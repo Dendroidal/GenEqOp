@@ -1,0 +1,136 @@
+\usepackage[latin1]{inputenc}%
+\usepackage{enumerate}%
+
+\usepackage{amsmath}%
+\usepackage{amsfonts,amssymb,MnSymbol}%
+\usepackage{amsthm}%
+
+\usepackage[all,cmtip]{xy}%
+\newdir{ >}{{}*!/-5pt/@{>}}%
+\usepackage{array}%
+\usepackage[dvipsnames]{xcolor}%
+\usepackage{ulem}%
+\usepackage{dsfont}%
+\usepackage{bbm}%
+\usepackage{paralist}%
+
+\usepackage{relsize}%
+
+\usepackage{tikz-cd}%
+\usetikzlibrary{patterns}%
+\tikzset{%
+  treenode/.style = {shape=rectangle, rounded corners,%
+                     draw, align=center,%
+                     top color=white, bottom color=blue!20},%
+  root/.style     = {treenode, font=\Large, bottom color=red!30},%
+  env/.style      = {treenode, font=\ttfamily\normalsize},%
+  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=1.4mm}%
+}%
+
+\usepackage{todonotes}%
+
+\usepackage[inline]{enumitem}%
+
+\newtheorem{theorem}[equation]{Theorem}%
+\newtheorem{lemma}[equation]{Lemma}%
+\newtheorem{proposition}[equation]{Proposition}%
+\newtheorem{corollary}[equation]{Corollary}%
+\newtheorem{conjecture}[equation]{Conjecture}%
+\newtheorem{claim}[equation]{Claim}%
+
+\theoremstyle{definition}%
+\newtheorem{definition}[equation]{Definition}%
+\newtheorem{example}[equation]{Example}%
+\newtheorem{remark}[equation]{Remark}%
+\newtheorem{notation}[equation]{Notation}%
+\newtheorem{convention}[equation]{Convention}%
+\newtheorem{exercise}{Exercise}%
+
+\newcommand{\A}{\mathcal{A}}%
+\newcommand{\B}{\mathcal{B}}%
+\newcommand{\G}{\mathcal{G}}%
+\newcommand{\s}{\mathbf{s}}%
+\renewcommand{\t}{\mathbf{t}}%
+\renewcommand{\H}{\mathcal{H}}%
+\newcommand{\Ss}{\mathbb S}%
+\newcommand{\Tt}{\mathbb T}%
+\newcommand{\Rr}{\mathbb R}%
+\newcommand{\Qq}{\mathbb Q}%
+\newcommand{\Cc}{\mathbb C}%
+\newcommand{\Zz}{\mathbb Z}%
+\newcommand{\Fin}{\mathsf{F}}%
+
+\newcommand{\m}{\text{$\mathfrak{m}$}}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}%
+\newcommand{\abs}[1]{\left\vert#1\right\vert}%
+\newcommand{\set}[1]{\left\{#1\right\}}%
+\newcommand{\sets}[2]{\left\{ #1 \;|\; #2\right\}}%
+\newcommand{\eval}[1]{\left\langle#1\right\rangle}%
+\newcommand{\eps}{\varepsilon}%
+\newcommand{\To}{\longrightarrow}%
+\newcommand{\rmap}{\longrightarrow}%
+\newcommand{\longto}{\longrightarrow}%
+\newcommand{\lmap}{\longleftarrow}%
+\newcommand{\into}{\hookrightarrow}%
+\newcommand{\onto}{\twoheadrightarrow}%
+\newcommand{\Boxe}{\raisebox{.8ex}{\framebox}}%
+\newcommand{\X}{\mathcal{X}}%
+\newcommand{\F}{\ensuremath{\mathbb{F}}}%
+\newcommand{\E}{\ensuremath{\mathcal{E}}}%
+\newcommand{\D}{\ensuremath{\mathcal{D}}}%
+\newcommand{\C}{\ensuremath{\mathcal{C}}}%
+\renewcommand{\P}{\ensuremath{\mathcal{P}}}%
+\renewcommand{\O}{\ensuremath{\mathcal{O}}}%
+%\renewcommand{\S}{\ensuremath{\mathcal{S}}}%
+\renewcommand{\Ss}{\ensuremath{\mathsf{S}}}%
+\newcommand{\su}{\ensuremath{\mathfrak{su}}}%
+\newcommand{\Pa}{\ensuremath{\mathcal{M}}}%
+\newcommand{\NN}{\ensuremath{\mathcal{N}}}%
+\newcommand{\AAA}{\ensuremath{\mathcal{A}}}%
+\newcommand{\Z}{\ensuremath{\mathcal{Z}}}%
+\newcommand{\mcI}{\ensuremath{\mathcal{I}}}%
+\newcommand{\al}{\alpha}%
+\newcommand{\be}{\beta}%
+\newcommand{\ga}{\gamma}%
+\newcommand{\Lie}{\mathcal{L}}%  
+\renewcommand{\gg}{\mathfrak{g}}%
+\newcommand{\hh}{\mathfrak{h}}%
+\renewcommand{\L}{\mathbb L}%
+\newcommand{\tto}{\rightrightarrows}%
+
+\newcommand{\del}{\partial}%
+\newcommand{\fC}{\ensuremath{\mathfrak{C}}}%
+\newcommand{\fc}{\ensuremath{\mathfrak{c}}}%
+\newcommand{\blank}{\,\line(1,0){5}\,}%
+
+
+\newcommand{\Sig}{\ensuremath{\Sigma}}%
+
+\newcommand{\Sym}{\ensuremath{\mathsf{Sym}}}%
+\newcommand{\sSet}{\ensuremath{\mathsf{sSet}}}%
+\newcommand{\BSym}{\ensuremath{\mathsf{BSym}}}%
+\newcommand{\fgt}{\ensuremath{\mathsf{fgt}}}%
+
+\DeclareMathOperator{\hocmp}{hocmp}%
+\DeclareMathOperator{\cmp}{cmp}%
+\DeclareMathOperator{\hofiber}{hofiber}%
+\DeclareMathOperator{\fiber}{fiber}%
+\DeclareMathOperator{\hocofiber}{hocof}%
+\DeclareMathOperator{\hocof}{hocof}%
+\DeclareMathOperator{\holim}{holim}%
+\DeclareMathOperator{\hocolim}{hocolim}%
+\DeclareMathOperator{\colim}{colim}%
+\DeclareMathOperator{\Lan}{Lan}%
+\DeclareMathOperator{\Map}{Map}%
+\DeclareMathOperator{\Id}{Id}%
+\DeclareMathOperator{\mlf}{mlf}%
+\DeclareMathOperator{\Hom}{Hom}%
+\DeclareMathOperator{\Aut}{Aut}%
+\newcommand{\free}{\ensuremath{\mathrm{free}}}%
+
+\let\squish\smash
+\newcommand{\Top}{\text{\squish{$\mathcal{T}\!op$}}}
+\newcommand{\Set}{\text{$\mathcal{F}\!in$}}
+
+
+\numberwithin{equation}{section}%
