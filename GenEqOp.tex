@@ -95,20 +95,15 @@ An example of a planar structure on a tree $T$ follows, with $\leq_r$ encoded by
 \]
 Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$
 and $e \leq_p f$ holds if either
-$e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured by the node where they intersect).
-
-
-{\color{red} HERE}
-
-a planarization of $T$ encodes the exact same information as a depiction of $T$ in the plane, though we will not  need to make this idea precise. Informally,
- a $e \leq_p f$ relation dictates that either: 
-\begin{inparaenum}
-	\item [(i)] $e$ appears above $f$, should it be $e \leq_d f$, or; that ``the path from $e$ to the root is to the left of the path from $f$ to the root'', should it be $e \nleq_d f$.
-\end{inparaenum}
+$e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured at the node where the paths intersect).
 \end{example}
 
 
-We now establish some basic properties of planarizations. We start with some notation.
+
+Intuitively, a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
+
+While we will not need to make this last statement precise, we will nonetheless find it convenient to show that Definition \ref{PLANARIZE DEF} is equivalent to such choosing total orders for each of the sets of input edges.
+To do so, we first introduce some notation.
 
 
 \begin{notation}\label{INPUTPATH NOT}
@@ -117,72 +112,139 @@ We now establish some basic properties of planarizations. We start with some not
 and refer to this poset as the \textit{input path of $e$}.
 \end{notation}
 
-\begin{notation}
-	Let $T \in \Omega$ be a tree and suppose that $e <_d f$. We will denote by $f^{\uparrow}_e \in T$ the only edge $f^{\uparrow}_e \in f^{\uparrow}$ such that 
-	$e \leq_f f^{\uparrow}_e$.
-\end{notation}
 
-
-\begin{proposition}
+\begin{proposition}\label{INPUTPATHS PROP}
 	Let $T \in \Omega$ be a tree. Then
 	\begin{itemize}
 		\item[(a)] for any $e \in T$ the finite poset $I(e)$ is totally ordered;
-		\item[(b)] the edge $g \in I(e)$ is the successor of 
-		$f \in I(e)$ iff $f \in g^{\uparrow}$ iff $f=g^{\uparrow}_f$; 
-		\item[(c)] the poset $(T,\leq_d)$ has all joins.
+		\item[(b)] the poset $(T,\leq_d)$ has all joins, denoted $\vee$. In fact, $\bigvee_{i} e_i = \min (\bigcap_{i} I(e_i))$.
 	\end{itemize}
 \end{proposition}
 
 \begin{proof}
-	To prove (a), note that if any two edges in $I(e)$ were $\leq_d$ incomparable, then {\color{green} Eq.D.S. Lemma 4.14} would lead to a non-simple broad relation for the root of $T$.
-	(b) follows since $f \leq g^{\uparrow}_f$.
-
-	To prove (c), note that 
-	$\min (\bigcap_{i=1}^n I(e_i))$ exists by (a), and this is clearly the join $\bigvee_{i=1}^n{e_i}$.
+	To prove (a), note that if $g,g' \in I(e)$ were $\leq_d$-incomparable, the relations $e \leq_d g$, $e \leq_d g'$ would contradict \cite[Cor. 5.26]{Pe16b}.
+To prove (b) we note that 
+	$\min (\bigcap_{i} I(e_i))$ exists by (a), and that this is clearly the join $\bigvee{e_i}$.
 \end{proof}
+
+
+\begin{notation}
+	Let $T \in \Omega$ be a tree and suppose that $e <_d g$. We will denote by $g^{\uparrow}_e \in T$ the predecessor of $g$ in $I(e)$.
+\end{notation}
+
+
+\begin{proposition}
+Suppose $e,f$ are $\leq_d$-incomparable edges of $T$ and write $g= e \vee f$. Then
+\begin{itemize}
+\item [(a)] $g^{\uparrow}_e, g^{\uparrow}_f \in g^{\uparrow}$. In fact $\{g^{\uparrow}_e\} = I(e) \cap g^{\uparrow}$,
+$\{g^{\uparrow}_f\} = I(f) \cap g^{\uparrow}$;
+\item [(b)] $e <_d g$, $f<_d g$ and $g^{\uparrow}_e \neq g^{\uparrow}_f$;
+\item[(c)] if $e' \leq_d e$, $f' \leq_d f$ then 
+$g=e' \vee f'$ and $g^{\uparrow}_{e'} = g^{\uparrow}_{e}$, $g^{\uparrow}_{f'} = g^{\uparrow}_{f}$.
+\end{itemize}
+\end{proposition}
+
+{\color{blue} HERE}
+
+\begin{proof}
+kk
+\end{proof}
+
+
+
+
+
 
 \begin{proposition}
 \label{TERNARYJOIN PROP}
 All ternary joins in $(T,\leq_d)$ are binary, i.e.
 \[ e_1 \vee e_2 \vee e_3 = e_i \vee e_j\]
-for some $1\leq i <j \leq 3$. Further, $e_1 \vee e_2 \vee e_3 \neq e_i \vee e_j$ can hold for at most one choice of $1\leq i <j \leq 3$.
+for some $1\leq i <j \leq 3$. Further, $e_1 \vee e_2 \vee e_3 \neq e_i \vee e_j$ holds for at most one choice of $1\leq i <j \leq 3$.
 \end{proposition}
 
 \begin{proof}
-By definition of join the edges 
-$(e_1 \vee e_2 \vee e_3)^\uparrow_{e_1}$, 
-$(e_1 \vee e_2 \vee e_3)^\uparrow_{e_2}$, 
-$(e_1 \vee e_2 \vee e_3)^\uparrow_{e_3}$
-can not all coincide. Noting that hence at most two of these edges are the same yields the result.
+Writing $E = e_1 \vee e_2 \vee e_3$, by the characterization of joins in Proposition \ref{INPUTPATHS PROP}(c) the edges
+$E^{\uparrow}_{e_1}$, $E^{\uparrow}_{e_2}$, $E^{\uparrow}_{e_3}$
+can not all coincide. But if $E^{\uparrow}_{e_i}\neq E^{\uparrow}_{e_j}$ then
+$E = \min(I(e_i) \cap I(e_j)) = e_i \vee e_j$.
+The ``further'' claim follows since at most two of 
+$E^{\uparrow}_{e_1}$, $E^{\uparrow}_{e_2}$, $E^{\uparrow}_{e_3}$
+coincide.
 \end{proof}
+
+\begin{notation}
+	Given a set $S$ of size $n$ we write
+	$\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will usually abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order in $S$.
+\end{notation}
 
 
 \begin{proposition}\label{PLANARIZATIONCHAR PROP}
-	Let $T \in \Omega$ be a tree. There is a bijection {\color{green}(change $\Sigma$ notation)}
+	Let $T \in \Omega$ be a tree. There is a bijection
 	\begin{equation}\label{PLANAR EQ}
 	\begin{tikzcd}[row sep = 0.5em]
-		\{\text{planarizations }(T,\leq_p)\} \ar[r] &
-		\prod_{(e^{\uparrow} \leq e) \in V(T)} \Sigma_{e^{\uparrow}} \\
+		\{\text{planar structures }(T,\leq_p)\} \ar[r] &
+		\prod_{(e^{\uparrow} \leq e) \in V(T)} \mathsf{Ord}(e^{\uparrow}) \\
 		\leq_p \ar[mapsto]{r} & (\leq_p|_{e^{\uparrow}})
 	\end{tikzcd}	
 	\end{equation}
 \end{proposition}
 
-\begin{proof}
-	Suppose $e, f$ are $\leq_d$-incomparable edges. One must then have $e,f <_d  e \vee f$ as well as 
-	$(e \vee f)^{\uparrow}_e \neq (e \vee f)^{\uparrow}_f$. Without loss of generality, we may assume 
-	\begin{equation}\label{PLANARORDERDEF}
-		(e \vee f)^{\uparrow}_e <_p (e \vee f)^{\uparrow}_f
-	\end{equation}
-and the relations 
-$e \leq_d (e \vee f)^{\uparrow}_e <_p (e \vee f)^{\uparrow}_f \geq_d f$ now show that $e \leq_p f$, and hence (\ref{PLANAR EQ}) is injective.
 
-To see that (\ref{PLANAR EQ}) is surjective, it suffices to check that for $\leq_d$-incomparable $e,f$, defining $e \leq_p f$ to hold iff 
-(\ref{PLANARORDERDEF}) holds yields a planarization. 
-In the remainder of the proof, we abuse notation by writing $e<_p f$ to denote (\ref{PLANARORDERDEF}) together with the assumption that $e,f$ are $\leq_d$-incomparable. The antisymmetry and total order conditions are immediate. Now suppose that
-\begin{equation}\label{TRANSITIV1 EQ}
-	e' \leq_d e \qquad  f' \geq_d f \qquad e \vee f \neq e,f.
-\end{equation}
+\begin{proof}
+Throughout we will let $e, f$ be $\leq_d$-incomparable edges and write 
+$g = e \vee f$. Note that one must have $e <_d g$, $f <_d g$ and 
+$g^{\uparrow}_e \neq g^{\uparrow}_f$. 
+
+	We first show that (\ref{PLANAR EQ}) is injective.
+If $g^{\uparrow}_e <_p g^{\uparrow}_f$, the relations
+$e \leq_d g^{\uparrow}_e <_p g^{\uparrow}_f \geq_d f$
+and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=1.9em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 9em]{node [dummy] {}
+					child[sibling distance = 2.5em]{
+					edge from parent node [near end,swap] {}}
+					child[level distance=2.5em]{
+					edge from parent node [near end,swap] {$f$}}				
+					child[sibling distance = 2.3em]{
+					edge from parent node [near end] {}}
+				edge from parent node [swap] {$g^{\uparrow}_{f}$}}
+				child[level distance =2.1em]{
+				edge from parent node [swap] {}}
+				child[sibling distance = 8em]{node [dummy] {}
+					child[sibling distance =3em, level distance = 1.5 em]{
+					edge from parent node [swap] {}}
+					child[sibling distance = 1.5em]{node [dummy] {}
+					edge from parent node [very near end,swap] {}}
+					child[sibling distance =1.5em]{
+					edge from parent node [very near end] {$e$}}
+					child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
+					edge from parent node {}}
+				edge from parent node {$g^{\uparrow}_e$}}
+			edge from parent node [swap] {$g$}};
+	\end{tikzpicture}
+\]
+Dually, if $g^{\uparrow}_f <_p g^{\uparrow}_e$ it is 
+$f <_p e$, i.e. 
+$g^{\uparrow}_e <_p g^{\uparrow}_f \Leftrightarrow e <_p f$, and hence (\ref{PLANAR EQ}) is indeed injective.
+
+To check that (\ref{PLANAR EQ}) is surjective, it suffices (recall that $e,f$ are assumed $\leq_d$-incomparable) to check that
+defining $e \leq_p f$ to hold iff $g^{\uparrow}_e < g^{\uparrow}_f$ holds in $g^{\uparrow}$ yields a planar structure.
+
+Antisymmetry and the total order conditions are immediate, and it thus remains to check the transitivity and planar conditions.
+Suppose $e' \leq_d e$, $f' \leq_d f$.
+
+It then must be $I(e') \cap I(f') = I(e) \cap I(f)$
+
+Then $g'$ must be $\leq_d$-comparable with both $e$ and $f$ (since the relevant pairs lie in either $I(e')$ or $I(f')$)
+and this 
+{\color{red} HERE}
+ 
+
 Noting that $e' \vee f'$ must be $\leq_d$-comparable with both $e$ and $f$ (since the relevant pairs lie in either $I(e')$ or $I(f')$), one sees that it must be $e,f <_d  e' \vee f'$ (since otherwise all three would lie in either $I(e')$ or $I(f')$) and that hence
 $e \vee f = e' \vee f'$ and 
 $(e \vee f)^{\uparrow}_e=(e \vee f)^{\uparrow}_{e'}$, 
