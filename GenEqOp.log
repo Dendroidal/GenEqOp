@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  4 APR 2017 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  4 APR 2017 21:22
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1000,20 +1000,24 @@ No file GenEqOp.bbl.
 {C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (GenEqOp.aux) ) 
 Here is how much of TeX's memory you used:
- 20190 strings out of 493334
- 377821 string characters out of 3130222
- 448702 words of memory out of 3000000
- 23237 multiletter control sequences out of 15000+200000
- 22891 words of font info for 87 fonts, out of 3000000 for 9000
+ 20212 strings out of 493334
+ 378082 string characters out of 3130222
+ 449702 words of memory out of 3000000
+ 23249 multiletter control sequences out of 15000+200000
+ 26322 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,7n,84p,3270b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on GenEqOp.pdf (1 page, 42893 bytes).
+ <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public
+\mnsymbol\dpi600\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on GenEqOp.pdf (1 page, 73773 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
