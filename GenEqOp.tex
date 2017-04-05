@@ -112,6 +112,11 @@ To do so, we first introduce some notation.
 and refer to this poset as the \textit{input path of $e$}.
 \end{notation}
 
+We will repeatedly use the following, which is a consequence of \cite[Cor. 5.26]{Pe16b}.
+
+\begin{lemma}\label{INCOMPNOTOP}
+If $e \leq_d f$, $e \leq_d f'$, then $f,f'$ are $\leq_d$-comparable. 
+\end{lemma} 
 
 \begin{proposition}\label{INPUTPATHS PROP}
 	Let $T \in \Omega$ be a tree. Then
@@ -122,54 +127,65 @@ and refer to this poset as the \textit{input path of $e$}.
 \end{proposition}
 
 \begin{proof}
-	To prove (a), note that if $g,g' \in I(e)$ were $\leq_d$-incomparable, the relations $e \leq_d g$, $e \leq_d g'$ would contradict \cite[Cor. 5.26]{Pe16b}.
+	(a) is immediate from Lemma \ref{INCOMPNOTOP}.
 To prove (b) we note that 
 	$\min (\bigcap_{i} I(e_i))$ exists by (a), and that this is clearly the join $\bigvee{e_i}$.
 \end{proof}
 
 
 \begin{notation}
-	Let $T \in \Omega$ be a tree and suppose that $e <_d g$. We will denote by $g^{\uparrow}_e \in T$ the predecessor of $g$ in $I(e)$.
+	Let $T \in \Omega$ be a tree and suppose that $e <_d b$. We will denote by $b^{\uparrow}_e \in T$ the predecessor of $b$ in $I(e)$.
 \end{notation}
 
 
-\begin{proposition}
-Suppose $e,f$ are $\leq_d$-incomparable edges of $T$ and write $g= e \vee f$. Then
+\begin{proposition}\label{INPUTPREDECESSORPROP PROP}
+Suppose $e,f$ are $\leq_d$-incomparable edges of $T$ and write $b= e \vee f$. Then
 \begin{itemize}
-\item [(a)] $g^{\uparrow}_e, g^{\uparrow}_f \in g^{\uparrow}$. In fact $\{g^{\uparrow}_e\} = I(e) \cap g^{\uparrow}$,
-$\{g^{\uparrow}_f\} = I(f) \cap g^{\uparrow}$;
-\item [(b)] $e <_d g$, $f<_d g$ and $g^{\uparrow}_e \neq g^{\uparrow}_f$;
+\item [(a)] $e <_d b$, $f<_d b$ and $b^{\uparrow}_e \neq b^{\uparrow}_f$;
+\item [(b)] $b^{\uparrow}_e, b^{\uparrow}_f \in b^{\uparrow}$. In fact $\{b^{\uparrow}_e\} = I(e) \cap b^{\uparrow}$,
+$\{b^{\uparrow}_f\} = I(f) \cap b^{\uparrow}$;
 \item[(c)] if $e' \leq_d e$, $f' \leq_d f$ then 
-$g=e' \vee f'$ and $g^{\uparrow}_{e'} = g^{\uparrow}_{e}$, $g^{\uparrow}_{f'} = g^{\uparrow}_{f}$.
+$b = e' \vee f'$ and $b^{\uparrow}_{e'} = b^{\uparrow}_{e}$, $b^{\uparrow}_{f'} = b^{\uparrow}_{f}$.
 \end{itemize}
 \end{proposition}
 
-{\color{blue} HERE}
 
 \begin{proof}
-kk
+(a) is immediate: the condition $e = g$ (resp. $f = g$) would imply $f \leq_d e$ (resp. $e \leq_d f$)
+while the condition $b^{\uparrow}_e = b^{\uparrow}_f$ would provide a predecessor of $b$ in $I(e) \cap I(f)$. 
+
+For (b), note that any relation $a <_d b$ factors as 
+$a \leq_d b^{\star}_a <_d b$ for some unique $b^{\**}_a \in b^{\uparrow}$, where uniqueness follows from Lemma \ref{INCOMPNOTOP}. Choosing $a=e$ implies $I(e) \cap b^{\uparrow} = \{b^{\**}_e\}$ and letting $a$ range over edges such that $e \leq_d a <_d b$ shows that $b^{\**}_e$ is in fact the predecessor of $b$.
+
+To prove (c) one reduces to the case $e'=e$, in which case it suffices to check $I(e) \cap I(f') = I(e) \cap I(f)$. But if it were otherwise there would exist an edge $a$ satisfying
+$f' \leq_d a <_d f$ and $e \leq_d a$, and this would imply $e \leq_d f$, contradicting our hypothesis.
 \end{proof}
-
-
-
 
 
 
 \begin{proposition}
 \label{TERNARYJOIN PROP}
-All ternary joins in $(T,\leq_d)$ are binary, i.e.
-\[ e_1 \vee e_2 \vee e_3 = e_i \vee e_j\]
-for some $1\leq i <j \leq 3$. Further, $e_1 \vee e_2 \vee e_3 \neq e_i \vee e_j$ holds for at most one choice of $1\leq i <j \leq 3$.
+Let $c = e_1 \vee e_2 \vee e_3$.
+Then $c = e_i \vee e_j$ iff $c^{\uparrow}_{e_i} \neq c^{\uparrow}_{e_j}$.
+
+Therefore, all ternary joins in $(T,\leq_d)$ are binary, i.e.
+\begin{equation}\label{TERNJOIN EQ}
+	c = e_1 \vee e_2 \vee e_3 = e_i \vee e_j
+\end{equation}
+for some $1\leq i <j \leq 3$, and
+(\ref{TERNJOIN EQ}) fails for 
+ at most one choice of $1\leq i <j \leq 3$.
 \end{proposition}
 
+
 \begin{proof}
-Writing $E = e_1 \vee e_2 \vee e_3$, by the characterization of joins in Proposition \ref{INPUTPATHS PROP}(c) the edges
-$E^{\uparrow}_{e_1}$, $E^{\uparrow}_{e_2}$, $E^{\uparrow}_{e_3}$
-can not all coincide. But if $E^{\uparrow}_{e_i}\neq E^{\uparrow}_{e_j}$ then
-$E = \min(I(e_i) \cap I(e_j)) = e_i \vee e_j$.
-The ``further'' claim follows since at most two of 
-$E^{\uparrow}_{e_1}$, $E^{\uparrow}_{e_2}$, $E^{\uparrow}_{e_3}$
-coincide.
+If $c^{\uparrow}_{e_i} \neq c^{\uparrow}_{e_j}$ then
+$c = \min\left(I(e_i) \cap I(e_j)\right) = e_i \vee e_j$, whereas the converse follows from Proposition \ref{INPUTPREDECESSORPROP PROP}(a).
+
+The ``therefore'' part follows by noting that 
+$c^{\uparrow}_{e_1}$, $c^{\uparrow}_{e_2}$, $c^{\uparrow}_{e_3}$
+can not all coincide, or else $c$ would not be the minimum of
+$I(e_1) \cap I(e_2) \cap I(e_3)$. 
 \end{proof}
 
 \begin{notation}
@@ -183,21 +199,20 @@ coincide.
 	\begin{equation}\label{PLANAR EQ}
 	\begin{tikzcd}[row sep = 0.5em]
 		\{\text{planar structures }(T,\leq_p)\} \ar[r] &
-		\prod_{(e^{\uparrow} \leq e) \in V(T)} \mathsf{Ord}(e^{\uparrow}) \\
-		\leq_p \ar[mapsto]{r} & (\leq_p|_{e^{\uparrow}})
+		\prod_{(a^{\uparrow} \leq a) \in V(T)} \mathsf{Ord}(a^{\uparrow}) \\
+		\leq_p \ar[mapsto]{r} & (\leq_p|_{a^{\uparrow}})
 	\end{tikzcd}	
 	\end{equation}
 \end{proposition}
 
 
 \begin{proof}
-Throughout we will let $e, f$ be $\leq_d$-incomparable edges and write 
-$g = e \vee f$. Note that one must have $e <_d g$, $f <_d g$ and 
-$g^{\uparrow}_e \neq g^{\uparrow}_f$. 
+We will keep the setup of Proposition \ref{INPUTPREDECESSORPROP PROP} throughout: $e, f$ are $\leq_d$-incomparable edges and we write $b = e \vee f$. 
 
-	We first show that (\ref{PLANAR EQ}) is injective.
-If $g^{\uparrow}_e <_p g^{\uparrow}_f$, the relations
-$e \leq_d g^{\uparrow}_e <_p g^{\uparrow}_f \geq_d f$
+	We first show that (\ref{PLANAR EQ}) is injective, i.e. that the restrictions $\leq_p|_{a^{\uparrow}}$ determine if 
+	$e <_p f$ holds or not.
+If $b^{\uparrow}_e <_p b^{\uparrow}_f$, the relations
+$e \leq_d b^{\uparrow}_e <_p b^{\uparrow}_f \geq_d f$
 and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=1.9em,
@@ -212,7 +227,7 @@ and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
 					edge from parent node [near end,swap] {$f$}}				
 					child[sibling distance = 2.3em]{
 					edge from parent node [near end] {}}
-				edge from parent node [swap] {$g^{\uparrow}_{f}$}}
+				edge from parent node [swap] {$b^{\uparrow}_{f}$}}
 				child[level distance =2.1em]{
 				edge from parent node [swap] {}}
 				child[sibling distance = 8em]{node [dummy] {}
@@ -224,53 +239,51 @@ and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
 					edge from parent node [very near end] {$e$}}
 					child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
 					edge from parent node {}}
-				edge from parent node {$g^{\uparrow}_e$}}
-			edge from parent node [swap] {$g$}};
+				edge from parent node {$b^{\uparrow}_e$}}
+			edge from parent node [swap] {$b$}};
 	\end{tikzpicture}
 \]
-Dually, if $g^{\uparrow}_f <_p g^{\uparrow}_e$ it is 
-$f <_p e$, i.e. 
-$g^{\uparrow}_e <_p g^{\uparrow}_f \Leftrightarrow e <_p f$, and hence (\ref{PLANAR EQ}) is indeed injective.
+Dually, if $b^{\uparrow}_f <_p b^{\uparrow}_e$ then 
+$f <_p e$. Thus 
+$b^{\uparrow}_e <_p b^{\uparrow}_f \Leftrightarrow e <_p f$ and hence (\ref{PLANAR EQ}) is indeed injective.
 
 To check that (\ref{PLANAR EQ}) is surjective, it suffices (recall that $e,f$ are assumed $\leq_d$-incomparable) to check that
-defining $e \leq_p f$ to hold iff $g^{\uparrow}_e < g^{\uparrow}_f$ holds in $g^{\uparrow}$ yields a planar structure.
+defining $e \leq_p f$ to hold iff $b^{\uparrow}_e < b^{\uparrow}_f$ holds in $b^{\uparrow}$ yields a planar structure.
 
 Antisymmetry and the total order conditions are immediate, and it thus remains to check the transitivity and planar conditions.
-Suppose $e' \leq_d e$, $f' \leq_d f$.
+Transitivity of $\leq_p$ in the case $e' \leq_d e <_p f$ and the planar condition, which is the case $e <_p f \geq_d f'$, follow from Proposition \ref{INPUTPREDECESSORPROP PROP}(c). Transitivity of $\leq_p$ in the case $e <_p f \leq_d f'$
+follows since either $e \leq_d f'$ or else $e,f'$ are $\leq_d$-incomparable, in which case one can apply \ref{INPUTPREDECESSORPROP PROP}(c) with the roles of $f,f'$ reversed.
 
-It then must be $I(e') \cap I(f') = I(e) \cap I(f)$
-
-Then $g'$ must be $\leq_d$-comparable with both $e$ and $f$ (since the relevant pairs lie in either $I(e')$ or $I(f')$)
-and this 
-{\color{red} HERE}
- 
-
-Noting that $e' \vee f'$ must be $\leq_d$-comparable with both $e$ and $f$ (since the relevant pairs lie in either $I(e')$ or $I(f')$), one sees that it must be $e,f <_d  e' \vee f'$ (since otherwise all three would lie in either $I(e')$ or $I(f')$) and that hence
-$e \vee f = e' \vee f'$ and 
-$(e \vee f)^{\uparrow}_e=(e \vee f)^{\uparrow}_{e'}$, 
-$(e \vee f)^{\uparrow}_f=(e \vee f)^{\uparrow}_{f'}$. 
-Therefore, in the conditions of (\ref{TRANSITIV1 EQ}) one has 
-$e <_p f$ iff $e'<_p f'$. The planar condition and the non-trivial instances of transitivity thus follow, with the single exception of the $e <_p f <_p g$ case. 
-To check this last case, note that by Proposition \ref{TERNARYJOIN PROP} either:
+It remains to check transitivity in the hardest case, that of 
+$e <_p f <_p g$ with $\leq_d$-incomparable $f,g$.
+We write $c = e \vee f \vee g$.
+By the ``therefore'' part of Proposition \ref{TERNARYJOIN PROP}, either
 \begin{inparaenum}
-	\item[(i)] both  
-$e \vee f$, $f \vee g$ equal $e \vee f \vee g$, in which case  
- $(e \vee f \vee g)^{\uparrow}_e <_p
-(e \vee f \vee g)^{\uparrow}_f <_p
-(e \vee f \vee g)^{\uparrow}_g 
- $ 
-implies that $e \vee g$ must also equal $e \vee f \vee g$ and transitivity follows;
-	\item[(ii)] $e \vee f <_d e \vee f \vee g$, in which case 
-	transitivity follows from noting that 
-	$(e \vee f \vee g)^{\uparrow}_e = (e \vee f \vee g)^{\uparrow}_f$;
-	\item[(iii)] $f \vee g <_d e \vee f \vee g$, which follows just as the previous case.
+	\item[(i)] $e \vee f <_d c$, in which case 
+	Proposition \ref{TERNARYJOIN PROP}
+	implies 
+	$c^{\uparrow}_e = c^{\uparrow}_f$ and transitivity follows;
+	\item[(ii)] $f \vee g <_d c$, which follows just as (i);
+	\item[(iii)]  
+$e \vee f = f \vee g =c$, in which case 
+$c^{\uparrow}_e <
+c^{\uparrow}_f <
+c^{\uparrow}_g $ in $c^{\uparrow}$
+so that $c^{\uparrow}_e \neq c^{\uparrow}_g$ and by Proposition \ref{TERNARYJOIN PROP} it is also 
+$e \vee g = c$ and transitivity follows.
 \end{inparaenum}
 \end{proof}
 
+
+
 \begin{remark}
-	Definition \ref{PLANARIZE DEF} readily extends to forests $F \in \Phi$. The analogue of Proposition \ref{PLANARIZATIONCHAR PROP} then states that the data of a planarization is equivalent to total orderings of the vertices of $F$ together with a total ordering of the roots of $F$. The interested reader may wish to suitably modify the proof of Proposition \ref{PLANARIZE DEF} to obtain this result. Instead, we simply note that planarizations of $F$ are clearly in bijection with planarizations of the join tree $F \star \eta$ (cf. {\color{green} Equiv. dend. sets}).
+	Definition \ref{PLANARIZE DEF} readily extends to forests $F \in \Phi$. The analogue of Proposition \ref{PLANARIZATIONCHAR PROP} then states that the data of a planar structure is 
+equivalent to total orderings of the nodes of $F$ together with a total ordering of its set of roots.
+Indeed, this follows by either adapting the proof above or by noting that planar structures on $F$ are clearly in bijection with planar structures on the join tree $F \star \eta$ 
+(cf. \cite[Def. 7.44]{Pe16b}), which adds a single edge $\eta$ to $F$, serving as the (unique) root of $F \star \eta$.
 \end{remark}
 
+{\color{red} HERE}
 
 \begin{convention}\label{PLANARCONV CON}
 	From now on, we will write $\Omega$ (resp. $\Omega_G$) to denote a model for the category of trees (resp. $G$-trees) where
