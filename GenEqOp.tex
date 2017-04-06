@@ -188,6 +188,45 @@ can not all coincide, or else $c$ would not be the minimum of
 $I(e_1) \cap I(e_2) \cap I(e_3)$. 
 \end{proof}
 
+{\color{red} HERE}
+
+\begin{example}
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=1.9em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {}
+			child{node [dummy] {}
+				child{
+				edge from parent node [swap] {$g$}}
+				child[sibling distance = 7em]{node [dummy] {}
+					child[sibling distance = 5em,level distance=1.7em]
+					child[sibling distance = 1.5em,level distance=2.7em]{node [dummy] {}
+						child[sibling distance = 2.5em]{
+						edge from parent node [near end,swap] {}}
+						child[level distance=2.5em]{
+						edge from parent node [near end,swap] {$f$}}				
+						child[sibling distance = 2.3em]{
+						edge from parent node [near end] {}}
+					edge from parent node [swap,very near end] {$b^{\uparrow}_{f}$}}
+					child[sibling distance = 1.5em,level distance =2.1em]{
+					edge from parent node [swap] {}}
+					child[sibling distance = 5em]{node [dummy] {}
+						child[sibling distance =3em, level distance = 1.5 em]{
+						edge from parent node [swap] {}}
+						child[sibling distance = 1.5em]{node [dummy] {}
+						edge from parent node [very near end,swap] {}}
+						child[sibling distance =1.5em]{
+						edge from parent node [very near end] {$e$}}
+						child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
+						edge from parent node {}}
+					edge from parent node {$b^{\uparrow}_e$}}
+				edge from parent node {$b$}}
+			edge from parent node [swap] {$c$}};
+	\end{tikzpicture}
+\]
+\end{example}
+
 \begin{notation}
 	Given a set $S$ of size $n$ we write
 	$\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will usually abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order in $S$.
@@ -214,35 +253,6 @@ We will keep the setup of Proposition \ref{INPUTPREDECESSORPROP PROP} throughout
 If $b^{\uparrow}_e <_p b^{\uparrow}_f$, the relations
 $e \leq_d b^{\uparrow}_e <_p b^{\uparrow}_f \geq_d f$
 and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
-\[
-	\begin{tikzpicture}[grow=up,auto,level distance=1.9em,
-	every node/.style = {font=\footnotesize,inner sep=2pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 9em]{node [dummy] {}
-					child[sibling distance = 2.5em]{
-					edge from parent node [near end,swap] {}}
-					child[level distance=2.5em]{
-					edge from parent node [near end,swap] {$f$}}				
-					child[sibling distance = 2.3em]{
-					edge from parent node [near end] {}}
-				edge from parent node [swap] {$b^{\uparrow}_{f}$}}
-				child[level distance =2.1em]{
-				edge from parent node [swap] {}}
-				child[sibling distance = 8em]{node [dummy] {}
-					child[sibling distance =3em, level distance = 1.5 em]{
-					edge from parent node [swap] {}}
-					child[sibling distance = 1.5em]{node [dummy] {}
-					edge from parent node [very near end,swap] {}}
-					child[sibling distance =1.5em]{
-					edge from parent node [very near end] {$e$}}
-					child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
-					edge from parent node {}}
-				edge from parent node {$b^{\uparrow}_e$}}
-			edge from parent node [swap] {$b$}};
-	\end{tikzpicture}
-\]
 Dually, if $b^{\uparrow}_f <_p b^{\uparrow}_e$ then 
 $f <_p e$. Thus 
 $b^{\uparrow}_e <_p b^{\uparrow}_f \Leftrightarrow e <_p f$ and hence (\ref{PLANAR EQ}) is indeed injective.
@@ -283,16 +293,18 @@ Indeed, this follows by either adapting the proof above or by noting that planar
 (cf. \cite[Def. 7.44]{Pe16b}), which adds a single edge $\eta$ to $F$, serving as the (unique) root of $F \star \eta$.
 \end{remark}
 
-{\color{red} HERE}
 
 \begin{convention}\label{PLANARCONV CON}
 	From now on, we will write $\Omega$ (resp. $\Omega_G$) to denote a model for the category of trees (resp. $G$-trees) where
 \begin{itemize}	
 	\item each object (i.e. tree) is equipped with a planar structure;
 	\item morphisms ignore the planar structure;
-	\item there is exactly one representative of each planarization, i.e. the identities are the only isomorphisms that preserve the planar structure.
+	\item there is exactly one representative of each planar structure, i.e. the identities are the only isomorphisms that preserve the planar structure.
 \end{itemize}
+Similarly, $\mathsf{O}_G$ will denote a model for the $G$-orbit category where each orbital $G$-set $X$ is given a total order, and with exactly one representative for each order.
 \end{convention}
+
+{\color{red} HERE}
 
 \begin{remark}\label{CONCRETETREE REM}
 	The reader desiring extra concreteness is welcome to think of the objects of $\Omega$, $\Omega_G$ as consisting of planarized tree structures on one of the sets 
