@@ -2,4 +2,4 @@
 \contentsline {section}{\numberline {2}Planar and tall maps}{1}
 \contentsline {subsection}{\numberline {2.1}Planar structures}{1}
 \contentsline {subsection}{\numberline {2.2}Outer faces and tall maps}{5}
-\contentsline {subsection}{\numberline {2.3}Substitution}{5}
+\contentsline {subsection}{\numberline {2.3}Substitution}{6}
