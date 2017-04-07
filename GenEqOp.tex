@@ -302,13 +302,15 @@ There is a full subcategory $\Omega^s \hookrightarrow \Omega^p$, whose objects w
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 		\node at (-0.25,0) {$C$};
-		\node at (-0.25,0.4) {}
+		\node at (-0.25,0.3) {}
 			child{node [dummy] {}
+				child[sibling distance = 1.5em,level distance= 2em]{
+				edge from parent node [swap, near end] {$3$}}
 				child[sibling distance = 1.5em,level distance= 2.5em]{
 				edge from parent node [swap, near end] {$2$}}
-				child[sibling distance = 1.5em,level distance= 2.5em]{
+				child[sibling distance = 1.5em,level distance= 2em]{
 				edge from parent node [near end] {$1$}}
-			edge from parent node [swap] {$3$}};
+			edge from parent node [swap] {$4$}};
 		\node at (3,0) {$T_1$}
 			child{node [dummy] {}
 				child[sibling distance = 5em, level distance=1.8em]{
@@ -372,7 +374,7 @@ To illustrate our convention, we consider the trees in Example \ref{STANDMODEL E
 
 One has subfaces
 $F_1 \subset F_2 \subset U$
-where $F_1$ is the subtree with edge set $\{3,6,7\}$ and 
+where $F_1$ is the subtree with edge set $\{1,2,6,7\}$ and 
 $F_2$ is the subtree with edge set $\{1,2,3,6,7\}$, both with inherited tree and planar structures. 
 Applying $(\minus)^s$ to the inclusion diagram on the left below then yields a diagram as on the right.
 \[
@@ -482,13 +484,52 @@ For example, when $G = \mathbb{Z}_{/4}$, in both diagrams below the orbital repr
 		\draw[decorate,decoration={brace,amplitude=2.5pt}] (9.85,-2) -- (7.4,-2) node[midway]{$T_2$};
 	\end{tikzpicture}
 \]
-
 \end{example}
+
+
+\begin{definition}
+	A morphism $S \xrightarrow{\varphi} T$ in $\Omega$ that is compatible with the planar structures $\leq_p$ is called a 
+	\textit{planar map}.
+	
+	More generally, a morphism $F \to G$ in the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe16b}) compatible with the planar structures $\leq_p$.
+\end{definition}
+
+
+\begin{remark}
+	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe16b} and its converse, since non independent maps do not reflect
+ $\leq_d$ inequalities.
+ 
+ We note that in the $\Omega_G$ case a map $\varphi$ is independent iff $\varphi$ does not factor through a non trivial quotient iff $\varphi$ is injective on each edge orbit.
+\end{remark}
+
+
+\begin{proposition}
+\label{PLANARPULL EQ}
+	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
+	\[F \xrightarrow{\simeq} \bar{F} \to G\]
+	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
+\end{proposition}
+
+\begin{proof}
+We need to show that there is a unique planar structure 
+$\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
+Simplicity of $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
+The result now follows from (the forest version of) Proposition
+\ref{PLANARIZATIONCHAR PROP}: one simply orders each set $e^{\uparrow}$ and $\underline{r}_F$ according to its image.
+\end{proof}
+
+
+
+\begin{remark}\label{PULLPLANAR REM}
+	Proposition \ref{PLANARPULL EQ} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+\end{remark}
 
 
 
 
 \subsection{Outer faces and tall maps}\label{OUTTALL SEC}
+
+{\color{red} HERE}
 
 \subsection{Substitution}\label{SUBS SEC}
 
