@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  8 APR 2017 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  8 APR 2017 15:40
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1007,21 +1007,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 :
  []
 
-
+[7]
 Underfull \hbox (badness 2035) in paragraph at lines 10--13
 []\OT1/cmr/m/n/9 I. Weiss.  Broad posets, trees, and the den-droidal cat-e-gory
 .  Avail-able at:
  []
 
-) [7] (GenEqOp.aux) ) 
+) [8] (GenEqOp.aux) ) 
 Here is how much of TeX's memory you used:
- 21795 strings out of 493334
- 414346 string characters out of 3130222
- 518310 words of memory out of 3000000
- 24820 multiletter control sequences out of 15000+200000
+ 21805 strings out of 493334
+ 414550 string characters out of 3130222
+ 519736 words of memory out of 3000000
+ 24830 multiletter control sequences out of 15000+200000
  29550 words of font info for 110 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,17n,84p,3270b,1932s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,17n,84p,3270b,2082s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
 public\mnsymbol\dpi600\MnSymbolE8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\
 fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC8.pk> <C:\Users\luisa\AppData\L
@@ -1057,9 +1057,9 @@ ts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on GenEqOp.pdf (7 pages, 280159 bytes).
+Output written on GenEqOp.pdf (8 pages, 283134 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 219 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
