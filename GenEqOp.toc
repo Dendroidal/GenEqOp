@@ -3,3 +3,5 @@
 \contentsline {subsection}{\numberline {2.1}Planar structures}{1}
 \contentsline {subsection}{\numberline {2.2}Outer faces and tall maps}{5}
 \contentsline {subsection}{\numberline {2.3}Substitution}{7}
+\contentsline {section}{\numberline {3}The genuine equivariant operad monad}{8}
+\contentsline {subsection}{\numberline {3.1}Wreath product over finite sets}{9}

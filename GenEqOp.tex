@@ -960,6 +960,145 @@ The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
 are inverse to each other is clear by the same inductive argument.
 \end{proof}
 
+
+
+\section{The genuine equivariant operad monad}
+
+We now turn to the task of building the monad encoding genuine equivariant operads.
+
+
+
+{\color{red} HERE}
+
+
+\subsection{Wreath product over finite sets}
+
+In what follows we will let $\Fin$ denote the usual skeleton of the category of finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
+However, much as in the discussion in 
+Convention \ref{PLANARCONV CON} we will often find it more convenient to regard the elements of $\Fin$ as equivalence classes of finite sets equipped with total orders.
+ 
+
+\begin{definition}
+	For a category $\C$, we let $\Fin \wr \C$ denote the opposite of the Grothendieck construction for the functor
+\[
+\begin{tikzcd}[row sep=0pt]
+	\Fin^{op} \ar{r} & \mathsf{Cat}
+\\
+	I \ar[r,mapsto] & \C^I
+\end{tikzcd}	
+ \]
+Explicitly, the objects of $\Fin \wr \C$ are tuples $(c_i)_{i \in I}$ and a map 
+$(c_i)_{i \in I} \to (d_j)_{j \in J}$ consists of a pair 
+\[(\phi \colon I \to J, (f_i\colon c_i \to d_{\phi(i)})_{i\in I}),\]
+ henceforth abbreviated as $(\phi,(f_i))$.
+\end{definition}
+ 
+ The following is immediate.
+
+\begin{proposition}
+	Suppose $\C$ has all finite coproducts. One then has a functor as on the left below.
+Dually, if $\C$ has all finite products, one has a functor as on the right below.
+\[
+\begin{tikzcd}[row sep=0pt]
+	\Fin \wr \C \ar{r}{\coprod} & \C & &
+	(\Fin \wr \C^{op})^{op} \ar{r}{\prod} & \C
+\\
+	(c_i)_{i \in I} \ar[mapsto]{r} & \coprod_{i \in I}{c_i} & &
+	(c_i)_{i \in I} \ar[mapsto]{r} & \prod_{i \in I}{c_i}
+\end{tikzcd}
+\]
+\end{proposition}
+
+
+
+\begin{lemma}\label{FINWREATPRODLIM LEM}
+Suppose that $\mathcal{E}$ is a bicomplete category such that 
+coproducts commute with limits in each variable. If the leftmost diagram
+\begin{equation}\label{WRRAN EQ}
+	\begin{tikzcd}
+	\mathcal{C} \ar{r}[swap,name=F]{}{F} \ar{d}[swap]{k} &
+	\mathcal{E} & 
+	& 
+	\Fin \wr \mathcal{C} \ar{r}[swap,name=FF]{}{\Fin \wr F} \ar{d}[swap]{\Fin \wr k}&
+	\Fin \wr \mathcal{E} \ar{r}{\amalg} &
+	\mathcal{E}
+		\\
+	|[alias=D]|\mathcal{D} \ar{ru}[swap]{G} &
+	& & 
+	|[alias=FD]|\Fin \wr \mathcal{D} \ar{ru}[swap]{\Fin \wr G}
+	\ar[bend right=13]{rru}[swap]{\amalg \circ \Fin \wr G}
+	\arrow[Rightarrow, from=D, to=F,shorten <=0.10cm,"\eta"]
+	\arrow[Rightarrow, from=FD, to=FF,shorten <=0.10cm,"\Fin \wr \eta"]
+	\end{tikzcd}
+\end{equation}
+is a right Kan extension diagram then so is the composite of the rightmost diagram. 
+
+Dually, if in $\mathcal{E}$ products commute with colimits in each variable, and the leftmost diagram
+\begin{equation}\label{WRLAN EQ}
+	\begin{tikzcd}[column sep = 4.5em]
+	\mathcal{C}^{op} \ar{r}[swap,name=F]{}{F} \ar{d}[swap]{k} & 
+	\mathcal{E} & 
+	(\Fin \wr \mathcal{C})^{op} \ar{d}[swap]{(\Fin \wr k^{op})^{op}} 
+	\ar{r}[swap,name=FF]{}{(\Fin \wr F^{op})^{op}} & 
+	(\Fin \wr \mathcal{E}^{op})^{op} \ar{r}{\Pi} &
+	\mathcal{E}
+	\\
+	|[alias=D]|\mathcal{D}^{op} \ar{ru}[swap]{G} &
+	& 
+	|[alias=FD]|(\Fin \wr \mathcal{D})^{op} 
+	\ar{ru}[swap]{(\Fin \wr G^{op})^{op}}
+	\ar[bend right=13]{rru}[swap]{\Pi \circ (\Fin \wr G^{op})^{op}}
+	&
+	\arrow[Leftarrow, from=D, to=F,shorten <=0.10cm,"\epsilon"]
+	\arrow[Leftarrow, from=FD, to=FF,shorten <=0.10cm]
+	\end{tikzcd}
+\end{equation}
+is a left Kan extension diagram then so is the composite of the rightmost diagram. 
+\end{lemma}
+
+
+\begin{proof}
+	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin \wr \mathcal{D}$ one has natural isomorphisms
+	\begin{equation}\label{POINTKAN EQ}
+	\underset{((d_i) \to (kc_j))\in
+	\left( (d_i) \downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{F(c_j)}\right)}
+		\simeq	
+	\coprod_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
+	\left(F(c_i)\right).
+	\end{equation}
+Noting that the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
+\[(d_i)_{i\in I} \to (c_{\phi(i)})_{i \in I} \to (k c_j)_{j \in J}\]
+exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of $(d_i)\downarrow \Fin \wr \mathcal{C}$, we see that it is an initial subcategory. Therefore
+	\[
+	\underset{((d_i) \to (kc_j))\in
+	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{F(c_j)}\right)}
+		\simeq	
+	\underset{((d_i) \to (kc_i))\in
+	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
+	\left(\coprod_i{F(c_i)}\right)
+	\]
+and hence (\ref{POINTKAN EQ}) now follows from the assumption that coproducts commute with limits in each variable.
+\end{proof}
+
+\begin{notation}
+Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the simpleton $\{1\} \in \Fin$
+one can regard the collection of categories 
+$\Fin^{\wr \{0,\cdots,n\}} \wr \C = \Fin^{\wr \underline{n}} \wr \C$
+ as a coaugmented cosimplicial object in $\mathsf{Cat}$.
+As such, we will denote by
+\[
+	\delta^i\colon \Fin^{\wr \underline{n-1}} \wr \C \to \Fin^{\wr \underline{n}} \wr \C, \qquad 0 \leq i \leq n
+\]
+the cofaces obtained by inserting simpletons $\{1\} \in \Fin$ and by 
+\[
+	\sigma^i \colon \Fin^{\wr \underline{n+1}} \wr \C \to \Fin^{\wr \underline{n}} \wr \C, \qquad 0 \leq i \leq n
+\]
+the codegeneracies obtained by applying the coproduct 
+$\Fin^{\wr 2} \xrightarrow{\amalg} \Fin$ to adjacent 
+$\Fin$ coordinates.
+\end{notation}
+
+
 {\color{red} HERE}
 
 
