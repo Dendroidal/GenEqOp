@@ -516,6 +516,8 @@ $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a p
 Simplicity of $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
 The result now follows from (the forest version of) Proposition
 \ref{PLANARIZATIONCHAR PROP}: one simply orders each set $e^{\uparrow}$ and $\underline{r}_F$ according to its image.
+
+{\color{orange} not quite complete... maybe that $\leq_p$ is the closure of $\leq_d$ and the vertex relations under transitivity and the planar condition}
 \end{proof}
 
 
@@ -524,14 +526,443 @@ The result now follows from (the forest version of) Proposition
 	Proposition \ref{PLANARPULL EQ} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
 \end{remark}
 
-
+\begin{remark}\label{UNIQCOR REM}
+	Given any tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
+	$\mathsf{lr}(T) \to T$.
+	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
+\end{remark}
 
 
 \subsection{Outer faces and tall maps}\label{OUTTALL SEC}
 
-{\color{red} HERE}
+
+
+In preparation for our discussion of the substitution operation in \S \ref{SUBS SEC}, we now recall some basic notions and results concerning outer subtrees and tree grafting, as in \cite[\S5]{Pe16b}.
+
+\begin{definition}
+	Let $T \in \Omega$ be a tree and 
+	$e_1 \cdots e_n =\underline{e} \leq e$ a broad relation in $T$.
+	
+	We define the \textit{planar outer face $T_{\underline{e} \leq e}$}
+	to be the subtree with underlying set those edges $f \in T$ such that
+\begin{equation}\label{OUTERFACE EQ}
+	f \leq_d e,\quad \forall_i e_i \nless_d f,
+\end{equation}
+generating broad relations the relations $f^{\uparrow} \leq f$ for $f$ satisfying (\ref{OUTERFACE EQ}) and $\forall_i f\neq e_i$,
+and planar structure pulled back from $T$.
+\end{definition}
+
+
+\begin{remark}
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \to T$ is usually called simply an \textit{outer face}.
+\end{remark}
+
+We now recap some basic results.
+
+\begin{proposition}
+Let $T \in \Omega$ be a tree.
+\begin{itemize}
+\item[(a)] $T_{\underline{e} \leq e}$ is a tree with root $e$
+and edge tuple $\underline{e}$;
+\item[(b)] there is a bijection
+\[
+	\{\text{planar outer faces of $T$} \} 
+\leftrightarrow 
+	\{\text{broad relations of $T$}\};
+\]
+\item[(c)] if $R \to S$ and $S \to T$ are outer face maps then so is $R \to T$;
+\item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a grafting pushout diagram
+\begin{equation}\label{GRAPTPUSH EQ}
+\begin{tikzcd}
+	\eta \ar{r}{v} \ar{d}[swap]{v} & T_{\underline{g} \leq v} \ar{d}
+\\
+	T_{\underline{f}v \leq e} \ar{r} & T_{\underline{f}\underline{g} \leq v}
+\end{tikzcd}
+\end{equation}
+%\item[(e)] a face map $S \to T$ is an outer face map iff whenever the composite relation $\underline{f} \underline{g} \leq e$ is in $S$ then so are the relations $\underline{g} \leq v$ and
+%$\underline{f}v \leq e$.
+\end{itemize}
+\end{proposition}
+
+
+\begin{proof}
+We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe16b}: more precisely, 
+$T_{\underline{e} \leq e} = (T^{\leq e})_{\less \underline{e}}$
+in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the root tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe16b}.
+
+ (b) follows from (a), which shows that $\underline{e} \leq e$ can be recovered from
+$T_{\underline{e} \leq e}$.
+
+ (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe16b}, which states that the $\leq_d$ relations on $S,T$ coincide.
+ 
+  Since by (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq v}$, 
+(d) is a restatement of \cite[Prop. 5.15]{Pe16b}. 
+%Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe16b})
+\end{proof}
+
+\begin{definition}
+	A map $S \xrightarrow{\varphi} T$ in $\Omega$ is called a \textit{tall map} if 
+	\[\varphi(\underline{l}_S) = \underline{l}_T, 
+		\qquad
+	\varphi(r_S)= r_T,\]
+where $l_{(\minus)}$ denotes the leaf tuple and $r_{(\minus)}$ the root.
+\end{definition}
+
+
+The following is a restatement of \cite[Cor. 5.24]{Pe16b}
+
+\begin{proposition}\label{TALLOUTERDEC COR}
+	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphism,
+	\[
+		S \xrightarrow{\varphi^t} U \xrightarrow{\varphi^u} T
+	\]
+	as a tall map followed by an outer face (in fact, 
+	$U= T_{\varphi(\underline{l}_S) \leq r_S}$).
+\end{proposition}
+
+We recall that a face $F \to T$ is called inner if is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Corollary \ref{TALLOUTERDEC COR} to give the following.
+
+\begin{corollary}
+	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphisms,
+	\begin{equation}\label{TRIPLEFACT EQ}
+		S \xrightarrow{\varphi^-} U \xrightarrow{\varphi^i} V \xrightarrow{\varphi^u} T
+	\end{equation}
+	as a degeneracy followed by an inner face followed by an outer face.
+\end{corollary}
+	
+\begin{proof}
+	The factorization (\ref{TRIPLEFACT EQ}) can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
+\end{proof}
+
 
 \subsection{Substitution}\label{SUBS SEC}
+
+
+One of the key ideas needed to describe operads is that of substitution of tree nodes, a process that we will prefer to repackage in terms of maps of trees. We start by discussing an example, focusing on the related notion of 
+ iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
+
+\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted into the tree $U$ in the middle.
+More precisely (among other possible grafting orders), one has
+\begin{equation}\label{UFORMULA EQ}
+U = \left(
+		\left(
+			\left(
+				\left(
+					\left(U_6 \amalg_a U_2 \right)
+				\right) \amalg_a U_1
+			\right) \amalg_b U_3
+		\right) \amalg_d U_5
+	\right) \amalg_c U_4
+\end{equation}
+\begin{equation}\label{SUBSDATUMTREES EQ}
+	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.25mm}]
+\begin{scope}[xshift=-2em]
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=2.25em]%
+	\tikzstyle{level 3}=[sibling distance=1.25em]%
+		\node at (-0.25,3.2) {$U_1$}
+			child{node [dummy] {}
+				child
+				child{node [dummy] {}
+					child
+					child
+				}
+			edge from parent node {$a$}};
+	\end{scope}
+		\node at (-0.25,1.5) {$U_2$}
+			child{
+		edge from parent node {$a$}};
+		\node at (1.15,1.5) {$U_3$}
+			child{node [dummy] {}
+		edge from parent node {$b$}};
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=0.875em]%
+		\node at (2.2,3.2) {$U_4$}
+			child{node [dummy] {}
+				child{node [dummy] {}}
+				child{node [dummy] {}}
+			edge from parent node {$c$}};
+	\end{scope}
+	\begin{scope}
+		\tikzstyle{level 2}=[sibling distance=1.25em]%
+		\node at (2.5,1.5) {$U_5$}
+			child{node [dummy] {}
+				child{node[dummy] {}}
+				child{
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+	\end{scope}
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=3.5em]%
+	\tikzstyle{level 3}=[sibling distance=2.25em]%
+		\node at (1,-1) {$U_6$}
+			child{node [dummy] {}
+				child[sibling distance = 5em]{node [dummy] {}
+					child[sibling distance = 3.5em]{edge from parent node [swap,near end] {$d$} }
+					child[sibling distance = 3.5em]{edge from parent node [near end] {$b$} }
+				}
+				child[sibling distance = 7em]{ edge from parent node {$a$} }
+			edge from parent node [swap] {$e$}};
+	\end{scope}
+\end{scope}
+\begin{scope}[yshift=1em]
+	\begin{scope}[level distance=2.3em]
+	\tikzstyle{level 2}=[sibling distance=3.5em]%
+	\tikzstyle{level 3}=[sibling distance=2.25em]%
+	\tikzstyle{level 4}=[sibling distance=1.25em]%
+	\tikzstyle{level 5}=[sibling distance=0.875em]%
+		\node at (5.5,0) {$U$}
+			child{node [dummy] {}
+				child[sibling distance =5em]{node [dummy] {}
+					child[sibling distance =3.5em]{node [dummy] {}
+						child{node [dummy] {}
+						}
+						child{node [dummy] {}
+							child{node [dummy] {}}
+							child{node [dummy] {}}
+						edge from parent node [near end] {$c$}}
+					edge from parent node [swap, near end] {$d$}}
+					child[sibling distance =3.5em]{node [dummy] {}
+					edge from parent node [near end] {$b$}}
+				}
+				child[sibling distance =7em]{node [dummy] {}
+					child
+					child{node [dummy] {}
+						child
+						child
+					}
+				edge from parent node {$a$}}
+			edge from parent node [swap] {$e$}};
+	\end{scope}
+	\begin{scope}[level distance=2.3em]
+	\tikzstyle{level 2}=[sibling distance=2.3em]%
+	\tikzstyle{level 4}=[sibling distance=1em]%
+		\node at (10,0.3) {$T$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{node [dummy] {}
+					edge from parent node [swap] {$c$}}	
+				edge from parent node [swap] {$d$}}
+				child{node [dummy] {}
+				edge from parent node [near end,swap] {$b$}}
+				child{node [dummy] {}
+					child{node [dummy] {}
+						child
+						child
+						child
+					edge from parent node {$a_1$}}
+				edge from parent node {$a_2$}}
+			edge from parent node [swap] {$e$}};
+	\end{scope}
+	\draw [->,dashed] (8.6,1.25) -- node {$\varphi$} (7.1,1.25);
+\end{scope}
+	\end{tikzpicture}
+\end{equation}
+We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$ (cf. Remark \ref{UNIQCOR REM}), and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
+
+
+One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
+\begin{equation}\label{SUBSDATUMTREES2 EQ}
+	\begin{tikzpicture}[grow=up,auto,level distance=2.25em,
+	every node/.style = {font=\footnotesize, inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.25mm}]
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=0.75em]%
+		\node at (0,0) {$T_{a_1^{\uparrow}\leq a_1}$}
+			child{node [dummy] {}
+				child
+				child
+				child
+			edge from parent node [swap] {$a_1$}};
+	\end{scope}	
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=2.25em]%
+	\tikzstyle{level 3}=[sibling distance=1.25em]%
+		\node at (2,0) {$U_1$}
+			child{node [dummy] {}
+				child
+				child{node [dummy] {}
+					child
+					child
+				}
+			edge from parent node [swap] {$a$}};
+	\end{scope}
+		\draw [->] (0.75,0.7) -- node [swap]{$\varphi_1$} (1.25,0.7);
+		\node at (4.5,0) {$T_{a_2^{\uparrow}\leq a_2}$}
+			child{node [dummy] {}
+				child{
+				edge from parent node [swap] {$a_1$}}
+			edge from parent node [swap] {$a_2$}};
+		\node at (6.5,0) {$U_2$}
+			child{
+			edge from parent node [swap] {$a$}};
+		\draw [->] (5.25,0.7) -- node [swap]{$\varphi_2$} (5.75,0.7);
+		\node at (9,0) {$T_{b^{\uparrow}\leq b}$}
+			child{node [dummy] {}
+			edge from parent node [swap] {$b$}};
+		\node at (11,0) {$U_3$}
+			child{node [dummy] {}
+			edge from parent node [swap] {$b$}};
+		\draw [->] (9.75,0.7) -- node [swap]{$\varphi_3$} (10.25,0.7);
+	\begin{scope}[yshift=-2.55cm]
+		\node at (0,0) {$T_{c^{\uparrow}\leq c}$}
+			child{node [dummy] {}
+			edge from parent node [swap] {$c$}};
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=0.875em]%
+		\node at (2,0) {$U_4$}
+			child{node [dummy] {}
+				child{node [dummy] {}}
+				child{node [dummy] {}}
+			edge from parent node  [swap]{$c$}};
+	\end{scope}
+	\draw [->] (0.75,0.7) -- node [swap]{$\varphi_4$} (1.25,0.7);
+		\node at (4.5,0) {$T_{d^{\uparrow}\leq d}$}
+			child{node [dummy] {}
+				child{
+				edge from parent node [swap] {$c$}}
+			edge from parent node [swap] {$d$}};
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=1.25em]%
+		\node at (6.5,0) {$U_5$}
+			child{node [dummy] {}
+				child{node[dummy] {}}
+				child{
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+	\end{scope}
+	\draw [->] (5.25,0.7) -- node [swap]{$\varphi_5$} (5.75,0.7);
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=2em]%
+		\node at (9,0) {$T_{e^{\uparrow}\leq e}$}
+			child{node [dummy] {}
+				child{ edge from parent node [swap] {$d$} }
+				child[level distance=2.75em]{ edge from parent node [near end,swap] {$b$} }
+				child{ edge from parent node {$a_2$} }
+			edge from parent node [swap] {$e$}};
+	\end{scope}
+	\begin{scope}
+	\tikzstyle{level 2}=[sibling distance=3.5em]%
+	\tikzstyle{level 3}=[sibling distance=2.25em]%
+		\node at (11,0) {$U_6$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{ edge from parent node [swap,near end] {$d$} }
+					child{ edge from parent node [near end]{$b$} }
+				}
+				child{ edge from parent node {$a$} }
+			edge from parent node {$e$}};
+	\end{scope}
+	\draw [->] (9.75,0.7) -- node [swap]{$\varphi_6$} (10.25,0.7);
+	\end{scope}
+	\end{tikzpicture}
+\end{equation}
+From this perspective, $U$ can now be thought as obtained from $T$ by substituting each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
+$\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto e$), which likewise encodes the same information.
+
+Our perspective will then be that data for substitution of tree nodes such as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
+repackaged using planar tall maps. 
+\end{example}
+
+
+\begin{definition}
+	Let $T \in \Omega$ be a tree.
+	
+	A \textit{$T$-substitution datum} is a tuple 
+	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ such that $\mathsf{lr}(U_{e^{\uparrow}\leq e}) = T_{e^{\uparrow} \leq e}$.
+	
+	Further, a map of $T$-substitution data 
+	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of planar tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$.
+\end{definition}
+
+\begin{definition}
+	Let $T \in \Omega$. 
+	
+	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the edge subtrees $\eta_e$ and vertex substrees $T_{e^{\uparrow} \leq e}$. The order relation is given by inclusion.
+\end{definition}
+
+\begin{remark}
+Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
+In particular, there are no pairs of composable non-identity relations in $\mathsf{Sc}(T)$. 
+\end{remark}
+
+Given a $T$-substitution datum $\{U_{\{e^{\uparrow}\leq e\}}\}$ we abuse notation by writing
+\[U_{(\minus)} \colon \mathsf{Sc}(T) \to \Omega\]
+for the functor $\eta_a \mapsto \eta$, $T_{e^{\uparrow} \leq e} \mapsto U_{e^{\uparrow} \leq e}$  
+and sending the inclusions $\eta_a \subset T_{e^{\uparrow} \leq e}$
+to the composites
+\[
+\eta \xrightarrow{a} T_{e^{\uparrow} \leq e} = 
+\mathsf{lr}(U_{e^{\uparrow}\leq e}) \to U_{e^{\uparrow} \leq e}.\]
+
+
+\begin{proposition}
+There is an isomorphism of categories
+\begin{equation}\label{SUBDATAUNDERPLAN EQ}
+\begin{tikzcd}[row sep =0pt]
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
+	\Omega_{T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
+\\
+	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
+\\
+	\{U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\} &
+	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
+\end{tikzcd}
+\end{equation}
+Where $\mathsf{Sub}(T)$ denotes the category of $T$-substitution data and $\Omega_{T/}^{\mathsf{pt}}$
+the category of planar tall maps under $T$. 
+\end{proposition}
+
+\begin{proof}
+We first claim that
+\begin{inparaenum}
+\item[(i)] the $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ indeed exists;
+\item[(ii)] for the canonical datum $\{T_{e^{\uparrow}\leq e}\}$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
+\item[(iii)] the induced map
+$T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is planar tall.
+\end{inparaenum}
+ 
+The argument is by induction on the number of vertices of $T$, with the base cases of $T$ with $0$ or $1$ vertices being immediate, since then $T$ is the terminal object of $\mathsf{Sc}(T)$.
+Otherwise, one can choose a non trivial grafting decomposition so as to write $T = R \amalg_e S$, resulting 
+in identifications 
+$\mathsf{Sc}(R) \subset \mathsf{Sc}(T)$, 
+$\mathsf{Sc}(S) \subset \mathsf{Sc}(T)$
+so that 
+$\mathsf{Sc}(R) \cup \mathsf{Sc}(S) = \mathsf{Sc}(T)$
+and 
+$\mathsf{Sc}(R) \cap \mathsf{Sc}(S) = \{\eta_e \}$.
+The existence of $\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+is thus equivalent to the existence of the pushout below.
+\begin{equation}\label{ASSEMBLYGRAFT EQ}
+\begin{tikzcd}
+	\eta \ar{r} \ar{d} & \colim_{\mathsf{Sc}(R)}U_{(\minus)} \ar[dashed,d]
+\\
+	\colim_{\mathsf{Sc}(S)}U_{(\minus)} \ar[dashed,r] &
+	\colim_{\mathsf{Sc}(T)}U_{(\minus)}
+\end{tikzcd}
+\end{equation}
+By induction, the top right and bottom left colimits exist for any $U_{(\minus)}$, 
+equal $R$ and $S$ in the case $U_{(\minus)} = T_{(\minus)}$,
+and the maps 
+$R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
+$S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
+are planar tall.
+But is now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram, so that the pushout indeed exists. The conditions that
+$T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$
+and 
+$T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+is planar tall follow.
+
+The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
+are inverse to each other is clear by the same inductive argument.
+\end{proof}
+
+{\color{red} HERE}
+
+
 
 \bibliography{biblio}{}
 
