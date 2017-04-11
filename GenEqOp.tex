@@ -867,7 +867,7 @@ repackaged using planar tall maps.
 \end{example}
 
 
-\begin{definition}
+\begin{definition}\label{SUBSTITUTIONDATUM}
 	Let $T \in \Omega$ be a tree.
 	
 	A \textit{$T$-substitution datum} is a tuple 
@@ -898,8 +898,8 @@ to the composites
 \mathsf{lr}(U_{e^{\uparrow}\leq e}) \to U_{e^{\uparrow} \leq e}.\]
 
 
-\begin{proposition}
-There is an isomorphism of categories
+\begin{proposition}\label{SUBDATAUNDERPLAN PROP}
+Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERPLAN EQ}
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
@@ -966,9 +966,6 @@ are inverse to each other is clear by the same inductive argument.
 
 We now turn to the task of building the monad encoding genuine equivariant operads.
 
-
-
-{\color{red} HERE}
 
 
 \subsection{Wreath product over finite sets}
@@ -1099,7 +1096,741 @@ $\Fin$ coordinates.
 \end{notation}
 
 
+
+\subsection{Equivariant leaf-root and vertex functors}
+
+\begin{definition}
+	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of forests
+	\[\coprod_{[g]\in G/H} {T_{[g]} } 
+	\to
+	\coprod_{[h]\in G/K} {S_{[h]} } 
+	\]
+maps each tree component (or, equivalently, some tree component) isomorphically onto its image component.
+
+We denote the subcategory of $G$-trees and quotients by $\Omega_G^q$.
+\end{definition}
+
+
+\begin{definition}
+	The \textit{$G$-symmetric category}, which we will also call the \textit{category of $G$-corollas}, is the full subcategory 
+	$\Sigma_G \subset \Omega_G^{q}$ of those $G$-trees that are corollas, i.e. $G$-trees such that each edge is either a root or a leaf (but not both).
+\end{definition}
+
+
+\begin{definition}
+	The \textit{leaf-root functor} is the functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
+	\[
+	 \mathsf{lr}(T)=\{\text{leaves of }T\}\amalg \{\text{roots of }T\}
+	\]
+	with a broad relation $l_1 \cdots l_n \leq r$ holding in 
+	$\mathsf{lr}(T)$ iff its image holds in $T$ and similarly for the planar structure $\leq_p$.
+\end{definition}
+
+\begin{remark}\label{LEAFROOTEXAMP REM}
+	Generalizing Remark \ref{UNIQCOR REM},
+	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique (tree-wise) tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
+	$T=G\cdot_H \eta$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+	every node/.style = {font=\footnotesize,inner sep=3pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$T$}
+			child{node [dummy] {}
+				child[level distance=1.25em,sibling distance = 3em]{node [dummy] {}
+					child[level distance=2.3em,sibling distance =0.75em]{
+					edge from parent node [swap,near end] {$a+2$}}
+					child[level distance=2.3em,sibling distance =0.75em]{
+					edge from parent node [near end] {$a+3$}}
+				edge from parent node [swap] {$b+1$}}
+				child[sibling distance = 0.75em]{node [dummy] {}
+				edge from parent node [swap, very near end] {$c+1$}}
+				child[sibling distance = 1.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,very near end] {$a+1$}}
+					child[sibling distance = 1em]{
+					edge from parent node [very near end] {$\phantom{1+}a$}}
+				edge from parent node [very near end] {$b$}}
+				child[level distance=1.25em,sibling distance = 2.5em]{node [dummy] {}
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (0,-2) {$\mathsf{lr}(T)$}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$a+2$}}
+				child[sibling distance=0.75em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+3$}}
+				child[sibling distance=0.75em,level distance=2.75em]{
+				edge from parent node [very near end] {$a+1$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}a$}}
+			edge from parent node [swap] {$d$}};
+		\node at (4,0) {}
+			child{node [dummy] {}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node [swap] {$c+2$}}
+				child{node [dummy] {}
+					child[sibling distance=1em]{
+					edge from parent node [near end,swap] {$a+2$}}
+					child[sibling distance=1em]{
+					edge from parent node [near end] {$\phantom{1}a$}}
+				edge from parent node [swap, near end] {$b$}}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (7,0) {}
+			child{node [dummy] {}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node [swap] {$c+1$}}
+				child{node [dummy] {}
+					child[sibling distance=1em]{
+					edge from parent node [near end,swap] {$a+3$}}
+					child[sibling distance=1em]{
+					edge from parent node [near end] {$a+1$}}
+				edge from parent node [swap, near end] {$b+1$}}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node {$c+3$}}
+			edge from parent node [swap] {$d+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,0) -- (3.9,0) node[midway]{$U$};
+		\node at (4,-2) {}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$c+2$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+2$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end] {$\phantom{1+}a$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (7,-2) {}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$c+1$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+3$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end] {$a+1$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}c+3$}}
+			edge from parent node [swap] {$d+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,-2) -- (3.9,-2) node[midway]{$\mathsf{lr}(U)$};
+			\node at (10,0) {}
+				child{
+				edge from parent node [swap] {$a$}};
+			\node at (11,0) {}
+				child{
+				edge from parent node [swap] {$a+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (9.9,0) node[midway]{$V$};
+			\node at (10,-2) {}
+				child{node[dummy]{}
+					child{
+					edge from parent node [swap] {$a$}}
+				edge from parent node [swap] {$\bar{a}$}};
+			\node at (11,-2) {}
+				child{node[dummy]{}
+					child{
+					edge from parent node [swap] {$a+1$}}
+				edge from parent node [swap] {$\bar{a}+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,-2) -- (9.9,-2) node[midway]{$\mathsf{lr}(V)$};
+	\end{tikzpicture}
+\]	
+\end{remark}
+
+
+\begin{remark}
+	One consequence of the fact that planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
+is that $\mathsf{lr} \colon \Omega_G^q \to \Sigma_G$ is not a categorical fibration.
+{\color{red} maybe add to this}.
+\end{remark}
+
+
+\begin{definition}\label{VG DEF}
+	Given $T \in \Omega_G$ we define the set $V_G(T)$ of 
+	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set $V(T)$ by its $G$-action.
+	
+Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
+\end{definition}
+
+
+Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
+\[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
+We note that $T_{v_{Ge}}$ is always a $G$-corolla. Indeed, noting that a quotient map $\varphi \colon T \to S$ induces quotient maps 
+$T_{v_{ge}} \to S_{v_{G\varphi(e)}}$ one obtains a functor
+	\begin{equation}\label{VFUNCTOR EQ}
+		\begin{tikzcd}[row sep=tiny]
+		\Omega_G^q \ar{r}{V_G} & \Fin \wr \Sigma_G \\
+		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)}.
+		\end{tikzcd}	
+	\end{equation}
+
+\begin{remark}
+	The need to introduce the $\Fin \wr \C$ categories comes from the fact that general quotient maps do not preserve the number of $G$-vertices. For a simple example, let $G=\mathbb{Z}_{/4}$ and consider the quotient map
+		\[
+		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$T$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{
+					edge from parent node [swap] {$a^{+1} + G$}}
+				edge from parent node[near end,swap] {$b^{+1} + G/2G$}}
+				child{node [dummy] {}
+					child{
+					edge from parent node {$a + G$}}
+				edge from parent node [near end] {$b + G/2G$}}		
+			edge from parent node[swap] {$c + G/2G$}};
+		\node at (4.53,0) {$S$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{
+					edge from parent node [swap] {$a + G$}}
+				edge from parent node [swap] {$b + G/2G$}}
+			edge from parent node [swap] {$c + G/G$}};
+		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
+		\end{tikzpicture}
+		\]
+sending edges labeled $a,b,c$ to the edges with the same name and the edges $a^{+1}$, $b^{+1}$ to the edges $a+1$, $b+1$. We note that $T$ has three $G$-vertices $v_{Gc}$, $v_{Gb}$, $v_{Gb^{+1}}$ while $S$ has only two $G$-vertices $v_{Gc}$ and $v_{Gb}$. $V(\phi)$ then maps the two corollas 
+$T_{v_{Gb}}$ and $T_{v_{G b^{+1}}}$
+isomorphically onto $T_{S_{Gb}}$
+and the corolla $T_{v_{Gc}}$ non-isomorphically onto $S_{v_{Gc}}$.
+\end{remark}
+
+
+Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes.
+
+\begin{definition}\label{SUBSTITUTIONDATUMG DEF}
+	Let $T \in \Omega_G$ be a $G$-tree.
+	
+	A \textit{$T$-substitution datum} is a tuple 
+	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V_G(T)}$ such that $\mathsf{lr}(U_{e^{\uparrow}\leq e}) = T_{e^{\uparrow} \leq e}$.
+	
+	Further, a map of $T$-substitution data 
+	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of planar tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$.
+\end{definition}
+
+
+\begin{remark}\label{SUBSDATUMCONV REM}
+	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant ones.
+	
+	Indeed, letting $G \ltimes V(T)$ denote the Grothendieck construction for the action of $G$ on the non-equivariant vertices $V(T)$ (often called the action groupoid), it is immediate that an equivariant $T$-substitution datum is the same as a functor $G \ltimes V(T) \to \Omega$ whose restriction to $V(T) \subset G \ltimes V(T)$ is a (non-equivariant) substitution datum.
+\end{remark}
+
+
+\begin{proposition}\label{SUBDATAUNDERPLANG PROP}
+Let $T \in \Omega_G$ be a $G$-tree. There is an isomorphism of categories
+\begin{equation}\label{SUBDATAUNDERPLANG EQ}
+\begin{tikzcd}[row sep =0pt]
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
+	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
+\\
+	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
+\end{tikzcd}
+\end{equation}
+\end{proposition}
+
+
+\begin{proof}
+	This is a minor adaptation of the non-equivariant analogue Proposition \ref{SUBDATAUNDERPLANG PROP}.
+	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{e^{\uparrow} \leq e}\}$ therefore induce functors 
+	$U_{(\minus)} \colon G \ltimes \mathsf{Sc}(T) \to \Omega$.
+	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. The only subtle point is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
+\end{proof}
+
+
+
+\subsection{Planar strings}\label{PLANARSTRING SEC}
+
+The leaf-root and vertex functors will allows us reinterpret our results concerning substitution.
+
+\begin{definition}
+	The category $\Omega_{G,n}$ of 
+	\textit{substitution $n$-strings} is the category whose objects are strings
+	\[
+	\begin{tikzcd}
+	T_0 \ar{r}{f_1} & T_1 \ar{r}{f_2} & \cdots \ar{r}{f_n} & T_n
+	\end{tikzcd}	
+	,\]
+	where $T_i \in \Omega_G$ and the $f_i$ are tall planar maps, and arrows are commutative diagrams 
+	\begin{equation} \label{PTNARROW EQ}
+	\begin{tikzcd}
+	T_0 \ar{r}{f_1} \ar{d}[swap]{q_0} & T_1 \ar{r}{f_2} \ar{d}[swap]{q_1} & \cdots \ar{r}{f_n} & T_n \ar{d}[swap]{q_n}
+\\
+	T'_0 \ar{r}[swap]{f'_1} & T'_1 \ar{r}[swap]{f'_2} & \cdots \ar{r}[swap]{f'_n} & T'_n
+	\end{tikzcd}	
+	\end{equation}
+where each $q_i$ is a quotient map.
+\end{definition}
+
+
+\begin{notation}\label{SIMPOPERATORS NOT}
+	Since compositions of planar tall arrows are planar tall
+	and identity arrows are planar tall	
+	it follows that 
+	$\Omega_{G,\bullet}$
+	forms a simplicial object in $\mathsf{Cat}$, 
+	with faces given by composing and degeneracies by inserting identities. 
+
+	Noting that $\Omega_{G,0} = \Omega_G^q$ and setting 
+	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G,\bullet}^q$ into an augmented simplicial object and, furthermore, the maps 
+	$s_{-1} \colon \Omega_{G,n}^q \to \Omega_{G,n+1}^q$
+sending $T_0 \to T_1 \to \cdots \to T_n$ to 
+$\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
+\end{notation}
+
+
+\begin{notation}
+We extend the vertex functor to a functor 
+$V_G \colon \Omega_{G,n+1} \to \Fin \wr \Omega_{G,n}$
+by
+\[
+	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
+	\left(
+	V_G(T_0), (T_{1,v_{Ge}} \to \cdots \to
+	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}
+	\right)
+\]
+where we abuse notation by writing $T_{i,v_{Ge}}$
+for $T_{i, (f_i\circ \cdots \circ f_1)(v_{Ge})}$.
+\end{notation}
+
+
+The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG PROP}.
+
+\begin{proposition} \label{SUBSASPULL PROP}
+The diagram
+	\begin{equation}\label{PTPULL EQ}
+	\begin{tikzcd}
+		\Omega_{G,n+1} \ar{r}{V_G} 
+		\ar{d}[swap]{d_{1,\cdots,n+1}} & \Fin \wr \Omega_{G,n} 
+		\ar{d}{\Fin \wr d_{0,\cdots,n}}
+	\\
+		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin \wr \Sigma_G
+	\end{tikzcd}
+	\end{equation}
+is a pullback diagram in $\mathsf{Cat}$.
+\end{proposition}
+
+
+\begin{proof}
+	An object in the pullback (\ref{PTPULL EQ}) over 
+	$T\in \Omega_{G,0} = \Omega_G^q$ is precisely the same as a $n$-string in $\mathsf{Sub}(T)$, and thus by Proposition \ref{SUBDATAUNDERPLANG PROP} equivalent to a $n+1$ planar tall string starting at $T$.
+	
+	The case of arrows is slightly more subtle. A quotient map $\pi \colon T \to T'$ induces a $G$-equivariant poset map 
+	$\pi_{\**} \colon \mathsf{Sc}(T) \to \mathsf{Sc}(T')$ 
+	(or equivalently, a map of Grothendieck constructions 
+	$G \ltimes \mathsf{Sc}(T) \to G \ltimes \mathsf{Sc}(T')$)
+	and diagrams as on the left below (where $v_{Ge}$ ranges over $V_G(T)$ and $e'=\varphi(e)$) induce diagrams (of functors $\mathsf{Sc}(T) \to \Omega$) as on the right below.
+	\begin{equation} \label{PTNARROWLOC EQ}
+	\begin{tikzcd}[column sep=1.2em]
+	T_{v_{G e}} \ar{r}{} \ar{d}[swap]{} & 
+	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{} &
+	\cdots \ar{r}{} &
+	T_{n,v_{G e}} \ar{d}{} &
+	T_{(\minus)} \ar{r}{} \ar{d}[swap]{} & 
+	T_{1,(\minus)} \ar{r}{} \ar{d}[swap]{} &
+	\cdots \ar{r}{} &
+	T_{n,(\minus)} \ar{d}{} &
+\\
+	T'_{v_{G e'}} \ar{r}{} &
+	T'_{1,v_{G e'}} \ar{r}{} &
+	\cdots \ar{r}{} &
+	T'_{n,v_{G e'}} &
+	T'_{(\minus)}\circ \pi_{\**} \ar{r}{} &
+	T'_{1,(\minus)}\circ \pi_{\**} \ar{r}{} &
+	\cdots \ar{r}{} &
+	T'_{n,(\minus)}\circ \pi_{\**} &
+	\end{tikzcd}	
+	\end{equation}
+Passing to colimits then gives the desired commutative diagram (\ref{PTNARROW EQ}). Moreover, diagrams of the form (\ref{PTNARROW EQ}) clearly induce diagrams as in  (\ref{PTNARROWLOC EQ}) and it is straightforward to check that these are inverse processes. 
+\end{proof}
+
+
+\begin{remark}\label{DSCOM REM}
+The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
+	\[
+	\begin{tikzcd}[column sep = 0.1em]
+		\Omega_{G,{n+2}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
+		 & & \Fin \wr \Omega_{G,{n+1}} \ar{rd}{\Fin \wr d_i} \ar{dd} & &
+		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{i}} \ar{dd} 
+		& & \Fin \wr \Omega_{G,{n}} \ar{rd}{\Fin \wr s_{i-1}} \ar{dd} &
+	\\
+		& \Omega_{G,{n+1}} \ar{ld} \ar[crossing over]{rr} 
+		& & \Fin \wr \Omega_{G,{n}} \ar{ld} &
+		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
+		& & \Fin \wr \Omega_{G,{n+1}} \ar{ld}
+	\\
+		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G & &
+		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G &
+	\end{tikzcd}
+	\]
+commute whenever defined (i.e. $0 \leq i \leq n+1$).
+\end{remark}
+
+
+\subsection{A monad on spans}
+
+\begin{definition}
+We will write 
+$\mathsf{WSpan}^l(\C,\D)$
+(resp.
+$\mathsf{WSpan}^r(\C,\D)$),
+which we call the category of  \textit{left weak spans} (resp. \textit{right weak spans}),
+to denote the category with objects the spans
+\[
+\begin{tikzcd}
+\C & A \ar{l}[swap]{k} \ar{r}{F} & \D,
+\end{tikzcd}
+\]
+arrows the diagrams as on the left (resp. right) below \begin{equation}\label{TWISTEDARROWRIGHT EQ}
+	\begin{tikzcd}[row sep=small]
+	&
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{F_1} \ar{dd}[swap]{i} & &
+	&
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F1]{F_1} \ar{dd}[swap]{i} 
+\\
+	\C & & \D &
+	\C & & \D 
+\\
+		& |[alias=G21]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} & &
+		& |[alias=G2]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} &
+		\arrow[Leftarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
+		\arrow[Rightarrow, from=F11, to=G21,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
+	\end{tikzcd}
+\end{equation}
+which we write as $(i,\varphi) \colon (k_1,F_1) \to (k_2,F_2)$, and composition given in the obvious way.
+\end{definition}
+
+
+\begin{remark}
+There are natural isomorphisms
+\begin{equation}\label{LRSPANISO EQ}
+\mathsf{WSpan}^r(\C,\D) \simeq \mathsf{WSpan}^l(\C^{op},\D^{op}).
+\end{equation}
+\end{remark}
+
+
+\begin{remark}\label{RANLANADJ REM}
+The terms \textit{left/right} are motivated by the existence of adjunctions (which are seen to be equivalent by using (\ref{LRSPANISO EQ}))
+\[
+	\mathsf{Lan} \colon
+	\mathsf{WSpan}^l(\C, \D)
+		\rightleftarrows
+	\mathsf{Fun}(\C, \D)
+	\colon \iota
+\]
+\[
+	\iota \colon 
+	\mathsf{Fun}(\C, \D)
+		\rightleftarrows
+	\mathsf{WSpan}^r(\C, \D)^{op}
+	\colon \mathsf{Ran}
+\]
+where the functors $\iota$ denote the obvious inclusions 
+(note the need for the $(\minus)^{op}$ in the second adjunction) 
+and $\mathsf{Lan}$/$\mathsf{Ran}$ denote the left/right Kan extension functors.
+\end{remark}
+
+
+We will mainly be interested in the span categories 
+$\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq 
+\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
+
 {\color{red} HERE}
+
+\begin{notation}
+	Given a functor $A \to \Sigma_G$, we let $\Omega^{(A)}$ denote the pullback (in $\mathsf{Cat}$)
+\[
+	\begin{tikzcd}
+	\Omega_G^{(A)} \ar{r}{V_G^{(A)}} \ar{d}& 
+	\Fin \wr A \ar{d}
+\\
+	\Omega_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Sigma_G
+	\end{tikzcd}
+\]
+Furthermore, considering the composite functor 
+$\Omega_G^{(A)} \to \Omega_G \to \Sigma_G$
+we will abbreviate $\Omega_G^{\left(\Omega_G^{(A)}\right)}$
+as $\Omega_{G,1}^{(A)}$ and, more generally, 
+$\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)}$ as
+$\Omega_{G,n+1}^{(A)}$.
+
+Lastly, when $A = \Sigma_G$, we write $\Omega_{G,n+1}^{(\Sigma)}$ simply as $\Omega_{G,n+1}$.
+\end{notation}
+
+
+\begin{remark}
+In the diagram
+\[
+\begin{tikzcd}
+	\Omega^{(A)}_{G,1} \ar{r} \ar{d}& 
+	\Fin \wr \Omega^{(A)}_G \ar{r} \ar{d}&
+	\Fin \wr \Fin \wr A  \ar{d}
+\\
+	\Omega_{G,1} \ar{r} \ar{d} &
+	\Fin \wr \Omega_G \ar{r} \ar{d} &
+	\Fin \wr \Fin \wr \Sigma_G
+\\
+	\Omega \ar{r} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\]
+the top right, bottom left and left composite rectangles are all pullbacks, and thus so are all rectangles.
+\end{remark}
+
+
+\begin{proposition}
+For any $A \to \Sigma_G$ there are functors 
+$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G}^{(A)}$ and natural isomorphisms
+\begin{equation}\label{SHUFFLEPERMA EQ}
+	\begin{tikzcd}
+	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Fin \wr \Omega_{G}^{(A)} \ar{r}{\Fin \wr V_G} &
+	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0}
+\\
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}[swap]{V_G} &&
+	\Fin \wr A,
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\end{tikzcd}
+\end{equation}
+both natural in $A \to \Sigma$.
+Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ with corresponding diagram
+\begin{equation}\label{PICUBOIDAB EQ}
+\begin{tikzcd}[column sep = small, row sep = small]
+	\Omega_{G,1}^{(A)} \ar{rr}{V_G} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{H}}
+	&&
+	\Fin \wr \Omega_{G}^{(A)} \ar{rr}{\Fin \wr V_G} \ar[dd,dashed]&&
+	|[alias=FFOmegan]|\Fin \wr \Fin \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
+\\
+	&
+	|[alias=Omeganp1]|\Omega_{G}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G} \ar[crossing over]{dd} &&&&
+	\Fin \wr A \ar{dd}{\Fin \wr H}&
+\\
+	\Omega_{G,1}^{(B)} \ar[dashed]{rr} \ar{rd}[swap,near end]{d^{(B)}_0}&&
+	\Fin \wr \Omega^{(B)}_{G} \ar[rr,dashed] &&
+	|[alias=FFOmeganm1]|\Fin \wr \Fin \wr B \ar[rd,dashed] 
+\\
+	&
+	|[alias=Omegan]|\Omega^{(B)}_{G} \ar{rrrr}[swap]{V_G} &&&&
+	\Fin \wr B &
+	\arrow[Leftrightarrow, from=Omeganp1, to=FFOmegan,shorten <=0.15cm,shorten >=0.15cm,swap,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm,dashed]
+\end{tikzcd}
+\end{equation}
+one has an equality 
+\[(\Fin \wr H)\pi^{(A)} = \pi^{(B)}\Omega_{G,1}^{(H)}\]
+ (i.e. the two natural isomorphisms between the two distinct functors $\Omega_{G,1}^{(A)} \rightrightarrows \Fin \wr B$ coincide).
+\end{proposition}
+
+\begin{proof}
+Since $d_0$ has already been defined when $B=\Sigma_G$, one can generally define $d_0^{(A)}$ by using diagram (\ref{PICUBOIDAB EQ}) when $B=\Sigma$ and recalling that the front, back and left faces are all known to be pullbacks.
+
+{\color{red} Fill in the definition of $\pi^{(A)}$.}
+\end{proof}
+
+\begin{definition}
+	Suppose $\mathcal{V}$ has finite products.
+	
+	We define an endofunctor $N$ of 
+	$\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$
+	by letting $N(\Sigma_G \leftarrow A \to \mathcal{V}^{op})$
+	be the span $\Sigma_G \leftarrow \Omega^{(A)}_G \to \mathcal{V}^{op}$ given by the diagram
+\[
+	\begin{tikzcd}
+	\Omega^{(A)}_G \ar{r} \ar{d}&
+	\Fin \wr A \ar{r} \ar{d}&
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi^{op}} &
+	\mathcal{V}^{op}
+\\
+	\Omega_G \ar{r} \ar{d} &
+	\Fin \wr \Sigma_G
+\\
+	\Sigma_G
+	\end{tikzcd}
+\]
+and defined on arrows in the obvious way.
+
+One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natural isomorphisms
+\begin{equation}\label{MULTDEFSPAN EQ}
+	\begin{tikzcd}
+	\Sigma \ar[equal]{d}&
+	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}} \ar{l}&
+	\Fin \wr \Omega_{G}^{(A)} \ar{r}{\Fin \wr V_G} &
+	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \Fin \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Sigma &
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}[swap]{V_G} \ar{l}&&
+	\Fin \wr A \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+	\end{tikzcd}
+\end{equation}
+where we note that naturality follows from the commutativity of 
+(\ref{PICUBOIDAB EQ}).
+
+Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly commutative diagrams
+\begin{equation}\label{UNITSPAN EQ}
+	\begin{tikzcd}
+	\Sigma \ar[equal]{d} &
+	A \ar{l} \ar{d}[swap]{s_{-1}^{(A)}} \ar[equal]{r} &
+	A \ar{d} \ar{r} &
+	\mathcal{V}^{op} \ar{d} \ar[equal]{r}&
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Sigma &
+	\Omega_G^{(A)} \ar{l} \ar{r}[swap]{V_G}&
+	\Fin \wr A \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\mathcal{V}^{op}.
+	\end{tikzcd}
+\end{equation}	
+\end{definition}
+
+\begin{proposition}\label{MONSPAN PROP}
+$(N,\mu,\eta)$ form a monad on $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$.
+\end{proposition}
+
+\begin{proof}
+The natural transformation component of $\mu \circ (N \mu)$ is given by the composite diagram
+\begin{equation}\label{ASSOCSPAN1 EQ}
+	\begin{tikzcd}[column sep=1.05em]
+	\Omega_{G,2}^{(A)}\ar{d}[swap]{d_1^{(A)}} \ar{r} &
+	\Fin \wr \Omega_{G,1}^{(A)} \ar{d} \ar{r}&
+	\Fin^{\wr 2} \wr \Omega_{G}^{(A)} \ar{r} &
+	|[alias=dog2]|
+	\Fin^{\wr 3} \wr A \ar{d}{\sigma^1} \ar{r} &
+	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{d}{\sigma^1} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}&
+	|[alias=cat3]|
+	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
+	|[alias=cat2]|
+	\Fin \wr \Omega_{G}^{(A)} \ar{rr} &&
+	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	|[alias=dog3]|
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{rr} &&
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rrr} &&&
+	\Fin \wr A \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha"]
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \pi^{(A)}"]
+	\arrow[Leftrightarrow, from=cat3, to=dog3,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \alpha"]
+	\end{tikzcd}
+\end{equation}
+whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
+\begin{equation}\label{ASSOCSPAN2 EQ}
+	\begin{tikzcd}[column sep=1.05em]
+	\Omega_{G,2}^{(A)} \ar{d}[swap]{d_0^{(A)}} \ar{r} &
+	\Fin \wr \Omega_{G,1}^{(A)} \ar{r} &
+	|[alias=dog2]|
+	\Fin^{\wr 2} \wr \Omega_{G}^{(A)} \ar{r} \ar{d}&
+	\Fin^{\wr 3} \wr A \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r} \ar{d}&
+	\Fin^ \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog3]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=cat2]|
+	\Omega_{G,1}^{(A)} \ar{rr} \ar{d}[swap]{d_{0}^{(A)}} &&
+	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	|[alias=FFOmega]|
+	\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	|[alias=cat3]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rrr} &&&
+	\Fin \wr A \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{\left(\Omega_G^{(A)}\right)}"]
+	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+	\end{tikzcd}
+\end{equation}
+{\color{red} Add argument that these commute}
+
+As for $\mu \circ (N \eta)$, it is represented by
+\begin{equation}\label{UNITSPAN1 EQ}
+	\begin{tikzcd}[column sep=1.05em]
+	\Omega_G^{(A)} \ar{d}[swap]{s_{0}^{(A)}} \ar{r} &
+	\Fin \wr A \ar{d} \ar[equal]{r} &
+	\Fin \wr A \ar{d}{\delta^1} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{d}{\delta^1} \ar[equal]{r} &
+	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}&&
+	\Fin \wr A \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+	\end{tikzcd}
+\end{equation}
+while $\mu \circ (\eta N)$ is represented by 
+\begin{equation}\label{UNITSPAN2 EQ}
+	\begin{tikzcd}[column sep=1.05em]
+	\Omega^{(A)}_G \ar{d}[swap]{s_{-1}^{(A)}} \ar[equal]{r} &
+	\Omega^{(A)}_G \ar{d} \ar{r} &
+	\Fin \wr A \ar{d}{\delta^0} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{d}{\delta^0} \ar{r} &
+	\mathcal{V}^{op} \ar{d} \ar[equal]{r} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \Fin \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr} &&
+	\Fin \wr A \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+	\end{tikzcd}
+\end{equation}
+{\color{red} Add argument that these commute}
+\end{proof}
+
+
+
 
 
 

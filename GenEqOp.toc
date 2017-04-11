@@ -7,3 +7,4 @@
 \contentsline {subsection}{\numberline {3.1}Wreath product over finite sets}{9}
 \contentsline {subsection}{\numberline {3.2}Equivariant leaf-root and vertex functors}{10}
 \contentsline {subsection}{\numberline {3.3}Planar strings}{12}
+\contentsline {subsection}{\numberline {3.4}A monad on spans}{13}
