@@ -1274,7 +1274,7 @@ Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with
 
 
 
-\begin{remark}
+\begin{remark}\label{VERTEXDECOMPG REM}
 	Following Remark \ref{VERTEXDECOMP REM},
 	a planar tall map $f \colon T \to U$ of $G$-trees
 	induces a $G$-equivariant map
@@ -1549,6 +1549,7 @@ The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 commute whenever defined (i.e. $0 \leq i \leq n+1$).
 \end{remark}
 
+
 {\color{red} HERE}
 
 
@@ -1561,7 +1562,29 @@ be inductively defined by
 $V_{G,n} = \sigma_0 \circ V_{G,n-1} \circ V_G$.
 \end{notation}
 
-Let's try to edit test brunch!!!
+\begin{remark}
+When $n = 2$, $V_{G,2}$ is thus the composite
+\[
+\begin{tikzcd}[column sep =1.7em]
+	\Omega_{G,2} \ar{r}{V_G} &
+	\Fin \wr \Omega_{G,1} \ar{r}{V_G} &
+	\Fin \wr \Fin \wr \Omega_{G,0} \ar{r}{V_G} &
+	\Fin \wr \Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin \wr \Sigma_{G}
+\end{tikzcd}
+\]
+In light of Remarks \ref{VERTEXDECOMP REM} and \ref{VERTEXDECOMPG REM}, 
+$V_{G,n}(T_0 \to \cdots \to T_n)$ is identified with the tuple 
+\begin{equation}\label{VGNISO EQ}
+	(T_{n,v_{G e}})_{v_{G e} \in V_G(T_n)},
+\end{equation}
+though this requires changing the total order in $V_G(T_n)$. Rather than using the order induced by $T_n$, one instead equips 
+$V_G(T_n)$ with the order induced lexicographically
+from the maps 
+$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$, i.e., for 
+$v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that the images of $v,w \in V_G(T_i)$ are distinct.
+\end{remark}
 
 
 
@@ -1636,80 +1659,59 @@ $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq
 
 
 \begin{notation}
-	Given a functor $\pi \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,0}$ denote the pullback (in $\mathsf{Cat}$)
+	Given a functor $\pi \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback (in $\mathsf{Cat}$)
 \[
 	\begin{tikzcd}
-	\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}& 
+	\Omega_{G,n}^{(A)} \ar{r}{V_{G,n}^{(A)}} \ar{d}& 
 	\Fin \wr A \ar{d}
 \\
-	\Omega_{G,0} \ar{r}[swap]{V_G} &
+	\Omega_{G,n} \ar{r}[swap]{V_{G,n}} &
 	\Fin \wr \Sigma_G
 	\end{tikzcd}
 \]
-Explicitly, the objects of $\Omega_{G,0}^{(A)}$ are pairs 
-$(T,(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T)})$
-such that $\pi(a_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$.
-
-Using the composite map 
-$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$
-one can thus iterate the $\Omega_{G,0}^{(\minus)}$ construction.
-{\color{red} HERE}
-
-The content of Proposition \ref{SUBSASPULL PROP} is then that there are compatible identifications
-$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$
-which identify $V_G^{(\Omega_{G,n})}$
-
-and we will likewise abbreviate 
-$\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)}$ as
-$\Omega_{G,n+1}^{(A)}$.
-Note that then $\Omega_{G,n}^{(\Sigma_G)} = \Omega_{G,n}$.
-
-Moreover, since the $\Omega_{G,0}^{(A)}$ construction is functorial in $A$,
- Remark \ref{DSCOM REM} can now be reinterpreted as saying that 
-$\Omega_{G_0}^{(d_i)}=d_{i+1}$ and 
-$\Omega_{G,0}^{s_{i-1}}=s_i$.
-
-{\color{red} HERE}
-
+Explicitly, the objects of $\Omega_{G,n}^{(A)}$ are pairs 
+\[(T_0 \to \cdots \to T_n,
+(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_n)})\]
+such that $\pi(a_{e^{\uparrow} \leq e}) = T_{n,e^{\uparrow} \leq e}$.
 \end{notation}
 
-{\color{red} HERE}
+\begin{remark}
+Our primary interest here will be in the 
+$\Omega_{G,0}^{(A)}$ construction.
+Importantly, the composite maps 
+$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$
+allow us to iterate the $\Omega_{G,0}^{(\minus)}$ construction. In practice, the role of higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
+$\Omega_{G,0}^{(\minus)}$ constructions.
 
+
+Indeed, the content of Proposition \ref{SUBSASPULL PROP} is then that there are compatible identifications
+$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$
+which identify $V_G^{(\Omega_{G,n})}$ with $V_G$.
+
+Moreover, since all squares in the diagram
 \[
 \begin{tikzcd}
-	\Omega^{(A)}_{G,1} \ar{r} \ar{d}& 
-	\Fin \wr \Omega^{(A)}_{G,0} \ar{r} \ar{d}&
-	\Fin \wr \Fin \wr A  \ar{d} \ar{r} &
+	\Omega^{(A)}_{G,n+1} \ar{r}{V_G^{(A)}} \ar{d}& 
+	\Fin \wr \Omega^{(A)}_{G,n} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
+	\Fin \wr \Fin \wr A  \ar{d} \ar{r}{\sigma^0} &
 	\Fin \wr A \ar{d}
 \\
-	\Omega_{G,1} \ar{r} \ar{d} &
-	\Fin \wr \Omega_{G,0} \ar{r} \ar{d} &
-	\Fin \wr \Fin \wr \Sigma_G \ar{r} &
+	\Omega_{G,n+1} \ar{r}{V_G} \ar{d} &
+	\Fin \wr \Omega_{G,n} \ar{r}{\Fin \wr V_{G,n}} \ar{d} &
+	\Fin \wr \Fin \wr \Sigma_G \ar{r}{\sigma^0} &
 	\Fin \wr \Sigma_G
 \\
 	\Omega_{G,0} \ar{r} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \]
-
-\begin{remark}
-In the diagram
-\[
-\begin{tikzcd}
-	\Omega^{(A)}_{G,1} \ar{r} \ar{d}& 
-	\Fin \wr \Omega^{(A)}_G \ar{r} \ar{d}&
-	\Fin \wr \Fin \wr A  \ar{d}
-\\
-	\Omega_{G,1} \ar{r} \ar{d} &
-	\Fin \wr \Omega_G \ar{r} \ar{d} &
-	\Fin \wr \Fin \wr \Sigma_G
-\\
-	\Omega \ar{r} &
-	\Fin \wr \Sigma_G
-\end{tikzcd}
-\]
-the top right, bottom left and left composite rectangles are all pullbacks, and thus so are all rectangles.
+are pullback squares (the top center square is so by induction, the top right square by direct verification, the total top square by definition of $\Omega_{G,n+1}^{(A)}$ and the bottom left square by Proposition \ref{SUBSASPULL PROP}),
+we likewise obtain identifications 
+$\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
 \end{remark}
+
+{\color{red} HERE}
+
 
 
 \begin{proposition}
