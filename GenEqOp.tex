@@ -4,7 +4,7 @@
 \author{Peter Bonventre, Lu\'is A. Pereira}%
 \title{Genuine equivariant operads}%
 
-\usepackage{showkeys}%
+\usepackage{showkeys}
 
 \usepackage{stmaryrd}
 
@@ -36,6 +36,7 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 \section{Introduction}
 
 No content yet.
+
 
 
 
@@ -961,6 +962,26 @@ are inverse to each other is clear by the same inductive argument.
 \end{proof}
 
 
+\begin{remark}\label{VERTEXDECOMP REM}
+	It follows from the previous proof that, writing 
+	$U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
+	one has 
+\begin{equation}\label{VERTEXDECOMP EQ}
+	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
+	V(U_{e^{\uparrow} \leq e}).
+\end{equation}
+Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
+$f^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
+$f \colon T \to U$.
+Explicitly, $f^{\**}(U_{u^{\uparrow} \leq u})$ 
+is the unique $T_{t^{\uparrow}\leq t}$ such that
+$U_{u^{\uparrow} \leq u} \subset U_{t^{\uparrow} \leq t}$. We note that $f^{\**}$ is indeed contravariant in the tall planar map $f$.
+\end{remark}
+
+
+
+
+
 
 \section{The genuine equivariant operad monad}
 
@@ -1252,6 +1273,54 @@ Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with
 \end{definition}
 
 
+
+\begin{remark}
+	Following Remark \ref{VERTEXDECOMP REM},
+	a planar tall map $f \colon T \to U$ of $G$-trees
+	induces a $G$-equivariant map
+	$f^{\**} \colon V(U) \to V(T)$
+	and thus also a map of orbits
+	$f^{\**} \colon V_G(U) \to V_G(T)$.
+We note, however, that $f^{\**}$ is not in general compatible with the order on $V_G$, as is indeed the case even in the non-equivariant case.
+
+A minimal example follows.
+		\[
+		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,
+		every node/.style = {font=\footnotesize},
+		dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$T$}
+			child{node [dummy] {}
+				child[sibling distance = 3.5em]{node [dummy] {}
+					child
+				edge from parent node[swap] {$c$}}
+				child[level distance=2.9em]{
+				edge from parent node [swap] {$b$}}
+				child[sibling distance = 3.5em]{node [dummy] {}
+					child
+				edge from parent node {$a$}}		
+			edge from parent node [swap] {$d$}};
+		\node at (6,0) {$U$}
+			child{node [dummy] {}
+				child[sibling distance = 5em]{node [dummy] {}
+					child
+				edge from parent node [swap] {$c$}}
+				child[sibling distance = 5em]{node [dummy] {}
+					child[sibling distance = 3.5em]{
+					edge from parent node [swap,near end] {$b$}}
+					child[sibling distance = 3.5em]{node [dummy] {}
+						child
+					edge from parent node [near end]{$a$}}
+				edge from parent node {$e$}}
+			edge from parent node [swap] {$d$}};
+		\draw[->] (2.6,1) -- node [above] {$f$} (3.6,1) ;
+		\end{tikzpicture}
+		\]
+In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
+$f^{\**} \colon V(U) \to V(T)$ is given by 
+$a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
+\end{remark}
+
+
 Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
 \[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
 We note that $T_{v_{Ge}}$ is always a $G$-corolla. Indeed, noting that a quotient map $\varphi \colon T \to S$ induces quotient maps 
@@ -1297,21 +1366,24 @@ and the corolla $T_{v_{Gc}}$ non-isomorphically onto $S_{v_{Gc}}$.
 
 Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes.
 
+
 \begin{definition}\label{SUBSTITUTIONDATUMG DEF}
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{$T$-substitution datum} is a tuple 
-	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V_G(T)}$ such that $\mathsf{lr}(U_{e^{\uparrow}\leq e}) = T_{e^{\uparrow} \leq e}$.
+	$\{U_{v_{G e}}\}_{v_{G e} \in V_G(T)}$ such that 
+	$\mathsf{lr}(U_{v_{G e}}) = T_{v_{G e}}$.
 	
 	Further, a map of $T$-substitution data 
-	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of planar tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$.
+	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of planar tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
 \end{definition}
 
-
 \begin{remark}\label{SUBSDATUMCONV REM}
-	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant ones.
-	
-	Indeed, letting $G \ltimes V(T)$ denote the Grothendieck construction for the action of $G$ on the non-equivariant vertices $V(T)$ (often called the action groupoid), it is immediate that an equivariant $T$-substitution datum is the same as a functor $G \ltimes V(T) \to \Omega$ whose restriction to $V(T) \subset G \ltimes V(T)$ is a (non-equivariant) substitution datum.
+	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant terms.
+
+Noting that there are decompositions 
+$U_{v_{G e}}= \coprod_{g e \in Ge} U_{ge^{\uparrow} \leq ge}$
+and letting $G \ltimes V(T)$ denote the Grothendieck construction for the action of $G$ on the non-equivariant vertices $V(T)$ (often called the action groupoid), it is immediate that an equivariant $T$-substitution datum is the same as a functor $G \ltimes V(T) \to \Omega$ whose restriction to $V(T) \subset G \ltimes V(T)$ is a (non-equivariant) substitution datum.
 \end{remark}
 
 
@@ -1322,25 +1394,35 @@ Let $T \in \Omega_G$ be a $G$-tree. There is an isomorphism of categories
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
 	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
 \\
-	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
+	\{U_{v_{G e}}\} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \end{tikzcd}
 \end{equation}
 \end{proposition}
 
-
 \begin{proof}
 	This is a minor adaptation of the non-equivariant analogue Proposition \ref{SUBDATAUNDERPLANG PROP}.
-	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{e^{\uparrow} \leq e}\}$ therefore induce functors 
+	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{v_{Ge}}\}$ therefore induce functors 
 	$U_{(\minus)} \colon G \ltimes \mathsf{Sc}(T) \to \Omega$.
-	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. The only subtle point is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
+	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. 
+	The key observation is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
 \end{proof}
+
+\begin{remark} We will need to know that each of the maps 
+\[U_{v_{Ge}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}\]
+induced by the previous proof is a planar map of $G$-trees.
+This requires two observations:
+\begin{inparaenum}
+	\item[(i)] the restrictions to each of the constituent non-equivariant trees $U_{ge^{\uparrow}\leq ge}$ is planar by Proposition \ref{SUBDATAUNDERPLANG PROP};
+	\item[(ii)] the restriction to the roots of $U_{v_{Ge}}$ is injective and order preserving since it matches the inclusion of the roots of $T_{v_{Ge}}$, and the map $T \to U$ is a planar map of $G$-trees.
+\end{inparaenum}
+\end{remark}
 
 
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
-The leaf-root and vertex functors will allows us reinterpret our results concerning substitution.
+The leaf-root and vertex functors will allow us to reinterpret our results concerning substitution.
 
 \begin{definition}
 	The category $\Omega_{G,n}$ of 
@@ -1349,7 +1431,7 @@ The leaf-root and vertex functors will allows us reinterpret our results concern
 	\begin{tikzcd}
 	T_0 \ar{r}{f_1} & T_1 \ar{r}{f_2} & \cdots \ar{r}{f_n} & T_n
 	\end{tikzcd}	
-	,\]
+	\]
 	where $T_i \in \Omega_G$ and the $f_i$ are tall planar maps, and arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
@@ -1467,6 +1549,22 @@ The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 commute whenever defined (i.e. $0 \leq i \leq n+1$).
 \end{remark}
 
+{\color{red} HERE}
+
+
+\begin{notation}
+	We will let 
+\[
+	V_{G,n} \colon \Omega_{G,n} \to \Fin \wr \Sigma_G
+\]
+be inductively defined by 
+$V_{G,n} = \sigma_0 \circ V_{G,n-1} \circ V_G$.
+\end{notation}
+
+Let's try to edit test brunch!!!
+
+
+
 
 \subsection{A monad on spans}
 
@@ -1536,29 +1634,63 @@ We will mainly be interested in the span categories
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq 
 \mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
 
-{\color{red} HERE}
 
 \begin{notation}
-	Given a functor $A \to \Sigma_G$, we let $\Omega^{(A)}$ denote the pullback (in $\mathsf{Cat}$)
+	Given a functor $\pi \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,0}$ denote the pullback (in $\mathsf{Cat}$)
 \[
 	\begin{tikzcd}
-	\Omega_G^{(A)} \ar{r}{V_G^{(A)}} \ar{d}& 
+	\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}& 
 	\Fin \wr A \ar{d}
 \\
-	\Omega_G \ar{r}[swap]{V_G} &
+	\Omega_{G,0} \ar{r}[swap]{V_G} &
 	\Fin \wr \Sigma_G
 	\end{tikzcd}
 \]
-Furthermore, considering the composite functor 
-$\Omega_G^{(A)} \to \Omega_G \to \Sigma_G$
-we will abbreviate $\Omega_G^{\left(\Omega_G^{(A)}\right)}$
-as $\Omega_{G,1}^{(A)}$ and, more generally, 
+Explicitly, the objects of $\Omega_{G,0}^{(A)}$ are pairs 
+$(T,(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T)})$
+such that $\pi(a_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$.
+
+Using the composite map 
+$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$
+one can thus iterate the $\Omega_{G,0}^{(\minus)}$ construction.
+{\color{red} HERE}
+
+The content of Proposition \ref{SUBSASPULL PROP} is then that there are compatible identifications
+$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$
+which identify $V_G^{(\Omega_{G,n})}$
+
+and we will likewise abbreviate 
 $\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)}$ as
 $\Omega_{G,n+1}^{(A)}$.
+Note that then $\Omega_{G,n}^{(\Sigma_G)} = \Omega_{G,n}$.
 
-Lastly, when $A = \Sigma_G$, we write $\Omega_{G,n+1}^{(\Sigma)}$ simply as $\Omega_{G,n+1}$.
+Moreover, since the $\Omega_{G,0}^{(A)}$ construction is functorial in $A$,
+ Remark \ref{DSCOM REM} can now be reinterpreted as saying that 
+$\Omega_{G_0}^{(d_i)}=d_{i+1}$ and 
+$\Omega_{G,0}^{s_{i-1}}=s_i$.
+
+{\color{red} HERE}
+
 \end{notation}
 
+{\color{red} HERE}
+
+\[
+\begin{tikzcd}
+	\Omega^{(A)}_{G,1} \ar{r} \ar{d}& 
+	\Fin \wr \Omega^{(A)}_{G,0} \ar{r} \ar{d}&
+	\Fin \wr \Fin \wr A  \ar{d} \ar{r} &
+	\Fin \wr A \ar{d}
+\\
+	\Omega_{G,1} \ar{r} \ar{d} &
+	\Fin \wr \Omega_{G,0} \ar{r} \ar{d} &
+	\Fin \wr \Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Sigma_G
+\\
+	\Omega_{G,0} \ar{r} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\]
 
 \begin{remark}
 In the diagram
@@ -1832,6 +1964,37 @@ while $\mu \circ (\eta N)$ is represented by
 
 
 
+
+
+
+\section{Appendix}
+
+\subsection{Grothendieck fibrations}
+
+{\color{red} This is missing a bunch of expository content}
+
+
+\begin{definition}
+Suppose $(\D,\D_c)$ is a pair in $\mathsf{Cat}$ such that $\D_c$ is a wide subcategory of $\D$.
+
+A functor $\pi \colon \mathcal{B} \to \D$
+is called a partial Grothendieck construction if there are cartesian lifts for every arrow in $\D_c$.
+\end{definition}
+
+\begin{lemma}
+bla bla
+\[
+\begin{tikzcd}
+	\mathcal{C} \times_F \mathcal{B} \ar[dashed]{rrr} \ar[dashed]{dd} \ar[dashed]{rd} & & & \mathcal{B} \ar{dd}{\pi}
+\\
+	& \mathcal{C} \times_G \mathcal{B} \ar[dashed]{rru} \ar[dashed]{dd}
+\\
+	\mathcal{C} \ar{rrr}{F} \ar[equal]{rd} & & & \mathcal{D}
+\\
+	& \mathcal{C} \ar{rru}[swap]{G}
+\end{tikzcd}
+\]
+\end{lemma}
 
 
 \bibliography{biblio}{}
