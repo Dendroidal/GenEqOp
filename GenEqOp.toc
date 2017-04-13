@@ -8,3 +8,6 @@
 \contentsline {subsection}{\numberline {3.2}Equivariant leaf-root and vertex functors}{10}
 \contentsline {subsection}{\numberline {3.3}Planar strings}{12}
 \contentsline {subsection}{\numberline {3.4}A monad on spans}{14}
+\contentsline {subsection}{\numberline {3.5}The free genuine operad monad}{17}
+\contentsline {section}{\numberline {4}Free extensions}{20}
+\contentsline {subsection}{\numberline {4.1}Remarks on general monads}{21}
