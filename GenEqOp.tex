@@ -1550,9 +1550,6 @@ commute whenever defined (i.e. $0 \leq i \leq n+1$).
 \end{remark}
 
 
-{\color{red} HERE}
-
-
 \begin{notation}
 	We will let 
 \[
@@ -1670,8 +1667,10 @@ $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq
 	\end{tikzcd}
 \]
 Explicitly, the objects of $\Omega_{G,n}^{(A)}$ are pairs 
-\[(T_0 \to \cdots \to T_n,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_n)})\]
+\begin{equation}\label{OMEGAGNA EQ}
+(T_0 \to \cdots \to T_n,
+(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_n)})
+\end{equation}
 such that $\pi(a_{e^{\uparrow} \leq e}) = T_{n,e^{\uparrow} \leq e}$.
 \end{notation}
 
@@ -1710,9 +1709,6 @@ we likewise obtain identifications
 $\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
 \end{remark}
 
-{\color{red} HERE}
-
-
 
 \begin{proposition}
 For any $A \to \Sigma_G$ there are functors 
@@ -1732,21 +1728,21 @@ both natural in $A \to \Sigma$.
 Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ with corresponding diagram
 \begin{equation}\label{PICUBOIDAB EQ}
 \begin{tikzcd}[column sep = small, row sep = small]
-	\Omega_{G,1}^{(A)} \ar{rr}{V_G} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{H}}
+	\Omega_{G,1}^{(A)} \ar{rr}{V_G^{(A)}} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{(H)}}
 	&&
-	\Fin \wr \Omega_{G}^{(A)} \ar{rr}{\Fin \wr V_G} \ar[dd,dashed]&&
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr}{\Fin \wr V_G^{(A)}} \ar[dd,dashed]&&
 	|[alias=FFOmegan]|\Fin \wr \Fin \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
 \\
 	&
-	|[alias=Omeganp1]|\Omega_{G}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G} \ar[crossing over]{dd} &&&&
+	|[alias=Omeganp1]|\Omega_{G,0}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G^{(A)}} \ar[crossing over]{dd} &&&&
 	\Fin \wr A \ar{dd}{\Fin \wr H}&
 \\
 	\Omega_{G,1}^{(B)} \ar[dashed]{rr} \ar{rd}[swap,near end]{d^{(B)}_0}&&
-	\Fin \wr \Omega^{(B)}_{G} \ar[rr,dashed] &&
+	\Fin \wr \Omega^{(B)}_{G,0} \ar[rr,dashed] &&
 	|[alias=FFOmeganm1]|\Fin \wr \Fin \wr B \ar[rd,dashed] 
 \\
 	&
-	|[alias=Omegan]|\Omega^{(B)}_{G} \ar{rrrr}[swap]{V_G} &&&&
+	|[alias=Omegan]|\Omega^{(B)}_{G,0} \ar{rrrr}[swap]{V_G^{(B)}} &&&&
 	\Fin \wr B &
 	\arrow[Leftrightarrow, from=Omeganp1, to=FFOmegan,shorten <=0.15cm,shorten >=0.15cm,swap,"\pi^{(A)}"]
 	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm,dashed]
@@ -1758,10 +1754,34 @@ one has an equality
 \end{proposition}
 
 \begin{proof}
-Since $d_0$ has already been defined when $B=\Sigma_G$, one can generally define $d_0^{(A)}$ by using diagram (\ref{PICUBOIDAB EQ}) when $B=\Sigma$ and recalling that the front, back and left faces are all known to be pullbacks.
+Informally, using the object description in (\ref{OMEGAGNA EQ}),
+$d_0^{(A)}$ is simply given by the formula
+\begin{equation}\label{GEND0 EQ}
+d_0^{(A)} \left(
+T_0 \to T_1,
+(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+\right)
+=
+\left(
+T_1,
+(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+\right),
+\end{equation}
+though one must note that since in (\ref{OMEGAGNA EQ}) the
+order in $V_G(T_1)$ is induced lexicographically from the string, the two orders for $V_G(T_1)$ in each side of (\ref{GEND0 EQ})
+do not coincide.
 
-{\color{red} Fill in the definition of $\pi^{(A)}$.}
+It now follows that the composites 
+$\sigma^0 \circ (\Fin \wr V_G^{(A)}) \circ V_G^{(A)}$
+and 
+$V_G^{(A)} \circ d_0^{(A)}$
+differ by the natural automorphism $\pi^{(A)}$
+given by the tuple permutations interchanging the two orders in
+$V_G(T_1)$ for each $T_0 \to T_1$.
+
+The commutativity of (\ref{PICUBOIDAB EQ}) is clear.
 \end{proof}
+
 
 \begin{definition}
 	Suppose $\mathcal{V}$ has finite products.
@@ -1769,21 +1789,21 @@ Since $d_0$ has already been defined when $B=\Sigma_G$, one can generally define
 	We define an endofunctor $N$ of 
 	$\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$
 	by letting $N(\Sigma_G \leftarrow A \to \mathcal{V}^{op})$
-	be the span $\Sigma_G \leftarrow \Omega^{(A)}_G \to \mathcal{V}^{op}$ given by the diagram
+	be the span $\Sigma_G \leftarrow \Omega^{(A)}_G \to \mathcal{V}^{op}$ given composition along the diagram
 \[
 	\begin{tikzcd}
-	\Omega^{(A)}_G \ar{r} \ar{d}&
+	\Omega^{(A)}_{G,0} \ar{r} \ar{d}&
 	\Fin \wr A \ar{r} \ar{d}&
 	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi^{op}} &
 	\mathcal{V}^{op}
 \\
-	\Omega_G \ar{r} \ar{d} &
+	\Omega_{G,0} \ar{r} \ar{d} &
 	\Fin \wr \Sigma_G
 \\
 	\Sigma_G
 	\end{tikzcd}
 \]
-and defined on arrows in the obvious way.
+and defined on maps of spans in the obvious way.
 
 One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natural isomorphisms
 \begin{equation}\label{MULTDEFSPAN EQ}
@@ -1807,8 +1827,8 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-where we note that naturality follows from the commutativity of 
-(\ref{PICUBOIDAB EQ}).
+where $\alpha$ is an associativity isomorphism for the product $\Pi$. We we note that naturality of $\mu$ 
+follows from the commutativity of (\ref{PICUBOIDAB EQ}).
 
 Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly commutative diagrams
 \begin{equation}\label{UNITSPAN EQ}
@@ -1904,9 +1924,16 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-{\color{red} Add argument that these commute}
 
-As for $\mu \circ (N \eta)$, it is represented by
+That the rightmost sections of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from compatibility of the associativity isomorphisms for $\Pi^{op}$. 
+
+For the leftmost sections, note first that, in either diagram,
+the top right and bottom left paths $\Omega_{G,2}^{(A)} \to \Fin \wr A$ differ only by the induced order on $V_G(T_2)$ for each string $T_0 \to T_1 \to T_2$. More explicitly, the top right paths use the order induced lexicographically from the string $T_0 \to T_1 \to T_2$
+while the bottom left paths use the order induced exclusively by $T_2$.
+The two left sections then coincide since are both given by the permutation interchanging these orders, the only difference being that the intermediate stage of (\ref{ASSOCSPAN1 EQ}) uses the order induced lexicographically from $T_0 \to T_2$
+while (\ref{ASSOCSPAN2 EQ}) uses the order induced lexicographically from $T_1 \to T_2$.
+
+As for unit conditions, $\mu \circ (N \eta)$ is represented by
 \begin{equation}\label{UNITSPAN1 EQ}
 	\begin{tikzcd}[column sep=1.05em]
 	\Omega_G^{(A)} \ar{d}[swap]{s_{0}^{(A)}} \ar{r} &
@@ -1960,43 +1987,44 @@ while $\mu \circ (\eta N)$ is represented by
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-{\color{red} Add argument that these commute}
+It is straightforward to check that the composites of the left and right sections of both (\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) are strictly commutative diagrams, and thus that 
+(\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) coincide.
 \end{proof}
 
+{\color{red} HERE}
 
 
 
 
 
+%\section{Appendix}
 
-\section{Appendix}
+%\subsection{Grothendieck fibrations}
 
-\subsection{Grothendieck fibrations}
-
-{\color{red} This is missing a bunch of expository content}
+%{\color{red} This is missing a bunch of expository content}
 
 
-\begin{definition}
-Suppose $(\D,\D_c)$ is a pair in $\mathsf{Cat}$ such that $\D_c$ is a wide subcategory of $\D$.
+%\begin{definition}
+%Suppose $(\D,\D_c)$ is a pair in $\mathsf{Cat}$ such that $\D_c$ is a wide subcategory of $\D$.
 
-A functor $\pi \colon \mathcal{B} \to \D$
-is called a partial Grothendieck construction if there are cartesian lifts for every arrow in $\D_c$.
-\end{definition}
+%A functor $\pi \colon \mathcal{B} \to \D$
+%is called a partial Grothendieck construction if there are cartesian lifts for every arrow in $\D_c$.
+%\end{definition}
 
-\begin{lemma}
-bla bla
-\[
-\begin{tikzcd}
-	\mathcal{C} \times_F \mathcal{B} \ar[dashed]{rrr} \ar[dashed]{dd} \ar[dashed]{rd} & & & \mathcal{B} \ar{dd}{\pi}
-\\
-	& \mathcal{C} \times_G \mathcal{B} \ar[dashed]{rru} \ar[dashed]{dd}
-\\
-	\mathcal{C} \ar{rrr}{F} \ar[equal]{rd} & & & \mathcal{D}
-\\
-	& \mathcal{C} \ar{rru}[swap]{G}
-\end{tikzcd}
-\]
-\end{lemma}
+%\begin{lemma}
+%bla bla
+%\[
+%\begin{tikzcd}
+%	\mathcal{C} \times_F \mathcal{B} \ar[dashed]{rrr} \ar[dashed]{dd} \ar[dashed]{rd} & & & \mathcal{B} \ar{dd}{\pi}
+%\\
+%	& \mathcal{C} \times_G \mathcal{B} \ar[dashed]{rru} \ar[dashed]{dd}
+%\\
+%	\mathcal{C} \ar{rrr}{F} \ar[equal]{rd} & & & \mathcal{D}
+%\\
+%	& \mathcal{C} \ar{rru}[swap]{G}
+%\end{tikzcd}
+%\]
+%\end{lemma}
 
 
 \bibliography{biblio}{}
