@@ -2375,76 +2375,102 @@ Our overall goal in this section will be to produce a description of free genuin
 \]
 in the category $\mathsf{Op}_G$ of genuine equivariant operads.
 
-{\color{red} HERE}
 
 
+\subsection{Extensions over general monads}
 
+Any monad $T$ on $\C$ one obtains induced monads $T^{\times n}$ on $\C^{\times n}$, and we will make use of several standard relations between these.
+In particular, any map $\alpha \colon \underline{n} \to \underline{m}$ induces a forgetful functor
+such that for the forgetul functor 
+$\alpha^{\**} \colon \C^{\times m} \to \C^{\times n}$
+one has $T^{\times n} \alpha^{\**} \simeq  \alpha^{\**} T^{\times m}$.
 
-\subsection{Remarks on general monads}
+Indeed, we will need to make use of a slightly more general setup. Letting $I$ denote the identity monad on $\C$, and $A \subset \underline{n}$ be a subset, there is a monad $T^{\times A} \times I^{\times(\underline{n}-A)}$, which we abusively denote simply as $T^{\times A}$. Identities then determine maps of monads 
+$T^{\times A} \to T^{\times B}$
+and, moreover, there are identifications
+$T^{\times A} \alpha^{\**} \simeq \alpha^{\**} T^{\times \alpha(A)}$.
+One then has the following.
 
-Given a monad $T$ on $\C$ one immediately obtains a monad
-$T^{\times 2}$ on $\C^{\times 2}$.
 
 \begin{proposition}\label{MONADICFUN PROP}
-	Consider the adjunction
-\[
-	\amalg \colon \C^{\times 2}
-	\rightleftarrows
-	\C \colon \Delta	
-\]
-Then there is a monadic functor ({\color{red} check terminology})
-\begin{equation}\label{TPOWERMONFUN EQ}
-T^{\times 2} \to \Delta \circ T \circ \amalg.
+	The functor
+\begin{equation}\label{MONADFUNCTORALPHA EQ}
+	T^{\times A} \Rightarrow \alpha^{\**} T^{\times \alpha(A)} \alpha_{!}
 \end{equation}
+adjoint to the identification 
+$T^{\times A} \alpha^{\**} \simeq \alpha^{\**} T^{\times \alpha(A)}$
+is a map of monads on $\C^{\times n}$.
 \end{proposition}
 
+
 \begin{proof}
-We first note that there are natural isomorphisms
-$T^{\times 2} \circ \Delta \simeq \Delta \circ T$ and 
-$(T \circ S)^{\times 2} \simeq T^{\times 2} \circ S^{\times 2}$ which are compatible in the sense that the composite isomorphism
-$T^{\times 2} \circ S^{\times 2} \circ \Delta \simeq
-T^{\times 2} \circ \Delta \circ S \simeq
-\Delta \circ T \circ S$ matches
-$(T \circ S)^{\times 2} \circ \Delta \simeq \Delta \circ T \circ S$.
-(\ref{TPOWERMONFUN EQ}) is then the composite
+We first note that there are identifications of functors
+$(FG)^{\times A} \simeq F^{\times A} G^{\times A}$ which are compatible with the identifications
+$F^{\times A} \alpha^{\**} \simeq \alpha^{\**} F^{\times \alpha(A)}$
+in the sense that the identification
+$(F G)^{\times A} \circ \alpha^{\**} \simeq 
+\alpha^{\**} (FG)^{\times \alpha(A)}$
+matches the composite identification
+$F^{\times A} G^{\times A} \alpha^{\**} \simeq
+F^{\times A}\alpha^{\**}G^{\times \alpha(A)} \simeq
+\alpha^{\**} F^{\times \alpha(A)} G^{\times \alpha(A)}$.
+
+Letting $\eta, \epsilon$ denote the unit and counit for the 
+$(\alpha_{!},\alpha^{\**})$ adjunction, 
+(\ref{MONADFUNCTORALPHA EQ})
+is then the composite
 \[
-	T^{\times 2} \xrightarrow{\eta} 
-	T^{\times 2} \circ \Delta \circ \amalg \simeq
-	\Delta \circ T \circ \amalg.
+	T^{\times A} \xrightarrow{\eta} 
+	T^{\times A} \alpha^{\**} \alpha_{!} \simeq
+	\alpha^{\**} T^{\times \alpha(A)}\alpha_{!}.
 \]
-The multiplicative condition is the commutativity of the diagram
-\[
-\begin{tikzcd}
-	T^{\times 2} \circ T^{\times 2} \ar{d} \ar{r} &
-	\Delta \circ T \circ \amalg \circ \Delta \circ T \circ \amalg \ar{d} 
-\\
-	T^{\times 2} \ar{r} &
-	\Delta \circ T \circ \amalg.
-\end{tikzcd}
-\]
-Recalling that $(\minus) \circ \amalg$ is the right adjoint to 
-$(\minus) \circ \Delta$ this follows from the diagram
+That this is a monad map is the condition that multiplication and unit diagrams below commute.
 \[
 \begin{tikzcd}
-	T^{\times 2} \circ \Delta \circ \amalg \circ T^{\times 2} \circ \Delta \ar{r} &
-		T^{\times 2} \circ \Delta \circ \amalg \circ \Delta \circ T \ar{rd}{\epsilon}
+	T^{\times A} \circ T^{\times A} \ar{d} \ar{r} &
+	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \circ 
+	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \ar{d} &
+	I^{\times n} \ar{d} \ar{rd}& 	
 \\
-	T^{\times 2} \circ T^{\times 2} \circ \Delta \ar{u}{\eta} \ar{r} \ar{d}&
-	T^{\times 2} \circ \Delta \circ T \ar[equal]{r} \ar{u}{\eta} &
-	T^{\times 2} \circ \Delta \circ T \ar{r} &
-	\Delta \circ T \circ T \ar{d}
-\\
-	T^{\times 2} \circ \Delta \ar{rrr} &&&
-	\Delta \circ T
+	T^{\times A} \ar{r} &
+	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} &
+	T^{\times A} \ar{r} &
+	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!}
 \end{tikzcd}
 \]
-{\color{red} Add a unit argument.}
+We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since the precomposition
+$(\minus) \circ \alpha^{\**}$
+is the left adjoint to the precomposition
+$(\minus) \circ \alpha_{!}$
+this follows from the following diagram.
+\[
+\begin{tikzcd}
+	T^{\times A}  T^{\times A}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
+	T^{\times A}  \alpha^{*}  T^{\times \alpha(A)} \ar{r}{\eta}
+	\ar[equal]{rd} &
+	T^{\times A} \alpha^{\**} \alpha_{!} \alpha^{*} T^{\times \alpha(A)} \ar{d}{\epsilon} \ar{r}{\simeq}&
+	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \alpha^{\**}  T^{\times \alpha(A)} \ar{d}{\epsilon}
+\\
+	& &
+	T^{\times A}  \alpha^{*}  T^{\times \alpha(A)} \ar{r}{\simeq} &
+	\alpha^{*}  T^{\times \alpha(A)}  T^{\times \alpha(A)} \ar{d}
+\\
+	T^{\times A}  \alpha^{*} \ar{rrr}{\simeq} &&&
+	\alpha^{*} T^{\times \alpha(A)}
+\end{tikzcd}
+\]
 \end{proof}
 
 
 \begin{remark}
-	Since $T \circ \amalg$ is a right $\Delta \circ T \circ \amalg$-module, it is likewise a right $T^{\times 2}$-module.
+	Since $T^{\times B} \circ \alpha_{!}$ is a right 
+	$\alpha^{\**} T^{\times B}\alpha_{!}$-module,
+	Proposition \ref{MONADICFUN PROP} implies that it is also a 
+	right $T^{\times \alpha^{-1}(B)}$-module or, moreover, a 
+	$T^{\times A}$-module whenever $\alpha(A) \subset B$.
 \end{remark}
+
+{\color{red} HERE}
 
 \begin{proposition}
 	The right module action natural transformation
