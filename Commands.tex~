@@ -59,6 +59,7 @@
 \newcommand{\Qq}{\mathbb Q}%
 \newcommand{\Cc}{\mathbb C}%
 \newcommand{\Zz}{\mathbb Z}%
+\newcommand{\Fin}{\mathsf{F}}%
 
 \newcommand{\m}{\text{$\mathfrak{m}$}}
 \newcommand{\norm}[1]{\left\Vert#1\right\Vert}%
@@ -110,10 +111,6 @@
 \newcommand{\sSet}{\ensuremath{\mathsf{sSet}}}%
 \newcommand{\BSym}{\ensuremath{\mathsf{BSym}}}%
 \newcommand{\fgt}{\ensuremath{\mathsf{fgt}}}%
-\newcommand{\Fin}{\mathsf{F}}%
-\newcommand{\Set}{\ensuremath{\mathsf{Set}}}
-\newcommand{\Op}{\ensuremath{\mathsf{Op}}}
-\newcommand{\sOp}{\ensuremath{\mathsf{sOp}}}
 
 \DeclareMathOperator{\hocmp}{hocmp}%
 \DeclareMathOperator{\cmp}{cmp}%
@@ -131,6 +128,10 @@
 \DeclareMathOperator{\Hom}{Hom}%
 \DeclareMathOperator{\Aut}{Aut}%
 \newcommand{\free}{\ensuremath{\mathrm{free}}}%
+
+\let\squish\smash
+\newcommand{\Top}{\text{\squish{$\mathcal{T}\!op$}}}
+\newcommand{\Set}{\text{$\mathcal{F}\!in$}}
 
 
 \numberwithin{equation}{section}%
