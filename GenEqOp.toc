@@ -11,3 +11,4 @@
 \contentsline {subsection}{\numberline {3.5}The free genuine operad monad}{17}
 \contentsline {section}{\numberline {4}Free extensions}{20}
 \contentsline {subsection}{\numberline {4.1}Extensions over general monads}{21}
+\contentsline {subsection}{\numberline {4.2}Mixed strings}{22}
