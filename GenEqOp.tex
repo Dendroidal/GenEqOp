@@ -2385,57 +2385,58 @@ such that for the forgetul functor
 $\alpha^{\**} \colon \C^{\times m} \to \C^{\times n}$
 one has $T^{\times n} \alpha^{\**} \simeq  \alpha^{\**} T^{\times m}$.
 
-Indeed, we will need to make use of a slightly more general setup. Letting $I$ denote the identity monad on $\C$, and $A \subset \underline{n}$ be a subset, there is a monad $T^{\times A} \times I^{\times(\underline{n}-A)}$, which we abusively denote simply as $T^{\times A}$. Identities then determine maps of monads 
-$T^{\times A} \to T^{\times B}$
+
+Indeed, we will need to make use of a slightly more general setup. Letting $I$ denote the identity monad on $\C$, and $K \subset \underline{m}$ be a subset, there is a monad $T^{\times K} \times I^{\times(\underline{m}-K)}$ on $\mathcal{C}^{\times m}$, which we abusively denote simply as $T^{\times K}$. Identities then determine maps of monads 
+$T^{J} \to T^{\times K}$ whenever $J \subset K$
 and, moreover, there are identifications
-$T^{\times A} \alpha^{\**} \simeq \alpha^{\**} T^{\times \alpha(A)}$.
+$T^{\times \alpha^{-1}(K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$.
 One then has the following.
 
 
 \begin{proposition}\label{MONADICFUN PROP}
 	The functor
 \begin{equation}\label{MONADFUNCTORALPHA EQ}
-	T^{\times A} \Rightarrow \alpha^{\**} T^{\times \alpha(A)} \alpha_{!}
+	T^{\times \alpha^{-1} (K)} \Rightarrow \alpha^{\**} T^{\times K} \alpha_{!}
 \end{equation}
 adjoint to the identification 
-$T^{\times A} \alpha^{\**} \simeq \alpha^{\**} T^{\times \alpha(A)}$
+$T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$
 is a map of monads on $\C^{\times n}$.
 \end{proposition}
 
 
 \begin{proof}
 We first note that there are identifications of functors
-$(FG)^{\times A} \simeq F^{\times A} G^{\times A}$ which are compatible with the identifications
-$F^{\times A} \alpha^{\**} \simeq \alpha^{\**} F^{\times \alpha(A)}$
+$(FG)^{\times K} \simeq F^{\times K} G^{\times K}$ which are compatible with the identifications
+$F^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} F^{\times K}$
 in the sense that the identification
-$(F G)^{\times A} \circ \alpha^{\**} \simeq 
-\alpha^{\**} (FG)^{\times \alpha(A)}$
+$(F G)^{\times \alpha^{-1} (K)} \circ \alpha^{\**} \simeq 
+\alpha^{\**} (FG)^{\times K}$
 matches the composite identification
-$F^{\times A} G^{\times A} \alpha^{\**} \simeq
-F^{\times A}\alpha^{\**}G^{\times \alpha(A)} \simeq
-\alpha^{\**} F^{\times \alpha(A)} G^{\times \alpha(A)}$.
+$F^{\times \alpha^{-1} (K)} G^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq
+F^{\times \alpha^{-1} (K)}\alpha^{\**}G^{\times K} \simeq
+\alpha^{\**} F^{\times K} G^{\times K}$.
 
 Letting $\eta, \epsilon$ denote the unit and counit for the 
 $(\alpha_{!},\alpha^{\**})$ adjunction, 
 (\ref{MONADFUNCTORALPHA EQ})
 is then the composite
 \[
-	T^{\times A} \xrightarrow{\eta} 
-	T^{\times A} \alpha^{\**} \alpha_{!} \simeq
-	\alpha^{\**} T^{\times \alpha(A)}\alpha_{!}.
+	T^{\times \alpha^{-1} (K)} \xrightarrow{\eta} 
+	T^{\times \alpha^{-1} (K)} \alpha^{\**} \alpha_{!} \simeq
+	\alpha^{\**} T^{\times K}\alpha_{!}.
 \]
-That this is a monad map is the condition that multiplication and unit diagrams below commute.
+That this is a monad map is the condition that the following multiplication and unit diagrams commute.
 \[
 \begin{tikzcd}
-	T^{\times A} \circ T^{\times A} \ar{d} \ar{r} &
-	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \circ 
-	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \ar{d} &
+	T^{\times \alpha^{-1} (K)} \circ T^{\times \alpha^{-1} (K)} \ar{d} \ar{r} &
+	\alpha^{\**} T^{\times K} \alpha_{!} \circ 
+	\alpha^{\**} T^{\times K} \alpha_{!} \ar{d} &
 	I^{\times n} \ar{d} \ar{rd}& 	
 \\
-	T^{\times A} \ar{r} &
-	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} &
-	T^{\times A} \ar{r} &
-	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!}
+	T^{\times \alpha^{-1} (K)} \ar{r} &
+	\alpha^{\**} T^{\times K} \alpha_{!} &
+	T^{\times \alpha^{-1} (K)} \ar{r} &
+	\alpha^{\**} T^{\times K} \alpha_{!}
 \end{tikzcd}
 \]
 We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since the precomposition
@@ -2445,71 +2446,99 @@ $(\minus) \circ \alpha_{!}$
 this follows from the following diagram.
 \[
 \begin{tikzcd}
-	T^{\times A}  T^{\times A}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
-	T^{\times A}  \alpha^{*}  T^{\times \alpha(A)} \ar{r}{\eta}
+	T^{\times \alpha^{-1} (K)}  T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
+	T^{\times \alpha^{-1} (K)}  \alpha^{*}  T^{\times K} \ar{r}{\eta}
 	\ar[equal]{rd} &
-	T^{\times A} \alpha^{\**} \alpha_{!} \alpha^{*} T^{\times \alpha(A)} \ar{d}{\epsilon} \ar{r}{\simeq}&
-	\alpha^{\**} T^{\times \alpha(A)} \alpha_{!} \alpha^{\**}  T^{\times \alpha(A)} \ar{d}{\epsilon}
+	T^{\times \alpha^{-1} (K)} \alpha^{\**} \alpha_{!} \alpha^{*} T^{\times K} \ar{d}{\epsilon} \ar{r}{\simeq}&
+	\alpha^{\**} T^{\times K} \alpha_{!} \alpha^{\**}  T^{\times K} \ar{d}{\epsilon}
 \\
 	& &
-	T^{\times A}  \alpha^{*}  T^{\times \alpha(A)} \ar{r}{\simeq} &
-	\alpha^{*}  T^{\times \alpha(A)}  T^{\times \alpha(A)} \ar{d}
+	T^{\times \alpha^{-1} (K)}  \alpha^{*}  T^{\times K} \ar{r}{\simeq} &
+	\alpha^{*}  T^{\times K}  T^{\times K} \ar{d}
 \\
-	T^{\times A}  \alpha^{*} \ar{rrr}{\simeq} &&&
-	\alpha^{*} T^{\times \alpha(A)}
+	T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{rrr}{\simeq} &&&
+	\alpha^{*} T^{\times K}
 \end{tikzcd}
 \]
 \end{proof}
 
 
 \begin{remark}
-	Since $T^{\times B} \circ \alpha_{!}$ is a right 
-	$\alpha^{\**} T^{\times B}\alpha_{!}$-module,
+	Since $T^{\times K} \alpha_{!}$ is a right 
+	$\alpha^{\**} T^{\times K}\alpha_{!}$-module,
 	Proposition \ref{MONADICFUN PROP} implies that it is also a 
-	right $T^{\times \alpha^{-1}(B)}$-module or, moreover, a 
-	$T^{\times A}$-module whenever $\alpha(A) \subset B$.
+	right $T^{\times \alpha^{-1}(K)}$-module or, moreover, a 
+	right $T^{\times J}$-module whenever $\alpha(J) \subset K$.
 \end{remark}
+
+
+\begin{remark}
+Combining the precomposition and postcomposition adjunctions,
+the identification 
+$T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$
+is then adjoint to a functor
+$	\alpha_{!} T^{\times \alpha^{-1} (K)} 
+	\to
+	T^{\times K} \alpha_{!}$
+which is readily checked to be a map of right $T^{\times \alpha^{-1} (K)}$-modules.
+
+More generally, for $\alpha(J) \subset K$, the composite 
+$T^{\times J}\alpha^{\**} \to T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$ is thus adjoint to a map of right $T^{\times J}$-modules
+\begin{equation}\label{RIGHTMODULETMAP EQ}
+	\alpha_{!} T^{\times J} \to T^{\times K} \alpha_{!}.
+\end{equation}
+We now unpack the content of (\ref{RIGHTMODULETMAP EQ}) when 
+$\alpha \colon \underline{n} \to \**$ is the unique map to the simpleton $\** = \underline{1}$. In this case we can instead write $\alpha_{!} = \coprod$, $\alpha^{\**}=\Delta$,
+and we thus have commutative diagrams
+\begin{equation}\label{RIGHTMODULETMAPAUX EQ}
+\begin{tikzcd}
+	\coprod_{J} TT A_j \amalg \coprod_{\underline{n}-J} A_j
+	\ar{r} \ar{d} &
+	T\left( \coprod_{J} T A_j \amalg \coprod_{\underline{n}-J} A_j \right) \ar{d}
+\\
+	\coprod_{J} T A_j \amalg \coprod_{\underline{n}-J} A_j
+	\ar{r} &
+		T\left( \coprod_{J} A_j \amalg \coprod_{\underline{n}-J} A_j \right)
+\end{tikzcd}
+\end{equation}
+where the vertical maps
+come from the right $T^{\times J}$-module structure.
+Writing $\amalg^a$ for the coproduct of $T$-algebras and recalling the canonical identifications 
+$\coprod^a_K (T A_k) \simeq T\left( \coprod_K A_k \right)$, 
+(\ref{RIGHTMODULETMAPAUX EQ}) in fact shows that the 
+right $T^{\times J}$-module structure on $T \circ \coprod$
+in fact codifies the multiplication maps
+\[
+\coprod^a_J TT A_j \amalg^a \coprod^a_{\underline{n}-J} T A_j
+	\to
+\coprod^a_J T A_j \amalg^a \coprod^a_{\underline{n}-J} T A_j.
+\] 
+\end{remark}
+
+
+\subsection{Mixed strings}
+
 
 {\color{red} HERE}
 
-\begin{proposition}
-	The right module action natural transformation
+kk
+
+
 \[
-\begin{tikzcd}[row sep = 0.5em]
-	T \circ \amalg \circ T^{\times 2} \ar{r} & T \circ \amalg
+\begin{tikzcd}
+	\Omega_{1,0}^{(A \amalg B, A \amalg B)} &&
+	\Fin \wr \left( \Omega^{(A \amalg B)} \amalg \Omega^{(A \amalg B)} \right) \ar{rd} \ar{dd}
 \\
-	T(T X_1 \amalg T X_2) \ar{r} & T(X_1 \amalg X_2)
+	&\Omega_{1,1}^{(A \amalg B)}&
+	& \Fin \wr \Omega^{(A \amalg B)} \ar{dd}
+\\
+	\Omega_{1,0} \ar{rr} \ar{rd} &&
+	\Fin (\Omega \amalg \Omega) \ar{rd}
+\\
+	& \Omega_{1,1} \ar{rr} &
+	& \Fin \wr \Omega
 \end{tikzcd}
 \]
-encodes the multiplication map
-\[
-	T T X_1 \amalg_a T T X_2 \to T X_1 \amalg_a T X_2.
-\]
-\end{proposition}
-
-\begin{proof}
-	It suffices to check that the diagrams on the leftmost diagrams below commute for each $k$ or, equivalently, that the central diagram commutes. By adjunction, this is equivalent to the commutativity of the rightmost diagram, and thus follows directly from Proposition \ref{MONADICFUN PROP}.
-\[
-\begin{tikzcd}[row sep=1em]
-	TT X_k \ar{r} \ar{d} & 
-	T(T X_1 \amalg T X_2) \ar{d} &
-	\amalg \circ T^{\times 2} \circ T^{\times 2} \ar{r} \ar{d} &
-	T \circ \amalg \circ T^{\times 2} \ar{d} &
-	T^{\times 2} \circ T^{\times 2} \ar{r} \ar{d} &
-	\Delta \circ T \circ \amalg \circ T^{\times 2} \ar{d} 
-\\
-	T X_k \ar{r} & 
-	T(X_1 \amalg X_2) &
-	\amalg \circ T^{\times 2} \ar{r} &
-	T \circ \amalg &
-	T^{\times 2} \ar{r} &
-	\Delta \circ T \circ \amalg 
-\end{tikzcd}
-\]
-\end{proof}
-
-
-
 
 
 %\section{Appendix}
