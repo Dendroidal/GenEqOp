@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  15 APR 2017 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  16 APR 2017 18:34
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1007,37 +1007,90 @@ Overfull \hbox (5.49458pt too wide) detected at line 1257
  []
 
 [10] [11] [12] [13] [14] [15] [16] [17]
-Overfull \hbox (79.68538pt too wide) detected at line 2202
+Overfull \hbox (79.68538pt too wide) detected at line 2200
 []
  []
 
 [18] [19] [20]
-Overfull \hbox (26.14528pt too wide) detected at line 2462
+Overfull \hbox (26.14528pt too wide) detected at line 2460
 []
  []
 
-[21] (GenEqOp.bbl
+[21]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 2526--2527
+[]\OT1/cmr/bx/n/9 Definition 4.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
+r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
+ (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
+mr/m/it/9 -tree\OT1/cmr/m/n/9 ) $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree is a pa
+ir $\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/
+m/it/9 T\OMX/MnSymbolE/m/n/9  \U/MnSymbolA/m/n/9  
+ []
+
+
+LaTeX Warning: Reference `TALPHAKMOD REM' on page 22 undefined on input line 26
+21.
+
+[22]
+
+LaTeX Warning: Reference `NSTRINGLAB EQ' on page 23 undefined on input line 263
+2.
+
+
+LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 23 undefined on input line
+ 2632.
+
+
+LaTeX Warning: Reference `NKNFGT EQ' on page 23 undefined on input line 2670.
+
+
+LaTeX Warning: Reference `LABELEDTREES EX' on page 23 undefined on input line 2
+672.
+
+
+LaTeX Warning: Reference `INDVNG NOT' on page 23 undefined on input line 2679.
+
+
+LaTeX Warning: Reference `NSTRINGLAB EQ' on page 23 undefined on input line 270
+8.
+
+
+LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 23 undefined on input line
+ 2716.
+
+
+LaTeX Warning: Reference `ALLSQUARES EQ' on page 23 undefined on input line 272
+1.
+
+[23]
+
+LaTeX Warning: Reference `LTUPLEAPULL EQ' on page 24 undefined on input line 27
+38.
+
+(GenEqOp.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 10--14
 []\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
 :
  []
 
-
+[24]
 Underfull \hbox (badness 2035) in paragraph at lines 16--19
 []\OT1/cmr/m/n/9 I. Weiss.  Broad posets, trees, and the den-droidal cat-e-gory
 .  Avail-able at:
  []
 
-) [22] (GenEqOp.aux)
+) [25] (GenEqOp.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 25571 strings out of 493334
- 506823 string characters out of 3130222
- 584759 words of memory out of 3000000
- 28592 multiletter control sequences out of 15000+200000
+ 26042 strings out of 493334
+ 518795 string characters out of 3130222
+ 585432 words of memory out of 3000000
+ 29063 multiletter control sequences out of 15000+200000
  30250 words of font info for 114 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,19n,84p,3270b,2082s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1080,9 +1133,9 @@ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GenEqOp.pdf (22 pages, 443973 bytes).
+Output written on GenEqOp.pdf (25 pages, 464420 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
+ 349 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
