@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {4.1}Extensions over general monads}{21}
 \contentsline {subsection}{\numberline {4.2}Labeled planar strings}{22}
 \contentsline {subsection}{\numberline {4.3}Bar constructions on spans}{24}
-\contentsline {section}{\numberline {5}Filtration of Cellular Extensions}{26}
-\contentsline {subsection}{\numberline {5.1}Filtration Pieces}{26}
-\contentsline {subsection}{\numberline {5.2}Notation}{30}
-\contentsline {subsection}{\numberline {5.3}Filtration Result}{31}
+\contentsline {section}{\numberline {5}Filtration of Cellular Extensions}{27}
+\contentsline {subsection}{\numberline {5.1}Filtration Pieces}{27}
+\contentsline {subsection}{\numberline {5.2}Notation}{31}
+\contentsline {subsection}{\numberline {5.3}Filtration Result}{32}
