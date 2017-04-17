@@ -2756,9 +2756,16 @@ This last claim is simply a variation of Proposition \ref{SUBSASPULL PROP}, and 
 
 \subsection{Bar constructions on spans}
 
-kk
+We use the results in the previous sections to obtain a string description of the bar constructions
+\[
+\coprod_J^a N^{\bullet +1} A_j \amalg^a
+\coprod_{\underline{l}-J}^a N A_j.
+\]
 
-
+For simplicity, we discuss first the particular case 
+$\coprod^a N^{\bullet +1} A$. Writing the span as 
+$\Sigma_G \leftarrow A \xrightarrow{F} \mathcal{V}$
+there are
 {\color{red} HERE}
 
 
@@ -2767,11 +2774,84 @@ kk
 
 
 
+\begin{equation}
+	\begin{tikzcd}[column sep=3.7em]
+	\Omega_{G,n}^{(A)} \ar{d}[swap]{d_i^{(A)}} \ar{r}{V_G^{\circ n}} &
+	|[alias=dog2]|
+	\Fin^{\wr n} \wr A \ar{r}{\Fin^{\wr n}\wr F} \ar{d}{\sigma^i}&
+	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar{d}{\sigma^i} &
+	|[alias=dog3]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=cat2]|
+	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n-1}} &
+	\Fin^{\wr n-1} \wr A \ar{r} &
+	|[alias=cat3]|
+	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
+	|[alias=dog]|
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(A)}"]
+	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
+	\end{tikzcd}
+\end{equation}
+
+\begin{equation}
+	\begin{tikzcd}[column sep=3.7em]
+	\Omega_{G,n}^{(A)} \ar{d} \ar{r}{V_G^{\circ n}} &
+	\Fin^{\wr n-1} \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin^{\wr n-1}\wr F_1} \ar{d}&
+	|[alias=dog2]|
+	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n-1}}  \ar[equal]{d} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n-1}} &
+	|[alias=cat3]|
+	\Fin^{\wr n-1} \wr A \ar{r}[swap]{\Fin^{\wr n-1} \wr F} &
+	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
+	|[alias=dog]|
+	\mathcal{V}^{op}
+	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"m"]
+	\end{tikzcd}
+\end{equation}
+
+{\color{red} HERE}
 
 
 
 
 
+\begin{equation}\label{ASSOCSPAN1 EQ}
+	\begin{tikzcd}[column sep=0.5em]
+	\Omega_{G,n}^{(\underline{A})}  \ar{d} \ar{r} &
+	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{d} \ar{rr} &&
+	\Fin \wr \coprod \Fin^{\wr n-1} A_j \ar{d} \ar{r}&
+	\Fin \wr \coprod \Fin^{\wr n-1} \mathcal{V}^{op} \ar{d}\ar{rr} & &
+	|[alias=cat3]|
+	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,n,1}^{(\underline{A})} \ar{r} \ar{d} &
+	|[alias=cat2]|
+	\Fin \wr \Omega_{G,n-1}^{(\underline{A})} \ar{r} &
+	|[alias=FFOmega]| \Fin^{\wr 2} \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \coprod \Fin^{\wr n-2} A_j \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \coprod \Fin^{\wr n-2} \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r}&
+	|[alias=dog3]|
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=Omega]|\Omega_{G,n-1}^{(\underline{A})} \ar{rr} &&
+	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r} &
+	\Fin \wr \coprod \Fin^{\wr n-2} A_j \ar{r} &
+	\Fin \wr \coprod \Fin^{\wr n-2} \mathcal{V}^{op} \ar{r}&
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi"]
+	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha"]
+	\end{tikzcd}
+\end{equation}
 
 
 
@@ -2804,6 +2884,11 @@ kk
 	\Fin \wr \Omega_1^{(A \amalg B)} 
 \end{tikzcd}
 \]
+
+
+\newpage
+
+
 
 \section{Filtration of Cellular Extensions}
 
