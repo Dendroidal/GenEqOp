@@ -2765,8 +2765,106 @@ We use the results in the previous sections to obtain a string description of th
 For simplicity, we discuss first the particular case 
 $\coprod^a N^{\bullet +1} A$. Writing the span as 
 $\Sigma_G \leftarrow A \xrightarrow{F} \mathcal{V}$
-there are
+the identifications 
+$\Omega_{G,0}^{\left( \Omega_{G,n}^{(A)} \right)} \simeq \Omega_{G,n+1}^{(A)}$
+iteratively identify the operator in the bar construction
+$N^{\bullet+1} A$ as follows.
+
+The top differentials $d_n$ have natural transformation given by
+\begin{equation}
+	\begin{tikzcd}[column sep=3.7em]
+	\Omega_{G,n}^{(A)} \ar{d} \ar{r}{V_G^{\circ n}} &
+	\Fin^{\wr n} \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin^{\wr n}\wr F_1} \ar{d}&
+	|[alias=dog2]|
+	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar[equal]{d} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n}} &
+	|[alias=cat3]|
+	\Fin^{\wr n} \wr A \ar{r}[swap]{\Fin^{\wr n} \wr F} &
+	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n}} &
+	|[alias=dog]|
+	\mathcal{V}^{op}
+	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\Fin^{\wr n} \wr m"]
+	\end{tikzcd}
+\end{equation}
+where $m$ is the natural transformation component of the multiplication $NA \to A$, and the remaining differentials
+$d_i$ for $0 \leq i \leq n$ are given by
+\begin{equation}
+	\begin{tikzcd}[column sep=3.7em]
+	\Omega_{G,n}^{(A)} \ar{d}[swap]{d_i^{(A)}} \ar{r}{V_G^{\circ n + 1}} &
+	|[alias=dog2]|
+	\Fin^{\wr n+1} \wr A \ar{r}{F} \ar{d}{\sigma^i}&
+	\Fin^{\wr n+1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n+1}}  \ar{d}{\sigma^i} &
+	|[alias=dog3]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=cat2]|
+	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n}} &
+	\Fin^{\wr n} \wr A \ar{r}[swap]{F} &
+	|[alias=cat3]|
+	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n}} &
+	|[alias=dog]|
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(A)}"]
+	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
+	\end{tikzcd}
+\end{equation}
+where $\pi_i^{(A)}$ interchanges lexicographic orders and $\alpha_i$ is the natural associativity isomorphism.
+
+{\color{blue} Maybe add degeneracies}
+
+
 {\color{red} HERE}
+
+\begin{equation}
+	\begin{tikzcd}[column sep=2em]
+	\Omega_{G,n}^{(\underline{A})} \ar{d} \ar{r}{V_G} &
+	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{r}{V_G^{\circ n-1}}&
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr \Omega_{G,0}^{(A)} \ar{r}{F_1} \ar{d}&
+	|[alias=dog2]|
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n-1}}  \ar[equal]{d} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi} &
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	\Omega_{G,n-1}^{(\underline{A})} \ar{r}[swap]{V_G} &
+	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r}[swap]{V_G^{\circ n-1}}&
+	|[alias=cat3]|
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr A \ar{r}[swap]{F} &
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi} &
+	|[alias=dog]|
+	\mathcal{V}^{op}
+	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"m"]
+	\end{tikzcd}
+\end{equation}
+
+
+{\color{red} HERE}
+
+\begin{equation}
+	\begin{tikzcd}[column sep=2em,row sep=3em]
+	\Omega_{G,n}^{(\underline{A})} \ar{d} \ar{r}{V_G} &
+	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{r}{V_G^{\circ n}} &
+	|[alias=dog2]|
+	\Fin \wr \coprod \Fin^{\wr n} \wr A \ar{r}{F} \ar{d}{\sigma^1}&
+	\Fin \wr \coprod \Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar{d}{\sigma^i} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi} &
+	|[alias=dog3]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	|[alias=cat3]|
+	\Omega_{G,n-1}^{(\underline{A})} \ar{r}[swap]{V_G} &
+	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r}[swap]{V_G^{\circ n-1}}&
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr A \ar{r}[swap]{F} &
+	|[alias=cat2]|
+	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi} &
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(\underline{A})}"]
+	\arrow[Leftrightarrow, from=dog3, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
+	\end{tikzcd}
+\end{equation}
 
 
 {\color{green} HERE}
@@ -2774,44 +2872,9 @@ there are
 
 
 
-\begin{equation}
-	\begin{tikzcd}[column sep=3.7em]
-	\Omega_{G,n}^{(A)} \ar{d}[swap]{d_i^{(A)}} \ar{r}{V_G^{\circ n}} &
-	|[alias=dog2]|
-	\Fin^{\wr n} \wr A \ar{r}{\Fin^{\wr n}\wr F} \ar{d}{\sigma^i}&
-	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar{d}{\sigma^i} &
-	|[alias=dog3]|
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	|[alias=cat2]|
-	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n-1}} &
-	\Fin^{\wr n-1} \wr A \ar{r} &
-	|[alias=cat3]|
-	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
-	|[alias=dog]|
-	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(A)}"]
-	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
-	\end{tikzcd}
-\end{equation}
 
-\begin{equation}
-	\begin{tikzcd}[column sep=3.7em]
-	\Omega_{G,n}^{(A)} \ar{d} \ar{r}{V_G^{\circ n}} &
-	\Fin^{\wr n-1} \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin^{\wr n-1}\wr F_1} \ar{d}&
-	|[alias=dog2]|
-	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n-1}}  \ar[equal]{d} &
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n-1}} &
-	|[alias=cat3]|
-	\Fin^{\wr n-1} \wr A \ar{r}[swap]{\Fin^{\wr n-1} \wr F} &
-	\Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
-	|[alias=dog]|
-	\mathcal{V}^{op}
-	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"m"]
-	\end{tikzcd}
-\end{equation}
+
+
 
 {\color{red} HERE}
 
