@@ -11,8 +11,9 @@
 \contentsline {subsection}{\numberline {3.5}The free genuine operad monad}{18}
 \contentsline {section}{\numberline {4}Free extensions}{21}
 \contentsline {subsection}{\numberline {4.1}Extensions over general monads}{21}
-\contentsline {subsection}{\numberline {4.2}Mixed strings}{22}
-\contentsline {section}{\numberline {5}Filtration of Cellular Extensions}{22}
-\contentsline {subsection}{\numberline {5.1}Filtration Pieces}{23}
-\contentsline {subsection}{\numberline {5.2}Notation}{27}
-\contentsline {subsection}{\numberline {5.3}Filtration Result}{27}
+\contentsline {subsection}{\numberline {4.2}Labeled planar strings}{22}
+\contentsline {subsection}{\numberline {4.3}Bar constructions on spans}{24}
+\contentsline {section}{\numberline {5}Filtration of Cellular Extensions}{27}
+\contentsline {subsection}{\numberline {5.1}Filtration Pieces}{27}
+\contentsline {subsection}{\numberline {5.2}Notation}{31}
+\contentsline {subsection}{\numberline {5.3}Filtration Result}{32}
