@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  17 APR 2017 14:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  17 APR 2017 16:47
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1044,43 +1044,29 @@ Overfull \hbox (49.15059pt too wide) detected at line 2905
 []
  []
 
-[25]
+[25] [26] [27] [28] [29] [30]
 
-LaTeX Warning: Reference `TWISTEDARROW EQ' on page 26 undefined on input line 2
-996.
-
-
-Overfull \hbox (24.15404pt too wide) in paragraph at lines 2994--3000
-\OT1/cmr/m/n/9 the $[]\OMX/MnSymbolE/m/n/9 ˆ\OMS/MnSymbolS/m/n/9 S\OML/cmm/m/it
-/9 ; \OMS/MnSymbolS/m/n/9 C\OMX/MnSymbolE/m/n/9 $ \OT1/cmr/m/n/9 cat-e-gories 
-in-tro-duced in ([][]). Note that there is a for-get-ful func-tor $[]\U/MnSymbo
-lC/m/n/9  []\OMX/MnSymbolE/m/n/9 ˆ\OMS/MnSymbolS/m/n/9 S\OML/cmm/m/it/9 ; \OMS
-/MnSymbolS/m/n/9 C\OMX/MnSymbolE/m/n/9  \U/MnSymbolA/m/n/9  
- []
-
-[26] [27] [28] [29]
-
-LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 30 undefined on input lin
-e 3532.
+LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 31 undefined on input lin
+e 3584.
 
 
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3532.
+LaTeX Warning: Reference `FMULT EQ' on page 31 undefined on input line 3584.
 
 
-LaTeX Warning: Reference `FID EQ' on page 30 undefined on input line 3533.
+LaTeX Warning: Reference `FID EQ' on page 31 undefined on input line 3585.
 
 
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3533.
+LaTeX Warning: Reference `FMULT EQ' on page 31 undefined on input line 3585.
 
 
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3534.
+LaTeX Warning: Reference `FMULT EQ' on page 31 undefined on input line 3586.
 
 
-LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 30 undefined on input lin
-e 3536.
+LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 31 undefined on input lin
+e 3588.
 
-[30] [31]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 3609--3611
+[31]
+Overfull \hbox (4.37666pt too wide) in paragraph at lines 3661--3663
 []\OT1/cmr/bx/n/9 Definition 5.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
 9 ˆ\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
 n/9 $\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
@@ -1090,12 +1076,12 @@ t/9 Y\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -alternating
  []
 
 [32]
-Overfull \hbox (13.09369pt too wide) detected at line 3759
+Overfull \hbox (13.09369pt too wide) detected at line 3811
 []
  []
 
 [33] [34] [35] [36]
-Overfull \hbox (23.33171pt too wide) detected at line 4015
+Overfull \hbox (23.33171pt too wide) detected at line 4067
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
@@ -1123,10 +1109,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28290 strings out of 493334
- 577794 string characters out of 3130222
- 644757 words of memory out of 3000000
- 31308 multiletter control sequences out of 15000+200000
+ 28293 strings out of 493334
+ 577840 string characters out of 3130222
+ 645235 words of memory out of 3000000
+ 31311 multiletter control sequences out of 15000+200000
  31206 words of font info for 118 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,19n,84p,3270b,2240s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1174,7 +1160,7 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (38 pages, 609161 bytes).
+Output written on GenEqOp.pdf (38 pages, 611297 bytes).
 PDF statistics:
  451 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
