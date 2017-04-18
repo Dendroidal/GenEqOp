@@ -39,6 +39,102 @@ No content yet.
 
 
 
+\section{Basic definitions}
+
+In this section we recall some definitions that will be used throughout.
+
+
+
+Recall that for a diagram category $\mathcal{D}$ and functor $\mathcal{I}_{\bullet}$
+\begin{equation}
+\begin{tikzcd}[row sep = 0.2em]
+	\mathcal{D} \ar{r}{\mathcal{I}_{\bullet}} & \mathsf{Cat} \\
+	d \ar[mapsto]{r} & \mathcal{I}_d
+\end{tikzcd}
+\end{equation}
+the (covariant) Grothendieck construction 
+$\mathcal{D} \ltimes \mathcal{I}_{\bullet}$
+has objects pairs $(d,i)$ with $d \in \mathcal{D}$,
+ $i \in \mathcal{I}_d$ and 
+arrows $(d,i) \to (d',i')$ given by pairs
+\[(f\colon d \to d', g \colon f_{\**}(i) \to i'),\]
+where $f_{\**}\colon \mathcal{I}_d \to \mathcal{I}_{d'}$ is a shorthand for the functor $\mathcal{I}_{\bullet}(f)$.
+
+
+We now discuss a basic property of over and under categories that will be used in \S \ref{TRANSFSIMP SEC}.
+
+
+Given $\mathcal{J},\C \in \mathsf{Cat}$ and $j \in \mathcal{J}$ we will let $\C^{ \downarrow j}$ denote the Grothendieck construction for the functor
+\[
+\begin{tikzcd}[row sep = 0.25em]
+	\mathcal{J} \ar{r} & \mathsf{Cat} \\
+	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}
+\end{tikzcd}
+\]
+Explicitly, an object of $\C^{\downarrow j}$ is a pair
+$\left(i,\mathcal{J}(i,j)\xrightarrow{\varphi} \C\right)$
+and an arrow 
+$(i,\varphi) \to (i',\varphi')$
+is a pair
+$(I \colon i \to i', 
+\gamma \colon \varphi\circ I^{\**} \to \varphi')$.
+
+	
+
+\begin{lemma}\label{UNDERLEFTADJ LEM}
+Let $\mathcal{J} \in \mathsf{Cat}$ be a small category and 
+$j \in \mathcal{J}$. One then has adjunctions
+\[
+	(\minus \downarrow j) 
+		\colon
+	\mathsf{Cat}_{/\mathcal{J}}
+		\rightleftarrows
+	\mathsf{Cat}
+		\colon
+	(\minus)^{\downarrow j},
+\qquad
+	(j \downarrow \minus) 
+		\colon
+	\mathsf{Cat}_{/\mathcal{J}}
+		\rightleftarrows
+	\mathsf{Cat}
+		\colon
+	(\minus)^{j \downarrow}.
+\]
+\end{lemma}
+
+\begin{proof}
+Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
+
+	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
+	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
+correspond to functors
+	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
+	
+	On objects, $F$ associates to each pair 
+	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
+
+	On arrows $F$ associates to 
+	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
+	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
+	One thus defines
+\[
+	G(I) = \left(
+	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
+	F\left(i,(\minus)\circ \pi(i)\right)
+		\xrightarrow{F(I)}
+	F\left(i',\minus \right)
+	\right)
+\]
+and again it is clear that these are inverse processes.
+	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
+\end{proof}
+
+
+
+
+
+
 
 \section{Planar and tall maps}
 
@@ -2966,7 +3062,7 @@ depicted below.
 \end{equation}
 
 
-\subsection{Transferring simplicial colimits of left Kan extensions}
+\subsection{Transferring simplicial colimits of left Kan extensions} \label{TRANSFSIMP SEC}
 
 
 Given genuine equivariant operads 
@@ -3023,22 +3119,6 @@ We note that $\Omega_{G,\bullet}^{\underline{2}}$ together with the correspondin
 can be viewed as a simplicial object 
 $\Delta^{op} \to \mathsf{WSpan}^l(\Sigma,G^{op},\mathcal{V})$,
 and our first task will be to repackage such functors in terms of Grothendieck constructions.
-
-
-Recall that for a diagram category $\mathcal{D}$ and functor $\mathcal{I}_{\bullet}$
-\begin{equation}
-\begin{tikzcd}[row sep = 0.2em]
-	\mathcal{D} \ar{r}{\mathcal{I}_{\bullet}} & \mathsf{Cat} \\
-	d \ar[mapsto]{r} & \mathcal{I}_d
-\end{tikzcd}
-\end{equation}
-the (covariant) Grothendieck construction 
-$\mathcal{D} \ltimes \mathcal{I}_{\bullet}$
-has objects pairs $(d,i)$ with $d \in \mathcal{D}$,
- $i \in \mathcal{I}_d$ and 
-arrows $(d,i) \to (d',i')$ given by pairs
-\[(f\colon d \to d', g \colon f_{\**}(i) \to i'),\]
-where $f_{\**}\colon \mathcal{I}_d \to \mathcal{I}_{d'}$ is a shorthand for the functor $\mathcal{I}_{\bullet}(f)$.
 
 
 \begin{lemma}\label{SIMPSPANREIN LEMMA}
@@ -3211,12 +3291,19 @@ and
 \end{inparaenum}
 \end{remark}
 
-{\color{red} HERE}
 
 \begin{example}
 For $\Omega_{G,\bullet}^q$ the simplicial object of planar strings one has $|\Omega_{G,\bullet}| = \Omega_G^t$, the category of $G$-trees and tall maps. Indeed, arrows of $\Omega_{G,0}$ and objects of $\Omega_{G,1}$ are naturally identified with the quotient arrows and planar tall arrows of $\Omega_G^t$, which are a generating set of arrows.
+And likewise, relations in $\Omega_{G,0}$, 
+arrows in $\Omega_{G,1}$ and 
+objects in $\Omega_{G,2}$ are identified with the relations of $\Omega_G^t$.
+
+Analogously, for $\Omega_{G,\bullet}^J$ the simplicial object of planar $\underline{l}$-labeled strings that are 
+$(\{l\}-J)$-inert, one has $|\Omega_{G,\bullet}^J| = \Omega_G^{J,t}$,
+the category of $\underline{l}$-labeled $G$-trees and $(\{l\}-J)$-inert tall maps.
 \end{example}
 
+The following is the key result in this section.
 
 \begin{proposition}\label{SOURCEFINAL PROP}
 	Let $\mcI_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$.
@@ -3308,86 +3395,17 @@ If $n=0$, one can apply the induction hypothesis by lifting $f_r$ to $\Delta^{op
 \end{inparaenum}
 \end{proof}
 
-In practice, we will need to know that $s$ satisfies a stronger  finality condition with respect to left Kan extensions, stated as Corollary \ref{SOURCELANFINAL COR}. The necessary lemma follows.
 
+In practice, we will need to know that $s$ satisfies the following stronger finality condition with respect to left Kan extensions.
 
-
-Given $\mathcal{J},\C \in \mathsf{Cat}$ and $j \in \mathcal{J}$ we will let $\C^{ \downarrow j}$ denote the Grothendieck construction for the functor
-\[
-\begin{tikzcd}[row sep = 0.25em]
-	\mathcal{J} \ar{r} & \mathsf{Cat} \\
-	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}
-\end{tikzcd}
-\]
-Explicitly, an object of $\C^{\downarrow j}$ is a pair
-$\left(i,\mathcal{J}(i,j)\xrightarrow{\varphi} \C\right)$
-and an arrow 
-$(i,\varphi) \to (i',\varphi')$
-is a pair
-$(I \colon i \to i', 
-\gamma \colon \varphi\circ I^{\**} \to \varphi')$.
-
-	
-
-\begin{lemma}\label{UNDERLEFTADJ LEM}
-Let $\mathcal{J} \in \mathsf{Cat}$ be a small category and 
-$j \in \mathcal{J}$. One then has adjunctions
-\[
-	(\minus \downarrow j) 
-		\colon
-	\mathsf{Cat}_{/\mathcal{J}}
-		\rightleftarrows
-	\mathsf{Cat}
-		\colon
-	(\minus)^{\downarrow j},
-\qquad
-	(j \downarrow \minus) 
-		\colon
-	\mathsf{Cat}_{/\mathcal{J}}
-		\rightleftarrows
-	\mathsf{Cat}
-		\colon
-	(\minus)^{j \downarrow}.
-\]
-\end{lemma}
-
-\begin{proof}
-Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
-
-	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
-	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
-correspond to functors
-	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
-	
-	On objects, $F$ associates to each pair 
-	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
-
-	On arrows $F$ associates to 
-	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
-	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
-	One thus defines
-\[
-	G(I) = \left(
-	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
-	F\left(i,(\minus)\circ \pi(i)\right)
-		\xrightarrow{F(I)}
-	F\left(i',\minus \right)
-	\right)
-\]
-and again it is clear that these are inverse processes.
-	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
-\end{proof}
-
-
-In the following statement note that when 
-$\mathcal{J}=\mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
-is a constant simplicial object one has a canonical identification between
-$\Delta^{op}\ltimes \mathcal{J}_{\bullet}
-\xrightarrow{s}
-|\mathcal{J}_{\bullet}|$
-and the projection
-$ \Delta^{op}\times \mathcal{J} \to \mathcal{J}$.
-
+%In the following statement note that when 
+%$\mathcal{J}=\mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
+%is a constant simplicial object one has a canonical identification between
+%$\Delta^{op}\ltimes \mathcal{J}_{\bullet}
+%\xrightarrow{s}
+%|\mathcal{J}_{\bullet}|$
+%and the projection
+%$ \Delta^{op}\times \mathcal{J} \to \mathcal{J}$.
 
 \begin{corollary}\label{SOURCELANFINAL COR}
 	Consider a map
@@ -3409,6 +3427,44 @@ $s \downarrow j\colon (\Delta^{op} \ltimes \mcI_{\bullet})\downarrow j \to |\mcI
 It is clear that $(\Delta^{op} \ltimes \mcI_{\bullet})\downarrow j \simeq \Delta^{op} \ltimes ( \mcI_{\bullet}\downarrow j)$
 while Lemma \ref{UNDERLEFTADJ LEM}
 guarantees that, since $(\minus) \downarrow j$ is a left adjoint, $|\mcI_{\bullet}|\downarrow j \simeq |\mcI_{\bullet}\downarrow j |$. One thus reduces to Proposition \ref{SOURCEFINAL PROP}.
+\end{proof}
+
+
+We end this section with two basic lemmas that will allows us to apply Corollary \ref{SOURCELANFINAL COR}
+to the tree categories we will be interested in.
+
+\begin{lemma}
+	Let $\mcI_{\bullet}^F \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ be such that the diagrams
+	\begin{equation}\label{IDENTSIMPRELSISO EQ}
+	\begin{tikzcd}[row sep=0.4em,column sep = 3.5em]
+		\mathcal{I}_n
+		\ar{dr}[name=F1]{F_n} \ar{dd}[swap]{d_i} & &
+		\mathcal{I}_n
+		\ar{dr}[name=F2]{F_n} \ar{dd}[swap]{s_j} & &
+	\\
+ & \C & & \C &
+	\\
+|[alias=G2]| \mathcal{I}_{n-1}  \ar{ur}[swap]{F_{n-1}} & & 
+|[alias=G3]| \mathcal{I}_{n+1}  \ar{ur}[swap]{F_{n+1}} & &
+		\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\delta_{i}"]
+		\arrow[Leftrightarrow, from=F2, to=G3,shorten >=0.25cm,shorten <=0.25cm,"\sigma_{j}"]
+	\end{tikzcd}
+\end{equation}
+commute up to isomorphism for $0 < i \leq n$, $0 \leq j \leq n$.
+
+Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
+\[
+\mcI_n \xrightarrow{d_{1,\cdots,n}} 
+\mcI_0 \xrightarrow{F_0}
+\C
+\]
+assemble to an object 
+$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams (\ref{IDENTSIMPRELSISO EQ}) for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
+\end{lemma}
+
+
+\begin{proof}
+This follows by a straightforward verification.
 \end{proof}
 
 
@@ -3459,7 +3515,6 @@ F_{n-k} d_{0,\cdots,k-1}
 F_{n-k-1} d_{0,\cdots,k}.
 \end{equation}
 The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal map in (\ref{SOURCEFACT EQ}) is straightforward, hence the real task is to prove that (\ref{EQUIVALENCEDEF EQ}) indeed defines a map of simplicial objects.
-
 \begin{equation}
 	\varphi_{n-1}d_i = \varphi_n,\phantom{1}1<i
 		\qquad
@@ -3469,7 +3524,6 @@ The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal m
 		\qquad
 	\varphi_{n+1} s_{0} =id_{F_{n}}
 \end{equation}
-
 Next, note that there is no ambiguity in writing simply 
 $\varphi_{n-k} d_{0,\cdots,k-1}$
 to denote the map (\ref{EQUIVALENCEDEF EQ}).
@@ -3489,61 +3543,29 @@ We now check that $\bar{F}_{n-1} d_i = d_i \bar{F}_n$, $0 \leq i \leq n$, which 
 	\varphi_{n-k-1} d_{i-k} d_{0,\cdots,k-1} =
 	\varphi_{n-k}d_{0,\cdots,k-1}$.
 \end{itemize}
-We similarly check that 
-$\bar{F}_{n+1}s_i = s_i\bar{F}_{n}$, $0\leq i \leq n$ after restricting to $k \to k+1$ for each $0\leq k \leq n$. One again has three cases depending on $k$:
-\begin{itemize}
-	\item[($i<k$)] 
-	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
-	\varphi_{n+1-k}d_{0,\cdots,k-2}$;
-	\item[($i=k$)] 
-	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
-	\varphi_{n+1-k} s_0 d_{0,\cdots,k-1} =
-	id_{F_{n-k} d_{0,\cdots,k-1}}
-	$;
-	\item[($i>k$)]
-	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
-	\varphi_{n+1-k} s_{i-k} d_{0,\cdots,k-1}=
-	\varphi_{n-k} d_{0,\cdots,k-1}
-	$.
-\end{itemize}
+The case of degeneracies is similar.
+%We similarly check that 
+%$\bar{F}_{n+1}s_i = s_i\bar{F}_{n}$, $0\leq i \leq n$ after restricting to $k \to k+1$ for each $0\leq k \leq n$. One again has three cases depending on $k$:
+%\begin{itemize}
+%	\item[($i<k$)] 
+%	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
+%	\varphi_{n+1-k}d_{0,\cdots,k-2}$;
+%	\item[($i=k$)] 
+%	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
+%	\varphi_{n+1-k} s_0 d_{0,\cdots,k-1} =
+%	id_{F_{n-k} d_{0,\cdots,k-1}}
+%	$;
+%	\item[($i>k$)]
+%	$\varphi_{n+1-k} d_{0,\cdots,k-1} s_i =
+%	\varphi_{n+1-k} s_{i-k} d_{0,\cdots,k-1}=
+%	\varphi_{n-k} d_{0,\cdots,k-1}
+%	$.
+%\end{itemize}
 \end{proof}
 
 
 
-\begin{lemma}
-	Let $\mcI_{\bullet}^F \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ be such that the diagrams
-	\begin{equation}\label{IDENTSIMPRELSISO EQ}
-	\begin{tikzcd}[row sep=0.4em,column sep = 3.5em]
-		\mathcal{I}_n
-		\ar{dr}[name=F1]{F_n} \ar{dd}[swap]{d_i} & &
-		\mathcal{I}_n
-		\ar{dr}[name=F2]{F_n} \ar{dd}[swap]{s_j} & &
-	\\
- & \C & & \C &
-	\\
-|[alias=G2]| \mathcal{I}_{n-1}  \ar{ur}[swap]{F_{n-1}} & & 
-|[alias=G3]| \mathcal{I}_{n+1}  \ar{ur}[swap]{F_{n+1}} & &
-		\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\delta_{i}"]
-		\arrow[Leftrightarrow, from=F2, to=G3,shorten >=0.25cm,shorten <=0.25cm,"\sigma_{j}"]
-	\end{tikzcd}
-\end{equation}
-commute up to isomorphism for $0 < i \leq n$, $0 \leq j \leq n$.
-
-Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
-\[
-\mcI_n \xrightarrow{d_{1,\cdots,n}} 
-\mcI_0 \xrightarrow{F_0}
-\C
-\]
-assemble to an object 
-$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams (\ref{IDENTSIMPRELSISO EQ}) for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
-\end{lemma}
-
-
-\begin{proof}
-This follows by a straightforward verification.
-\end{proof}
-
+\subsection{The category of extension trees}
 
 
 
