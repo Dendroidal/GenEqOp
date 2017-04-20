@@ -2471,7 +2471,7 @@ in the category $\mathsf{Op}_G$ of genuine equivariant operads.
 
 
 
-\subsection{Extensions over general monads}
+\subsection{Extensions over general monads}\label{EXTGENMON SEC}
 
 Any monad $T$ on $\C$ one obtains induced monads $T^{\times l}$ on $\C^{\times l}$, and we will make use of several standard relations between these.
 In particular, any map $\alpha \colon \underline{l} \to \underline{m}$ induces a forgetful functor
@@ -3697,7 +3697,7 @@ The posets $\langle n \rangle$ together with antisymmetric (i.e. such that $f(-x
 then form a simplicial object\footnote{Indeed, we recall that the opposite simplex category $\Delta^{op}$ can equivalently described as the category of \textit{intervals}, i.e. finite ordered posets with distinct top and bottom, along with order maps preserving both top and bottom.
 $\langle n \rangle$ can then be regarded as obtained by gluing the interval $0\leq 1 \leq \cdots \leq n \leq + \infty$ with its opposite.}
 $\langle \minus \rangle \colon \Delta^{op} \to \Fin$.
-{\color{red} HERE}
+
 
 (\ref{FREEEXT EQ}) thus induces a simplicial object
 $(B,A,X)_{\langle n \rangle} \in \Fin \wr \mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$.
@@ -3715,11 +3715,46 @@ $\left(
 on $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
 whose realization along the string direction yields the
 spans 
-$\Sigma_G^{op} \leftarrow 
+\begin{equation}\label{PARTREALSPAN EQ}
+	\Sigma_G^{op} \leftarrow 
 	\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle},op}
 	\xrightarrow{N^{(B,A,X)_{\langle \bullet \rangle}}}
 	\mathcal{V}
-$
+\end{equation}
+discussed above, except now assembled into a simplicial object in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$.
+
+
+
+All degeneracies $s_i$ and differentials $d_i$ of 
+(\ref{PARTREALSPAN EQ}) other than the top differential $d_n$ are induced by maps $\alpha^{\**}$ described in \S \ref{EXTGENMON SEC} and thus given by strictly commutative diagrams, so that Lemma \ref{SOURCEFACT LEM} and Corollary \ref{SOURCELANFINAL COR} can be applied (this time with no need to appeal to Lemma \ref{TWISTING LEMMA}) so as to allow 
+(\ref{FREEEXTUSEFCOL EQ}) to be repackaged as 
+\begin{equation}\label{FREEEXTUSEFCOL EQ}
+	\mathbb{F} B \coprod_{\mathbb{F} A} X
+\simeq
+	\mathsf{Lan}_{\Omega_G^{e,op} \to \Sigma_G^{op}} 
+	N^{(B,A,X)}
+\end{equation}
+where 
+$\Omega_G^e = 
+|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|$.
+We now turn to the task of describing $\Omega_G^e$, starting with by defining it directly.
+
+\begin{definition}
+	The \textit{extension tree category $\Omega_G^e$} is the category whose objects are $\{B,A,X\}$-labeled trees and whose maps $\varphi \colon T \to S$ are tall maps of trees such that
+	\begin{itemize}
+		\item[(i)] if $T_{v_{Ge}}$ has an $A$-label, then 
+		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has an $A$-label;
+		\item[(ii)] if $T_{v_{Ge}}$ has a $B$-label, then 
+		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has either an $A$-label or a $B$-label;
+		\item[(iii)] if $T_{v_{Ge}}$ has a $X$-label, then 
+		$S_{v_{Ge}}$ has only $A$ and $X$-labels.
+	\end{itemize}
+\end{definition}
+
+
+
+
+
 
 \newpage
 
