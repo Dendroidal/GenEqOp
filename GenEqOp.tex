@@ -1075,7 +1075,52 @@ $U_{u^{\uparrow} \leq u} \subset U_{t^{\uparrow} \leq t}$. We note that $f^{\**}
 \end{remark}
 
 
+The following is a converse of sorts to
+ Proposition \ref{SUBDATAUNDERPLAN PROP}.
 
+\begin{proposition}\label{BUILDABLE PROP}
+	Let $U \in \Omega$ be a tree. Then:
+\begin{itemize}
+	\item[(i)] given non stick outer subtrees $U_i$ such that 
+	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that $\{U_i\} = \{U_{e^{\uparrow}\leq e}\}$;
+	\item[(ii)] given multiplicities $m_e \geq 1$ for each edge $e \in U$, there is a unique planar degeneracy $\rho \colon T \to U$ such that $\rho^{-1}(e)$ has $m_e$ elements;
+	\item[(iii)] planar tall maps $T \to U$ are in bijection with collections $\{U_i\}$ of outer subtrees such that $V(U) = \coprod_i V(U_i)$ and $U_j$ is not an inner edge of any $U_i$ whenever $U_j \simeq \eta$ is a stick.
+\end{itemize}
+\end{proposition}
+
+
+\begin{proof}
+	We first show (i) by induction on the number of subtrees $U_i$. The base case $\{U_i\}=\{U\}$ is immediate, setting 
+	$T= \mathsf{lr}(U)$. Otherwise, letting $e$ be edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a pushout diagram
+\begin{equation} \label{DECOMPPROOF EQ}
+\begin{tikzcd}
+	\eta \ar{r}{e} \ar{d}[swap]{e} & V \ar{d}
+\\
+	W \ar{r} & U
+\end{tikzcd}
+\end{equation}
+inducing a nontrivial partition 
+$\{U_i\} = \{U_i|U_i \hookrightarrow V\} 
+\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), and thus uniqueness too follows by the induction hypothesis.
+
+For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
+by \cite[Lemma 5.33]{Pe16b} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
+\cite[Cor. 5.39]{Pe16b} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the tree $T$ is uniquely determined.
+
+(iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique decomposition 
+$T \twoheadrightarrow \bar{T} \hookrightarrow U$
+as a planar degeneracy followed by a planar inner face, and each  of these maps is classified by the data in (b) and (a).
+\end{proof}
+
+
+\begin{lemma}
+	Suppose $T_1,T_2 \hookrightarrow T$ are two outer faces with at least one common edge $e$. Then there exists an unique outer face $T_1 \cup T_2$ such that 
+	$V(T_1 \cup T_2) = V(T_1) \cup V(T_2)$.
+\end{lemma}
+
+\begin{proof}
+	If either of $T_1,T_2$ is the root or a leaf the result is obvious. Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of $T_1,T_2,T$ admit compatible decompositions (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+\end{proof}
 
 
 
@@ -3734,9 +3779,8 @@ All degeneracies $s_i$ and differentials $d_i$ of
 	\mathsf{Lan}_{\Omega_G^{e,op} \to \Sigma_G^{op}} 
 	N^{(B,A,X)}
 \end{equation}
-where 
-$\Omega_G^e = 
-|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|$.
+where we write $\Omega_G^e$ for 
+$|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|$.
 We now turn to the task of describing $\Omega_G^e$, starting with by defining it directly.
 
 \begin{definition}
@@ -3751,6 +3795,126 @@ We now turn to the task of describing $\Omega_G^e$, starting with by defining it
 	\end{itemize}
 \end{definition}
 
+
+\begin{example}
+The following  is an example of a planar map in $\Omega_G^e$, where black nodes represent $X$-labeled nodes, grey nodes represent $B$-labeled nodes and white nodes represent $A$-labeled nodes.
+\begin{equation}\label{REGALTERNMAP EQ}
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+every node/.style = {font=\footnotesize},
+dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
+	\tikzstyle{level 2}=[sibling distance = 4em]
+	\tikzstyle{level 3}=[sibling distance = 3em]
+	\tikzstyle{level 4}=[sibling distance = 1.5em]
+	\node at (0,0.85) {$T$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black!20] {}
+					child
+					child
+				}
+				child{node [dummy,fill = black] {}
+				edge from parent node [near end] {$d$}}
+			edge from parent node [swap] {$e$}}
+			child{node [dummy,fill=black] {}
+			edge from parent node [swap, near end] {$c$}}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child
+				edge from parent node [swap, near end] {$a$}}
+				child{node [dummy,fill = black!20] {}
+					child
+					child
+				}
+			edge from parent node {$b$}}
+		};
+\begin{scope}[level distance=1.75em]
+	\tikzstyle{level 3}=[sibling distance = 6em]
+	\tikzstyle{level 4}=[sibling distance = 4em]
+	\tikzstyle{level 5}=[sibling distance = 3em]
+	\tikzstyle{level 6}=[sibling distance = 1.5em]
+	\tikzstyle{level 7}=[sibling distance = 0.75em]
+	\node at (9,0) {$S$}
+		child{node [dummy,fill = white] {}
+			child{node [dummy,fill = white] {}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill = white] {}
+							child
+							child
+						}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill=black] {}
+						}
+							child{node [dummy,fill=white] {}}
+						edge from parent node [near end] {$d$}}
+					edge from parent node [swap] {$e\phantom{1}$}}
+				}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+					edge from parent node [swap, near end] {$c\phantom{1}$}}
+					child{node [dummy,fill=white] {}
+						child{
+						edge from parent node [swap,near end] {$a$}}
+						child{node [dummy,fill = black!20] {}
+							child
+							child
+						}
+					edge from parent node [near end] {$\phantom{1}b$}}
+				}
+			}
+		};
+\end{scope}
+	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+\end{tikzpicture}
+\end{equation}
+\end{example}
+
+
+\begin{proposition}
+One has an identification
+\[
+\Omega_G^e \simeq 
+|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|.
+\]
+\end{proposition}
+
+
+\begin{proof}
+We note first that $\Omega_{G}^e$ contains all label maps that are $\{A,B\}$-inert. In fact, any map of $\Omega_{G}^e$ clearly has a unique factorization as such a label map followed by an underlying planar isomorphism of trees that replaces some of the $X$ and $B$ labels with $A$ labels.
+We will refer to the former as label maps and to the latter as relabel maps.
+
+We recall that 
+$\Omega_{G}^{\{+\infty\}_{\langle n \rangle}}$
+consists of trees with $2n+3$ types of labels: 
+$X$-labels, $B$-labels and $2n+1$ distinct types of $A$-labels.
+One can equivalently encode such a tree as a string 
+$T_0 \to \cdots \to T_n$
+of relabel maps. Indeed, the $A$-label nodes of $T_n$ in such a string are partitioned into $2n+1$ types according to that node's labels one the $T_i$ (which are either all $A$'s, some $X$'s and then $A$'s or some $B$'s and then $A$'s).
+Moreover, a diagram
+\[
+\begin{tikzcd}
+	T_0 \ar{r} \ar{d}[swap]{f_0} & 
+	T_1 \ar{r} \ar{d}[swap]{f_1} & 
+	\cdots \ar{r} &
+	T_n \ar{d}[swap]{f_n} &
+\\
+	T'_0 \ar{r} &
+	T'_1 \ar{r} &
+	\cdots \ar{r} &
+	T'_n 
+\end{tikzcd}
+\]
+with $f_i$ label maps of $\Omega^{e}_G$ is then equivalent to a label map $f_n \colon T_n \to T'_n$ respecting all $2n+3$ labels 
+in $\Omega_{G}^{\{+\infty\}_{\langle n \rangle}}$.
+Since the string description above is also compatible with the simplicial structure maps in the obvious way, 
+the result is now clear. 
+\end{proof}
+
+
+{\color{red} HERE}
+
+
+Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 
 
 
