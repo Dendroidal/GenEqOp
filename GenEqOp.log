@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  17 APR 2017 14:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  20 APR 2017 16:34
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -869,7 +869,7 @@ librarydecorations.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
 ecorations.pathreplacing.code.tex")) (GenEqOp.aux
 
-LaTeX Warning: Label `ASSOCSPAN1 EQ' multiply defined.
+LaTeX Warning: Label `FREEEXTUSEFCOL EQ' multiply defined.
 
 )
 \openout1 = `GenEqOp.aux'.
@@ -1005,23 +1005,23 @@ ABD: EveryShipout initializing macros
 
 {C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
  [5] [6] [7] [8] [9] [10]
-Overfull \hbox (5.49458pt too wide) detected at line 1257
+Overfull \hbox (5.49458pt too wide) detected at line 1353
 []
  []
 
 [11] [12] [13] [14] [15] [16] [17] [18]
-Overfull \hbox (79.68538pt too wide) detected at line 2200
+Overfull \hbox (79.68538pt too wide) detected at line 2296
 []
  []
 
-[19] [20]
-Overfull \hbox (26.14528pt too wide) detected at line 2460
+[19] [20] [21]
+Overfull \hbox (26.14528pt too wide) detected at line 2556
 []
  []
 
-[21]
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 2526--2527
-[]\OT1/cmr/bx/n/9 Definition 4.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
+[22]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 2622--2623
+[]\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
 mr/m/it/9 -tree\OT1/cmr/m/n/9 ) $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree is a pa
@@ -1029,59 +1029,37 @@ ir $\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/
 m/it/9 T\OMX/MnSymbolE/m/n/9 ç \U/MnSymbolA/m/n/9  
  []
 
-[22] [23] [24]
-Overfull \hbox (19.31252pt too wide) detected at line 2843
-[]
- []
-
-
-Overfull \hbox (5.0608pt too wide) detected at line 2869
-[]
- []
-
-
-Overfull \hbox (49.15059pt too wide) detected at line 2905
+[23] [24]
+Overfull \hbox (19.31252pt too wide) detected at line 2939
 []
  []
 
 [25]
-
-LaTeX Warning: Reference `TWISTEDARROW EQ' on page 26 undefined on input line 2
-996.
-
-
-Overfull \hbox (24.15404pt too wide) in paragraph at lines 2994--3000
-\OT1/cmr/m/n/9 the $[]\OMX/MnSymbolE/m/n/9 à\OMS/MnSymbolS/m/n/9 S\OML/cmm/m/it
-/9 ; \OMS/MnSymbolS/m/n/9 C\OMX/MnSymbolE/m/n/9 ç$ \OT1/cmr/m/n/9 cat-e-gories 
-in-tro-duced in ([][]). Note that there is a for-get-ful func-tor $[]\U/MnSymbo
-lC/m/n/9  []\OMX/MnSymbolE/m/n/9 à\OMS/MnSymbolS/m/n/9 S\OML/cmm/m/it/9 ; \OMS
-/MnSymbolS/m/n/9 C\OMX/MnSymbolE/m/n/9 ç \U/MnSymbolA/m/n/9  
+Overfull \hbox (5.0608pt too wide) detected at line 2965
+[]
  []
 
-[26] [27] [28] [29]
 
-LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 30 undefined on input lin
-e 3532.
+Overfull \hbox (49.15059pt too wide) detected at line 3001
+[]
+ []
 
-
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3532.
-
-
-LaTeX Warning: Reference `FID EQ' on page 30 undefined on input line 3533.
-
-
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3533.
+[26] [27] [28] [29] [30] [31]
+Overfull \hbox (74.56268pt too wide) detected at line 3677
+\U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
+ []
 
 
-LaTeX Warning: Reference `FMULT EQ' on page 30 undefined on input line 3534.
+Overfull \hbox (4.66757pt too wide) in paragraph at lines 3743--3745
+[]\OT1/cmr/bx/n/9 Definition 5.62. []\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-
+sion tree cat-e-gory $\OT1/cmr/m/n/9 
+[]$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ò\OML/cmm/m/it/9
+ B; A; X\OMX/MnSymbolE/m/n/9 ù$\OT1/cmr/m/n/9 -
+ []
 
-
-LaTeX Warning: Reference `TWISTEDARROWBLA EQ' on page 30 undefined on input lin
-e 3536.
-
-[30] [31]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 3609--3611
-[]\OT1/cmr/bx/n/9 Definition 5.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
+[32] [33]
+Overfull \hbox (4.37666pt too wide) in paragraph at lines 3812--3814
+[]\OT1/cmr/bx/n/9 Definition 6.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
 9 à\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
 n/9 ç$\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
 /cmm/m/it/9 T$\OT1/cmr/m/n/9 , let $\OML/cmm/m/it/9 T[]$ \OT1/cmr/m/n/9 de-note
@@ -1089,20 +1067,20 @@ n/9 ç$\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
 t/9 Y\OMX/MnSymbolE/m/n/9 ç$\OT1/cmr/m/n/9 -alternating
  []
 
-[32]
-Overfull \hbox (13.09369pt too wide) detected at line 3759
+[34]
+Overfull \hbox (13.09369pt too wide) detected at line 3962
 []
  []
 
-[33] [34] [35] [36]
-Overfull \hbox (23.33171pt too wide) detected at line 4015
+[35] [36] [37] [38]
+Overfull \hbox (23.33171pt too wide) detected at line 4218
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9 ç \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9 ç \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 ç\OML/cmm/m/it/9 :
  []
 
-[37] (GenEqOp.bbl
+[39] (GenEqOp.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
 []\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
 :
@@ -1114,69 +1092,68 @@ Underfull \hbox (badness 2035) in paragraph at lines 21--24
 .  Avail-able at:
  []
 
-) [38] (GenEqOp.aux)
-
-LaTeX Warning: There were undefined references.
-
+) [40] (GenEqOp.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28290 strings out of 493334
- 577794 string characters out of 3130222
- 644757 words of memory out of 3000000
- 31308 multiletter control sequences out of 15000+200000
- 31206 words of font info for 118 fonts, out of 3000000 for 9000
+ 28422 strings out of 493334
+ 581200 string characters out of 3130222
+ 639419 words of memory out of 3000000
+ 31439 multiletter control sequences out of 15000+200000
+ 31558 words of font info for 119 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,19n,84p,3270b,2240s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
 600\MnSymbolC7.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
 lic\mnsymbol\dpi600\MnSymbolS5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users\luisa\AppData\Loca
+ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppData\Loca
 l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\Users\lu
-isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS9.
+isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE8.
 pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dp
-i600\MnSymbolE8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
-blic\mnsymbol\dpi600\MnSymbolC8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE5.pk> <C:\Users\luisa\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\l
-uisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD6
+i600\MnSymbolC8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\mnsymbol\dpi600\MnSymbolE5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD6.pk> <C:\Users\luisa\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA5.pk> <C:\Users\l
+uisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF9
 .pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\d
-pi600\MnSymbolA5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
-ublic\mnsymbol\dpi600\MnSymbolE6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.pk> <C:\Users\luisa\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Users\
-luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF
-9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
-dpi600\MnSymbolC9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
-public\mnsymbol\dpi600\MnSymbolE9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD9.pk> <C:\Users\luisa
-\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC6.pk>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (38 pages, 609161 bytes).
+pi600\MnSymbolE6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
+ublic\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\luisa\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD9.pk> 
+<C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600
+\MnSymbolE9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public
+\mnsymbol\dpi600\MnSymbolC9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.pk> <C:\Users\luisa\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users\luisa
+\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS9.pk>
+ <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi60
+0\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on GenEqOp.pdf (40 pages, 641839 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
+ 475 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
