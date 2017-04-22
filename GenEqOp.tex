@@ -1113,7 +1113,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \end{proof}
 
 
-\begin{lemma}
+\begin{lemma}\label{OUTERFACEUNION LEM}
 	Suppose $T_1,T_2 \hookrightarrow T$ are two outer faces with at least one common edge $e$. Then there exists an unique outer face $T_1 \cup T_2$ such that 
 	$V(T_1 \cup T_2) = V(T_1) \cup V(T_2)$.
 \end{lemma}
@@ -2183,7 +2183,7 @@ and $G$-tree $T$ such that $\mathsf{r}(T)=B$
 we can build a cartesian arrow 
 $\varphi^{\**}(T) \to T$
 by letting $\varphi^{\**}(T)$ to be the pullback $G$-tree
-together with the planariz structure on roots given by $A$ and on non-equivariant nodes given by their image via 
+together with the planar structure on roots given by $A$ and on non-equivariant nodes given by their image via 
 $\varphi^{\**}(T) \to T$.
 
 It now follows that (\ref{ROOTLEAFTROOTCOM EQ}) are diagrams of split Grothendieck fibrations.
@@ -3773,7 +3773,7 @@ discussed above, except now assembled into a simplicial object in $\mathsf{WSpan
 All degeneracies $s_i$ and differentials $d_i$ of 
 (\ref{PARTREALSPAN EQ}) other than the top differential $d_n$ are induced by maps $\alpha^{\**}$ described in \S \ref{EXTGENMON SEC} and thus given by strictly commutative diagrams, so that Lemma \ref{SOURCEFACT LEM} and Corollary \ref{SOURCELANFINAL COR} can be applied (this time with no need to appeal to Lemma \ref{TWISTING LEMMA}) so as to allow 
 (\ref{FREEEXTUSEFCOL EQ}) to be repackaged as 
-\begin{equation}\label{FREEEXTUSEFCOL EQ}
+\begin{equation}\label{FREEEXTUSEFCOLNEW EQ}
 	\mathbb{F} B \coprod_{\mathbb{F} A} X
 \simeq
 	\mathsf{Lan}_{\Omega_G^{e,op} \to \Sigma_G^{op}} 
@@ -3783,7 +3783,7 @@ where we write $\Omega_G^e$ for
 $|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|$.
 We now turn to the task of describing $\Omega_G^e$, starting with by defining it directly.
 
-\begin{definition}
+\begin{definition}\label{EXTTREECAT DEF}
 	The \textit{extension tree category $\Omega_G^e$} is the category whose objects are $\{B,A,X\}$-labeled trees and whose maps $\varphi \colon T \to S$ are tall maps of trees such that
 	\begin{itemize}
 		\item[(i)] if $T_{v_{Ge}}$ has an $A$-label, then 
@@ -3911,12 +3911,168 @@ the result is now clear.
 \end{proof}
 
 
+Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
+We first introduce the auxiliary notion of alternating trees.
+We recall the notion of input path (Notation \ref{INPUTPATH NOT})
+$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\in \Omega, \Phi, \Omega_G, \Phi_G$.
+
+\begin{definition}\
+A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, for all leafs $l \in T$ one has that the input path $I(l)$ has an even number of elements.
+
+Further, a vertex $e^{\uparrow} \leq e$ is called \textit{active}
+if $|I(e)|$ is odd and \textit{inert} otherwise.
+
+Finally, a tall map $T \xrightarrow{\varphi} T'$ between alternating $G$-trees is called a 
+\textit{tall alternating map}
+if for any inert vertex $e^{\uparrow} \leq e$ of $T$ one has that 
+$T'_{ e^{\uparrow} \leq e)}$ is an inert vertex of $T'$.
+
+We will denote the category of alternating $G$-trees and tall alternating maps by $\Omega_G^a$.
+\end{definition}
+
+
+\begin{example}
+Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
+\begin{equation}\label{REGALTERNMAP EQ}
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\tikzstyle{level 2}=[sibling distance = 4em]
+	\tikzstyle{level 3}=[sibling distance = 3em]
+	\tikzstyle{level 4}=[sibling distance = 1.5em]
+	\node at (0,0.85) {$T$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child
+					child
+				}
+				child{node [dummy,fill = black] {}
+				edge from parent node [near end] {$d$}}
+			edge from parent node [swap] {$e$}}
+			child{node [dummy,fill=white] {}
+			edge from parent node [swap, near end] {$c$}}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child
+				edge from parent node [swap, near end] {$a$}}
+				child{node [dummy,fill = black] {}
+					child
+					child
+				}
+			edge from parent node {$b$}}
+		};
+\begin{scope}[level distance=1.75em]
+	\tikzstyle{level 3}=[sibling distance = 6em]
+	\tikzstyle{level 4}=[sibling distance = 4em]
+	\tikzstyle{level 5}=[sibling distance = 3em]
+	\tikzstyle{level 6}=[sibling distance = 1.5em]
+	\tikzstyle{level 7}=[sibling distance = 0.75em]
+	\node at (9,0) {$S$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill = white] {}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill = black] {}
+							child
+							child
+						}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill=white] {}
+								child{node [dummy,fill = black] {}}
+								child{node [dummy,fill = black] {}}
+						}
+							child{node [dummy,fill=white] {}}
+						edge from parent node [near end] {$d$}}
+					edge from parent node [swap] {$e\phantom{1}$}}
+				}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+					edge from parent node [swap, near end] {$c\phantom{1}$}}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill=white] {}
+								child{node [dummy,fill = black] {}
+									child
+								}
+							}
+						edge from parent node [swap,near end] {$a$}}
+						child{node [dummy,fill = black] {}
+							child
+							child
+						}
+					edge from parent node [near end] {$\phantom{1}b$}}
+				}
+			}
+		};
+\end{scope}
+	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+\end{tikzpicture}
+\end{equation}
+The term ``alternating'' comes from the fact that no adjacent nodes have the same color. We note, however, that there is additional restriction: the ``outer'' vertices, i.e. those immediately below a leaf or the one immediately above the root, are necessarily black/active
+(not, however, that this does \textit{not} apply to stumps).
+%As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
+\end{example}
+
+\begin{definition}
+	$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(B,A,X)$-labeled trees whose underlying trees is alternating, active nodes are labeled by $X$, and passive nodes are labeled by $A$ or $B$. 
+\end{definition}
+
+We note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} imply that maps in 
+$\bar{\Omega}_G^e$ are underlying alternating maps.
+
+The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega_G^e$.
+
+\begin{proposition}
+	For each $U \in \Omega_G^e$ there exists a unique 
+	$\mathsf{lr}_X (U) \in \bar{\Omega}_G^e$ together with a unique planar label map of $\Omega_G^e$
+	\[\mathsf{lr}_X (U) \to U.\]
+	Furthermore, $\mathsf{lr}_X$ extends to a right retraction $\mathsf{lr}_X \colon \Omega_G^e \to \bar{\Omega}_G^e$.
+\end{proposition}
+
+\begin{proof}
+	Given $U$, we form a collection of outer faces
+	$\{U_i^A\} \amalg \{U_j^B\} \amalg \{U_k^X\}$
+where the $U_i^A, U_j^b$ are simply the $A,B$-labeled nodes
+and the $\{U_k^X\}$ are the maximal outer subtrees whose nodes have only $X$-labels (we note that these may possible be sticks). 
+Lemma \ref{OUTERFACEUNION LEM} then guarantees that the $V_G(U_k^{X})$ are disjoint, so that one can apply (the equivariant version of Proposition \ref{BUILDABLE PROP})
+to build 
+\begin{equation}\label{LRXDEF EQ}
+T = \mathsf{lr}(U) \to U
+\end{equation}
+such that $\{U_{v_{G e}}\} = \{U_i^A\} \amalg \{U_j^B\} \amalg \{U_k^X\}$. $T$ has an obvious $(B,A,X)$-labeling making 
+(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that $T$ is alternating with the $X$-labeled vertices being precisely the $X$-labeled vertices.
+Let us now write any input path as 
+$I(e) = (e = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$.
+By Lemma \ref{OUTERFACEUNION LEM} and maximality of the $U_k^X$, no pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ can be both $X$-labeled.
+On the other hand, again by Lemma \ref{OUTERFACEUNION LEM} any edge of $U$ belongs to some $U^X_k$ and therefore:
+\begin{inparaenum}
+	\item[(i)] at least one of in each pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ is $X$-labeled;
+	\item[(ii)] if $r \in T$ is a root, $v_{G r}$ is $X$-labeled;
+	\item[(iii)] if $l \in T$ is a leaf $v_{G l_{n-1}}$ is $X$-labeled.
+\end{inparaenum}
+This suffices to conclude $T \in \bar{\Omega}_{G}^e$, and
+uniqueness of $T$ is immediate from the uniqueness in Lemma \ref{OUTERFACEUNION LEM}. 
+
 {\color{red} HERE}
 
+It remains to check that $\mathsf{lr}_X$ in fact defines a functor. We consider the following diagram.
+\[
+\begin{tikzcd}
+	\mathsf{lr}_X(U) \ar{r} \ar[dashed]{d}[swap]{\mathsf{lr}_X(f)} & U \ar{d}{f}
+\\
+	\mathsf{lr}_X(V) \ar{r} & V
+\end{tikzcd}
+\]
+When $f$ is a quotient map, $\mathsf{lr}_X(f)$ is simply the pullback of $f$. When $f$ is a planar tall map, writing $T=\mathsf{lr}_X(U)$ one has a map of $T$-substitution data
+$\{\mathsf{lr}_X(V_{v_{G_e}})\} \to \{V_{v_{G_e}}\}$, which after converted to a tree map yields the desired map 
+$\mathsf{lr}_X(f)$.
+\end{proof}
 
-Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 
+\begin{example}
 
+{\color{red} HERE}
+
+\end{example}
 
 
 
