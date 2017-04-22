@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  21 APR 2017 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  22 APR 2017 17:15
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -871,6 +871,9 @@ ecorations.pathreplacing.code.tex")) (GenEqOp.aux
 
 LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
 
+
+LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
+
 )
 \openout1 = `GenEqOp.aux'.
 
@@ -1057,8 +1060,13 @@ n/9
  B; A; X\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -
  []
 
-[33] [34] [35]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 4132--4134
+[33] [34]
+Overfull \hbox (4.73375pt too wide) detected at line 4221
+[]
+ []
+
+[35] [36]
+Overfull \hbox (4.37666pt too wide) in paragraph at lines 4280--4282
 []\OT1/cmr/bx/n/9 Definition 6.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
 9 ˆ\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
 n/9 $\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
@@ -1067,20 +1075,20 @@ n/9 $\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
 t/9 Y\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -alternating
  []
 
-[36]
-Overfull \hbox (13.09369pt too wide) detected at line 4282
+[37]
+Overfull \hbox (13.09369pt too wide) detected at line 4430
 []
  []
 
-[37] [38] [39] [40]
-Overfull \hbox (23.33171pt too wide) detected at line 4538
+[38] [39] [40] [41]
+Overfull \hbox (23.33171pt too wide) detected at line 4686
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 \OML/cmm/m/it/9 :
  []
 
-[41] (GenEqOp.bbl
+[42] (GenEqOp.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
 []\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
 :
@@ -1092,16 +1100,16 @@ Underfull \hbox (badness 2035) in paragraph at lines 21--24
 .  Avail-able at:
  []
 
-) [42] (GenEqOp.aux)
+) [43] (GenEqOp.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29004 strings out of 493334
- 597024 string characters out of 3130222
- 654029 words of memory out of 3000000
- 32021 multiletter control sequences out of 15000+200000
+ 29452 strings out of 493334
+ 609707 string characters out of 3130222
+ 661363 words of memory out of 3000000
+ 32469 multiletter control sequences out of 15000+200000
  31558 words of font info for 119 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1151,9 +1159,9 @@ cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (42 pages, 665354 bytes).
+Output written on GenEqOp.pdf (43 pages, 672324 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
+ 486 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

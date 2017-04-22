@@ -4072,6 +4072,154 @@ $\mathsf{lr}_X(f)$.
 
 {\color{red} HERE}
 
+
+\begin{equation}
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+every node/.style = {font=\footnotesize},
+dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
+	\tikzstyle{level 2}=[sibling distance = 6em]
+	\tikzstyle{level 3}=[sibling distance = 3em]
+	\tikzstyle{level 4}=[sibling distance = 1.5em]
+	\node at (0,0.85) {$\mathsf{lr}_X(T)$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill = black!20] {}
+						child{node [dummy,fill = black] {}
+							child}
+						child{node [dummy,fill = black] {}
+							child}
+					}
+				}
+				child{node [dummy,fill = black] {}
+				edge from parent node [near end] {$d$}}
+			edge from parent node [swap] {$e$}}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child
+				edge from parent node [swap, near end] {$a$}}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill = black!20] {}
+						child{node [dummy,fill = black] {}
+							child}
+						child{node [dummy,fill = black] {}
+							child}
+					}
+				}
+			edge from parent node {$b$}}
+		};
+\begin{scope}
+	\tikzstyle{level 2}=[sibling distance = 4em]
+	\tikzstyle{level 3}=[sibling distance = 3em]
+	\tikzstyle{level 4}=[sibling distance = 1.5em]
+	\node at (9,0.85) {$T$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black!20] {}
+					child
+					child
+				}
+				child{node [dummy,fill = black] {}
+				edge from parent node [near end] {$d$}}
+			edge from parent node [swap] {$e$}}
+			child{node [dummy,fill=black] {}
+			edge from parent node [swap, near end] {$c$}}
+			child{node [dummy,fill=white] {}
+				child{node [dummy,fill = black] {}
+					child
+				edge from parent node [swap, near end] {$a$}}
+				child{node [dummy,fill = black!20] {}
+					child
+					child
+				}
+			edge from parent node {$b$}}
+		};
+\end{scope}
+\begin{scope}[level distance=1.75em]
+	\tikzstyle{level 3}=[sibling distance = 6em]
+	\tikzstyle{level 4}=[sibling distance = 4em]
+	\tikzstyle{level 5}=[sibling distance = 3em]
+	\tikzstyle{level 6}=[sibling distance = 1.5em]
+	\tikzstyle{level 7}=[sibling distance = 1em]
+	\node at (0,-4) {$\mathsf{lr}_X(S)$}
+		child{node [dummy,fill = black] {}
+			child{node [dummy,fill = white] {}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill = white] {}
+								child{node [dummy,fill = black] {}
+									child}
+								child{node [dummy,fill = black] {}
+									child}
+							}
+						}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill=white] {}}
+						edge from parent node [near end] {$d$}}
+					edge from parent node [swap] {$e\phantom{1}$}}
+					child{node [dummy,fill=white] {}
+					edge from parent node [swap, near end] {$c\phantom{1}$}}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill=black] {}
+							child
+						edge from parent node [swap,near end] {$a$}}
+						child{node [dummy,fill=black] {}
+							child{node [dummy,fill = black!20] {}
+								child{node [dummy,fill=black] {}
+									child
+								}
+								child{node [dummy,fill=black] {}
+									child
+								}
+							}
+						}
+					edge from parent node [near end] {$\phantom{1}b$}}
+				}
+			}
+		};
+\end{scope}
+\begin{scope}[level distance=1.75em]
+	\tikzstyle{level 3}=[sibling distance = 6em]
+	\tikzstyle{level 4}=[sibling distance = 4em]
+	\tikzstyle{level 5}=[sibling distance = 3em]
+	\tikzstyle{level 6}=[sibling distance = 1.5em]
+	\tikzstyle{level 7}=[sibling distance = 0.75em]
+	\node at (9,-3) {$S$}
+		child{node [dummy,fill = white] {}
+			child{node [dummy,fill = black] {}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+						child{node [dummy,fill = white] {}
+							child
+							child
+						}
+						child{node [dummy,fill = black] {}
+							child{node [dummy,fill=black] {}
+						}
+							child{node [dummy,fill=white] {}}
+						edge from parent node [near end] {$d$}}
+					edge from parent node [swap] {$e\phantom{1}$}}
+				}
+				child{node [dummy,fill = black] {}
+					child{node [dummy,fill=white] {}
+					edge from parent node [swap, near end] {$c\phantom{1}$}}
+					child{node [dummy,fill=white] {}
+						child{
+						edge from parent node [swap,near end] {$a$}}
+						child{node [dummy,fill = black!20] {}
+							child
+							child
+						}
+					edge from parent node [near end] {$\phantom{1}b$}}
+				}
+			}
+		};
+\end{scope}
+%	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+\end{tikzpicture}
+\end{equation}
+
 \end{example}
 
 
@@ -4095,7 +4243,7 @@ We begin by analyzing the objects of this category. These are $(\P; X,Y)$-altern
 
 Adjusting the general notation of the previous section to this setting, given $T\in \Omega_{G,e}$ we let $V_{\P}(T)$, $V_{X}(T)$, and $V_{Y}(T)$ denote the $G$-sets of vertices labeled by $\P$, $X$, or $Y$, respectiely, and $V_{G,\P}(T)$ (and similarly) the set $V_{\P}(T)/G$ of orbits. Further, let $V_{G,in}(T) = V_{G,X}(T) \amalg V_{G,Y}(T)$ denote the set of \textit{inert} or \textit{passive} nodes. Moreover, we let $\mathbb V_{G,in}(T) \in \mathsf F \wr \V$ denote the map $V_{G,in}(T) \to \V$ which sends $T_v$ to $X(T_v)$ or $Y(T_v)$, depending on the labeling of the vertex $v$.
 
-Further, we define the \textit{degree} of $T$, denote $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$ is define by
+Further, we define the \textit{degree} of $T$, denoted $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$ is defined by
 \[
 |T|_X = \dfrac{|V_X(T)|}{|G.r|} = \sum\limits_{G.v\in V_{G,X}(T)}\dfrac{|G.v|}{|G.r|}
 \]
@@ -4131,7 +4279,7 @@ In order to prove this, we will first need a particular construction $T \mapsto 
 \begin{definition}
   Given a $(\P;X,Y)$-alternating $G$-tree $T$, let $T^\wedge_\P$ denote the $(\P; Y)$-alternating tree created from $T$ by
   \begin{enumerate}
-  \item relabelling at $X$-nodes $\P$ (yielding a $(\P,Y)$-labeled tree); then
+  \item relabelling all $X$-nodes by $\P$ (yielding a $(\P,Y)$-labeled tree); then
   \item collapsing all connected components of $\P$-labeled nodes.
   \end{enumerate}
 There is a unique planar-tall map $\partial_\P: T^\wedge_\P \to T$, and in fact this map factors through all maps of the form $\partial_\P: S \to T$.
