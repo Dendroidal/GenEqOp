@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{26}
 \contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{27}
 \contentsline {subsection}{\numberline {5.5}The category of extension trees}{32}
-\contentsline {section}{\numberline {6}Filtration of Cellular Extensions}{36}
-\contentsline {subsection}{\numberline {6.1}Filtration Pieces}{36}
-\contentsline {subsection}{\numberline {6.2}Notation}{40}
-\contentsline {subsection}{\numberline {6.3}Filtration Result}{41}
+\contentsline {section}{\numberline {6}Filtration of Cellular Extensions}{37}
+\contentsline {subsection}{\numberline {6.1}Filtration Pieces}{37}
+\contentsline {subsection}{\numberline {6.2}Notation}{41}
+\contentsline {subsection}{\numberline {6.3}Filtration Result}{42}
