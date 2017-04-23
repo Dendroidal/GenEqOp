@@ -1,22 +1,27 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Basic definitions}{2}
+\contentsline {section}{\numberline {2}Basic definitions}{1}
 \contentsline {section}{\numberline {3}Planar and tall maps}{2}
 \contentsline {subsection}{\numberline {3.1}Planar structures}{2}
 \contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{6}
-\contentsline {subsection}{\numberline {3.3}Substitution}{8}
-\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{11}
-\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{11}
-\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{12}
-\contentsline {subsection}{\numberline {4.3}Planar strings}{14}
-\contentsline {subsection}{\numberline {4.4}A monad on spans}{16}
-\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{20}
-\contentsline {section}{\numberline {5}Free extensions}{22}
-\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{23}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{24}
-\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{26}
-\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{28}
-\contentsline {subsection}{\numberline {5.5}The category of extension trees}{32}
-\contentsline {section}{\numberline {6}Filtration of Cellular Extensions}{37}
-\contentsline {subsection}{\numberline {6.1}Filtration Pieces}{37}
-\contentsline {subsection}{\numberline {6.2}Notation}{41}
-\contentsline {subsection}{\numberline {6.3}Filtration Result}{42}
+\contentsline {subsection}{\numberline {3.3}Substitution}{7}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{9}
+\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{9}
+\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{10}
+\contentsline {subsection}{\numberline {4.3}Planar strings}{13}
+\contentsline {subsection}{\numberline {4.4}A monad on spans}{14}
+\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{18}
+\contentsline {section}{\numberline {5}Free extensions}{21}
+\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{21}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{22}
+\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{24}
+\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{26}
+\contentsline {subsection}{\numberline {5.5}The category of extension trees}{30}
+\contentsline {section}{\numberline {6}Filtration of Cellular Extensions}{33}
+\contentsline {subsection}{\numberline {6.1}Filtration Pieces}{33}
+\contentsline {subsection}{\numberline {6.2}Notation}{37}
+\contentsline {subsection}{\numberline {6.3}Filtration Result}{38}
+\contentsline {section}{\numberline {7}Model Structures on Genuine Operads}{40}
+\contentsline {subsection}{\numberline {7.1}Weak Indexing Systems}{40}
+\contentsline {subsection}{\numberline {7.2}$\ensuremath {\mathbb {F}}$-Model Structures}{40}
+\contentsline {subsubsection}{\numberline {7.2.1}Genuine Operads}{41}
+\contentsline {subsubsection}{\numberline {7.2.2}$G$-Operads}{42}
