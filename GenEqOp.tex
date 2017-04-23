@@ -4408,15 +4408,19 @@ as desired.
 
 
 \newpage
-\todo[inline]{come back: this is all disorganized, internally, externally, everything}
-\section{Model Structures on Genuine Operads}
 
-In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$, which are true model categories in the cases we are most interested in, in particular for $\V = \sSet$.  These model structures will be determined by a choice of weak indexing system, a generalization of the notion defined in \ref{BH16}. 
+\section{Model Structures on Genuine Operads}
+\todo[inline]{come back: this is all disorganized, internally, externally, everything}
+\todo[inline]{replaced $\backslash$ F with $\mathcal F$ (as opposed to $\mathbb F$)}
+\renewcommand{\F}{\ensuremath{\mathcal F}}
+
+
+In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$, which are true model categories in the cases we are most interested in (i.e. for $\V = \sSet$).  These model structures will be determined by a choice of weak indexing system, a generalization of the notion defined in \cite{BH15}. 
 
 
 \subsection{Weak Indexing Systems}
 
-We recall certain constructions found in \ref{Per17}, which relate graph subgroups, finite $H$-sets, and systems of categories.
+We recall certain constructions found in \cite{Per17} relating graph subgroups, finite $H$-sets, and systems of categories.
 \begin{definition}
   A \textit{$G$-graph subgroup} of $G\times \Sigma_n$ is a subgroup $\Lambda \leq G\times \Sigma_n$ such that $\Lambda \cap \Sigma_n = e$. Equivalently, $\Gamma = \Gamma(\phi)$ is the graph of some homomorphism $G \geq H \xrightarrow{\phi} \Sigma_n$. 
 \end{definition}
@@ -4441,44 +4445,53 @@ We note that this always holds for any $\F$ is $f$ is an outer face or a quotien
 
 
 \begin{lemma}
-  A weak indexing system $\F$ is \textit{strong} (in the sense of \ref{BH16}) if and only if all trivial $H$-sets are $\F$-admissible, for all $H\leq G$.
+  A weak indexing system $\F$ is an indexing system (in the sense of \cite{BH15}) if and only if all trivial $H$-sets are $\F$-admissible, for all $H\leq G$.
 \end{lemma}
+\begin{proof}
 \todo[inline]{come back}
+\end{proof}
 
-We will define $\F$-model structures on $\V\Op_G$ for any weak indexing system $\F$; the $\F$-model structure on $\V\Sym_G$ will exist for any $\F$, but transfering requires the additional closure properties.
+We will define $\F$-model structures on $\V\Op_G$ for any weak indexing system $\F$; the $\F$-model structure on $\V\Sym_G$ will exist for any $G$-vertex family $\F$, but transfering requires the additional closure properties.
 
-\subsection{$\F$-Model Structures}
+\subsection{$\F$-Model Structures on Genuine Operads}
 
-Fix a $G$-vertex family $\F = \set{\F_n}$. More, we fix the following about our base category $\V$:
+Fix a $G$-vertex family $\F = \set{\F_n}$. For the following section, we fix the following about our base category $\V$:
 \begin{definition}
   We say $\V$ satisfies \textsc{Assumption 1} (for $\F$) if the following hold:
   \begin{enumerate}
-  \item $\V$ is a cofibrantly-generated closed symmetric monoidal model category, and
-  \item for each $n$, $\V^{G\times \Sigma_n}$ is $\F_n$-cellular.
+  \item $\V$ is a cofibrantly-generated Cartesian symmetric monoidal model category, and
+  \item for each $T\in\Omega$, $\V^{G\times \Sigma_T}$ is $\F_T$-cellular (c.f. \cite{Stephan16})
   \end{enumerate}
+where $\Sigma_T := \mathrm{Aut}(T)$, and $\F_T$ is the family of $G$-graph subgroups of $G\times \Sigma_T$ such that the induced action on $T$ defines an $\F$-admissible tree.
 \end{definition}
 
+\begin{definition}
+  The \textit{$\F$-projective model structure} on $\V\Sym = \V^{\Sigma_G^{op}}$ is the unique model structure induced by the adjunction
+\[
+\V^{\Sigma_G^{op}} \leftrightarrows \V^{\Sigma_\F^{op}}.
+\]
+Explicitly, a map $f$ is a fibration (resp. weak equivalence) if $f(C)$ is one in $\V$ for all $C\in \Sigma_\F$.
+\end{definition}
 
-\subsubsection{Genuine Operads}
 \begin{definition}
   A map $f: \O \to \P$ in $\V\Op_G$ is called a 
   \begin{enumerate}
   \item \textit{$\F$-fibration} (resp. $\F$-weak equivalence) if $f(C):\O(C) \to \P(C)$ is one in $\V$ for all $\F$-admissible $G$-corollas $C\in\Sigma_\F$.
   \item \textit{$\F$-cofibration} if it has the left lifting property against all maps which are both $\F$-fibrations and $\F$-weak equivalences.
-  \item \textit{level $\F$-cofibration} if $f(C)$ is a cofibration in $\V$ for all $C\in \Sigma_\F$.
+  \item \textit{$\Sigma_\F$-cofibration} if $f$ is an $\F$-cofibration in $\V\Sym_G$.
   \end{enumerate}
 \end{definition}
-In particular, $\P\in \V\Op_G$ is called \textit{$\F$-cofibrant} if $\varnothing \to \P$ is an $\F$-cofibration.
+In particular, $\P\in \V\Op_G$ will be called \textit{$\F$-cofibrant} if $\varnothing \to \P$ is an $\F$-cofibration.
 \begin{definition}
   The $\F$-model structure on $\V\Op_G$, if it exists, is the unique model structure with the above specified weak equivalences and fibrations. Equivalently, it is the transfered model structure along the adjoints
 \[
 \begin{tikzcd}
-  \V\Op_G \arrow[r, shift right, "\mathsf{fgt}"] & \V^{\Sigma_G^{op}} \arrow[l, shift right, "\mathbb F_G"] \arrow[r, shift right] & \prod_{\mathrm{Ob}(\Sigma_G)}\V \arrow[l, shift right] \arrow[r, shift right] & \prod_{\mathrm{Ob}(\Sigma_\F}\V \arrow[l, shift right]
+  \V\Op_G \arrow[r, shift right, "\mathsf{fgt}"'] & \V^{\Sigma_G^{op}} \arrow[l, shift right, "\mathbb F_G"'] \arrow[r, shift right] & \prod\limits_{\mathrm{Ob}(\Sigma_G)}\V \arrow[l, shift right] \arrow[r, shift right] & \prod\limits_{\mathrm{Ob}(\Sigma_\F)}\V \arrow[l, shift right]
 \end{tikzcd}
 \]
 \end{definition}
 
-Using general arguments of \ref{Hir03}, this structure would be cofibrantly generated, with generating arrows
+Using general arguments of \cite{Hi03}, this structure would be cofibrantly generated, with generating arrows
 \begin{align*}
   I_\F &= \sets{\mathbb F_G(\Sigma_G(-,C) \cdot i)}{C \in \Sigma_\F,\ i\in I}\\
   J_\F &= \sets{\mathbb F_G(\Sigma_G(-,C) \cdot j)}{C \in \Sigma_\F,\ j\in J},
@@ -4514,30 +4527,95 @@ If the result holds for any $\P\in \mathsf{Alg}_{\mathbb F}(\mathcal C)$, then t
   Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb F_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
 \end{theorem}
 \begin{proof}
-  We use the filtration from the previous section. In particular, it suffices to show that
+  We use the filtration from the previous section. In particular, it suffices to show that the map
 \[
 \Lan_{\Omega_{G,e}[k,-]^{op}}N^e \to \Lan_{\Omega_{G,e}[k]^{op}}N^e
 \]
-is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
+induced by the inclusion $p[k]: \Omega_G^e[k,-]\into \Omega_G^e[k]$, is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
 \[
 \begin{tikzcd}
-  \V^{\Omega_{G,e}[k,-]^{op}}_\F \arrow[r, shift left, "{\Lan = p[k]_!}"] & \V^{\Omega_{G,e}[k]^{op}}_\F \arrow[l, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[r, shift left, "\Lan = \mathsf{lr}_!"] & \V^{\Sigma_G^{op}}_\F \arrow[l, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
+  \V^{\Omega_G^e[k,-]^{op}}_\F \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_\F \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_\F \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
 \end{tikzcd}
 \]
-where each category is equipped with the $\F$-projective model structure, we can repackage this as the following two claims:
+where each category is equipped with the $\F$-projective model structure, if we use the fact that
+\[
+\Lan_{\Omega_G^e[k,-]^{op}}N^e = \Lan_{\Omega_G^e[k]^{op}}\Lan_{p[k]}N^e,
+\]
+it further suffices to show the following three claims:
 \begin{enumerate}
 \item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
-\item The counit $\epsilon_k: \Lan_{p[k]}N^ep[k] \to N^e$ is a projective cofibration in $\V_\F^{\Omega_{G,e}[k]^{op}}$,
+\item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
+\item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
+\todo[inline]{come back: somehow we've lost the dependence on $u$ being trivial or not...}
 \end{enumerate}
-where here we have denoted $p[k]: \Omega_{G,e}[k,-] \into \Omega_{G,e}[k]$. Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claim (2) is the content of Proposition BLANK. 
+Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
 \end{proof}
+
+
+We first classify cofibrant objects in $\V^{\Omega_G^e[k]^{op}}$, by breaking apart our category $\Omega_G^e[k]$. 
+
+\begin{definition}
+  Given a tree $T_0 \in \Omega$, let $\Omega_G[T_0]$ denote the full subcategory of $\Omega_G^q$ spanned by those trees which recieve a map from $G\cdot T_0$; that is, all trees of the form $G\cdot T_0/N$.
+\end{definition}
+
+\begin{lemma}
+  $\Omega_G[T_0] \simeq O_{\Gamma_{T_0}}$ as categories, where $\Gamma_{T_0}$ is the family of graph subgroups of $G\times \Sigma_{T_0}$. \qed
+\end{lemma}
+  
+\begin{definition}
+Refining the above, given an odd tree $T_0\in \Omega^{\mbox{odd}}$, let $T_0(Y)\in\Omega^e$ denote the labeled tree with underlying tree $T_0$ and all even nodes labeled with $Y$. 
+Further, let $\Omega^e[T_0]$ denote the full subcategory of $\Omega^e$ spanned by those trees $(S_0,\lambda_{S_0})$ which receieve a map from $T_0(Y)$ in $\Omega^e$. 
+Similarly, let $\Omega_G^e[T_0]$ denote the full subcategory of $\Omega_G^e$ spanned by those trees $(S,\lambda_S)$ which recieve a map from $G\cdot T_0(Y)$.
+\end{definition}
+
+We have an inclusion $\tau: G \times \Omega^e[T_0] \into \Omega_G^e[T_0]$, refining the inclusion $G \times \Omega \into \Omega_G$. This induces an adjunction
+\[
+\begin{tikzcd}
+\V^{G\times \Omega^e[T_0]^{op}} \arrow[r, shift right, "\tau_*"'] & \V^{\Omega_G^e[T_0]^{op}} \arrow[l, shift right, "\tau^*"']
+\end{tikzcd}
+\]
+and we observe that
+\[
+\tau_*X(G\cdot T_0/N, \lambda) \simeq X(G\cdot T_0, q^*\lambda)^N,
+\]
+where we are using the fact that even element in $\Omega_G^e[T_0]$ has underlying tree of the form $G\cdot T_0/N$, and $q^*\lambda$ is the vertex labeling 
+\[
+q^*\lambda: V_G(G \cdot T_0) \to V_G(G \cdot T_0/N) \xrightarrow{\lambda} \set{Y,X}.
+\]
+
+We further repackage $\Omega_G^e[T_0]$. In particular, we observe that if there is a map $(T',\lambda') \to (T'', \lambda'')$ in $\Omega_G^e[T_0]$, it is uniquely determined by the underlying quotient map $T' \to T''$. Indeed, $\Omega_G^e[T_0](T',T'')$ is the subset of $\Omega_{\Gamma_{T_0}}(G\times \Sigma_{T_0}/N', G\times\Sigma_{T_0}/N'')$, where $T' \simeq G\cdot T_0/N'$ and $T'' \simeq G\cdot T_0/N''$, of those maps $q$ such that $v''\in V_Y(T'')$ implies $q^{-1}(v'')\subseteq V_Y(T')$. 
+
+We can now prove a proposition, modeled on the proof of \cite[Theorem 2.10]{Stephan16}.
+\begin{proposition}
+ If $X\in \V^{\Omega_G^e[T_0]^{op}}$ is cofibrant, then $\eta_X: X \to \tau_*\tau^*X$ is an isomorphism.
+\end{proposition}
+\begin{proof}
+  \todo[inline]{come back, type up these sheets}
+First: $\eta$ is an iso on representables.\\
+Second: carries through across the necessary cellular extensions.
+\end{proof}
+
+
+\begin{corollary}
+  \label{N_E_COFIBRANT_PROP}
+  $N^e$ is $\F$-cofibrant.
+\end{corollary}
+\todo[inline]{come back: can't actually prove this yet - can only show that $N^e$ satisfies the above necessary condition, if we assume $\V$ is \textbf{strongly} cofibrantly generated.}
+
+
+\begin{proposition}
+  \label{EPSILON_COFIB_LEMMA}
+  The counit $\epsilon$ is a cofibration between cofibrant objects.
+\end{proposition}
+
+
 
 Unraveling, we see that, for $T\in \Omega_{G,e}[k]$, we have
 \[
 \epsilon_k(T) = \mathop{\square}\limits_{Gv \in V_G^\P(T)} \iota_{\P(T_{Gv})} \square \mathop\square\limits_{Gv \in V_G^{in}(T)}u(T_{Gv}) 
 \]
 if $|T|_Y = k$, and is the identity otherwise.
-
+\todo[inline]{the above is \textbf{FALSE} - it fails to take into consideration the colimit conditions introduced by quotient maps}
 
 
 
