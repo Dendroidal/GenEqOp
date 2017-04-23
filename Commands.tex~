@@ -49,6 +49,7 @@
 \newcommand{\A}{\mathcal{A}}%
 \newcommand{\B}{\mathcal{B}}%
 \newcommand{\G}{\mathcal{G}}%
+\newcommand{\V}{\ensuremath{\mathcal V}}
 \newcommand{\s}{\mathbf{s}}%
 \renewcommand{\t}{\mathbf{t}}%
 \renewcommand{\H}{\mathcal{H}}%
@@ -58,7 +59,7 @@
 \newcommand{\Qq}{\mathbb Q}%
 \newcommand{\Cc}{\mathbb C}%
 \newcommand{\Zz}{\mathbb Z}%
-\newcommand{\Fin}{\mathsf{F}}%
+
 
 \newcommand{\m}{\text{$\mathfrak{m}$}}
 \newcommand{\norm}[1]{\left\Vert#1\right\Vert}%
@@ -107,7 +108,12 @@
 \newcommand{\Sig}{\ensuremath{\Sigma}}%
 
 \newcommand{\Sym}{\ensuremath{\mathsf{Sym}}}%
+\newcommand{\Fin}{\mathsf{F}}%
+\newcommand{\Set}{\ensuremath{\mathsf{Set}}}
+\newcommand{\Top}{\ensuremath{\mathsf{Top}}}
 \newcommand{\sSet}{\ensuremath{\mathsf{sSet}}}%
+\newcommand{\Op}{\ensuremath{\mathsf{Op}}}%
+\newcommand{\sOp}{\ensuremath{\mathsf{sOp}}}%
 \newcommand{\BSym}{\ensuremath{\mathsf{BSym}}}%
 \newcommand{\fgt}{\ensuremath{\mathsf{fgt}}}%
 
@@ -128,9 +134,7 @@
 \DeclareMathOperator{\Aut}{Aut}%
 \newcommand{\free}{\ensuremath{\mathrm{free}}}%
 
-\let\squish\smash
-\newcommand{\Top}{\text{\squish{$\mathcal{T}\!op$}}}
-\newcommand{\Set}{\text{$\mathcal{F}\!in$}}
+
 
 
 \numberwithin{equation}{section}%
