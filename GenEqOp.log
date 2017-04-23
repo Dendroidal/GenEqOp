@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 18:36
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1006,8 +1006,59 @@ ABD: EveryShipout initializing macros
 
  [1
 
-{C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
- [5] [6] [7] [8] [9] [10] [11]
+{C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `We12' on page 2 undefined on input line 146.
+
+
+LaTeX Warning: Citation `Pe16b' on page 2 undefined on input line 146.
+
+[2]
+
+LaTeX Warning: Citation `Pe16b' on page 3 undefined on input line 212.
+
+[3]
+
+LaTeX Warning: Citation `Pe16b' on page 4 undefined on input line 385.
+
+[4] [5]
+
+LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 591.
+
+
+LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 596.
+
+
+LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 637.
+
+[6]
+
+LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 686.
+
+
+LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 688.
+
+
+LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 693.
+
+
+LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 696.
+
+
+LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 709.
+
+[7] [8] [9]
+
+LaTeX Warning: Citation `Pe16b' on page 10 undefined on input line 1133.
+
+
+LaTeX Warning: Citation `Pe16b' on page 10 undefined on input line 1134.
+
+[10]
+
+LaTeX Warning: Citation `McL' on page 11 undefined on input line 1246.
+
+[11]
 Overfull \hbox (5.49458pt too wide) detected at line 1424
 []
  []
@@ -1016,6 +1067,9 @@ Overfull \hbox (5.49458pt too wide) detected at line 1424
 Overfull \hbox (79.68538pt too wide) detected at line 2393
 []
  []
+
+
+LaTeX Warning: Citation `McL' on page 21 undefined on input line 2421.
 
 [21] [22]
 Overfull \hbox (26.14528pt too wide) detected at line 2653
@@ -1075,7 +1129,11 @@ Overfull \hbox (13.09369pt too wide) detected at line 4486
 []
  []
 
-[38] [39] [40] [41]
+[38] [39] [40]
+
+LaTeX Warning: Citation `BM03' on page 41 undefined on input line 4657.
+
+[41]
 Overfull \hbox (23.33171pt too wide) detected at line 4746
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
@@ -1083,19 +1141,10 @@ bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 \OML/cmm/m/it/9 :
  []
 
-[42] (GenEqOp.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 15--19
-[]\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
-:
- []
+[42] (GenEqOp.bbl) [43] (GenEqOp.aux)
 
+LaTeX Warning: There were undefined references.
 
-Underfull \hbox (badness 2035) in paragraph at lines 21--24
-[]\OT1/cmr/m/n/9 I. Weiss.  Broad posets, trees, and the den-droidal cat-e-gory
-.  Avail-able at:
- []
-
-) [43] (GenEqOp.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1103,7 +1152,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  29582 strings out of 493334
  613183 string characters out of 3130222
- 659750 words of memory out of 3000000
+ 660770 words of memory out of 3000000
  32599 multiletter control sequences out of 15000+200000
  31558 words of font info for 119 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1154,7 +1203,7 @@ cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (43 pages, 676362 bytes).
+Output written on GenEqOp.pdf (43 pages, 670586 bytes).
 PDF statistics:
  486 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
