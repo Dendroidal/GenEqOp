@@ -968,10 +968,14 @@ repackaged using planar tall maps.
 	Let $T \in \Omega$ be a tree.
 	
 	A \textit{$T$-substitution datum} is a tuple 
-	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ such that $\mathsf{lr}(U_{e^{\uparrow}\leq e}) = T_{e^{\uparrow} \leq e}$.
+	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
+	$T_{e^{\uparrow}\leq e} \to U_{e^{\uparrow}\leq e}$.
 	
-	Further, a map of $T$-substitution data 
-	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of planar tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$.
+	Further, a map of planar $T$-substitution data 
+	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$ compatible with the chosen maps.
+	
+	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
+	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$) and a morphism of planar data is called a planar morphism if it consists of a tuple of planar maps.
 \end{definition}
 
 \begin{definition}
@@ -991,15 +995,17 @@ for the functor $\eta_a \mapsto \eta$, $T_{e^{\uparrow} \leq e} \mapsto U_{e^{\u
 and sending the inclusions $\eta_a \subset T_{e^{\uparrow} \leq e}$
 to the composites
 \[
-\eta \xrightarrow{a} T_{e^{\uparrow} \leq e} = 
-\mathsf{lr}(U_{e^{\uparrow}\leq e}) \to U_{e^{\uparrow} \leq e}.\]
+\eta \xrightarrow{a} T_{e^{\uparrow} \leq e}  \to 
+%\simeq 
+%\mathsf{lr}(U_{e^{\uparrow}\leq e}) \to 
+U_{e^{\uparrow} \leq e}.\]
 
 
 \begin{proposition}\label{SUBDATAUNDERPLAN PROP}
 Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERPLAN EQ}
 \begin{tikzcd}[row sep =0pt]
-	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
+	\mathsf{Sub}_p(T) \ar[r,shift left=2pt] &
 	\Omega_{T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
 \\
 	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
@@ -1009,7 +1015,7 @@ Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
 \end{tikzcd}
 \end{equation}
-Where $\mathsf{Sub}(T)$ denotes the category of $T$-substitution data and $\Omega_{T/}^{\mathsf{pt}}$
+where $\mathsf{Sub}_p(T)$ denotes the category of planar $T$-substitution data and $\Omega_{T/}^{\mathsf{pt}}$
 the category of planar tall maps under $T$. 
 \end{proposition}
 
@@ -1055,6 +1061,26 @@ is planar tall follow.
 
 The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
 are inverse to each other is clear by the same inductive argument.
+\end{proof}
+
+
+\begin{corollary}\label{SUBDATAUNDERPLAN COR}
+Let $T \in \Omega$ be a tree. There is an isomorphism of categories
+\begin{equation}\label{SUBDATAUNDERNONPL EQ}
+\begin{tikzcd}[row sep =0pt]
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
+	\Omega_{T/}^{\mathsf{t}} \ar[l,shift left=2pt]
+\end{tikzcd}
+\end{equation}
+where $\mathsf{Sub}(T)$ denotes the category of $T$-substitution data and $\Omega_{T/}^{\mathsf{t}}$
+the category of tall maps under $T$.
+\end{corollary}
+
+
+\begin{proof}
+	This is a consequence of Proposition \ref{PLANARPULL EQ} together with the previous result, with the functor 
+	$\mathsf{Sub}(T) \to \Omega_{T/}^{\mathsf{t}}$ given by the same formula.
+	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness reduces to that in the previous result.
 \end{proof}
 
 
@@ -1505,18 +1531,18 @@ and the corolla $T_{v_{Gc}}$ non-isomorphically onto $S_{v_{Gc}}$.
 \end{remark}
 
 
-Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes.
+Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes. Here a map is called \textit{rooted} if it induces an ordered isomorphism on the root orbit.
 
 
 \begin{definition}\label{SUBSTITUTIONDATUMG DEF}
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
-	A \textit{$T$-substitution datum} is a tuple 
-	$\{U_{v_{G e}}\}_{v_{G e} \in V_G(T)}$ such that 
-	$\mathsf{lr}(U_{v_{G e}}) = T_{v_{G e}}$.
+	A \textit{rooted (resp. planar) $T$-substitution datum} is a tuple 
+	$\{U_{v_{G e}}\}_{v_{G e} \in V_G(T)}$ together with rooted (resp. planar) tall maps 
+	$T_{v_{Ge}} \to U_{v_{G e}} = T_{v_{G e}}$.
 	
-	Further, a map of $T$-substitution data 
-	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of planar tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
+	Further, a map of rooted (resp. planar) $T$-substitution data 
+	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of rooted (resp. planar) tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
 \end{definition}
 
 \begin{remark}\label{SUBSDATUMCONV REM}
@@ -1529,27 +1555,34 @@ and letting $G \ltimes V(T)$ denote the Grothendieck construction for the action
 
 
 \begin{proposition}\label{SUBDATAUNDERPLANG PROP}
-Let $T \in \Omega_G$ be a $G$-tree. There is an isomorphism of categories
+Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 \begin{equation}\label{SUBDATAUNDERPLANG EQ}
 \begin{tikzcd}[row sep =0pt]
-	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
-	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
+	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
+	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] &
+	\Omega_{G,T/}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
+	\{U_{v_{G e}}\} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
 	\{U_{v_{G e}}\} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \end{tikzcd}
 \end{equation}
 \end{proposition}
 
+
 \begin{proof}
-	This is a minor adaptation of the non-equivariant analogue Proposition \ref{SUBDATAUNDERPLANG PROP}.
+	This is a minor adaptation of the non-equivariant analogues Proposition \ref{SUBDATAUNDERPLANG PROP} and Corollary \ref{SUBDATAUNDERPLAN COR}.
 	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{v_{Ge}}\}$ therefore induce functors 
 	$U_{(\minus)} \colon G \ltimes \mathsf{Sc}(T) \to \Omega$.
 	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. 
 	The key observation is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
+	
+	Additionally, we note that the need to use rooted data comes from the fact that rooted isomorphisms $T \to T'$ are in bijection with rooted substitution data that are given by isomorphisms, a statement that fails in the absence of the rooted condition.
 \end{proof}
 
-\begin{remark} We will need to know that each of the maps 
+\begin{remark} We will need to know that in the planar case each of the maps 
 \[U_{v_{Ge}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}\]
 induced by the previous proof is a planar map of $G$-trees.
 This requires two observations:
@@ -1557,6 +1590,25 @@ This requires two observations:
 	\item[(i)] the restrictions to each of the constituent non-equivariant trees $U_{ge^{\uparrow}\leq ge}$ is planar by Proposition \ref{SUBDATAUNDERPLANG PROP};
 	\item[(ii)] the restriction to the roots of $U_{v_{Ge}}$ is injective and order preserving since it matches the inclusion of the roots of $T_{v_{Ge}}$, and the map $T \to U$ is a planar map of $G$-trees.
 \end{inparaenum}
+\end{remark}
+
+\begin{remark}\label{PULLCOMP REM}
+	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
+	are compatible with root pullback of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
+	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
+\begin{equation}\label{SUBDATAUNDERPLANG EQ}
+\begin{tikzcd}[row sep =10pt]
+	\mathsf{Sub}_{\mathsf{p}}(S) \ar[r,shift left=2pt] &
+	\Omega_{G,S/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
+	\mathsf{Sub}_{\mathsf{r}}(S) \ar[r,shift left=2pt] &
+	\Omega_{G,S/}^{\mathsf{rt}} \ar[l,shift left=2pt]
+\\
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
+	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}} &
+	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
+	\Omega_{G,T/}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}}
+\end{tikzcd}
+\end{equation}
 \end{remark}
 
 
@@ -3805,7 +3857,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (0,0.85) {$T$}
+	\node at (0,0.25) {$T$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black!20] {}
@@ -3820,7 +3872,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
 					child
-				edge from parent node [swap, near end] {$a$}}
+				edge from parent node [swap, near end] {$a\phantom{d}$}}
 				child{node [dummy,fill = black!20] {}
 					child
 					child
@@ -3833,9 +3885,9 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 5}=[sibling distance = 3em]
 	\tikzstyle{level 6}=[sibling distance = 1.5em]
 	\tikzstyle{level 7}=[sibling distance = 0.75em]
-	\node at (9,0) {$S$}
+	\node at (8,0) {$S$}
 		child{node [dummy,fill = white] {}
-			child{node [dummy,fill = white] {}
+			child{node [dummy,fill = black] {}
 				child{node [dummy,fill = black] {}
 					child{node [dummy,fill=white] {}
 						child{node [dummy,fill = white] {}
@@ -3854,7 +3906,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 					edge from parent node [swap, near end] {$c\phantom{1}$}}
 					child{node [dummy,fill=white] {}
 						child{
-						edge from parent node [swap,near end] {$a$}}
+						edge from parent node [swap,near end] {$a\phantom{d}$}}
 						child{node [dummy,fill = black!20] {}
 							child
 							child
@@ -3864,7 +3916,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			}
 		};
 \end{scope}
-	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+	\draw [->] (2.5,1.5) -- node [swap] {$\varphi$} (5.5,1.5);
 \end{tikzpicture}
 \end{equation}
 \end{example}
@@ -3953,7 +4005,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
 					child
-				edge from parent node [swap, near end] {$a$}}
+				edge from parent node [swap, near end] {$a\phantom{d}$}}
 				child{node [dummy,fill = black] {}
 					child
 					child
@@ -3994,7 +4046,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 									child
 								}
 							}
-						edge from parent node [swap,near end] {$a$}}
+						edge from parent node [swap,near end] {$a\phantom{d}$}}
 						child{node [dummy,fill = black] {}
 							child
 							child
@@ -4011,6 +4063,10 @@ The term ``alternating'' comes from the fact that no adjacent nodes have the sam
 (not, however, that this does \textit{not} apply to stumps).
 %As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
 \end{example}
+
+\begin{remark}
+	One can extend Definition \ref{SUBSTITUTIONDATUM} to the alternating context by defining a substitution datum to be alternating if it is given by isomorphisms for inert nodes and by alternating maps for active nodes. It is then straightforward to check that Proposition \ref{SUBDATAUNDERPLAN PROP} and its equivariant analogue Proposition \ref{SUBDATAUNDERPLANG PROP} extend to give alternating analogues.
+\end{remark}
 
 \begin{definition}
 	$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(B,A,X)$-labeled trees whose underlying trees is alternating, active nodes are labeled by $X$, and passive nodes are labeled by $A$ or $B$. 
@@ -4040,7 +4096,7 @@ T = \mathsf{lr}(U) \to U
 \end{equation}
 such that $\{U_{v_{G e}}\} = \{U_i^A\} \amalg \{U_j^B\} \amalg \{U_k^X\}$. $T$ has an obvious $(B,A,X)$-labeling making 
 (\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that $T$ is alternating with the $X$-labeled vertices being precisely the $X$-labeled vertices.
-Let us now write any input path as 
+Let us now write any input path of $T$ as 
 $I(e) = (e = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$.
 By Lemma \ref{OUTERFACEUNION LEM} and maximality of the $U_k^X$, no pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ can be both $X$-labeled.
 On the other hand, again by Lemma \ref{OUTERFACEUNION LEM} any edge of $U$ belongs to some $U^X_k$ and therefore:
@@ -4052,7 +4108,6 @@ On the other hand, again by Lemma \ref{OUTERFACEUNION LEM} any edge of $U$ belon
 This suffices to conclude $T \in \bar{\Omega}_{G}^e$, and
 uniqueness of $T$ is immediate from the uniqueness in Lemma \ref{OUTERFACEUNION LEM}. 
 
-{\color{red} HERE}
 
 It remains to check that $\mathsf{lr}_X$ in fact defines a functor. We consider the following diagram.
 \[
@@ -4062,17 +4117,17 @@ It remains to check that $\mathsf{lr}_X$ in fact defines a functor. We consider 
 	\mathsf{lr}_X(V) \ar{r} & V
 \end{tikzcd}
 \]
-When $f$ is a quotient map, $\mathsf{lr}_X(f)$ is simply the pullback of $f$. When $f$ is a planar tall map, writing $T=\mathsf{lr}_X(U)$ one has a map of $T$-substitution data
-$\{\mathsf{lr}_X(V_{v_{G_e}})\} \to \{V_{v_{G_e}}\}$, which after converted to a tree map yields the desired map 
+When $f$ is a root pullback map, we define $\mathsf{lr}_X(f)$ to likewise be a root pullback map. When $f$ is a rooted tall map, writing $T=\mathsf{lr}_X(U)$ one has a map of rooted $T$-substitution data
+$\{\mathsf{lr}_X(V_{v_{G_e}})\} \to \{V_{v_{G_e}}\}$,
+which after converted to a tree map yields the desired map 
 $\mathsf{lr}_X(f)$.
+To check that $\mathsf{lr}_X$ respects composition of maps, 
+the only non immediate case is that of a root pullback followed by a rooted map, in which case this follows from Remark \ref{PULLCOMP REM}.
 \end{proof}
 
 
 \begin{example}
-
-{\color{red} HERE}
-
-
+The following illustrates the $\mathsf{lr}_X$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}).
 \begin{equation}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
@@ -4097,7 +4152,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
 					child
-				edge from parent node [swap, near end] {$a$}}
+				edge from parent node [swap, near end] {$a\phantom{d}$}}
 				child{node [dummy,fill = black] {}
 					child{node [dummy,fill = black!20] {}
 						child{node [dummy,fill = black] {}
@@ -4112,7 +4167,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (9,0.85) {$T$}
+	\node at (0,-3) {$T$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black!20] {}
@@ -4127,7 +4182,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
 					child
-				edge from parent node [swap, near end] {$a$}}
+				edge from parent node [swap, near end] {$a\phantom{d}$}}
 				child{node [dummy,fill = black!20] {}
 					child
 					child
@@ -4141,7 +4196,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 5}=[sibling distance = 3em]
 	\tikzstyle{level 6}=[sibling distance = 1.5em]
 	\tikzstyle{level 7}=[sibling distance = 1em]
-	\node at (0,-4) {$\mathsf{lr}_X(S)$}
+	\node at (7.5,0.85) {$\mathsf{lr}_X(S)$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill = white] {}
 				child{node [dummy,fill = black] {}
@@ -4163,7 +4218,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 					child{node [dummy,fill=white] {}
 						child{node [dummy,fill=black] {}
 							child
-						edge from parent node [swap,near end] {$a$}}
+						edge from parent node [swap,near end] {$a\phantom{d}$}}
 						child{node [dummy,fill=black] {}
 							child{node [dummy,fill = black!20] {}
 								child{node [dummy,fill=black] {}
@@ -4185,7 +4240,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 5}=[sibling distance = 3em]
 	\tikzstyle{level 6}=[sibling distance = 1.5em]
 	\tikzstyle{level 7}=[sibling distance = 0.75em]
-	\node at (9,-3) {$S$}
+	\node at (7.5,-3.5) {$S$}
 		child{node [dummy,fill = white] {}
 			child{node [dummy,fill = black] {}
 				child{node [dummy,fill = black] {}
@@ -4206,7 +4261,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 					edge from parent node [swap, near end] {$c\phantom{1}$}}
 					child{node [dummy,fill=white] {}
 						child{
-						edge from parent node [swap,near end] {$a$}}
+						edge from parent node [swap,near end] {$a\phantom{d}$}}
 						child{node [dummy,fill = black!20] {}
 							child
 							child
@@ -4216,12 +4271,13 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			}
 		};
 \end{scope}
-%	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+	\draw [->] (2.25,2.5) -- node [swap] {$\mathsf{lr}_X(\varphi)$} (5.25,2.5);
+	\draw [->] (2.25,-2) -- node [swap] {$\varphi$} (5.25,-2);
 \end{tikzpicture}
 \end{equation}
-
 \end{example}
 
+{\color{red} HERE}
 
 
 \newpage
@@ -4445,7 +4501,7 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
     \label{K-1_LAN_FINAL_EQ1}
     \begin{tikzcd}
       val(S) && val(S^\wedge_\P) \arrow[ll, "\partial_\P"']\\
-      & C \arrow[ur, "q_S"] \arrow[ul, "q_S"]
+      & C \arrow{ur}[swap]{q_S} \arrow{ul}{q_S}
     \end{tikzcd}
   \end{equation}
   showing that the desired overcategory is inhabited. Further, given any other element
@@ -4453,19 +4509,23 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
     \label{K-1_LAN_FINAL_EQ2}
     \begin{tikzcd}
       val(S) && val(T) \arrow[ll, "f"']\\
-      & C \arrow[ur, "q_S"] \arrow[ul, "q_T"]
+      & C \arrow{ur}[swap]{q_S} \arrow[ul, "q_T"]
     \end{tikzcd}
   \end{equation}
   in the overcategory, consider the following zig-zag of maps connecting the objects (\ref{K-1_LAN_FINAL_EQ1}) and (\ref{K-1_LAN_FINAL_EQ2}):
-  \begin{equation}
-    \label{K-1_LAN_FINAL_DIAGRAM}
-    \begin{tikzcd}
-      && S &&\\[20pt]
-      && \tilde q_T^*(S) \arrow[u, "\tilde q_T"'] &&\\
-      S^\wedge_\P \arrow[uurr, "\partial_\P"] & \tilde q_T^*(S^\wedge_\P) \arrow[l, "\tilde q_T"'] \arrow[ur, "\partial_\P"] \arrow[rr, "\partial_\P"] && T' \arrow[ul, "\partial_\P"'] & T \arrow[l, "\partial_Y"'] \arrow[uull, "f"']\\[20pt]
-      && C \arrow[ull, "q_S"] \arrow[ul, "q_T"'] \arrow[ur, "q_T"] \arrow[urr, "q_T"'] 
-    \end{tikzcd}
-  \end{equation}
+\begin{equation}\label{K-1_LAN_FINAL_DIAGRAM}
+\begin{tikzcd}
+	&& S &&
+\\[20pt]
+	&& \tilde q_T^*(S) \arrow[u, "\tilde q_T"'] &&
+\\
+	S^\wedge_\P \arrow[uurr, "\partial_\P"] &
+	\tilde q_T^*(S^\wedge_\P) \arrow[l, "\tilde q_T"'] \arrow[ur, "\partial_\P"] \arrow[rr, "\partial_\P"] &&
+	 T' \arrow[ul, "\partial_\P"'] & T \arrow[l, "\partial_Y"'] \arrow[uull, "f"']
+\\[20pt]
+	&& C \arrow[ull, "q_S"] \arrow[ul, "q_T"'] \arrow[ur, "q_T"] \arrow[urr, "q_T"'] 
+\end{tikzcd}
+\end{equation}
   Here, we have omitted the notation ``$val$'' from the top three rows. To understand this diagram, we first record that we have a factorization:
   \[
   q_S = \tilde q_T q_T,
@@ -4477,8 +4537,8 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
   and hence, by the unique factorization of maps in $\Omega_{G,e}$, a factorization% via Remark \ref{OMEGA_E_REMARKS} (2), a factorization
   \[
   \begin{tikzcd}
-    C_T \arrow[d, "\tilde q_T"'] \arrow[r, dotted] & \tilde q_T^*(S^\wedge_\P) \arrow[d, dotted, "\tilde q_T"]\\
-    C_s \arrow[r] & S^\wedge_\P
+    C_T \arrow[d, "\tilde q_T"'] \arrow[r, dashed] & \tilde q_T^*(S^\wedge_\P) \arrow[d, dashed, "\tilde q_T"]\\
+    C_S \arrow[r] & S^\wedge_\P
   \end{tikzcd}
   \]
   (where we are recording $C \to val(S)$ as a planar-tall map $C \to S$). 

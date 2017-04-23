@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  22 APR 2017 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 16:39
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -869,7 +869,7 @@ librarydecorations.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
 ecorations.pathreplacing.code.tex")) (GenEqOp.aux
 
-LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
+LaTeX Warning: Label `SUBDATAUNDERPLANG EQ' multiply defined.
 
 
 LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
@@ -1008,22 +1008,22 @@ ABD: EveryShipout initializing macros
 
 {C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
  [5] [6] [7] [8] [9] [10] [11]
-Overfull \hbox (5.49458pt too wide) detected at line 1398
+Overfull \hbox (5.49458pt too wide) detected at line 1424
 []
  []
 
-[12] [13] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (79.68538pt too wide) detected at line 2341
+[12] [13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (79.68538pt too wide) detected at line 2393
 []
  []
 
-[20] [21] [22]
-Overfull \hbox (26.14528pt too wide) detected at line 2601
+[21] [22]
+Overfull \hbox (26.14528pt too wide) detected at line 2653
 []
  []
 
-
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 2667--2668
+[23]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 2719--2720
 []\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
@@ -1032,41 +1032,36 @@ ir $\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/
 m/it/9 T\OMX/MnSymbolE/m/n/9  \U/MnSymbolA/m/n/9  
  []
 
-[23] [24] [25]
-Overfull \hbox (19.31252pt too wide) detected at line 2984
+[24] [25]
+Overfull \hbox (19.31252pt too wide) detected at line 3036
+[]
+ []
+
+[26]
+Overfull \hbox (5.0608pt too wide) detected at line 3062
 []
  []
 
 
-Overfull \hbox (5.0608pt too wide) detected at line 3010
+Overfull \hbox (49.15059pt too wide) detected at line 3098
 []
  []
 
-
-Overfull \hbox (49.15059pt too wide) detected at line 3046
-[]
- []
-
-[26] [27] [28] [29] [30] [31]
-Overfull \hbox (74.56268pt too wide) detected at line 3722
+[27] [28] [29] [30] [31] [32]
+Overfull \hbox (74.56268pt too wide) detected at line 3774
 \U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
  []
 
-[32]
-Overfull \hbox (6.85089pt too wide) in paragraph at lines 3787--3789
+
+Overfull \hbox (6.85089pt too wide) in paragraph at lines 3839--3841
 [][]\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-sion tree cat-e-gory $\OT1/cmr/m/
 n/9 
 []$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ˜\OML/cmm/m/it/9
  B; A; X\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -
  []
 
-[33] [34]
-Overfull \hbox (4.73375pt too wide) detected at line 4221
-[]
- []
-
-[35] [36]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 4280--4282
+[33] [34] [35] [36]
+Overfull \hbox (4.37666pt too wide) in paragraph at lines 4336--4338
 []\OT1/cmr/bx/n/9 Definition 6.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
 9 ˆ\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
 n/9 $\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
@@ -1076,12 +1071,12 @@ t/9 Y\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -alternating
  []
 
 [37]
-Overfull \hbox (13.09369pt too wide) detected at line 4430
+Overfull \hbox (13.09369pt too wide) detected at line 4486
 []
  []
 
 [38] [39] [40] [41]
-Overfull \hbox (23.33171pt too wide) detected at line 4686
+Overfull \hbox (23.33171pt too wide) detected at line 4746
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
@@ -1106,10 +1101,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29452 strings out of 493334
- 609707 string characters out of 3130222
- 661363 words of memory out of 3000000
- 32469 multiletter control sequences out of 15000+200000
+ 29582 strings out of 493334
+ 613183 string characters out of 3130222
+ 659750 words of memory out of 3000000
+ 32599 multiletter control sequences out of 15000+200000
  31558 words of font info for 119 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1159,7 +1154,7 @@ cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (43 pages, 672324 bytes).
+Output written on GenEqOp.pdf (43 pages, 676362 bytes).
 PDF statistics:
  486 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
