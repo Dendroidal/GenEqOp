@@ -4333,7 +4333,7 @@ Intuitively, $|T|_X$ counts the number of $X$-labeled vertices in each individua
 \end{definition}
 
 
-\begin{remark}
+\begin{remark}\label{LIMMOR REM}
 	The categories $\bar{\Omega}_G^e[k]$ and $\bar{\Omega}_G^e[k,-]$ have only rather limited morphisms.
 	In fact, all maps in these categories must be underlying quotients of trees. Indeed, it is clear from Definition \ref{EXTTREECAT DEF} that maps never lower degree and, moreover, degree is preserved iff $\mathcal{P}$-vertices are substituted by $\mathcal{P}$-vertices (rather than larger trees in $\bar{\Omega}_G^e$, which would necessarily possess $X$-vertices).
 \end{remark}
@@ -4358,7 +4358,7 @@ $\Omega_{G,e}$: given $T \in \Omega_{G,e}$ we will let $T_{\mathcal{P}}$ denote 
 
 \begin{example}
 %  We observe that this construction is symmetric across all tree components, and hence, to give an example, it suffices to show want happens on a single component (i.e. when $G = \set{e}$).
-Combining the $(\minus)_{\mathcal{P}}$ and $\mathsf{lr}_{\mathcal{P}}$ constructions one obtains a construction sending trees $bar{\Omega}^e_G$ to trees in $bar{\Omega}^e_G$.
+Combining the $(\minus)_{\mathcal{P}}$ and $\mathsf{lr}_{\mathcal{P}}$ constructions one obtains a construction sending trees in $\bar{\Omega}^e_G$ to trees in $\bar{\Omega}^e_G$.
 We illustrate this for the tree $T \in \bar{\Omega}^e_G$ below, where black nodes are $\P$-labeled, white nodes filled with $\times$ are $X$-labeled, and empty white nodes are $Y$-labeled.
 \[
 \begin{tikzpicture}
@@ -4597,30 +4597,36 @@ in (\ref{UNDERCATPR EQ}), finishing the proof.
 %  Lastly, we must check that the middle two maps are in fact elements of the appropriate overcategory. This follows from the fact that $S^\wedge_\P$ and $T$ have $|-|_Y < k$. Thus, the overcategory in question is connected, as desired.
 \end{proof}
 
-{\color{red} HERE} 
 
-\todo[inline]{come back: define $S^\wedge_Y$.}
-
+Similarly to the $(\minus)_{\mathcal{P}}$ construction,
+there is also a construction $T_Y$ which replaces all $X$-labels of $T \in \Omega_G^e$ with $Y$-labels. Moreover, in this case the construction restricts directly to a construction on 
+$\bar{\Omega}_G^e$,
+which is easily seen to be functorial (and the $T_Y \to T$ maps natural) with regards to $\mathcal{P}$-inert maps. Remark \ref{LIMMOR REM} thus implies that 
+$(\minus)_Y \colon \bar{\Omega}_G^e[k] \to 
+\bar{\Omega}_G^e[k,0]$
+is a left retraction, 
+resulting in the following.
 \begin{lemma}
   \label{ZERO_LAN_FINALITY_LEMMA}
-  $\Omega_G^{e}[k,0]^{op}$ is $\Lan$-final in $\Omega_G^e[k]$ over $\Sigma_G^{op}$.
+  $\bar{\Omega}_G^{e}[k,0]$ is $\mathsf{Ran}$-initial in $\bar{\Omega}_G^e[k]$ over $\Sigma_G$.
 \end{lemma}
 
-Similarly, we need a construction $T \mapsto T^\wedge_Y$ in order to prove this lemma. However, in this case, the analogous notion is much simpler, as $T^\wedge_Y$ has the same underlying $(\P;Z)$-alternating $G$-tree, but we just relabel all $X$-vertices as being $Y$-labeled.
+{\color{red} HERE}
 
-\begin{proof}[Proof of Lemma \ref{ZERO_LAN_FINALITY_LEMMA}]
-  This follows analogously to Lemma \ref{MINUS_LAN_FINAL_LEMMA}, by replacing Diagram \ref{K-1_LAN_FINAL_DIAGRAM} with the diagram below:
-  \[
-  \begin{tikzcd}
-    && S & \\[20pt]
-    &&\tilde q_T^*(S) \arrow[u, "\tilde q_T"]\\
-    S^\wedge_Y \arrow[uurr, "\partial_Y"] && \tilde q_T^*(S^\wedge_Y) \arrow[ll, "\tilde q_T"'] \arrow[u, "\partial_Y"] \arrow[rr, "\partial_Y"] && T \arrow[ull, "\partial_Y"'] \arrow[uull, "f"']\\
-    && C \arrow[ull, "q_S"] \arrow[u, "q_T"] \arrow[urr, "q_T"'] 
-  \end{tikzcd}
-  \]
-\end{proof}
 
-Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G,e}[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
+%\begin{proof}[Proof of Lemma \ref{ZERO_LAN_FINALITY_LEMMA}]
+%  This follows analogously to Lemma \ref{MINUS_LAN_FINAL_LEMMA}, by replacing Diagram \ref{K-1_LAN_FINAL_DIAGRAM} with the diagram below:
+%  \[
+%  \begin{tikzcd}
+%    && S & \\[20pt]
+%    &&\tilde q_T^*(S) \arrow[u, "\tilde q_T"]\\
+%    S^\wedge_Y \arrow[uurr, "\partial_Y"] && \tilde q_T^*(S^\wedge_Y) \arrow[ll, "\tilde q_T"'] \arrow[u, "\partial_Y"] \arrow[rr, "\partial_Y"] && T \arrow[ull, "\partial_Y"'] \arrow[uull, "f"']\\
+%    && C \arrow[ull, "q_S"] \arrow[u, "q_T"] \arrow[urr, "q_T"'] 
+%  \end{tikzcd}
+%  \]
+%\end{proof}
+
+Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
 While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
 \[
 \begin{tikzcd}
