@@ -18,9 +18,9 @@
 \contentsline {subsection}{\numberline {5.5}The category of extension trees}{32}
 \contentsline {section}{\numberline {6}Filtration of cellular extensions}{37}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{37}
-\contentsline {subsection}{\numberline {6.2}Notation}{41}
+\contentsline {subsection}{\numberline {6.2}Notation}{40}
 \contentsline {subsection}{\numberline {6.3}Filtration Result}{41}
-\contentsline {section}{\numberline {7}Model Structures on Genuine Operads}{44}
-\contentsline {subsection}{\numberline {7.1}Weak Indexing Systems}{44}
-\contentsline {subsection}{\numberline {7.2}$\ensuremath {\mathcal F}$-Model Structures on Genuine Operads}{45}
-\contentsline {subsubsection}{\numberline {7.2.1}$G$-Operads}{47}
+\contentsline {section}{\numberline {7}Model Structures on Genuine Operads}{43}
+\contentsline {subsection}{\numberline {7.1}Weak Indexing Systems}{43}
+\contentsline {subsection}{\numberline {7.2}$\ensuremath {\mathcal F}$-Model Structures on Genuine Operads}{44}
+\contentsline {subsubsection}{\numberline {7.2.1}$G$-Operads}{46}

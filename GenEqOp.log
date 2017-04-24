@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 20:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 23:05
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1061,56 +1061,51 @@ n/9
  []
 
 [33] [34] [35] [36]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 4351--4353
-[]\OT1/cmr/bx/n/9 Definition 6.5. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
-9 ˆ\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
-n/9 $\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
-/cmm/m/it/9 T$\OT1/cmr/m/n/9 , let $\OML/cmm/m/it/9 T[]$ \OT1/cmr/m/n/9 de-note
- the $\OMX/MnSymbolE/m/n/9 ˆ\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/i
-t/9 Y\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -alternating
- []
-
-[37]
-Overfull \hbox (13.09369pt too wide) detected at line 4501
+Overfull \hbox (13.09369pt too wide) detected at line 4500
 []
  []
 
-[38] [39] [40] [41]
-Overfull \hbox (23.33171pt too wide) detected at line 4761
+[37]
+
+LaTeX Warning: Reference `K-1_LAN_FINAL_DIAGRAM' on page 38 undefined on input 
+line 4612.
+
+[38] [39] [40]
+Overfull \hbox (23.33171pt too wide) detected at line 4796
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 \OML/cmm/m/it/9 :
  []
 
-[42] [43]
+[41] [42]
 
-LaTeX Warning: Citation `BH15' on page 44 undefined on input line 4797.
-
-
-LaTeX Warning: Citation `Per17' on page 44 undefined on input line 4802.
+LaTeX Warning: Citation `BH15' on page 43 undefined on input line 4832.
 
 
-LaTeX Warning: Citation `BH15' on page 44 undefined on input line 4827.
+LaTeX Warning: Citation `Per17' on page 43 undefined on input line 4837.
 
 
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 4830--4830
+LaTeX Warning: Citation `BH15' on page 43 undefined on input line 4862.
+
+
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 4865--4865
 [][] 
  []
 
-[44]
+[43]
 
-LaTeX Warning: Citation `Stephan16' on page 45 undefined on input line 4842.
-
-
-LaTeX Warning: Citation `Hi03' on page 45 undefined on input line 4873.
-
-[45] [46]
-
-LaTeX Warning: Citation `Stephan16' on page 47 undefined on input line 4967.
+LaTeX Warning: Citation `Stephan16' on page 44 undefined on input line 4877.
 
 
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 4972--4972
+LaTeX Warning: Citation `Hi03' on page 44 undefined on input line 4908.
+
+[44] [45]
+
+LaTeX Warning: Citation `Stephan16' on page 46 undefined on input line 5002.
+
+
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5007--5007
 [][] 
  []
 
@@ -1126,7 +1121,7 @@ Underfull \hbox (badness 2035) in paragraph at lines 21--24
 .  Avail-able at:
  []
 
-[47]) [48] (GenEqOp.aux)
+[46]) [47] (GenEqOp.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1135,10 +1130,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29774 strings out of 493334
- 617800 string characters out of 3130222
- 661197 words of memory out of 3000000
- 32787 multiletter control sequences out of 15000+200000
+ 29640 strings out of 493334
+ 614346 string characters out of 3130222
+ 661724 words of memory out of 3000000
+ 32653 multiletter control sequences out of 15000+200000
  32650 words of font info for 123 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1146,9 +1141,9 @@ Here is how much of TeX's memory you used:
 600\MnSymbolS12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
 blic\mnsymbol\dpi600\MnSymbolS10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
 onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE10.pk> <C:\Users\luisa\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC7.pk> <C:\Users
+ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS5.pk> <C:\Users
 \luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbol
-S5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
+C7.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
 \dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
 \public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9
 \fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE8.pk> <C:\Users\luisa\AppData\
@@ -1194,9 +1189,9 @@ ublic/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb>
-Output written on GenEqOp.pdf (48 pages, 738982 bytes).
+Output written on GenEqOp.pdf (47 pages, 736415 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
+ 529 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
