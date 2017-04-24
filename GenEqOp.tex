@@ -4277,58 +4277,73 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 \end{equation}
 \end{example}
 
-{\color{red} HERE}
+
 
 
 \newpage
 
 
 
-\section{Filtration of Cellular Extensions}
+\section{Filtration of cellular extensions}
 
-As we saw above, we have the the free extension $\P[u]$ given by the pushout
+Put together, the results in the previous section show that the free extension $\P[u]$ given by the pushout
 \[
 \begin{tikzcd}
   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
   \mathbb F_G Y \arrow[r] & \P[u]
 \end{tikzcd}
 \]
-can be built via Kan extensions over $\Omega_{G,e}$. Thus, in order to filter the map $\P \to \P[u]$, it will suffice, via naturality of Kan extensions, to filter the category $\Omega_{G,e}$.
+is given by a left Kan extension along 
+$(\bar{\Omega}_{G}^e)^{op} \xrightarrow{\mathsf{lr}} \Sigma_G^{op}$. So as to study the homotopical properties of the map $\P \to \P[u]$ we will identity a suitable filtration of this map, which will in turn be induced by a suitable filtration of the extension tree category $\bar{\Omega}_{G}^e$.
 
-We begin by analyzing the objects of this category. These are $(\P; X,Y)$-alternating $G$-trees $T$; that is, an odd tree $T$ with each odd vertex labeled by $\P$, and the even vertices labeled by either $X$ or $Y$.
 
-Adjusting the general notation of the previous section to this setting, given $T\in \Omega_{G,e}$ we let $V_{\P}(T)$, $V_{X}(T)$, and $V_{Y}(T)$ denote the $G$-sets of vertices labeled by $\P$, $X$, or $Y$, respectiely, and $V_{G,\P}(T)$ (and similarly) the set $V_{\P}(T)/G$ of orbits. Further, let $V_{G,in}(T) = V_{G,X}(T) \amalg V_{G,Y}(T)$ denote the set of \textit{inert} or \textit{passive} nodes. Moreover, we let $\mathbb V_{G,in}(T) \in \mathsf F \wr \V$ denote the map $V_{G,in}(T) \to \V$ which sends $T_v$ to $X(T_v)$ or $Y(T_v)$, depending on the labeling of the vertex $v$.
+\subsection{Filtration pieces}
 
-Further, we define the \textit{degree} of $T$, denoted $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$ is defined by
+We now turn to the task of describing our filtration of $\bar{\Omega}_{G}^e$. 
+
+Firstly, we write $V_X(T)$ (resp. $V_Y(T)$) to denote the set of (non-equivariant) vertices of $T$ with a $X$-label (resp. $Y$-label). 
+We now define the \textit{degree} of $T \in \bar{\Omega}_{G}^e$,
+denoted $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$, $|T|_Y$ are defined by
 \[
-|T|_X = \dfrac{|V_X(T)|}{|G.r|} = \sum\limits_{G.v\in V_{G,X}(T)}\dfrac{|G.v|}{|G.r|}
+|T|_X = \dfrac{|V_X(T)|}{|G r|} = \sum\limits_{G v\in V_{G,X}(T)}\dfrac{|G v|}{|G r|},
+\qquad
+|T|_Y = \dfrac{|V_Y(T)|}{|G r|} = \sum\limits_{G v\in V_{G,Y}(T)}\dfrac{|G v|}{|G r|}
 \]
-where $G.r$ is the root $G$-set of $T$, and similarly for $|T|_Y$. Intuitively, $|T|_X$ is the number of $X$-labeled vertices in any (every) single tree component of $T$.
+for $G r$ the root orbit of $T$. 
+
+Intuitively, $|T|_X$ counts the number of $X$-labeled vertices in each individual tree component of $T$.
 
 
-\subsection{Filtration Pieces}
+\begin{remark}
+	One of the key properties of the degrees just defined is that they are invariant under root pullback.
+\end{remark}
 
-We begin our filtration of $\Omega_{G,e}$. 
 
 \begin{definition}
   \label{TREE_FILTRATION_PIECES_DEFINITION}
-  We define subcategories of $\Omega_G^e$.
-  \begin{enumerate}
-  \item Let $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) be the full subcategory of $\Omega_G^e$ spanned by trees $T$ with $|T|\leq k$ (respectively, $|T| = k$).
-  \item Let $\Omega_G^e[\leq k,-]$ (respectively $\Omega_G^e[k,-]$) be the full subcategory of $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) spanned by trees $T$ with $|T|_{Y}\neq k$.
-  \item Let $\Omega_G^e[\leq k,0]$ (respectively $\Omega_G^e[k,0]$) be the full subcategory of $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) spanned by trees $T$ with $|T|_X = 0$ (equivalently, $|T|_{Y} = k$).
-  \item If $\Xi$ is any of the above categories, and $C\in \Sigma_G$, let $\Xi(C)$ denote the full subcategory of $\Xi$ spanned by those trees $T$ with $val(T) \simeq C$.
-  \end{enumerate}
+  We define subcategories of $\bar{\Omega}_{G}^e$:
+  \begin{itemize}
+  \item $\bar{\Omega}_G^e[\leq k]$ (resp. $\Omega_G^e[k]$) is the full subcategory of trees 
+  $T \in \bar{\Omega}_G^e$ with $|T|\leq k$ (resp. $|T| = k$);
+  \item $\bar{\Omega}_G^e[\leq k,-]$ (resp. $\bar{\Omega}_G^e[k,-]$) is the full subcategory of $\bar{\Omega}_G^e[\leq k]$ (resp. $\bar{\Omega}_G^e[k]$) of trees $T$ with $|T|_{Y}\neq k$;
+  \item $\bar{\Omega}_G^e[k,0]$ is the full subcategory of 
+  $\bar{\Omega}_G^e[k]$ of trees $T$ with $|T|_X = 0$ (or, equivalently, $|T|_{Y} = k$).
+%  \item If $\Xi$ is any of the above categories, and $C\in \Sigma_G$, let $\Xi(C)$ denote the full subcategory of $\Xi$ spanned by those trees $T$ with $val(T) \simeq C$.
+  \end{itemize}
 \end{definition}
 
+
 \begin{remark}
-  The categories $\Omega_G^e[k]$ and $\Omega_G^e[k,-]$ have only very limited morphisms, as there cannot be any ``active substitutions''. Thus, any map $S \to T$ in these categories just changes some $Y$-labelings into $X$-labelings, while the underlying $(\P; Z)$-alternating tree remains fixed (where here the one passive colour $Z$ encompasses both $Y$ and $X$).
+	The categories $\bar{\Omega}_G^e[k]$ and $\bar{\Omega}_G^e[k,-]$ have only rather limited morphisms.
+	In fact, all maps in these categories must be underlying quotients of trees. Indeed, it is clear from Definition \ref{EXTTREECAT DEF} that maps never lower degree and, moreover, degree is preserved iff $\mathcal{P}$-vertices are substituted by $\mathcal{P}$-vertices (rather than larger trees in $\bar{\Omega}_G^e$, which would necessarily possess $X$-vertices).
 \end{remark}
 
-\begin{lemma}
-  \label{MINUS_LAN_FINAL_LEMMA}
-  $\Omega_G^e[\leq k-1]^{op}$ is $\Lan$-final in $\Omega_G^{e}[\leq k,-]^{op}$ over $\Sigma_G^{op}$.
+
+\begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
+  $\Omega_G^e[\leq k-1]$ is $\mathsf{Ran}$-final in $\Omega_G^{e}[\leq k,-]$ over $\Sigma_G$.
 \end{lemma}
+
+{\color{red} HERE}
 
 In order to prove this, we will first need a particular construction $T \mapsto T^\wedge_\P$ on $\Omega_{G,e}$. 
 
@@ -4910,7 +4925,7 @@ it further suffices to show the following three claims:
 \item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
 \item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
 \item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
-\todo[inline]{come back: somehow we've lost the dependence on $u$ being trivial or not...}
+\todo[inline]{come back: somehow I've lost the dependence on $u$ being trivial or not...}
 \end{enumerate}
 Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
 \end{proof}

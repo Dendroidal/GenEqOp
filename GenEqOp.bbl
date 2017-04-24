@@ -5,18 +5,6 @@ C.~Berger and I.~Moerdijk.
 \newblock Axiomatic homotopy theory for operads.
 \newblock {\em Commentarii Mathematici Helvetici}, 78:805--831, 2003.
 
-\bibitem{BH15}
-A.~Blumberg and M.~Hill.
-\newblock Operadic multiplications in equivariant spectra, norms, and
-  transfers.
-\newblock {\em Adv. Math.}, 285:658--708, 2015.
-
-\bibitem{Hi03}
-P.~S. Hirschhorn.
-\newblock {\em Model categories and their localizations}, volume~99 of {\em
-  Mathematical Surveys and Monographs}.
-\newblock American Mathematical Society, Providence, RI, 2003.
-
 \bibitem{McL}
 S.~Mac~Lane.
 \newblock {\em Categories for the working mathematician}, volume~5 of {\em
@@ -28,16 +16,6 @@ L.~A. Pereira.
 \newblock Equivariant dendroidal sets.
 \newblock {Available at: \texttt{http://www.faculty.virginia.edu/luisalex/}},
   2016.
-
-\bibitem{Per17}
-L.~A. Pereira.
-\newblock Equivariant dendroidal sets.
-\newblock arXiv preprint: 1702.08119, 2017.
-
-\bibitem{Stephan16}
-M.~Stephan.
-\newblock On equivariant homotopy theory for model categories.
-\newblock arXiv preprint: 1308.0856v3, 2016.
 
 \bibitem{We12}
 I.~Weiss.

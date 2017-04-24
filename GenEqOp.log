@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  23 APR 2017 20:05
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -867,7 +867,14 @@ librarydecorations.code.tex"
 \tikz@lib@dec@box=\box47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathreplacing.code.tex")) (GenEqOp.aux)
+ecorations.pathreplacing.code.tex")) (GenEqOp.aux
+
+LaTeX Warning: Label `SUBDATAUNDERPLANG EQ' multiply defined.
+
+
+LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
+
+)
 \openout1 = `GenEqOp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -884,8 +891,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 25.
@@ -998,452 +1004,26 @@ ABD: EveryShipout initializing macros
 \tf@toc=\write5
 \openout5 = `GenEqOp.toc'.
 
-
-
-LaTeX Warning: Reference `TRANSFSIMP SEC' on page 1 undefined on input line 64.
-
-
-[1
-
-{C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Citation `We12' on page 2 undefined on input line 146.
-
-
-LaTeX Warning: Citation `Pe16b' on page 2 undefined on input line 146.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 2 undefined on input line 202.
-
-
-
-LaTeX Warning: Citation `Pe16b' on page 2 undefined on input line 212.
-
-[2]
-
-LaTeX Warning: Reference `INCOMPNOTOP' on page 3 undefined on input line 227.
-
-
-LaTeX Warning: Reference `INCOMPNOTOP' on page 3 undefined on input line 255.
-
-
-LaTeX Warning: Reference `TERNJOIN EQ' on page 3 undefined on input line 273.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 3 undefined on inp
-ut line 280.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 3 undefined on inp
-ut line 342.
-
-
-LaTeX Warning: Reference `PLANAR EQ' on page 3 undefined on input line 344.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 3 undefined on input line 348.
-
-
-
-LaTeX Warning: Reference `PLANAR EQ' on page 3 undefined on input line 351.
-
-[3]
-
-LaTeX Warning: Reference `PLANAR EQ' on page 4 undefined on input line 353.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 4 undefined on inp
-ut line 357.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 4 undefined on inp
-ut line 358.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-63.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-66.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-75.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 4 undefined on input line 382.
-
-
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 4 undefined on input 
-line 382.
-
-
-LaTeX Warning: Citation `Pe16b' on page 4 undefined on input line 385.
-
-
-LaTeX Warning: Reference `SUBS SEC' on page 4 undefined on input line 389.
-
-
-LaTeX Warning: Reference `OUTTALL SEC' on page 4 undefined on input line 389.
-
-
-LaTeX Warning: Reference `PLANAREX EQ' on page 4 undefined on input line 396.
-
-
-LaTeX Warning: Reference `FORESTPLAN REM' on page 4 undefined on input line 463
-.
-
-[4]
-
-LaTeX Warning: Reference `STANDMODEL EX' on page 5 undefined on input line 470.
-
-
-
-LaTeX Warning: Citation `Pe16b' on page 5 undefined on input line 591.
-
-
-LaTeX Warning: Citation `Pe16b' on page 5 undefined on input line 596.
-
-[5]
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 6 undefined on input 
-line 615.
-
-
-LaTeX Warning: Reference `PLANARPULL EQ' on page 6 undefined on input line 623.
-
-
-
-LaTeX Warning: Reference `PLANAROMEGAEX1 EQ' on page 6 undefined on input line 
-623.
-
-
-LaTeX Warning: Reference `SUBS SEC' on page 6 undefined on input line 637.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 637.
-
-
-LaTeX Warning: Reference `OUTERFACE EQ' on page 6 undefined on input line 648.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 686.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 688.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 693.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 696.
-
-[6]
-
-LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 709.
-
-
-LaTeX Warning: Reference `TALLOUTERDEC COR' on page 7 undefined on input line 7
-20.
-
-
-LaTeX Warning: Reference `TRIPLEFACT EQ' on page 7 undefined on input line 731.
-
-
-
-LaTeX Warning: Reference `GRAPTPUSH EQ' on page 7 undefined on input line 739.
-
-
-LaTeX Warning: Reference `UNIQCOR REM' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 863.
-
-[7]
-
-LaTeX Warning: Reference `SUBSDATUMTREES2 EQ' on page 8 undefined on input line
- 962.
-
-[8]
-
-LaTeX Warning: Reference `ASSEMBLYGRAFT EQ' on page 9 undefined on input line 1
-050.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN EQ' on page 9 undefined on input lin
-e 1056.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP EQ' on page 9 undefined on input line 10
-69.
-
-
-LaTeX Warning: Reference `PLANARCONV CON' on page 9 undefined on input line 109
-2.
-
-[9]
-
-LaTeX Warning: Citation `McL' on page 10 undefined on input line 1175.
-
-
-LaTeX Warning: Reference `WRRAN EQ' on page 10 undefined on input line 1175.
-
-
-LaTeX Warning: Reference `POINTKAN EQ' on page 10 undefined on input line 1194.
-
-
-[10]
-
-LaTeX Warning: Reference `UNIQCOR REM' on page 11 undefined on input line 1247.
-
-
-
-Overfull \hbox (5.49458pt too wide) detected at line 1353
+ [1
+
+{C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
+ [5] [6] [7] [8] [9] [10] [11]
+Overfull \hbox (5.49458pt too wide) detected at line 1424
 []
  []
 
-
-LaTeX Warning: Reference `PULLPLANAR REM' on page 11 undefined on input line 13
-58.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP REM' on page 11 undefined on input line 
-1374.
-
-[11]
-
-LaTeX Warning: Reference `SUBSTITUTIONDATUM' on page 12 undefined on input line
- 1463.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 12 undefined on input 
-line 1478.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 12 undefined on input
- line 1500.
-
-
-LaTeX Warning: Reference `SUBSDATUMCONV REM' on page 12 undefined on input line
- 1501.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 12 undefined on input
- line 1512.
-
-[12]
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 13 undefined on input
- line 1574.
-
-
-LaTeX Warning: Reference `PTPULL EQ' on page 13 undefined on input line 1592.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 13 undefined on input
- line 1593.
-
-[13]
-
-LaTeX Warning: Reference `PTNARROW EQ' on page 14 undefined on input line 1621.
-
-
-
-LaTeX Warning: Reference `PTNARROW EQ' on page 14 undefined on input line 1621.
-
-
-
-LaTeX Warning: Reference `PTNARROWLOC EQ' on page 14 undefined on input line 16
-21.
-
-
-LaTeX Warning: Reference `PTPULL EQ' on page 14 undefined on input line 1626.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP REM' on page 14 undefined on input line 
-1668.
-
-
-LaTeX Warning: Reference `VERTEXDECOMPG REM' on page 14 undefined on input line
- 1668.
-
-
-LaTeX Warning: Reference `LRSPANISO EQ' on page 14 undefined on input line 1726
-.
-
-[14]
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 15 undefined on input line 1
-780.
-
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 15 undefined on input line 1
-801.
-
-[15]
-
-LaTeX Warning: Reference `OMEGAGNA EQ' on page 16 undefined on input line 1851.
-
-
-
-LaTeX Warning: Reference `OMEGAGNA EQ' on page 16 undefined on input line 1864.
-
-
-
-LaTeX Warning: Reference `GEND0 EQ' on page 16 undefined on input line 1865.
-
-
-LaTeX Warning: Reference `PICUBOIDAB EQ' on page 16 undefined on input line 187
-6.
-
-
-LaTeX Warning: Reference `PICUBOIDAB EQ' on page 16 undefined on input line 192
-5.
-
-[16]
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 17 undefined on input line 202
-2.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 17 undefined on input line 202
-2.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 17 undefined on input line 202
-7.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 17 undefined on input line 202
-8.
-
-[17]
-
-LaTeX Warning: Reference `UNITSPAN1 EQ' on page 18 undefined on input line 2084
-.
-
-
-LaTeX Warning: Reference `UNITSPAN2 EQ' on page 18 undefined on input line 2084
-.
-
-
-LaTeX Warning: Reference `UNITSPAN1 EQ' on page 18 undefined on input line 2085
-.
-
-
-LaTeX Warning: Reference `UNITSPAN2 EQ' on page 18 undefined on input line 2085
-.
-
-
-LaTeX Warning: Reference `MONSPAN PROP' on page 18 undefined on input line 2096
-.
-
-
-LaTeX Warning: Reference `RANLANADJ REM' on page 18 undefined on input line 209
-6.
-
-
-LaTeX Warning: Reference `PLANARCONV CON' on page 18 undefined on input line 21
-12.
-
-
-LaTeX Warning: Reference `ROOTLEAFTROOTCOM EQ' on page 18 undefined on input li
-ne 2133.
-
-
-LaTeX Warning: Reference `ROOTLEAFTROOTCOM EQ' on page 18 undefined on input li
-ne 2144.
-
-[18]
-
-LaTeX Warning: Reference `ROOTIMPLIESROOT EQ' on page 19 undefined on input lin
-e 2182.
-
-
-Overfull \hbox (79.68538pt too wide) detected at line 2296
+[12] [13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (79.68538pt too wide) detected at line 2393
 []
  []
 
-
-LaTeX Warning: Citation `McL' on page 19 undefined on input line 2324.
-
-
-LaTeX Warning: Reference `FINWREATPRODLIM LEM' on page 19 undefined on input li
-ne 2332.
-
-[19]
-
-LaTeX Warning: Reference `TDOWNISOA EQ' on page 20 undefined on input line 2360
-.
-
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 20 undefined on input
- line 2362.
-
-
-LaTeX Warning: Reference `TDOWNISOA EQ' on page 20 undefined on input line 2373
-.
-
-
-LaTeX Warning: Reference `ROOTFIBPULL LEM' on page 20 undefined on input line 2
-380.
-
-
-LaTeX Warning: Reference `MONSPAN PROP' on page 20 undefined on input line 2386
-.
-
-
-LaTeX Warning: Reference `LANIOTAADJ EQ' on page 20 undefined on input line 238
-9.
-
-
-LaTeX Warning: Reference `LANPULLCOMA LEM' on page 20 undefined on input line 2
-404.
-
-
-LaTeX Warning: Reference `FINWREATPRODLIM LEM' on page 20 undefined on input li
-ne 2404.
-
-
-LaTeX Warning: Reference `THEMONAD DEF' on page 20 undefined on input line 2434
-.
-
-[20]
-
-LaTeX Warning: Reference `MONADFUNCTORALPHA EQ' on page 21 undefined on input l
-ine 2515.
-
-
-Overfull \hbox (26.14528pt too wide) detected at line 2556
+[21] [22]
+Overfull \hbox (26.14528pt too wide) detected at line 2653
 []
  []
 
-
-LaTeX Warning: Reference `MONADICFUN PROP' on page 21 undefined on input line 2
-563.
-
-[21]
-
-LaTeX Warning: Reference `RIGHTMODULETMAP EQ' on page 22 undefined on input lin
-e 2584.
-
-
-LaTeX Warning: Reference `RIGHTMODULETMAPAUX EQ' on page 22 undefined on input 
-line 2602.
-
-
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 2622--2623
+[23]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 2719--2720
 []\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
@@ -1452,299 +1032,37 @@ ir $\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/
 m/it/9 T\OMX/MnSymbolE/m/n/9 ç \U/MnSymbolA/m/n/9  
  []
 
-[22]
-
-LaTeX Warning: Reference `TALPHAKMOD REM' on page 23 undefined on input line 27
-17.
-
-
-LaTeX Warning: Reference `NSTRINGLAB EQ' on page 23 undefined on input line 272
-8.
-
-
-LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 23 undefined on input line
- 2728.
-
-
-LaTeX Warning: Reference `SIMPOPERATORS NOT' on page 23 undefined on input line
- 2739.
-
-
-LaTeX Warning: Reference `NKNFGT EQ' on page 23 undefined on input line 2766.
-
-
-LaTeX Warning: Reference `LABELEDTREES EX' on page 23 undefined on input line 2
-768.
-
-
-LaTeX Warning: Reference `INDVNG NOT' on page 23 undefined on input line 2775.
-
-
-LaTeX Warning: Reference `OMEGAGNA NOT' on page 23 undefined on input line 2790
-.
-
-[23]
-
-LaTeX Warning: Reference `NSTRINGLAB EQ' on page 24 undefined on input line 280
-4.
-
-
-LaTeX Warning: Reference `PLANARSTRING SEC' on page 24 undefined on input line 
-2812.
-
-
-LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 24 undefined on input line
- 2812.
-
-
-LaTeX Warning: Reference `ALLSQUARES EQ' on page 24 undefined on input line 281
-7.
-
-
-LaTeX Warning: Reference `LTUPLEAPULL EQ' on page 24 undefined on input line 28
-34.
-
-
-LaTeX Warning: Reference `VGDEF EQ' on page 24 undefined on input line 2839.
-
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 24 undefined on input line 2
-849.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 24 undefined on input 
-line 2849.
-
-[24]
-
-LaTeX Warning: Reference `ALLSQUARESJ PROP' on page 25 undefined on input line 
-2913.
-
-
-Overfull \hbox (19.31252pt too wide) detected at line 2939
+[24] [25]
+Overfull \hbox (19.31252pt too wide) detected at line 3036
 []
  []
-
-
-Overfull \hbox (5.0608pt too wide) detected at line 2965
-[]
- []
-
-
-LaTeX Warning: Reference `DISJBARDN EQ' on page 25 undefined on input line 2967
-.
-
-
-LaTeX Warning: Reference `REMAINDIFF EQ' on page 25 undefined on input line 296
-8.
-
-
-LaTeX Warning: Reference `TALPHAKMOD REM' on page 25 undefined on input line 29
-68.
-
-
-Overfull \hbox (49.15059pt too wide) detected at line 3001
-[]
- []
-
-[25]
-
-LaTeX Warning: Reference `REPACKAGERES REM' on page 26 undefined on input line 
-3079.
-
-
-LaTeX Warning: Reference `PRECOMPPOSTCOMP REM' on page 26 undefined on input li
-ne 3081.
-
-
-LaTeX Warning: Reference `COLIMLAN EQ' on page 26 undefined on input line 3111.
-
 
 [26]
+Overfull \hbox (5.0608pt too wide) detected at line 3062
+[]
+ []
 
-LaTeX Warning: Reference `REALDEF EQ' on page 27 undefined on input line 3222.
 
+Overfull \hbox (49.15059pt too wide) detected at line 3098
+[]
+ []
 
-LaTeX Warning: Reference `FACTORIZATIONREAL EQ' on page 27 undefined on input l
-ine 3238.
-
-
-LaTeX Warning: Reference `REALDEF EQ' on page 27 undefined on input line 3262.
-
-[27]
-
-LaTeX Warning: Reference `REALDEF EQ' on page 28 undefined on input line 3331.
-
-
-LaTeX Warning: Reference `TARGETDEFINITON EQ' on page 28 undefined on input lin
-e 3347.
-
-
-LaTeX Warning: Reference `OBJGENREL LEMMA' on page 28 undefined on input line 3
-377.
-
-[28]
-
-LaTeX Warning: Reference `UNDERLEFTADJ LEM' on page 29 undefined on input line 
-3428.
-
-
-LaTeX Warning: Reference `SOURCEFINAL PROP' on page 29 undefined on input line 
-3429.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 29 undefined on input lin
-e 3433.
-
-
-LaTeX Warning: Reference `IDENTSIMPRELSISO EQ' on page 29 undefined on input li
-ne 3462.
-
-
-LaTeX Warning: Reference `SIMPSPANREIN LEMMA' on page 29 undefined on input lin
-e 3481.
-
-
-LaTeX Warning: Reference `IDENTSIMPRELS EQ' on page 29 undefined on input line 
-3506.
-
-
-LaTeX Warning: Reference `SOURCEFACT EQ' on page 29 undefined on input line 351
-7.
-
-
-LaTeX Warning: Reference `EQUIVALENCEDEF EQ' on page 29 undefined on input line
- 3517.
-
-[29]
-
-LaTeX Warning: Reference `EQUIVALENCEDEF EQ' on page 30 undefined on input line
- 3529.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 30 undefined on input lin
-e 3584.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 30 undefined on input line 35
-85.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 30 undefined on input line 35
-85.
-
-
-LaTeX Warning: Reference `COLIMLAN EQ' on page 30 undefined on input line 3603.
-
-
-
-LaTeX Warning: Reference `DISJBARDNJ EQ' on page 30 undefined on input line 361
-8.
-
-
-LaTeX Warning: Reference `DUALRESULTS REM' on page 30 undefined on input line 3
-618.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 30 undefined on input line 36
-18.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 30 undefined on input line 36
-18.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 30 undefined on input lin
-e 3623.
-
-[30]
-
-LaTeX Warning: Reference `PLANARSTRING EX' on page 31 undefined on input line 3
-630.
-
-
-LaTeX Warning: Reference `LANCOPRODDESC' on page 31 undefined on input line 364
-4.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 31 undefined on input line 364
-8.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 31 undefined on input line 364
-9.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 31 undefined on input line 365
-1.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 31 undefined on input line 365
-1.
-
-
-LaTeX Warning: Reference `LANCOPRODDESC' on page 31 undefined on input line 365
-7.
-
-
-LaTeX Warning: Reference `FREEEXT EQ' on page 31 undefined on input line 3662.
-
-
-Overfull \hbox (74.56268pt too wide) detected at line 3677
+[27] [28] [29] [30] [31] [32]
+Overfull \hbox (74.56268pt too wide) detected at line 3774
 \U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
  []
 
 
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 31 undefined on input line
- 3682.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 31 undefined on input line
- 3686.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 31 undefined on input line
- 3687.
-
-
-LaTeX Warning: Reference `FREEEXT EQ' on page 31 undefined on input line 3702.
-
-[31]
-
-LaTeX Warning: Reference `PARTREALSPAN EQ' on page 32 undefined on input line 3
-729.
-
-
-LaTeX Warning: Reference `EXTGENMON SEC' on page 32 undefined on input line 372
-9.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 32 undefined on input line 37
-29.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 32 undefined on input lin
-e 3729.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 32 undefined on input line 37
-29.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 32 undefined on input line
- 3730.
-
-
-Overfull \hbox (4.66757pt too wide) in paragraph at lines 3743--3745
-[]\OT1/cmr/bx/n/9 Definition 5.62. []\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-
-sion tree cat-e-gory $\OT1/cmr/m/n/9 
+Overfull \hbox (6.85089pt too wide) in paragraph at lines 3839--3841
+[][]\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-sion tree cat-e-gory $\OT1/cmr/m/
+n/9 
 []$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ò\OML/cmm/m/it/9
  B; A; X\OMX/MnSymbolE/m/n/9 ù$\OT1/cmr/m/n/9 -
  []
 
-[32]
-Overfull \hbox (4.37666pt too wide) in paragraph at lines 3812--3814
-[]\OT1/cmr/bx/n/9 Definition 6.4. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
+[33] [34] [35] [36]
+Overfull \hbox (4.37666pt too wide) in paragraph at lines 4351--4353
+[]\OT1/cmr/bx/n/9 Definition 6.5. []\OT1/cmr/m/n/9 Given a $\OMX/MnSymbolE/m/n/
 9 à\OMS/MnSymbolS/m/n/9 P\OT1/cmr/m/n/9 ; \OML/cmm/m/it/9 X; Y\OMX/MnSymbolE/m/
 n/9 ç$\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
 /cmm/m/it/9 T$\OT1/cmr/m/n/9 , let $\OML/cmm/m/it/9 T[]$ \OT1/cmr/m/n/9 de-note
@@ -1752,111 +1070,49 @@ n/9 ç$\OT1/cmr/m/n/9 -alternating $\OML/cmm/m/it/9 G$\OT1/cmr/m/n/9 -tree $\OML
 t/9 Y\OMX/MnSymbolE/m/n/9 ç$\OT1/cmr/m/n/9 -alternating
  []
 
-[33]
-Overfull \hbox (13.09369pt too wide) detected at line 3962
+[37]
+Overfull \hbox (13.09369pt too wide) detected at line 4501
 []
  []
 
-
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 34 undefined on input 
-line 3965.
-
-
-LaTeX Warning: Reference `K-1_LAN_FINAL_EQ1' on page 34 undefined on input line
- 3991.
-
-
-LaTeX Warning: Reference `K-1_LAN_FINAL_EQ2' on page 34 undefined on input line
- 3991.
-
-[34]
-
-LaTeX Warning: Reference `ZERO_LAN_FINALITY_LEMMA' on page 35 undefined on inpu
-t line 4033.
-
-
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 35 undefined on input 
-line 4034.
-
-
-LaTeX Warning: Reference `K-1_LAN_FINAL_DIAGRAM' on page 35 undefined on input 
-line 4034.
-
-[35] [36]
-
-LaTeX Warning: Citation `BM03' on page 37 undefined on input line 4129.
-
-[37]
-
-LaTeX Warning: Reference `TREE_FILTRATION_PIECES_DEFINITION' on page 38 undefin
-ed on input line 4193.
-
-
-LaTeX Warning: Reference `LAN_PUSHOUT_LEMMA' on page 38 undefined on input line
- 4197.
-
-
-LaTeX Warning: Reference `TREE_CATS_DECOMP_LEMMA' on page 38 undefined on input
- line 4197.
-
-
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 38 undefined on input 
-line 4208.
-
-
-LaTeX Warning: Reference `ZERO_LAN_FINALITY_LEMMA' on page 38 undefined on inpu
-t line 4210.
-
-
-Overfull \hbox (23.33171pt too wide) detected at line 4218
+[38] [39] [40] [41]
+Overfull \hbox (23.33171pt too wide) detected at line 4761
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9 ç \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9 ç \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 ç\OML/cmm/m/it/9 :
  []
 
-[38]
+[42] [43]
 
-LaTeX Warning: Reference `FILTRATION_LAN_SQUARE_DIAGRAM' on page 39 undefined o
-n input line 4226.
-
-
-LaTeX Warning: Reference `Q_DEFINITION' on page 39 undefined on input line 4233
-.
+LaTeX Warning: Citation `BH15' on page 44 undefined on input line 4797.
 
 
-LaTeX Warning: Reference `FILTRATION_LAN_SQUARE_DIAGRAM' on page 39 undefined o
-n input line 4235.
-
-[39]
-
-LaTeX Warning: Reference `BH16' on page 40 undefined on input line 4250.
+LaTeX Warning: Citation `Per17' on page 44 undefined on input line 4802.
 
 
-LaTeX Warning: Reference `Per17' on page 40 undefined on input line 4255.
+LaTeX Warning: Citation `BH15' on page 44 undefined on input line 4827.
 
 
-LaTeX Warning: Reference `BH16' on page 40 undefined on input line 4280.
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 4830--4830
+[][] 
+ []
 
-[40]
+[44]
 
-LaTeX Warning: Reference `Hir03' on page 41 undefined on input line 4317.
-
-
-LaTeX Warning: Citation `WY15' on page 41 undefined on input line 4326.
-
-
-LaTeX Warning: Reference `CELLULAR_EXTENSION_COFIBRATION_THEOREM' on page 41 un
-defined on input line 4344.
+LaTeX Warning: Citation `Stephan16' on page 45 undefined on input line 4842.
 
 
-LaTeX Warning: Reference `SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM' on page 41 und
-efined on input line 4344.
+LaTeX Warning: Citation `Hi03' on page 45 undefined on input line 4873.
 
-[41]
+[45] [46]
 
-LaTeX Warning: Reference `WEAK_INDEXING_VALENCE_LEMMA' on page 42 undefined on 
-input line 4368.
+LaTeX Warning: Citation `Stephan16' on page 47 undefined on input line 4967.
+
+
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 4972--4972
+[][] 
+ []
 
 (GenEqOp.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
@@ -1870,74 +1126,77 @@ Underfull \hbox (badness 2035) in paragraph at lines 21--24
 .  Avail-able at:
  []
 
-) [42] (GenEqOp.aux)
+[47]) [48] (GenEqOp.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28583 strings out of 493334
- 585013 string characters out of 3130222
- 645816 words of memory out of 3000000
- 31594 multiletter control sequences out of 15000+200000
- 33271 words of font info for 125 fonts, out of 3000000 for 9000
+ 29774 strings out of 493334
+ 617800 string characters out of 3130222
+ 661197 words of memory out of 3000000
+ 32787 multiletter control sequences out of 15000+200000
+ 32650 words of font info for 123 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,19n,84p,3270b,2240s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
-600\MnSymbolC7.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
-lic\mnsymbol\dpi600\MnSymbolS5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\Users\lu
-isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE8.
+600\MnSymbolS12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\mnsymbol\dpi600\MnSymbolS10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE10.pk> <C:\Users\luisa\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC7.pk> <C:\Users
+\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbol
+S5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
+\dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9
+\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE8.pk> <C:\Users\luisa\AppData\
+Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC8.pk> <C:\User
+s\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbo
+lE5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbo
+l\dpi600\MnSymbolD6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\public\mnsymbol\dpi600\MnSymbolA5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF9.pk> <C:\Users\luisa\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE6.pk> <C:\Use
+rs\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymb
+olA6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
+lic\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD9.pk> <C:\Users\luisa\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE9.pk> <C:\Users\lu
+isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC9.
 pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dp
-i600\MnSymbolC8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
-blic\mnsymbol\dpi600\MnSymbolE5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD6.pk> <C:\Users\luisa\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA5.pk> <C:\Users\l
-uisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF9
-.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\d
-pi600\MnSymbolE6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
-ublic\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\luisa\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD9.pk> 
-<C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600
-\MnSymbolE9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public
-\mnsymbol\dpi600\MnSymbolC9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.pk> <C:\Users\luisa\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users\luisa
-\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS9.pk>
- <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi60
-0\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msbm5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (42 pages, 688458 bytes).
+i600\MnSymbolC5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
+nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS9.pk> <C:\Users\luisa\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC6.pk><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
+s/msbm7.pfb>
+Output written on GenEqOp.pdf (48 pages, 738982 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
+ 532 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
