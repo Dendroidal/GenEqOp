@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  24 APR 2017 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  24 APR 2017 15:34
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1061,25 +1061,34 @@ n/9
  []
 
 [33] [34] [35] [36]
-Overfull \hbox (13.09369pt too wide) detected at line 4500
+Overfull \hbox (13.09369pt too wide) detected at line 4499
 []
  []
 
-[37] [38] [39] [40]
-Overfull \hbox (23.33171pt too wide) detected at line 4802
+[37] [38] [39]
+
+LaTeX Warning: Reference `LAN_PUSHOUT_LEMMA' on page 40 undefined on input line
+ 4812.
+
+
+LaTeX Warning: Reference `TREE_CATS_DECOMP_LEMMA' on page 40 undefined on input
+ line 4812.
+
+
+Overfull \hbox (23.33171pt too wide) detected at line 4833
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9  \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9  \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 ˆ\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 \OML/cmm/m/it/9 :
  []
 
-[41] [42]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 4871--4871
+[40] [41]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 4902--4902
 [][] 
  []
 
-[43] [44] [45]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5013--5013
+[42] [43] [44]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5044--5044
 [][] 
  []
 
@@ -1089,22 +1098,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 :
  []
 
-[46]
+[45]
 Underfull \hbox (badness 2035) in paragraph at lines 43--46
 []\OT1/cmr/m/n/9 I. Weiss.  Broad posets, trees, and the den-droidal cat-e-gory
 .  Avail-able at:
  []
 
-) [47] (GenEqOp.aux)
+) [46] (GenEqOp.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29576 strings out of 493334
- 612674 string characters out of 3130222
- 659636 words of memory out of 3000000
- 32589 multiletter control sequences out of 15000+200000
+ 29494 strings out of 493334
+ 610457 string characters out of 3130222
+ 659690 words of memory out of 3000000
+ 32507 multiletter control sequences out of 15000+200000
  32650 words of font info for 123 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1158,9 +1170,9 @@ msfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (47 pages, 733271 bytes).
+Output written on GenEqOp.pdf (46 pages, 728082 bytes).
 PDF statistics:
- 523 PDF objects out of 1000 (max. 8388607)
+ 515 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

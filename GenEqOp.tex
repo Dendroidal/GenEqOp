@@ -4287,12 +4287,12 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 \section{Filtration of cellular extensions}
 
 Put together, the results in the previous section show that the free extension $\P[u]$ given by the pushout
-\[
+\begin{equation}\label{CELLEXTPUSH EQ}
 \begin{tikzcd}
   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
   \mathbb F_G Y \arrow[r] & \P[u]
 \end{tikzcd}
-\]
+\end{equation}
 is given by a left Kan extension along 
 $(\bar{\Omega}_{G}^e)^{op} \xrightarrow{\mathsf{lr}} \Sigma_G^{op}$. So as to study the homotopical properties of the map $\P \to \P[u]$ we will identity a suitable filtration of this map, which will in turn be induced by a suitable filtration of the extension tree category $\bar{\Omega}_{G}^e$.
 
@@ -4319,9 +4319,8 @@ Intuitively, $|T|_X$ counts the number of $X$-labeled vertices in each individua
 \end{remark}
 
 
-\begin{definition}
-  \label{TREE_FILTRATION_PIECES_DEFINITION}
-  We define subcategories of $\bar{\Omega}_{G}^e$:
+\begin{definition}\label{TREE_FILTRATION_PIECES_DEFINITION}
+We define subcategories of $\bar{\Omega}_{G}^e$:
   \begin{itemize}
   \item $\bar{\Omega}_G^e[\leq k]$ (resp. $\Omega_G^e[k]$) is the full subcategory of trees 
   $T \in \bar{\Omega}_G^e$ with $|T|\leq k$ (resp. $|T| = k$);
@@ -4611,9 +4610,6 @@ resulting in the following.
   $\bar{\Omega}_G^{e}[k,0]$ is $\mathsf{Ran}$-initial in $\bar{\Omega}_G^e[k]$ over $\Sigma_G$.
 \end{lemma}
 
-{\color{red} HERE}
-
-
 %\begin{proof}[Proof of Lemma \ref{ZERO_LAN_FINALITY_LEMMA}]
 %  This follows analogously to Lemma \ref{MINUS_LAN_FINAL_LEMMA}, by replacing Diagram \ref{K-1_LAN_FINAL_DIAGRAM} with the diagram below:
 %  \[
@@ -4626,83 +4622,118 @@ resulting in the following.
 %  \]
 %\end{proof}
 
-Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
-While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
-\[
-\begin{tikzcd}
-  \mathcal A \arrow[d] \arrow[r] & \mathcal C \arrow[d]\\
-  \mathcal C \arrow[r] & \mathcal D
-\end{tikzcd}
-\]
-if the nerve of this square is a pushout in $\sSet$, then this is a pushout of categories (since the nerve is the inclusion of a reflective subcategory).
-\begin{definition}
-  \label{NERVOUS_PUSHOUTS_DEFN}
-  We call such squares \textit{nervous pushouts} of categories.
-\end{definition}
 
-If we further assume that the span of functors is built out of fully-faithful inclusions, these pushouts behave as nicely as possible with left Kan extensions.
-\begin{lemma}
-  \label{LAN_PUSHOUT_LEMMA}
-  Given any diagram in categories of the form 
-\[
-\begin{tikzcd}
-  \mathcal A \arrow[d] \arrow[r, "f"] & \mathcal C \arrow[d, "i"]\\
-  \mathcal B \arrow[r, "g"] & \mathcal D \arrow[r, "Y"] \arrow[d, "j"] & \V \\
-  & \mathcal D
-\end{tikzcd}
-\]
-such that the square is a nervous pushout of fully-faithful functors, then $\Lan_j Y$ is the pushout of the induced span
-\[
-\begin{tikzcd}
-  \Lan_{j i f}(Y i f) \arrow[r] \arrow[d] & \Lan_{j i}(Y i)\\
-  \Lan_{j g}(Y g).
-\end{tikzcd}
-\]
-\end{lemma}
-\begin{proof}
-  By the universal property of left Kan extensions, it suffices to show that, for any functor $Z: \V \to \D$, the natural map
-  \[
-  \V^\D(Y, Z j) \longto \V^{\mathcal B} (Y g, Z j g) \prod\limits_{\V^{\mathcal A}(Y i f, Z j i f)} \V^{\mathcal C}(Y i, Z j i)
-  \]
-  is a bijection. These two sets give the same data: a collection of maps $\Phi_b: Y(b) \to Z(b)$ and $\Phi_c:Y(c) \to Z(c)$ for all $b\in \mathcal B$ and $c \in \mathcal C$, such that $\Phi_b = \Phi_c$ whenever $b = c \in \mathcal A$. In general, the compatibilites required on the right are less demanding. However, with the above assumptions, a map $d \to d'$ in $\mathcal D$ is \textit{uniquely} a map in $\mathcal A$, $\mathcal B \setminus \mathcal A$, or $\mathcal C \setminus \mathcal A$, and thus all the necessary compatibilities are covered by (at least) one of the $\set{\Phi_b}$ or $\set{\Phi_c}$. 
-\end{proof}
+In what follows we write $N^e \colon \Omega_G^{e,op} \to \mathcal{V}$ for the functor in (\ref{FREEEXTUSEFCOLNEW EQ}),
+and abuse notation by likewise writing $N^e$ for any of its restrictions to the subcategories in 
+Definition \ref{TREE_FILTRATION_PIECES_DEFINITION}.
 
-We can now build our category $\Omega_{G,e}[\leq k]$ inductively.
+We are now in a position to produce the desired filtration of the map $\mathcal{P} \to \mathcal{P}[u]$ in 
+(\ref{CELLEXTPUSH EQ}).
 
-\begin{lemma}
-  \label{TREE_CATS_DECOMP_LEMMA}
-  $\Omega_G^e[\leq k]$ is the isomorphic to the pushout below.
-  \[
-  \begin{tikzcd}
-    \Omega_G^{e}[k,-] \arrow[d] \arrow[r] & \Omega_G^{e}[\leq k,-] \arrow[d]\\
-    \Omega_G^e[k] \arrow[r] & \Omega_G^e[\leq k]
-  \end{tikzcd}
-  \]
-  In fact, it is a \textit{nervous pushout} of fully-faithful functors.% (see \ref{NERVOUS_PUSHOUT_DEFN}).
-\end{lemma}
-\begin{proof}
-  Since maps in $\Omega_G^e$ can only increase $|-|$ by adding $|-|_X$, if $T$ is a tree with $|T| = |T|_Y = k$, then any other tree $S\in \Omega_G^e$ connected to $T$ via a zig-zag of maps must have $|S| = k$; that is, if $T\in \Omega_G^e[\leq k] \setminus \Omega_G^e[\leq k, -]$, then the connected component of $T$ is entirely contained in $\Omega_G^e[k]$. Conversely, if $T \in \Omega_G^e[\leq k] \setminus \Omega_G^e[k]$, the connected component of $T$ is entirely contained in $\Omega_G^e[\leq k,-]$. Since the natural induced map
-  \[
-  \Omega_G^e[k] \amalg \Omega_G^e[\leq k,-] \to \Omega_G^e[\leq k]
-  \]
-  is clearly full and surjective on objects, the result follows from the above discussion and the obvious fully-faithfulness ofthe span. 
-\end{proof}
-
-Abusing notation, we will denote by $N^e$ the restriction of that functor to any of the subcategories of $\Omega_G^e$ in the above pushout square.
-
-We can now define the sequencers which will make up our filtration of $\P[u]$:
 \begin{definition}
   Let $\P_k$ denote the left Kan extension
 \[
 \begin{tikzcd}
-  |[alias=U]| \Omega_G^e[\leq k]^{op} \arrow[r, "N^e"] \arrow[d, "val"'] & \V\\
-  \Sigma_G^{op} \arrow[ur, "\P_k"', ""{name=V}]
-  \arrow[Rightarrow, from=U, to=V]
+	|[alias=U]| \bar{\Omega}_G^e[\leq k]^{op} \arrow[r, "N^e"] \arrow[d, "\mathsf{lr}"'] & \V
+\\
+	\Sigma_G^{op} \arrow[ur, "\P_k"', ""{name=V}]
+	\arrow[Rightarrow, from=U, to=V]
 \end{tikzcd}
 \]
 \end{definition}
+Noting that $\bar{\Omega}_G^e[\leq 0] \simeq \Sigma_G$ (since $|T|=0$ only if $T$ is a $G$-corolla with $\mathcal{P}$-labeled vertex) and that $\bar{\Omega}_G^e$
+is the union of (the nerves of) the 
+$\bar{\Omega}_G^e[\leq k]$, one has a filtration
+\begin{equation}\label{FILT EQ}
+	\mathcal{P} = 
+	\mathcal{P}_0 \to 
+	\mathcal{P}_1 \to
+	\mathcal{P}_2 \to
+	\cdots \to 
+	\colim_k \mathcal{P}_k = \mathcal{P}[u].
+\end{equation}
 
-Note that by naturality of $\Lan$, we have maps $\P_{k-1} \to \P_k$.
+
+To analyze (\ref{FILT EQ}) homotopically we will further make use of a pushout description of each individual map 
+$\mathcal{P}_{k-1} \to \mathcal{P}_k$. To do so, we note that the diagram of inclusions
+\begin{equation}\label{INCDIAG EQ}
+\begin{tikzcd}
+	\bar{\Omega}_G^{e}[k,-] \arrow[d] \arrow[r] &
+	\bar{\Omega}_G^{e}[\leq k,-] \arrow[d]
+\\
+	\bar{\Omega}_G^e[k] \arrow[r] &
+	\bar{\Omega}_G^e[\leq k]
+\end{tikzcd}
+\end{equation}
+is a pushout of at the level of nerves.
+Indeed, this follows since
+\[
+\bar{\Omega}_G^e[k] \cap 
+\bar{\Omega}_G^{e}[\leq k,-]
+= \bar{\Omega}_G^{e}[k,-],
+	\qquad
+\bar{\Omega}_G^e[k] \cup 
+\bar{\Omega}_G^{e}[\leq k,-]
+= \bar{\Omega}_G^{e}[\leq k],
+\]
+and since a map $T \to S$ in 
+$\bar{\Omega}_G^e[\leq k]$
+will be in one of subcategories in (\ref{INCDIAG EQ}) iff $T$ is.
+
+Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification 
+$\Lan_{\bar{\Omega}_{G,e}[\leq k,-]^{op}}N^e \simeq
+\Lan_{\bar{\Omega}_{G,e}[\leq k-1]^{op}}N^e = \mathcal{P}_{k-1}$,
+applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram below.
+\[
+\begin{tikzcd}
+  \Lan_{\bar{\Omega}_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
+  \Lan_{\bar{\Omega}_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
+\end{tikzcd}
+\]
+
+
+{\color{red} HERE}
+
+%Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
+%While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
+%\[
+%\begin{tikzcd}
+%  \mathcal A \arrow[d] \arrow[r] & \mathcal C \arrow[d]\\
+%  \mathcal C \arrow[r] & \mathcal D
+%\end{tikzcd}
+%\]
+%if the nerve of this square is a pushout in $\sSet$, then this is a pushout of categories (since the nerve is the inclusion of a reflective subcategory).
+
+
+%If we further assume that the span of functors is built out of fully-faithful inclusions, these pushouts behave as nicely as possible with left Kan extensions.
+%\begin{lemma}
+%  \label{LAN_PUSHOUT_LEMMA}
+%  Given any diagram in categories of the form 
+%\[
+%\begin{tikzcd}
+%  \mathcal A \arrow[d] \arrow[r, "f"] & \mathcal C \arrow[d, %"i"]\\
+%  \mathcal B \arrow[r, "g"] & \mathcal D \arrow[r, "Y"] \arrow[d, "j"] & \V \\
+%  & \mathcal D
+%\end{tikzcd}
+%\]
+%such that the square is a nerve pushout of fully-faithful %functors, then $\Lan_j Y$ is the pushout of the induced span
+%\[
+%\begin{tikzcd}
+%  \Lan_{j i f}(Y i f) \arrow[r] \arrow[d] & \Lan_{j i}(Y i)\\
+%  \Lan_{j g}(Y g).
+%\end{tikzcd}
+%\]
+%\end{lemma}
+%\begin{proof}
+%  By the universal property of left Kan extensions, it suffices to show that, for any functor $Z: \V \to \D$, the natural map
+%  \[
+%  \V^\D(Y, Z j) \longto \V^{\mathcal B} (Y g, Z j g) \prod\limits_{\V^{\mathcal A}(Y i f, Z j i f)} \V^{\mathcal C}(Y i, Z j i)
+%  \]
+%  is a bijection. These two sets give the same data: a collection of maps $\Phi_b: Y(b) \to Z(b)$ and $\Phi_c:Y(c) \to Z(c)$ for all $b\in \mathcal B$ and $c \in \mathcal C$, such that $\Phi_b = \Phi_c$ whenever $b = c \in \mathcal A$. In general, the compatibilites required on the right are less demanding. However, with the above assumptions, a map $d \to d'$ in $\mathcal D$ is \textit{uniquely} a map in $\mathcal A$, $\mathcal B \setminus \mathcal A$, or $\mathcal C \setminus \mathcal A$, and thus all the necessary compatibilities are covered by (at least) one of the $\set{\Phi_b}$ or $\set{\Phi_c}$. 
+%\end{proof}
+
+
+
 
 \subsection{Notation}
 \todo[inline]{Luis: should this be stated earlier when defining the categorical wreath products?}
