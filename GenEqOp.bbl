@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{BM03}
+C.~Berger and I.~Moerdijk.
+\newblock Axiomatic homotopy theory for operads.
+\newblock {\em Commentarii Mathematici Helvetici}, 78:805--831, 2003.
+
+\bibitem{McL}
+S.~Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5 of {\em
+  Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, New York, second edition, 1998.
+
+\bibitem{Pe16b}
+L.~A. Pereira.
+\newblock Equivariant dendroidal sets.
+\newblock {Available at: \texttt{http://www.faculty.virginia.edu/luisalex/}},
+  2016.
+
+\bibitem{We12}
+I.~Weiss.
+\newblock Broad posets, trees, and the dendroidal category.
+\newblock Available at: \texttt{https://arxiv.org/abs/1201.3987}, 2012.
+
+\bibitem{WY15}
+D.~White and D.~Yau.
+\newblock Bousfield localization and algebras over colored operads.
+\newblock arXiv preprint: 1503.06720v2, 2015.
+
+\end{thebibliography}
