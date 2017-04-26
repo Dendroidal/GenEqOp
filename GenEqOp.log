@@ -1,10 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  25 APR 2017 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.26)  26 APR 2017 12:56
 entering extended mode
-**./GenEqOp.tex
-(GenEqOp.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+**\input GenEqOp.tex
+(GenEqOp.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -34,7 +31,7 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks16
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/06/28 v2.15d AMS math features
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
@@ -101,11 +98,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mnsymbol\MnSymbol.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\mnsymbol\MnSymbol.sty
 Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
-Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -332,7 +329,8 @@ utility macros; pictures: \xy, positions,
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package: xy 2013/10/06 Xy-pic version 3.8.9
 
@@ -397,39 +395,39 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip49
 \backup@length=\skip50
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count109
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\ulem\ulem.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\ulem\ulem.sty
 \UL@box=\box32
 \UL@hyphenbox=\box33
 \UL@skip=\skip51
@@ -441,18 +439,18 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 Package: ulem 2012/05/18
 \ULdepth=\dimen150
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\doublestroke\dsfont.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\dstroke\dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\bbm.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\bbm\bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\paralist\paralist.sty"
-Package: paralist 2016/08/07 v2.6 Extended list environments
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\paralist\paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
 \pltopsep=\skip52
 \plpartopsep=\skip53
 \plitemsep=\skip54
@@ -462,29 +460,33 @@ Package: paralist 2016/08/07 v2.6 Extended list environments
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
 Package: relsize 2003/07/04 ver 3.1
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tikz-cd\tikz-cd.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\tikz-cd\tikz-cd.sty
 Package: tikz-cd 2014/10/30 v0.9e Commutative diagrams with tikz
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-co
+mmon.tex
 \pgfutil@everybye=\toks38
 \pgfutil@tempdima=\dimen151
 \pgfutil@tempdimb=\dimen152
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.te
-x")) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-co
+mmon-lists.tex))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-la
+tex.def
 \pgfutil@abb=\box35
-("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+ (C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.cod
+e.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -493,29 +495,32 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks39
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 )
 \Gin@req@height=\dimen153
 \Gin@req@width=\dimen154
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
-Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.c
+ode.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.co
+de.tex
 \pgfkeys@pathtoks=\toks40
 \pgfkeys@temptoks=\toks41
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
-x"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfil
+tered.code.tex
 \pgfkeys@tmptoks=\toks42
 ))
 \pgf@x=\dimen155
@@ -535,33 +540,42 @@ x"
 \t@pgf@toka=\toks43
 \t@pgf@tokb=\toks44
 \t@pgf@tokc=\toks45
- ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
+
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-p
+dftex.def
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
-"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-c
+ommon-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
-ex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysso
+ftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count115
 \pgfsyssoftpath@bigbuffer@items=\count116
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
-ex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyspr
+otocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
-Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
- ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
+))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.c
+ode.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
+x
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.cod
+e.tex
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.cod
+e.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.c
+ode.tex
 \pgfmath@dimen=\dimen163
 \pgfmath@count=\count117
 \pgfmath@box=\box36
@@ -569,28 +583,30 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks47
 \pgfmath@stack@operation=\toks48
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
-tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometr
-ic.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code
-.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.
-code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.t
-ex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.
-tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
-ex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarit
-hmetics.code.tex")))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.code.tex
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.basic.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.trigonometric.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.random.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.comparison.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.base.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.round.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.misc.code.tex)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
+s.integerarithmetics.code.tex)))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.co
+de.tex
 \c@pgfmathroundto@lastzeros=\count118
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
-"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepo
+ints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen164
 \pgf@picmaxx=\dimen165
@@ -607,114 +623,126 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen176
 \pgf@zy=\dimen177
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
-ode.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
+thconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen178
 \pgf@path@lasty=\dimen179
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
-tex"
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
+thusage.code.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 \pgf@shorten@end@additional=\dimen180
 \pgf@shorten@start@additional=\dimen181
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
-"
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresc
+opes.code.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box37
 \pgf@hbox=\box38
 \pgf@layerbox@main=\box39
 \pgf@picture@serial@count=\count119
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
-de.tex"
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregr
+aphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
 \pgflinewidth=\dimen182
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
-.code.tex"
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretr
+ansformations.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
 \pgf@pt@x=\dimen183
 \pgf@pt@y=\dimen184
 \pgf@pt@temp=\dimen185
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequ
+ick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.te
-x"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreob
+jects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.
-code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
+thprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
-"
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorear
+rows.code.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 \pgfarrowsep=\dimen186
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresh
+ade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen187
 \pgf@sys@shading@range@num=\count120
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
-x"
+)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreim
+age.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.t
-ex"
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreex
+ternal.code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box40
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
-"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorela
+yers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.co
-de.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretr
+ansparency.code.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.t
-ex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
+tterns.code.tex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulesha
+pes.code.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box41
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
-sty"
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplo
+t.code.tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
+version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen188
 \pgf@nodesepend=\dimen189
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
-sty"
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
-Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
+version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.co
+de.tex))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
+x))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.cod
+e.tex
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
+x)
 \pgffor@iter=\dimen190
 \pgffor@skip=\dimen191
 \pgffor@stack=\toks49
 \pgffor@toks=\toks50
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
-Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\t
+ikz.code.tex
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
-code.tex"
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
+plothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count121
 \pgfplotmarksize=\dimen192
 )
@@ -733,7 +761,8 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikznumberofcurrentchild=\count124
 \tikz@fig@count=\count125
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulemat
+rix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count126
 \pgfmatrixcurrentcolumn=\count127
@@ -741,36 +770,38 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 )
 \tikz@expandcount=\count129
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarytopaths.code.tex"
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\tikz-cd\tikzlibrarycd.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarymatrix.code.tex"
-File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\tikz-cd\tikzlibrarycd.co
+de.tex
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.4)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-libraryquotes.code.tex"
-File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2013/08/28 v3.0.0 (rcs-revision 1.3)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.meta.c
-ode.tex"
-File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
+arrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2013/12/13 v3.0.0 (rcs-revision 1.12)
 \pgfarrowinset=\dimen199
 \pgfarrowlength=\dimen256
 \pgfarrowwidth=\dimen257
 \pgfarrowlinewidth=\dimen258
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarypatterns.code.tex"
-File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.0 (rcs-revision 1.2)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibrarypatterns.code
-.tex"
-File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\todonotes\todonotes.sty"
-Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
+patterns.code.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.0 (rcs-revision 1.13)
+))
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\todonotes\todonotes.sty
+Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -787,9 +818,9 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@depth=\count130
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarypositioning.code.tex"
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
@@ -806,7 +837,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count134
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip59
 \enit@outerparindent=\dimen261
@@ -819,7 +850,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\showkeys.sty"
 Package: showkeys 2014/10/28 v3.17 Show cite and label keys (DPC, MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\stmaryrd.sty"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\stmaryrd\stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
@@ -829,7 +860,7 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
@@ -849,12 +880,12 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks54
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarydecorations.pathreplacing.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarydecorations.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecorations.code
-.tex"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
+ibraries\tikzlibrarydecorations.code.tex
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduledec
+orations.code.tex
 \pgfdecoratedcompleteddistance=\dimen270
 \pgfdecoratedremainingdistance=\dimen271
 \pgfdecoratedinputsegmentcompleteddistance=\dimen272
@@ -866,8 +897,15 @@ librarydecorations.code.tex"
 )
 \tikz@lib@dec@box=\box47
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathreplacing.code.tex")) (GenEqOp.aux)
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decoration
+s\pgflibrarydecorations.pathreplacing.code.tex)) (GenEqOp.aux
+
+LaTeX Warning: Label `SUBDATAUNDERPLANG EQ' multiply defined.
+
+
+LaTeX Warning: Label `REGALTERNMAP EQ' multiply defined.
+
+)
 \openout1 = `GenEqOp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -884,8 +922,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 25.
@@ -901,10 +938,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+stmry on input line 25.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\latex\stmaryrd\ustmry.fd)
 Package xypdf Info: Line width: 0.44975pt on input line 25.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(C:\Users\Peter\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count141
 \scratchdimen=\dimen277
@@ -917,12 +954,13 @@ Package xypdf Info: Line width: 0.44975pt on input line 25.
 \MPnumerator=\count145
 \makeMPintoPDFobject=\count146
 \everyMPtoPDFconversion=\toks56
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+) ABD: EveryShipout initializing macros
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -931,35 +969,32 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 )
-ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -998,489 +1033,26 @@ ABD: EveryShipout initializing macros
 \tf@toc=\write5
 \openout5 = `GenEqOp.toc'.
 
+ [1
 
-
-LaTeX Warning: Reference `TRANSFSIMP SEC' on page 1 undefined on input line 64.
-
-
-[1
-
-{C:/Users/luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Citation `We12' on page 2 undefined on input line 146.
-
-
-LaTeX Warning: Citation `Pe16b' on page 2 undefined on input line 146.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 2 undefined on input line 202.
-
-
-
-LaTeX Warning: Citation `Pe16b' on page 2 undefined on input line 212.
-
-[2]
-
-LaTeX Warning: Reference `INCOMPNOTOP' on page 3 undefined on input line 227.
-
-
-LaTeX Warning: Reference `INCOMPNOTOP' on page 3 undefined on input line 255.
-
-
-LaTeX Warning: Reference `TERNJOIN EQ' on page 3 undefined on input line 273.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 3 undefined on inp
-ut line 280.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 3 undefined on inp
-ut line 342.
-
-
-LaTeX Warning: Reference `PLANAR EQ' on page 3 undefined on input line 344.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 3 undefined on input line 348.
-
-
-
-LaTeX Warning: Reference `PLANAR EQ' on page 3 undefined on input line 351.
-
-[3]
-
-LaTeX Warning: Reference `PLANAR EQ' on page 4 undefined on input line 353.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 4 undefined on inp
-ut line 357.
-
-
-LaTeX Warning: Reference `INPUTPREDECESSORPROP PROP' on page 4 undefined on inp
-ut line 358.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-63.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-66.
-
-
-LaTeX Warning: Reference `TERNARYJOIN PROP' on page 4 undefined on input line 3
-75.
-
-
-LaTeX Warning: Reference `PLANARIZE DEF' on page 4 undefined on input line 382.
-
-
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 4 undefined on input 
-line 382.
-
-
-LaTeX Warning: Citation `Pe16b' on page 4 undefined on input line 385.
-
-
-LaTeX Warning: Reference `SUBS SEC' on page 4 undefined on input line 389.
-
-
-LaTeX Warning: Reference `OUTTALL SEC' on page 4 undefined on input line 389.
-
-
-LaTeX Warning: Reference `PLANAREX EQ' on page 4 undefined on input line 396.
-
-
-LaTeX Warning: Reference `FORESTPLAN REM' on page 4 undefined on input line 463
-.
-
-[4]
-
-LaTeX Warning: Reference `STANDMODEL EX' on page 5 undefined on input line 470.
-
-
-
-LaTeX Warning: Citation `Pe16b' on page 5 undefined on input line 591.
-
-
-LaTeX Warning: Citation `Pe16b' on page 5 undefined on input line 596.
-
-[5]
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 6 undefined on input 
-line 615.
-
-
-LaTeX Warning: Reference `PLANARPULL EQ' on page 6 undefined on input line 623.
-
-
-
-LaTeX Warning: Reference `PLANAROMEGAEX1 EQ' on page 6 undefined on input line 
-623.
-
-
-LaTeX Warning: Reference `SUBS SEC' on page 6 undefined on input line 637.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 637.
-
-
-LaTeX Warning: Reference `OUTERFACE EQ' on page 6 undefined on input line 648.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 686.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 688.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 693.
-
-
-LaTeX Warning: Citation `Pe16b' on page 6 undefined on input line 696.
-
-[6]
-
-LaTeX Warning: Citation `Pe16b' on page 7 undefined on input line 709.
-
-
-LaTeX Warning: Reference `TALLOUTERDEC COR' on page 7 undefined on input line 7
-20.
-
-
-LaTeX Warning: Reference `TRIPLEFACT EQ' on page 7 undefined on input line 731.
-
-
-
-LaTeX Warning: Reference `GRAPTPUSH EQ' on page 7 undefined on input line 739.
-
-
-LaTeX Warning: Reference `UNIQCOR REM' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 860.
-
-
-LaTeX Warning: Reference `UFORMULA EQ' on page 7 undefined on input line 863.
-
-[7]
-
-LaTeX Warning: Reference `SUBSDATUMTREES2 EQ' on page 8 undefined on input line
- 962.
-
-[8]
-
-LaTeX Warning: Reference `ASSEMBLYGRAFT EQ' on page 9 undefined on input line 1
-056.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN EQ' on page 9 undefined on input lin
-e 1062.
-
-
-LaTeX Warning: Reference `PLANARPULL EQ' on page 9 undefined on input line 1081
-.
-
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 9 undefined on input 
-line 1083.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP EQ' on page 9 undefined on input line 10
-95.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 9 undefined on input l
-ine 1105.
-
-
-LaTeX Warning: Reference `DECOMPPROOF EQ' on page 9 undefined on input line 113
-0.
-
-[9]
-
-LaTeX Warning: Reference `DECOMPPROOF EQ' on page 10 undefined on input line 11
-32.
-
-
-LaTeX Warning: Citation `Pe16b' on page 10 undefined on input line 1133.
-
-
-LaTeX Warning: Citation `Pe16b' on page 10 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `DECOMPPROOF EQ' on page 10 undefined on input line 11
-48.
-
-
-LaTeX Warning: Reference `PLANARCONV CON' on page 10 undefined on input line 11
-63.
-
-[10]
-
-LaTeX Warning: Citation `McL' on page 11 undefined on input line 1246.
-
-
-LaTeX Warning: Reference `WRRAN EQ' on page 11 undefined on input line 1246.
-
-
-LaTeX Warning: Reference `POINTKAN EQ' on page 11 undefined on input line 1265.
-
-
-
-LaTeX Warning: Reference `UNIQCOR REM' on page 11 undefined on input line 1318.
-
-
-[11]
+{C:/Users/Peter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
+ [5] [6] [7] [8] [9] [10] [11]
 Overfull \hbox (5.49458pt too wide) detected at line 1424
 []
  []
 
-
-LaTeX Warning: Reference `PULLPLANAR REM' on page 12 undefined on input line 14
-29.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP REM' on page 12 undefined on input line 
-1445.
-
-[12]
-
-LaTeX Warning: Reference `SUBSTITUTIONDATUM' on page 13 undefined on input line
- 1534.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 13 undefined on input 
-line 1549.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 13 undefined on input
- line 1576.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN COR' on page 13 undefined on input l
-ine 1576.
-
-
-LaTeX Warning: Reference `SUBSDATUMCONV REM' on page 13 undefined on input line
- 1577.
-
-[13]
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 14 undefined on input
- line 1590.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 14 undefined on input
- line 1596.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 14 undefined on input
- line 1671.
-
-[14]
-
-LaTeX Warning: Reference `PTPULL EQ' on page 15 undefined on input line 1689.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 15 undefined on input
- line 1690.
-
-
-LaTeX Warning: Reference `PTNARROW EQ' on page 15 undefined on input line 1718.
-
-
-
-LaTeX Warning: Reference `PTNARROW EQ' on page 15 undefined on input line 1718.
-
-
-
-LaTeX Warning: Reference `PTNARROWLOC EQ' on page 15 undefined on input line 17
-18.
-
-
-LaTeX Warning: Reference `PTPULL EQ' on page 15 undefined on input line 1723.
-
-
-LaTeX Warning: Reference `VERTEXDECOMP REM' on page 15 undefined on input line 
-1765.
-
-
-LaTeX Warning: Reference `VERTEXDECOMPG REM' on page 15 undefined on input line
- 1765.
-
-[15]
-
-LaTeX Warning: Reference `LRSPANISO EQ' on page 16 undefined on input line 1823
-.
-
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 16 undefined on input line 1
-877.
-
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 16 undefined on input line 1
-898.
-
-[16]
-
-LaTeX Warning: Reference `OMEGAGNA EQ' on page 17 undefined on input line 1948.
-
-
-
-LaTeX Warning: Reference `OMEGAGNA EQ' on page 17 undefined on input line 1961.
-
-
-
-LaTeX Warning: Reference `GEND0 EQ' on page 17 undefined on input line 1962.
-
-
-LaTeX Warning: Reference `PICUBOIDAB EQ' on page 17 undefined on input line 197
-3.
-
-[17]
-
-LaTeX Warning: Reference `PICUBOIDAB EQ' on page 18 undefined on input line 202
-2.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 18 undefined on input line 211
-9.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 18 undefined on input line 211
-9.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 18 undefined on input line 212
-4.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 18 undefined on input line 212
-5.
-
-[18]
-
-LaTeX Warning: Reference `UNITSPAN1 EQ' on page 19 undefined on input line 2181
-.
-
-
-LaTeX Warning: Reference `UNITSPAN2 EQ' on page 19 undefined on input line 2181
-.
-
-
-LaTeX Warning: Reference `UNITSPAN1 EQ' on page 19 undefined on input line 2182
-.
-
-
-LaTeX Warning: Reference `UNITSPAN2 EQ' on page 19 undefined on input line 2182
-.
-
-
-LaTeX Warning: Reference `MONSPAN PROP' on page 19 undefined on input line 2193
-.
-
-
-LaTeX Warning: Reference `RANLANADJ REM' on page 19 undefined on input line 219
-3.
-
-
-LaTeX Warning: Reference `PLANARCONV CON' on page 19 undefined on input line 22
-09.
-
-
-LaTeX Warning: Reference `ROOTLEAFTROOTCOM EQ' on page 19 undefined on input li
-ne 2230.
-
-
-LaTeX Warning: Reference `ROOTLEAFTROOTCOM EQ' on page 19 undefined on input li
-ne 2241.
-
-[19]
-
-LaTeX Warning: Reference `ROOTIMPLIESROOT EQ' on page 20 undefined on input lin
-e 2279.
-
-
-Overfull \hbox (79.68538pt too wide) detected at line 2393
+[12] [13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (79.68538pt too wide) detected at line 2428
 []
  []
 
-
-LaTeX Warning: Citation `McL' on page 20 undefined on input line 2421.
-
-[20]
-
-LaTeX Warning: Reference `FINWREATPRODLIM LEM' on page 21 undefined on input li
-ne 2429.
-
-
-LaTeX Warning: Reference `TDOWNISOA EQ' on page 21 undefined on input line 2457
-.
-
-
-LaTeX Warning: Reference `PLANARIZATIONCHAR PROP' on page 21 undefined on input
- line 2459.
-
-
-LaTeX Warning: Reference `TDOWNISOA EQ' on page 21 undefined on input line 2470
-.
-
-
-LaTeX Warning: Reference `ROOTFIBPULL LEM' on page 21 undefined on input line 2
-477.
-
-
-LaTeX Warning: Reference `MONSPAN PROP' on page 21 undefined on input line 2483
-.
-
-
-LaTeX Warning: Reference `LANIOTAADJ EQ' on page 21 undefined on input line 248
-6.
-
-
-LaTeX Warning: Reference `LANPULLCOMA LEM' on page 21 undefined on input line 2
-501.
-
-
-LaTeX Warning: Reference `FINWREATPRODLIM LEM' on page 21 undefined on input li
-ne 2501.
-
-
-LaTeX Warning: Reference `THEMONAD DEF' on page 21 undefined on input line 2531
-.
-
-[21]
-
-LaTeX Warning: Reference `MONADFUNCTORALPHA EQ' on page 22 undefined on input l
-ine 2612.
-
-[22]
-Overfull \hbox (26.14528pt too wide) detected at line 2653
+[21] [22] [23]
+Overfull \hbox (26.14528pt too wide) detected at line 2688
 []
  []
 
-
-LaTeX Warning: Reference `MONADICFUN PROP' on page 23 undefined on input line 2
-660.
-
-
-LaTeX Warning: Reference `RIGHTMODULETMAP EQ' on page 23 undefined on input lin
-e 2681.
-
-
-LaTeX Warning: Reference `RIGHTMODULETMAPAUX EQ' on page 23 undefined on input 
-line 2699.
-
-
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 2719--2720
+[24]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 2754--2755
 []\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
@@ -1489,606 +1061,134 @@ ir $\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/
 m/it/9 T\OMX/MnSymbolE/m/n/9 ç \U/MnSymbolA/m/n/9  
  []
 
-[23]
-
-LaTeX Warning: Reference `TALPHAKMOD REM' on page 24 undefined on input line 28
-14.
-
-
-LaTeX Warning: Reference `NSTRINGLAB EQ' on page 24 undefined on input line 282
-5.
-
-
-LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 24 undefined on input line
- 2825.
-
-
-LaTeX Warning: Reference `SIMPOPERATORS NOT' on page 24 undefined on input line
- 2836.
-
-
-LaTeX Warning: Reference `NKNFGT EQ' on page 24 undefined on input line 2863.
-
-
-LaTeX Warning: Reference `LABELEDTREES EX' on page 24 undefined on input line 2
-865.
-
-
-LaTeX Warning: Reference `INDVNG NOT' on page 24 undefined on input line 2872.
-
-[24]
-
-LaTeX Warning: Reference `OMEGAGNA NOT' on page 25 undefined on input line 2887
-.
-
-
-LaTeX Warning: Reference `NSTRINGLAB EQ' on page 25 undefined on input line 290
-1.
-
-
-LaTeX Warning: Reference `PLANARSTRING SEC' on page 25 undefined on input line 
-2909.
-
-
-LaTeX Warning: Reference `OMEGANMINUSONE EQ' on page 25 undefined on input line
- 2909.
-
-
-LaTeX Warning: Reference `ALLSQUARES EQ' on page 25 undefined on input line 291
-4.
-
-
-LaTeX Warning: Reference `LTUPLEAPULL EQ' on page 25 undefined on input line 29
-31.
-
-
-LaTeX Warning: Reference `VGDEF EQ' on page 25 undefined on input line 2936.
-
-
-LaTeX Warning: Reference `SUBSASPULL PROP' on page 25 undefined on input line 2
-946.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 25 undefined on input 
-line 2946.
-
-[25]
-
-LaTeX Warning: Reference `ALLSQUARESJ PROP' on page 26 undefined on input line 
-3010.
-
-
-Overfull \hbox (19.31252pt too wide) detected at line 3036
+[25] [26]
+Overfull \hbox (19.31252pt too wide) detected at line 3071
 []
  []
-
-
-Overfull \hbox (5.0608pt too wide) detected at line 3062
-[]
- []
-
-
-LaTeX Warning: Reference `DISJBARDN EQ' on page 26 undefined on input line 3064
-.
-
-
-LaTeX Warning: Reference `REMAINDIFF EQ' on page 26 undefined on input line 306
-5.
-
-
-LaTeX Warning: Reference `TALPHAKMOD REM' on page 26 undefined on input line 30
-65.
-
-
-Overfull \hbox (49.15059pt too wide) detected at line 3098
-[]
- []
-
-[26]
-
-LaTeX Warning: Reference `REPACKAGERES REM' on page 27 undefined on input line 
-3176.
-
-
-LaTeX Warning: Reference `PRECOMPPOSTCOMP REM' on page 27 undefined on input li
-ne 3178.
-
-
-LaTeX Warning: Reference `COLIMLAN EQ' on page 27 undefined on input line 3208.
-
 
 [27]
+Overfull \hbox (5.0608pt too wide) detected at line 3097
+[]
+ []
 
-LaTeX Warning: Reference `REALDEF EQ' on page 28 undefined on input line 3319.
 
+Overfull \hbox (49.15059pt too wide) detected at line 3133
+[]
+ []
 
-LaTeX Warning: Reference `FACTORIZATIONREAL EQ' on page 28 undefined on input l
-ine 3335.
-
-
-LaTeX Warning: Reference `REALDEF EQ' on page 28 undefined on input line 3359.
-
-[28]
-
-LaTeX Warning: Reference `REALDEF EQ' on page 29 undefined on input line 3428.
-
-
-LaTeX Warning: Reference `TARGETDEFINITON EQ' on page 29 undefined on input lin
-e 3444.
-
-[29]
-
-LaTeX Warning: Reference `OBJGENREL LEMMA' on page 30 undefined on input line 3
-474.
-
-
-LaTeX Warning: Reference `UNDERLEFTADJ LEM' on page 30 undefined on input line 
-3525.
-
-
-LaTeX Warning: Reference `SOURCEFINAL PROP' on page 30 undefined on input line 
-3526.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 30 undefined on input lin
-e 3530.
-
-
-LaTeX Warning: Reference `IDENTSIMPRELSISO EQ' on page 30 undefined on input li
-ne 3559.
-
-[30]
-
-LaTeX Warning: Reference `SIMPSPANREIN LEMMA' on page 31 undefined on input lin
-e 3578.
-
-
-LaTeX Warning: Reference `IDENTSIMPRELS EQ' on page 31 undefined on input line 
-3603.
-
-
-LaTeX Warning: Reference `SOURCEFACT EQ' on page 31 undefined on input line 361
-4.
-
-
-LaTeX Warning: Reference `EQUIVALENCEDEF EQ' on page 31 undefined on input line
- 3614.
-
-
-LaTeX Warning: Reference `EQUIVALENCEDEF EQ' on page 31 undefined on input line
- 3626.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 31 undefined on input lin
-e 3681.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 31 undefined on input line 36
-82.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 31 undefined on input line 36
-82.
-
-[31]
-
-LaTeX Warning: Reference `COLIMLAN EQ' on page 32 undefined on input line 3700.
-
-
-
-LaTeX Warning: Reference `DISJBARDNJ EQ' on page 32 undefined on input line 371
-5.
-
-
-LaTeX Warning: Reference `DUALRESULTS REM' on page 32 undefined on input line 3
-715.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 32 undefined on input line 37
-15.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 32 undefined on input line 37
-15.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 32 undefined on input lin
-e 3720.
-
-
-LaTeX Warning: Reference `PLANARSTRING EX' on page 32 undefined on input line 3
-727.
-
-
-LaTeX Warning: Reference `LANCOPRODDESC' on page 32 undefined on input line 374
-1.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 32 undefined on input line 374
-5.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 32 undefined on input line 374
-6.
-
-
-LaTeX Warning: Reference `ASSOCSPAN1 EQ' on page 32 undefined on input line 374
-8.
-
-
-LaTeX Warning: Reference `ASSOCSPAN2 EQ' on page 32 undefined on input line 374
-8.
-
-
-LaTeX Warning: Reference `LANCOPRODDESC' on page 32 undefined on input line 375
-4.
-
-
-LaTeX Warning: Reference `FREEEXT EQ' on page 32 undefined on input line 3759.
-
-
-Overfull \hbox (74.56268pt too wide) detected at line 3774
+[28] [29] [30] [31] [32] [33]
+Overfull \hbox (74.56268pt too wide) detected at line 3809
 \U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
  []
 
 
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 32 undefined on input line
- 3779.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 32 undefined on input line
- 3783.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 32 undefined on input line
- 3784.
-
-[32]
-
-LaTeX Warning: Reference `FREEEXT EQ' on page 33 undefined on input line 3799.
-
-
-LaTeX Warning: Reference `PARTREALSPAN EQ' on page 33 undefined on input line 3
-826.
-
-
-LaTeX Warning: Reference `EXTGENMON SEC' on page 33 undefined on input line 382
-6.
-
-
-LaTeX Warning: Reference `SOURCEFACT LEM' on page 33 undefined on input line 38
-26.
-
-
-LaTeX Warning: Reference `SOURCELANFINAL COR' on page 33 undefined on input lin
-e 3826.
-
-
-LaTeX Warning: Reference `TWISTING LEMMA' on page 33 undefined on input line 38
-26.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOL EQ' on page 33 undefined on input line
- 3827.
-
-
-Overfull \hbox (6.85089pt too wide) in paragraph at lines 3839--3841
+Overfull \hbox (6.85089pt too wide) in paragraph at lines 3874--3876
 [][]\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-sion tree cat-e-gory $\OT1/cmr/m/
 n/9 
 []$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ò\OML/cmm/m/it/9
  B; A; X\OMX/MnSymbolE/m/n/9 ù$\OT1/cmr/m/n/9 -
  []
 
-[33]
-
-LaTeX Warning: Reference `INPUTPATH NOT' on page 34 undefined on input line 396
-8.
-
-
-LaTeX Warning: Reference `SUBSTITUTIONDATUM' on page 34 undefined on input line
- 4068.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLAN PROP' on page 34 undefined on input 
-line 4068.
-
-
-LaTeX Warning: Reference `SUBDATAUNDERPLANG PROP' on page 34 undefined on input
- line 4068.
-
-[34]
-
-LaTeX Warning: Reference `EXTTREECAT DEF' on page 35 undefined on input line 40
-75.
-
-
-LaTeX Warning: Reference `OUTERFACEUNION LEM' on page 35 undefined on input lin
-e 4092.
-
-
-LaTeX Warning: Reference `BUILDABLE PROP' on page 35 undefined on input line 40
-92.
-
-
-LaTeX Warning: Reference `LRXDEF EQ' on page 35 undefined on input line 4098.
-
-
-LaTeX Warning: Reference `OUTERFACEUNION LEM' on page 35 undefined on input lin
-e 4101.
-
-
-LaTeX Warning: Reference `OUTERFACEUNION LEM' on page 35 undefined on input lin
-e 4102.
-
-
-LaTeX Warning: Reference `OUTERFACEUNION LEM' on page 35 undefined on input lin
-e 4109.
-
-
-LaTeX Warning: Reference `PULLCOMP REM' on page 35 undefined on input line 4125
-.
-
-
-LaTeX Warning: Reference `REGALTERNMAP EQ' on page 35 undefined on input line 4
-130.
-
-[35] [36]
-
-LaTeX Warning: Reference `EXTTREECAT DEF' on page 37 undefined on input line 43
-37.
-
-
-LaTeX Warning: Reference `LXP PROP' on page 37 undefined on input line 4349.
-
-
-Overfull \hbox (6.32141pt too wide) in paragraph at lines 4349--4355
-[][]\OT1/cmr/m/n/9 Unlike the $[][]$ con-struc-tion of Propo-si-tion [][], whic
-h de-fines a func-tor $[][]\U/MnSymbolC/m/n/9  \OT1/cmr/m/n/9 
-[] \U/MnSymbolA/m/n/9  
- []
-
-
-Overfull \hbox (13.09369pt too wide) detected at line 4499
+[34] [35] [36] [37]
+Overfull \hbox (13.09369pt too wide) detected at line 4534
 []
  []
 
-[37]
+[38] [39] [40]
 
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 38 undefined on input 
-line 4503.
-
-
-LaTeX Warning: Reference `LANPULLCOMA LEM' on page 38 undefined on input line 4
-504.
+LaTeX Warning: Reference `LAN_PUSHOUT_LEMMA' on page 41 undefined on input line
+ 4847.
 
 
-LaTeX Warning: Citation `McL' on page 38 undefined on input line 4517.
+LaTeX Warning: Reference `TREE_CATS_DECOMP_LEMMA' on page 41 undefined on input
+ line 4847.
 
 
-LaTeX Warning: Reference `UNDERCATPR EQ' on page 38 undefined on input line 452
-7.
-
-
-LaTeX Warning: Reference `UNDERCATPR EQ' on page 38 undefined on input line 453
-6.
-
-
-LaTeX Warning: Reference `UNDERCATPR EQ' on page 38 undefined on input line 454
-0.
-
-
-LaTeX Warning: Reference `K-1LANFINAL EQ' on page 38 undefined on input line 45
-48.
-
-
-LaTeX Warning: Reference `YINERT REM' on page 38 undefined on input line 4548.
-
-
-LaTeX Warning: Reference `K-1LANFINAL EQ' on page 38 undefined on input line 45
-49.
-
-
-LaTeX Warning: Reference `UNDERCATPR EQ' on page 38 undefined on input line 455
-1.
-
-
-LaTeX Warning: Reference `LIMMOR REM' on page 38 undefined on input line 4603.
-
-
-LaTeX Warning: Reference `FREEEXTUSEFCOLNEW EQ' on page 38 undefined on input l
-ine 4626.
-
-
-LaTeX Warning: Reference `TREE_FILTRATION_PIECES_DEFINITION' on page 38 undefin
-ed on input line 4628.
-
-
-LaTeX Warning: Reference `CELLEXTPUSH EQ' on page 38 undefined on input line 46
-31.
-
-[38]
-
-LaTeX Warning: Reference `FILT EQ' on page 39 undefined on input line 4657.
-
-
-LaTeX Warning: Reference `INCDIAG EQ' on page 39 undefined on input line 4681.
-
-
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 39 undefined on input 
-line 4683.
-
-
-LaTeX Warning: Reference `INCDIAG EQ' on page 39 undefined on input line 4686.
-
-
-LaTeX Warning: Citation `BM03' on page 39 undefined on input line 4744.
-
-[39]
-
-LaTeX Warning: Reference `TREE_FILTRATION_PIECES_DEFINITION' on page 40 undefin
-ed on input line 4808.
-
-
-LaTeX Warning: Reference `LAN_PUSHOUT_LEMMA' on page 40 undefined on input line
- 4812.
-
-
-LaTeX Warning: Reference `TREE_CATS_DECOMP_LEMMA' on page 40 undefined on input
- line 4812.
-
-
-LaTeX Warning: Reference `MINUS_LAN_FINAL_LEMMA' on page 40 undefined on input 
-line 4823.
-
-
-LaTeX Warning: Reference `ZERO_LAN_FINALITY_LEMMA' on page 40 undefined on inpu
-t line 4825.
-
-
-Overfull \hbox (23.33171pt too wide) detected at line 4833
+Overfull \hbox (23.33171pt too wide) detected at line 4868
 [] \OML/cmm/m/it/9 N[]\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 T\OMX/MnSymbolE/m/n
 /9 ç \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE/m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSym
 bolE/m/n/9 ç \U/MnSymbolD/m/n/9   [] [] \U/MnSymbolC/m/n/9 a[] []\OMX/MnSymbolE
 /m/n/9 à\OML/cmm/m/it/9 C\OMX/MnSymbolE/m/n/9 ç\OML/cmm/m/it/9 :
  []
 
-[40]
-
-LaTeX Warning: Reference `FILTRATION_LAN_SQUARE_DIAGRAM' on page 41 undefined o
-n input line 4841.
-
-
-LaTeX Warning: Reference `Q_DEFINITION' on page 41 undefined on input line 4848
-.
-
-
-LaTeX Warning: Reference `FILTRATION_LAN_SQUARE_DIAGRAM' on page 41 undefined o
-n input line 4850.
-
-[41]
-
-LaTeX Warning: Citation `BH15' on page 42 undefined on input line 4869.
-
-
-LaTeX Warning: Citation `Per17' on page 42 undefined on input line 4874.
-
-
-LaTeX Warning: Citation `BH15' on page 42 undefined on input line 4899.
-
-
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 4902--4902
+[41] [42]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 4937--4937
 [][] 
  []
 
-[42]
-
-LaTeX Warning: Citation `Stephan16' on page 43 undefined on input line 4914.
-
-
-LaTeX Warning: Citation `Hi03' on page 43 undefined on input line 4945.
-
-
-LaTeX Warning: Citation `WY15' on page 43 undefined on input line 4954.
-
-[43]
-
-LaTeX Warning: Reference `CELLULAR_EXTENSION_COFIBRATION_THEOREM' on page 44 un
-defined on input line 4972.
-
-
-LaTeX Warning: Reference `SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM' on page 44 und
-efined on input line 4972.
-
-
-LaTeX Warning: Reference `WEAK_INDEXING_VALENCE_LEMMA' on page 44 undefined on 
-input line 5002.
-
-
-LaTeX Warning: Reference `N_E_COFIBRANT_PROP' on page 44 undefined on input lin
-e 5002.
-
-
-LaTeX Warning: Reference `EPSILON_COFIB_LEMMA' on page 44 undefined on input li
-ne 5002.
-
-[44]
-
-LaTeX Warning: Citation `Stephan16' on page 45 undefined on input line 5039.
-
-
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5044--5044
+[43] [44] [45]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5079--5079
 [][] 
  []
 
-(GenEqOp.bbl) [45] (GenEqOp.aux)
+(GenEqOp.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+[]\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
+:
+ []
+
+[46]
+Underfull \hbox (badness 2035) in paragraph at lines 43--46
+[]\OT1/cmr/m/n/9 I. Weiss.  Broad posets, trees, and the den-droidal cat-e-gory
+.  Avail-able at:
+ []
+
+) [47] (GenEqOp.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29498 strings out of 493334
- 610495 string characters out of 3130222
- 660444 words of memory out of 3000000
- 32509 multiletter control sequences out of 15000+200000
- 33271 words of font info for 125 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
-600\MnSymbolS12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
-blic\mnsymbol\dpi600\MnSymbolS10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE10.pk> <C:\Users\luisa\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS5.pk> <C:\Users
-\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbol
-D8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
-\dpi600\MnSymbolF6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\public\mnsymbol\dpi600\MnSymbolE8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9
-\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC8.pk> <C:\Users\luisa\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE5.pk> <C:\User
-s\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbo
-lD6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbo
-l\dpi600\MnSymbolA5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\public\mnsymbol\dpi600\MnSymbolF9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE6.pk> <C:\Users\luisa\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Use
-rs\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.p
-k> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
-600\MnSymbolA9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
-lic\mnsymbol\dpi600\MnSymbolD9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE9.pk> <C:\Users\luisa\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC9.pk> <C:\Users\lu
-isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.
-pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dp
-i600\MnSymbolS6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
-blic\mnsymbol\dpi600\MnSymbolS9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (45 pages, 718648 bytes).
+ 29610 strings out of 493617
+ 615645 string characters out of 3143641
+ 657426 words of memory out of 3000000
+ 32499 multiletter control sequences out of 15000+200000
+ 32650 words of font info for 123 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 63i,21n,84p,3275b,2745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymbol/MnSymbolS
+.enc}{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymbol/MnSymb
+olE.enc}{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymbol/MnS
+ymbolD.enc}{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymbol/
+MnSymbolF.enc}{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymb
+ol/MnSymbolC.enc}{C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mns
+ymbol/MnSymbolA.enc} <C:\Users\Peter\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\tcrm0900.pk><C:/Users/Peter/AppData/Roaming/MiKTeX/2.9/fonts/
+type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Peter/AppData/Roaming/MiKTeX/2.9
+/fonts/type1/public/mnsymbol/MnSymbol12.pfb><C:/Users/Peter/AppData/Roaming/MiK
+TeX/2.9/fonts/type1/public/mnsymbol/MnSymbol5.pfb><C:/Users/Peter/AppData/Roami
+ng/MiKTeX/2.9/fonts/type1/public/mnsymbol/MnSymbol6.pfb><C:/Users/Peter/AppData
+/Roaming/MiKTeX/2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Peter/A
+ppData/Roaming/MiKTeX/2.9/fonts/type1/public/mnsymbol/MnSymbol9.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
+ls/msbm7.pfb>
+Output written on GenEqOp.pdf (47 pages, 815640 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
+ 325 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
