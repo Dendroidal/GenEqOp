@@ -1,20 +1,20 @@
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Basic definitions}{2}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Basic definitions}{1}
 \contentsline {section}{\numberline {3}Planar and tall maps}{2}
 \contentsline {subsection}{\numberline {3.1}Planar structures}{2}
 \contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{6}
-\contentsline {subsection}{\numberline {3.3}Substitution}{8}
-\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{11}
-\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{11}
-\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{12}
+\contentsline {subsection}{\numberline {3.3}Substitution}{7}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{10}
+\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{10}
+\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{11}
 \contentsline {subsection}{\numberline {4.3}Planar strings}{14}
 \contentsline {subsection}{\numberline {4.4}A monad on spans}{16}
-\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{20}
+\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{19}
 \contentsline {section}{\numberline {5}Free extensions}{22}
-\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{23}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{24}
+\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{22}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{23}
 \contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{26}
-\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{28}
+\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{27}
 \contentsline {subsection}{\numberline {5.5}The category of extension trees}{32}
 \contentsline {section}{\numberline {6}Filtration of cellular extensions}{37}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{37}
