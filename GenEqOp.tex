@@ -4077,7 +4077,7 @@ $\bar{\Omega}_G^e$ are underlying alternating maps.
 
 The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega_G^e$.
 
-\begin{proposition}
+\begin{proposition}\label{LXP PROP}
 	For each $U \in \Omega_G^e$ there exists a unique 
 	$\mathsf{lr}_X (U) \in \bar{\Omega}_G^e$ together with a unique planar label map of $\Omega_G^e$
 	\[\mathsf{lr}_X (U) \to U.\]
@@ -4277,75 +4277,88 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 \end{equation}
 \end{example}
 
-{\color{red} HERE}
+
 
 
 \newpage
 
 
 
-\section{Filtration of Cellular Extensions}
+\section{Filtration of cellular extensions}
 
-As we saw above, we have the the free extension $\P[u]$ given by the pushout
-\[
+Put together, the results in the previous section show that the free extension $\P[u]$ given by the pushout
+\begin{equation}\label{CELLEXTPUSH EQ}
 \begin{tikzcd}
   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
   \mathbb F_G Y \arrow[r] & \P[u]
 \end{tikzcd}
-\]
-can be built via Kan extensions over $\Omega_{G,e}$. Thus, in order to filter the map $\P \to \P[u]$, it will suffice, via naturality of Kan extensions, to filter the category $\Omega_{G,e}$.
+\end{equation}
+is given by a left Kan extension along 
+$(\bar{\Omega}_{G}^e)^{op} \xrightarrow{\mathsf{lr}} \Sigma_G^{op}$. So as to study the homotopical properties of the map $\P \to \P[u]$ we will identity a suitable filtration of this map, which will in turn be induced by a suitable filtration of the extension tree category $\bar{\Omega}_{G}^e$.
 
-We begin by analyzing the objects of this category. These are $(\P; X,Y)$-alternating $G$-trees $T$; that is, an odd tree $T$ with each odd vertex labeled by $\P$, and the even vertices labeled by either $X$ or $Y$.
 
-Adjusting the general notation of the previous section to this setting, given $T\in \Omega_{G,e}$ we let $V_{\P}(T)$, $V_{X}(T)$, and $V_{Y}(T)$ denote the $G$-sets of vertices labeled by $\P$, $X$, or $Y$, respectiely, and $V_{G,\P}(T)$ (and similarly) the set $V_{\P}(T)/G$ of orbits. Further, let $V_{G,in}(T) = V_{G,X}(T) \amalg V_{G,Y}(T)$ denote the set of \textit{inert} or \textit{passive} nodes. Moreover, we let $\mathbb V_{G,in}(T) \in \mathsf F \wr \V$ denote the map $V_{G,in}(T) \to \V$ which sends $T_v$ to $X(T_v)$ or $Y(T_v)$, depending on the labeling of the vertex $v$.
+\subsection{Filtration pieces}
 
-Further, we define the \textit{degree} of $T$, denoted $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$ is defined by
+We now turn to the task of describing our filtration of $\bar{\Omega}_{G}^e$. 
+
+Firstly, we write $V_X(T)$ (resp. $V_Y(T)$) to denote the set of (non-equivariant) vertices of $T$ with a $X$-label (resp. $Y$-label). 
+We now define the \textit{degree} of $T \in \bar{\Omega}_{G}^e$,
+denoted $|T|$, to be the sum $|T|_X + |T|_Y$, where $|T|_X$, $|T|_Y$ are defined by
 \[
-|T|_X = \dfrac{|V_X(T)|}{|G.r|} = \sum\limits_{G.v\in V_{G,X}(T)}\dfrac{|G.v|}{|G.r|}
+|T|_X = \dfrac{|V_X(T)|}{|G r|} = \sum\limits_{G v\in V_{G,X}(T)}\dfrac{|G v|}{|G r|},
+\qquad
+|T|_Y = \dfrac{|V_Y(T)|}{|G r|} = \sum\limits_{G v\in V_{G,Y}(T)}\dfrac{|G v|}{|G r|}
 \]
-where $G.r$ is the root $G$-set of $T$, and similarly for $|T|_Y$. Intuitively, $|T|_X$ is the number of $X$-labeled vertices in any (every) single tree component of $T$.
+for $G r$ the root orbit of $T$. 
 
+Intuitively, $|T|_X$ counts the number of $X$-labeled vertices in each individual tree component of $T$.
 
-\subsection{Filtration Pieces}
-
-We begin our filtration of $\Omega_{G,e}$. 
-
-\begin{definition}
-  \label{TREE_FILTRATION_PIECES_DEFINITION}
-  We define subcategories of $\Omega_G^e$.
-  \begin{enumerate}
-  \item Let $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) be the full subcategory of $\Omega_G^e$ spanned by trees $T$ with $|T|\leq k$ (respectively, $|T| = k$).
-  \item Let $\Omega_G^e[\leq k,-]$ (respectively $\Omega_G^e[k,-]$) be the full subcategory of $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) spanned by trees $T$ with $|T|_{Y}\neq k$.
-  \item Let $\Omega_G^e[\leq k,0]$ (respectively $\Omega_G^e[k,0]$) be the full subcategory of $\Omega_G^e[\leq k]$ (respectively $\Omega_G^e[k]$) spanned by trees $T$ with $|T|_X = 0$ (equivalently, $|T|_{Y} = k$).
-  \item If $\Xi$ is any of the above categories, and $C\in \Sigma_G$, let $\Xi(C)$ denote the full subcategory of $\Xi$ spanned by those trees $T$ with $val(T) \simeq C$.
-  \end{enumerate}
-\end{definition}
 
 \begin{remark}
-  The categories $\Omega_G^e[k]$ and $\Omega_G^e[k,-]$ have only very limited morphisms, as there cannot be any ``active substitutions''. Thus, any map $S \to T$ in these categories just changes some $Y$-labelings into $X$-labelings, while the underlying $(\P; Z)$-alternating tree remains fixed (where here the one passive colour $Z$ encompasses both $Y$ and $X$).
+	One of the key properties of the degrees just defined is that they are invariant under root pullback.
 \end{remark}
 
-\begin{lemma}
-  \label{MINUS_LAN_FINAL_LEMMA}
-  $\Omega_G^e[\leq k-1]^{op}$ is $\Lan$-final in $\Omega_G^{e}[\leq k,-]^{op}$ over $\Sigma_G^{op}$.
-\end{lemma}
 
-In order to prove this, we will first need a particular construction $T \mapsto T^\wedge_\P$ on $\Omega_{G,e}$. 
-
-\begin{definition}
-  Given a $(\P;X,Y)$-alternating $G$-tree $T$, let $T^\wedge_\P$ denote the $(\P; Y)$-alternating tree created from $T$ by
-  \begin{enumerate}
-  \item relabelling all $X$-nodes by $\P$ (yielding a $(\P,Y)$-labeled tree); then
-  \item collapsing all connected components of $\P$-labeled nodes.
-  \end{enumerate}
-There is a unique planar-tall map $\partial_\P: T^\wedge_\P \to T$, and in fact this map factors through all maps of the form $\partial_\P: S \to T$.
+\begin{definition}\label{TREE_FILTRATION_PIECES_DEFINITION}
+We define subcategories of $\bar{\Omega}_{G}^e$:
+  \begin{itemize}
+  \item $\bar{\Omega}_G^e[\leq k]$ (resp. $\Omega_G^e[k]$) is the full subcategory of trees 
+  $T \in \bar{\Omega}_G^e$ with $|T|\leq k$ (resp. $|T| = k$);
+  \item $\bar{\Omega}_G^e[\leq k,-]$ (resp. $\bar{\Omega}_G^e[k,-]$) is the full subcategory of $\bar{\Omega}_G^e[\leq k]$ (resp. $\bar{\Omega}_G^e[k]$) of trees $T$ with $|T|_{Y}\neq k$;
+  \item $\bar{\Omega}_G^e[k,0]$ is the full subcategory of 
+  $\bar{\Omega}_G^e[k]$ of trees $T$ with $|T|_X = 0$ (or, equivalently, $|T|_{Y} = k$).
+%  \item If $\Xi$ is any of the above categories, and $C\in \Sigma_G$, let $\Xi(C)$ denote the full subcategory of $\Xi$ spanned by those trees $T$ with $val(T) \simeq C$.
+  \end{itemize}
 \end{definition}
 
+
+\begin{remark}\label{LIMMOR REM}
+	The categories $\bar{\Omega}_G^e[k]$ and $\bar{\Omega}_G^e[k,-]$ have only rather limited morphisms.
+	In fact, all maps in these categories must be underlying quotients of trees. Indeed, it is clear from Definition \ref{EXTTREECAT DEF} that maps never lower degree and, moreover, degree is preserved iff $\mathcal{P}$-vertices are substituted by $\mathcal{P}$-vertices (rather than larger trees in $\bar{\Omega}_G^e$, which would necessarily possess $X$-vertices).
+\end{remark}
+
+
+\begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
+  $\bar{\Omega}_G^e[\leq k-1]$ is $\mathsf{Ran}$-initial in $\bar{\Omega}_G^{e}[\leq k,-]$ over $\Sigma_G$.
+\end{lemma}
+
+In the proof we will make use of the following construction on 
+$\Omega_{G,e}$: given $T \in \Omega_{G,e}$ we will let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
+
+\begin{remark}\label{YINERT REM}
+	Unlike the $\mathsf{lr}_{\mathcal{P}}$ construction of Proposition \ref{LXP PROP}, which defines a functor 
+	$\mathsf{lr}_{\mathcal{P}} \colon
+	\Omega_G^e \to \bar{\Omega}_G^e $,
+	the construction 
+	$(\minus)_{\mathcal{P}}$ does not define a full functor
+	$\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the $Y$-inert maps of $\Omega_G^e$.
+\end{remark}
+
+
 \begin{example}
-  We observe that this construction is symmetric across all tree components, and hence, to give an example, it suffices to show want happens on a single component (i.e. when $G = \set{e}$). Consider the $(\P;X,Y)$-alternating tree $T$ below, where black nodes are $\P$-labeled, white nodes filled with $\times$ are $X$-labeled, and empty white nodes are $Y$-labeled.
-After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing connected $\P$-components yields the tree $T^\wedge_\P$ on the right.
-
-
+%  We observe that this construction is symmetric across all tree components, and hence, to give an example, it suffices to show want happens on a single component (i.e. when $G = \set{e}$).
+Combining the $(\minus)_{\mathcal{P}}$ and $\mathsf{lr}_{\mathcal{P}}$ constructions one obtains a construction sending trees in $\bar{\Omega}^e_G$ to trees in $\bar{\Omega}^e_G$.
+We illustrate this for the tree $T \in \bar{\Omega}^e_G$ below, where black nodes are $\P$-labeled, white nodes filled with $\times$ are $X$-labeled, and empty white nodes are $Y$-labeled.
 \[
 \begin{tikzpicture}
   [grow=up,auto,level distance=2.1em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -4402,7 +4415,7 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
       edge from parent node {$d$}
     }
   };
-  \node at (5,0){$T^{\sim}_\P$}
+  \node at (5,0){$T_{\mathcal{P}}$}
   child{node [dummy, fill=black] {}%
     child{node [dummy, fill=black] {}%
       child{node [dummy,fill=black] {}%
@@ -4451,7 +4464,7 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
   };
   \tikzstyle{level 2}=[sibling distance=2em]
   \tikzstyle{level 4}=[sibling distance=1em]
-  \node at (10,0){$T^{\wedge}_\P$}
+  \node at (10,0){$\mathsf{lr}_{\mathcal{P}}(T_{\mathcal{P}})$}
   child{node [dummy,fill=black] {}%
     child{node [dummy] {}%{\tiny y}%
       child{node [dummy, fill=black] {}%
@@ -4459,24 +4472,24 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
       }
       edge from parent node [swap]{$i$}
     }
-    child{node [dummy] {}%{\tiny y}%
-      child{node [dummy, fill=black] {}%
+    child[level distance = 3.5em]{node [dummy] {}%{\tiny y}%
+      child[level distance = 2em]{node [dummy, fill=black] {}%
         child{}
       }
-      edge from parent node [left] {$h$}
+      edge from parent node [swap,near end] {$h$}
     }
-    child[sibling distance=.5em, level distance = 1.6cm]{edge from parent node [swap, very near end]{$g$}}
-    child[sibling distance=.5em, level distance = 1.6cm]{edge from parent node [very near end]{$f$}}
-    child{node [dummy] {}%{\tiny y}%
-      child{node [dummy, fill=black] {}%
+    child[sibling distance=1em, level distance = 9em]{edge from parent node [swap, very near end]{$g$}}
+    child[sibling distance=1em, level distance = 9em]{edge from parent node [very near end]{$f$}}
+    child[level distance = 3.5em]{node [dummy] {}%{\tiny y}%
+      child[level distance = 2em]{node [dummy, fill=black] {}%
         child{}
       }
-      edge from parent node [right]{$e$}
+      edge from parent node [near end]{$e$}
     }
     child{node [dummy] {}%{\tiny y}%
       child{node [dummy, fill=black] {}%
-        child{edge from parent node [swap]{$b$}}
-        child{edge from parent node {$a$}}
+        child{edge from parent node [swap,near end]{$b$}}
+        child{edge from parent node [near end] {$\phantom{b}a$}}
         edge from parent node {$c$}
       }
       edge from parent node {$d$}
@@ -4486,167 +4499,241 @@ After Step (1), we produce the tree $T^\sim_\P$ in the middle, and collapsing co
 \]
 \end{example} 
 
+
 \begin{proof}[Proof of Lemma \ref{MINUS_LAN_FINAL_LEMMA}]
-  Fix an arbitrary $C\in \Sigma_G$, and consider an element $q_S: val(S) \leftarrow C$ in $\Omega_G^{e}[\leq k, -]^{op} \downarrow C$ (so in particular $S \in \Omega_G^e[\leq k,-]$). We must show that the overcategory 
-  \[
-  (\Omega_G^e[\leq k-1]^{op} \downarrow C) \downarrow (val(S) \leftarrow C)
-  \]
-  is non-empty and connected. 
-  If in fact $S\in \Omega_G^e[\leq k-1]$, the result is immediate. Otherwise, consider the map 
-  \[
-  S^{\wedge}_\P \xrightarrow{\partial_\P} S.
-  \]
-  Since $|S|_Y \neq k$, $|S^\wedge_\P| \leq k-1$, and hence we have a diagram
-  \begin{equation}
-    \label{K-1_LAN_FINAL_EQ1}
-    \begin{tikzcd}
-      val(S) && val(S^\wedge_\P) \arrow[ll, "\partial_\P"']\\
-      & C \arrow{ur}[swap]{q_S} \arrow{ul}{q_S}
-    \end{tikzcd}
-  \end{equation}
-  showing that the desired overcategory is inhabited. Further, given any other element
-  \begin{equation}
-    \label{K-1_LAN_FINAL_EQ2}
-    \begin{tikzcd}
-      val(S) && val(T) \arrow[ll, "f"']\\
-      & C \arrow{ur}[swap]{q_S} \arrow[ul, "q_T"]
-    \end{tikzcd}
-  \end{equation}
-  in the overcategory, consider the following zig-zag of maps connecting the objects (\ref{K-1_LAN_FINAL_EQ1}) and (\ref{K-1_LAN_FINAL_EQ2}):
-\begin{equation}\label{K-1_LAN_FINAL_DIAGRAM}
+Just as in the proof of Lemma \ref{LANPULLCOMA LEM}, for each 
+$C \in \Sigma_G$, 
+the under categories
+$C \downarrow \bar{\Omega}_G^e[\leq k-1]$,
+$C \downarrow \bar{\Omega}_G^e[\leq k,-]$
+have initial subcategories 
+$C \downarrow_{\mathsf{r},\simeq} \bar{\Omega}_G^e[\leq k-1]$.
+$C \downarrow_{\mathsf{r},\simeq} \bar{\Omega}_G^e[\leq k,-]$
+of those objects
+$(S,q \colon C \to \mathsf{lr}(S))$ such that 
+$q$ is an ordered isomorphism on roots,
+and thus an isomorphism in $\Sigma_G$.
+
+It now suffices to show (cf. (\cite[X.3.1]{McL})) that for each
+$(S,q \colon C \to \mathsf{lr}(S))$ in 
+$C \downarrow_{\mathsf{r},\simeq} \bar{\Omega}_G^e[\leq k,-]$
+the undercategory
+\begin{equation}\label{UNDERCATPR EQ}
+	(S,q) \downarrow  
+	(C \downarrow_{\mathsf{r},\simeq} \bar{\Omega}_G^e[\leq k-1])
+\end{equation}
+is non-empty and connected. 
+Moreover, we note that an object in 
+(\ref{UNDERCATPR EQ})
+is uniquely encoded by a map $T \to S$ inducing a rooted isomorphism on $\mathsf{lr}$.
+
+The case $S\in \Omega_G^e[\leq k-1]$ is immediate. 
+Otherwise, since $|S|_Y \neq k$ it is
+$|\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}})|<k$
+and the map 
+$\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \to S$,
+which is a rooted isomorphism on $\mathsf{lr}$, shows that
+(\ref{UNDERCATPR EQ}) is indeed non-empty.
+
+  
+Otherwise, given any rooted tall map $T \to S$ with 
+$T \in \bar{\Omega}_G^e[k-1]$ (which gives a rooted isomorphism on $\mathsf{lr}$ and thus encodes a unique object of (\ref{UNDERCATPR EQ})). One can then form a diagram
+\begin{equation}\label{K-1LANFINAL EQ}
 \begin{tikzcd}
-	&& S &&
-\\[20pt]
-	&& \tilde q_T^*(S) \arrow[u, "\tilde q_T"'] &&
+	      & S & \mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \ar{l}
 \\
-	S^\wedge_\P \arrow[uurr, "\partial_\P"] &
-	\tilde q_T^*(S^\wedge_\P) \arrow[l, "\tilde q_T"'] \arrow[ur, "\partial_\P"] \arrow[rr, "\partial_\P"] &&
-	 T' \arrow[ul, "\partial_\P"'] & T \arrow[l, "\partial_Y"'] \arrow[uull, "f"']
-\\[20pt]
-	&& C \arrow[ull, "q_S"] \arrow[ul, "q_T"'] \arrow[ur, "q_T"] \arrow[urr, "q_T"'] 
+	T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{inert}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
 \end{tikzcd}
 \end{equation}
-  Here, we have omitted the notation ``$val$'' from the top three rows. To understand this diagram, we first record that we have a factorization:
-  \[
-  q_S = \tilde q_T q_T,
-  \]
-  Then, if we let $C_S = val(S) = val(S^\wedge_\P)$ and $C_T = val(T)$, we have
-  \[
-  C \xrightarrow{q_T} C_T \xrightarrow{\tilde q_T} C_S
-  \]
-  and hence, by the unique factorization of maps in $\Omega_{G,e}$, a factorization% via Remark \ref{OMEGA_E_REMARKS} (2), a factorization
-  \[
-  \begin{tikzcd}
-    C_T \arrow[d, "\tilde q_T"'] \arrow[r, dashed] & \tilde q_T^*(S^\wedge_\P) \arrow[d, dashed, "\tilde q_T"]\\
-    C_S \arrow[r] & S^\wedge_\P
-  \end{tikzcd}
-  \]
-  (where we are recording $C \to val(S)$ as a planar-tall map $C \to S$). 
-  A similar analysis shows that the top left trapezoid commutes. 
-
-  The other regions also commute by a straightforward analysis. Indeed, the top right trapezoid commutes by unique factorization, and finally the middle triangle of $\partial_\P$ maps commutes since $(\tilde q_T^*S)^\wedge_\P = \tilde q^*_T(S^\wedge_\P)$. 
-  
-  Lastly, we must check that the middle two maps are in fact elements of the appropriate overcategory. This follows from the fact that $S^\wedge_\P$ and $T$ have $|-|_Y < k$. Thus, the overcategory in question is connected, as desired.
+where $T \to T' \to S$ is the natural factorization such that the second map is $Y$-inert, i.e., $T'$ is obtained from $T$ by simply relabeling to $X$ those $Y$-labeled vertices of $T$ that become $X$-vertices in $S$. Note that the existence of the right square in (\ref{K-1LANFINAL EQ}) follows from the map $T' \to S$ being $Y$-inert together with Remark \ref{YINERT REM}.
+Since (\ref{K-1LANFINAL EQ}) becomes a diagram of rooted  isomorphism on $\mathsf{lr}$, if produces the necessary zigzag connecting the objects $T \to S$ and 
+$\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \to S$
+in (\ref{UNDERCATPR EQ}), finishing the proof.
+%
+%
+%Further, given any other element
+%\begin{equation}
+%    \label{K-1_LAN_FINAL_EQ2}
+%    \begin{tikzcd}
+%      val(S) && val(T) \arrow[ll, "f"']\\
+%      & C \arrow{ur}[swap]{q_S} \arrow[ul, "q_T"]
+%    \end{tikzcd}
+%  \end{equation}
+%  in the overcategory, consider the following zig-zag of maps connecting the objects (\ref{K-1_LAN_FINAL_EQ1}) and (\ref{K-1_LAN_FINAL_EQ2}):
+%\begin{equation}\label{K-1_LAN_FINAL_DIAGRAM}
+%\begin{tikzcd}
+%	&& S &&
+%\\[20pt]
+%	&& \tilde q_T^*(S) \arrow[u, "\tilde q_T"'] &&
+%\\
+%	S^\wedge_\P \arrow[uurr, "\partial_\P"] &
+%	\tilde q_T^*(S^\wedge_\P) \arrow[l, "\tilde q_T"'] \arrow[ur, "\partial_\P"] \arrow[rr, "\partial_\P"] &&
+%	 T' \arrow[ul, "\partial_\P"'] & T \arrow[l, "\partial_Y"'] \arrow[uull, "f"']
+%\\[20pt]
+%	&& C \arrow[ull, "q_S"] \arrow[ul, "q_T"'] \arrow[ur, "q_T"] \arrow[urr, "q_T"'] 
+%\end{tikzcd}
+%\end{equation}
+%  Here, we have omitted the notation ``$val$'' from the top three rows. To understand this diagram, we first record that we have a factorization:
+%  \[
+%  q_S = \tilde q_T q_T,
+%  \]
+%  Then, if we let $C_S = val(S) = val(S^\wedge_\P)$ and $C_T = val(T)$, we have
+%  \[
+%  C \xrightarrow{q_T} C_T \xrightarrow{\tilde q_T} C_S
+%  \]
+%  and hence, by the unique factorization of maps in $\Omega_{G,e}$, a factorization% via Remark \ref{OMEGA_E_REMARKS} (2), a factorization
+%  \[
+%  \begin{tikzcd}
+%    C_T \arrow[d, "\tilde q_T"'] \arrow[r, dashed] & \tilde q_T^*(S^\wedge_\P) \arrow[d, dashed, "\tilde q_T"]\\
+%    C_S \arrow[r] & S^\wedge_\P
+%  \end{tikzcd}
+%  \]
+%  (where we are recording $C \to val(S)$ as a planar-tall map $C \to S$). 
+%  A similar analysis shows that the top left trapezoid commutes. 
+%
+%  The other regions also commute by a straightforward analysis. Indeed, the top right trapezoid commutes by unique factorization, and finally the middle triangle of $\partial_\P$ maps commutes since $(\tilde q_T^*S)^\wedge_\P = \tilde q^*_T(S^\wedge_\P)$. 
+%  
+%  Lastly, we must check that the middle two maps are in fact elements of the appropriate overcategory. This follows from the fact that $S^\wedge_\P$ and $T$ have $|-|_Y < k$. Thus, the overcategory in question is connected, as desired.
 \end{proof}
 
-\todo[inline]{come back: define $S^\wedge_Y$.}
 
+Similarly to the $(\minus)_{\mathcal{P}}$ construction,
+there is also a construction $T_Y$ which replaces all $X$-labels of $T \in \Omega_G^e$ with $Y$-labels. Moreover, in this case the construction restricts directly to a construction on 
+$\bar{\Omega}_G^e$,
+which is easily seen to be functorial (and the $T_Y \to T$ maps natural) with regards to $\mathcal{P}$-inert maps. Remark \ref{LIMMOR REM} thus implies that 
+$(\minus)_Y \colon \bar{\Omega}_G^e[k] \to 
+\bar{\Omega}_G^e[k,0]$
+is a left retraction, 
+resulting in the following.
 \begin{lemma}
   \label{ZERO_LAN_FINALITY_LEMMA}
-  $\Omega_G^{e}[k,0]^{op}$ is $\Lan$-final in $\Omega_G^e[k]$ over $\Sigma_G^{op}$.
+  $\bar{\Omega}_G^{e}[k,0]$ is $\mathsf{Ran}$-initial in $\bar{\Omega}_G^e[k]$ over $\Sigma_G$.
 \end{lemma}
 
-Similarly, we need a construction $T \mapsto T^\wedge_Y$ in order to prove this lemma. However, in this case, the analogous notion is much simpler, as $T^\wedge_Y$ has the same underlying $(\P;Z)$-alternating $G$-tree, but we just relabel all $X$-vertices as being $Y$-labeled.
+%\begin{proof}[Proof of Lemma \ref{ZERO_LAN_FINALITY_LEMMA}]
+%  This follows analogously to Lemma \ref{MINUS_LAN_FINAL_LEMMA}, by replacing Diagram \ref{K-1_LAN_FINAL_DIAGRAM} with the diagram below:
+%  \[
+%  \begin{tikzcd}
+%    && S & \\[20pt]
+%    &&\tilde q_T^*(S) \arrow[u, "\tilde q_T"]\\
+%    S^\wedge_Y \arrow[uurr, "\partial_Y"] && \tilde q_T^*(S^\wedge_Y) \arrow[ll, "\tilde q_T"'] \arrow[u, "\partial_Y"] \arrow[rr, "\partial_Y"] && T \arrow[ull, "\partial_Y"'] \arrow[uull, "f"']\\
+%    && C \arrow[ull, "q_S"] \arrow[u, "q_T"] \arrow[urr, "q_T"'] 
+%  \end{tikzcd}
+%  \]
+%\end{proof}
 
-\begin{proof}[Proof of Lemma \ref{ZERO_LAN_FINALITY_LEMMA}]
-  This follows analogously to Lemma \ref{MINUS_LAN_FINAL_LEMMA}, by replacing Diagram \ref{K-1_LAN_FINAL_DIAGRAM} with the diagram below:
-  \[
-  \begin{tikzcd}
-    && S & \\[20pt]
-    &&\tilde q_T^*(S) \arrow[u, "\tilde q_T"]\\
-    S^\wedge_Y \arrow[uurr, "\partial_Y"] && \tilde q_T^*(S^\wedge_Y) \arrow[ll, "\tilde q_T"'] \arrow[u, "\partial_Y"] \arrow[rr, "\partial_Y"] && T \arrow[ull, "\partial_Y"'] \arrow[uull, "f"']\\
-    && C \arrow[ull, "q_S"] \arrow[u, "q_T"] \arrow[urr, "q_T"'] 
-  \end{tikzcd}
-  \]
-\end{proof}
 
-Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G,e}[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
-While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
-\[
-\begin{tikzcd}
-  \mathcal A \arrow[d] \arrow[r] & \mathcal C \arrow[d]\\
-  \mathcal C \arrow[r] & \mathcal D
-\end{tikzcd}
-\]
-if the nerve of this square is a pushout in $\sSet$, then this is a pushout of categories (since the nerve is the inclusion of a reflective subcategory).
-\begin{definition}
-  \label{NERVOUS_PUSHOUTS_DEFN}
-  We call such squares \textit{nervous pushouts} of categories.
-\end{definition}
+In what follows we write $N^e \colon \Omega_G^{e,op} \to \mathcal{V}$ for the functor in (\ref{FREEEXTUSEFCOLNEW EQ}),
+and abuse notation by likewise writing $N^e$ for any of its restrictions to the subcategories in 
+Definition \ref{TREE_FILTRATION_PIECES_DEFINITION}.
 
-If we further assume that the span of functors is built out of fully-faithful inclusions, these pushouts behave as nicely as possible with left Kan extensions.
-\begin{lemma}
-  \label{LAN_PUSHOUT_LEMMA}
-  Given any diagram in categories of the form 
-\[
-\begin{tikzcd}
-  \mathcal A \arrow[d] \arrow[r, "f"] & \mathcal C \arrow[d, "i"]\\
-  \mathcal B \arrow[r, "g"] & \mathcal D \arrow[r, "Y"] \arrow[d, "j"] & \V \\
-  & \mathcal D
-\end{tikzcd}
-\]
-such that the square is a nervous pushout of fully-faithful functors, then $\Lan_j Y$ is the pushout of the induced span
-\[
-\begin{tikzcd}
-  \Lan_{j i f}(Y i f) \arrow[r] \arrow[d] & \Lan_{j i}(Y i)\\
-  \Lan_{j g}(Y g).
-\end{tikzcd}
-\]
-\end{lemma}
-\begin{proof}
-  By the universal property of left Kan extensions, it suffices to show that, for any functor $Z: \V \to \D$, the natural map
-  \[
-  \V^\D(Y, Z j) \longto \V^{\mathcal B} (Y g, Z j g) \prod\limits_{\V^{\mathcal A}(Y i f, Z j i f)} \V^{\mathcal C}(Y i, Z j i)
-  \]
-  is a bijection. These two sets give the same data: a collection of maps $\Phi_b: Y(b) \to Z(b)$ and $\Phi_c:Y(c) \to Z(c)$ for all $b\in \mathcal B$ and $c \in \mathcal C$, such that $\Phi_b = \Phi_c$ whenever $b = c \in \mathcal A$. In general, the compatibilites required on the right are less demanding. However, with the above assumptions, a map $d \to d'$ in $\mathcal D$ is \textit{uniquely} a map in $\mathcal A$, $\mathcal B \setminus \mathcal A$, or $\mathcal C \setminus \mathcal A$, and thus all the necessary compatibilities are covered by (at least) one of the $\set{\Phi_b}$ or $\set{\Phi_c}$. 
-\end{proof}
+We are now in a position to produce the desired filtration of the map $\mathcal{P} \to \mathcal{P}[u]$ in 
+(\ref{CELLEXTPUSH EQ}).
 
-We can now build our category $\Omega_{G,e}[\leq k]$ inductively.
-
-\begin{lemma}
-  \label{TREE_CATS_DECOMP_LEMMA}
-  $\Omega_G^e[\leq k]$ is the isomorphic to the pushout below.
-  \[
-  \begin{tikzcd}
-    \Omega_G^{e}[k,-] \arrow[d] \arrow[r] & \Omega_G^{e}[\leq k,-] \arrow[d]\\
-    \Omega_G^e[k] \arrow[r] & \Omega_G^e[\leq k]
-  \end{tikzcd}
-  \]
-  In fact, it is a \textit{nervous pushout} of fully-faithful functors.% (see \ref{NERVOUS_PUSHOUT_DEFN}).
-\end{lemma}
-\begin{proof}
-  Since maps in $\Omega_G^e$ can only increase $|-|$ by adding $|-|_X$, if $T$ is a tree with $|T| = |T|_Y = k$, then any other tree $S\in \Omega_G^e$ connected to $T$ via a zig-zag of maps must have $|S| = k$; that is, if $T\in \Omega_G^e[\leq k] \setminus \Omega_G^e[\leq k, -]$, then the connected component of $T$ is entirely contained in $\Omega_G^e[k]$. Conversely, if $T \in \Omega_G^e[\leq k] \setminus \Omega_G^e[k]$, the connected component of $T$ is entirely contained in $\Omega_G^e[\leq k,-]$. Since the natural induced map
-  \[
-  \Omega_G^e[k] \amalg \Omega_G^e[\leq k,-] \to \Omega_G^e[\leq k]
-  \]
-  is clearly full and surjective on objects, the result follows from the above discussion and the obvious fully-faithfulness ofthe span. 
-\end{proof}
-
-Abusing notation, we will denote by $N^e$ the restriction of that functor to any of the subcategories of $\Omega_G^e$ in the above pushout square.
-
-We can now define the sequencers which will make up our filtration of $\P[u]$:
 \begin{definition}
   Let $\P_k$ denote the left Kan extension
 \[
 \begin{tikzcd}
-  |[alias=U]| \Omega_G^e[\leq k]^{op} \arrow[r, "N^e"] \arrow[d, "val"'] & \V\\
-  \Sigma_G^{op} \arrow[ur, "\P_k"', ""{name=V}]
-  \arrow[Rightarrow, from=U, to=V]
+	|[alias=U]| \bar{\Omega}_G^e[\leq k]^{op} \arrow[r, "N^e"] \arrow[d, "\mathsf{lr}"'] & \V
+\\
+	\Sigma_G^{op} \arrow[ur, "\P_k"', ""{name=V}]
+	\arrow[Rightarrow, from=U, to=V]
 \end{tikzcd}
 \]
 \end{definition}
+Noting that $\bar{\Omega}_G^e[\leq 0] \simeq \Sigma_G$ (since $|T|=0$ only if $T$ is a $G$-corolla with $\mathcal{P}$-labeled vertex) and that $\bar{\Omega}_G^e$
+is the union of (the nerves of) the 
+$\bar{\Omega}_G^e[\leq k]$, one has a filtration
+\begin{equation}\label{FILT EQ}
+	\mathcal{P} = 
+	\mathcal{P}_0 \to 
+	\mathcal{P}_1 \to
+	\mathcal{P}_2 \to
+	\cdots \to 
+	\colim_k \mathcal{P}_k = \mathcal{P}[u].
+\end{equation}
 
-Note that by naturality of $\Lan$, we have maps $\P_{k-1} \to \P_k$.
+
+To analyze (\ref{FILT EQ}) homotopically we will further make use of a pushout description of each individual map 
+$\mathcal{P}_{k-1} \to \mathcal{P}_k$. To do so, we note that the diagram of inclusions
+\begin{equation}\label{INCDIAG EQ}
+\begin{tikzcd}
+	\bar{\Omega}_G^{e}[k,-] \arrow[d] \arrow[r] &
+	\bar{\Omega}_G^{e}[\leq k,-] \arrow[d]
+\\
+	\bar{\Omega}_G^e[k] \arrow[r] &
+	\bar{\Omega}_G^e[\leq k]
+\end{tikzcd}
+\end{equation}
+is a pushout of at the level of nerves.
+Indeed, this follows since
+\[
+\bar{\Omega}_G^e[k] \cap 
+\bar{\Omega}_G^{e}[\leq k,-]
+= \bar{\Omega}_G^{e}[k,-],
+	\qquad
+\bar{\Omega}_G^e[k] \cup 
+\bar{\Omega}_G^{e}[\leq k,-]
+= \bar{\Omega}_G^{e}[\leq k],
+\]
+and since a map $T \to S$ in 
+$\bar{\Omega}_G^e[\leq k]$
+will be in one of subcategories in (\ref{INCDIAG EQ}) iff $T$ is.
+
+Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification 
+$\Lan_{\bar{\Omega}_{G,e}[\leq k,-]^{op}}N^e \simeq
+\Lan_{\bar{\Omega}_{G,e}[\leq k-1]^{op}}N^e = \mathcal{P}_{k-1}$,
+applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram below.
+\[
+\begin{tikzcd}
+  \Lan_{\bar{\Omega}_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
+  \Lan_{\bar{\Omega}_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
+\end{tikzcd}
+\]
+
+
+{\color{red} HERE}
+
+%Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
+%While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
+%\[
+%\begin{tikzcd}
+%  \mathcal A \arrow[d] \arrow[r] & \mathcal C \arrow[d]\\
+%  \mathcal C \arrow[r] & \mathcal D
+%\end{tikzcd}
+%\]
+%if the nerve of this square is a pushout in $\sSet$, then this is a pushout of categories (since the nerve is the inclusion of a reflective subcategory).
+
+
+%If we further assume that the span of functors is built out of fully-faithful inclusions, these pushouts behave as nicely as possible with left Kan extensions.
+%\begin{lemma}
+%  \label{LAN_PUSHOUT_LEMMA}
+%  Given any diagram in categories of the form 
+%\[
+%\begin{tikzcd}
+%  \mathcal A \arrow[d] \arrow[r, "f"] & \mathcal C \arrow[d, %"i"]\\
+%  \mathcal B \arrow[r, "g"] & \mathcal D \arrow[r, "Y"] \arrow[d, "j"] & \V \\
+%  & \mathcal D
+%\end{tikzcd}
+%\]
+%such that the square is a nerve pushout of fully-faithful %functors, then $\Lan_j Y$ is the pushout of the induced span
+%\[
+%\begin{tikzcd}
+%  \Lan_{j i f}(Y i f) \arrow[r] \arrow[d] & \Lan_{j i}(Y i)\\
+%  \Lan_{j g}(Y g).
+%\end{tikzcd}
+%\]
+%\end{lemma}
+%\begin{proof}
+%  By the universal property of left Kan extensions, it suffices to show that, for any functor $Z: \V \to \D$, the natural map
+%  \[
+%  \V^\D(Y, Z j) \longto \V^{\mathcal B} (Y g, Z j g) \prod\limits_{\V^{\mathcal A}(Y i f, Z j i f)} \V^{\mathcal C}(Y i, Z j i)
+%  \]
+%  is a bijection. These two sets give the same data: a collection of maps $\Phi_b: Y(b) \to Z(b)$ and $\Phi_c:Y(c) \to Z(c)$ for all $b\in \mathcal B$ and $c \in \mathcal C$, such that $\Phi_b = \Phi_c$ whenever $b = c \in \mathcal A$. In general, the compatibilites required on the right are less demanding. However, with the above assumptions, a map $d \to d'$ in $\mathcal D$ is \textit{uniquely} a map in $\mathcal A$, $\mathcal B \setminus \mathcal A$, or $\mathcal C \setminus \mathcal A$, and thus all the necessary compatibilities are covered by (at least) one of the $\set{\Phi_b}$ or $\set{\Phi_c}$. 
+%\end{proof}
+
+
+
 
 \subsection{Notation}
 \todo[inline]{Luis: should this be stated earlier when defining the categorical wreath products?}
@@ -4910,7 +4997,7 @@ it further suffices to show the following three claims:
 \item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
 \item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
 \item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
-\todo[inline]{come back: somehow we've lost the dependence on $u$ being trivial or not...}
+\todo[inline]{come back: somehow I've lost the dependence on $u$ being trivial or not...}
 \end{enumerate}
 Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
 \end{proof}
