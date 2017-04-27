@@ -2240,6 +2240,41 @@ $\varphi^{\**}(T) \to T$.
 
 It now follows that (\ref{ROOTLEAFTROOTCOM EQ}) are diagrams of split Grothendieck fibrations.
 
+One advantage of split Grothendieck fibrations (in general) is the following initiality condition on overcategories.
+\begin{definition}
+  Suppose we have two split fibrations $r: \mathcal C \to \mathcal E$ and $r: \mathcal D \to \mathcal E$ and a map of fibrations $f$ as below.
+  \[
+  \begin{tikzcd}
+    \mathcal C \arrow[dr, "r"'] \arrow[rr, "f"] & & \mathcal D \arrow[dl, "r"]\\
+    &     \mathcal E
+  \end{tikzcd}
+  \]  
+  For any $d\in \mathcal D$, let $d \downarrow_{\mathsf r}\mathcal C$ denote the subcategory of $d\downarrow \mathcal C$ of just those maps $d \to f(c)$ which map to the identity under $r$.
+\end{definition}
+\begin{lemma}
+  In the above scenario, $d \downarrow_{\mathsf r}\mathcal C$ is inital in $d\downarrow \mathcal C$.
+\end{lemma}
+\begin{proof}
+  We must show that the appropriate iterated overcategories are non-empty and connected. To that end, suppose we have a map $\phi: d\to f(c)$ in $\mathcal D$, and let $q := r(\phi): r(d) \to r(c)$. Since $\mathcal C$ is fibrant over $\mathcal E$, we have a Cartesian arrow $q': c' \to c$ lifting $q: r(d) = r(c') \to r(c)$. Thus we have diagrams in $\mathcal E$ and $\mathcal D$ of the form
+\[
+\begin{tikzcd}
+  r(d) \arrow[dr, "r(\phi)"'] \arrow[r, equal, "id"] & r(c') \arrow[d, "q"] &\qquad \qquad & d \arrow[dr, "\phi"'] \arrow[r, dotted, "\exists!"] & f(c') \arrow[d, "f(q')"'] \\
+  & r(c) & & & f(c)
+\end{tikzcd}
+\]
+As $f$ preserves Cartesian arrows, $f(q')$ is Cartesian, and hence we have a unique lifting $d \to f(c')$ of $r(d) = r(c')$. Thus the iterated overcategory is inhabited.
+
+To show it is connected, any other factorization $d \xrightarrow{\psi} f(c'') \to f(c)$ such that $r(\psi) = id$, we can again use the fact that $q'$ is Cartesian to produce a lift $f(c';) \to f(c')$ of $r(c'') = r(c')$; by uniqueness of the map $d \to f(c')$, we have that the diagram below commutes, finishing the proof.
+\[
+\begin{tikzcd}
+  & d \arrow[dl, "\exists!"'] \arrow[dr, "\psi"] & \\
+  f(c') \arrow[dr, "f(q')"']  && f(c'') \arrow[ll, dotted, "\exists!"'] \arrow[dl]\\
+  & f(c)
+\end{tikzcd}
+\]
+\end{proof}
+
+
 \begin{definition}
 A split Grothendieck fibration 
 $A \xrightarrow{\mathsf{r}} \mathsf{O}_G$
