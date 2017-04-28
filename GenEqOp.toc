@@ -10,20 +10,21 @@
 \contentsline {subsection}{\numberline {4.3}Planar strings}{15}
 \contentsline {subsection}{\numberline {4.4}A monad on spans}{17}
 \contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{20}
-\contentsline {section}{\numberline {5}Free extensions}{24}
-\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{24}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{25}
-\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{27}
-\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{29}
-\contentsline {subsection}{\numberline {5.5}The category of extension trees}{33}
-\contentsline {section}{\numberline {6}Filtration of cellular extensions}{38}
-\contentsline {subsection}{\numberline {6.1}Filtration pieces}{38}
-\contentsline {subsection}{\numberline {6.2}Notation}{40}
-\contentsline {subsection}{\numberline {6.3}Filtration Result}{41}
-\contentsline {section}{\numberline {7}Model Structures on Genuine Operads}{43}
-\contentsline {subsection}{\numberline {7.1}Weak Indexing Systems}{43}
-\contentsline {subsection}{\numberline {7.2}Semi Model Structures on Genuine Operads}{44}
-\contentsline {subsection}{\numberline {7.3}True Model Structures}{45}
-\contentsline {subsection}{\numberline {7.4}Preservation of Cofibrant Objects}{45}
-\contentsline {subsection}{\numberline {7.5}Cofibrant Symmetric Collections}{46}
-\contentsline {subsubsection}{\numberline {7.5.1}$G$-Operads}{46}
+\contentsline {section}{\numberline {5}Genuine equivariant operads versus equivariant operads}{24}
+\contentsline {section}{\numberline {6}Free extensions}{25}
+\contentsline {subsection}{\numberline {6.1}Extensions over general monads}{25}
+\contentsline {subsection}{\numberline {6.2}Labeled planar strings}{26}
+\contentsline {subsection}{\numberline {6.3}Bar constructions on spans}{28}
+\contentsline {subsection}{\numberline {6.4}Transferring simplicial colimits of left Kan extensions}{30}
+\contentsline {subsection}{\numberline {6.5}The category of extension trees}{34}
+\contentsline {section}{\numberline {7}Filtration of cellular extensions}{39}
+\contentsline {subsection}{\numberline {7.1}Filtration pieces}{39}
+\contentsline {subsection}{\numberline {7.2}Notation}{41}
+\contentsline {subsection}{\numberline {7.3}Filtration Result}{42}
+\contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{44}
+\contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{44}
+\contentsline {subsection}{\numberline {8.2}Semi Model Structures on Genuine Operads}{45}
+\contentsline {subsection}{\numberline {8.3}True Model Structures}{46}
+\contentsline {subsection}{\numberline {8.4}Preservation of Cofibrant Objects}{46}
+\contentsline {subsection}{\numberline {8.5}Cofibrant Symmetric Collections}{47}
+\contentsline {subsubsection}{\numberline {8.5.1}$G$-Operads}{47}

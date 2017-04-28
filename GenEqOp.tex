@@ -1596,7 +1596,7 @@ This requires two observations:
 	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
 	are compatible with root pullback of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
 	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
-\begin{equation}\label{SUBDATAUNDERPLANG EQ}
+\begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =10pt]
 	\mathsf{Sub}_{\mathsf{p}}(S) \ar[r,shift left=2pt] &
 	\Omega_{G,S/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
@@ -2592,6 +2592,61 @@ is isomorphic to
 \]
 \end{remark}
 
+
+\section{Genuine equivariant operads versus equivariant operads}
+
+We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
+$\mathsf{Sym}_{\**}(\mathcal{V})
+\simeq \mathsf{Sym}(\mathcal{V})$
+and
+$\mathsf{Op}_{\**}(\mathcal{V})
+\simeq \mathsf{Op}(\mathcal{V})$, 
+and in what follows we will adopt the notations
+$\mathsf{Sym}^G(\mathcal{V})$ and
+$\mathsf{Op}^G(\mathcal{V})$ 
+for the corresponding categories of $G$-objects.
+Our goal will be to relate these to the categories
+$\mathsf{Sym}_G(\mathcal{V})$ and $\mathsf{Op}_G(\mathcal{V})$
+of genuine equivariant sequences and genuine operads.
+
+We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions in this section.
+
+We thus have an inclusion functor
+\[
+\begin{tikzcd}[row sep =0]
+	\iota \colon G \times \Sigma \ar[hookrightarrow]{r} &
+	\Sigma_G
+\\
+	C \ar[mapsto]{r} & G \cdot C
+\end{tikzcd}
+\]
+where $G \cdot C$ is planarized so that the roots inherit the order of $G$ and each of the individual copies of $C$ inherits the planarization of $C$.
+We now consider the associated adjunction.
+\begin{equation}\label{TWOADJOINTS EQ}
+\begin{tikzcd}
+	\iota^{\**} \colon 
+	\mathsf{Sym}_G \ar[shift left =2pt]{r} 
+	&
+	\mathsf{Sym}^G 
+	\colon \iota_{\**} \ar[shift left =2pt]{l}
+\end{tikzcd}
+\end{equation}
+Explicitly, we have the formulas
+\[
+	\iota^{\**}X (C) = X(G \cdot C),
+\qquad
+	\iota_{\**}Y (\amalg_i C_i)=
+	\left(\prod_i Y(C_i)\right)^G,
+\]
+where we note that in the formula for $\iota_{\**}(\minus)$
+the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
+As a side note, we note that the formula for $\iota_{\**}$ is independent of the chosen order of $G$.
+
+{\color{red} HERE}
+
+
+
+\newpage
 
 \section{Free extensions}
 
@@ -4024,7 +4079,7 @@ We will denote the category of alternating $G$-trees and tall alternating maps b
 
 \begin{example}
 Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
-\begin{equation}\label{REGALTERNMAP EQ}
+\begin{equation}\label{REGALTERNMAPLR EQ}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
