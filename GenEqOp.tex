@@ -44,6 +44,8 @@ No content yet.
 In this section we recall some definitions that will be used throughout.
 
 
+\subsection{Grothendieck constructions}
+
 
 Recall that for a diagram category $\mathcal{D}$ and functor $\mathcal{I}_{\bullet}$
 \begin{equation}
@@ -129,6 +131,46 @@ correspond to functors
 and again it is clear that these are inverse processes.
 	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
 \end{proof}
+
+
+
+\subsection{Monads}
+
+We will make multiple uses of the following straightforward result.
+
+\begin{proposition}\label{MONADADJ PROP}
+Let
+$
+L \colon \mathcal{C} \rightleftarrows \mathcal{D} \colon R
+$
+be an adjunction, $T$ a monad on $\mathcal{C}$, and suppose further that
+\[
+	LR \xrightarrow{\epsilon} id_{\mathcal{D}}, 
+\qquad
+	LT \xrightarrow{\eta} LTRL
+\]
+are natural isomorphisms 
+(so that in particular $\mathcal{D}$ is a reflexive subcategory of $\mathcal{C}$).
+
+Then
+\begin{itemize}
+\item[(i)] $LTR$ is a monad, with multiplication and unit given by
+\[LTRLTR \xrightarrow{\eta^{-1}} LTTR \to LTR,\qquad
+id_{\mathcal{D}} \xrightarrow{\epsilon^{-1}} LR \to LTR;
+\]
+\item[(ii)]
+$d \in \mathcal{D}$ is a $LTR$-algebra iff $Rd$ is a $T$-algebra;
+\item[(iii)] there is an induced adjunction
+\[
+L \colon \mathsf{Alg}_{T}(\mathcal{C})
+	\rightleftarrows
+\mathsf{Alg}_{LTR}(\mathcal{D}) \colon R.
+\]
+\end{itemize}
+
+\end{proposition}
+
+
 
 
 
@@ -2593,7 +2635,7 @@ is isomorphic to
 \end{remark}
 
 
-\section{Genuine equivariant operads versus equivariant operads}
+\subsection{Genuine equivariant operads versus equivariant operads}
 
 We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
@@ -2622,7 +2664,7 @@ We thus have an inclusion functor
 \]
 where $G \cdot C$ is planarized so that the roots inherit the order of $G$ and each of the individual copies of $C$ inherits the planarization of $C$.
 We now consider the associated adjunction.
-\begin{equation}\label{TWOADJOINTS EQ}
+\begin{equation}\label{JUSTONEDJOINT EQ}
 \begin{tikzcd}
 	\iota^{\**} \colon 
 	\mathsf{Sym}_G \ar[shift left =2pt]{r} 
@@ -2642,11 +2684,110 @@ where we note that in the formula for $\iota_{\**}(\minus)$
 the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
 As a side note, we note that the formula for $\iota_{\**}$ is independent of the chosen order of $G$.
 
-{\color{red} HERE}
+The adjunction (\ref{JUSTONEDJOINT EQ}) identifies
+$\mathsf{Sym}^G$ 
+as a reflexive subcategory of
+$\mathsf{Sym}_G$, with the counit map $X(C) \to \left(\prod_G X(C)\right)^G$ given by 
+the isomorphism between $X(C)$ and the diagonal of $\prod_G X(C)$.
+
+
+\begin{proposition}
+	One has the following
+\begin{itemize}
+	\item[(i)]
+	the map 
+	$\iota^{\**} \mathbb{F}_G
+		\xrightarrow{\eta}
+	\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**}$
+	is an isomorphism, 
+	and thus (cf. Prop. \ref{MONADADJ PROP})
+	$\iota^{\**} \mathbb{F}_G \iota_{\**}$
+	is a monad;
+	\item[(ii)] there is a natural isomorphism of monads
+	$\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Throughout this proof we write 
+$\Sigma_G^{\text{free}} \hookrightarrow \Sigma_G$,
+$\Omega_{G,0}^{\text{free}} \hookrightarrow \Omega_{G,0}$,
+for the full subcategories of 
+those $G$-corollas/trees with free $G$-actions.
+We note that the leaf-root and vertex functors
+$\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$,
+$V_G \colon \Omega_{G,0} \to \Fin \wr \Sigma_G$
+then both restrict to 
+free trees, i.e., one has
+$\mathsf{lr} \colon \Omega_{G,0}^{\text{free}} \to \Sigma_G^{\text{free}}$,
+$V_G \colon \Omega_{G,0}^{\text{free}} \to \Fin \wr \Sigma_G^{\text{free}}$.
+Furthermore, for any $C \in \Sigma_G^{\text{free}}$ one has an equality of rooted undercategories between
+$C \downarrow_{\mathsf{r}} \Omega_{G,0}$
+and
+$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{free}}$,
+so that
+$\iota^{\**} \mathbb{F}_G A$ is computed by the Kan extension of
+\begin{equation}\label{IFGI EQ}
+\begin{tikzcd}
+	\Omega_{G,0}^{\text{free}} \ar{d} \ar{r} &
+	\Fin \wr \Sigma_G^{\text{free}} \ar{r}{\Fin \wr A} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\mathcal{V}^{op}
+\\
+	\Sigma_G^{\text{free}}
+\end{tikzcd}
+\end{equation}
+so that (i) follows from the obvious claim 
+$A \to \iota_{\**} \iota^{\**} A$
+is an isomorphism when restricted to $\Sigma_G^{\text{free}}$
+(indeed, $\Sigma_G^{\text{free}}$ is the closure of the image of $\iota$ under isomorphism).
+
+To show (ii), we first set some notation. We will slightly abuse notation to write 
+$G \times \Sigma \hookrightarrow \Sigma_G^{\text{free}} \hookrightarrow \Sigma_G$ for the image of $\iota$
+and similarly
+$G \times \Omega_0 \hookrightarrow \Omega_{G,0}^{\text{free}} \hookrightarrow \Omega_{G,0}$ for the image of the obvious analogue functor
+$\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
+Just as before the leaf-root and vertex functors
+factor as
+$\mathsf{lr} \colon G \times \Omega_0 \to G \times \Sigma$,
+$V_G \colon G \times \Omega_0 \to \Fin \wr (G \times \Sigma)$
+. In fact, this notation extends to strings $G \times \Omega_{n}$ compatibly with all vertex functors and simplicial functors.
+
+Under this identification, $\mathbb{F}B$ is then computed as the Kan extension of
+\begin{equation}\label{F EQ}
+\begin{tikzcd}
+	G \times \Omega_{0} \ar{d} \ar{r} &
+	\Fin \wr (G \times \Sigma) \ar{r}{\Fin \wr B} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\mathcal{V}^{op}
+\\
+	G \times \Sigma
+\end{tikzcd}
+\end{equation}
+The map $\mathcal{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is then induced by the obvious ``inclusion'' natural transformation of (\ref{F EQ}) into (\ref{IFGI EQ}) when $B=\iota_{\**} A$, with the fact that this is a map of monads following from the analogous diagram for strings $\Omega_{G,1}$.
+\end{proof}
+
+
+Proposition \ref{MONADADJ PROP}) now gives the following.
+
+\begin{corollary}
+	The adjunction (\ref{JUSTONEDJOINT EQ}) extends to an adjunction
+\begin{equation}\label{JUSTONEDJOINTOP EQ}
+\begin{tikzcd}
+	\iota^{\**} \colon 
+	\mathsf{Op}_G \ar[shift left =2pt]{r} 
+	&
+	\mathsf{Op}^G 
+	\colon \iota_{\**} \ar[shift left =2pt]{l}
+\end{tikzcd}
+\end{equation}
+identifying $\mathsf{Op}^G$ as a reflexive subcategory of 
+$\mathsf{Op}_G$.
+\end{corollary}
 
 
 
-\newpage
+
 
 \section{Free extensions}
 
