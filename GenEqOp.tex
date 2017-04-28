@@ -2262,7 +2262,7 @@ One advantage of split Grothendieck fibrations (in general) is the following ini
   & r(c) & & & f(c)
 \end{tikzcd}
 \]
-As $f$ preserves Cartesian arrows, $f(q')$ is Cartesian, and hence we have a unique lifting $d \to f(c')$ of $r(d) = r(c')$. Thus the iterated overcategory is inhabited.
+As $f$ preserves Cartesian arrows, $f(q')$ is Cartesian, and hence we have a unique lifting $p(\phi): d \to f(c')$ of $r(d) = r(c')$. Thus the iterated overcategory is inhabited.
 
 To show it is connected, any other factorization $d \xrightarrow{\psi} f(c'') \to f(c)$ such that $r(\psi) = id$, we can again use the fact that $q'$ is Cartesian to produce a lift $f(c';) \to f(c')$ of $r(c'') = r(c')$; by uniqueness of the map $d \to f(c')$, we have that the diagram below commutes, finishing the proof.
 \[
@@ -2274,6 +2274,10 @@ To show it is connected, any other factorization $d \xrightarrow{\psi} f(c'') \t
 \]
 \end{proof}
 
+\begin{remark}
+  The above proof can be easily modified to show that $d \downarrow_{\mathsf r} \mathcal C$ is in fact a coreflective subcategory of $d \downarrow \mathcal C$, with $\phi \mapsto p(\phi)$ the reflection.
+\todo[inline]{Luis: to actually show this would take just as long - functoriality and the fact that the inclusion is a left adjoint both require unique liftings/factorizations}
+\end{remark}
 
 \begin{definition}
 A split Grothendieck fibration 
@@ -4364,12 +4368,21 @@ We define subcategories of $\bar{\Omega}_{G}^e$:
   $\bar{\Omega}_G^e[k]$ of trees $T$ with $|T|_X = 0$ (or, equivalently, $|T|_{Y} = k$).
 %  \item If $\Xi$ is any of the above categories, and $C\in \Sigma_G$, let $\Xi(C)$ denote the full subcategory of $\Xi$ spanned by those trees $T$ with $val(T) \simeq C$.
   \end{itemize}
+The above definitions still hold if we replace $\bar\Omega_G^e$ with $\Omega_G^a$; in particular, we have vertical forgetful functors
+\[
+\begin{tikzcd}
+  \bar\Omega_G^e[k,-] \arrow[dr, "\mathsf{fgt}"'] \arrow[rr, hookrightarrow] && \bar\Omega_G^e[k] \arrow[dl, "\mathsf{fgt}"]\\
+  & \Omega_G^a[k]
+\end{tikzcd}
+\]
 \end{definition}
 
 
 \begin{remark}\label{LIMMOR REM}
-	The categories $\bar{\Omega}_G^e[k]$ and $\bar{\Omega}_G^e[k,-]$ have only rather limited morphisms.
-	In fact, all maps in these categories must be underlying quotients of trees. Indeed, it is clear from Definition \ref{EXTTREECAT DEF} that maps never lower degree and, moreover, degree is preserved iff $\mathcal{P}$-vertices are substituted by $\mathcal{P}$-vertices (rather than larger trees in $\bar{\Omega}_G^e$, which would necessarily possess $X$-vertices).
+  The categories $\bar{\Omega}_G^e[k]$ and $\bar{\Omega}_G^e[k,-]$ have only rather limited morphisms.
+  In fact, all maps in these categories must be underlying quotients of trees. Indeed, it is clear from Definition \ref{EXTTREECAT DEF} that maps never lower degree and, moreover, degree is preserved iff $\mathcal{P}$-vertices are substituted by $\mathcal{P}$-vertices (rather than larger trees in $\bar{\Omega}_G^e$, which would necessarily possess $X$-vertices).
+  
+  Moreover, we have a clear isomorphism of categories $\bar\Omega_G^e[k,0] \simeq \Omega_G^a[k]$. 
 \end{remark}
 
 
@@ -4381,12 +4394,12 @@ In the proof we will make use of the following construction on
 $\Omega_{G,e}$: given $T \in \Omega_{G,e}$ we will let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
 
 \begin{remark}\label{YINERT REM}
-	Unlike the $\mathsf{lr}_{\mathcal{P}}$ construction of Proposition \ref{LXP PROP}, which defines a functor 
-	$\mathsf{lr}_{\mathcal{P}} \colon
-	\Omega_G^e \to \bar{\Omega}_G^e $,
-	the construction 
-	$(\minus)_{\mathcal{P}}$ does not define a full functor
-	$\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the $Y$-inert maps of $\Omega_G^e$.
+  Unlike the $\mathsf{lr}_{\mathcal{P}}$ construction of Proposition \ref{LXP PROP}, which defines a functor 
+  $\mathsf{lr}_{\mathcal{P}} \colon
+  \Omega_G^e \to \bar{\Omega}_G^e $,
+  the construction 
+  $(\minus)_{\mathcal{P}}$ does not define a full functor
+  $\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the $Y$-inert maps of $\Omega_G^e$.
 \end{remark}
 
 
@@ -4666,6 +4679,7 @@ We are now in a position to produce the desired filtration of the map $\mathcal{
 (\ref{CELLEXTPUSH EQ}).
 
 \begin{definition}
+  \label{PK_DEFN}
   Let $\P_k$ denote the left Kan extension
 \[
 \begin{tikzcd}
@@ -4719,12 +4733,13 @@ Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification
 $\Lan_{\bar{\Omega}_{G,e}[\leq k,-]^{op}}N^e \simeq
 \Lan_{\bar{\Omega}_{G,e}[\leq k-1]^{op}}N^e = \mathcal{P}_{k-1}$,
 applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram below.
-\[
-\begin{tikzcd}
-  \Lan_{\bar{\Omega}_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
-  \Lan_{\bar{\Omega}_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
-\end{tikzcd}
-\]
+\begin{equation}
+  \label{FILTRATION_LAN_SQUARE_DIAGRAM}
+  \begin{tikzcd}
+    \Lan_{\bar{\Omega}_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
+    \Lan_{\bar{\Omega}_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
+  \end{tikzcd}
+\end{equation}
 
 
 {\color{red} HERE}
@@ -4790,27 +4805,35 @@ where the first map is defined on $\xi: A \to \set{0,1}$ by
 \]
 \end{definition}
 
-We recall that, in a general category $\mathcal C$, a subcategory $\mathcal C' \subseteq \mathcal C$ is called \textit{convex} if whenever $c' \in \mathcal C'$ and $c \to c'$ is an arrow in $\mathcal C$< then both $c'$ and the map are in $\mathcal C'$. 
+%We recall that, in a general category $\mathcal C$, a subcategory $\mathcal C' \subseteq \mathcal C$ is called \textit{convex} if whenever $c' \in \mathcal C'$ and $c \to c'$ is an arrow in $\mathcal C$< then both $c'$ and the map are in $\mathcal C'$. 
 
 \begin{definition}
   \label{Q_DEFINITION}
-  Let $\mathcal C$ be a convex subcategory of $(0 \to 1)^A$. We define 
+  Given $u: Y_0 \to Y_1$ and $(A,D)\in \mathsf F \wr \Sigma_G$ as before, let $\mathsf{pc}(A)$ denote the 
+%be a convex subcategory of $(0 \to 1)^A$. We define 
+%\[
+%Q_{\mathcal C}[u]^D := \colim_{\mathcal C}[u]^D.
+%\]
+%Moreover, given nested convex subcategories $\mathcal C' \subseteq \mathcal C$, we let
+%\[
+%[u]^D\square_{\mathcal C'}^{\mathcal C}: Q_{\mathcal C'}[u]^D \to Q_{\mathcal C}[u]^D
+%\]
+%denote the unique natural map.
+%
+%In particular, if $\mathcal C$ is the full 
+``punctured cube'' subcategory 
 \[
-Q_{\mathcal C}[u]^D := \colim_{\mathcal C}[u]^D.
+\mathsf{pc}(A) := (0 \to 1)^A \setminus \set{(1)_a} \subseteq (0 \to 1)^A,
 \]
-Moreover, given nested convex subcategories $\mathcal C' \subseteq \mathcal C$, we let
+and define 
 \[
-[u]^D\square_{\mathcal C'}^{\mathcal C}: Q_{\mathcal C'}[u]^D \to Q_{\mathcal C}[u]^D
+Q[u]^D := \colim_{\mathsf{pc(A)}}[u]^D,
 \]
-denote the unique natural map.
-
-In particular, if $\mathcal C$ is the full ``punctured cube'' subcategory $(0 \to 1)^A \setminus \set{(1)_a}$, we simplify the notation as follows:
+and
 \[
-Q[u]^D := Q_{\mathcal C}[u]^D
+[u]^{\square D}: Q[u]^D \to \bigotimes\limits_{a \in A}Y_1(D(a))
 \]
-\[
-[u]^{\square D} := [u]^D\square_{\mathcal C}^{(0 \to 1)^A}: Q[u]^D \to \bigotimes\limits_{a \in A}Y_1(D(a)).
-\]
+as the natural map.
 \end{definition}
 
 \subsection{Filtration Result}
@@ -4825,68 +4848,89 @@ We can now state our filtration of the cellular extension $\P \to \P[u]$.
 where $\P_{k-1} \to \P_k$ is given by the pushout
 \[
 \begin{tikzcd}
-  \Lan_{\Omega_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
-  \Lan_{\Omega_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
+  \Lan_{\bar\Omega_G^e[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
+  \Lan_{\bar\Omega_G^e[k]^{op}}N^e \arrow[r] & \P_k
 \end{tikzcd}
 \]
-Levelwise, for each $C\in \Sigma_G$, in the underlying category $\V^{G\times\Sigma_n}$, we have a filtration on the evaluations at $C$, where $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout
+where each $\Lan$ is over the leaf-root functor associated to the given category.
+
+Levelwise, for each $C\in \Sigma_G$, we have a filtration of $\P(C) \to \P[u](C)$ in $\V^{\mathrm{Aut}(C)}$, where $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout
 \[
 \begin{tikzcd}
-  \coprod\limits_{[T] \in \Omega_{G,e}[k,0](C)/\simeq} \left( \bigotimes\limits_{v \in V_{G,\P}(T)}\P(T_v) \otimes Q[u]^{\mathbb V_{G,in}(T)} \right) \otimes_{\mathrm{Aut}(T)} \mathrm{Aut}(C) \arrow[r] \arrow[d] & \P_{k-1}(C) \arrow[d] \\
-   \coprod\limits_{[T] \in \Omega_{G,e}[k,0](C)/\simeq} \left( \bigotimes\limits_{v \in V_{G,\P}(T)}\P(T_v) \otimes \bigotimes\limits_{v \in V_{G,in}(T)} Y_1(T_v) \right) \otimes_{\mathrm{Aut}(T)} \mathrm{Aut}(C) \arrow[r] & \P_k(C)
+  \coprod\limits_{[T] \in \Omega_G^a[k](C)/\simeq} \left( \bigotimes\limits_{v \in V_{G,\P}(T)}\P(T_v) \otimes Q[u]^{\mathbb V_{G,in}(T)} \right) \otimes_{\mathrm{Aut}(T)} \mathrm{Aut}(C) \arrow[r] \arrow[d] & \P_{k-1}(C) \arrow[d] \\
+   \coprod\limits_{[T] \in \Omega_G^a[k](C)/\simeq} \left( \bigotimes\limits_{v \in V_{G,\P}(T)}\P(T_v) \otimes \bigotimes\limits_{v \in V_{G,in}(T)} Y_1(T_v) \right) \otimes_{\mathrm{Aut}(T)} \mathrm{Aut}(C) \arrow[r] & \P_k(C)
 \end{tikzcd}
 \]
 where the left vertical map is the iterated box product
 \[
 \coprod \mathop{\square}\limits_{V_{G,\P}(T)}\iota_{\P(T_v)}\mathop{\square} [u]^{\square \mathbb V_{G,in}(T)},
 \]
-$\iota_{\P(T_v)}$ is the canonical map $\varnothing \to \P(T_v)$ out of the initial object, and $\Omega_{G,e}[k,0](C)$ is as in Definition \ref{TREE_FILTRATION_PIECES_DEFINITION}.
+$\iota_{\P(T_v)}$ is the canonical map $\varnothing \to \P(T_v)$ out of the initial object, and $\Omega_G^a[k](C)$ is as in Definnition \ref{TREE_FILTRATION_PIECES_DEFINITION}.
 \end{theorem}
 
 \begin{proof}
-  Combining Lemmas \ref{LAN_PUSHOUT_LEMMA} and \ref{TREE_CATS_DECOMP_LEMMA}, we have that $\P_k$ can be computed as the pushout
-
-\begin{equation}
-  \label{FILTRATION_LAN_SQUARE_DIAGRAM}
-  \begin{tikzcd}
-    \Lan_{\Omega_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \Lan_{\Omega_{G,e}[\leq k, -]^{op}}N^e \arrow[d] \\
-    %\colim_{\mathbb T_e^-[k]^{op}\downarrow n}N^e \arrow[d] \arrow[r] & \colim_{\mathbb T_e^-[\leq k]^{op} \downarrow n}N^e \arrow[d]\\
-    \Lan_{\Omega_{G,e}[k]^{op}}N^e \arrow[r] & \Lan_{\Omega_{G,e}[\leq k]^{op}}N^e := \P_k
-    % \colim_{\mathbb T_e[k]^{op}\downarrow n}N^e \arrow[r] & \colim_{\mathbb T_e[\leq k]^{op}\downarrow n}N^e := \P_k(n)
-  \end{tikzcd}
-\end{equation}
-By Lemma \ref{MINUS_LAN_FINAL_LEMMA}, the top right corner can be identified with $\P_{k-1}$. Thus, it remains to identify the left hand side.
-
-By Lemma \ref{ZERO_LAN_FINALITY_LEMMA}, we may replace the bottom left corner with $\Lan_{\Omega_{G,e}[k,0]^{op}} N^e$.
-%$\colim_{\mathbb T_e^0[k]^{op}\downarrow n} N^e$. 
-Now, given $T\in \Omega_{G,e}[k,0]$, let $[T]$ denote the isomorphism class of $T$ in $\Omega_{G,e}[k,0]$. With this notation, the bottom left corner can further be identified with
+%  Combining Lemmas \ref{LAN_PUSHOUT_LEMMA} and \ref{TREE_CATS_DECOMP_LEMMA}, we have that $\P_k$ can be computed as the pushout
+The first result is just a restatement of Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}). Levelwise analysis follows from understanding the left-hand vertical map of Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}), which we will denote 
 \[
-\displaystyle\coprod_{[T]\in \Omega_{G,e}[k,0](C)/\simeq}N^e(T)\otimes_{\mathrm{Aut}(T)}\Aut(C) 
-= \displaystyle\coprod_{[T]}
-\left(\bigotimes_{v\in V_{G,\P}(T)}\P(T_v) \otimes \bigotimes_{v\in V_{G,Y}(T)}Y_1(T_v) \right)
-\otimes_{\mathrm{Aut}(T)}\Aut(C).
+l[k]: L_1[k] \to L_2[k]. 
 \]
-
-Next, we observe that the non-invertible morphisms of $\Omega_{G,e}[k,-]^{op}\downarrow C$ are just those which change the labeling of some nodes from $X$ to $Y$. Given $S$ and $T$ in $\Omega_{G,e}[k,-]$, write $S \sim T$ if they are in the same path component, and again note that this implies $|S| = |T|$, and moreover that $S$ and $T$ forget to the same $(\P;Z)$-alternating tree. Denote the path component of $T$ by $(T)$.
-
-We note that 
-%each connected component $(T)$ of $\mathbb T_e^-[k]$ is a generalized direct category (see \cite{nLabDirect}), and moreover 
-the set of path components of those trees with $val(T) = C$ is equal to the set of isomorphism classes in $\Omega_{G,e}[k,0](C)$, as both are just determined preicsely by their underlying $(\P;Z)$-alternating tree.
-
-To account for the $\Aut(C)$-action on the indexing category, we note that each connected component of $\Omega_{G,e}[k,-]^{op}\downarrow C$ has an action of $\mathrm{Aut}([T])$. Thus, the top left corner of Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) can be identified with the image of the colimit map below:
+By stacking left Kan extensions, we have
 \[
-\begin{tikzcd}
-\displaystyle\coprod_{[T]\in \Omega_{G,e}[k](C)/\sim}\left(\displaystyle\coprod_{S\in (T)\setminus{\set{T}}}N^e(S)\right) \otimes_{\mathrm{Aut}(T)}\Aut(C) \arrow[d, "\colim"]\\
-\displaystyle\coprod_{[T]}\left( \bigotimes_{v\in V_{G,\P}(T)} \P(T_v) \otimes Q[u]^{\mathbb V_{G,in}(T)}\right) \otimes_{\mathrm{Aut}(T)}\Aut(C)
-\end{tikzcd}
+%\Lan_{\bar\Omega_G^e[k]^{op}}N^e
+L_i[k] \simeq \Lan_{\Omega_G^a[k]}(\Lan_{\bar\Omega_G^e[\epsilon_i] \to \Omega_G^a[k]}N^e),
 \]
-where $Q[u]^{\mathbb V_{G,in}(T)}$ is the source of the pushout product map defined in Definition \ref{Q_DEFINITION}.
-
-Lastly, this left-side map is induced, via the naturality of Kan extesnions, by an inclusion of categories, in particular the product of multiple inclusions of categories, each corresponding the inclusion of a punctured cube into the full cube. Thus, after taking colimits, we have that the left-side map in Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) is in fact (multiple copies of) the pushout-product maps 
+where $[\epsilon_1] = [k,-]$ and $[\epsilon_2] = [k]$. 
+Evaluating at $C \in \Sigma_G$ using pointwise left Kan extensions yields
 \[
-[u]^{\Box \mathbb V_{G,in}(T)}: Q[u]^{\mathbb V_{G,in}(T)} \to \bigotimes_{v\in V_{G,in}(T)}Y_1(T_v)),
+L_i[k](C) \simeq \mathop{\colim}\limits_{\substack{\Omega_G^{a,op} \downarrow_{\mathsf r} C\\ T \xleftarrow{\simeq} C}}
+\left( \mathop{\colim}\limits_{\substack{\bar\Omega_G^e[\epsilon_i]^{op} \downarrow_{\mathsf r} T \\ T^e \leftarrow T}}N^e(T^e)) \right).
+\]
+Further, we observe that $\bar\Omega_G^e[k]^{op} \downarrow_{\mathsf r} T$ is equivalent to the cube category $(0 \to 1)^{V_{G,in}(T)}$ (with only $\mathrm{Aut}(T)$-induced isomorphisms), while $\bar\Omega_G^e[k,-]^{op} \downarrow_{\mathsf  r} T$ is similarly equivalent to the punctured cube category $\mathsf{pc}(V_{G,in}(T))$.
+Unpacked, these statements, in particular that cube categories have terminal objects, Lemma \ref{ZERO_LAN_FINALITY_LEMMA}, 
+and the fact that $\Omega_G^{a,op}\downarrow_{\mathsf r}C$ is a groupoid, combine to imply that $l[k]$ is equivalent to the map
+\[
+\coprod\limits_{[T] \in \Omega_G^{a,op}[k](C)/\simeq} \left( \bigotimes\limits_{V_{G,\P}(T)} \P(T_{Gv}) \otimes Q[u]^{V_{G,in}(T)} \to N^e(T_Y) \right) \otimes_{\mathrm{Aut}(T)}\mathrm{Aut}(C),
 \]
 as desired.
+
+% Repeating the above analysis for $L_1[k](C)$, we find
+% \[
+% L_1[k](C) \simeq \coprod\limits_{[T] \in \Omega_G^{a,op}[k](C)/\simeq} \left( \colim_{\mathsf{pc}(V(T))}Q[\bar u]^{N^e} \right) \otimes_{\mathrm{Aut}(T)}\mathrm{Aut}(C),
+% \]
+% where
+
+% COME BACK HERE 
+
+% By Lemma \ref{ZERO_LAN_FINALITY_LEMMA}, we may replace the bottom left corner with $\Lan_{\Omega_{G,e}[k,0]^{op}} N^e$.
+% %$\colim_{\mathbb T_e^0[k]^{op}\downarrow n} N^e$. 
+% Now, given $T\in \Omega_{G,e}[k,0]$, let $[T]$ denote the isomorphism class of $T$ in $\Omega_{G,e}[k,0]$. With this notation, the bottom left corner can further be identified with
+% \[
+% \displaystyle\coprod_{[T]\in \Omega_{G,e}[k,0](C)/\simeq}N^e(T)\otimes_{\mathrm{Aut}(T)}\Aut(C) 
+% = \displaystyle\coprod_{[T]}
+% \left(\bigotimes_{v\in V_{G,\P}(T)}\P(T_v) \otimes \bigotimes_{v\in V_{G,Y}(T)}Y_1(T_v) \right)
+% \otimes_{\mathrm{Aut}(T)}\Aut(C).
+% \]
+
+% Next, we observe that the non-invertible morphisms of $\Omega_{G,e}[k,-]^{op}\downarrow C$ are just those which change the labeling of some nodes from $X$ to $Y$. Given $S$ and $T$ in $\Omega_{G,e}[k,-]$, write $S \sim T$ if they are in the same path component, and again note that this implies $|S| = |T|$, and moreover that $S$ and $T$ forget to the same $(\P;Z)$-alternating tree. Denote the path component of $T$ by $(T)$.
+
+% We note that 
+% %each connected component $(T)$ of $\mathbb T_e^-[k]$ is a generalized direct category (see \cite{nLabDirect}), and moreover 
+% the set of path components of those trees with $val(T) = C$ is equal to the set of isomorphism classes in $\Omega_{G,e}[k,0](C)$, as both are just determined preicsely by their underlying $(\P;Z)$-alternating tree.
+
+% To account for the $\Aut(C)$-action on the indexing category, we note that each connected component of $\Omega_{G,e}[k,-]^{op}\downarrow C$ has an action of $\mathrm{Aut}([T])$. Thus, the top left corner of Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) can be identified with the image of the colimit map below:
+% \[
+% \begin{tikzcd}
+% \displaystyle\coprod_{[T]\in \Omega_{G,e}[k](C)/\sim}\left(\displaystyle\coprod_{S\in (T)\setminus{\set{T}}}N^e(S)\right) \otimes_{\mathrm{Aut}(T)}\Aut(C) \arrow[d, "\colim"]\\
+% \displaystyle\coprod_{[T]}\left( \bigotimes_{v\in V_{G,\P}(T)} \P(T_v) \otimes Q[u]^{\mathbb V_{G,in}(T)}\right) \otimes_{\mathrm{Aut}(T)}\Aut(C)
+% \end{tikzcd}
+% \]
+% where $Q[u]^{\mathbb V_{G,in}(T)}$ is the source of the pushout product map defined in Definition \ref{Q_DEFINITION}.
+
+% Lastly, this left-side map is induced, via the naturality of Kan extesnions, by an inclusion of categories, in particular the product of multiple inclusions of categories, each corresponding the inclusion of a punctured cube into the full cube. Thus, after taking colimits, we have that the left-side map in Diagram (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) is in fact (multiple copies of) the pushout-product maps 
+% \[
+% [u]^{\Box \mathbb V_{G,in}(T)}: Q[u]^{\mathbb V_{G,in}(T)} \to \bigotimes_{v\in V_{G,in}(T)}Y_1(T_v)),
+% \]
+% as desired.
 \end{proof}
 
 
