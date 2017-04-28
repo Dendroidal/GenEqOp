@@ -4841,6 +4841,7 @@ as the natural map.
 We can now state our filtration of the cellular extension $\P \to \P[u]$. 
 
 \begin{theorem}
+  \label{FILTRATION_THEOREM}
   Let $\P$ be a genuine $G$-operad, and suppose we are given a map of $G$-symmetric sequences $u: Y_0 \to Y_1$. Then we have a filtration in $G$-sequences of the cellular extension
 \[
 \P = \P_0 \to \P_1 \to \ldots \to \colim(\P_i) = \P[u],
@@ -4983,16 +4984,18 @@ We note that this always holds for any $\F$ is $f$ is an outer face or a quotien
 
 We will define $\F$-model structures on $\V\Op_G$ for any weak indexing system $\F$; the $\F$-model structure on $\V\Sym_G$ will exist for any $G$-vertex family $\F$, but transfering requires the additional closure properties.
 
-\subsection{$\F$-Model Structures on Genuine Operads}
+
+\subsection{Semi Model Structures on Genuine Operads}
 
 Fix a $G$-vertex family $\F = \set{\F_n}$. For the following section, we fix the following about our base category $\V$:
 \begin{definition}
   We say $\V$ satisfies \textsc{Assumption 1} (for $\F$) if the following hold:
   \begin{enumerate}
   \item $\V$ is a cofibrantly-generated Cartesian symmetric monoidal model category, and
-  \item for each $T\in\Omega$, $\V^{G\times \Sigma_T}$ is $\F_T$-cellular (c.f. \cite{Stephan16})
+  \item $\V$ is has cellular fixed point functors for all finite grouops %for each $T\in\Omega$, $\V^{G\times \Sigma_T}$ is $\F_T$-cellular 
+(c.f. \cite{Stephan16}).
   \end{enumerate}
-where $\Sigma_T := \mathrm{Aut}(T)$, and $\F_T$ is the family of $G$-graph subgroups of $G\times \Sigma_T$ such that the induced action on $T$ defines an $\F$-admissible tree.
+%where $\Sigma_T := \mathrm{Aut}(T)$, and $\F_T$ is the family of $G$-graph subgroups of $G\times \Sigma_T$ such that the induced action on $T$ defines an $\F$-admissible tree.
 \end{definition}
 
 \begin{definition}
@@ -5028,59 +5031,174 @@ Using general arguments of \cite{Hi03}, this structure would be cofibrantly gene
 \end{align*}
 for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$.
 
-Only transfer across the left-most adjunction requires proof. We will use the following result of White-Yau, following Fresse and Kan:
-\begin{theorem}
-  [{\cite[Theorem 2.2.2]{WY15}}]
-  \label{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM}
-  Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb F}(\mathcal C) \leftrightarrows \C: \mathbb F$ for some monad $\mathbb F$ on $\mathcal C$. Further assume that, for any $\mathbb F(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
-\[
-\begin{tikzcd}
-  \mathbb F(X) \arrow[d, "u"'] \arrow[r, "h"] & \P \arrow[d] \\
-  \mathbb F(Y) \arrow[r] & \P[u]
-\end{tikzcd}
-\]
-is an underlying cofibration in $\C$, which is trivial whenever $u$ is. Then $\mathsf{Alg}_{\mathbb F}(\mathcal C)$ has the transfered cofibrationaly-generated semi-model structure, with weak equivalences and fibrations detected by $U$, generating cofibrations $\mathbb F(I)$ and trivial cofibrations $\mathbb F(J)$, and such that $\mathsf{fgt}$ sends cofibrations with cofibrant domain to cofibrations.
-
-If the result holds for any $\P\in \mathsf{Alg}_{\mathbb F}(\mathcal C)$, then this is in fact a true model structure.
-\end{theorem}
+\begin{definition}
+  If $\F$ is the complete $G$-vertex family - so $\F_n$ is the family of \textbf{all} graph subgroups of $G\times \Sigma_n$ - we refer to the $\F$-model structure as the \textit{genuine} model structure.
+\end{definition}
 
 \begin{theorem}
-  The $\F$-semi-model structure on $\V\Op_G$ exists for any weak indexing system $\F$ and any $\V$ satisfying \textsc{Assumption 1}.
+  \label{GENUINE_SEMI_VOP_G_THM}
+  The genuine semi-model structure on $\V\Op_G$ exists for all $\V$ satisfying \textsc{Assumption 1}.
 \end{theorem}
 \begin{proof}
-  This is an immediate corollary of Theorem \ref{CELLULAR_EXTENSION_COFIBRATION_THEOREM} by applying Theorem \ref{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM} above.
-\end{proof}
-
-
-\begin{theorem}
-  \label{CELLULAR_EXTENSION_COFIBRATION_THEOREM}
-  Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb F_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
-\end{theorem}
-\begin{proof}
-  We use the filtration from the previous section. In particular, it suffices to show that the map
-\[
-\Lan_{\Omega_{G,e}[k,-]^{op}}N^e \to \Lan_{\Omega_{G,e}[k]^{op}}N^e
-\]
-induced by the inclusion $p[k]: \Omega_G^e[k,-]\into \Omega_G^e[k]$, is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
+    By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extensions $\P \to \P[u]$, each built by pushouts
 \[
 \begin{tikzcd}
-  \V^{\Omega_G^e[k,-]^{op}}_\F \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_\F \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_\F \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
+  \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+  \mathbb F_G Y \arrow[r] & \P[u]
 \end{tikzcd}
 \]
-where each category is equipped with the $\F$-projective model structure, if we use the fact that
-\[
-\Lan_{\Omega_G^e[k,-]^{op}}N^e = \Lan_{\Omega_G^e[k]^{op}}\Lan_{p[k]}N^e,
-\]
-it further suffices to show the following three claims:
-\begin{enumerate}
-\item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
-\item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
-\item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
-\todo[inline]{come back: somehow I've lost the dependence on $u$ being trivial or not...}
-\end{enumerate}
-Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
+where $u: X \to Y$ is a generating trivial cofibration and $\P$ is cofibrant in $\V^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $V^{\Sigma_G^{op}}_{gen}$. 
+
+In particular, it suffices to show that, for $u$ a genuine level trivial cofibration and $\P$ genuine level cofibrant, any map $\P \to \P[u]$ is itself a genuine level trivial cofibration; since these are weaker conditions on $u$ and $\P$, and transfinite composition is levelwise, this implies the above result. This case follows from the levelwise filtration from Theorem \ref{FILTRATION_THEOREM}, by applying Propositions \ref{TREE_BOX_COFIBRANT_PROP} and \ref{FGTRIGHT PROP}.
 \end{proof}
 
+\begin{remark}
+  In proving the above, we will often use the fact that, given families $\F \subseteq \bar \F$ of subgroups of a group $\Pi$, the identity map 
+\[
+\V^G_\F \to \V^G_{\bar \F}
+\]
+is left Quillen (and in particular preserves cofibrations). In particular, any $\F$-cofibration is a genuine cofibration.
+\end{remark}
+
+\begin{proposition}
+  \label{TREE_BOX_COFIBRANT_PROP}
+  Fix $T\in \Omega_G$, and suppose we are given cofibrations $f(Gv) \in \V^{\mathrm{Aut}(T_{Gv})}_{gen}$ for all $Gv\in V_G(T)$, such that $f(Gv) = f(\alpha(Gv))$ for all $\alpha\in \mathrm{Aut}(T)$. Then the iterated box product
+\[
+f^{\Box V_G(T)} = \mathop{\Box}\limits_{Gv \in V_G(T)} f(Gv)
+\]
+is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
+\end{proposition}
+\begin{proof}
+  Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition
+\[
+f^{\Box V_G(T)} = f(Gv_r) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right)
+\]
+where $Gv_r$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step.
+\begin{itemize}
+\item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$.
+\item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$.
+\item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$.
+\item By Proposition \ref{FGTLEFT PROP}, $f(Gv_r)$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$.
+\item Finally, by the decomposotion on $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired.
+\end{itemize}
+If any $f(Gv)$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results.
+\end{proof}
+
+\begin{corollary}
+  For any $G$-vertex system $\F$, the $\F$-semi-model structure on $\V\Op_G$ exists.
+\end{corollary}
+\begin{proof}
+  This follows from the proof of Theorem \ref{GENUINE_SEMI_VOP_G_THM}. In particular, it suffices to show that if $u: X\to Y$ is a level trivial $\F$-cofibration and $\P$ is level $\F$-cofibrant in $\V^{\Sigma_G^{op}}$, then the cellular extension $\P \to \P[u]$ is a level trivial $\F$-cofibration. However, such $u$ are level genuine cofibrations, and such $\P$ are level genuine cofibrant, and hence $\P \to \P[u]$ is a level trivial genuine cofibration, and hence a level trivial $\F$-cofibration.
+\end{proof}
+
+\subsection{True Model Structures}
+
+\todo[inline]{come back}
+
+\subsection{Preservation of Cofibrant Objects}
+
+\todo[inline]{come back}
+
+%%%%%%%%%%%%%% TRYING FOR V = SSET FIRST %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% We first prove the existence of these model structures when $\V = \sSet$. In this case, we denote $\V\Op_G$ by $\sOp_G$. 
+% \begin{theorem}
+%   The genuine model structure on $\sOp_G$ exists.
+% \end{theorem}
+% \begin{proof}
+%   By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extension $\P \to \P[u]$, each built by pushouts
+% \[
+% \begin{tikzcd}
+%   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+%   \mathbb F_G Y \arrow[r] & \P[u]
+% \end{tikzcd}
+% \]
+% where $u: X \to Y$ is a generating trivial cofibration in $\sSet^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $\sSet^{\Sigma_G^{op}}_{gen}$. 
+
+% Since transfinite compositions are computed levelwise, it in fact suffices to show that each $\P \to \P[u]$ is a level trivial cofibration in $\sSet^{\Sigma_G^{op}}$; that is, that for all $C\in \Sigma_G$, $\P(C) \to \P[u](C)$ is a genuine trivial cofibration in $\sSet^{\mathrm{Aut}(C)}$. This is precisely the content of Lemma \ref{SSET_CELLULAR_LEVEL_COFIB_LEMMA}.
+% \end{proof}
+
+% \begin{theorem}
+%   Cofibrant objects in $\sOp_G$ forget to cofibrant objects in $\sSet^{\Sigma_G^{op}}$. 
+% \end{theorem}
+% \begin{proof}
+%   Similarly as above, it suffices to show that, for $u: X\to Y$ a cofibration in $\sSet^{\Sigma_G^{op}}$ and $\P$ underlyingly cofibrant in $\sSet^{\Sigma_G^{op}}$, the cellular extension $\P \to \P[u]$ is an underlying cofibration in $\sSet^{\Sigma_G^{op}}$. 
+% \todo[inline]{come back}
+% \end{proof}
+
+% \begin{lemma}
+%   \label{SSET_CELLULAR_LEVEL_COFIB_LEMMA}
+%   If $u: X\to Y$ is a level trivial genuine cofibration in $\sSet^{\Sigma_G^{op}}$ (so $X(C) \to Y(C)$ is a genuine cofibration in $\sSet^{\mathrm{Aut}(C)}$), then $\P \to \P[u]$ is a level trivial genuine cofibration for any $\P \in \sOp_G$.
+% \end{lemma}
+% \begin{proof}
+%   We first record that, since genuine cofibrations of simplicial sets are underlying, all $\P \in \sOp_G$ are levelwise genuine cofibrant, i.e. $\P(C)$ is cofibrant in $\sSet^{\mathrm{Aut}(C)}_{gen}$. 
+% %  Usign the levelwise filtration
+%   \todo[inline]{come back}
+%   Follows from cofibration analysis.
+% \end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%% LANS AND STUFF "RESULTS" %%%%%%%%%%%%%%%%%%
+
+% Only transfer across the left-most adjunction requires proof. We will use the following result of White-Yau, following Fresse and Kan:
+% \begin{theorem}
+%   [{\cite[Theorem 2.2.2]{WY15}}]
+%   \label{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM}
+%   Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb F}(\mathcal C) \leftrightarrows \C: \mathbb F$ for some monad $\mathbb F$ on $\mathcal C$. Further assume that, for any $\mathbb F(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
+% \[
+% \begin{tikzcd}
+%   \mathbb F(X) \arrow[d, "u"'] \arrow[r, "h"] & \P \arrow[d] \\
+%   \mathbb F(Y) \arrow[r] & \P[u]
+% \end{tikzcd}
+% \]
+% is an underlying cofibration in $\C$, which is trivial whenever $u$ is. Then $\mathsf{Alg}_{\mathbb F}(\mathcal C)$ has the transfered cofibrationaly-generated semi-model structure, with weak equivalences and fibrations detected by $U$, generating cofibrations $\mathbb F(I)$ and trivial cofibrations $\mathbb F(J)$, and such that $\mathsf{fgt}$ sends cofibrations with cofibrant domain to cofibrations.
+
+% If the result holds for any $\P\in \mathsf{Alg}_{\mathbb F}(\mathcal C)$, then this is in fact a true model structure.
+% \end{theorem}
+% \todo[inline]{come back: edit this!}
+% \begin{theorem}
+%   The $\F$-semi-model structure on $\V\Op_G$ exists for any weak indexing system $\F$ and any $\V$ satisfying \textsc{Assumption 1}.
+% \end{theorem}
+% \begin{proof}
+%   This is an immediate corollary of Theorem \ref{CELLULAR_EXTENSION_COFIBRATION_THEOREM} by applying Theorem \ref{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM} above.
+% \end{proof}
+
+
+% \begin{theorem}
+%   \label{CELLULAR_EXTENSION_COFIBRATION_THEOREM}
+%   Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb F_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
+% \end{theorem}
+% \begin{proof}
+%   We use the filtration from the previous section. In particular, it suffices to show that the map
+% \[
+% \Lan_{\Omega_{G,e}[k,-]^{op}}N^e \to \Lan_{\Omega_{G,e}[k]^{op}}N^e
+% \]
+% induced by the inclusion $p[k]: \Omega_G^e[k,-]\into \Omega_G^e[k]$, is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
+% \[
+% \begin{tikzcd}
+%   \V^{\Omega_G^e[k,-]^{op}}_\F \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_\F \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_\F \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
+% \end{tikzcd}
+% \]
+% where each category is equipped with the $\F$-projective model structure, if we use the fact that
+% \[
+% \Lan_{\Omega_G^e[k,-]^{op}}N^e = \Lan_{\Omega_G^e[k]^{op}}\Lan_{p[k]}N^e,
+% \]
+% it further suffices to show the following three claims:
+% \begin{enumerate}
+% \item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
+% \item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
+% \item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
+% \todo[inline]{come back: somehow I've lost the dependence on $u$ being trivial or not...}
+% \end{enumerate}
+% Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
+% \end{proof}
+
+
+\subsection{Cofibrant Symmetric Collections}
+
+\todo[inline]{come back: can do all of this for $\V^{\Omega_G^{op}}$ and $\V^{\Sigma_G^{op}}$, don't need these crazy categories.}
 
 We first classify cofibrant objects in $\V^{\Omega_G^e[k]^{op}}$, by breaking apart our category $\Omega_G^e[k]$. 
 
@@ -5126,26 +5244,26 @@ Second: carries through across the necessary cellular extensions.
 \end{proof}
 
 
-\begin{corollary}
-  \label{N_E_COFIBRANT_PROP}
-  $N^e$ is $\F$-cofibrant.
-\end{corollary}
-\todo[inline]{come back: can't actually prove this yet - can only show that $N^e$ satisfies the above necessary condition, if we assume $\V$ is \textbf{strongly} cofibrantly generated.}
+% \begin{corollary}
+%   \label{N_E_COFIBRANT_PROP}
+%   $N^e$ is $\F$-cofibrant.
+% \end{corollary}
+% \todo[inline]{come back: can't actually prove this yet - can only show that $N^e$ satisfies the above necessary condition, if we assume $\V$ is \textbf{strongly} cofibrantly generated.}
 
 
-\begin{proposition}
-  \label{EPSILON_COFIB_LEMMA}
-  The counit $\epsilon$ is a cofibration between cofibrant objects.
-\end{proposition}
+% \begin{proposition}
+%   \label{EPSILON_COFIB_LEMMA}
+%   The counit $\epsilon$ is a cofibration between cofibrant objects.
+% \end{proposition}
 
 
 
-Unraveling, we see that, for $T\in \Omega_{G,e}[k]$, we have
-\[
-\epsilon_k(T) = \mathop{\square}\limits_{Gv \in V_G^\P(T)} \iota_{\P(T_{Gv})} \square \mathop\square\limits_{Gv \in V_G^{in}(T)}u(T_{Gv}) 
-\]
-if $|T|_Y = k$, and is the identity otherwise.
-\todo[inline]{the above is \textbf{FALSE} - it fails to take into consideration the colimit conditions introduced by quotient maps}
+% Unraveling, we see that, for $T\in \Omega_{G,e}[k]$, we have
+% \[
+% \epsilon_k(T) = \mathop{\square}\limits_{Gv \in V_G^\P(T)} \iota_{\P(T_{Gv})} \square \mathop\square\limits_{Gv \in V_G^{in}(T)}u(T_{Gv}) 
+% \]
+% if $|T|_Y = k$, and is the identity otherwise.
+% \todo[inline]{the above is \textbf{FALSE} - it fails to take into consideration the colimit conditions introduced by quotient maps}
 
 
 
