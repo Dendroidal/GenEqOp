@@ -2635,7 +2635,7 @@ is isomorphic to
 \end{remark}
 
 
-\subsection{Genuine equivariant operads versus equivariant operads}
+\subsection{Comparison with (regular) equivariant operads}
 
 We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
@@ -2653,6 +2653,7 @@ of genuine equivariant sequences and genuine operads.
 
 We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions in this section.
 
+
 We thus have an inclusion functor
 \[
 \begin{tikzcd}[row sep =0]
@@ -2663,18 +2664,36 @@ We thus have an inclusion functor
 \end{tikzcd}
 \]
 where $G \cdot C$ is planarized so that the roots inherit the order of $G$ and each of the individual copies of $C$ inherits the planarization of $C$.
-We now consider the associated adjunction.
-\begin{equation}\label{JUSTONEDJOINT EQ}
-\begin{tikzcd}
-	\iota^{\**} \colon 
-	\mathsf{Sym}_G \ar[shift left =2pt]{r} 
+Moreover, letting $\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_G$ denote the full subcategory of $G$-free corollas, there is an induced retraction 
+$\rho \colon \Sigma_{G}^{\text{fr}} \to G \times \Sigma$
+defined by 
+$\rho(\amalg_{1\leq i \leq |G|} C_i) = G \cdot C_1$
+together with isomorphisms 
+$C \simeq \rho(C)$
+uniquely determined by the condition that they
+are the identity on the first tree component $C_1$.
+
+
+We now consider the associated adjunctions.
+\begin{equation}\label{TWOADJOINTS EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Sym}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
 	&
-	\mathsf{Sym}^G 
-	\colon \iota_{\**} \ar[shift left =2pt]{l}
+	\mathsf{Sym}^G(\mathcal{V})
+	\ar[bend right]{l}[swap,midway]{\iota_{!}}
+	\ar[bend left]{l}{\iota_{\**}}
 \end{tikzcd}
 \end{equation}
+
+
 Explicitly, we have the formulas
 \[
+	\iota_!Y(\amalg_i C_i)=
+	\begin{cases}
+	Y(C_1), & \amalg_i C_i \in \Sigma_G^{\text{fr}} \\
+	\emptyset, & \amalg_i C_i \nin \Sigma_G^{\text{fr}}
+	\end{cases},
+\qquad
 	\iota^{\**}X (C) = X(G \cdot C),
 \qquad
 	\iota_{\**}Y (\amalg_i C_i)=
@@ -2682,9 +2701,40 @@ Explicitly, we have the formulas
 \]
 where we note that in the formula for $\iota_{\**}(\minus)$
 the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
-As a side note, we note that the formula for $\iota_{\**}$ is independent of the chosen order of $G$.
+As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
-The adjunction (\ref{JUSTONEDJOINT EQ}) identifies
+There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
+$\amalg_i C_i \in \Sigma_G^{\text{fr}}$
+sends $Y(C_1)$ to the ``$G$-twisted diagonal'' of 
+$\prod_i Y(C_i)$.
+Moreover, letting $\eta_!,\epsilon_!$ 
+(resp. $\eta_{\**},\epsilon_{\**}$)
+denote the unit and counit of the $(\iota_!,\iota^{\**})$ adjunction 
+(resp. $(\iota^{\**},\iota_{\**})$ adjunction)
+it is straightforward to check that the following diagram commutes.
+\begin{equation}\label{BETADEFSQUARE EQ}
+\begin{tikzcd}
+		\iota_{!} \iota^{\**} \iota_{\**}
+		\ar[Rightarrow]{r}{\epsilon_!}
+		\ar[Rightarrow]{d}{\simeq}[swap]{\epsilon_{\**}}
+	&
+		\iota_{\**}
+		\ar[Rightarrow]{d}{\eta_{!}}[swap]{\simeq}
+\\
+		\iota_!
+		\ar[Rightarrow]{r}[swap]{\eta_{\**}}
+		\ar[Rightarrow]{ru}[swap]{\beta}
+	&
+		\iota_{\**} \iota^{\**} \iota_{!}
+\end{tikzcd}
+\end{equation}
+\begin{remark} An exercise in adjunctions shows that any outer square as in (\ref{BETADEFSQUARE EQ})
+ commutes provided at least one of the adjunctions in \ref{TWOADJOINTS EQ} is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
+\end{remark}
+
+{\color{red} HERE}
+
+The adjunction (\ref{TWOADJOINTS EQ}) identifies
 $\mathsf{Sym}^G$ 
 as a reflexive subcategory of
 $\mathsf{Sym}_G$, with the counit map $X(C) \to \left(\prod_G X(C)\right)^G$ given by 
@@ -2764,14 +2814,71 @@ Under this identification, $\mathbb{F}B$ is then computed as the Kan extension o
 	G \times \Sigma
 \end{tikzcd}
 \end{equation}
-The map $\mathcal{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is then induced by the obvious ``inclusion'' natural transformation of (\ref{F EQ}) into (\ref{IFGI EQ}) when $B=\iota_{\**} A$, with the fact that this is a map of monads following from the analogous diagram for strings $\Omega_{G,1}$.
+The map $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is then induced by the obvious ``inclusion'' natural transformation of (\ref{F EQ}) into (\ref{IFGI EQ}) when $B=\iota_{\**} A$.
+To check that $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is an isomorphism, 
+we first note that there are compatible retractions
+$\rho \colon \Omega_{G,0}^{\text{free}} \to G \times \Omega_0$,
+$\rho \colon \Sigma_{G}^{\text{free}} \to G \times \Sigma$
+defined by 
+$\rho(\amalg_{1\leq i \leq |G|} T_i) = G \cdot T_1$
+together with uniquely determined isomorphisms 
+$T \simeq \rho(T)$ which are given by the identity
+on the first tree component $T_1$.
+It thus now follows that for each $C \in G \times \Sigma$ the undercategory $C \downarrow G \times \Omega_0$ is initial (as well as final) in 
+$C \downarrow \Omega_{G,0}^{\text{free}}$,
+showing that 
+$\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$
+is indeed an isomorphism.
+
+The final claim that $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is a map of monads 
+follows from the intuitive fact that the composite 
+$\mathbb{F} \mathbb{F}
+	\to 
+\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**}
+	\to
+\iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{\**}
+$
+is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{free}}$.
+
+{\color{red} HERE}
+
+However, since a rigorous direct proof of this last claim can be fairly cumbersome due to the presence of left Kan extensions in the definitions of $\mathbb{F}$, $\mathbb{F}_G$, we sketch here an alternate argument.
+
+
+
+{\color{red} HERE}
+
+
+
+%\[
+%\begin{tikzcd}
+%	G \times \Omega_1	\ar{dd} \ar{rd} \ar{rr} &&
+%	\Fin \wr (G \times \Omega_0) \ar{rd} \ar[dashed]{dd} \ar{rr}%&&
+%	\Fin \wr \mathcal{V}^{op} \ar{r} &
+%	\mathcal{V}^{op}
+%\\
+%	& \Omega_{G,1}^{\text{fr}} \ar{dd} \ar{rr} &&
+%	\Fin \wr \Omega_{G,0}^{\text{fr}} \ar{dd} \ar{ru}
+%\\
+%	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rr}&&
+%	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
+%\\
+%	& \Omega_{G,0}^{\text{fr}} \ar{dd} \ar{rr} &&
+%	\Fin \wr \Sigma_G^{\text{fr}}
+%\\
+%	G \times \Sigma \ar{rd}
+%\\
+%	& \Sigma_{G}^{\text{fr}}
+%\end{tikzcd}
+%\]
+
 \end{proof}
 
 
-Proposition \ref{MONADADJ PROP}) now gives the following.
+Proposition (\ref{MONADADJ PROP}) now gives the following.
 
 \begin{corollary}
-	The adjunction (\ref{JUSTONEDJOINT EQ}) extends to an adjunction
+	The adjunction (\ref{TWOADJOINTS EQ}) extends to an adjunction
 \begin{equation}\label{JUSTONEDJOINTOP EQ}
 \begin{tikzcd}
 	\iota^{\**} \colon 
