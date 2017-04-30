@@ -136,7 +136,28 @@ and again it is clear that these are inverse processes.
 
 \subsection{Monads}
 
-We will make multiple uses of the following straightforward result.
+We will make multiple uses of the following straightforward results.
+
+\begin{proposition}\label{MONADADJ1 PROP}
+Let
+$
+L \colon \mathcal{C} \rightleftarrows \mathcal{D} \colon R
+$
+be an adjunction and $T$ a monad on $\mathcal{D}$.
+Then
+\begin{itemize}
+\item[(i)] $RTL$ is a monad and $R$ induces a functor
+$R \colon \mathsf{Alg}_T(\mathcal{D}) \to \mathsf{Alg}_{RTL}(\mathcal{C})$;
+\item[(ii)] if $LRTL \xrightarrow{\epsilon} TL$ is an isomorphism one further has an induced adjunction
+\[
+L \colon \mathsf{Alg}_{RTL}(\mathcal{C})
+	\rightleftarrows
+\mathsf{Alg}_{T}(\mathcal{D}) \colon R.
+\]
+\end{itemize}
+\end{proposition}
+
+
 
 \begin{proposition}\label{MONADADJ PROP}
 Let
@@ -167,7 +188,6 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 \mathsf{Alg}_{LTR}(\mathcal{D}) \colon R.
 \]
 \end{itemize}
-
 \end{proposition}
 
 
@@ -2732,13 +2752,23 @@ it is straightforward to check that the following diagram commutes.
  commutes provided at least one of the adjunctions in \ref{TWOADJOINTS EQ} is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
 \end{remark}
 
-{\color{red} HERE}
 
-The adjunction (\ref{TWOADJOINTS EQ}) identifies
-$\mathsf{Sym}^G$ 
-as a reflexive subcategory of
-$\mathsf{Sym}_G$, with the counit map $X(C) \to \left(\prod_G X(C)\right)^G$ given by 
-the isomorphism between $X(C)$ and the diagonal of $\prod_G X(C)$.
+%By adjunction, one needs compare the composites
+%\[
+%\iota_{\**} \xrightarrow{\eta_{!}}
+%\iota_{\**} \iota^{\**} \iota_{!} 
+% \xrightarrow{\iota_{\**} \iota^{\**}\eta_{\**}\iota_{!}}
+%\iota_{\**} \iota^{\**} \iota_{\**} \iota^{\**} \iota_{!},
+%\qquad
+%\iota_{\**} \xrightarrow{\eta_{\**}}
+%\iota_{\**} \iota^{\**} \iota_{\**} 
+%\xrightarrow{\eta_{!}}
+%\iota_{\**} \iota^{\**} \iota_{\**} \iota^{\**} \iota_{!},
+%\]
+%and the claim comes down to the checking that both maps
+%$\iota_{\**} \iota^{\**} \to
+%\iota_{\**} \iota^{\**} \iota_{\**} \iota^{\**}$
+%coincide, which they do since they have a common inverse.
 
 
 \begin{proposition}
@@ -2747,152 +2777,389 @@ the isomorphism between $X(C)$ and the diagonal of $\prod_G X(C)$.
 	\item[(i)]
 	the map 
 	$\iota^{\**} \mathbb{F}_G
-		\xrightarrow{\eta}
+		\xrightarrow{\eta_{\**}}
 	\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**}$
 	is an isomorphism, 
 	and thus (cf. Prop. \ref{MONADADJ PROP})
 	$\iota^{\**} \mathbb{F}_G \iota_{\**}$
 	is a monad;
-	\item[(ii)] there is a natural isomorphism of monads
-	$\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$.
+	\item[(ii)] the map 
+	$\iota^{\**} \mathbb{F}_G \iota_{!}
+	\xrightarrow{\beta}	
+	\iota^{\**} \mathbb{F}_G \iota_{\**}$ is an isomorphism of monads;
+	\item[(iii)] the map 
+	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
+	\xrightarrow{\epsilon_!}
+	\mathbb{F}_G \iota_{!}$ is an isomorphism;
+	\item[(iv)] there is a natural isomorphism of monads
+	$\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$.
 \end{itemize}
 \end{proposition}
 
+
 \begin{proof}
-Throughout this proof we write 
-$\Sigma_G^{\text{free}} \hookrightarrow \Sigma_G$,
-$\Omega_{G,0}^{\text{free}} \hookrightarrow \Omega_{G,0}$,
-for the full subcategories of 
-those $G$-corollas/trees with free $G$-actions.
-We note that the leaf-root and vertex functors
-$\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$,
-$V_G \colon \Omega_{G,0} \to \Fin \wr \Sigma_G$
-then both restrict to 
-free trees, i.e., one has
-$\mathsf{lr} \colon \Omega_{G,0}^{\text{free}} \to \Sigma_G^{\text{free}}$,
-$V_G \colon \Omega_{G,0}^{\text{free}} \to \Fin \wr \Sigma_G^{\text{free}}$.
-Furthermore, for any $C \in \Sigma_G^{\text{free}}$ one has an equality of rooted undercategories between
+We first show (i), starting with some notation. 
+In analogy with $\Sigma_{G}^{\text{fr}}$,
+we write $\Omega_{G,0}^{\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
+$\mathsf{lr} \colon \Omega_{G,0}^{\text{fr}} \to \Sigma_G^{\text{fr}}$,
+$V_G \colon \Omega_{G,0}^{\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
+Moreover, for each $C \in \Sigma_G^{\text{fr}}$ one has an equality of rooted undercategories between
 $C \downarrow_{\mathsf{r}} \Omega_{G,0}$
 and
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{free}}$,
-so that
-$\iota^{\**} \mathbb{F}_G A$ is computed by the Kan extension of
+$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$,
+and thus 
+$\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram.
 \begin{equation}\label{IFGI EQ}
 \begin{tikzcd}
-	\Omega_{G,0}^{\text{free}} \ar{d} \ar{r} &
-	\Fin \wr \Sigma_G^{\text{free}} \ar{r}{\Fin \wr A} &
+	\Omega_{G,0}^{\text{fr}} \ar{d} \ar{r} &
+	\Fin \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin \wr X} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	\Sigma_G^{\text{free}}
+	\Sigma_G^{\text{fr}}
 \end{tikzcd}
 \end{equation}
-so that (i) follows from the obvious claim 
-$A \to \iota_{\**} \iota^{\**} A$
-is an isomorphism when restricted to $\Sigma_G^{\text{free}}$
-(indeed, $\Sigma_G^{\text{free}}$ is the closure of the image of $\iota$ under isomorphism).
+(i) now follows by noting that 
+$X \to \iota_{\**} \iota^{\**} X$
+is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
 
-To show (ii), we first set some notation. We will slightly abuse notation to write 
-$G \times \Sigma \hookrightarrow \Sigma_G^{\text{free}} \hookrightarrow \Sigma_G$ for the image of $\iota$
-and similarly
-$G \times \Omega_0 \hookrightarrow \Omega_{G,0}^{\text{free}} \hookrightarrow \Omega_{G,0}$ for the image of the obvious analogue functor
-$\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
-Just as before the leaf-root and vertex functors
-factor as
-$\mathsf{lr} \colon G \times \Omega_0 \to G \times \Sigma$,
-$V_G \colon G \times \Omega_0 \to \Fin \wr (G \times \Sigma)$
-. In fact, this notation extends to strings $G \times \Omega_{n}$ compatibly with all vertex functors and simplicial functors.
+For (ii), to show that 
+	$\iota^{\**} \mathbb{F}_G \iota_{!}
+	\to	
+	\iota^{\**} \mathbb{F}_G \iota_{\**}$ is an isomorphism one just repeats the argument in the previous paragraph by noting  that $\iota_! \to \iota_{\**}$ is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
+	To check that this is a map of monads, we recall first that the monad structure on $\iota^{\**} \mathbb{F}_G \iota_{\**}$
+is given as described in Proposition \ref{MONADADJ PROP}.
+Unpacking definitions, compatibility with multiplication reduces to showing that the composite 
+$\iota_! \iota^{\**} \xrightarrow{\epsilon_!} 
+id \xrightarrow{\eta_{\**}} \iota_{\**} \iota^{\**}$
+coincides with $\beta \iota^{\**}$
+while compatibility with units 
+reduces to showing that the composite
+$
+	id \xrightarrow{\eta_!} 
+	\iota^{\**} \iota_! \xrightarrow{\iota^{\**} \beta}
+	\iota^{\**} \iota_{\**} \xrightarrow{\epsilon_{\**}}
+	id
+$
+is the identity. Both of these are a consequence of 
+(\ref{BETADEFSQUARE EQ}), following from the diagrams below 
+(where the top composites are identities).
+\begin{equation}
+\begin{tikzcd}[column sep =3em]
+		\iota_! \iota^{\**}
+		\ar[Rightarrow]{r}{\iota_! \iota^{\**} \eta_{\**}}
+		\ar[Rightarrow]{d}[swap]{\epsilon_!}
+	&
+		\iota_{!} \iota^{\**} \iota_{\**} \iota^{\**}
+		\ar[Rightarrow]{d}[swap]{ \epsilon_! \iota_{\**}\iota^{\**}}
+		\ar[Rightarrow]{r}[swap]{\simeq}{\iota_{!}\epsilon_{\**}\iota^{\**}}
+	&
+		\iota_! \iota^{\**}
+		\ar[Rightarrow]{ld}{\beta \iota^{\**}}
+	&	
+		\iota^{\**} \iota_{\**}
+		\ar[Rightarrow]{r}{\eta_! \iota^{\**} \iota_{\**}}[swap]{\simeq}
+		\ar[Rightarrow]{d}[swap]{\epsilon_{\**}}{\simeq}
+	&
+		\iota^{\**} \iota_{!} \iota^{\**} \iota_{\**}
+		\ar[Rightarrow]{r}{\iota^{\**} \epsilon_! \iota_{\**}}
+		\ar[Rightarrow]{d}{\simeq}[swap]{\iota^{\**}\iota_{!}\epsilon_{\**}}
+	&
+		\iota^{\**}\iota_{\**}
+\\
+		id
+		\ar[Rightarrow]{r}[swap]{\eta_{\**}}
+	&
+		\iota_{\**} \iota^{\**}
+	&
+	&	
+		id
+		\ar[Rightarrow]{r}[swap]{\eta_!}{\simeq}
+	&
+		\iota^{\**} \iota_!
+		\ar[Rightarrow]{ru}[swap]{\iota^{\**} \beta}
+\end{tikzcd}
+\end{equation}
 
-Under this identification, $\mathbb{F}B$ is then computed as the Kan extension of
-\begin{equation}\label{F EQ}
+(iii) amounts to showing that if $X(C) =\emptyset$ whenever 
+$C \nin \Sigma_G^{\text{fr}}$
+then it is also 
+$\mathbb{F}_G X(C) =\emptyset$.
+But since for such 
+$C \nin \Sigma_G^{\text{fr}}$
+the undercategory
+$C \downarrow \Omega_{G,0}$
+consists of trees with at least one non-free vertex, the composite
+\[
 \begin{tikzcd}
-	G \times \Omega_{0} \ar{d} \ar{r} &
-	\Fin \wr (G \times \Sigma) \ar{r}{\Fin \wr B} &
+	C \downarrow \Omega_{G,0} \ar{r}{V} &
+	\Fin \wr \Sigma_G \ar{r}{\Fin \wr X} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi}&
+	\mathcal{V}^{op}
+\end{tikzcd}
+\]
+is constant equal to $\emptyset$, and (iii) follows.
+
+
+Finally, we show (iv). We will slightly abuse notation by writing 
+$G \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
+and similarly
+$G \times \Omega_0 \hookrightarrow \Omega_{G,0}$ for the image of the obvious analogous functor
+$\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
+The map 
+$\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$
+is the adjoint to the map 
+$\mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded by the following diagram.
+\begin{equation}\label{MONADEQUIV DEF}
+\begin{tikzcd}[row sep=5pt, column sep =8pt]
+	G \times \Omega_0	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr (G \times \Sigma_0) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
+	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
+	\mathcal{V}^{op} \ar[equal]{rd}
+\\
+	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	\Fin \wr \Sigma_G  \ar{rr}[swap]{X} &&
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	G \times \Sigma
+	G \times \Sigma \ar{rd} 
+\\
+	& \Sigma_G
 \end{tikzcd}
 \end{equation}
-The map $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is then induced by the obvious ``inclusion'' natural transformation of (\ref{F EQ}) into (\ref{IFGI EQ}) when $B=\iota_{\**} A$.
-To check that $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is an isomorphism, 
-we first note that there are compatible retractions
-$\rho \colon \Omega_{G,0}^{\text{free}} \to G \times \Omega_0$,
-$\rho \colon \Sigma_{G}^{\text{free}} \to G \times \Sigma$
-defined by 
-$\rho(\amalg_{1\leq i \leq |G|} T_i) = G \cdot T_1$
-together with uniquely determined isomorphisms 
-$T \simeq \rho(T)$ which are given by the identity
-on the first tree component $T_1$.
-It thus now follows that for each $C \in G \times \Sigma$ the undercategory $C \downarrow G \times \Omega_0$ is initial (as well as final) in 
-$C \downarrow \Omega_{G,0}^{\text{free}}$,
-showing that 
-$\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$
-is indeed an isomorphism.
+That 
+$\alpha$
+is a natural isomorphism
+follows by the previous identifications 
+$C \downarrow_{\mathsf{r}} \Omega_{G,0} \simeq
+C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+for $C \in G \times \Sigma$
+together with the fact that the retraction 
+$\rho \colon \Omega_{G,0}^{\text{fr}} \to G \times \Omega_0$
+(built just as the retraction
+$\rho \colon \Sigma_G^{\text{fr}} \to G \times \Sigma$)
+retracts 
+$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+to the undercategory
+$C \downarrow_{\mathsf{r}} G \times \Omega_0$, which is thus initial (as well as final), and the claim that $\alpha$ is an isomorphism follows.
 
-The final claim that $\mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{\**}$ is a map of monads 
-follows from the intuitive fact that the composite 
-$\mathbb{F} \mathbb{F}
+Intuitively, the final claim that 
+$\alpha$ is a map of monads 
+follows from the fact that the composite 
+$
+\mathbb{F} \mathbb{F}
 	\to 
 \iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**}
 	\to
 \iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{\**}
 $
-is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{free}}$.
-
-{\color{red} HERE}
-
-However, since a rigorous direct proof of this last claim can be fairly cumbersome due to the presence of left Kan extensions in the definitions of $\mathbb{F}$, $\mathbb{F}_G$, we sketch here an alternate argument.
-
-
-
-{\color{red} HERE}
-
-
-
+is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{fr}}$.
+However, since the presence of left Kan extensions in the 
+definitions of $\mathbb{F}$, $\mathbb{F}_G$
+can make a rigorous direct proof of this last claim fairly cumbersome, we sketch here a workaround argument.
+We first consider the adjunction
+$
+	\iota_{!} \colon
+	\mathsf{WSpan}^l((G\times \Sigma)^{op},\mathcal{V})
+		\rightleftarrows
+	\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})
+	\colon \iota^{\**}
+$
+where $\iota_!$ is composition with $\iota$ and $\iota^{\**}$ is the pullback of spans. 
+Writing $N$, $N_G$ for the monads 
+on the span categories, mimicking (\ref{MONADEQUIV DEF}) yields
+a map 
+$\tilde{\alpha} \colon N \to \iota^{\**} N_G \iota_{!}$
+encoded by the diagram (where the front and back squares are pullbacks).
+\[
+\begin{tikzcd}[row sep=3pt, column sep =8pt]
+	(G \times \Omega)^{(\iota^{\**} A)}	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr \iota^{\**} A \ar{rd} \ar[dashed]{dd} \ar{rr}&&
+	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
+	\mathcal{V}^{op} \ar[equal]{rd}
+\\
+	& \Omega_{G,0}^{(A)} \ar{dd} \ar{rr} &&
+	\Fin \wr A \ar{dd} \ar{rr} &&
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\mathcal{V}^{op}
+\\
+	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rr}&&
+	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
+\\
+	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	\Fin \wr \Sigma_G
+\\
+	G \times \Sigma \ar{rd}
+\\
+	& \Sigma_{G}
+\end{tikzcd}
+\]
+The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writing
+\[
+	\mathsf{Lan} \colon
+	\mathsf{WSpan}^l((G\times \Sigma)^{op},\mathcal{V})
+		\rightleftarrows
+	\mathsf{Fun}((G\times \Sigma)^{op},\mathcal{V})
+	\colon j
+\quad
+	\mathsf{Lan}_G \colon
+	\mathsf{WSpan}^l(\Omega_G^{op},\mathcal{V})
+		\rightleftarrows
+	\mathsf{Fun}(\Omega_G^{op},\mathcal{V})
+	\colon j_G
+\]
+for the span functor adjunctions,  
+$\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$ can then be written as the composite
+\[
+	\mathsf{Lan} N j \to 
+	\mathsf{Lan} \iota^{\**} N_G \iota_! j  \to
+	\iota^{\**} \mathsf{Lan}_G  N_G  j_G \iota_!
+\]
+where the first map is the isomorphism of monads induced by $\tilde{\alpha}$ and the second map can be shown directly to be a monad map by unpacking the monad structures in 
+Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\[
 %\begin{tikzcd}
-%	G \times \Omega_1	\ar{dd} \ar{rd} \ar{rr} &&
-%	\Fin \wr (G \times \Omega_0) \ar{rd} \ar[dashed]{dd} \ar{rr}%&&
-%	\Fin \wr \mathcal{V}^{op} \ar{r} &
-%	\mathcal{V}^{op}
+%	(G \times \Omega_1)^{(\iota^{\**} A)}	\ar{ddd} \ar{rd} \ar{rrr} &&&
+%	\Fin \wr (G \times \Omega_0)^{(\iota^{\**} A)} \ar{rd} \ar[dashed]{ddd} 
 %\\
-%	& \Omega_{G,1}^{\text{fr}} \ar{dd} \ar{rr} &&
-%	\Fin \wr \Omega_{G,0}^{\text{fr}} \ar{dd} \ar{ru}
+%	& \bullet \ar{rrr} \ar{ldd} \ar{rd}&&&
+%	\Fin \wr \iota^{\**} \left( \Omega_G^{(A)} \right)
+%	\ar[dashed]{ldd}\ar{rd}
 %\\
-%	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rr}&&
+%	& & \Omega_1^{(A)} \ar{rrr} \ar{ddl}&&&
+%	\Fin \wr \Omega_G^{(A)}\ar{ddl}
+%\\
+%	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rrr}&&&
 %	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
 %\\
-%	& \Omega_{G,0}^{\text{fr}} \ar{dd} \ar{rr} &&
-%	\Fin \wr \Sigma_G^{\text{fr}}
+%	& \Omega_{G,0} \ar{dd} \ar{rrr} &&&
+%	\Fin \wr \Sigma_G
 %\\
 %	G \times \Sigma \ar{rd}
 %\\
-%	& \Sigma_{G}^{\text{fr}}
+%	& \Sigma_{G}
 %\end{tikzcd}
 %\]
-
+%to check second map is monad map, need to show
+%\[
+%\begin{tikzcd}
+%	\iota_{!} \iota^{\**} \ar{d}{\simeq}[swap]{\eta_{\mathsf{Lan}}} \ar{rd}{\epsilon_!}
+%\\	
+%	\iota_! j \mathsf{Lan} \iota^{\**} \ar{d}&
+%	id \ar{d}{\eta_{\mathsf{Lan}_G}}
+%\\
+%	j_G \iota_! \iota^{\**} \mathsf{Lan}_G \ar{r}{\epsilon_!} & %j_G \mathsf{Lan}_G
+%\end{tikzcd}
+%\]
+%which after two adjunctions becomes
+%\[
+%\begin{tikzcd}
+%	id \ar{d}{\eta_{\mathsf{Lan}}} \ar{r}{\eta_{!}} &
+%	\iota^{\**} \iota_! \ar{ddd}{\eta_{\mathsf{Lan}_G}}
+%\\
+%	j \mathsf{Lan} \ar{d}{\eta_! \eta_!}
+%\\
+%	j \iota^{\**} \iota_{!} \iota^{\**} \iota_{!} \mathsf{Lan}
+%	\ar[equal]{d}
+%\\
+%	\iota^{\**} j_G \iota_{!} \iota^{\**} \mathsf{Lan}_G \iota_{!} \ar{r}{\epsilon_!}& \iota^{\**} j_G \mathsf{Lan}_G \iota_!
+%\end{tikzcd}
+%\]
 \end{proof}
 
 
-Proposition (\ref{MONADADJ PROP}) now gives the following.
+Combining the previous result with
+Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the following.
 
 \begin{corollary}
-	The adjunction (\ref{TWOADJOINTS EQ}) extends to an adjunction
-\begin{equation}\label{JUSTONEDJOINTOP EQ}
-\begin{tikzcd}
-	\iota^{\**} \colon 
-	\mathsf{Op}_G \ar[shift left =2pt]{r} 
+	The adjunctions (\ref{TWOADJOINTS EQ}) extends to  adjunctions
+\begin{equation}\label{TWOADJOINTSOP EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
 	&
-	\mathsf{Op}^G 
-	\colon \iota_{\**} \ar[shift left =2pt]{l}
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[bend right]{l}[swap,midway]{\iota_{!}}
+	\ar[bend left]{l}{\iota_{\**}}.
 \end{tikzcd}
 \end{equation}
-identifying $\mathsf{Op}^G$ as a reflexive subcategory of 
+In particular, $\iota_{\**}$
+identifies $\mathsf{Op}^G$ as a reflexive subcategory of 
 $\mathsf{Op}_G$.
 \end{corollary}
 
+\begin{remark}
+	The image of $\iota_{\**}$ consists of genuine equivariant operads whose mapping spaces for non-free $G$-trees are suitable fixed points of the mapping spaces for free $G$-trees.
 
+By contrast, if one uses $\iota_!$ to regard $\mathsf{Op}^G$ as a coreflexive subcategory of $\mathsf{Op}_G$, 
+	one obtains the far less interesting
+	subcategory of genuine equivariant operads whose mapping spaces are empty for non-free trees.
+
+The isomorphism
+	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
+	\xrightarrow{\epsilon_!}
+	\mathbb{F}_G \iota_{!}$
+then shows that $\mathbb{F}_G$ essentially preserves the image of $\iota_!$, and can thus be identified with $\mathbb{F}$ over it.
+
+However, the analogous statement fails for $\iota_{\**}$, i.e., one does not always have that
+\begin{equation}\label{KEYNONISO EQ}
+	\mathbb{F}_G \iota_{\**}
+	\xrightarrow{\eta_{\**}}
+	\iota_{\**}\iota^{\**} \mathbb{F}_G \iota_{\**}
+\end{equation}
+is an isomorphism. 
+In fact, showing that (\ref{KEYNONISO EQ})
+\textit{does} become an isomorphism when restricted to suitably cofibrant objects is one of the key technical ingredients for our proof of the Quillen equivalence between 
+$\mathsf{Op}_G(\mathcal{V})$ and
+$\mathsf{Op}^G(\mathcal{V})$, 
+and will be the subject of \S \ref{COFIB SEC}.
+
+For now, we end this section with a minimal counterexample to  the more general claim.
+
+Let $G=\mathbb{Z}_{/2}$ and 
+$Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the simpleton.
+
+	When evaluating $\mathbb{F}_G Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$, the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot T_0$).
+\begin{equation}
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) {$G/G \cdot C_0$}
+		child{
+			node [dummy] {}
+		edge from parent node [swap] {$r+G/G$}};
+	\node at (3,0) {$T_1$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap] {$a+G$}}
+		edge from parent node [swap] {$r+G/G$}};
+	\node at (7,0) {$T_2$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c+G/G$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b+G/G$}}
+		edge from parent node [swap] {$r+G/G$}};
+\end{tikzpicture}
+\end{equation}
+However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point, namely that encoded by the $G$-tree $T$ below.
+\begin{equation}
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) {$G \cdot C_0$}
+		child{
+			node [dummy] {}
+		edge from parent node [swap] {$r+G$}};
+	\node at (5,0) {$T$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c+G$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b+G$}}
+		edge from parent node [swap] {$r+G$}};
+\end{tikzpicture}
+\end{equation}
+Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
+
+However, such counter-examples all require the use of trees with stumps. Indeed, it can be shown that (\ref{KEYNONISO EQ})
+is an isomorphism whenever evaluated at a $Y$ such that $Y(0)=\emptyset$.
+\end{remark}
 
 
 
@@ -5242,6 +5509,14 @@ as desired.
 
 
 \newpage
+
+
+\section{Cofibrancy}\label{COFIB SEC}
+
+Add to this
+
+\newpage
+
 
 \section{Model Structures on Genuine Operads}
 \todo[inline]{come back: this is all disorganized, internally, externally, everything}

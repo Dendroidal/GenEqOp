@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  29 APR 2017 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  30 APR 2017 18:37
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1001,22 +1001,22 @@ ABD: EveryShipout initializing macros
 \openout5 = `GenEqOp.toc'.
 
  [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (5.49458pt too wide) detected at line 1466
+Overfull \hbox (5.49458pt too wide) detected at line 1486
 []
  []
 
 [13] [14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (79.68538pt too wide) detected at line 2474
+Overfull \hbox (79.68538pt too wide) detected at line 2494
 []
  []
 
-[22] [23] [24] [25]
-Overfull \hbox (26.14528pt too wide) detected at line 2995
+[22] [23] [24] [25] [26] [27]
+Overfull \hbox (26.14528pt too wide) detected at line 3262
 []
  []
 
-[26]
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 3061--3062
+[28]
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 3328--3329
 []\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
@@ -1025,72 +1025,72 @@ ir $\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 T; V[]\OMX/MnSymbolE/m/n/9 ˆ\OML/cmm/
 m/it/9 T\OMX/MnSymbolE/m/n/9  \U/MnSymbolA/m/n/9  
  []
 
-[27] [28] [29]
-Overfull \hbox (19.31252pt too wide) detected at line 3378
+[29] [30] [31]
+Overfull \hbox (19.31252pt too wide) detected at line 3645
 []
  []
 
 
-Overfull \hbox (5.0608pt too wide) detected at line 3404
+Overfull \hbox (5.0608pt too wide) detected at line 3671
 []
  []
 
 
-Overfull \hbox (49.15059pt too wide) detected at line 3440
+Overfull \hbox (49.15059pt too wide) detected at line 3707
 []
  []
 
-[30] [31] [32] [33] [34] [35]
-Overfull \hbox (74.56268pt too wide) detected at line 4116
+[32] [33] [34] [35] [36] [37]
+Overfull \hbox (74.56268pt too wide) detected at line 4383
 \U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
  []
 
-[36]
-Overfull \hbox (6.85089pt too wide) in paragraph at lines 4181--4183
+
+Overfull \hbox (6.85089pt too wide) in paragraph at lines 4448--4450
 [][]\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-sion tree cat-e-gory $\OT1/cmr/m/
 n/9 
 []$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ˜\OML/cmm/m/it/9
  B; A; X\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -
  []
 
-[37] [38] [39] [40]
-Overfull \hbox (13.09369pt too wide) detected at line 4850
+[38] [39] [40] [41] [42]
+Overfull \hbox (13.09369pt too wide) detected at line 5117
 []
  []
 
-[41] [42] [43] [44]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5285--5285
+[43] [44] [45] [46] [47]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5560--5560
 [][] 
  []
 
-[45]
+[48]
 
-LaTeX Warning: Reference `FGTRIGHT PROP' on page 46 undefined on input line 535
-5.
+LaTeX Warning: Reference `FGTRIGHT PROP' on page 49 undefined on input line 563
+0.
 
-[46]
+[49]
 
-LaTeX Warning: Reference `POWERF PROP' on page 47 undefined on input line 5382.
-
-
-
-LaTeX Warning: Reference `EXTERINTADJ EQ' on page 47 undefined on input line 53
-83.
+LaTeX Warning: Reference `POWERF PROP' on page 50 undefined on input line 5657.
 
 
-LaTeX Warning: Reference `FGTLEFT PROP' on page 47 undefined on input line 5384
+
+LaTeX Warning: Reference `EXTERINTADJ EQ' on page 50 undefined on input line 56
+58.
+
+
+LaTeX Warning: Reference `FGTLEFT PROP' on page 50 undefined on input line 5659
 .
 
 
-LaTeX Warning: Reference `BIQUILLENG PROP' on page 47 undefined on input line 5
-385.
+LaTeX Warning: Reference `BIQUILLENG PROP' on page 50 undefined on input line 5
+660.
 
-[47]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5544--5544
+[50]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5819--5819
 [][] 
  []
 
-(GenEqOp.bbl [48]
+(GenEqOp.bbl [51]
 Underfull \hbox (badness 10000) in paragraph at lines 27--31
 []\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
 :
@@ -1102,16 +1102,16 @@ Underfull \hbox (badness 2035) in paragraph at lines 43--46
 .  Avail-able at:
  []
 
-) [49] (GenEqOp.aux)
+) [52] (GenEqOp.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 29832 strings out of 493334
- 619227 string characters out of 3130222
- 670455 words of memory out of 3000000
- 32847 multiletter control sequences out of 15000+200000
+ 30250 strings out of 493334
+ 629807 string characters out of 3130222
+ 669275 words of memory out of 3000000
+ 33265 multiletter control sequences out of 15000+200000
  32167 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1165,9 +1165,9 @@ fonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (49 pages, 749524 bytes).
+Output written on GenEqOp.pdf (52 pages, 760989 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
+ 543 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
