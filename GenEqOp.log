@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  30 APR 2017 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  1 MAY 2017 16:03
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1011,12 +1011,12 @@ Overfull \hbox (79.68538pt too wide) detected at line 2494
  []
 
 [22] [23] [24] [25] [26] [27]
-Overfull \hbox (26.14528pt too wide) detected at line 3262
+Overfull \hbox (26.14528pt too wide) detected at line 3277
 []
  []
 
 [28]
-Overfull \hbox (1.60092pt too wide) in paragraph at lines 3328--3329
+Overfull \hbox (1.60092pt too wide) in paragraph at lines 3343--3344
 []\OT1/cmr/bx/n/9 Definition 5.7. []\OT1/cmr/m/n/9 A $\OML/cmm/m/it/9 l$\OT1/cm
 r/m/it/9 -node la-beled $\OML/cmm/m/it/9 G$\OT1/cmr/m/it/9 -tree \OT1/cmr/m/n/9
  (or just $\OML/cmm/m/it/9 l$\OT1/cmr/m/it/9 -labeled $\OML/cmm/m/it/9 G$\OT1/c
@@ -1026,67 +1026,67 @@ m/it/9 T\OMX/MnSymbolE/m/n/9  \U/MnSymbolA/m/n/9  
  []
 
 [29] [30] [31]
-Overfull \hbox (19.31252pt too wide) detected at line 3645
+Overfull \hbox (19.31252pt too wide) detected at line 3660
 []
  []
 
 
-Overfull \hbox (5.0608pt too wide) detected at line 3671
+Overfull \hbox (5.0608pt too wide) detected at line 3686
 []
  []
 
 
-Overfull \hbox (49.15059pt too wide) detected at line 3707
+Overfull \hbox (49.15059pt too wide) detected at line 3722
 []
  []
 
 [32] [33] [34] [35] [36] [37]
-Overfull \hbox (74.56268pt too wide) detected at line 4383
+Overfull \hbox (74.56268pt too wide) detected at line 4398
 \U/msb/m/n/9 F\OML/cmm/m/it/9 B [] X \U/MnSymbolD/m/n/9  [][] []
  []
 
-
-Overfull \hbox (6.85089pt too wide) in paragraph at lines 4448--4450
+[38]
+Overfull \hbox (6.85089pt too wide) in paragraph at lines 4463--4465
 [][]\OT1/cmr/m/n/9 The \OT1/cmr/m/it/9 ex-ten-sion tree cat-e-gory $\OT1/cmr/m/
 n/9 
 []$ is the cat-e-gory whose ob-jects are $\OMX/MnSymbolE/m/n/9 ˜\OML/cmm/m/it/9
  B; A; X\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 -
  []
 
-[38] [39] [40] [41] [42]
-Overfull \hbox (13.09369pt too wide) detected at line 5117
+[39] [40] [41] [42]
+Overfull \hbox (13.09369pt too wide) detected at line 5132
 []
  []
 
 [43] [44] [45] [46] [47]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5560--5560
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5580--5580
 [][] 
  []
 
 [48]
 
-LaTeX Warning: Reference `FGTRIGHT PROP' on page 49 undefined on input line 563
+LaTeX Warning: Reference `FGTRIGHT PROP' on page 49 undefined on input line 565
 0.
 
 [49]
 
-LaTeX Warning: Reference `POWERF PROP' on page 50 undefined on input line 5657.
+LaTeX Warning: Reference `POWERF PROP' on page 50 undefined on input line 5677.
 
 
 
 LaTeX Warning: Reference `EXTERINTADJ EQ' on page 50 undefined on input line 56
-58.
+78.
 
 
-LaTeX Warning: Reference `FGTLEFT PROP' on page 50 undefined on input line 5659
+LaTeX Warning: Reference `FGTLEFT PROP' on page 50 undefined on input line 5679
 .
 
 
 LaTeX Warning: Reference `BIQUILLENG PROP' on page 50 undefined on input line 5
-660.
+680.
 
 [50]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 5819--5819
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 5839--5839
 [][] 
  []
 
@@ -1108,10 +1108,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30250 strings out of 493334
- 629807 string characters out of 3130222
- 669275 words of memory out of 3000000
- 33265 multiletter control sequences out of 15000+200000
+ 30251 strings out of 493334
+ 629823 string characters out of 3130222
+ 676437 words of memory out of 3000000
+ 33266 multiletter control sequences out of 15000+200000
  32167 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2749s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1165,7 +1165,7 @@ fonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (52 pages, 760989 bytes).
+Output written on GenEqOp.pdf (52 pages, 763213 bytes).
 PDF statistics:
  543 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

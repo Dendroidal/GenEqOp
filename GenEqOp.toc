@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {4.4}A monad on spans}{17}
 \contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{20}
 \contentsline {subsection}{\numberline {4.6}Comparison with (regular) equivariant operads}{24}
-\contentsline {section}{\numberline {5}Free extensions}{27}
+\contentsline {section}{\numberline {5}Free extensions}{28}
 \contentsline {subsection}{\numberline {5.1}Extensions over general monads}{28}
 \contentsline {subsection}{\numberline {5.2}Labeled planar strings}{29}
 \contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{31}
