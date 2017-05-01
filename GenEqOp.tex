@@ -2730,6 +2730,25 @@ where we note that in the formula for $\iota_{\**}(\minus)$
 the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
 As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
+\begin{remark}\label{REFLCOREFL REM}
+	$\iota_!$ essentially identifies 
+	$\mathsf{Sym}^G(\mathcal{V})$ as the coreflexive subcategory of sequences 
+	$X \in \mathsf{Sym}_G(\mathcal{V})$ such that $X(C)=\emptyset$ whenever $C$ is not a free corolla.
+
+By contrast, $\iota_{\**}$ identifies 
+$\mathsf{Sym}^G(\mathcal{V})$ with a far more interesting reflexive subcategory of sequences 
+$X \in \mathsf{Sym}_G(\mathcal{V})$ 
+such that $X(C)$ for each $C$ not a free corolla must satisfy a fixed point condition. Concretely, letting 
+$\varphi \colon G \to \mathsf{r}(C)$
+denote the unique map preserving the minimal element, one has
+\[X(C) \xrightarrow{\simeq} X(\varphi^{\**}C)^{\Gamma}\]
+for 
+$\Gamma \leq \mathsf{Aut}(\varphi^{\**}C)$
+the subgroup preserving the quotient map
+$\varphi^{\**}C \to C$
+under precomposition.
+\end{remark}
+
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
 $\amalg_i C_i \in \Sigma_G^{\text{fr}}$
 sends $Y(C_1)$ to the ``$G$-twisted diagonal'' of 
@@ -2956,9 +2975,9 @@ follows from the fact that the composite
 $
 \mathbb{F} \mathbb{F}
 	\to 
-\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**}
+\iota^{\**} \mathbb{F}_G \iota_{!} \iota^{\**} \mathbb{F}_G \iota_{!}
 	\to
-\iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{\**}
+\iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{!}
 $
 is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{fr}}$.
 However, since the presence of left Kan extensions in the 
@@ -3095,13 +3114,9 @@ $\mathsf{Op}_G$.
 \end{corollary}
 
 \begin{remark}
-	The image of $\iota_{\**}$ consists of genuine equivariant operads whose mapping spaces for non-free $G$-trees are suitable fixed points of the mapping spaces for free $G$-trees.
-
-By contrast, if one uses $\iota_!$ to regard $\mathsf{Op}^G$ as a coreflexive subcategory of $\mathsf{Op}_G$, 
-	one obtains the far less interesting
-	subcategory of genuine equivariant operads whose mapping spaces are empty for non-free trees.
-
-The isomorphism
+	Remark \ref{REFLCOREFL REM} extends to operads mutatis mutandis.
+	
+Moreover, the isomorphism
 	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
 	\xrightarrow{\epsilon_!}
 	\mathbb{F}_G \iota_{!}$
@@ -5319,7 +5334,12 @@ applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram be
 \end{equation}
 
 
+
+
 {\color{red} HERE}
+
+kk
+
 
 %Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
 %While dealing with general pushouts of categories requires solving a ``word problem'' on morphisms, we will only work in cases where the problem collapses. We recall that, given a square of categories
