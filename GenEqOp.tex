@@ -3141,7 +3141,7 @@ Let $G=\mathbb{Z}_{/2}$ and
 $Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the simpleton.
 
 	When evaluating $\mathbb{F}_G Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$, the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot T_0$).
-\begin{equation}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 	\node at (0,0) {$G/G \cdot C_0$}
 		child{
@@ -3160,9 +3160,9 @@ $Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the simpleton.
 			edge from parent node [near end] {$b+G/G$}}
 		edge from parent node [swap] {$r+G/G$}};
 \end{tikzpicture}
-\end{equation}
+\]
 However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point, namely that encoded by the $G$-tree $T$ below.
-\begin{equation}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 	\node at (0,0) {$G \cdot C_0$}
 		child{
@@ -3176,7 +3176,7 @@ However, when pulling these points back to the $G$-free stump corolla $G \cdot C
 			edge from parent node [near end] {$b+G$}}
 		edge from parent node [swap] {$r+G$}};
 \end{tikzpicture}
-\end{equation}
+\]
 Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
 
 However, such counter-examples all require the use of trees with stumps. Indeed, it can be shown that (\ref{KEYNONISO EQ})
@@ -5325,20 +5325,21 @@ Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification
 $\Lan_{\bar{\Omega}_{G,e}[\leq k,-]^{op}}N^e \simeq
 \Lan_{\bar{\Omega}_{G,e}[\leq k-1]^{op}}N^e = \mathcal{P}_{k-1}$,
 applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram below.
-\begin{equation}
-  \label{FILTRATION_LAN_SQUARE_DIAGRAM}
-  \begin{tikzcd}
-    \Lan_{\bar{\Omega}_{G,e}[k,-]^{op}}N^e \arrow[d] \arrow[r] & \P_{k-1} \arrow[d]\\
-    \Lan_{\bar{\Omega}_{G,e}[k]^{op}}N^e \arrow[r] & \P_k
-  \end{tikzcd}
+\begin{equation}\label{FILTRATION_LAN_SQUARE_DIAGRAM}
+\begin{tikzcd}
+	\Lan_{\bar{\Omega}_{G}^e[k,-]^{op}}N^e \arrow[d] \arrow[r] & 
+	\P_{k-1} \arrow[d]
+\\
+	\Lan_{\bar{\Omega}_{G}^e[k]^{op}}N^e \arrow[r] &
+	\P_k
+\end{tikzcd}
 \end{equation}
 
+We will find it convenient for our purposes to 
+have explicit levelwise descriptions for 
+(\ref{FILTRATION_LAN_SQUARE_DIAGRAM}),
+which we now describe.
 
-
-
-{\color{red} HERE}
-
-kk
 
 
 %Finally, we show that each layer $\Omega_G^e[\leq k]$ can be built from $\Omega_{G}^e[\leq k-1]$ via a pushout which attaches trees with precise degree $k$. 
@@ -5378,6 +5379,85 @@ kk
 %  \]
 %  is a bijection. These two sets give the same data: a collection of maps $\Phi_b: Y(b) \to Z(b)$ and $\Phi_c:Y(c) \to Z(c)$ for all $b\in \mathcal B$ and $c \in \mathcal C$, such that $\Phi_b = \Phi_c$ whenever $b = c \in \mathcal A$. In general, the compatibilites required on the right are less demanding. However, with the above assumptions, a map $d \to d'$ in $\mathcal D$ is \textit{uniquely} a map in $\mathcal A$, $\mathcal B \setminus \mathcal A$, or $\mathcal C \setminus \mathcal A$, and thus all the necessary compatibilities are covered by (at least) one of the $\set{\Phi_b}$ or $\set{\Phi_c}$. 
 %\end{proof}
+
+\begin{proposition}
+For each level $C\in \Sigma_G$,
+(\ref{FILTRATION_LAN_SQUARE_DIAGRAM})
+is given by the following pushout in $\V^{\mathsf{Aut}(C)}$
+\begin{equation}\label{FILTRATION_LAN_LEVEL}
+\begin{tikzcd}
+	\coprod\limits_{[T] \in \mathsf{Iso}
+		\left(C \downarrow_{\mathsf{r}} \Omega_G^a[k]\right)}
+	\left(
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		Q_T^{in}[u]
+	\right)
+		\otimes_{\mathsf{Aut}(T)} \mathsf{Aut}(C)
+	\arrow[r] \arrow[d] &
+	\P_{k-1}(C) \arrow[d] 
+\\
+	\coprod\limits_{[T] \in \mathsf{Iso}
+		\left(C \downarrow_{\mathsf{r}} \Omega_G^a[k]\right)}
+	\left(
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		\bigotimes\limits_{v \in V_{G}^{in}(T)} Y(T_v)
+	\right)
+		\underset{\mathsf{Aut}(T)}{\otimes} \mathsf{Aut}(C)
+	\arrow[r] &
+	\P_k(C)
+\end{tikzcd}
+\end{equation}
+where $\Omega_G^a[k]$ denotes alternating trees with exactly $k$ 
+passive vertices, $ V_{G}^{ac}(T)$, $V_{G}^{in}(T)$ denote the active and passive vertices of $T$,
+and $Q_T^{in}[u]$ is the domain 
+of the the iterated pushout product
+\[
+		\underset{v \in V_G^{in}(T)}
+		{\mathlarger{\mathlarger{\mathlarger{\square}}}}u(T_v)
+	\colon
+		Q_T^{in}[u] \to
+		\bigotimes\limits_{v \in V_{G}^{in}(T)} Y(T_v).
+\]
+%where the left vertical map is the iterated pushout product
+%\[
+%\coprod \mathop{\square}\limits_{V_{G,\P}(T)}\iota_{\P(T_v)}\mathop{\square} [u]^{\square \mathbb V_{G,in}(T)},
+%\]
+%$\iota_{\P(T_v)}$ is the canonical map $\varnothing \to \P(T_v)$ out of the initial object, and $\Omega_G^a[k](C)$ is as in Definition \ref{TREE_FILTRATION_PIECES_DEFINITION}.
+\end{proposition}
+
+
+\begin{proof}
+We first note that, following 
+Definition \ref{LIMMOR REM}, both 
+$\bar{\Omega}_{G}^e[k]^{op}$ and $\bar{\Omega}_{G}^e[k,-]^{op}$
+are split Grothendieck constructions over
+$\Omega_G^a[k]^{op}$.
+The fibers of these Grothendieck constructions
+are the cube and punctured cube categories
+\[
+	(X \to Y)^{\times V_G^{in}(T)},
+\qquad
+	(X \to Y)^{\times V_G^{in}(T)} - Y^{\times V_G^{in}(T)}
+\]
+and thus by computing the left Kan extensions on the leftmost map in (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) iteratively by first extending to $\Omega_G^a$, we can rewrite that map as
+\[
+	\Lan_{\Omega_G^a[k]^{op}}
+	\left(
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		\underset{v \in V_{G}^{in}(T)}
+		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+		u(T_v)
+	\right).
+\]
+The desired description of the leftmost map given in (\ref{FILTRATION_LAN_LEVEL})
+now follows by noting that the root undercategories
+$C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
+are groupoids.
+\end{proof}
+
+
+
+
 
 
 
@@ -5491,6 +5571,8 @@ and the fact that $\Omega_G^{a,op}\downarrow_{\mathsf r}C$ is a groupoid, combin
 \]
 as desired.
 
+\end{proof}
+
 % Repeating the above analysis for $L_1[k](C)$, we find
 % \[
 % L_1[k](C) \simeq \coprod\limits_{[T] \in \Omega_G^{a,op}[k](C)/\simeq} \left( \colim_{\mathsf{pc}(V(T))}Q[\bar u]^{N^e} \right) \otimes_{\mathrm{Aut}(T)}\mathrm{Aut}(C),
@@ -5529,7 +5611,7 @@ as desired.
 % [u]^{\Box \mathbb V_{G,in}(T)}: Q[u]^{\mathbb V_{G,in}(T)} \to \bigotimes_{v\in V_{G,in}(T)}Y_1(T_v)),
 % \]
 % as desired.
-\end{proof}
+
 
 
 
