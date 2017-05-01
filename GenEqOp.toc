@@ -1,3 +1,33 @@
+
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Basic definitions}{2}{section.2}
+\contentsline {section}{\numberline {3}Planar and tall maps}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Planar structures}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Substitution}{8}{subsection.3.3}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Planar strings}{15}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}A monad on spans}{17}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{20}{subsection.4.5}
+\contentsline {section}{\numberline {5}Free extensions}{24}{section.5}
+\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{24}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{25}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{27}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{29}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}The category of extension trees}{33}{subsection.5.5}
+\contentsline {section}{\numberline {6}Filtration of cellular extensions}{38}{section.6}
+\contentsline {subsection}{\numberline {6.1}Filtration pieces}{38}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Notation}{40}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Filtration Result}{41}{subsection.6.3}
+\contentsline {section}{\numberline {7}Model Structures on Genuine Operads}{43}{section.7}
+\contentsline {subsection}{\numberline {7.1}Weak Indexing Systems}{43}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Semi Model Structures on Genuine Operads}{44}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}True Model Structures}{45}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Preservation of Cofibrant Objects}{45}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Cofibrant Symmetric Collections}{46}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}$G$-Operads}{46}{subsubsection.7.5.1}
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Basic definitions}{2}
 \contentsline {subsection}{\numberline {2.1}Grothendieck constructions}{2}
@@ -31,3 +61,4 @@
 \contentsline {subsection}{\numberline {8.4}Preservation of Cofibrant Objects}{50}
 \contentsline {subsection}{\numberline {8.5}Cofibrant Symmetric Collections}{51}
 \contentsline {subsubsection}{\numberline {8.5.1}$G$-Operads}{51}
+
