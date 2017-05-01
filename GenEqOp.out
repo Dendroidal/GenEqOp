@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Basic definitions}{}% 2
+\BOOKMARK [1][-]{section.3}{Planar and tall maps}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Planar structures}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Outer faces and tall maps}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Substitution}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{The genuine equivariant operad monad}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Wreath product over finite sets}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Equivariant leaf-root and vertex functors}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Planar strings}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{A monad on spans}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.5}{The free genuine operad monad}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Free extensions}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Extensions over general monads}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Labeled planar strings}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.3}{Bar constructions on spans}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.4}{Transferring simplicial colimits of left Kan extensions}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.5}{The category of extension trees}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{Filtration of cellular extensions}{}% 19
+\BOOKMARK [2][-]{subsection.6.1}{Filtration pieces}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.2}{Notation}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.3}{Filtration Result}{section.6}% 22
+\BOOKMARK [1][-]{section.7}{Model Structures on Genuine Operads}{}% 23
+\BOOKMARK [2][-]{subsection.7.1}{Weak Indexing Systems}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.2}{Semi Model Structures on Genuine Operads}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.3}{True Model Structures}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.4}{Preservation of Cofibrant Objects}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.5}{Cofibrant Symmetric Collections}{section.7}% 28
+\BOOKMARK [3][-]{subsubsection.7.5.1}{G-Operads}{subsection.7.5}% 29
