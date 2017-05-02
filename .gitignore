@@ -50,3 +50,8 @@ GenEqOp.log
 GenEqOp.pdf
 
 *.tex#
+GenEqOp.aux
+GenEqOp.bbl
+GenEqOp.toc
+GenEqOp.aux
+GenEqOp.out
