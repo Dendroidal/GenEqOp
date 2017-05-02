@@ -5705,9 +5705,10 @@ This section establishes some useful properties of the model structures associat
 	We note that for any fixed group $G$, families form a lattice, with the order given by inclusion, and meet and join given by intersection and union, respectively.
 \end{remark}
 
-We now recall the following fundamental notion and result.
 
-{\color{blue} add Stephan reference}
+
+We now recall the following fundamental notion and result
+(cf. \cite[Prop. 2.6]{Ste16}).
 
 \begin{definition}\label{CELL DEF}
 	$\mathcal{V}$ is said to have \textit{cellular fixed points} if:
@@ -5721,13 +5722,13 @@ We now recall the following fundamental notion and result.
 \end{definition}
 
 
-\begin{theorem}
+\begin{proposition}
 	If $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points, then for any finite group $G$ and family $\mathcal{F}$, there is a model structure $\mathcal{V}^G_{\mathcal{F}}$ on the category 
 	$\mathcal{V}^G$, called the 
 	\textbf{$\mathcal{F}$-model structure}
 	such that both weak equivalences and fibrations are determined by the fixed points $(\minus)^H$ for 
 	$H \in \mathcal{F}$.
-\end{theorem}
+\end{proposition}
 
 We will also make use of the following strengthenings of
 conditions (ii) (iii) in Definition \ref{CELL DEF}.
@@ -6141,9 +6142,10 @@ Proposition \ref{FGTRIGHT PROP}.
 	one has that $f^{\square n}$ is a cofibration (resp. trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
+
 Our proof of Proposition \ref{POWERF PROP} will be essentially a repetition of the main argument in the proof of
-{\color{green} Pe16 Thm1.2}.
-However, both for the sake of completeness and to stress that the argument is independent of the (fairly technical) model structures in {\color{green}, Pe14}, we include an abridged version of the proof below, the key ingredient 
+\cite[Thm. 1.2]{Pe16}.
+However, both for the sake of completeness and to stress that the argument is independent of the (fairly technical) model structures in \cite{Pe16}, we include an abridged version of the proof below, the key ingredient 
 of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor. 
 
 \begin{proof}
@@ -6181,7 +6183,8 @@ Briefly, (\ref{COMPNFOLDFACT EQ}) follows from suitable $\Sigma_n$-symmetric con
 $P_0 \subset P_1 \subset \cdots \subset P_n$
 of the poset $P_n = (0 \to 1 \to 2)^{\times n}$ 
 where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_i$ is obtained from $P_{i-1}$ by adding the ``tuples with $n-i$ $1$-coordinates and $i$ $2$-coordinates''.
-Additional details concerning this filtration appear in the proof of {\color{green} Pe16 Lemma 4.8}.
+Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
+
 
 The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations. As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
@@ -6248,9 +6251,8 @@ X_{\beta}^{\otimes n}$
 is precisely the map $k_0$ of (\ref{COMPNFOLDFACT EQ}) for 
 $g=\bar{f}_{\beta}$, $h=f_{\beta}$, this last map is the composite $k_nk_{n-1}\cdots k_1$ so that the result now follows from (\ref{COMPNFOLDFACTPUSH EQ}) combined with 
 (\ref{LTIMESPRODQUI EQ}), the induction hypothesis applied to $\bar{f}_{\beta}$, the fact that $f_{\beta}^{\square k}$ is a pushout of $i_{\beta}^{\square k}$
-(cf. {\color{green} Pe16 Lemma 4.11}) and the cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
+(cf. \cite[Lemma 4.11]{Pe16}) and the cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
 \end{proof}
-
 
 
 We will also need to understand the fixed points of $f^{\square n}$ for general subgroups $K \leq \Sigma_n \wr G$.
@@ -6382,7 +6384,7 @@ $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
 and the result now follows.
 \end{proof}
 
-{\color{red} HERE}
+
 
 
 \subsection{$G$-graph families and trees}
@@ -6731,7 +6733,8 @@ $(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
 	In light of Remark \ref{VACUOUSNESS REM} any weak coefficient system must contain the $1$-corollas $(G/H) \cdot C_1$.
 \end{remark}
 
-The notion of indexing system in Definition \ref{INDEXSYS DEF} matches the eponymous notion first introduced in {\color{green} BH}, though packaged quite differently.
+The notion of indexing system in Definition \ref{INDEXSYS DEF} matches the eponymous notion first introduced in 
+\cite[Def. 3.22]{BH15}, though packaged quite differently.
 To justify this claim, we need the following lemma.
 
 
@@ -6758,7 +6761,7 @@ where each inclusion $T_i \to T_{i+1}$ misses exactly one inner edge orbit. The 
 
 
 \begin{remark}
-	In the language of {\color{green} BH}, the isomorphism classes $\Sigma_{\mathcal{F}}$ are instead encoded by 
+	In the language of \cite{BH15}, the isomorphism classes $\Sigma_{\mathcal{F}}$ are instead encoded by 
 	$H$-sets. Namely, a $H$-set with orbital decomposition $K_1/H \amalg \cdots \amalg K_n/H$ corresponds to a $G$-tree with orbital representation as follows.
 \begin{equation}
 \begin{tikzpicture}
@@ -6824,7 +6827,7 @@ Definition \ref{INDEXSYS DEF}
 needs only be stated for trees with a single root orbit, a single inner edge orbit (in fact, we can further assume a single leaf edge orbit), showing that under those assumptions the closure condition in 
 Definition \ref{INDEXSYS DEF}
 is indeed equivalent to the self-induction condition of 
-{\color{green} BH}.
+\cite{BH15}.
 \end{remark}
 
 
@@ -6851,12 +6854,15 @@ is a left Quillen functor.
 
 \begin{remark}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
-coincides with Lemma 5.9 of {\color{green} BerMoer}. Moreover, it is not hard to leverage that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas. However, the reader of {\color{green} BerMoer} may note that the proof therein is technically easier, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families. Indeed, this is reflected 
+coincides with \cite[Lemma 5.9]{BM08}.
+Moreover, it is not hard to leverage that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas.
+However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
+Indeed, this is reflected 
 on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
 uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
 to deduce the much simpler condition
 $\Gamma \cap \prod \Sigma_{T_i} = \**$
-that would suffice for the direct generalization of {\color{green} BerMoer} suggested above.
+that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} suggested above.
 It it thus natural to wonder if a suitably simpler analogue
 of (\ref{KEYLEMMAGECOR EQ}) might have been used, with the most natural candidate being the condition  
 \begin{equation}\label{WRONGCONJ}
@@ -6868,7 +6874,7 @@ However, the following example shows that
 (\ref{WRONGCONJ}) 
 is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
 and $\mathcal{F}$ be the indexing system generated
-(described in the $H$-set language of {\color{green} BH}) by the $G$-set $G/\Sigma_3$.
+(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
 Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
 Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
 \begin{equation}
