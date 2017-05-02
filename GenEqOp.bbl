@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{BM08}
+C.~Berger and I.~Moerdijk.
+\newblock On an extension of the notion of {R}eedy category.
+\newblock {\em Math. Z.}, 269(3-4):977--1004, 2011.
+
 \bibitem{BH15}
 A.~J. Blumberg and M.~A. Hill.
 \newblock Operadic multiplications in equivariant spectra, norms, and
@@ -17,6 +22,11 @@ S.~Mac~Lane.
 \newblock {\em Categories for the working mathematician}, volume~5 of {\em
   Graduate Texts in Mathematics}.
 \newblock Springer-Verlag, New York, second edition, 1998.
+
+\bibitem{Pe16}
+L.~A. Pereira.
+\newblock Cofibrancy of operadic constructions in positive symmetric spectra.
+\newblock {\em Homology Homotopy Appl.}, 18(2):133--168, 2016.
 
 \bibitem{Pe17}
 L.~A. Pereira.
