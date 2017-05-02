@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  2 MAY 2017 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  2 MAY 2017 14:21
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -973,7 +973,11 @@ librarydecorations.code.tex"
 \tikz@lib@dec@box=\box47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathreplacing.code.tex")) (GenEqOp.aux)
+ecorations.pathreplacing.code.tex")) (GenEqOp.aux
+
+LaTeX Warning: Label `GENUINE_SEMI_VOP_G_THM' multiply defined.
+
+)
 \openout1 = `GenEqOp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -990,8 +994,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 32.
@@ -1160,55 +1163,62 @@ Overfull \hbox (13.09369pt too wide) detected at line 5139
 []
  []
 
-[44] [45] [46] [47] [48]
-Overfull \hbox (18.46295pt too wide) detected at line 5736
+[44] [45]
+
+LaTeX Warning: Command \O invalid in math mode on input line 5515.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 5517.
+
+[46] [47] [48] [49] [50]
+Overfull \hbox (18.46295pt too wide) detected at line 5944
 \OML/cmm/m/it/9 []\OMX/MnSymbolE/m/n/9 à[]ç \U/MnSymbolD/m/n/9 ` \OMS/MnSymbol
 S/m/n/9 F \U/MnSymbolA/m/n/9  []  []  []  \OML/cmm/m/it/9 []\OMX/MnSymbolE
 /m/n/9 à[]ç \U/MnSymbolD/m/n/9 ` \OMS/MnSymbolS/m/n/9 F
  []
 
-[49] [50] [51]
+[51] [52] [53]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6182.
+(hyperref)                removing `math shift' on input line 6390.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6182.
+(hyperref)                removing `math shift' on input line 6390.
 
-[52] [53] [54] [55] [56]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 6770--6770
+[54] [55] [56] [57] [58]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 6978--6978
 [][] 
  []
 
-[57]
+[59]
 
-LaTeX Warning: Command \O invalid in math mode on input line 6798.
-
-
-LaTeX Warning: Command \O invalid in math mode on input line 6800.
+LaTeX Warning: Command \O invalid in math mode on input line 7006.
 
 
-LaTeX Warning: Reference `FILTRATION_THEOREM' on page 58 undefined on input lin
-e 6840.
+LaTeX Warning: Command \O invalid in math mode on input line 7008.
 
-[58] [59]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 7029--7029
+
+LaTeX Warning: Reference `FILTRATION_THEOREM' on page 60 undefined on input lin
+e 7048.
+
+[60] [61]
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 7237--7237
 [][] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7069.
+(hyperref)                removing `math shift' on input line 7277.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7069.
+(hyperref)                removing `math shift' on input line 7277.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 7071.
+LaTeX Warning: Command \O invalid in math mode on input line 7279.
 
-(GenEqOp.bbl [60]
+(GenEqOp.bbl [62]
 Underfull \hbox (badness 10000) in paragraph at lines 22--26
 []\OT1/cmr/m/n/9 L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-able at
 :
@@ -1220,100 +1230,91 @@ Underfull \hbox (badness 2035) in paragraph at lines 33--36
 .  Avail-able at:
  []
 
-) [61]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7134.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7134.
+) [63]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7342.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7342.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7134.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7134.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7342.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7342.
 
+Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
+(rerunfilecheck)             Checksum: 273EC15510D556F8886013170026C8BE;2601.
 
-
-Package rerunfilecheck Warning: File `GenEqOp.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `GenEqOp.out':
-(rerunfilecheck)             Before: A78A17DCD07497E604851CB549116627;2510
-(rerunfilecheck)             After:  AE5CE6E3E8A9D6D5004A34C680E61885;2592.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7134.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7342.
  ) 
 Here is how much of TeX's memory you used:
- 34748 strings out of 493334
- 702143 string characters out of 3130222
- 757136 words of memory out of 3000000
- 37286 multiletter control sequences out of 15000+200000
- 37356 words of font info for 139 fonts, out of 3000000 for 9000
+ 34864 strings out of 493334
+ 704669 string characters out of 3130222
+ 757366 words of memory out of 3000000
+ 37374 multiletter control sequences out of 15000+200000
+ 38596 words of font info for 143 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2784s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsubsection.8.4.1} has been referenced but does
- not exist, replaced by a fixed one
-
- <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi60
-0\MnSymbolS5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publi
-c\mnsymbol\dpi600\MnSymbolS10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\public\mnsymbol\dpi600\MnSymbolE10.pk> <C:\Users\luisa\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC10.pk> <C:\Users\l
-uisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC1
-2.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
-dpi600\MnSymbolD5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
-public\mnsymbol\dpi720\MnSymbolC12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9
-\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\User
-s\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbo
-lE8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbo
-l\dpi600\MnSymbolC8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\public\mnsymbol\dpi600\MnSymbolE5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD6.pk> <C:\Users\luisa\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA5.pk> <C:\Use
-rs\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymb
-olF9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
-pi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
-lic\mnsymbol\dpi600\MnSymbolE6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Users\luisa\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\lu
-isa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD9.
-pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dp
-i600\MnSymbolE9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
-blic\mnsymbol\dpi600\MnSymbolC9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.pk> <C:\Users\luisa\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users\l
-uisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS9
-.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\d
-pi600\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (61 pages, 983219 bytes).
+ <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
+600\MnSymbolC10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\mnsymbol\dpi600\MnSymbolC12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD5.pk> <C:\Users\luisa\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS5.pk> <C:\Users\
+luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS
+10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
+\dpi600\MnSymbolE10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\public\mnsymbol\dpi720\MnSymbolC12.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD8.pk> <C:\Users\luisa\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolF6.pk> <C:\Us
+ers\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSym
+bolE8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsym
+bol\dpi600\MnSymbolC8.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\public\mnsymbol\dpi600\MnSymbolE5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD6.pk> <C:\Users\luisa\AppDa
+ta\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA5.pk> <C:\U
+sers\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSy
+mbolF9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\tcrm0900.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
+ublic\mnsymbol\dpi600\MnSymbolE6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA6.pk> <C:\Users\luisa\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolA9.pk> <C:\Users\
+luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD
+9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
+dpi600\MnSymbolE9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+public\mnsymbol\dpi600\MnSymbolC9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC5.pk> <C:\Users\luisa\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS6.pk> <C:\Users
+\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbol
+S9.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
+\dpi600\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/symbols/msbm7.pfb>
+Output written on GenEqOp.pdf (63 pages, 1006028 bytes).
 PDF statistics:
- 1628 PDF objects out of 1728 (max. 8388607)
- 453 named destinations out of 1000 (max. 500000)
- 293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1683 PDF objects out of 1728 (max. 8388607)
+ 477 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 
