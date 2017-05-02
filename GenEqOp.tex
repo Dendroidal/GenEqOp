@@ -212,7 +212,7 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 
 Throughout we will work with trees possessing \textit{planar structures} or, more intuitively, trees embedded into the plane.
 
-Our preferred model for trees will be that of broad posets first introduced by Weiss in \cite{We12} and further worked out by the second author in \cite{Pe16b}. We now define planar structures in this context.
+Our preferred model for trees will be that of broad posets first introduced by Weiss in \cite{We12} and further worked out by the second author in \cite{Pe17}. We now define planar structures in this context.
 
 
 \begin{definition}\label{PLANARIZE DEF}
@@ -278,7 +278,7 @@ To do so, we first introduce some notation.
 and refer to this poset as the \textit{input path of $e$}.
 \end{notation}
 
-We will repeatedly use the following, which is a consequence of \cite[Cor. 5.26]{Pe16b}.
+We will repeatedly use the following, which is a consequence of \cite[Cor. 5.26]{Pe17}.
 
 \begin{lemma}\label{INCOMPNOTOP}
 If $e \leq_d f$, $e \leq_d f'$, then $f,f'$ are $\leq_d$-comparable. 
@@ -451,7 +451,7 @@ $e \vee g = c$ and transitivity follows.
 	Definition \ref{PLANARIZE DEF} readily extends to forests $F \in \Phi$. The analogue of Proposition \ref{PLANARIZATIONCHAR PROP} then states that the data of a planar structure is 
 equivalent to total orderings of the nodes of $F$ together with a total ordering of its set of roots.
 Indeed, this follows by either adapting the proof above or by noting that planar structures on $F$ are clearly in bijection with planar structures on the join tree $F \star \eta$ 
-(cf. \cite[Def. 7.44]{Pe16b}), which adds a single edge $\eta$ to $F$, serving as the (unique) root of $F \star \eta$.
+(cf. \cite[Def. 7.44]{Pe17}), which adds a single edge $\eta$ to $F$, serving as the (unique) root of $F \star \eta$.
 \end{remark}
 
 
@@ -657,12 +657,12 @@ For example, when $G = \mathbb{Z}_{/4}$, in both diagrams below the orbital repr
 	A morphism $S \xrightarrow{\varphi} T$ in $\Omega$ that is compatible with the planar structures $\leq_p$ is called a 
 	\textit{planar map}.
 	
-	More generally, a morphism $F \to G$ in the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe16b}) compatible with the planar structures $\leq_p$.
+	More generally, a morphism $F \to G$ in the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
 \end{definition}
 
 
 \begin{remark}
-	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe16b} and its converse, since non independent maps do not reflect
+	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect
  $\leq_d$ inequalities.
  
  We note that in the $\Omega_G$ case a map $\varphi$ is independent iff $\varphi$ does not factor through a non trivial quotient iff $\varphi$ is injective on each edge orbit.
@@ -703,7 +703,7 @@ The result now follows from (the forest version of) Proposition
 
 
 
-In preparation for our discussion of the substitution operation in Section \ref{SUBS SEC}, we now recall some basic notions and results concerning outer subtrees and tree grafting, as in \cite[Section 5]{Pe16b}.
+In preparation for our discussion of the substitution operation in Section \ref{SUBS SEC}, we now recall some basic notions and results concerning outer subtrees and tree grafting, as in \cite[Section 5]{Pe17}.
 
 \begin{definition}
 	Let $T \in \Omega$ be a tree and 
@@ -752,18 +752,18 @@ and edge tuple $\underline{e}$;
 
 
 \begin{proof}
-We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe16b}: more precisely, 
+We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe17}: more precisely, 
 $T_{\underline{e} \leq e} = (T^{\leq e})_{\less \underline{e}}$
-in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the root tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe16b}.
+in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the root tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe17}.
 
  (b) follows from (a), which shows that $\underline{e} \leq e$ can be recovered from
 $T_{\underline{e} \leq e}$.
 
- (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe16b}, which states that the $\leq_d$ relations on $S,T$ coincide.
+ (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe17}, which states that the $\leq_d$ relations on $S,T$ coincide.
  
   Since by (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq v}$, 
-(d) is a restatement of \cite[Prop. 5.15]{Pe16b}. 
-%Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe16b})
+(d) is a restatement of \cite[Prop. 5.15]{Pe17}. 
+%Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
 
 \begin{definition}
@@ -775,7 +775,7 @@ where $l_{(\minus)}$ denotes the leaf tuple and $r_{(\minus)}$ the root.
 \end{definition}
 
 
-The following is a restatement of \cite[Cor. 5.24]{Pe16b}
+The following is a restatement of \cite[Cor. 5.24]{Pe17}
 
 \begin{proposition}\label{TALLOUTERDEC COR}
 	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphism,
@@ -1199,8 +1199,8 @@ $\{U_i\} = \{U_i|U_i \hookrightarrow V\}
 \amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), and thus uniqueness too follows by the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
-by \cite[Lemma 5.33]{Pe16b} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
-\cite[Cor. 5.39]{Pe16b} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the tree $T$ is uniquely determined.
+by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
+\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the tree $T$ is uniquely determined.
 
 (iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique decomposition 
 $T \twoheadrightarrow \bar{T} \hookrightarrow U$
@@ -5463,8 +5463,11 @@ are groupoids.
 \newpage
 
 
+
+
 \section{Cofibrancy}\label{COFIB SEC}
 
+{\color{red} HERE}
 
 \subsection{Families of subgroups}
 
@@ -6734,7 +6737,7 @@ In order to encode the homotopical information inspired by $N_\infty$-operads di
 
 \subsection{Weak Indexing Systems}
 
-We recall certain constructions found in \cite{Per17} relating graph subgroups, finite $H$-sets, and systems of categories.
+We recall certain constructions found in \cite{Pe17} relating graph subgroups, finite $H$-sets, and systems of categories.
 \begin{definition}
   A \textit{$G$-graph subgroup} of $G\times \Sigma_n$ is a subgroup $\Lambda \leq G\times \Sigma_n$ such that $\Lambda \cap \Sigma_n = e$. Equivalently, $\Gamma = \Gamma(\phi)$ is the graph of some homomorphism $G \geq H \xrightarrow{\phi} \Sigma_n$. 
 \end{definition}
@@ -6776,7 +6779,7 @@ Fix a $G$-vertex family $\F = \set{\F_n}$. For the following section, we fix the
   \begin{enumerate}
   \item $\V$ is a cofibrantly-generated Cartesian symmetric monoidal model category, and
   \item $\V$ is has cellular fixed point functors for all finite grouops %for each $T\in\Omega$, $\V^{G\times \Sigma_T}$ is $\F_T$-cellular 
-(c.f. \cite{Stephan16}).
+(c.f. \cite{Ste16}).
   \end{enumerate}
 %where $\Sigma_T := \mathrm{Aut}(T)$, and $\F_T$ is the family of $G$-graph subgroups of $G\times \Sigma_T$ such that the induced action on $T$ defines an $\F$-admissible tree.
 \end{definition}
@@ -6927,7 +6930,7 @@ If any $f(Gv)$ were trivial, then, during the appropriate step above, the result
 
 % Only transfer across the left-most adjunction requires proof. We will use the following result of White-Yau, following Fresse and Kan:
 % \begin{theorem}
-%   [{\cite[Theorem 2.2.2]{WY15}}]
+%   [{\cite[Theorem 2.2.2]{WhYa15}}]
 %   \label{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM}
 %   Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb F}(\mathcal C) \leftrightarrows \C: \mathbb F$ for some monad $\mathbb F$ on $\mathcal C$. Further assume that, for any $\mathbb F(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
 % \[
@@ -7016,7 +7019,7 @@ q^*\lambda: V_G(G \cdot T_0) \to V_G(G \cdot T_0/N) \xrightarrow{\lambda} \set{Y
 
 We further repackage $\Omega_G^e[T_0]$. In particular, we observe that if there is a map $(T',\lambda') \to (T'', \lambda'')$ in $\Omega_G^e[T_0]$, it is uniquely determined by the underlying quotient map $T' \to T''$. Indeed, $\Omega_G^e[T_0](T',T'')$ is the subset of $\Omega_{\Gamma_{T_0}}(G\times \Sigma_{T_0}/N', G\times\Sigma_{T_0}/N'')$, where $T' \simeq G\cdot T_0/N'$ and $T'' \simeq G\cdot T_0/N''$, of those maps $q$ such that $v''\in V_Y(T'')$ implies $q^{-1}(v'')\subseteq V_Y(T')$. 
 
-We can now prove a proposition, modeled on the proof of \cite[Theorem 2.10]{Stephan16}.
+We can now prove a proposition, modeled on the proof of \cite[Theorem 2.10]{Ste16}.
 \begin{proposition}
  If $X\in \V^{\Omega_G^e[T_0]^{op}}$ is cofibrant, then $\eta_X: X \to \tau_*\tau^*X$ is an isomorphism.
 \end{proposition}
