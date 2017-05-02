@@ -26,7 +26,7 @@
 \contentsline {subsection}{\numberline {7.1}Families of subgroups}{49}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{51}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{54}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems}{57}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.4}Indexing systems}{56}{subsection.7.4}
 \contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{59}{section.8}
 \contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{59}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Semi Model Structures on Genuine Operads}{60}{subsection.8.2}

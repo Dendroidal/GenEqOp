@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  2 MAY 2017 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  2 MAY 2017 14:27
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -973,11 +973,7 @@ librarydecorations.code.tex"
 \tikz@lib@dec@box=\box47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathreplacing.code.tex")) (GenEqOp.aux
-
-LaTeX Warning: Label `GENUINE_SEMI_VOP_G_THM' multiply defined.
-
-)
+ecorations.pathreplacing.code.tex")) (GenEqOp.aux)
 \openout1 = `GenEqOp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -994,7 +990,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 32.
@@ -1171,7 +1168,7 @@ LaTeX Warning: Command \O invalid in math mode on input line 5515.
 LaTeX Warning: Command \O invalid in math mode on input line 5517.
 
 [46] [47] [48] [49] [50]
-Overfull \hbox (18.46295pt too wide) detected at line 5944
+Overfull \hbox (18.46295pt too wide) detected at line 5942
 \OML/cmm/m/it/9 []\OMX/MnSymbolE/m/n/9 ˆ[] \U/MnSymbolD/m/n/9 ` \OMS/MnSymbol
 S/m/n/9 F \U/MnSymbolA/m/n/9  []  []  []  \OML/cmm/m/it/9 []\OMX/MnSymbolE
 /m/n/9 ˆ[] \U/MnSymbolD/m/n/9 ` \OMS/MnSymbolS/m/n/9 F
@@ -1180,43 +1177,43 @@ S/m/n/9 F \U/MnSymbolA/m/n/9  []  []  []  \OML/cmm/m/it/9 []\OMX/MnSymbolE
 [51] [52] [53]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6390.
+(hyperref)                removing `math shift' on input line 6388.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6390.
+(hyperref)                removing `math shift' on input line 6388.
 
 [54] [55] [56] [57] [58]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 6978--6978
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 6976--6976
 [][] 
  []
 
 [59]
 
+LaTeX Warning: Command \O invalid in math mode on input line 7004.
+
+
 LaTeX Warning: Command \O invalid in math mode on input line 7006.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 7008.
-
-
 LaTeX Warning: Reference `FILTRATION_THEOREM' on page 60 undefined on input lin
-e 7048.
+e 7046.
 
 [60] [61]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 7237--7237
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 7235--7235
 [][] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7277.
+(hyperref)                removing `math shift' on input line 7275.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7277.
+(hyperref)                removing `math shift' on input line 7275.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 7279.
+LaTeX Warning: Command \O invalid in math mode on input line 7277.
 
 (GenEqOp.bbl [62]
 Underfull \hbox (badness 10000) in paragraph at lines 22--26
@@ -1231,11 +1228,11 @@ Underfull \hbox (badness 2035) in paragraph at lines 33--36
  []
 
 ) [63]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7342.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7342.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7340.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7340.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7342.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7342.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7340.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7340.
 
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
 (rerunfilecheck)             Checksum: 273EC15510D556F8886013170026C8BE;2601.
@@ -1244,15 +1241,15 @@ Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7342.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7340.
  ) 
 Here is how much of TeX's memory you used:
- 34864 strings out of 493334
- 704669 string characters out of 3130222
- 757366 words of memory out of 3000000
- 37374 multiletter control sequences out of 15000+200000
+ 34865 strings out of 493334
+ 704697 string characters out of 3130222
+ 757358 words of memory out of 3000000
+ 37375 multiletter control sequences out of 15000+200000
  38596 words of font info for 143 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2784s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1312,7 +1309,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (63 pages, 1006028 bytes).
+Output written on GenEqOp.pdf (63 pages, 1006505 bytes).
 PDF statistics:
  1683 PDF objects out of 1728 (max. 8388607)
  477 named destinations out of 1000 (max. 500000)
