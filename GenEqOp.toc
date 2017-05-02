@@ -22,15 +22,15 @@
 \contentsline {section}{\numberline {6}Model structures}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{43}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{46}{subsection.6.2}
-\contentsline {section}{\numberline {7}Cofibrancy}{49}{section.7}
-\contentsline {subsection}{\numberline {7.1}Families of subgroups}{49}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Pushout powers}{51}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{54}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems}{56}{subsection.7.4}
-\contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{59}{section.8}
-\contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{59}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Semi Model Structures on Genuine Operads}{60}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}True Model Structures}{61}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Preservation of Cofibrant Objects}{61}{subsection.8.4}
-\contentsline {subsection}{\numberline {8.5}Cofibrant Symmetric Collections}{62}{subsection.8.5}
-\contentsline {subsubsection}{\numberline {8.5.1}$G$-Operads}{62}{subsubsection.8.5.1}
+\contentsline {subsubsection}{\numberline {6.2.1}cofibrancy stuff}{50}{subsubsection.6.2.1}
+\contentsline {section}{\numberline {7}Cofibrancy}{51}{section.7}
+\contentsline {subsection}{\numberline {7.1}Families of subgroups}{51}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{56}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Indexing systems}{58}{subsection.7.4}
+\contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{61}{section.8}
+\contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{61}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}True Model Structures}{61}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Preservation of Cofibrant Objects}{61}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Cofibrant Symmetric Collections}{62}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}$G$-Operads}{62}{subsubsection.8.4.1}
