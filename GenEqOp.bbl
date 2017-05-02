@@ -1,12 +1,12 @@
 \begin{thebibliography}{1}
 
-\bibitem{BM03}
+\bibitem{BM08}
 C.~Berger and I.~Moerdijk.
-\newblock Axiomatic homotopy theory for operads.
-\newblock {\em Commentarii Mathematici Helvetici}, 78:805--831, 2003.
+\newblock On an extension of the notion of {R}eedy category.
+\newblock {\em Math. Z.}, 269(3-4):977--1004, 2011.
 
 \bibitem{BH15}
-A.~Blumberg and M.~Hill.
+A.~J. Blumberg and M.~A. Hill.
 \newblock Operadic multiplications in equivariant spectra, norms, and
   transfers.
 \newblock {\em Adv. Math.}, 285:658--708, 2015.
@@ -23,21 +23,21 @@ S.~Mac~Lane.
   Graduate Texts in Mathematics}.
 \newblock Springer-Verlag, New York, second edition, 1998.
 
-\bibitem{Pe16b}
+\bibitem{Pe16}
+L.~A. Pereira.
+\newblock Cofibrancy of operadic constructions in positive symmetric spectra.
+\newblock {\em Homology Homotopy Appl.}, 18(2):133--168, 2016.
+
+\bibitem{Pe17}
 L.~A. Pereira.
 \newblock Equivariant dendroidal sets.
 \newblock {Available at: \texttt{http://www.faculty.virginia.edu/luisalex/}},
   2016.
 
-\bibitem{Per17}
-L.~A. Pereira.
-\newblock Equivariant dendroidal sets.
-\newblock arXiv preprint: 1702.08119, 2017.
-
-\bibitem{Stephan16}
+\bibitem{Ste16}
 M.~Stephan.
 \newblock On equivariant homotopy theory for model categories.
-\newblock arXiv preprint: 1308.0856v3, 2016.
+\newblock {\em Homology Homotopy Appl.}, 18(2):183--208, 2016.
 
 \bibitem{We12}
 I.~Weiss.
