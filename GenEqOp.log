@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  2 MAY 2017 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.1)  3 MAY 2017 20:30
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1190,52 +1190,58 @@ LaTeX Warning: Command \O invalid in math mode on input line 5759.
 
 LaTeX Warning: Command \O invalid in math mode on input line 5762.
 
-[50] [51] [52]
-Overfull \hbox (18.46295pt too wide) detected at line 6051
-\OML/cmm/m/it/9 []\OMX/MnSymbolE/m/n/9 à[]ç \U/MnSymbolD/m/n/9 ` \OMS/MnSymbol
-S/m/n/9 F \U/MnSymbolA/m/n/9  []  []  []  \OML/cmm/m/it/9 []\OMX/MnSymbolE
-/m/n/9 à[]ç \U/MnSymbolD/m/n/9 ` \OMS/MnSymbolS/m/n/9 F
- []
+[50] [51] [52] [53] [54]
 
-[53] [54] [55]
+LaTeX Warning: Reference `STROIII LEM' on page 55 undefined on input line 6456.
+
+
+
+LaTeX Warning: Reference `PUSHFIX LEM' on page 55 undefined on input line 6458.
+
+
+
+LaTeX Warning: Reference `FIXEDDIAG LEM' on page 55 undefined on input line 645
+9.
+
+[55]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6498.
+(hyperref)                removing `math shift' on input line 6473.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 6498.
+(hyperref)                removing `math shift' on input line 6473.
 
 [56] [57] [58] [59] [60]
-Overfull \hbox (28.82947pt too wide) in paragraph at lines 7090--7090
+Overfull \hbox (28.82947pt too wide) in paragraph at lines 7065--7065
 [][] 
  []
 
 [61]
 
-LaTeX Warning: Command \O invalid in math mode on input line 7118.
+LaTeX Warning: Command \O invalid in math mode on input line 7093.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 7120.
+LaTeX Warning: Command \O invalid in math mode on input line 7095.
 
 
 LaTeX Warning: Reference `FILTRATION_THEOREM' on page 62 undefined on input lin
-e 7160.
+e 7135.
 
 [62] [63]
 
-LaTeX Warning: Citation `Stephan16' on page 64 undefined on input line 7352.
+LaTeX Warning: Citation `Stephan16' on page 64 undefined on input line 7327.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7411.
+(hyperref)                removing `math shift' on input line 7386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 7411.
+(hyperref)                removing `math shift' on input line 7386.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 7413.
+LaTeX Warning: Command \O invalid in math mode on input line 7388.
 
 (GenEqOp.bbl [64]
 Underfull \hbox (badness 10000) in paragraph at lines 32--36
@@ -1250,33 +1256,33 @@ Underfull \hbox (badness 2035) in paragraph at lines 43--46
  []
 
 ) [65]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7476.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7476.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7451.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7451.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7476.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7476.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7451.
 
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
-(rerunfilecheck)             Checksum: B56084952466345E9AA931E18927D376;2678.
+(rerunfilecheck)             Checksum: A97B822131AE83F62EB4F97802DE489D;2703.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7476.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7451.
  ) 
 Here is how much of TeX's memory you used:
- 34919 strings out of 493334
- 705858 string characters out of 3130222
- 757691 words of memory out of 3000000
- 37418 multiletter control sequences out of 15000+200000
- 38596 words of font info for 143 fonts, out of 3000000 for 9000
+ 34958 strings out of 493334
+ 706956 string characters out of 3130222
+ 762815 words of memory out of 3000000
+ 37464 multiletter control sequences out of 15000+200000
+ 38237 words of font info for 142 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,84p,3270b,2784s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi
 600\MnSymbolS7.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pub
 lic\mnsymbol\dpi600\MnSymbolC10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fo
-nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC12.pk> <C:\Users\luisa\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD5.pk> <C:\Users\
+nts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolD5.pk> <C:\Users\luisa\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolC12.pk> <C:\Users\
 luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\dpi600\MnSymbolS
 5.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol\
 dpi600\MnSymbolS10.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -1307,32 +1313,31 @@ S6.pk> <C:\Users\luisa\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\mnsymbol
 \public\mnsymbol\dpi600\MnSymbolC6.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (65 pages, 1038190 bytes).
+cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on GenEqOp.pdf (65 pages, 1027351 bytes).
 PDF statistics:
- 1738 PDF objects out of 2073 (max. 8388607)
- 488 named destinations out of 1000 (max. 500000)
+ 1720 PDF objects out of 1728 (max. 8388607)
+ 482 named destinations out of 1000 (max. 500000)
  309 words of extra memory for PDF output out of 10000 (max. 10000000)
 

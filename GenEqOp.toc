@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{43}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{46}{subsection.6.2}
 \contentsline {subsubsection}{\numberline {6.2.1}cofibrancy stuff}{50}{subsubsection.6.2.1}
-\contentsline {section}{\numberline {7}Cofibrancy}{51}{section.7}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{51}{section.7}
 \contentsline {subsection}{\numberline {7.1}Families of subgroups}{51}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{56}{subsection.7.3}
