@@ -6074,18 +6074,32 @@ $f^{\square n}$ using $2$-out-of-$3$ and the filtration in
 the proof of Proposition \ref{POWERF PROP}.
 \end{remark}
 
-{\color{red} HERE}
+
+We now turn to describing the symmetric power analogue of 
+Definition \ref{EXTERINT DEF}.
+
+We start with some notation. Letting 
+$\lambda$ be a partition 
+$E = \lambda_1 \amalg\cdots \amalg \lambda_k$
+of a finite set $E$, 
+we write 
+ $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
+ \Sigma_{\lambda_k} \leq \Sigma_E$ for the subgroup of permutations preserving $\lambda$. 
+ In addition, given any $e \in E$ we write
+$\lambda_e$ for the partition $E = \{e\} \amalg (E-e)$, so that $\Sigma_{\lambda_e}$ is then the isotropy of $e$.
+
+
 
 \begin{definition}
  Let $\mathcal{F}$ be a family of $G$,
  $E$ a finite set and $e \in E$ any fixed element.
  
-We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
+We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to be the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
 \begin{equation}\label{FLTIMESN EQ}
 	\mathcal{F}^{\ltimes E}
 		=
 	\left(
-	\iota_{ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G}
+	\iota_{\Sigma_{\lambda_e} \wr G}
 	\right)_{\**}
 	\left(
 		\left(
@@ -6094,36 +6108,52 @@ We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to the family of
 	\right),
 \end{equation}
 where $\iota$ is the inclusion 
-$ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G 
+$\Sigma_{\lambda_e} \wr G
 	\to 
 \Sigma_E \wr G$
-and $\pi$ is the projection
-$\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+and $\pi$ the projection
+$\Sigma_{\lambda_e} \wr G = \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$.
 
-More explicitly, noting that in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, it follows that when computing $\iota$ one needs only consider conjugates by permutations of $E$ not fixing $e$, so that one has that
+
+More explicitly, since in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
+$\left( \iota_{\Sigma_{\lambda_e} \wr G}\right)_{\**}$
+one needs only conjugate by coset representatives of 
+$\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so that
+
 \begin{equation}\label{FLTIMESN2 EQ}
 	K \in \mathcal{F}^{\ltimes E} 
 	\text{ iff }
 	\underset{e \in E}{\forall} \pi_{G}
 	\left(
-		K \cap \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+		K \cap \left( \Sigma_{\lambda_e} \wr G \right)
 	\right)
 	\in \mathcal{F},
 \end{equation}
-showing that in particular the definition in (\ref{FLTIMESN EQ})
+showing that in particular (\ref{FLTIMESN EQ})
 is independent of the choice of $e \in E$.
 \end{definition}
 
 
+
+\begin{remark}
+The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
+is best understood by working through this section backwards:
+the study of the interactions between equivariant trees and graph families, namely Lemma \ref{KEYLEMMAGECO LEM}, requires the study of the families $\mathcal{F}^{\ltimes_G n}$ in Notation \ref{SEMIDIRG NOT}, which are variants of the $\mathcal{F}^{\ltimes n}$ construction for graph families.
+It then suffices, and is notationally far more convenient, to establish the required results first for the $\mathcal{F}^{\ltimes n}$ families and then translate them to the $\mathcal{F}^{\ltimes_G n}$ families.
+\end{remark}
+
+
 \begin{proposition}
-	One has 
+	Writing 
+	$\iota \colon \Sigma_E \times \Sigma_{\bar{E}} \to
+	\Sigma_{E \amalg \bar{E}}$ for the inclusion, one has 
 	\begin{equation}\label{LTIMESPRODINC EQ}
 	\mathcal{F}^{\ltimes E}
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}
 		\subset
-	\iota^{\**}(\mathcal{F}^{\ltimes E \amalg \bar{E}}).
+	\iota^{\**}\left(\mathcal{F}^{\ltimes E \amalg \bar{E}}\right).
 	\end{equation}
 	Hence, the following is a left Quillen bifunctor.
 \begin{equation}\label{LTIMESPRODQUI EQ}
@@ -6140,6 +6170,7 @@ is independent of the choice of $e \in E$.
 \end{proposition}
 
 
+
 \begin{proof}
 	Let 
 	$K \in 
@@ -6147,36 +6178,43 @@ is independent of the choice of $e \in E$.
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}	
 	$
-	and $e \in E$. Since
+	and $e \in E$. 
+	We write $\lambda_e$ for the partition of $E \amalg \bar{E}$
+	and $\lambda_e^E$ for the partition of $E$.
+	One then has
 \begin{equation}
 \pi_G
 \left(
-	K \cap \Sigma_{\{e\}} \times G
-		\times
-	\Sigma_{E \amalg \bar{E} - e} \wr G
-\right)
+	K \cap \left( \Sigma_{\lambda_e} \wr G \right) \right)
 	=
 \pi_G
 \left(
 	\pi_{\Sigma_E \wr G}(K)
-	\cap \Sigma_{\{e\}} \times G
-		\times
-	\Sigma_{E - e} \wr G
+	\cap \left( \Sigma_{\lambda_e^E} \wr G \right)
 \right),
 \end{equation}
-it follows that $K$ 
+where on the right we write
+$\pi_{\Sigma_E \wr G} \colon
+\Sigma_E \wr G \times \Sigma_{\bar{E}} \wr G
+\to 
+\Sigma_E \wr G$
+and 
+$\pi_G \colon \Sigma_{\lambda^E_e} \wr G
+=\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+\to G$. Therefore $K$ 
 satisfies (\ref{FLTIMESN2 EQ}) for 
 $\mathcal{F}^{\ltimes E \amalg \bar{E}}$
 since 
 $\pi_{\Sigma_E \wr G}(K)$ does so for 
-$\mathcal{F}^{\ltimes E}$. The case of $e \in \bar{E}$ is identical.
+$\mathcal{F}^{\ltimes E}$.
+The case of $e \in \bar{E}$ is identical.
 
 (\ref{LTIMESPRODQUI EQ}) simply combines 
 (\ref{EXTERINTADJ EQ}) and 
 Proposition \ref{FGTRIGHT PROP}.
 \end{proof}
 
-
+{\color{red} HERE}
 
 
 \begin{proposition}\label{POWERF PROP}
@@ -6460,12 +6498,12 @@ for the inclusion homomorphism
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
 \end{remark}
 
-
+\begin{notation}\label{SEMIDIRG NOT}
 Letting $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of $G \times \Sigma$ and $G \times \bar{\Sigma}$ we will write
 \[
 	\mathcal{F} \sqcap_G \bar{\mathcal{F}} 
 	= \Delta^{\**} (\mathcal{F} \sqcap \bar{\mathcal{F}} )
-	\qquad
+\qquad \qquad
 	\mathcal{F}^{\ltimes_G n} = \Delta^{\**} (\mathcal{F}^{\ltimes n})
 \]
 where $\Delta$ denotes either of the diagonal inclusions
@@ -6475,6 +6513,7 @@ G \times \Sigma \times G \times \bar{\Sigma}$
 or 
 $\Delta \colon G \times \Sigma_n \wr \Sigma \to 
 \Sigma_n \wr (G \times \Sigma)$.
+\end{notation}
 
 \begin{remark}\label{UNPACKINGSQCAP REM}
 	Unpacking Definition \ref{EXTERINT DEF} one has that 
