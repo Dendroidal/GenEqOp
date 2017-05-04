@@ -5456,19 +5456,6 @@ $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
 are groupoids.
 \end{proof}
 
-
-\subsection{Existence of (semi) model structures} 
-
- 
-In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$. 
-
-\todo[inline]{LUIS: these definition of ``$G$-graph subgroup'' and ``$G$-vertex family'' probably belong earlier in the paper, possibly the introduction. Though it could also make sense to mention them in the intro, and formally define them here} 
-
-\begin{theorem}
-  Kan theorem about transfering model structures
-  \todo[inline]{come back}
-\end{theorem}
-
 \subsection{Families of Subgroups}
 
 \todo[inline]{Luis: I think the basic discussion about families and cellularity should go here, so we can define the $\F$-model structures below.}
@@ -5490,28 +5477,33 @@ In order to encode the homotopical information inspired by $N_\infty$-operads di
   Suppose we are given a small category $\mathcal D$, a subcategory $\mathcal D' \subseteq \mathcal D$, and a familly $\F_d$ of subgroup of $\mathrm{Aut}(d)$ for each $d\in \mathcal D'$. We define the \textit{$\mathcal D'$-projective $\F$-model structure} on $\V^{\mathcal D}$, if it exists, to be the unique model structure where $f$ is a weak equivalence or fibration if and only if $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \mathcal D'$. Equivalently, this is the model structure transfered along either composite of adjunctions
   \[
   \begin{tikzcd}
-    \V^{\mathcal D}_{\mathcal D', \F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\mathcal D'}_\F \arrow[l, shift right, "i_!"'] \arrow[d, shift right]\\
-    \V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F} \arrow[r, shift right, "i^*"'] \arrow[u, shift right] & \V^{\mathrm{Ob}(\mathcal D')}_{\F} \arrow[l, shift right] \arrow[u, shift right]
+    \V^{\mathcal D}_{\mathcal D', \F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\mathcal D'}_\F \arrow[l, shift right, "i_!"] \arrow[d, shift right]\\
+    \V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F} \arrow[r, shift right, "i^*"'] & \V^{\mathrm{Ob}(\mathcal D')}_{\F}
   \end{tikzcd}
   \]
   where we give
   \begin{itemize}
-  \item $\V^{\mathrm{Ob}(\mathcal D')}_\F = \mathop{\prod}\limits_{d\in \mathcal D'}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, and
+  \item $\V^{\mathrm{Ob}(\mathcal D')}_\F = \mathop(\prod)\limits_{d\in \mathcal D'}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, and
   \item $\V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F}$ the transfered model structure from $\V^{\mathrm{Ob}(\mathcal D')}_\F$.
   \end{itemize}
   
-  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\mathcal D'$-projective \textit{genuine} model structure. 
+  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the \textit{$\mathcal D'$-projective genuine model structure.} 
 
-  If $\mathcal D' = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
+  If $\mathcal D' = \mathcal D$, we refer to the above as the \textit{projective $\F$-model structure}.
 \end{definition}
 
 \begin{remark}
-  \label{LEVEL_COFIB_REMARK}
   We record that any cofibration in $\V^{\mathcal D}_{\mathcal D', \F}$ is a level $\F_d$-cofibration as well, for all $d\in \mathcal D'$. 
 \todo[inline]{come back}
 \end{remark}
 
-For $\Op_G(\V)$, we will need a more fine-tuned understanding of more specific classes of subgroups.
+\subsection{Existence of (semi) model structures} 
+
+ 
+In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$. 
+
+\todo[inline]{LUIS: these definition of ``$G$-graph subgroup'' and ``$G$-vertex family'' probably belong earlier in the paper, possibly the introduction. Though it could also make sense to mention them in the intro, and formally define them here} 
+
 
 \begin{definition} 
  A \textit{$G$-graph subgroup} of $G\times \Sigma_n$ is a subgroup $\Lambda \leq G\times \Sigma_n$ such that $\Lambda \cap \Sigma_n = e$. Equivalently, $\Gamma = \Gamma(\phi)$ is the graph of some homomorphism $G \geq H \xrightarrow{\phi} \Sigma_n$.  
@@ -5526,9 +5518,7 @@ For $\Op_G(\V)$, we will need a more fine-tuned understanding of more specific c
 where each $\F_n$ is a \textit{family} of $G$-graph subgroups of $G\times \Sigma_n$, closed under subgroups and conjugation. For a fixed $\F$, we call an $H$-set $A\in \mathsf F^H$ \textit{$\F$-admissible} if for some (equivalently, any) choice of bijection $A \leftrightarrow \set{1,\ldots, |A|}$, the graph subgroup of $G\times \Sigma_n$ encoding the induced $H$-action on $\set{1,\ldots, |A|}$ is in $\F_n$.  
 \end{definition} 
 
-\subsubsection{The $\F$-model structures}
-
-We will define $\F$-semi-model structures on $\V\Sym_G$ and $\V\Op_G$ for any $G$-vertex family $\F$, given the following assumptions about our base category $\V$: 
+We will define $\F$-model structures on $\V\Sym_G$ and $\V\Op_G$ for any $G$-vertex family $\F$, given the following assumptions about our base category $\V$: 
 
 \begin{definition} 
  We say $\V$ satisfies \textsc{Assumption 1} if the following hold: 
@@ -5546,14 +5536,14 @@ Now, fix a $G$-vertex family $\F = \set{\F_n}$.
  For any $G$-vertex family $\F$, a $G$-tree $T\in \Omega_G$ is called \textit{$\F$-admissible} if, for each vertex $e_1\ldots e_n \leq e$ in $V(T)$, the set $\set{e_1,\ldots, e_n}$ is an $\F$-admissible $\Stab_G(e)$-set. We let $\Omega_\F\subseteq \Omega_G$ and $\Sigma_\F\subseteq \Sigma_G$ denote the full subcategories spanned by the $\F$-admissible trees. Further, we let $\Sym_\F(\V)$ denote the presheaf category $\V^{\Sigma_\F^{op}}$.
 \end{definition} 
 
-From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Sigma_\F$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE} (equivalently, this is the model structure transfered from $\Sym_\F(\V)$).
+From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Sigma_\F$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE}.
 
 \begin{definition} 
   A map $f: \O \to \P$ in $\V\Op_G$ is called an  
   \begin{enumerate} 
-  \item \textit{$\F$-fibration} (resp. $\F$-weak equivalence) if $f(C):\O(C) \to \P(C)$ is one in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $\F$-admissible $G$-corollas $C\in\Sigma_\F$. 
+  \item \textit{$\F$-fibration} (resp. $\F$-weak equivalence) if $f(C):\O(C) \to \P(C)$ is one in $\V$ for all $\F$-admissible $G$-corollas $C\in\Sigma_\F$. 
   \item \textit{$\F$-cofibration} if it has the left lifting property against all maps which are both $\F$-fibrations and $\F$-weak equivalences. 
-  \item \textit{$\Sigma_\F$-cofibration} if $f$ is an cofibration in $\Sym_G^\F(\V)$. 
+  \item \textit{$\Sigma_\F$-cofibration} if $f$ is an $\F$-cofibration in $\Sym_G(\V)$. 
   \item \textit{level genuine cofibration} if $f(C)$ is a cofibration in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $C\in \Sigma_\G$. 
   \end{enumerate} 
 \end{definition} 
@@ -5561,7 +5551,7 @@ From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Si
 %In particular, $\P\in \V\Op_G$ will be called \textit{$\F$-cofibrant} if $\varnothing \to \P$ is an $\F$-cofibration. 
 
 \begin{definition} 
- The $\F$-model structure on $\V\Op_G$, if it exists, is the unique model structure with $\F$-fibrations, $\F$-weak equivalences, and $\F$-cofibrations. Equivalently, it is the transfered model structure along the adjoints 
+ The $\F$-model structure on $\V\Op_G$, if it exists, is the unique model structure with the above specified weak equivalences and fibrations. Equivalently, it is the transfered model structure along the adjoints 
 \[ 
 \begin{tikzcd} 
   \V\Op_G \arrow[r, shift right, "\mathsf{fgt}"'] & \Sym_G^\F(\V) \arrow[l, shift right, "\mathbb F_G"']
@@ -5639,32 +5629,24 @@ where $u: X \to Y$ is a level genuine trivial cofibration and $\P$ is level genu
 
 
 \begin{proof}[Proof of Theorem \ref{GENUINE_SEMI_VOP_G_THM}] 
- This follows by general arguments of Kan \cite[11.6.1]{Hi03} from Proposition \ref{CELLULAR_LEVEL_COFIB_PROP} and Remark \ref{LEVEL_COFIB_REMARK}, as transfinite compositions are constructed levelwise. 
-%, and all genuine (trivial) cofibrations in $\V^{\Sigma_G^{op}}$ and $\V\Op_G$ are so levelwise. 
+ This follows by general arguments of Kan \cite[11.6.1]{Hi03} from Proposition \ref{CELLULAR_LEVEL_COFIB_PROP}, as transfinite compositions are constructed levelwise, and all genuine (trivial) cofibrations in $\V^{\Sigma_G^{op}}$ and $\V\Op_G$ are so levelwise. 
 \end{proof} 
 
 
 Somewhat surprisingly, the existance of the $\F$-semi-model structure follows from the genuine. 
+
 \begin{corollary} 
   For any $G$-vertex system $\F$, the $\F$-semi-model structure on $\V\Op_G$ exists.  
 \end{corollary} 
 \begin{proof} 
-  This follows from Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, as again by Remark \ref{LEVEL_COFIB_REMARK}, cofibrations in $\Sym_G^\F(\V)$ are also level genuine cofibrations. %. Indeed, it suffices to show that if $u: X\to Y$ is an $\F$-level trivial cofibration and $\P$ is $\F$-level cofibrant in $\V^{\Sigma_G^{op}}$, then the cellular extension $\P \to \P[u]$ is an $\F$-level trivial cofibration. 
-%  \todo[inline]{come back}
+  This follows from Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, as $\F$-cofibrations are also level genuine cofibrations. %. Indeed, it suffices to show that if $u: X\to Y$ is an $\F$-level trivial cofibration and $\P$ is $\F$-level cofibrant in $\V^{\Sigma_G^{op}}$, then the cellular extension $\P \to \P[u]$ is an $\F$-level trivial cofibration. 
+  \todo[inline]{come back}
  %However, such $u$ are genuine level cofibrations, and such $\P$ are level genuine cofibrant, and hence $\P \to \P[u]$ is a level trivial genuine cofibration by said corollary, and thus is a level trivial $\F$-cofibration. 
 \end{proof} 
 
 Moreover, if our base category $\V$ is sufficiently nice, these semi model structures are in fact Quillen model structures. 
-\begin{definition}
-  We say $\V$ satisfies \textsc{Assumption 2} if $\V$ satisfies \textsc{Assumption 1} and
-  \begin{itemize}
-  \item genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and
-  \item every object in $\V$ is cofibrant.
-  \end{itemize}
-\end{definition}
-
 \begin{theorem} 
-  $\V$ satisfies \textsc{Assumption 2}, then the $\F$-model structure on $\V\Op_G$ exists. 
+  If genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and every object in $\V$ is cofibrant, then the $\F$-model structure on $\V\Op_G$ exists. 
 \end{theorem} 
 \begin{proof} 
   In these cases, the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied. 
@@ -5689,7 +5671,7 @@ We first record an obvious comparison result between the categories of sequences
   With the genuine model structures, the adjunction
 \[
 \begin{tikzcd}
-  \V\Sym^G \arrow[r, shift right, "i_*"'] & \V\Sym_G \arrow[l, shift right, "i^*"'] 
+  \V\Sym^G \arrow[r, shift right, "i_*"'] & \V\Sym_G \arrow[l, shift right, "i^*"] 
 \end{tikzcd}
 \]
 from (\ref{TWOADJOINTS EQ}) is Quillen.
@@ -5749,10 +5731,7 @@ Again, the $\F$-model structures follows from the genuine.
 \end{proof} 
 
 
-As before, this extends to a Quillen model structure if $\V$ is sufficiently nice:
-\begin{theorem}
-  If $\V$ satisfies \textsc{Assumption 2}, then the $\F$-model structure exists on $\Op^G(\V)$. \qed
-\end{theorem}
+
 
 
 
