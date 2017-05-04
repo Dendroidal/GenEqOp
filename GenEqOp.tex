@@ -5723,15 +5723,24 @@ Again, the $\F$-model structures follows from the genuine.
 
 
 
-\section{Cofibrancy}\label{COFIB SEC}
+\section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-{\color{red} HERE}
 
-testy test
+
+The key ingredient required to prove our desired Quillen equivalence
+\[
+	\iota^{\**} \colon
+	\mathsf{Op}_G \rightleftarrows \mathsf{Op}^G
+	\colon \iota_{\**}
+\]
+will be an analysis of cofibrant objects $\mathsf{Op}_G$, which we now provide.
+
 
 \subsection{Families of subgroups}
 
+
 This section establishes some useful properties of the model structures associated to families of subgroups. Throughout all groups will be assumed finite.
+
 
 \begin{definition}\label{FAMILY DEF}
 	A \textit{family} $\mathcal{F}$ of subgroups of $G$ is a collection of subgroups 
@@ -5746,146 +5755,110 @@ This section establishes some useful properties of the model structures associat
 
 \begin{remark}
 	Any family determines a full subcategory 
-	$\mathsf{O}_{\mathcal{F}} \subset \mathsf{O}_G$
-	consisting of the orbital $G$-sets $G/H$ for 
+	$\mathsf{O}_{\mathcal{F}} \hookrightarrow \mathsf{O}_G$
+	of those orbital $G$-sets $G/H$ for 
 	$H \in \mathcal{F}$.
 	
-	Furthermore, $\mathsf{O}_{\mathcal{F}}$ has the property of being a sieve of $\mathsf{O}_G$, i.e., for any map $G/K \to G/H$ in $\mathsf{O}_G$ such that $G/H \in \mathsf{O}_{\mathcal{F}}$ it is also $G/K \in \mathsf{O}_{\mathcal{F}}$. Moreover, it is straightforward to show that families as in Definition \ref{FAMILY DEF} are in fact in bijection with such sieves.
+	Moreover, $\mathsf{O}_{\mathcal{F}}$ is a sieve, i.e., for any map $G/K \to G/H$ in $\mathsf{O}_G$ such that $G/H \in \mathsf{O}_{\mathcal{F}}$ it is also $G/K \in \mathsf{O}_{\mathcal{F}}$. In fact, it is easy to check that families are in bijection with sieves.
 \end{remark}
+
 
 \begin{remark}
-	We note that for any fixed group $G$, families form a lattice, with the order given by inclusion, and meet and join given by intersection and union, respectively.
+For fixed $G$ families form a lattice, ordered by inclusion, 
+with meet and join given by intersection and union.
 \end{remark}
 
 
+We now recall the following basic notion and result concerning model structures induced by families (cf. \cite[Prop. 2.6]{Ste16}).
 
-We now recall the following fundamental notion and result
-(cf. \cite[Prop. 2.6]{Ste16}).
 
 \begin{definition}\label{CELL DEF}
-	$\mathcal{V}$ is said to have \textit{cellular fixed points} if:
+	We say a model category $\mathcal{V}$ has 
+	\textit{cellular fixed points} if for all finite groups $G$ and subgroups $H,K\leq G$ one has that:
 \begin{itemize}
-	\item[(i)] fixed points $(\minus)^H$ preserve direct colimits;
-	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one of the legs is $(G/K)\cdot f$, for $f$ a cofibration;
-	\item[(iii)] for each object $A \in \mathcal{V}$, the natural map 
-	$(G/K)^H \cdot A \to ((G/K) \cdot A)^H$
+	\item[(i)] fixed points $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserve direct colimits;
+	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration;
+	\item[(iii)] for each object $X \in \mathcal{V}$, the natural map 
+	$(G/K)^H \cdot X \to ((G/K) \cdot X)^H$
 	is an isomorphism.
 \end{itemize}
 \end{definition}
 
 
-\begin{proposition}
+\begin{proposition}\label{FMODELEXIST PROP}
 	If $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points, then for any finite group $G$ and family $\mathcal{F}$, there is a model structure $\mathcal{V}^G_{\mathcal{F}}$ on the category 
 	$\mathcal{V}^G$, called the 
-	\textbf{$\mathcal{F}$-model structure}
+	\emph{$\mathcal{F}$-model structure}
 	such that both weak equivalences and fibrations are determined by the fixed points $(\minus)^H$ for 
 	$H \in \mathcal{F}$.
 \end{proposition}
 
-We will also make use of the following strengthenings of
-conditions (ii) (iii) in Definition \ref{CELL DEF}.
+When $\mathcal{F}$ is the family of all subgroups the model structure in Proposition \ref{FMODELEXIST PROP} is called simply the \textit{$G$-genuine model structure}.
 
-\begin{remark}\label{GENPIXEDPUSH REM}
-If $\mathcal{V}$ is cofibrantly generated, then
-(i) and (ii) in Definition \ref{CELL DEF} imply that fixed points $(\minus)^H$ preserve pushouts where one of the legs is a $G$-genuine cofibration.
-\end{remark}
+We will find it convenient to strengthen the cellularity conditions in Definition \ref{CELL DEF}.
 
 
-\begin{lemma}
-	If $\mathcal{V}$ is cofibrantly generated and has cellular fixed points then fixed points $(\minus)^H$
-	preserve any pushout diagram where one leg is a $G$-genuine cofibration.
-\end{lemma}
+\begin{proposition}
+	Suppose that $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points. Then:
+	\begin{itemize}
+		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
+			 is a genuine cofibration;
+		\item[(ii)] if $X$ is $G$-genuine cofibrant the map 
+			$(G/K)^H \cdot X^H \to (G \cdot_K X)^H$ is an isomorphism.
+	\end{itemize}
+Suppose additionally that $\mathcal{V}$ is a 
+closed monoidal model category
+as well as strongly cofibrantly generated
+(i.e. that the domains of the generating (trivial) cofibrations are cofibrant). Then:
+	\begin{itemize}
+		\item[(iii)] for $f,g$ genuine cofibrations between genuine cofibrant objects the natural map 
+\[f^H \square g^H \xrightarrow{\simeq} (f \square g)^H\]
+ is an isomorphism.
+ In particular, $X^H \otimes Y^H \xrightarrow{\simeq} 
+ (X \otimes Y)^H$ is an isomorphism when $X,Y$ are genuine cofibrant.
+	\end{itemize}
+\end{proposition}
+
 
 \begin{proof}
-	This is an immediate consequence of (i) and (ii) by writing
-	the cofibration as a retract of a transfinite composition of pushouts of generating cofibrations. 
-\end{proof}
-
-
-\begin{lemma}\label{FIXEDDIAG LEM}
-	Suppose $\mathcal{V}$ is strongly cofibrantly generated, 
-	has cellular fixed points and is a closed monoidal model category.
-	
-	Then for $C,D \in \mathcal{V}^G$ genuinely cofibrant the canonical map
-\begin{equation}\label{FIXEDTENSORISO EQ}
-	C^H \otimes D^H \to (C \otimes D)^H	
+Since all conditions are compatible with retracts, we are free to assume each cofibration $f\colon X \to Y$
+(or, for $Y$ cofibrant, the map $\emptyset \to Y$)
+is a transfinite composition
+\begin{equation}\label{TRANSFCOMP EQ}
+	X_0 \xrightarrow{f_0} 
+	X_1 \xrightarrow{f_1}
+	X_2 \xrightarrow{f_2}
+	X_3 \xrightarrow{f_3} 
+	\cdots
+	\to Y = X_{\beta} = \colim_{\alpha < \beta} X_{\alpha}
 \end{equation}
-is an isomorphism.
-\end{lemma}
-
-
-\begin{proof}
-	Considering first the case $C = G/H \cdot A$, where $A$ is cofibrant in $\mathcal{V}$,
-	the properties in Definition \ref{CELL DEF} ensure that the $D$ 
-	satisfying the condition that (\ref{FIXEDTENSORISO EQ}) is an isomorphism are closed under cellular extension,
-	and thus include all cofibrant objects.
-	But now the same argument shows that the $C$ satisfying that
-	(\ref{FIXEDTENSORISO EQ}) is an isomorphism for each fixed cofibrant $D$ are themselves closed under cellular extension, and the result follows.  
+where each $f_{\alpha} \colon X_{\alpha} \to X_{\alpha+1}$
+is the pushout of a generating cofibration
+$(G/H) \cdot i_{\alpha}$. Both (i) and (ii) now follow by transfinite induction on $\alpha$ in the partial composite map
+$X_0 \to X_{\alpha}$, with the successor ordinal case following by Def. \ref{CELL DEF} (ii), (iii) and the limit ordinal case by
+Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X_0=\emptyset$.
+To prove (iii), we consider first the case of $g$ a generating cofibration. The exact same induction argument now applies to any $f$ as in (\ref{TRANSFCOMP EQ}), contingently on a base case $f=(\emptyset \to X)$. But this base case now follows by the exact same argument, now contingent on the base case $f=(\emptyset \to \emptyset)$, which is obvious.
+The general case now follows by repeating the same argument, now using the analogous filtration (\ref{TRANSFCOMP EQ}) for $g$.
 \end{proof}
 
 
-\begin{lemma}\label{FIXCOF LEM}
-	If $\mathcal{V}$ is cofibrantly generated and has cellular fixed points then each of the fixed point functors $(\minus)^H$
-	preserve cofibrations and pushouts where one of the legs is a cofibration.
-\end{lemma}
-
-\begin{proof}
-	This follows by Definition \ref{CELL DEF}: the case of generating cofibrations follows by (iii), their pushouts follow by (ii) and transfinite compositions by (i).
-\end{proof}
-
-
-\begin{lemma}\label{PUSHFIX LEM}
-	Suppose $\mathcal{V}$ is strongly cofibrantly generated, 
-	has cellular fixed points and is a closed monoidal model category.
-	
-	If $f,g$ are $G$-genuine cofibrations between $G$-genuine cofibrant objects, then the canonical map
-\[
-	f^H \square g^H \to (f \square g)^{H}
-\]
-is an isomorphism.
-\end{lemma}
-
-\begin{proof}
-	This follows by combining
-	Lemmas \ref{FIXEDDIAG LEM} and \ref{FIXCOF LEM}.
-\end{proof}
-
-
-
-
-
-\begin{lemma}\label{STROIII LEM}
-	Suppose that $\mathcal{V}$ is cofibrantly generated and has cellular fixed points and that $A \in \mathcal{V}^{H}$ is genuinely cofibrant. Then the natural map
-\begin{equation}\label{STROIII EQ}
-	(G/H)^K \cdot A^K
-		\to
-	(G \cdot_H A)^K
-\end{equation}
-is an isomorphism.
-\end{lemma}
-
-\begin{proof}
-	The isomorphism (\ref{STROIII EQ}) is obvious in the case of $A$ a set, and thus follows from (iii) in Definition \ref{CELL DEF} for $A$ either the domain or codomain of a generating cofibration $(H/L)\cdot f$. (i) and (ii) in Definition \ref{CELL DEF} now show that the property that (\ref{STROIII EQ}) is an isomorphism is preserved by both pushouts of generating cofibrations and transfinite composition.
-	The result follows by writing $\emptyset \to A$ as a retract of a transfinite composition of pushouts of generating cofibrations.
-\end{proof}
-
-We now list some key properties of $\mathcal{F}$-model structure that we will use throughout.
-
-
+We end this section by cataloging some straightforward interactions of $\mathcal{F}$-model structures
+with regards to change of group and pushout products.
 
 
 \begin{proposition}\label{FGTRIGHT PROP}
-	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ as above.
-	
+	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ be cofibrantly generated with cellular fixed points.	
 	Then the adjunction
 \begin{equation}
+\begin{tikzcd}
 	\bar{G}\cdot_G(\minus)
 	\colon
-	\mathcal{V}^{G}_{\mathcal{F}}
-		\rightleftarrows
+	\mathcal{V}^{G}_{\mathcal{F}} \ar[shift left=1]{r}
+&
 	\mathcal{V}^{\bar{G}}_{\bar{\mathcal{F}}}
-	\colon
+	\colon \ar[shift left=1]{l}
 	\mathsf{fgt}
+\end{tikzcd}
 \end{equation}
 is a Quillen adjunction if for any 
 $H \in \mathcal{F}$ it is $\phi(H) \in \bar{\mathcal{F}}$.
@@ -5898,40 +5871,41 @@ it is immediate that the right adjoint preserves fibrations and trivial fibratio
 \end{proof}
 
 
-
 \begin{proposition}\label{FGTLEFT PROP}
-	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ as above.
-	
+	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ be cofibrantly generated with cellular fixed points.		
 	Then the adjunction
 \begin{equation}
+\begin{tikzcd}
 	\mathsf{fgt}
 	\colon
-	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}}
-		\rightleftarrows
+	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar[shift left=1]{r}
+&
 	\mathcal{V}^{G}_{\mathcal{F}}
 	\colon
 	\mathsf{Hom}_G(\bar{G},\minus)
+	\colon \ar[shift left=1]{l}
+\end{tikzcd}
 \end{equation}
 is a Quillen adjunction if for any 
 $H \in \bar{\mathcal{F}}$ it is 
 $\phi^{-1}(H) \in \mathcal{F}$.
 \end{proposition}
 
+
 \begin{proof}
 	Since the double coset formula yields that that
 \[
-	\mathsf{fgt}(\bar{G}/H \cdot f)
+	\mathsf{fgt}\left(\bar{G}/H \cdot f\right)
 		\simeq 
-	\mathsf{fgt}(\bar{G}/H) \cdot f
+	\mathsf{fgt}\left(\bar{G}/H\right) \cdot f
 		\simeq
 	\left(
 		\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
 		{G/\phi^{-1}(H^{a})}
 	\right)	\cdot f
 \]
-it is immediate that the left adjoint preserves cofibrations and trivial cofibrations.
+it is immediate that the left adjoint $\mathsf{fgt}$ preserves cofibrations and trivial cofibrations.
 \end{proof}
-
 
 
 Propositions \ref{FGTRIGHT PROP} and \ref{FGTLEFT PROP}
@@ -5975,19 +5949,20 @@ $\bar{\mathcal{F}} \subset \phi_{\**}(\mathcal{F})$.
 \end{itemize}
 \end{lemma}
 
+
 \begin{proof}
 	Since the result is elementary, we include only the proof of the second iff in (ii), which is the hardest step and illustrates the necessary arguments. This follows by the following equivalences.
 \[
 	\phi^{\**} (\bar{\mathcal{F}}) \subset \mathcal{F}
 \Leftrightarrow
-	\left( \underset{H \leq G,\phi(H) \in \bar{\mathcal{F}} }{\forall} 
+	\left( \underset{ \substack{H \leq G \\ \phi(H) \in \bar{\mathcal{F}} }}{\mathlarger{\mathlarger{\forall}}} 
 	H \in \mathcal{F} \right)
 \Leftrightarrow
-	\left( \underset{\bar{H} \in \bar{\mathcal{F}}}{\forall}
+	\left( \underset{\bar{H} \in \bar{\mathcal{F}}}{\mathlarger{\mathlarger{\forall}}}
 	\phi^{-1}(\bar{H}) \in \mathcal{F}
 	\right)
 \Leftrightarrow
-	\left( \underset{\bar{H} \in \bar{\mathcal{F}},\bar{g} \in \bar{G}}{\forall}
+	\left( \underset{ \substack{\bar{H} \in \bar{\mathcal{F}}\\\bar{g} \in \bar{G}}}{\mathlarger{\mathlarger{\forall}}}
 	\phi^{-1}(\bar{H}^{\bar{g}}) \in \mathcal{F}
 	\right)
 \Leftrightarrow
@@ -5998,9 +5973,9 @@ $H \leq \phi^{-1}(\phi(H))$ and $\mathcal{F}$ is closed under subgroups while th
 $\bar{\mathcal{F}}$ is closed under conjugation. 
 \end{proof}
 
+
 \begin{proposition}\label{BIQUILLENG PROP}
-	Suppose that $\mathcal{V}$ is as above and also a closed monoidal model category.
-	
+	Suppose that $\mathcal{V}$ is cofibrantly generated, has cellular fixed points, and is also a closed monoidal model category. 	
 	Then the bifunctor
 \begin{equation}\label{BIQUILLENG EQ}
 	\mathcal{V}^G_{\mathcal{F}}
@@ -6012,12 +5987,13 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 	is a left Quillen bifunctor.
 \end{proposition}
 
+
 \begin{proof}
 	The double coset formula now yields
 \begin{equation}
-	(G/H \cdot f) \square (G/\bar{H} \cdot g)
+	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
-	(G/H \times G/\bar{H}) \cdot (f \square g)
+	\left(G/H \times G/\bar{H}\right) \cdot \left(f \square g\right)
 		\simeq
 	\left(
 		\coprod_{[a]\in H \backslash G /\bar{H}}
@@ -6028,12 +6004,10 @@ and hence the result follows since families are closed under conjugation and sub
 \end{proof}
 
 
-
-
 \begin{definition}\label{EXTERINT DEF}
 Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families in $G$ and $G$, respectively.
 
-We defined their \textit{external intersection} to be the 
+We define their \textit{external intersection} to be the 
 family of $G \times \bar{G}$ given by
 \[
 	\mathcal{F} \sqcap \bar{\mathcal{F}}
@@ -6073,17 +6047,34 @@ the projections.
 \subsection{Pushout powers}
 
 
-That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and well as the group) are allowed to change. However, when those cofibrations (and hence also $G$) coincide there is an additional symmetric group action that must be considered.
+That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and the group) are allowed to change. However, when those cofibrations (and hence $G$) coincide there is an additional symmetric group action that  we will need to consider.
 
-To handle such actions we introduce the following axiom
+To handle such actions we introduce the following notion.
 
-\begin{definition}
-	We say $\mathcal{V}$ has 
+\begin{definition}\label{COFSYMPUSHPOW}
+	We say a monoidal model category $\mathcal{V}$ has 
 	\textit{cofibrant symmetric pushout powers}
 	if for each cofibration $f$ the pushout product 
 	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration.
 \end{definition}
 
+
+\begin{remark}
+When $\mathcal{V}$ is cofibrantly generated
+the condition in Definition \ref{COFSYMPUSHPOW} needs only be checked for generating cofibrations. 
+However, the argument needed is somewhat harder than usual due to $(-)^{\square n}$ not preserving composition of maps:
+one instead follows the argument in the proof of 
+Proposition \ref{POWERF PROP} below when $G=\**$.
+\end{remark}
+
+
+\begin{remark}
+	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
+$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
+the proof of Proposition \ref{POWERF PROP}.
+\end{remark}
+
+{\color{red} HERE}
 
 \begin{definition}
  Let $\mathcal{F}$ be a family of $G$,
@@ -6402,7 +6393,7 @@ one thus obtains isomorphisms
 	\right)^K
 \simeq &
 	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
-	|A|=n-i,|B|=i}} 
+	|A|=n-i,|B|=i}}
 	\left( X^{\otimes A} \otimes f^{\square B} \right)^K
 \simeq
 	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\

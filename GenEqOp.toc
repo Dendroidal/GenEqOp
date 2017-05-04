@@ -22,11 +22,11 @@
 \contentsline {section}{\numberline {6}Model structures}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{43}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{46}{subsection.6.2}
-\contentsline {section}{\numberline {7}Cofibrancy}{50}{section.7}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{50}{section.7}
 \contentsline {subsection}{\numberline {7.1}Families of subgroups}{50}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{52}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{55}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems}{57}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.4}Indexing systems}{58}{subsection.7.4}
 \contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{60}{section.8}
 \contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{60}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Moved From Earlier}{61}{subsection.8.2}
