@@ -6046,19 +6046,35 @@ the projections.
 
 \subsection{Pushout powers}
 
-{\color{red} HERE}
 
-That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and well as the group) are allowed to change. However, when those cofibrations (and hence also $G$) coincide there is an additional symmetric group action that must be considered.
+That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and the group) are allowed to change. However, when those cofibrations (and hence $G$) coincide there is an additional symmetric group action that  we will need to consider.
 
-To handle such actions we introduce the following axiom
+To handle such actions we introduce the following notion.
 
-\begin{definition}
-	We say $\mathcal{V}$ has 
+\begin{definition}\label{COFSYMPUSHPOW}
+	We say a monoidal model category $\mathcal{V}$ has 
 	\textit{cofibrant symmetric pushout powers}
 	if for each cofibration $f$ the pushout product 
 	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration.
 \end{definition}
 
+
+\begin{remark}
+When $\mathcal{V}$ is cofibrantly generated
+the condition in Definition \ref{COFSYMPUSHPOW} needs only be checked for generating cofibrations. 
+However, the argument needed is somewhat harder than usual due to $(-)^{\square n}$ not preserving composition of maps:
+one instead follows the argument in the proof of 
+Proposition \ref{POWERF PROP} below when $G=\**$.
+\end{remark}
+
+
+\begin{remark}
+	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
+$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
+the proof of Proposition \ref{POWERF PROP}.
+\end{remark}
+
+{\color{red} HERE}
 
 \begin{definition}
  Let $\mathcal{F}$ be a family of $G$,
