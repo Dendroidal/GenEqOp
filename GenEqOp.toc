@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{51}{section.7}
 \contentsline {subsection}{\numberline {7.1}Families of subgroups}{51}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and trees}{56}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{56}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Indexing systems}{59}{subsection.7.4}
 \contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{61}{section.8}
 \contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{61}{subsection.8.1}
