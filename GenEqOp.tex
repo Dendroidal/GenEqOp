@@ -5845,7 +5845,7 @@ When $\mathcal{F}$ is the family of all subgroups the model structure in Proposi
 We will find it convenient to strengthen the cellularity conditions in Definition \ref{CELL DEF}.
 
 
-\begin{proposition}
+\begin{proposition}\label{STRONGCELL PROP}
 	Suppose that $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
@@ -6101,8 +6101,8 @@ To handle such actions we introduce the following notion.
 \begin{definition}\label{COFSYMPUSHPOW}
 	We say a monoidal model category $\mathcal{V}$ has 
 	\textit{cofibrant symmetric pushout powers}
-	if for each cofibration $f$ the pushout product 
-	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration.
+	if for each cofibration (resp. trivial cofibration) $f$ the pushout product 
+	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration (resp. trivial cofibration).
 \end{definition}
 
 
@@ -6115,24 +6115,38 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
 
 
-\begin{remark}
-	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
-$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
-the proof of Proposition \ref{POWERF PROP}.
-\end{remark}
+%\begin{remark}
+%	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
+%$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
+%the proof of Proposition \ref{POWERF PROP}.
+%\end{remark}
 
-{\color{red} HERE}
+
+We now turn to describing the symmetric power analogue of 
+Definition \ref{EXTERINT DEF}.
+
+We start with some notation. Letting 
+$\lambda$ be a partition 
+$E = \lambda_1 \amalg\cdots \amalg \lambda_k$
+of a finite set $E$, 
+we write 
+ $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
+ \Sigma_{\lambda_k} \leq \Sigma_E$ for the subgroup of permutations preserving $\lambda$. 
+ In addition, given any $e \in E$ we write
+$\lambda_e$ for the partition $E = \{e\} \amalg (E-e)$, so that $\Sigma_{\lambda_e}$ is then the isotropy of $e$.
+
+
 
 \begin{definition}
  Let $\mathcal{F}$ be a family of $G$,
  $E$ a finite set and $e \in E$ any fixed element.
  
-We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
+We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to be the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
 \begin{equation}\label{FLTIMESN EQ}
 	\mathcal{F}^{\ltimes E}
 		=
 	\left(
-	\iota_{ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G}
+	\iota_{\Sigma_{\lambda_e} \wr G}
 	\right)_{\**}
 	\left(
 		\left(
@@ -6141,36 +6155,52 @@ We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to the family of
 	\right),
 \end{equation}
 where $\iota$ is the inclusion 
-$ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G 
+$\Sigma_{\lambda_e} \wr G
 	\to 
 \Sigma_E \wr G$
-and $\pi$ is the projection
-$\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+and $\pi$ the projection
+$\Sigma_{\lambda_e} \wr G = \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$.
 
-More explicitly, noting that in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, it follows that when computing $\iota$ one needs only consider conjugates by permutations of $E$ not fixing $e$, so that one has that
+
+More explicitly, since in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
+$\left( \iota_{\Sigma_{\lambda_e} \wr G}\right)_{\**}$
+one needs only conjugate by coset representatives of 
+$\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so that
+
 \begin{equation}\label{FLTIMESN2 EQ}
 	K \in \mathcal{F}^{\ltimes E} 
 	\text{ iff }
 	\underset{e \in E}{\forall} \pi_{G}
 	\left(
-		K \cap \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+		K \cap \left( \Sigma_{\lambda_e} \wr G \right)
 	\right)
 	\in \mathcal{F},
 \end{equation}
-showing that in particular the definition in (\ref{FLTIMESN EQ})
+showing that in particular (\ref{FLTIMESN EQ})
 is independent of the choice of $e \in E$.
 \end{definition}
 
 
-\begin{proposition}
-	One has 
+
+\begin{remark}
+The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
+is best understood by working through this section backwards:
+the study of the interactions between equivariant trees and graph families, namely Lemma \ref{KEYLEMMAGECO LEM}, requires the study of the families $\mathcal{F}^{\ltimes_G n}$ in Notation \ref{SEMIDIRG NOT}, which are variants of the $\mathcal{F}^{\ltimes n}$ construction for graph families.
+It then suffices, and is notationally far more convenient, to establish the required results first for the $\mathcal{F}^{\ltimes n}$ families and then translate them to the $\mathcal{F}^{\ltimes_G n}$ families.
+\end{remark}
+
+
+\begin{proposition}\label{LTIMESPRODINC PROP}
+	Writing 
+	$\iota \colon \Sigma_E \times \Sigma_{\bar{E}} \to
+	\Sigma_{E \amalg \bar{E}}$ for the inclusion, one has 
 	\begin{equation}\label{LTIMESPRODINC EQ}
 	\mathcal{F}^{\ltimes E}
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}
 		\subset
-	\iota^{\**}(\mathcal{F}^{\ltimes E \amalg \bar{E}}).
+	\iota^{\**}\left(\mathcal{F}^{\ltimes E \amalg \bar{E}}\right).
 	\end{equation}
 	Hence, the following is a left Quillen bifunctor.
 \begin{equation}\label{LTIMESPRODQUI EQ}
@@ -6187,6 +6217,7 @@ is independent of the choice of $e \in E$.
 \end{proposition}
 
 
+
 \begin{proof}
 	Let 
 	$K \in 
@@ -6194,54 +6225,70 @@ is independent of the choice of $e \in E$.
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}	
 	$
-	and $e \in E$. Since
+	and $e \in E$. 
+	We write $\lambda_e$ for the partition of $E \amalg \bar{E}$
+	and $\lambda_e^E$ for the partition of $E$.
+	One then has
 \begin{equation}
 \pi_G
 \left(
-	K \cap \Sigma_{\{e\}} \times G
-		\times
-	\Sigma_{E \amalg \bar{E} - e} \wr G
-\right)
+	K \cap \left( \Sigma_{\lambda_e} \wr G \right) \right)
 	=
 \pi_G
 \left(
 	\pi_{\Sigma_E \wr G}(K)
-	\cap \Sigma_{\{e\}} \times G
-		\times
-	\Sigma_{E - e} \wr G
+	\cap \left( \Sigma_{\lambda_e^E} \wr G \right)
 \right),
 \end{equation}
-it follows that $K$ 
+where on the right we write
+$\pi_{\Sigma_E \wr G} \colon
+\Sigma_E \wr G \times \Sigma_{\bar{E}} \wr G
+\to 
+\Sigma_E \wr G$
+and 
+$\pi_G \colon \Sigma_{\lambda^E_e} \wr G
+=\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+\to G$. Therefore $K$ 
 satisfies (\ref{FLTIMESN2 EQ}) for 
 $\mathcal{F}^{\ltimes E \amalg \bar{E}}$
 since 
 $\pi_{\Sigma_E \wr G}(K)$ does so for 
-$\mathcal{F}^{\ltimes E}$. The case of $e \in \bar{E}$ is identical.
+$\mathcal{F}^{\ltimes E}$.
+The case of $e \in \bar{E}$ is identical.
 
 (\ref{LTIMESPRODQUI EQ}) simply combines 
-(\ref{EXTERINTADJ EQ}) and 
+the left Quillen bifunctor
+(\ref{EXTERINTADJ EQ}) with 
 Proposition \ref{FGTRIGHT PROP}.
 \end{proof}
 
 
-
-
 \begin{proposition}\label{POWERF PROP}
-	Suppose that $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
+	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
+	
 	Then, for all $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
 	one has that $f^{\square n}$ is a cofibration (resp. trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
 
-Our proof of Proposition \ref{POWERF PROP} will be essentially a repetition of the main argument in the proof of
+Our proof of Proposition \ref{POWERF PROP} will essentially repeat the main argument in the proof of
 \cite[Thm. 1.2]{Pe16}.
 However, both for the sake of completeness and to stress that the argument is independent of the (fairly technical) model structures in \cite{Pe16}, we include an abridged version of the proof below, the key ingredient 
 of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor. 
 
+
 \begin{proof}
 	We first note that in the case of 
-	$i = (G/H) \cdot \bar{i}$, $H\in \mathcal{F}$, a generating (trivial) cofibration it is 
-	$i^{\square n} = (G/H)^{\times n} \cdot \bar{i}^{\square n}$, and thus this case follows since the $\Sigma_n \wr G$-orbits of $(G/H)^{\times n}$ are in $\mathcal{F}^{\ltimes n}$.
+	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, a generating (trivial) cofibration it is 
+	\[i^{\square n} = 
+	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
+	\simeq \Sigma_n \wr G 
+	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
+$\bar{\imath}^{\square n}$ is thus a $\Sigma_n \wr-H$-genuine (trivial) cofibration by the cofibrant symmetric pushout powers hypothesis combined with Proposition \ref{FGTLEFT PROP} and hence 
+$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
+(trivial) cofibration by Proposition \ref{FGTRIGHT PROP}
+since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
+
 
 	For the general case, we start by making the key observation that for composable arrows 
 	$\bullet \xrightarrow{g} \bullet \xrightarrow{h} \bullet$ the $n$-fold pushout product $(hg)^{\square n}$ has a factorization
@@ -6276,7 +6323,8 @@ where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_i$ is
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
 
 
-The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations. As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
+The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
+As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
 such that 
 \begin{inparaenum}
@@ -6290,17 +6338,18 @@ $X_{\kappa} = \colim_{\beta < \kappa} X_{\beta}$,
 $f$ equals the transfinite composite $X_0 \to X_{\kappa}$.
 \end{inparaenum}
 
+
 We argue by transfinite induction on $\kappa$.
 Writing $\bar{f}_{\beta} \colon X_0 \to X_{\beta}$ for the partial composites, it suffices to check that the natural transformation of $\kappa$-diagrams (rightmost map not included)
 \[
 \begin{tikzcd}
-		Q^n(\bar{f}_{1}) \ar{d}[swap]{\bar{f}_0^{\square n}} \ar{r}
+		Q^n(\bar{f}_{1}) \ar{d}[swap]{\bar{f}_1^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{2}) \ar{d}[swap]{\bar{f}_1^{\square n}} \ar{r}
+		Q^n(\bar{f}_{2}) \ar{d}[swap]{\bar{f}_2^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{3}) \ar{d}[swap]{\bar{f}_2^{\square n}} \ar{r}
+		Q^n(\bar{f}_{3}) \ar{d}[swap]{\bar{f}_3^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{4}) \ar{d}[swap]{\bar{f}_3^{\square n}} \ar{r}
+		Q^n(\bar{f}_{4}) \ar{d}[swap]{\bar{f}_4^{\square n}} \ar{r}
 	&
 		\cdots \ar{r}
 	&
@@ -6328,13 +6377,14 @@ $Q^n(\bar{f}_{\beta})
 X_{\beta}^{\otimes n} 
 $ are cofibrations in 
 $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
-Condition (ii) above implies that this map is an isomorphism for $\beta$ a limit ordinal and the map
+Condition (ii) above implies that this map is an isomorphism for $\beta$ a limit ordinal 
+while for $\beta+1$ a successor ordinal it is the map
 $Q^n(\bar{f}_{\beta+1})
 \amalg_{Q^n(\bar{f}_{\beta}) }
 X_{\beta}^{\otimes n} 
 	\to
-X_{\beta+1}^{\otimes n} 
-$ for $\beta+1$ a successor. But since 
+X_{\beta+1}^{\otimes n}$.
+But since 
 $Q^n(\bar{f}_{\beta+1}) \to Q^n(\bar{f}_{\beta+1})
 \amalg_{Q^n(\bar{f}_{\beta}) }
 X_{\beta}^{\otimes n}$ 
@@ -6363,17 +6413,19 @@ as the map
 	\to 
 Y^{\otimes n}.
 \]
-It then follows that $K$ acts on the diagram category 
-$(0 \to 1)^{\times n}$ itself (via the composite
-$K \to \Sigma_n \wr G \to \Sigma_n$).
-The fixed diagram subcategory 
+Any $K \leq \Sigma_n \wr G$ acts on the poset 
+$(0 \to 1)^{\times n}$ itself 
+(via $K \to \Sigma_n \wr G \to \Sigma_n$).
+Moreover, the fixed subposet  
 $\left((0 \to 1)^{\times n}\right)^K$
-consists of those tuples in $\{0,1\}^{n}$
+then consists of those tuples in $\{0,1\}^{\times n}$
 whose coordinates coincide if their indexes are in the same coset of $n/K$, i.e. there is an identification
 $\left((0 \to 1)^{\times n}\right)^K \simeq (0 \to 1)^{\times n/K}$.
+
+
+
 \begin{example}
-When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$
-$(0 \to 1)^{n/K}$ is identified with the subposet on the right below.
+When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$ the fixed subposet $(0 \to 1)^{n/K}$ is displayed on the right below.
 \[
 \begin{tikzcd}[column sep=1em, row sep=1em]
 	& 000 \ar{rr} \ar{ld} \ar[dashed]{dd} && 010 \ar{ld} \ar{dd}&
@@ -6396,15 +6448,13 @@ It will be key for our purposes to know that fixed points
 $\left( f^{\square n} \right)^K$ can be computed by first restricting to the smaller cube 
 $(0 \to 1)^{\times n/K}$,
 resulting in a cube of objects with $K$-actions,
-and then computing a pushout over that smaller cube (either before or after taking fixed points of each level).
+and then computing a pushout over that smaller cube.
 The formal result follows.
 
 
 
-
-
 \begin{proposition}
-	Suppose that $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category with symmetric pushout powers.
+	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated (cf. Prop. \ref{STRONGCELL PROP}(iii)).
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
 	$f \colon X \to Y$ a map in $\mathcal{V}$ and consider the natural maps (in the arrow category)
 \begin{equation}\label{FIXEDPUSH EQ}
@@ -6418,7 +6468,7 @@ The formal result follows.
 	\left( f^{\square n} \right)^K.
 \end{equation}
 If $f$ is a cofibration between cofibrant objects then 
-all maps in (\ref{FIXEDPUSH EQ}) are isomorphisms.
+(\ref{FIXEDPUSH EQ}) is an isomorphism.
 \end{proposition}
 
 
@@ -6432,11 +6482,11 @@ $g=\emptyset \to X$, $h=f$ and removing the last map $k_n$
 one obtains a filtration of the source of $f^{\square n}$.
 Applying $(\minus)^K$ to the leftmost map in 
 (\ref{COMPNFOLDFACTPUSH EQ})
-one thus obtains isomorphisms
+one has isomorphisms
 \begin{align*}
 	\left(
 	\Sigma_n \underset{\Sigma_{n-i} \times \Sigma_i}
-	{\cdot}\left( X^{\otimes n-i} \otimes f^{\square i} \right)
+	{\cdot} X^{\otimes n-i} \otimes f^{\square i}
 	\right)^K
 \simeq &
 	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
@@ -6460,24 +6510,24 @@ one thus obtains isomorphisms
 	\left(  f^{\otimes [k]} \right)^K
 	\right)
 \end{align*}
-where the first step is an instance of Lemma \ref{STROIII LEM}, 
-the second step an instance of
-Lemma \ref{PUSHFIX LEM},
-and the last step follows by combining Lemma \ref{FIXEDDIAG LEM}
-with the induction hypothesis (since $|B|\leq i <n$).
+where the first step is an instance of Prop. \ref{STRONGCELL PROP}(ii), 
+the second step follows from Prop. \ref{STRONGCELL PROP}(iii)
+(with the required cofibrancy of the objects following from Propositions \ref{BIQUILLENG PROP} and \ref{POWERF PROP}),
+and the last step follows by Prop. \ref{STRONGCELL PROP}(iii) together with the induction hypothesis (which applies since $|B|\leq i <n$).
+
 
 We have thus shown that the leftmost map in the pushouts (\ref{COMPNFOLDFACTPUSH EQ}) for 
 $\left( f^{\square n} \right)^K$
-is isomorphic to the leftmost map in the corresponding pushout for 	
+is isomorphic to the leftmost map in the pushouts for the corresponding filtration of 	
 $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
 \left( f^{\otimes [i]} \right)^K$,
-and the result now follows.
+and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(i)), the result now follows.
 \end{proof}
 
 
-
-
 \subsection{$G$-graph families and trees}
+
+{\color{red} HERE}
 
 We note that in this section we use $\Sigma$ to denote a general group.
 
@@ -6507,12 +6557,12 @@ for the inclusion homomorphism
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
 \end{remark}
 
-
+\begin{notation}\label{SEMIDIRG NOT}
 Letting $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of $G \times \Sigma$ and $G \times \bar{\Sigma}$ we will write
 \[
 	\mathcal{F} \sqcap_G \bar{\mathcal{F}} 
 	= \Delta^{\**} (\mathcal{F} \sqcap \bar{\mathcal{F}} )
-	\qquad
+\qquad \qquad
 	\mathcal{F}^{\ltimes_G n} = \Delta^{\**} (\mathcal{F}^{\ltimes n})
 \]
 where $\Delta$ denotes either of the diagonal inclusions
@@ -6522,6 +6572,7 @@ G \times \Sigma \times G \times \bar{\Sigma}$
 or 
 $\Delta \colon G \times \Sigma_n \wr \Sigma \to 
 \Sigma_n \wr (G \times \Sigma)$.
+\end{notation}
 
 \begin{remark}\label{UNPACKINGSQCAP REM}
 	Unpacking Definition \ref{EXTERINT DEF} one has that 
