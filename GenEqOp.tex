@@ -6525,28 +6525,30 @@ and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(
 \end{proof}
 
 
-\subsection{$G$-graph families and trees}
+\subsection{$G$-graph families and $G$-trees}
 
-{\color{red} HERE}
 
-We note that in this section we use $\Sigma$ to denote a general group.
+We will now convert the results in the previous sections to the context of the type of families we are mainly interested in: graph families. 
+We note that in this section we use $\Sigma$ to denote a general group (usually meant to be some type of permutation group).
+
 
 \begin{definition}
 A subgroup $\Gamma \leq G \times \Sigma$ is called a
 \textit{$G$-graph subgroup} if $\Gamma \cap \Sigma = \**$. 
 
-Further, a family $\mathcal{F}$ of $G \times \Sigma$ is called a \textit{$G$-graph family} if it consists only of $G$-graph subgroups.
+Further, a family $\mathcal{F}$ of $G \times \Sigma$ is called a \textit{$G$-graph family} if it consists of $G$-graph subgroups.
 \end{definition}
 
+
 \begin{remark}\label{GRAPH REM}
-One can show that $\Gamma$ is a $G$-graph subgroup iff it can be written as
+$\Gamma$ is a $G$-graph subgroup iff it can be written as
 \[
 	\Gamma = 
 	\{
 	(k,\varphi(k)) : k \in K \leq G
 	\}
 \]
-for some partial homomorphism $G \geq K \xrightarrow{\varphi} \Sigma$.
+for some partial homomorphism $G \geq K \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
 \end{remark}
 
 
@@ -6556,6 +6558,7 @@ for some partial homomorphism $G \geq K \xrightarrow{\varphi} \Sigma$.
 for the inclusion homomorphism 
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
 \end{remark}
+
 
 \begin{notation}\label{SEMIDIRG NOT}
 Letting $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of $G \times \Sigma$ and $G \times \bar{\Sigma}$ we will write
@@ -6574,6 +6577,7 @@ $\Delta \colon G \times \Sigma_n \wr \Sigma \to
 \Sigma_n \wr (G \times \Sigma)$.
 \end{notation}
 
+
 \begin{remark}\label{UNPACKINGSQCAP REM}
 	Unpacking Definition \ref{EXTERINT DEF} one has that 
 	$\Gamma \in \mathcal{F} \sqcap_G \bar{\mathcal{F}}$ iff
@@ -6581,19 +6585,18 @@ $\Delta \colon G \times \Sigma_n \wr \Sigma \to
 	$\pi_{G \times \bar{\Sigma}}(\Gamma) \in \bar{\mathcal{F}}$.
 \end{remark}
 
+
 \begin{remark}\label{UNPACKINGLTIMES REM}
 Unpacking (\ref{FLTIMESN2 EQ}) and noting that
 \[
-\left(G \times \Sigma_E \wr \Sigma\right)
+	\left(G \times \Sigma_E \wr \Sigma\right)
 \cap
-\left(
-\Sigma_{\{e\}}\times (G \times \Sigma) \times
- \Sigma_{E-\{e\}} \wr (G \times \Sigma)
-\right)
+	\left(
+	\Sigma_{\lambda_e} \wr (G \times \Sigma)
+	\right)
 =
-G \times \Sigma_{\{e\}} \times \Sigma \times
- \Sigma_{E-\{e\}} \wr \Sigma
- \]
+	G \times \Sigma_{\lambda_e} \wr \Sigma
+\]
  one has  
 \begin{equation}\label{FLTIMESN2G EQ}
 	K \in \mathcal{F}^{\ltimes_G E} 
@@ -6601,18 +6604,20 @@ G \times \Sigma_{\{e\}} \times \Sigma \times
 	\underset{e \in E}{\forall} \pi_{G \times \Sigma}
 	\left(
 		K \cap 
-		G \times \Sigma_{\{e\}} \times \Sigma \times \Sigma_{E-e} \wr \Sigma
+		\left(G \times \Sigma_{\lambda_e} \wr \Sigma \right)
 	\right)
 	\in \mathcal{F}.
 \end{equation}
 \end{remark}
 
-Combining either of (\ref{EXTERINTADJ EQ}) or 
+
+Combining either the left Quillen bifunctor (\ref{EXTERINTADJ EQ}) or 
 Proposition \ref{POWERF PROP}
 with Proposition \ref{FGTLEFT PROP} yields the following results.
 
 
-\begin{proposition}
+\begin{proposition}\label{EXTERINTADJG PROP}
+Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points.
 Let $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of 
 $G \times \Sigma$ and $G \times \bar{\Sigma}$. Then the following (with diagonal $G$-action on the images) 
 is a left Quillen bifunctor.
@@ -6626,8 +6631,9 @@ is a left Quillen bifunctor.
 \end{equation}
 \end{proposition}
 
+
 \begin{proposition}\label{POWERFG PROP}
-	Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
+Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 	
 	Let $\mathcal{F}$ be a $G$-graph family of $G \times \Sigma$. If $f$ is a cofibration (resp. trivial cofibration) in
 	$\mathcal{V}^{G \times \Sigma}_{\mathcal{F}}$
@@ -6638,29 +6644,37 @@ a cofibration (resp. trivial cofibration) in
 
 
 \begin{remark}
-	While it is easy to check that 
+	It is straightforward to check that 
 	$\mathcal{F} \sqcap_G \bar{\mathcal{F}}$
-	is indeed a $G$-graph family of $G \times \Sigma \times \bar{\Sigma}$, note that it is \textit{not} the case that
-	$\mathcal{F}^{\ltimes_G n}$ is a $G$-graph family of
-	$G \times \Sigma_n \wr \Sigma$, due to the need to consider the power $\Sigma_n$-action.
+	is in fact also a $G$-graph family of $G \times \Sigma \times \bar{\Sigma}$.
+	However, $\mathcal{F}^{\ltimes_G n}$ is \textit{not}
+	a $G$-graph family of $G \times \Sigma_n \wr \Sigma$,
+	due to the need to consider the power $\Sigma_n$-action.
 \end{remark}
 
 
-
-The $G$-graph families we will be interested in will encode certain families of $G$-trees. We start by with the case of corollas.
-
+The $G$-graph families we will be interested in encode certain families of $G$-trees. We start with the case of corollas.
 
 
 \begin{definition}
 	A \textit{family} $\Sigma_{\mathcal{F}}$ of $G$-corollas is a sieve 
-	$\Sigma_{\mathcal{F}} \subset \Sigma_G$, i.e., a full subcategory such that for any morphism $T \to T'$ with $T' \in \Sigma_{\mathcal{F}}$ it is also $T \in \Sigma_{\mathcal{F}}$.
-	
-	Equivalenty, the data of a family of corollas $\Sigma_{\mathcal{F}}$ consists of
-	$G$-graph families $\mathcal{F}_n$ of $G \times \Sigma_n$ for each $n \geq 0$ with $C \in \Sigma_{\mathcal{F}}$ precisely if $C \simeq G \cdot_H C_H$ for $C_H \in \Sigma_n^H$ an $H$-equivariant corolla encoded by a partial homomorphism $G \geq H \to \Sigma_n$ encoding a subgroup in $\mathcal{F}_n$ 
-	(cf. Remark \ref{GRAPH REM}). 
+	$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$, i.e., a full subcategory such that for any quotient morphism $C \to C'$ with $C' \in \Sigma_{\mathcal{F}}$ it is also $C \in \Sigma_{\mathcal{F}}$.
 \end{definition}
 
+\begin{remark}
+	Equivalenty, a family of corollas $\Sigma_{\mathcal{F}}$
+	can be encoded by
+	$G$-graph families $\mathcal{F}_n$ of $G \times \Sigma_n$ for each $n \geq 0$ so that $C \in \Sigma_{\mathcal{F}}$ if 
+	\[C \simeq G \cdot_H C_e\]
+for $C_e$ a $H$-equivariant corolla 
+(i.e. $C_e \in \Sigma^H$)
+encoded by a partial homomorphism $G \geq H \to \Sigma_n$ corresponding to a subgroup in $\mathcal{F}_n$ 
+	(cf. Remark \ref{GRAPH REM}). 
+\end{remark}
+
 Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate both sets of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
+
+{\color{red} HERE}
 
 \begin{definition}
 Let $\Sigma_{\mathcal{F}}$ be a family of $G$-corollas.
@@ -6669,6 +6683,8 @@ We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
 if all of its $G$-vertices $T_{v_G}$ are in 
 $\Sigma_{\mathcal{F}}$.
 \end{definition}
+
+
 
 \begin{remark}\label{VACUOUSNESS REM}
 	Note that by vacuousness the stick $G$-trees $G \cdot_H \eta$ are always $\mathcal{F}$-trees.
