@@ -5456,19 +5456,6 @@ $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
 are groupoids.
 \end{proof}
 
-
-\subsection{Existence of (semi) model structures} 
-
- 
-In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$. 
-
-\todo[inline]{LUIS: these definition of ``$G$-graph subgroup'' and ``$G$-vertex family'' probably belong earlier in the paper, possibly the introduction. Though it could also make sense to mention them in the intro, and formally define them here} 
-
-\begin{theorem}
-  Kan theorem about transfering model structures
-  \todo[inline]{come back}
-\end{theorem}
-
 \subsection{Families of Subgroups}
 
 \todo[inline]{Luis: I think the basic discussion about families and cellularity should go here, so we can define the $\F$-model structures below.}
@@ -5490,28 +5477,33 @@ In order to encode the homotopical information inspired by $N_\infty$-operads di
   Suppose we are given a small category $\mathcal D$, a subcategory $\mathcal D' \subseteq \mathcal D$, and a familly $\F_d$ of subgroup of $\mathrm{Aut}(d)$ for each $d\in \mathcal D'$. We define the \textit{$\mathcal D'$-projective $\F$-model structure} on $\V^{\mathcal D}$, if it exists, to be the unique model structure where $f$ is a weak equivalence or fibration if and only if $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \mathcal D'$. Equivalently, this is the model structure transfered along either composite of adjunctions
   \[
   \begin{tikzcd}
-    \V^{\mathcal D}_{\mathcal D', \F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\mathcal D'}_\F \arrow[l, shift right, "i_!"'] \arrow[d, shift right]\\
-    \V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F} \arrow[r, shift right, "i^*"'] \arrow[u, shift right] & \V^{\mathrm{Ob}(\mathcal D')}_{\F} \arrow[l, shift right] \arrow[u, shift right]
+    \V^{\mathcal D}_{\mathcal D', \F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\mathcal D'}_\F \arrow[l, shift right, "i_!"] \arrow[d, shift right]\\
+    \V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F} \arrow[r, shift right, "i^*"'] & \V^{\mathrm{Ob}(\mathcal D')}_{\F}
   \end{tikzcd}
   \]
   where we give
   \begin{itemize}
-  \item $\V^{\mathrm{Ob}(\mathcal D')}_\F = \mathop{\prod}\limits_{d\in \mathcal D'}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, and
+  \item $\V^{\mathrm{Ob}(\mathcal D')}_\F = \mathop(\prod)\limits_{d\in \mathcal D'}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, and
   \item $\V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D', \F}$ the transfered model structure from $\V^{\mathrm{Ob}(\mathcal D')}_\F$.
   \end{itemize}
   
-  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\mathcal D'$-projective \textit{genuine} model structure. 
+  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the \textit{$\mathcal D'$-projective genuine model structure.} 
 
-  If $\mathcal D' = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
+  If $\mathcal D' = \mathcal D$, we refer to the above as the \textit{projective $\F$-model structure}.
 \end{definition}
 
 \begin{remark}
-  \label{LEVEL_COFIB_REMARK}
   We record that any cofibration in $\V^{\mathcal D}_{\mathcal D', \F}$ is a level $\F_d$-cofibration as well, for all $d\in \mathcal D'$. 
 \todo[inline]{come back}
 \end{remark}
 
-For $\Op_G(\V)$, we will need a more fine-tuned understanding of more specific classes of subgroups.
+\subsection{Existence of (semi) model structures} 
+
+ 
+In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\V\Op_G$ and $\V\Op^G$ for a wide range of $\V$. 
+
+\todo[inline]{LUIS: these definition of ``$G$-graph subgroup'' and ``$G$-vertex family'' probably belong earlier in the paper, possibly the introduction. Though it could also make sense to mention them in the intro, and formally define them here} 
+
 
 \begin{definition} 
  A \textit{$G$-graph subgroup} of $G\times \Sigma_n$ is a subgroup $\Lambda \leq G\times \Sigma_n$ such that $\Lambda \cap \Sigma_n = e$. Equivalently, $\Gamma = \Gamma(\phi)$ is the graph of some homomorphism $G \geq H \xrightarrow{\phi} \Sigma_n$.  
@@ -5526,9 +5518,7 @@ For $\Op_G(\V)$, we will need a more fine-tuned understanding of more specific c
 where each $\F_n$ is a \textit{family} of $G$-graph subgroups of $G\times \Sigma_n$, closed under subgroups and conjugation. For a fixed $\F$, we call an $H$-set $A\in \mathsf F^H$ \textit{$\F$-admissible} if for some (equivalently, any) choice of bijection $A \leftrightarrow \set{1,\ldots, |A|}$, the graph subgroup of $G\times \Sigma_n$ encoding the induced $H$-action on $\set{1,\ldots, |A|}$ is in $\F_n$.  
 \end{definition} 
 
-\subsubsection{The $\F$-model structures}
-
-We will define $\F$-semi-model structures on $\V\Sym_G$ and $\V\Op_G$ for any $G$-vertex family $\F$, given the following assumptions about our base category $\V$: 
+We will define $\F$-model structures on $\V\Sym_G$ and $\V\Op_G$ for any $G$-vertex family $\F$, given the following assumptions about our base category $\V$: 
 
 \begin{definition} 
  We say $\V$ satisfies \textsc{Assumption 1} if the following hold: 
@@ -5546,14 +5536,14 @@ Now, fix a $G$-vertex family $\F = \set{\F_n}$.
  For any $G$-vertex family $\F$, a $G$-tree $T\in \Omega_G$ is called \textit{$\F$-admissible} if, for each vertex $e_1\ldots e_n \leq e$ in $V(T)$, the set $\set{e_1,\ldots, e_n}$ is an $\F$-admissible $\Stab_G(e)$-set. We let $\Omega_\F\subseteq \Omega_G$ and $\Sigma_\F\subseteq \Sigma_G$ denote the full subcategories spanned by the $\F$-admissible trees. Further, we let $\Sym_\F(\V)$ denote the presheaf category $\V^{\Sigma_\F^{op}}$.
 \end{definition} 
 
-From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Sigma_\F$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE} (equivalently, this is the model structure transfered from $\Sym_\F(\V)$).
+From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Sigma_\F$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE}.
 
 \begin{definition} 
   A map $f: \O \to \P$ in $\V\Op_G$ is called an  
   \begin{enumerate} 
-  \item \textit{$\F$-fibration} (resp. $\F$-weak equivalence) if $f(C):\O(C) \to \P(C)$ is one in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $\F$-admissible $G$-corollas $C\in\Sigma_\F$. 
+  \item \textit{$\F$-fibration} (resp. $\F$-weak equivalence) if $f(C):\O(C) \to \P(C)$ is one in $\V$ for all $\F$-admissible $G$-corollas $C\in\Sigma_\F$. 
   \item \textit{$\F$-cofibration} if it has the left lifting property against all maps which are both $\F$-fibrations and $\F$-weak equivalences. 
-  \item \textit{$\Sigma_\F$-cofibration} if $f$ is an cofibration in $\Sym_G^\F(\V)$. 
+  \item \textit{$\Sigma_\F$-cofibration} if $f$ is an $\F$-cofibration in $\Sym_G(\V)$. 
   \item \textit{level genuine cofibration} if $f(C)$ is a cofibration in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $C\in \Sigma_\G$. 
   \end{enumerate} 
 \end{definition} 
@@ -5561,7 +5551,7 @@ From now on, we write $\Sym_G^\F(\V)$ to mean $\Sym_G(\V)$ endowed with the $\Si
 %In particular, $\P\in \V\Op_G$ will be called \textit{$\F$-cofibrant} if $\varnothing \to \P$ is an $\F$-cofibration. 
 
 \begin{definition} 
- The $\F$-model structure on $\V\Op_G$, if it exists, is the unique model structure with $\F$-fibrations, $\F$-weak equivalences, and $\F$-cofibrations. Equivalently, it is the transfered model structure along the adjoints 
+ The $\F$-model structure on $\V\Op_G$, if it exists, is the unique model structure with the above specified weak equivalences and fibrations. Equivalently, it is the transfered model structure along the adjoints 
 \[ 
 \begin{tikzcd} 
   \V\Op_G \arrow[r, shift right, "\mathsf{fgt}"'] & \Sym_G^\F(\V) \arrow[l, shift right, "\mathbb F_G"']
@@ -5639,32 +5629,24 @@ where $u: X \to Y$ is a level genuine trivial cofibration and $\P$ is level genu
 
 
 \begin{proof}[Proof of Theorem \ref{GENUINE_SEMI_VOP_G_THM}] 
- This follows by general arguments of Kan \cite[11.6.1]{Hi03} from Proposition \ref{CELLULAR_LEVEL_COFIB_PROP} and Remark \ref{LEVEL_COFIB_REMARK}, as transfinite compositions are constructed levelwise. 
-%, and all genuine (trivial) cofibrations in $\V^{\Sigma_G^{op}}$ and $\V\Op_G$ are so levelwise. 
+ This follows by general arguments of Kan \cite[11.6.1]{Hi03} from Proposition \ref{CELLULAR_LEVEL_COFIB_PROP}, as transfinite compositions are constructed levelwise, and all genuine (trivial) cofibrations in $\V^{\Sigma_G^{op}}$ and $\V\Op_G$ are so levelwise. 
 \end{proof} 
 
 
 Somewhat surprisingly, the existance of the $\F$-semi-model structure follows from the genuine. 
+
 \begin{corollary} 
   For any $G$-vertex system $\F$, the $\F$-semi-model structure on $\V\Op_G$ exists.  
 \end{corollary} 
 \begin{proof} 
-  This follows from Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, as again by Remark \ref{LEVEL_COFIB_REMARK}, cofibrations in $\Sym_G^\F(\V)$ are also level genuine cofibrations. %. Indeed, it suffices to show that if $u: X\to Y$ is an $\F$-level trivial cofibration and $\P$ is $\F$-level cofibrant in $\V^{\Sigma_G^{op}}$, then the cellular extension $\P \to \P[u]$ is an $\F$-level trivial cofibration. 
-%  \todo[inline]{come back}
+  This follows from Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, as $\F$-cofibrations are also level genuine cofibrations. %. Indeed, it suffices to show that if $u: X\to Y$ is an $\F$-level trivial cofibration and $\P$ is $\F$-level cofibrant in $\V^{\Sigma_G^{op}}$, then the cellular extension $\P \to \P[u]$ is an $\F$-level trivial cofibration. 
+  \todo[inline]{come back}
  %However, such $u$ are genuine level cofibrations, and such $\P$ are level genuine cofibrant, and hence $\P \to \P[u]$ is a level trivial genuine cofibration by said corollary, and thus is a level trivial $\F$-cofibration. 
 \end{proof} 
 
 Moreover, if our base category $\V$ is sufficiently nice, these semi model structures are in fact Quillen model structures. 
-\begin{definition}
-  We say $\V$ satisfies \textsc{Assumption 2} if $\V$ satisfies \textsc{Assumption 1} and
-  \begin{itemize}
-  \item genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and
-  \item every object in $\V$ is cofibrant.
-  \end{itemize}
-\end{definition}
-
 \begin{theorem} 
-  $\V$ satisfies \textsc{Assumption 2}, then the $\F$-model structure on $\V\Op_G$ exists. 
+  If genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and every object in $\V$ is cofibrant, then the $\F$-model structure on $\V\Op_G$ exists. 
 \end{theorem} 
 \begin{proof} 
   In these cases, the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied. 
@@ -5689,7 +5671,7 @@ We first record an obvious comparison result between the categories of sequences
   With the genuine model structures, the adjunction
 \[
 \begin{tikzcd}
-  \V\Sym^G \arrow[r, shift right, "i_*"'] & \V\Sym_G \arrow[l, shift right, "i^*"'] 
+  \V\Sym^G \arrow[r, shift right, "i_*"'] & \V\Sym_G \arrow[l, shift right, "i^*"] 
 \end{tikzcd}
 \]
 from (\ref{TWOADJOINTS EQ}) is Quillen.
@@ -5749,10 +5731,7 @@ Again, the $\F$-model structures follows from the genuine.
 \end{proof} 
 
 
-As before, this extends to a Quillen model structure if $\V$ is sufficiently nice:
-\begin{theorem}
-  If $\V$ satisfies \textsc{Assumption 2}, then the $\F$-model structure exists on $\Op^G(\V)$. \qed
-\end{theorem}
+
 
 
 
@@ -5845,7 +5824,7 @@ When $\mathcal{F}$ is the family of all subgroups the model structure in Proposi
 We will find it convenient to strengthen the cellularity conditions in Definition \ref{CELL DEF}.
 
 
-\begin{proposition}\label{STRONGCELL PROP}
+\begin{proposition}
 	Suppose that $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
@@ -6101,8 +6080,8 @@ To handle such actions we introduce the following notion.
 \begin{definition}\label{COFSYMPUSHPOW}
 	We say a monoidal model category $\mathcal{V}$ has 
 	\textit{cofibrant symmetric pushout powers}
-	if for each cofibration (resp. trivial cofibration) $f$ the pushout product 
-	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration (resp. trivial cofibration).
+	if for each cofibration $f$ the pushout product 
+	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration.
 \end{definition}
 
 
@@ -6115,38 +6094,24 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
 
 
-%\begin{remark}
-%	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
-%$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
-%the proof of Proposition \ref{POWERF PROP}.
-%\end{remark}
+\begin{remark}
+	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
+$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
+the proof of Proposition \ref{POWERF PROP}.
+\end{remark}
 
-
-We now turn to describing the symmetric power analogue of 
-Definition \ref{EXTERINT DEF}.
-
-We start with some notation. Letting 
-$\lambda$ be a partition 
-$E = \lambda_1 \amalg\cdots \amalg \lambda_k$
-of a finite set $E$, 
-we write 
- $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
- \Sigma_{\lambda_k} \leq \Sigma_E$ for the subgroup of permutations preserving $\lambda$. 
- In addition, given any $e \in E$ we write
-$\lambda_e$ for the partition $E = \{e\} \amalg (E-e)$, so that $\Sigma_{\lambda_e}$ is then the isotropy of $e$.
-
-
+{\color{red} HERE}
 
 \begin{definition}
  Let $\mathcal{F}$ be a family of $G$,
  $E$ a finite set and $e \in E$ any fixed element.
  
-We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to be the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
+We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to the family of $\Sigma_E \wr G = \Sigma_E \ltimes G^{\times E}$ given by
 \begin{equation}\label{FLTIMESN EQ}
 	\mathcal{F}^{\ltimes E}
 		=
 	\left(
-	\iota_{\Sigma_{\lambda_e} \wr G}
+	\iota_{ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G}
 	\right)_{\**}
 	\left(
 		\left(
@@ -6155,52 +6120,36 @@ We define the \textit{$n$-th semidirect power of $\mathcal{F}$} to be the family
 	\right),
 \end{equation}
 where $\iota$ is the inclusion 
-$\Sigma_{\lambda_e} \wr G
+$ \Sigma_{\{e\}} \times G \times \Sigma_{E-e}\wr G 
 	\to 
 \Sigma_E \wr G$
-and $\pi$ the projection
-$\Sigma_{\lambda_e} \wr G = \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
+and $\pi$ is the projection
+$\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$.
 
-
-More explicitly, since in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
-$\left( \iota_{\Sigma_{\lambda_e} \wr G}\right)_{\**}$
-one needs only conjugate by coset representatives of 
-$\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so that
-
+More explicitly, noting that in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, it follows that when computing $\iota$ one needs only consider conjugates by permutations of $E$ not fixing $e$, so that one has that
 \begin{equation}\label{FLTIMESN2 EQ}
 	K \in \mathcal{F}^{\ltimes E} 
 	\text{ iff }
 	\underset{e \in E}{\forall} \pi_{G}
 	\left(
-		K \cap \left( \Sigma_{\lambda_e} \wr G \right)
+		K \cap \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 	\right)
 	\in \mathcal{F},
 \end{equation}
-showing that in particular (\ref{FLTIMESN EQ})
+showing that in particular the definition in (\ref{FLTIMESN EQ})
 is independent of the choice of $e \in E$.
 \end{definition}
 
 
-
-\begin{remark}
-The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
-is best understood by working through this section backwards:
-the study of the interactions between equivariant trees and graph families, namely Lemma \ref{KEYLEMMAGECO LEM}, requires the study of the families $\mathcal{F}^{\ltimes_G n}$ in Notation \ref{SEMIDIRG NOT}, which are variants of the $\mathcal{F}^{\ltimes n}$ construction for graph families.
-It then suffices, and is notationally far more convenient, to establish the required results first for the $\mathcal{F}^{\ltimes n}$ families and then translate them to the $\mathcal{F}^{\ltimes_G n}$ families.
-\end{remark}
-
-
-\begin{proposition}\label{LTIMESPRODINC PROP}
-	Writing 
-	$\iota \colon \Sigma_E \times \Sigma_{\bar{E}} \to
-	\Sigma_{E \amalg \bar{E}}$ for the inclusion, one has 
+\begin{proposition}
+	One has 
 	\begin{equation}\label{LTIMESPRODINC EQ}
 	\mathcal{F}^{\ltimes E}
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}
 		\subset
-	\iota^{\**}\left(\mathcal{F}^{\ltimes E \amalg \bar{E}}\right).
+	\iota^{\**}(\mathcal{F}^{\ltimes E \amalg \bar{E}}).
 	\end{equation}
 	Hence, the following is a left Quillen bifunctor.
 \begin{equation}\label{LTIMESPRODQUI EQ}
@@ -6217,7 +6166,6 @@ It then suffices, and is notationally far more convenient, to establish the requ
 \end{proposition}
 
 
-
 \begin{proof}
 	Let 
 	$K \in 
@@ -6225,70 +6173,54 @@ It then suffices, and is notationally far more convenient, to establish the requ
 		\sqcap
 	\mathcal{F}^{\ltimes \bar{E}}	
 	$
-	and $e \in E$. 
-	We write $\lambda_e$ for the partition of $E \amalg \bar{E}$
-	and $\lambda_e^E$ for the partition of $E$.
-	One then has
+	and $e \in E$. Since
 \begin{equation}
 \pi_G
 \left(
-	K \cap \left( \Sigma_{\lambda_e} \wr G \right) \right)
+	K \cap \Sigma_{\{e\}} \times G
+		\times
+	\Sigma_{E \amalg \bar{E} - e} \wr G
+\right)
 	=
 \pi_G
 \left(
 	\pi_{\Sigma_E \wr G}(K)
-	\cap \left( \Sigma_{\lambda_e^E} \wr G \right)
+	\cap \Sigma_{\{e\}} \times G
+		\times
+	\Sigma_{E - e} \wr G
 \right),
 \end{equation}
-where on the right we write
-$\pi_{\Sigma_E \wr G} \colon
-\Sigma_E \wr G \times \Sigma_{\bar{E}} \wr G
-\to 
-\Sigma_E \wr G$
-and 
-$\pi_G \colon \Sigma_{\lambda^E_e} \wr G
-=\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
-\to G$. Therefore $K$ 
+it follows that $K$ 
 satisfies (\ref{FLTIMESN2 EQ}) for 
 $\mathcal{F}^{\ltimes E \amalg \bar{E}}$
 since 
 $\pi_{\Sigma_E \wr G}(K)$ does so for 
-$\mathcal{F}^{\ltimes E}$.
-The case of $e \in \bar{E}$ is identical.
+$\mathcal{F}^{\ltimes E}$. The case of $e \in \bar{E}$ is identical.
 
 (\ref{LTIMESPRODQUI EQ}) simply combines 
-the left Quillen bifunctor
-(\ref{EXTERINTADJ EQ}) with 
+(\ref{EXTERINTADJ EQ}) and 
 Proposition \ref{FGTRIGHT PROP}.
 \end{proof}
 
 
+
+
 \begin{proposition}\label{POWERF PROP}
-	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
-	
+	Suppose that $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
 	Then, for all $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
 	one has that $f^{\square n}$ is a cofibration (resp. trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
 
-Our proof of Proposition \ref{POWERF PROP} will essentially repeat the main argument in the proof of
+Our proof of Proposition \ref{POWERF PROP} will be essentially a repetition of the main argument in the proof of
 \cite[Thm. 1.2]{Pe16}.
 However, both for the sake of completeness and to stress that the argument is independent of the (fairly technical) model structures in \cite{Pe16}, we include an abridged version of the proof below, the key ingredient 
 of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor. 
 
-
 \begin{proof}
 	We first note that in the case of 
-	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, a generating (trivial) cofibration it is 
-	\[i^{\square n} = 
-	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
-	\simeq \Sigma_n \wr G 
-	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
-$\bar{\imath}^{\square n}$ is thus a $\Sigma_n \wr-H$-genuine (trivial) cofibration by the cofibrant symmetric pushout powers hypothesis combined with Proposition \ref{FGTLEFT PROP} and hence 
-$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
-(trivial) cofibration by Proposition \ref{FGTRIGHT PROP}
-since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
-
+	$i = (G/H) \cdot \bar{i}$, $H\in \mathcal{F}$, a generating (trivial) cofibration it is 
+	$i^{\square n} = (G/H)^{\times n} \cdot \bar{i}^{\square n}$, and thus this case follows since the $\Sigma_n \wr G$-orbits of $(G/H)^{\times n}$ are in $\mathcal{F}^{\ltimes n}$.
 
 	For the general case, we start by making the key observation that for composable arrows 
 	$\bullet \xrightarrow{g} \bullet \xrightarrow{h} \bullet$ the $n$-fold pushout product $(hg)^{\square n}$ has a factorization
@@ -6323,8 +6255,7 @@ where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_i$ is
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
 
 
-The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
-As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
+The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations. As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
 such that 
 \begin{inparaenum}
@@ -6338,18 +6269,17 @@ $X_{\kappa} = \colim_{\beta < \kappa} X_{\beta}$,
 $f$ equals the transfinite composite $X_0 \to X_{\kappa}$.
 \end{inparaenum}
 
-
 We argue by transfinite induction on $\kappa$.
 Writing $\bar{f}_{\beta} \colon X_0 \to X_{\beta}$ for the partial composites, it suffices to check that the natural transformation of $\kappa$-diagrams (rightmost map not included)
 \[
 \begin{tikzcd}
-		Q^n(\bar{f}_{1}) \ar{d}[swap]{\bar{f}_1^{\square n}} \ar{r}
+		Q^n(\bar{f}_{1}) \ar{d}[swap]{\bar{f}_0^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{2}) \ar{d}[swap]{\bar{f}_2^{\square n}} \ar{r}
+		Q^n(\bar{f}_{2}) \ar{d}[swap]{\bar{f}_1^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{3}) \ar{d}[swap]{\bar{f}_3^{\square n}} \ar{r}
+		Q^n(\bar{f}_{3}) \ar{d}[swap]{\bar{f}_2^{\square n}} \ar{r}
 	&
-		Q^n(\bar{f}_{4}) \ar{d}[swap]{\bar{f}_4^{\square n}} \ar{r}
+		Q^n(\bar{f}_{4}) \ar{d}[swap]{\bar{f}_3^{\square n}} \ar{r}
 	&
 		\cdots \ar{r}
 	&
@@ -6377,14 +6307,13 @@ $Q^n(\bar{f}_{\beta})
 X_{\beta}^{\otimes n} 
 $ are cofibrations in 
 $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
-Condition (ii) above implies that this map is an isomorphism for $\beta$ a limit ordinal 
-while for $\beta+1$ a successor ordinal it is the map
+Condition (ii) above implies that this map is an isomorphism for $\beta$ a limit ordinal and the map
 $Q^n(\bar{f}_{\beta+1})
 \amalg_{Q^n(\bar{f}_{\beta}) }
 X_{\beta}^{\otimes n} 
 	\to
-X_{\beta+1}^{\otimes n}$.
-But since 
+X_{\beta+1}^{\otimes n} 
+$ for $\beta+1$ a successor. But since 
 $Q^n(\bar{f}_{\beta+1}) \to Q^n(\bar{f}_{\beta+1})
 \amalg_{Q^n(\bar{f}_{\beta}) }
 X_{\beta}^{\otimes n}$ 
@@ -6413,19 +6342,17 @@ as the map
 	\to 
 Y^{\otimes n}.
 \]
-Any $K \leq \Sigma_n \wr G$ acts on the poset 
-$(0 \to 1)^{\times n}$ itself 
-(via $K \to \Sigma_n \wr G \to \Sigma_n$).
-Moreover, the fixed subposet  
+It then follows that $K$ acts on the diagram category 
+$(0 \to 1)^{\times n}$ itself (via the composite
+$K \to \Sigma_n \wr G \to \Sigma_n$).
+The fixed diagram subcategory 
 $\left((0 \to 1)^{\times n}\right)^K$
-then consists of those tuples in $\{0,1\}^{\times n}$
+consists of those tuples in $\{0,1\}^{n}$
 whose coordinates coincide if their indexes are in the same coset of $n/K$, i.e. there is an identification
 $\left((0 \to 1)^{\times n}\right)^K \simeq (0 \to 1)^{\times n/K}$.
-
-
-
 \begin{example}
-When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$ the fixed subposet $(0 \to 1)^{n/K}$ is displayed on the right below.
+When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$
+$(0 \to 1)^{n/K}$ is identified with the subposet on the right below.
 \[
 \begin{tikzcd}[column sep=1em, row sep=1em]
 	& 000 \ar{rr} \ar{ld} \ar[dashed]{dd} && 010 \ar{ld} \ar{dd}&
@@ -6448,13 +6375,15 @@ It will be key for our purposes to know that fixed points
 $\left( f^{\square n} \right)^K$ can be computed by first restricting to the smaller cube 
 $(0 \to 1)^{\times n/K}$,
 resulting in a cube of objects with $K$-actions,
-and then computing a pushout over that smaller cube.
+and then computing a pushout over that smaller cube (either before or after taking fixed points of each level).
 The formal result follows.
 
 
 
+
+
 \begin{proposition}
-	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated (cf. Prop. \ref{STRONGCELL PROP}(iii)).
+	Suppose that $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category with symmetric pushout powers.
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
 	$f \colon X \to Y$ a map in $\mathcal{V}$ and consider the natural maps (in the arrow category)
 \begin{equation}\label{FIXEDPUSH EQ}
@@ -6468,7 +6397,7 @@ The formal result follows.
 	\left( f^{\square n} \right)^K.
 \end{equation}
 If $f$ is a cofibration between cofibrant objects then 
-(\ref{FIXEDPUSH EQ}) is an isomorphism.
+all maps in (\ref{FIXEDPUSH EQ}) are isomorphisms.
 \end{proposition}
 
 
@@ -6482,11 +6411,11 @@ $g=\emptyset \to X$, $h=f$ and removing the last map $k_n$
 one obtains a filtration of the source of $f^{\square n}$.
 Applying $(\minus)^K$ to the leftmost map in 
 (\ref{COMPNFOLDFACTPUSH EQ})
-one has isomorphisms
+one thus obtains isomorphisms
 \begin{align*}
 	\left(
 	\Sigma_n \underset{\Sigma_{n-i} \times \Sigma_i}
-	{\cdot} X^{\otimes n-i} \otimes f^{\square i}
+	{\cdot}\left( X^{\otimes n-i} \otimes f^{\square i} \right)
 	\right)^K
 \simeq &
 	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
@@ -6510,24 +6439,24 @@ one has isomorphisms
 	\left(  f^{\otimes [k]} \right)^K
 	\right)
 \end{align*}
-where the first step is an instance of Prop. \ref{STRONGCELL PROP}(ii), 
-the second step follows from Prop. \ref{STRONGCELL PROP}(iii)
-(with the required cofibrancy of the objects following from Propositions \ref{BIQUILLENG PROP} and \ref{POWERF PROP}),
-and the last step follows by Prop. \ref{STRONGCELL PROP}(iii) together with the induction hypothesis (which applies since $|B|\leq i <n$).
-
+where the first step is an instance of Lemma \ref{STROIII LEM}, 
+the second step an instance of
+Lemma \ref{PUSHFIX LEM},
+and the last step follows by combining Lemma \ref{FIXEDDIAG LEM}
+with the induction hypothesis (since $|B|\leq i <n$).
 
 We have thus shown that the leftmost map in the pushouts (\ref{COMPNFOLDFACTPUSH EQ}) for 
 $\left( f^{\square n} \right)^K$
-is isomorphic to the leftmost map in the pushouts for the corresponding filtration of 	
+is isomorphic to the leftmost map in the corresponding pushout for 	
 $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
 \left( f^{\otimes [i]} \right)^K$,
-and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(i)), the result now follows.
+and the result now follows.
 \end{proof}
 
 
-\subsection{$G$-graph families and trees}
 
-{\color{red} HERE}
+
+\subsection{$G$-graph families and trees}
 
 We note that in this section we use $\Sigma$ to denote a general group.
 
@@ -6557,12 +6486,12 @@ for the inclusion homomorphism
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
 \end{remark}
 
-\begin{notation}\label{SEMIDIRG NOT}
+
 Letting $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of $G \times \Sigma$ and $G \times \bar{\Sigma}$ we will write
 \[
 	\mathcal{F} \sqcap_G \bar{\mathcal{F}} 
 	= \Delta^{\**} (\mathcal{F} \sqcap \bar{\mathcal{F}} )
-\qquad \qquad
+	\qquad
 	\mathcal{F}^{\ltimes_G n} = \Delta^{\**} (\mathcal{F}^{\ltimes n})
 \]
 where $\Delta$ denotes either of the diagonal inclusions
@@ -6572,7 +6501,6 @@ G \times \Sigma \times G \times \bar{\Sigma}$
 or 
 $\Delta \colon G \times \Sigma_n \wr \Sigma \to 
 \Sigma_n \wr (G \times \Sigma)$.
-\end{notation}
 
 \begin{remark}\label{UNPACKINGSQCAP REM}
 	Unpacking Definition \ref{EXTERINT DEF} one has that 
