@@ -9,7 +9,7 @@
 \newdir{ >}{{}*!/-5pt/@{>}}%
 \usepackage{array}%
 \usepackage[dvipsnames]{xcolor}%
-\usepackage[normalem]{ulem}%
+\usepackage{ulem}%
 \usepackage{dsfont}%
 \usepackage{bbm}%
 \usepackage{paralist}%
