@@ -6698,84 +6698,96 @@ The $G$-graph families we will be interested in encode certain families of $G$-t
   (cf. Remark \ref{GRAPH REM}). 
 \end{remark}
 
-Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate both sets of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
+Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate either set of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
 
-{\color{red} HERE}
 
 \begin{definition}
-  Let $\Sigma_{\mathcal{F}}$ be a family of $G$-corollas.
 
-  We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
-  if all of its $G$-vertices $T_{v_G}$ are in 
-  $\Sigma_{\mathcal{F}}$.
+Let $\mathcal{F}$ be a family of $G$-corollas.
+
+We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
+if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
+$\Sigma_{\mathcal{F}}$.
+
 \end{definition}
 
 
-
 \begin{remark}\label{VACUOUSNESS REM}
-  Note that by vacuousness the stick $G$-trees $G \cdot_H \eta$ are always $\mathcal{F}$-trees.
+
+	By vacuousness the stick $G$-trees
+	$G \cdot_H \eta \simeq G/H \cdot \eta$ are always $\mathcal{F}$-trees.
+
 \end{remark}
 
+
 \begin{proposition}
-  Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with automorphism group $\Sigma_T$.
-  
-  Let $\mathcal{F}_T$ be the collection of graph subgroups of 
-  $G \times \Sigma_T$ encoded by partial homomorphisms
-  $G \leq H \to \Sigma_T$ such that the associated $G$-tree
-  $G \cdot_H T$ is a $\mathcal{F}$-tree.
-  
-  Then $\mathcal{F}_T$ is a $G$-graph family.
+
+	Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with automorphism group $\Sigma_T$.
+	Write $\mathcal{F}_T$ for the collection of $G$-graph subgroups of 
+	$G \times \Sigma_T$ encoded by partial homomorphisms
+	$G \geq H \to \Sigma_T$ such that the associated $G$-tree
+	$G \cdot_H T$ is a $\mathcal{F}$-tree.
+	
+	Then $\mathcal{F}_T$ is a $G$-graph family.
+
 \end{proposition}
 
+
 \begin{proof}
-  Closure under conjugation follows since conjugate graph subgroups produce isomorphic $G$-trees.
-  As for subgroups, they are encoded by restrictions $K \leq H \to \Sigma_T$ which induce
-  quotient maps 
-  $G \cdot_K T \to G \cdot_H T$, so that any vertex of 
-  $G \cdot_K T$ maps in $\Sigma_G$ to some vertex of $G \cdot_H T$.
+
+	Closure under conjugation follows since conjugate graph subgroups produce isomorphic $G$-trees.
+	As for subgroups, they correspond to restrictions $K \leq H \to \Sigma_T$,
+	which induce quotient maps 
+	$G \cdot_K T \to G \cdot_H T$. 
+	$\mathcal{F}_T$ is thus closed under subgroups since the $G$-vertices of $ G \cdot_H T$ are quotients of those of $G \cdot_K T$.
+
 \end{proof}
 
 
-
 \begin{remark}\label{UNPACKFTYPE REM}
-  Unpacking definitions, one sees that a partial homomorphism 
-  $G \geq H \to \Sigma_T$
-  encodes a subgroup in $\mathcal{F}_T$
-  iff, for each non-leaf edge $e \in T$ with $H$-isotropy $H_e \leq H$, the induced homomorphism
-  \begin{equation}\label{PARTIALHOMEDGE EQ}
-    H_e \to \Sigma_{T_{e^{\uparrow}\leq e}} \simeq 
-    \Sigma_{|e^{\uparrow}|}
-  \end{equation}
-  encodes a subgroup in $\mathcal{F}_{|e^{\uparrow}|}$.
+
+Unpacking definitions, a partial homomorphism 
+$G \geq H \to \Sigma_T$
+encodes a subgroup in $\mathcal{F}_T$
+iff, for each vertex $v= e^{\uparrow} \leq e$ of $T$ with 
+$H_e \leq H$ the
+$H$-isotropy of the edge $e$, the induced homomorphism
+\begin{equation}\label{PARTIALHOMEDGE EQ}
+H_e \to \Sigma_{T_{v}} \simeq 
+\Sigma_{|v|}
+\end{equation}
+encodes a subgroup in $\mathcal{F}_{|v|}$, where $|v|=|e^{\uparrow}|$.
+
 \end{remark}
-
-
 
 
 \begin{remark}\label{TREEINDUCDESC REM}
-  Recall that any tree $T \in \Omega$ other than the stick $\eta$ has an essentially unique grafting decomposition
-  $T=(T_1,\cdots,T_n)$. Further, let
-  $\lambda$ be the partition 
-  $\{1,\cdots,n\} = \lambda_1 \amalg\cdots \amalg \lambda_k$
-  such that $1 \leq i_1, i_2 \leq n$ are in the same class iff
-  $T_{i_1}, T_{i_2} \in \Omega$ are isomorphic.
-  
-  Writing 
-  $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
-  \Sigma_{\lambda_k}$
-  and picking representatives $i_j \in \lambda_j$ 
-  one then has isomorphisms
-  \begin{equation}\label{TREEISOT EQ}
-    \Sigma_T \simeq \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}
-    \simeq
-    \Sigma_{|\lambda_1|} \wr \Sigma_{T_{i_1}}
-    \times \cdots \times	
-    \Sigma_{|\lambda_k|} \wr \Sigma_{T_{i_k}}
-  \end{equation}
-  where the second isomorphism, while not canonical 
-  (it depends on choices of isomorphisms $T_{i_j} \simeq T_l$ for each $i_j \neq l \in \lambda_j$) is nonetheless well defined up to conjugation.
+
+Recall that any tree $T \in \Omega$ other than the stick $\eta$ has an essentially unique grafting decomposition
+$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$ where $C_n$ is the root corolla and the leaves of $C_n$ are identified with the roots of the $T_i$. We now let 
+$\lambda$ be the partition 
+$\{1,\cdots,n\} = \lambda_1 \amalg\cdots \amalg \lambda_k$
+ such that $1 \leq i_1, i_2 \leq n$ are in the same class iff
+ $T_{i_1}, T_{i_2} \in \Omega$ are isomorphic.
+ 
+ Writing 
+ $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
+ \Sigma_{\lambda_k}$
+and picking representatives $i_j \in \lambda_j$ 
+one then has isomorphisms
+\begin{equation}\label{TREEISOT EQ}
+	\Sigma_T \simeq \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}
+		\simeq
+	\Sigma_{|\lambda_1|} \wr \Sigma_{T_{i_1}}
+		\times \cdots \times	
+	\Sigma_{|\lambda_k|} \wr \Sigma_{T_{i_k}}
+\end{equation}
+where the second isomorphism, while not canonical 
+(it depends on choices of isomorphisms $T_{i_j} \simeq T_l$ for each $i_j \neq l \in \lambda_j$) is nonetheless well defined up to conjugation.
+
 \end{remark}
 
+{\color{red} HERE}
 
 The following, which is the core result in this section, is a reinterpretation of 
 Remark \ref{UNPACKFTYPE REM}
@@ -6890,6 +6902,8 @@ The results in this section now combine to yield the following.
   is a left Quillen multifunctor.
   The result now follows by Proposition \ref{POWERFG PROP}. 
 \end{proof}
+
+{\color{red} HERE}
 
 
 \subsection{Indexing systems}
