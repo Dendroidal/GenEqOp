@@ -5441,7 +5441,7 @@ are the cube and punctured cube categories
 	(X \to Y)^{\times V_G^{in}(T)} - Y^{\times V_G^{in}(T)}
 \]
 and thus by computing the left Kan extensions on the leftmost map in (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) iteratively by first left Kan extending to $\Omega_G^a$, we can rewrite that map as
-\[
+\begin{equation}\label{FILTINTALT EQ}
 	\Lan_{\Omega_G^a[k]^{op}}
 	\left(
 		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
@@ -5449,7 +5449,7 @@ and thus by computing the left Kan extensions on the leftmost map in (\ref{FILTR
 		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
 		u(T_v)
 	\right).
-\]
+\end{equation}
 The desired description of the leftmost map given in (\ref{FILTRATION_LAN_LEVEL})
 now follows by noting that the root undercategories
 $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
@@ -6780,7 +6780,6 @@ where the second isomorphism, while not canonical
 (it depends on choices of isomorphisms $T_{i_j} \simeq T_l$ for each $i_j \neq l \in \lambda_j$) is nonetheless well defined up to conjugation.
 \end{remark}
 
-{\color{red} HERE}
 
 The following, which is the core result in this section, is a reinterpretation of 
 Remark \ref{UNPACKFTYPE REM}
@@ -6806,14 +6805,18 @@ $G \times \Sigma_T \to G \times \Sigma_{\lambda} \to
  G \times \Sigma_n$.
 \end{lemma}
 
-\begin{proof} The argument is by induction on the decomposition $T=(T_1,\cdots,T_n)$ with the base case, that of a corolla, being immediate.
 
-	Consider a partial homomorphism $G \geq H \to \Sigma_T$ encoding a 
-	$G$-graph subgroup $\Gamma$ of $G \times \Sigma_T$.
-	
+
+\begin{proof} The argument is by induction on the decomposition
+$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$
+with the base case, that of a corolla, being immediate.
+
+	Consider now a partial homomorphism $G \geq H \to \Sigma_T$ encoding a 
+	$G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
 	The condition that $\Gamma \in \left(\pi_{G \times \Sigma_n}\right)^{\**}(\mathcal{F}_n)$ states that the composite $H \to \Sigma_T \to \Sigma_n$ is in $\mathcal{F}_n$, 
-	and this is precisely (\ref{PARTIALHOMEDGE EQ}) when $e=r$ is the root of $T$.
-	
+	and this is precisely the condition (\ref{PARTIALHOMEDGE EQ}) in Remark \ref{UNPACKFTYPE REM}
+	for $e=r$ the root of $T$.
+
 As for the condition 
 	$ \Gamma \in 
 	\left(
@@ -6821,40 +6824,70 @@ As for the condition
 		\sqcap_G \cdots \sqcap_G
 	\mathcal{F}_{T_{i_k}}^{\ltimes_G |\lambda_k|}
 	\right)	$, by unpacking it by combining 
-	Remark \ref{UNPACKINGSQCAP REM} and 
-	(\ref{FLTIMESN2G EQ}), this translates to the condition that, for each $i \in \{1,\cdots,n\}$, one has
+	Remarks \ref{UNPACKINGSQCAP REM} and 
+	\ref{UNPACKINGLTIMES REM},
+	this translates to the condition that, for each $i \in \{1,\cdots,n\}$, one has
 	\begin{equation}\label{KEYLEMMAGECOR EQ}
 	\pi_{G \times \Sigma_{T_i}}
 	\left(
 		\Gamma \cap 
+	\left(
 		G \times \Sigma_{\{i\}} \times \Sigma_{T_i}
 		\times 
 		\Sigma_{\lambda-\{i\}} \wr \prod_{j\neq i} \Sigma_{T_j}
+	\right)
 	\right)	
 	\in \mathcal{F}_{T_i}
 	\end{equation}
 where $\lambda - \{i\}$ denotes the induced partition of 
-$\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup appearing inside $\pi_{G \times \Sigma_{T_i}}$ in (\ref{KEYLEMMAGECOR EQ}) can be rewritten as 
+$\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in (\ref{KEYLEMMAGECOR EQ}) can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
 we see that this is the graph subgroup encoded by the restriction $H_i \leq H \to \Sigma_T$, where $H_i$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
 But since for any edge $e \in T_i$ its isotropy $H_e$ 
 (cf. \ref{PARTIALHOMEDGE EQ}) is a subgroup of $H_i$, the induction hypothesis implies that (\ref{KEYLEMMAGECOR EQ})
 is equivalent to condition (\ref{PARTIALHOMEDGE EQ}) 
-across all non-leaf edges other than the root $r \in T$.
+across all vertices other than the root vertex.
 
-The paragraphs above show that 
+The previous paragraphs show that 
 (\ref{KEYLEMMAGECO EQ})
-indeed holds when restricted to $G$-graph subgroups. However, it still remains to show that any group $\Gamma$ in the right family in (\ref{KEYLEMMAGECO EQ}) indeed satisfies
-$\Gamma \cap \Sigma_T =\**$, or in other words, that any element $\gamma \in \Gamma \leq G \times \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}$ with $G$-coordinate 
+indeed holds when restricted to $G$-graph subgroups. However, it still remains to show that any group $\Gamma$ in the right family in (\ref{KEYLEMMAGECO EQ}) is indeed
+a $G$-graph subgroup, i.e. $\Gamma \cap \Sigma_T =\**$ or,
+in other words, that any element 
+$\gamma \in \Gamma \leq
+\Gamma \cap \Sigma_T =
+G \times \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}$
+with $G$-coordinate 
 $\gamma_G = e$ is indeed the identity.
 But the condition 
-$\pi_{G \times \Sigma_n}(\Gamma) \in \mathcal{F}_n$ now implies that the $\Sigma_{\lambda}$-coordinate is $\gamma_{\Sigma_{\lambda}} = e$
+$\pi_{G \times \Sigma_n}(\Gamma) \in \mathcal{F}_n$ now implies that for such $\gamma$ the $\Sigma_{\lambda}$-coordinate is $\gamma_{\Sigma_{\lambda}} = e$
 and thus (\ref{KEYLEMMAGECOR EQ}) in turn implies that the 
 $\Sigma_{T_i}$-coordinates are 
 $\gamma_{\Sigma_{T_i}} = e$,
 finishing the proof.
 \end{proof}
+
+{\color{red} HERE}
+
+The results just developed will allow us to 
+analyze cofibrancy properties of the left maps in the key pushouts (\ref{FILTRATION_LAN_LEVEL}). The first part of the analysis concerns the maps  
+\begin{equation}\label{COFIBMAPSTREE EQ}
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		\underset{v \in V_{G}^{in}(T)}
+		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+		u(T_v)
+\end{equation}
+that constitute the inner part of (\ref{FILTINTALT EQ}),
+where we recall that $T \in \Omega_G^a$ is an alternating tree.
+We will in turn subdivide the cofibrancy analysis of 
+(\ref{COFIBMAPSTREE EQ}) itself into two parts:
+
+
+{\color{red} HERE}
+
+Remark \ref{REFLCOREFL REM}
+
+{\color{red} HERE}
 
 
 The results in this section now combine to yield the following.
@@ -6896,7 +6929,7 @@ is a left Quillen multifunctor.
 The result now follows by Proposition \ref{POWERFG PROP}. 
 \end{proof}
 
-{\color{red} HERE}
+{\color{red} HERR}
 
 
 \subsection{Indexing systems}
