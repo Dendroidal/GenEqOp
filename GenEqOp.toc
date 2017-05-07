@@ -22,19 +22,18 @@
 \contentsline {section}{\numberline {6}Model structures}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{43}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{46}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Cellularity and Model Structures on Product Categories}{46}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}Genuine $G$-Operads}{48}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.3}$G$-Operads}{50}{subsubsection.6.2.3}
-\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{52}{section.7}
-\contentsline {subsection}{\numberline {7.1}Families of subgroups}{52}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Pushout powers}{54}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{57}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems}{60}{subsection.7.4}
-\contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{63}{section.8}
-\contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{63}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Moved From Earlier}{64}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}weak indexing systems}{64}{subsubsection.8.2.1}
-\contentsline {subsubsection}{\numberline {8.2.2}cofibrancy stuff}{64}{subsubsection.8.2.2}
-\contentsline {subsection}{\numberline {8.3}Preservation of Cofibrant Objects}{65}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Cofibrant Symmetric Collections}{65}{subsection.8.4}
-\contentsline {subsubsection}{\numberline {8.4.1}$G$-Operads}{65}{subsubsection.8.4.1}
+\contentsline {subsection}{\numberline {6.3}Families of Subgroups}{46}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}The $\ensuremath {\mathcal F}$-model structures}{47}{subsubsection.6.3.1}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{51}{section.7}
+\contentsline {subsection}{\numberline {7.1}Families of subgroups}{51}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{56}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Indexing systems}{59}{subsection.7.4}
+\contentsline {section}{\numberline {8}Model Structures on Genuine Operads}{62}{section.8}
+\contentsline {subsection}{\numberline {8.1}Weak Indexing Systems}{62}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Moved From Earlier}{63}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}weak indexing systems}{63}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}cofibrancy stuff}{63}{subsubsection.8.2.2}
+\contentsline {subsection}{\numberline {8.3}Preservation of Cofibrant Objects}{64}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Cofibrant Symmetric Collections}{64}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}$G$-Operads}{64}{subsubsection.8.4.1}
