@@ -3339,7 +3339,7 @@ in fact codifies the multiplication maps
 \end{remark}
 
 
-\subsection{Labeled planar strings}
+\subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
 We now translate the results in the previous section to the context of the monad $N$ on $\mathsf{WSpan}^l(\Sigma^{op},\mathcal{V})$. In analogy to the planar string models $\Omega_{G,n}^{(A)}$ for iterations $N^{\circ n+1}$ of the monad $N$,
 we will find it convenient to build similar string models
@@ -6487,10 +6487,10 @@ The formal result follows.
 
 
 
-\begin{proposition}
+\begin{proposition}\label{FIXEDPUSH PROP}
 	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated (cf. Prop. \ref{STRONGCELL PROP}(iii)).
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
-	$f \colon X \to Y$ a map in $\mathcal{V}$ and consider the natural maps (in the arrow category)
+	$f \colon X \to Y$ a map in $\mathcal{V}^G$ and consider the natural maps (in the arrow category)
 \begin{equation}\label{FIXEDPUSH EQ}
 	\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
 	\left( f^{\otimes [i]} \right)^K
@@ -6556,6 +6556,34 @@ is isomorphic to the leftmost map in the pushouts for the corresponding filtrati
 $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
 \left( f^{\otimes [i]} \right)^K$,
 and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(i)), the result now follows.
+\end{proof}
+
+
+\begin{corollary}\label{FIXEDPUSH COR}
+	Given a partition $\lambda$ given by
+	$\{1,2,\cdots,n\} = \lambda_1 \amalg \cdots \amalg \lambda_k$, cofibrations between cofibrant objects $f_i$ in $\mathcal{V}^{G_i}$, $1\leq i \leq k$ and a subgroup
+	$K \leq 
+	\Sigma_{\lambda_1} \wr G_1
+	\times \cdots \times
+	\Sigma_{\lambda_k} \wr G_k
+	$,
+	the natural map
+\begin{equation}\label{FIXEDPUSH EQ}
+	\underset{1\leq i\leq k}{\mathlarger{\mathlarger{\square}}}
+	\underset{[j] \in \lambda_i/K}{\mathlarger{\mathlarger{\square}}}
+	\left( f_i^{\otimes [j]} \right)^K
+%\to 
+%	\left( \underset{[j] \in n/K}
+%{\mathlarger{\mathlarger{\square}}}
+%	 f^{\otimes [j]} \right)^K
+\to
+	\left( 	\underset{1\leq i\leq k}{\mathlarger{\mathlarger{\square}}}f_i^{\square \lambda_i} \right)^K.
+\end{equation}
+is an isomorphism.
+\end{corollary}
+
+\begin{proof}
+This simply combines Propositions \ref{STRONGCELL PROP}(iii) and \ref{FIXEDPUSH PROP}.
 \end{proof}
 
 
@@ -6709,7 +6737,7 @@ encoded by a partial homomorphism $G \geq H \to \Sigma_n$ corresponding to a sub
 Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate either set of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
 
 
-\begin{definition}
+\begin{definition}\label{FTREE DEF}
 Let $\mathcal{F}$ be a family of $G$-corollas.
 
 We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
@@ -6870,51 +6898,80 @@ $\gamma_{\Sigma_{T_i}} = e$,
 finishing the proof.
 \end{proof}
 
-{\color{red} HERE}
 
 The results just developed will allow us to 
 analyze cofibrancy properties of the left maps in the key pushouts (\ref{FILTRATION_LAN_LEVEL}). The first part of the analysis concerns the maps  
 \begin{equation}\label{COFIBMAPSTREE EQ}
-		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
-		\underset{v \in V_{G}^{in}(T)}
-		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
-		u(T_v)
+	\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+	\underset{v \in V_{G}^{in}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	u(T_v)
 \end{equation}
 that constitute the inner part of (\ref{FILTINTALT EQ}),
 where we recall that $T \in \Omega_G^a$ is an alternating tree.
 We will in turn subdivide the cofibrancy analysis of 
 (\ref{COFIBMAPSTREE EQ}) itself into two parts:
+\begin{inparaenum}
+\item[(i)] showing a $\mathcal{F}_{T_e}$-cofibrancy claim when $T=G \cdot T_e$ is free and;
+\item[(ii)] showing a fixed point claim for non free trees, 
+as in Remark \ref{REFLCOREFL REM}.
+\end{inparaenum}
+
+It will find it convenine to  sligthly reinterpret (\ref{COFIBMAPSTREE EQ}): writing 
+$p(T_v)\colon \emptyset \to \mathcal{P}(T_v)$
+for the unique map, 
+we can rewrite (\ref{COFIBMAPSTREE EQ}) as
+\[
+	\underset{v \in V_{G}^{ac}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	p(T_v) 
+		\square
+	\underset{v \in V_{G}^{in}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	u(T_v).
+\]
+For both the sake of generality and to simply notation in the proof, we extend the context of the following results to the 
+$l$-labeled trees
+$\Omega_G^{\underline{l}}$
+of \S \ref{LABELSTRI SEC}.
 
 
-{\color{red} HERE}
+\begin{remark}
+$l$-labeled $\mathcal{F}$-trees can be defined exactly as in Definition \ref{FTREE DEF}. Moreover, it is then clear that a $l$-labeled $G$-tree $T$ is an $\mathcal{F}$-tree iff the underlying $G$-tree is.
 
-Remark \ref{REFLCOREFL REM}
-
-{\color{red} HERE}
-
-
-The results in this section now combine to yield the following.
+Remarks \ref{UNPACKFTYPE REM}, \ref{TREEINDUCDESC REM}
+and Lemma \ref{KEYLEMMAGECO LEM} then extend to the $l$-labeled context, by now writing $\Sigma_T$ for the group of label isomorphisms (a subgroup of the isomorphisms of the underlying tree) and defining the partition $\lambda$ 
+in Remark \ref{TREEINDUCDESC REM}
+by using label isomorphism classes.
+\end{remark}
+ 
 
 
 \begin{proposition}\label{AUTTCOFPUSH PROP}
-	Let $\Sigma_{\mathcal{F}}$ be a family of corollas 
+	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
+
+	Let $\mathcal{F}$ be a family of corollas 
 	and suppose that 
-	$f \colon A \to B$ is a $\mathcal{F}$-cofibration (resp. trivial cofibration)
+	$f_i \colon A \to B$, $1\leq i \leq l$ are $\mathcal{F}$-cofibrations (resp. trivial cofibrations)
 	in $\mathsf{Sym}^G(\mathcal{V})$, i.e. that 
-	$f(r) \colon A(r) \to B(r)$ are cofibrations (resp. trivial cofibrations) in 
-	$\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$. Then for any tree $T \in \Omega$ the map
+	$f_i(r) \colon A(r) \to B(r)$ are cofibrations (resp. trivial cofibrations) in 
+	$\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$.
+	Then for any $l$-labeled tree $T \in \Omega^{\underline{l}}$ the map
 	\[
 	f^{\square V(T)} = 
-	\underset{v \in V(T)}{\mathlarger{\mathlarger{\square}}}
-	f(v)\]
-	is a cofibration (resp. trivial cofibration) in 
+		\underset{1\leq i \leq l, v \in V_i(T)}{\mathlarger{\mathlarger{\square}}}
+	f_i(v)\]
+	(where $V_i(T)$ denotes vertices with label $i$) is a cofibration (resp. trivial cofibration) in 
 	$\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$.
 \end{proposition}
 
 
 \begin{proof}
 	This follows by induction on the decomposition 
-	$T=(T_1,\cdots,T_n)$, with the base cases of corollas and $\eta$ being immediate. (\ref{KEYLEMMAGECO EQ}) combined with (\ref{EXTERINTADJG EQ}), (\ref{BIQUILLENG PROP}) and Proposition \ref{FGTLEFT PROP} yields that
+	$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$, 
+	with the base cases of corollas and $\eta$ being immediate.
+	The description of $\mathcal{F}_T$ in (\ref{KEYLEMMAGECO EQ}) combined with the left Quillen functors in 
+	Propositions \ref{EXTERINTADJG PROP}, \ref{BIQUILLENG PROP} and \ref{FGTLEFT PROP} then yield that 
 \[
 	\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}	
 		\times
@@ -6929,14 +6986,128 @@ The results in this section now combine to yield the following.
 	\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}
 \]
 is a left Quillen multifunctor.
-The result now follows by Proposition \ref{POWERFG PROP}. 
+The result now follows by Proposition \ref{POWERFG PROP} together with the induction hypothesis.
 \end{proof}
 
-{\color{red} HERR}
+
+
+\begin{proposition}
+	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
+	$\mathcal{V}$ is strongly cofibrantly generated
+	and that the monoidal structure on $\mathcal{V}$ is cartesian.
+
+	Let  
+	$f_i \colon A \to B$, $1\leq i \leq l$ be 
+	genuine cofibrations between genuine cofibrant objects in 
+	$\mathsf{Sym}^G(\mathcal{V})$. 
+	For each $T \in \Omega_{G,0}^{\underline{l}}$ define
+	\begin{equation}
+	f^{\square V_G(T)} = 
+		\underset{1\leq i \leq l, v \in V_{G,i}(T)}{\mathlarger{\mathlarger{\square}}}
+	\iota_{\**}f_i(v).
+	\end{equation}
+	Then the canonical map
+	\begin{equation}\label{FIXEDPOINT1 EQ}
+	\iota_{\**} \iota^{\**} f^{\square V_G(T)} \to
+	f^{\square V_G(T)}
+	\end{equation}
+is an isomorphism.	
+\end{proposition}
+
+\begin{proof}
+Note first that there is a coproduct decomposition
+\[\Omega_{G,0}^{\underline{l}}
+\simeq \coprod_{U \in \mathsf{Iso}
+\left(\Omega^{\underline{l}}_0\right)}
+\Omega_{G,0}^{\underline{l}}[U]\]
+where $\Omega_{G,0}^{\underline{l}}[U]$ is the full subcategory
+formed by the quotients of $G \cdot U$.
+It suffices to establish (\ref{FIXEDPOINT1 EQ}) for each subcategory 
+$\Omega_{G,0}^{\underline{l}}[U]$. 
+
+Moreover, writing $T$ as $T \simeq G \cdot_H T_e$ for $T_e \in \Omega^H$, we are free by induction on $|G|$ to assume $H=G$.
+Indeed, otherwise there are identifications
+$V_G(T) \simeq V_H(T_e)$ and 
+$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(T_e)}$ from which the desired isomorphism follows.
+
+We thus reduce to the case where there is a quotient map 
+$G \cdot U \to U_G$
+where $U_G$ denotes the underlying tree $U$ together a $G$-action. Moreover, the automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
+are the subgroup $K \leq G \times \Sigma_U$
+encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
+One then has identifications
+\begin{align*}
+\left(
+	\underset{[v] \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
+	\iota_{\**} f_{\bullet}([v])
+	\right)^K
+\simeq 
+	\left(
+	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet}(v)
+	\right)^G
+\simeq 
+	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
+	\left(
+	\prod_{v \in [v]}
+	f_{\bullet}(v)
+	\right)^G
+\simeq
+	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
+	\iota_{\**}
+	f_{\bullet}([v])
+\end{align*}
+where the middle step is Corollary \ref{FIXEDPUSH COR}
+establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
+%\begin{align*}
+%	\left(
+%	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet}(v)
+%	\right)^G
+%\simeq &
+%	\left(
+%	f(n) \square
+%	\underset{1 \leq j \leq n}{\mathlarger{\mathlarger{\square}}}
+%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet}(v)
+%	\right)^G
+%\\
+%	\simeq & 
+%	f_{\bullet}(n)^G
+%	\square
+%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%	\left(
+%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet}(v)
+%	\right)^G
+%\\
+%	\simeq &
+%	f_{\bullet}(n)^G
+%	\square
+%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%	\left(
+%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet}(v)
+%	\right)^G
+%\\
+%	\simeq &
+%	f_{\bullet}(n)^G
+%	\square
+%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%	\left(
+%	\underset{v \in V(U_{\lambda})}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet}(v)
+%	\right)^G
+%\end{align*}
+\end{proof}
+
 
 
 \subsection{Indexing systems}
 
+{\color{red} HERE}
 
 The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads'', by which we mean genuine operads whose mapping objects are only defined for some of corollas in 
 $\Sigma_G$.
