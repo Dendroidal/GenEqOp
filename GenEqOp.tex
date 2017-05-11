@@ -7109,12 +7109,6 @@ $\Omega_{\mathcal{F},0} \to
 $.
 \end{remark}
 
-
-{\color{red} HERE}
-
-
-
-
 \begin{remark}
 The closure condition in 
 Definition \ref{INDEXSYS DEF}
@@ -7124,14 +7118,14 @@ be the natural homomorphism, one has
 $(G \times \phi)(\Gamma) \in \mathcal{F}_{\mathsf{lr}(T)}$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Proposition \ref{FGTRIGHT PROP} then says that
-\[
-	\Sigma_{\mathsf{lr}(T)} \cdot_{\Sigma_T} (\minus)
+\begin{equation}\label{LRLEFTQUILLEN EQ}
+	\phi_{!}
 		\colon
 	\mathcal{V}^{G\times \Sigma_T}_{\mathcal{F}_T}
 		\to
 	\mathcal{V}^{G\times \mathsf{lr}(T)}
 	_{\mathcal{F}_{\mathsf{lr}(T)}}
-\]
+\end{equation}
 is a left Quillen functor.
 \end{remark}
 
@@ -7139,81 +7133,93 @@ is a left Quillen functor.
 \begin{remark}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
 coincides with \cite[Lemma 5.9]{BM08}.
-Moreover, it is not hard to leverage that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas.
+Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
 However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
 Indeed, this is reflected 
 on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
 uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
 to deduce the much simpler condition
 $\Gamma \cap \prod \Sigma_{T_i} = \**$
-that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} suggested above.
-It it thus natural to wonder if a suitably simpler analogue
-of (\ref{KEYLEMMAGECOR EQ}) might have been used, with the most natural candidate being the condition  
+that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} mentioned above.
+One may thus wonder if the $\mathcal{F}^{\ltimes_G n}$
+families are indeed required 
+to prove Proposition \ref{AUTTCOFPUSH PROP},
+or whether a more direct adaptation of the proof of \cite[Lemma 5.9]{BM08} is possible.
+Reverse engineering our proofs, the most natural ``simplification'' would be to replace the condition (\ref{KEYLEMMAGECOR EQ}) with the condition
 \begin{equation}\label{WRONGCONJ}
 \pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
-\in   \mathcal{F}.
+\in   \mathcal{F},
 \end{equation}
-
-However, the following example shows that  
-(\ref{WRONGCONJ}) 
-is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
-and $\mathcal{F}$ be the indexing system generated
-(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
-Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
-Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
-\begin{equation}
-\begin{tikzpicture}
-[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\tikzstyle{level 2}=[sibling distance = 1.75em]
-	\tikzstyle{level 3}=[sibling distance = 0.75em]
-	\node at (0,0) {$T$}
-		child{node [dummy] {}
-			child{node [dummy] {}
-				child{
-				edge from parent node [swap] {$G/A_3$} }
-			edge from parent node [swap] {$G/\Sigma_3$} }
-		edge from parent node [swap] {G/G}
-		};
-	\node at (5,0) {$T$}
-		child{node [dummy] {}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-		};
-\end{tikzpicture}
-\end{equation}
-$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
-since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
+thus replacing the families 
+$\mathcal{F}^{\ltimes n}$ of (\ref{FLTIMESN EQ}) with the families
+$(\iota_{G^{\times n}})_{\**}
+(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
+However, it is not hard to build indexing systems $\mathcal{F}$ (other than the universal one) for which these simpler families do not satisfy the analogue of 
+Lemma \ref{KEYLEMMAGECO LEM}, 
+and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
+%However, the following example shows that  
+%(\ref{WRONGCONJ}) 
+%is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
+%and $\mathcal{F}$ be the indexing system generated
+%(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
+%Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
+%Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
+%\begin{equation}
+%\begin{tikzpicture}
+%[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+%	\tikzstyle{level 2}=[sibling distance = 1.75em]
+%	\tikzstyle{level 3}=[sibling distance = 0.75em]
+%	\node at (0,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child{
+%				edge from parent node [swap] {$G/A_3$} }
+%			edge from parent node [swap] {$G/\Sigma_3$} }
+%		edge from parent node [swap] {G/G}
+%		};
+%	\node at (5,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%		};
+%\end{tikzpicture}
+%\end{equation}
+%$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
+%since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
 \end{remark}
+
+
+
 
 
 {\color{red} HERE}

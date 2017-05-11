@@ -22,14 +22,14 @@
 \contentsline {section}{\numberline {6}Model structures}{43}{section.6}
 \contentsline {subsection}{\numberline {6.1}Filtration pieces}{43}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{46}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{48}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{47}{subsubsection.6.2.1}
 \contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{49}{subsubsection.6.2.2}
 \contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{51}{section.7}
 \contentsline {subsection}{\numberline {7.1}Families of subgroups}{51}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{57}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Indexing systems}{60}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}something}{63}{subsection.7.5}
-\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Operads}{63}{subsubsection.7.5.1}
-\contentsline {subsubsection}{\numberline {7.5.2}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{64}{subsubsection.7.5.2}
-\contentsline {subsubsection}{\numberline {7.5.3}Cofibrant Genuine $G$-Operads}{64}{subsubsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5}something}{62}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Operads}{62}{subsubsection.7.5.1}
+\contentsline {subsubsection}{\numberline {7.5.2}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{62}{subsubsection.7.5.2}
+\contentsline {subsubsection}{\numberline {7.5.3}Cofibrant Genuine $G$-Operads}{63}{subsubsection.7.5.3}
