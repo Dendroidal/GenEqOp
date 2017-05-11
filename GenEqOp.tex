@@ -1355,7 +1355,7 @@ $\Fin$ coordinates.
 
 
 
-\subsection{Equivariant leaf-root and vertex functors}
+\subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 \begin{definition}
 	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of forests
@@ -2257,7 +2257,7 @@ It is straightforward to check that the composites of the left and right section
 
 
 
-\subsection{The free genuine operad monad}
+\subsection{The free genuine operad monad} \label{FGMON SEC}
 
 Recalling that 
 $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op}) \simeq 
@@ -5811,7 +5811,7 @@ This section establishes some useful properties of the model structures associat
 	\end{itemize} 
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{SIEVE REM}
 	Any family determines a full subcategory 
 	$\mathsf{O}_{\mathcal{F}} \hookrightarrow \mathsf{O}_G$
 	of those orbital $G$-sets $G/H$ for 
@@ -6564,6 +6564,8 @@ This simply combines Propositions \ref{STRONGCELL PROP}(iii) and \ref{FIXEDPUSH 
 \end{proof}
 
 
+
+
 \subsection{$G$-graph families and $G$-trees}
 
 
@@ -7084,21 +7086,35 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 
 \subsection{Indexing systems}
 
-{\color{red} HERE}
 
-The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads'', by which we mean genuine operads whose mapping objects are only defined for some of corollas in 
-$\Sigma_G$.
+The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
+More concretely, given a family $\mathcal{F}$ of $G$-corollas and writing 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ 
+for the partial $G$-symmetric sequences determined by $\mathcal{F}$, one may then ask under which conditions the construction of the monad
+$\mathbb{F}_G$ on $\mathsf{Sym}_{G}(\mathcal{V})$
+of \S \ref{FGMON SEC}
+can be adapted to build a monad
+$\mathbb{F}_{\mathcal{F}}$ on 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
 
-In practice, the fact that genuine operads possess a unit and multiplication requires $\Sigma_{\mathcal{F}}$ to satisfy an additional closure condition that we now introduce.
-\todo[inline]{Luis: don't we need that $\Sigma_{\F}$ is a \textit{sieve}? I.e. that it has restrictions?}
+Writing $\Omega_{\mathcal{F},0} \hookrightarrow \Omega_{G,0}$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
+this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
+$V_G \colon \Omega_{\mathcal{F},0} \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
+$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
+$V_{G}^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
+Compatibility with the leaf-root functor, however, 
+requires an additional closure condition on $\mathcal{F}$,
+which we now formally introduce.
+
 
 \begin{definition}\label{INDEXSYS DEF}
-	$\Sigma_{\mathcal{F}}$ is called a 
+	A family $\mathcal{F}$ of $G$-corollas is called a 
 	\textit{weak indexing system}
-	if for any $\mathcal{F}$-tree $T$ it is 
-	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$.
+	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F},0}$ it is 
+	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e., if the leaf-root functor restricts to a functor
+	$\mathsf{lr} \colon \Omega_{\mathcal{F},0} \to \Sigma_{\mathcal{F}}$.
 	
-	Additionally, $\Sigma_{\mathcal{F}}$ is called simply an \textit{indexing system} if all trivial corollas 
+	Additionally, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
 $(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
 \end{definition}
 
@@ -7107,102 +7123,35 @@ $(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
 	In light of Remark \ref{VACUOUSNESS REM} any weak coefficient system must contain the $1$-corollas $(G/H) \cdot C_1$.
 \end{remark}
 
-The notion of indexing system in Definition \ref{INDEXSYS DEF} matches the eponymous notion first introduced in 
-\cite[Def. 3.22]{BH15}, though packaged quite differently.
-To justify this claim, we need the following lemma.
-
-
-\begin{lemma}
-	The condition in Definition \ref{INDEXSYS DEF}
-	holds for all equivariant trees $T$ with at least one inner edge orbit provided that it holds for those $T$ with precisely one inner edge orbit.
-\end{lemma}
-
-
-\begin{proof}
-If $T$ containing $n>0$ edge orbits, one can build a sequence of inner face inclusions
-	\[
-		\mathsf{lr}(T) = T_0
-		\to
-		T_1
-			\to 
-		\cdots
-			\to
-		T_n= T
-	\]
-where each inclusion $T_i \to T_{i+1}$ misses exactly one inner edge orbit. The condition in the statement implies by downwards induction that all $T_i$ will be $\mathcal{F}$-trees whenever $T$ is.
-\end{proof}
-
-
 
 \begin{remark}
-	In the language of \cite{BH15}, the isomorphism classes $\Sigma_{\mathcal{F}}$ are instead encoded by 
-	$H$-sets. Namely, a $H$-set with orbital decomposition $K_1/H \amalg \cdots \amalg K_n/H$ corresponds to a $G$-tree with orbital representation as follows.
-\begin{equation}
-\begin{tikzpicture}
-[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {}
-		child{node [dummy] {}
-			child{
-			edge from parent node [swap,near end] {$G/K_n$} node [name=Kn] {}}
-			child{
-			edge from parent node [near end] {$G/K_1$}
-node [name=Kone,swap] {}}
-		edge from parent node [swap] {G/H}
-		};
-		\draw [dotted,thick] (Kone) -- (Kn) ;
-\end{tikzpicture}
-\end{equation}
-Under the assumption that all trivial $H$-sets are admissible (including the empty ones), the closure condition in Definition \ref{INDEXSYS DEF} implies that such $H$-sets are closed under both disjoint unions and subobjects. Indeed, this follows by taking $\mathsf{lr}$
-of $G$-trees of the following forms.
-\begin{equation}
-\begin{tikzpicture}
-[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\tikzstyle{level 2}=[sibling distance = 8.5em]
-	\tikzstyle{level 3}=[sibling distance = 3.5em]
-	\node at (0,0) {}
-		child{node [dummy] {}
-			child{node [dummy] {}
-				child{
-				edge from parent node [swap,near end] {$G/\bar{K}_m$} node [name=Kn] {}}
-				child{
-				edge from parent node [near end] {$G/\bar{K}_1$}
-node [name=Kone,swap] {}}
-			edge from parent node [swap] {G/H}}
-			child{node [dummy] {}
-				child{
-				edge from parent node [swap,near end] {$G/K_n$} node [name=K2n] {}}
-				child{
-				edge from parent node [near end] {$G/K_1$}
-node [name=K2one,swap] {}}
-			edge from parent node {G/H}}
-		edge from parent node [swap] {G/H}		
-		};
-		\draw [dotted,thick] (Kone) -- (Kn)	;
-		\draw [dotted,thick] (K2one) -- (K2n)	;
-	\begin{scope}
-	\tikzstyle{level 2}=[sibling distance = 5.5em]
-	\node at (6,0) {}
-		child{node [dummy] {}
-			child{node [dummy] {}
-			edge from parent node [swap,near end] {$G/K_n$} node [name=Kn] {}}
-			child{node [dummy] {}
-			edge from parent node [near end] {$G/K_2$}
-node [name=Kone,swap,near end] {}}
-			child{
-			edge from parent node [near end] {$G/K_1$}}
-		edge from parent node [swap] {G/H}
-		};
-		\draw [dotted,thick] (Kone) -- (Kn) ;
-	\end{scope}
-\end{tikzpicture}
-\end{equation}
-It hence follows that, when in the presence of all trivial $H$-sets and if assuming closure under disjoint unions and subobjects, the third condition in 
-Definition \ref{INDEXSYS DEF}
-needs only be stated for trees with a single root orbit, a single inner edge orbit (in fact, we can further assume a single leaf edge orbit), showing that under those assumptions the closure condition in 
-Definition \ref{INDEXSYS DEF}
-is indeed equivalent to the self-induction condition of 
-\cite{BH15}.
+The notion and terminology of indexing system
+was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
+Moreover, an alternate third definition of indexing systems, also in terms of $G$-trees but differing slightly from Definition \ref{INDEXSYS DEF}, was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
+\cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the description in \cite[\S 9]{Pe17}.
+
+In \cite[Def. 9.5]{Pe17}, $\mathcal{F}$ was defined to be an indexing system if $\mathcal{F}$-trees form a sieve
+$\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$ 
+(cf. \ref{SIEVE REM}). The existence of canonical maps 
+$\mathsf{lr}(T) \to T$ then imply that the condition in 
+\cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
+Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
+planar tall strings $\Omega_{\mathcal{F},1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
+$\Omega_{\mathcal{F},0} \to
+\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
+\Fin \wr \Omega_{\mathcal{F},0}
+$.
+
+
+{\color{red} HERE}
+
+
 \end{remark}
+
+
+
+
+
 
 
 \begin{remark}
@@ -7334,6 +7283,7 @@ commute when applied to genuine cofibrant/$\mathcal{F}$-cofibrant objects.
 
 \newpage
 
+\subsection{something}
 
 \subsubsection{$\F$-Cofibrant $G$-Operads}
 
