@@ -7281,7 +7281,7 @@ prove Theorem \ref{MAINQUILLENEQUIV THM}.
 	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
 	
 Then in both of the adjunctions
-\begin{equation}
+\begin{equation}\label{COFADJ EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
 &
@@ -7314,10 +7314,58 @@ preserve cofibrant objects.
 \end{lemma}
 
 \begin{proof}
+All claims will be shown in parallel.
+Further, since the argument for the ``essential image'' claim for the symmetric sequence adjunction in 
+(\ref{COFADJ EQ}) is simpler than that for the
+operad adjunction, we will mainly refer to the latter. 
+
+Note first that since $\iota_{\**}$ identifies 
+$\mathsf{Op}^{G}(\mathcal{V})$ as a reflexive 
+subcategory of $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$, 
+it is 
+$X \simeq \iota^{\**}Y$ for some 
+$Y \in \mathsf{Op}^{G}(\mathcal{V})$
+(i.e. $X \in \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ is in the essential image of $\iota^{\**}$)
+iff both $\iota_{\**}X \simeq Y$ and the unit map 
+$X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$
+is an isomorphism.
+
+Letting $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) denote the classes of cofibrant objects in 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
+(resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$)
+we need to show 
+$C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$,
+where we slightly abuse notation by writing 
+$\iota_{\**}(\minus)$ for the essential image rather than the image.
+Since $C_{\mathcal{F}}$ is characterized as the smallest class closed under retracts and transfinite composition of cellular extensions
+containing the initial genuine operad $\mathbb{F}_G (\emptyset)$,
+and suffices to show that 
+$\iota_{\**}(C^{\mathcal{F}})$
+satisfies this characterization.
+An immediate verification shows that 
+$\mathbb{F}_G (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$
+while the alternate characterization of the essential image of $\iota_{\**}$ in the previous paragraph shows that 
+$\iota_{\**}(C^{\mathcal{F}})$
+is also closed under retracts.
+Since $\iota_{\**}$ commutes with transfinite compositions, 
+it suffices to check that cellular extensions of 
+objects in $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
+\begin{equation}
+\begin{tikzcd}
+	\mathbb{F}_G \iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
+	\iota_{\**} \mathcal{O} \ar[dashed]{d} & &
+	\mathbb{F} X \ar{d}[swap]{u} \ar{r} &
+	\mathcal{O} \ar[dashed]{d}
+\\
+	\mathbb{F}_G \iota_{\**} Y  \ar[dashed]{r}&
+	\iota_{\**} \mathcal{O}[\iota_{\**} u]& &
+	\mathbb{F} Y \ar[dashed]{r}&
+	\mathcal{O}[u]
+\end{tikzcd}
+\end{equation}
+are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
 
 {\color{red} HERE}
-
-kk
 
 \end{proof}
 
