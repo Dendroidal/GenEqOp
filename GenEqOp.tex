@@ -45,6 +45,36 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 No content yet.
 
+Our main result is the following.
+
+\begin{theorem}\label{MAINQUILLENEQUIV THM}
+Let $\mathcal{V}$ be $\mathsf{sSet}$ or, more generally,
+a strongly cofibrantly generated cartesian closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
+
+Then the adjunction 
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_G(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+	&
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}} .
+\end{tikzcd}
+\end{equation}
+is a Quillen equivalence.
+
+More generally, for $\mathcal{F}$ a (weak) indexing system, 
+the analogue adjunction 
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+	&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}} .
+\end{tikzcd}
+\end{equation}
+is also a Quillen equivalence.
+\end{theorem}
+
 
 
 \section{Basic definitions}
@@ -7244,8 +7274,52 @@ commute when applied to genuine cofibrant/$\mathcal{F}$-cofibrant objects.
 
 {\color{red} HERE}
 
+We now possess all the technical ingredients needed to 
+prove Theorem \ref{MAINQUILLENEQUIV THM}.
 
+\begin{lemma}
+	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
+	
+Then in both of the adjunctions
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}
+&
+	\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}	
+\end{tikzcd}
+\end{equation}	
+the cofibrant objects in the leftmost category are the essential image under $\iota_{\**}$ of the 
+cofibrant objects in the rightmost category.
 
+Moreover, both forgetful functors 
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar{r}{\mathsf{fgt}} 
+&
+	\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	 \ar{r}{\mathsf{fgt}}
+&
+	\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+\end{tikzcd}
+\end{equation}
+preserve cofibrant objects.
+\end{lemma}
+
+\begin{proof}
+
+{\color{red} HERE}
+
+kk
+
+\end{proof}
 
 
 \newpage
