@@ -7250,29 +7250,143 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 
 
 
-
-
 {\color{red} HERE}
 
-\begin{remark}
-It follows from (the argument in the proof of) Proposition \ref{STRONGCELL PROP} that the following
+
+
+\begin{proposition}
+	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
+	and consider the reflexive adjunction
+	\begin{equation}\label{COFADJ EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}
+	\ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathcal{V}^G_{\mathcal{F}}
+	\ar[shift left=1.5]{l}{\iota_{\**}}.
+\end{tikzcd}
+\end{equation}
+Then the cofibrant objects of 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+are precisely the essential image under $\iota_{\**}$
+of the cofibrant objects of
+$\mathcal{V}^G_{\mathcal{F}}$.
+Moreover, the analogous statement for cofibrations between cofibrant objects also holds.
+\end{proposition}
+
+\begin{proof}
+Note first that since $\iota_{\**}$ identifies 
+$\mathcal{V}^{G}(\mathcal{F})$ as a reflexive 
+subcategory of $\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$, 
+it is 
+$X \simeq \iota^{\**}Y$ for some 
+$Y \in \mathcal{V}^{G}(\mathcal{F})$
+(i.e. $X \in \mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+is in the essential image of $\iota^{\**}$)
+iff both $\iota_{\**}X \simeq Y$ and the unit map 
+$X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$
+is an isomorphism.
+
+Letting $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) denote the classes of cofibrant objects in 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$ 
+(resp. $\mathcal{V}^G_{\mathcal{F}}$)
+we need to show 
+$C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$,
+where we slightly abuse notation by writing 
+$\iota_{\**}(\minus)$ for the essential image rather than the image.
+Since $C_{\mathcal{F}}$ is characterized as being the smallest class closed under retracts and transfinite composition of cellular extensions
+that contains the initial presheaf $\emptyset$,
+it suffices to show that 
+$\iota_{\**}(C^{\mathcal{F}})$
+satisfies this same characterization.
+
+It is immediate that $\iota_{\**}(\emptyset) = \emptyset$.
+Further, the characterization in the first paragraph yields that 
+$X \in \iota_{\**}(C^{\mathcal{F}})$ iff $\iota^{\**}(X)\in C^{\mathcal{F}}$ and $X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$ is an isomorphism, showing that  
+$\iota_{\**}(C^{\mathcal{F}})$ is closed under retracts.
+
+The crux of the proof will be to compare 
+cellular extensions in 
+$C_{\mathcal{F}}$ with the images under $\iota_{\**}$ of the cellular extensions in 
+$C^{\mathcal{F}}$.
+Firstly, note that the generating cofibrations in 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+have the form $\mathsf{Hom}(\minus,G/H)\cdot f$, 
+and that by the cellularity axiom (iii) in
+Definition \ref{CELL DEF}
+this map is isomorphic to the map
+$\iota_{\**}(G/H \cdot f)$.
+We now claim that the cellular extensions of objects in 
+$\iota_{\**}(C^{\mathcal{F}})$, i.e. pushforward diagrams as on the left below
+\begin{equation}\label{TWOCELLEXTEAS EQ}
+\begin{tikzcd}
+	\iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
+	\iota_{\**} V \ar[dashed]{d} & &
+	X \ar{d}[swap]{u} \ar{r} &
+	V \ar[dashed]{d}
+\\
+	\iota_{\**} Y  \ar[dashed]{r}&
+	\tilde{W} & &
+	Y \ar[dashed]{r}&
+	W
+\end{tikzcd}
+\end{equation}
+are precisely the essential image under $\iota_{\**}$
+of the cellular extensions of objects in $C^{\mathcal{F}}$, 
+i.e., pushforward diagrams as on the right above. That the solid subdiagrams in either side of (\ref{TWOCELLEXTEAS EQ}) are indeed in bijection up isomorphism is simply the claim that 
+$\iota^{\**}$ is fully faithful,
+hence the real claim is that $\tilde{W} \simeq \iota_{\**} W$.
+But this follows since by 
+the cellularity axiom (ii) in
+Definition \ref{CELL DEF}
+the map $\iota_{\**}$ preserves the rightmost pushforward
+in (\ref{TWOCELLEXTEAS EQ}) 
+(note that $u \colon X \to Y$ is assumed to be a generating cofibration of $\mathcal{V}^G_{\mathcal{F}}$).
+
+Noting that the cellularity axiom (i) in
+Definition \ref{CELL DEF} implies that
+$\iota_{\**}$ preserves filtered colimits finishes the proof that $C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$.
+
+The additional claim concerning cofibrations between cofibrant objects follows by the same argument.
+\end{proof}
+
+
+\begin{corollary}
+Let $\mathcal{V}$ be as above, 
+$\phi \colon G \to \bar{G}$
+a homomorphism, and 
+$\mathcal{F}$, $\bar{\mathcal{F}}$
+families of $G$, $\bar{G}$
+such that $\phi_{!}\mathcal{F} \subset \mathcal{F}$.
+Then the diagram
 \[
 \begin{tikzcd}
-	\mathcal{V}^{\mathsf{O}_G^{op}} \ar{d}[swap]{\phi_!} &
-	\mathcal{V}^{G} \ar{l}[swap]{\iota_{\**}} \ar{d}{\phi_!}& & &
 	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}} \ar{d}[swap]{\phi_!} &
 	\mathcal{V}^{G}_{\mathcal{F}} \ar{l}[swap]{\iota_{\**}} \ar{d}{\phi_!}&
 \\
-	\mathcal{V}^{\mathsf{O}_{\bar{G}}^{op}}  &
-	\mathcal{V}^{\bar{G}} \ar{l}{\iota_{\**}}& & &
 	\mathcal{V}^{\mathsf{O}_{\mathcal{\bar{F}}}^{op}}  &
 	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar{l}{\iota_{\**}}&
 \end{tikzcd}
 \]
-commute when applied to genuine cofibrant/$\mathcal{F}$-cofibrant objects.
-\end{remark}
+commutes up to isomorphism when restricted to 
+cofibrant objects of $\mathcal{V}^{G}_{\mathcal{F}}$.
+\end{corollary}
 
-{\color{red} HERE}
+
+\begin{proof}
+	It is straightforward to check that the left adjoints commute, i.e. that there is a natural isomorphism 
+	$\iota^{\**} \phi_{!} \simeq \phi_{!} \iota^{\**}$
+which by adjunction induces a natural transformation
+	$\phi_! \iota_{\**} \to \iota_{\**} \phi_!$.
+More explicitly, this natural transformation is the composite
+\[\phi_! \iota_{\**} \to 
+\iota_{\**} \iota^{\**} \phi_! \iota_{\**} \xrightarrow{\simeq}
+\iota_{\**} \phi_! \iota^{\**} \iota_{\**} \xrightarrow{\simeq}
+\iota_{\**} \phi_!
+\]
+where the last two maps are always isomorphisms. But when restricting to cofibrant objects the previous result guarantees both that $\phi_! \iota_{\**}$ lands in cofibrant objects and that cofibrant objects are in the essential image of $\iota_{\**}$. The result follows.
+\end{proof}
+
 
 We now possess all the technical ingredients needed to 
 prove Theorem \ref{MAINQUILLENEQUIV THM}.
@@ -7350,7 +7464,7 @@ is also closed under retracts.
 Since $\iota_{\**}$ commutes with transfinite compositions, 
 it suffices to check that cellular extensions of 
 objects in $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
-\begin{equation}
+\begin{equation}\label{TWOCELLEXT EQ}
 \begin{tikzcd}
 	\mathbb{F}_G \iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
 	\iota_{\**} \mathcal{O} \ar[dashed]{d} & &
@@ -7358,14 +7472,59 @@ objects in $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
 	\mathcal{O} \ar[dashed]{d}
 \\
 	\mathbb{F}_G \iota_{\**} Y  \ar[dashed]{r}&
-	\iota_{\**} \mathcal{O}[\iota_{\**} u]& &
+	(\iota_{\**} \mathcal{O})[\iota_{\**} u]& &
 	\mathbb{F} Y \ar[dashed]{r}&
 	\mathcal{O}[u]
 \end{tikzcd}
 \end{equation}
 are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
 
+Recalling that there are natural isomorphisms 
+$\iota^{\**} \mathbb{F}_{G} \iota_{\**}
+\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}$, we see that the two solid subdiagrams in 
+(\ref{TWOCELLEXT EQ})
+are in fact adjoint, so that there is a bijection between such data. 
+We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+are in the essential image of $\iota_{\**}$.
+Indeed, if that is the case then
+$\mathbb{F}_G \iota_{\**} Z \simeq 
+\iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
+\iota_{\**} \mathbb{F} Z
+$ for $Z=X,Y$
+and since $\iota_{\**}$ reflects colimits (i.e. any diagram that becomes a colimit upon applying $\iota_{\**}$ must have already been a colimit diagram), it must then be
+indeed be 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]
+\simeq \iota_{\**} (\mathcal{O}[u])$, 
+so that the leftmost diagram in 
+(\ref{TWOCELLEXT EQ})
+is indeed isomorphic to the image of the rightmost diagram under $\iota_{\**}$.
+
+To establish the remaining claim that the leftmost diagram in
+(\ref{TWOCELLEXT EQ})
+is indeed in the essential image of $\iota_{\**}$, it suffices to check that this is the case for the bottom right corner 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$.
+Indeed, the claim concerning $\mathbb{F}_G \iota_{\**}Y$
+can be reduced to the claim concerning to check that this is the case for the bottom right corner 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ by setting $X=\emptyset$
+and $\mathcal{O}=\mathbb{F} \emptyset$ the initial operad, and similarly for $\mathbb{F}_G \iota_{\**}X$.
+
+Writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
+the required condition that
+$\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**}\mathcal{P}[\iota_{\**} u]$
+is an isomorphism can be checked by forgetting to 
+$\mathsf{Sym}_G(\mathcal{V})$, and we can thus appeal to the filtration 
+(\ref{FILT EQ}) for the map
+$ \mathcal{P} \to \mathcal{P}[\iota_{\**} u]$, and it suffices to verify by induction that each $\mathcal{P}_k$ is in the essential image of 
+$\iota_{\**} \colon \mathsf{Sym}^G(\mathcal{V})
+\to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+Using the inductive description of the $\mathcal{P}_k$ in
+(\ref{FILTRATION_LAN_LEVEL})
+
+
 {\color{red} HERE}
+
+
 
 \end{proof}
 
