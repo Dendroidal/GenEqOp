@@ -6966,7 +6966,7 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 
 
 
-\begin{proposition}
+\begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
 	$\mathcal{V}$ is strongly cofibrantly generated
 	and that the monoidal structure on $\mathcal{V}$ is cartesian.
@@ -6983,8 +6983,8 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 	\end{equation}
 	Then the canonical map
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-	\iota_{\**} \iota^{\**} f^{\square V_G(T)} \to
-	f^{\square V_G(T)}
+	f^{\square V_G(T)} \to
+	\iota_{\**} \iota^{\**} f^{\square V_G(T)}
 	\end{equation}
 is an isomorphism.	
 \end{proposition}
@@ -7249,12 +7249,7 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 \end{remark}
 
 
-
-{\color{red} HERE}
-
-
-
-\begin{proposition}
+\begin{proposition}\label{COFESSIM PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
 	and consider the reflexive adjunction
 	\begin{equation}\label{COFADJ EQ}
@@ -7351,7 +7346,7 @@ The additional claim concerning cofibrations between cofibrant objects follows b
 \end{proof}
 
 
-\begin{corollary}
+\begin{corollary}\label{FINALCOR COR}
 Let $\mathcal{V}$ be as above, 
 $\phi \colon G \to \bar{G}$
 a homomorphism, and 
@@ -7428,42 +7423,39 @@ preserve cofibrant objects.
 \end{lemma}
 
 \begin{proof}
-All claims will be shown in parallel.
-Further, since the argument for the ``essential image'' claim for the symmetric sequence adjunction in 
-(\ref{COFADJ EQ}) is simpler than that for the
-operad adjunction, we will mainly refer to the latter. 
+We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ EQ})
+is not really new. Indeed, there are equivalences of categories
+$
+\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+\simeq \prod_{n \geq 0}
+\mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_n}}
+$,
+$
+\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+\simeq \prod_{n \geq 0}
+\mathcal{V}_{\mathcal{F}_n}^{G \times \Sigma_n}
+$,
+compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ adjunctions, 
+so that the symmetric sequence statement merely repackages 
+Proposition \ref{COFESSIM PROP}.
 
-Note first that since $\iota_{\**}$ identifies 
-$\mathsf{Op}^{G}(\mathcal{V})$ as a reflexive 
-subcategory of $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$, 
-it is 
-$X \simeq \iota^{\**}Y$ for some 
-$Y \in \mathsf{Op}^{G}(\mathcal{V})$
-(i.e. $X \in \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ is in the essential image of $\iota^{\**}$)
-iff both $\iota_{\**}X \simeq Y$ and the unit map 
-$X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$
-is an isomorphism.
+For the operad adjunction in (\ref{COFADJ EQ}),
+most of the argument in the proof of
+Proposition \ref{COFESSIM PROP}
+applies mutatis mutandis
+except for the claim that 
+$\mathbb{F}_G (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$, which is readily checked directly, 
+and the comparison of cellular extensions,
+which is the key claim.
 
-Letting $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) denote the classes of cofibrant objects in 
+
+Explicitly, and borrowing the notation
+$C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) used in Proposition \ref{COFESSIM PROP} for the 
+classes of cofibrant objects in 
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
-(resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$)
-we need to show 
-$C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$,
-where we slightly abuse notation by writing 
-$\iota_{\**}(\minus)$ for the essential image rather than the image.
-Since $C_{\mathcal{F}}$ is characterized as the smallest class closed under retracts and transfinite composition of cellular extensions
-containing the initial genuine operad $\mathbb{F}_G (\emptyset)$,
-and suffices to show that 
-$\iota_{\**}(C^{\mathcal{F}})$
-satisfies this characterization.
-An immediate verification shows that 
-$\mathbb{F}_G (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$
-while the alternate characterization of the essential image of $\iota_{\**}$ in the previous paragraph shows that 
-$\iota_{\**}(C^{\mathcal{F}})$
-is also closed under retracts.
-Since $\iota_{\**}$ commutes with transfinite compositions, 
-it suffices to check that cellular extensions of 
-objects in $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
+(resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$),
+we need to show that cellular extensions of objects in 
+$\iota(C^{\mathcal{F}})$, such as on the left below
 \begin{equation}\label{TWOCELLEXT EQ}
 \begin{tikzcd}
 	\mathbb{F}_G \iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
@@ -7479,11 +7471,12 @@ objects in $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
 \end{equation}
 are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
 
+
 Recalling that there are natural isomorphisms 
 $\iota^{\**} \mathbb{F}_{G} \iota_{\**}
 \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}$, we see that the two solid subdiagrams in 
 (\ref{TWOCELLEXT EQ})
-are in fact adjoint, so that there is a bijection between such data. 
+are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
 We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
 are in the essential image of $\iota_{\**}$.
 Indeed, if that is the case then
@@ -7491,22 +7484,25 @@ $\mathbb{F}_G \iota_{\**} Z \simeq
 \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
 \iota_{\**} \mathbb{F} Z
 $ for $Z=X,Y$
-and since $\iota_{\**}$ reflects colimits (i.e. any diagram that becomes a colimit upon applying $\iota_{\**}$ must have already been a colimit diagram), it must then be
+and since $\iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\iota_{\**}$ must have already been a colimit diagram.},
+ it must then be
 indeed be 
 $(\iota_{\**} \mathcal{O})[\iota_{\**} u]
-\simeq \iota_{\**} (\mathcal{O}[u])$, 
-so that the leftmost diagram in 
-(\ref{TWOCELLEXT EQ})
-is indeed isomorphic to the image of the rightmost diagram under $\iota_{\**}$.
+\simeq \iota_{\**} (\mathcal{O}[u])$.
 
-To establish the remaining claim that the leftmost diagram in
+
+To establish the remaining claim that the objects 
+in the leftmost diagram in
 (\ref{TWOCELLEXT EQ})
-is indeed in the essential image of $\iota_{\**}$, it suffices to check that this is the case for the bottom right corner 
-$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$.
-Indeed, the claim concerning $\mathbb{F}_G \iota_{\**}Y$
-can be reduced to the claim concerning to check that this is the case for the bottom right corner 
-$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ by setting $X=\emptyset$
-and $\mathcal{O}=\mathbb{F} \emptyset$ the initial operad, and similarly for $\mathbb{F}_G \iota_{\**}X$.
+are in the essential image of $\iota_{\**}$,
+we claim
+it suffices to show this for the bottom right corner 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
+$\mathsf{Sym}^{G}_{\mathcal{F}}(\mathcal{V})$.
+Indeed, setting  $X=\emptyset$ and $\O=\mathbb{F} \emptyset$, 
+one has 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = 
+\mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\mathbb{F}_{G} \iota_{\**} X$.
 
 Writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
 $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
@@ -7514,20 +7510,57 @@ the required condition that
 $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**}\mathcal{P}[\iota_{\**} u]$
 is an isomorphism can be checked by forgetting to 
 $\mathsf{Sym}_G(\mathcal{V})$, and we can thus appeal to the filtration 
-(\ref{FILT EQ}) for the map
-$ \mathcal{P} \to \mathcal{P}[\iota_{\**} u]$, and it suffices to verify by induction that each $\mathcal{P}_k$ is in the essential image of 
+(\ref{FILT EQ}) of the map
+$ \mathcal{P} \to \mathcal{P}[\iota_{\**} u]$. It thus suffices to verify by induction on $k$ that each 
+$\mathcal{P}_k$ is in the essential image of 
 $\iota_{\**} \colon \mathsf{Sym}^G(\mathcal{V})
 \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
-Using the inductive description of the $\mathcal{P}_k$ in
+Using the iterative description 
+of the $\mathcal{P}_k$ in
 (\ref{FILTRATION_LAN_LEVEL})
+it suffices by
+Proposition \ref{COFESSIM PROP}
+to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
+a cofibration between cofibrant objects in 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+We now recall that that map can also be described 
+(cf. (\ref{FILTINTALT EQ})) as
+\begin{equation}\label{FILTINTALTAG EQ}
+	\Lan_{\Omega_{\mathcal{F}}^a[k]^{op} \to \Sigma_G^{op}}
+	\left(
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		\underset{v \in V_{G}^{in}(T)}
+		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+		u(T_v)
+	\right).
+\end{equation}
+Noting that there is an equivalence
+$\mathcal{V}^{\Omega_{\mathcal{F}}^a[k]^{op}} \simeq
+\prod_{T \in \mathsf{Iso}(\Omega_{\mathcal{F}}^a[k])}
+\mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
+Propositions \ref{AUTTCOFPUSH PROP}
+and \ref{FIXPT PROP} show that the 
+inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+is in the essential image
+of the cofibrations between cofibrant objects of
+$\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
+under the functor
+$\iota_{\**} \colon
+\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
+\to
+\mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
+Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+can now be identified with an instance of the functor $\phi_!$ 
+in Corollary \ref{FINALCOR COR} one has 
+(using the further identification
+$\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
+\prod_{T \in \mathsf{Iso}(\Omega^a[k])}
+\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
+that the result now follows by Corollary \ref{FINALCOR COR}.
+\end{proof}
 
 
 {\color{red} HERE}
-
-
-
-\end{proof}
-
 
 \newpage
 
