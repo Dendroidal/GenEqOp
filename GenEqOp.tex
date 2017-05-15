@@ -729,6 +729,7 @@ The result now follows from (the forest version of) Proposition
 	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
 \end{remark}
 
+\todo[inline]{planarity for $\Omega_G$: choice of planar structures on $\amalg_{[g]}T_{[g]}$, $G\cdot_H T_H$, etc}
 
 \subsection{Outer faces and tall maps}\label{OUTTALL SEC}
 
@@ -743,9 +744,9 @@ In preparation for our discussion of the substitution operation in Section \ref{
 	We define the \textit{planar outer face $T_{\underline{e} \leq e}$}
 	to be the subtree with underlying set those edges $f \in T$ such that
 \begin{equation}\label{OUTERFACE EQ}
-	f \leq_d e,\quad \forall_i e_i \nless_d f,
+	f \leq_d e,\quad \forall_i f \nless_d e_i%e_i \nless_d f,
 \end{equation}
-generating broad relations the relations $f^{\uparrow} \leq f$ for $f$ satisfying (\ref{OUTERFACE EQ}) and $\forall_i f\neq e_i$,
+with generating broad relations the relations $f^{\uparrow} \leq f$ in $T$ for $f$ satisfying (\ref{OUTERFACE EQ}) but $\forall_i f\neq e_i$,
 and planar structure pulled back from $T$.
 \end{definition}
 
@@ -768,7 +769,7 @@ and edge tuple $\underline{e}$;
 	\{\text{broad relations of $T$}\};
 \]
 \item[(c)] if $R \to S$ and $S \to T$ are outer face maps then so is $R \to T$;
-\item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a grafting pushout diagram
+\item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a \emph{grafting pushout diagram}
 \begin{equation}\label{GRAPTPUSH EQ}
 \begin{tikzcd}
 	\eta \ar{r}{v} \ar{d}[swap]{v} & T_{\underline{g} \leq v} \ar{d}
@@ -1071,7 +1072,7 @@ repackaged using planar tall maps.
 	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
 	$T_{e^{\uparrow}\leq e} \to U_{e^{\uparrow}\leq e}$.
 	
-	Further, a map of planar $T$-substitution data 
+	Further, a map of $T$-substitution data 
 	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$ compatible with the chosen maps.
 	
 	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
@@ -1153,7 +1154,7 @@ and the maps
 $R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
 $S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
 are planar tall.
-But is now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram, so that the pushout indeed exists. The conditions that
+But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (\ref{GRAPTPUSH EQ}), so that the pushout indeed exists. The conditions that
 $T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$
 and 
 $T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
@@ -1258,7 +1259,7 @@ We now turn to the task of building the monad encoding genuine equivariant opera
 
 \subsection{Wreath product over finite sets}
 
-In what follows we will let $\Fin$ denote the usual skeleton of the category of finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
+In what follows we will let $\Fin$ denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 However, much as in the discussion in 
 Convention \ref{PLANARCONV CON} we will often find it more convenient to regard the elements of $\Fin$ as equivalence classes of finite sets equipped with total orders.
  
@@ -1351,9 +1352,9 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 	\coprod_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
 	\left(F(c_i)\right).
 	\end{equation}
-Noting that the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
+As the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
 \[(d_i)_{i\in I} \to (c_{\phi(i)})_{i \in I} \to (k c_j)_{j \in J}\]
-exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of $(d_i)\downarrow \Fin \wr \mathcal{C}$, we see that it is an initial subcategory. Therefore
+exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of $(d_i)\downarrow \Fin \wr \mathcal{C}$, we conclude in particular that it is an initial subcategory. Therefore
 	\[
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{F(c_j)}\right)}
@@ -1388,7 +1389,7 @@ $\Fin$ coordinates.
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 \begin{definition}
-	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of forests
+	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of (non-planar) forests
 	\[\coprod_{[g]\in G/H} {T_{[g]} } 
 	\to
 	\coprod_{[h]\in G/K} {S_{[h]} } 
@@ -1695,7 +1696,7 @@ This requires two observations:
 
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
-	are compatible with root pullback of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
+	are compatible with \textit{root pullbacks} of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
 	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
 \begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =10pt]
@@ -1848,7 +1849,7 @@ commute whenever defined (i.e. $0 \leq i \leq n+1$).
 	V_{G,n} \colon \Omega_{G,n} \to \Fin \wr \Sigma_G
 \]
 be inductively defined by 
-$V_{G,n} = \sigma_0 \circ V_{G,n-1} \circ V_G$.
+$V_{G,n} = \sigma^0 \circ V_{G,n-1} \circ V_G$.
 \end{notation}
 
 \begin{remark}
@@ -2111,7 +2112,7 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	\Sigma &
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}[swap]{V_G} \ar{l}&&
+	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G} \ar{l}&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
@@ -2360,17 +2361,17 @@ One advantage of split Grothendieck fibrations (in general) is the following ini
   We must show that the appropriate iterated overcategories are non-empty and connected. To that end, suppose we have a map $\phi: d\to f(c)$ in $\mathcal D$, and let $q := r(\phi): r(d) \to r(c)$. Since $\mathcal C$ is fibrant over $\mathcal E$, we have a Cartesian arrow $q': c' \to c$ lifting $q: r(d) = r(c') \to r(c)$. Thus we have diagrams in $\mathcal E$ and $\mathcal D$ of the form
 \[
 \begin{tikzcd}
-  r(d) \arrow[dr, "r(\phi)"'] \arrow[r, equal, "id"] & r(c') \arrow[d, "q"] &\qquad \qquad & d \arrow[dr, "\phi"'] \arrow[r, dotted, "\exists!"] & f(c') \arrow[d, "f(q')"'] \\
+  r(d) \arrow[dr, "r(\phi)"'] \arrow[r, equal, "id"] & r(c') \arrow[d, "q"] &\qquad \qquad & d \arrow[dr, "\phi"'] \arrow[r, dashed, "\exists!"] & f(c') \arrow[d, "f(q')"] \\
   & r(c) & & & f(c)
 \end{tikzcd}
 \]
 As $f$ preserves Cartesian arrows, $f(q')$ is Cartesian, and hence we have a unique lifting $p(\phi): d \to f(c')$ of $r(d) = r(c')$. Thus the iterated overcategory is inhabited.
 
-To show it is connected, any other factorization $d \xrightarrow{\psi} f(c'') \to f(c)$ such that $r(\psi) = id$, we can again use the fact that $q'$ is Cartesian to produce a lift $f(c';) \to f(c')$ of $r(c'') = r(c')$; by uniqueness of the map $d \to f(c')$, we have that the diagram below commutes, finishing the proof.
+To show it is connected, given any other factorization $d \xrightarrow{\psi} f(c'') \to f(c)$ such that $r(\psi) = id$, we can again use the fact that $q'$ is Cartesian to produce a lift $f(c'') \to f(c')$ of $r(c'') = r(c')$; by uniqueness of the map $d \to f(c')$, we have that the diagram below commutes, finishing the proof.
 \[
 \begin{tikzcd}
   & d \arrow[dl, "\exists!"'] \arrow[dr, "\psi"] & \\
-  f(c') \arrow[dr, "f(q')"']  && f(c'') \arrow[ll, dotted, "\exists!"'] \arrow[dl]\\
+  f(c') \arrow[dr, "f(q')"']  && f(c'') \arrow[ll, dashed, "\exists!"'] \arrow[dl]\\
   & f(c)
 \end{tikzcd}
 \]
@@ -2426,7 +2427,7 @@ Since the map $V_G$ sends the chosen cartesian arrows in $\Omega_{G,0}$
 \end{proof}
 
 
-
+\todo[inline]{Luis: why does this need to be here? Root pullbacks were discussed earlier \ref{PULLCOMP REM} without an example.}
 \begin{example}
 Let $G=\mathbb{Z}_{/8}$. The following exemplifies a pull back along the twist map $\varphi\colon G/2G \to G/2G$ (i.e., accounting for order, $\varphi$ is the permutation $(12)$), 
 with the topmost representation of $\varphi^{\**} T$ maintaining 
@@ -2664,6 +2665,7 @@ id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
 \Rightarrow
 \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
 \]
+We let $\Op_G(\V)$ denote the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
 \end{definition}
 
 
@@ -2779,7 +2781,7 @@ for
 $\Gamma \leq \mathsf{Aut}(\varphi^{\**}C)$
 the subgroup preserving the quotient map
 $\varphi^{\**}C \to C$
-under precomposition.
+under precomposition (where we note that $\phi^*C \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
@@ -2968,7 +2970,7 @@ $\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
 The map 
 $\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$
 is the adjoint to the map 
-$\mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded by the following diagram.
+$\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on spans by the following diagram.
 \begin{equation}\label{MONADEQUIV DEF}
 \begin{tikzcd}[row sep=5pt, column sep =8pt]
 	G \times \Omega_0	\ar{dd} \ar{rd} \ar{rr} &&
@@ -3213,14 +3215,15 @@ However, when pulling these points back to the $G$-free stump corolla $G \cdot C
 Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
 
 However, such counter-examples all require the use of trees with stumps. Indeed, it can be shown that (\ref{KEYNONISO EQ})
-is an isomorphism whenever evaluated at a $Y$ such that $Y(0)=\emptyset$.
+is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \end{remark}
 
 
 
 \section{Free extensions}
 
-Our overall goal in this section will be to produce a description of free genuine operad pushouts, i.e. pushouts of the form
+Our overall goal in this section will be to produce a description of free $\mathbb F_G$-extensions,  %genuine operad pushouts,
+i.e. pushouts of the form
 \[
 \begin{tikzcd}
 	\mathbb{F}_G A \ar{r} \ar{d} & X \ar{d}
@@ -3242,7 +3245,7 @@ one has $T^{\times l} \alpha^{\**} \simeq  \alpha^{\**} T^{\times m}$.
 
 
 Indeed, we will need to make use of a slightly more general setup. Letting $I$ denote the identity monad on $\C$, and $K \subset \underline{m}$ be a subset, there is a monad $T^{\times K} \times I^{\times(\underline{m}-K)}$ on $\mathcal{C}^{\times m}$, which we abusively denote simply as $T^{\times K}$. Identities then determine maps of monads 
-$T^{J} \to T^{\times K}$ whenever $J \subset K$
+$T^{\times J} \to T^{\times K}$ whenever $J \subset K$
 and, moreover, there are identifications
 $T^{\times \alpha^{-1}(K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$.
 One then has the following.
@@ -3298,7 +3301,7 @@ We argue only the case of the leftmost multiplication diagram, with commutativit
 $(\minus) \circ \alpha^{\**}$
 is the left adjoint to the precomposition
 $(\minus) \circ \alpha_{!}$
-this follows from the following diagram.
+this follows from the commutativity of the following diagram.
 \[
 \begin{tikzcd}
 	T^{\times \alpha^{-1} (K)}  T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
@@ -3347,15 +3350,16 @@ $\alpha \colon \underline{l} \to \**$ is the unique map to the simpleton $\** = 
 and we thus have commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
 \begin{tikzcd}
-	\coprod_{J} TT A_j \amalg \coprod_{\underline{n}-J} A_j
+	\coprod_{J} TT A_j \amalg \coprod_{\underline{l}-J} A_j
 	\ar{r} \ar{d} &
-	T\left( \coprod_{J} T A_j \amalg \coprod_{\underline{n}-J} A_j \right) \ar{d}
+	T\left( \coprod_{J} T A_j \amalg \coprod_{\underline{l}-J} A_j \right) \ar{d}
 \\
-	\coprod_{J} T A_j \amalg \coprod_{\underline{n}-J} A_j
+	\coprod_{J} T A_j \amalg \coprod_{\underline{l}-J} A_j
 	\ar{r} &
-		T\left( \coprod_{J} A_j \amalg \coprod_{\underline{n}-J} A_j \right)
+		T\left( \coprod_{J} A_j \amalg \coprod_{\underline{l}-J} A_j \right)
 \end{tikzcd}
 \end{equation}
+{\color{blue} for any collection $\set{A_j}_{j\in\underline{l}} \subset \mathcal C$, }
 where the vertical maps
 come from the right $T^{\times J}$-module structure.
 Writing $\amalg^a$ for the coproduct of $T$-algebras and recalling the canonical identifications 
@@ -3463,7 +3467,7 @@ We define $\Omega_{G,n,s}^{J}$ to have as objects $n$-planar strings
 together with
 $l$-labelings of $T_s, T_{s+1},\cdots, T_{n}$ such that the $f_r,r>s$ are $(\underline{l}-J)$-inert label maps.
 
-Arrows in $\Omega_{G,n,s}^{J}$ are quotients of strings 
+Arrows in $\Omega_{G,n,s}^{J}$ are strings of quotients
 $(q_r \colon T_r \to T'_r)$ such that 
 $q_r,r\leq s$ are label maps.
 \end{definition}
@@ -3615,9 +3619,11 @@ This last claim is simply a variation of Proposition \ref{SUBSASPULL PROP}, and 
 
 We use the results in the previous sections to obtain a string description of the bar constructions
 \[
+N \circ \amalg \circ (N^{\times J})^{\circ \bullet} \underline{A} = 
 \coprod_J^a N^{\bullet +1} A_j \amalg^a
-\coprod_{\underline{l}-J}^a N A_j.
+\coprod_{\underline{l}-J}^a N A_j
 \]
+{\color{blue} for a tuple of $N$-alegebras $\underline(A)$.}
 
 For simplicity, we discuss first the particular case 
 $\coprod^a N^{\bullet +1} A$. Writing the span as 
@@ -3672,7 +3678,7 @@ where $\pi_i^{(A)}$ interchanges lexicographic orders on the $i$-th $\Fin$ coord
 {\color{blue} Maybe add degeneracies}
 
 Similarly, Proposition \ref{ALLSQUARESJ PROP} shows that
-$\Omega_{G,n}^{(A)} \simeq
+$\Omega_{G,n}^{(\underline{A})} \simeq
 \Omega_{G,0}^{\left( \coprod \Omega_{G,n-1}^{(A_j)} \right)}$
 so that the top boundaries $d_n$ in the bar construction
 $N \circ \amalg \circ (N^{\times l})^{\circ n} \underline{A}$
@@ -3878,7 +3884,7 @@ via realization in $\mathsf{Cat}$.
 
 We note that $\Omega_{G,\bullet}^{\underline{2}}$ together with the corresponding functors to $\Sigma_G$, $\mathcal{V}^{op}$
 can be viewed as a simplicial object 
-$\Delta^{op} \to \mathsf{WSpan}^l(\Sigma,G^{op},\mathcal{V})$,
+$\Delta^{op} \to \mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$,
 and our first task will be to repackage such functors in terms of Grothendieck constructions.
 
 
@@ -4105,7 +4111,8 @@ $(\phi,I_m)\colon (n,i_n) \to (m,i'_m)$ as the composite
 	 \xrightarrow{I_m} 
 	[0,i'_m].
 \end{equation}
-To check associativity, the cases of of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from (\ref{TARGETDEFINITON EQ}), 
+To check compatibility with composition, % associativity, 
+the cases of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from (\ref{TARGETDEFINITON EQ}), 
 hence we are left with the case 
 $([n],i_n) \xrightarrow{I_n} ([n],i'_n) \to 
 ([m],\phi^{\**}(i'_n))$
@@ -4327,7 +4334,7 @@ The case of degeneracies is similar.
 \begin{remark}\label{DUALRESULTS REM}
 	One can twist all results by the opposite functor
 	\[\Delta \xrightarrow{(\minus)^{op}} \Delta\]
-	which sends $[n]$ to itself and $d_i,s_i$ to $d_{n-i},s_{n-i}$.
+	which sends $[n]$ to itself and $d_i,s_i$ to $d_{n-i},s_{n-i}$, respectively.
 	In doing so, one obtains vertical isomorphisms	
 \[
 \begin{tikzcd}
@@ -4436,7 +4443,7 @@ as a left Kan extension. One has a colimit description
 \end{tikzcd}
 	\right)
 \end{equation}
-where all differentials are fold maps of $\mathbb{F} A$ except to the $n$-th differential $d_n$, which is induced by the two maps $\mathbb{F}A \to X$, $\mathbb{F}A \to \mathbb{F}B$.
+where all differentials are fold maps of $\mathbb{F} A$ except the $n$-th differential $d_n$, which is induced by the two maps $\mathbb{F}A \to X$, $\mathbb{F}A \to \mathbb{F}B$.
 
 By the previous discussion each individual object 
 $X \amalg (\mathbb{F}A)^{\amalg 2n+1} \amalg \mathbb{F}B$ in
