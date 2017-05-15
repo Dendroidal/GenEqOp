@@ -45,6 +45,36 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 No content yet.
 
+Our main result is the following.
+
+\begin{theorem}\label{MAINQUILLENEQUIV THM}
+Let $\mathcal{V}$ be $\mathsf{sSet}$ or, more generally,
+a strongly cofibrantly generated cartesian closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
+
+Then the adjunction 
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_G(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+	&
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}} .
+\end{tikzcd}
+\end{equation}
+is a Quillen equivalence.
+
+More generally, for $\mathcal{F}$ a (weak) indexing system, 
+the analogue adjunction 
+\begin{equation}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+	&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}} .
+\end{tikzcd}
+\end{equation}
+is also a Quillen equivalence.
+\end{theorem}
+
 
 
 \section{Basic definitions}
@@ -6936,7 +6966,7 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 
 
 
-\begin{proposition}
+\begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
 	$\mathcal{V}$ is strongly cofibrantly generated
 	and that the monoidal structure on $\mathcal{V}$ is cartesian.
@@ -6953,8 +6983,8 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 	\end{equation}
 	Then the canonical map
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-	\iota_{\**} \iota^{\**} f^{\square V_G(T)} \to
-	f^{\square V_G(T)}
+	f^{\square V_G(T)} \to
+	\iota_{\**} \iota^{\**} f^{\square V_G(T)}
 	\end{equation}
 is an isomorphism.	
 \end{proposition}
@@ -7107,18 +7137,7 @@ $\Omega_{\mathcal{F},0} \to
 \Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
 \Fin \wr \Omega_{\mathcal{F},0}
 $.
-
-
-{\color{red} HERE}
-
-
 \end{remark}
-
-
-
-
-
-
 
 \begin{remark}
 The closure condition in 
@@ -7129,14 +7148,14 @@ be the natural homomorphism, one has
 $(G \times \phi)(\Gamma) \in \mathcal{F}_{\mathsf{lr}(T)}$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Proposition \ref{FGTRIGHT PROP} then says that
-\[
-	\Sigma_{\mathsf{lr}(T)} \cdot_{\Sigma_T} (\minus)
+\begin{equation}\label{LRLEFTQUILLEN EQ}
+	\phi_{!}
 		\colon
 	\mathcal{V}^{G\times \Sigma_T}_{\mathcal{F}_T}
 		\to
 	\mathcal{V}^{G\times \mathsf{lr}(T)}
 	_{\mathcal{F}_{\mathsf{lr}(T)}}
-\]
+\end{equation}
 is a left Quillen functor.
 \end{remark}
 
@@ -7144,108 +7163,439 @@ is a left Quillen functor.
 \begin{remark}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
 coincides with \cite[Lemma 5.9]{BM08}.
-Moreover, it is not hard to leverage that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas.
+Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
 However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
 Indeed, this is reflected 
 on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
 uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
 to deduce the much simpler condition
 $\Gamma \cap \prod \Sigma_{T_i} = \**$
-that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} suggested above.
-It it thus natural to wonder if a suitably simpler analogue
-of (\ref{KEYLEMMAGECOR EQ}) might have been used, with the most natural candidate being the condition  
+that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} mentioned above.
+One may thus wonder if the $\mathcal{F}^{\ltimes_G n}$
+families are indeed required 
+to prove Proposition \ref{AUTTCOFPUSH PROP},
+or whether a more direct adaptation of the proof of \cite[Lemma 5.9]{BM08} is possible.
+Reverse engineering our proofs, the most natural ``simplification'' would be to replace the condition (\ref{KEYLEMMAGECOR EQ}) with the condition
 \begin{equation}\label{WRONGCONJ}
 \pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
-\in   \mathcal{F}.
+\in   \mathcal{F},
 \end{equation}
-
-However, the following example shows that  
-(\ref{WRONGCONJ}) 
-is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
-and $\mathcal{F}$ be the indexing system generated
-(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
-Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
-Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
-\begin{equation}
-\begin{tikzpicture}
-[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\tikzstyle{level 2}=[sibling distance = 1.75em]
-	\tikzstyle{level 3}=[sibling distance = 0.75em]
-	\node at (0,0) {$T$}
-		child{node [dummy] {}
-			child{node [dummy] {}
-				child{
-				edge from parent node [swap] {$G/A_3$} }
-			edge from parent node [swap] {$G/\Sigma_3$} }
-		edge from parent node [swap] {G/G}
-		};
-	\node at (5,0) {$T$}
-		child{node [dummy] {}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-			child{node [dummy] {}
-				child
-				child
-			}
-		};
-\end{tikzpicture}
-\end{equation}
-$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
-since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
+thus replacing the families 
+$\mathcal{F}^{\ltimes n}$ of (\ref{FLTIMESN EQ}) with the families
+$(\iota_{G^{\times n}})_{\**}
+(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
+However, it is not hard to build indexing systems $\mathcal{F}$ (other than the universal one) for which these simpler families do not satisfy the analogue of 
+Lemma \ref{KEYLEMMAGECO LEM}, 
+and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
+%However, the following example shows that  
+%(\ref{WRONGCONJ}) 
+%is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
+%and $\mathcal{F}$ be the indexing system generated
+%(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
+%Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
+%Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
+%\begin{equation}
+%\begin{tikzpicture}
+%[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+%	\tikzstyle{level 2}=[sibling distance = 1.75em]
+%	\tikzstyle{level 3}=[sibling distance = 0.75em]
+%	\node at (0,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child{
+%				edge from parent node [swap] {$G/A_3$} }
+%			edge from parent node [swap] {$G/\Sigma_3$} }
+%		edge from parent node [swap] {G/G}
+%		};
+%	\node at (5,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%		};
+%\end{tikzpicture}
+%\end{equation}
+%$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
+%since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
 \end{remark}
 
 
-{\color{red} HERE}
+\begin{proposition}\label{COFESSIM PROP}
+	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
+	and consider the reflexive adjunction
+	\begin{equation}\label{COFADJ EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}
+	\ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathcal{V}^G_{\mathcal{F}}
+	\ar[shift left=1.5]{l}{\iota_{\**}}.
+\end{tikzcd}
+\end{equation}
+Then the cofibrant objects of 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+are precisely the essential image under $\iota_{\**}$
+of the cofibrant objects of
+$\mathcal{V}^G_{\mathcal{F}}$.
+Moreover, the analogous statement for cofibrations between cofibrant objects also holds.
+\end{proposition}
 
-\begin{remark}
-It follows from (the argument in the proof of) Proposition \ref{STRONGCELL PROP} that the following
+\begin{proof}
+Note first that since $\iota_{\**}$ identifies 
+$\mathcal{V}^{G}(\mathcal{F})$ as a reflexive 
+subcategory of $\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$, 
+it is 
+$X \simeq \iota^{\**}Y$ for some 
+$Y \in \mathcal{V}^{G}(\mathcal{F})$
+(i.e. $X \in \mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+is in the essential image of $\iota^{\**}$)
+iff both $\iota_{\**}X \simeq Y$ and the unit map 
+$X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$
+is an isomorphism.
+
+Letting $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) denote the classes of cofibrant objects in 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$ 
+(resp. $\mathcal{V}^G_{\mathcal{F}}$)
+we need to show 
+$C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$,
+where we slightly abuse notation by writing 
+$\iota_{\**}(\minus)$ for the essential image rather than the image.
+Since $C_{\mathcal{F}}$ is characterized as being the smallest class closed under retracts and transfinite composition of cellular extensions
+that contains the initial presheaf $\emptyset$,
+it suffices to show that 
+$\iota_{\**}(C^{\mathcal{F}})$
+satisfies this same characterization.
+
+It is immediate that $\iota_{\**}(\emptyset) = \emptyset$.
+Further, the characterization in the first paragraph yields that 
+$X \in \iota_{\**}(C^{\mathcal{F}})$ iff $\iota^{\**}(X)\in C^{\mathcal{F}}$ and $X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$ is an isomorphism, showing that  
+$\iota_{\**}(C^{\mathcal{F}})$ is closed under retracts.
+
+The crux of the proof will be to compare 
+cellular extensions in 
+$C_{\mathcal{F}}$ with the images under $\iota_{\**}$ of the cellular extensions in 
+$C^{\mathcal{F}}$.
+Firstly, note that the generating cofibrations in 
+$\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+have the form $\mathsf{Hom}(\minus,G/H)\cdot f$, 
+and that by the cellularity axiom (iii) in
+Definition \ref{CELL DEF}
+this map is isomorphic to the map
+$\iota_{\**}(G/H \cdot f)$.
+We now claim that the cellular extensions of objects in 
+$\iota_{\**}(C^{\mathcal{F}})$, i.e. pushforward diagrams as on the left below
+\begin{equation}\label{TWOCELLEXTEAS EQ}
+\begin{tikzcd}
+	\iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
+	\iota_{\**} V \ar[dashed]{d} & &
+	X \ar{d}[swap]{u} \ar{r} &
+	V \ar[dashed]{d}
+\\
+	\iota_{\**} Y  \ar[dashed]{r}&
+	\tilde{W} & &
+	Y \ar[dashed]{r}&
+	W
+\end{tikzcd}
+\end{equation}
+are precisely the essential image under $\iota_{\**}$
+of the cellular extensions of objects in $C^{\mathcal{F}}$, 
+i.e., pushforward diagrams as on the right above. That the solid subdiagrams in either side of (\ref{TWOCELLEXTEAS EQ}) are indeed in bijection up isomorphism is simply the claim that 
+$\iota^{\**}$ is fully faithful,
+hence the real claim is that $\tilde{W} \simeq \iota_{\**} W$.
+But this follows since by 
+the cellularity axiom (ii) in
+Definition \ref{CELL DEF}
+the map $\iota_{\**}$ preserves the rightmost pushforward
+in (\ref{TWOCELLEXTEAS EQ}) 
+(note that $u \colon X \to Y$ is assumed to be a generating cofibration of $\mathcal{V}^G_{\mathcal{F}}$).
+
+Noting that the cellularity axiom (i) in
+Definition \ref{CELL DEF} implies that
+$\iota_{\**}$ preserves filtered colimits finishes the proof that $C_{\mathcal{F}} = \iota_{\**}(C^{\mathcal{F}})$.
+
+The additional claim concerning cofibrations between cofibrant objects follows by the same argument.
+\end{proof}
+
+
+\begin{corollary}\label{FINALCOR COR}
+Let $\mathcal{V}$ be as above, 
+$\phi \colon G \to \bar{G}$
+a homomorphism, and 
+$\mathcal{F}$, $\bar{\mathcal{F}}$
+families of $G$, $\bar{G}$
+such that $\phi_{!}\mathcal{F} \subset \mathcal{F}$.
+Then the diagram
 \[
 \begin{tikzcd}
-	\mathcal{V}^{\mathsf{O}_G^{op}} \ar{d}[swap]{\phi_!} &
-	\mathcal{V}^{G} \ar{l}[swap]{\iota_{\**}} \ar{d}{\phi_!}& & &
 	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}} \ar{d}[swap]{\phi_!} &
 	\mathcal{V}^{G}_{\mathcal{F}} \ar{l}[swap]{\iota_{\**}} \ar{d}{\phi_!}&
 \\
-	\mathcal{V}^{\mathsf{O}_{\bar{G}}^{op}}  &
-	\mathcal{V}^{\bar{G}} \ar{l}{\iota_{\**}}& & &
 	\mathcal{V}^{\mathsf{O}_{\mathcal{\bar{F}}}^{op}}  &
 	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar{l}{\iota_{\**}}&
 \end{tikzcd}
 \]
-commute when applied to genuine cofibrant/$\mathcal{F}$-cofibrant objects.
-\end{remark}
+commutes up to isomorphism when restricted to 
+cofibrant objects of $\mathcal{V}^{G}_{\mathcal{F}}$.
+\end{corollary}
+
+
+\begin{proof}
+	It is straightforward to check that the left adjoints commute, i.e. that there is a natural isomorphism 
+	$\iota^{\**} \phi_{!} \simeq \phi_{!} \iota^{\**}$
+which by adjunction induces a natural transformation
+	$\phi_! \iota_{\**} \to \iota_{\**} \phi_!$.
+More explicitly, this natural transformation is the composite
+\[\phi_! \iota_{\**} \to 
+\iota_{\**} \iota^{\**} \phi_! \iota_{\**} \xrightarrow{\simeq}
+\iota_{\**} \phi_! \iota^{\**} \iota_{\**} \xrightarrow{\simeq}
+\iota_{\**} \phi_!
+\]
+where the last two maps are always isomorphisms. But when restricting to cofibrant objects the previous result guarantees both that $\phi_! \iota_{\**}$ lands in cofibrant objects and that cofibrant objects are in the essential image of $\iota_{\**}$. The result follows.
+\end{proof}
+
+
+We now possess all the technical ingredients needed to 
+prove Theorem \ref{MAINQUILLENEQUIV THM}.
+
+\begin{lemma}\label{MAINLEM LEM}
+	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
+	
+Then in both of the adjunctions
+\begin{equation}\label{COFADJ EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}
+&
+	\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
+&
+	\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}	
+\end{tikzcd}
+\end{equation}	
+the cofibrant objects in the leftmost category are the essential image under $\iota_{\**}$ of the 
+cofibrant objects in the rightmost category.
+
+Moreover, both forgetful functors 
+\begin{equation}\label{FGTFUNC EQ}
+\begin{tikzcd}[column sep =5em]
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar{r}{\mathsf{fgt}} 
+&
+	\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	 \ar{r}{\mathsf{fgt}}
+&
+	\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+\end{tikzcd}
+\end{equation}
+preserve cofibrant objects.
+\end{lemma}
+
+\begin{proof}
+We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ EQ})
+is not really new. Indeed, there are equivalences of categories
+$
+\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+\simeq \prod_{n \geq 0}
+\mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_n}}
+$,
+$
+\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+\simeq \prod_{n \geq 0}
+\mathcal{V}_{\mathcal{F}_n}^{G \times \Sigma_n}
+$,
+compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ adjunctions, 
+so that the symmetric sequence statement merely repackages 
+Proposition \ref{COFESSIM PROP}.
+
+For the operad adjunction in (\ref{COFADJ EQ}),
+most of the argument in the proof of
+Proposition \ref{COFESSIM PROP}
+applies mutatis mutandis
+except for the claim that 
+$\mathbb{F}_G (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$, which is readily checked directly, 
+and the comparison of cellular extensions,
+which is the key claim.
+
+
+Explicitly, and borrowing the notation
+$C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) used in Proposition \ref{COFESSIM PROP} for the 
+classes of cofibrant objects in 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
+(resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$),
+we need to show that cellular extensions of objects in 
+$\iota(C^{\mathcal{F}})$, such as on the left below
+\begin{equation}\label{TWOCELLEXT EQ}
+\begin{tikzcd}
+	\mathbb{F}_G \iota_{\**} X \ar{d}[swap]{\iota_{\**}u} \ar{r} &
+	\iota_{\**} \mathcal{O} \ar[dashed]{d} & &
+	\mathbb{F} X \ar{d}[swap]{u} \ar{r} &
+	\mathcal{O} \ar[dashed]{d}
+\\
+	\mathbb{F}_G \iota_{\**} Y  \ar[dashed]{r}&
+	(\iota_{\**} \mathcal{O})[\iota_{\**} u]& &
+	\mathbb{F} Y \ar[dashed]{r}&
+	\mathcal{O}[u]
+\end{tikzcd}
+\end{equation}
+are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
+
+
+Recalling that there are natural isomorphisms 
+$\iota^{\**} \mathbb{F}_{G} \iota_{\**}
+\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}$, we see that the two solid subdiagrams in 
+(\ref{TWOCELLEXT EQ})
+are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
+We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+are in the essential image of $\iota_{\**}$.
+Indeed, if that is the case then
+$\mathbb{F}_G \iota_{\**} Z \simeq 
+\iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
+\iota_{\**} \mathbb{F} Z
+$ for $Z=X,Y$
+and since $\iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\iota_{\**}$ must have already been a colimit diagram.},
+ it must then be
+indeed be 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]
+\simeq \iota_{\**} (\mathcal{O}[u])$.
+
+
+To establish the remaining claim that the objects 
+in the leftmost diagram in
+(\ref{TWOCELLEXT EQ})
+are in the essential image of $\iota_{\**}$,
+we claim
+it suffices to show this for the bottom right corner 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
+$\mathsf{Sym}^{G}_{\mathcal{F}}(\mathcal{V})$.
+Indeed, setting  $X=\emptyset$ and $\O=\mathbb{F} \emptyset$, 
+one has 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = 
+\mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\mathbb{F}_{G} \iota_{\**} X$.
+
+Writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
+the required condition that
+$\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**}\mathcal{P}[\iota_{\**} u]$
+is an isomorphism can be checked by forgetting to 
+$\mathsf{Sym}_G(\mathcal{V})$, and we can thus appeal to the filtration 
+(\ref{FILT EQ}) of the map
+$ \mathcal{P} \to \mathcal{P}[\iota_{\**} u]$. It thus suffices to verify by induction on $k$ that each 
+$\mathcal{P}_k$ is in the essential image of 
+$\iota_{\**} \colon \mathsf{Sym}^G(\mathcal{V})
+\to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+Using the iterative description 
+of the $\mathcal{P}_k$ in
+(\ref{FILTRATION_LAN_LEVEL})
+it suffices by
+Proposition \ref{COFESSIM PROP}
+to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
+a cofibration between cofibrant objects in 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+We now recall that that map can also be described 
+(cf. (\ref{FILTINTALT EQ})) as
+\begin{equation}\label{FILTINTALTAG EQ}
+	\Lan_{\Omega_{\mathcal{F}}^a[k]^{op} \to \Sigma_G^{op}}
+	\left(
+		\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+		\underset{v \in V_{G}^{in}(T)}
+		{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+		u(T_v)
+	\right).
+\end{equation}
+Noting that there is an equivalence
+$\mathcal{V}^{\Omega_{\mathcal{F}}^a[k]^{op}} \simeq
+\prod_{T \in \mathsf{Iso}(\Omega_{\mathcal{F}}^a[k])}
+\mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
+Propositions \ref{AUTTCOFPUSH PROP}
+and \ref{FIXPT PROP} show that the 
+inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+is in the essential image
+of the cofibrations between cofibrant objects of
+$\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
+under the functor
+$\iota_{\**} \colon
+\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
+\to
+\mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
+Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+can now be identified with an instance of the functor $\phi_!$ 
+in Corollary \ref{FINALCOR COR} one has 
+(using the further identification
+$\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
+\prod_{T \in \mathsf{Iso}(\Omega^a[k])}
+\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
+that the main claim now follows by Corollary \ref{FINALCOR COR}.
+
+As for the additional claim concerning the forgetful functors
+in (\ref{FGTFUNC EQ}),
+that $\mathsf{fgt} \colon
+\mathsf{Op}_{\mathcal{F}}(\mathcal{V})
+\to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
+preserves cofibrant objects is precisely what was argued in the previous paragraph.
+But since the forgetful functors commute with $\iota_{\**}$, the claim that
+$\mathsf{fgt} \colon
+\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+\to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
+also preserves cofibrant objects follows 
+``essential image characterization'' of cofibrant objects in
+(\ref{COFADJ EQ}).
+\end{proof}
+
+
+\begin{proof}[proof of Theorem \ref{MAINQUILLENEQUIV THM}]
+It suffices to show that both the derived unit and derived counit for the adjunction are given by weak equivalences.
+
+For the counit, it is immediate from Lemma \ref{MAINLEM LEM} that if $X \in \mathsf{Op}^G(\mathcal{V})$ is bifibrant
+the functor $\iota^{\**} \iota_{\**} X$ is already derived, and hence the derived counit is identified with the counit isomorphism $\iota^{\**} \iota_{\**} X \xrightarrow{\simeq} X$.
+
+For the unit, note first that it is immediate from the definitions that 
+$\iota_{\**} \colon 
+\mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})\to 
+\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+detects fibrations (as well as weak equivalences), 
+and thus by Lemma \ref{MAINLEM LEM}
+$Y \in \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+is bifibrant iff $Y \simeq \iota_{\**} X$
+for $X \in \mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})$ bifibrant.
+But then the functor $\iota_{\**} \iota^{\**} Y$ 
+is also already derived (since $\iota^{\**} Y \simeq \iota^{\**}\iota_{\**} X \simeq X$ is fibrant) and the derived unit is thus the isomorphism
+$Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
+\end{proof}
+
 
 {\color{red} HERE}
-
-
-
-
 
 \newpage
 
@@ -7393,9 +7743,6 @@ Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of \cite[Theorem 2.10]{Ste1
 % \end{align*}
 %\end{proof}
 
-\subsubsection{Cofibrant Genuine $G$-Operads}
-
-\todo[inline]{come back}
 
 
 
