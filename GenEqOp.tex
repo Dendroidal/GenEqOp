@@ -43,8 +43,6 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-{\color{red} HERE}
-
 Operads encode a variety of algebraic structures, such as monoids, commutative monoids or (depending on the ambient category) Lie algebras, $E_n$-algebras, etc. Indeed, all such instances can be regarded as categories of algebras for some (fixed) suitable operad.
 Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 
@@ -64,10 +62,68 @@ This contrast hints at a number of novel subtleties that appear when studying eq
 
 {\color{red} HERE}
 
-
-
 Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
-the $n$-th level $\O(n)$ has a $G \times \Sigma_n$
+the $n$-th level $\O(n)$ has a $G \times \Sigma_n$,
+one might guess that a map of $G$-operads
+$\O \to \O'$
+should be called a weak equivalence if each of the maps
+$\O(n) \to \O'(n)$
+is $G$-equivalence after forgetting the $\Sigma_n$-actions, 
+i.e. if the maps
+\begin{equation}\label{NAIVEOPEQ EQ}
+	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
+\end{equation}
+are weak equivalences of spaces. 
+However, the notion of equivalence suggested in (\ref{NAIVEOPEQ EQ}) turns out to not be ``genuine enough''.
+To see why, we first recall that the class of (non-equivariant)
+$E_{\infty}$-operads,
+which are up-to-homotopy replacements for the commutative operad
+$\mathsf{Comm}(n)=\**$,
+consists of those operads 
+$\O$ such that:
+\begin{inparaenum}
+	\item[(i)] $\O(n)$ is $\Sigma_n$-free and;
+	\item[(ii)] $\O(n)$ is contractible.
+\end{inparaenum}
+If one simply equips an $E_{\infty}$-operad $\O$ with a trivial $G$-action, the resulting $G$-operad has fixed points for each subgroup $\Gamma \leq G \times \Sigma_n$
+determined by
+\begin{equation}\label{NAIVEGEINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \leq G
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}
+However, as first noted by Costenoble-Waner in \cite{CW91},
+(\ref{NAIVEGEINFTY EQ}) does not provide the correct notion of $G$-$E_{\infty}$-operads, by which we mean 
+up-to-homotopy replacements of the commutative operad 
+$\mathsf{Comm}(n)=\**$ in the $G$-equivariant context. Instead, 
+$G$-$E_{\infty}$-operads are characterized by the fixed point conditions
+\begin{equation}\label{GENGEINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \cap \Sigma_n = \{\**\}
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}
+In contrasting 
+(\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}),
+note that the subgroups $\Gamma \leq G \times \Sigma_n$ 
+are precisely the graphs of partial homomorphisms 
+$G \geq H \to \Sigma_n$,
+and that $\Gamma \leq G$ iff $\Gamma$ is the graph of such a trivial homomorphism. 
+However, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
+(\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
+and indeed it is possible
+to build maps $\O \to \O'$ where
+$\O$ is a $G$-trivial $E_{\infty}$-operad (as in (\ref{NAIVEGEINFTY EQ}))
+and $\O'$ is a $G$-$E_{\infty}$-operad 
+(as in (\ref{GENGEINFTY EQ})).
+
+{\color{red} HERE}
+
 
 \newpage
 
