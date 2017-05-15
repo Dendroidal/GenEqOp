@@ -43,7 +43,27 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-No content yet.
+No expository content yet.
+
+{\color{red} HERE}
+
+\begin{theorem}\label{MAINEXIST1 THM}
+$\mathcal{F}$-model structures, 
+denoted
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
+on 
+the category $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$ exist.
+\end{theorem}
+
+
+\begin{theorem}\label{MAINEXIST2 THM}
+Projective model structures on  
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exist.
+\end{theorem}
+
+
+{\color{red} HERE}
+
 
 Our main result is the following.
 
@@ -744,9 +764,10 @@ In preparation for our discussion of the substitution operation in Section \ref{
 	We define the \textit{planar outer face $T_{\underline{e} \leq e}$}
 	to be the subtree with underlying set those edges $f \in T$ such that
 \begin{equation}\label{OUTERFACE EQ}
-	f \leq_d e,\quad \forall_i f \nless_d e_i%e_i \nless_d f,
+	f \leq_d e,\quad \forall_i f \nless_d e_i,
 \end{equation}
-with generating broad relations the relations $f^{\uparrow} \leq f$ in $T$ for $f$ satisfying (\ref{OUTERFACE EQ}) but $\forall_i f\neq e_i$,
+generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying (\ref{OUTERFACE EQ}) but 
+$\forall_i f\neq e_i$,
 and planar structure pulled back from $T$.
 \end{definition}
 
@@ -769,12 +790,12 @@ and edge tuple $\underline{e}$;
 	\{\text{broad relations of $T$}\};
 \]
 \item[(c)] if $R \to S$ and $S \to T$ are outer face maps then so is $R \to T$;
-\item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a \emph{grafting pushout diagram}
+\item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a grafting pushout diagram
 \begin{equation}\label{GRAPTPUSH EQ}
 \begin{tikzcd}
 	\eta \ar{r}{v} \ar{d}[swap]{v} & T_{\underline{g} \leq v} \ar{d}
 \\
-	T_{\underline{f}v \leq e} \ar{r} & T_{\underline{f}\underline{g} \leq v}
+	T_{\underline{f}v \leq e} \ar{r} & T_{\underline{f}\underline{g} \leq e}
 \end{tikzcd}
 \end{equation}
 %\item[(e)] a face map $S \to T$ is an outer face map iff whenever the composite relation $\underline{f} \underline{g} \leq e$ is in $S$ then so are the relations $\underline{g} \leq v$ and
@@ -793,7 +814,7 @@ $T_{\underline{e} \leq e}$.
 
  (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe17}, which states that the $\leq_d$ relations on $S,T$ coincide.
  
-  Since by (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq v}$, 
+  Since by (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq e}$, 
 (d) is a restatement of \cite[Prop. 5.15]{Pe17}. 
 %Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
@@ -1154,7 +1175,7 @@ and the maps
 $R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
 $S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
 are planar tall.
-But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (\ref{GRAPTPUSH EQ}), so that the pushout indeed exists. The conditions that
+But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions that
 $T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$
 and 
 $T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
@@ -1352,7 +1373,7 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 	\coprod_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
 	\left(F(c_i)\right).
 	\end{equation}
-As the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
+But since the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
 \[(d_i)_{i\in I} \to (c_{\phi(i)})_{i \in I} \to (k c_j)_{j \in J}\]
 exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of $(d_i)\downarrow \Fin \wr \mathcal{C}$, we conclude in particular that it is an initial subcategory. Therefore
 	\[
@@ -1363,7 +1384,7 @@ exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
 	\left(\coprod_i{F(c_i)}\right)
 	\]
-and hence (\ref{POINTKAN EQ}) now follows from the assumption that coproducts commute with limits in each variable.
+and hence the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that coproducts commute with limits in each variable.
 \end{proof}
 
 \begin{notation}
@@ -1696,7 +1717,7 @@ This requires two observations:
 
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
-	are compatible with \textit{root pullbacks} of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
+	are compatible with root pullbacks of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
 	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
 \begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =10pt]
@@ -2083,7 +2104,7 @@ The commutativity of (\ref{PICUBOIDAB EQ}) is clear.
 	We define an endofunctor $N$ of 
 	$\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$
 	by letting $N(\Sigma_G \leftarrow A \to \mathcal{V}^{op})$
-	be the span $\Sigma_G \leftarrow \Omega^{(A)}_G \to \mathcal{V}^{op}$ given composition along the diagram
+	be the span $\Sigma_G \leftarrow \Omega^{(A)}_{G,0} \to \mathcal{V}^{op}$ given composition along the diagram
 \[
 	\begin{tikzcd}
 	\Omega^{(A)}_{G,0} \ar{r} \ar{d}&
@@ -2104,7 +2125,7 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\begin{tikzcd}
 	\Sigma \ar[equal]{d}&
 	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}} \ar{l}&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r}{\Fin \wr V_G} &
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G} &
 	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \Fin \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
@@ -2134,7 +2155,7 @@ Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly com
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	\Sigma &
-	\Omega_G^{(A)} \ar{l} \ar{r}[swap]{V_G}&
+	\Omega_{G,0}^{(A)} \ar{l} \ar{r}[swap]{V_G}&
 	\Fin \wr A \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}.
@@ -2152,7 +2173,7 @@ The natural transformation component of $\mu \circ (N \mu)$ is given by the comp
 	\begin{tikzcd}[column sep=1.05em]
 	\Omega_{G,2}^{(A)}\ar{d}[swap]{d_1^{(A)}} \ar{r} &
 	\Fin \wr \Omega_{G,1}^{(A)} \ar{d} \ar{r}&
-	\Fin^{\wr 2} \wr \Omega_{G}^{(A)} \ar{r} &
+	\Fin^{\wr 2} \wr \Omega_{G,0}^{(A)} \ar{r} &
 	|[alias=dog2]|
 	\Fin^{\wr 3} \wr A \ar{d}{\sigma^1} \ar{r} &
 	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{d}{\sigma^1} \ar{r} &
@@ -2163,7 +2184,7 @@ The natural transformation component of $\mu \circ (N \mu)$ is given by the comp
 \\
 	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
 	|[alias=cat2]|
-	\Fin \wr \Omega_{G}^{(A)} \ar{rr} &&
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr} &&
 	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	|[alias=dog3]|
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{rr} &&
@@ -2171,7 +2192,7 @@ The natural transformation component of $\mu \circ (N \mu)$ is given by the comp
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rrr} &&&
+	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rrr} &&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
@@ -2188,7 +2209,7 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\Omega_{G,2}^{(A)} \ar{d}[swap]{d_0^{(A)}} \ar{r} &
 	\Fin \wr \Omega_{G,1}^{(A)} \ar{r} &
 	|[alias=dog2]|
-	\Fin^{\wr 2} \wr \Omega_{G}^{(A)} \ar{r} \ar{d}&
+	\Fin^{\wr 2} \wr \Omega_{G,0}^{(A)} \ar{r} \ar{d}&
 	\Fin^{\wr 3} \wr A \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r} \ar{d}&
@@ -2198,7 +2219,7 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 \\
 	|[alias=cat2]|
 	\Omega_{G,1}^{(A)} \ar{rr} \ar{d}[swap]{d_{0}^{(A)}} &&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{r} &
 	|[alias=FFOmega]|
 	\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
@@ -2207,7 +2228,7 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rrr} &&&
+	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rrr} &&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
@@ -2781,7 +2802,7 @@ for
 $\Gamma \leq \mathsf{Aut}(\varphi^{\**}C)$
 the subgroup preserving the quotient map
 $\varphi^{\**}C \to C$
-under precomposition (where we note that $\phi^*C \in \Sigma_G^{\text{fr}}$).
+under precomposition (note that $\varphi^{\**}C \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
@@ -3297,13 +3318,13 @@ That this is a monad map is the condition that the following multiplication and 
 	\alpha^{\**} T^{\times K} \alpha_{!}
 \end{tikzcd}
 \]
-We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since the precomposition
+We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since precomposition
 $(\minus) \circ \alpha^{\**}$
-is the left adjoint to the precomposition
+is left adjoint to precomposition
 $(\minus) \circ \alpha_{!}$
-this follows from the commutativity of the following diagram.
+this follows from the following commutative diagram.
 \[
-\begin{tikzcd}
+\begin{tikzcd}[column sep=1.5em]
 	T^{\times \alpha^{-1} (K)}  T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
 	T^{\times \alpha^{-1} (K)}  \alpha^{*}  T^{\times K} \ar{r}{\eta}
 	\ar[equal]{rd} &
@@ -3359,7 +3380,7 @@ and we thus have commutative diagrams
 		T\left( \coprod_{J} A_j \amalg \coprod_{\underline{l}-J} A_j \right)
 \end{tikzcd}
 \end{equation}
-{\color{blue} for any collection $\set{A_j}_{j\in\underline{l}} \subset \mathcal C$, }
+for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
 where the vertical maps
 come from the right $T^{\times J}$-module structure.
 Writing $\amalg^a$ for the coproduct of $T$-algebras and recalling the canonical identifications 
@@ -3467,7 +3488,7 @@ We define $\Omega_{G,n,s}^{J}$ to have as objects $n$-planar strings
 together with
 $l$-labelings of $T_s, T_{s+1},\cdots, T_{n}$ such that the $f_r,r>s$ are $(\underline{l}-J)$-inert label maps.
 
-Arrows in $\Omega_{G,n,s}^{J}$ are strings of quotients
+Arrows in $\Omega_{G,n,s}^{J}$ are quotients of strings
 $(q_r \colon T_r \to T'_r)$ such that 
 $q_r,r\leq s$ are label maps.
 \end{definition}
@@ -3619,19 +3640,19 @@ This last claim is simply a variation of Proposition \ref{SUBSASPULL PROP}, and 
 
 We use the results in the previous sections to obtain a string description of the bar constructions
 \[
-N \circ \amalg \circ (N^{\times J})^{\circ \bullet} \underline{A} = 
-\coprod_J^a N^{\bullet +1} A_j \amalg^a
+N \circ \amalg \circ (N^{\times J})^{\circ n} \underline{A} = 
+\coprod_J^a N^{n +1} A_j \amalg^a
 \coprod_{\underline{l}-J}^a N A_j
 \]
-{\color{blue} for a tuple of $N$-alegebras $\underline(A)$.}
+for $\underline{A} = \left(A_j \right)$ a tuple of $N$-algebras.
 
 For simplicity, we discuss first the particular case 
-$\coprod^a N^{\bullet +1} A$. Writing the span as 
+$\coprod^a N^{n+1} A$. Writing the span as 
 $\Sigma_G \leftarrow A \xrightarrow{F} \mathcal{V}$
 the identifications 
 $\Omega_{G,0}^{\left( \Omega_{G,n}^{(A)} \right)} \simeq \Omega_{G,n+1}^{(A)}$
 iteratively identify the operator in the bar construction
-$N^{\bullet+1} A$ as follows.
+$N^{n+1} A$ as follows.
 
 The top boundaries $d_n$ have natural transformation given by
 \begin{equation}
@@ -4111,7 +4132,7 @@ $(\phi,I_m)\colon (n,i_n) \to (m,i'_m)$ as the composite
 	 \xrightarrow{I_m} 
 	[0,i'_m].
 \end{equation}
-To check compatibility with composition, % associativity, 
+To check compatibility with composition,
 the cases of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from (\ref{TARGETDEFINITON EQ}), 
 hence we are left with the case 
 $([n],i_n) \xrightarrow{I_n} ([n],i'_n) \to 
@@ -7087,7 +7108,7 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 
 
 
-\subsection{Indexing systems}
+\subsection{Indexing systems and the proof of Theorem \ref{MAINQUILLENEQUIV THM}}
 
 
 The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
@@ -7575,10 +7596,24 @@ But since the forgetful functors commute with $\iota_{\**}$, the claim that
 $\mathsf{fgt} \colon
 \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
 \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
-also preserves cofibrant objects follows 
+also preserves cofibrant objects follows from the
 ``essential image characterization'' of cofibrant objects in
 (\ref{COFADJ EQ}).
 \end{proof}
+
+
+\begin{remark}
+	A slightly more careful analysis of the argument in the previous proof shows that we have in fact shown the slightly more general claim that operads 
+(in either 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ or
+$\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$)
+that forget to cofibrant symmetric sequences
+(in either 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$ or
+$\mathsf{Sym}_{\mathcal{F}}^G(\mathcal{V})$)
+are closed under cellular extensions of operads. 
+\end{remark}
+
 
 
 \begin{proof}[proof of Theorem \ref{MAINQUILLENEQUIV THM}]
@@ -7602,35 +7637,31 @@ $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 \end{proof}
 
 
-{\color{red} HERE}
+\subsection{$N_{\infty}$-operads}
 
-\newpage
+%\subsubsection{$\F$-Cofibrant $G$-Operads}
 
-\subsection{something}
+%We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
 
-\subsubsection{$\F$-Cofibrant $G$-Operads}
+%\begin{theorem}
+% \label{COFIBRANT_G_OPS_THEOREM}
+ % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_\F(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_\F(\V)$.
+%\end{theorem}
 
-We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
-
-\begin{theorem}
-  \label{COFIBRANT_G_OPS_THEOREM}
-  Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_\F(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_\F(\V)$.
-\end{theorem}
-
-The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
-\begin{proposition}
-  \label{F_COFIB_OP_CLOSURE_THM}
-  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_\F(\V)$, then the free $\mathbb F$-extension $\P \to \P[u]$
+%The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
+%\begin{proposition}
+%  \label{F_COFIB_OP_CLOSURE_THM}
+%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_\F(\V)$, then the free $\mathbb F$-extension $\P \to \P[u]$
   % \[
   % \begin{tikzcd}
   %   \mathbb F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
   %   \mathbb F Y \arrow[r] & \P[u]
   % \end{tikzcd}
   % \]
-is a level $\F$-cofibration, trivial if $u$ is so.
-\end{proposition}
-\begin{proof}
-  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
+%is a level $\F$-cofibration, trivial if $u$ is so.
+%\end{proposition}
+%\begin{proof}
+%  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
 % Thus, it suffices to that that, for all $T\in \Omega$, the map
 % \[
 % \left( 
@@ -7639,17 +7670,20 @@ is a level $\F$-cofibration, trivial if $u$ is so.
 % \]
 % is a (trivial) cofibration in $\V^{G\times \Sigma_n}_{\F_n}$ given our assumptions.
 
-By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
-Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
-\end{proof}
-Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb F$-extensions.
+%By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
+%Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
+%\end{proof}
 
-\begin{proof}
-  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
-  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
-\end{proof}
+%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb F$-extensions.
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill \cite{BH15}.
+%\begin{proof}
+%  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
+%  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
+%\end{proof}
+
+{\color{red} HERE}
+
+Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
 
 \begin{corollary}
   \label{N_INFINITY_REALIZATION_COROLLARY}
