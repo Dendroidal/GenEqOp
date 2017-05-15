@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {7.2}Pushout powers}{53}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{57}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Indexing systems}{60}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}something}{64}{subsection.7.5}
-\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Operads}{64}{subsubsection.7.5.1}
-\contentsline {subsubsection}{\numberline {7.5.2}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{64}{subsubsection.7.5.2}
-\contentsline {subsubsection}{\numberline {7.5.3}Cofibrant Genuine $G$-Operads}{65}{subsubsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5}something}{65}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Operads}{65}{subsubsection.7.5.1}
+\contentsline {subsubsection}{\numberline {7.5.2}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{65}{subsubsection.7.5.2}
+\contentsline {subsubsection}{\numberline {7.5.3}Cofibrant Genuine $G$-Operads}{66}{subsubsection.7.5.3}

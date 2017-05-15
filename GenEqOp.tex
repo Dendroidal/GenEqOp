@@ -7386,7 +7386,7 @@ where the last two maps are always isomorphisms. But when restricting to cofibra
 We now possess all the technical ingredients needed to 
 prove Theorem \ref{MAINQUILLENEQUIV THM}.
 
-\begin{lemma}
+\begin{lemma}\label{MAINLEM LEM}
 	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
 	
 Then in both of the adjunctions
@@ -7557,6 +7557,27 @@ $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
 \prod_{T \in \mathsf{Iso}(\Omega^a[k])}
 \mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
 that the result now follows by Corollary \ref{FINALCOR COR}.
+\end{proof}
+
+
+\begin{proof}[proof of Theorem \ref{MAINQUILLENEQUIV THM}]
+It suffices to show that both the derived unit and derived counit for the adjunction are given by weak equivalences.
+
+For the counit, it is immediate from Lemma \ref{MAINLEM LEM} that if $X \in \mathsf{Op}^G(\mathcal{V})$ is bifibrant
+the functor $\iota^{\**} \iota_{\**} X$ is already derived, and hence the derived counit is identified with the counit isomorphism $\iota^{\**} \iota_{\**} X \xrightarrow{\simeq} X$.
+
+For the unit, note first that it is immediate from the definitions that 
+$\iota_{\**} \colon 
+\mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})\to 
+\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+detects fibrations (as well as weak equivalences), 
+and thus by Lemma \ref{MAINLEM LEM}
+$Y \in \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+is bifibrant iff $Y \simeq \iota_{\**} X$
+for $X \in \mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})$ bifibrant.
+But then the functor $\iota_{\**} \iota^{\**} Y$ 
+is also already derived (since $\iota^{\**} Y \simeq \iota^{\**}\iota_{\**} X \simeq X$ is fibrant) and the derived unit is thus the isomorphism
+$Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 \end{proof}
 
 
