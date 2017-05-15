@@ -43,9 +43,33 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-No expository content yet.
+{\color{red} HERE}
+
+Operads encode a variety of algebraic structures, such as monoids, commutative monoids or (depending on the ambient category) Lie algebras, $E_n$-algebras, etc. Indeed, all such instances can be regarded as categories of algebras for some (fixed) suitable operad.
+Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+
+Notably, when studying the homotopy theory of operads
+(in, say, spaces)
+the preferred notion of weak equivalence is 
+usually that of ``naive equivalences'',
+i.e. a map of operads 
+$\O \to \O'$
+is called a weak equivalence if each of the maps
+$\O(n) \to \O'(n)$
+is a weak equivalence of spaces
+after forgetting the $\Sigma_n$-actions.
+This is in contrast with so called ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is considered a $G$-weak equivalence only if all the induced fix point maps $X^H \to Y^H$, $H \leq G$ are weak equivalences.
+This contrast hints at a number of novel subtleties that appear when studying equivariant operads, which we now discuss.
+
 
 {\color{red} HERE}
+
+
+
+Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
+the $n$-th level $\O(n)$ has a $G \times \Sigma_n$
+
+\newpage
 
 \begin{theorem}\label{MAINEXIST1 THM}
 $\mathcal{F}$-model structures, 
@@ -5786,22 +5810,7 @@ As before, this extends to a Quillen model structure if $\V$ is sufficiently nic
 \end{example}
 
 
-
-
-
-
-
-
-
-
-
-
 \newpage
-
-
-
-
-
 
 
 
@@ -5815,7 +5824,7 @@ The key ingredient required to prove our desired Quillen equivalence
 	\mathsf{Op}_G \rightleftarrows \mathsf{Op}^G
 	\colon \iota_{\**}
 \]
-will be an analysis of cofibrant objects $\mathsf{Op}_G$, which we now provide.
+will be an analysis of cofibrant objects in $\mathsf{Op}_G$, which we now provide.
 
 
 \subsection{Families of subgroups}
@@ -7275,6 +7284,9 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 %$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
 %since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
 \end{remark}
+
+The following is a refinement of the key argument in the proof of
+\cite[Thm. 2.10]{Ste16}.
 
 
 \begin{proposition}\label{COFESSIM PROP}
