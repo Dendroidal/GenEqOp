@@ -7407,7 +7407,7 @@ the cofibrant objects in the leftmost category are the essential image under $\i
 cofibrant objects in the rightmost category.
 
 Moreover, both forgetful functors 
-\begin{equation}
+\begin{equation}\label{FGTFUNC EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar{r}{\mathsf{fgt}} 
 &
@@ -7556,7 +7556,21 @@ in Corollary \ref{FINALCOR COR} one has
 $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
 \prod_{T \in \mathsf{Iso}(\Omega^a[k])}
 \mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
-that the result now follows by Corollary \ref{FINALCOR COR}.
+that the main claim now follows by Corollary \ref{FINALCOR COR}.
+
+As for the additional claim concerning the forgetful functors
+in (\ref{FGTFUNC EQ}),
+that $\mathsf{fgt} \colon
+\mathsf{Op}_{\mathcal{F}}(\mathcal{V})
+\to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
+preserves cofibrant objects is precisely what was argued in the previous paragraph.
+But since the forgetful functors commute with $\iota_{\**}$, the claim that
+$\mathsf{fgt} \colon
+\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+\to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
+also preserves cofibrant objects follows 
+``essential image characterization'' of cofibrant objects in
+(\ref{COFADJ EQ}).
 \end{proof}
 
 
@@ -7729,9 +7743,6 @@ Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of \cite[Theorem 2.10]{Ste1
 % \end{align*}
 %\end{proof}
 
-\subsubsection{Cofibrant Genuine $G$-Operads}
-
-\todo[inline]{come back}
 
 
 
