@@ -7080,7 +7080,7 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 
 
 
-\subsection{Indexing systems}
+\subsection{Indexing systems and the proof of Theorem \ref{MAINQUILLENEQUIV THM}}
 
 
 The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
@@ -7568,10 +7568,24 @@ But since the forgetful functors commute with $\iota_{\**}$, the claim that
 $\mathsf{fgt} \colon
 \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
 \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
-also preserves cofibrant objects follows 
+also preserves cofibrant objects follows from the
 ``essential image characterization'' of cofibrant objects in
 (\ref{COFADJ EQ}).
 \end{proof}
+
+
+\begin{remark}
+	A slightly more careful analysis of the argument in the previous proof shows that we have in fact shown the slightly more general claim that operads 
+(in either 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ or
+$\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$)
+that forget to cofibrant symmetric sequences
+(in either 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$ or
+$\mathsf{Sym}_{\mathcal{F}}^G(\mathcal{V})$)
+are closed under cellular extensions of operads. 
+\end{remark}
+
 
 
 \begin{proof}[proof of Theorem \ref{MAINQUILLENEQUIV THM}]
@@ -7595,35 +7609,31 @@ $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 \end{proof}
 
 
-{\color{red} HERE}
+\subsection{$N_{\infty}$-operads}
 
-\newpage
+%\subsubsection{$\F$-Cofibrant $G$-Operads}
 
-\subsection{something}
+%We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
 
-\subsubsection{$\F$-Cofibrant $G$-Operads}
+%\begin{theorem}
+% \label{COFIBRANT_G_OPS_THEOREM}
+ % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_\F(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_\F(\V)$.
+%\end{theorem}
 
-We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
-
-\begin{theorem}
-  \label{COFIBRANT_G_OPS_THEOREM}
-  Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_\F(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_\F(\V)$.
-\end{theorem}
-
-The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
-\begin{proposition}
-  \label{F_COFIB_OP_CLOSURE_THM}
-  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_\F(\V)$, then the free $\mathbb F$-extension $\P \to \P[u]$
+%The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
+%\begin{proposition}
+%  \label{F_COFIB_OP_CLOSURE_THM}
+%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_\F(\V)$, then the free $\mathbb F$-extension $\P \to \P[u]$
   % \[
   % \begin{tikzcd}
   %   \mathbb F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
   %   \mathbb F Y \arrow[r] & \P[u]
   % \end{tikzcd}
   % \]
-is a level $\F$-cofibration, trivial if $u$ is so.
-\end{proposition}
-\begin{proof}
-  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
+%is a level $\F$-cofibration, trivial if $u$ is so.
+%\end{proposition}
+%\begin{proof}
+%  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
 % Thus, it suffices to that that, for all $T\in \Omega$, the map
 % \[
 % \left( 
@@ -7632,17 +7642,20 @@ is a level $\F$-cofibration, trivial if $u$ is so.
 % \]
 % is a (trivial) cofibration in $\V^{G\times \Sigma_n}_{\F_n}$ given our assumptions.
 
-By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
-Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
-\end{proof}
-Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb F$-extensions.
+%By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
+%Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
+%\end{proof}
 
-\begin{proof}
-  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
-  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
-\end{proof}
+%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb F$-extensions.
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill \cite{BH15}.
+%\begin{proof}
+%  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
+%  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
+%\end{proof}
+
+{\color{red} HERE}
+
+Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
 
 \begin{corollary}
   \label{N_INFINITY_REALIZATION_COROLLARY}
