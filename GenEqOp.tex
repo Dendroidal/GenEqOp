@@ -66,7 +66,7 @@ one might guess that a map of $G$-operads
 $\O \to \O'$
 should be called a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
-is $G$-equivalence after forgetting the $\Sigma_n$-actions, 
+is a $G$-equivalence after forgetting the $\Sigma_n$-actions, 
 i.e. if the maps
 \begin{equation}\label{NAIVEOPEQ EQ}
 	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
@@ -93,7 +93,7 @@ determined by
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
-However, as first noted by Costenoble-Waner in \cite{CW91},
+However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equivariant infinite loop spaces,
 (\ref{NAIVEGEINFTY EQ}) does not provide the correct notion of $G$-$E_{\infty}$-operads, by which we mean 
 up-to-homotopy replacements of the commutative operad 
 $\mathsf{Comm}(n)=\**$ in the $G$-equivariant context. Instead, 
@@ -121,20 +121,21 @@ and $\O'$ is a $G$-$E_{\infty}$-operad
 (as in (\ref{GENGEINFTY EQ})).
 Therefore, in order to distinguish such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
 with the notion of \textit{graph equivalences}, 
-so that $\O \to \O'$ considered a weak equivalence only if
-\begin{equation}\label{NAIVEOPEQ EQ}
-	\O(n)^H \xrightarrow{\sim} \O'(n)^{\Gamma}, \qquad \Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}.
+so that $\O \to \O'$ is considered a weak equivalence only if
+\begin{equation}\label{GENEOPEQ EQ}
+	\O(n)^{\Gamma} \xrightarrow{\sim} \O'(n)^{\Gamma}, \qquad
+	\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}.
 \end{equation}
 are weak equivalences.
 
-{\color{red} HERE}
 
-We now recall why it is that (\ref{GENGEINFTY EQ}), rather than 
-(\ref{NAIVEGEINFTY EQ}), provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context.
-The original perspective in \cite{CW91} is focused on equivariant loop spaces, 
-but for our purposes we will the perspective
-of Blumberg-Hill in \cite{BH15},
-which focuses on the Hill-Hopkins-Ravenel norm maps used in the solution of the Kervaire invariant problem.
+As mentioned above, the original evidence (cf. \cite{CW91}) 
+that (\ref{GENGEINFTY EQ}), 
+rather than (\ref{NAIVEGEINFTY EQ}), 
+provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
+For our purposes, however, we will instead focus on the perspective of Blumberg-Hill in \cite{BH15},
+which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem.
+
 Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
 the corresponding \textit{norm} is a $G$-spectrum $N^X R$
 whose underlying spetrum is 
@@ -143,16 +144,42 @@ but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in
 If $R$ is additionally a strictly commutative ring $G$-spectrum
 (i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
 ring multiplication then induces so called \textit{norm maps}
-\begin{equation}
-	N^X R \to R
+\begin{equation}\label{NORMMAPS EQ}
+	N^X R \to R.
 \end{equation}
-satisfying natural equivariance and associativity conditions.
+Moreover, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
+then satisfy a number of 
+natural equivariance and associativity conditions.
+Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for varying $H$
+(for an example packaged in operadic language,
+see (\ref{INTFIXPTCOMP EQ}) below).
+
+{\color{red} HERE}
+
+The key observation at the source of the work in 
+\cite{BH15} is then that, operadically, 
+norm maps are encoded by the graph fixed points as in (\ref{GENEOPEQ EQ}).
+More explicitly, noting that a $H$-set $X$ with $n$ elements 
+is encoded by a partial homomorphism 
+$G \geq H \to \Sigma_n$, 
+one obtains an associated graph subgroup 
+$\Gamma_X \leq G \times \Sigma_n$, 
+$\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follows that for $R$ an 
+$\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
+are parametrized by the fixed point space
+$\mathcal{O}(n)^{\Gamma_X}$.
 
 {\color{red} HERE}
 
 
+\begin{equation}\label{INTFIXPTCOMP EQ}
+\O(H_1/H_2)^{H_1} \times \O(H_2/H_3)^{H_2} \to \O(H_1/H_3)^{H_1}
+\end{equation}
+
 
 \newpage
+
+\subsection{Main results}
 
 \begin{theorem}\label{MAINEXIST1 THM}
 $\mathcal{F}$-model structures, 
@@ -6579,7 +6606,6 @@ and then computing a pushout over that smaller cube.
 The formal result follows.
 
 
-
 \begin{proposition}\label{FIXEDPUSH PROP}
 	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated (cf. Prop. \ref{STRONGCELL PROP}(iii)).
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
@@ -6642,7 +6668,6 @@ the second step follows from Prop. \ref{STRONGCELL PROP}(iii)
 (with the required cofibrancy of the objects following from Propositions \ref{BIQUILLENG PROP} and \ref{POWERF PROP}),
 and the last step follows by Prop. \ref{STRONGCELL PROP}(iii) together with the induction hypothesis (which applies since $|B|\leq i <n$).
 
-
 We have thus shown that the leftmost map in the pushouts (\ref{COMPNFOLDFACTPUSH EQ}) for 
 $\left( f^{\square n} \right)^K$
 is isomorphic to the leftmost map in the pushouts for the corresponding filtration of 	
@@ -6661,7 +6686,7 @@ and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(
 	\Sigma_{\lambda_k} \wr G_k
 	$,
 	the natural map
-\begin{equation}\label{FIXEDPUSH EQ}
+\begin{equation}
 	\underset{1\leq i\leq k}{\mathlarger{\mathlarger{\square}}}
 	\underset{[j] \in \lambda_i/K}{\mathlarger{\mathlarger{\square}}}
 	\left( f_i^{\otimes [j]} \right)^K
@@ -7513,7 +7538,7 @@ prove Theorem \ref{MAINQUILLENEQUIV THM}.
 	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
 	
 Then in both of the adjunctions
-\begin{equation}\label{COFADJ EQ}
+\begin{equation}\label{COFADJ2 EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
 &
@@ -7546,7 +7571,7 @@ preserve cofibrant objects.
 \end{lemma}
 
 \begin{proof}
-We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ EQ})
+We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
 is not really new. Indeed, there are equivalences of categories
 $
 \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
@@ -7562,7 +7587,7 @@ compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ ad
 so that the symmetric sequence statement merely repackages 
 Proposition \ref{COFESSIM PROP}.
 
-For the operad adjunction in (\ref{COFADJ EQ}),
+For the operad adjunction in (\ref{COFADJ2 EQ}),
 most of the argument in the proof of
 Proposition \ref{COFESSIM PROP}
 applies mutatis mutandis
@@ -7693,7 +7718,7 @@ $\mathsf{fgt} \colon
 \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
 also preserves cofibrant objects follows from the
 ``essential image characterization'' of cofibrant objects in
-(\ref{COFADJ EQ}).
+(\ref{COFADJ2 EQ}).
 \end{proof}
 
 
