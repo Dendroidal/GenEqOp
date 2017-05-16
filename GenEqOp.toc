@@ -30,4 +30,3 @@
 \contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{59}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{62}{subsection.7.4}
 \contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{66}{subsection.7.5}
-\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{66}{subsubsection.7.5.1}

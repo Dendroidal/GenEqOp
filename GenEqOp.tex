@@ -60,8 +60,6 @@ This is in contrast with so called ``genuine equivariant homotopy theory'', wher
 This contrast hints at a number of novel subtleties that appear when studying equivariant operads, which we now discuss.
 
 
-{\color{red} HERE}
-
 Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
 the $n$-th level $\O(n)$ has a $G \times \Sigma_n$,
 one might guess that a map of $G$-operads
@@ -131,12 +129,26 @@ are weak equivalences.
 
 {\color{red} HERE}
 
-We now address why (\ref{GENGEINFTY EQ}), rather than 
-(\ref{NAIVEGEINFTY EQ}), provides the correct up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context.
+We now recall why it is that (\ref{GENGEINFTY EQ}), rather than 
+(\ref{NAIVEGEINFTY EQ}), provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context.
+The original perspective in \cite{CW91} is focused on equivariant loop spaces, 
+but for our purposes we will the perspective
+of Blumberg-Hill in \cite{BH15},
+which focuses on the Hill-Hopkins-Ravenel norm maps used in the solution of the Kervaire invariant problem.
+Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
+the corresponding \textit{norm} is a $G$-spectrum $N^X R$
+whose underlying spetrum is 
+$R^{\wedge X} \simeq R^{\wedge n}$
+but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
+If $R$ is additionally a strictly commutative ring $G$-spectrum
+(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
+ring multiplication then induces so called \textit{norm maps}
+\begin{equation}
+	N^X R \to R
+\end{equation}
+satisfying natural equivariance and associativity conditions.
 
-
-
-
+{\color{red} HERE}
 
 
 
@@ -7783,74 +7795,74 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 \end{proof}
 
 
-\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
+%\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
 
-We first classify cofibrant objects in $\V\Sym_G$ by breaking $\Omega_{G,0}$ apart along the free $G$-trees. 
+%We first classify cofibrant objects in $\V\Sym_G$ by breaking $\Omega_{G,0}$ apart along the free $G$-trees. 
 
-Again, we fix an ordering on $G$.
-\begin{definition}
-  Given a tree $T_0 \in \Omega$, let $\Omega_G[T_0]$ denote the full subcategory of $\Omega_{G,0}$ spanned by those trees which recieve a (quotient) map from $G\cdot T_0$. Further, we observe that $\Omega_{G,0}$ is isomorphic to the disjoint union
-\[
-\mathop{\coprod}\limits_{T_0 \in \mathrm{Iso}(\Omega)}\Omega_G[T_0].
-\]
-\end{definition}
+%Again, we fix an ordering on $G$.
+%\begin{definition}
+%  Given a tree $T_0 \in \Omega$, let $\Omega_G[T_0]$ denote the full subcategory of $\Omega_{G,0}$ spanned by those trees which recieve a (quotient) map from $G\cdot T_0$. Further, we observe that $\Omega_{G,0}$ is isomorphic to the disjoint union
+%\[
+%\mathop{\coprod}\limits_{T_0 \in \mathrm{Iso}(\Omega)}\Omega_G[T_0].
+%\]
+%\end{definition}
 
-\begin{lemma}
-  \label{O_GAMMA_T_0_LEMMA}
-  $\Omega_G[T_0]$ and the orbit category $O_{\Gamma_{T_0}}$ are equivalent, where $\Gamma_{T_0}$ is the family of all graph subgroups of $G\times \Sigma_{T_0}$. \qed
-\end{lemma}
-The two above categories are not isomorphic: $O_{\Gamma_{T_0}}$ only records the planar structure on (say) the \textit{first} tree component, ignoring the rest, and hence is isomorphic to $\Omega_G^s[T_0]$.
+%\begin{lemma}
+%  \label{O_GAMMA_T_0_LEMMA}
+%  $\Omega_G[T_0]$ and the orbit category $O_{\Gamma_{T_0}}$ are equivalent, where $\Gamma_{T_0}$ is the family of all graph subgroups of $G\times \Sigma_{T_0}$. \qed
+%\end{lemma}
+%The two above categories are not isomorphic: $O_{\Gamma_{T_0}}$ only records the planar structure on (say) the \textit{first} tree component, ignoring the rest, and hence is isomorphic to $\Omega_G^s[T_0]$.
   
 
-We repackage the description of cofibrant objects from \cite{Ste16}.
-\begin{lemma}
-  \label{ORBIT_COFIB}
-  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_\F^{op}}$ is cofibrant iff
-  \begin{itemize}
-  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_\F$.
-  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_\F^{op}}$. 
-  \end{itemize}
-\end{lemma}
-\begin{proof}
-  Ignoring retracts as usual, cofibrant $Y$ are built by a transfinite composition of pushouts of the form of the first diagram from the left below. Evaluating at $G/e$ yields the second, and further taking $K$-fixed points yields the third by cellularity; as $(-)^K$ is preserved by transfinite composition by cellularity, $(i)$ follows. The fourth diagram is evaluation at $G/K$, and hence $Y_\alpha(G/K) \simeq Y_\alpha(G/e)^K$ for all $K\in \F$, and again cellularity implies this holds true for $Y$ as well.
-\[
-  \begin{tikzcd}
-    O_\F(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
-    G/H\cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e) \arrow[d] &&
-    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e)^K \arrow[d] &&
-    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/K) \arrow[d]\\
-    O_\F(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
-    G/H \cdot B \arrow[r] & Y_{\alpha+1}(G/e) &&
-    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/e)^K&&
-    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/K)
-  \end{tikzcd}
-\]
-\end{proof}
+%We repackage the description of cofibrant objects from \cite{Ste16}.
+%\begin{lemma}
+%  \label{ORBIT_COFIB}
+%  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_\F^{op}}$ is cofibrant iff
+%  \begin{itemize}
+%  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_\F$.
+%  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_\F^{op}}$. 
+%  \end{itemize}
+%\end{lemma}
+%\begin{proof}
+%  Ignoring retracts as usual, cofibrant $Y$ are built by a transfinite composition of pushouts of the form of the first diagram from the left below. Evaluating at $G/e$ yields the second, and further taking $K$-fixed points yields the third by cellularity; as $(-)^K$ is preserved by transfinite composition by cellularity, $(i)$ follows. The fourth diagram is evaluation at $G/K$, and hence $Y_\alpha(G/K) \simeq Y_\alpha(G/e)^K$ for all $K\in \F$, and again cellularity implies this holds true for $Y$ as well.
+%\[
+%  \begin{tikzcd}
+%    O_\F(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
+%    G/H\cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e) \arrow[d] &&
+%    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e)^K \arrow[d] &&
+%    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/K) \arrow[d]\\
+%    O_\F(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
+%    G/H \cdot B \arrow[r] & Y_{\alpha+1}(G/e) &&
+%    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/e)^K&&
+%    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/K)
+%  \end{tikzcd}
+%\]
+%\end{proof}
 
-Extending the above, we record an obvious comparison result between the categories of sequences.
-\begin{lemma}
-  \label{SYM_QUI_ADJ}
-  For $\V$ cofibrantly-generated with cellular fixed points, 
-  the adjunction
-  \[
-  \begin{tikzcd}
-    \Sym^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
-  \end{tikzcd}
-  \]
-  from (\ref{TWOADJOINTS EQ}) is Quillen.
+%Extending the above, we record an obvious comparison result between the categories of sequences.
+%\begin{lemma}
+%  \label{SYM_QUI_ADJ}
+%  For $\V$ cofibrantly-generated with cellular fixed points, 
+%  the adjunction
+%  \[
+%  \begin{tikzcd}
+%    \Sym^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
+%  \end{tikzcd}
+%  \]
+%  from (\ref{TWOADJOINTS EQ}) is Quillen.
   
-  Moreover, $i_*$ preserves cofibrant objects.
-\end{lemma}
-\begin{proof}
-  The explicit description in Remark \ref{REFLCOREFL REM} of the essential image of $i_*$ makes it clear that it sends (trivial) $\F$-fibrations to (trivial) $\F$-fibrations, as desired.
+%  Moreover, $i_*$ preserves cofibrant objects.
+%\end{lemma}
+%\begin{proof}
+%  The explicit description in Remark \ref{REFLCOREFL REM} of the essential image of $i_*$ makes it clear that it sends (trivial) $\F$-fibrations to (trivial) $\F$-fibrations, as desired.
   
-  The moreover follows by Lemmas \ref{ORBIT_COFIB} and \ref{O_GAMMA_T_0_LEMMA}.
-\end{proof}
+%  The moreover follows by Lemmas \ref{ORBIT_COFIB} and \ref{O_GAMMA_T_0_LEMMA}.
+%\end{proof}
 
-Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of \cite[Theorem 2.10]{Ste16} yield the following.
-\begin{proposition}
- If $X\in \Sym_G(\V)$ is cofibrant, then $\eta_X: X \to i_*i^*X$ is an isomorphism. \qed
-\end{proposition}
+%Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of\cite[Theorem 2.10]{Ste16} yield the following.
+%\begin{proposition}
+% If $X\in \Sym_G(\V)$ is cofibrant, then $\eta_X: X \to i_*i^*X$ is an isomorphism. \qed
+%\end{proposition}
 %\begin{proof}
 %  Using Lemma \ref{O_GAMMA_T_0_LEMMA} and the fact that pushouts are underlying and levelwise, this follows from cellularity precisely as in \cite[Theorem 2.10]{Ste16}. Indeed, analogous arguments show that $\eta$ is an isomorphism on representable sheaves $\Omega_G(-,T)\cdot A$, and then the result can be extended to transfinite composite of free extensions exactly as before.
 % \todo[inline]{come back: write these sheets up}
@@ -7866,61 +7878,6 @@ Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of \cite[Theorem 2.10]{Ste1
 %   &\simeq \Omega_G(T,T') \cdot A.
 % \end{align*}
 %\end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%% TRYING FOR V = SSET FIRST %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% We first prove the existence of these model structures when $\V = \sSet$. In this case, we denote $\V\Op_G$ by $\sOp_G$. 
-% \begin{theorem}
-%   The genuine model structure on $\sOp_G$ exists.
-% \end{theorem}
-% \begin{proof}
-%   By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extension $\P \to \P[u]$, each built by pushouts
-% \[
-% \begin{tikzcd}
-%   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-%   \mathbb F_G Y \arrow[r] & \P[u]
-% \end{tikzcd}
-% \]
-% where $u: X \to Y$ is a generating trivial cofibration in $\sSet^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $\sSet^{\Sigma_G^{op}}_{gen}$. 
-
-% Since transfinite compositions are computed levelwise, it in fact suffices to show that each $\P \to \P[u]$ is a level trivial cofibration in $\sSet^{\Sigma_G^{op}}$; that is, that for all $C\in \Sigma_G$, $\P(C) \to \P[u](C)$ is a genuine trivial cofibration in $\sSet^{\mathrm{Aut}(C)}$. This is precisely the content of Lemma \ref{SSET_CELLULAR_LEVEL_COFIB_LEMMA}.
-% \end{proof}
-
-% \begin{theorem}
-%   Cofibrant objects in $\sOp_G$ forget to cofibrant objects in $\sSet^{\Sigma_G^{op}}$. 
-% \end{theorem}
-% \begin{proof}
-%   Similarly as above, it suffices to show that, for $u: X\to Y$ a cofibration in $\sSet^{\Sigma_G^{op}}$ and $\P$ underlyingly cofibrant in $\sSet^{\Sigma_G^{op}}$, the cellular extension $\P \to \P[u]$ is an underlying cofibration in $\sSet^{\Sigma_G^{op}}$. 
-% \todo[inline]{come back}
-% \end{proof}
-
-% \begin{lemma}
-%   \label{SSET_CELLULAR_LEVEL_COFIB_LEMMA}
-%   If $u: X\to Y$ is a level trivial genuine cofibration in $\sSet^{\Sigma_G^{op}}$ (so $X(C) \to Y(C)$ is a genuine cofibration in $\sSet^{\mathrm{Aut}(C)}$), then $\P \to \P[u]$ is a level trivial genuine cofibration for any $\P \in \sOp_G$.
-% \end{lemma}
-% \begin{proof}
-%   We first record that, since genuine cofibrations of simplicial sets are underlying, all $\P \in \sOp_G$ are levelwise genuine cofibrant, i.e. $\P(C)$ is cofibrant in $\sSet^{\mathrm{Aut}(C)}_{gen}$. 
-% %  Usign the levelwise filtration
-%   \todo[inline]{come back}
-%   Follows from cofibration analysis.
-% \end{proof}
 
 
 
