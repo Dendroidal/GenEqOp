@@ -154,7 +154,6 @@ Crucially,  we note that the more interesting of these associativity conditions 
 (for an example packaged in operadic language,
 see (\ref{INTFIXPTCOMP EQ}) below).
 
-{\color{red} HERE}
 
 The key observation at the source of the work in 
 \cite{BH15} is then that, operadically, 
@@ -168,6 +167,101 @@ $\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follo
 $\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
+The flaw with the $G$-trivial $E_{\infty}$-operad
+described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$.
+Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
+according to which (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}) are equivalent,
+as studying ``operads without norm maps''
+(in the sense that equivalences ignore norm maps), 
+while the equivalences (\ref{GENEOPEQ EQ})
+study ``operads with norm maps''.
+
+Our first main result, Theorem \ref{MAINEXIST1 THM}, 
+establishes the existence of a model structure on operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
+though our analysis here goes significantly further, again guided by Blumberg-Hill's analysis in \cite{BH15}.
+
+The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of types of operads, which they dub $N_{\infty}$-operads.
+The minimum type of $N_{\infty}$-operads is then that of the 
+$G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
+while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
+The remaining types, which interpolate between 
+$G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$, 
+can be thought of as encoding varying degrees of ``equivariant commutativity''.
+
+
+More concretely, each type of $N_{\infty}$-operad is determined by a collection $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$, with an operad $\O$ being called a $N \mathcal{F}$-operad if it satisfies the fixed point condition
+\begin{equation}\label{NFINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \in \mathcal{F}_n
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}
+Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that such $\mathcal{F}$ must satisfy.
+The simplest of these conditions, that each 
+$\mathcal{F}_n$ be closed under subgroups and conjugation 
+(so that each $\mathcal{F}_n$ is called a \textit{family}),
+are simply consequences of the fact that each $\O(n)$ is a space, and are routinely found in equivariant theory.
+However, the remaining conditions,
+all of which involve $\mathcal{F}_n$ for varying $n$ simultaneously and are a consequence of operadic multiplication,
+are both novel and subtle.
+In loose terms, these conditions, 
+which are more easily described in terms of the $H$-sets $X$ associated to graph subgroups,
+concern closure of those under 
+disjoint union, cartesian product, subobjects,
+and a key novel condition called \textit{self-induction}.
+The precise conditions are collected in
+\cite[Def. 3.22]{BH15},
+which also introduces the term \textit{indexing system} for 
+a $\mathcal{F}$ satisfying all such conditions.
+The main result of \cite[\S 4]{BH15} is then that whenever an operad $\O$ as in (\ref{NFINFTY EQ}) exists the associated collection $\mathcal{F}$ must be an indexing system, 
+though the converse statement that given any indexing system $\mathcal{F}$ such an $\O$ can be produced is left as a conjecture.
+
+One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain 
+Corollary \ref{NINFTY_REAL_COR_MAIN},
+and, moreover, to produce models of $N \mathcal{F}$-operads that
+are as explicit as possible.
+
+
+{\color{red} HERE}
+
+To motivate our approach, we first recall the solution of a closed related but simpler problem: that of building universal spaces for families of subgroups. 
+Given a family $\mathcal{F}$ of subgroups of $G$ 
+(i.e. a collection closed under conjugation and subgroups), a universal space $X$ for $\mathcal{F}$, 
+also called a $E \mathcal{F}$-space,
+is a space with fixed points $X^H$ are defined just as in (\ref{NFINFTY EQ}).
+In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
+each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
+The existence of $E \mathcal{F}$-spaces for any family is 
+best understood in light Elmendorf's classical result 
+stating that there is a Quillen equivalence 
+(where $\mathsf{O}_G$ is the \textit{orbital} category, formed by the $G$-sets $G/H$)
+\begin{equation}\label{COFADJINT EQ}
+\begin{tikzcd}[column sep =5em,row sep=0.5em]
+	\mathsf{Top}^{\mathsf{O}_G^{op}}
+	\ar[shift left=1]{r}{\iota^{\**}} 
+&
+	\mathsf{Top}^G
+	\ar[shift left=1]{l}{\iota_{\**}}
+\\
+	(G/H \mapsto X^H) &
+	X \ar[mapsto]{l}
+\end{tikzcd}
+\end{equation}
+where the weak equivalences (and fibrations)
+on $\mathsf{Top}^G$ are detected on all fixed points and
+the weak equivalences (and fibrations)
+on $\mathsf{Top}^{\mathsf{O}_G^{op}}$
+are detected at each presheaf level.
+Noting that the fixed point characterization of $E \mathcal{F}$-spaces define an obvious object 
+$\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by 
+$\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
+$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise
+
+
+
+{\color{red} HERE}
 
 {\color{red} HERE}
 
@@ -228,6 +322,25 @@ the analogue adjunction
 \end{equation}
 is also a Quillen equivalence.
 \end{theorem}
+
+
+
+\begin{corollary}\label{NINFTY_REAL_COR_MAIN}
+For $\V = \sSet$ and 
+$\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
+any weak indexing system,
+$N \mathcal{F}$-operads exist. I.e. there exist operads $\O$
+such that
+\begin{equation}\label{NFINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \in \mathcal{F}_n
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}  
+In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
+\end{corollary}
 
 
 
@@ -7400,7 +7513,7 @@ The following is a refinement of the key argument in the proof of
 \begin{proposition}\label{COFESSIM PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
 	and consider the reflexive adjunction
-	\begin{equation}\label{COFADJ EQ}
+\begin{equation}\label{COFADJ EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}
 	\ar[shift left=1.5]{r}{\iota^{\**}} 
@@ -7809,6 +7922,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
   \label{N_INFINITY_REALIZATION_COROLLARY}
   For $\V = \sSet$ and $\F$ any weak indexing system, there exists an operad $N\F$ such that $N\F(n)^\Gamma \simeq *$ if $\Gamma \in \F(n)$, and is empty otherwise. In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
 \end{corollary}
+
 \begin{proof}
   Recall that $\mathsf{Comm}(n) = *$ for all $n$. Consider the functorial factorization 
   \[
