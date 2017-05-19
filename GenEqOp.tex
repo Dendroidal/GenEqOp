@@ -60,15 +60,13 @@ This is in contrast with so called ``genuine equivariant homotopy theory'', wher
 This contrast hints at a number of novel subtleties that appear when studying equivariant operads, which we now discuss.
 
 
-{\color{red} HERE}
-
 Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
 the $n$-th level $\O(n)$ has a $G \times \Sigma_n$,
 one might guess that a map of $G$-operads
 $\O \to \O'$
 should be called a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
-is $G$-equivalence after forgetting the $\Sigma_n$-actions, 
+is a $G$-equivalence after forgetting the $\Sigma_n$-actions, 
 i.e. if the maps
 \begin{equation}\label{NAIVEOPEQ EQ}
 	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
@@ -95,7 +93,7 @@ determined by
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
-However, as first noted by Costenoble-Waner in \cite{CW91},
+However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equivariant infinite loop spaces,
 (\ref{NAIVEGEINFTY EQ}) does not provide the correct notion of $G$-$E_{\infty}$-operads, by which we mean 
 up-to-homotopy replacements of the commutative operad 
 $\mathsf{Comm}(n)=\**$ in the $G$-equivariant context. Instead, 
@@ -121,11 +119,161 @@ to build maps $\O \to \O'$ where
 $\O$ is a $G$-trivial $E_{\infty}$-operad (as in (\ref{NAIVEGEINFTY EQ}))
 and $\O'$ is a $G$-$E_{\infty}$-operad 
 (as in (\ref{GENGEINFTY EQ})).
+Therefore, in order to distinguish such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
+with the notion of \textit{graph equivalences}, 
+so that $\O \to \O'$ is considered a weak equivalence only if
+\begin{equation}\label{GENEOPEQ EQ}
+	\O(n)^{\Gamma} \xrightarrow{\sim} \O'(n)^{\Gamma}, \qquad
+	\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}.
+\end{equation}
+are weak equivalences.
+
+
+As mentioned above, the original evidence (cf. \cite{CW91}) 
+that (\ref{GENGEINFTY EQ}), 
+rather than (\ref{NAIVEGEINFTY EQ}), 
+provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
+For our purposes, however, we will instead focus on the perspective of Blumberg-Hill in \cite{BH15},
+which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem.
+
+Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
+the corresponding \textit{norm} is a $G$-spectrum $N^X R$
+whose underlying spetrum is 
+$R^{\wedge X} \simeq R^{\wedge n}$
+but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
+If $R$ is additionally a strictly commutative ring $G$-spectrum
+(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
+ring multiplication then induces so called \textit{norm maps}
+\begin{equation}\label{NORMMAPS EQ}
+	N^X R \to R.
+\end{equation}
+Moreover, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
+then satisfy a number of 
+natural equivariance and associativity conditions.
+Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for varying $H$
+(for an example packaged in operadic language,
+see (\ref{INTFIXPTCOMP EQ}) below).
+
+
+The key observation at the source of the work in 
+\cite{BH15} is then that, operadically, 
+norm maps are encoded by the graph fixed points as in (\ref{GENEOPEQ EQ}).
+More explicitly, noting that a $H$-set $X$ with $n$ elements 
+is encoded by a partial homomorphism 
+$G \geq H \to \Sigma_n$, 
+one obtains an associated graph subgroup 
+$\Gamma_X \leq G \times \Sigma_n$, 
+$\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follows that for $R$ an 
+$\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
+are parametrized by the fixed point space
+$\mathcal{O}(n)^{\Gamma_X}$.
+The flaw with the $G$-trivial $E_{\infty}$-operad
+described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$.
+Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
+according to which (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}) are equivalent,
+as studying ``operads without norm maps''
+(in the sense that equivalences ignore norm maps), 
+while the equivalences (\ref{GENEOPEQ EQ})
+study ``operads with norm maps''.
+
+Our first main result, Theorem \ref{MAINEXIST1 THM}, 
+establishes the existence of a model structure on operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
+though our analysis here goes significantly further, again guided by Blumberg-Hill's analysis in \cite{BH15}.
+
+The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of types of operads, which they dub $N_{\infty}$-operads.
+The minimum type of $N_{\infty}$-operads is then that of the 
+$G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
+while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
+The remaining types, which interpolate between 
+$G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$, 
+can be thought of as encoding varying degrees of ``equivariant commutativity''.
+
+
+More concretely, each type of $N_{\infty}$-operad is determined by a collection $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$, with an operad $\O$ being called a $N \mathcal{F}$-operad if it satisfies the fixed point condition
+\begin{equation}\label{NFINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \in \mathcal{F}_n
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}
+Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that such $\mathcal{F}$ must satisfy.
+The simplest of these conditions, that each 
+$\mathcal{F}_n$ be closed under subgroups and conjugation 
+(so that each $\mathcal{F}_n$ is called a \textit{family}),
+are simply consequences of the fact that each $\O(n)$ is a space, and are routinely found in equivariant theory.
+However, the remaining conditions,
+all of which involve $\mathcal{F}_n$ for varying $n$ simultaneously and are a consequence of operadic multiplication,
+are both novel and subtle.
+In loose terms, these conditions, 
+which are more easily described in terms of the $H$-sets $X$ associated to graph subgroups,
+concern closure of those under 
+disjoint union, cartesian product, subobjects,
+and a key novel condition called \textit{self-induction}.
+The precise conditions are collected in
+\cite[Def. 3.22]{BH15},
+which also introduces the term \textit{indexing system} for 
+a $\mathcal{F}$ satisfying all such conditions.
+The main result of \cite[\S 4]{BH15} is then that whenever an operad $\O$ as in (\ref{NFINFTY EQ}) exists the associated collection $\mathcal{F}$ must be an indexing system, 
+though the converse statement that given any indexing system $\mathcal{F}$ such an $\O$ can be produced is left as a conjecture.
+
+One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain 
+Corollary \ref{NINFTY_REAL_COR_MAIN},
+and, moreover, to produce models of $N \mathcal{F}$-operads that
+are as explicit as possible.
+
+
+{\color{red} HERE}
+
+To motivate our approach, we first recall the solution of a closed related but simpler problem: that of building universal spaces for families of subgroups. 
+Given a family $\mathcal{F}$ of subgroups of $G$ 
+(i.e. a collection closed under conjugation and subgroups), a universal space $X$ for $\mathcal{F}$, 
+also called a $E \mathcal{F}$-space,
+is a space with fixed points $X^H$ are defined just as in (\ref{NFINFTY EQ}).
+In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
+each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
+The existence of $E \mathcal{F}$-spaces for any family is 
+best understood in light Elmendorf's classical result 
+stating that there is a Quillen equivalence 
+(where $\mathsf{O}_G$ is the \textit{orbital} category, formed by the $G$-sets $G/H$)
+\begin{equation}\label{COFADJINT EQ}
+\begin{tikzcd}[column sep =5em,row sep=0.5em]
+	\mathsf{Top}^{\mathsf{O}_G^{op}}
+	\ar[shift left=1]{r}{\iota^{\**}} 
+&
+	\mathsf{Top}^G
+	\ar[shift left=1]{l}{\iota_{\**}}
+\\
+	(G/H \mapsto X^H) &
+	X \ar[mapsto]{l}
+\end{tikzcd}
+\end{equation}
+where the weak equivalences (and fibrations)
+on $\mathsf{Top}^G$ are detected on all fixed points and
+the weak equivalences (and fibrations)
+on $\mathsf{Top}^{\mathsf{O}_G^{op}}$
+are detected at each presheaf level.
+Noting that the fixed point characterization of $E \mathcal{F}$-spaces define an obvious object 
+$\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by 
+$\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
+$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise
+
+
+
+{\color{red} HERE}
 
 {\color{red} HERE}
 
 
+\begin{equation}\label{INTFIXPTCOMP EQ}
+\O(H_1/H_2)^{H_1} \times \O(H_2/H_3)^{H_2} \to \O(H_1/H_3)^{H_1}
+\end{equation}
+
+
 \newpage
+
+\subsection{Main results}
 
 \begin{theorem}\label{MAINEXIST1 THM}
 $\mathcal{F}$-model structures, 
@@ -174,6 +322,25 @@ the analogue adjunction
 \end{equation}
 is also a Quillen equivalence.
 \end{theorem}
+
+
+
+\begin{corollary}\label{NINFTY_REAL_COR_MAIN}
+For $\V = \sSet$ and 
+$\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
+any weak indexing system,
+$N \mathcal{F}$-operads exist. I.e. there exist operads $\O$
+such that
+\begin{equation}\label{NFINFTY EQ}
+	\O(n)^{\Gamma} \sim 
+\begin{cases}
+	\** & \text{if } \Gamma \in \mathcal{F}_n
+\\
+	\emptyset & \text{otherwise}.
+\end{cases}
+\end{equation}  
+In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
+\end{corollary}
 
 
 
@@ -6554,7 +6721,6 @@ and then computing a pushout over that smaller cube.
 The formal result follows.
 
 
-
 \begin{proposition}\label{FIXEDPUSH PROP}
 	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated (cf. Prop. \ref{STRONGCELL PROP}(iii)).
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
@@ -6617,7 +6783,6 @@ the second step follows from Prop. \ref{STRONGCELL PROP}(iii)
 (with the required cofibrancy of the objects following from Propositions \ref{BIQUILLENG PROP} and \ref{POWERF PROP}),
 and the last step follows by Prop. \ref{STRONGCELL PROP}(iii) together with the induction hypothesis (which applies since $|B|\leq i <n$).
 
-
 We have thus shown that the leftmost map in the pushouts (\ref{COMPNFOLDFACTPUSH EQ}) for 
 $\left( f^{\square n} \right)^K$
 is isomorphic to the leftmost map in the pushouts for the corresponding filtration of 	
@@ -6636,7 +6801,7 @@ and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(
 	\Sigma_{\lambda_k} \wr G_k
 	$,
 	the natural map
-\begin{equation}\label{FIXEDPUSH EQ}
+\begin{equation}
 	\underset{1\leq i\leq k}{\mathlarger{\mathlarger{\square}}}
 	\underset{[j] \in \lambda_i/K}{\mathlarger{\mathlarger{\square}}}
 	\left( f_i^{\otimes [j]} \right)^K
@@ -7350,7 +7515,7 @@ The following is a refinement of the key argument in the proof of
 \begin{proposition}\label{COFESSIM PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
 	and consider the reflexive adjunction
-	\begin{equation}\label{COFADJ EQ}
+\begin{equation}\label{COFADJ EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}
 	\ar[shift left=1.5]{r}{\iota^{\**}} 
@@ -7488,7 +7653,7 @@ prove Theorem \ref{MAINQUILLENEQUIV THM}.
 	Let $\mathcal{V}$ be as in Theorem \ref{MAINQUILLENEQUIV THM} and let $\mathcal{F}$ be a weak indexing system.
 	
 Then in both of the adjunctions
-\begin{equation}\label{COFADJ EQ}
+\begin{equation}\label{COFADJ2 EQ}
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
 &
@@ -7521,7 +7686,7 @@ preserve cofibrant objects.
 \end{lemma}
 
 \begin{proof}
-We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ EQ})
+We note first that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
 is not really new. Indeed, there are equivalences of categories
 $
 \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
@@ -7537,7 +7702,7 @@ compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ ad
 so that the symmetric sequence statement merely repackages 
 Proposition \ref{COFESSIM PROP}.
 
-For the operad adjunction in (\ref{COFADJ EQ}),
+For the operad adjunction in (\ref{COFADJ2 EQ}),
 most of the argument in the proof of
 Proposition \ref{COFESSIM PROP}
 applies mutatis mutandis
@@ -7668,7 +7833,7 @@ $\mathsf{fgt} \colon
 \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
 also preserves cofibrant objects follows from the
 ``essential image characterization'' of cofibrant objects in
-(\ref{COFADJ EQ}).
+(\ref{COFADJ2 EQ}).
 \end{proof}
 
 
@@ -7759,6 +7924,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
   \label{N_INFINITY_REALIZATION_COROLLARY}
   For $\V = \sSet$ and $\F$ any weak indexing system, there exists an operad $N\F$ such that $N\F(n)^\Gamma \simeq *$ if $\Gamma \in \F(n)$, and is empty otherwise. In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
 \end{corollary}
+
 \begin{proof}
   Recall that $\mathsf{Comm}(n) = *$ for all $n$. Consider the functorial factorization 
   \[
@@ -7770,74 +7936,74 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 \end{proof}
 
 
-\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
+%\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
 
-We first classify cofibrant objects in $\V\Sym_G$ by breaking $\Omega_{G,0}$ apart along the free $G$-trees. 
+%We first classify cofibrant objects in $\V\Sym_G$ by breaking $\Omega_{G,0}$ apart along the free $G$-trees. 
 
-Again, we fix an ordering on $G$.
-\begin{definition}
-  Given a tree $T_0 \in \Omega$, let $\Omega_G[T_0]$ denote the full subcategory of $\Omega_{G,0}$ spanned by those trees which recieve a (quotient) map from $G\cdot T_0$. Further, we observe that $\Omega_{G,0}$ is isomorphic to the disjoint union
-\[
-\mathop{\coprod}\limits_{T_0 \in \mathrm{Iso}(\Omega)}\Omega_G[T_0].
-\]
-\end{definition}
+%Again, we fix an ordering on $G$.
+%\begin{definition}
+%  Given a tree $T_0 \in \Omega$, let $\Omega_G[T_0]$ denote the full subcategory of $\Omega_{G,0}$ spanned by those trees which recieve a (quotient) map from $G\cdot T_0$. Further, we observe that $\Omega_{G,0}$ is isomorphic to the disjoint union
+%\[
+%\mathop{\coprod}\limits_{T_0 \in \mathrm{Iso}(\Omega)}\Omega_G[T_0].
+%\]
+%\end{definition}
 
-\begin{lemma}
-  \label{O_GAMMA_T_0_LEMMA}
-  $\Omega_G[T_0]$ and the orbit category $O_{\Gamma_{T_0}}$ are equivalent, where $\Gamma_{T_0}$ is the family of all graph subgroups of $G\times \Sigma_{T_0}$. \qed
-\end{lemma}
-The two above categories are not isomorphic: $O_{\Gamma_{T_0}}$ only records the planar structure on (say) the \textit{first} tree component, ignoring the rest, and hence is isomorphic to $\Omega_G^s[T_0]$.
+%\begin{lemma}
+%  \label{O_GAMMA_T_0_LEMMA}
+%  $\Omega_G[T_0]$ and the orbit category $O_{\Gamma_{T_0}}$ are equivalent, where $\Gamma_{T_0}$ is the family of all graph subgroups of $G\times \Sigma_{T_0}$. \qed
+%\end{lemma}
+%The two above categories are not isomorphic: $O_{\Gamma_{T_0}}$ only records the planar structure on (say) the \textit{first} tree component, ignoring the rest, and hence is isomorphic to $\Omega_G^s[T_0]$.
   
 
-We repackage the description of cofibrant objects from \cite{Ste16}.
-\begin{lemma}
-  \label{ORBIT_COFIB}
-  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_\F^{op}}$ is cofibrant iff
-  \begin{itemize}
-  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_\F$.
-  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_\F^{op}}$. 
-  \end{itemize}
-\end{lemma}
-\begin{proof}
-  Ignoring retracts as usual, cofibrant $Y$ are built by a transfinite composition of pushouts of the form of the first diagram from the left below. Evaluating at $G/e$ yields the second, and further taking $K$-fixed points yields the third by cellularity; as $(-)^K$ is preserved by transfinite composition by cellularity, $(i)$ follows. The fourth diagram is evaluation at $G/K$, and hence $Y_\alpha(G/K) \simeq Y_\alpha(G/e)^K$ for all $K\in \F$, and again cellularity implies this holds true for $Y$ as well.
-\[
-  \begin{tikzcd}
-    O_\F(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
-    G/H\cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e) \arrow[d] &&
-    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e)^K \arrow[d] &&
-    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/K) \arrow[d]\\
-    O_\F(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
-    G/H \cdot B \arrow[r] & Y_{\alpha+1}(G/e) &&
-    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/e)^K&&
-    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/K)
-  \end{tikzcd}
-\]
-\end{proof}
+%We repackage the description of cofibrant objects from \cite{Ste16}.
+%\begin{lemma}
+%  \label{ORBIT_COFIB}
+%  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_\F^{op}}$ is cofibrant iff
+%  \begin{itemize}
+%  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_\F$.
+%  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_\F^{op}}$. 
+%  \end{itemize}
+%\end{lemma}
+%\begin{proof}
+%  Ignoring retracts as usual, cofibrant $Y$ are built by a transfinite composition of pushouts of the form of the first diagram from the left below. Evaluating at $G/e$ yields the second, and further taking $K$-fixed points yields the third by cellularity; as $(-)^K$ is preserved by transfinite composition by cellularity, $(i)$ follows. The fourth diagram is evaluation at $G/K$, and hence $Y_\alpha(G/K) \simeq Y_\alpha(G/e)^K$ for all $K\in \F$, and again cellularity implies this holds true for $Y$ as well.
+%\[
+%  \begin{tikzcd}
+%    O_\F(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
+%    G/H\cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e) \arrow[d] &&
+%    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e)^K \arrow[d] &&
+%    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/K) \arrow[d]\\
+%    O_\F(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
+%    G/H \cdot B \arrow[r] & Y_{\alpha+1}(G/e) &&
+%    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/e)^K&&
+%    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/K)
+%  \end{tikzcd}
+%\]
+%\end{proof}
 
-Extending the above, we record an obvious comparison result between the categories of sequences.
-\begin{lemma}
-  \label{SYM_QUI_ADJ}
-  For $\V$ cofibrantly-generated with cellular fixed points, 
-  the adjunction
-  \[
-  \begin{tikzcd}
-    \Sym^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
-  \end{tikzcd}
-  \]
-  from (\ref{TWOADJOINTS EQ}) is Quillen.
+%Extending the above, we record an obvious comparison result between the categories of sequences.
+%\begin{lemma}
+%  \label{SYM_QUI_ADJ}
+%  For $\V$ cofibrantly-generated with cellular fixed points, 
+%  the adjunction
+%  \[
+%  \begin{tikzcd}
+%    \Sym^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
+%  \end{tikzcd}
+%  \]
+%  from (\ref{TWOADJOINTS EQ}) is Quillen.
   
-  Moreover, $i_*$ preserves cofibrant objects.
-\end{lemma}
-\begin{proof}
-  The explicit description in Remark \ref{REFLCOREFL REM} of the essential image of $i_*$ makes it clear that it sends (trivial) $\F$-fibrations to (trivial) $\F$-fibrations, as desired.
+%  Moreover, $i_*$ preserves cofibrant objects.
+%\end{lemma}
+%\begin{proof}
+%  The explicit description in Remark \ref{REFLCOREFL REM} of the essential image of $i_*$ makes it clear that it sends (trivial) $\F$-fibrations to (trivial) $\F$-fibrations, as desired.
   
-  The moreover follows by Lemmas \ref{ORBIT_COFIB} and \ref{O_GAMMA_T_0_LEMMA}.
-\end{proof}
+%  The moreover follows by Lemmas \ref{ORBIT_COFIB} and \ref{O_GAMMA_T_0_LEMMA}.
+%\end{proof}
 
-Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of \cite[Theorem 2.10]{Ste16} yield the following.
-\begin{proposition}
- If $X\in \Sym_G(\V)$ is cofibrant, then $\eta_X: X \to i_*i^*X$ is an isomorphism. \qed
-\end{proposition}
+%Further, Lemma \ref{O_GAMMA_T_0_LEMMA} and the proof of\cite[Theorem 2.10]{Ste16} yield the following.
+%\begin{proposition}
+% If $X\in \Sym_G(\V)$ is cofibrant, then $\eta_X: X \to i_*i^*X$ is an isomorphism. \qed
+%\end{proposition}
 %\begin{proof}
 %  Using Lemma \ref{O_GAMMA_T_0_LEMMA} and the fact that pushouts are underlying and levelwise, this follows from cellularity precisely as in \cite[Theorem 2.10]{Ste16}. Indeed, analogous arguments show that $\eta$ is an isomorphism on representable sheaves $\Omega_G(-,T)\cdot A$, and then the result can be extended to transfinite composite of free extensions exactly as before.
 % \todo[inline]{come back: write these sheets up}
