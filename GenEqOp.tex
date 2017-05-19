@@ -8029,6 +8029,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 
 \section{Introduction}
 
+\todo[inline]{come back: read all of this through, edit}
 A surprising feature of topological algebra is that the category of topological commutative monoids is quite small, and only consists of products of Eilenburg-MacLane spaces \todo{cite Moore}. Instead, the most interesting cases are monoids which are commutative and associative up to homotopy, or more so up to ``coherent'' homotopies. To capture these more complex algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the notions of \textit{operads}. Operad encode ``generalized multiplication'', and consists of a sequences $\O = \set{\O(n)}$ of $\Sigma_n$-spaces $\O(n)$ recording ``$n$-ary operations''. The structures of (commutative) monoids, Lie algebras, algebras with a module, and other algebraic structure can be all captured using this structure. Moreover, in \cite{May72}, May introduced $E_\infty$-operads, ``homotopical replacements'' for the commutative operad which encode the above ``monoids up to higher homotopies''. In particular, an $E_\infty$-algebra structure on $X$ doesn't give unique maps $X^n \to X$, but instead ``homotopy unique'' maps.
 
 Moreover, he showed that these operads also encoded infinite loop spaces (and hence connective spectra). Further, $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible; that is,
@@ -8042,7 +8043,9 @@ Moreover, he showed that these operads also encoded infinite loop spaces (and he
 
 This homotopical replacement has since been encoded as a \textit{cofibrant} replacement $\O \to \mathsf{Comm}$ in a model structure on topological operads (see, for example, \cite{Vogt03}). This model structure is levelwise, forgetting the $\Sigma_n$-action: $f:\O \to \P$ is a weak equivalence or fibration iff each $f(n)$ is so in spaces.
 
-Now, given a finite group, we can consider operads with a $G$-action that commutes with all of the algebraic structure. In this case, the homotopical replacements form $\mathsf{Comm}$ are harder to pin down. In particular, commutative $G$-monoids $X$ have additional unique multiplicative \textit{norm maps} $N^A X \to X$, where $A$ is a finite $H$-set with $H\leq G$, and $N^A X$ is the Hill-Hopkins-Ravenel Norm \cite{HHR,BH15}. A first guess for a homotopical replacement may also be characterized levelwise: 
+Now, given a finite group, we can consider operads with a $G$-action that commutes with all of the algebraic structure. In this case, the homotopical replacements form $\mathsf{Comm}$ are harder to pin down. In particular, commutative $G$-monoids $X$ have additional unique multiplicative \textit{norm maps} $N^A X \to X$, where $A$ is a finite $H$-set with $H\leq G$, and $N^A X$ is the Hill-Hopkins-Ravenel Norm; in particular, these norm maps were instrumental in the proof of the Kervaire Invariant One problem \cite{HHR, BH15}.
+
+A first guess for a homotopical replacement in this new setting may also be characterized levelwise: 
 \begin{definition*}
         $\O$ is an $N_\infty$-operad iff each $\O(n)$ is $\Sigma_n$-free and $G$-contractible.
 \end{definition*}
@@ -8070,11 +8073,14 @@ Thus, in the above example, all fixed point spaces for non-trivial homomorphisms
 \]
 In this case, $G$-$E_\infty$-algebras have maps $N^A X \to X$, unique up to coherent homotopy; similarly, grouplike algebras are equivalent to equivariant infinite loop spaces.
 
-An upshot of this discussion is that there are multiple possible notions of equivariant homotopy commutativity. Blumberg-Hill \cite{BH15} characterized all possible options, using the following definition of $N_\infty$ (a term they coined):
+An upshot of this discussion is that there are multiple possible notions of equivariant homotopy commutativity. 
+These variations are based on which norm maps are specified: the na\'ive choice has only trivial norms, while the genuine option of \cite{CW91} has all norms. Blumberg-Hill \cite{BH15} characterized all possible options, using the following definition of $N_\infty$ (a term they coined):
 \begin{definition}
         $\O$ is an \textit{$N_\infty$-operad} iff each $\O(n)$ is the universal space for a family $\F(\O)_n$ of graph subgroups of $G\times \Sigma_n$ containing the trivial graphs.
 \end{definition}
-As each homomophism $H \to \Sigma_n$ encodes an $H$-set structure on $\underline{n} = \set{1,2,\ldots, n}$, a collection of families $\F = \set{\F_n}$ is equivalent to a collection of $H$-sets $\F(G/H)\subseteq \Fin^H$ for each $H\leq G$. However, if $\F$ came from an $N_\infty$-operad, these $\F_n$, and hence the $\F(G/H)$, were subject to compatibility conditions coming from the operadic structure. 
+As each homomophism $H \to \Sigma_n$ encodes an $H$-set structure on $\underline{n} = \set{1,2,\ldots, n}$, a collection of families $\F = \set{\F_n}$ is equivalent to a collection of $H$-sets $\F(G/H)\subseteq \Fin^H$ for each $H\leq G$. Indeed, $A\in \F(\O)(G/H)$ iff $\O$ algebras $X$ have norm maps $N^A X \to X$. 
+
+Moreover, if $\F$ came from an $N_\infty$-operad $\O$, these $\F(\O)_n$, and hence the $\F(\O)(G/H)$, are subject to compatibility conditions coming from the operadic structure. 
 \begin{definition}\cite{BH15}
         Let $\underline{\Fin}$ denote the functor $O_G^{op} \to \mathsf{SymMon}$ sending $G/H$ to the symmetric monoidal category $(\Fin^H, \amalg)$. A system $\underline{\F} = \set{\F(G/H)}$ is called an \textit{indexing system} if $\underline{\F}$ is a subsystem of $\underline{\Fin}$ which contains all trivial sets and is closed under finite limits and self-induction.
 \end{definition}
