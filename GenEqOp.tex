@@ -5744,7 +5744,7 @@ In order to encode the homotopical information inspired by $N_\infty$-operads di
 We begin by describing general notions of projective model structures on diagram categories.
 
 \begin{definition}[\cite{Ste16}]
-  Let $\Pi$ be a finite group, and $\F$ a collection of subgroups. A map $f$ is called an \textit{$\F$-fibration} (resp. \textit{$\F$-weak equivalence} if $f^H$ is so in $\V$ for all $H\in \F$, or an \textit{$\F$-cofibrations} if it has lifts against all maps which are both $\F$-fibrations and $\F$-weak equivalences. The \textit{$\F$-model structure} on $\V^\Pi$, if it exists, is the unique model structure with $\F$-fibration, $\F$-weak equivalences, and $\F$-cofibrations.
+  Let $\Pi$ be a finite group, and $\F$ a collection of subgroups. A map $f$ is called an \textit{$\F$-fibration} (resp. \textit{$\F$-weak equivalence}) if $f^H$ is so in $\V$ for all $H\in \F$, or an \textit{$\F$-cofibrations} if it has lifts against all maps which are both $\F$-fibrations and $\F$-weak equivalences. The \textit{$\F$-model structure} on $\V^\Pi$, if it exists, is the unique model structure with $\F$-fibration, $\F$-weak equivalences, and $\F$-cofibrations.
 \end{definition}
 
 \begin{definition}
@@ -5840,12 +5840,20 @@ for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$.
   If $\Sigma_\F = \Sigma_G$, we refer to the $\F$-model structure as the \textit{genuine} model structure. 
 \end{notation} 
 
-\begin{remark}\label{GENUINE FGTRIGHT REMARK} 
-  We record the standard fact (generalized in \ref{FGTRIGHT PROP}) that if $\phi: \Pi \to \bar \Pi$ is a homomorphism of groups, then the induction map 
+\begin{remark}
+        \label{GENUINE_FGTRIGHT_REMARK} 
+  We record the following standard facts (generalized in \ref{FGTRIGHT PROP}, \ref{FGTLEFT PROP}, and \ref{EXTERINTADJ EQ}):
+  \begin{itemize}
+  \item [(i)] if $\phi: \Pi \to \bar \Pi$ is a homomorphism of groups, then both the induction map and the forgetful functor 
   \[ 
-  \bar\Pi\cdot_\Pi(-): \V^\Pi_{gen} \to \V^{\bar \Pi}_{gen}
+  \phi_!: \bar\Pi\cdot_\Pi(-): \V^\Pi_{gen} \leftrightarrows \V^{\bar \Pi}_{gen}: \phi^*
   \] 
-  is left Quillen for the genuine model structures. 
+  are left Quillen for the genuine model structures. 
+  \item[(ii)] The symmetric monoidal product extends to a left Quillen functor
+          \[
+          \V^\Pi_{gen} \times \V^{\bar \Pi}_{gen} \to \V^{\Pi \times \bar\Pi}_{gen}.
+          \]
+  \end{itemize}
 \end{remark} 
 
 \begin{theorem}\label{GENUINE_SEMI_VOP_G_THM} 
@@ -5863,25 +5871,43 @@ The key technical result follows as the easy cases of stronger results from Sect
   \] 
   is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$.  
 \end{proposition}
-\begin{proof}(c.f. the proof of Proposition \ref{AUTTCOFPUSH PROP})
-  \todo[inline]{This result isn't actually a particular case of loc cite; or the precise statement of a family version.}
-  Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition 
+\begin{proof}
+        Given $[v]\in V_G(T)$, let $\llbracket v \rrbracket$ denote the orbit in $V_G(T)/\mathsf{Aut(T)}$. Then we have a natural group homomorphism
+        \[ 
+        \beta: \mathsf{Aut}(T) \to \prod\limits_{\llbracket v \rrbracket} \Sigma_{|\llbracket v \rrbracket |} \wr \mathsf{Aut}(T_{[v]})
+        \]
+        and the forgetful functor 
+        \[
+        \beta^*: V^{\Pi \Sigma_{\llbracket v \rrbracket} \wr \mathsf{Aut}(T_{[v]})} \to \V^{\mathsf{Aut}(T)}
+        \]
+        preserves genuine cofibrations. Thus, it suffices to show that $f^{\Box V_G(T)}$ is cofibrant on the right hand side. This follows immediately by Proposition \ref{AUTTCOFPUSH PROP} and Remark \ref{GENUINE_FGTRIGHT_REMARK}.
+        % \[
+        % \prod \V^{\mathsf{Aut}(T_{[v]})}_{gen} \to \V^{\Sigma_{|\llbracket v \rrbracket|} \wr \mathsf{Aut}(T_{[v]})}
+        % \]
+        % is left Quillen, and by inspection, 
+        % \[
+        % \prod_i \V^{G_i}_{gen} \to \V^{\prod G_i}_{gen}
+        % \]
+        % is left Quillen, completing the proof.
+  %%%%%%%%%%%%%%%%%%%% OLD PROOF       (c.f. the proof of Proposition \ref{AUTTCOFPUSH PROP})
+  % \todo[inline]{This result isn't actually a particular case of loc cite; or the precise statement of a family version.}
+  % Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition 
 
-  \[ 
-  f^{\Box V_G(T)} = f([v_r]) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right) 
-  \] 
+  % \[ 
+  % f^{\Box V_G(T)} = f([v_r]) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right) 
+  % \] 
 
-  where $[v_r]$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step. 
+  % where $[v_r]$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step. 
 
-  \begin{itemize} 
-  \item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Proposition \ref{FGTLEFT PROP}, $f([v_r])$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
-  \item Finally, by the decomposotion of $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired. 
-  \end{itemize} 
+  % \begin{itemize} 
+  % \item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Proposition \ref{FGTLEFT PROP}, $f([v_r])$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
+  % \item Finally, by the decomposotion of $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired. 
+  % \end{itemize} 
 
-  If any $f([v])$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results. 
+  % If any $f([v])$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results. 
 \end{proof} 
 
 \begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP} 
@@ -5895,7 +5921,7 @@ The key technical result follows as the easy cases of stronger results from Sect
   where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym_G(\V)$, $\P \to \P[u]$ is a level cofibration, trivial if $u$ is so. 
 \end{corollary}  
 \begin{proof} 
-  By using the levelwise filtration from (\ref{FILTRATION_LAN_LEVEL}), this follows immediately from Proposition \ref{GENUINE_TREE_BOX_COFIBRANT_PROP} and Remark \ref{GENUINE FGTRIGHT REMARK}. 
+  By using the levelwise filtration from (\ref{FILTRATION_LAN_LEVEL}), this follows immediately from Proposition \ref{GENUINE_TREE_BOX_COFIBRANT_PROP} and Remark \ref{GENUINE_FGTRIGHT_REMARK}. 
 \end{proof} 
 
 
@@ -6005,11 +6031,12 @@ The key technical result is an easy particular case of the stronger \ref{AUTTCOF
   Follows exactly as \ref{GENUINE_SEMI_VOP_G_THM}, replacing \ref{CELLULAR_LEVEL_COFIB_PROP} with \ref{CELLULAR_LEVEL_COFIB_PROP2}.  
 \end{proof}
 
-\begin{remark}
-  It also follows in a more complicated fashion. 
+% \begin{remark}
+%   It also follows in a more complicated fashion. 
 
-  We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_\F$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb F \simeq i^*\mathbb F_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
-\end{remark}
+%   We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_\F$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb F \simeq i^*\mathbb F_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
+% \end{remark}
+
 \begin{remark}
   The Cartesian condition can be dropped from the above theorem. Indeed, when restricting the machinery of Section \ref{GENUINE_OP_MONAD_SECTION} to $G = *$ and $\V = \V^G$, Remark \ref{NEED_WREATH_REMARK} no longer applies, and hence we may reformulate the monad on spans from Definition \ref{WSPAN_MONAD_DEFINITION} by replacing $\Fin$ with $\Fin_{\mathsf{Iso}}$ and using the natural map $\mathsf F_{\mathsf{Iso}} \wr \V^{op} \xrightarrow{\otimes} \V^{op}$ for \textit{any} symmetric monoidal product $\otimes$ on $\V$.
 \end{remark}
@@ -7932,7 +7959,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
     \varnothing \arrow[r, rightarrowtail] & N\F \arrow[r, "\sim"] & \mathsf{Comm}
   \end{tikzcd}
   \]
-  in $\Op^{G}_\F(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{COFIBRANT_G_OPS_THEOREM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
+  in $\Op^{G}_\F(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
 \end{proof}
 
 
@@ -8020,10 +8047,6 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % \end{align*}
 %\end{proof}
 
-\newpage
-
-\todo[inline]{come back: restriction to categories? Is this interesting?}
-\todo[inline]{come back: any examples of genuine $G$-operads?}
 
 \newpage
 
