@@ -275,31 +275,33 @@ Indeed, it may at first seem tempting to simply
 employ one of the known formal generalizations of Elmendorf's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
 $\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
 with a more general model category $\mathcal{V}$.
-However, applying such results when $\mathcal{V}=\mathsf{Op}$
+However, if one applies such a result when $\mathcal{V}=\mathsf{Op}$
 to establish a Quillen equivalence
 $\mathsf{Op}^{\mathsf{O}_G^{op}}
 \rightleftarrows
-\mathsf{Op}^G$
-requires working in the context of operads \textit{without} norm maps
-(i.e. using the notion of equivalence in (\ref{NAIVEOPEQ EQ})),
+\mathsf{Op}^G$, 
+the fact that the levels of each object
+$\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
+correspond to those in (\ref{NAIVEOPEQ EQ})
+requires working in the context of operads \textit{without} norm maps,
 and in doing so one forgoes the ability to distinguish 
 the many types of $N \mathcal{F}$-operads.
 
-The correct replacement for
+In order to work in the context of operads with norm maps we will need to replace 
 $\mathsf{Top}^{\mathsf{O}_G^{op}}$
-in the context of operads with norm maps will then be 
-a new category $\mathsf{Op}_G$,
-whose objects are novel algebraic structures we dub \textit{genuine equivariant operads} (as opposed to the category $\mathsf{Op}^G$ of (regular) equivariant operads), and which we formally define in \S \ref{GENUINE_OP_MONAD_SECTION}.
-To motivate this category, we note first that the desideratum that weak equivalences in $\mathsf{Op}_G$
-be detected ``at each level''
-suggest that each $\mathcal{P} \in \mathsf{Op}_G$
-should consist of a list of spaces, one for each of the graph subgroups in (\ref{GENGEINFTY EQ}), along with 
-obvious restriction maps and, more importantly, 
-suitable \textit{multiplication maps}.
-Correctly encoding such multiplication maps is one of the main challenges of our theory, and again the motivation for these is provided by the work in \cite{BH15}.
-Indeed, when analyzing the proofs of the results in 
+with a category
+$\mathsf{Op}_G$
+of new algebraic objects we dub 
+\textit{genuine equivariant operads}
+(as opposed to (regular) equivariant operads
+$\mathsf{Op}^G$).
+Each genuine equivariant operad 
+$\mathcal{P} \in \mathsf{Op}_G$
+will consist of a list of spaces indexed as in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+suitable \textit{multiplication maps}. Precisely identifying the required multiplication maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
+When analyzing the proofs of the results in 
 \cite[\S 4]{BH15}
-that establish the closure properties for indexing systems 
+concerning the closure properties for indexing systems 
 a common motif emerges:
 when performing an operadic composition
 \begin{equation}
@@ -314,18 +316,139 @@ when performing an operadic composition
 a careful choice of fixed point conditions on the operations $f,g_1,\cdots,g_n$ 
 yield a fixed point condition on the composite operation
 $f(g_1,\cdots,g_n)$.
-The desired multiplications for genuine equivariant operads
-are then an abstraction
+The desired multiplication maps for a genuine equivariant operad
+$\mathcal{P} \in \mathsf{Op}_G$
+will then abstract such interactions between multiplication and fixed points for a equivariant operad 
+$\mathcal{O} \in \mathsf{Op}^G$.
+However, such interactions can be quite challenging to write down explicitly and, indeed, 
+the arguments in \cite[\S 4]{BH15}
+do not quite provide the sort of unified conceptual approach
+to these needed for our purposes.
+The cornerstone of the current work was then the 
+joint discovery by the authors of
+such a conceptual framework: equivariant trees.
 
-{\color{red} HERE}
 
-{\color{red} HERE}
-
-
+Non-equivariantly, it has long been known that
+the combinatorics of operadic composition is best visualized by means of trees diagrams. For instance, the tree
+\[%
+	\begin{tikzpicture}[grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
+	\tikzstyle{level 2}=[sibling distance=3.75em]%
+	\tikzstyle{level 3}=[sibling distance=1.5em]%
+		\node {}%
+			child{node [dummy] {}%
+				child{node [dummy] {}}%
+				child{node [dummy] {}%
+					child{}%
+					child{}%
+					child{}%
+				}%
+				child{node [dummy] {}%
+					child{node {} }%
+					child{node {} }%
+				}%
+			};%
+	\end{tikzpicture}%
+\]%
+encodes the operadic composition
+\[
+	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
+\]
+where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
+and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
+Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
+A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we borrow a single representative example therein.
+Let $G = D_6 = \{e, r, r^2, r^3, r^4, r^5, s, sr, \cdots, s r^5\}$ denote the dihedral group with generators $r,s$ such that %
+$r^6=e$, $s^2=e$, $s r s = r^5$
+and $H_1 \geq H_2 \geq H_3$ denote the subgroups %
+ $H_1 = \langle r^2,s \rangle$, %
+ $H_2 = \langle s \rangle$, %
+ $H_3 = \{e\}$.%
+There is then a $D_6$-tree $S$ with 
+\textit{expanded representation}
+given by the two diagrams on the left below and
+\textit{orbital representation}
+given by the (single) diagram on the right.
+\begin{equation}\label{D6SMALLER EQ}%
+	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,every node/.style={font=\scriptsize}]%
+		\tikzstyle{level 2}=[sibling distance=4.75em]%
+		\tikzstyle{level 3}=[sibling distance=0.75em]%
+			\node at (5,0){}%
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s r a\phantom{1^2}$}}%
+						child{node {}%
+						edge from parent node [very near end] {$r^5 a$}}%
+					edge from parent node [swap] {$r^5 b$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s r^3 a$}}%
+						child{node {}%
+						edge from parent node [very near end] {$r^3 a$}}%
+					edge from parent node [swap,near end] {$r^3 b$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s r^5 a$}}%
+						child{node {}%
+						edge from parent node [very near end] {$\phantom{1^2}r a$}}%
+					edge from parent node  {$r b$}}%
+				edge from parent node [swap] {$r c$}};%
+			\node at (0,0){}%	
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s r^2 a$}}%
+						child{node {}%
+						edge from parent node [very near end] {$r^4 a$}}%
+					edge from parent node [swap] {$r^4 b$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s r^4 a$}}%
+						child{node {}%
+						edge from parent node [very near end] {$r^2 a$}}%
+					edge from parent node [near end,swap] {$r^2 b$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$s a \phantom{1^2}$}}%
+						child{node {}%
+						edge from parent node [very near end] {$\phantom{1^2}a$}}%
+					edge from parent node  {$\phantom{r^4}b$}}%
+				edge from parent node [swap] {$c$}};%
+		\begin{scope}[every node/.style={font=\footnotesize}]%
+			\node at (8,0){}%
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [right] {$(G/H_3) \cdot a$}}%
+					edge from parent node [right] {$(G/H_2) \cdot b$}}%
+				edge from parent node [right] {$(G/H_1) \cdot c$}};%
+		\end{scope}%
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (5.1,0) -- (-0.1,0) node[midway]{$S$}; %
+		\node at (8,-0.15) {$S$};
+	\end{tikzpicture}%
+\end{equation}%
+We note that $D_6$ acts on the expanded representation of $S$ as indicated by the edge labels (so that the edges $a,b,c$ have stabilizers $H_3$, $H_2$, $H_1$), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{BH15}, $S$ then encodes the fact that for any 
+equivariant operad $\O \in \mathsf{Op}^G$ the composition 
+$\mathcal{O}(3) \times \mathcal{O}(2)^{\times 3} \to 
+\mathcal{O}(6)$ restricts to a fixed point composition
 \begin{equation}\label{INTFIXPTCOMP EQ}
 \O(H_1/H_2)^{H_1} \times \O(H_2/H_3)^{H_2} \to \O(H_1/H_3)^{H_1}
 \end{equation}
+where $\O(X)$ for an $H$-set $X$ denotes $\O(|X|)$ together with a suitable combined $H$-action.
+We note that the inputs 
+$\O(H_1/H_2)^{H_1}$, $\O(H_2/H_3)^{H_2}$ in
+(\ref{INTFIXPTCOMP EQ})
+correspond to the nodes of the orbital representation
+in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge orbits, while the output 
+$\O(H_1/H_3)^{H_1}$
+is similarly determined by both the leaf and root edge orbits.
 
+The existence of maps of the form (\ref{INTFIXPTCOMP EQ})
+
+k
+
+{\color{red} HERE}
 
 \newpage
 
