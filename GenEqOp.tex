@@ -3525,6 +3525,7 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 
 \section{Free extensions}
+\label{FREE_EXTENSIONS_SECTION}
 
 Our overall goal in this section will be to produce a description of free $\mathbb F_G$-extensions,  %genuine operad pushouts,
 i.e. pushouts of the form
@@ -5260,6 +5261,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 
 
 \section{Model structures}
+\label{MODEL_STRUCTURES_SECTION}
 
 Summarizing the results in the previous section, we have that the free $\mathbb F_G$-extension $\P[u]$ defined by the pushout
 \begin{equation}\label{CELLEXTPUSH EQ}
@@ -5778,7 +5780,7 @@ In order to encode the homotopical information inspired by $N_\infty$-operads di
 We begin by describing general notions of projective model structures on diagram categories.
 
 \begin{definition}[\cite{Ste16}]
-  Let $\Pi$ be a finite group, and $\F$ a collection of subgroups. A map $f$ is called an \textit{$\F$-fibration} (resp. \textit{$\F$-weak equivalence} if $f^H$ is so in $\V$ for all $H\in \F$, or an \textit{$\F$-cofibrations} if it has lifts against all maps which are both $\F$-fibrations and $\F$-weak equivalences. The \textit{$\F$-model structure} on $\V^\Pi$, if it exists, is the unique model structure with $\F$-fibration, $\F$-weak equivalences, and $\F$-cofibrations.
+  Let $\Pi$ be a finite group, and $\F$ a collection of subgroups. A map $f$ is called an \textit{$\F$-fibration} (resp. \textit{$\F$-weak equivalence}) if $f^H$ is so in $\V$ for all $H\in \F$, or an \textit{$\F$-cofibrations} if it has lifts against all maps which are both $\F$-fibrations and $\F$-weak equivalences. The \textit{$\F$-model structure} on $\V^\Pi$, if it exists, is the unique model structure with $\F$-fibration, $\F$-weak equivalences, and $\F$-cofibrations.
 \end{definition}
 
 \begin{definition}
@@ -5874,12 +5876,20 @@ for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$.
   If $\Sigma_\F = \Sigma_G$, we refer to the $\F$-model structure as the \textit{genuine} model structure. 
 \end{notation} 
 
-\begin{remark}\label{GENUINE FGTRIGHT REMARK} 
-  We record the standard fact (generalized in \ref{FGTRIGHT PROP}) that if $\phi: \Pi \to \bar \Pi$ is a homomorphism of groups, then the induction map 
+\begin{remark}
+        \label{GENUINE_FGTRIGHT_REMARK} 
+  We record the following standard facts (generalized in \ref{FGTRIGHT PROP}, \ref{FGTLEFT PROP}, and \ref{EXTERINTADJ EQ}):
+  \begin{itemize}
+  \item [(i)] if $\phi: \Pi \to \bar \Pi$ is a homomorphism of groups, then both the induction map and the forgetful functor 
   \[ 
-  \bar\Pi\cdot_\Pi(-): \V^\Pi_{gen} \to \V^{\bar \Pi}_{gen}
+  \phi_!: \bar\Pi\cdot_\Pi(-): \V^\Pi_{gen} \leftrightarrows \V^{\bar \Pi}_{gen}: \phi^*
   \] 
-  is left Quillen for the genuine model structures. 
+  are left Quillen for the genuine model structures. 
+  \item[(ii)] The symmetric monoidal product extends to a left Quillen functor
+          \[
+          \V^\Pi_{gen} \times \V^{\bar \Pi}_{gen} \to \V^{\Pi \times \bar\Pi}_{gen}.
+          \]
+  \end{itemize}
 \end{remark} 
 
 \begin{theorem}\label{GENUINE_SEMI_VOP_G_THM} 
@@ -5897,25 +5907,43 @@ The key technical result follows as the easy cases of stronger results from Sect
   \] 
   is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$.  
 \end{proposition}
-\begin{proof}(c.f. the proof of Proposition \ref{AUTTCOFPUSH PROP})
-  \todo[inline]{This result isn't actually a particular case of loc cite; or the precise statement of a family version.}
-  Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition 
+\begin{proof}
+        Given $[v]\in V_G(T)$, let $\llbracket v \rrbracket$ denote the orbit in $V_G(T)/\mathsf{Aut(T)}$. Then we have a natural group homomorphism
+        \[ 
+        \beta: \mathsf{Aut}(T) \to \prod\limits_{\llbracket v \rrbracket} \Sigma_{|\llbracket v \rrbracket |} \wr \mathsf{Aut}(T_{[v]})
+        \]
+        and the forgetful functor 
+        \[
+        \beta^*: V^{\Pi \Sigma_{\llbracket v \rrbracket} \wr \mathsf{Aut}(T_{[v]})} \to \V^{\mathsf{Aut}(T)}
+        \]
+        preserves genuine cofibrations. Thus, it suffices to show that $f^{\Box V_G(T)}$ is cofibrant on the right hand side. This follows immediately by Proposition \ref{POWERF PROP} and Remark \ref{GENUINE_FGTRIGHT_REMARK}.
+        % \[
+        % \prod \V^{\mathsf{Aut}(T_{[v]})}_{gen} \to \V^{\Sigma_{|\llbracket v \rrbracket|} \wr \mathsf{Aut}(T_{[v]})}
+        % \]
+        % is left Quillen, and by inspection, 
+        % \[
+        % \prod_i \V^{G_i}_{gen} \to \V^{\prod G_i}_{gen}
+        % \]
+        % is left Quillen, completing the proof.
+  %%%%%%%%%%%%%%%%%%%% OLD PROOF       (c.f. the proof of Proposition \ref{AUTTCOFPUSH PROP})
+  % \todo[inline]{This result isn't actually a particular case of loc cite; or the precise statement of a family version.}
+  % Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition 
 
-  \[ 
-  f^{\Box V_G(T)} = f([v_r]) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right) 
-  \] 
+  % \[ 
+  % f^{\Box V_G(T)} = f([v_r]) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right) 
+  % \] 
 
-  where $[v_r]$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step. 
+  % where $[v_r]$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step. 
 
-  \begin{itemize} 
-  \item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$. 
-  \item By Proposition \ref{FGTLEFT PROP}, $f([v_r])$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
-  \item Finally, by the decomposotion of $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired. 
-  \end{itemize} 
+  % \begin{itemize} 
+  % \item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$. 
+  % \item By Proposition \ref{FGTLEFT PROP}, $f([v_r])$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
+  % \item Finally, by the decomposotion of $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired. 
+  % \end{itemize} 
 
-  If any $f([v])$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results. 
+  % If any $f([v])$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results. 
 \end{proof} 
 
 \begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP} 
@@ -5929,7 +5957,7 @@ The key technical result follows as the easy cases of stronger results from Sect
   where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym_G(\V)$, $\P \to \P[u]$ is a level cofibration, trivial if $u$ is so. 
 \end{corollary}  
 \begin{proof} 
-  By using the levelwise filtration from (\ref{FILTRATION_LAN_LEVEL}), this follows immediately from Proposition \ref{GENUINE_TREE_BOX_COFIBRANT_PROP} and Remark \ref{GENUINE FGTRIGHT REMARK}. 
+  By using the levelwise filtration from (\ref{FILTRATION_LAN_LEVEL}), this follows immediately from Proposition \ref{GENUINE_TREE_BOX_COFIBRANT_PROP} and Remark \ref{GENUINE_FGTRIGHT_REMARK}. 
 \end{proof} 
 
 
@@ -6039,11 +6067,12 @@ The key technical result is an easy particular case of the stronger \ref{AUTTCOF
   Follows exactly as \ref{GENUINE_SEMI_VOP_G_THM}, replacing \ref{CELLULAR_LEVEL_COFIB_PROP} with \ref{CELLULAR_LEVEL_COFIB_PROP2}.  
 \end{proof}
 
-\begin{remark}
-  It also follows in a more complicated fashion. 
+% \begin{remark}
+%   It also follows in a more complicated fashion. 
 
-  We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_\F$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb F \simeq i^*\mathbb F_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
-\end{remark}
+%   We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_\F$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb F \simeq i^*\mathbb F_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
+% \end{remark}
+
 \begin{remark}
   The Cartesian condition can be dropped from the above theorem. Indeed, when restricting the machinery of Section \ref{GENUINE_OP_MONAD_SECTION} to $G = *$ and $\V = \V^G$, Remark \ref{NEED_WREATH_REMARK} no longer applies, and hence we may reformulate the monad on spans from Definition \ref{WSPAN_MONAD_DEFINITION} by replacing $\Fin$ with $\Fin_{\mathsf{Iso}}$ and using the natural map $\mathsf F_{\mathsf{Iso}} \wr \V^{op} \xrightarrow{\otimes} \V^{op}$ for \textit{any} symmetric monoidal product $\otimes$ on $\V$.
 \end{remark}
@@ -7966,7 +7995,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
     \varnothing \arrow[r, rightarrowtail] & N\F \arrow[r, "\sim"] & \mathsf{Comm}
   \end{tikzcd}
   \]
-  in $\Op^{G}_\F(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{COFIBRANT_G_OPS_THEOREM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
+  in $\Op^{G}_\F(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
 \end{proof}
 
 
@@ -8049,10 +8078,273 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % \begin{align*}
 %   (i_*i^*\Omega_G(-,T')\cdot A)(T) &\simeq (\Omega_G[T_0](G \cdot T_0, T') \cdot A)^N \simeq (O_{\Gamma_{T_0}}(G\times \Sigma_{T_0}, G \times \Sigma_{T_0}/N') \cdot A)^N\\
 %   &= (G\times \Sigma_{T_0}/N' \cdot A)^N \simeq (G\times \Sigma_{T_0}/N')^N \cdot A\\
-%   &= (O_{\Gamma_{T_0}}(G \times \Sigma_{T_0}, G \times \Sigma_{T_0}/N')^N \cdot A \simeq O_{\Gamma_{T_0}}(G \times \Sigma_{T_0}/N, G \times \Sigma_{T_0}/N') \cdot A\\
+%   &= (O_{\Gamma_{T_0}}(G \times \Sigma_{T_0}, G \times \Sigma_{T_0}/N')^N) \cdot A \simeq O_{\Gamma_{T_0}}(G \times \Sigma_{T_0}/N, G \times \Sigma_{T_0}/N') \cdot A\\
 %   &\simeq \Omega_G(T,T') \cdot A.
 % \end{align*}
 %\end{proof}
+
+
+\newpage
+
+\section{Introduction}
+
+\todo[inline]{come back: read all of this through, edit}
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenburg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structuress are those monoids which are commutative and associative up to homotopy, or more so up to ``all higher'' homotopies. To capture these more complex algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the notions of \textit{operads}. Operads encode ``generalized multiplications'', and consist of a sequence $\O = \set{\O(n)}$ of $\Sigma_n$-spaces $\O(n)$ recording ``$n$-ary operations''. The structures of (commutative) monoids, Lie algebras, algebras with a module, and other algebraic structure can be all captured using this structure. Moreover, in \cite{May72}, May introduced $E_\infty$-operads, ``homotopical replacements'' for the commutative operad which encode the above monoids up to higher homotopies. In particular, an $E_\infty$-algebra structure on $X$ doesn't give unique maps $X^n \to X$, but instead ``homotopy unique'' such maps. 
+Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
+
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible; that is,
+\[
+\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
+\O(n)^\Gamma \sim
+\begin{cases}
+        * & \Gamma = *  \\
+        \varnothing \qquad & \Gamma \neq *
+\end{cases}
+\]
+
+This homotopical replacement has since been encoded as a \textit{cofibrant} replacement $\O \to \mathsf{Comm}$ in a model structure on topological operads (see, for example, \cite{Vogt03}). This model structure is levelwise, forgetting the $\Sigma_n$-action: $f:\O \to \P$ is a weak equivalence or fibration iff each $f(n)$ is so in spaces.
+
+Now, given a finite group, we can consider $G$-operads $\O\in \Op^G$; that is, operads equipped with a $G$-action that commutes with all of the algebraic structure. In this case, commutative $G$-monoids $X$ have additional structure, namely unique multiplicative \textit{norm maps} $N^A X \to X$, where $A$ is a finite $H$-set for some subgroup $H\leq G$, and $N^A X$ is the Hill-Hopkins-Ravenel Norm; in particular, these norm maps in the context of spectra were instrumental in the proof of the Kervaire Invariant One problem \cite{HHR, BH15}.
+
+A first guess for a homotopical replacement in this new setting may also be characterized levelwise: 
+\begin{definition*}
+        $\O$ is an $N_\infty$-operad iff each $\O(n)$ is $\Sigma_n$-free and $G$-contractible.
+\end{definition*}
+There is an immediate example of such an object: equipping any non-equivariant $E_\infty$-operad $\O$ with the trivial $G$-action yields the na\'ive $N_\infty$-operad$\O_{na}$ with the following fixed points:
+\[
+\mbox{For $\Gamma \leq G\times \Sigma_n$,} \qquad
+\O_{na}(n)^\Gamma \sim
+\begin{cases}
+        * \qquad & \Gamma \leq G\\
+        \varnothing & \mbox{otherwise}
+\end{cases}
+\]
+However, Constenoble-Waner \cite{CW91} show that algebras over this operad only have trivial norm maps $X^n \to X$; that is, these simply encode $E_\infty$-algebras (or infinite loop spaces) that happen to have a compatible $G$-action.
+
+The missing ingredient is that the $N_\infty$ condition does not specify a unique $G\times\Sigma_n$-homotopy type for $\O(n)$. Indeed, $\Gamma \leq G$ are not the only subgroups of $G\times \Sigma_n$ for which $\Gamma \cap \Sigma_n = *$: it is easy to verify that $\Gamma \cap \Sigma_n = *$ iff $\Gamma = \Gamma(\phi)$ is the graph of a partial homomorphism 
+\[
+G \leq H \xrightarrow{\phi} \Sigma_n.
+\]
+For $\O_{na}$, all fixed point spaces for non-trivial homomorphisms are empty. Instead, Constenoble-Waner showed that the most highly structured notion of equivariant $E_\infty$ requires that each $\O(n)$ is ``as contractible as possible while still being $\Sigma_n$-free''. 
+\begin{definition*}
+        $\O_G$ is \textit{$G$-$E_\infty$} iff
+        \[
+        \O_G(n)^\Gamma \sim
+        \begin{cases}
+                * \qquad & \Gamma \cap \Sigma_n = *\\
+                \varnothing & \mbox{otherwise}
+        \end{cases}
+        \]
+\end{definition*}
+In this case, $G$-$E_\infty$-algebras have maps $N^A X \to X$, unique up to coherent homotopy; similarly, grouplike algebras are equivalent to equivariant infinite loop spaces.
+
+An upshot of this discussion is that there are multiple possible notions of equivariant homotopy commutativity. 
+These variations are based on which norm maps are specified: $\O_{na}$ only has trivial ones, while the genuine $\O_G$ has all norm maps. In fact, these are not all possible options. It is clear that the following original definition from \cite{BH15} matches the earlier terminology:
+\begin{definition*}
+        $\O$ is an \textit{$N_\infty$-operad} iff each $\O(n)$ is the universal space for a family $\F(\O)_n$ of graph subgroups of $G\times \Sigma_n$ containing the trivial graphs.
+\end{definition*}
+As each homomophism $H \to \Sigma_n$ encodes an $H$-set structure on $\underline{n} = \set{1,2,\ldots, n}$, a \textit{$G$-vertex system} $\F = \set{\F_n}$ of sets $\F_n$ of subgroups of $G\times \Sigma_n$ is equivalent to a collection of $H$-sets $\F(G/H)\subseteq \Fin^H$ for each $H\leq G$. In this notation, for any $N_\infty$-operad $\O$, \cite{BH15} show that $A\in \F(\O)(G/H)$ iff $\O$ algebras $X$ have norm maps $N^A X \to X$. 
+
+The question remains as to which norm maps arise naturally together. If $\F$ came from an $N_\infty$-operad $\O$, these $\F(\O)_n$, and hence the $\F(\O)(G/H)$, are subject to compatibility conditions coming from the operadic structure. 
+\begin{definition*}\cite{BH15}
+        Let $\underline{\Fin}$ denote the functor $O_G^{op} \to \mathsf{SymMon}$ sending $G/H$ to the symmetric monoidal category $(\Fin^H, \amalg)$. A system $\underline{\F} = \set{\F(G/H)}$ is called an \textit{indexing system} if $\underline{\F}$ is a subsystem of $\underline{\Fin}$ which contains $\underline{\Fin}_{triv}$ (the system of all trivial sets) and is closed under finite limits and self-induction.
+\end{definition*}
+Blumberg-Hill show that the map $\O \to (G/H \mapsto \F(\O)(G/H))$ is funtorial from the homotopy category of $N_\infty$-operads to the poset of indexing systems, and moreover is fully-faithful. Further, they conjecture the following:
+\begin{conjecture*}
+        $\O \to (G/H \mapsto \F(\O)(G/H))$ is essentially surjective, and hence an equivalence of categories.
+\end{conjecture*}
+The affirmation of this conjecture will be a consequence of one of our main results.
+
+Indeed, one main goal when the authors began this paper was to build $\F$-model structures on $\Op^G$ for any indexing system $\F$, where a map $f$ is a weak equivalence or fibration iff $f(n)^\Gamma$ is so for all $\Gamma \in \F_n$ for all $n$. This would provide a solution to the above by taking a homotopical (i.e. cofibrant) replacement of $\mathsf{Comm}$. However, this bridged into a large analysis of the equivariant homotopy theory of operads. 
+
+In particular, in order to arrive at this result, we need a better understanding of the interplay between the subtle equivariance structures we just discussed, and the combinatorics which underly operads. 
+That is, we need to synthesize the equivariant stories of \cite{Elm83, Pia91, Ste16} with the operadic story of \cite{MW07}, specifically building a suitable replacement for the notion of ``coefficient systems'' for operads over some ``nice'' base category $\V$.
+
+To that end, we exploit the equivariant generalization $\Omega_G$ of the dendroidal category $\Omega$ discussed in \cite{Pe17}.
+First, we observe that the free operad $\mathbb F X$ generated by a symmetric sequence $X \in \Sym(\V) = \V^\Sigma$, found in \cite{Spitz01, BM03}, can be repackaged as the left-most left Kan extension
+\[
+\begin{tikzcd}
+        |[alias=U]| \Omega^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_X"] & \V & \qquad & |[alias=A]| \Omega_G^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_Y"] & \V\\
+        \Sigma^{op} \arrow[ur, "\mathbb F X"', ""{name=V}] & && \Sigma_G^{op} \arrow[ur, "\mathbb F_G Y"', ""{name=B}]
+        \arrow[Rightarrow, from=U, to=V] 
+        \arrow[Rightarrow, from=A, to=B]
+\end{tikzcd}
+\]
+where $\mathsf{lr}$ is the ``leaf-root'' or ``valence'' functor, and $N_X$ sends $T$ to $\prod_{v\in V(T)} X(v)$.
+
+We generalize this to the equivariant setting using our $G$-trees $\Omega_G$ and $G$-corollas $\Sigma_G$ from \cite{Pe17}, and define an endofuctor $\mathbb F_G$ on the category of $G$-symmetric sequences $\Sym_G(\V) = \V^{\Sigma_G^{op}}$ by the right-most left Kan extension above; here, $\mathsf{lr}$ is the equivariant leaf-root functor.
+
+Intuitively speaking, $G$-symetric sequences $Y\in \Sym_G(\V)$ can be evaluated at any finite $H$-set for $H\leq G$ (more accurately, at any $G$-corolla), and genuine $G$-operads $Y\in \Op_G(\V)$ have composition maps, e.g. of the form
+\[
+Y(G/H_1 \amalg G/H_2) \times Y(H_1/K_{1,1} \amalg H_1/K_{1,2}) \times Y(H_2/K_2) \to Y(G/K_{1,1} \amalg G/K_{1,2} \amalg G/K_2). 
+\]
+
+There are natural inclusions $\Sym^G(\V) \into \Sym_G(\V)$ and $\Op^G(\V) \into \Op_G(\V)$, with essential image those $\O$ satisfying a rigid fixed-point condition of the form $\O(A) \simeq \O(|A|)^{\Gamma_A}$; in this way, we see $\Sym_G$ and $\Op_G$ playing the roles of ``coefficient systems''.
+
+Moving forward, we note that an indexing system $\F$ corresponds to a highly-structured subcategory $\Sigma_\F \subseteq \Sigma_G$.  
+Operadically extending the work of \cite{Pia91, Ste16}, we prove the existance of an $\F$-model structure for \textit{any} subcategory $\Sigma_\F$.
+\begin{theorem*}
+        [\ref{GENUINE_SEMI_VOP_G_THM}, \ref{GEN_SEMI_GOP_THM}]
+        For any collection $\F = \set{\F_n}$ of graph subgroups of $G\times\Sigma_n$ closed under conjugation (equivalently, any full subcategory $\Sigma_F \subseteq \Sigma_G$, the $\F$-model structures on $\Op^G(\V)$ and $\Op_G(\V)$ exist.
+\end{theorem*} 
+(In fact, the result \ref{GEN_SEMI_GOP_THM} is stronger.)
+
+% Let $\mathcal{L}(G\times \Sigma_n)$ and $\mathbb{G}(G\times \Sigma_n)$ denote the posets of subgroups and \textit{graph} subgroups of $G \times \Sigma_n$, and $\subseteq$ denote subsets closed under conjugation. We then have the following hierachy: 
+% \[
+% \set{\substack{\mbox{collections $\F = \set{\F_n}$} \\ \mbox{of sets} \\ \mbox{$\F_n \subseteq \mathcal L(G\times\Sigma_n)$}}}
+% %  of subgroups} \\ \mbox{of $G\times\Sigma_n$ closed} \\ \mbox{under conjugation}}}
+% \supseteq
+% % \set{\substack{\mbox{collections $\F = \set{\F_n}$ of sets $\F_n$}\\ \mbox{of graph subgroups of $G\times\Sigma_n$}\\ \mbox{closed under conjugation}}}
+% \substack{
+%   \set{\substack{\mbox{collections $\F = \set{\F_n}$} \\ \mbox{of sets} \\ \mbox{$\F_n \subseteq \mathbb G(G\times\Sigma_n)$}}}\\[6pt]
+%   {\text{\large =}}\\[6pt]
+%   \set{\substack{\mbox{full subcategories}\\ \mbox{$\Sigma_\F \subseteq \Sigma_G$}}}
+% }
+% \supseteq
+% % \set{\substack{\mbox{collections $\F = \set{\F_n}$ of families $\F_n$} \\ \mbox{of graph subgroups of $G\times\Sigma_n$} \\ \mbox{closed under conjugation}}}
+% \substack{
+%   \set{\substack{\mbox{collections $\F = \set{\F_n}$} \\ \mbox{of families} \\ \mbox{$\F_n \subseteq \mathbb G(G\times\Sigma_n)$}}}\\[6pt]
+%   {\text{\large =}}\\[6pt]
+%   \set{\substack{\mbox{sieve subcategories} \\ \mbox{$\Sigma_\F \subseteq \Sigma_G$}}}
+% }
+% \]
+% \supseteq
+% \set{\mbox{weak indexing systems: $\Sigma_\F$ closed under leaf-root induction}}
+% \supseteq
+% \set{\mbox{indexing systems: $\Sigma_\F$ closed under self-induction}}
+
+%that the $\F$-model structures exist on $\Op^G$ and $\Op_G$ for any full subcategory of $G$-corollas $\Sigma_\F \subseteq \Sigma_G$ (where subsystems of $\underline{\Fin}$ correspond to \textit{sieves} $\Sigma_F \subseteq \Sigma_G$).
+However, just an the systems $\F(\O)$ were not arbitrary, not all of the above model structures will be well-behaved.
+The construction of $\mathbb F_G$ naturally inspires a closure condition with respect to the equivariant leaf-root functor, that we could ask our $\Sigma_\F$ to satisfy:
+\begin{definition*}
+        [\ref{INDEXSYS DEF}]
+        $\Sigma_\F\subseteq \Sigma_G$ is a \textit{weak indexing system} iff
+        \begin{itemize}
+        \item it is a sieve subcategory (corresponding to the associated $\F_n$ being \textit{families} of graph subgroups); and
+        \item it is closed under leaf-root induction.
+        \end{itemize}
+\end{definition*}
+
+With this setup in place, we come to our main result:
+
+\begin{theorem*}
+        If $\F$ is a weak indexing system, then
+        \begin{itemize}
+        \item[(i)] The forgetful functors $\Op^G_\F(\V) \to \Sym^G_\F(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
+        \item[(ii)] The comparison adjuction
+                \[
+                \begin{tikzcd}
+                        \Op^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Op_G^\F(\V) \arrow[l, shift right, "i^*"']
+                \end{tikzcd}
+                \]
+                is a Quillen equivalence. In particular, the cofibrant objects in $\Op_G^\F(\V)$ are precisely the essential immage of $i_*$.
+        \end{itemize}
+\end{theorem*}
+
+Relating back to the $N_\infty$-operads, we have that a weak indexing system $\F$ is an indexing system of \cite{BH15} iff it contains $\F_{triv}$. Thus, 
+Part (i) is sufficient to resolve in the affirmative the conjecutre of Blumberg-Hill, using a cofibrant replacement in $\Op^G_\F$ (\ref{N_INFINITY_REALIZATION_COROLLARY}). However, again ``mimicing'' \cite{Elm83}, we build an explicit cofibrant replacement of $i_*\mathsf{Comm}$ in $\Op_G(\V)$ using a bar construction (\ref{N_INFINITY_BAR}). 
+\todo[inline]{come back}
+
+We end this introduction with a brief discussion on the general context of ``$G$-infinity operads''. We recall that $\infty$-operads, intuitively, can be thought of as operads where composition is ``weakly defined'', and $G$-coefficient systems spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is a suitable notion of $G$-$\infty$-operad in the true pre-sheaf category $\Set^{\Omega_G^{op}}$:
+\[
+\begin{tikzcd}
+        \Op^G_\F(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^\F(\V) \arrow[d, "hcN_G", "\simeq ?"']\\
+        \mathsf{dSet}^G_\F \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^\F
+\end{tikzcd}
+\]
+We expect to make a full comparison between these notions in sequels.
+
+% In order to compare $\Op^G$ and $\Op_G$, we extend the framework defining $\mathbb F_G$ in order to build, in particular, a filtration of free extensions of gen1uine operads. We then spend the rest of the paper investigating this filtration, and in particular how cofibrancy interacts with the equivariance restrictions. 
+
+% As a consequence of this framework, we prove the existance of various $\F$-model structures on both $\Op_G(\V)$ and $\Op^G(\V)$ for sufficiently nice $\V$. Moreover, along the way, there is a natural closure condition on a subcategory $\Sigma_\F\subseteq \Sigma_G$ over which the machinery of this paper still runs as expected. These are the \textit{weak indexing systems}, and are equivalent to well-structured collections of either
+% \begin{itemize}
+% \item families $\F_n$ of graph subgroups of $G\times \Sigma_n$ for each $n$; or
+% \item subcategories $\F(G/H) \subseteq \Fin^H$ for each $H\leq G$.
+% \end{itemize}
+% This closure condition implies that cofibrancy is well-behaved and well-adjusted, and moreover that the natural inclusion $\Op^G_\F(\V) \into \Op_G^\F(\V)$ is a Quillen equivalence.
+
+
+\subsection{Tools and Techniques / Outline}
+\todo[inline]{come back}
+
+Much of this paper is dedicated to constructing the underlying categorical machinery used to run our investigation. 
+There are multiple distinct steps along the path to proving our main result:
+\begin{itemize}
+\item Defining $\mathbb F_G$, and rigorously showing it is a monad on $\Sym_G(\V)$ (Section \ref{GENUINE_OP_MONAD_SECTION}).
+\item Conveniently expressing free $\mathbb F_G$-extensions (Section \ref{FREE_EXTENSIONS_SECTION}).
+\item Analyzing filtrations of free $\mathbb F_G$-extensions to build various model structures (Section \ref{MODEL_STRUCTURES_SECTION}).
+\item Exploring the interplay between grafting of trees and cofibrancy to prove the above model structures are well-behaved (Section \ref{COFIB SEC}).
+\end{itemize}
+
+Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_EXTENSIONS_SECTION} are built in large categorical generality, designed such that the intuitive descriptions of, for example, the free operad monad and operations on forests, are verified with strict categorical rigor; as such, they may be of broader interest.
+
+\todo[inline]{come back}
+
+
+% \subsection{Main Results}
+
+% We fix a strongly cofibrantly generated Cartesian monoidal model category $\V$ with cellular fixed points and genuine pushout products. 
+
+% \begin{theorem}
+%         For any collection $\F = \set{\F_n}$ of subgroups of $G\times\Sigma_n$, the $\F$-model structure on $\Op^G$ exsits. Similarly, for any full subcategory $\Sigma_\F \subseteq \Sigma_G$, the $\Sigma_\F$-model structure on $\Op_G$ exists. 
+% \end{theorem}        
+
+% \begin{theorem}
+%         If $\F$ is a weak indexing system, then
+%         \begin{itemize}
+%         \item[(i)] The forgetful functors $\Op^G_\F(\V) \to \Sym^G_\F(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
+%         \item[(ii)] The comparison adjuction
+%                 \[
+%                 \begin{tikzcd}
+%                         \Op^G_\F(\V) \arrow[r, "i_*"'] & \Op_G^\F(\V) \arrow[l, "i^*"']
+%                 \end{tikzcd}
+%                 \]
+%                 is a Quillen equivalence.
+%         \end{itemize}
+% \end{theorem}
+
+
+
+
+
+
+%%%%%%%%%%%%%% TRYING FOR V = SSET FIRST %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% We first prove the existence of these model structures when $\V = \sSet$. In this case, we denote $\V\Op_G$ by $\sOp_G$. 
+% \begin{theorem}
+%   The genuine model structure on $\sOp_G$ exists.
+% \end{theorem}
+% \begin{proof}
+%   By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extension $\P \to \P[u]$, each built by pushouts
+% \[
+% \begin{tikzcd}
+%   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+%   \mathbb F_G Y \arrow[r] & \P[u]
+% \end{tikzcd}
+% \]
+% where $u: X \to Y$ is a generating trivial cofibration in $\sSet^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $\sSet^{\Sigma_G^{op}}_{gen}$. 
+
+% Since transfinite compositions are computed levelwise, it in fact suffices to show that each $\P \to \P[u]$ is a level trivial cofibration in $\sSet^{\Sigma_G^{op}}$; that is, that for all $C\in \Sigma_G$, $\P(C) \to \P[u](C)$ is a genuine trivial cofibration in $\sSet^{\mathrm{Aut}(C)}$. This is precisely the content of Lemma \ref{SSET_CELLULAR_LEVEL_COFIB_LEMMA}.
+% \end{proof}
+
+% \begin{theorem}
+%   Cofibrant objects in $\sOp_G$ forget to cofibrant objects in $\sSet^{\Sigma_G^{op}}$. 
+% \end{theorem}
+% \begin{proof}
+%   Similarly as above, it suffices to show that, for $u: X\to Y$ a cofibration in $\sSet^{\Sigma_G^{op}}$ and $\P$ underlyingly cofibrant in $\sSet^{\Sigma_G^{op}}$, the cellular extension $\P \to \P[u]$ is an underlying cofibration in $\sSet^{\Sigma_G^{op}}$. 
+% \todo[inline]{come back}
+% \end{proof}
+
+% \begin{lemma}
+%   \label{SSET_CELLULAR_LEVEL_COFIB_LEMMA}
+%   If $u: X\to Y$ is a level trivial genuine cofibration in $\sSet^{\Sigma_G^{op}}$ (so $X(C) \to Y(C)$ is a genuine cofibration in $\sSet^{\mathrm{Aut}(C)}$), then $\P \to \P[u]$ is a level trivial genuine cofibration for any $\P \in \sOp_G$.
+% \end{lemma}
+% \begin{proof}
+%   We first record that, since genuine cofibrations of simplicial sets are underlying, all $\P \in \sOp_G$ are levelwise genuine cofibrant, i.e. $\P(C)$ is cofibrant in $\sSet^{\mathrm{Aut}(C)}_{gen}$. 
+% %  Usign the levelwise filtration
+%   \todo[inline]{come back}
+%   Follows from cofibration analysis.
+% \end{proof}
 
 
 

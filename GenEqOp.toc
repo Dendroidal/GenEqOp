@@ -1,33 +1,33 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Main results}{5}{subsection.1.1}
-\contentsline {section}{\numberline {2}Basic definitions}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Grothendieck constructions}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Monads}{6}{subsection.2.2}
-\contentsline {section}{\numberline {3}Planar and tall maps}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Planar structures}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Substitution}{12}{subsection.3.3}
-\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{15}{section.4}
-\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{15}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{16}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Planar strings}{19}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}A monad on spans}{20}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{24}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Comparison with (regular) equivariant operads}{28}{subsection.4.6}
-\contentsline {section}{\numberline {5}Free extensions}{31}{section.5}
-\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{31}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{33}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{35}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{36}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}The category of extension trees}{41}{subsection.5.5}
-\contentsline {section}{\numberline {6}Model structures}{46}{section.6}
-\contentsline {subsection}{\numberline {6.1}Filtration pieces}{46}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{49}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{50}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{52}{subsubsection.6.2.2}
-\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{54}{section.7}
-\contentsline {subsection}{\numberline {7.1}Families of subgroups}{54}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Pushout powers}{56}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{60}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{63}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{67}{subsection.7.5}
+\contentsline {section}{\numberline {2}Basic definitions}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Grothendieck constructions}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Monads}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Planar and tall maps}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Planar structures}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Substitution}{11}{subsection.3.3}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{14}{section.4}
+\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Planar strings}{18}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}A monad on spans}{19}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{23}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Comparison with (regular) equivariant operads}{27}{subsection.4.6}
+\contentsline {section}{\numberline {5}Free extensions}{30}{section.5}
+\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{30}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{32}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{34}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{35}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}The category of extension trees}{40}{subsection.5.5}
+\contentsline {section}{\numberline {6}Model structures}{45}{section.6}
+\contentsline {subsection}{\numberline {6.1}Filtration pieces}{45}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{48}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{49}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{51}{subsubsection.6.2.2}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{53}{section.7}
+\contentsline {subsection}{\numberline {7.1}Families of subgroups}{53}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Pushout powers}{55}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{59}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{62}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{66}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{66}{subsubsection.7.5.1}
