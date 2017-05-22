@@ -224,8 +224,6 @@ and, moreover, to produce models of $N \mathcal{F}$-operads that
 are as explicit as possible.
 
 
-{\color{red} HERE}
-
 To motivate our approach, we first recall the solution of a closed related but simpler problem: that of building universal spaces for families of subgroups. 
 Given a family $\mathcal{F}$ of subgroups of $G$ 
 (i.e. a collection closed under conjugation and subgroups), a universal space $X$ for $\mathcal{F}$, 
@@ -238,12 +236,15 @@ best understood in light Elmendorf's classical result
 stating that there is a Quillen equivalence 
 (where $\mathsf{O}_G$ is the \textit{orbital} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
-\begin{tikzcd}[column sep =5em,row sep=0.5em]
+\begin{tikzcd}[column sep =5em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_G^{op}}
 	\ar[shift left=1]{r}{\iota^{\**}} 
 &
 	\mathsf{Top}^G
 	\ar[shift left=1]{l}{\iota_{\**}}
+\\
+	\left(G/H \mapsto Y(G/H)\right)  \ar[mapsto]{r}&
+	Y(G)
 \\
 	(G/H \mapsto X^H) &
 	X \ar[mapsto]{l}
@@ -252,13 +253,49 @@ stating that there is a Quillen equivalence
 where the weak equivalences (and fibrations)
 on $\mathsf{Top}^G$ are detected on all fixed points and
 the weak equivalences (and fibrations)
-on $\mathsf{Top}^{\mathsf{O}_G^{op}}$
+on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of 
+\textit{coefficient systems}
 are detected at each presheaf level.
 Noting that the fixed point characterization of $E \mathcal{F}$-spaces define an obvious object 
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by 
 $\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
-$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise
+$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise, 
+$E \mathcal{F}$-spaces can then be built as
+$\iota^{\**}(C \delta_{\mathcal{F}}) = 
+C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
+Moreover, we note that in this case cofibrant replacements can be built via explicit simplicial realizations.
 
+The overarching goal of this work is then that of proving the analogue of Elmendorf's Theorem (\ref{COFADJINT EQ})
+in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
+which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
+However, in trying to formulate such a result one immediately runs into a fundamental issue: 
+it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in that context.
+This last remark likely requires justification. 
+Indeed, it may at first seem tempting to simply 
+employ one of the known formal generalizations of Elmendorf's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
+$\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
+with a more general model category $\mathcal{V}$.
+However, applying such results when $\mathcal{V}=\mathsf{Op}$
+to establish a Quillen equivalence
+$\mathsf{Op}^{\mathsf{O}_G^{op}}
+\rightleftarrows
+\mathsf{Op}^G$
+requires working in the context of operads \textit{without} norm maps
+(i.e. using the notion of equivalence in (\ref{NAIVEOPEQ EQ})),
+and in doing so one forgoes the ability to distinguish 
+the many types of $N \mathcal{F}$-operads.
+
+The correct replacement for
+$\mathsf{Top}^{\mathsf{O}_G^{op}}$
+in the context of operads with norm maps will then be 
+a new category $\mathsf{Op}_G$,
+whose objects are novel algebraic structures we dub \textit{genuine equivariant operads} (as opposed to the category $\mathsf{Op}^G$ of (regular) equivariant operads), and which we formally define in \S \ref{GENUINE_OP_MONAD_SECTION}.
+To motivate this category, we note first that the desideratum that weak equivalences in $\mathsf{Op}_G$
+be detected ``at each level''
+suggest that each $\mathcal{P} \in \mathsf{Op}_G$
+should consist of a list of spaces for each of the graph subgroups in (\ref{GENGEINFTY EQ}), along with 
+obvious restriction maps and, more importantly, 
+suitable \textit{multiplication maps}.
 
 
 {\color{red} HERE}
@@ -1519,8 +1556,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 
 
 
-\section{The genuine equivariant operad monad}
-\label{GENUINE_OP_MONAD_SECTION}
+\section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
 We now turn to the task of building the monad encoding genuine equivariant operads.
 
 
