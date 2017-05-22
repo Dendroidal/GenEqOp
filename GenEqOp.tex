@@ -293,10 +293,29 @@ whose objects are novel algebraic structures we dub \textit{genuine equivariant 
 To motivate this category, we note first that the desideratum that weak equivalences in $\mathsf{Op}_G$
 be detected ``at each level''
 suggest that each $\mathcal{P} \in \mathsf{Op}_G$
-should consist of a list of spaces for each of the graph subgroups in (\ref{GENGEINFTY EQ}), along with 
+should consist of a list of spaces, one for each of the graph subgroups in (\ref{GENGEINFTY EQ}), along with 
 obvious restriction maps and, more importantly, 
 suitable \textit{multiplication maps}.
-
+Correctly encoding such multiplication maps is one of the main challenges of our theory, and again the motivation for these is provided by the work in \cite{BH15}.
+Indeed, when analyzing the proofs of the results in 
+\cite[\S 4]{BH15}
+that establish the closure properties for indexing systems 
+a common motif emerges:
+when performing an operadic composition
+\begin{equation}
+\begin{tikzcd}[row sep=0]
+	\O(n) \times \O(m_1) \times \cdots \times \O(m_n) \ar{r} &
+	\O(m_1 + \cdots + m_n)
+\\
+	(f,g_1,\cdots,g_n) \ar[mapsto]{r} &
+	f(g_1,\cdots,g_n)
+\end{tikzcd}
+\end{equation}
+a careful choice of fixed point conditions on the operations $f,g_1,\cdots,g_n$ 
+yield a fixed point condition on the composite operation
+$f(g_1,\cdots,g_n)$.
+The desired multiplications for genuine equivariant operads
+are then an abstraction
 
 {\color{red} HERE}
 
