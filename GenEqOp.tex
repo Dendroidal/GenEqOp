@@ -448,33 +448,51 @@ self-induction (cf. \cite[Def. 3.20]{BH15}),
 and similar tree descriptions exist for all other closure properties, as detailed by the second author in 
 \cite[\S 9]{Pe17}.
 
-{\color{red} HERE}
 
-We can now finally give a complete informal description of the category $\mathsf{Op}_G$ appearing in 
+We can now finally give a complete informal description of the category $\mathsf{Op}_G$ featured in 
 our main result Theorem \ref{MAINQUILLENEQUIV THM}.
 A genuine equivariant operad
 $\mathcal{P} \in \mathsf{Op}_G$
 has levels $\mathcal{P}(X)$ for each $H$-set $X$, $H\leq G$, 
 that mimick the role of the fixed points $\O(X)^H$ for 
 $\mathcal{O} \in \mathsf{Op}^G$.
+More explicitly, there are restriction maps 
+$\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq L$,
+isomorphisms
+$\mathcal{P}(X)\simeq \mathcal{P}(g X)$
+where $gX$ denotes the conjugate $gHg^{-1}$-set,
+and multiplication maps
+\begin{align}\label{FIXEDPOINTMUL EQ}
+	\mathcal{P}(H/K_1 \amalg \cdots \amalg H/K_n) &
+\times
+	\mathcal{P}(K_1 / L_{11} \amalg \cdots \amalg K_1/L_{1 m_1})
+\times \cdots \times
+	\mathcal{P}(K_n / L_{n1} \amalg \cdots \amalg K_n / L_{n m_n})
+	\to
+\\
+\to & \mathcal{P}(H / L_{11} \amalg \cdots \amalg H/L_{1 m_1}
+\amalg \cdots \amalg
+H / L_{n1} \amalg \cdots \amalg H/L_{n m_n}
+)
+\end{align}
+generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
+Lastly, the multiplication maps (\ref{FIXEDPOINTMUL EQ})
+must satisfy associativity, unitality, compatibility with restriction maps and equivariance conditions as encoded by the theory of $G$-trees (though we note that, rather than make such compatibilities explicit, it will be more convenient for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees).
+
+
+
+\subsection{Main results}
+
 
 {\color{red} HERE}
 
-
-
-
-
-
-\newpage
-
-\subsection{Main results}
 
 \begin{theorem}\label{MAINEXIST1 THM}
 $\mathcal{F}$-model structures, 
 denoted
 $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
 on 
-the category $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$ exist.
+the category $\mathsf{Op}^G(\mathcal{V})$ exist.
 \end{theorem}
 
 
@@ -484,7 +502,6 @@ $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exist.
 \end{theorem}
 
 
-{\color{red} HERE}
 
 
 Our main result is the following.
