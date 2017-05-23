@@ -357,98 +357,113 @@ encodes the operadic composition
 where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
 and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
 Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
-A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we borrow a single representative example therein.
-Let $G = D_6 = \{e, r, r^2, r^3, r^4, r^5, s, sr, \cdots, s r^5\}$ denote the dihedral group with generators $r,s$ such that %
-$r^6=e$, $s^2=e$, $s r s = r^5$
-and $H_1 \geq H_2 \geq H_3$ denote the subgroups %
- $H_1 = \langle r^2,s \rangle$, %
- $H_2 = \langle s \rangle$, %
- $H_3 = \{e\}$.%
-There is then a $D_6$-tree $S$ with 
+A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include a single representative example.
+Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
+and $G \geq H \geq K \geq L$ denote the subgroups %
+$H = \langle j \rangle$, %
+$K = \langle -1 \rangle$, %
+$L = \{1\}$.
+There is then a $G$-tree $T$ with 
 \textit{expanded representation}
-given by the two diagrams on the left below and
+given by the two trees on the left below and
 \textit{orbital representation}
-given by the (single) diagram on the right.
-\begin{equation}\label{D6SMALLER EQ}%
-	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,every node/.style={font=\scriptsize}]%
-		\tikzstyle{level 2}=[sibling distance=4.75em]%
-		\tikzstyle{level 3}=[sibling distance=0.75em]%
-			\node at (5,0){}%
+given by the (single) tree on the right.
+\begin{equation}\label{D6SMALLER EQ}
+	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,
+	every node/.style={font=\scriptsize,inner sep = 2pt}]%
+		\tikzstyle{level 2}=[sibling distance=7em]%
+		\tikzstyle{level 3}=[sibling distance=2.25em]%
+			\node at (4.75,0){}%	
 				child{node [dummy] {}%
 					child{node [dummy] {}%
 						child{node {}%
-						edge from parent node [swap,very near end] {$s r a\phantom{1^2}$}}%
+						edge from parent node [swap,very near end] {$-k a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$k b$}}%
 						child{node {}%
-						edge from parent node [very near end] {$r^5 a$}}%
-					edge from parent node [swap] {$r^5 b$}}%
+						edge from parent node [very near end] {$k a$}}%
+					edge from parent node [swap] {$k c$}}%
 					child{node [dummy] {}%
 						child{node {}%
-						edge from parent node [swap,very near end] {$s r^3 a$}}%
+						edge from parent node [swap,very near end] {$-i a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$i b$}}%
 						child{node {}%
-						edge from parent node [very near end] {$r^3 a$}}%
-					edge from parent node [swap,near end] {$r^3 b$}}%
-					child{node [dummy] {}%
-						child{node {}%
-						edge from parent node [swap,very near end] {$s r^5 a$}}%
-						child{node {}%
-						edge from parent node [very near end] {$\phantom{1^2}r a$}}%
-					edge from parent node  {$r b$}}%
-				edge from parent node [swap] {$r c$}};%
+						edge from parent node [very near end] {$i a$}}%
+					edge from parent node  {$i c$}}%
+				edge from parent node [swap] {$i d$}};%
 			\node at (0,0){}%	
 				child{node [dummy] {}%
 					child{node [dummy] {}%
 						child{node {}%
-						edge from parent node [swap,very near end] {$s r^2 a$}}%
+						edge from parent node [swap,very near end] {$-j a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$j b$}}%
 						child{node {}%
-						edge from parent node [very near end] {$r^4 a$}}%
-					edge from parent node [swap] {$r^4 b$}}%
+						edge from parent node [very near end] {$j a$}}%
+					edge from parent node [swap] {$j c$}}%
 					child{node [dummy] {}%
 						child{node {}%
-						edge from parent node [swap,very near end] {$s r^4 a$}}%
+						edge from parent node [swap,very near end] {$-a\phantom{j}$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$b\phantom{j}$}}%
 						child{node {}%
-						edge from parent node [very near end] {$r^2 a$}}%
-					edge from parent node [near end,swap] {$r^2 b$}}%
-					child{node [dummy] {}%
-						child{node {}%
-						edge from parent node [swap,very near end] {$s a \phantom{1^2}$}}%
-						child{node {}%
-						edge from parent node [very near end] {$\phantom{1^2}a$}}%
-					edge from parent node  {$\phantom{r^4}b$}}%
-				edge from parent node [swap] {$c$}};%
+						edge from parent node [very near end] {$\phantom{j}a$}}%
+					edge from parent node  {$\phantom{j}c$}}%
+				edge from parent node [swap] {$d$}};%
 		\begin{scope}[every node/.style={font=\footnotesize}]%
-			\node at (8,0){}%
+			\node at (9.15,0){}%
 				child{node [dummy] {}%
 					child{node [dummy] {}%
 						child{node {}%
-						edge from parent node [right] {$(G/H_3) \cdot a$}}%
-					edge from parent node [right] {$(G/H_2) \cdot b$}}%
-				edge from parent node [right] {$(G/H_1) \cdot c$}};%
+						edge from parent node [swap,very near end] {$(G/K) \cdot b$}}%
+						child{node {}%
+						edge from parent node [very near end] {$(G/L) \cdot a$}}%
+					edge from parent node [right] {$(G/K) \cdot c$}}%
+				edge from parent node [right] {$(G/H) \cdot d$}};%
 		\end{scope}%
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (5.1,0) -- (-0.1,0) node[midway]{$S$}; %
-		\node at (8,-0.15) {$S$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway]{$T$}; %
+		\node at (9.15,-0.15) {$T$};
 	\end{tikzpicture}%
 \end{equation}%
-We note that $D_6$ acts on the expanded representation of $S$ as indicated by the edge labels (so that the edges $a,b,c$ have stabilizers $H_3$, $H_2$, $H_1$), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{BH15}, $S$ then encodes the fact that for any 
+We note that $G$ acts on the expanded representation of $T$ as indicated by the edge labels (so that the edges $a,b,c,d$ have stabilizers $L$, $K$, $K$ $H$), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{Pe17}, $T$ then encodes the fact that for any 
 equivariant operad $\O \in \mathsf{Op}^G$ the composition 
-$\mathcal{O}(3) \times \mathcal{O}(2)^{\times 3} \to 
+$\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
 \mathcal{O}(6)$ restricts to a fixed point composition
 \begin{equation}\label{INTFIXPTCOMP EQ}
-\O(H_1/H_2)^{H_1} \times \O(H_2/H_3)^{H_2} \to \O(H_1/H_3)^{H_1}
+\O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
+\O(H/L \amalg H/K)^{H}
 \end{equation}
-where $\O(X)$ for an $H$-set $X$ denotes $\O(|X|)$ together with a suitable combined $H$-action.
+where $\O(X)$ for an $H$-set/$K$-set $X$ denotes $\O(|X|)$ together with a suitable combined $H$-action/$K$-action.
 We note that the inputs 
-$\O(H_1/H_2)^{H_1}$, $\O(H_2/H_3)^{H_2}$ in
+$\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 (\ref{INTFIXPTCOMP EQ})
 correspond to the nodes of the orbital representation
 in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge orbits, while the output 
-$\O(H_1/H_3)^{H_1}$
+$\O(H/L \amalg H/K)^{H}$
 is similarly determined by both the leaf and root edge orbits.
-
-The existence of maps of the form (\ref{INTFIXPTCOMP EQ})
-
-k
+The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
+closure property for indexing systems $\mathcal{F}$,
+self-induction (cf. \cite[Def. 3.20]{BH15}),
+and similar tree descriptions exist for all other closure properties, as detailed by the second author in 
+\cite[\S 9]{Pe17}.
 
 {\color{red} HERE}
+
+We can now finally give a complete informal description of the category $\mathsf{Op}_G$ appearing in 
+our main result Theorem \ref{MAINQUILLENEQUIV THM}.
+A genuine equivariant operad
+$\mathcal{P} \in \mathsf{Op}_G$
+has levels $\mathcal{P}(X)$ for each $H$-set $X$, $H\leq G$, 
+that mimick the role of the fixed points $\O(X)^H$ for 
+$\mathcal{O} \in \mathsf{Op}^G$.
+
+{\color{red} HERE}
+
+
+
+
+
 
 \newpage
 
