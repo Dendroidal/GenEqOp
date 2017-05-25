@@ -224,8 +224,6 @@ and, moreover, to produce models of $N \mathcal{F}$-operads that
 are as explicit as possible.
 
 
-{\color{red} HERE}
-
 To motivate our approach, we first recall the solution of a closed related but simpler problem: that of building universal spaces for families of subgroups. 
 Given a family $\mathcal{F}$ of subgroups of $G$ 
 (i.e. a collection closed under conjugation and subgroups), a universal space $X$ for $\mathcal{F}$, 
@@ -238,12 +236,15 @@ best understood in light Elmendorf's classical result
 stating that there is a Quillen equivalence 
 (where $\mathsf{O}_G$ is the \textit{orbital} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
-\begin{tikzcd}[column sep =5em,row sep=0.5em]
+\begin{tikzcd}[column sep =5em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_G^{op}}
 	\ar[shift left=1]{r}{\iota^{\**}} 
 &
 	\mathsf{Top}^G
 	\ar[shift left=1]{l}{\iota_{\**}}
+\\
+	\left(G/H \mapsto Y(G/H)\right)  \ar[mapsto]{r}&
+	Y(G)
 \\
 	(G/H \mapsto X^H) &
 	X \ar[mapsto]{l}
@@ -252,35 +253,246 @@ stating that there is a Quillen equivalence
 where the weak equivalences (and fibrations)
 on $\mathsf{Top}^G$ are detected on all fixed points and
 the weak equivalences (and fibrations)
-on $\mathsf{Top}^{\mathsf{O}_G^{op}}$
+on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of 
+\textit{coefficient systems}
 are detected at each presheaf level.
 Noting that the fixed point characterization of $E \mathcal{F}$-spaces define an obvious object 
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by 
 $\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
-$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise
+$\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise, 
+$E \mathcal{F}$-spaces can then be built as
+$\iota^{\**}(C \delta_{\mathcal{F}}) = 
+C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
+Moreover, we note that in this case cofibrant replacements can be built via explicit simplicial realizations.
 
+The overarching goal of this work is then that of proving the analogue of Elmendorf's Theorem (\ref{COFADJINT EQ})
+in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
+which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
+However, in trying to formulate such a result one immediately runs into a fundamental issue: 
+it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in that context.
+This last remark likely requires justification. 
+Indeed, it may at first seem tempting to simply 
+employ one of the known formal generalizations of Elmendorf's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
+$\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
+with a more general model category $\mathcal{V}$.
+However, if one applies such a result when $\mathcal{V}=\mathsf{Op}$
+to establish a Quillen equivalence
+$\mathsf{Op}^{\mathsf{O}_G^{op}}
+\rightleftarrows
+\mathsf{Op}^G$, 
+the fact that the levels of each object
+$\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
+correspond to those in (\ref{NAIVEOPEQ EQ})
+requires working in the context of operads \textit{without} norm maps,
+and in doing so one forgoes the ability to distinguish 
+the many types of $N \mathcal{F}$-operads.
 
-
-{\color{red} HERE}
-
-{\color{red} HERE}
-
-
-\begin{equation}\label{INTFIXPTCOMP EQ}
-\O(H_1/H_2)^{H_1} \times \O(H_2/H_3)^{H_2} \to \O(H_1/H_3)^{H_1}
+In order to work in the context of operads with norm maps we will need to replace 
+$\mathsf{Top}^{\mathsf{O}_G^{op}}$
+with a category
+$\mathsf{Op}_G$
+of new algebraic objects we dub 
+\textit{genuine equivariant operads}
+(as opposed to (regular) equivariant operads
+$\mathsf{Op}^G$).
+Each genuine equivariant operad 
+$\mathcal{P} \in \mathsf{Op}_G$
+will consist of a list of spaces indexed as in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+suitable \textit{multiplication maps}. Precisely identifying the required multiplication maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
+When analyzing the proofs of the results in 
+\cite[\S 4]{BH15}
+concerning the closure properties for indexing systems 
+a common motif emerges:
+when performing an operadic composition
+\begin{equation}
+\begin{tikzcd}[row sep=0]
+	\O(n) \times \O(m_1) \times \cdots \times \O(m_n) \ar{r} &
+	\O(m_1 + \cdots + m_n)
+\\
+	(f,g_1,\cdots,g_n) \ar[mapsto]{r} &
+	f(g_1,\cdots,g_n)
+\end{tikzcd}
 \end{equation}
+a careful choice of fixed point conditions on the operations $f,g_1,\cdots,g_n$ 
+yield a fixed point condition on the composite operation
+$f(g_1,\cdots,g_n)$.
+The desired multiplication maps for a genuine equivariant operad
+$\mathcal{P} \in \mathsf{Op}_G$
+will then abstract such interactions between multiplication and fixed points for a equivariant operad 
+$\mathcal{O} \in \mathsf{Op}^G$.
+However, such interactions can be quite challenging to write down explicitly and, indeed, 
+the arguments in \cite[\S 4]{BH15}
+do not quite provide the sort of unified conceptual approach
+to these needed for our purposes.
+The cornerstone of the current work was then the 
+joint discovery by the authors of
+such a conceptual framework: equivariant trees.
 
 
-\newpage
+Non-equivariantly, it has long been known that
+the combinatorics of operadic composition is best visualized by means of trees diagrams. For instance, the tree
+\[%
+	\begin{tikzpicture}[grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
+	\tikzstyle{level 2}=[sibling distance=3.75em]%
+	\tikzstyle{level 3}=[sibling distance=1.5em]%
+		\node {}%
+			child{node [dummy] {}%
+				child{node [dummy] {}}%
+				child{node [dummy] {}%
+					child{}%
+					child{}%
+					child{}%
+				}%
+				child{node [dummy] {}%
+					child{node {} }%
+					child{node {} }%
+				}%
+			};%
+	\end{tikzpicture}%
+\]%
+encodes the operadic composition
+\[
+	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
+\]
+where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
+and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
+Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
+A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include a single representative example.
+Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
+and $G \geq H \geq K \geq L$ denote the subgroups %
+$H = \langle j \rangle$, %
+$K = \langle -1 \rangle$, %
+$L = \{1\}$.
+There is then a $G$-tree $T$ with 
+\textit{expanded representation}
+given by the two trees on the left below and
+\textit{orbital representation}
+given by the (single) tree on the right.
+\begin{equation}\label{D6SMALLER EQ}
+	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,
+	every node/.style={font=\scriptsize,inner sep = 2pt}]%
+		\tikzstyle{level 2}=[sibling distance=7em]%
+		\tikzstyle{level 3}=[sibling distance=2.25em]%
+			\node at (4.75,0){}%	
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$-k a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$k b$}}%
+						child{node {}%
+						edge from parent node [very near end] {$k a$}}%
+					edge from parent node [swap] {$k c$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$-i a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$i b$}}%
+						child{node {}%
+						edge from parent node [very near end] {$i a$}}%
+					edge from parent node  {$i c$}}%
+				edge from parent node [swap] {$i d$}};%
+			\node at (0,0){}%	
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$-j a$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$j b$}}%
+						child{node {}%
+						edge from parent node [very near end] {$j a$}}%
+					edge from parent node [swap] {$j c$}}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$-a\phantom{j}$}}%
+						child[level distance = 2.4em]{node {}%
+						edge from parent node [swap,near end] {$b\phantom{j}$}}%
+						child{node {}%
+						edge from parent node [very near end] {$\phantom{j}a$}}%
+					edge from parent node  {$\phantom{j}c$}}%
+				edge from parent node [swap] {$d$}};%
+		\begin{scope}[every node/.style={font=\footnotesize}]%
+			\node at (9.15,0){}%
+				child{node [dummy] {}%
+					child{node [dummy] {}%
+						child{node {}%
+						edge from parent node [swap,very near end] {$(G/K) \cdot b$}}%
+						child{node {}%
+						edge from parent node [very near end] {$(G/L) \cdot a$}}%
+					edge from parent node [right] {$(G/K) \cdot c$}}%
+				edge from parent node [right] {$(G/H) \cdot d$}};%
+		\end{scope}%
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway]{$T$}; %
+		\node at (9.15,-0.15) {$T$};
+	\end{tikzpicture}%
+\end{equation}%
+We note that $G$ acts on the expanded representation of $T$ as indicated by the edge labels (so that the edges $a,b,c,d$ have stabilizers $L$, $K$, $K$ $H$), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{Pe17}, $T$ then encodes the fact that for any 
+equivariant operad $\O \in \mathsf{Op}^G$ the composition 
+$\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
+\mathcal{O}(6)$ restricts to a fixed point composition
+\begin{equation}\label{INTFIXPTCOMP EQ}
+\O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
+\O(H/L \amalg H/K)^{H}
+\end{equation}
+where $\O(X)$ for an $H$-set/$K$-set $X$ denotes $\O(|X|)$ together with a suitable combined $H$-action/$K$-action.
+We note that the inputs 
+$\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
+(\ref{INTFIXPTCOMP EQ})
+correspond to the nodes of the orbital representation
+in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge orbits, while the output 
+$\O(H/L \amalg H/K)^{H}$
+is similarly determined by both the leaf and root edge orbits.
+The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
+closure property for indexing systems $\mathcal{F}$,
+self-induction (cf. \cite[Def. 3.20]{BH15}),
+and similar tree descriptions exist for all other closure properties, as detailed by the second author in 
+\cite[\S 9]{Pe17}.
+
+
+We can now finally give a complete informal description of the category $\mathsf{Op}_G$ featured in 
+our main result Theorem \ref{MAINQUILLENEQUIV THM}.
+A genuine equivariant operad
+$\mathcal{P} \in \mathsf{Op}_G$
+has levels $\mathcal{P}(X)$ for each $H$-set $X$, $H\leq G$, 
+that mimick the role of the fixed points $\O(X)^H$ for 
+$\mathcal{O} \in \mathsf{Op}^G$.
+More explicitly, there are restriction maps 
+$\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq L$,
+isomorphisms
+$\mathcal{P}(X)\simeq \mathcal{P}(g X)$
+where $gX$ denotes the conjugate $gHg^{-1}$-set,
+and multiplication maps
+\begin{align}\label{FIXEDPOINTMUL EQ}
+	\mathcal{P}(H/K_1 \amalg \cdots \amalg H/K_n) &
+\times
+	\mathcal{P}(K_1 / L_{11} \amalg \cdots \amalg K_1/L_{1 m_1})
+\times \cdots \times
+	\mathcal{P}(K_n / L_{n1} \amalg \cdots \amalg K_n / L_{n m_n})
+	\to
+\\
+\to & \mathcal{P}(H / L_{11} \amalg \cdots \amalg H/L_{1 m_1}
+\amalg \cdots \amalg
+H / L_{n1} \amalg \cdots \amalg H/L_{n m_n}
+)
+\end{align}
+generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
+Lastly, the multiplication maps (\ref{FIXEDPOINTMUL EQ})
+must satisfy associativity, unitality, compatibility with restriction maps and equivariance conditions as encoded by the theory of $G$-trees (though we note that, rather than make such compatibilities explicit, it will be more convenient for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees).
+
+
 
 \subsection{Main results}
+
+
+{\color{red} HERE}
+
 
 \begin{theorem}\label{MAINEXIST1 THM}
 $\mathcal{F}$-model structures, 
 denoted
 $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
 on 
-the category $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$ exist.
+the category $\mathsf{Op}^G(\mathcal{V})$ exist.
 \end{theorem}
 
 
@@ -290,7 +502,6 @@ $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exist.
 \end{theorem}
 
 
-{\color{red} HERE}
 
 
 Our main result is the following.
@@ -1519,8 +1730,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 
 
 
-\section{The genuine equivariant operad monad}
-\label{GENUINE_OP_MONAD_SECTION}
+\section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
 We now turn to the task of building the monad encoding genuine equivariant operads.
 
 
