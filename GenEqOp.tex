@@ -626,6 +626,29 @@ where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the 
 
 {\color{red} HERE}
 
+One useful property of Grothendieck constructions is that
+right Kan extensions can be computed using fibers, i.e., 
+given a functor $F \colon \mathcal{E} \to \mathcal{C}$ into a complete category $\mathcal{C}$ one has
+\[
+	\mathsf{Ran}_{\pi}F (b)
+\simeq
+	\mathsf{lim} F{|_{b \downarrow \mathcal{E}}}
+\simeq
+	\mathsf{lim} F|_{\mathcal{E}_b}
+\]
+where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3.1]{McL})
+and the second identification follows by noting that due to the existence of cartesian arrows the fibers
+$\mathcal{E}_b$ are initial (in the sense of \cite[IX.3]{McL})
+in the undercategories $b \downarrow \mathcal{E}$.
+
+{\color{red} HERE}
+
+In fact, 
+
+(in fact, pull $\mathcal{E}_b$ is a )
+
+{\color{red} HERE}
+
 We now discuss a basic property of over and under categories that will be used in Section \ref{TRANSFSIMP SEC}.
 
 
@@ -644,7 +667,7 @@ is a pair
 $(I \colon i \to i', 
 \gamma \colon \varphi\circ I^{\**} \to \varphi')$.
 
-	
+
 
 \begin{lemma}\label{UNDERLEFTADJ LEM}
 Let $\mathcal{J} \in \mathsf{Cat}$ be a small category and 
