@@ -408,7 +408,7 @@ given by the (single) tree on the right.
 						child[level distance = 2.4em]{node {}%
 						edge from parent node [swap,near end] {$b\phantom{j}$}}%
 						child{node {}%
-						edge from parent node [very near end] {$\phantom{j}a$}}%
+						edge from parent node [very near end] {$\phantom{-j}a$}}%
 					edge from parent node  {$\phantom{j}c$}}%
 				edge from parent node [swap] {$d$}};%
 		\begin{scope}[every node/.style={font=\footnotesize}]%
@@ -560,24 +560,71 @@ In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of 
 In this section we recall some definitions that will be used throughout.
 
 
-\subsection{Grothendieck constructions}
+\subsection{Grothendieck fibrations}
+Recall that a functor 
+$\pi \colon \mathcal{E} \to \mathcal{B}$
+is called a \textit{Grothendieck fibration}
+if for every arrow 
+$f \colon b' \to b$ in $\mathcal{B}$
+and $e \in \mathcal{E}$ such that $\pi(e)=b$,
+there exists a cartesian arrow 
+$f^{\**} e \to e$ lifting $f$, meaning that for any choice of solid arrows 
+\[
+\begin{tikzcd}[row sep=7pt]
+	e'' \ar{rr} \ar[dashed]{rd}[swap]{\exists !} & & 
+	e
+&
+	b'' \ar{rr} \ar{rd} & & 
+	b
+\\
+	& f^{\**} e \ar{ru} &
+&
+	& b' \ar{ru}[swap]{f} &
+\end{tikzcd}
+\]
+such that the rightmost diagram commutes and 
+$e'' \to e$ lifts $b'' \to b$
+there exists a unique dashed arrow
+$e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute.
 
+In most contexts the cartesian arrows $f^{\**} e \to e$ are assumed to be defined only up to unique isomorphism, 
+but in all examples considered in this paper
+we will in fact be able so identify preferred choices of cartesian arrows to which we will refer to as \textit{pullbacks}.
+Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
+As a terminological note, one sometimes encounters the term \textit{split fibration} to refer to a Grothendieck fibration together with such a choice of pullbacks, though we will rarely have need to make the distinction outside of the present discussion. 
 
-Recall that for a diagram category $\mathcal{D}$ and functor $\mathcal{I}_{\bullet}$
+A map of Grothendieck fibrations (resp. split fibrations) is then a commutative diagram
+\[
+\begin{tikzcd}
+	\mathcal{E} \ar{rr} \ar{rd} && \bar{\mathcal{E}} \ar{dl}
+\\
+	& \mathcal{B}
+\end{tikzcd}
+\]
+such that the top functor preserves cartesian arrows (pullbacks).
+
+There is a well known equivalence between Grothendieck fibrations over $\mathcal{B}$ and pseudo-functors
+$\mathcal{B} \to \mathsf{Cat}$
+with split fibrations corresponding to (regular) functors, and we now recall how this works in the latter case.
+
+\begin{definition}
+Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 \begin{equation}
-\begin{tikzcd}[row sep = 0.2em]
-	\mathcal{D} \ar{r}{\mathcal{I}_{\bullet}} & \mathsf{Cat} \\
-	d \ar[mapsto]{r} & \mathcal{I}_d
+\begin{tikzcd}[row sep = 0em]
+	\mathcal{B} \ar{r}{\mathcal{E}_{\bullet}} & \mathsf{Cat} \\
+	b \ar[mapsto]{r} & \mathcal{E}_b
 \end{tikzcd}
 \end{equation}
 the (covariant) Grothendieck construction 
-$\mathcal{D} \ltimes \mathcal{I}_{\bullet}$
-has objects pairs $(d,i)$ with $d \in \mathcal{D}$,
- $i \in \mathcal{I}_d$ and 
-arrows $(d,i) \to (d',i')$ given by pairs
-\[(f\colon d \to d', g \colon f_{\**}(i) \to i'),\]
-where $f_{\**}\colon \mathcal{I}_d \to \mathcal{I}_{d'}$ is a shorthand for the functor $\mathcal{I}_{\bullet}(f)$.
+$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$
+has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
+$e \in \mathcal{E}_d$ and 
+arrows $(b,e) \to (b',e')$ given by pairs
+\[(f\colon b \to b', g \colon g_{\**}(e) \to e'),\]
+where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the functor $\mathcal{E}_{\bullet}(f)$.
+\end{definition}
 
+{\color{red} HERE}
 
 We now discuss a basic property of over and under categories that will be used in Section \ref{TRANSFSIMP SEC}.
 
@@ -5869,7 +5916,7 @@ which we now describe.
 %\end{proof}
 
 \begin{proposition}
-For each level $C\in \Sigma_G$,
+For each $G$-corolla $C \in \Sigma_G$,
 (\ref{FILTRATION_LAN_SQUARE_DIAGRAM})
 is given by the following pushout in $\V^{\mathsf{Aut}(C)}$
 \begin{equation}\label{FILTRATION_LAN_LEVEL}
