@@ -1,35 +1,35 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}Main results}{6}{subsection.1.1}
-\contentsline {section}{\numberline {2}Basic definitions}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Grothendieck constructions}{7}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Monads}{7}{subsection.2.2}
-\contentsline {section}{\numberline {3}Planar and tall maps}{8}{section.3}
-\contentsline {subsection}{\numberline {3.1}Planar structures}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{12}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Substitution}{13}{subsection.3.3}
-\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}Wreath product over finite sets}{16}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Equivariant leaf-root and vertex functors}{18}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Planar strings}{20}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}A monad on spans}{22}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}The free genuine operad monad}{25}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Comparison with (regular) equivariant operads}{29}{subsection.4.6}
-\contentsline {section}{\numberline {5}Free extensions}{33}{section.5}
-\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{33}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{35}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{37}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{38}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}The category of extension trees}{43}{subsection.5.5}
-\contentsline {section}{\numberline {6}Model structures}{48}{section.6}
-\contentsline {subsection}{\numberline {6.1}Filtration pieces}{48}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{51}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{52}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{54}{subsubsection.6.2.2}
-\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{56}{section.7}
-\contentsline {subsection}{\numberline {7.1}Families of subgroups}{56}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Pushout powers}{58}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{62}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{65}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{69}{subsection.7.5}
-\contentsline {section}{\numberline {8}Introduction}{70}{section.8}
-\contentsline {subsection}{\numberline {8.1}Tools and Techniques / Outline}{73}{subsection.8.1}
+\contentsline {section}{\numberline {2}Preliminaries}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Grothendieck fibrations}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Wreath product over finite sets}{8}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{10}{subsection.2.3}
+\contentsline {section}{\numberline {3}Planar and tall maps}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Planar structures}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{14}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Substitution}{16}{subsection.3.3}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{19}{section.4}
+\contentsline {subsection}{\numberline {4.1}Equivariant leaf-root and vertex functors}{19}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Planar strings}{21}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}A monad on spans}{23}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}The free genuine operad monad}{26}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Comparison with (regular) equivariant operads}{30}{subsection.4.5}
+\contentsline {section}{\numberline {5}Free extensions}{34}{section.5}
+\contentsline {subsection}{\numberline {5.1}Extensions over general monads}{34}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{36}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{38}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{39}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}The category of extension trees}{44}{subsection.5.5}
+\contentsline {section}{\numberline {6}Model structures}{49}{section.6}
+\contentsline {subsection}{\numberline {6.1}Filtration pieces}{49}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{52}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{53}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{55}{subsubsection.6.2.2}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{57}{section.7}
+\contentsline {subsection}{\numberline {7.1}Families of subgroups}{57}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Pushout powers}{59}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{63}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{66}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{70}{subsection.7.5}
+\contentsline {section}{\numberline {8}Introduction}{71}{section.8}
+\contentsline {subsection}{\numberline {8.1}Tools and Techniques / Outline}{74}{subsection.8.1}
