@@ -491,7 +491,7 @@ and composition maps of the form %, for example,
 \[
 \P(H/K) \times \P(K/L \amalg K/K) \to \P(H/L \amalg H/K)
 \]
-as in (\ref{INTFIXPTCOMP EQ}); in general, we have maps
+as in (\ref{INTFIXPTCOMP EQ}); in general, these maps are of the form
 %and multiplication maps
 %\begin{align*}%\label{FIXEDPOINTMUL EQ}
 \[
@@ -526,7 +526,7 @@ We now present the highlights of this paper.
 %, each of which proves the existence of certain model structures, or makes comparisons between them. 
 For much of the discussion, our base category will need to been sufficiently nice, either (Cartesian) \textit{strongly cellular} or \textit{underlying strongly cellular} (see Definitions \ref{STRONGLY_CELLULAR} and \ref{UNDERLYING_STRONGLY_CELLULAR}). In particular, these results all hold when $\V = \sSet$.
 
-Our first result, proved in Section \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads have a large variety of partial-genuine semi-model structures.
+Our first result, proved in Section \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads have a large variety of partial-genuine (semi) model structures.
 
 \begin{customthm}{I}\label{MAINEXIST1 THM}
 Let $\V$ be strongly cellular, and fix a collection ${\mathcal F} = \set{{\mathcal F}_n}$ of sets ${\mathcal F}_n$ of subgroups of $G\times \Sigma_n$, each closed under conjugation. 
@@ -539,7 +539,7 @@ the category $\mathsf{Op}^G(\mathcal{V})$ exists.
 If moreover $\V$ is underlying strongly cellular, these are actual model structures.
 \end{customthm}
 
-While we note that the above hold for general sets of subgroups of $G\times \Sigma_n$, when considering our genuine $G$-operads, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of sets of graph subgroups, or equivalently full subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. Letting $\Op_{\mathcal F}(\V)$ denote the category of $\mathbb F_G$-algebras in $\Sym_{\mathcal F}(\V)$, we have the following, proved in Section \ref{OP_G_EXISTS_SECTION}.
+While we note that in the result above, the sets $\F_n$ can contain \textit{general} subgroups of $G\times \Sigma_n$, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of sets of \textit{graph} subgroups, or equivalently full subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. Letting $\Op_{\mathcal F}(\V)$ denote the category of $\mathbb F_G$-algebras in $\Sym_{\mathcal F}(\V)$, we have the following, proved in Section \ref{OP_G_EXISTS_SECTION}.
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
 Let $\V$ be Cartesian strongly cellular, and fix any full subcategory $\Sigma_{\mathcal F} \subseteq \Sigma_G$.
@@ -550,8 +550,8 @@ Equivalently, the $\Sigma_{\mathcal F}$-semi-model structure, denoted $\Op_G^{\m
 If moreover $\V$ is underlying strongly cellular, these are actual model structures.
 \end{customthm}
 
-While these model structures always exist, they are not necessarily well-behaved with respect to cofibrancy unless the collections ${\mathcal F}$ are highly structured.
-Our main result is the following, proved in Section \ref{MAINTHM_PROOF_SECTION}.
+Oone important remark to make after these results is that these model structures need not be ``well-behaved'', in particular with respect to cofibrancy, unless the collections ${\mathcal F}$ are highly structured.
+Our main result, proved in Section \ref{MAINTHM_PROOF_SECTION}, shows that assuming $\mathcal F$ is a \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}) is sufficient.
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
 Let $\mathcal{V}$ be a Cartesian underlying strongly cellular model category.
@@ -583,7 +583,8 @@ is also a Quillen equivalence.
 
 If $\V$ is strongly cellular but not underlying, then the above equivalences are of semi model categories.
 
-We lastly return to the conjecture of \cite{BH15}, which we resolve in the affirmative using two different methods in Section \ref{NINFTY_SECTION}. In fact, we show the existence of a larger class of operads, realizing any \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}).
+We lastly return to the conjecture of \cite{BH15}, which we resolve in the affirmative using two different methods in Section \ref{NINFTY_SECTION}. In fact, we show the existence of a larger class of operads, realizing any weak indexing system.
+%(see Definition \ref{INDEXSYS DEF}).
 
 \begin{customcor}{IV}\label{NINFTY_REAL_COR_MAIN}
 For $\V = \sSet$ and 
@@ -606,7 +607,9 @@ In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of 
 
 \todo[inline]{come back here}
 
-There are multiple distinct steps along the path to proving our main result.  Specifically, we need a better understanding of the interplay between the subtle equivariance structures we just discussed, and the combinatorics which underly operads. To that end, we exploit the equivariant generalization $\Omega_G$ of the dendroidal category $\Omega$ discussed in \cite{Pe17}. First, we observe that the free operad $\mathbb F X$ generated by a symmetric sequence $X \in \Sym(\V)$, discussed in \cite{Spitz01, BM03, Rub17} etc., can be repackaged as a left Kan extension out of $\Omega$, given on the left-hand side:
+There are multiple distinct steps along the path to proving our main result.  Specifically, we need better understanding and control of the interplay between the subtle equivariant structures and the combinatorics which underly operads. To that end, we rebuild operads in a way which allows us to exploit the equivariant generalization $\Omega_G$ of the dendroidal category $\Omega$ discussed in \cite{Pe17}. 
+
+We begin by observing that the free operad $\mathbb F X$ generated by a symmetric sequence $X \in \Sym(\V)$, discussed in \cite{Spitz01, BM03, Rub17} etc., can be repackaged as a left Kan extension out of $\Omega$.
 \[
 \begin{tikzcd}
         |[alias=U]| \Omega^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_X"] & \V & \qquad & |[alias=A]| \Omega_G^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_Y"] & \V\\
@@ -615,41 +618,48 @@ There are multiple distinct steps along the path to proving our main result.  Sp
         \arrow[Rightarrow, from=A, to=B]
 \end{tikzcd}
 \]
-where $\mathsf{lr}$ is the ``leaf-root'' or ``valence'' functor, and $N_X$ sends $T$ to $\prod_{v\in V(T)} X(v)$.
+Here, $\mathsf{lr}$ is the ``leaf-root'' or ``valence'' functor, and $N_X$ sends $T$ to $\prod_{v\in V(T)} X(v)$.
 
-This can be equivariantly generalized, replacing $\Omega$ and $\Sigma$ with $\Omega_G$ and $\Sigma_G$, as seen on the right-hand-side. This yields our ``genuine $G$-operad'' monad $\mathbb F_G$, acting on the new category of $G$-sequences $Y\in \Sym_G(\V) = \V^{\Sigma_G^{op}}$. Now, having defined our notion of ``coefficient systems'', we begin the process of analyzing this new functor. 
-First, we produce multiple categorical manipulations of this functor. We modify both $\Omega_G$ and $\mathbb F_G$ to construct a description of coproducts of $\mathbb F_G$-algebras as a similar looking left Kan extension. Then, as our true goal is to understand free $\mathbb F_G$-extensions, we ``add in relations'' by attaching new maps to this modified $\Omega_G$ by realizing a certain simplicial category of strings of such maps. Finally, using this description, we build a filtration of such free extensions.
+This can be equivariantly generalized, replacing $\Omega$ and $\Sigma$ with $\Omega_G$ and $\Sigma_G$, as seen on the right-hand-side. This yields our ``genuine $G$-operad'' monad $\mathbb F_G$, acting on the new category of $G$-sequences $Y\in \Sym_G(\V) = \V^{\Sigma_G^{op}}$. Now, having defined our notion of ``coefficient systems'', we can begin further analysis. As is often the case, we desire a clear understanding of free $\mathbb F_G$-extensions (\ref{FREE_FG_EXT_EQ}). 
 
-Secondly, we consider the homotopical relations of this functor, studying the subtle interactions of different versions of cofibrancy observed when grafting tree components together. This analysis produces our model structures, as well as proves many of their desired properties. 
-Lastly, we compare $\mathbb F$ and $\mathbb F_G$, categorically and homotopically, in order to display the Quillen equivalence.
+First, we produce multiple categorical manipulations of this functor. We modify both $\Omega_G$ and $\mathbb F_G$ to construct a description of coproducts of $\mathbb F_G$-algebras as a similar looking left Kan extension. Then, we``add in relations'' found in our free $\mathbb F_G$-extension by inserting new maps into this modified $\Omega_G$, via a realization of a simplicial category of strings of such maps. Finally, using this description, we can build a filtration of such free extensions.
 
-We now give a brief overview of each remaining chapter.
-\textbf{Section \ref{PRELIM_SECTION}: Preliminaries.} Here, we identify the major constructions we will be using throughout the paper, as well as establish notion and background material.
+Secondly, we consider the homotopical characteristics of $\mathbb F_G$, in particular a detailed study of the interactions of cofibrancy with composition. We also compare $\mathbb F$ and $\mathbb F_G$, categorically and homotopically, in order to display the Quillen equivalence.
 
-\textbf{Section \ref{PLANAR_SECTION}: Planar and tall maps.} Our machery requires our trees to record an additional structure, namely a planarization. In this chapter, we define this for $G$-trees, and explore the notion of ``substitution'', a second operad-like structure on the set of trees.
+We now give a brief overview of the remaining sections.
 
-\textbf{Section \ref{GENUINE_OP_MONAD_SECTION}: The genuine equivariant operad monad.} Defining $\mathbb F_G$ as an endofunctor is fairly straightforward, as is defining composition and unit maps. However, showing that this data combines to form a monad requires a more subtle analysis. In particular, we define a more general monad $N$ on the category of weak spans $\mathsf{WSpan}(\Sigma_G, \V)$ over $\Sigma_G^{op}$ and $\V$, and through the flexibility of this more general category are able to prove the required properties. It is also here that the concept of ``planar strings'' of maps are introduced, which will also be useful in the next chapter
+\textbf{\hyperref[PRELIM_SECTION]{Section \ref{PRELIM_SECTION}: Preliminaries.}} Here, we identify the major constructions we will be using throughout the paper, as well as establish notion and background material.
 
-\textbf{Section \ref{FREE_EXTENSIONS_SECTION}: Free extensions.} In this chapter, we develop the technology to produce free $T$-extensions for particular monads $T$, utilizing the realizations of simplicial categories of planar strings.
+\textbf{\hyperref[PLANAR_SECTION]{Section \ref{PLANAR_SECTION}: Planar and tall maps.}} Our machery requires our trees to record an additional structure, namely a planarization. In this section, we define this notion for $G$-trees, and explore the notion of ``substitution'', a second operad-like structure on the class of trees, which many of our constructions employ.
 
-\textbf{Section \ref{MODEL_STRUCTURES_SECTION}: Model structures.} Using the description of free extensions developed in the previous chapter, we produce a filtration of free extensions, and exploit this to transfer model structures from the categories of sequences $\Sym^G$ and $\Sym_G$ onto our categories of operads $\Op^G$ and $\Op_G$.
+\textbf{\hyperref[GENUINE_OP_MONAD_SECTION]{Section \ref{GENUINE_OP_MONAD_SECTION}: The genuine equivariant operad monad.}} Defining $\mathbb F_G$ as an endofunctor is fairly straightforward, as is defining composition and unit maps. However, showing that this data forms a monad requires a more subtle analysis. We define a more general monad $N$ on the category of weak spans $\mathsf{WSpan}(\Sigma_G, \V)$, and simplify the discussion through the flexibility of this more general category. It is also here that the concept of ``planar strings'' of maps are introduced.
 
-\textbf{Section \ref{COFIB SEC}: Cofibrancy and Quillen equivalences.} This chapter contains the bulk of the homotopical analysis, and uncovers the interactions of different notions of cofibrancy with tree grafting. As such, it is here that we show weak indexing systems provide structure so that their associated model structures are well-behaved, in particular providing the desired Quillen equivalences. We end this chapter, and this paper, by providing two proofs of the $N_\infty$ realization conjecture.
+\textbf{\hyperref[FREE_EXTENSIONS_SECTION]{Section \ref{FREE_EXTENSIONS_SECTION}: Free extensions.}} In this section, we develop the technology to produce free $T$-extensions for a particular class of monads $T$, utilizing the realizations of simplicial categories of planar strings.
 
-\begin{itemize}
-\item Defining $\mathbb F_G$, and rigorously showing it is a monad on $\Sym_G(\V)$ (Section \ref{GENUINE_OP_MONAD_SECTION}).
-\item Conveniently expressing free $\mathbb F_G$-extensions (Section \ref{FREE_EXTENSIONS_SECTION}).
-\item Analyzing filtrations of free $\mathbb F_G$-extensions to build various model structures (Section \ref{MODEL_STRUCTURES_SECTION}).
-\item Exploring the interplay between grafting of trees and cofibrancy to prove the above model structures are well-behaved (Section \ref{COFIB SEC}).
-\end{itemize}
+\textbf{\hyperref[MODEL_STRUCTURES_SECTION]{Section \ref{MODEL_STRUCTURES_SECTION}: Model structures.}} Using the description of free extensions developed in the previous section, we produce a filtration of free extensions, and exploit this to transfer model structures from the categories of sequences $\Sym^G$ and $\Sym_G$ onto our categories of operads $\Op^G$ and $\Op_G$.
 
-Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_EXTENSIONS_SECTION} are built in large categorical generality, designed such that the intuitive descriptions of, for example, the free operad monad and operations on forests, are verified with strict categorical rigor; as such, they may be of broader interest
+\textbf{\hyperref[COFIB SEC]{Section \ref{COFIB SEC}: Cofibrancy and Quillen equivalences.}} This section contains the bulk of the homotopical analysis. It is here that we show that weak indexing systems $\mathcal F$ provide sufficient structure so that their associated $\mathcal F$-model structures are well-behaved, in particular proving the desired Quillen equivalences. We end this section, and this paper, by providing two proofs of the $N_\infty$ realization conjecture.
+
+% \begin{itemize}
+% \item Defining $\mathbb F_G$, and rigorously showing it is a monad on $\Sym_G(\V)$ (Section \ref{GENUINE_OP_MONAD_SECTION}).
+% \item Conveniently expressing free $\mathbb F_G$-extensions (Section \ref{FREE_EXTENSIONS_SECTION}).
+% \item Analyzing filtrations of free $\mathbb F_G$-extensions to build various model structures (Section \ref{MODEL_STRUCTURES_SECTION}).
+% \item Exploring the interplay between grafting of trees and cofibrancy to prove the above model structures are well-behaved (Section \ref{COFIB SEC}).
+% \end{itemize}
+
+Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_EXTENSIONS_SECTION} are built in large categorical generality, designed such that the intuitive descriptions of, for example, the free operad monad and operations on forests, are verified with strict categorical rigor; as such, they may be of broader interest.
 
 \subsection{Future Work}
 
 \todo[inline]{come back here}
 
-We end this introduction with a brief discussion on the context of this paper. As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper, along with \cite{Pe17}, form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. In particular, in sequels, we will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b}, reproduced here below, to the $G$-equivariant context. 
+While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
+
+%We end this introduction with a brief discussion on the context of this paper. 
+As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. 
+Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}. 
+
+Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b}, reproduced here below, to the $G$-equivariant context. 
 \begin{equation}
   \label{CM_EQ}
   \tag{$\filledstar$}
@@ -660,20 +670,15 @@ We end this introduction with a brief discussion on the context of this paper. A
 \end{equation}
 We note that, as in \cite{Pe17}, there are both multiple possible \textit{categorical} generalizations (i.e. $\mathsf{dSet}^G$ verses $\mathsf{dSet}_G$, or $\Op^G$ verses $\Op_G$) and multiple possible \textit{model categorical} generalizations (i.e $\mathsf{dSet}^G_{\mathcal F}$ for varying weak indexing systems ${\mathcal F}$) for each corner of (\ref{CM_EQ}). Analogous to the main result of this paper, we expect all compatible notions at each corner to be Quillen equivalent (i.e. $\mathsf{dSet}^G_{\mathcal F} \simeq_Q \mathsf{dSet}_G^{\mathcal F} \simeq_Q \mathsf{dSet}_{\mathcal F}^{\mathcal F}$). In future papers, we will study this precise question, as well as comparisons between the different models.
 
-We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined''; similiarly, $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, yielding an expanded equivariant right half of \ref{CM_EQ}, given by the following.
+We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined'', and similiarly $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, in which both composition and fixed-point conditions are weak. This would yield an expanded equivariant right half of \ref{CM_EQ}, given by the following.
 \[
 \begin{tikzcd}
         \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
         \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
 \end{tikzcd}
 \]
-We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging. 
+We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
 %We expect to make a full comparison between these notions in sequels.
-
-
-
-
-\subsection{Future work}
 
 {\color{red} Mention colored operad versions, equivalence with dendroidal sets}
 
@@ -4263,15 +4268,17 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
 
+\todo[inline]{match notation: $A,B,X,Y$ vs $X,Y,\mathcal P, \mathcal P[u]$}
 Our overall goal in this section will be to produce a description of free $\mathbb F_G$-extensions,  %genuine operad pushouts,
 i.e. pushouts of the form
-\[
-\begin{tikzcd}
-	\mathbb{F}_G A \ar{r} \ar{d} & X \ar{d}
-\\
-	\mathbb{F}_G B \ar{r} & Y
-\end{tikzcd}
-\]
+\begin{equation}
+  \label{FREE_FG_EXT_EQ}
+  \begin{tikzcd}
+    \mathbb{F}_G A \ar{r} \ar{d} & X \ar{d}
+    \\
+    \mathbb{F}_G B \ar{r} & Y
+  \end{tikzcd}
+\end{equation}
 in the category $\mathsf{Op}_G$ of genuine equivariant operads.
 
 
