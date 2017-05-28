@@ -818,8 +818,6 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$, so that the claim follows by coreflexivity (note that if not in the split case pullbacks may be chosen arbitrarily).
 \end{proof}
 
-{\color{red} HERE}
-
 %\begin{proof}
 %  We must show that the appropriate iterated overcategories are non-empty and connected. To that end, suppose we have a map $\phi: d\to f(c)$ in $\mathcal D$, and let $q := r(\phi): r(d) \to r(c)$. Since $\mathcal C$ is fibrant over $\mathcal E$, we have a Cartesian arrow $q': c' \to c$ lifting $q: r(d) = r(c') \to r(c)$. Thus we have diagrams in $\mathcal E$ and $\mathcal D$ of the form
 %\[
@@ -840,6 +838,25 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 %\]
 %\end{proof}
 
+{\color{red} HERE}
+
+We also record the following, the proof of which is straightforward.
+\begin{proposition}\label{GROTHSTAB PROP}
+	Suppose that $\mathcal{E} \to \mathcal{B}$ is a (split) Grothendieck fibration. Then so is the map of functor categories 
+	$\mathcal{E}^{\mathcal{C}} \to \mathcal{B}^{\mathcal{C}}$ for any category $\mathcal{C}$ as well as the map 
+	$\bar{\mathcal{E}} \to \bar{\mathcal{B}}$ in any pullback of categories
+\[
+\begin{tikzcd}
+	\bar{\mathcal{E}} \ar{r} \ar{d} & \mathcal{E} \ar{d}
+\\
+	\bar{\mathcal{B}} \ar{r} & \mathcal{B}.
+\end{tikzcd}
+\]	
+\end{proposition}
+
+
+
+{\color{red} HERE}
 
 
 
@@ -1249,29 +1266,50 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	\textit{symmetric monoidal category with diagonals}.
 \end{remark}
 
+{\color{red} Maybe mention that if both folds and inclusions then cocartesian}
+
 \begin{remark}
 Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}.
 \end{remark}
 
-{\color{red} HERE}
+We end this section by collecting some straightforward lemmas
+that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
+
+\begin{lemma}
+	If $\mathcal{E} \to \mathcal{B}$ a (split) Grothendieck fibration then so is 
+	$\Fin \wr \mathcal{E} \to \Fin \wr \mathcal{B}$.
+
+	Moreover, if 
+	$\mathcal{E} \to \bar{\mathcal{E}}$ is a map of (split) Grothendieck fibrations over $\mathcal{B}$ then
+	$\Fin \wr \mathcal{E} \to \Fin \wr \bar{\mathcal{E}}$ is a map of (split) Grothendieck fibrations over $\Fin \wr \mathcal{B}$.
+\end{lemma}
+
+\begin{proof}
+Given a map 
+$(\phi,(f_i)) \colon
+(b'_i)_{i \in I} \to (b_j)_{j \in J}$ 
+in $\Fin \wr \mathcal{B}$
+and object $(e_j)_{j \in J}$ one readily checks that its pullback can be defined by $(f^{\**}_{\phi(i)}e_{\phi(i)})_{i \in I}$.
+\end{proof}
+
 
 \begin{lemma}\label{FINWREATPRODLIM LEM}
 Suppose that $\mathcal{V}$ is a bicomplete category such that 
 coproducts commute with limits in each variable. If the leftmost diagram
 \begin{equation}\label{WRRAN EQ}
-	\begin{tikzcd}
-	\mathcal{C} \ar{r}[swap,name=F]{}{F} \ar{d}[swap]{k} &
+	\begin{tikzcd}[column sep = 3.5em]
+	\mathcal{C} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k} &
 	\mathcal{V} & 
 	& 
-	\Fin \wr \mathcal{C} \ar{r}[swap,name=FF]{}{\Fin \wr F} \ar{d}[swap]{\Fin \wr k}&
+	\Fin \wr \mathcal{C} \ar{r}[swap,name=FF]{}{\Fin \wr G} \ar{d}[swap]{\Fin \wr k}&
 	\Fin \wr \mathcal{V} \ar{r}{\amalg} &
 	\mathcal{V}
 		\\
-	|[alias=D]|\mathcal{D} \ar{ru}[swap]{G} &
+	|[alias=D]|\mathcal{D} \ar{ru}[swap]{H} &
 	& & 
-	|[alias=FD]|\Fin \wr \mathcal{D} \ar{ru}[swap]{\Fin \wr G}
-	\ar[bend right=13]{rru}[swap]{\amalg \circ \Fin \wr G}
+	|[alias=FD]|\Fin \wr \mathcal{D} \ar{ru}[swap]{\Fin \wr H}
+	\ar[bend right=13]{rru}[swap]{\amalg \circ \Fin \wr H}
 	\arrow[Rightarrow, from=D, to=F,shorten <=0.10cm,"\eta"]
 	\arrow[Rightarrow, from=FD, to=FF,shorten <=0.10cm,"\Fin \wr \eta"]
 	\end{tikzcd}
@@ -1281,18 +1319,18 @@ is a right Kan extension diagram then so is the composite of the rightmost diagr
 Dually, if in $\mathcal{E}$ products commute with colimits in each variable, and the leftmost diagram
 \begin{equation}\label{WRLAN EQ}
 	\begin{tikzcd}[column sep = 4.5em]
-	\mathcal{C}^{op} \ar{r}[swap,name=F]{}{F} \ar{d}[swap]{k} & 
-	\mathcal{E} & 
-	(\Fin \wr \mathcal{C})^{op} \ar{d}[swap]{(\Fin \wr k^{op})^{op}} 
-	\ar{r}[swap,name=FF]{}{(\Fin \wr F^{op})^{op}} & 
-	(\Fin \wr \mathcal{E}^{op})^{op} \ar{r}{\Pi} &
-	\mathcal{E}
-	\\
-	|[alias=D]|\mathcal{D}^{op} \ar{ru}[swap]{G} &
+	\mathcal{C}^{op} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k^{op}} & 
+	\mathcal{V} & 
+	(\Fin \wr \mathcal{C})^{op} \ar{d}[swap]{(\Fin \wr k)^{op}} 
+	\ar{r}[swap,name=FF]{}{(\Fin \wr G^{op})^{op}} & 
+	(\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} &
+	\mathcal{V}
+\\
+	|[alias=D]|\mathcal{D}^{op} \ar{ru}[swap]{H} &
 	& 
 	|[alias=FD]|(\Fin \wr \mathcal{D})^{op} 
-	\ar{ru}[swap]{(\Fin \wr G^{op})^{op}}
-	\ar[bend right=13]{rru}[swap]{\Pi \circ (\Fin \wr G^{op})^{op}}
+	\ar{ru}[swap]{(\Fin \wr H^{op})^{op}}
+	\ar[bend right=13]{rru}[swap]{\Pi \circ (\Fin \wr H^{op})^{op}}
 	&
 	\arrow[Leftarrow, from=D, to=F,shorten <=0.10cm,"\epsilon"]
 	\arrow[Leftarrow, from=FD, to=FF,shorten <=0.10cm]
@@ -1306,37 +1344,35 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin \wr \mathcal{D}$ one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
-	\left( (d_i) \downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{F(c_j)}\right)}
+	\left( (d_i) \downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{G(c_j)}\right)}
 		\simeq	
 	\coprod_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
-	\left(F(c_i)\right).
+	\left(G(c_i)\right).
 	\end{equation}
-But since the canonical factorizations of each $(\varphi,(f_i))\colon (d_i)_{i \in I} \to (k c_j)_{j \in J}$ as
-\[(d_i)_{i\in I} \to (c_{\phi(i)})_{i \in I} \to (k c_j)_{j \in J}\]
-exhibit $\prod_{i}{(d_i\downarrow \mathcal{C})}$ as a coreflexive subcategory of $(d_i)\downarrow \Fin \wr \mathcal{C}$, we conclude in particular that it is an initial subcategory. Therefore
+Proposition \ref{FIBERKANMAP PROP} now applies to 
+the map $\Fin \wr \mathcal{C} \to \Fin \wr \mathcal{D}$ of Grothendieck fibrations over $\Fin$ and one readily checks that
+$(d_i)\downarrow_{\pi} \Fin \wr \mathcal{C} \simeq
+\prod_{i}{(d_i\downarrow \mathcal{C})}
+$
+so that 
 	\[
 	\underset{((d_i) \to (kc_j))\in
-	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{F(c_j)}\right)}
+	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{G(c_j)}\right)}
 		\simeq	
 	\underset{((d_i) \to (kc_i))\in
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
-	\left(\coprod_i{F(c_i)}\right)
+	\left(\coprod_i{G(c_i)}\right)
 	\]
-and hence the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that coproducts commute with limits in each variable.
+and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that coproducts commute with limits in each variable.
 \end{proof}
-
-
-
-
-
-
-
 
 
 
 \subsection{Monads and adjunctions}
 
-We will make multiple uses of the following straightforward results.
+In \S 4 we will make use of the following straightforward results concerning the transfer of monads along adjunctions
+(note that $L$ (resp. $R$) denotes the left (right) adjoint).
+
 
 \begin{proposition}\label{MONADADJ1 PROP}
 Let
@@ -1356,7 +1392,6 @@ L \colon \mathsf{Alg}_{RTL}(\mathcal{C})
 \]
 \end{itemize}
 \end{proposition}
-
 
 
 \begin{proposition}\label{MONADADJ PROP}
@@ -1392,19 +1427,55 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 
 
 
-
-
-
-
-
-
 \section{Planar and tall maps}
-\label{PLANAR_SECTION}
 
-\subsection{Planar structures}
+{\color{red} HERE}
+
+Throughout we will assume that the reader is familiar with the category $\Omega$ of trees.
+%While not hard to correctly guess the objects of $\Omega$, the exact definition of the arrows can be more surprising.
+A good introduction to $\Omega$ is given by 
+\cite[\S 3.1]{MW07}, where arrows are described both via 
+the ``colored operad generated by a tree''  and by identifying explicit generating arrows, called faces and degeneracies.
+Alternatively, $\Omega$ can also be described 
+using the algebraic model of 
+\textit{broad posets}
+introduced by Weiss in \cite{We12} and further worked out by the second author in \cite[\S 5]{Pe17}.
+This latter will be our ``official'' model,
+though a detailed understanding of broad posets is needed only
+to follow our formal discussion of planar structures in \S \ref{PLASTR SEC},
+and the reader willing to accept the results therein should be able to read the remainder of the paper.
+
+Given a finite group $G$, there is also a category $\Omega_G$
+of $G$-trees, jointly discovered by the authors and first discussed by the second author in 
+\cite[\S 4.3,\S 5.3]{Pe17}, which we now recall.
+Firstly, we let $\Phi$ denote the category of forests, i.e.
+``formal coproducts of trees''.
+A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
+but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$. The category of $G$-forests is then 
+$\Phi^G$, i.e. the category of $G$-objects in $\Phi$. 
+Identifying the $G$-orbit category as the subcategory
+$\mathsf{O}_G \hookrightarrow \Fin^G$
+of those sets with transitive actions, $\Omega_G$ can then be described as given by the pullback of categories
+\begin{equation}
+\begin{tikzcd}
+	\Omega_G \ar{r} \ar{d} & \Phi^G \ar{d}
+\\
+	\mathsf{O}_G \ar{r} & \Fin^G,
+\end{tikzcd}
+\end{equation}
+which is a repackaging of \cite[Prop. 5.46]{Pe17}.
 
 
-Throughout we will work with trees possessing \textit{planar structures} or, more intuitively, trees embedded into the plane.
+{\color{red} HERE}
+
+
+
+\subsection{Planar structures}\label{PLASTR SEC}
+
+
+{\color{red} HERE}
+
+Throughout we will prefer to work with trees possessing \textit{planar structures} or, more intuitively, trees embedded into the plane.
 
 Our preferred model for trees will be that of broad posets first introduced by Weiss in \cite{We12} and further worked out by the second author in \cite{Pe17}. We now define planar structures in this context.
 
@@ -1419,7 +1490,7 @@ Our preferred model for trees will be that of broad posets first introduced by W
 
 
 \begin{example}
-An example of a planar structure on a tree $T$ follows, with $\leq_r$ encoded by the number labels.
+An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the number labels.
 \begin{equation}\label{PLANAREX EQ}
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -1462,7 +1533,7 @@ $e \leq_d f$ or if the downward path from $e$ is to the left of the downward pat
 
 Intuitively, a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
 
-While we will not need to make this last statement precise, we will nonetheless find it convenient to show that Definition \ref{PLANARIZE DEF} is equivalent to such choosing total orders for each of the sets of input edges.
+While we will not need to make this last statement precise, we will nonetheless find it convenient to show that Definition \ref{PLANARIZE DEF} is equivalent to such choices of total orders for each of the sets of input edges.
 To do so, we first introduce some notation.
 
 
