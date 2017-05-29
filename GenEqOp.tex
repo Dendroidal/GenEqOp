@@ -1250,10 +1250,10 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 %\]
 
 
-\begin{remark}
+\begin{remark}\label{FINSURJ REM}
 	In lieu of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
-	for the subcategories of surjections,
+	for the subcategory of surjections,
 	we define a 
 	\textit{symmetric monoidal category with fold maps}
 	as a category $\mathcal{V}$ together with a functor
@@ -2895,41 +2895,69 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
-{\color{red} HERE}
+
+This section introduces two functors that are the very center of our definition of the category $\mathsf{Op}_G$ of
+genuine equivariant operads: the leaf-root and vertex functors.
+
+We start by recalling a key class of maps of $G$-trees.
 
 
-\begin{definition}
-	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of (non-planar) forests
-	\[\coprod_{[g]\in G/H} {T_{[g]} } 
-	\to
-	\coprod_{[h]\in G/K} {S_{[h]} } 
+\begin{definition}\label{QUOT DEF}
+	Let $S = (S_y)_{y \in Y}$ and $T = (T_x)_{x \in X}$
+	be $G$-trees.
+	A map of $G$-trees 
+	\[
+	\varphi = (\phi, (\varphi_y))\colon S \to T
 	\]
-maps each tree component (or, equivalently, some tree component) isomorphically onto its image component.
+	is called a \textit{quotient} if each of the constituent tree maps
+	\[
+	\varphi_y \colon S_y \to T_{\phi(y)}
+	\]
+is an isomorphism of trees.	
 
-We denote the subcategory of $G$-trees and quotients by $\Omega_{G,0}$.
+The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
 \end{definition}
+
+
+\begin{remark}
+	Quotients can alternatively be described as the cartesian arrows for the Grothendieck fibration
+	$\Omega_G \xrightarrow{\mathsf{r}} \mathsf{O}_G$.
+	We note that this differs from the notion of root pullbacks, which are the \textit{chosen} cartesian arrows, and include only those quotients such that each
+	$\varphi_y \colon S_y \to T_{\phi(y)}$
+	is a planar isomorphism, i.e., an identity.
+\end{remark}
 
 
 \begin{definition}
 	The \textit{$G$-symmetric category},
 	whose objects we call \textit{$G$-corollas}, is the full subcategory 
-	$\Sigma_G \subset \Omega_{G,0}$ of those $G$-trees that are corollas, i.e. $G$-trees such that each edge is either a root or a leaf (but not both).
+	$\Sigma_G \hookrightarrow \Omega_{G,0}$ of those $G$-trees
+	$C = (C_x)_{x \in X}$ such that some (and thus all) $C_x$ is a corolla $C_x \in \Sigma \hookrightarrow \Omega$
+	(cf. Notation \ref{UNIQCOR NOT}).
 \end{definition}
 
 
 \begin{definition}
 	The \textit{leaf-root functor} is the functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
-	\[
-	 \mathsf{lr}(T)=\{\text{leaves of }T\}\amalg \{\text{roots of }T\}
-	\]
-	with a broad relation $l_1 \cdots l_n \leq r$ holding in 
-	$\mathsf{lr}(T)$ iff its image holds in $T$ and similarly for the planar structure $\leq_p$.
+\[
+	\mathsf{lr}\left((T_x)_{x \in X}\right)=
+	\left(\mathsf{lr}(T_x)\right)_{x \in X}.
+\]
 \end{definition}
 
+
+\begin{remark}
+	The leaf-root functor extends 
+	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
+	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows in $\Omega_G$.
+	However, we will mostly be concerned with the restriction  
+	$\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$.
+\end{remark}
+
 \begin{remark}\label{LEAFROOTEXAMP REM}
-	Generalizing Remark \ref{UNIQCOR REM},
-	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique (tree-wise) tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
-	$T=G\cdot_H \eta$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
+	Generalizing the remark in Notation \ref{UNIQCOR NOT},
+	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
+	$T=(\eta_x)_{x \in X}$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 	every node/.style = {font=\footnotesize,inner sep=3pt},
@@ -3038,33 +3066,38 @@ We denote the subcategory of $G$-trees and quotients by $\Omega_{G,0}$.
 
 
 \begin{remark}
-	One consequence of the fact that planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
-is that $\mathsf{lr} \colon \Omega_G^q \to \Sigma_G$ is not a categorical fibration.
-{\color{red} maybe add to this}.
+	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
+the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
+but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
+(for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
 \end{remark}
 
 
 \begin{definition}\label{VG DEF}
-	Given $T \in \Omega_G$ we define the set $V_G(T)$ of 
-	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set $V(T)$ by its $G$-action.
+Given $T = (T_x)_{x \in X} \in \Omega_G$ we define its set of \textit{vertices} to be $V(T) = \coprod_{x \in X} V(T_x)$
+and its set of
+	\textit{$G$-vertices} to be the orbit set $V(T)/G$.
 	
-Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
+Furthermore, we will regard 
+$V(T)$ as an object of $\Fin$ by using the induced planar order
+(with $e^{\uparrow}\leq e$ ordered according to $e$)
+and likewise $V_G(T)$ will be regarded as an object of $\Fin$ by using the lexicographic order: i.e. vertex equivalence classes 
+$[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
 \end{definition}
-
 
 
 \begin{remark}\label{VERTEXDECOMPG REM}
 	Following Remark \ref{VERTEXDECOMP REM},
-	a planar tall map $f \colon T \to U$ of $G$-trees
+	a tall map $\varphi \colon T \to U$ of $G$-trees
 	induces a $G$-equivariant map
-	$f^{\**} \colon V(U) \to V(T)$
+	$\varphi^{\**} \colon V(U) \to V(T)$
 	and thus also a map of orbits
-	$f^{\**} \colon V_G(U) \to V_G(T)$.
-We note, however, that $f^{\**}$ is not in general compatible with the order on $V_G$, as is indeed the case even in the non-equivariant case.
+	$\varphi^{\**} \colon V_G(U) \to V_G(T)$.
+	We note, however, that $\varphi^{\**}$ is not in general compatible with the order on $V_G(\minus)$ even if $\varphi$ is planar, as is indeed the case even in the non-equivariant setting.
 
 A minimal example follows.
 		\[
-		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,
+		\begin{tikzpicture}[grow=up,auto,level distance=2.2em,
 		every node/.style = {font=\footnotesize},
 		dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 		\node at (0,0) {$T$}
@@ -3091,25 +3124,46 @@ A minimal example follows.
 					edge from parent node [near end]{$a$}}
 				edge from parent node {$e$}}
 			edge from parent node [swap] {$d$}};
-		\draw[->] (2.6,1) -- node [above] {$f$} (3.6,1) ;
+		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
 		\end{tikzpicture}
 		\]
 In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
-$f^{\**} \colon V(U) \to V(T)$ is given by 
+$\varphi^{\**} \colon V(U) \to V(T)$ is given by 
 $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
 \end{remark}
 
 
-Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
-\[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
-We note that $T_{v_{Ge}}$ is always a $G$-corolla. Indeed, noting that a quotient map $\varphi \colon T \to S$ induces quotient maps 
-$T_{v_{ge}} \to S_{v_{G\varphi(e)}}$ one obtains a functor
+\begin{notation}
+Given $T=(T_x)_{x \in X} \in \Omega_G$
+and $(e^{\uparrow} \leq e) \in V(T)$ 
+we write $T_{e^{\uparrow}\leq e}$
+as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
+
+Further, each element $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
+We will prefer to write $G$-vertices as $v_{Ge}$, and write
+\[
+T_{v_{Ge}} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+\]
+where $Ge$ inherits the planar order.
+\end{notation}
+
+
+We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
+
+\begin{definition}
+The \textit{$G$-vertex functor} is the functor
 	\begin{equation}\label{VFUNCTOR EQ}
 		\begin{tikzcd}[row sep=tiny]
-		\Omega_G^q \ar{r}{V_G} & \Fin \wr \Sigma_G \\
-		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)}.
+		\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
+		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
 		\end{tikzcd}	
 	\end{equation}
+where $\Fin_s$ is the category of finite sets and surjections of
+Remark \ref{FINSURJ REM}.
+\end{definition}
+
+{\color{red} HERE}
+
 
 \begin{remark}
   \label{NEED_WREATH_REMARK}
