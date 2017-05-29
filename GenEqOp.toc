@@ -8,14 +8,13 @@
 \contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{14}{subsection.2.3}
 \contentsline {section}{\numberline {3}Planar and tall maps}{15}{section.3}
 \contentsline {subsection}{\numberline {3.1}Planar structures}{15}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Outer faces and tall maps}{19}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Substitution}{21}{subsection.3.3}
-\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{24}{section.4}
-\contentsline {subsection}{\numberline {4.1}Equivariant leaf-root and vertex functors}{24}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Planar strings}{26}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}A monad on spans}{28}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}The free genuine operad monad}{31}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Comparison with (regular) equivariant operads}{35}{subsection.4.5}
+\contentsline {subsection}{\numberline {3.2}Root, leaf-root and vertex functors}{19}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Outer faces, tall maps, and substitution}{22}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Planar strings}{26}{subsection.3.4}
+\contentsline {section}{\numberline {4}The genuine equivariant operad monad}{28}{section.4}
+\contentsline {subsection}{\numberline {4.1}A monad on spans}{28}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}The free genuine operad monad}{32}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Comparison with (regular) equivariant operads}{36}{subsection.4.3}
 \contentsline {section}{\numberline {5}Free extensions}{39}{section.5}
 \contentsline {subsection}{\numberline {5.1}Extensions over general monads}{39}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Labeled planar strings}{41}{subsection.5.2}
