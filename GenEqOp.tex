@@ -2056,23 +2056,35 @@ the connection with another key functor
 which we call the \textit{leaf-root functor},
 described in \S \ref{LRVERT SEC}.
 
-
-{\color{red} HERE}
+Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
+$T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
+along the map 
+$\varphi \colon Y \to X$
+is simply the $G$-tree
+$(T_{\varphi(y)})_{y \in Y}$
+with structure maps 
+$T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
 
 
 \begin{example}
-Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$
-and $H = \langle j \rangle$.
-The following illustrates a root pullback along the twist map
-$\tau \colon G/H \to G/H$
+Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$, 
+$H = \langle j \rangle$ and $K = \langle -1 \rangle$.
+Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees 
+$T$ and $S$ along the 
+twist map $\tau \colon G/H \to G/H$
+and the unique map $\pi \colon G/H \to G/G$
 (or, more precisely, noting that in our model the underlying set 
 of $G/H$ is actually $\{1,2\}$,
 $\tau$ is the permutation $(12)$).
-In the top depiction of $\tau^{\**} T$ we use the edge orbit generators induced from $T$, 
-while the bottom depiction 
-chooses generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
-$d = i c$, $e = i b$, $f = i a$.
-\begin{equation}
+We note that the stabilizers of $a,b,c$ are $\{1\},K,H$ for $T$
+and $K,H,G$ for $S$.
+The top depictions of $\tau^{\**} T$, $\pi^{\**} (S)$ then use the edge orbit generators suggested by $T$, $S$ 
+while the bottom depictions
+choose generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
+$d = i c$, $e = i b$, $f = i a$
+and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
+\begin{figure}[h]
+\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep =2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -2259,7 +2271,10 @@ $d = i c$, $e = i b$, $f = i a$.
 		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
 	\end{scope}
 	\end{tikzpicture}
-\end{equation}
+\]
+\caption{Root pullbacks}
+\label{FIGURE}
+\end{figure}
 \end{example}
 
 
