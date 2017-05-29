@@ -1480,7 +1480,7 @@ definitions of \textit{planar trees} along those lines
 are found throughout the literature.
 However, to allow for precise proofs of some key results 
 concerning the interaction of planar structures with the maps in $\Omega$ 
-(namely Propositions \ref{PLANARPULL EQ} and  \ref{SUBDATAUNDERPLAN PROP})
+(namely Propositions \ref{PLANARPULL PROP} and  \ref{SUBDATAUNDERPLAN PROP})
 we will instead use a combinatorial definition 
 of planar structure in the context of broad posets.
 
@@ -2296,7 +2296,7 @@ $\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\var
 
 
 \begin{proposition}
-\label{PLANARPULL EQ}
+\label{PLANARPULL PROP}
 	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
 	\[F \xrightarrow{\simeq} \bar{F} \to G\]
 	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
@@ -2318,7 +2318,7 @@ that $\varphi$ reflects $\leq_d$-comparability.
 
 
 \begin{remark}\label{PULLPLANAR REM}
-	Proposition \ref{PLANARPULL EQ} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+	Proposition \ref{PLANARPULL PROP} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
 \end{remark}
 
 
@@ -2334,7 +2334,7 @@ In preparation for that discussion,
 we first recall some basic definitions and results concerning outer subtrees and tree grafting, as in \cite[\S 5]{Pe17}.
 
 
-\begin{definition}
+\begin{definition}\label{OUTFACE DEF}
 	Let $T \in \Omega$ be a tree and 
 	$e_1 \cdots e_n =\underline{e} \leq e$ a broad relation in $T$.
 	
@@ -2350,7 +2350,7 @@ and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANA
 
 
 \begin{remark}
-If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \to T$ is usually called simply an \textit{outer face}.
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
 \end{remark}
 
 
@@ -2457,15 +2457,11 @@ and isomorphisms.
 \end{notation}
 
 
-{\color{red} HERE}
-
-We now turn to discussing the substitution operation.
-
-
-One of the key ideas needed to describe operads is that of substitution of tree nodes, a process that we will prefer to repackage in terms of maps of trees. We start by discussing an example, focusing on the related notion of 
+We now turn to discussing the substitution operation. We start with an example, focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
-\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted into the tree $U$ in the middle.
+
+\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
 More precisely (among other possible grafting orders), one has
 \begin{equation}\label{UFORMULA EQ}
 U = \left(
@@ -2584,7 +2580,7 @@ U = \left(
 \end{scope}
 	\end{tikzpicture}
 \end{equation}
-We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$ (cf. Remark \ref{UNIQCOR REM}), and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
+We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
 
 
 One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
@@ -2683,10 +2679,11 @@ One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as bein
 	\end{scope}
 	\end{tikzpicture}
 \end{equation}
-From this perspective, $U$ can now be thought as obtained from $T$ by substituting each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
+From this perspective, $U$ can then be thought of as obtained from $T$ by \textit{substituting} each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
 $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto e$), which likewise encodes the same information.
 
-Our perspective will then be that data for substitution of tree nodes such as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
+One of the fundamental ideas that shape our perspective on operads
+is then that data for substitution of nodes as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
 repackaged using planar tall maps. 
 \end{example}
 
@@ -2703,13 +2700,16 @@ repackaged using planar tall maps.
 	
 	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
 	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$) and a morphism of planar data is called a planar morphism if it consists of a tuple of planar maps.
+	
+	We denote the category of (resp. planar) $T$-substitution data 
+	by $\mathsf{Sub}(T)$ (resp. $\mathsf{Sub}_p(T)$).
 \end{definition}
 
 \begin{definition}
-	Let $T \in \Omega$. 
-	
-	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the edge subtrees $\eta_e$ and vertex substrees $T_{e^{\uparrow} \leq e}$. The order relation is given by inclusion.
+	Let $T \in \Omega$ be a tree. 
+	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the single edge subtrees $\eta_e$ and vertex substrees $T_{e^{\uparrow} \leq e}$, ordered by inclusion.
 \end{definition}
+
 
 \begin{remark}
 Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
@@ -2733,7 +2733,7 @@ Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERPLAN EQ}
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}_p(T) \ar[r,shift left=2pt] &
-	\Omega_{T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
+	T \downarrow \Omega^{\mathsf{pt}} \ar[l,shift left=2pt]
 \\
 	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
@@ -2742,17 +2742,20 @@ Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
 \end{tikzcd}
 \end{equation}
-where $\mathsf{Sub}_p(T)$ denotes the category of planar $T$-substitution data and $\Omega_{T/}^{\mathsf{pt}}$
-the category of planar tall maps under $T$. 
+where $T \downarrow \Omega^{\mathsf{pt}}$ denotes
+the category of planar tall maps under $T$
+and $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is chosen in the unique way that makes the inclusions of the $U_{e^{\uparrow} \leq e}$ planar. 
 \end{proposition}
 
+
 \begin{proof}
-We first claim that
+We first show in parallel that:
 \begin{inparaenum}
-\item[(i)] the $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ indeed exists;
-\item[(ii)] for the canonical datum $\{T_{e^{\uparrow}\leq e}\}$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
-\item[(iii)] the induced map
-$T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is planar tall.
+\item[(i)] $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$, which we denote $U_T$, exists;
+\item[(ii)] for the datum $\{T_{e^{\uparrow}\leq e}\}$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
+\item[(iii)] $V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$;
+\item[(iv)] the induced map
+$T \to U_T$ is planar tall.
 \end{inparaenum}
  
 The argument is by induction on the number of vertices of $T$, with the base cases of $T$ with $0$ or $1$ vertices being immediate, since then $T$ is the terminal object of $\mathsf{Sc}(T)$.
@@ -2764,78 +2767,86 @@ so that
 $\mathsf{Sc}(R) \cup \mathsf{Sc}(S) = \mathsf{Sc}(T)$
 and 
 $\mathsf{Sc}(R) \cap \mathsf{Sc}(S) = \{\eta_e \}$.
-The existence of $\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
-is thus equivalent to the existence of the pushout below.
+The existence of $U_T = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+is thus equivalent to the existence of the pushout below
+(where the rightmost diagram merely simplifies notation).
 \begin{equation}\label{ASSEMBLYGRAFT EQ}
 \begin{tikzcd}
-	\eta \ar{r} \ar{d} & \colim_{\mathsf{Sc}(R)}U_{(\minus)} \ar[dashed,d]
+	\eta \ar{r}{e} \ar{d}[swap]{e} & \colim_{\mathsf{Sc}(R)}U_{(\minus)} \ar[dashed,d] &
+	\eta \ar{r}{e} \ar{d}[swap]{e} & U_R \ar[dashed,d]	
 \\
 	\colim_{\mathsf{Sc}(S)}U_{(\minus)} \ar[dashed,r] &
-	\colim_{\mathsf{Sc}(T)}U_{(\minus)}
+	\colim_{\mathsf{Sc}(T)}U_{(\minus)} &
+	U_S \ar[dashed,r] &
+	U_T
 \end{tikzcd}
 \end{equation}
-By induction, the top right and bottom left colimits exist for any $U_{(\minus)}$, 
+By induction, $U_R$ and $U_S$ exist for any $U_{(\minus)}$, 
 equal $R$ and $S$ in the case $U_{(\minus)} = T_{(\minus)}$,
+$V(U_R) = \coprod_{V(R)} V(U_{e^{\uparrow} \leq e})$
+and likewise for $S$ (so that there are unique choices of $U_R$, $U_S$ making the inclusions of $U_{e^{\uparrow} \leq e}$ planar),
 and the maps 
 $R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
 $S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
 are planar tall.
-But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions that
-$T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$
-and 
+But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions
+$T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$,
+$V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$, 
+and that
 $T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
 is planar tall follow.
 
 The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
-are inverse to each other is clear by the same inductive argument.
+are inverse to each other is clear from the same inductive argument.
 \end{proof}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
-Let $T \in \Omega$ be a tree. There is an isomorphism of categories
+Let $T \in \Omega$ be a tree. The formulas in (\ref{SUBDATAUNDERPLAN EQ}) give an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERNONPL EQ}
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
-	\Omega_{T/}^{\mathsf{t}} \ar[l,shift left=2pt]
+	T \downarrow \Omega^{\mathsf{t}} \ar[l,shift left=2pt]
 \end{tikzcd}
 \end{equation}
-where $\mathsf{Sub}(T)$ denotes the category of $T$-substitution data and $\Omega_{T/}^{\mathsf{t}}$
+where $T \downarrow \Omega^{\mathsf{t}}$ denotes
 the category of tall maps under $T$.
 \end{corollary}
 
 
 \begin{proof}
-	This is a consequence of Proposition \ref{PLANARPULL EQ} together with the previous result, with the functor 
-	$\mathsf{Sub}(T) \to \Omega_{T/}^{\mathsf{t}}$ given by the same formula.
-	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness reduces to that in the previous result.
+	This is a consequence of Proposition \ref{PLANARPULL PROP} together with the previous result.
+	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness of $\mathsf{Sub}(T) \to T \downarrow \Omega^{\mathsf{t}}$ reduces to that in the previous result.
 \end{proof}
 
 
 \begin{remark}\label{VERTEXDECOMP REM}
-	It follows from the previous proof that, writing 
-	$U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
+As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
 	one has 
 \begin{equation}\label{VERTEXDECOMP EQ}
 	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
 	V(U_{e^{\uparrow} \leq e}).
 \end{equation}
 Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
-$f^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
-$f \colon T \to U$.
-Explicitly, $f^{\**}(U_{u^{\uparrow} \leq u})$ 
+$\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
+$\varphi \colon T \to U$.
+Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$ 
 is the unique $T_{t^{\uparrow}\leq t}$ such that
-$U_{u^{\uparrow} \leq u} \subset U_{t^{\uparrow} \leq t}$. We note that $f^{\**}$ is indeed contravariant in the tall planar map $f$.
+there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
+so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
 \end{remark}
 
 
-The following is a converse of sorts to
- Proposition \ref{SUBDATAUNDERPLAN PROP}.
+We end this section with a couple of lemmas that will allow us to reverse the substitution procedure of 
+Proposition \ref{SUBDATAUNDERPLAN PROP}
+and will be needed in \S \ref{EXTTREE SEC}.
+
 
 \begin{proposition}\label{BUILDABLE PROP}
 	Let $U \in \Omega$ be a tree. Then:
 \begin{itemize}
 	\item[(i)] given non stick outer subtrees $U_i$ such that 
-	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that $\{U_i\} = \{U_{e^{\uparrow}\leq e}\}$;
+	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that the sets $\{U_i\}$, $\{U_{e^{\uparrow}\leq e}\}$ coincide;
 	\item[(ii)] given multiplicities $m_e \geq 1$ for each edge $e \in U$, there is a unique planar degeneracy $\rho \colon T \to U$ such that $\rho^{-1}(e)$ has $m_e$ elements;
 	\item[(iii)] planar tall maps $T \to U$ are in bijection with collections $\{U_i\}$ of outer subtrees such that $V(U) = \coprod_i V(U_i)$ and $U_j$ is not an inner edge of any $U_i$ whenever $U_j \simeq \eta$ is a stick.
 \end{itemize}
@@ -2844,21 +2855,25 @@ The following is a converse of sorts to
 
 \begin{proof}
 	We first show (i) by induction on the number of subtrees $U_i$. The base case $\{U_i\}=\{U\}$ is immediate, setting 
-	$T= \mathsf{lr}(U)$. Otherwise, letting $e$ be edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a pushout diagram
+	$T= \mathsf{lr}(U)$. Otherwise, $U$ must not be a corolla and letting $e$ be an edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a grafting pushout diagram
 \begin{equation} \label{DECOMPPROOF EQ}
 \begin{tikzcd}
-	\eta \ar{r}{e} \ar{d}[swap]{e} & V \ar{d}
+	\eta \ar{r}{e} \ar{d}[swap]{e} & U^{\leq e} \ar{d}
 \\
-	W \ar{r} & U
+	U_{\nless e} \ar{r} & U
 \end{tikzcd}
 \end{equation}
-inducing a nontrivial partition 
+where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the edges $u \leq_d e$ (resp. $u \nless_d e$).
+Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
+it follows from the definition of outer face that there is a
+nontrivial partition 
 $\{U_i\} = \{U_i|U_i \hookrightarrow V\} 
-\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), and thus uniqueness too follows by the induction hypothesis.
+\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
-\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the tree $T$ is uniquely determined.
+\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
+Proposition \ref{PLANARPULL PROP}.
 
 (iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique decomposition 
 $T \twoheadrightarrow \bar{T} \hookrightarrow U$
@@ -2872,14 +2887,15 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \end{lemma}
 
 \begin{proof}
-	If either of $T_1,T_2$ consists only of the root or a leaf  the result is obvious. Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of $T_1,T_2,T$ admit compatible decompositions (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+	If either $T$ is a corolla or one of $T_1,T_2$ consists only of the root or a leaf  stick subtrees the result is obvious.
+	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
 \end{proof}
 
 
 
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
-
+{\color{red} HERE}
 
 
 \begin{definition}
@@ -2890,18 +2906,19 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 	\]
 maps each tree component (or, equivalently, some tree component) isomorphically onto its image component.
 
-We denote the subcategory of $G$-trees and quotients by $\Omega_G^q$.
+We denote the subcategory of $G$-trees and quotients by $\Omega_{G,0}$.
 \end{definition}
 
 
 \begin{definition}
-	The \textit{$G$-symmetric category}, which we will also call the \textit{category of $G$-corollas}, is the full subcategory 
-	$\Sigma_G \subset \Omega_G^{q}$ of those $G$-trees that are corollas, i.e. $G$-trees such that each edge is either a root or a leaf (but not both).
+	The \textit{$G$-symmetric category},
+	whose objects we call \textit{$G$-corollas}, is the full subcategory 
+	$\Sigma_G \subset \Omega_{G,0}$ of those $G$-trees that are corollas, i.e. $G$-trees such that each edge is either a root or a leaf (but not both).
 \end{definition}
 
 
 \begin{definition}
-	The \textit{leaf-root functor} is the functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
+	The \textit{leaf-root functor} is the functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
 	\[
 	 \mathsf{lr}(T)=\{\text{leaves of }T\}\amalg \{\text{roots of }T\}
 	\]
@@ -5871,7 +5888,7 @@ $s([n],i_n)= [0,i_n]$.
 
 
 
-\subsection{The category of extension trees}
+\subsection{The category of extension trees}\label{EXTTREE SEC}
 
 In this section we combine the previous sections to obtain a compact description of free extension pushouts
 \begin{equation}\label{FREEEXT EQ}
@@ -5883,7 +5900,7 @@ In this section we combine the previous sections to obtain a compact description
 \end{equation}
 as a left Kan extension over a convenient category of trees.
 
-For simplicity, we first explain how to obtain a similar description for the simpler case of a coproduct $X \amalg^a Y$.
+For motivation, we first explain how to obtain a similar description for the simpler case of a coproduct $X \amalg^a Y$.
 By (\ref{COLIMLAN EQ}), one has a description 
 \begin{align*}
 	X \amalg^a Y \simeq  &
@@ -7326,7 +7343,6 @@ then the $\F$-model structure exists on $\Op^G(\V)$. \qed
 \end{example}
 
 
-\newpage
 
 
 
