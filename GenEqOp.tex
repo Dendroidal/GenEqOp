@@ -2277,7 +2277,6 @@ unique choice of pushout that makes the maps in (\ref{GRAPTPUSH EQ}) planar.
 \end{itemize}
 \end{proposition}
 
-{\color{red} HERE}
 
 \begin{proof}
 We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe17}: more precisely, 
@@ -2290,7 +2289,11 @@ $T_{\underline{e} \leq e}$.
  (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe17}, which states that the $\leq_d$ relations on $S,T$ coincide.
  
   Since by (b) and (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq e}$, 
-(d) is a restatement of \cite[Prop. 5.15]{Pe17}. 
+the first part of (d) is a restatement of \cite[Prop. 5.15]{Pe17}, while the additional planarity claim 
+follows by Proposition \ref{PLANARIZATIONCHAR PROP}
+together with the vertex identification
+$V(T_{\underline{f} \underline{g} \leq e})=
+V(T_{\underline{f} v \leq e}) \amalg V(T_{\underline{g} \leq v})$.
 %Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
 
@@ -2300,7 +2303,7 @@ $T_{\underline{e} \leq e}$.
 	\[\varphi(\underline{l}_S) = \underline{l}_T, 
 		\qquad
 	\varphi(r_S)= r_T,\]
-where $l_{(\minus)}$ denotes the leaf tuple and $r_{(\minus)}$ the root.
+where $l_{(\minus)}$ denotes the (unordered) leaf tuple and $r_{(\minus)}$ the root.
 \end{definition}
 
 
@@ -2462,7 +2465,7 @@ One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as bein
 \begin{equation}\label{SUBSDATUMTREES2 EQ}
 	\begin{tikzpicture}[grow=up,auto,level distance=2.25em,
 	every node/.style = {font=\footnotesize, inner sep=2pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.25mm}]
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.375mm}]
 	\begin{scope}
 	\tikzstyle{level 2}=[sibling distance=0.75em]%
 		\node at (0,0) {$T_{a_1^{\uparrow}\leq a_1}$}
