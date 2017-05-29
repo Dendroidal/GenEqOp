@@ -3065,36 +3065,35 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 \end{remark}
 
 
-{\color{red} HERE}
-
 \begin{remark}
-	One consequence of the fact that planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
-is that $\mathsf{lr} \colon \Omega_G^q \to \Sigma_G$ is not a categorical fibration.
-{\color{red} maybe add to this}.
+	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
+the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
+but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
+(for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
 \end{remark}
 
 
 \begin{definition}\label{VG DEF}
-	Given $T \in \Omega_G$ we define the set $V_G(T)$ of 
-	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set $V(T)$ by its $G$-action.
+	Given $T = (T_x)_{x \in X} \in \Omega_G$ we define the set $V_G(T)$ of 
+	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set 
+	$V(T) = \coprod_{x \in X} V(T_x)$ by its $G$-action.
 	
-Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
+Furthermore, we will regard $V_G(T)$ as an object of $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
 \end{definition}
-
 
 
 \begin{remark}\label{VERTEXDECOMPG REM}
 	Following Remark \ref{VERTEXDECOMP REM},
-	a planar tall map $f \colon T \to U$ of $G$-trees
+	a tall map $\varphi \colon T \to U$ of $G$-trees
 	induces a $G$-equivariant map
-	$f^{\**} \colon V(U) \to V(T)$
+	$\varphi^{\**} \colon V(U) \to V(T)$
 	and thus also a map of orbits
-	$f^{\**} \colon V_G(U) \to V_G(T)$.
-We note, however, that $f^{\**}$ is not in general compatible with the order on $V_G$, as is indeed the case even in the non-equivariant case.
+	$\varphi^{\**} \colon V_G(U) \to V_G(T)$.
+	We note, however, that $\varphi^{\**}$ is not in general compatible with the order on $V_G(\minus)$ even if $\varphi$ is planar, as is indeed the case even in the non-equivariant setting.
 
 A minimal example follows.
 		\[
-		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,
+		\begin{tikzpicture}[grow=up,auto,level distance=2.2em,
 		every node/.style = {font=\footnotesize},
 		dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 		\node at (0,0) {$T$}
@@ -3121,14 +3120,15 @@ A minimal example follows.
 					edge from parent node [near end]{$a$}}
 				edge from parent node {$e$}}
 			edge from parent node [swap] {$d$}};
-		\draw[->] (2.6,1) -- node [above] {$f$} (3.6,1) ;
+		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
 		\end{tikzpicture}
 		\]
 In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
-$f^{\**} \colon V(U) \to V(T)$ is given by 
+$\varphi^{\**} \colon V(U) \to V(T)$ is given by 
 $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
 \end{remark}
 
+{\color{red} HERE}
 
 Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
 \[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
