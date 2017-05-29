@@ -652,18 +652,21 @@ Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_E
 
 \todo[inline]{come back here}
 
-While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
+While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend to the coloured setting. 
+One key difference is that coloured genuine $G$-operads will have a \textit{coefficient system} of colours: evaluation at a $G$-corolla will include the additional data of a colour for each $G$-orbit of edges, and the isotropy of the colours must match that of its asscoatied edge.
+This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate.
+%More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
 
 %We end this introduction with a brief discussion on the context of this paper. 
 As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. 
-Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}. 
+Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}.
 
-Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b}, reproduced here below, to the $G$-equivariant context. 
+Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b} reproduced below, to the $G$-equivariant context. 
 \begin{equation}
   \label{CM_EQ}
   \tag{$\filledstar$}
   \begin{tikzcd}
-    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l, "N_d"] \arrow[d, "hcN_d"]\\
+    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l] \arrow[d, "hcN_d"]\\
     \mathsf{sdSet} & \mathsf{dSet} \arrow[l]
   \end{tikzcd}
 \end{equation}
@@ -672,11 +675,19 @@ We note that, as in \cite{Pe17}, there are both multiple possible \textit{catego
 We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined'', and similiarly $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, in which both composition and fixed-point conditions are weak. This would yield an expanded equivariant right half of \ref{CM_EQ}, given by the following.
 \[
 \begin{tikzcd}
-        \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
-        \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
+        \Op^G_{\mathcal F}(\V) \arrow[rr, "i_*"] \arrow[dd, shift right, "hcN^G"]& & \Op_G^{\mathcal F}(\V) \arrow[dd, "hcN_G"']\\ \\
+        \mathsf{dSet}^G_{\mathcal F} \arrow[rr, "i_*"'] \arrow[uu, shift left, shift left, dashed, bend left, "Ho^G"] \arrow[uurr, "Ho_G", dashed] && \mathsf{dSet}_G^{\mathcal F} \arrow[uu, shift right, shift right, bend right, dashed, "\mathrm{Ho}_G"']
 \end{tikzcd}
 \]
-We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
+We expect that all solid arrows are Quillen equivalences. However, analogous to the work of Cisinski-Moerdijk, direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, inspiring futher need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
+
+We also record our finding of an unexpected complication, that $G$-$\infty$-operads in $\mathsf{dSet}^G$ themselves satisfy a rigid fixed point condition, but their \textit{genuine} homotopy operad does \textit{not}, in particular that 
+\[
+\mathrm{Ho}_G(X) \not\simeq \mathrm{Ho}_G i_*(X) \not\simeq i_* \mathrm{Ho}^G(X)
+\]
+for $G$-$\infty$-operads $X$. 
+
+A full exploration of this and the other above topics will be discussed in sequels.
 %We expect to make a full comparison between these notions in sequels.
 
 {\color{red} Mention colored operad versions, equivalence with dendroidal sets}
@@ -1270,6 +1281,8 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}.
 \end{remark}
+
+{\color{red} Maybe mention that ``cat with projections'' is the same as semi-cartesian}
 
 We end this section by collecting some straightforward lemmas
 that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
@@ -2587,6 +2600,7 @@ Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \
 In particular, there are no pairs of composable non-identity relations in $\mathsf{Sc}(T)$. 
 \end{remark}
 
+
 Given a $T$-substitution datum $\{U_{\{e^{\uparrow}\leq e\}}\}$ we abuse notation by writing
 \[U_{(\minus)} \colon \mathsf{Sc}(T) \to \Omega\]
 for the functor $\eta_a \mapsto \eta$, $T_{e^{\uparrow} \leq e} \mapsto U_{e^{\uparrow} \leq e}$  
@@ -2597,6 +2611,7 @@ to the composites
 %\simeq 
 %\mathsf{lr}(U_{e^{\uparrow}\leq e}) \to 
 U_{e^{\uparrow} \leq e}.\]
+
 
 
 \begin{proposition}\label{SUBDATAUNDERPLAN PROP}
@@ -9091,7 +9106,7 @@ $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 
 {\color{red} HERE}
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
+Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of Conjecture \ref{NINFTY_REAL_COR_MAIN} from \cite{BH15}.
 
 % \begin{corollary}
 %   \label{N_INFINITY_REALIZATION_COROLLARY}
