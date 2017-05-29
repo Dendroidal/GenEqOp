@@ -652,21 +652,18 @@ Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_E
 
 \todo[inline]{come back here}
 
-While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend to the coloured setting. 
-One key difference is that coloured genuine $G$-operads will have a \textit{coefficient system} of colours: evaluation at a $G$-corolla will include the additional data of a colour for each $G$-orbit of edges, and the isotropy of the colours must match that of its asscoatied edge.
-This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate.
-%More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
+While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
 
 %We end this introduction with a brief discussion on the context of this paper. 
 As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. 
-Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}.
+Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}. 
 
-Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b} reproduced below, to the $G$-equivariant context. 
+Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b}, reproduced here below, to the $G$-equivariant context. 
 \begin{equation}
   \label{CM_EQ}
   \tag{$\filledstar$}
   \begin{tikzcd}
-    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l] \arrow[d, "hcN_d"]\\
+    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l, "N_d"] \arrow[d, "hcN_d"]\\
     \mathsf{sdSet} & \mathsf{dSet} \arrow[l]
   \end{tikzcd}
 \end{equation}
@@ -675,19 +672,11 @@ We note that, as in \cite{Pe17}, there are both multiple possible \textit{catego
 We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined'', and similiarly $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, in which both composition and fixed-point conditions are weak. This would yield an expanded equivariant right half of \ref{CM_EQ}, given by the following.
 \[
 \begin{tikzcd}
-        \Op^G_{\mathcal F}(\V) \arrow[rr, "i_*"] \arrow[dd, shift right, "hcN^G"]& & \Op_G^{\mathcal F}(\V) \arrow[dd, "hcN_G"']\\ \\
-        \mathsf{dSet}^G_{\mathcal F} \arrow[rr, "i_*"'] \arrow[uu, shift left, shift left, dashed, bend left, "Ho^G"] \arrow[uurr, "Ho_G", dashed] && \mathsf{dSet}_G^{\mathcal F} \arrow[uu, shift right, shift right, bend right, dashed, "\mathrm{Ho}_G"']
+        \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
+        \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
 \end{tikzcd}
 \]
-We expect that all solid arrows are Quillen equivalences. However, analogous to the work of Cisinski-Moerdijk, direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, inspiring futher need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
-
-We also record our finding of an unexpected complication, that $G$-$\infty$-operads in $\mathsf{dSet}^G$ themselves satisfy a rigid fixed point condition, but their \textit{genuine} homotopy operad does \textit{not}, in particular that 
-\[
-\mathrm{Ho}_G(X) \not\simeq \mathrm{Ho}_G i_*(X) \not\simeq i_* \mathrm{Ho}^G(X)
-\]
-for $G$-$\infty$-operads $X$. 
-
-A full exploration of this and the other above topics will be discussed in sequels.
+We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
 %We expect to make a full comparison between these notions in sequels.
 
 {\color{red} Mention colored operad versions, equivalence with dendroidal sets}
@@ -1282,8 +1271,6 @@ Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}.
 \end{remark}
 
-{\color{red} Maybe mention that ``cat with projections'' is the same as semi-cartesian}
-
 We end this section by collecting some straightforward lemmas
 that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
 
@@ -1472,7 +1459,10 @@ of those sets with transitive actions, $\Omega_G$ can then be described as given
 	\mathsf{O}_G \ar{r} & \Fin^G,
 \end{tikzcd}
 \end{equation}
-which is a repackaging of \cite[Prop. 5.46]{Pe17}.
+which is a repackaging of \cite[Prop. 5.46]{Pe17}. Explicitly, a $G$-tree $T$ is then a tuple 
+$T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
+together with isomorphisms
+$T_x \to T_{g x}$ that are suitably associative and unital.
 
 
 
@@ -2067,6 +2057,9 @@ which we call the \textit{leaf-root functor},
 described in \S \ref{LRVERT SEC}.
 
 
+{\color{red} HERE}
+
+
 \begin{example}
 Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$
 and $H = \langle j \rangle$.
@@ -2083,6 +2076,7 @@ $d = i c$, $e = i b$, $f = i a$.
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep =2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\begin{scope}[yshift=12em]
 		\node at  (0,0) {}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
@@ -2114,8 +2108,9 @@ $d = i c$, $e = i b$, $f = i a$.
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
 		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$T$};
-	\begin{scope}[yshift=4em,xshift=-5em]
-		\node at  (11,0) {}
+	\end{scope}
+	\begin{scope}[yshift=4em]
+		\node at  (3,0) {}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
@@ -2130,7 +2125,7 @@ $d = i c$, $e = i b$, $f = i a$.
 					edge from parent node [near end] {$\phantom{+1}a$}}
 				edge from parent node {$b$}}
 			edge from parent node [swap] {$c$}};
-		\node at  (8,0) {}
+		\node at  (0,0) {}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
@@ -2145,10 +2140,10 @@ $d = i c$, $e = i b$, $f = i a$.
 					edge from parent node [near end] {$i a$}}
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (7.9,0) node[midway]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
 	\end{scope}
-	\begin{scope}[yshift=-4em,xshift=-5em]
-		\node at  (8,0) {}
+	\begin{scope}[yshift=-4em]
+		\node at  (0,0) {}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
@@ -2163,7 +2158,7 @@ $d = i c$, $e = i b$, $f = i a$.
 					edge from parent node [near end] {$\phantom{+1}d$}}
 				edge from parent node {$\phantom{j}e$}}
 			edge from parent node [swap] {$f$}};
-		\node at  (11,0) {}
+		\node at  (3,0) {}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
@@ -2178,7 +2173,90 @@ $d = i c$, $e = i b$, $f = i a$.
 					edge from parent node [near end] {$\phantom{+1}-i d$}}
 				edge from parent node {$i e$}}
 			edge from parent node [swap] {$i f$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (7.9,0) node[midway]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
+	\end{scope}
+	\begin{scope}[yshift=12em,xshift=20em]
+		\node at  (1.5,0) {$S$}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{j}a$}}
+				edge from parent node {$b$}}
+			edge from parent node [swap] {$c$}};
+	\end{scope}
+	\begin{scope}[yshift=4em,xshift=20em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a'$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a'$}}
+				edge from parent node [swap] {$i b'$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$\phantom{j}b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a'\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a'$}}
+				edge from parent node {$b'$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
+	\end{scope}
+	\begin{scope}[yshift=-4em,xshift=20em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j d$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$d $}}
+				edge from parent node [swap] {$e{\phantom{b}}$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$\phantom{j}b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k d\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}i d$}}
+				edge from parent node {$i e$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
 	\end{scope}
 	\end{tikzpicture}
 \end{equation}
@@ -2346,7 +2424,27 @@ We recall that a face $F \to T$ is called inner if is obtained by iteratively re
 	The factorization (\ref{TRIPLEFACT EQ}) can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
 \end{proof}
 
+
+We will find it convenient  throughout to regard the 
+groupoid $\Sigma$ of finite sets 
+as the subcategory 
+$\Sigma \hookrightarrow \Omega$
+consisting of \textit{corollas}
+(i.e. trees with a single vertex)
+and isomorphisms.
+
+
+\begin{notation}\label{UNIQCOR NOT}
+	Given a tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
+	$\mathsf{lr}(T) \to T$, which we call the 
+	\textit{leaf-root} of $T$ (this name is motivated by the equivariant analogue, discussed in \S \ref{LRVERT SEC}).
+	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
+\end{notation}
+
+
 {\color{red} HERE}
+
+We now turn to discussing the substitution operation.
 
 
 One of the key ideas needed to describe operads is that of substitution of tree nodes, a process that we will prefer to repackage in terms of maps of trees. We start by discussing an example, focusing on the related notion of 
@@ -2603,7 +2701,6 @@ Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \
 In particular, there are no pairs of composable non-identity relations in $\mathsf{Sc}(T)$. 
 \end{remark}
 
-
 Given a $T$-substitution datum $\{U_{\{e^{\uparrow}\leq e\}}\}$ we abuse notation by writing
 \[U_{(\minus)} \colon \mathsf{Sc}(T) \to \Omega\]
 for the functor $\eta_a \mapsto \eta$, $T_{e^{\uparrow} \leq e} \mapsto U_{e^{\uparrow} \leq e}$  
@@ -2614,7 +2711,6 @@ to the composites
 %\simeq 
 %\mathsf{lr}(U_{e^{\uparrow}\leq e}) \to 
 U_{e^{\uparrow} \leq e}.\]
-
 
 
 \begin{proposition}\label{SUBDATAUNDERPLAN PROP}
@@ -2761,21 +2857,14 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \end{lemma}
 
 \begin{proof}
-	If either of $T_1,T_2$ is the root or a leaf the result is obvious. Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of $T_1,T_2,T$ admit compatible decompositions (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+	If either of $T_1,T_2$ consists only of the root or a leaf  the result is obvious. Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of $T_1,T_2,T$ admit compatible decompositions (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
 \end{proof}
 
 
 
-\subsection{Leaf-root and vertex functors}\label{LRVERT SEC}
+\subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 
-\begin{remark}\label{UNIQCOR REM}
-	Given any tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
-	$\mathsf{lr}(T) \to T$.
-	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
-\end{remark}
-
-\todo[inline]{planarity for $\Omega_G$: choice of planar structures on $\amalg_{[g]}T_{[g]}$, $G\cdot_H T_H$, etc}
 
 
 \begin{definition}
@@ -6367,7 +6456,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 
 
 
-\section{Model structures}
+\section{Existence of model structures}
 \label{MODEL_STRUCTURES_SECTION}
 
 Summarizing the results in the previous section, we have that the free $\mathbb F_G$-extension $\P[u]$ defined by the pushout
@@ -9109,7 +9198,7 @@ $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 
 {\color{red} HERE}
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of Conjecture \ref{NINFTY_REAL_COR_MAIN} from \cite{BH15}.
+Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
 
 % \begin{corollary}
 %   \label{N_INFINITY_REALIZATION_COROLLARY}
