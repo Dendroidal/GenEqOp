@@ -1250,10 +1250,10 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 %\]
 
 
-\begin{remark}
+\begin{remark}\label{FINSURJ REM}
 	In lieu of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
-	for the subcategories of surjections,
+	for the subcategory of surjections,
 	we define a 
 	\textit{symmetric monoidal category with fold maps}
 	as a category $\mathcal{V}$ together with a functor
@@ -3074,11 +3074,15 @@ but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$
 
 
 \begin{definition}\label{VG DEF}
-	Given $T = (T_x)_{x \in X} \in \Omega_G$ we define the set $V_G(T)$ of 
-	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set 
-	$V(T) = \coprod_{x \in X} V(T_x)$ by its $G$-action.
+Given $T = (T_x)_{x \in X} \in \Omega_G$ we define its set of \textit{vertices} to be $V(T) = \coprod_{x \in X} V(T_x)$
+and its set of
+	\textit{$G$-vertices} to be the orbit set $V(T)/G$.
 	
-Furthermore, we will regard $V_G(T)$ as an object of $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
+Furthermore, we will regard 
+$V(T)$ as an object of $\Fin$ by using the induced planar order
+(with $e^{\uparrow}\leq e$ ordered according to $e$)
+and likewise $V_G(T)$ will be regarded as an object of $\Fin$ by using the lexicographic order: i.e. vertex equivalence classes 
+$[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
 \end{definition}
 
 
@@ -3128,18 +3132,38 @@ $\varphi^{\**} \colon V(U) \to V(T)$ is given by
 $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
 \end{remark}
 
-{\color{red} HERE}
 
-Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
-\[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
-We note that $T_{v_{Ge}}$ is always a $G$-corolla. Indeed, noting that a quotient map $\varphi \colon T \to S$ induces quotient maps 
-$T_{v_{ge}} \to S_{v_{G\varphi(e)}}$ one obtains a functor
+\begin{notation}
+Given $T=(T_x)_{x \in X} \in \Omega_G$
+and $(e^{\uparrow} \leq e) \in V(T)$ 
+we write $T_{e^{\uparrow}\leq e}$
+as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
+
+Further, each element $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
+We will prefer to write $G$-vertices as $v_{Ge}$, and write
+\[
+T_{v_{Ge}} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+\]
+where $Ge$ inherits the planar order.
+\end{notation}
+
+
+We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
+
+\begin{definition}
+The \textit{$G$-vertex functor} is the functor
 	\begin{equation}\label{VFUNCTOR EQ}
 		\begin{tikzcd}[row sep=tiny]
-		\Omega_G^q \ar{r}{V_G} & \Fin \wr \Sigma_G \\
-		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)}.
+		\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
+		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
 		\end{tikzcd}	
 	\end{equation}
+where $\Fin_s$ is the category of finite sets and surjections of
+Remark \ref{FINSURJ REM}.
+\end{definition}
+
+{\color{red} HERE}
+
 
 \begin{remark}
   \label{NEED_WREATH_REMARK}

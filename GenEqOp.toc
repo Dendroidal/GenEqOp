@@ -15,20 +15,20 @@
 \contentsline {subsection}{\numberline {4.1}A monad on spans}{30}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}The free genuine operad monad}{33}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Comparison with (regular) equivariant operads}{37}{subsection.4.3}
-\contentsline {section}{\numberline {5}Free extensions}{40}{section.5}
+\contentsline {section}{\numberline {5}Free extensions}{41}{section.5}
 \contentsline {subsection}{\numberline {5.1}Extensions over general monads}{41}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{42}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{44}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.2}Labeled planar strings}{43}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Bar constructions on spans}{45}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Transferring simplicial colimits of left Kan extensions}{46}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}The category of extension trees}{50}{subsection.5.5}
-\contentsline {section}{\numberline {6}Existence of model structures}{55}{section.6}
-\contentsline {subsection}{\numberline {6.1}Filtration pieces}{55}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{58}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{59}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{61}{subsubsection.6.2.2}
-\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{62}{section.7}
-\contentsline {subsection}{\numberline {7.1}Families of subgroups}{62}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Pushout powers}{65}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{68}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{71}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{75}{subsection.7.5}
+\contentsline {subsection}{\numberline {5.5}The category of extension trees}{51}{subsection.5.5}
+\contentsline {section}{\numberline {6}Existence of model structures}{56}{section.6}
+\contentsline {subsection}{\numberline {6.1}Filtration pieces}{56}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Existence of (semi) model structures}{59}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Genuine $G$-Operads}{60}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}$G$-Operads}{62}{subsubsection.6.2.2}
+\contentsline {section}{\numberline {7}Cofibrancy and Quillen equivalences}{63}{section.7}
+\contentsline {subsection}{\numberline {7.1}Families of subgroups}{63}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Pushout powers}{66}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}$G$-graph families and $G$-trees}{69}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Indexing systems and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{72}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}$N_{\infty }$-operads}{76}{subsection.7.5}
