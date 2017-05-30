@@ -3336,18 +3336,10 @@ $\rho$ is the block permutation $\rho = (13)(24)$.
 \end{example}
 
 
-
-{\color{red} HERE}
-
-
-
 We are now in a position to generalize 
 Definition \ref{SUBSTITUTIONDATUM}.
 We recall that a map of $G$-trees is called 
 \textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
-
-
-
 
 
 \begin{definition}\label{SUBSTITUTIONDATUMG DEF}
@@ -3362,21 +3354,52 @@ We recall that a map of $G$-trees is called
 	$\left(U_{v_{G e}} \to V_{v_{G e}}\right)$.
 	
 	We denote the category of rooted (resp. planar) $T$-substitution data 
-	by $\mathsf{Sub}_{\mathsf{r}}(T)$ (resp. $\mathsf{Sub}_p(T)$).
+	by $\mathsf{Sub}_{\mathsf{r}}(T)$
+	(resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
 \end{definition}
 
-{\color{red} HERE}
 
 \begin{remark}\label{SUBSDATUMCONV REM}
-	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant terms.
+	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
 
-Noting that there are decompositions 
-$U_{v_{G e}}= \coprod_{g e \in Ge} U_{ge^{\uparrow} \leq ge}$
-and letting $G \ltimes V(T)$ denote the Grothendieck construction for the action of $G$ on the non-equivariant vertices $V(T)$ (often called the action groupoid), it is immediate that an equivariant $T$-substitution datum is the same as a functor $G \ltimes V(T) \to \Omega$ whose restriction to $V(T) \subset G \ltimes V(T)$ is a (non-equivariant) substitution datum.
+	The rooted condition of $T$-substitution data allows us to write
+	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
+	for each $v_{G e} \in V_G(T)$, 
+	so that writing $T = (T_x)_{x \in X}$ as usual
+	one obtains (non-equivariant) $T_x$-substitution data 
+	$U_{x,(\minus)}$ for each $T_x$.
+	We again write
+	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
+	and note that these are compatible with $G$-action in the sense that the obvious diagram
+\begin{equation}\label{EQUIVSCMAP EQ}
+\begin{tikzcd}[row sep =3pt]
+	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
+	\Omega
+\\
+	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{U_{gx,(\minus)}}
+\end{tikzcd}
+\end{equation}
+commutes.
+Writing $\mathsf{Sc}(T) = \coprod_x \mathsf{Sc}(T_x)$,
+(\ref{EQUIVSCMAP EQ}) is then equivalent to a functor
+$G \ltimes \mathsf{Sc}(T) \to \Omega$
+where $G \ltimes \mathsf{Sc}(T)$ is the Grothendieck construction for the $G$-action
+(which, explicitly, adds arrows 
+$\eta_a \to \eta_{ga}$, 
+$T_{e^{\uparrow} \leq e} \to T_{ge^{\uparrow} \leq ge}$
+to $\mathsf{Sc}(T)$ that satisfy obvious compatibilities).
 \end{remark}
 
 
-\begin{proposition}\label{SUBDATAUNDERPLANG PROP}
+In the following we write
+$\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+to mean
+$(\colim_{\mathsf{Sc}(T_x)}U_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
+in $\Phi = \Fin \wr \Omega$ rather than in $\Omega$
+(as is needed since $\Omega$ lacks coproducts).
+
+
+\begin{corollary}\label{SUBDATAUNDERPLANG COR}
 Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 \begin{equation}\label{SUBDATAUNDERPLANG EQ}
 \begin{tikzcd}[row sep =0pt]
@@ -3385,61 +3408,88 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
-	\{U_{v_{G e}}\} \ar[r,mapsto] & 
+	\left(U_{v_{G e}}\right) \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
-	\{U_{v_{G e}}\} \ar[r,mapsto] & 
+	\left(U_{v_{G e}}\right) \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \end{tikzcd}
 \end{equation}
-\end{proposition}
+\end{corollary}
 
 
 \begin{proof}
-	This is a minor adaptation of the non-equivariant analogues Proposition \ref{SUBDATAUNDERPLANG PROP} and Corollary \ref{SUBDATAUNDERPLAN COR}.
-	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{v_{Ge}}\}$ therefore induce functors 
-	$U_{(\minus)} \colon G \ltimes \mathsf{Sc}(T) \to \Omega$.
-	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. 
-	The key observation is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
-	
-	Additionally, we note that the need to use rooted data comes from the fact that rooted isomorphisms $T \to T'$ are in bijection with rooted substitution data that are given by isomorphisms, a statement that fails in the absence of the rooted condition.
+	This is a direct consequence of the 
+	non-equivariant analogues Proposition \ref{SUBDATAUNDERPLAN PROP} and Corollary \ref{SUBDATAUNDERPLAN COR}
+	applied to each individual $T_x$ together with the equivariance analysis in
+	Remark \ref{SUBSDATUMCONV REM}.
 \end{proof}
 
-\begin{remark} We will need to know that in the planar case each of the maps 
-\[U_{v_{Ge}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}\]
-induced by the previous proof is a planar map of $G$-trees.
-This requires two observations:
-\begin{inparaenum}
-	\item[(i)] the restrictions to each of the constituent non-equivariant trees $U_{ge^{\uparrow}\leq ge}$ is planar by Proposition \ref{SUBDATAUNDERPLANG PROP};
-	\item[(ii)] the restriction to the roots of $U_{v_{Ge}}$ is injective and order preserving since it matches the inclusion of the roots of $T_{v_{Ge}}$, and the map $T \to U$ is a planar map of $G$-trees.
-\end{inparaenum}
+
+\begin{remark} 
+In the planar case the maps 
+$U_{v_{G e}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+are themselves planar maps of $G$-trees.
+Indeed, writing
+$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
+each of the individual maps
+$U_{f^{\uparrow} \leq f} \to U$ 
+is planar by Proposition \ref{SUBDATAUNDERPLAN PROP}, 
+and the order of the root tuple,
+which we can identify with $Ge$,
+is preserved since $T \to U$ is a planar map of $G$-trees.
+
+However, the maps $U_{v_{G e}} \to U$ need not be 
+planar in the rooted case. 
+Indeed, while each map
+$U_{f^{\uparrow} \leq f} \to U$ \textit{is} planar by  Corollary \ref{SUBDATAUNDERPLAN COR},
+the order of the roots $Ge$ needs not be preserved.
+In fact, requiring such maps to be planar would overdetermine the planar structure on $U$,
+which is why in the equivariant case
+substitution data are required to be rooted.
 \end{remark}
 
+
 \begin{remark}\label{PULLCOMP REM}
-	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
-	are compatible with root pullbacks of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
-	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
-\begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
+	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
+	are compatible with root pullbacks of trees. 
+	More concretely, as in the proof of Lemma \ref{VGPULL LEM}
+	each pullback 
+	$\bar{\psi} \colon \psi^{\**} T \to T$
+	determines pullback maps
+	$\bar{\psi}_{G e} \colon
+	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
+	which we now note are a pullback over the map
+	$\bar{\psi}_{G e} \colon Ge \to \bar{\varphi}(G e)$
+	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram
+\[
 \begin{tikzcd}[row sep =10pt]
-	\mathsf{Sub}_{\mathsf{p}}(S) \ar[r,shift left=2pt] &
-	\Omega_{G,S/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
-	\mathsf{Sub}_{\mathsf{r}}(S) \ar[r,shift left=2pt] &
-	\Omega_{G,S/}^{\mathsf{rt}} \ar[l,shift left=2pt]
+	(\psi^{\**} T)_{v_{Ge}} \ar{d} \ar[dashed]{r} &
+	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}} \ar{d}
 \\
-	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
-	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}} &
-	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
-	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}}
+	T_{v_{G \bar{\psi}(e)}} \ar{r} &
+	U_{v_{G \bar{\psi}(e)}}
+\end{tikzcd}	
+\]
+defining the left vertical functors (with the right functors being analogous) in the commutative diagrams below.
+\begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
+\begin{tikzcd}[row sep =12pt,column sep= 14pt]
+	\mathsf{Sub}_{\mathsf{p}}(\psi^{\**} T) \ar[r,shift left=2pt] &
+	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] & &
+	\mathsf{Sub}_{\mathsf{r}}(\psi^{\**} T) \ar[r,shift left=2pt] &
+	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
+\\
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
+	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}} & &
+	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
+	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}}
 \end{tikzcd}
 \end{equation}
 \end{remark}
 
 
-
-
-
-
-
 \subsection{Planar strings}\label{PLANARSTRING SEC}
+
+{\color{red} HERE}
 
 The leaf-root and vertex functors will allow us to reinterpret our results concerning substitution.
 
@@ -3494,7 +3544,7 @@ for $T_{i, (f_i\circ \cdots \circ f_1)(v_{Ge})}$.
 \end{notation}
 
 
-The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG PROP}.
+The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG COR}.
 
 \begin{proposition} \label{SUBSASPULL PROP}
 The diagram
