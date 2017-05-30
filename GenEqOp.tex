@@ -2692,22 +2692,21 @@ repackaged using planar tall maps.
 	Let $T \in \Omega$ be a tree.
 	
 	A \textit{$T$-substitution datum} is a tuple 
-	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
+	$\left(U_{e^{\uparrow} \leq e}\right)_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
 	$T_{e^{\uparrow}\leq e} \to U_{e^{\uparrow}\leq e}$.
-	
 	Further, a map of $T$-substitution data 
-	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$ compatible with the chosen maps.
+	$\left(U_{e^{\uparrow} \leq e}\right) \to \left(V_{e^{\uparrow} \leq e}\right)$ is a tuple of tall maps $\left(U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\right)$ compatible with the substitution maps.
 	
 	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
 	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$) and a morphism of planar data is called a planar morphism if it consists of a tuple of planar maps.
 	
 	We denote the category of (resp. planar) $T$-substitution data 
-	by $\mathsf{Sub}(T)$ (resp. $\mathsf{Sub}_p(T)$).
+	by $\mathsf{Sub}(T)$ (resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
 \end{definition}
 
 \begin{definition}
 	Let $T \in \Omega$ be a tree. 
-	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the single edge subtrees $\eta_e$ and vertex substrees $T_{e^{\uparrow} \leq e}$, ordered by inclusion.
+	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the single edge subtrees $\eta_e$ and vertex subtrees $T_{e^{\uparrow} \leq e}$, ordered by inclusion.
 \end{definition}
 
 
@@ -2732,13 +2731,13 @@ U_{e^{\uparrow} \leq e}.\]
 Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERPLAN EQ}
 \begin{tikzcd}[row sep =0pt]
-	\mathsf{Sub}_p(T) \ar[r,shift left=2pt] &
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega^{\mathsf{pt}} \ar[l,shift left=2pt]
 \\
-	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
+	\left(U_{e^{\uparrow} \leq e}\right) \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \\
-	\{U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\} &
+	\left(U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\right) &
 	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
 \end{tikzcd}
 \end{equation}
@@ -2752,7 +2751,7 @@ and $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is chosen in the unique way that make
 We first show in parallel that:
 \begin{inparaenum}
 \item[(i)] $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$, which we denote $U_T$, exists;
-\item[(ii)] for the datum $\{T_{e^{\uparrow}\leq e}\}$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
+\item[(ii)] for the datum $\left(T_{e^{\uparrow}\leq e}\right)$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
 \item[(iii)] $V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$;
 \item[(iv)] the induced map
 $T \to U_T$ is planar tall.
@@ -3212,11 +3211,15 @@ We recall that a map of $G$-trees is called
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{rooted (resp. planar) $T$-substitution datum} is a tuple 
-	$\{U_{v_{G e}}\}_{V_G(T)}$ together with rooted (planar) tall maps 
+	$\left(U_{v_{G e}}\right)_{V_G(T)}$ together with rooted (planar) tall maps 
 	$T_{v_{Ge}} \to U_{v_{G e}}$.
 	
 	Further, a map of rooted (resp. planar) $T$-substitution data 
-	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of rooted (resp. planar) tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
+	$\left(U_{v_{G e}}\right) \to \left(V_{v_{G e}}\right)$ is a tuple of rooted (resp. planar) tall maps 
+	$\left(U_{v_{G e}} \to V_{v_{G e}}\right)$.
+	
+	We denote the category of rooted (resp. planar) $T$-substitution data 
+	by $\mathsf{Sub}_{\mathsf{r}}(T)$ (resp. $\mathsf{Sub}_p(T)$).
 \end{definition}
 
 {\color{red} HERE}
@@ -3235,9 +3238,9 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 \begin{equation}\label{SUBDATAUNDERPLANG EQ}
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
-	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
+	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] &
 	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] &
-	\Omega_{G,T/}^{\mathsf{rt}} \ar[l,shift left=2pt]
+	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
 	\{U_{v_{G e}}\} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
