@@ -2038,11 +2038,11 @@ Proposition \ref{GROTHSTAB PROP}
 that both vertical maps in (\ref{OGDEF EQ})
 are split Grothendieck fibrations. We now introduce some terminology.
 
-\begin{definition}
+\begin{definition}\label{ROOTPULL DEF}
 The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
 in (\ref{OGDEF EQ}) is called the \textit{root functor}.
 
-Further, pullbacks with respect to $\mathsf{r}$ are called
+Further, fiber maps (i.e. maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps} and pullbacks with respect to $\mathsf{r}$ are called
 \textit{root pullbacks}.
 \end{definition}
 
@@ -2066,7 +2066,7 @@ with structure maps
 $T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
 
 
-\begin{example}
+\begin{example}\label{ROOTPULL EX}
 Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$, 
 $H = \langle j \rangle$ and $K = \langle -1 \rangle$.
 Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees 
@@ -3162,55 +3162,64 @@ where $\Fin_s$ is the category of finite sets and surjections of
 Remark \ref{FINSURJ REM}.
 \end{definition}
 
-{\color{red} HERE}
 
-
-\begin{remark}
-  \label{NEED_WREATH_REMARK}
-	The need to introduce the $\Fin \wr \C$ categories comes from the fact that general quotient maps do not preserve the number of $G$-vertices. For a simple example, let $G=\mathbb{Z}_{/4}$ and consider the quotient map
+\begin{remark}\label{NEED_WREATH_REMARK}
+In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
+	The need to introduce the $\Fin \wr (\minus)$ construction comes from the fact that
+	in general quotient maps do not preserve the number of $G$-vertices.
+	For a simple example, let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
+	$\varphi \colon \pi^{\**} S \to S$ of Example \ref{ROOTPULL EX}
+	determined by the assignments
+	$a \mapsto a$, $b \mapsto b$, $c \mapsto c$, $d \mapsto i a$, $e \mapsto i b$,	
+	and presented below in orbital notation. 
 		\[
 		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
+		\node at (0,0) {$\pi^{\**}S$}
 			child{node [dummy] {}
 				child{node [dummy] {}
 					child{
-					edge from parent node [swap] {$a^{+1} + G$}}
-				edge from parent node[near end,swap] {$b^{+1} + G/2G$}}
+					edge from parent node [swap] {$G/\langle j \rangle  \cdot d$}}
+				edge from parent node[near end,swap] {$G/\langle -1 \rangle  \cdot e$}}
 				child{node [dummy] {}
 					child{
-					edge from parent node {$a + G$}}
-				edge from parent node [near end] {$b + G/2G$}}		
-			edge from parent node[swap] {$c + G/2G$}};
+					edge from parent node {$G/\langle j \rangle  \cdot a$}}
+				edge from parent node [near end] {$G/\langle -1 \rangle  \cdot b$}}		
+			edge from parent node[swap] {$G/\langle -1 \rangle  \cdot c$}};
 		\node at (4.53,0) {$S$}
 			child{node [dummy] {}
 				child{node [dummy] {}
 					child{
-					edge from parent node [swap] {$a + G$}}
-				edge from parent node [swap] {$b + G/2G$}}
-			edge from parent node [swap] {$c + G/G$}};
+					edge from parent node [swap] {$G/\langle j \rangle \cdot a$}}
+				edge from parent node [swap] {$G / \langle -1 \rangle \cdot b$}}
+			edge from parent node [swap] {$G/G \cdot c$}};
 		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
 		\end{tikzpicture}
 		\]
-sending edges labeled $a,b,c$ to the edges with the same name and the edges $a^{+1}$, $b^{+1}$ to the edges $a+1$, $b+1$. We note that $T$ has three $G$-vertices $v_{Gc}$, $v_{Gb}$, $v_{Gb^{+1}}$ while $S$ has only two $G$-vertices $v_{Gc}$ and $v_{Gb}$. $V(\phi)$ then maps the two corollas 
-$T_{v_{Gb}}$ and $T_{v_{G b^{+1}}}$
-isomorphically onto $T_{S_{Gb}}$
-and the corolla $T_{v_{Gc}}$ non-isomorphically onto $S_{v_{Gc}}$.
+We note that $T = \pi^{\**} S$ has three $G$-vertices $v_{G c}$, $v_{G b}$, $v_{G e}$ while $S$ has only two $G$-vertices $v_{G c}$ and $v_{G b}$. $V_G(\varphi)$ then maps the two $G$-corollas 
+$T_{v_{G b}}$ and $T_{v_{G e}}$
+isomorphically onto $S_{v_{G b}}$
+and the $G$-corolla $T_{v_{Gc}}$ by a non-isomorphism quotient onto $S_{v_{G c}}$.
 \end{remark}
 
 
-Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes. Here a map is called \textit{rooted} if it induces an ordered isomorphism on the root orbit.
+We are now in a position to generalize 
+Definition \ref{SUBSTITUTIONDATUM}.
+We recall that a map of $G$-trees is called 
+\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
 
 
 \begin{definition}\label{SUBSTITUTIONDATUMG DEF}
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{rooted (resp. planar) $T$-substitution datum} is a tuple 
-	$\{U_{v_{G e}}\}_{v_{G e} \in V_G(T)}$ together with rooted (resp. planar) tall maps 
-	$T_{v_{Ge}} \to U_{v_{G e}} = T_{v_{G e}}$.
+	$\{U_{v_{G e}}\}_{V_G(T)}$ together with rooted (planar) tall maps 
+	$T_{v_{Ge}} \to U_{v_{G e}}$.
 	
 	Further, a map of rooted (resp. planar) $T$-substitution data 
 	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of rooted (resp. planar) tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
 \end{definition}
+
+{\color{red} HERE}
 
 \begin{remark}\label{SUBSDATUMCONV REM}
 	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant terms.
