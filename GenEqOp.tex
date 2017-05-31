@@ -2083,7 +2083,7 @@ while the bottom depictions
 choose generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
 $d = i c$, $e = i b$, $f = i a$
 and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
-\begin{figure}[h]
+\begin{figure}[ht]
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep =2pt},
@@ -3507,8 +3507,6 @@ defining the left vertical functors (with the right functors defined analogously
 \end{equation}
 \end{remark}
 
-{\color{red} HERE}
-
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
@@ -3710,7 +3708,7 @@ $V_{G,n+1} = \sigma^0 \circ V_{G,n} \circ V_G$ for $n \geq 0$.
 \end{notation}
 
 
-\begin{remark}
+\begin{remark}\label{VGN REM}
 When $n = 2$, $V_{G,2}$ is thus the composite
 \[
 \begin{tikzcd}[column sep =1.7em]
@@ -3737,18 +3735,22 @@ $v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that
 
 
 
-
-
 \section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
 
-{\color{red} HERE}
 
-We now turn to the task of building the monad encoding genuine equivariant operads.
+In this section we now build the category 
+$\mathsf{Op}_G (\mathcal{V})$
+of genuine equivariant operads.
+We will do so by building a monad $\mathbb{F}_G$
+on the category
+$\mathsf{Sym}_G(\mathcal{V}) = 
+\mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$,
+that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$.
 
-
-
-
-
+This will be done via a two step process, 
+by first building a monad $N$ on a larger category
+$\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
+which we then transfer via adjunction.
 
 
 
@@ -3763,31 +3765,31 @@ which we call the category of  \textit{left weak spans} (resp. \textit{right wea
 to denote the category with objects the spans
 \[
 \begin{tikzcd}
-\C & A \ar{l}[swap]{k} \ar{r}{F} & \D,
+\C & A \ar{l}[swap]{k} \ar{r}{X} & \D,
 \end{tikzcd}
 \]
 arrows the diagrams as on the left (resp. right) below \begin{equation}\label{TWISTEDARROWRIGHT EQ}
 	\begin{tikzcd}[row sep=small]
 	&
-	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{F_1} \ar{dd}[swap]{i} & &
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{X_1} \ar{dd}[swap]{i} & &
 	&
-	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F1]{F_1} \ar{dd}[swap]{i} 
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F1]{X_1} \ar{dd}[swap]{i} 
 \\
 	\C & & \D &
 	\C & & \D 
 \\
-		& |[alias=G21]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} & &
-		& |[alias=G2]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} &
+		& |[alias=G21]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{X_2} & &
+		& |[alias=G2]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{X_2} &
 		\arrow[Leftarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 		\arrow[Rightarrow, from=F11, to=G21,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 	\end{tikzcd}
 \end{equation}
-which we write as $(i,\varphi) \colon (k_1,F_1) \to (k_2,F_2)$, and composition given in the obvious way.
+which we write as $(i,\varphi) \colon (k_1,X_1) \to (k_2,X_2)$, and composition given in the obvious way.
 \end{definition}
 
 
 \begin{remark}
-There are natural isomorphisms
+There are canonical natural isomorphisms
 \begin{equation}\label{LRSPANISO EQ}
 \mathsf{WSpan}^r(\C,\D) \simeq \mathsf{WSpan}^l(\C^{op},\D^{op}).
 \end{equation}
@@ -3816,42 +3818,59 @@ and $\mathsf{Lan}$/$\mathsf{Ran}$ denote the left/right Kan extension functors.
 \end{remark}
 
 
+
 We will mainly be interested in the span categories 
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq 
 \mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
 
 
 \begin{notation}\label{OMEGAGNA NOT}
-	Given a functor $\pi \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback (in $\mathsf{Cat}$)
-\[
+	Given a functor $\rho \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback in $\mathsf{Cat}$
+\begin{equation}\label{OMGGNA}
 	\begin{tikzcd}
 	\Omega_{G,n}^{(A)} \ar{r}{V_{G,n}^{(A)}} \ar{d}& 
-	\Fin \wr A \ar{d}
+	\Fin_s \wr A \ar{d}
 \\
 	\Omega_{G,n} \ar{r}[swap]{V_{G,n}} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 	\end{tikzcd}
-\]
-Explicitly, the objects of $\Omega_{G,n}^{(A)}$ are pairs 
+\end{equation}
+Explicitly, by Remark \ref{VGN REM}
+the objects of $\Omega_{G,n}^{(A)}$ are pairs 
 \begin{equation}\label{OMEGAGNA EQ}
 (T_0 \to \cdots \to T_n,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_n)})
+(a_{v_{G e}})_{v_{G e} \in V_G(T_n)})
 \end{equation}
-such that $\pi(a_{e^{\uparrow} \leq e}) = T_{n,e^{\uparrow} \leq e}$.
+such that $\rho(a_{v_{G e}}) = T_{n,v_{G e}}$.
 \end{notation}
+
+
+\begin{remark}
+The definition of $\Omega_{G,n}^{(A)}$ in (\ref{OMGGNA})
+is unchanged by replacing $\Fin_s$ with $\Fin$. 
+As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
+\end{remark}
+
+{\color{red} Expand on}
 
 \begin{remark}
 Our primary interest here will be in the 
-$\Omega_{G,0}^{(A)}$ construction.
-Importantly, the composite maps 
-$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$
-allow us to iterate the $\Omega_{G,0}^{(\minus)}$ construction. In practice, the role of higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
+$\Omega_{G,0}^{(\minus)}$ construction,
+which can be iterated thanks to the existance of the composite maps
+$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$.
+The role of the higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
 $\Omega_{G,0}^{(\minus)}$ constructions.
 
+{\color{red} HERE}
 
-Indeed, the content of Proposition \ref{SUBSASPULL PROP} is then that there are compatible identifications
-$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$
-which identify $V_G^{(\Omega_{G,n})}$ with $V_G$.
+Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as an identification
+$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$.
+Moreover, $V_{G,0}^{(\Omega_{G,n})}$ is then identified with 
+$V_G$ as defined in Notation \ref{VGDEF NOT} and by Remark \ref{DSCOM REM} the maps
+$V_{G,0}^{(d_i)}$, $V_{G,0}^{(s_{i-1})}$ are identified with
+$d_{i+1}$, $s_i$ for $i \geq 0$.
+
+{\color{red} HERE}
 
 Moreover, since all squares in the diagram
 \begin{equation}\label{ALLSQUARES EQ}
@@ -3878,14 +3897,14 @@ $\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
 
 \begin{proposition}
 For any $A \to \Sigma_G$ there are functors 
-$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G}^{(A)}$ and natural isomorphisms
+$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G}^{(A,0)}$ and natural isomorphisms
 \begin{equation}\label{SHUFFLEPERMA EQ}
 	\begin{tikzcd}
-	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}}&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r}{\Fin \wr V_G} &
+	\Omega_{G,1}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G^{(A)}} &
 	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}[swap]{V_G} &&
+	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G^{(A)}} &&
 	\Fin \wr A,
 	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
 	\end{tikzcd}
