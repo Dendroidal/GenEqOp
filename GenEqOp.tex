@@ -3068,7 +3068,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 \end{remark}
 
 
-\begin{remark}
+\begin{remark}\label{LRROOTMAP REM}
 	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
 the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
 but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
@@ -3470,7 +3470,7 @@ substitution data are required to be rooted.
 	U_{v_{G \bar{\psi}(e)}}
 \end{tikzcd}	
 \]
-defining the left vertical functors (with the right functors being analogous) in the commutative diagrams below.
+defining the left vertical functors (with the right functors defined analogously) in the commutative diagrams below.
 \begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =12pt,column sep= 14pt]
 	\mathsf{Sub}_{\mathsf{p}}(\psi^{\**} T) \ar[r,shift left=2pt] &
@@ -3489,27 +3489,28 @@ defining the left vertical functors (with the right functors being analogous) in
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
-{\color{red} HERE}
+We now use the leaf-root and vertex functors to repackage 
+our substitution results in a format that will be more convenient for our discussion of operads in 
+\S \ref{GENUINE_OP_MONAD_SECTION}.
 
-The leaf-root and vertex functors will allow us to reinterpret our results concerning substitution.
 
 \begin{definition}
 	The category $\Omega_{G,n}$ of 
-	\textit{substitution $n$-strings} is the category whose objects are strings
+	\textit{planar $n$-strings} is the category whose objects are strings
 	\[
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} & T_1 \ar{r}{f_2} & \cdots \ar{r}{f_n} & T_n
+	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
 	\]
-	where $T_i \in \Omega_G$ and the $f_i$ are tall planar maps, and arrows are commutative diagrams 
+	where $T_i \in \Omega_G$ and the $\varphi_i$ are tall planar maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} \ar{d}[swap]{q_0} & T_1 \ar{r}{f_2} \ar{d}[swap]{q_1} & \cdots \ar{r}{f_n} & T_n \ar{d}[swap]{q_n}
+	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\pi_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\pi_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\pi_n}
 \\
-	T'_0 \ar{r}[swap]{f'_1} & T'_1 \ar{r}[swap]{f'_2} & \cdots \ar{r}[swap]{f'_n} & T'_n
+	T'_0 \ar{r}[swap]{\varphi'_1} & T'_1 \ar{r}[swap]{\varphi'_2} & \cdots \ar{r}[swap]{\varphi'_n} & T'_n
 	\end{tikzcd}	
 	\end{equation}
-where each $q_i$ is a quotient map.
+where each $\pi_i$ is a quotient map.
 \end{definition}
 
 
@@ -3521,18 +3522,30 @@ where each $q_i$ is a quotient map.
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composing and degeneracies by inserting identities. 
 
-	Noting that $\Omega_{G,0} = \Omega_G^q$ and setting 
-	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
-	$\Omega_{G,\bullet}^q$ into an augmented simplicial object and, furthermore, the maps 
-	$s_{-1} \colon \Omega_{G,n}^q \to \Omega_{G,n+1}^q$
+	Further setting 
+	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G,\bullet}$ into an augmented simplicial object and, furthermore, the maps 
+	$s_{-1} \colon \Omega_{G,n} \to \Omega_{G,n+1}$
 sending $T_0 \to T_1 \to \cdots \to T_n$ to 
 $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
 \end{notation}
 
+\begin{remark}
+Since for any planar $n$-string it is 
+$\mathsf{r}(T_i) = \mathsf{r}(T_j)$
+for any $1 \leq i,j \leq n$, 
+one has a well defined functor
+$\mathsf{r} \colon \Omega_{G,n} \to \mathsf{O}_G$,
+which is readily seen to be a split Grothendieck fibration.
+Furthermore, generalizing Remark \ref{LRROOTMAP REM},
+all operators $d_i$, $s_j$ 
+are maps of split Grothendieck fibrations.
+\end{remark}
 
-\begin{notation}
+
+\begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
-$V_G \colon \Omega_{G,n+1} \to \Fin \wr \Omega_{G,n}$
+$V_G \colon \Omega_{G,n+1} \to \Fin_s \wr \Omega_{G,n}$
 by
 \begin{equation}\label{VGDEF EQ}
 	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
@@ -3540,21 +3553,31 @@ by
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
 where we abuse notation by writing $T_{i,v_{Ge}}$
-for $T_{i, (f_i\circ \cdots \circ f_1)(v_{Ge})}$.
+for 
+$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in v_{Ge}}$, where 
+$\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
+
+Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n-1$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
+the object $V_G(T_0 \to \cdots \to T_n)$
+can be thought of as the image of the inverse functor in
+Corollary \ref{SUBDATAUNDERPLANG COR},
+though we caution that from this perspective
+functoriality needs to be checked separately.
 \end{notation}
 
+We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
-The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG COR}.
+{\color{red} HERE}
 
 \begin{proposition} \label{SUBSASPULL PROP}
-The diagram
+For any $n\geq -1$ the commutative diagram
 	\begin{equation}\label{PTPULL EQ}
 	\begin{tikzcd}
 		\Omega_{G,n+1} \ar{r}{V_G} 
-		\ar{d}[swap]{d_{1,\cdots,n+1}} & \Fin \wr \Omega_{G,n} 
+		\ar{d}[swap]{d_{1,\cdots,n+1}} & \Fin_s \wr \Omega_{G,n} 
 		\ar{d}{\Fin \wr d_{0,\cdots,n}}
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin \wr \Sigma_G
+		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin_s \wr \Sigma_G
 	\end{tikzcd}
 	\end{equation}
 is a pullback diagram in $\mathsf{Cat}$.
@@ -3562,6 +3585,33 @@ is a pullback diagram in $\mathsf{Cat}$.
 
 
 \begin{proof}
+Let us write 
+$P = \Omega_{G,0} \times_{\Fin_s \wr \Sigma_G} \Fin_s \wr \Omega_{G,n}$ for the pullback,
+so that our goal is to show that the canonical map
+$\Omega_{G,n+1} \to P$ is an isomorphism. 
+
+{\color{red} HERE}
+
+It is straightforward to show that Lemma \ref{VGPULL LEM}
+implies that $P$ is a split fibration over 
+$\mathsf{O}_G$, with $P \to \Omega_{G,0}$
+a map of split fibrations. 
+Indeed, pullback arrows in $P$ are defined in the obvious way as compatible pairs
+$(f,g)$ with $f$ a pullback in 
+$\Omega_{G,0}$ over $\mathsf{O}_G$
+and $g$ a pullback in 
+$\Fin_s \wr \Omega_{G,n}$ over 
+$\Fin_s \wr \mathsf{O}_G$.
+
+Combining the alternative description of $V_G$ in 
+Notation \ref{VGDEF NOT} with (\ref{SUBDATAUNDERPLANG2 EQ}) 
+then shows that 
+the map $\Omega_{G,n+1} \to P$ preserves pullbacks,
+and one thus needs only show that this is an isomorphism
+on each of the fibers over $\mathsf{O}_G$.
+
+{\color{red} HERE}
+
 	An object in the pullback (\ref{PTPULL EQ}) over 
 	$T\in \Omega_{G,0} = \Omega_G^q$ is precisely the same as a $n$-string in $\mathsf{Sub}(T)$, and thus by Proposition \ref{SUBDATAUNDERPLANG PROP} equivalent to a $n+1$ planar tall string starting at $T$.
 	
