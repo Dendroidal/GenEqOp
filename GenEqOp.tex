@@ -3068,7 +3068,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 \end{remark}
 
 
-\begin{remark}
+\begin{remark}\label{LRROOTMAP REM}
 	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
 the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
 but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
@@ -3136,7 +3136,7 @@ $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
 \end{remark}
 
 
-\begin{notation}
+\begin{notation}\label{GVERT NOT}
 Given $T=(T_x)_{x \in X} \in \Omega_G$
 and $(e^{\uparrow} \leq e) \in V(T)$ 
 we write $T_{e^{\uparrow}\leq e}$
@@ -3338,39 +3338,56 @@ $\rho$ is the block permutation $\rho = (13)(24)$.
 
 We are now in a position to generalize 
 Definition \ref{SUBSTITUTIONDATUM}.
-We recall that a map of $G$-trees is called 
-\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
-
 
 \begin{definition}\label{SUBSTITUTIONDATUMG DEF}
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
-	A \textit{rooted (resp. planar) $T$-substitution datum} is a tuple 
-	$\left(U_{v_{G e}}\right)_{V_G(T)}$ together with rooted (planar) tall maps 
-	$T_{v_{Ge}} \to U_{v_{G e}}$.
+	A \textit{(resp. planar) $T$-substitution datum} is a tuple 
+	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ together with
+\begin{itemize}	
+\item[(i)] associative and unital $G$-action maps
+$U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
+\item[(ii)]	(resp. planar) tall maps 
+	$T_{f^{\uparrow} \leq f} \to U_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
+\end{itemize}	
+	Further, a map of (resp. planar) $T$-substitution data 
+	$\left(U_{f^{\uparrow} \leq f}\right) \to
+	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (resp. planar) tall maps 
+	$\left(U_{f^{\uparrow} \leq f} \to V_{f^{\uparrow} \leq f} \right)$.
 	
-	Further, a map of rooted (resp. planar) $T$-substitution data 
-	$\left(U_{v_{G e}}\right) \to \left(V_{v_{G e}}\right)$ is a tuple of rooted (resp. planar) tall maps 
-	$\left(U_{v_{G e}} \to V_{v_{G e}}\right)$.
-	
-	We denote the category of rooted (resp. planar) $T$-substitution data 
-	by $\mathsf{Sub}_{\mathsf{r}}(T)$
+	We denote the category of (resp. planar) $T$-substitution data 
+	by $\mathsf{Sub}(T)$
 	(resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
 \end{definition}
 
 
-\begin{remark}\label{SUBSDATUMCONV REM}
-	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
+Recall that a map of $G$-trees is called 
+\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
 
-	The rooted condition of $T$-substitution data allows us to write
-	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
-	for each $v_{G e} \in V_G(T)$, 
-	so that writing $T = (T_x)_{x \in X}$ as usual
+\begin{remark}\label{SUBSGREF DEF}
+Writing $U^{\mathsf{r}}_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in Ge}$
+a $T$-substitution datum can equivalently be encoded by the tuple
+$\left(U^{\mathsf{r}}_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
+$T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+The need to include $\mathsf{r}$ (which stands for ``rooted'')
+in the notation is explained by Remark \ref{WHYR REM}.
+
+Further, the $T$-substitution datum is planar iff the so are the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+\end{remark}
+
+
+\begin{remark}\label{SUBSDATUMCONV REM}
+%	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
+%
+%	The rooted condition of $T$-substitution data allows us to write
+%	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
+%	for each $v_{G e} \in V_G(T)$, 
+	Writing $T = (T_x)_{x \in X}$ as usual
 	one obtains (non-equivariant) $T_x$-substitution data 
 	$U_{x,(\minus)}$ for each $T_x$.
 	We again write
 	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
-	and note that these are compatible with $G$-action in the sense that the obvious diagram
+	and note that these are compatible with the $G$-action in the sense that the obvious diagram
 \begin{equation}\label{EQUIVSCMAP EQ}
 \begin{tikzcd}[row sep =3pt]
 	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
@@ -3382,7 +3399,7 @@ We recall that a map of $G$-trees is called
 commutes.
 Writing $\mathsf{Sc}(T) = \coprod_x \mathsf{Sc}(T_x)$,
 (\ref{EQUIVSCMAP EQ}) is then equivalent to a functor
-$G \ltimes \mathsf{Sc}(T) \to \Omega$
+$G \ltimes \mathsf{Sc}(T) \to \Omega$,
 where $G \ltimes \mathsf{Sc}(T)$ is the Grothendieck construction for the $G$-action
 (which, explicitly, adds arrows 
 $\eta_a \to \eta_{ga}$, 
@@ -3405,15 +3422,18 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] &
-	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] &
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
-	\left(U_{v_{G e}}\right) \ar[r,mapsto] & 
+	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
-	\left(U_{v_{G e}}\right) \ar[r,mapsto] & 
+	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \end{tikzcd}
 \end{equation}
+where $T \downarrow \Omega_G^{\mathsf{pt}}$ 
+(resp. $T \downarrow \Omega_G^{\mathsf{rt}}$)
+is the category of planar tall (resp. rooted tall) maps under $T$.
 \end{corollary}
 
 
@@ -3425,29 +3445,30 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 \end{proof}
 
 
-\begin{remark} 
-In the planar case the maps 
-$U_{v_{G e}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
-are themselves planar maps of $G$-trees.
-Indeed, writing
-$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
-each of the individual maps
-$U_{f^{\uparrow} \leq f} \to U$ 
-is planar by Proposition \ref{SUBDATAUNDERPLAN PROP}, 
-and the order of the root tuple,
-which we can identify with $Ge$,
-is preserved since $T \to U$ is a planar map of $G$-trees.
+\begin{remark} \label{WHYR REM}
+Writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$, 
+it follows from the non-equivariant results
+Proposition \ref{SUBDATAUNDERPLAN PROP} and
+Corollary \ref{SUBDATAUNDERPLAN COR}
+that each inclusion map $U_{f^{\uparrow} \leq f} \to U$
+is planar, so that there is no conflict with 
+Notation \ref{GVERT NOT}.
 
-However, the maps $U_{v_{G e}} \to U$ need not be 
-planar in the rooted case. 
-Indeed, while each map
-$U_{f^{\uparrow} \leq f} \to U$ \textit{is} planar by  Corollary \ref{SUBDATAUNDERPLAN COR},
-the order of the roots $Ge$ needs not be preserved.
-In fact, requiring such maps to be planar would overdetermine the planar structure on $U$,
-which is why in the equivariant case
-substitution data are required to be rooted.
+However, some care is needed concerning the
+$U_{v_{Ge}}^{\mathsf{r}}$ appearing in the reformulation of substitution data given in Remark \ref{SUBSGREF DEF}.
+Letting $\varphi \colon T \to U$ be the induced map,
+one sees that while $U_{v_{Ge}}^{\mathsf{r}}$ and 
+$U_{v_{G\varphi(e)}}$
+have the same constituent trees (with the latter defined by Notation \ref{GVERT NOT}),
+the roots of $U_{v_{Ge}}^{\mathsf{r}}$ are ordered by $Ge$
+while those of $U_{v_{G\varphi(e)}}$ are ordered by $G \varphi(e)$.
+More succinctly, it is then 
+$U_{v_{Ge}}^{\mathsf{r}} = \varphi_{Ge}^{\**}U_{v_{G\varphi(e)}}$ for $\varphi_{Ge} \colon Ge \to G \varphi(e)$
+the induced map.
+
+Lastly, we note that such distinctions are unnecessary for planar data, since then the $\varphi_{G e}$ are ordered isomorphisms (i.e. identities), so that 
+$U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 \end{remark}
-
 
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
@@ -3460,56 +3481,59 @@ substitution data are required to be rooted.
 	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
 	which we now note are a pullback over the map
 	$\bar{\psi}_{G e} \colon Ge \to \bar{\varphi}(G e)$
-	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram
+	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram (where we reformulate substitution data as in Remark \ref{SUBSGREF DEF})
 \[
 \begin{tikzcd}[row sep =10pt]
 	(\psi^{\**} T)_{v_{Ge}} \ar{d} \ar[dashed]{r} &
-	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}} \ar{d}
+	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}} \ar{d}
 \\
 	T_{v_{G \bar{\psi}(e)}} \ar{r} &
-	U_{v_{G \bar{\psi}(e)}}
+	U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}}
 \end{tikzcd}	
 \]
-defining the left vertical functors (with the right functors being analogous) in the commutative diagrams below.
+defining the left vertical functors (with the right functors defined analogously) in the commutative diagrams below.
 \begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =12pt,column sep= 14pt]
 	\mathsf{Sub}_{\mathsf{p}}(\psi^{\**} T) \ar[r,shift left=2pt] &
 	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] & &
-	\mathsf{Sub}_{\mathsf{r}}(\psi^{\**} T) \ar[r,shift left=2pt] &
+	\mathsf{Sub}(\psi^{\**} T) \ar[r,shift left=2pt] &
 	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
 	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
 	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}} & &
-	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
 	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}}
 \end{tikzcd}
 \end{equation}
 \end{remark}
 
+{\color{red} HERE}
+
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
-{\color{red} HERE}
+We now use the leaf-root and vertex functors to repackage 
+our substitution results in a format that will be more convenient for our discussion of operads in 
+\S \ref{GENUINE_OP_MONAD_SECTION}.
 
-The leaf-root and vertex functors will allow us to reinterpret our results concerning substitution.
 
 \begin{definition}
 	The category $\Omega_{G,n}$ of 
-	\textit{substitution $n$-strings} is the category whose objects are strings
+	\textit{planar $n$-strings} is the category whose objects are strings
 	\[
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} & T_1 \ar{r}{f_2} & \cdots \ar{r}{f_n} & T_n
+	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
 	\]
-	where $T_i \in \Omega_G$ and the $f_i$ are tall planar maps, and arrows are commutative diagrams 
+	where $T_i \in \Omega_G$ and the $\varphi_i$ are tall planar maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} \ar{d}[swap]{q_0} & T_1 \ar{r}{f_2} \ar{d}[swap]{q_1} & \cdots \ar{r}{f_n} & T_n \ar{d}[swap]{q_n}
+	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\pi_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\pi_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\pi_n}
 \\
-	T'_0 \ar{r}[swap]{f'_1} & T'_1 \ar{r}[swap]{f'_2} & \cdots \ar{r}[swap]{f'_n} & T'_n
+	T'_0 \ar{r}[swap]{\varphi'_1} & T'_1 \ar{r}[swap]{\varphi'_2} & \cdots \ar{r}[swap]{\varphi'_n} & T'_n
 	\end{tikzcd}	
 	\end{equation}
-where each $q_i$ is a quotient map.
+where each $\pi_i$ is a quotient map.
 \end{definition}
 
 
@@ -3521,18 +3545,30 @@ where each $q_i$ is a quotient map.
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composing and degeneracies by inserting identities. 
 
-	Noting that $\Omega_{G,0} = \Omega_G^q$ and setting 
-	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
-	$\Omega_{G,\bullet}^q$ into an augmented simplicial object and, furthermore, the maps 
-	$s_{-1} \colon \Omega_{G,n}^q \to \Omega_{G,n+1}^q$
+	Further setting 
+	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G,\bullet}$ into an augmented simplicial object and, furthermore, the maps 
+	$s_{-1} \colon \Omega_{G,n} \to \Omega_{G,n+1}$
 sending $T_0 \to T_1 \to \cdots \to T_n$ to 
 $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
 \end{notation}
 
+\begin{remark}
+Since for any planar $n$-string it is 
+$\mathsf{r}(T_i) = \mathsf{r}(T_j)$
+for any $1 \leq i,j \leq n$, 
+one has a well defined functor
+$\mathsf{r} \colon \Omega_{G,n} \to \mathsf{O}_G$,
+which is readily seen to be a split Grothendieck fibration.
+Furthermore, generalizing Remark \ref{LRROOTMAP REM},
+all operators $d_i$, $s_j$ 
+are maps of split Grothendieck fibrations.
+\end{remark}
 
-\begin{notation}
+
+\begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
-$V_G \colon \Omega_{G,n+1} \to \Fin \wr \Omega_{G,n}$
+$V_G \colon \Omega_{G,n+1} \to \Fin_s \wr \Omega_{G,n}$
 by
 \begin{equation}\label{VGDEF EQ}
 	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
@@ -3540,21 +3576,35 @@ by
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
 where we abuse notation by writing $T_{i,v_{Ge}}$
-for $T_{i, (f_i\circ \cdots \circ f_1)(v_{Ge})}$.
+for 
+$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in v_{Ge}}$, where 
+$\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
+
+Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n-1$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
+the object $V_G(T_0 \to \cdots \to T_n)$
+can be thought of as the image of the inverse functor in
+Corollary \ref{SUBDATAUNDERPLANG COR},
+written according to the reformulation in 
+Remark \ref{SUBSGREF DEF}
+(where since we are in the planar case we need not distinguish between 
+$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notation
+(cf. Remark \ref{WHYR REM})).
+Note however that from this perspective
+functoriality needs to be checked separately.
 \end{notation}
 
+We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
-The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG COR}.
 
 \begin{proposition} \label{SUBSASPULL PROP}
-The diagram
+For any $n\geq 0$ the commutative diagram
 	\begin{equation}\label{PTPULL EQ}
 	\begin{tikzcd}
-		\Omega_{G,n+1} \ar{r}{V_G} 
-		\ar{d}[swap]{d_{1,\cdots,n+1}} & \Fin \wr \Omega_{G,n} 
-		\ar{d}{\Fin \wr d_{0,\cdots,n}}
+		\Omega_{G,n} \ar{r}{V_G} 
+		\ar{d}[swap]{d_{1,\cdots,n}} & \Fin_s \wr \Omega_{G,n-1} 
+		\ar{d}{\Fin \wr d_{0,\cdots,n-1}}
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin \wr \Sigma_G
+		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin_s \wr \Sigma_G
 	\end{tikzcd}
 	\end{equation}
 is a pullback diagram in $\mathsf{Cat}$.
@@ -3562,36 +3612,70 @@ is a pullback diagram in $\mathsf{Cat}$.
 
 
 \begin{proof}
-	An object in the pullback (\ref{PTPULL EQ}) over 
-	$T\in \Omega_{G,0} = \Omega_G^q$ is precisely the same as a $n$-string in $\mathsf{Sub}(T)$, and thus by Proposition \ref{SUBDATAUNDERPLANG PROP} equivalent to a $n+1$ planar tall string starting at $T$.
-	
-	The case of arrows is slightly more subtle. A quotient map $\pi \colon T \to T'$ induces a $G$-equivariant poset map 
-	$\pi_{\**} \colon \mathsf{Sc}(T) \to \mathsf{Sc}(T')$ 
-	(or equivalently, a map of Grothendieck constructions 
-	$G \ltimes \mathsf{Sc}(T) \to G \ltimes \mathsf{Sc}(T')$)
-	and diagrams as on the left below (where $v_{Ge}$ ranges over $V_G(T)$ and $e'=\varphi(e)$) induce diagrams (of functors $\mathsf{Sc}(T) \to \Omega$) as on the right below.
-	\begin{equation} \label{PTNARROWLOC EQ}
-	\begin{tikzcd}[column sep=1.2em]
-	T_{v_{G e}} \ar{r}{} \ar{d}[swap]{} & 
-	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{} &
+Let us write 
+$P = \Omega_{G,0} \times_{\Fin_s \wr \Sigma_G} \Fin_s \wr \Omega_{G,n-1}$ for the pullback,
+so that our goal is to show that the canonical map
+$\Omega_{G,n} \to P$ is an isomorphism. 
+
+That $\Omega_{G,n} \to P$ is an isomorphism on objects 
+follows by combining the alternative description of $V_G$
+in Notation \ref{VGDEF NOT} with the planar half of
+Corollary \ref{SUBDATAUNDERPLANG COR}
+(in fact, this yields isomorphisms of the fibers over 
+$\Omega_{G,0}$, but we will not directly use this fact).
+We will hence write $T_0 \to \cdots \to T_n$
+to denote an object of $P$ as well.
+
+An arrow in $P$ from 
+$T_0 \to \cdots \to T_n$ to 
+$T'_0 \to \cdots \to T'_n$
+then consists of a quotient 
+$\pi_0 \colon T_0 \to T'_0$
+together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write $e'=\pi_0(e)$)
+\begin{equation} \label{PTNARROWLOC EQ}
+\begin{tikzcd}[column sep=1.2em]
+	T_{0,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{0,e}} & 
+	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{1,e}} &
 	\cdots \ar{r}{} &
-	T_{n,v_{G e}} \ar{d}{} &
-	T_{(\minus)} \ar{r}{} \ar{d}[swap]{} & 
-	T_{1,(\minus)} \ar{r}{} \ar{d}[swap]{} &
-	\cdots \ar{r}{} &
-	T_{n,(\minus)} \ar{d}{} &
+	T_{n,v_{G e}} \ar{d}{\pi_{n,e}}
 \\
-	T'_{v_{G e'}} \ar{r}{} &
+	T'_{0,v_{G e'}} \ar{r}{} &
 	T'_{1,v_{G e'}} \ar{r}{} &
 	\cdots \ar{r}{} &
-	T'_{n,v_{G e'}} &
-	T'_{(\minus)}\circ \pi_{\**} \ar{r}{} &
-	T'_{1,(\minus)}\circ \pi_{\**} \ar{r}{} &
-	\cdots \ar{r}{} &
-	T'_{n,(\minus)}\circ \pi_{\**} &
-	\end{tikzcd}	
-	\end{equation}
-Passing to colimits then gives the desired commutative diagram (\ref{PTNARROW EQ}). Moreover, diagrams of the form (\ref{PTNARROW EQ}) clearly induce diagrams as in  (\ref{PTNARROWLOC EQ}) and it is straightforward to check that these are inverse processes. 
+	T'_{n,v_{G e'}}.
+\end{tikzcd}	
+\end{equation}
+%Note that the rooted arrows in (\ref{PTNARROWLOC EQ})
+%and we note that the dashed information is superfluous
+%since $T_{0,v_{G e}} = \mathsf{lr}(T_{1,v_{G e}})$,
+%$T'_{0,v_{G e}} = \mathsf{lr}(T'_{1,v_{G e}})$.
+That $\Omega_{G,n} \to P$ is injective on arrows is then clear.
+
+For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to \Omega_{G,0} \to \mathsf{O}_G$
+is a split Grothendieck fibration and 
+$P \to \Omega_{G,0}$ is a map of split Grothendieck fibrations. 
+Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
+(\ref{PTNARROWLOC EQ})
+are pullbacks (alternatively, an abstract argument also works).
+The alternative description of $V_G$ in 
+Notation \ref{VGDEF NOT} combined with
+(\ref{SUBDATAUNDERPLANG2 EQ}) 
+then show that 
+$\Omega_{G,n} \to P$ preserves pullbacks,
+so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
+Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
+But since a quotient is an isomorphism iff it is so on roots,
+we further have that 
+a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
+is a rooted isomorphism and
+each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
+But now rewriting \ref{PTNARROWLOC EQ} as a tuple of diagrams indexed by
+$f \in G e$
+one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
+$T_0 \downarrow \Omega_G^{\mathsf{rt}}$
+using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
+yields the desired rooted map (\ref{PTNARROW EQ})
+in $\Omega_{G,n}$ lifting the rooted map in $P$.
 \end{proof}
 
 
@@ -3600,42 +3684,42 @@ The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 	\[
 	\begin{tikzcd}[column sep = 0.1em]
 		\Omega_{G,{n+2}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
-		 & & \Fin \wr \Omega_{G,{n+1}} \ar{rd}{\Fin \wr d_i} \ar{dd} & &
+		 & & \Fin_s \wr \Omega_{G,{n+1}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
 		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{i}} \ar{dd} 
-		& & \Fin \wr \Omega_{G,{n}} \ar{rd}{\Fin \wr s_{i-1}} \ar{dd} &
+		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{i-1}} \ar{dd} &
 	\\
 		& \Omega_{G,{n+1}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin \wr \Omega_{G,{n}} \ar{ld} &
+		& & \Fin_s \wr \Omega_{G,{n}} \ar{ld} &
 		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin \wr \Omega_{G,{n+1}} \ar{ld}
+		& & \Fin_s \wr \Omega_{G,{n+1}} \ar{ld}
 	\\
-		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G & &
-		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G &
+		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G & &
+		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G &
 	\end{tikzcd}
 	\]
 commute whenever defined (i.e. $0 \leq i \leq n+1$).
 \end{remark}
 
-
 \begin{notation}\label{INDVNG NOT}
 	We will let 
 \[
-	V_{G,n} \colon \Omega_{G,n} \to \Fin \wr \Sigma_G
+	V_{G,n} \colon \Omega_{G,n} \to \Fin_s \wr \Sigma_G
 \]
 be inductively defined by 
-$V_{G,n} = \sigma^0 \circ V_{G,n-1} \circ V_G$.
+$V_{G,n+1} = \sigma^0 \circ V_{G,n} \circ V_G$ for $n \geq 0$.
 \end{notation}
+
 
 \begin{remark}
 When $n = 2$, $V_{G,2}$ is thus the composite
 \[
 \begin{tikzcd}[column sep =1.7em]
 	\Omega_{G,2} \ar{r}{V_G} &
-	\Fin \wr \Omega_{G,1} \ar{r}{V_G} &
-	\Fin \wr \Fin \wr \Omega_{G,0} \ar{r}{V_G} &
-	\Fin \wr \Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
-	\Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
-	\Fin \wr \Sigma_{G}
+	\Fin_s \wr \Omega_{G,1} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Omega_{G,0} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Sigma_{G}
 \end{tikzcd}
 \]
 In light of Remarks \ref{VERTEXDECOMP REM} and \ref{VERTEXDECOMPG REM}, 
@@ -3646,7 +3730,8 @@ $V_{G,n}(T_0 \to \cdots \to T_n)$ is identified with the tuple
 though this requires changing the total order in $V_G(T_n)$. Rather than using the order induced by $T_n$, one instead equips 
 $V_G(T_n)$ with the order induced lexicographically
 from the maps 
-$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$, i.e., for 
+$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
+of Remark \ref{VERTEXDECOMP REM}. I.e., for 
 $v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that the images of $v,w \in V_G(T_i)$ are distinct.
 \end{remark}
 
@@ -3654,11 +3739,10 @@ $v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that
 
 
 
-
-
-
-
 \section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
+
+{\color{red} HERE}
+
 We now turn to the task of building the monad encoding genuine equivariant operads.
 
 
