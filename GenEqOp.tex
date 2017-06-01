@@ -3851,7 +3851,7 @@ is unchanged by replacing $\Fin_s$ with $\Fin$.
 As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
 \end{remark}
 
-{\color{red} Expand on}
+{\color{red} Expand on if necessary}
 
 \begin{remark}
 Our primary interest here will be in the 
@@ -3877,12 +3877,12 @@ Moreover, since all squares in the diagram
 \begin{tikzcd}
 	\Omega^{(A)}_{G,n+1} \ar{r}{V_G^{(A)}} \ar{d}& 
 	\Fin \wr \Omega^{(A)}_{G,n} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
-	\Fin \wr \Fin \wr A  \ar{d} \ar{r}{\sigma^0} &
+	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
 	\Fin \wr A \ar{d}
 \\
 	\Omega_{G,n+1} \ar{r}{V_G} \ar{d} &
 	\Fin \wr \Omega_{G,n} \ar{r}{\Fin \wr V_{G,n}} \ar{d} &
-	\Fin \wr \Fin \wr \Sigma_G \ar{r}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
 	\Fin \wr \Sigma_G
 \\
 	\Omega_{G,0} \ar{r} &
@@ -3897,12 +3897,12 @@ $\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
 
 \begin{proposition}
 For any $A \to \Sigma_G$ there are functors 
-$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G}^{(A,0)}$ and natural isomorphisms
+$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G,0}^{(A)}$ and natural isomorphisms
 \begin{equation}\label{SHUFFLEPERMA EQ}
 	\begin{tikzcd}
 	\Omega_{G,1}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}[swap]{d_{0}^{(A)}}&
 	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G^{(A)}} &
-	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0}
+	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0}
 \\
 	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G^{(A)}} &&
 	\Fin \wr A,
@@ -3916,7 +3916,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 	\Omega_{G,1}^{(A)} \ar{rr}{V_G^{(A)}} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{(H)}}
 	&&
 	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr}{\Fin \wr V_G^{(A)}} \ar[dd,dashed]&&
-	|[alias=FFOmegan]|\Fin \wr \Fin \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
+	|[alias=FFOmegan]|\Fin^{\wr 2} \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
 \\
 	&
 	|[alias=Omeganp1]|\Omega_{G,0}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G^{(A)}} \ar[crossing over]{dd} &&&&
@@ -3924,7 +3924,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 \\
 	\Omega_{G,1}^{(B)} \ar[dashed]{rr} \ar{rd}[swap,near end]{d^{(B)}_0}&&
 	\Fin \wr \Omega^{(B)}_{G,0} \ar[rr,dashed] &&
-	|[alias=FFOmeganm1]|\Fin \wr \Fin \wr B \ar[rd,dashed] 
+	|[alias=FFOmeganm1]| \Fin^{\wr 2} \wr B \ar[rd,dashed] 
 \\
 	&
 	|[alias=Omegan]|\Omega^{(B)}_{G,0} \ar{rrrr}[swap]{V_G^{(B)}} &&&&
@@ -3933,7 +3933,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm,dashed]
 \end{tikzcd}
 \end{equation}
-one has an equality 
+one has an equality of natural transformations
 \[(\Fin \wr H)\pi^{(A)} = \pi^{(B)}\Omega_{G,1}^{(H)}\]
  (i.e. the two natural isomorphisms between the two distinct functors $\Omega_{G,1}^{(A)} \rightrightarrows \Fin \wr B$ coincide).
 \end{proposition}
@@ -3944,12 +3944,12 @@ $d_0^{(A)}$ is simply given by the formula
 \begin{equation}\label{GEND0 EQ}
 d_0^{(A)} \left(
 T_0 \to T_1,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+(a_{v_{G e}})_{v_{G e}\in V_G(T_1)}
 \right)
 =
 \left(
 T_1,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+(a_{v_{G e}})_{v_{G e} \in V_G(T_1)}
 \right),
 \end{equation}
 though one must note that since in (\ref{OMEGAGNA EQ}) the
@@ -3997,8 +3997,8 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\Sigma \ar[equal]{d}&
 	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}} \ar{l}&
 	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G} &
-	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0} \ar{r} &
-	\Fin \wr \Fin \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	|[alias=FFOmega]| \Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
