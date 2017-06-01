@@ -520,7 +520,6 @@ must satisfy associativity, unitality, compatibility with restriction maps (noti
 \subsection{Main results}
 
 
-{\color{red} HERE}
 
 We now present the highlights of this paper. 
 %, each of which proves the existence of certain model structures, or makes comparisons between them. 
@@ -653,21 +652,18 @@ Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_E
 
 \todo[inline]{come back here}
 
-While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend to the coloured setting. 
-One key difference is that coloured genuine $G$-operads will have a \textit{coefficient system} of colours: evaluation at a $G$-corolla will include the additional data of a colour for each $G$-orbit of edges, and the isotropy of the colours must match that of its asscoatied edge.
-This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate.
-%More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
+While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
 
 %We end this introduction with a brief discussion on the context of this paper. 
 As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. 
-Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}.
+Importantly, the notion of ``multicoloured genuine $G$-operads'' will provide the natural (and most highly structured) target for the strictification, or ``homotopy operad'' construction, on the $G$-$\infty$-operads of \cite{Pe17}. 
 
-Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b} reproduced below, to the $G$-equivariant context. 
+Moreover, sequels will extend the definitions of ``dendroidal complete Segal spaces'' and ``Segal pre-operads'', as well as the comparison Diagram $(\filledstar)$ of Quillen equivalences from \cite{CM13b}, reproduced here below, to the $G$-equivariant context. 
 \begin{equation}
   \label{CM_EQ}
   \tag{$\filledstar$}
   \begin{tikzcd}
-    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l] \arrow[d, "hcN_d"]\\
+    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l, "N_d"] \arrow[d, "hcN_d"]\\
     \mathsf{sdSet} & \mathsf{dSet} \arrow[l]
   \end{tikzcd}
 \end{equation}
@@ -676,19 +672,11 @@ We note that, as in \cite{Pe17}, there are both multiple possible \textit{catego
 We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined'', and similiarly $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, in which both composition and fixed-point conditions are weak. This would yield an expanded equivariant right half of \ref{CM_EQ}, given by the following.
 \[
 \begin{tikzcd}
-        \Op^G_{\mathcal F}(\V) \arrow[rr, "i_*"] \arrow[dd, shift right, "hcN^G"]& & \Op_G^{\mathcal F}(\V) \arrow[dd, "hcN_G"']\\ \\
-        \mathsf{dSet}^G_{\mathcal F} \arrow[rr, "i_*"'] \arrow[uu, shift left, shift left, dashed, bend left, "Ho^G"] \arrow[uurr, "Ho_G", dashed] && \mathsf{dSet}_G^{\mathcal F} \arrow[uu, shift right, shift right, bend right, dashed, "\mathrm{Ho}_G"']
+        \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
+        \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
 \end{tikzcd}
 \]
-We expect that all solid arrows are Quillen equivalences. However, analogous to the work of Cisinski-Moerdijk, direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, inspiring futher need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
-
-We also record our finding of an unexpected complication, that $G$-$\infty$-operads in $\mathsf{dSet}^G$ themselves satisfy a rigid fixed point condition, but their \textit{genuine} homotopy operad does \textit{not}, in particular that 
-\[
-\mathrm{Ho}_G(X) \not\simeq \mathrm{Ho}_G i_*(X) \not\simeq i_* \mathrm{Ho}^G(X)
-\]
-for $G$-$\infty$-operads $X$. 
-
-A full exploration of this and the other above topics will be discussed in sequels.
+We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
 %We expect to make a full comparison between these notions in sequels.
 
 {\color{red} Mention colored operad versions, equivalence with dendroidal sets}
@@ -849,7 +837,6 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 %\]
 %\end{proof}
 
-{\color{red} HERE}
 
 We also record the following, the proof of which is straightforward.
 \begin{proposition}\label{GROTHSTAB PROP}
@@ -1263,10 +1250,10 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 %\]
 
 
-\begin{remark}
+\begin{remark}\label{FINSURJ REM}
 	In lieu of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
-	for the subcategories of surjections,
+	for the subcategory of surjections,
 	we define a 
 	\textit{symmetric monoidal category with fold maps}
 	as a category $\mathcal{V}$ together with a functor
@@ -1284,12 +1271,10 @@ Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}.
 \end{remark}
 
-{\color{red} Maybe mention that ``cat with projections'' is the same as semi-cartesian}
-
 We end this section by collecting some straightforward lemmas
 that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
 
-\begin{lemma}
+\begin{lemma}\label{FWRGROTH LEM}
 	If $\mathcal{E} \to \mathcal{B}$ a (split) Grothendieck fibration then so is 
 	$\Fin \wr \mathcal{E} \to \Fin \wr \mathcal{B}$.
 
@@ -1474,7 +1459,10 @@ of those sets with transitive actions, $\Omega_G$ can then be described as given
 	\mathsf{O}_G \ar{r} & \Fin^G,
 \end{tikzcd}
 \end{equation}
-which is a repackaging of \cite[Prop. 5.46]{Pe17}.
+which is a repackaging of \cite[Prop. 5.46]{Pe17}. Explicitly, a $G$-tree $T$ is then a tuple 
+$T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
+together with isomorphisms
+$T_x \to T_{g x}$ that are suitably associative and unital.
 
 
 
@@ -1492,7 +1480,7 @@ definitions of \textit{planar trees} along those lines
 are found throughout the literature.
 However, to allow for precise proofs of some key results 
 concerning the interaction of planar structures with the maps in $\Omega$ 
-(namely Propositions \ref{PLANARPULL EQ} and  \ref{SUBDATAUNDERPLAN PROP})
+(namely Propositions \ref{PLANARPULL PROP} and  \ref{SUBDATAUNDERPLAN PROP})
 we will instead use a combinatorial definition 
 of planar structure in the context of broad posets.
 
@@ -1733,7 +1721,7 @@ $c = e \vee g$ and transitivity follows.
 \end{proof}
 
 
-\begin{remark}
+\begin{remark}\label{CLOSURE REM}
 Proposition \ref{PLANARIZATIONCHAR PROP} states in particular that $\leq_p$
 is the closure of the relations in $\leq_d$	and on the vertices
 $a^{\uparrow}$ under the planar condition in 
@@ -2044,27 +2032,271 @@ trees in the isomorphism class of the tree depicted in
 (\ref{D6SMALLER EQ}).
 \end{example}
 
-{\color{red} HERE}
+The attentive reader may have noted
+that it follows from 
+Proposition \ref{GROTHSTAB PROP}
+that both vertical maps in (\ref{OGDEF EQ})
+are split Grothendieck fibrations. We now introduce some terminology.
+
+\begin{definition}\label{ROOTPULL DEF}
+The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
+in (\ref{OGDEF EQ}) is called the \textit{root functor}.
+
+Further, fiber maps (i.e. maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps} and pullbacks with respect to $\mathsf{r}$ are called
+\textit{root pullbacks}.
+\end{definition}
+
+To motivate the terminology, 
+note first that unpacking definitions shows that 
+$\mathsf{r}(T)$ is the ordered set of tree components of  
+$T\in \Omega_G$,
+which coincides with the ordered set of roots.
+The exact choice of name is further meant to accentuate 
+the connection with another key functor
+which we call the \textit{leaf-root functor},
+described in \S \ref{LRVERT SEC}.
+
+Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
+$T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
+along the map 
+$\varphi \colon Y \to X$
+is simply the $G$-tree
+$(T_{\varphi(y)})_{y \in Y}$
+with structure maps 
+$T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
+
+
+\begin{example}\label{ROOTPULL EX}
+Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$, 
+$H = \langle j \rangle$ and $K = \langle -1 \rangle$.
+Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees 
+$T$ and $S$ along the 
+twist map $\tau \colon G/H \to G/H$
+and the unique map $\pi \colon G/H \to G/G$
+(or, more precisely, noting that in our model the underlying set 
+of $G/H$ is actually $\{1,2\}$,
+$\tau$ is the permutation $(12)$).
+We note that the stabilizers of $a,b,c$ are $\{1\},K,H$ for $T$
+and $K,H,G$ for $S$.
+The top depictions of $\tau^{\**} T$, $\pi^{\**} (S)$ then use the edge orbit generators suggested by $T$, $S$ 
+while the bottom depictions
+choose generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
+$d = i c$, $e = i b$, $f = i a$
+and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
+\begin{figure}[ht]
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
+	every node/.style = {font=\footnotesize,inner sep =2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\begin{scope}[yshift=12em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-j a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$j a$}}
+				edge from parent node [swap] {$j b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$- k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$k a$}}
+				edge from parent node [swap] {$k b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$- i a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node {$i b$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$T$};
+	\end{scope}
+	\begin{scope}[yshift=4em]
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-j a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$j a$}}
+				edge from parent node [swap] {$j b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$- k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$k a$}}
+				edge from parent node [swap] {$k b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$- i a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node {$i b$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
+	\end{scope}
+	\begin{scope}[yshift=-4em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j d$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$-j d$}}
+				edge from parent node [swap] {$j e$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-d\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}d$}}
+				edge from parent node {$\phantom{j}e$}}
+			edge from parent node [swap] {$f$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$-k d$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$k d$}}
+				edge from parent node [swap] {$k e$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$i d\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}-i d$}}
+				edge from parent node {$i e$}}
+			edge from parent node [swap] {$i f$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
+	\end{scope}
+	\begin{scope}[yshift=12em,xshift=20em]
+		\node at  (1.5,0) {$S$}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{j}a$}}
+				edge from parent node {$b$}}
+			edge from parent node [swap] {$c$}};
+	\end{scope}
+	\begin{scope}[yshift=4em,xshift=20em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a'$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a'$}}
+				edge from parent node [swap] {$i b'$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$\phantom{j}b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a'\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a'$}}
+				edge from parent node {$b'$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
+	\end{scope}
+	\begin{scope}[yshift=-4em,xshift=20em]
+		\node at  (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j d$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$d $}}
+				edge from parent node [swap] {$e{\phantom{b}}$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$j a\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}a$}}
+				edge from parent node {$\phantom{j}b$}}
+			edge from parent node [swap] {$c$}};
+		\node at  (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k a$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$i a$}}
+				edge from parent node [swap] {$i b$}}
+				child[sibling distance = 4.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,near end] {$k d\phantom{j}$}}
+					child[sibling distance = 1em]{
+					edge from parent node [near end] {$\phantom{+1}i d$}}
+				edge from parent node {$i e$}}
+			edge from parent node [swap] {$i c$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
+	\end{scope}
+	\end{tikzpicture}
+\]
+\caption{Root pullbacks}
+\label{FIGURE}
+\end{figure}
+\end{example}
 
 
 \begin{definition}
-	A morphism $S \xrightarrow{\varphi} T$ in $\Omega$ preserving the planar structure $\leq_p$
+	A map $S \xrightarrow{\varphi} T$ in $\Omega$ preserving the planar structure $\leq_p$
 	is called a \textit{planar map}.
 	
-	More generally, a morphism $F \to G$ in the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
+	More generally, a map $F \to G$ in one of the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
 \end{definition}
 
 
 \begin{remark}
-	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect
- $\leq_d$ inequalities.
+	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect $\leq_d$-comparability.
  
- We note that in the $\Omega_G$ case a map $\varphi$ is independent iff $\varphi$ does not factor through a non trivial quotient iff $\varphi$ is injective on each edge orbit.
+However, we note that in the case of $\Omega_G$
+independence admits simpler characterizations:
+$\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\varphi$ is injective on the root orbit.
 \end{remark}
 
 
 \begin{proposition}
-\label{PLANARPULL EQ}
+\label{PLANARPULL PROP}
 	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
 	\[F \xrightarrow{\simeq} \bar{F} \to G\]
 	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
@@ -2073,376 +2305,36 @@ trees in the isomorphism class of the tree depicted in
 \begin{proof}
 We need to show that there is a unique planar structure 
 $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
-Simplicity of $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
-The result now follows from (the forest version of) Proposition
-\ref{PLANARIZATIONCHAR PROP}: one simply orders each set $e^{\uparrow}$ and $\underline{r}_F$ according to its image.
-
-{\color{orange} not quite complete... maybe that $\leq_p$ is the closure of $\leq_d$ and the vertex relations under transitivity and the planar condition}
+Simplicity of the broad poset $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
+By (the forest version of) Proposition
+\ref{PLANARIZATIONCHAR PROP}
+the only possible planar structure $\leq_p^{\bar{F}}$
+is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
+The claim that $\varphi$ is then planar follows from 
+Remark \ref{CLOSURE REM}
+together with the fact (\cite[Lemma 5.33]{Pe17})
+that $\varphi$ reflects $\leq_d$-comparability.
 \end{proof}
-
 
 
 \begin{remark}\label{PULLPLANAR REM}
-	Proposition \ref{PLANARPULL EQ} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+	Proposition \ref{PLANARPULL PROP} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
 \end{remark}
-
-
-
-\subsection{Root, leaf-root and vertex functors}\label{LRVERT SEC}
-
-
-\begin{remark}\label{UNIQCOR REM}
-	Given any tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
-	$\mathsf{lr}(T) \to T$.
-	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
-\end{remark}
-
-\todo[inline]{planarity for $\Omega_G$: choice of planar structures on $\amalg_{[g]}T_{[g]}$, $G\cdot_H T_H$, etc}
-
-
-\begin{definition}
-	A morphism $T \xrightarrow{\varphi} S$ in $\Omega_G$ is called a \textit{quotient} if the underlying morphism of (non-planar) forests
-	\[\coprod_{[g]\in G/H} {T_{[g]} } 
-	\to
-	\coprod_{[h]\in G/K} {S_{[h]} } 
-	\]
-maps each tree component (or, equivalently, some tree component) isomorphically onto its image component.
-
-We denote the subcategory of $G$-trees and quotients by $\Omega_G^q$.
-\end{definition}
-
-
-\begin{definition}
-	The \textit{$G$-symmetric category}, which we will also call the \textit{category of $G$-corollas}, is the full subcategory 
-	$\Sigma_G \subset \Omega_G^{q}$ of those $G$-trees that are corollas, i.e. $G$-trees such that each edge is either a root or a leaf (but not both).
-\end{definition}
-
-
-\begin{definition}
-	The \textit{leaf-root functor} is the functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
-	\[
-	 \mathsf{lr}(T)=\{\text{leaves of }T\}\amalg \{\text{roots of }T\}
-	\]
-	with a broad relation $l_1 \cdots l_n \leq r$ holding in 
-	$\mathsf{lr}(T)$ iff its image holds in $T$ and similarly for the planar structure $\leq_p$.
-\end{definition}
-
-\begin{remark}\label{LEAFROOTEXAMP REM}
-	Generalizing Remark \ref{UNIQCOR REM},
-	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique (tree-wise) tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
-	$T=G\cdot_H \eta$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
-\[
-	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
-	every node/.style = {font=\footnotesize,inner sep=3pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
-			child{node [dummy] {}
-				child[level distance=1.25em,sibling distance = 3em]{node [dummy] {}
-					child[level distance=2.3em,sibling distance =0.75em]{
-					edge from parent node [swap,near end] {$a+2$}}
-					child[level distance=2.3em,sibling distance =0.75em]{
-					edge from parent node [near end] {$a+3$}}
-				edge from parent node [swap] {$b+1$}}
-				child[sibling distance = 0.75em]{node [dummy] {}
-				edge from parent node [swap, very near end] {$c+1$}}
-				child[sibling distance = 1.25em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,very near end] {$a+1$}}
-					child[sibling distance = 1em]{
-					edge from parent node [very near end] {$\phantom{1+}a$}}
-				edge from parent node [very near end] {$b$}}
-				child[level distance=1.25em,sibling distance = 2.5em]{node [dummy] {}
-				edge from parent node {$c$}}
-			edge from parent node [swap] {$d$}};
-		\node at (0,-2) {$\mathsf{lr}(T)$}
-			child{node [dummy] {}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node [swap] {$a+2$}}
-				child[sibling distance=0.75em,level distance=2.75em]{
-				edge from parent node [very near end,swap] {$a+3$}}
-				child[sibling distance=0.75em,level distance=2.75em]{
-				edge from parent node [very near end] {$a+1$}}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node {$\phantom{1+}a$}}
-			edge from parent node [swap] {$d$}};
-		\node at (4,0) {}
-			child{node [dummy] {}
-				child[level distance=1.3em,sibling distance=2.75em]{
-				edge from parent node [swap] {$c+2$}}
-				child{node [dummy] {}
-					child[sibling distance=1em]{
-					edge from parent node [near end,swap] {$a+2$}}
-					child[sibling distance=1em]{
-					edge from parent node [near end] {$\phantom{1}a$}}
-				edge from parent node [swap, near end] {$b$}}
-				child[level distance=1.3em,sibling distance=2.75em]{
-				edge from parent node {$c$}}
-			edge from parent node [swap] {$d$}};
-		\node at (7,0) {}
-			child{node [dummy] {}
-				child[level distance=1.3em,sibling distance=2.75em]{
-				edge from parent node [swap] {$c+1$}}
-				child{node [dummy] {}
-					child[sibling distance=1em]{
-					edge from parent node [near end,swap] {$a+3$}}
-					child[sibling distance=1em]{
-					edge from parent node [near end] {$a+1$}}
-				edge from parent node [swap, near end] {$b+1$}}
-				child[level distance=1.3em,sibling distance=2.75em]{
-				edge from parent node {$c+3$}}
-			edge from parent node [swap] {$d+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,0) -- (3.9,0) node[midway]{$U$};
-		\node at (4,-2) {}
-			child{node [dummy] {}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node [swap] {$c+2$}}
-				child[sibling distance=1em,level distance=2.75em]{
-				edge from parent node [very near end,swap] {$a+2$}}
-				child[sibling distance=1em,level distance=2.75em]{
-				edge from parent node [very near end] {$\phantom{1+}a$}}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node {$\phantom{1+}c$}}
-			edge from parent node [swap] {$d$}};
-		\node at (7,-2) {}
-			child{node [dummy] {}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node [swap] {$c+1$}}
-				child[sibling distance=1em,level distance=2.75em]{
-				edge from parent node [very near end,swap] {$a+3$}}
-				child[sibling distance=1em,level distance=2.75em]{
-				edge from parent node [very near end] {$a+1$}}
-				child[sibling distance=2em, level distance=1em]{
-				edge from parent node {$\phantom{1+}c+3$}}
-			edge from parent node [swap] {$d+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,-2) -- (3.9,-2) node[midway]{$\mathsf{lr}(U)$};
-			\node at (10,0) {}
-				child{
-				edge from parent node [swap] {$a$}};
-			\node at (11,0) {}
-				child{
-				edge from parent node [swap] {$a+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (9.9,0) node[midway]{$V$};
-			\node at (10,-2) {}
-				child{node[dummy]{}
-					child{
-					edge from parent node [swap] {$a$}}
-				edge from parent node [swap] {$\bar{a}$}};
-			\node at (11,-2) {}
-				child{node[dummy]{}
-					child{
-					edge from parent node [swap] {$a+1$}}
-				edge from parent node [swap] {$\bar{a}+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,-2) -- (9.9,-2) node[midway]{$\mathsf{lr}(V)$};
-	\end{tikzpicture}
-\]	
-\end{remark}
-
-
-\begin{remark}
-	One consequence of the fact that planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
-is that $\mathsf{lr} \colon \Omega_G^q \to \Sigma_G$ is not a categorical fibration.
-{\color{red} maybe add to this}.
-\end{remark}
-
-
-\begin{definition}\label{VG DEF}
-	Given $T \in \Omega_G$ we define the set $V_G(T)$ of 
-	\textit{$G$-vertices} of $T$ to be the orbit set $V(T)/G$, i.e. the quotient of the vertex set $V(T)$ by its $G$-action.
-	
-Furthermore, we will regard $V_G(T)$ as an object in $\Fin$ by equipping it with its lexicographic order: i.e. vertex equivalence classes $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
-\end{definition}
-
-
-
-\begin{remark}\label{VERTEXDECOMPG REM}
-	Following Remark \ref{VERTEXDECOMP REM},
-	a planar tall map $f \colon T \to U$ of $G$-trees
-	induces a $G$-equivariant map
-	$f^{\**} \colon V(U) \to V(T)$
-	and thus also a map of orbits
-	$f^{\**} \colon V_G(U) \to V_G(T)$.
-We note, however, that $f^{\**}$ is not in general compatible with the order on $V_G$, as is indeed the case even in the non-equivariant case.
-
-A minimal example follows.
-		\[
-		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,
-		every node/.style = {font=\footnotesize},
-		dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
-			child{node [dummy] {}
-				child[sibling distance = 3.5em]{node [dummy] {}
-					child
-				edge from parent node[swap] {$c$}}
-				child[level distance=2.9em]{
-				edge from parent node [swap] {$b$}}
-				child[sibling distance = 3.5em]{node [dummy] {}
-					child
-				edge from parent node {$a$}}		
-			edge from parent node [swap] {$d$}};
-		\node at (6,0) {$U$}
-			child{node [dummy] {}
-				child[sibling distance = 5em]{node [dummy] {}
-					child
-				edge from parent node [swap] {$c$}}
-				child[sibling distance = 5em]{node [dummy] {}
-					child[sibling distance = 3.5em]{
-					edge from parent node [swap,near end] {$b$}}
-					child[sibling distance = 3.5em]{node [dummy] {}
-						child
-					edge from parent node [near end]{$a$}}
-				edge from parent node {$e$}}
-			edge from parent node [swap] {$d$}};
-		\draw[->] (2.6,1) -- node [above] {$f$} (3.6,1) ;
-		\end{tikzpicture}
-		\]
-In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
-$f^{\**} \colon V(U) \to V(T)$ is given by 
-$a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
-\end{remark}
-
-
-Note that each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf. As such, we will represent the corresponding $G$-vertex by $v_{Ge}=(Ge)^{\uparrow} \leq Ge$ (which we interpret as the concatenation of the relations $f^{\uparrow} \leq f$ for $f \in G e$) and write
-\[T_{v_{Ge}}=T_{(Ge)^{\uparrow} \leq Ge} = \coprod_{f\in Ge} T_{f^{\uparrow}\leq f}.\]
-We note that $T_{v_{Ge}}$ is always a $G$-corolla. Indeed, noting that a quotient map $\varphi \colon T \to S$ induces quotient maps 
-$T_{v_{ge}} \to S_{v_{G\varphi(e)}}$ one obtains a functor
-	\begin{equation}\label{VFUNCTOR EQ}
-		\begin{tikzcd}[row sep=tiny]
-		\Omega_G^q \ar{r}{V_G} & \Fin \wr \Sigma_G \\
-		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)}.
-		\end{tikzcd}	
-	\end{equation}
-
-\begin{remark}
-  \label{NEED_WREATH_REMARK}
-	The need to introduce the $\Fin \wr \C$ categories comes from the fact that general quotient maps do not preserve the number of $G$-vertices. For a simple example, let $G=\mathbb{Z}_{/4}$ and consider the quotient map
-		\[
-		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
-			child{node [dummy] {}
-				child{node [dummy] {}
-					child{
-					edge from parent node [swap] {$a^{+1} + G$}}
-				edge from parent node[near end,swap] {$b^{+1} + G/2G$}}
-				child{node [dummy] {}
-					child{
-					edge from parent node {$a + G$}}
-				edge from parent node [near end] {$b + G/2G$}}		
-			edge from parent node[swap] {$c + G/2G$}};
-		\node at (4.53,0) {$S$}
-			child{node [dummy] {}
-				child{node [dummy] {}
-					child{
-					edge from parent node [swap] {$a + G$}}
-				edge from parent node [swap] {$b + G/2G$}}
-			edge from parent node [swap] {$c + G/G$}};
-		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
-		\end{tikzpicture}
-		\]
-sending edges labeled $a,b,c$ to the edges with the same name and the edges $a^{+1}$, $b^{+1}$ to the edges $a+1$, $b+1$. We note that $T$ has three $G$-vertices $v_{Gc}$, $v_{Gb}$, $v_{Gb^{+1}}$ while $S$ has only two $G$-vertices $v_{Gc}$ and $v_{Gb}$. $V(\phi)$ then maps the two corollas 
-$T_{v_{Gb}}$ and $T_{v_{G b^{+1}}}$
-isomorphically onto $T_{S_{Gb}}$
-and the corolla $T_{v_{Gc}}$ non-isomorphically onto $S_{v_{Gc}}$.
-\end{remark}
-
-
-Definition \ref{SUBSTITUTIONDATUM} now immediately generalizes. Here a map is called \textit{rooted} if it induces an ordered isomorphism on the root orbit.
-\todo[inline]{reordering not complete - future referencing}
-
-\begin{definition}\label{SUBSTITUTIONDATUMG DEF}
-	Let $T \in \Omega_G$ be a $G$-tree.
-	
-	A \textit{rooted (resp. planar) $T$-substitution datum} is a tuple 
-	$\{U_{v_{G e}}\}_{v_{G e} \in V_G(T)}$ together with rooted (resp. planar) tall maps 
-	$T_{v_{Ge}} \to U_{v_{G e}} = T_{v_{G e}}$.
-	
-	Further, a map of rooted (resp. planar) $T$-substitution data 
-	$\{U_{v_{G e}}\} \to \{V_{v_{G e}}\}$ is a tuple of rooted (resp. planar) tall maps $\{U_{v_{G e}} \to V_{v_{G e}}\}$.
-\end{definition}
-
-\begin{remark}\label{SUBSDATUMCONV REM}
-	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we will prefer to repackage equivariant substitution data in terms of non-equivariant terms.
-
-Noting that there are decompositions 
-$U_{v_{G e}}= \coprod_{g e \in Ge} U_{ge^{\uparrow} \leq ge}$
-and letting $G \ltimes V(T)$ denote the Grothendieck construction for the action of $G$ on the non-equivariant vertices $V(T)$ (often called the action groupoid), it is immediate that an equivariant $T$-substitution datum is the same as a functor $G \ltimes V(T) \to \Omega$ whose restriction to $V(T) \subset G \ltimes V(T)$ is a (non-equivariant) substitution datum.
-\end{remark}
-
-
-\begin{proposition}\label{SUBDATAUNDERPLANG PROP}
-Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
-\begin{equation}\label{SUBDATAUNDERPLANG EQ}
-\begin{tikzcd}[row sep =0pt]
-	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
-	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
-	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] &
-	\Omega_{G,T/}^{\mathsf{rt}} \ar[l,shift left=2pt]
-\\
-	\{U_{v_{G e}}\} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
-	\{U_{v_{G e}}\} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
-\end{tikzcd}
-\end{equation}
-\end{proposition}
-
-
-\begin{proof}
-	This is a minor adaptation of the non-equivariant analogues Proposition \ref{SUBDATAUNDERPLANG PROP} and Corollary \ref{SUBDATAUNDERPLAN COR}.
-            \todo{this seems to be both self-referential and future referential}
-	Since $\mathsf{Sc}(T)$ inherits a $G$ action, one can form the Grothendieck construction $G \ltimes \mathsf{Sc}(T)$ and by Remark \ref{SUBSDATUMCONV REM} equivariant substitution data $\{U_{v_{Ge}}\}$ therefore induce functors 
-	$U_{(\minus)} \colon G \ltimes \mathsf{Sc}(T) \to \Omega$.
-	It is then immediate that $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ inherits a $G$-action, provided it exists. 
-	The key observation is then that, since $\mathsf{Sc}(T)$ is now a disconnected poset, this colimit is to be interpreted as taken in the category $\Phi$ of forests rather than in $\Omega$.
-	
-	Additionally, we note that the need to use rooted data comes from the fact that rooted isomorphisms $T \to T'$ are in bijection with rooted substitution data that are given by isomorphisms, a statement that fails in the absence of the rooted condition.
-\end{proof}
-
-\begin{remark} We will need to know that in the planar case each of the maps 
-\[U_{v_{Ge}} \to U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}\]
-induced by the previous proof is a planar map of $G$-trees.
-This requires two observations:
-\begin{inparaenum}
-	\item[(i)] the restrictions to each of the constituent non-equivariant trees $U_{ge^{\uparrow}\leq ge}$ is planar by Proposition \ref{SUBDATAUNDERPLANG PROP};
-	\item[(ii)] the restriction to the roots of $U_{v_{Ge}}$ is injective and order preserving since it matches the inclusion of the roots of $T_{v_{Ge}}$, and the map $T \to U$ is a planar map of $G$-trees.
-\end{inparaenum}
-\end{remark}
-
-\begin{remark}\label{PULLCOMP REM}
-	The isomorphisms in Proposition \ref{SUBDATAUNDERPLANG PROP}
-	are compatible with root pullbacks of trees. More concretely, any pullback $\pi \colon S=\varphi^{\**} T \to T$ induces pullbacks 
-	$\pi_{Ge}\colon S_{v_{Ge}} \to T_{v_{Ge}}$ for $v_{Ge} \in V_G(S)$ and one has commutative diagrams
-\begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
-\begin{tikzcd}[row sep =10pt]
-	\mathsf{Sub}_{\mathsf{p}}(S) \ar[r,shift left=2pt] &
-	\Omega_{G,S/}^{\mathsf{pt}} \ar[l,shift left=2pt] &
-	\mathsf{Sub}_{\mathsf{r}}(S) \ar[r,shift left=2pt] &
-	\Omega_{G,S/}^{\mathsf{rt}} \ar[l,shift left=2pt]
-\\
-	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
-	\Omega_{G,T/}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}} &
-	\mathsf{Sub}_{\mathsf{r}}(T) \ar[r,shift left=2pt] \ar{u}{(\pi_{Ge})} &
-	\Omega_{G,T/}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\pi^{\**}}
-\end{tikzcd}
-\end{equation}
-\end{remark}
-
-
-
-
-
-
-
 
 
 
 \subsection{Outer faces, tall maps, and substitution}\label{OUTTALL SEC}
 \label{SUBS SEC}
 
+One of the key ideas needed for our description of operads is 
+the notion of substitution of tree nodes,
+a process that we will prefer to repackage in terms of maps of trees.
+
+In preparation for that discussion,
+we first recall some basic definitions and results concerning outer subtrees and tree grafting, as in \cite[\S 5]{Pe17}.
 
 
-In preparation for our discussion of the substitution operation in \S \ref{SUBS SEC}, we now recall some basic notions and results concerning outer subtrees and tree grafting, as in \cite[\S 5]{Pe17}.
-
-\begin{definition}
+\begin{definition}\label{OUTFACE DEF}
 	Let $T \in \Omega$ be a tree and 
 	$e_1 \cdots e_n =\underline{e} \leq e$ a broad relation in $T$.
 	
@@ -2453,13 +2345,14 @@ In preparation for our discussion of the substitution operation in \S \ref{SUBS 
 \end{equation}
 generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying (\ref{OUTERFACE EQ}) but 
 $\forall_i f\neq e_i$,
-and planar structure pulled back from $T$.
+and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
 \end{definition}
 
 
 \begin{remark}
-If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \to T$ is usually called simply an \textit{outer face}.
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
 \end{remark}
+
 
 We now recap some basic results.
 
@@ -2480,9 +2373,11 @@ and edge tuple $\underline{e}$;
 \begin{tikzcd}
 	\eta \ar{r}{v} \ar{d}[swap]{v} & T_{\underline{g} \leq v} \ar{d}
 \\
-	T_{\underline{f}v \leq e} \ar{r} & T_{\underline{f}\underline{g} \leq e}
+	T_{\underline{f}v \leq e} \ar{r} & T_{\underline{f}\underline{g} \leq e}.
 \end{tikzcd}
 \end{equation}
+Further, $T_{\underline{f} \underline{g} \leq e}$ is the
+unique choice of pushout that makes the maps in (\ref{GRAPTPUSH EQ}) planar.
 %\item[(e)] a face map $S \to T$ is an outer face map iff whenever the composite relation $\underline{f} \underline{g} \leq e$ is in $S$ then so are the relations $\underline{g} \leq v$ and
 %$\underline{f}v \leq e$.
 \end{itemize}
@@ -2499,23 +2394,28 @@ $T_{\underline{e} \leq e}$.
 
  (c) follows from the definition of outer face together with \cite[Lemma 5.33]{Pe17}, which states that the $\leq_d$ relations on $S,T$ coincide.
  
-  Since by (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq e}$, 
-(d) is a restatement of \cite[Prop. 5.15]{Pe17}. 
+  Since by (b) and (c) both $T_{\underline{g} \leq v}$ and $T_{\underline{f}v \leq e}$ are outer faces of $T_{\underline{f} \underline{g} \leq e}$, 
+the first part of (d) is a restatement of \cite[Prop. 5.15]{Pe17}, while the additional planarity claim 
+follows by Proposition \ref{PLANARIZATIONCHAR PROP}
+together with the vertex identification
+$V(T_{\underline{f} \underline{g} \leq e})=
+V(T_{\underline{f} v \leq e}) \amalg V(T_{\underline{g} \leq v})$.
 %Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
+
 
 \begin{definition}
 	A map $S \xrightarrow{\varphi} T$ in $\Omega$ is called a \textit{tall map} if 
 	\[\varphi(\underline{l}_S) = \underline{l}_T, 
 		\qquad
 	\varphi(r_S)= r_T,\]
-where $l_{(\minus)}$ denotes the leaf tuple and $r_{(\minus)}$ the root.
+where $l_{(\minus)}$ denotes the (unordered) leaf tuple and $r_{(\minus)}$ the root.
 \end{definition}
 
 
 The following is a restatement of \cite[Cor. 5.24]{Pe17}
 
-\begin{proposition}\label{TALLOUTERDEC COR}
+\begin{proposition}\label{TALLOUTERDEC PROP}
 	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphism,
 	\[
 		S \xrightarrow{\varphi^t} U \xrightarrow{\varphi^u} T
@@ -2524,7 +2424,8 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq r_S}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called inner if is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Corollary \ref{TALLOUTERDEC COR} to give the following.
+We recall that a face $F \to T$ is called inner if is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
+
 
 \begin{corollary}
 	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphisms,
@@ -2539,12 +2440,28 @@ We recall that a face $F \to T$ is called inner if is obtained by iteratively re
 \end{proof}
 
 
+We will find it convenient  throughout to regard the 
+groupoid $\Sigma$ of finite sets 
+as the subcategory 
+$\Sigma \hookrightarrow \Omega$
+consisting of \textit{corollas}
+(i.e. trees with a single vertex)
+and isomorphisms.
 
 
-One of the key ideas needed to describe operads is that of substitution of tree nodes, a process that we will prefer to repackage in terms of maps of trees. We start by discussing an example, focusing on the related notion of 
+\begin{notation}\label{UNIQCOR NOT}
+	Given a tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
+	$\mathsf{lr}(T) \to T$, which we call the 
+	\textit{leaf-root} of $T$ (this name is motivated by the equivariant analogue, discussed in \S \ref{LRVERT SEC}).
+	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
+\end{notation}
+
+
+We now turn to discussing the substitution operation. We start with an example, focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
-\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted into the tree $U$ in the middle.
+
+\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
 More precisely (among other possible grafting orders), one has
 \begin{equation}\label{UFORMULA EQ}
 U = \left(
@@ -2560,7 +2477,7 @@ U = \left(
 \begin{equation}\label{SUBSDATUMTREES EQ}
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.25mm}]
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.375mm}]
 \begin{scope}[xshift=-2em]
 	\begin{scope}
 	\tikzstyle{level 2}=[sibling distance=2.25em]%
@@ -2663,14 +2580,14 @@ U = \left(
 \end{scope}
 	\end{tikzpicture}
 \end{equation}
-We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$ (cf. Remark \ref{UNIQCOR REM}), and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
+We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
 
 
 One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
 \begin{equation}\label{SUBSDATUMTREES2 EQ}
 	\begin{tikzpicture}[grow=up,auto,level distance=2.25em,
 	every node/.style = {font=\footnotesize, inner sep=2pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.25mm}]
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.375mm}]
 	\begin{scope}
 	\tikzstyle{level 2}=[sibling distance=0.75em]%
 		\node at (0,0) {$T_{a_1^{\uparrow}\leq a_1}$}
@@ -2762,10 +2679,11 @@ One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as bein
 	\end{scope}
 	\end{tikzpicture}
 \end{equation}
-From this perspective, $U$ can now be thought as obtained from $T$ by substituting each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
+From this perspective, $U$ can then be thought of as obtained from $T$ by \textit{substituting} each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
 $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto e$), which likewise encodes the same information.
 
-Our perspective will then be that data for substitution of tree nodes such as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
+One of the fundamental ideas that shape our perspective on operads
+is then that data for substitution of nodes as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
 repackaged using planar tall maps. 
 \end{example}
 
@@ -2774,21 +2692,23 @@ repackaged using planar tall maps.
 	Let $T \in \Omega$ be a tree.
 	
 	A \textit{$T$-substitution datum} is a tuple 
-	$\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
+	$\left(U_{e^{\uparrow} \leq e}\right)_{(e^{\uparrow} \leq e)\in V(T)}$ together with tall maps
 	$T_{e^{\uparrow}\leq e} \to U_{e^{\uparrow}\leq e}$.
-	
 	Further, a map of $T$-substitution data 
-	$\{U_{e^{\uparrow} \leq e}\} \to \{V_{e^{\uparrow} \leq e}\}$ is a tuple of tall maps $\{U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\}$ compatible with the chosen maps.
+	$\left(U_{e^{\uparrow} \leq e}\right) \to \left(V_{e^{\uparrow} \leq e}\right)$ is a tuple of tall maps $\left(U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\right)$ compatible with the substitution maps.
 	
 	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
 	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$) and a morphism of planar data is called a planar morphism if it consists of a tuple of planar maps.
+	
+	We denote the category of (resp. planar) $T$-substitution data 
+	by $\mathsf{Sub}(T)$ (resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
 \end{definition}
 
 \begin{definition}
-	Let $T \in \Omega$. 
-	
-	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the edge subtrees $\eta_e$ and vertex substrees $T_{e^{\uparrow} \leq e}$. The order relation is given by inclusion.
+	Let $T \in \Omega$ be a tree. 
+	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the single edge subtrees $\eta_e$ and vertex subtrees $T_{e^{\uparrow} \leq e}$, ordered by inclusion.
 \end{definition}
+
 
 \begin{remark}
 Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
@@ -2811,27 +2731,30 @@ U_{e^{\uparrow} \leq e}.\]
 Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERPLAN EQ}
 \begin{tikzcd}[row sep =0pt]
-	\mathsf{Sub}_p(T) \ar[r,shift left=2pt] &
-	\Omega_{T/}^{\mathsf{pt}} \ar[l,shift left=2pt]
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
+	T \downarrow \Omega^{\mathsf{pt}} \ar[l,shift left=2pt]
 \\
-	\{U_{e^{\uparrow} \leq e}\} \ar[r,mapsto] & 
+	\left(U_{e^{\uparrow} \leq e}\right) \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \\
-	\{U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\} &
+	\left(U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\right) &
 	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
 \end{tikzcd}
 \end{equation}
-where $\mathsf{Sub}_p(T)$ denotes the category of planar $T$-substitution data and $\Omega_{T/}^{\mathsf{pt}}$
-the category of planar tall maps under $T$. 
+where $T \downarrow \Omega^{\mathsf{pt}}$ denotes
+the category of planar tall maps under $T$
+and $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is chosen in the unique way that makes the inclusions of the $U_{e^{\uparrow} \leq e}$ planar. 
 \end{proposition}
 
+
 \begin{proof}
-We first claim that
+We first show in parallel that:
 \begin{inparaenum}
-\item[(i)] the $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ indeed exists;
-\item[(ii)] for the canonical datum $\{T_{e^{\uparrow}\leq e}\}$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
-\item[(iii)] the induced map
-$T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is planar tall.
+\item[(i)] $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$, which we denote $U_T$, exists;
+\item[(ii)] for the datum $\left(T_{e^{\uparrow}\leq e}\right)$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
+\item[(iii)] $V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$;
+\item[(iv)] the induced map
+$T \to U_T$ is planar tall.
 \end{inparaenum}
  
 The argument is by induction on the number of vertices of $T$, with the base cases of $T$ with $0$ or $1$ vertices being immediate, since then $T$ is the terminal object of $\mathsf{Sc}(T)$.
@@ -2843,78 +2766,86 @@ so that
 $\mathsf{Sc}(R) \cup \mathsf{Sc}(S) = \mathsf{Sc}(T)$
 and 
 $\mathsf{Sc}(R) \cap \mathsf{Sc}(S) = \{\eta_e \}$.
-The existence of $\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
-is thus equivalent to the existence of the pushout below.
+The existence of $U_T = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+is thus equivalent to the existence of the pushout below
+(where the rightmost diagram merely simplifies notation).
 \begin{equation}\label{ASSEMBLYGRAFT EQ}
 \begin{tikzcd}
-	\eta \ar{r} \ar{d} & \colim_{\mathsf{Sc}(R)}U_{(\minus)} \ar[dashed,d]
+	\eta \ar{r}{e} \ar{d}[swap]{e} & \colim_{\mathsf{Sc}(R)}U_{(\minus)} \ar[dashed,d] &
+	\eta \ar{r}{e} \ar{d}[swap]{e} & U_R \ar[dashed,d]	
 \\
 	\colim_{\mathsf{Sc}(S)}U_{(\minus)} \ar[dashed,r] &
-	\colim_{\mathsf{Sc}(T)}U_{(\minus)}
+	\colim_{\mathsf{Sc}(T)}U_{(\minus)} &
+	U_S \ar[dashed,r] &
+	U_T
 \end{tikzcd}
 \end{equation}
-By induction, the top right and bottom left colimits exist for any $U_{(\minus)}$, 
+By induction, $U_R$ and $U_S$ exist for any $U_{(\minus)}$, 
 equal $R$ and $S$ in the case $U_{(\minus)} = T_{(\minus)}$,
+$V(U_R) = \coprod_{V(R)} V(U_{e^{\uparrow} \leq e})$
+and likewise for $S$ (so that there are unique choices of $U_R$, $U_S$ making the inclusions of $U_{e^{\uparrow} \leq e}$ planar),
 and the maps 
 $R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
 $S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
 are planar tall.
-But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions that
-$T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$
-and 
+But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions
+$T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$,
+$V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$, 
+and that
 $T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
 is planar tall follow.
 
 The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
-are inverse to each other is clear by the same inductive argument.
+are inverse to each other is clear from the same inductive argument.
 \end{proof}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
-Let $T \in \Omega$ be a tree. There is an isomorphism of categories
+Let $T \in \Omega$ be a tree. The formulas in (\ref{SUBDATAUNDERPLAN EQ}) give an isomorphism of categories
 \begin{equation}\label{SUBDATAUNDERNONPL EQ}
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
-	\Omega_{T/}^{\mathsf{t}} \ar[l,shift left=2pt]
+	T \downarrow \Omega^{\mathsf{t}} \ar[l,shift left=2pt]
 \end{tikzcd}
 \end{equation}
-where $\mathsf{Sub}(T)$ denotes the category of $T$-substitution data and $\Omega_{T/}^{\mathsf{t}}$
+where $T \downarrow \Omega^{\mathsf{t}}$ denotes
 the category of tall maps under $T$.
 \end{corollary}
 
 
 \begin{proof}
-	This is a consequence of Proposition \ref{PLANARPULL EQ} together with the previous result, with the functor 
-	$\mathsf{Sub}(T) \to \Omega_{T/}^{\mathsf{t}}$ given by the same formula.
-	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness reduces to that in the previous result.
+	This is a consequence of Proposition \ref{PLANARPULL PROP} together with the previous result.
+	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness of $\mathsf{Sub}(T) \to T \downarrow \Omega^{\mathsf{t}}$ reduces to that in the previous result.
 \end{proof}
 
 
 \begin{remark}\label{VERTEXDECOMP REM}
-	It follows from the previous proof that, writing 
-	$U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
+As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
 	one has 
 \begin{equation}\label{VERTEXDECOMP EQ}
 	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
 	V(U_{e^{\uparrow} \leq e}).
 \end{equation}
 Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
-$f^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
-$f \colon T \to U$.
-Explicitly, $f^{\**}(U_{u^{\uparrow} \leq u})$ 
+$\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
+$\varphi \colon T \to U$.
+Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$ 
 is the unique $T_{t^{\uparrow}\leq t}$ such that
-$U_{u^{\uparrow} \leq u} \subset U_{t^{\uparrow} \leq t}$. We note that $f^{\**}$ is indeed contravariant in the tall planar map $f$.
+there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
+so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
 \end{remark}
 
 
-The following is a converse of sorts to
- Proposition \ref{SUBDATAUNDERPLAN PROP}.
+We end this section with a couple of lemmas that will allow us to reverse the substitution procedure of 
+Proposition \ref{SUBDATAUNDERPLAN PROP}
+and will be needed in \S \ref{EXTTREE SEC}.
+
 
 \begin{proposition}\label{BUILDABLE PROP}
 	Let $U \in \Omega$ be a tree. Then:
 \begin{itemize}
 	\item[(i)] given non stick outer subtrees $U_i$ such that 
-	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that $\{U_i\} = \{U_{e^{\uparrow}\leq e}\}$;
+	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that the sets $\{U_i\}$, $\{U_{e^{\uparrow}\leq e}\}$ coincide;
 	\item[(ii)] given multiplicities $m_e \geq 1$ for each edge $e \in U$, there is a unique planar degeneracy $\rho \colon T \to U$ such that $\rho^{-1}(e)$ has $m_e$ elements;
 	\item[(iii)] planar tall maps $T \to U$ are in bijection with collections $\{U_i\}$ of outer subtrees such that $V(U) = \coprod_i V(U_i)$ and $U_j$ is not an inner edge of any $U_i$ whenever $U_j \simeq \eta$ is a stick.
 \end{itemize}
@@ -2923,21 +2854,25 @@ The following is a converse of sorts to
 
 \begin{proof}
 	We first show (i) by induction on the number of subtrees $U_i$. The base case $\{U_i\}=\{U\}$ is immediate, setting 
-	$T= \mathsf{lr}(U)$. Otherwise, letting $e$ be edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a pushout diagram
+	$T= \mathsf{lr}(U)$. Otherwise, $U$ must not be a corolla and letting $e$ be an edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a grafting pushout diagram
 \begin{equation} \label{DECOMPPROOF EQ}
 \begin{tikzcd}
-	\eta \ar{r}{e} \ar{d}[swap]{e} & V \ar{d}
+	\eta \ar{r}{e} \ar{d}[swap]{e} & U^{\leq e} \ar{d}
 \\
-	W \ar{r} & U
+	U_{\nless e} \ar{r} & U
 \end{tikzcd}
 \end{equation}
-inducing a nontrivial partition 
+where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the edges $u \leq_d e$ (resp. $u \nless_d e$).
+Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
+it follows from the definition of outer face that there is a
+nontrivial partition 
 $\{U_i\} = \{U_i|U_i \hookrightarrow V\} 
-\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), and thus uniqueness too follows by the induction hypothesis.
+\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
-\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the tree $T$ is uniquely determined.
+\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
+Proposition \ref{PLANARPULL PROP}.
 
 (iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique decomposition 
 $T \twoheadrightarrow \bar{T} \hookrightarrow U$
@@ -2951,40 +2886,652 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \end{lemma}
 
 \begin{proof}
-	If either of $T_1,T_2$ is the root or a leaf the result is obvious. Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of $T_1,T_2,T$ admit compatible decompositions (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+	If either $T$ is a corolla or one of $T_1,T_2$ consists only of the root or a leaf  stick subtrees the result is obvious.
+	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
 \end{proof}
 
 
 
+\subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 
+This section introduces two functors that are the very center of our definition of the category $\mathsf{Op}_G$ of
+genuine equivariant operads: the leaf-root and vertex functors.
+
+We start by recalling a key class of maps of $G$-trees.
 
 
+\begin{definition}\label{QUOT DEF}
+	Let $S = (S_y)_{y \in Y}$ and $T = (T_x)_{x \in X}$
+	be $G$-trees.
+	A map of $G$-trees 
+	\[
+	\varphi = (\phi, (\varphi_y))\colon S \to T
+	\]
+	is called a \textit{quotient} if each of the constituent tree maps
+	\[
+	\varphi_y \colon S_y \to T_{\phi(y)}
+	\]
+is an isomorphism of trees.	
+
+The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
+\end{definition}
 
 
+\begin{remark}
+	Quotients can alternatively be described as the cartesian arrows for the Grothendieck fibration
+	$\Omega_G \xrightarrow{\mathsf{r}} \mathsf{O}_G$.
+	We note that this differs from the notion of root pullbacks, which are the \textit{chosen} cartesian arrows, and include only those quotients such that each
+	$\varphi_y \colon S_y \to T_{\phi(y)}$
+	is a planar isomorphism, i.e., an identity.
+\end{remark}
+
+
+\begin{definition}
+	The \textit{$G$-symmetric category},
+	whose objects we call \textit{$G$-corollas}, is the full subcategory 
+	$\Sigma_G \hookrightarrow \Omega_{G,0}$ of those $G$-trees
+	$C = (C_x)_{x \in X}$ such that some (and thus all) $C_x$ is a corolla $C_x \in \Sigma \hookrightarrow \Omega$
+	(cf. Notation \ref{UNIQCOR NOT}).
+\end{definition}
+
+
+\begin{definition}
+	The \textit{leaf-root functor} is the functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
+\[
+	\mathsf{lr}\left((T_x)_{x \in X}\right)=
+	\left(\mathsf{lr}(T_x)\right)_{x \in X}.
+\]
+\end{definition}
+
+
+\begin{remark}
+	The leaf-root functor extends 
+	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
+	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows in $\Omega_G$.
+	However, we will mostly be concerned with the restriction  
+	$\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$.
+\end{remark}
+
+\begin{remark}\label{LEAFROOTEXAMP REM}
+	Generalizing the remark in Notation \ref{UNIQCOR NOT},
+	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
+	$T=(\eta_x)_{x \in X}$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+	every node/.style = {font=\footnotesize,inner sep=3pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$T$}
+			child{node [dummy] {}
+				child[level distance=1.25em,sibling distance = 3em]{node [dummy] {}
+					child[level distance=2.3em,sibling distance =0.75em]{
+					edge from parent node [swap,near end] {$a+2$}}
+					child[level distance=2.3em,sibling distance =0.75em]{
+					edge from parent node [near end] {$a+3$}}
+				edge from parent node [swap] {$b+1$}}
+				child[sibling distance = 0.75em]{node [dummy] {}
+				edge from parent node [swap, very near end] {$c+1$}}
+				child[sibling distance = 1.25em]{node [dummy] {}
+					child[sibling distance = 1em]{
+					edge from parent node [swap,very near end] {$a+1$}}
+					child[sibling distance = 1em]{
+					edge from parent node [very near end] {$\phantom{1+}a$}}
+				edge from parent node [very near end] {$b$}}
+				child[level distance=1.25em,sibling distance = 2.5em]{node [dummy] {}
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (0,-2) {$\mathsf{lr}(T)$}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$a+2$}}
+				child[sibling distance=0.75em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+3$}}
+				child[sibling distance=0.75em,level distance=2.75em]{
+				edge from parent node [very near end] {$a+1$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}a$}}
+			edge from parent node [swap] {$d$}};
+	\begin{scope}[xshift=-0.5em]
+		\node at (4,0) {}
+			child{node [dummy] {}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node [swap] {$c+2$}}
+				child{node [dummy] {}
+					child[sibling distance=1em]{
+					edge from parent node [near end,swap] {$a+2$}}
+					child[sibling distance=1em]{
+					edge from parent node [near end] {$\phantom{1}a$}}
+				edge from parent node [swap, near end] {$b$}}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node {$c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (7,0) {}
+			child{node [dummy] {}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node [swap] {$c+1$}}
+				child{node [dummy] {}
+					child[sibling distance=1em]{
+					edge from parent node [near end,swap] {$a+3$}}
+					child[sibling distance=1em]{
+					edge from parent node [near end] {$a+1$}}
+				edge from parent node [swap, near end] {$b+1$}}
+				child[level distance=1.3em,sibling distance=2.75em]{
+				edge from parent node {$c+3$}}
+			edge from parent node [swap] {$d+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,0) -- (3.9,0) node[midway]{$U$};
+		\node at (4,-2) {}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$c+2$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+2$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end] {$\phantom{1+}a$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}c$}}
+			edge from parent node [swap] {$d$}};
+		\node at (7,-2) {}
+			child{node [dummy] {}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node [swap] {$c+1$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end,swap] {$a+3$}}
+				child[sibling distance=1em,level distance=2.75em]{
+				edge from parent node [very near end] {$a+1$}}
+				child[sibling distance=2em, level distance=1em]{
+				edge from parent node {$\phantom{1+}c+3$}}
+			edge from parent node [swap] {$d+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,-2) -- (3.9,-2) node[midway]{$\mathsf{lr}(U)$};
+	\end{scope}
+	\begin{scope}[xshift=-2em]
+			\node at (10,0) {}
+				child{
+				edge from parent node [swap] {$a$}};
+			\node at (11,0) {}
+				child{
+				edge from parent node [swap] {$a+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (9.9,0) node[midway]{$V$};
+			\node at (10,-2) {}
+				child{node[dummy]{}
+					child{
+					edge from parent node [swap] {$a$}}
+				edge from parent node [swap] {$\bar{a}$}};
+			\node at (11,-2) {}
+				child{node[dummy]{}
+					child{
+					edge from parent node [swap] {$a+1$}}
+				edge from parent node [swap] {$\bar{a}+1$}};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,-2) -- (9.9,-2) node[midway]{$\mathsf{lr}(V)$};
+	\end{scope}
+	\end{tikzpicture}
+\]	
+\end{remark}
+
+
+\begin{remark}\label{LRROOTMAP REM}
+	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
+the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
+but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
+(for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
+\end{remark}
+
+
+\begin{definition}\label{VG DEF}
+Given $T = (T_x)_{x \in X} \in \Omega_G$ we define its set of \textit{vertices} to be $V(T) = \coprod_{x \in X} V(T_x)$
+and its set of
+	\textit{$G$-vertices} to be the orbit set $V(T)/G$.
+	
+Furthermore, we will regard 
+$V(T)$ as an object of $\Fin$ by using the induced planar order
+(with $e^{\uparrow}\leq e$ ordered according to $e$)
+and likewise $V_G(T)$ will be regarded as an object of $\Fin$ by using the lexicographic order: i.e. vertex equivalence classes 
+$[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of the smallest representative $ge$, $g \in G$.
+\end{definition}
+
+
+\begin{remark}\label{VERTEXDECOMPG REM}
+	Following Remark \ref{VERTEXDECOMP REM},
+	a tall map $\varphi \colon T \to U$ of $G$-trees
+	induces a $G$-equivariant map
+	$\varphi^{\**} \colon V(U) \to V(T)$
+	and thus also a map of orbits
+	$\varphi^{\**} \colon V_G(U) \to V_G(T)$.
+	We note, however, that $\varphi^{\**}$ is not in general compatible with the order on $V_G(\minus)$ even if $\varphi$ is planar, as is indeed the case even in the non-equivariant setting.
+
+A minimal example follows.
+		\[
+		\begin{tikzpicture}[grow=up,auto,level distance=2.2em,
+		every node/.style = {font=\footnotesize},
+		dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$T$}
+			child{node [dummy] {}
+				child[sibling distance = 3.5em]{node [dummy] {}
+					child
+				edge from parent node[swap] {$c$}}
+				child[level distance=2.9em]{
+				edge from parent node [swap] {$b$}}
+				child[sibling distance = 3.5em]{node [dummy] {}
+					child
+				edge from parent node {$a$}}		
+			edge from parent node [swap] {$d$}};
+		\node at (6,0) {$U$}
+			child{node [dummy] {}
+				child[sibling distance = 5em]{node [dummy] {}
+					child
+				edge from parent node [swap] {$c$}}
+				child[sibling distance = 5em]{node [dummy] {}
+					child[sibling distance = 3.5em]{
+					edge from parent node [swap,near end] {$b$}}
+					child[sibling distance = 3.5em]{node [dummy] {}
+						child
+					edge from parent node [near end]{$a$}}
+				edge from parent node {$e$}}
+			edge from parent node [swap] {$d$}};
+		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
+		\end{tikzpicture}
+		\]
+In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
+$\varphi^{\**} \colon V(U) \to V(T)$ is given by 
+$a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
+\end{remark}
+
+
+\begin{notation}\label{GVERT NOT}
+Given $T=(T_x)_{x \in X} \in \Omega_G$
+and $(e^{\uparrow} \leq e) \in V(T)$ 
+we write $T_{e^{\uparrow}\leq e}$
+as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
+
+Further, each element $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
+We will prefer to write $G$-vertices as $v_{Ge}$, and write
+\begin{equation}\label{TVGE DEF}
+T_{v_{Ge}} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+\end{equation}
+where $Ge$ inherits the planar order.
+\end{notation}
+
+
+We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
+
+\begin{definition}
+The \textit{$G$-vertex functor} is the functor
+	\begin{equation}\label{VFUNCTOR EQ}
+		\begin{tikzcd}[row sep=tiny]
+		\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
+		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
+		\end{tikzcd}	
+	\end{equation}
+where $\Fin_s$ is the category of finite sets and surjections of
+Remark \ref{FINSURJ REM}.
+\end{definition}
+
+
+\begin{remark}\label{NEED_WREATH_REMARK}
+In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
+	The need to introduce the $\Fin \wr (\minus)$ construction comes from the fact that
+	in general quotient maps do not preserve the number of $G$-vertices.
+	For a simple example, let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
+	$\varphi \colon \pi^{\**} S \to S$ of Example \ref{ROOTPULL EX}
+	determined by the assignments
+	$a \mapsto a$, $b \mapsto b$, $c \mapsto c$, $d \mapsto i a$, $e \mapsto i b$,	
+	and presented below in orbital notation. 
+		\[
+		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+		\node at (0,0) {$\pi^{\**}S$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{
+					edge from parent node [swap] {$G/\langle j \rangle  \cdot d$}}
+				edge from parent node[near end,swap] {$G/\langle -1 \rangle  \cdot e$}}
+				child{node [dummy] {}
+					child{
+					edge from parent node {$G/\langle j \rangle  \cdot a$}}
+				edge from parent node [near end] {$G/\langle -1 \rangle  \cdot b$}}		
+			edge from parent node[swap] {$G/\langle -1 \rangle  \cdot c$}};
+		\node at (4.53,0) {$S$}
+			child{node [dummy] {}
+				child{node [dummy] {}
+					child{
+					edge from parent node [swap] {$G/\langle j \rangle \cdot a$}}
+				edge from parent node [swap] {$G / \langle -1 \rangle \cdot b$}}
+			edge from parent node [swap] {$G/G \cdot c$}};
+		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
+		\end{tikzpicture}
+		\]
+We note that $T = \pi^{\**} S$ has three $G$-vertices $v_{G c}$, $v_{G b}$, $v_{G e}$ while $S$ has only two $G$-vertices $v_{G c}$ and $v_{G b}$. $V_G(\varphi)$ then maps the two $G$-corollas 
+$T_{v_{G b}}$ and $T_{v_{G e}}$
+isomorphically onto $S_{v_{G b}}$
+and the $G$-corolla $T_{v_{Gc}}$ by a non-isomorphism quotient onto $S_{v_{G c}}$.
+\end{remark}
+
+
+The following elementary statement will play an important auxiliary role.
+
+\begin{lemma}\label{VGPULL LEM}
+The $G$-vertex functor
+\[
+\begin{tikzcd}
+	\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G
+\end{tikzcd}
+\]
+sends pullbacks over $\mathsf{O}_G$ (i.e. root pullbacks)
+to pullbacks over $\Fin_s \wr \mathsf{O}_G$
+(cf. Lemma \ref{FWRGROTH LEM}).
+\end{lemma}
+
+\begin{proof}
+Note first that an arrow 
+$(\phi,(\varphi_i))\colon (C_i)_{i \in I} \to (C'_j)_{j\in J}$
+is a pullback for the split fibration 
+$\Fin_s \wr \Sigma_G \to \Fin_s \wr \mathsf{O}_G$
+iff each of the constituent arrows
+$\varphi_i \colon C_i \to C'_{\phi(i)}$
+are pullbacks for the split fibration $\Sigma_G \to \mathsf{O}_G$.
+
+The pullback
+$\psi^{\**} T \xrightarrow{\bar{\psi}} T$
+of $T = (T_x)_{x \in X} \in \Omega_{G,0}$
+over $\psi \colon Y \to X$
+has the form 
+$(T_{\psi(y)})_{y \in Y} \to (T_x)_{x \in X}$
+and it now suffices to check that each of the vertex maps
+$
+	(\psi^{\**} T)_{v_{G e}} \to T_{v_{G \bar{\psi}(e)}}
+$
+is itself a pullback.
+By (\ref{TVGE DEF}), this is the statement that for 
+$f \in G e$ the induced map
+\begin{equation}\label{VGPULL EQ}
+	(\psi^{\**}T)_{f^{\uparrow} \leq f} \to 
+	T_{\bar{\psi}(f^{\uparrow}) \leq \bar{\psi} (f)}
+\end{equation}
+is an identity (i.e. planar isomorphism),
+and letting $y$ be such that $f \in T_{\psi(y)}$
+one sees that (\ref{VGPULL EQ})
+is the identity
+$T_{\psi(y),f^{\uparrow} \leq f} = 
+T_{x,\bar{\psi}(f)^{\uparrow} \leq \bar{\psi}(f)}$, where $x=\psi(y)$, finishing the proof.
+\end{proof}
+
+
+\begin{example}
+The following depicts one of the maps 
+(\ref{VGPULL EQ})
+for the pullback $\tau^{\**} T \to T$
+appearing in Example \ref{ROOTPULL EX}.
+\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\begin{scope}[xshift=7cm]
+		\node at (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-a\phantom{j}$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$\phantom{j}a$}}
+			edge from parent node [swap] {$b$}};
+		\node at (1.5,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-j a$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$j a$}}
+			edge from parent node [swap] {$j b$}};
+		\node at (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-i a$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$i a$}}
+			edge from parent node [swap] {$i b$}};
+		\node at (4.5,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-k a$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$k a$}}
+			edge from parent node [swap] {$k b$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.6,0) -- (-0.1,0) node[midway]{$T_{v_{G b}}$};
+	\end{scope}
+		\node at (0,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-d\phantom{j}$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$\phantom{j}d$}}
+			edge from parent node [swap] {$e$}};
+		\node at (1.5,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$j d$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$-j d$}}
+			edge from parent node [swap] {$j e$}};
+		\node at (3,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$i d$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$-i d$}}
+			edge from parent node [swap] {$i e$}};
+		\node at (4.5,0) {}
+			child{node [dummy] {}
+				child[sibling distance=1.25em]{
+				edge from parent node [swap,near end] {$-k d$}}
+				child[sibling distance=1.25em]{
+				edge from parent node [near end]  {$k d$}}
+			edge from parent node [swap] {$k e$}};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.6,0) -- (-0.1,0) node[midway]{$(\tau^{\**}T)_{v_{G e}}$};
+	\draw[->] (5.3,0.6) -- node [below] {$\substack{d \mapsto i a \\ e \mapsto i b}{}$} (6.2,0.6) ;
+	\end{tikzpicture}
+\]
+Note that 
+$(\tau^{\**} T)_{v_{G e}} = \rho^{\**} T_{v_{G b}}$
+for $\rho$ the map
+$\{e,j e, i e, k e\} \to \{b, j b, i b, k b\}$ 
+defined by $e \mapsto i b$ so that,
+accounting for orders,
+$\rho$ is the block permutation $\rho = (13)(24)$.
+\end{example}
+
+
+We are now in a position to generalize 
+Definition \ref{SUBSTITUTIONDATUM}.
+
+\begin{definition}\label{SUBSTITUTIONDATUMG DEF}
+	Let $T \in \Omega_G$ be a $G$-tree.
+	
+	A \textit{(resp. planar) $T$-substitution datum} is a tuple 
+	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ together with
+\begin{itemize}	
+\item[(i)] associative and unital $G$-action maps
+$U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
+\item[(ii)]	(resp. planar) tall maps 
+	$T_{f^{\uparrow} \leq f} \to U_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
+\end{itemize}	
+	Further, a map of (resp. planar) $T$-substitution data 
+	$\left(U_{f^{\uparrow} \leq f}\right) \to
+	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (resp. planar) tall maps 
+	$\left(U_{f^{\uparrow} \leq f} \to V_{f^{\uparrow} \leq f} \right)$.
+	
+	We denote the category of (resp. planar) $T$-substitution data 
+	by $\mathsf{Sub}(T)$
+	(resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
+\end{definition}
+
+
+Recall that a map of $G$-trees is called 
+\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
+
+\begin{remark}\label{SUBSGREF DEF}
+Writing $U^{\mathsf{r}}_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in Ge}$
+a $T$-substitution datum can equivalently be encoded by the tuple
+$\left(U^{\mathsf{r}}_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
+$T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+The need to include $\mathsf{r}$ (which stands for ``rooted'')
+in the notation is explained by Remark \ref{WHYR REM}.
+
+Further, the $T$-substitution datum is planar iff the so are the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+\end{remark}
+
+
+\begin{remark}\label{SUBSDATUMCONV REM}
+%	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
+%
+%	The rooted condition of $T$-substitution data allows us to write
+%	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
+%	for each $v_{G e} \in V_G(T)$, 
+	Writing $T = (T_x)_{x \in X}$ as usual
+	one obtains (non-equivariant) $T_x$-substitution data 
+	$U_{x,(\minus)}$ for each $T_x$.
+	We again write
+	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
+	and note that these are compatible with the $G$-action in the sense that the obvious diagram
+\begin{equation}\label{EQUIVSCMAP EQ}
+\begin{tikzcd}[row sep =3pt]
+	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
+	\Omega
+\\
+	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{U_{gx,(\minus)}}
+\end{tikzcd}
+\end{equation}
+commutes.
+Writing $\mathsf{Sc}(T) = \coprod_x \mathsf{Sc}(T_x)$,
+(\ref{EQUIVSCMAP EQ}) is then equivalent to a functor
+$G \ltimes \mathsf{Sc}(T) \to \Omega$,
+where $G \ltimes \mathsf{Sc}(T)$ is the Grothendieck construction for the $G$-action
+(which, explicitly, adds arrows 
+$\eta_a \to \eta_{ga}$, 
+$T_{e^{\uparrow} \leq e} \to T_{ge^{\uparrow} \leq ge}$
+to $\mathsf{Sc}(T)$ that satisfy obvious compatibilities).
+\end{remark}
+
+
+In the following we write
+$\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+to mean
+$(\colim_{\mathsf{Sc}(T_x)}U_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
+in $\Phi = \Fin \wr \Omega$ rather than in $\Omega$
+(as is needed since $\Omega$ lacks coproducts).
+
+
+\begin{corollary}\label{SUBDATAUNDERPLANG COR}
+Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
+\begin{equation}\label{SUBDATAUNDERPLANG EQ}
+\begin{tikzcd}[row sep =0pt]
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
+	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] &
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
+	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
+\\
+	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
+	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
+\end{tikzcd}
+\end{equation}
+where $T \downarrow \Omega_G^{\mathsf{pt}}$ 
+(resp. $T \downarrow \Omega_G^{\mathsf{rt}}$)
+is the category of planar tall (resp. rooted tall) maps under $T$.
+\end{corollary}
+
+
+\begin{proof}
+	This is a direct consequence of the 
+	non-equivariant analogues Proposition \ref{SUBDATAUNDERPLAN PROP} and Corollary \ref{SUBDATAUNDERPLAN COR}
+	applied to each individual $T_x$ together with the equivariance analysis in
+	Remark \ref{SUBSDATUMCONV REM}.
+\end{proof}
+
+
+\begin{remark} \label{WHYR REM}
+Writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$, 
+it follows from the non-equivariant results
+Proposition \ref{SUBDATAUNDERPLAN PROP} and
+Corollary \ref{SUBDATAUNDERPLAN COR}
+that each inclusion map $U_{f^{\uparrow} \leq f} \to U$
+is planar, so that there is no conflict with 
+Notation \ref{GVERT NOT}.
+
+However, some care is needed concerning the
+$U_{v_{Ge}}^{\mathsf{r}}$ appearing in the reformulation of substitution data given in Remark \ref{SUBSGREF DEF}.
+Letting $\varphi \colon T \to U$ be the induced map,
+one sees that while $U_{v_{Ge}}^{\mathsf{r}}$ and 
+$U_{v_{G\varphi(e)}}$
+have the same constituent trees (with the latter defined by Notation \ref{GVERT NOT}),
+the roots of $U_{v_{Ge}}^{\mathsf{r}}$ are ordered by $Ge$
+while those of $U_{v_{G\varphi(e)}}$ are ordered by $G \varphi(e)$.
+More succinctly, it is then 
+$U_{v_{Ge}}^{\mathsf{r}} = \varphi_{Ge}^{\**}U_{v_{G\varphi(e)}}$ for $\varphi_{Ge} \colon Ge \to G \varphi(e)$
+the induced map.
+
+Lastly, we note that such distinctions are unnecessary for planar data, since then the $\varphi_{G e}$ are ordered isomorphisms (i.e. identities), so that 
+$U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
+\end{remark}
+
+\begin{remark}\label{PULLCOMP REM}
+	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
+	are compatible with root pullbacks of trees. 
+	More concretely, as in the proof of Lemma \ref{VGPULL LEM}
+	each pullback 
+	$\bar{\psi} \colon \psi^{\**} T \to T$
+	determines pullback maps
+	$\bar{\psi}_{G e} \colon
+	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
+	which we now note are a pullback over the map
+	$\bar{\psi}_{G e} \colon Ge \to \bar{\varphi}(G e)$
+	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram (where we reformulate substitution data as in Remark \ref{SUBSGREF DEF})
+\[
+\begin{tikzcd}[row sep =10pt]
+	(\psi^{\**} T)_{v_{Ge}} \ar{d} \ar[dashed]{r} &
+	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}} \ar{d}
+\\
+	T_{v_{G \bar{\psi}(e)}} \ar{r} &
+	U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}}
+\end{tikzcd}	
+\]
+defining the left vertical functors (with the right functors defined analogously) in the commutative diagrams below.
+\begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
+\begin{tikzcd}[row sep =12pt,column sep= 14pt]
+	\mathsf{Sub}_{\mathsf{p}}(\psi^{\**} T) \ar[r,shift left=2pt] &
+	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] & &
+	\mathsf{Sub}(\psi^{\**} T) \ar[r,shift left=2pt] &
+	\psi^{\**} T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
+\\
+	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
+	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}} & &
+	\mathsf{Sub}(T) \ar[r,shift left=2pt] \ar{u}{(\bar{\psi}_{Ge}^{\**})} &
+	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt] \ar{u}[swap]{\psi^{\**}}
+\end{tikzcd}
+\end{equation}
+\end{remark}
 
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
-The leaf-root and vertex functors will allow us to reinterpret our results concerning substitution.
+We now use the leaf-root and vertex functors to repackage 
+our substitution results in a format that will be more convenient for our discussion of operads in 
+\S \ref{GENUINE_OP_MONAD_SECTION}.
+
 
 \begin{definition}
 	The category $\Omega_{G,n}$ of 
-	\textit{substitution $n$-strings} is the category whose objects are strings
+	\textit{planar $n$-strings} is the category whose objects are strings
 	\[
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} & T_1 \ar{r}{f_2} & \cdots \ar{r}{f_n} & T_n
+	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
 	\]
-	where $T_i \in \Omega_G$ and the $f_i$ are tall planar maps, and arrows are commutative diagrams 
+	where $T_i \in \Omega_G$ and the $\varphi_i$ are tall planar maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
-	T_0 \ar{r}{f_1} \ar{d}[swap]{q_0} & T_1 \ar{r}{f_2} \ar{d}[swap]{q_1} & \cdots \ar{r}{f_n} & T_n \ar{d}[swap]{q_n}
+	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\pi_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\pi_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\pi_n}
 \\
-	T'_0 \ar{r}[swap]{f'_1} & T'_1 \ar{r}[swap]{f'_2} & \cdots \ar{r}[swap]{f'_n} & T'_n
+	T'_0 \ar{r}[swap]{\varphi'_1} & T'_1 \ar{r}[swap]{\varphi'_2} & \cdots \ar{r}[swap]{\varphi'_n} & T'_n
 	\end{tikzcd}	
 	\end{equation}
-where each $q_i$ is a quotient map.
+where each $\pi_i$ is a quotient map.
 \end{definition}
 
 
@@ -2996,18 +3543,30 @@ where each $q_i$ is a quotient map.
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composing and degeneracies by inserting identities. 
 
-	Noting that $\Omega_{G,0} = \Omega_G^q$ and setting 
-	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_G^q \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
-	$\Omega_{G,\bullet}^q$ into an augmented simplicial object and, furthermore, the maps 
-	$s_{-1} \colon \Omega_{G,n}^q \to \Omega_{G,n+1}^q$
+	Further setting 
+	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G,\bullet}$ into an augmented simplicial object and, furthermore, the maps 
+	$s_{-1} \colon \Omega_{G,n} \to \Omega_{G,n+1}$
 sending $T_0 \to T_1 \to \cdots \to T_n$ to 
 $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
 \end{notation}
 
+\begin{remark}
+Since for any planar $n$-string it is 
+$\mathsf{r}(T_i) = \mathsf{r}(T_j)$
+for any $1 \leq i,j \leq n$, 
+one has a well defined functor
+$\mathsf{r} \colon \Omega_{G,n} \to \mathsf{O}_G$,
+which is readily seen to be a split Grothendieck fibration.
+Furthermore, generalizing Remark \ref{LRROOTMAP REM},
+all operators $d_i$, $s_j$ 
+are maps of split Grothendieck fibrations.
+\end{remark}
 
-\begin{notation}
+
+\begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
-$V_G \colon \Omega_{G,n+1} \to \Fin \wr \Omega_{G,n}$
+$V_G \colon \Omega_{G,n+1} \to \Fin_s \wr \Omega_{G,n}$
 by
 \begin{equation}\label{VGDEF EQ}
 	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
@@ -3015,21 +3574,35 @@ by
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
 where we abuse notation by writing $T_{i,v_{Ge}}$
-for $T_{i, (f_i\circ \cdots \circ f_1)(v_{Ge})}$.
+for 
+$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in v_{Ge}}$, where 
+$\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
+
+Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n-1$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
+the object $V_G(T_0 \to \cdots \to T_n)$
+can be thought of as the image of the inverse functor in
+Corollary \ref{SUBDATAUNDERPLANG COR},
+written according to the reformulation in 
+Remark \ref{SUBSGREF DEF}
+(where since we are in the planar case we need not distinguish between 
+$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notation
+(cf. Remark \ref{WHYR REM})).
+Note however that from this perspective
+functoriality needs to be checked separately.
 \end{notation}
 
+We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
-The following is a reinterpretation of Proposition \ref{SUBDATAUNDERPLANG PROP}.
 
 \begin{proposition} \label{SUBSASPULL PROP}
-The diagram
+For any $n\geq 0$ the commutative diagram
 	\begin{equation}\label{PTPULL EQ}
 	\begin{tikzcd}
-		\Omega_{G,n+1} \ar{r}{V_G} 
-		\ar{d}[swap]{d_{1,\cdots,n+1}} & \Fin \wr \Omega_{G,n} 
-		\ar{d}{\Fin \wr d_{0,\cdots,n}}
+		\Omega_{G,n} \ar{r}{V_G} 
+		\ar{d}[swap]{d_{1,\cdots,n}} & \Fin_s \wr \Omega_{G,n-1} 
+		\ar{d}{\Fin \wr d_{0,\cdots,n-1}}
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin \wr \Sigma_G
+		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin_s \wr \Sigma_G
 	\end{tikzcd}
 	\end{equation}
 is a pullback diagram in $\mathsf{Cat}$.
@@ -3037,36 +3610,70 @@ is a pullback diagram in $\mathsf{Cat}$.
 
 
 \begin{proof}
-	An object in the pullback (\ref{PTPULL EQ}) over 
-	$T\in \Omega_{G,0} = \Omega_G^q$ is precisely the same as a $n$-string in $\mathsf{Sub}(T)$, and thus by Proposition \ref{SUBDATAUNDERPLANG PROP} equivalent to a $n+1$ planar tall string starting at $T$.
-	
-	The case of arrows is slightly more subtle. A quotient map $\pi \colon T \to T'$ induces a $G$-equivariant poset map 
-	$\pi_{\**} \colon \mathsf{Sc}(T) \to \mathsf{Sc}(T')$ 
-	(or equivalently, a map of Grothendieck constructions 
-	$G \ltimes \mathsf{Sc}(T) \to G \ltimes \mathsf{Sc}(T')$)
-	and diagrams as on the left below (where $v_{Ge}$ ranges over $V_G(T)$ and $e'=\varphi(e)$) induce diagrams (of functors $\mathsf{Sc}(T) \to \Omega$) as on the right below.
-	\begin{equation} \label{PTNARROWLOC EQ}
-	\begin{tikzcd}[column sep=1.2em]
-	T_{v_{G e}} \ar{r}{} \ar{d}[swap]{} & 
-	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{} &
+Let us write 
+$P = \Omega_{G,0} \times_{\Fin_s \wr \Sigma_G} \Fin_s \wr \Omega_{G,n-1}$ for the pullback,
+so that our goal is to show that the canonical map
+$\Omega_{G,n} \to P$ is an isomorphism. 
+
+That $\Omega_{G,n} \to P$ is an isomorphism on objects 
+follows by combining the alternative description of $V_G$
+in Notation \ref{VGDEF NOT} with the planar half of
+Corollary \ref{SUBDATAUNDERPLANG COR}
+(in fact, this yields isomorphisms of the fibers over 
+$\Omega_{G,0}$, but we will not directly use this fact).
+We will hence write $T_0 \to \cdots \to T_n$
+to denote an object of $P$ as well.
+
+An arrow in $P$ from 
+$T_0 \to \cdots \to T_n$ to 
+$T'_0 \to \cdots \to T'_n$
+then consists of a quotient 
+$\pi_0 \colon T_0 \to T'_0$
+together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write $e'=\pi_0(e)$)
+\begin{equation} \label{PTNARROWLOC EQ}
+\begin{tikzcd}[column sep=1.2em]
+	T_{0,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{0,e}} & 
+	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{1,e}} &
 	\cdots \ar{r}{} &
-	T_{n,v_{G e}} \ar{d}{} &
-	T_{(\minus)} \ar{r}{} \ar{d}[swap]{} & 
-	T_{1,(\minus)} \ar{r}{} \ar{d}[swap]{} &
-	\cdots \ar{r}{} &
-	T_{n,(\minus)} \ar{d}{} &
+	T_{n,v_{G e}} \ar{d}{\pi_{n,e}}
 \\
-	T'_{v_{G e'}} \ar{r}{} &
+	T'_{0,v_{G e'}} \ar{r}{} &
 	T'_{1,v_{G e'}} \ar{r}{} &
 	\cdots \ar{r}{} &
-	T'_{n,v_{G e'}} &
-	T'_{(\minus)}\circ \pi_{\**} \ar{r}{} &
-	T'_{1,(\minus)}\circ \pi_{\**} \ar{r}{} &
-	\cdots \ar{r}{} &
-	T'_{n,(\minus)}\circ \pi_{\**} &
-	\end{tikzcd}	
-	\end{equation}
-Passing to colimits then gives the desired commutative diagram (\ref{PTNARROW EQ}). Moreover, diagrams of the form (\ref{PTNARROW EQ}) clearly induce diagrams as in  (\ref{PTNARROWLOC EQ}) and it is straightforward to check that these are inverse processes. 
+	T'_{n,v_{G e'}}.
+\end{tikzcd}	
+\end{equation}
+%Note that the rooted arrows in (\ref{PTNARROWLOC EQ})
+%and we note that the dashed information is superfluous
+%since $T_{0,v_{G e}} = \mathsf{lr}(T_{1,v_{G e}})$,
+%$T'_{0,v_{G e}} = \mathsf{lr}(T'_{1,v_{G e}})$.
+That $\Omega_{G,n} \to P$ is injective on arrows is then clear.
+
+For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to \Omega_{G,0} \to \mathsf{O}_G$
+is a split Grothendieck fibration and 
+$P \to \Omega_{G,0}$ is a map of split Grothendieck fibrations. 
+Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
+(\ref{PTNARROWLOC EQ})
+are pullbacks (alternatively, an abstract argument also works).
+The alternative description of $V_G$ in 
+Notation \ref{VGDEF NOT} combined with
+(\ref{SUBDATAUNDERPLANG2 EQ}) 
+then show that 
+$\Omega_{G,n} \to P$ preserves pullbacks,
+so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
+Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
+But since a quotient is an isomorphism iff it is so on roots,
+we further have that 
+a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
+is a rooted isomorphism and
+each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
+But now rewriting \ref{PTNARROWLOC EQ} as a tuple of diagrams indexed by
+$f \in G e$
+one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
+$T_0 \downarrow \Omega_G^{\mathsf{rt}}$
+using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
+yields the desired rooted map (\ref{PTNARROW EQ})
+in $\Omega_{G,n}$ lifting the rooted map in $P$.
 \end{proof}
 
 
@@ -3075,42 +3682,42 @@ The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 	\[
 	\begin{tikzcd}[column sep = 0.1em]
 		\Omega_{G,{n+2}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
-		 & & \Fin \wr \Omega_{G,{n+1}} \ar{rd}{\Fin \wr d_i} \ar{dd} & &
+		 & & \Fin_s \wr \Omega_{G,{n+1}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
 		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{i}} \ar{dd} 
-		& & \Fin \wr \Omega_{G,{n}} \ar{rd}{\Fin \wr s_{i-1}} \ar{dd} &
+		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{i-1}} \ar{dd} &
 	\\
 		& \Omega_{G,{n+1}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin \wr \Omega_{G,{n}} \ar{ld} &
+		& & \Fin_s \wr \Omega_{G,{n}} \ar{ld} &
 		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin \wr \Omega_{G,{n+1}} \ar{ld}
+		& & \Fin_s \wr \Omega_{G,{n+1}} \ar{ld}
 	\\
-		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G & &
-		 \Omega_{G,0} \ar{rr} & & \Fin \wr \Sigma_G &
+		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G & &
+		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G &
 	\end{tikzcd}
 	\]
 commute whenever defined (i.e. $0 \leq i \leq n+1$).
 \end{remark}
 
-
 \begin{notation}\label{INDVNG NOT}
 	We will let 
 \[
-	V_{G,n} \colon \Omega_{G,n} \to \Fin \wr \Sigma_G
+	V_{G,n} \colon \Omega_{G,n} \to \Fin_s \wr \Sigma_G
 \]
 be inductively defined by 
-$V_{G,n} = \sigma^0 \circ V_{G,n-1} \circ V_G$.
+$V_{G,n+1} = \sigma^0 \circ V_{G,n} \circ V_G$ for $n \geq 0$.
 \end{notation}
 
-\begin{remark}
+
+\begin{remark}\label{VGN REM}
 When $n = 2$, $V_{G,2}$ is thus the composite
 \[
 \begin{tikzcd}[column sep =1.7em]
 	\Omega_{G,2} \ar{r}{V_G} &
-	\Fin \wr \Omega_{G,1} \ar{r}{V_G} &
-	\Fin \wr \Fin \wr \Omega_{G,0} \ar{r}{V_G} &
-	\Fin \wr \Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
-	\Fin \wr \Fin \wr \Sigma_{G} \ar{r}{\sigma^0} &
-	\Fin \wr \Sigma_{G}
+	\Fin_s \wr \Omega_{G,1} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Omega_{G,0} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Sigma_{G}
 \end{tikzcd}
 \]
 In light of Remarks \ref{VERTEXDECOMP REM} and \ref{VERTEXDECOMPG REM}, 
@@ -3121,25 +3728,29 @@ $V_{G,n}(T_0 \to \cdots \to T_n)$ is identified with the tuple
 though this requires changing the total order in $V_G(T_n)$. Rather than using the order induced by $T_n$, one instead equips 
 $V_G(T_n)$ with the order induced lexicographically
 from the maps 
-$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$, i.e., for 
+$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
+of Remark \ref{VERTEXDECOMP REM}. I.e., for 
 $v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that the images of $v,w \in V_G(T_i)$ are distinct.
 \end{remark}
 
 
 
-
-
-
-
-
-
 \section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
-We now turn to the task of building the monad encoding genuine equivariant operads.
 
 
+In this section we now build the category 
+$\mathsf{Op}_G (\mathcal{V})$
+of genuine equivariant operads.
+We will do so by building a monad $\mathbb{F}_G$
+on the category
+$\mathsf{Sym}_G(\mathcal{V}) = 
+\mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$,
+that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$.
 
-
-
+This will be done via a two step process, 
+by first building a monad $N$ on a larger category
+$\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
+which we then transfer via adjunction.
 
 
 
@@ -3154,31 +3765,31 @@ which we call the category of  \textit{left weak spans} (resp. \textit{right wea
 to denote the category with objects the spans
 \[
 \begin{tikzcd}
-\C & A \ar{l}[swap]{k} \ar{r}{F} & \D,
+\C & A \ar{l}[swap]{k} \ar{r}{X} & \D,
 \end{tikzcd}
 \]
 arrows the diagrams as on the left (resp. right) below \begin{equation}\label{TWISTEDARROWRIGHT EQ}
 	\begin{tikzcd}[row sep=small]
 	&
-	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{F_1} \ar{dd}[swap]{i} & &
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{X_1} \ar{dd}[swap]{i} & &
 	&
-	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F1]{F_1} \ar{dd}[swap]{i} 
+	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F1]{X_1} \ar{dd}[swap]{i} 
 \\
 	\C & & \D &
 	\C & & \D 
 \\
-		& |[alias=G21]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} & &
-		& |[alias=G2]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{F_2} &
+		& |[alias=G21]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{X_2} & &
+		& |[alias=G2]| A_2  \ar{ul}{k_2} \ar{ur}[swap]{X_2} &
 		\arrow[Leftarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 		\arrow[Rightarrow, from=F11, to=G21,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 	\end{tikzcd}
 \end{equation}
-which we write as $(i,\varphi) \colon (k_1,F_1) \to (k_2,F_2)$, and composition given in the obvious way.
+which we write as $(i,\varphi) \colon (k_1,X_1) \to (k_2,X_2)$, and composition given in the obvious way.
 \end{definition}
 
 
 \begin{remark}
-There are natural isomorphisms
+There are canonical natural isomorphisms
 \begin{equation}\label{LRSPANISO EQ}
 \mathsf{WSpan}^r(\C,\D) \simeq \mathsf{WSpan}^l(\C^{op},\D^{op}).
 \end{equation}
@@ -3207,54 +3818,71 @@ and $\mathsf{Lan}$/$\mathsf{Ran}$ denote the left/right Kan extension functors.
 \end{remark}
 
 
+
 We will mainly be interested in the span categories 
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq 
 \mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
 
 
 \begin{notation}\label{OMEGAGNA NOT}
-	Given a functor $\pi \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback (in $\mathsf{Cat}$)
-\[
+	Given a functor $\rho \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback in $\mathsf{Cat}$
+\begin{equation}\label{OMGGNA}
 	\begin{tikzcd}
 	\Omega_{G,n}^{(A)} \ar{r}{V_{G,n}^{(A)}} \ar{d}& 
-	\Fin \wr A \ar{d}
+	\Fin_s \wr A \ar{d}
 \\
 	\Omega_{G,n} \ar{r}[swap]{V_{G,n}} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 	\end{tikzcd}
-\]
-Explicitly, the objects of $\Omega_{G,n}^{(A)}$ are pairs 
+\end{equation}
+Explicitly, by Remark \ref{VGN REM}
+the objects of $\Omega_{G,n}^{(A)}$ are pairs 
 \begin{equation}\label{OMEGAGNA EQ}
 (T_0 \to \cdots \to T_n,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_n)})
+(a_{v_{G e}})_{v_{G e} \in V_G(T_n)})
 \end{equation}
-such that $\pi(a_{e^{\uparrow} \leq e}) = T_{n,e^{\uparrow} \leq e}$.
+such that $\rho(a_{v_{G e}}) = T_{n,v_{G e}}$.
 \end{notation}
+
+
+\begin{remark}
+The definition of $\Omega_{G,n}^{(A)}$ in (\ref{OMGGNA})
+is unchanged by replacing $\Fin_s$ with $\Fin$. 
+As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
+\end{remark}
+
+{\color{red} Expand on if necessary}
 
 \begin{remark}
 Our primary interest here will be in the 
-$\Omega_{G,0}^{(A)}$ construction.
-Importantly, the composite maps 
-$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$
-allow us to iterate the $\Omega_{G,0}^{(\minus)}$ construction. In practice, the role of higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
+$\Omega_{G,0}^{(\minus)}$ construction,
+which can be iterated thanks to the existance of the composite maps
+$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$.
+The role of the higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
 $\Omega_{G,0}^{(\minus)}$ constructions.
 
+{\color{red} HERE}
 
-Indeed, the content of Proposition \ref{SUBSASPULL PROP} is then that there are compatible identifications
-$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$
-which identify $V_G^{(\Omega_{G,n})}$ with $V_G$.
+Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as an identification
+$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$.
+Moreover, $V_{G,0}^{(\Omega_{G,n})}$ is then identified with 
+$V_G$ as defined in Notation \ref{VGDEF NOT} and by Remark \ref{DSCOM REM} the maps
+$V_{G,0}^{(d_i)}$, $V_{G,0}^{(s_{i-1})}$ are identified with
+$d_{i+1}$, $s_i$ for $i \geq 0$.
+
+{\color{red} HERE}
 
 Moreover, since all squares in the diagram
 \begin{equation}\label{ALLSQUARES EQ}
 \begin{tikzcd}
 	\Omega^{(A)}_{G,n+1} \ar{r}{V_G^{(A)}} \ar{d}& 
 	\Fin \wr \Omega^{(A)}_{G,n} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
-	\Fin \wr \Fin \wr A  \ar{d} \ar{r}{\sigma^0} &
+	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
 	\Fin \wr A \ar{d}
 \\
 	\Omega_{G,n+1} \ar{r}{V_G} \ar{d} &
 	\Fin \wr \Omega_{G,n} \ar{r}{\Fin \wr V_{G,n}} \ar{d} &
-	\Fin \wr \Fin \wr \Sigma_G \ar{r}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
 	\Fin \wr \Sigma_G
 \\
 	\Omega_{G,0} \ar{r} &
@@ -3269,14 +3897,14 @@ $\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
 
 \begin{proposition}
 For any $A \to \Sigma_G$ there are functors 
-$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G}^{(A)}$ and natural isomorphisms
+$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G,0}^{(A)}$ and natural isomorphisms
 \begin{equation}\label{SHUFFLEPERMA EQ}
 	\begin{tikzcd}
-	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}}&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r}{\Fin \wr V_G} &
-	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0}
+	\Omega_{G,1}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G^{(A)}} &
+	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}[swap]{V_G} &&
+	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G^{(A)}} &&
 	\Fin \wr A,
 	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
 	\end{tikzcd}
@@ -3288,7 +3916,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 	\Omega_{G,1}^{(A)} \ar{rr}{V_G^{(A)}} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{(H)}}
 	&&
 	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr}{\Fin \wr V_G^{(A)}} \ar[dd,dashed]&&
-	|[alias=FFOmegan]|\Fin \wr \Fin \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
+	|[alias=FFOmegan]|\Fin^{\wr 2} \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
 \\
 	&
 	|[alias=Omeganp1]|\Omega_{G,0}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G^{(A)}} \ar[crossing over]{dd} &&&&
@@ -3296,7 +3924,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 \\
 	\Omega_{G,1}^{(B)} \ar[dashed]{rr} \ar{rd}[swap,near end]{d^{(B)}_0}&&
 	\Fin \wr \Omega^{(B)}_{G,0} \ar[rr,dashed] &&
-	|[alias=FFOmeganm1]|\Fin \wr \Fin \wr B \ar[rd,dashed] 
+	|[alias=FFOmeganm1]| \Fin^{\wr 2} \wr B \ar[rd,dashed] 
 \\
 	&
 	|[alias=Omegan]|\Omega^{(B)}_{G,0} \ar{rrrr}[swap]{V_G^{(B)}} &&&&
@@ -3305,7 +3933,7 @@ Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ 
 	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm,dashed]
 \end{tikzcd}
 \end{equation}
-one has an equality 
+one has an equality of natural transformations
 \[(\Fin \wr H)\pi^{(A)} = \pi^{(B)}\Omega_{G,1}^{(H)}\]
  (i.e. the two natural isomorphisms between the two distinct functors $\Omega_{G,1}^{(A)} \rightrightarrows \Fin \wr B$ coincide).
 \end{proposition}
@@ -3316,12 +3944,12 @@ $d_0^{(A)}$ is simply given by the formula
 \begin{equation}\label{GEND0 EQ}
 d_0^{(A)} \left(
 T_0 \to T_1,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+(a_{v_{G e}})_{v_{G e}\in V_G(T_1)}
 \right)
 =
 \left(
 T_1,
-(a_{e^{\uparrow} \leq e})_{(e^{\uparrow} \leq e)\in V_G(T_1)}
+(a_{v_{G e}})_{v_{G e} \in V_G(T_1)}
 \right),
 \end{equation}
 though one must note that since in (\ref{OMEGAGNA EQ}) the
@@ -3369,8 +3997,8 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\Sigma \ar[equal]{d}&
 	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}} \ar{l}&
 	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G} &
-	|[alias=FFOmega]|\Fin \wr \Fin \wr A \ar{d}{\sigma^0} \ar{r} &
-	\Fin \wr \Fin \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
+	|[alias=FFOmega]| \Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
@@ -3618,33 +4246,8 @@ One advantage of split Grothendieck fibrations (in general) is the following ini
   \]  
   For any $d\in \mathcal D$, let $d \downarrow_{\mathsf r}\mathcal C$ denote the subcategory of $d\downarrow \mathcal C$ of just those maps $d \to f(c)$ which map to the identity under $r$.
 \end{definition}
-\begin{lemma}
-  In the above scenario, $d \downarrow_{\mathsf r}\mathcal C$ is inital in $d\downarrow \mathcal C$.
-\end{lemma}
-\begin{proof}
-  We must show that the appropriate iterated overcategories are non-empty and connected. To that end, suppose we have a map $\phi: d\to f(c)$ in $\mathcal D$, and let $q := r(\phi): r(d) \to r(c)$. Since $\mathcal C$ is fibrant over $\mathcal E$, we have a Cartesian arrow $q': c' \to c$ lifting $q: r(d) = r(c') \to r(c)$. Thus we have diagrams in $\mathcal E$ and $\mathcal D$ of the form
-\[
-\begin{tikzcd}
-  r(d) \arrow[dr, "r(\phi)"'] \arrow[r, equal, "id"] & r(c') \arrow[d, "q"] &\qquad \qquad & d \arrow[dr, "\phi"'] \arrow[r, dashed, "\exists!"] & f(c') \arrow[d, "f(q')"] \\
-  & r(c) & & & f(c)
-\end{tikzcd}
-\]
-As $f$ preserves Cartesian arrows, $f(q')$ is Cartesian, and hence we have a unique lifting $p(\phi): d \to f(c')$ of $r(d) = r(c')$. Thus the iterated overcategory is inhabited.
 
-To show it is connected, given any other factorization $d \xrightarrow{\psi} f(c'') \to f(c)$ such that $r(\psi) = id$, we can again use the fact that $q'$ is Cartesian to produce a lift $f(c'') \to f(c')$ of $r(c'') = r(c')$; by uniqueness of the map $d \to f(c')$, we have that the diagram below commutes, finishing the proof.
-\[
-\begin{tikzcd}
-  & d \arrow[dl, "\exists!"'] \arrow[dr, "\psi"] & \\
-  f(c') \arrow[dr, "f(q')"']  && f(c'') \arrow[ll, dashed, "\exists!"'] \arrow[dl]\\
-  & f(c)
-\end{tikzcd}
-\]
-\end{proof}
 
-\begin{remark}
-  The above proof can be easily modified to show that $d \downarrow_{\mathsf r} \mathcal C$ is in fact a coreflective subcategory of $d \downarrow \mathcal C$, with $\phi \mapsto p(\phi)$ the reflection.
-\todo[inline]{Luis: to actually show this would take just as long - functoriality and the fact that the inclusion is a left adjoint both require unique liftings/factorizations}
-\end{remark}
 
 \begin{definition}
 A split Grothendieck fibration 
@@ -3690,118 +4293,6 @@ Since the map $V_G$ sends the chosen cartesian arrows in $\Omega_{G,0}$
 (over $\mathsf{O}_G$) to chosen cartesian arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), the result follows.
 \end{proof}
 
-
-\todo[inline]{Luis: why does this need to be here? Root pullbacks were discussed earlier \ref{PULLCOMP REM} without an example.}
-\begin{example}
-Let $G=\mathbb{Z}_{/8}$. The following exemplifies a pull back along the twist map $\varphi\colon G/2G \to G/2G$ (i.e., accounting for order, $\varphi$ is the permutation $(12)$), 
-with the topmost representation of $\varphi^{\**} T$ maintaining 
-the chosen generators for each edge orbit from $T$ and the bottom representation choosing instead the generators to be minimal with regard to the planar structure.
-\begin{equation}
-	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at  (0,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+6$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+2$}}
-				edge from parent node [swap] {$b+2$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+4$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}a$}}
-				edge from parent node {$b$}}
-			edge from parent node [swap] {$c$}};
-		\node at  (4,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+7$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+3$}}
-				edge from parent node [swap] {$b+3$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+5$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+1$}}
-				edge from parent node {$b+1$}}
-			edge from parent node [swap] {$c+1$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.1,0) -- (-0.1,0) node[midway]{$T$};
-	\begin{scope}[yshift=4em]
-		\node at  (12,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+6$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+2$}}
-				edge from parent node [swap] {$b+2$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+4$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}a$}}
-				edge from parent node {$b$}}
-			edge from parent node [swap] {$c$}};
-		\node at  (8,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+7$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+3$}}
-				edge from parent node [swap] {$b+3$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$a+5$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$a+1$}}
-				edge from parent node {$b+1$}}
-			edge from parent node [swap] {$c+1$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (12.1,0) -- (7.9,0) node[midway]{$\varphi^{\**}T$};
-	\end{scope}
-	\begin{scope}[yshift=-4em]
-		\node at  (8,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$d+6$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$d+2$}}
-				edge from parent node [swap] {$e+2$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$d+4$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}d$}}
-				edge from parent node {$e$}}
-			edge from parent node [swap] {$f$}};
-		\node at  (12,0) {}
-			child{node [dummy] {}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$d+5$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$d+1$}}
-				edge from parent node [swap] {$e+1$}}
-				child[sibling distance = 6em]{node [dummy] {}
-					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$d+3$}}
-					child[sibling distance = 1em]{
-					edge from parent node [near end] {$d+7$}}
-				edge from parent node {$e+3$}}
-			edge from parent node [swap] {$f+1$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (12.1,0) -- (7.9,0) node[midway]{$\varphi^{\**}T$};
-	\end{scope}
-	\end{tikzpicture}
-\end{equation}
-We note that $(\varphi^{\**}(T))_{v_{G e}} = \psi^{\**}(T_{v_{G b}})$
-for $\psi$ the permutation $(13)(24)$ encoded by the composite identifications
-$\{1,2,3,4\} \simeq \{e,e+2,e+3,e+1\} \simeq 
-\{b+1,b+3,b,b+2\}\simeq \{3,4,1,2\}$.
-\end{example}
 
 
 \begin{lemma}\label{LANPULLCOMA LEM}
@@ -5622,7 +6113,7 @@ $s([n],i_n)= [0,i_n]$.
 
 
 
-\subsection{The category of extension trees}
+\subsection{The category of extension trees}\label{EXTTREE SEC}
 
 In this section we combine the previous sections to obtain a compact description of free extension pushouts
 \begin{equation}\label{FREEEXT EQ}
@@ -5634,7 +6125,7 @@ In this section we combine the previous sections to obtain a compact description
 \end{equation}
 as a left Kan extension over a convenient category of trees.
 
-For simplicity, we first explain how to obtain a similar description for the simpler case of a coproduct $X \amalg^a Y$.
+For motivation, we first explain how to obtain a similar description for the simpler case of a coproduct $X \amalg^a Y$.
 By (\ref{COLIMLAN EQ}), one has a description 
 \begin{align*}
 	X \amalg^a Y \simeq  &
@@ -6222,7 +6713,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 
 
 
-\section{Model structures}
+\section{Existence of model structures}
 \label{MODEL_STRUCTURES_SECTION}
 
 Summarizing the results in the previous section, we have that the free $\mathbb F_G$-extension $\P[u]$ defined by the pushout
@@ -7077,7 +7568,6 @@ then the $\F$-model structure exists on $\Op^G(\V)$. \qed
 \end{example}
 
 
-\newpage
 
 
 
@@ -8964,7 +9454,7 @@ $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 
 {\color{red} HERE}
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of Conjecture \ref{NINFTY_REAL_COR_MAIN} from \cite{BH15}.
+Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
 
 % \begin{corollary}
 %   \label{N_INFINITY_REALIZATION_COROLLARY}
