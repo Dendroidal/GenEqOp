@@ -3936,43 +3936,30 @@ and the obvious claim that $\Fin \wr \Fin \wr A \xrightarrow{\sigma^0} \Fin \wr 
 
 (c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullbacks, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
 
-{\color{red} HERE}
-
-Lastly, (d) is argued by induction on $k$ and $n$
-
-
-
-\begin{equation}\label{PIIDEFDI EQ}
+Lastly, (d) is argued by induction on $k$ and $n$. The case $k=0$ follows by the diagram on the left below, combined with
+Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, with the left square being in the case $k=0$, the middle square being a pullback by induction (and since $\Fin \wr (\minus)$ preserves pullback squares), and the rightmost square by direct verification.
+\begin{equation}
 \begin{tikzcd}[row sep=1.7em,column sep = 2.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G} &
 	\Fin_s \wr \Omega_{G}^{n-1}
 	\ar{d}{d_{i-1}} &
-	\Omega_G^n \ar{r}{V_G} &
-	\Fin_s \wr \Omega_G^{n-1} \ar{r}{V_G^k} &
-	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-2} \ar{r}{\sigma_0} &
-	\Fin_s \wr \Omega_G^{n-k-2}
+	\Omega_G^n \ar{r}{V_G} \ar{d}[swap]{d_i} &
+	\Fin_s \wr \Omega_G^{n-1} \ar{r}{V_G^k} \ar{d}[swap]{\Fin_s \wr d_{i-1}} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-2} \ar{r}{\sigma_0} \ar{d}[swap]{\Fin_s^{\wr 2}d_{i-1}}  &
+	\Fin_s \wr \Omega_G^{n-k-2} \ar{d}[swap]{\Fin_s \wr d_{i-1}}
 \\
-	\Omega_{G}^{n-1} \ar{d}[swap]{d_{1,\cdots,n}} \ar{r}{V_G} &
+	\Omega_{G}^{n-1} \ar{d}[swap]{d_{1,\cdots,n}} \ar{r}[swap]{V_G} &
 	\Fin_s \wr \Omega_{G}^{n-2}
-	\ar{d}{d_{0,\cdots,n-1}} 
+	\ar{d}{d_{0,\cdots,n-1}}  &
+	\Omega_G^{n-1} \ar{r}[swap]{V_G} &
+	\Fin_s \wr \Omega_G^{n-3} \ar{r}[swap]{V_G^k} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-3} \ar{r}[swap]{\sigma_0} &
+	\Fin_s \wr \Omega_G^{n-k-3}
 \\
 	\Omega_{G}^{0} \ar{r}{V_G}&
-	\Fin_s \wr \Sigma_G
+	\Fin_s \wr \Sigma_G 
 \end{tikzcd}
 \end{equation}
-
-
-
-\[
-\begin{tikzcd}
-	\Omega_G^n \ar{r}{V_G} &
-	\Fin_s \wr \Omega_G^{n-k} \ar{r}{V_G^k} &
-	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2} \ar{r}{\sigma_0} &
-	\Fin_s \wr \Omega_G^{n-k-l-2}
-\end{tikzcd}
-\]
-
- 
 \end{proof}
 
 
@@ -3989,7 +3976,7 @@ $\mathsf{Sym}_G(\mathcal{V}) =
 that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. The underlying endofunctor of $\mathbb{F}_G$ is easy enough to describe. Given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left Kan extension diagram
 \begin{equation}
 \begin{tikzcd}[row sep=2em,column sep = 3.3em]
-	\Omega_{G,0}^{op} \ar{r}{V_{G}} \ar{d}[swap]{\mathsf{lr}} &
+	(\Omega_{G}^{0})^{op} \ar{r}{V_{G}^{op}} \ar{d}[swap]{\mathsf{lr}} &
 (\Fin \wr \Sigma_G)^{op} \ar{r}[swap,name=F1]{}{(\Fin \wr X^{op})^{op}}& (\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} & \mathcal{V}
 \\
 	|[alias=G2]|
@@ -4005,7 +3992,7 @@ $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
 which we then transfer via the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
 
 
-
+{\color{red} HERE}
 
 
 \subsection{A monad on spans}
