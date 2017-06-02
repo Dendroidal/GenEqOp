@@ -3752,13 +3752,13 @@ in $\Omega_{G,n}$ lifting the rooted map in $P$.
 The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 	\[
 	\begin{tikzcd}[column sep = 0.1em]
-		\Omega_{G,{n+2}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
-		 & & \Fin_s \wr \Omega_{G,{n+1}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
-		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{i}} \ar{dd} 
-		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{i-1}} \ar{dd} &
+		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
+		 & & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
+		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{j+1}} \ar{dd} 
+		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{j}} \ar{dd} &
 	\\
-		& \Omega_{G,{n+1}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin_s \wr \Omega_{G,{n}} \ar{ld} &
+		& \Omega_{G,{n}} \ar{ld} \ar[crossing over]{rr} 
+		& & \Fin_s \wr \Omega_{G,{n-1}} \ar{ld} &
 		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
 		& & \Fin_s \wr \Omega_{G,{n+1}} \ar{ld}
 	\\
@@ -3766,7 +3766,9 @@ The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
 		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G &
 	\end{tikzcd}
 	\]
-commute whenever defined (i.e. $0 \leq i \leq n+1$).
+commute whenever defined, i.e. 
+$0 \leq i  \leq n $ and 
+$-1 \leq j \leq n$.
 \end{remark}
 
 \begin{notation}\label{INDVNG NOT}
@@ -3775,7 +3777,7 @@ commute whenever defined (i.e. $0 \leq i \leq n+1$).
 	V_{G,n} \colon \Omega_{G,n} \to \Fin_s \wr \Sigma_G
 \]
 be inductively defined by 
-$V_{G,n+1} = \sigma^0 \circ V_{G,n} \circ V_G$ for $n \geq 0$.
+$V_{G,n+1} = \sigma^0 \circ (\Fin_s \wr V_{G,n}) \circ V_G$ for $n \geq 0$.
 \end{notation}
 
 
@@ -3802,7 +3804,99 @@ from the maps
 $V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
 of Remark \ref{VERTEXDECOMP REM}. I.e., for 
 $v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that the images of $v,w \in V_G(T_i)$ are distinct.
+
+For any $d_i$ \textit{other than} $d_n$ there are then natural isomorphisms $\pi_i$ as on the left
+\begin{equation}\label{PIIDEF EQ}
+\begin{tikzcd}[row sep=0.4em,column sep = 3em]
+	\Omega_{G,n} \ar{dr}[name=F1]{V_{G,n}} \ar{dd}[swap]{d_i} &
+&
+	\Omega_{G,n} \ar{dr}{V_{G,n}} \ar{dd}[swap]{s_j} &
+\\
+	& \Fin_s \wr \Sigma_G &
+	& \Fin_s \wr \Sigma_G 
+\\
+	|[alias=G2]|
+	\Omega_{G,n-1}  \ar{ur}[swap]{V_{G,n-1}} & &
+	\Omega_{G,n+1}  \ar{ur}[swap]{V_{G,n+1}} & 
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\pi_i"]
+\end{tikzcd}
+\end{equation}
+which interchange the lexicographical order on $V_G(T_n)$
+induced by the string
+$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
+with the one induced by the string that omits $V_G(T_i)$.
+The analogous maps on the right side of 
+(\ref{PIIDEF EQ})
+strictly commute for any degeneracy $s_j$.
 \end{remark}
+
+The isomorphisms $\pi_i$ satisfy a number of useful straightforward conditions that we now catalog.
+
+\begin{proposition}\label{PIIPROP PROP}
+\begin{itemize}
+\item[(a)] The isomorphisms $\pi_i(T_0 \to \cdots \to T_n)$
+are pullbacks for the split Grothendieck fibration $\Fin_s \wr \Sigma_G \to \Fin_s$.
+
+\item[(b)] The composite natural transformation of the diagram below is $\pi_{i+1}$ for any $0 \leq i <n$.
+\begin{equation}
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
+	\Omega_{G,n+1} \ar{d}[swap]{d_{i+1}} \ar{r}{V_G} &
+	\Fin_s \wr \Omega_{G,n} \ar{r}{V_{G,n}} 
+	\ar{d}[swap]{\Fin_s \wr d_{i}} &
+	|[alias=F1]|
+	\Fin_s^{\wr 2} \wr \Sigma_G \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Sigma_G \ar[equal]{d}
+\\
+	\Omega_{G,n} \ar{r}[swap]{V_G}&
+	|[alias=G2]|
+	\Fin_s \wr \Omega_{G,n-1} \ar{r}[swap]{V_{G,n-1}} &
+	\Fin_s^{\wr 2} \wr \Sigma_G \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr \Sigma_G
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i}"]
+\end{tikzcd}
+\end{equation}
+
+\item[(c)] The pairs $(d_i,\pi_i)$ and
+$(s_j,id_{V_{G,n}})$ satisfy all possible simplicial identities (i.e. those with $i \neq n$).
+Explicitly, for $0 \leq i' < i < n$
+the composite natural transformations
+in the diagrams
+\begin{equation}
+\begin{tikzcd}[row sep=1.7em,column sep = 2em]
+	\Omega_{G,n} \ar{r}{} \ar{d}[swap]{d_{i}} &
+	|[alias=F1]|
+	\Fin_s \wr \Sigma_G \ar[equal]{d}
+&&
+	\Omega_{G,n} \ar{r}{} \ar{d}[swap]{d_{i'}} &
+	|[alias=F12]|
+	\Fin_s \wr \Sigma_G \ar[equal]{d}
+\\
+	|[alias=G2]|
+	\Omega_{G,n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i'}} &
+	|[alias=F2]|
+	\Fin_s \wr \Sigma_G \ar[equal]{d}
+&&
+	|[alias=G22]|
+	\Omega_{G,n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i-1}} &
+	|[alias=F22]|
+	\Fin_s \wr \Sigma_G \ar[equal]{d}
+\\
+	|[alias=G3]|
+	\Omega_{G,n-2} \ar{r}{} &
+	\Fin_s \wr \Sigma_G
+&&
+	|[alias=G32]|
+	\Omega_{G,n-2} \ar{r}{} &
+	\Fin_s \wr \Sigma_G
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
+\arrow[Leftrightarrow, from=F2, to=G3,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i'}"]
+\arrow[Leftrightarrow, from=F12, to=G22,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i'}"]
+\arrow[Leftrightarrow, from=F22, to=G32,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i-1}"]
+\end{tikzcd}
+\end{equation}
+coincide, and similarly for the face-degeneracy relations.
+\end{itemize}
+\end{proposition}
 
 
 
@@ -3816,12 +3910,25 @@ We will do so by building a monad $\mathbb{F}_G$
 on the category
 $\mathsf{Sym}_G(\mathcal{V}) = 
 \mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$,
-that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$.
-
-This will be done via a two step process, 
-by first building a monad $N$ on a larger category
+that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. The underlying endofunctor of $\mathbb{F}_G$ is easy enough to describe. Given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left Kan extension diagram
+\begin{equation}
+\begin{tikzcd}[row sep=2em,column sep = 3.3em]
+	\Omega_{G,0}^{op} \ar{r}{V_{G}} \ar{d}[swap]{\mathsf{lr}} &
+(\Fin \wr \Sigma_G)^{op} \ar{r}[swap,name=F1]{}{(\Fin \wr X^{op})^{op}}& (\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} & \mathcal{V}
+\\
+	|[alias=G2]|
+	\Sigma_G^{op}  \ar{urrr}[swap]{\mathbb{F}_G X} & &
+\arrow[Rightarrow, from=F1, to=G2,shorten >=0.45cm,shorten <=0.45cm]
+\end{tikzcd}
+\end{equation}
+To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension 
+step from the remaining construction.
+As such, we will first build a monad 
+$N$ on a larger category
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
-which we then transfer via adjunction.
+which we then transfer via the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
+
+
 
 
 
@@ -3896,7 +4003,7 @@ $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq
 
 
 \begin{notation}\label{OMEGAGNA NOT}
-	Given a functor $\rho \colon A \to \Sigma_G$, we let $\Omega^{(A)}_{G,n}$ denote the pullback in $\mathsf{Cat}$
+	Given a functor $\rho \colon A \to \Sigma_G$, $n \geq 0$, we let $\Omega^{(A)}_{G,n}$ denote the pullback in $\mathsf{Cat}$
 \begin{equation}\label{OMGGNA}
 	\begin{tikzcd}
 	\Omega_{G,n}^{(A)} \ar{r}{V_{G,n}^{(A)}} \ar{d}& 
@@ -3912,8 +4019,14 @@ the objects of $\Omega_{G,n}^{(A)}$ are pairs
 (T_0 \to \cdots \to T_n,
 (a_{v_{G e}})_{v_{G e} \in V_G(T_n)})
 \end{equation}
-such that $\rho(a_{v_{G e}}) = T_{n,v_{G e}}$.
+such that $\rho(a_{v_{G e}}) = T_{n,v_{G e}}$, and
+where $V_G(T_n)$ is ordered lexicographically
+according to the string $T_0 \to \cdots \to T_n$.
 \end{notation}
+
+\begin{remark}
+	Generalizing the notation $\Omega_{G,-1} = \Sigma_G$, we will also write $\Omega^{(A)}_{G,-1} = A$.
+\end{remark}
 
 
 \begin{remark}
@@ -3924,7 +4037,7 @@ As such, to avoid cluttering the diagrams in this section we will from now on ab
 
 {\color{red} Expand on if necessary}
 
-\begin{remark}
+
 Our primary interest here will be in the 
 $\Omega_{G,0}^{(\minus)}$ construction,
 which can be iterated thanks to the existance of the composite maps
@@ -3932,20 +4045,47 @@ $\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$.
 The role of the higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
 $\Omega_{G,0}^{(\minus)}$ constructions.
 
-{\color{red} HERE}
 
-Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as an identification
+Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as providing a canonical identification
 $\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$.
 Moreover, $V_{G,0}^{(\Omega_{G,n})}$ is then identified with 
-$V_G$ as defined in Notation \ref{VGDEF NOT} and by Remark \ref{DSCOM REM} the maps
-$V_{G,0}^{(d_i)}$, $V_{G,0}^{(s_{i-1})}$ are identified with
-$d_{i+1}$, $s_i$ for $i \geq 0$.
+$V_G$ as defined in Notation \ref{VGDEF NOT}, by Remark \ref{DSCOM REM} and the maps
+$\Omega_{G,0}^{(d_i)}$, $\Omega_{G,0}^{(s_{j})}$ are identified with
+$d_{i+1}$, $s_{j+1}$ for $i \geq 0$, $j \geq -1$.
 
-{\color{red} HERE}
+To address the general case we start by generalizing the key functors from \S \ref{PLANARSTRING SEC}.
 
-Moreover, since all squares in the diagram
+\begin{notation}
+	The functor $V_G^{(A)} \colon \Omega_{G,n}^{(A)}
+	\to \Fin \wr \Omega_{G,n-1}^{(A)}$ is defined by sending (\ref{OMEGAGNA EQ}) to
+	\begin{equation}\label{VGDEFA EQ}
+	\left(
+		\left(
+		T_{1,v_{G f}} \to \cdots \to T_{n,v_{G f}},
+		\left(
+		a_{v_{G e}}
+		\right)_{v_{G e} \in V_G\left(T_{n,v_{G f}}\right)}
+		\right)
+	\right)_{v_{G f} \in V_G(T_0)}
+\end{equation}
+Similarly, functors 
+$d_i \colon \Omega_{G,n}^{(A)} \to \Omega_{G,n-1}^{(A)}$
+for $0 \leq i < n$
+and 
+$s_j \colon \Omega_{G,n}^{(A)} \to \Omega_{G,n+1}^{(A)}$
+for $-1 \leq j \leq n$
+are defined on (\ref{OMEGAGNA EQ})
+by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate.
+Note that in the $d_i$ case one must also reorder $V_G(T_n)$
+and that the $s_j$ case includes a map  
+$s_{-1}^{(A)} \colon A = \Omega_{G,-1}^{(A)} \to \Omega_{G,0}^{(A)}$ .
+\end{notation}
+
+
+\begin{proposition}
+Consider the commutative diagram below.
 \begin{equation}\label{ALLSQUARES EQ}
-\begin{tikzcd}
+\begin{tikzcd}[row sep = 1.3em,column sep = 3em]
 	\Omega^{(A)}_{G,n+1} \ar{r}{V_G^{(A)}} \ar{d}& 
 	\Fin \wr \Omega^{(A)}_{G,n} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
 	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
@@ -3956,14 +4096,34 @@ Moreover, since all squares in the diagram
 	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
 	\Fin \wr \Sigma_G
 \\
-	\Omega_{G,0} \ar{r} &
+	\Omega_{G,0} \ar{r}{V_G} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-are pullback squares (the top center square is so by induction, the top right square by direct verification, the total top square by definition of $\Omega_{G,n+1}^{(A)}$ and the bottom left square by Proposition \ref{SUBSASPULL PROP}),
-we likewise obtain identifications 
-$\Omega_G^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}$.
-\end{remark}
+The top composite of this diagram is the map
+$V_{G,n+1}^{(A)}$, and all the squares are pullback squares.
+
+Therefore, there are canonical compatible identifications
+\begin{equation}\label{FOURIDE EQ}
+\Omega_{G,0}^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}, \qquad 
+V_{G,0}^{\left(\Omega_{G,n}^{(A)}\right)} \simeq V_G^{(A)},\qquad
+\Omega_{G,0}^{\left(d_i^{(A)}\right)}\simeq d^{(A)}_{i+1},\qquad
+\Omega_{G,0}^{\left(s_j^{(A)}\right)}\simeq s^{(A)}_{i+1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+	That the top composite is $V_{G,n+1}^{(A)}$ follows by direct inspection, noting that the indexing set $V_G(T_n)$ indeed has the right order. The composite top square is hence an instance of (\ref{OMGGNA}) and thus a pullback, as is the top center square by (\ref{OMGGNA}) together with 
+	the easy claim that $\Fin \wr (\minus)$ preserves pullback squares. The top right square is easily shown to be a pullback by direct inspection, while the bottom left square is a pullback by Proposition \ref{DSCOM REM}, and hence all squares are pullbacks.
+	
+	The first two identifications in (\ref{FOURIDE EQ})
+	then follow by noting that the two leftmost squares
+	in (\ref{ALLSQUARES EQ}) combine into a pullback as in (\ref{OMGGNA}), while the other two identifications follow from the obvious analogue of Remark \ref{DSCOM REM}.
+\end{proof}
+
+{\color{red} HERE}
+
+
 
 
 \begin{proposition}
