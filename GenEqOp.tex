@@ -3480,7 +3480,7 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 	$\bar{\psi}_{G e} \colon
 	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
 	which we now note are pullbacks over the maps
-	$\bar{\psi}_{G e} \colon Ge \to \bar{\varphi}(G e)$
+	$\bar{\psi}_{G e} \colon Ge \to G \bar{\psi}(e)$
 	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram (where we reformulate substitution data as in Remark \ref{SUBSGREF DEF})
 \[
 \begin{tikzcd}[row sep =10pt]
@@ -4599,15 +4599,32 @@ $\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Om
 and the result follows.
 \end{proof}
 
+
+\begin{remark}
+Explicitly, if $\psi \colon Y \to X$ is a map in $\mathsf{O}_G$,
+and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$,
+the pullback $\psi^{\**} \tilde{T}$ is given by
+\[
+\left(\psi^{\**}T,(\bar{\psi}^{\**}_{Ge}
+ A_{v_{Ge}})_{V_G(\psi^{\**}T)}\right)
+\]
+where $\bar{\psi}$ is the map 
+$\bar{\psi} \colon \psi^{\**}T \to T$
+and $\bar{\psi}_{G e}$ denote the restrictions
+$\bar{\psi} \colon G e \to G \bar{\psi}(e)$, 
+as in Remark \ref{PULLCOMP REM}.
+\end{remark}
+
+
 \begin{lemma}\label{LANPULLCOMA LEM}
-	Suppose that $\mathcal{V}$ is complete and that $A \to \Sigma_G$ is a root fibration map. If the rightmost triangle in 
+	Suppose that $\mathcal{V}$ is complete and that $\rho \colon A \to \Sigma_G$ is a root fibration map. If the rightmost triangle in 
 	\begin{equation}
 	\begin{tikzcd}
 		\Omega_{G}^{0} \wr A \ar{r}{V_G} 
 		\ar{d} & 
 		\Fin \wr A  
 		\ar{d}  \ar{r}[swap,name=F]{}&
-		\mathcal{V}		
+		\mathcal{V}^{op}
 	\\
 		\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
 		|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
@@ -4617,79 +4634,93 @@ and the result follows.
 is a right Kan extension diagram then so is the composite diagram.
 \end{lemma}
 
-{\color{red} HERE}
 
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
-	it suffices to check that for each $T \in \Omega_{G,0}$ the functor
-	\begin{equation}\label{LANPULLCOMA EQ}
-	T \downarrow \Omega_{G,0}^{(A)}
-	\to 
+	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
+\begin{equation}\label{LANPULLCOMA EQ}
+\begin{tikzcd}
+	T \downarrow \Omega_{G}^{0} \wr A \ar{r}{V_G} & 
 	V_G(T) \downarrow \Fin \wr A
-	\end{equation}
-is initial.
-In the course of the proof of Lemma \ref{FINWREATPRODLIM LEM}
-it was shown that the subcategory
-\[
-\prod_{v_{Ge} \in V_G(T)} 
-T_{v_{Ge}} \downarrow A
-\]
-is initial in the $V_G(T) \downarrow \Fin \wr A$.
-
-On the other hand, since $\Omega_G^{(A)} \to \Omega_G$ is a root fibration functor, 
-$T \downarrow \Omega_{G}^{(A)}$
-has an initial subcategory 
-$T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)}$
-with objects
-$(S \in \Omega_G^{(A)},T \to u(S))$
-such that 
-$T \to u(S)$
-is a quotient map that induces an ordered isomorphism on roots. Note that this can be restated as saying that 
-$T \to u(S)$ is an isomorphism preserving the order of the roots.
-
-
-The result now follows from the natural isomorphism
-\begin{equation}\label{TDOWNISOA EQ}
-	T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)} 
-\simeq
-	\prod_{v_{Ge} \in V_G(T)}
-	{T_{v_{Ge}} \downarrow_{\mathsf{r},\simeq} A}.
+\end{tikzcd}
 \end{equation}
-To see this, we focus first on the case $A = \Sigma_G$.
-In that case, the left hand side of (\ref{TDOWNISOA EQ}) encodes replanarizations of $T$ that preserve the root order.
-On the other hand, the right hand side encodes replanarizations of all the $G$-vertices that preserve the order of their roots, or, equivalently, replanarizations of the non-equivariant vertices of $T$.
-That these are equivalent is the content of Proposition \ref{PLANARIZATIONCHAR PROP}.
+is initial.
+We will slightly abuse notation by writing 
+$(T \to U, (A_{v_{G f}})_{V_G(U)})$ for the objects of 
+$T \downarrow \Omega_{G}^{0}$,
+as well as 
+$
+\left(
+	(T_{v_{G e}} \to U_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
+	(A_v)_{v \in V}
+\right)
+$
+for the objects of 
+$V_G(T) \downarrow \Fin \wr A$,
+with the map $\phi \colon V_G(T) \to V$ and the condition 
+$\rho(A_v) = U_v$ left implicit.
 
-Note that $(T \to S) \in (T \downarrow_{\mathsf{r},\simeq} \Omega_{G})$ is then encoded by a tuple
-$\left(T_{v_{Ge}} \to \varphi^{\**}_{v_{Ge}} S_{v_{Ge}}\right)_
-{v_{Ge} \in V_G(T)}$
-where the pullbacks $\varphi^{\**}_{v_{Ge}}$ are needed to correct the root order.
+By Proposition \ref{FIBERKANMAP PROP}, $T \downarrow \Omega_{G}^{0} \wr A$ has an initial subcategory
+$T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A$
+of those objects such that $T \to U$ is the identity on roots. 
+Similarly, again by Proposition \ref{FIBERKANMAP PROP},
+$V_G(T) \downarrow \Fin \wr A$
+has an initial subcategory
+\begin{equation}\label{INITCAT EQ}
+	\prod_{v_{Ge} \in V_G(T)} 
+	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+\end{equation}
+of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
+(\ref{INITCAT EQ}) comes together with a right retraction $r$,
+i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
+which is built using pullbacks. 
+We now compute the following composite
+(where we abbreviate expressions $T_{v_{G e}}$ as 
+$T_{v_Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$).
+\[
+\begin{tikzcd}[column sep =1.5em , row sep =0em]
+	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
+	\ar{r}{V_G} &
+	V_G(T) \downarrow \Fin \wr A \ar{r}{r} &
+	\underset{v_{Ge} \in V_G(T)}{\prod} 
+	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+\\
+	(T \xrightarrow{\psi} U, (A_{{G f}})) \ar[mapsto]{r} &
+	\left(
+		(T_{{G e}} \to U_{{G \psi(e)}}),
+		(A_{{G f}})
+	\right) \ar[mapsto]{r} &
+	\left(
+		(T_{{G e}} \to \psi_{G e}^{\**} U_{{G \psi(e)}}),
+		(\psi_{G e}^{\**} A_{{G \psi(e)}})
+	\right)
+\end{tikzcd}
+\]
+Since rooted quotients are isomorphisms, the $\psi$
+and $\psi_{Ge}$ appearing above are isomorphisms, 
+and hence the natural transformation
+$i \circ r \circ V_G \Rightarrow V_G$
+is a natural isomorphism. Therefore, to check that $V_G$ is initial it suffices to verify that 
+$r \circ V_G$ is an isomorphism.
 
-The case of general $A$ follows likewise, 
-using the corresponding pullbacks
-$\varphi^{\**}_{v_{Ge}}$.
-
-{\color{red} Note: an addendum is needed to show that (\ref{TDOWNISOA EQ}) suffices, since $T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)}$ is not sent directly to
- $\prod_{v_{Ge} \in V_G(T)}
-	{T_{v_{Ge}} \downarrow_{\mathsf{r},\simeq} A}$}
+But now note that an arbitrary choice of rooted isomorphisms
+$T_{v_{G_e}} \to U^{\mathsf{r}}_{v_{G_e}}$
+uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon U$.
+Therefore, arbitrary choices of 
+$\psi_{G e}^{\**} U_{{G \psi(e)}}$,
+$\psi_{G e}^{\**} A_{{G \psi(e)}}$
+uniquely determine $U$, $A_{G f}$, finishing the proof.
 \end{proof}
 
-
-
-Lemma \ref{ROOTFIBPULL LEM} can be interpreted as saying that, if one defines a category
+Lemmas \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
+on
 $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$
-of \textit{rooted spans}
-\[
-\Sigma_G^{op} \leftarrow A^{op} \to \mathcal{V}
-\]
-where $A \to \Sigma_G$ is a root fibration functor, the monad $N$ built in Proposition \ref{MONSPAN PROP} lifts to a monad 
-$N_{\mathsf{r}}$ in
-$\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$,
-and likewise for the adjunction (\ref{LANIOTAADJ EQ}).
+lifting the monad $N$.
 
 \begin{corollary}
-Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable.
-The functors
+Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable or, more generally, that 
+$\mathcal{V}$ is a monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
+Then the functors
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
 	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ \mathsf{Lan},
@@ -4725,39 +4756,37 @@ id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
 \Rightarrow
 \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
 \]
-We let $\Op_G(\V)$ denote the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
+We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
 \end{definition}
-
 
 \begin{remark}
 	The functor $\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota$ is isomorphic to 
-	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
+	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and hence we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
 	
-	From this point of view, the role of root fibrations is to guarantee that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, but unnecessary to describe the monad structure itself.
+	From this point of view, the role of root fibrations is to guarantee that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, though unnecessary to describe the monad structure itself.
 \end{remark}
-
 
 \begin{remark}\label{REPACKAGERES REM}
 Since a map 
-\[\F_G X =\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota X \to X\]
+\[\F_G X =\mathsf{Lan} \circ N \circ \iota X \to X\]
 is adjoint to a map
-\[N_{\mathsf{r}} \circ \iota X \to \iota X\]
+\[N \circ \iota X \to \iota X\]
 one easily verifies that 
 $X$ is a genuine equivariant operad, i.e. 
 a $\F_G$-algebra, iff 
 $\iota X$ is a $N$-algebra.
+
 Moreover, the bar resolution
-\[
-	\F_G^{\bullet +1} X 
-\]
+$ \F_G^{\circ n +1} X $
 is isomorphic to
-\[
-	\mathsf{Lan} \left( N^{\bullet +1} \iota X \right).
-\]
+$
+	\mathsf{Lan} \left( N^{\circ n +1} \iota X \right)
+$.
 \end{remark}
 
-
 \subsection{Comparison with (regular) equivariant operads}
+
+{\color{red} HERE}
 
 We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
