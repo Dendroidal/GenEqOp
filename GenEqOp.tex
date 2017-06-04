@@ -4786,8 +4786,6 @@ $.
 
 \subsection{Comparison with (regular) equivariant operads}
 
-{\color{red} HERE}
-
 We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
 \simeq \mathsf{Sym}(\mathcal{V})$
@@ -4804,7 +4802,6 @@ of genuine equivariant sequences and genuine operads.
 
 We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions in this section.
 
-
 We thus have an inclusion functor
 \[
 \begin{tikzcd}[row sep =0]
@@ -4814,11 +4811,12 @@ We thus have an inclusion functor
 	C \ar[mapsto]{r} & G \cdot C
 \end{tikzcd}
 \]
-where $G \cdot C$ is planarized so that the roots inherit the order of $G$ and each of the individual copies of $C$ inherits the planarization of $C$.
+where $G \cdot C$ is the constant tuple $(C)_{g \in G}$,
+which we think of as $|G|$ copies of $C$, planarized according to $C$ and the order on $G$.
 Moreover, letting $\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_G$ denote the full subcategory of $G$-free corollas, there is an induced retraction 
 $\rho \colon \Sigma_{G}^{\text{fr}} \to G \times \Sigma$
 defined by 
-$\rho(\amalg_{1\leq i \leq |G|} C_i) = G \cdot C_1$
+$\rho\left( (C_i)_{1\leq i \leq |G|} \right) = G \cdot C_1$
 together with isomorphisms 
 $C \simeq \rho(C)$
 uniquely determined by the condition that they
@@ -4835,24 +4833,22 @@ We now consider the associated adjunctions.
 	\ar[bend left]{l}{\iota_{\**}}
 \end{tikzcd}
 \end{equation}
-
-
-Explicitly, we have the formulas
+Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for $I \in \mathsf{O}_G$)
 \[
-	\iota_!Y(\amalg_i C_i)=
+	\iota_!Y\left( (C_i)_I \right)=
 	\begin{cases}
-	Y(C_1), & \amalg_i C_i \in \Sigma_G^{\text{fr}} \\
-	\emptyset, & \amalg_i C_i \nin \Sigma_G^{\text{fr}}
+	Y(C_1), & (C_i)_I \in \Sigma_G^{\text{fr}} \\
+	\emptyset, & (C_i)_I \nin \Sigma_G^{\text{fr}}
 	\end{cases},
-\qquad
+\quad
 	\iota^{\**}X (C) = X(G \cdot C),
-\qquad
-	\iota_{\**}Y (\amalg_i C_i)=
-	\left(\prod_i Y(C_i)\right)^G,
+\quad
+	\iota_{\**}Y ((C_i)_I)=
+	\left(\prod_{I} Y(C_i)\right)^G,
 \]
-where we note that in the formula for $\iota_{\**}(\minus)$
-the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
-As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
+where in the formula for $\iota_{\**}(\minus)$
+the action of $G$ interchanges factors according to the action on the indexing set $I$.
+As a side note, note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
 \begin{remark}\label{REFLCOREFL REM}
 	$\iota_!$ essentially identifies 
@@ -4874,9 +4870,9 @@ under precomposition (note that $\varphi^{\**}C \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
-$\amalg_i C_i \in \Sigma_G^{\text{fr}}$
+$(C_i)_I \in \Sigma_G^{\text{fr}}$
 sends $Y(C_1)$ to the ``$G$-twisted diagonal'' of 
-$\prod_i Y(C_i)$.
+$\prod_I Y(C_i)$.
 Moreover, letting $\eta_!,\epsilon_!$ 
 (resp. $\eta_{\**},\epsilon_{\**}$)
 denote the unit and counit of the $(\iota_!,\iota^{\**})$ adjunction 
@@ -4902,7 +4898,6 @@ it is straightforward to check that the following diagram commutes.
  commutes provided at least one of the adjunctions in \ref{TWOADJOINTS EQ} is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
 \end{remark}
 
-
 %By adjunction, one needs compare the composites
 %\[
 %\iota_{\**} \xrightarrow{\eta_{!}}
@@ -4920,9 +4915,8 @@ it is straightforward to check that the following diagram commutes.
 %\iota_{\**} \iota^{\**} \iota_{\**} \iota^{\**}$
 %coincide, which they do since they have a common inverse.
 
-
 \begin{proposition}
-	One has the following
+	One has the following:
 \begin{itemize}
 	\item[(i)]
 	the map 
@@ -4946,22 +4940,21 @@ it is straightforward to check that the following diagram commutes.
 \end{itemize}
 \end{proposition}
 
-
 \begin{proof}
 We first show (i), starting with some notation. 
 In analogy with $\Sigma_{G}^{\text{fr}}$,
-we write $\Omega_{G,0}^{\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
-$\mathsf{lr} \colon \Omega_{G,0}^{\text{fr}} \to \Sigma_G^{\text{fr}}$,
-$V_G \colon \Omega_{G,0}^{\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
+we write $\Omega_{G}^{0,\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
+$\mathsf{lr} \colon \Omega_{G}^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$,
+$V_G \colon \Omega_{G}^{0,\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
 Moreover, for each $C \in \Sigma_G^{\text{fr}}$ one has an equality of rooted undercategories between
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^0$
 and
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$,
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$,
 and thus 
 $\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram.
 \begin{equation}\label{IFGI EQ}
 \begin{tikzcd}
-	\Omega_{G,0}^{\text{fr}} \ar{d} \ar{r} &
+	\Omega_{G}^{0,\text{fr}} \ar{d} \ar{r} &
 	\Fin \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin \wr X} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
@@ -5038,11 +5031,11 @@ $\mathbb{F}_G X(C) =\emptyset$.
 But since for such 
 $C \nin \Sigma_G^{\text{fr}}$
 the undercategory
-$C \downarrow \Omega_{G,0}$
-consists of trees with at least one non-free vertex, the composite
+$C \downarrow \Omega_{G}^{0}$
+consists of trees with at least one non-free vertex (namely the root vertex), the composite
 \[
 \begin{tikzcd}
-	C \downarrow \Omega_{G,0} \ar{r}{V} &
+	C \downarrow \Omega_{G}^{0} \ar{r}{V_G} &
 	\Fin \wr \Sigma_G \ar{r}{\Fin \wr X} &
 	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi}&
 	\mathcal{V}^{op}
@@ -5050,24 +5043,23 @@ consists of trees with at least one non-free vertex, the composite
 \]
 is constant equal to $\emptyset$, and (iii) follows.
 
-
 Finally, we show (iv). We will slightly abuse notation by writing 
 $G \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
 and similarly
-$G \times \Omega_0 \hookrightarrow \Omega_{G,0}$ for the image of the obvious analogous functor
-$\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
+$G \times \Omega^0 \hookrightarrow \Omega_{G}^{0}$ for the image of the obvious analogous functor
+$\iota \colon G \times \Omega^0 \to \Omega_{G}^{0}$.
 The map 
 $\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$
 is the adjoint to the map 
 $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on spans by the following diagram.
 \begin{equation}\label{MONADEQUIV DEF}
 \begin{tikzcd}[row sep=5pt, column sep =8pt]
-	G \times \Omega_0	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr (G \times \Sigma_0) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
+	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr (G \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
-	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	& \Omega_{G}^{0} \ar{dd} \ar{rr} &&
 	\Fin \wr \Sigma_G  \ar{rr}[swap]{X} &&
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
@@ -5081,17 +5073,18 @@ That
 $\alpha$
 is a natural isomorphism
 follows by the previous identifications 
-$C \downarrow_{\mathsf{r}} \Omega_{G,0} \simeq
-C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0} \simeq
+C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
 for $C \in G \times \Sigma$
 together with the fact that the retraction 
-$\rho \colon \Omega_{G,0}^{\text{fr}} \to G \times \Omega_0$
+$\rho \colon \Omega_{G}^{0,\text{fr}} \to G \times \Omega^0$
 (built just as the retraction
 $\rho \colon \Sigma_G^{\text{fr}} \to G \times \Sigma$)
 retracts 
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
 to the undercategory
-$C \downarrow_{\mathsf{r}} G \times \Omega_0$, which is thus initial (as well as final), and the claim that $\alpha$ is an isomorphism follows.
+$C \downarrow_{\mathsf{r}} G \times \Omega^0$, which is thus initial (as well as final).
+%, and the claim that $\alpha$ is an isomorphism follows.
 
 Intuitively, the final claim that 
 $\alpha$ is a map of monads 
@@ -5103,7 +5096,7 @@ $
 	\to
 \iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{!}
 $
-is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{fr}}$.
+is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega^1 \hookrightarrow \Omega_{G}^{1,\text{fr}}$.
 However, since the presence of left Kan extensions in the 
 definitions of $\mathbb{F}$, $\mathbb{F}_G$
 can make a rigorous direct proof of this last claim fairly cumbersome, we sketch here a workaround argument.
@@ -5123,25 +5116,30 @@ $\tilde{\alpha} \colon N \to \iota^{\**} N_G \iota_{!}$
 encoded by the diagram (where the front and back squares are pullbacks).
 \[
 \begin{tikzcd}[row sep=3pt, column sep =8pt]
-	(G \times \Omega)^{(\iota^{\**} A)}	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr \iota^{\**} A \ar{rd} \ar[dashed]{dd} \ar{rr}&&
+	(G \times \Omega^0) \wr \iota^{\**} A	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr \iota^{\**} A \ar{rd} \ar{dd} \ar{rr}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
-	& \Omega_{G,0}^{(A)} \ar{dd} \ar{rr} &&
+	& 
+	|[alias=O1]|
+	\Omega_{G}^{0} \wr A \ar[crossing over]{rr} &&
 	\Fin \wr A \ar{dd} \ar{rr} &&
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rr}&&
-	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
+	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr}&&
+	\Fin \wr (G \times \Sigma) \ar{rd}
 \\
-	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	&
+	|[alias=O2]|
+	\Omega_{G}^{0} \ar{dd} \ar{rr} &&
 	\Fin \wr \Sigma_G
 \\
 	G \times \Sigma \ar{rd}
 \\
 	& \Sigma_{G}
+\arrow[from=O1, to=O2,crossing over]
 \end{tikzcd}
 \]
 The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writing
@@ -5217,7 +5215,6 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\]
 \end{proof}
 
-
 Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the following.
 
@@ -5233,8 +5230,8 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the followin
 \end{tikzcd}
 \end{equation}
 In particular, $\iota_{\**}$
-identifies $\mathsf{Op}^G$ as a reflexive subcategory of 
-$\mathsf{Op}_G$.
+identifies $\mathsf{Op}^G(\mathcal{V})$ as a reflexive subcategory of 
+$\mathsf{Op}_G(\mathcal{V})$.
 \end{corollary}
 
 \begin{remark}
@@ -5307,7 +5304,7 @@ However, such counter-examples all require the use of trees with stumps. Indeed,
 is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \end{remark}
 
-
+{\color{red} HERE}
 
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
