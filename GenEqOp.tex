@@ -3563,7 +3563,7 @@ where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
 \end{remark}
 
 
-\begin{remark}
+\begin{remark}\label{ALLSPLITMAPS REM}
 Since for any planar $n$-string it is 
 $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
@@ -3946,15 +3946,15 @@ Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The g
 	\ar{d}{d_{i-1}} &
 	\Omega_G^n \ar{r}{V_G} \ar{d}[swap]{d_i} &
 	\Fin_s \wr \Omega_G^{n-1} \ar{r}{V_G^k} \ar{d}[swap]{\Fin_s \wr d_{i-1}} &
-	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-2} \ar{r}{\sigma_0} \ar{d}[swap]{\Fin_s^{\wr 2}d_{i-1}}  &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-2} \ar{r}{\sigma^0} \ar{d}[swap]{\Fin_s^{\wr 2} \wr d_{i-1}}  &
 	\Fin_s \wr \Omega_G^{n-k-2} \ar{d}[swap]{\Fin_s \wr d_{i-1}}
 \\
-	\Omega_{G}^{n-1} \ar{d}[swap]{d_{1,\cdots,n}} \ar{r}[swap]{V_G} &
+	\Omega_{G}^{n-1} \ar{d}[swap]{d_{1,\cdots,n}} \ar{r}{V_G} &
 	\Fin_s \wr \Omega_{G}^{n-2}
 	\ar{d}{d_{0,\cdots,n-1}}  &
 	\Omega_G^{n-1} \ar{r}[swap]{V_G} &
 	\Fin_s \wr \Omega_G^{n-3} \ar{r}[swap]{V_G^k} &
-	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-3} \ar{r}[swap]{\sigma_0} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-3} \ar{r}[swap]{\sigma^0} &
 	\Fin_s \wr \Omega_G^{n-k-3}
 \\
 	\Omega_{G}^{0} \ar{r}{V_G}&
@@ -3968,7 +3968,7 @@ $d_{0,\cdots,n-1}$) replaced by $s_j$.
 
 
 
-\section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
+\section{Genuine equivariant operads}\label{GENUINE_OP_MONAD_SECTION}
 
 
 In this section we now build the category 
@@ -4258,6 +4258,13 @@ by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordi
 $V_G(T_n)$.
 \end{remark}
 
+\begin{remark}
+One upshot of Proposition \ref{PIIPROPA PROP} is that formally applying the symbol $(\minus) \wr A$ 
+to the diagrams in Proposition \ref{PIIPROP PROP} yields sensible statements. As such, we will simply refer to the corresponding part of
+Proposition \ref{PIIPROP PROP} when
+using one of the generalized claims.
+\end{remark}
+
 \begin{corollary}
 One has identifications 
 $\Omega_G^k \wr \Omega_G^n \wr A \simeq \Omega_{G}^{n+k+1} \wr A$ which identify $V_G^k \wr \Omega_G^n \wr A$ with 
@@ -4504,12 +4511,10 @@ Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
 
 
-\subsection{The free genuine operad monad} \label{FGMON SEC}
-
-{\color{red} HERE}
+\subsection{The genuine equivariant operad monad} \label{FGMON SEC}
 
 
-Recalling that 
+Since 
 $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op}) \simeq 
 \mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$,
 Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
@@ -4520,119 +4525,91 @@ Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
 	\mathsf{Fun}(\Sigma^{op}_G, \mathcal{V})
 	\colon \iota
 \end{equation}
-together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$. We now turn to showing that, under reasonable hypothesis on $\mathcal{V}$, the composite
-$\mathsf{Lan} \circ N \circ \iota$ inherits a monad structure from $N$. The key will be to show that under such conditions the map
+together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$.
+
+
+We will now show that under reasonable conditions on 
+$\mathcal{V}$ this monad can be transferred by using 
+Proposition \ref{MONADADJ PROP},
+i.e. we will show that the natural transformations 
 $
 \mathsf{Lan} \circ N \Rightarrow \mathsf{Lan} \circ N \circ \iota \circ \mathsf{Lan}
 $
-is a natural isomorphism.
+and
+$\mathsf{Lan} \circ \iota \Rightarrow id$
+are isomorphisms.
 
-
-Recall that following Convention \ref{PLANARCONV CON} our model for  $\mathsf{O}_G$ consists of totally ordered sets.
-One therefore has \textit{root functors} 
-\[
-\Omega_G^q \xrightarrow{\mathsf{r}} \mathsf{O}_G,
-	\qquad
-\Sigma_G \xrightarrow{\mathsf{r}} \mathsf{O}_G
-\]
-sending each planar $G$-tree to its ordered orbital $G$-set of roots.
-
-Root functors are compatible with the leaf-root functor and the inclusion, i.e. the following commute.
-\begin{equation}\label{ROOTLEAFTROOTCOM EQ}
-\begin{tikzcd}
-	\Omega_G^q \ar{r}{\mathsf{lr}} \ar{rd}[swap]{\mathsf{r}}&
-	\Sigma_G \ar{d}{\mathsf{r}} &
-	\Sigma_G \ar[hookrightarrow]{r} \ar{rd}[swap]{\mathsf{r}}&
-	\Omega_G^q \ar{d}{\mathsf{r}}
-\\
-	& \mathsf{O}_G  &
-	& \mathsf{O}_G
-\end{tikzcd}
-\end{equation}
-Moreover, the diagrams (\ref{ROOTLEAFTROOTCOM EQ}) possess some extra structure we will need to make use of. 
-Indeed, both functors are split Grothendieck fibrations: given a map 
-$\varphi \colon A \to B$
-in $\mathsf{O}_G$
-and $G$-tree $T$ such that $\mathsf{r}(T)=B$
-we can build a cartesian arrow 
-$\varphi^{\**}(T) \to T$
-by letting $\varphi^{\**}(T)$ to be the pullback $G$-tree
-together with the planar structure on roots given by $A$ and on non-equivariant nodes given by their image via 
-$\varphi^{\**}(T) \to T$.
-
-It now follows that (\ref{ROOTLEAFTROOTCOM EQ}) are diagrams of split Grothendieck fibrations.
-
-One advantage of split Grothendieck fibrations (in general) is the following initiality condition on overcategories.
-\begin{definition}
-  Suppose we have two split fibrations $r: \mathcal C \to \mathcal E$ and $r: \mathcal D \to \mathcal E$ and a map of fibrations $f$ as below.
-  \[
-  \begin{tikzcd}
-    \mathcal C \arrow[dr, "r"'] \arrow[rr, "f"] & & \mathcal D \arrow[dl, "r"]\\
-    &     \mathcal E
-  \end{tikzcd}
-  \]  
-  For any $d\in \mathcal D$, let $d \downarrow_{\mathsf r}\mathcal C$ denote the subcategory of $d\downarrow \mathcal C$ of just those maps $d \to f(c)$ which map to the identity under $r$.
-\end{definition}
-
-
+This will require us to introduce a slight modification of the category of spans.
+For motivation, note that iterations
+$N^{\circ n+1} \circ \iota$ produce spans of the form
+$\Sigma_G \leftarrow \Omega_G^{n} \to \mathcal{V}^{op}$
+(where we use the identification $\Omega_G^{n} \wr \Sigma_G \simeq \Omega_G^{n}$). 
+As noted in Remark \ref{ALLSPLITMAPS REM}, the maps 
+$\Omega_G^{n} \to \Sigma_G$ are maps of split fibrations over $\mathsf{O}_G$, as are all other simplicial operators $d_i$, $s_j$.
 
 \begin{definition}
-A split Grothendieck fibration 
-$A \xrightarrow{\mathsf{r}} \mathsf{O}_G$
-is called a \textit{root fibration} and a split Grothendieck fibration diagram
-\[
-\begin{tikzcd}
-	A \ar{r} \ar{rd}[swap]{\mathsf{r}}&
-	B \ar{d}{\mathsf{r}} 
-\\
-	& \mathsf{O}_G 
-\end{tikzcd}
-\]
-is called a \textit{root fibration functor}.
+The category $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$ of \textit{rooted (left) spans}
+has as objects spans
+$\Sigma_G^{op} \leftarrow A^{op} \to \mathcal{V}$
+together with a split Grothendieck fibration 
+$\mathsf{r} \colon A \to \mathsf{O}_G$
+such that $A \to \Sigma_G$ is a map of split fibrations.
+
+Similarly, arrows are maps of spans that induce maps of split fibrations.
 \end{definition}
 
+We refer split fibrations $A \to \mathsf{O}_G$
+as \textit{root fibrations}
+and to maps between them as \textit{root fibration maps}.
 
-The relevance of root fibrations is given by the following couple of lemmas.
+\begin{remark}
+The condition that $A \to \mathsf{O}_G$
+be a root fibration requires additional \textit{choices} of root pullbacks. Therefore, the forgetful functor 
+$\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})
+\to
+\mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$
+is not quite injective on objects.
+\end{remark}
+
+The relevance of rooted spans is given by the following couple of lemmas.
 
 \begin{lemma}\label{ROOTFIBPULL LEM}
-If $A \to \Sigma_G$ is a root fibration functor then so is 
-$\Omega_G^{(A)} \to \Omega_G$, naturally in $A$.
+If $A \to \Sigma_G$ is a root fibration map then so is 
+$\Omega_G^0 \wr A \to \Omega_G^0$, naturally in $A$.
 \end{lemma}
 
-
 \begin{proof}
-We consider the pullback diagram below.
+The hypothesis that $A \to \Sigma_G$ is root fibration map
+implies that the rightmost map below in 
+is a map of split fibrations over
+$\Fin \wr \mathsf{O}_G$.
 \begin{equation}\label{ROOTIMPLIESROOT EQ}
 \begin{tikzcd}
-	\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} \ar{d} &
+	\Omega_{G}^0 \wr A \ar{r}{V_G} \ar{d} &
 	\Fin \wr A \ar{d}
 \\
-	\Omega_{G,0} \ar{r}[swap]{V_G} &
+	\Omega_{G}^0 \ar{r}[swap]{V_G} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-The hypothesis that $A \to \Sigma_G$ is root fibration 
-implies that the rightmost map in (\ref{ROOTIMPLIESROOT EQ})
-is a map of split Grothendieck fibrations over
-$\Fin \wr \mathsf{O}_G$.
-
-Since the map $V_G$ sends the chosen cartesian arrows in $\Omega_{G,0}$
-(over $\mathsf{O}_G$) to chosen cartesian arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), the result follows.
+Since by Lemma \ref{VGPULL LEM} the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
+(over $\mathsf{O}_G$) to pullback arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), 
+the root pullback arrows in 
+$\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin \wr A$,
+and the result follows.
 \end{proof}
 
-
-
 \begin{lemma}\label{LANPULLCOMA LEM}
-	Suppose that $\mathcal{V}$ is complete and that $A \to \Sigma_G$ is a root fibration. If the rightmost triangle in 
+	Suppose that $\mathcal{V}$ is complete and that $A \to \Sigma_G$ is a root fibration map. If the rightmost triangle in 
 	\begin{equation}
 	\begin{tikzcd}
-		\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} 
+		\Omega_{G}^{0} \wr A \ar{r}{V_G} 
 		\ar{d} & 
 		\Fin \wr A  
 		\ar{d}  \ar{r}[swap,name=F]{}&
 		\mathcal{V}		
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & 
+		\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
 		|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
 	\arrow[Rightarrow, from=FEG, to=F,shorten <=0.15cm]
 	\end{tikzcd}
@@ -4640,6 +4617,7 @@ Since the map $V_G$ sends the chosen cartesian arrows in $\Omega_{G,0}$
 is a right Kan extension diagram then so is the composite diagram.
 \end{lemma}
 
+{\color{red} HERE}
 
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
