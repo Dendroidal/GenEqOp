@@ -17,7 +17,6 @@
 \usepackage{showkeys}
 
 \usepackage{stmaryrd}
-\usepackage{upgreek}
 
 \usepackage{geometry}
 
@@ -50,7 +49,7 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, or more so up to ``all higher'' homotopies. To capture these more complex algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ encodes a ``generalized multiplication'', and consist of sets (or spaces) $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations.'' The structures of monoids, commutative monoids, Lie algebras, algebras with a module, and many more, can be all captured using operads. Moreover, in \cite{May72}, May introduced $E_\infty$-operads, ``homotopical replacements'' for the commutative operad, which encode the above monoids up to higher homotopies; in particular, an $E_\infty$-algebra structure on $X$ doesn't give unique maps $X^n \to X$, but instead ``homotopy unique'' such maps. 
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, or more so up to ``all higher'' homotopies. To capture these more complex algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the notions of \textit{operads}. Informally, an operad $\O$ encodes a ``generalized multiplication'', and consist of sets (or spaces) $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations.'' The structures of monoids, commutative monoids, Lie algebras, algebras with a module, and many more, can be all captured using operads. Moreover, in \cite{May72}, May introduced $E_\infty$-operads, ``homotopical replacements'' for the commutative operad, which encode the above monoids up to higher homotopies; in particular, an $E_\infty$-algebra structure on $X$ doesn't give unique maps $X^n \to X$, but instead ``homotopy unique'' such maps. 
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
 $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible; that is, for each subgroup $\Gamma \leq \Sigma_n$,
@@ -78,7 +77,7 @@ $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 after forgetting the $\Sigma_n$-actions.
 Using this theory, any cofibrant replacement of $\mathsf{Comm}$ is in fact an $E_\infty$-operad, providing a context for the notion of a ``homotopical replacement''.
-This is in contrast with so called ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is considered a $G$-weak equivalence only if all the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H\leq G$.
+This is in contrast with so called ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is considered a $G$-weak equivalence only if all the induced fix point maps $X^H \to Y^H$, $H \leq G$ are weak equivalences.
 This contrast hints at a number of novel subtleties that appear when studying equivariant operads, which we now discuss.
 
 
@@ -120,7 +119,7 @@ However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equ
 the \textit{$G$-trivial $E_\infty$-operads} of (\ref{NAIVEGEINFTY EQ}) do not provide 
 the correct replacement in the $G$-equivariant context. Instead, %notion of $G$-$E_{\infty}$-operads, by which we mean 
 %up-to-homotopy replacements of $\mathsf{Comm}$ in the $G$-equivariant context. Instead, 
-the correct notion, dubbed \textit{$G$-$E_{\infty}$-operads}, are characterized by the fixed point conditions
+\textit{$G$-$E_{\infty}$-operads} are characterized by the fixed point conditions
 \begin{equation}\label{GENGEINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
@@ -131,7 +130,7 @@ the correct notion, dubbed \textit{$G$-$E_{\infty}$-operads}, are characterized 
 \end{equation}
 In contrasting 
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}),
-we note the easy, but subtle, observation that the subgroups $\Gamma$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
+note that the subgroups such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
 and that $\Gamma \leq G$ iff $\Gamma$ is the graph of such a trivial homomorphism. 
@@ -157,20 +156,20 @@ that (\ref{GENGEINFTY EQ}),
 rather than (\ref{NAIVEGEINFTY EQ}), 
 provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
 For our purposes, however, we will instead focus on the perspective of Blumberg-Hill in \cite{BH15},
-which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
+which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem.
 
 Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
 the corresponding \textit{norm} is a $G$-spectrum $N^X R$
 whose underlying spetrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$
 but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
-Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e. strictly commutative ring $G$-spectrum $R$, 
+For any $\mathsf{Comm}$-algebra, i.e. strictly commutative ring $G$-spectrum, $R$, 
 %(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
 ring multiplication then induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X R \to R.
 \end{equation}
-Furthermore, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
+Moreover, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
 then satisfy a number of 
 natural equivariance and associativity conditions.
 Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for varying $H$
@@ -205,9 +204,9 @@ though our analysis here goes significantly further, again guided by Blumberg-Hi
 
 The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of specialized operads, which they dub $N_{\infty}$-operads.
 The minimum type of $N_{\infty}$-operads is that of the 
-$G$-trivial $E_{\infty}$-operads from (\ref{NAIVEGEINFTY EQ}) 
-while the maximal type is that of the $G$-$E_{\infty}$-operads from (\ref{GENGEINFTY EQ}).
-The remaining partially-genuine types, which interpolate between 
+$G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
+while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
+The remaining ``partial-genuine'' types, which interpolate between 
 $G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$, 
 can be thought of as encoding varying degrees of up-to-homotopy ``equivariant commutativity''.
 
@@ -257,7 +256,7 @@ In particular, whenever $\O$ is a $N \mathcal{F}$-operad,
 each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any family is 
 best understood in light Elmendorf's classical result from \cite{Elm83}
-stating that there is a Quillen equivalence \footnote{While Elmendorf did not use this language, the main result of \cite{Elm83} is the essential non-trivial step needed in such a proof. The first complete writeup to use the language of model structures is found in \cite{Pia91}, though the proof is by another method.}
+stating that there is a Quillen equivalence \footnote{While Elmendorf did not use this language, the main result of \cite{Elm83} is the essential non-trivial step needed; another method was explored in \cite{Pia91}.}
 (where $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
 \begin{tikzcd}[column sep =5em,row sep=0.3em]
@@ -289,7 +288,7 @@ $\iota^{\**}(C \delta_{\mathcal{F}}) =
 C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
 Moreover, we note that in \cite{Elm83}, cofibrant replacements are built via explicit simplicial realizations.
 
-The overarching goal of this paper is then that of proving the analogue of Elmendorf's Theorem (\ref{COFADJINT EQ})
+The overarching goal of this work is then that of proving the analogue of Elmendorf's Theorem (\ref{COFADJINT EQ})
 in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
 which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
 However, in trying to formulate such a result one immediately runs into a fundamental issue: 
@@ -323,7 +322,7 @@ of new algebraic objects we dub
 $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
-will consist of a list of spaces indexed by those appearing in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+will consist of a list of spaces indexed as in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
 When analyzing the proofs of the results in 
@@ -466,9 +465,9 @@ We note that the inputs
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 (\ref{INTFIXPTCOMP EQ})
 correspond to the nodes of the orbital representation
-in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge \textit{orbits}, while the output 
+in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge orbits, while the output 
 $\O(H/L \amalg H/K)^{H}$
-is similarly determined by both the leaf and root edge \textit{orbits}.
+is similarly determined by both the leaf and root edge orbits.
 The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
@@ -488,7 +487,7 @@ $\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq L$,
 isomorphisms
 $\mathcal{P}(X)\simeq \mathcal{P}(g X)$
 where $gX$ denotes the conjugate $gHg^{-1}$-set,
-and composition maps, e.g.%, for example,
+and composition maps of the form %, for example,
 \[
 \P(H/K) \times \P(K/L \amalg K/K) \to \P(H/L \amalg H/K)
 \]
@@ -513,7 +512,7 @@ as in (\ref{INTFIXPTCOMP EQ}); in general, these maps are of the form
 \]
 %\end{align*}
 %generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
-Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
+Lastly, thse composition maps %(\ref{FIXEDPOINTMUL EQ})
 must satisfy associativity, unitality, compatibility with restriction maps (noting that this will often change the orbit structure, radically altering the form of the given composition map), and equivariance conditions, as encoded by the theory of $G$-trees. Rather than making such compatibilities explicit, it will be more convenient and effective for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
 
@@ -524,71 +523,33 @@ must satisfy associativity, unitality, compatibility with restriction maps (noti
 
 We now present the highlights of this paper. 
 %, each of which proves the existence of certain model structures, or makes comparisons between them. 
-For much of the discussion, our base category will need to been sufficiently nice, either (Cartesian) \textit{strongly cellular} or \textit{underlying strongly cellular} (see Definitions \ref{STRONGLY_CELLULAR} and \ref{UNDERLYING_STRONGLY_CELLULAR}). In particular, the strongest statements all hold when $\V = \sSet$.
-p
-Our first result, proved in Section \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads can be endowed with a (semi) model structure encoding the theory of operads with norm maps. In fact, it shows that many more - in particular, the many partially-genuine (semi) model structures, also exist.
+For much of the discussion, our base category will need to been sufficiently nice, either (Cartesian) \textit{strongly cellular} or \textit{underlying strongly cellular} (see Definitions \ref{STRONGLY_CELLULAR} and \ref{UNDERLYING_STRONGLY_CELLULAR}). In particular, these results all hold when $\V = \sSet$.
+
+Our first result, proved in Section \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads have a large variety of partial-genuine (semi) model structures.
 
 \begin{customthm}{I}\label{MAINEXIST1 THM}
-Let $\V$ be a strongly cellular model category.
-
-Then there exists a semi model structure on $\Op^G(\V)$ where weak equivalences and fibrations are determined by graph subgroup fixed points as in \ref{GENEOPEQ EQ}; that is, by the forgetful functor
-\[
-\Op^G(\V) \xrightarrow{\mathsf{fgt}} \Sym^G(\V) \cong \prod_n \V^{G \times \Sigma_n}_{\Gamma_n}.
-\]
-
-More generally, for any collection $\mathcal F = \set{\mathcal F_n}_{n\geq 0}$ of sets $\mathcal F_n$ of arbitrary subgroups of $G\times \Sigma_n$ closed under conjugation, the $\mathcal F$-semi-model structure on $\Op^G(\V)$, where weak equiavlences and fibrations determined as in \ref{NFINFTY EQ} - that is, the model structure with weak equivalences and fibrations determined by the forgetful functor
-\[
-\Op^G_{\mathcal F}(\V) \xrightarrow{\mathsf{fgt}} \Sym^G_{\mathcal F}(\V) \cong \prod_n \V^{G\times \Sigma_n}_{\mathcal F_n},
-\]
-exists.
-% denoted $\Op^G_{\mathcal F}(\V)$, exists; t
-%  and fix a collection ${\mathcal F} = \set{{\mathcal F}_n}$ of sets ${\mathcal F}_n$ of subgroups of $G\times \Sigma_n$, each closed under conjugation. 
-% Then the $\mathcal{F}$-semi-model structure, 
-% denoted
-% $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
-% on 
-% the category $\mathsf{Op}^G(\mathcal{V})$ exists.
+Let $\V$ be strongly cellular, and fix a collection ${\mathcal F} = \set{{\mathcal F}_n}$ of sets ${\mathcal F}_n$ of subgroups of $G\times \Sigma_n$, each closed under conjugation. 
+Then the $\mathcal{F}$-semi-model structure, 
+denoted
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
+on 
+the category $\mathsf{Op}^G(\mathcal{V})$ exists.
 
 If moreover $\V$ is underlying strongly cellular, these are actual model structures.
 \end{customthm}
 
-Next, the analogous projective model structures on the category of genuine equivariant operads also exist. 
-Before the statement, we first highlight that, in the result above, the sets $\F_n$ can contain \textit{arbitrary} subgroups of $G\times \Sigma_n$. 
-However, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. 
-Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of sets of \textit{graph} subgroups, or equivalently full subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. 
-
-The following is proved in Section \ref{OP_G_EXISTS_SECTION}.
-%Letting $\Op_{\mathcal F}(\V)$ denote the category of $\mathbb F_G$-algebras in $\Sym_{\mathcal F}(\V)$, we have the following, proved in Section \ref{OP_G_EXISTS_SECTION}.
-\todo[inline]{come back: $\Op_{\mathcal F}$ vs $\Op_G^{\mathcal F}$}
+While we note that in the result above, the sets $\F_n$ can contain \textit{general} subgroups of $G\times \Sigma_n$, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of sets of \textit{graph} subgroups, or equivalently full subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. Letting $\Op_{\mathcal F}(\V)$ denote the category of $\mathbb F_G$-algebras in $\Sym_{\mathcal F}(\V)$, we have the following, proved in Section \ref{OP_G_EXISTS_SECTION}.
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
-Let $\V$ be Cartesian strongly cellular.
-Then there exists a projective semi model structure on $\mathsf{Op}_{G}(\V)$, determined by the forgetful functor
-\[
-\Op_G(\V) \xrightarrow{\mathsf{fgt}} \Sym_G(\V).
-\]
+Let $\V$ be Cartesian strongly cellular, and fix any full subcategory $\Sigma_{\mathcal F} \subseteq \Sigma_G$.
+Then the projective semi-model structure on  
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exists. 
+Equivalently, the $\Sigma_{\mathcal F}$-semi-model structure, denoted $\Op_G^{\mathcal F}(\V)$, on $\Op_G(\V)$ exists.
 
-More generally, for any full subcategory $\Sigma_{\mathcal F} \subseteq \Sigma_G$, 
-there exists a projective semi model structure on $\Op_{\mathcal F}(\V)$, determined by the forgetful functor
-\[
-\Op_{\mathcal F}(\V) \xrightarrow{\mathsf{fgt}} \Sym_{\mathcal F}(\V).
-\]
-
-Finally, 
-there exists a $\Sigma_{\mathcal F}$-projective semi-model structure on $\Op_G(\V)$, denoted $\Op_G^{\mathcal F}(\V)$ and determined by either composite of forgetful functors
-\[
-\begin{tikzcd}
-  \Op_G^{\mathcal F}(\V) \arrow[d, "\mathsf{fgt}"'] \arrow[r] & \Op_{\mathcal F}(\V) \arrow[d, "\mathsf{fgt}"]\\
-  \Sym_G^{\mathcal F}(\V) \arrow[r] & \Sym_{\mathcal F}(\V).
-\end{tikzcd}
-\]  
-
-%Equivalently, the $\Sigma_{\mathcal F}$-semi-model structure, denoted $\Op_G^{\mathcal F}(\V)$, on $\Op_G(\V)$ exists.
-
-If moreover $\V$ is underlying strongly cellular, all of these are actual model structures.
+If moreover $\V$ is underlying strongly cellular, these are actual model structures.
 \end{customthm}
 
-Oone important remark to make after these existence results is that these model structures need not be ``well-behaved'', specifically with respect to the forgetful functors preserving cofibrancy, unless the collections ${\mathcal F}$ are highly structured.
+Oone important remark to make after these results is that these model structures need not be ``well-behaved'', in particular with respect to cofibrancy, unless the collections ${\mathcal F}$ are highly structured.
 Our main result, proved in Section \ref{MAINTHM_PROOF_SECTION}, shows that assuming $\mathcal F$ is a \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}) is sufficient.
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
@@ -607,24 +568,12 @@ Then the adjunction
 is a Quillen equivalence.
 
 More generally, for $\mathcal{F}$ a (weak) indexing system, 
-the analogue adjunction
+the analogue adjunction 
 \begin{equation}
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_{G}^{\mathcal F}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
 	&
 	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
-	\ar[shift left=1.5]{l}{\iota_{\**}} .
-\end{tikzcd}
-\end{equation}
-is also a Quillen equivalence.
-
-\todo[inline]{come back}
-Most generally, for any two weak indexing systems $\mathcal F$ and $\bar{\mathcal F}$, the analogue adjunction
-\begin{equation}
-\begin{tikzcd}[column sep =5em]
-	\mathsf{Op}_{G}^{\mathcal F}(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
-	&
-	\mathsf{Op}^{\mathcal F}_{\bar{\mathcal{F}}}(\mathcal{V})
 	\ar[shift left=1.5]{l}{\iota_{\**}} .
 \end{tikzcd}
 \end{equation}
@@ -703,10 +652,7 @@ Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_E
 
 \todo[inline]{come back here}
 
-While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. 
-One key difference is that coloured genuine $G$-operads will have a \textit{coefficient system} of colours: evaluation at a $G$-corolla will include the additional data of a colour for each $G$-orbit of edges, and the isotropy of the colours must match that of its asscoatied edge.
-This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate. 
-%More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
+While this paper focuses soley on \textit{single coloured} operads, we expect the theory to extend immediately to the coloured setting. More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
 
 %We end this introduction with a brief discussion on the context of this paper. 
 As stated earlier, the main goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, describing the homotopy theory of non-equivariant operads, into the $G$-equivariant context. 
@@ -717,7 +663,7 @@ Moreover, sequels will extend the definitions of ``dendroidal complete Segal spa
   \label{CM_EQ}
   \tag{$\filledstar$}
   \begin{tikzcd}
-    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l] \arrow[d, "hcN_d"]\\
+    \mathsf{PreOp} \arrow[d] & \mathsf{sOp} \arrow[l, "N_d"] \arrow[d, "hcN_d"]\\
     \mathsf{sdSet} & \mathsf{dSet} \arrow[l]
   \end{tikzcd}
 \end{equation}
@@ -726,26 +672,11 @@ We note that, as in \cite{Pe17}, there are both multiple possible \textit{catego
 We end by interpreting these different models of $G$-operads, focusing on the right half of \ref{CM_EQ}. We recall that, intuitively, $\infty$-operads can be thought of as operads where composition is ``weakly defined'', and similiarly $G$-coefficient systems as spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is then the suitable notion of $G$-$\infty$-operad (that is, a suitable model structure) in the true pre-sheaf category $\mathsf{dSet}_G$, in which both composition and fixed-point conditions are weak. This would yield an expanded equivariant right half of \ref{CM_EQ}, given by the following.
 \[
 \begin{tikzcd}
-  \Op^G_{\mathcal F}(\V) \arrow[rr, "i_*"] \arrow[dd, shift right, "hcN^G"]& & \Op_G^{\mathcal F}(\V) \arrow[dd, "hcN_G"']\\ \\
-  \mathsf{dSet}^G_{\mathcal F} \arrow[rr, "i_*"'] \arrow[uu, shift left, shift left, dashed, bend left, "Ho^G"] \arrow[uurr, "Ho_G", dashed] && \mathsf{dSet}_G^{\mathcal F} \arrow[uu, shift right, shift right, bend right, dashed, "\mathrm{Ho}_G"']
+        \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
+        \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
 \end{tikzcd}
-% \begin{tikzcd}
-%         \Op^G_{\mathcal F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^{\mathcal F}(\V) \arrow[d, "hcN_G", "\simeq_Q ?"']\\
-%         \mathsf{dSet}^G_{\mathcal F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^{\mathcal F}
-% \end{tikzcd}
 \]
-
-We expect that all solid arrows are Quillen equivalences. However, analogous to the work of Cisinski-Moerdijk, direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, inspiring futher need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
-
-We also record our finding of an unexpected complication, that $G$-$\infty$-operads in $\mathsf{dSet}^G$ themselves satisfy a rigid fixed point condition, but their \textit{genuine} homotopy operad does \textit{not}, in particular that 
-\[
-\mathrm{Ho}_G(X) \not\simeq \mathrm{Ho}_G i_*(X) \not\simeq i_* \mathrm{Ho}^G(X)
-\]
-for $G$-$\infty$-operads $X$. 
-
-A full exploration of this and the other above topics will be discussed in sequels.
-
-%We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
+We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph. 
 %We expect to make a full comparison between these notions in sequels.
 
 {\color{red} Mention colored operad versions, equivalence with dendroidal sets}
@@ -1180,7 +1111,7 @@ $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 satisfying the analogues of 
 (\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ})
 endows $\mathcal{V}$ with a symmetric monoidal structure.
-We will however have no direct need to make use this fact, and as such include only a few pointers concerning the associativity pentagon axiom (the hardest condition to check) that the interested reader may find useful. 
+We will however have no direct need to use this fact, and as such include only a few pointers concerning the associativity pentagon axiom (the hardest condition to check) that the interested reader may find useful. 
 Firstly, it becomes convenient to write expressions such as
 $(A \otimes B) \otimes C$ instead as 
 $(A \otimes B) \otimes (C)$, so as to encode notationally the fact that this is the image of 
@@ -1339,8 +1270,6 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}.
 \end{remark}
-
-\todo[inline]{maybe mention that ``cat with projections'' is the same as semi-cartesian}
 
 We end this section by collecting some straightforward lemmas
 that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
@@ -2985,7 +2914,7 @@ We start by recalling a key class of maps of $G$-trees.
 	\]
 is an isomorphism of trees.	
 
-The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
+The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
 \end{definition}
 
 
@@ -3001,14 +2930,14 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 \begin{definition}
 	The \textit{$G$-symmetric category},
 	whose objects we call \textit{$G$-corollas}, is the full subcategory 
-	$\Sigma_G \hookrightarrow \Omega_{G,0}$ of those $G$-trees
+	$\Sigma_G \hookrightarrow \Omega_{G}^0$ of those $G$-trees
 	$C = (C_x)_{x \in X}$ such that some (and thus all) $C_x$ is a corolla $C_x \in \Sigma \hookrightarrow \Omega$
 	(cf. Notation \ref{UNIQCOR NOT}).
 \end{definition}
 
 
 \begin{definition}
-	The \textit{leaf-root functor} is the functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
+	The \textit{leaf-root functor} is the functor $\Omega_{G}^0 \xrightarrow{\mathsf{lr}} \Sigma_G$ defined by 
 \[
 	\mathsf{lr}\left((T_x)_{x \in X}\right)=
 	\left(\mathsf{lr}(T_x)\right)_{x \in X}.
@@ -3021,7 +2950,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
 	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows in $\Omega_G$.
 	However, we will mostly be concerned with the restriction  
-	$\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$.
+	$\Omega_{G}^0 \xrightarrow{\mathsf{lr}} \Sigma_G$.
 \end{remark}
 
 \begin{remark}\label{LEAFROOTEXAMP REM}
@@ -3141,7 +3070,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G,0}$ (this notation
 
 \begin{remark}\label{LRROOTMAP REM}
 	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
-the leaf-root functor $\mathsf{lr} \colon \Omega_{G,0} \to \Sigma_G$ is not a Grothendieck fibration,
+the leaf-root functor $\mathsf{lr} \colon \Omega_{G}^0 \to \Sigma_G$ is not a Grothendieck fibration,
 but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
 (for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
 \end{remark}
@@ -3228,7 +3157,7 @@ We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following defi
 The \textit{$G$-vertex functor} is the functor
 	\begin{equation}\label{VFUNCTOR EQ}
 		\begin{tikzcd}[row sep=tiny]
-		\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
+		\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
 		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
 		\end{tikzcd}	
 	\end{equation}
@@ -3275,14 +3204,14 @@ isomorphically onto $S_{v_{G b}}$
 and the $G$-corolla $T_{v_{Gc}}$ by a non-isomorphism quotient onto $S_{v_{G c}}$.
 \end{remark}
 
-
 The following elementary statement will play an important auxiliary role.
+
 
 \begin{lemma}\label{VGPULL LEM}
 The $G$-vertex functor
 \[
 \begin{tikzcd}
-	\Omega_{G,0} \ar{r}{V_G} & \Fin_s \wr \Sigma_G
+	\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G
 \end{tikzcd}
 \]
 sends pullbacks over $\mathsf{O}_G$ (i.e. root pullbacks)
@@ -3550,8 +3479,8 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 	determines pullback maps
 	$\bar{\psi}_{G e} \colon
 	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
-	which we now note are a pullback over the map
-	$\bar{\psi}_{G e} \colon Ge \to \bar{\varphi}(G e)$
+	which we now note are pullbacks over the maps
+	$\bar{\psi}_{G e} \colon Ge \to G \bar{\psi}(e)$
 	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram (where we reformulate substitution data as in Remark \ref{SUBSGREF DEF})
 \[
 \begin{tikzcd}[row sep =10pt]
@@ -3587,13 +3516,13 @@ our substitution results in a format that will be more convenient for our discus
 
 
 \begin{definition}
-	The category $\Omega_{G,n}$ of 
+	The category $\Omega_{G}^n$ of 
 	\textit{planar $n$-strings} is the category whose objects are strings
-	\[
+\begin{equation}\label{STRINGOBJ EQ}
 	\begin{tikzcd}
 	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
-	\]
+\end{equation}
 	where $T_i \in \Omega_G$ and the $\varphi_i$ are tall planar maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
@@ -3610,24 +3539,36 @@ where each $\pi_i$ is a quotient map.
 	Since compositions of planar tall arrows are planar tall
 	and identity arrows are planar tall	
 	it follows that 
-	$\Omega_{G,\bullet}$
+	$\Omega_{G}^{\bullet}$
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composing and degeneracies by inserting identities. 
 
 	Further setting 
-	$\Omega_{G,-1} = \Sigma_G$, the leaf-root functor $\Omega_{G,0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
-	$\Omega_{G,\bullet}$ into an augmented simplicial object and, furthermore, the maps 
-	$s_{-1} \colon \Omega_{G,n} \to \Omega_{G,n+1}$
+	$\Omega_{G}^{-1} = \Sigma_G$, the leaf-root functor $\Omega_{G}^{0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G}^{\bullet}$ into an augmented simplicial object and, furthermore, the maps 
+	$s_{-1} \colon \Omega_{G}^{n} \to \Omega_{G}^{n+1}$
 sending $T_0 \to T_1 \to \cdots \to T_n$ to 
 $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
 \end{notation}
 
+
 \begin{remark}
+The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string  (\ref{STRINGOBJ EQ}) is equivalent to a string
+\begin{equation}\label{STRINGOBJALT EQ}
+	\begin{tikzcd}
+	T_{-1} \ar{r}{\varphi_0} & T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
+	\end{tikzcd}	
+\end{equation}
+where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
+\end{remark}
+
+
+\begin{remark}\label{ALLSPLITMAPS REM}
 Since for any planar $n$-string it is 
 $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
 one has a well defined functor
-$\mathsf{r} \colon \Omega_{G,n} \to \mathsf{O}_G$,
+$\mathsf{r} \colon \Omega_{G}^{n} \to \mathsf{O}_G$,
 which is readily seen to be a split Grothendieck fibration.
 Furthermore, generalizing Remark \ref{LRROOTMAP REM},
 all operators $d_i$, $s_j$ 
@@ -3637,7 +3578,7 @@ are maps of split Grothendieck fibrations.
 
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
-$V_G \colon \Omega_{G,n+1} \to \Fin_s \wr \Omega_{G,n}$
+$V_G \colon \Omega_{G}^{n+1} \to \Fin_s \wr \Omega_{G}^{n}$
 by
 \begin{equation}\label{VGDEF EQ}
 	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
@@ -3669,11 +3610,11 @@ We now obtain a key reinterpretation (and slight strengthening) of Corollary \re
 For any $n\geq 0$ the commutative diagram
 	\begin{equation}\label{PTPULL EQ}
 	\begin{tikzcd}
-		\Omega_{G,n} \ar{r}{V_G} 
-		\ar{d}[swap]{d_{1,\cdots,n}} & \Fin_s \wr \Omega_{G,n-1} 
+		\Omega_{G}^{n} \ar{r}{V_G} 
+		\ar{d}[swap]{d_{1,\cdots,n}} & \Fin_s \wr \Omega_{G}^{n-1} 
 		\ar{d}{\Fin \wr d_{0,\cdots,n-1}}
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & \Fin_s \wr \Sigma_G
+		\Omega_{G}^{0} \ar{r}[swap]{V_G} & \Fin_s \wr \Sigma_G
 	\end{tikzcd}
 	\end{equation}
 is a pullback diagram in $\mathsf{Cat}$.
@@ -3682,16 +3623,16 @@ is a pullback diagram in $\mathsf{Cat}$.
 
 \begin{proof}
 Let us write 
-$P = \Omega_{G,0} \times_{\Fin_s \wr \Sigma_G} \Fin_s \wr \Omega_{G,n-1}$ for the pullback,
+$P = \Omega_{G}^{0} \times_{\Fin_s \wr \Sigma_G} \Fin_s \wr \Omega_{G}^{n-1}$ for the pullback,
 so that our goal is to show that the canonical map
-$\Omega_{G,n} \to P$ is an isomorphism. 
+$\Omega_{G}^{n} \to P$ is an isomorphism. 
 
-That $\Omega_{G,n} \to P$ is an isomorphism on objects 
+That $\Omega_{G}^{n} \to P$ is an isomorphism on objects 
 follows by combining the alternative description of $V_G$
 in Notation \ref{VGDEF NOT} with the planar half of
 Corollary \ref{SUBDATAUNDERPLANG COR}
 (in fact, this yields isomorphisms of the fibers over 
-$\Omega_{G,0}$, but we will not directly use this fact).
+$\Omega_{G}^{0}$, but we will not directly use this fact).
 We will hence write $T_0 \to \cdots \to T_n$
 to denote an object of $P$ as well.
 
@@ -3718,11 +3659,11 @@ together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write
 %and we note that the dashed information is superfluous
 %since $T_{0,v_{G e}} = \mathsf{lr}(T_{1,v_{G e}})$,
 %$T'_{0,v_{G e}} = \mathsf{lr}(T'_{1,v_{G e}})$.
-That $\Omega_{G,n} \to P$ is injective on arrows is then clear.
+That $\Omega_{G}^{n} \to P$ is injective on arrows is then clear.
 
-For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to \Omega_{G,0} \to \mathsf{O}_G$
+For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to \Omega_{G}^{0} \to \mathsf{O}_G$
 is a split Grothendieck fibration and 
-$P \to \Omega_{G,0}$ is a map of split Grothendieck fibrations. 
+$P \to \Omega_{G}^{0}$ is a map of split Grothendieck fibrations. 
 Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
 (\ref{PTNARROWLOC EQ})
 are pullbacks (alternatively, an abstract argument also works).
@@ -3730,11 +3671,11 @@ The alternative description of $V_G$ in
 Notation \ref{VGDEF NOT} combined with
 (\ref{SUBDATAUNDERPLANG2 EQ}) 
 then show that 
-$\Omega_{G,n} \to P$ preserves pullbacks,
+$\Omega_{G}^{n} \to P$ preserves pullbacks,
 so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
 But since a quotient is an isomorphism iff it is so on roots,
-we further have that
+we further have that 
 a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
 is a rooted isomorphism and
 each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
@@ -3744,149 +3685,226 @@ one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after con
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
 yields the desired rooted map (\ref{PTNARROW EQ})
-in $\Omega_{G,n}$ lifting the rooted map in $P$.
+in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \end{proof}
 
 
-\begin{remark}\label{DSCOM REM}
-The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
-	\[
-	\begin{tikzcd}[column sep = 0.1em]
-		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
-		 & & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
-		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{j+1}} \ar{dd} 
-		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{j}} \ar{dd} &
-	\\
-		& \Omega_{G,{n}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin_s \wr \Omega_{G,{n-1}} \ar{ld} &
-		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
-		& & \Fin_s \wr \Omega_{G,{n+1}} \ar{ld}
-	\\
-		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G & &
-		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G &
-	\end{tikzcd}
-	\]
-commute whenever defined, i.e. 
-$0 \leq i  \leq n $ and 
-$-1 \leq j \leq n$.
-\end{remark}
+%\begin{remark}\label{DSCOM REM}
+%The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
+%	\[
+%	\begin{tikzcd}[column sep = 0.1em]
+%		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
+%		 & & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr d_i} \ar{dd} & &
+%		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{s_{j+1}} \ar{dd} 
+%		& & \Fin_s \wr \Omega_{G,{n}} \ar{rd}{\Fin_s \wr s_{j}} \ar{dd} &
+%	\\
+%		& \Omega_{G,{n}} \ar{ld} \ar[crossing over]{rr} 
+%		& & \Fin_s \wr \Omega_{G,{n-1}} \ar{ld} &
+%		& \Omega_{G,{n+2}} \ar{ld} \ar[crossing over]{rr} 
+%		& & \Fin_s \wr \Omega_{G,{n+1}} \ar{ld}
+%	\\
+%		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G & &
+%		 \Omega_{G,0} \ar{rr} & & \Fin_s \wr \Sigma_G &
+%	\end{tikzcd}
+%	\]
+%commute whenever defined, i.e. 
+%$0 \leq i  \leq n $ and 
+%$-1 \leq j \leq n$.
+%\end{remark}
+
 
 \begin{notation}\label{INDVNG NOT}
-	We will let 
+	For $0 \leq k \leq n$ we will let 
 \[
-	V_{G,n} \colon \Omega_{G,n} \to \Fin_s \wr \Sigma_G
+	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
-be inductively defined by 
-$V_{G,n+1} = \sigma^0 \circ (\Fin_s \wr V_{G,n}) \circ V_G$ for $n \geq 0$.
+be inductively defined by $V_{G}^{0} = V_G$ and
+$V_{G}^{n+1} = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
 \end{notation}
 
 
 \begin{remark}\label{VGN REM}
-When $n = 2$, $V_{G,2}$ is thus the composite
+When $n = 2$, $V_{G}^{2}$ is thus the composite
 \[
 \begin{tikzcd}[column sep =1.7em]
-	\Omega_{G,2} \ar{r}{V_G} &
-	\Fin_s \wr \Omega_{G,1} \ar{r}{V_G} &
-	\Fin_s \wr \Fin_s \wr \Omega_{G,0} \ar{r}{V_G} &
+	\Omega_{G}^{2} \ar{r}{V_G} &
+	\Fin_s \wr \Omega_{G}^{1} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Omega_{G}^{0} \ar{r}{V_G} &
 	\Fin_s \wr \Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
 	\Fin_s \wr \Fin_s \wr \Sigma_{G} \ar{r}{\sigma^0} &
 	\Fin_s \wr \Sigma_{G}
 \end{tikzcd}
 \]
+while for $n=4$,  $V_{G}^{1}$ is the composite
+\[
+\begin{tikzcd}[column sep =1.7em]
+	\Omega_{G}^{4} \ar{r}{V_G} &
+	\Fin_s \wr \Omega_{G}^{3} \ar{r}{V_G} &
+	\Fin_s \wr \Fin_s \wr \Omega_{G}^{2} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_{G}^{2}.
+\end{tikzcd}
+\]
 In light of Remarks \ref{VERTEXDECOMP REM} and \ref{VERTEXDECOMPG REM}, 
-$V_{G,n}(T_0 \to \cdots \to T_n)$ is identified with the tuple 
+$V_{G}^{n}(T_0 \to \cdots \to T_n)$ is identified with the tuple 
 \begin{equation}\label{VGNISO EQ}
-	(T_{n,v_{G e}})_{v_{G e} \in V_G(T_n)},
+	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
 \end{equation}
-though this requires changing the total order in $V_G(T_n)$. Rather than using the order induced by $T_n$, one instead equips 
-$V_G(T_n)$ with the order induced lexicographically
+where we note that strings are written in prepended notation as in (\ref{STRINGOBJALT EQ}), so that $T_{i,v_{G e}}$ is superfluous unless $k=n$.
+Further, note that this requires changing the order of $V_G(T_k)$.
+Rather than using the order induced by $T_k$, one instead equips 
+$V_G(T_k)$ with the order induced lexicographically
 from the maps 
-$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
+$V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
 of Remark \ref{VERTEXDECOMP REM}. I.e., for 
-$v,w \in V_G(T_n)$ the condition $v<w$ is determined by the lowest $i$ such that the images of $v,w \in V_G(T_i)$ are distinct.
+$v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w \in V_G(T_l)$ are distinct.
 
-For any $d_i$ \textit{other than} $d_n$ there are then natural isomorphisms $\pi_i$ as on the left
-\begin{equation}\label{PIIDEF EQ}
-\begin{tikzcd}[row sep=0.4em,column sep = 3em]
-	\Omega_{G,n} \ar{dr}[name=F1]{V_{G,n}} \ar{dd}[swap]{d_i} &
+Therefore, for each $d_i$ with $i < k$ there are natural isomorphisms as on the left below which interchange the
+lexicographical order on the indexing set $V_G(T_k)$
+induced by the string
+$V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
+with the one induced by the string that omits $V_G(T_i)$.
+For $d_i$ with $i>k$ one has a commutative diagram as on the right below.
+Note that no such diagram is defined for $d_k$.
+\begin{equation}\label{PIIDEFDI EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
+	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1}
+	\ar[equal]{d} 
 &
-	\Omega_{G,n} \ar{dr}{V_{G,n}} \ar{dd}[swap]{s_j} &
-\\
-	& \Fin_s \wr \Sigma_G &
-	& \Fin_s \wr \Sigma_G 
+	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1}
+	\ar{d}{d_{i-k-1}} 
 \\
 	|[alias=G2]|
-	\Omega_{G,n-1}  \ar{ur}[swap]{V_{G,n-1}} & &
-	\Omega_{G,n+1}  \ar{ur}[swap]{V_{G,n+1}} & 
-\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\pi_i"]
+	\Omega_{G}^{n-1} \ar{r}[swap]{V_G^{k-1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1}  
+&
+	\Omega_{G}^{n-1} \ar{r}[swap]{V_G^{k}}&
+	\Fin_s \wr \Omega_{G}^{n-k-2}  
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-which interchange the lexicographical order on $V_G(T_n)$
-induced by the string
-$V_G(T_n) \to V_G(T_{n-1}) \to \cdots \to V_G(T_0)$ 
-with the one induced by the string that omits $V_G(T_i)$.
-The analogous maps on the right side of 
-(\ref{PIIDEF EQ})
-strictly commute for any degeneracy $s_j$.
+Similarly, for $s_j$ with $j<k$ (resp. $j \geq k$) one
+has commutative diagrams as on the left (resp. right) below. Note that for $s_k$ one uses the extra degeneracy 
+$s_{k-k-1}=s_{-1}$.
+
+\begin{equation}\label{PIIDEFDI2 EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
+	\Omega_{G}^{n} \ar{d}[swap]{s_{j}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1}
+	\ar[equal]{d} 
+&
+	\Omega_{G}^{n} \ar{d}[swap]{s_{j}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1}
+	\ar{d}{s_{j-k-1}} 
+\\
+	|[alias=G2]|
+	\Omega_{G}^{n+1} \ar{r}[swap]{V_G^{k+1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1}  
+&
+	\Omega_{G}^{n+1} \ar{r}[swap]{V_G^{k}}&
+	\Fin_s \wr \Omega_{G}^{n-k}  
+\end{tikzcd}
+\end{equation}
 \end{remark}
 
-The isomorphisms $\pi_i$ satisfy a number of useful straightforward conditions that we now catalog.
+The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of useful conditions that we now catalog.
 
 \begin{proposition}\label{PIIPROP PROP}
-\begin{itemize}
-\item[(a)] The isomorphisms $\pi_i(T_0 \to \cdots \to T_n)$
-are pullbacks for the split Grothendieck fibration $\Fin_s \wr \Sigma_G \to \Fin_s$.
+\begin{enumerate}[label=(\alph*)]
+\item The composite
+\[
+\begin{tikzcd}
+	\Omega_G^n \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_G^{n-k-1} \ar{r}{V_G^l} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2}
+\end{tikzcd}
+\]
+equals the functor $V_{G}^{k+l+1}$.
 
-\item[(b)] The composite natural transformation of the diagram below is $\pi_{i+1}$ for any $0 \leq i <n$.
-\begin{equation}
-\begin{tikzcd}[row sep=1.7em,column sep = 3em]
-	\Omega_{G,n+1} \ar{d}[swap]{d_{i+1}} \ar{r}{V_G} &
-	\Fin_s \wr \Omega_{G,n} \ar{r}{V_{G,n}} 
-	\ar{d}[swap]{\Fin_s \wr d_{i}} &
+\item The functors $V_G^k$ send pullbacks for the split Grothendieck fibration $\Omega_G^k \to \mathsf{O}_G$
+to pullbacks for $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$.
+
+\item The isomorphisms $\pi_i(T_0 \to \cdots \to T_n)$
+are pullbacks for the split Grothendieck fibration 
+$\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$. Moreover, the projection of $\pi_i(T_0 \to \cdots \to T_n)$ onto $\Fin_s$
+depends only on $T_0 \to \cdots \to T_i$.
+
+\item The rightmost diagrams in both (\ref{PIIDEFDI EQ})
+and (\ref{PIIDEFDI2 EQ}) are pullbacks diagrams in $\mathsf{Cat}$.
+
+\item
+For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
+\begin{equation}\label{INDPI1 EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
 	|[alias=F1]|
-	\Fin_s^{\wr 2} \wr \Sigma_G \ar[equal]{d} \ar{r}{\sigma^0} &
-	\Fin_s \wr \Sigma_G \ar[equal]{d}
+	\Fin_s \wr \Omega_{G}^{n-k-1} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar[equal]{d} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2} \ar[equal]{d}
 \\
-	\Omega_{G,n} \ar{r}[swap]{V_G}&
 	|[alias=G2]|
-	\Fin_s \wr \Omega_{G,n-1} \ar{r}[swap]{V_{G,n-1}} &
-	\Fin_s^{\wr 2} \wr \Sigma_G \ar{r}[swap]{\sigma^0} &
-	\Fin_s \wr \Sigma_G
+	\Omega_{G}^{n-1} \ar{r}[swap]{V_G^{k-1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1} \ar{r}[swap]{\Fin_s \wr V_{G}^{l}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2}
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
+\end{tikzcd}
+\end{equation}
+For $k< i < k+l+1$ the composite natural transformation in the diagram below is $\pi_{i+1}$.
+\begin{equation}\label{INDPI2 EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar{d}[swap]{\Fin_s \wr d_{i-k-1}} &
+	|[alias=F1]|
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2} \ar[equal]{d}
+\\
+	\Omega_{G}^{n-1} \ar{r}[swap]{V_G^k}&
+	|[alias=G2]|
+	\Fin_s \wr \Omega_{G}^{n-k-2} \ar{r}[swap]{\Fin_s \wr V_{G}^{l-1}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2}
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i}"]
 \end{tikzcd}
 \end{equation}
 
-\item[(c)] The pairs $(d_i,\pi_i)$ and
-$(s_j,id_{V_{G,n}})$ satisfy all possible simplicial identities (i.e. those with $i \neq n$).
+\item Restricting to the case $k=n$, the pairs $(d_i,\pi_i)$ and
+$(s_j,id_{V_{G}^{n}})$ satisfy all possible simplicial identities (i.e. those with $i \neq n$).
 Explicitly, for $0 \leq i' < i < n$
 the composite natural transformations
 in the diagrams
-\begin{equation}
+\begin{equation}\label{SIMPPI EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 2em]
-	\Omega_{G,n} \ar{r}{} \ar{d}[swap]{d_{i}} &
+	\Omega_{G}^{n} \ar{r}{} \ar{d}[swap]{d_{i}} &
 	|[alias=F1]|
 	\Fin_s \wr \Sigma_G \ar[equal]{d}
 &&
-	\Omega_{G,n} \ar{r}{} \ar{d}[swap]{d_{i'}} &
+	\Omega_{G}^{n} \ar{r}{} \ar{d}[swap]{d_{i'}} &
 	|[alias=F12]|
 	\Fin_s \wr \Sigma_G \ar[equal]{d}
 \\
 	|[alias=G2]|
-	\Omega_{G,n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i'}} &
+	\Omega_{G}^{n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i'}} &
 	|[alias=F2]|
 	\Fin_s \wr \Sigma_G \ar[equal]{d}
 &&
 	|[alias=G22]|
-	\Omega_{G,n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i-1}} &
+	\Omega_{G}^{n-1} \ar{r}[swap]{}  \ar{d}[swap]{d_{i-1}} &
 	|[alias=F22]|
 	\Fin_s \wr \Sigma_G \ar[equal]{d}
 \\
 	|[alias=G3]|
-	\Omega_{G,n-2} \ar{r}{} &
+	\Omega_{G}^{n-2} \ar{r}{} &
 	\Fin_s \wr \Sigma_G
 &&
 	|[alias=G32]|
-	\Omega_{G,n-2} \ar{r}{} &
+	\Omega_{G}^{n-2} \ar{r}{} &
 	\Fin_s \wr \Sigma_G
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \arrow[Leftrightarrow, from=F2, to=G3,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i'}"]
@@ -3895,12 +3913,62 @@ in the diagrams
 \end{tikzcd}
 \end{equation}
 coincide, and similarly for the face-degeneracy relations.
-\end{itemize}
+\end{enumerate}
 \end{proposition}
 
 
+\begin{proof}
+(a) follows by induction on $k$, with $k=0$ being the definition. More generally (and writing $\Fin$ for $\Fin_s$)
+one has
+\begin{align*}
+	\sigma^0(\Fin \wr V_G^l)V_G^{k+1}= &
+	\sigma^0(\Fin \wr V_G^l)\sigma^0 (\Fin \wr V_G^k) V_G =
+	\sigma^0 \sigma^0 (\Fin^{\wr 2} \wr V_G^l)(\Fin \wr V_G^k) V_G
+\\
+	= & \sigma^0 \sigma^1 (\Fin^{\wr 2} \wr V_G^l)(\Fin \wr V_G^k) V_G =
+	\sigma^0 (\Fin \wr \sigma^0)  (\Fin^{\wr 2} \wr V_G^l)(\Fin \wr V_G^k) V_G 
+\\
+	= & \sigma^0 \left(\Fin \wr \left( \sigma^0 (\Fin \wr V_G^l) V_G^k \right)\right) V_G = \sigma^0 \left(\Fin \wr V_G^{k+l-1}\right) V_G =
+V_G^{k+l}.
+\end{align*}
 
-\section{The genuine equivariant operad monad}\label{GENUINE_OP_MONAD_SECTION}
+(b) generalizes Lemma \ref{VGPULL LEM}, and follows by induction using that result, Lemma \ref{FWRGROTH LEM},
+and the obvious claim that $\Fin \wr \Fin \wr A \xrightarrow{\sigma^0} \Fin \wr A$ sends pullbacks over $\Fin \wr \Fin$ to pullbacks over $\Fin$.
+
+(c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullbacks, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
+
+Lastly, (d) is argued by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in (\ref{PIIDEFDI EQ}) follows by the diagram on the left below, combined with
+Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, with the left square being in the case $k=0$, the middle square being a pullback by induction (and since $\Fin \wr (\minus)$ preserves pullback squares), and the rightmost square by direct verification.
+\begin{equation}
+\begin{tikzcd}[row sep=1.7em,column sep = 2.5em]
+	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G} &
+	\Fin_s \wr \Omega_{G}^{n-1}
+	\ar{d}{d_{i-1}} &
+	\Omega_G^n \ar{r}{V_G} \ar{d}[swap]{d_i} &
+	\Fin_s \wr \Omega_G^{n-1} \ar{r}{V_G^k} \ar{d}[swap]{\Fin_s \wr d_{i-1}} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-2} \ar{r}{\sigma^0} \ar{d}[swap]{\Fin_s^{\wr 2} \wr d_{i-1}}  &
+	\Fin_s \wr \Omega_G^{n-k-2} \ar{d}[swap]{\Fin_s \wr d_{i-1}}
+\\
+	\Omega_{G}^{n-1} \ar{d}[swap]{d_{1,\cdots,n}} \ar{r}{V_G} &
+	\Fin_s \wr \Omega_{G}^{n-2}
+	\ar{d}{d_{0,\cdots,n-1}}  &
+	\Omega_G^{n-1} \ar{r}[swap]{V_G} &
+	\Fin_s \wr \Omega_G^{n-3} \ar{r}[swap]{V_G^k} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-3} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-3}
+\\
+	\Omega_{G}^{0} \ar{r}{V_G}&
+	\Fin_s \wr \Sigma_G 
+\end{tikzcd}
+\end{equation}
+The claim for the rightmost diagram in (\ref{PIIDEFDI2 EQ}) follows by the analogous diagrams with the $d_i$ (but not $d_{1,\cdots,n}$, 
+$d_{0,\cdots,n-1}$) replaced by $s_j$.
+\end{proof}
+
+
+
+
+\section{Genuine equivariant operads}\label{GENUINE_OP_MONAD_SECTION}
 
 
 In this section we now build the category 
@@ -3913,8 +3981,9 @@ $\mathsf{Sym}_G(\mathcal{V}) =
 that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. The underlying endofunctor of $\mathbb{F}_G$ is easy enough to describe. Given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left Kan extension diagram
 \begin{equation}
 \begin{tikzcd}[row sep=2em,column sep = 3.3em]
-	\Omega_{G,0}^{op} \ar{r}{V_{G}} \ar{d}[swap]{\mathsf{lr}} &
-(\Fin \wr \Sigma_G)^{op} \ar{r}[swap,name=F1]{}{(\Fin \wr X^{op})^{op}}& (\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} & \mathcal{V}
+	(\Omega_{G}^{0})^{op} \ar{r}{V_{G}^{op}} \ar{d}[swap]{\mathsf{lr}} &
+	|[alias=F1]|
+(\Fin \wr \Sigma_G)^{op} \ar{r}[swap,name=F2]{}{(\Fin \wr X^{op})^{op}}& (\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} & \mathcal{V}
 \\
 	|[alias=G2]|
 	\Sigma_G^{op}  \ar{urrr}[swap]{\mathbb{F}_G X} & &
@@ -3927,8 +3996,6 @@ As such, we will first build a monad
 $N$ on a larger category
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
 which we then transfer via the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
-
-
 
 
 
@@ -4003,18 +4070,20 @@ $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq
 
 
 \begin{notation}\label{OMEGAGNA NOT}
-	Given a functor $\rho \colon A \to \Sigma_G$, $n \geq 0$, we let $\Omega^{(A)}_{G,n}$ denote the pullback in $\mathsf{Cat}$
+	Given a functor $\rho \colon A \to \Sigma_G$, $n \geq 0$, we let $\Omega_G^n \wr A$ denote the pullback in $\mathsf{Cat}$
 \begin{equation}\label{OMGGNA}
 	\begin{tikzcd}
-	\Omega_{G,n}^{(A)} \ar{r}{V_{G,n}^{(A)}} \ar{d}& 
+	\Omega_{G}^n \wr A \ar{r}{V_{G}^{n}} \ar{d}& 
 	\Fin_s \wr A \ar{d}
 \\
-	\Omega_{G,n} \ar{r}[swap]{V_{G,n}} &
+	\Omega_{G}^{n} \ar{r}[swap]{V_{G}^{n}} &
 	\Fin_s \wr \Sigma_G
 	\end{tikzcd}
 \end{equation}
+We will write the top $V^n_G$ functor as $V_G^n \wr A$ whenever we need to distinguish such functors.
+
 Explicitly, by Remark \ref{VGN REM}
-the objects of $\Omega_{G,n}^{(A)}$ are pairs 
+the objects of $\Omega_{G}^{n} \wr A$ are pairs 
 \begin{equation}\label{OMEGAGNA EQ}
 (T_0 \to \cdots \to T_n,
 (a_{v_{G e}})_{v_{G e} \in V_G(T_n)})
@@ -4025,196 +4094,221 @@ according to the string $T_0 \to \cdots \to T_n$.
 \end{notation}
 
 \begin{remark}
-	Generalizing the notation $\Omega_{G,-1} = \Sigma_G$, we will also write $\Omega^{(A)}_{G,-1} = A$.
+	Generalizing the notation $\Omega_{G}^{-1} = \Sigma_G$, we will also write $\Omega_G^{-1} \wr A  = A$, in which case
+	$V_{G}^{-1} \wr A \colon \Omega_G^{-1} \wr A \to \Fin_s \wr A$
+	is the obvious ``simpleton map'' $\delta^0 \colon A \to \Fin_s \wr A$.
 \end{remark}
 
+\begin{remark}
+An alternative, and arguably more suggestive, notation for 
+$\Omega_{G}^n \wr A$ would be $\Omega_{G}^n \wr_{\Sigma_G} A$,
+since we are really defining a ``relative'' analogue of the wreath product 
+(so that in particular $\Omega_{G}^n \wr_{\Sigma_G} \Sigma_G \simeq \Omega_G^n)$.
+However, we will prefer $\Omega_{G}^n \wr A$ due to space concerns.
+\end{remark}
 
 \begin{remark}
-The definition of $\Omega_{G,n}^{(A)}$ in (\ref{OMGGNA})
+The definition of $\Omega_{G}^{n} \wr A$ in (\ref{OMGGNA})
 is unchanged by replacing $\Fin_s$ with $\Fin$. 
 As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
 \end{remark}
 
 {\color{red} Expand on if necessary}
 
-
 Our primary interest here will be in the 
-$\Omega_{G,0}^{(\minus)}$ construction,
-which can be iterated thanks to the existance of the composite maps
-$\Omega_{G,0}^{(A)} \to \Omega_{G,0} \to \Sigma_G$.
+$\Omega_{G}^{0}\wr (\minus)$ construction,
+which can be iterated thanks to the existence of the composite maps
+$\Omega_{G}^{0} \wr A \to \Omega_{G}^{0} \to \Sigma_G$.
 The role of the higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
-$\Omega_{G,0}^{(\minus)}$ constructions.
-
-
+$\Omega_{G}^{0}\wr (\minus)$ constructions.
 Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as providing a canonical identification
-$\Omega_{G,0}^{(\Omega_{G,n})} \simeq \Omega_{G,n+1}$.
-Moreover, $V_{G,0}^{(\Omega_{G,n})}$ is then identified with 
-$V_G$ as defined in Notation \ref{VGDEF NOT}, by Remark \ref{DSCOM REM} and the maps
-$\Omega_{G,0}^{(d_i)}$, $\Omega_{G,0}^{(s_{j})}$ are identified with
-$d_{i+1}$, $s_{j+1}$ for $i \geq 0$, $j \geq -1$.
+$\Omega_{G}^{0} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+1}$,
+with the functor $V_G^0 \wr \Omega_G^n$ identified with the functor $V_G$ as defined in Notation \ref{VGDEF NOT}.
+Moreover, arguing by induction on $n$, the fact that the rightmost squares in (\ref{PIIDEFDI EQ}) are pullbacks
+(Proposition \ref{PIIPROP PROP})
+provides further identifications
+$\Omega_{G}^{k} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+k+1}$
+with $V_G^k \wr \Omega_G^n$ identified with $V_G^k$ as defined by Notation \ref{INDVNG NOT}.
 
-To address the general case we start by generalizing the key functors from \S \ref{PLANARSTRING SEC}.
+Our first task is now to produce analogous identifications between
+$\Omega_{G}^{k} \wr \Omega_{G}^{n} \wr A =
+\Omega_{G}^{k} \wr (\Omega_{G}^{n} \wr A)$
+and 
+$\Omega_{G}^{n+k+1} \wr A$
+(note that iterated wreath expressions should always be read as bracketed on the right, i.e. we do \textit{not} define the expression
+$ (\Omega_{G}^{k} \wr \Omega_{G}^{n}) \wr A$).
+We start by generalizing the key functors from \S \ref{PLANARSTRING SEC}.
 
-\begin{notation}
-	The functor $V_G^{(A)} \colon \Omega_{G,n}^{(A)}
-	\to \Fin \wr \Omega_{G,n-1}^{(A)}$ is defined by sending (\ref{OMEGAGNA EQ}) to
-	\begin{equation}\label{VGDEFA EQ}
+\begin{proposition}\label{PIIPROPA PROP}
+There are functors
+\[
+	\begin{tikzcd}
+	\Omega_G^n \wr A \ar{r}{V_G^k} & \Fin_s \wr \Omega_G^{n-k-1}\wr A
+&
+	\Omega_G^n \wr A \ar{r}{d_i} & \Omega_G^{n-1}\wr A
+&
+	\Omega_G^n \wr A \ar{r}{s_j} & \Omega_G^{n+1}\wr A
+	\end{tikzcd}
+\]
+where $i<n$, and natural isomorphisms 
+\[
+	\pi_i \colon V_G^k \Rightarrow V_G^{k-1} \circ d_i
+\]
+for $i < k$.
+Further, all of these are natural in $A$
+and they satisfy all the analogues of the properties listed in 
+Proposition \ref{PIIPROP PROP}.
+\end{proposition}
+
+
+
+\begin{proof}
+While not hard to explicitly write formulas for $V_G^k$, $d_i$, $s_j$, $\pi_i$ (which we list in Remark \ref{VGDEFA REM}),
+and then verify the desired properties,
+we here instead argue that the desired properties themselves can be used to uniquely, and coherently, define those functors. 
+
+Firstly, the functors $V_G$ are defined from the following diagram
+\begin{equation}\label{ALLSQUARES2 EQ}
+\begin{tikzcd}[row sep = 1.3em,column sep = 3em]
+	\Omega_{G}^{n+1} \wr A \ar[dashed]{r}{V_G} \ar{d}& 
+	\Fin \wr \Omega_G^n \wr A \ar{r}{\Fin \wr V_{G}^n} \ar{d}&
+	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
+	\Fin \wr A \ar{d}
+\\
+	\Omega_{G}^{n+1} \ar{r}{V_G} &
+	\Fin \wr \Omega_{G}^{n} \ar{r}{\Fin \wr V_{G}^{n}} &
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\end{equation}
+by noting that the center and right squares are pullbacks, 
+and choosing $V_G$ to be the unique functor such that the top composite is $V_G^{n+1}.$
+The higher functors $V_G^k$ are defined exactly as in (\ref{VGDEF EQ}), and the analogue of Proposition \ref{PIIPROP PROP}(a) follows by the same proof.
+
+The analogue of Proposition \ref{PIIPROP PROP}(b) is tautological, as pullback arrows for 
+$\Omega_G^n \wr A \to \mathsf{O}_G$
+are defined as compatible pairs of pullbacks in 
+$\Omega_G^n$ and $\Fin \wr A$.
+
+To define $d_i$ we consider the diagram below (for some $i<k$).
+\begin{equation}\label{PICUBOIDAB EQ}
+\begin{tikzcd}[column sep = small, row sep = small]
+	\Omega_{G}^n \wr A \ar{rrrr}{V_G^{k}} \ar[dashed]{rd}[swap,near end]{d_i} \ar{dd}
+	&&
+	&&
+	|[alias=FFOmegan]|\Fin \wr \Omega_G^{n-k-1} \wr A  \ar[dd] \ar[equal]{rd}
+\\
+	&
+	|[alias=Omeganp1]|\Omega_{G}^{n-1} \wr A \ar[crossing over]{rrrr}[swap,near start]{V_G^{k-1}} &&&&
+	|[alias=Omeganp2]|
+	\Fin \wr \Omega_G^{n-k-1} \ar{dd}&
+\\
+	\Omega_{G}^{n} \ar{rrrr} \ar{rd}[swap,near end]{d_i}&&
+	 &&
+	|[alias=FFOmeganm1]| \Fin \wr \Omega_G^{n-k-1} \ar[rd,equal] 
+\\
+	&
+	|[alias=Omegan]|\Omega_G^{n-1} \ar{rrrr}[swap,near start]{V_G^{k-1}} &&&&
+	\Fin \wr \Omega_G^{n-k-1} &
+	\arrow[Leftrightarrow, from=Omeganp1, to=FFOmegan,shorten <=0.15cm,shorten >=0.15cm,swap,"\pi_i"]
+	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm]
+	\arrow[from=Omeganp1, to=Omegan,crossing over]
+\end{tikzcd}
+\end{equation}
+The desiderata that the top $\pi_i$ consist of pullback arrows lifting the lower $\pi_i$ implies that it is uniquely defined by the top $V_G^k$ functor, and hence so is the top composite 
+$V_G^{k-1}d_i$. But since the front face is a pullback square
+(by arguing by induction on $k$), there is a unique choice for $d_i$. 
+The fact that this definition of $d_i \wr A$ is not dependent on $k$ is ensured by natural transformation in (\ref{INDPI1 EQ}) is $\pi_i$.
+Similarly, that the analogues of the left diagrams in 
+(\ref{PIIDEFDI2 EQ})
+hold follows by an identical argument from the fact that the composites of (\ref{INDPI2 EQ}) are $\pi_{i+1}$.
+
+The definitions of the $s_j$ are similar, except easier since there are no $\pi_i$ to contend with.
+
+The analogue of Proposition \ref{PIIPROP PROP}(c),(e),(f) are then tautological, and the analogue of 
+Proposition \ref{PIIPROP PROP}(d)
+follows by an identical argument.
+\end{proof}
+
+\begin{remark}\label{VGDEFA REM}
+Explicitly,
+$V_G^{k} \colon \Omega_{G}^{n} \wr A
+\to \Fin \wr \Omega_{G}^{n-k-1} \wr A $
+is defined by sending (\ref{OMEGAGNA EQ}) to
+\begin{equation}\label{VGDEFA EQ}
 	\left(
 		\left(
-		T_{1,v_{G f}} \to \cdots \to T_{n,v_{G f}},
+		T_{k,v_{G f}} \to \cdots \to T_{n,v_{G f}},
 		\left(
 		a_{v_{G e}}
 		\right)_{v_{G e} \in V_G\left(T_{n,v_{G f}}\right)}
 		\right)
-	\right)_{v_{G f} \in V_G(T_0)}
+	\right)_{v_{G f} \in V_G(T_k)}
 \end{equation}
+where both $V_G(T_k)$ and $T_{n,v_{G f}}$ are ordered lexicographically accordind to the obvious strings.
+
 Similarly, functors 
-$d_i \colon \Omega_{G,n}^{(A)} \to \Omega_{G,n-1}^{(A)}$
+$d_i \colon \Omega_{G}^{n} \wr A \to \Omega_{G}^{n-1} \wr A$
 for $0 \leq i < n$
 and 
-$s_j \colon \Omega_{G,n}^{(A)} \to \Omega_{G,n+1}^{(A)}$
+$s_j \colon \Omega_{G}^{n} \wr A \to \Omega_{G}^{n+1} \wr A$
 for $-1 \leq j \leq n$
 are defined on (\ref{OMEGAGNA EQ})
-by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate.
-Note that in the $d_i$ case one must also reorder $V_G(T_n)$
-and that the $s_j$ case includes a map  
-$s_{-1}^{(A)} \colon A = \Omega_{G,-1}^{(A)} \to \Omega_{G,0}^{(A)}$ .
-\end{notation}
+by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate and, in the $d_i$ case suitably reordering
+$V_G(T_n)$.
+\end{remark}
 
+\begin{remark}
+One upshot of Proposition \ref{PIIPROPA PROP} is that formally applying the symbol $(\minus) \wr A$ 
+to the diagrams in Proposition \ref{PIIPROP PROP} yields sensible statements. As such, we will simply refer to the corresponding part of
+Proposition \ref{PIIPROP PROP} when
+using one of the generalized claims.
+\end{remark}
 
-\begin{proposition}
-Consider the commutative diagram below.
-\begin{equation}\label{ALLSQUARES EQ}
-\begin{tikzcd}[row sep = 1.3em,column sep = 3em]
-	\Omega^{(A)}_{G,n+1} \ar{r}{V_G^{(A)}} \ar{d}& 
-	\Fin \wr \Omega^{(A)}_{G,n} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
-	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
-	\Fin \wr A \ar{d}
-\\
-	\Omega_{G,n+1} \ar{r}{V_G} \ar{d} &
-	\Fin \wr \Omega_{G,n} \ar{r}{\Fin \wr V_{G,n}} \ar{d} &
-	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
-	\Fin \wr \Sigma_G
-\\
-	\Omega_{G,0} \ar{r}{V_G} &
-	\Fin \wr \Sigma_G
-\end{tikzcd}
-\end{equation}
-The top composite of this diagram is the map
-$V_{G,n+1}^{(A)}$, and all the squares are pullback squares.
+\begin{corollary}
+One has identifications 
+$\Omega_G^k \wr \Omega_G^n \wr A \simeq \Omega_{G}^{n+k+1} \wr A$ which identify $V_G^k \wr \Omega_G^n \wr A$ with 
+$V_G^k \wr A$.
+Further, these are associative in the sense that the identifications
+\[
+	\Omega_G^k \wr \Omega_G^l \wr \Omega_G^n \wr A \simeq 
+	\Omega_G^{k+l+1} \wr \Omega_G^n \wr A \simeq 
+	\Omega_G^{k+l+n+2} \wr A 
+\]
+\[
+	\Omega_G^k \wr \Omega_G^l \wr \Omega_G^n \wr A \simeq 
+	\Omega_G^{k} \wr \Omega_G^{l+n+1} \wr A \simeq 
+	\Omega_G^{k+l+n+2} \wr A 
+\]
+coincide.
+Lastly, one obtains identifications
+\[
+	d_i \wr \Omega_G^n \simeq d_i \qquad
+	s_j \wr \Omega_G^n \simeq s_j \qquad
+	\Omega_G^k \wr d_i \simeq d_{i+k+1} \qquad
+	\Omega_G^k \wr s_j \simeq s_{j+k+1}
+\]
+\end{corollary}
 
-Therefore, there are canonical compatible identifications
-\begin{equation}\label{FOURIDE EQ}
-\Omega_{G,0}^{\left(\Omega_{G,n}^{(A)}\right)} \simeq \Omega_{G,n+1}^{(A)}, \qquad 
-V_{G,0}^{\left(\Omega_{G,n}^{(A)}\right)} \simeq V_G^{(A)},\qquad
-\Omega_{G,0}^{\left(d_i^{(A)}\right)}\simeq d^{(A)}_{i+1},\qquad
-\Omega_{G,0}^{\left(s_j^{(A)}\right)}\simeq s^{(A)}_{i+1}.
-\end{equation}
-\end{proposition}
-
-\begin{proof}
-	That the top composite is $V_{G,n+1}^{(A)}$ follows by direct inspection, noting that the indexing set $V_G(T_n)$ indeed has the right order. The composite top square is hence an instance of (\ref{OMGGNA}) and thus a pullback, as is the top center square by (\ref{OMGGNA}) together with 
-	the easy claim that $\Fin \wr (\minus)$ preserves pullback squares. The top right square is easily shown to be a pullback by direct inspection, while the bottom left square is a pullback by Proposition \ref{DSCOM REM}, and hence all squares are pullbacks.
-	
-	The first two identifications in (\ref{FOURIDE EQ})
-	then follow by noting that the two leftmost squares
-	in (\ref{ALLSQUARES EQ}) combine into a pullback as in (\ref{OMGGNA}), while the other two identifications follow from the obvious analogue of Remark \ref{DSCOM REM}.
-\end{proof}
-
-{\color{red} HERE}
-
-
-
-
-\begin{proposition}
-For any $A \to \Sigma_G$ there are functors 
-$d_0^{(A)}\colon \Omega_{G,1}^{(A)} \to \Omega_{G,0}^{(A)}$ and natural isomorphisms
-\begin{equation}\label{SHUFFLEPERMA EQ}
-	\begin{tikzcd}
-	\Omega_{G,1}^{(A)} \ar{r}{V_G^{(A)}} \ar{d}[swap]{d_{0}^{(A)}}&
-	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G^{(A)}} &
-	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0}
-\\
-	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G^{(A)}} &&
-	\Fin \wr A,
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
-	\end{tikzcd}
-\end{equation}
-both natural in $A \to \Sigma$.
-Here naturality of $\pi^{(\minus)}$ means that for a functor $H \colon A \to B$ with corresponding diagram
-\begin{equation}\label{PICUBOIDAB EQ}
-\begin{tikzcd}[column sep = small, row sep = small]
-	\Omega_{G,1}^{(A)} \ar{rr}{V_G^{(A)}} \ar{rd}[swap,near end]{d^{(A)}_0} \ar{dd}[swap]{\Omega_{G,1}^{(H)}}
-	&&
-	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr}{\Fin \wr V_G^{(A)}} \ar[dd,dashed]&&
-	|[alias=FFOmegan]|\Fin^{\wr 2} \wr A  \ar[dd,dashed] \ar{rd}{\sigma^0}
-\\
-	&
-	|[alias=Omeganp1]|\Omega_{G,0}^{(A)} \ar[crossing over]{rrrr}[swap]{V_G^{(A)}} \ar[crossing over]{dd} &&&&
-	\Fin \wr A \ar{dd}{\Fin \wr H}&
-\\
-	\Omega_{G,1}^{(B)} \ar[dashed]{rr} \ar{rd}[swap,near end]{d^{(B)}_0}&&
-	\Fin \wr \Omega^{(B)}_{G,0} \ar[rr,dashed] &&
-	|[alias=FFOmeganm1]| \Fin^{\wr 2} \wr B \ar[rd,dashed] 
-\\
-	&
-	|[alias=Omegan]|\Omega^{(B)}_{G,0} \ar{rrrr}[swap]{V_G^{(B)}} &&&&
-	\Fin \wr B &
-	\arrow[Leftrightarrow, from=Omeganp1, to=FFOmegan,shorten <=0.15cm,shorten >=0.15cm,swap,"\pi^{(A)}"]
-	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm,dashed]
-\end{tikzcd}
-\end{equation}
-one has an equality of natural transformations
-\[(\Fin \wr H)\pi^{(A)} = \pi^{(B)}\Omega_{G,1}^{(H)}\]
- (i.e. the two natural isomorphisms between the two distinct functors $\Omega_{G,1}^{(A)} \rightrightarrows \Fin \wr B$ coincide).
-\end{proposition}
-
-\begin{proof}
-Informally, using the object description in (\ref{OMEGAGNA EQ}),
-$d_0^{(A)}$ is simply given by the formula
-\begin{equation}\label{GEND0 EQ}
-d_0^{(A)} \left(
-T_0 \to T_1,
-(a_{v_{G e}})_{v_{G e}\in V_G(T_1)}
-\right)
-=
-\left(
-T_1,
-(a_{v_{G e}})_{v_{G e} \in V_G(T_1)}
-\right),
-\end{equation}
-though one must note that since in (\ref{OMEGAGNA EQ}) the
-order in $V_G(T_1)$ is induced lexicographically from the string, the two orders for $V_G(T_1)$ in each side of (\ref{GEND0 EQ})
-do not coincide.
-
-It now follows that the composites 
-$\sigma^0 \circ (\Fin \wr V_G^{(A)}) \circ V_G^{(A)}$
-and 
-$V_G^{(A)} \circ d_0^{(A)}$
-differ by the natural automorphism $\pi^{(A)}$
-given by the tuple permutations interchanging the two orders in
-$V_G(T_1)$ for each $T_0 \to T_1$.
-
-The commutativity of (\ref{PICUBOIDAB EQ}) is clear.
-\end{proof}
-
+We now have all the necessary ingredients to define out monad on 
+spans.
 
 \begin{definition}
   \label{WSPAN_MONAD_DEFINITION}
-	Suppose $\mathcal{V}$ has finite products.
+	Suppose $\mathcal{V}$ has finite products or, more generally, that it is a symmetric monoidal category with diagonals in the sense of Remark \ref{FINSURJ REM}.
 	
 	We define an endofunctor $N$ of 
 	$\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$
 	by letting $N(\Sigma_G \leftarrow A \to \mathcal{V}^{op})$
-	be the span $\Sigma_G \leftarrow \Omega^{(A)}_{G,0} \to \mathcal{V}^{op}$ given composition along the diagram
+	be the span $\Sigma_G \leftarrow \Omega_G^0 \wr A \to \mathcal{V}^{op}$ given composition along the diagram
 \[
 	\begin{tikzcd}
-	\Omega^{(A)}_{G,0} \ar{r} \ar{d}&
+	\Omega_G^0 \wr A \ar{r}{V_G} \ar{d}&
 	\Fin \wr A \ar{r} \ar{d}&
 	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi^{op}} &
 	\mathcal{V}^{op}
 \\
-	\Omega_{G,0} \ar{r} \ar{d} &
+	\Omega_{G}^{0} \ar{r}[swap]{V_G} \ar{d} &
 	\Fin \wr \Sigma_G
 \\
 	\Sigma_G
@@ -4222,60 +4316,65 @@ The commutativity of (\ref{PICUBOIDAB EQ}) is clear.
 \]
 and defined on maps of spans in the obvious way.
 
-One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natural isomorphisms
+One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natural isomorphism
 \begin{equation}\label{MULTDEFSPAN EQ}
 	\begin{tikzcd}
-	\Sigma \ar[equal]{d}&
-	\Omega_{G,1}^{(A)} \ar{r}{V_G} \ar{d}[swap]{d_{0}^{(A)}} \ar{l}&
-	\Fin \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin \wr V_G} &
+	\Sigma_G \ar[equal]{d}&
+	\Omega_{G}^1 \wr A \ar{r}{V_G} \ar{d}[swap]{d_{0}} \ar{l}&
+	\Fin \wr \Omega_{G}^0 \wr A \ar{r}{\Fin \wr V_G} &
 	|[alias=FFOmega]| \Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
-	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r}{\Pi^{op}} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi^{op}} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	\Sigma &
-	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rr}[swap]{V_G} \ar{l}&&
+	\Sigma_G &
+	|[alias=Omega]|\Omega_{G}^{0} \wr A \ar{rr}[swap]{V_G} \ar{l}&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
-	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
+	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\Pi^{op}} &&
 	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-where $\alpha$ is an associativity isomorphism for the product $\Pi$. We we note that naturality of $\mu$ 
-follows from the commutativity of (\ref{PICUBOIDAB EQ}).
+where we note that the top right composite in the 
+$\pi_0$ square is indeed $V_{G}^{1}$
+using the inductive description in (the $(\minus) \wr A$ analogue of) Notation \ref{INDVNG NOT}.
 
 Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly commutative diagrams
+(where to see that the second square commutes we recall that $V_G^{-1} = \delta^0$)
 \begin{equation}\label{UNITSPAN EQ}
 	\begin{tikzcd}
-	\Sigma \ar[equal]{d} &
-	A \ar{l} \ar{d}[swap]{s_{-1}^{(A)}} \ar[equal]{r} &
-	A \ar{d} \ar{r} &
-	\mathcal{V}^{op} \ar{d} \ar[equal]{r}&
+	\Sigma_G \ar[equal]{d} &
+	A \ar{l} \ar{d}[swap]{s_{-1}} \ar[equal]{r} &
+	A \ar{d}{\delta^0} \ar{r} &
+	\mathcal{V}^{op} \ar{d}{\delta^0} \ar[equal]{r}&
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	\Sigma &
-	\Omega_{G,0}^{(A)} \ar{l} \ar{r}[swap]{V_G}&
+	\Sigma_G &
+	\Omega_{G}^{0} \wr A \ar{l} \ar{r}[swap]{V_G}&
 	\Fin \wr A \ar{r} &
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{op}} &
 	\mathcal{V}^{op}.
 	\end{tikzcd}
 \end{equation}	
 \end{definition}
 
+
 \begin{proposition}\label{MONSPAN PROP}
 $(N,\mu,\eta)$ form a monad on $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$.
 \end{proposition}
 
+
+
 \begin{proof}
 The natural transformation component of $\mu \circ (N \mu)$ is given by the composite diagram
 \begin{equation}\label{ASSOCSPAN1 EQ}
-	\begin{tikzcd}[column sep=1.05em]
-	\Omega_{G,2}^{(A)}\ar{d}[swap]{d_1^{(A)}} \ar{r} &
-	\Fin \wr \Omega_{G,1}^{(A)} \ar{d} \ar{r}&
-	\Fin^{\wr 2} \wr \Omega_{G,0}^{(A)} \ar{r} &
+	\begin{tikzcd}[column sep=1em]
+	\Omega_{G}^2 \wr A \ar{d}[swap]{d_1} \ar{r} &
+	\Fin \wr \Omega_{G}^1 \wr A \ar{d}[swap]{\Fin \wr d_0} \ar{r}&
+	\Fin^{\wr 2} \wr \Omega_{G}^0 \wr A \ar{r} &
 	|[alias=dog2]|
 	\Fin^{\wr 3} \wr A \ar{d}{\sigma^1} \ar{r} &
 	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{d}{\sigma^1} \ar{r} &
@@ -4284,9 +4383,9 @@ The natural transformation component of $\mu \circ (N \mu)$ is given by the comp
 	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
+	\Omega_{G}^1 \wr A \ar{r} \ar{d}[swap]{d_{0}}&
 	|[alias=cat2]|
-	\Fin \wr \Omega_{G,0}^{(A)} \ar{rr} &&
+	\Fin \wr \Omega_{G}^0 \wr A \ar{rr} &&
 	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	|[alias=dog3]|
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{rr} &&
@@ -4294,24 +4393,24 @@ The natural transformation component of $\mu \circ (N \mu)$ is given by the comp
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rrr} &&&
+	|[alias=Omega]|\Omega_{G}^0 \wr A \ar{rrr} &&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
 	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha"]
-	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \pi^{(A)}"]
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \pi_0"]
 	\arrow[Leftrightarrow, from=cat3, to=dog3,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \alpha"]
 	\end{tikzcd}
 \end{equation}
 whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 \begin{equation}\label{ASSOCSPAN2 EQ}
 	\begin{tikzcd}[column sep=1.05em]
-	\Omega_{G,2}^{(A)} \ar{d}[swap]{d_0^{(A)}} \ar{r} &
-	\Fin \wr \Omega_{G,1}^{(A)} \ar{r} &
+	\Omega_{G}^{2} \wr A \ar{d}[swap]{d_0} \ar{r} &
+	\Fin \wr \Omega_{G}^{1} \wr A \ar{r} &
 	|[alias=dog2]|
-	\Fin^{\wr 2} \wr \Omega_{G,0}^{(A)} \ar{r} \ar{d}&
+	\Fin^{\wr 2} \wr \Omega_{G}^{0} \wr A \ar{r} \ar{d}{\sigma^0}&
 	\Fin^{\wr 3} \wr A \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r} \ar{d}&
@@ -4320,8 +4419,8 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	|[alias=cat2]|
-	\Omega_{G,1}^{(A)} \ar{rr} \ar{d}[swap]{d_{0}^{(A)}} &&
-	\Fin \wr \Omega_{G,0}^{(A)} \ar{r} &
+	\Omega_{G}^{1} \wr A \ar{rr} \ar{d}[swap]{d_{0}} &&
+	\Fin \wr \Omega_{G}^{0} \wr A \ar{r} &
 	|[alias=FFOmega]|
 	\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
@@ -4330,90 +4429,92 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G,0}^{(A)} \ar{rrr} &&&
+	|[alias=Omega]|\Omega_{G}^{0} \wr A \ar{rrr} &&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
 	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
-	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{\left(\Omega_G^{(A)}\right)}"]
+	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
+That the rightmost sections of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from the associativity of the isomorphisms $\alpha$ in (\ref{COHER2 EQ}).
+On the other hand, the leftmost sections coincide since they are instances of the ``simplicial relation'' diagrams in (\ref{SIMPPI EQ}), as is seen by using 
+(\ref{INDPI1 EQ}) and (\ref{INDPI2 EQ})
+to reinterpret the top left sections.
 
-That the rightmost sections of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from compatibility of the associativity isomorphisms for $\Pi^{op}$. 
-
-For the leftmost sections, note first that, in either diagram,
-the top right and bottom left paths $\Omega_{G,2}^{(A)} \to \Fin \wr A$ differ only by the induced order on $V_G(T_2)$ for each string $T_0 \to T_1 \to T_2$. More explicitly, the top right paths use the order induced lexicographically from the string $T_0 \to T_1 \to T_2$
-while the bottom left paths use the order induced exclusively by $T_2$.
-The two left sections then coincide since are both given by the permutation interchanging these orders, the only difference being that the intermediate stage of (\ref{ASSOCSPAN1 EQ}) uses the order induced lexicographically from $T_0 \to T_2$
-while (\ref{ASSOCSPAN2 EQ}) uses the order induced lexicographically from $T_1 \to T_2$.
+% note first that, in either diagram,
+%the top right and bottom left paths $\Omega_{G,2}^{(A)} \to \Fin \wr A$ differ only by the induced order on $V_G(T_2)$ for each string $T_0 \to T_1 \to T_2$. More explicitly, the top right paths use the order induced lexicographically from the string $T_0 \to T_1 \to T_2$
+%while the bottom left paths use the order induced exclusively by $T_2$.
+%The two left sections then coincide since are both given by the permutation interchanging these orders, the only difference being that the intermediate stage of (\ref{ASSOCSPAN1 EQ}) uses the order induced lexicographically from $T_0 \to T_2$
+%while (\ref{ASSOCSPAN2 EQ}) uses the order induced lexicographically from $T_1 \to T_2$.
 
 As for unit conditions, $\mu \circ (N \eta)$ is represented by
 \begin{equation}\label{UNITSPAN1 EQ}
 	\begin{tikzcd}[column sep=1.05em]
-	\Omega_G^{(A)} \ar{d}[swap]{s_{0}^{(A)}} \ar{r} &
-	\Fin \wr A \ar{d} \ar[equal]{r} &
+	\Omega_G^0 \wr A \ar{d}[swap]{s_{0}} \ar{r} &
+	\Fin \wr A \ar{d}[swap]{s_{-1}} \ar[equal]{r} &
 	\Fin \wr A \ar{d}{\delta^1} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{d}{\delta^1} \ar[equal]{r} &
 	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	\Omega_{G}^{1} \wr A \ar{r} \ar{d}[swap]{d_{0}}&
+	\Fin \wr \Omega_{G}^{0} \wr A \ar{r} &
 	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr}&&
+	|[alias=Omega]|\Omega_{G}^0 \wr A \ar{rr}&&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
 	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
 while $\mu \circ (\eta N)$ is represented by 
 \begin{equation}\label{UNITSPAN2 EQ}
 	\begin{tikzcd}[column sep=1.05em]
-	\Omega^{(A)}_G \ar{d}[swap]{s_{-1}^{(A)}} \ar[equal]{r} &
-	\Omega^{(A)}_G \ar{d} \ar{r} &
+	\Omega_G^0 \wr A \ar{d}[swap]{s_{-1}} \ar[equal]{r} &
+	\Omega_G^0 \wr A \ar{d}{\delta^0} \ar{r} &
 	\Fin \wr A \ar{d}{\delta^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{d}{\delta^0} \ar{r} &
-	\mathcal{V}^{op} \ar{d} \ar[equal]{r} &
+	\mathcal{V}^{op} \ar{d}{\delta^0} \ar[equal]{r} &
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	\Omega_{G,1}^{(A)} \ar{r} \ar{d}[swap]{d_{0}^{(A)}}&
-	\Fin \wr \Omega_{G}^{(A)} \ar{r} &
+	\Omega_{G}^{1} \wr A \ar{r} \ar{d}[swap]{d_{0}}&
+	\Fin \wr \Omega_{G}^0 \wr A \ar{r} &
 	|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
-	|[alias=Omega]|\Omega_{G}^{(A)} \ar{rr} &&
+	|[alias=Omega]|\Omega_{G}^0 \wr A \ar{rr} &&
 	\Fin \wr A \ar{r} &
 	|[alias=cat]|
 	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
 	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi^{(A)}"]
+	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-It is straightforward to check that the composites of the left and right sections of both (\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) are strictly commutative diagrams, and thus that 
-(\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) coincide.
+That (\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) coincide follows analogously by the unital condition for $\alpha$
+and the face degeneracy relations in 
+Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
 
 
+\subsection{The genuine equivariant operad monad} \label{FGMON SEC}
 
 
-\subsection{The free genuine operad monad} \label{FGMON SEC}
-
-Recalling that 
+Since 
 $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op}) \simeq 
 \mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$,
 Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
@@ -4424,119 +4525,108 @@ Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
 	\mathsf{Fun}(\Sigma^{op}_G, \mathcal{V})
 	\colon \iota
 \end{equation}
-together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$. We now turn to showing that, under reasonable hypothesis on $\mathcal{V}$, the composite
-$\mathsf{Lan} \circ N \circ \iota$ inherits a monad structure from $N$. The key will be to show that under such conditions the map
+together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$.
+
+
+We will now show that under reasonable conditions on 
+$\mathcal{V}$ this monad can be transferred by using 
+Proposition \ref{MONADADJ PROP},
+i.e. we will show that the natural transformations 
 $
 \mathsf{Lan} \circ N \Rightarrow \mathsf{Lan} \circ N \circ \iota \circ \mathsf{Lan}
 $
-is a natural isomorphism.
+and
+$\mathsf{Lan} \circ \iota \Rightarrow id$
+are isomorphisms.
 
-
-Recall that following Convention \ref{PLANARCONV CON} our model for  $\mathsf{O}_G$ consists of totally ordered sets.
-One therefore has \textit{root functors} 
-\[
-\Omega_G^q \xrightarrow{\mathsf{r}} \mathsf{O}_G,
-	\qquad
-\Sigma_G \xrightarrow{\mathsf{r}} \mathsf{O}_G
-\]
-sending each planar $G$-tree to its ordered orbital $G$-set of roots.
-
-Root functors are compatible with the leaf-root functor and the inclusion, i.e. the following commute.
-\begin{equation}\label{ROOTLEAFTROOTCOM EQ}
-\begin{tikzcd}
-	\Omega_G^q \ar{r}{\mathsf{lr}} \ar{rd}[swap]{\mathsf{r}}&
-	\Sigma_G \ar{d}{\mathsf{r}} &
-	\Sigma_G \ar[hookrightarrow]{r} \ar{rd}[swap]{\mathsf{r}}&
-	\Omega_G^q \ar{d}{\mathsf{r}}
-\\
-	& \mathsf{O}_G  &
-	& \mathsf{O}_G
-\end{tikzcd}
-\end{equation}
-Moreover, the diagrams (\ref{ROOTLEAFTROOTCOM EQ}) possess some extra structure we will need to make use of. 
-Indeed, both functors are split Grothendieck fibrations: given a map 
-$\varphi \colon A \to B$
-in $\mathsf{O}_G$
-and $G$-tree $T$ such that $\mathsf{r}(T)=B$
-we can build a cartesian arrow 
-$\varphi^{\**}(T) \to T$
-by letting $\varphi^{\**}(T)$ to be the pullback $G$-tree
-together with the planar structure on roots given by $A$ and on non-equivariant nodes given by their image via 
-$\varphi^{\**}(T) \to T$.
-
-It now follows that (\ref{ROOTLEAFTROOTCOM EQ}) are diagrams of split Grothendieck fibrations.
-
-One advantage of split Grothendieck fibrations (in general) is the following initiality condition on overcategories.
-\begin{definition}
-  Suppose we have two split fibrations $r: \mathcal C \to \mathcal E$ and $r: \mathcal D \to \mathcal E$ and a map of fibrations $f$ as below.
-  \[
-  \begin{tikzcd}
-    \mathcal C \arrow[dr, "r"'] \arrow[rr, "f"] & & \mathcal D \arrow[dl, "r"]\\
-    &     \mathcal E
-  \end{tikzcd}
-  \]  
-  For any $d\in \mathcal D$, let $d \downarrow_{\mathsf r}\mathcal C$ denote the subcategory of $d\downarrow \mathcal C$ of just those maps $d \to f(c)$ which map to the identity under $r$.
-\end{definition}
-
-
+This will require us to introduce a slight modification of the category of spans.
+For motivation, note that iterations
+$N^{\circ n+1} \circ \iota$ produce spans of the form
+$\Sigma_G \leftarrow \Omega_G^{n} \to \mathcal{V}^{op}$
+(where we use the identification $\Omega_G^{n} \wr \Sigma_G \simeq \Omega_G^{n}$). 
+As noted in Remark \ref{ALLSPLITMAPS REM}, the maps 
+$\Omega_G^{n} \to \Sigma_G$ are maps of split fibrations over $\mathsf{O}_G$, as are all other simplicial operators $d_i$, $s_j$.
 
 \begin{definition}
-A split Grothendieck fibration 
-$A \xrightarrow{\mathsf{r}} \mathsf{O}_G$
-is called a \textit{root fibration} and a split Grothendieck fibration diagram
-\[
-\begin{tikzcd}
-	A \ar{r} \ar{rd}[swap]{\mathsf{r}}&
-	B \ar{d}{\mathsf{r}} 
-\\
-	& \mathsf{O}_G 
-\end{tikzcd}
-\]
-is called a \textit{root fibration functor}.
+The category $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$ of \textit{rooted (left) spans}
+has as objects spans
+$\Sigma_G^{op} \leftarrow A^{op} \to \mathcal{V}$
+together with a split Grothendieck fibration 
+$\mathsf{r} \colon A \to \mathsf{O}_G$
+such that $A \to \Sigma_G$ is a map of split fibrations.
+
+Similarly, arrows are maps of spans that induce maps of split fibrations.
 \end{definition}
 
+We refer split fibrations $A \to \mathsf{O}_G$
+as \textit{root fibrations}
+and to maps between them as \textit{root fibration maps}.
 
-The relevance of root fibrations is given by the following couple of lemmas.
+\begin{remark}
+The condition that $A \to \mathsf{O}_G$
+be a root fibration requires additional \textit{choices} of root pullbacks. Therefore, the forgetful functor 
+$\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})
+\to
+\mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$
+is not quite injective on objects.
+\end{remark}
+
+The relevance of rooted spans is given by the following couple of lemmas.
 
 \begin{lemma}\label{ROOTFIBPULL LEM}
-If $A \to \Sigma_G$ is a root fibration functor then so is 
-$\Omega_G^{(A)} \to \Omega_G$, naturally in $A$.
+If $A \to \Sigma_G$ is a root fibration map then so is 
+$\Omega_G^0 \wr A \to \Omega_G^0$, naturally in $A$.
 \end{lemma}
 
-
 \begin{proof}
-We consider the pullback diagram below.
+The hypothesis that $A \to \Sigma_G$ is root fibration map
+implies that the rightmost map below in 
+is a map of split fibrations over
+$\Fin \wr \mathsf{O}_G$.
 \begin{equation}\label{ROOTIMPLIESROOT EQ}
 \begin{tikzcd}
-	\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} \ar{d} &
+	\Omega_{G}^0 \wr A \ar{r}{V_G} \ar{d} &
 	\Fin \wr A \ar{d}
 \\
-	\Omega_{G,0} \ar{r}[swap]{V_G} &
+	\Omega_{G}^0 \ar{r}[swap]{V_G} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-The hypothesis that $A \to \Sigma_G$ is root fibration 
-implies that the rightmost map in (\ref{ROOTIMPLIESROOT EQ})
-is a map of split Grothendieck fibrations over
-$\Fin \wr \mathsf{O}_G$.
-
-Since the map $V_G$ sends the chosen cartesian arrows in $\Omega_{G,0}$
-(over $\mathsf{O}_G$) to chosen cartesian arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), the result follows.
+Since by Lemma \ref{VGPULL LEM} the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
+(over $\mathsf{O}_G$) to pullback arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), 
+the root pullback arrows in 
+$\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin \wr A$,
+and the result follows.
 \end{proof}
 
 
+\begin{remark}
+Explicitly, if $\psi \colon Y \to X$ is a map in $\mathsf{O}_G$,
+and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$,
+the pullback $\psi^{\**} \tilde{T}$ is given by
+\[
+\left(\psi^{\**}T,(\bar{\psi}^{\**}_{Ge}
+ A_{v_{Ge}})_{V_G(\psi^{\**}T)}\right)
+\]
+where $\bar{\psi}$ is the map 
+$\bar{\psi} \colon \psi^{\**}T \to T$
+and $\bar{\psi}_{G e}$ denote the restrictions
+$\bar{\psi} \colon G e \to G \bar{\psi}(e)$, 
+as in Remark \ref{PULLCOMP REM}.
+\end{remark}
+
 
 \begin{lemma}\label{LANPULLCOMA LEM}
-	Suppose that $\mathcal{V}$ is complete and that $A \to \Sigma_G$ is a root fibration. If the rightmost triangle in 
+	Suppose that $\mathcal{V}$ is complete and that $\rho \colon A \to \Sigma_G$ is a root fibration map. If the rightmost triangle in 
 	\begin{equation}
 	\begin{tikzcd}
-		\Omega_{G,0}^{(A)} \ar{r}{V_G^{(A)}} 
+		\Omega_{G}^{0} \wr A \ar{r}{V_G} 
 		\ar{d} & 
 		\Fin \wr A  
 		\ar{d}  \ar{r}[swap,name=F]{}&
-		\mathcal{V}		
+		\mathcal{V}^{op}
 	\\
-		\Omega_{G,0} \ar{r}[swap]{V_G} & 
+		\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
 		|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
 	\arrow[Rightarrow, from=FEG, to=F,shorten <=0.15cm]
 	\end{tikzcd}
@@ -4547,75 +4637,90 @@ is a right Kan extension diagram then so is the composite diagram.
 
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
-	it suffices to check that for each $T \in \Omega_{G,0}$ the functor
-	\begin{equation}\label{LANPULLCOMA EQ}
-	T \downarrow \Omega_{G,0}^{(A)}
-	\to 
+	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
+\begin{equation}\label{LANPULLCOMA EQ}
+\begin{tikzcd}
+	T \downarrow \Omega_{G}^{0} \wr A \ar{r}{V_G} & 
 	V_G(T) \downarrow \Fin \wr A
-	\end{equation}
-is initial.
-In the course of the proof of Lemma \ref{FINWREATPRODLIM LEM}
-it was shown that the subcategory
-\[
-\prod_{v_{Ge} \in V_G(T)} 
-T_{v_{Ge}} \downarrow A
-\]
-is initial in the $V_G(T) \downarrow \Fin \wr A$.
-
-On the other hand, since $\Omega_G^{(A)} \to \Omega_G$ is a root fibration functor, 
-$T \downarrow \Omega_{G}^{(A)}$
-has an initial subcategory 
-$T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)}$
-with objects
-$(S \in \Omega_G^{(A)},T \to u(S))$
-such that 
-$T \to u(S)$
-is a quotient map that induces an ordered isomorphism on roots. Note that this can be restated as saying that 
-$T \to u(S)$ is an isomorphism preserving the order of the roots.
-
-
-The result now follows from the natural isomorphism
-\begin{equation}\label{TDOWNISOA EQ}
-	T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)} 
-\simeq
-	\prod_{v_{Ge} \in V_G(T)}
-	{T_{v_{Ge}} \downarrow_{\mathsf{r},\simeq} A}.
+\end{tikzcd}
 \end{equation}
-To see this, we focus first on the case $A = \Sigma_G$.
-In that case, the left hand side of (\ref{TDOWNISOA EQ}) encodes replanarizations of $T$ that preserve the root order.
-On the other hand, the right hand side encodes replanarizations of all the $G$-vertices that preserve the order of their roots, or, equivalently, replanarizations of the non-equivariant vertices of $T$.
-That these are equivalent is the content of Proposition \ref{PLANARIZATIONCHAR PROP}.
+is initial.
+We will slightly abuse notation by writing 
+$(T \to U, (A_{v_{G f}})_{V_G(U)})$ for the objects of 
+$T \downarrow \Omega_{G}^{0}$,
+as well as 
+$
+\left(
+	(T_{v_{G e}} \to U_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
+	(A_v)_{v \in V}
+\right)
+$
+for the objects of 
+$V_G(T) \downarrow \Fin \wr A$,
+with the map $\phi \colon V_G(T) \to V$ and the condition 
+$\rho(A_v) = U_v$ left implicit.
 
-Note that $(T \to S) \in (T \downarrow_{\mathsf{r},\simeq} \Omega_{G})$ is then encoded by a tuple
-$\left(T_{v_{Ge}} \to \varphi^{\**}_{v_{Ge}} S_{v_{Ge}}\right)_
-{v_{Ge} \in V_G(T)}$
-where the pullbacks $\varphi^{\**}_{v_{Ge}}$ are needed to correct the root order.
+By Proposition \ref{FIBERKANMAP PROP}, $T \downarrow \Omega_{G}^{0} \wr A$ has an initial subcategory
+$T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A$
+of those objects such that $T \to U$ is the identity on roots. 
+Similarly, again by Proposition \ref{FIBERKANMAP PROP},
+$V_G(T) \downarrow \Fin \wr A$
+has an initial subcategory
+\begin{equation}\label{INITCAT EQ}
+	\prod_{v_{Ge} \in V_G(T)} 
+	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+\end{equation}
+of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
+(\ref{INITCAT EQ}) comes together with a right retraction $r$,
+i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
+which is built using pullbacks. 
+We now compute the following composite
+(where we abbreviate expressions $T_{v_{G e}}$ as 
+$T_{v_Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$).
+\[
+\begin{tikzcd}[column sep =1.5em , row sep =0em]
+	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
+	\ar{r}{V_G} &
+	V_G(T) \downarrow \Fin \wr A \ar{r}{r} &
+	\underset{v_{Ge} \in V_G(T)}{\prod} 
+	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+\\
+	(T \xrightarrow{\psi} U, (A_{{G f}})) \ar[mapsto]{r} &
+	\left(
+		(T_{{G e}} \to U_{{G \psi(e)}}),
+		(A_{{G f}})
+	\right) \ar[mapsto]{r} &
+	\left(
+		(T_{{G e}} \to \psi_{G e}^{\**} U_{{G \psi(e)}}),
+		(\psi_{G e}^{\**} A_{{G \psi(e)}})
+	\right)
+\end{tikzcd}
+\]
+Since rooted quotients are isomorphisms, the $\psi$
+and $\psi_{Ge}$ appearing above are isomorphisms, 
+and hence the natural transformation
+$i \circ r \circ V_G \Rightarrow V_G$
+is a natural isomorphism. Therefore, to check that $V_G$ is initial it suffices to verify that 
+$r \circ V_G$ is an isomorphism.
 
-The case of general $A$ follows likewise, 
-using the corresponding pullbacks
-$\varphi^{\**}_{v_{Ge}}$.
-
-{\color{red} Note: an addendum is needed to show that (\ref{TDOWNISOA EQ}) suffices, since $T \downarrow_{\mathsf{r},\simeq} \Omega_{G}^{(A)}$ is not sent directly to
- $\prod_{v_{Ge} \in V_G(T)}
-	{T_{v_{Ge}} \downarrow_{\mathsf{r},\simeq} A}$}
+But now note that an arbitrary choice of rooted isomorphisms
+$T_{v_{G_e}} \to U^{\mathsf{r}}_{v_{G_e}}$
+uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon U$.
+Therefore, arbitrary choices of 
+$\psi_{G e}^{\**} U_{{G \psi(e)}}$,
+$\psi_{G e}^{\**} A_{{G \psi(e)}}$
+uniquely determine $U$, $A_{G f}$, finishing the proof.
 \end{proof}
 
-
-
-Lemma \ref{ROOTFIBPULL LEM} can be interpreted as saying that, if one defines a category
+Lemmas \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
+on
 $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$
-of \textit{rooted spans}
-\[
-\Sigma_G^{op} \leftarrow A^{op} \to \mathcal{V}
-\]
-where $A \to \Sigma_G$ is a root fibration functor, the monad $N$ built in Proposition \ref{MONSPAN PROP} lifts to a monad 
-$N_{\mathsf{r}}$ in
-$\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$,
-and likewise for the adjunction (\ref{LANIOTAADJ EQ}).
+lifting the monad $N$.
 
 \begin{corollary}
-Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable.
-The functors
+Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable or, more generally, that 
+$\mathcal{V}$ is a monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
+Then the functors
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
 	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ \mathsf{Lan},
@@ -4651,37 +4756,33 @@ id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
 \Rightarrow
 \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
 \]
-We let $\Op_G(\V)$ denote the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
+We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
 \end{definition}
-
 
 \begin{remark}
 	The functor $\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota$ is isomorphic to 
-	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
+	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and hence we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
 	
-	From this point of view, the role of root fibrations is to guarantee that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, but unnecessary to describe the monad structure itself.
+	From this point of view, the role of root fibrations is to guarantee that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, though unnecessary to describe the monad structure itself.
 \end{remark}
-
 
 \begin{remark}\label{REPACKAGERES REM}
 Since a map 
-\[\F_G X =\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota X \to X\]
+\[\F_G X =\mathsf{Lan} \circ N \circ \iota X \to X\]
 is adjoint to a map
-\[N_{\mathsf{r}} \circ \iota X \to \iota X\]
+\[N \circ \iota X \to \iota X\]
 one easily verifies that 
 $X$ is a genuine equivariant operad, i.e. 
 a $\F_G$-algebra, iff 
 $\iota X$ is a $N$-algebra.
-Moreover, the bar resolution
-\[
-	\F_G^{\bullet +1} X 
-\]
-is isomorphic to
-\[
-	\mathsf{Lan} \left( N^{\bullet +1} \iota X \right).
-\]
-\end{remark}
 
+Moreover, the bar resolution
+$ \F_G^{\circ n +1} X $
+is isomorphic to
+$
+	\mathsf{Lan} \left( N^{\circ n +1} \iota X \right)
+$.
+\end{remark}
 
 \subsection{Comparison with (regular) equivariant operads}
 
@@ -4701,7 +4802,6 @@ of genuine equivariant sequences and genuine operads.
 
 We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions in this section.
 
-
 We thus have an inclusion functor
 \[
 \begin{tikzcd}[row sep =0]
@@ -4711,11 +4811,12 @@ We thus have an inclusion functor
 	C \ar[mapsto]{r} & G \cdot C
 \end{tikzcd}
 \]
-where $G \cdot C$ is planarized so that the roots inherit the order of $G$ and each of the individual copies of $C$ inherits the planarization of $C$.
+where $G \cdot C$ is the constant tuple $(C)_{g \in G}$,
+which we think of as $|G|$ copies of $C$, planarized according to $C$ and the order on $G$.
 Moreover, letting $\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_G$ denote the full subcategory of $G$-free corollas, there is an induced retraction 
 $\rho \colon \Sigma_{G}^{\text{fr}} \to G \times \Sigma$
 defined by 
-$\rho(\amalg_{1\leq i \leq |G|} C_i) = G \cdot C_1$
+$\rho\left( (C_i)_{1\leq i \leq |G|} \right) = G \cdot C_1$
 together with isomorphisms 
 $C \simeq \rho(C)$
 uniquely determined by the condition that they
@@ -4732,24 +4833,22 @@ We now consider the associated adjunctions.
 	\ar[bend left]{l}{\iota_{\**}}
 \end{tikzcd}
 \end{equation}
-
-
-Explicitly, we have the formulas
+Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for $I \in \mathsf{O}_G$)
 \[
-	\iota_!Y(\amalg_i C_i)=
+	\iota_!Y\left( (C_i)_I \right)=
 	\begin{cases}
-	Y(C_1), & \amalg_i C_i \in \Sigma_G^{\text{fr}} \\
-	\emptyset, & \amalg_i C_i \nin \Sigma_G^{\text{fr}}
+	Y(C_1), & (C_i)_I \in \Sigma_G^{\text{fr}} \\
+	\emptyset, & (C_i)_I \nin \Sigma_G^{\text{fr}}
 	\end{cases},
-\qquad
+\quad
 	\iota^{\**}X (C) = X(G \cdot C),
-\qquad
-	\iota_{\**}Y (\amalg_i C_i)=
-	\left(\prod_i Y(C_i)\right)^G,
+\quad
+	\iota_{\**}Y ((C_i)_I)=
+	\left(\prod_{I} Y(C_i)\right)^G,
 \]
-where we note that in the formula for $\iota_{\**}(\minus)$
-the action of $G$ interchanges factors according to the action on the indexing set, i.e. the root orbit of $\amalg_i C_i$.
-As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
+where in the formula for $\iota_{\**}(\minus)$
+the action of $G$ interchanges factors according to the action on the indexing set $I$.
+As a side note, note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
 \begin{remark}\label{REFLCOREFL REM}
 	$\iota_!$ essentially identifies 
@@ -4771,9 +4870,9 @@ under precomposition (note that $\varphi^{\**}C \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
-$\amalg_i C_i \in \Sigma_G^{\text{fr}}$
+$(C_i)_I \in \Sigma_G^{\text{fr}}$
 sends $Y(C_1)$ to the ``$G$-twisted diagonal'' of 
-$\prod_i Y(C_i)$.
+$\prod_I Y(C_i)$.
 Moreover, letting $\eta_!,\epsilon_!$ 
 (resp. $\eta_{\**},\epsilon_{\**}$)
 denote the unit and counit of the $(\iota_!,\iota^{\**})$ adjunction 
@@ -4799,7 +4898,6 @@ it is straightforward to check that the following diagram commutes.
  commutes provided at least one of the adjunctions in \ref{TWOADJOINTS EQ} is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
 \end{remark}
 
-
 %By adjunction, one needs compare the composites
 %\[
 %\iota_{\**} \xrightarrow{\eta_{!}}
@@ -4817,10 +4915,8 @@ it is straightforward to check that the following diagram commutes.
 %\iota_{\**} \iota^{\**} \iota_{\**} \iota^{\**}$
 %coincide, which they do since they have a common inverse.
 
-
 \begin{proposition}
-  \label{MONAD_COMPARISON_PROP}
-	One has the following
+	One has the following:
 \begin{itemize}
 	\item[(i)]
 	the map 
@@ -4844,22 +4940,21 @@ it is straightforward to check that the following diagram commutes.
 \end{itemize}
 \end{proposition}
 
-
 \begin{proof}
 We first show (i), starting with some notation. 
 In analogy with $\Sigma_{G}^{\text{fr}}$,
-we write $\Omega_{G,0}^{\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
-$\mathsf{lr} \colon \Omega_{G,0}^{\text{fr}} \to \Sigma_G^{\text{fr}}$,
-$V_G \colon \Omega_{G,0}^{\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
+we write $\Omega_{G}^{0,\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
+$\mathsf{lr} \colon \Omega_{G}^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$,
+$V_G \colon \Omega_{G}^{0,\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
 Moreover, for each $C \in \Sigma_G^{\text{fr}}$ one has an equality of rooted undercategories between
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^0$
 and
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$,
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$,
 and thus 
 $\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram.
 \begin{equation}\label{IFGI EQ}
 \begin{tikzcd}
-	\Omega_{G,0}^{\text{fr}} \ar{d} \ar{r} &
+	\Omega_{G}^{0,\text{fr}} \ar{d} \ar{r} &
 	\Fin \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin \wr X} &
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
@@ -4936,11 +5031,11 @@ $\mathbb{F}_G X(C) =\emptyset$.
 But since for such 
 $C \nin \Sigma_G^{\text{fr}}$
 the undercategory
-$C \downarrow \Omega_{G,0}$
-consists of trees with at least one non-free vertex, the composite
+$C \downarrow \Omega_{G}^{0}$
+consists of trees with at least one non-free vertex (namely the root vertex), the composite
 \[
 \begin{tikzcd}
-	C \downarrow \Omega_{G,0} \ar{r}{V} &
+	C \downarrow \Omega_{G}^{0} \ar{r}{V_G} &
 	\Fin \wr \Sigma_G \ar{r}{\Fin \wr X} &
 	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi}&
 	\mathcal{V}^{op}
@@ -4948,24 +5043,23 @@ consists of trees with at least one non-free vertex, the composite
 \]
 is constant equal to $\emptyset$, and (iii) follows.
 
-
 Finally, we show (iv). We will slightly abuse notation by writing 
 $G \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
 and similarly
-$G \times \Omega_0 \hookrightarrow \Omega_{G,0}$ for the image of the obvious analogous functor
-$\iota \colon G \times \Omega_0 \to \Omega_{G,0}$.
+$G \times \Omega^0 \hookrightarrow \Omega_{G}^{0}$ for the image of the obvious analogous functor
+$\iota \colon G \times \Omega^0 \to \Omega_{G}^{0}$.
 The map 
 $\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$
 is the adjoint to the map 
 $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on spans by the following diagram.
 \begin{equation}\label{MONADEQUIV DEF}
 \begin{tikzcd}[row sep=5pt, column sep =8pt]
-	G \times \Omega_0	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr (G \times \Sigma_0) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
+	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr (G \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
-	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	& \Omega_{G}^{0} \ar{dd} \ar{rr} &&
 	\Fin \wr \Sigma_G  \ar{rr}[swap]{X} &&
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
@@ -4979,17 +5073,18 @@ That
 $\alpha$
 is a natural isomorphism
 follows by the previous identifications 
-$C \downarrow_{\mathsf{r}} \Omega_{G,0} \simeq
-C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0} \simeq
+C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
 for $C \in G \times \Sigma$
 together with the fact that the retraction 
-$\rho \colon \Omega_{G,0}^{\text{fr}} \to G \times \Omega_0$
+$\rho \colon \Omega_{G}^{0,\text{fr}} \to G \times \Omega^0$
 (built just as the retraction
 $\rho \colon \Sigma_G^{\text{fr}} \to G \times \Sigma$)
 retracts 
-$C \downarrow_{\mathsf{r}} \Omega_{G,0}^{\text{fr}}$
+$C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
 to the undercategory
-$C \downarrow_{\mathsf{r}} G \times \Omega_0$, which is thus initial (as well as final), and the claim that $\alpha$ is an isomorphism follows.
+$C \downarrow_{\mathsf{r}} G \times \Omega^0$, which is thus initial (as well as final).
+%, and the claim that $\alpha$ is an isomorphism follows.
 
 Intuitively, the final claim that 
 $\alpha$ is a map of monads 
@@ -5001,7 +5096,7 @@ $
 	\to
 \iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{!}
 $
-is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega_1 \hookrightarrow \Omega_{G,1}^{\text{fr}}$.
+is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega^1 \hookrightarrow \Omega_{G}^{1,\text{fr}}$.
 However, since the presence of left Kan extensions in the 
 definitions of $\mathbb{F}$, $\mathbb{F}_G$
 can make a rigorous direct proof of this last claim fairly cumbersome, we sketch here a workaround argument.
@@ -5021,25 +5116,30 @@ $\tilde{\alpha} \colon N \to \iota^{\**} N_G \iota_{!}$
 encoded by the diagram (where the front and back squares are pullbacks).
 \[
 \begin{tikzcd}[row sep=3pt, column sep =8pt]
-	(G \times \Omega)^{(\iota^{\**} A)}	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr \iota^{\**} A \ar{rd} \ar[dashed]{dd} \ar{rr}&&
+	(G \times \Omega^0) \wr \iota^{\**} A	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr \iota^{\**} A \ar{rd} \ar{dd} \ar{rr}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
-	& \Omega_{G,0}^{(A)} \ar{dd} \ar{rr} &&
+	& 
+	|[alias=O1]|
+	\Omega_{G}^{0} \wr A \ar[crossing over]{rr} &&
 	\Fin \wr A \ar{dd} \ar{rr} &&
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rr}&&
-	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
+	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr}&&
+	\Fin \wr (G \times \Sigma) \ar{rd}
 \\
-	& \Omega_{G,0} \ar{dd} \ar{rr} &&
+	&
+	|[alias=O2]|
+	\Omega_{G}^{0} \ar{dd} \ar{rr} &&
 	\Fin \wr \Sigma_G
 \\
 	G \times \Sigma \ar{rd}
 \\
 	& \Sigma_{G}
+\arrow[from=O1, to=O2,crossing over]
 \end{tikzcd}
 \]
 The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writing
@@ -5115,7 +5215,6 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\]
 \end{proof}
 
-
 Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the following.
 
@@ -5131,8 +5230,8 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the followin
 \end{tikzcd}
 \end{equation}
 In particular, $\iota_{\**}$
-identifies $\mathsf{Op}^G$ as a reflexive subcategory of 
-$\mathsf{Op}_G$.
+identifies $\mathsf{Op}^G(\mathcal{V})$ as a reflexive subcategory of 
+$\mathsf{Op}_G(\mathcal{V})$.
 \end{corollary}
 
 \begin{remark}
@@ -5205,7 +5304,7 @@ However, such counter-examples all require the use of trees with stumps. Indeed,
 is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \end{remark}
 
-
+{\color{red} HERE}
 
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
@@ -6726,7 +6825,7 @@ The term ``alternating'' comes from the fact that no adjacent nodes have the sam
 \end{example}
 
 \begin{remark}
-	One can extend Definition \ref{SUBSTITUTIONDATUM} to the alternating context by defining a substitution datum to be alternating if it is given by isomorphisms for inert nodes and by alternating maps for active nodes. It is then straightforward to check that Proposition \ref{SUBDATAUNDERPLAN PROP} and its equivariant analogue Corollary \ref{SUBDATAUNDERPLANG COR} extend to give alternating analogues.
+	One can extend Definition \ref{SUBSTITUTIONDATUM} to the alternating context by defining a substitution datum to be alternating if it is given by isomorphisms for inert nodes and by alternating maps for active nodes. It is then straightforward to check that Proposition \ref{SUBDATAUNDERPLAN PROP} and its equivariant analogue Proposition \ref{SUBDATAUNDERPLANG PROP} extend to give alternating analogues.
 \end{remark}
 
 \begin{definition}
@@ -7457,8 +7556,7 @@ are groupoids.
 
  
 \subsection{Existence of (semi) model structures} 
-\label{EXISTENCE_SECTION}
-
+\todo[inline]{replaced $\backslash$ F with $\mathcal F$ (as opposed to $\mathbb F$)} 
 \renewcommand{\F}{\ensuremath{\mathcal F}} 
 
 In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, we will introduce (semi) model structures on the categories $\Op_G(\V)$ and $\Op^G(\V)$ for a wide range of $\V$. 
@@ -7471,86 +7569,35 @@ We begin by describing general notions of projective model structures on diagram
 
 \begin{definition}
   \label{SUBD_PROJ_F_MODEL_STRUCTURE}
-  Now suppose we are given a small category $\mathcal D$, a subcategory ${\bar{\mathcal D}^{op}} \subseteq \mathcal D$, and a collection $\F_d$ of subgroups of $\mathrm{Aut}(d)$ for each $d\in \bar{\mathcal D}^{op}$.
- We define the \textit{$\bar{\mathcal D}$-projective model structure} on $\V^{\mathcal D}$, if it exists, to be the unique model structure where $f$ is a fibrations (resp. weak equivalence) iff $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \bar{\mathcal D}^{op}$. 
+  Now suppose we are given a small category $\mathcal D$, a subcategory $\mathcal D' \subseteq \mathcal D$, and a collection $\F_d$ of subgroups of $\mathrm{Aut}(d)$ for each $d\in \mathcal D'$.
+ We define the \textit{$\mathcal D'$-projective model structure} on $\V^{\mathcal D}$, if it exists, to be the unique model structure where $f$ is a fibrations (resp. weak equivalence) iff $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \mathcal D'$. 
 
 Equivalently, this is the model structure transfered, via the technology of Kan \cite[11.6.1]{Hi03} or Schwede-Shipley \cite[2.3]{SS00} along either composite of adjunctions
-  \begin{equation}
-    \begin{tikzcd}
-      \V^{\mathcal D^{op}}_{\bar{\mathcal D},\F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\bar{\mathcal D}^{op}}_{\F} \arrow[l, shift right, "i_!"'] \arrow[d, shift right] \label{D_BARD_F_EQ}\\
-      \V^{\mathrm{Ob}(\mathcal D)}_{\bar{\mathcal D},\F} \arrow[r, shift right, "i^*"'] \arrow[u, shift right] & \V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} \arrow[l, shift right] \arrow[u, shift right]
-    \end{tikzcd}
-  \end{equation}
+  \[
+  \begin{tikzcd}
+    \V^{\mathcal D}_{\mathcal D',\F} \arrow[d, shift right] \arrow[r, shift right, "i^*"'] & \V^{\mathcal D'}_{\F} \arrow[l, shift right, "i_!"'] \arrow[d, shift right]\\
+    \V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D',\F} \arrow[r, shift right, "i^*"'] \arrow[u, shift right] & \V^{\mathrm{Ob}(\mathcal D')}_{\F} \arrow[l, shift right] \arrow[u, shift right]
+  \end{tikzcd}
+  \]
   where we give
   \begin{itemize}
-  \item $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} = \mathop{\prod}\limits_{d\in \bar{\mathcal D}^{op}}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, if it exists, and
-  \item $\V^{\mathrm{Ob}(\mathcal D)}_{\bar{\mathcal D},\F}$ and $\V_{\mathcal F}^{\bar{\mathcal D}^{op}}$ the transfered model structures from $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F}$, if they exist.
+  \item $\V^{\mathrm{Ob}(\mathcal D')}_{\F} = \mathop{\prod}\limits_{d\in \mathcal D'}\V^{\mathrm{Aut}(d)}_{\F_d}$ the level $\F_d$-model structure, if it exists, and
+  \item $\V^{\mathrm{Ob}(\mathcal D)}_{\mathcal D',\F}$ the transfered model structure from $\V^{\mathrm{Ob}(\mathcal D')}_{\F}$.
   \end{itemize}
   
-  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\bar{\mathcal D}$-projective \textit{genuine} model structure. 
+  If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\mathcal D'$-projective \textit{genuine} model structure. 
 
-  If $\bar{\mathcal D} = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
+  If $\mathcal D' = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
 \end{definition}
-
-\todo[inline]{come back: gen cofibs, Q equivs, etc}
- 
-Let us explore these model structures a little futher. In particular, we note that, if it exists, $\V^{\bar{\mathcal D}^{op}}_{\mathcal F}$ has generating cofibrations
-\[
-\bar{\mathcal D}(-, d)/H \cdot i, \qquad \mbox{$H\in \F_d,$ $d\in \bar{\mathcal D}$, $i$ a generating cofibration in $\V$}.
-\]
-
-In certain situations, this allows us to identify $\V^{\mathcal D^{op}}_{\bar{\mathcal D}, \F}$. 
-
-\begin{proposition}
-  If the model category $\V^{\bar{\mathcal D}^{op}}_\F$ exists and $\bar{\mathcal D}$ is a sieve
-\footnote{Any arrow $d \to \bar d$ with $\bar d \in \bar{\mathcal D}$ implies both $d$ and the arrow are in $\bar{\mathcal D}$}
- of $\mathcal D$, then the model cateogry $\V^{\mathcal D^{op}}_{\bar{\mathcal D},\F}$ exists, and the transfer adjunction (the top row of (\ref{D_BARD_F_EQ})) is a Quillen equivalence.
-\end{proposition}
-\begin{proof}
-  It is easy to check, using the fact that pushouts are levelwise, that the machinery of Kan \cite[11.6.1]{Hi03} applies, and so the model structure $\V^{\mathcal D^{op}}_{\bar{\mathcal D}, \F}$ exists, with generating cofibrations similarly of the form
-$\mathcal D(-,d)/H \cdot i$. 
-
-Moreover, is it similarly easy to show that cofibrant objects in $\V^{\mathcal D}_{\bar{\mathcal D}, \F}$ are precisely the essential image of cofibrant objects in $\V^{\bar{\mathcal D}^{op}}_\F$, and hence the verification of the Quillen equivalence is immediate.
-\end{proof}
-
-\begin{definition}
-  \todo[inline]{come back}
-  Given two subcategories $\bar{\mathcal D}$ and $\mathcal C$ of $\mathcal D$, define $\V_{\bar{\mathcal D}}^{\mathcal C^{op}}$ to have the transfered model structure
-  \[
-  \V_{\bar{\mathcal D}}^{\mathcal C^{op}} \leftrightarrows \V_{\bar{\mathcal D}, \F_{triv}}^{\mathcal D^{op}}.
-  \]
-  \todo[inline]{come back: trivial or genuine? Show that this exists.}
-\end{definition}
-\begin{corollary}
-  For any subcategories $\bar{\mathcal D}, \mathcal C$ of $\mathcal D$, we have a string of Quillen equivalences
-\[
-\V_{\bar{\mathcal D}}^{\mathcal C^{op}} \leftrightarrows \V_{\bar{\mathcal D}}^{\mathcal D^{op}} \leftrightarrows \V^{\bar{\mathcal D}^{op}}.
-\]
-\end{corollary}
-
 
 \begin{remark}
   \label{LEVEL_COFIB_REMARK}
-  We record that for any cofibration $f$ in $\V^{\mathcal D}_{{\bar{\mathcal D}^{op}}, \F}$, $f(d)$ is a cofibration in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in {\bar{\mathcal D}^{op}}$. Indeed, the map
+  We record that for any cofibration $f$ in $\V^{\mathcal D}_{\mathcal D', \F}$, $f(d)$ is a cofibration in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \mathcal D'$. Indeed, the map
   \[
   \mathcal D(d,c) \cdot_{\mathrm{Aut}(d)}(-): \V^{\mathrm{Aut}(d)}_{gen} \to \V^{\mathrm{Aut}(c)}_{gen}
   \]
   sends generating cofibrations to disjoint unions of generating cofibrations.
 \end{remark}
-
-\begin{example}
-  Following the work of \cite{Ste16}, for any family $\mathcal F$ of subgroups of $\Pi$, if the projective model structure on  $\V^{O_\F^{op}}$ exists (in particular if $\V$ has \textit{cellular fixed points} (see \ref{CELL DEF}), then the $O_{\mathcal F}$-model structure on $\V^{O_G^{op}}$ also exists, and the transfer adjunction
-\[
-\V^{O_G^{op}}_\F \leftrightarrows \V^{O_\F^{op}}
-\]
-is a Quillen equivalence. 
-% whenever the model category $\V^{O_\F^{op}}$ exists; in particular if $\V$ has cellular fixed points (see \ref{CELL DEF}). 
-% Verifying the conditions needed for the machinery of Kan \cite[11.6.1]{Hi03} is immediate as pushouts are computed levelwise.
-% Moreover, it is straightforward to show that the transfer adjunction is a Quillen equivalence, 
-% as the category of cofibrant objects in $\V^{O_G^{op}}_\F$ is precisely the essential image of $i_!$. 
-\end{example}
-
-\todo[inline]{come back here}
 
 \begin{definition}
   We say $\V$ is \textit{admissible for finite groups} if, for any finite group $\Pi$ and collection of subgroups $\F$, the $\F$ model structure $\V^\Pi_\F$ exists.
@@ -7643,7 +7690,7 @@ for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$.
 \end{remark} 
 
 \begin{theorem}\label{OP_G_SEMI_MODEL_THM} 
-  For $\V$ Cartesian strongly cellular, the projective semi model structure on $\Op_G(\V)$ exists.
+  The genuine semi model structure on $\Op_G(\V)$ exists for all Cartesian strongly cellular $\V$.
 \end{theorem} 
 
 The key technical result follows as an easy corollary of the simple case of a result from Section \ref{COFIB SEC}.
@@ -7718,13 +7765,14 @@ The key technical result follows as an easy corollary of the simple case of a re
 Somewhat surprisingly, the existance of the $\F$-semi-model structures follows identically as the genuine. Indeed, \ref{LEVEL_COFIB_REMARK} also implies that cofibrations in $\Sym_G^\F(\V)$ are in fact level genuine cofibrations, which suffices.
 \begin{corollary} 
   \label{OP_F_SEMI_MODEL_THM}
-  If $\V$ Cartesian strongly cellular, for any full subcategory $\Sigma_\F \subseteq \Sigma_G$, the $\F$-semi-model structure on $\Op_G(\V)$, denoted $\Op_G^{\mathcal F}(\V)$, exists.  \qed
+  For any full subcategory $\Sigma_\F \subseteq \Sigma_G$, the $\F$-semi-model structure on $\Op_G(\V)$ exists if $\V$ is Cartesian strongly cellular. \qed
 \end{corollary} 
+
 
 Moreover, if our base category $\V$ is sufficiently nice, these semi model structures are in fact Quillen model structures. 
 \begin{theorem} 
   \label{OP_F_Q_MODEL_THM}
-  For $\V$ Cartesian underlying strongly cellular, % and moreover
+  If $\V$ is Cartesian underlying strongly cellular, % and moreover
   % \begin{itemize}
   % \item genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and
   % \item every object in $\V$ is cofibrant,
@@ -7736,9 +7784,10 @@ Moreover, if our base category $\V$ is sufficiently nice, these semi model struc
 \end{proof} 
 
 \begin{example} 
-  The $\F$-model structure exists on $\s\Op_G$ for any full subcategory $\Sigma_\F \subseteq \Sigma_G$. 
+  The $\F$-model structure exists on $\s\Op_G$ for any $G$-vertex family $\F$. 
 \end{example} 
 
+\todo[inline]{come back}
 
 % \newpage
 \subsubsection{$G$-Operads}
@@ -7787,7 +7836,7 @@ so $\Op^G_\F(\V)$ would have generating cofibrations $\mathbb F I_\F = \sets{\ma
 
 \begin{theorem}
   \label{G_OP_SEMI_MODEL_THM}
-  For $\V$ Cartesian strongly cellular, the genuine semi model structure on $\Op^G(\V)$ exists.
+  The genuine semi-model structure on $\Op^G(\V)$ exists whenever $\V$ is Cartesian strongly cellular.
 \end{theorem}
 
 The key technical result is an easy particular case of the stronger \ref{AUTTCOFPUSH PROP}.
@@ -7831,7 +7880,7 @@ The key technical result is an easy particular case of the stronger \ref{AUTTCOF
 Again, the $\F$-model structures also follows from \ref{CELLULAR_LEVEL_COFIB_PROP}, as level (trivial) $\F$-cofibrations are also level (trivial) genuine cofibrations.
 \begin{corollary} 
   \label{F_OP_SEMI_MODEL_THM}
-  If $\V$ is strongly cellular, then for any collection $\F = \set{\F_n}$ of sets $\F_n$ of subgroups of $G\times \Sigma_n$, the $\F$-semi-model structure on $\Op^G(\V)$ exists. \qed
+  For any $G$-vertex system $\F$, the $\F$-semi-model structure on $\V\Op^G$ exists whenever $\V$ is strongly cellular. \qed
 \end{corollary} 
 % \begin{proof} 
 %   It suffices to show that if $u: X\to Y$ is a level trivial $\F$-cofibration and $\P$ is level $\F$-cofibrant in $\V^{G \times \Sigma}$, then the cellular extension $\P \to \P[u]$ is a level trivial $\F$-cofibration. However, such $u$ are level genuine cofibrations, and such $\P$ are level genuine cofibrant, and hence $\P \to \P[u]$ is a level trivial genuine cofibration by said corollary, and thus is a level trivial $\F$-cofibration. 
@@ -7846,7 +7895,7 @@ then the $\F$-model structure exists on $\Op^G(\V)$. \qed
 \end{theorem}
 
 \begin{example}
-  The $\F$-model structure exists on $\sOp^G$ for any such $\F$. 
+  The $\F$-model structure exists on $\sOp^G$ for any $G$-vertex system $\F$.
 \end{example}
 
 
@@ -9324,113 +9373,9 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 %since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
 \end{remark}
 
-
-
-
-
-
-
-
-\todo[inline]{come back: define $\mathbb F_{\mathcal F}$}
-We note that the macheriny defining the monad $\mathbb F_G$ in Section \ref{GENUINE_OP_MONAD_SECTION} is robust enough that replacing the key pieces 
-\[
-\Omega_{G,0} \qquad \mbox{ and } \qquad \mathsf{lr}: \Omega_{G,0} \to \Sigma_G
-\]
-with 
-\[
-\Omega_{\F,0} \qquad \mbox{ and } \qquad \mathsf{lr}: \Omega_\F \to \Sigma_\F
-\]
-for some weak indexing system $\F$, does not affect the proofs in any significant way. 
-In particular, the following results hold mutatis mutandis.
-
-\begin{corollary} 
-  Let $\F$ be a weak indexing system. Then the following categorical structures exist, which agree with those from Section \ref{GENUINE_OP_MONAD_SECTION} in the case $\Sigma_\F = \Sigma_G$. 
-  \begin{enumerate}
-  \item[(i)]  A monad 
-    \[
-    \mathbb F_{\mathcal F} := \mathsf{Lan} \circ N \circ \iota
-    \]
-    on $\Sym_\F(\V)$, where $\mathsf{Lan}$ and $\iota$ are adjoint maps (cf. Definition \ref{THEMONAD DEF} and (\ref{LANIOTAADJ EQ})).
-    \[    
-    \mathsf{Lan} \colon
-    \mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})
-    \rightleftarrows
-    \mathsf{Fun}(\Sigma^{op}_G, \mathcal{V})
-    \colon \iota
-    \]
-  \item[(ii)] An adjunction (cf. (\ref{TWOADJOINTS EQ}))
-    \[
-    \begin{tikzcd}[column sep =5em]
-      \mathsf{Sym}_G(\mathcal{V}) \ar{r}[swap]{\upgamma^{\**}} 
-      &
-      \mathsf{Sym}_{\mathcal F}(\mathcal{V})
-      \ar[bend right]{l}[swap,midway]{\upgamma_{!}}
-      \ar[bend left]{l}{\upgamma_{\**}}.
-    \end{tikzcd}
-    \]
-    via the map $\upgamma: \Sigma_\F \into \Sigma_G$.
-\item[(iii)] Isomorphisms of monads $\mathbb F_{\mathcal F} \to \upgamma^* \mathbb F_G \upgamma_! \to \upgamma^* \mathbb F_G \upgamma_*$ (cf. Proposition \ref{MONAD_COMPARISON_PROP})
-
-\item[(iv)] An extension of the above adjunction to operads (cf. (\ref{TWOADJOINTSOP EQ}))
-  \[
-  \begin{tikzcd}[column sep =5em]
-    \mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\upgamma^{\**}} 
-    &
-    \mathsf{Op}^G(\mathcal{V})
-    \ar[bend right]{l}[swap,midway]{\upgamma_{!}}
-    \ar[bend left]{l}{\upgamma_{\**}}.
-  \end{tikzcd}
-  \]
-where $\Op_\F(\V)$ denotes the ``$\F$-genuine equiviariant operad'' category of\ $\upgamma^* \mathbb F_G \upgamma_*$-algebras in $\Sym_\F(\V)$.
-\end{enumerate} \qed
-\end{corollary}
-
-\begin{remark}
-  For $(iv)$, we record that the primary steps of Proposition \ref{MONAD_COMPARISON_PROP}, with the exception of the subtle distinctions between $G\times \Sigma$ and $\Sigma_G^{\mathsf{fr}}$, only required that $\Sigma_G^{\mathsf{fr}}$ was a sieve in $\Sigma_G$, and that the leaf-root functor on $\Omega_G^{\mathsf{fr}}$ landed in $\Sigma_G^{\mathsf{fr}}$; that is, precisely that $\Sigma_\F$ was a weak indexing system. 
-\end{remark}
-
-\begin{remark}
-  We note that, while the endofunctor $\upgamma^* \mathbb F_G \upgamma_*$ exists for any family of corollas $\F$, it is not a monad unless $\F$ is a weak indexing system.
-\end{remark}
-
-We can now extend the results of Section \ref{OP_G_EXISTS_SECTION} to the categories $\Op_\F$. 
-
-\begin{definition}
-  Fix two weak indexing systems $\F$ and $\bar\F$.
-  The \textit{$\bar{\F}$ (semi) model structure} on $\Op_\F(\V)$ is the transfered (semi) model structure along the adjunction
-  \[
-  \begin{tikzcd}
-    \Op_\F^{\bar \F}(\V) \arrow[r, shift right, "\mathsf{fgt}"'] & \Sym_\F^{\bar \F}(\V) \arrow[l, shift right, "\mathbb F_\F"']
-  \end{tikzcd}
-  \]
-where $\Sym_\F^{\bar \F}(\V)$ denotes $\Sym_\F(\V)$ with the transfered $\Sigma_{\bar \F}$-projective model structure
-\[
-\begin{tikzcd}
-  \Sym_\F^{\bar \F} \arrow[r, shift right, "\upgamma_*"'] & \Sym_G^{\bar \F} \arrow[l, shift right, "\upgamma^*"']. 
-\end{tikzcd}
-\]
-\todo[inline]{come back: $\Sym_{(-)}^\F$ all Quillen equivalent? Go back to Section 6.2}
-\end{definition}
-
-\begin{corollary}
-  Suppose $\V$ is a Cartesian strongly cellular model category, and fix two weak indexing systems $\F$ and $\bar \F$.
-  \begin{enumerate}
-  \item[(i)] The projective semi model structure on $\Op_\F(\V)$ exists.
-  \item[(ii)] More generally, the model category $\Op_\F^{\bar\F}(\V)$ exists.
-\item[(iii)] The comparison adjunction $\Op_\F^{\bar \F} \leftrightarrows \Op_G^{\bar \F}$ is a Quillen equivalence.
-\todo[inline]{come back: this is wrong. If $\bar \F = \F$, this adjunction goes the wrong way.}
-  \end{enumerate}
-\end{corollary}
-\begin{proof}
- This again follows from Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}...
-\todo[inline]{come back: here}
-\end{proof}
-\todo[inline]{come back: end}
-
-
-One of the last steps to completing the proof of our Elmendorf-type result is the following refinement of the key argument in the proof of
-%The following is a refinement of the key argument in the proof of
+The following is a refinement of the key argument in the proof of
 \cite[Thm. 2.10]{Ste16}.
+
 
 \begin{proposition}\label{COFESSIM PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points, $\mathcal{F}$ a family of subgroups of $G$,
