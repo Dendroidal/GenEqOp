@@ -5527,7 +5527,6 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
 
-{\color{red} HERE}
 
 In order to prove all of our main theorems
 we will need to homotopically analyze free extensions 
@@ -5542,8 +5541,78 @@ i.e. pushouts of the form
   \end{tikzcd}
 \end{equation}
 in the category $\mathsf{Op}_G$.
+The key technical ingredient will be the identification of a suitable filtration
+$\mathcal{P}=\mathcal{P}_0 \to 
+\mathcal{P}_1 \to \mathcal{P}_2 \to
+\cdots \to \mathcal{P}[u] $
+of the map $\mathcal{P} \to \mathcal{P}[u]$
+in the underlying category $\mathsf{Sym}_G$.
+To explain how this filtration is obtained,
+and abbreviating 
+$\mathbb{F}_G$ as $\mathbb{F}$,
+note first that $\mathcal{P}[u]$ is the coequalizer
+\begin{equation}\label{REFLCOEQ EQ}
+\begin{tikzcd}
+	\mathcal{P} \mathbin{\check{\amalg}}
+	\mathbb{F} X \mathbin{\check{\amalg}} \mathbb{F} Y
+	\ar[shift right=4pt]{r} \ar[shift right=-4pt]{r}
+&
+	\mathcal{P} \mathbin{\check{\amalg}} \mathbb{F} Y
+	\ar[dashed]{l}
+\end{tikzcd}
+\end{equation}
+where $\check{\amalg}$ denotes the algebraic coproduct, 
+i.e. the coproduct in $\mathsf{Op}_G$.
+The coequalizer (\ref{REFLCOEQ EQ})
+is a priori also calculated in $\mathsf{Op}_G$. However, this is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
+and standard arguments show that 
+it is hence also an underlying coequalizer in 
+$\mathsf{Sym}_G$.
+
+In practice, we will need to enlarge 
+(\ref{REFLCOEQ EQ}) somewhat.
+Firstly, note that (\ref{REFLCOEQ EQ})
+corresponds to the two bottom levels of the bar construction
+$B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} Y)=
+\mathcal{P} \mathbin{\check{\amalg}}
+(\mathbb{F} X)^{\check{\amalg} l} 
+\mathbin{\check{\amalg}} \mathbb{F} Y$,
+whose colimit (over $\Delta^{op}$) is again $\mathcal{P}[u]$.
+For technical reasons, we prefer the double bar construction
+\begin{equation}\label{DOUBAR EQ}
+	B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
+=
+	\mathcal{P} \mathbin{\check{\amalg}}
+	(\mathbb{F} X)^{\check{\amalg} l} 
+	\mathbin{\check{\amalg}}
+	\mathbb{F} X
+	\mathbin{\check{\amalg}}
+	(\mathbb{F} X)^{\check{\amalg} l} 
+	\mathbin{\check{\amalg}} \mathbb{F} Y
+=
+	\mathcal{P} \mathbin{\check{\amalg}}
+	(\mathbb{F} X)^{\check{\amalg} 2l+1} 
+	\mathbin{\check{\amalg}} \mathbb{F} Y.
+\end{equation}
+To actually describe the individual levels 
+(\ref{DOUBAR EQ}) one further resolves $\mathcal{P}$
+so as to obtain
+\[
+	B_l(\mathbb{F}^{n+1}\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
+=
+	\mathbb{F}^{n+1}\mathcal{P} \mathbin{\check{\amalg}}
+	(\mathbb{F} X)^{\check{\amalg} 2l+1} 
+	\mathbin{\check{\amalg}} \mathbb{F} Y
+\simeq
+	\mathbb{F}\left(
+		\mathbb{F}^{n} \mathcal{P} \amalg
+		X^{\amalg 2l+1} \amalg Y
+	\right)
+\]
 
 
+
+{\color{red} HERE}
 
 
 
