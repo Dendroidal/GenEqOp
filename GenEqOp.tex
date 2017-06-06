@@ -17,6 +17,7 @@
 \usepackage{showkeys}
 
 \usepackage{stmaryrd}
+
 \usepackage{upgreek}
 
 \usepackage{geometry}
@@ -1498,6 +1499,148 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 \]
 \end{itemize}
 \end{proposition}
+
+
+
+Any monad $T$ on $\C$ induces obvious monads $T^{\times l}$ on $\C^{\times l}$.
+More generally, and 
+letting $I$ denote the identity monad,
+a partition 
+$\{1,\cdots,l\} = \lambda_a \amalg \lambda_i$,
+which we denote by $\lambda$,
+determines a monad 
+$T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mathcal{C}$.
+Here ``$a$'' stands for ``active'' and ``$i$'' for ``inert''.
+
+Such monads satisfy a number of compatibility conditions. 
+Firstly, if $\lambda'_a \subset \lambda_a$
+there is a monad map
+$T^{\times \lambda'} \Rightarrow T^{\times \lambda}$,
+and we write $\lambda' \leq \lambda$.
+Moreover, writing $\alpha^{\**} \colon 
+\C^{\times m} \to \C^{\times l}$
+for the forgetful functor induced by
+a map $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$,
+one has an equality
+$T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
+\alpha^{\**} T^{\times \lambda}$,
+where $\alpha^{\**}\lambda$ is the pullback partition.
+The following is straightforward.
+
+\begin{proposition}\label{MONADICFUN PROP}
+	Suppose $\C$ has finite coproducts and write
+	$\alpha_{!} \colon \mathcal{C}^{\times l} \to 
+	\mathcal{C}^{\times m}$
+	for the left adjoint of $\alpha^{\**}$. 
+	Then the map
+\begin{equation}\label{MONADFUNCTORALPHA EQ}
+	T^{\times \alpha^{\**} \lambda} \Rightarrow \alpha^{\**} T^{\times \lambda} \alpha_{!}
+\end{equation}
+adjoint to the identity 
+$T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
+\alpha^{\**} T^{\times \lambda}$
+is a map of monads on $\C^{\times l}$.
+
+Hence, since $T^{\times \lambda} \alpha_!$ is a right 
+$\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module, 
+it is also a right $T^{\times \lambda'}$ whenever
+$\lambda' \leq \alpha^{\**} \lambda$.
+Finally, the natural map 
+\begin{equation}\label{MONADFUNCTORALPHADOU EQ}
+	\alpha_{!} T^{\times \alpha^{\**} \lambda} \Rightarrow  T^{\times \lambda} \alpha_{!}
+\end{equation}
+is a map of right $T^{\times \alpha^{\**} \lambda}$-modules, 
+and thus also a map of right 
+$T^{\times \lambda'}$-modules
+whenever $\lambda' \leq \alpha^{\**} \lambda$.
+\end{proposition}
+
+%\begin{proof}
+%We first note that 
+%$(FG)^{\times \lambda} = F^{\times \lambda} G^{\times \lambda}$.
+
+%Letting $\eta, \epsilon$ denote the unit and counit for the 
+%$(\alpha_{!},\alpha^{\**})$ adjunction, 
+%(\ref{MONADFUNCTORALPHA EQ})
+%is then the composite
+%\[
+%	T^{\times \alpha^{\**} \lambda} \xrightarrow{\eta} 
+%	T^{\times \alpha^{\**} \lambda} \alpha^{\**} \alpha_{!}  %=
+%	\alpha^{\**} T^{\times \lambda}\alpha_{!}.
+%\]
+%That this is a monad map is the condition that the following multiplication and unit diagrams commute.
+%\[
+%\begin{tikzcd}
+%	T^{\times \alpha^{\**} \lambda} \circ T^{\times \alpha^{\**} \lambda} \ar{d} \ar{r} &
+%	\alpha^{\**} T^{\times \lambda} \alpha_{!} \circ 
+%	\alpha^{\**} T^{\times \lambda} \alpha_{!} \ar{d} &
+%	I^{\times n} \ar{d} \ar{rd}& 	
+%\\
+%	T^{\times \alpha^{\**} \lambda} \ar{r} &
+%	\alpha^{\**} T^{\times \lambda} \alpha_{!} &
+%	T^{\times \alpha^{\**} \lambda} \ar{r} &
+%	\alpha^{\**} T^{\times \lambda} \alpha_{!}
+%\end{tikzcd}
+%\]
+%We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since precomposition
+%$(\minus) \circ \alpha^{\**}$
+%is left adjoint to precomposition
+%$(\minus) \circ \alpha_{!}$
+%this follows from the following commutative diagram.
+%\[
+%\begin{tikzcd}[column sep=1.5em]
+%	T^{\times \alpha^{\**} \lambda}  T^{\times \alpha^{\**} \lambda}  \alpha^{*} \ar[equal]{r} \ar{dd}&
+%	T^{\times \alpha^{\**} \lambda}  \alpha^{*}  T^{\times \lambda} \ar{r}{\eta}
+%	\ar[equal]{rd} &
+%	T^{\times \alpha^{\**} \lambda} \alpha^{\**} \alpha_{!} \alpha^{*} T^{\times \lambda} \ar{d}{\epsilon} \ar[equal]{r}&
+%	\alpha^{\**} T^{\times \lambda} \alpha_{!} \alpha^{\**}  T^{\times \lambda} \ar{d}{\epsilon}
+%\\
+%	& &
+%	T^{\times \alpha^{\**} \lambda}  \alpha^{*}  T^{\times \lambda} \ar[equal]{r} &
+%	\alpha^{*}  T^{\times \lambda}  T^{\times \lambda} \ar{d}
+%\\
+%	T^{\times \alpha^{\**} \lambda}  \alpha^{*} \ar[equal]{rrr} &&&
+%	\alpha^{*} T^{\times \lambda}
+%\end{tikzcd}
+%\]
+%\end{proof}
+
+\begin{remark}\label{PRECOMPPOSTCOMP REM}
+We unpack the content of (\ref{MONADFUNCTORALPHADOU EQ}) when 
+$\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the simpleton $\**$, in which case we write $\alpha_{!} = \coprod$.
+We thus have commutative diagrams
+\begin{equation}\label{RIGHTMODULETMAPAUX EQ}
+\begin{tikzcd}
+	\coprod_{j \in \lambda_a} TT A_j \amalg \coprod_{j \in \lambda_i} A_j
+	\ar{r} \ar{d} &
+	T\left( \coprod_{j \in \lambda_a} T A_j \amalg \coprod_{j \in \lambda_i} A_j \right) \ar{d}
+\\
+	\coprod_{j \in \lambda_a} T A_j \amalg \coprod_{j \in \lambda_i} A_j
+	\ar{r} &
+		T\left( \coprod_{j \in \lambda_a} A_j \amalg \coprod_{j \in \lambda_i} A_j \right)
+\end{tikzcd}
+\end{equation}
+for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
+where the vertical maps
+come from the right $T^{\times \lambda}$-module structure.
+Writing $\amalg^T$ for the coproduct of $T$-algebras and recalling the canonical identifications 
+$\coprod^T_{k \in K} (T A_k) \simeq T
+\left( \coprod_{k \in K} A_k \right)$, 
+(\ref{RIGHTMODULETMAPAUX EQ}) shows that the 
+right $T^{\times \lambda}$-module structure on $T \circ \coprod$
+codifies the multiplication maps
+\[
+\coprod^T_{j \in \lambda_a} TT A_j \amalg^T 
+\coprod^T_{j \in \lambda_i} T A_j
+	\to
+\coprod^T_{j \in \lambda_a} T A_j \amalg^T 
+\coprod^T_{j \in \lambda_i} T A_j.
+\] 
+\end{remark}
+
+
+
+
 
 
 \section{Planar and tall maps}\label{PLANAR_SECTION}
@@ -4055,7 +4198,7 @@ on the category
 $\mathsf{Sym}_G(\mathcal{V}) = 
 \mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$,
 that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. The underlying endofunctor of $\mathbb{F}_G$ is easy enough to describe. Given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left Kan extension diagram
-\begin{equation}
+\begin{equation}\label{FGXDEF EQ}
 \begin{tikzcd}[row sep=2em,column sep = 3.3em]
 	(\Omega_{G}^{0})^{op} \ar{r}{V_{G}^{op}} \ar{d}[swap]{\mathsf{lr}} &
 	|[alias=F1]|
@@ -5386,159 +5529,22 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 {\color{red} HERE}
 
-
-Our overall goal in this section will be to produce a description of free $\mathbb F_G$-extensions,  %genuine operad pushouts,
+In order to prove all of our main theorems
+we will need to homotopically analyze free extensions 
+of genuine equivariant operads,
 i.e. pushouts of the form
 \begin{equation}
   \label{FREE_FG_EXT_EQ}
   \begin{tikzcd}
-    \mathbb{F}_G X \ar{r} \ar{d} & \mathcal{P} \ar{d}
+    \mathbb{F}_G X \ar{r} \ar{d}[swap]{\mathbb{F}_G u} & \mathcal{P} \ar{d}
     \\
     \mathbb{F}_G Y \ar{r} & \mathcal{P}[u]
   \end{tikzcd}
 \end{equation}
-in the category $\mathsf{Op}_G$ of genuine equivariant operads.
+in the category $\mathsf{Op}_G$.
 
 
 
-\subsection{Extensions over general monads}\label{EXTGENMON SEC}
-
-Any monad $T$ on $\C$ one obtains induced monads $T^{\times l}$ on $\C^{\times l}$, and we will make use of several standard relations between these.
-In particular, any map $\alpha \colon \underline{l} \to \underline{m}$ induces a forgetful functor
-such that for the forgetul functor 
-$\alpha^{\**} \colon \C^{\times l} \to \C^{\times n}$
-one has $T^{\times l} \alpha^{\**} \simeq  \alpha^{\**} T^{\times m}$.
-
-
-Indeed, we will need to make use of a slightly more general setup. Letting $I$ denote the identity monad on $\C$, and $K \subset \underline{m}$ be a subset, there is a monad $T^{\times K} \times I^{\times(\underline{m}-K)}$ on $\mathcal{C}^{\times m}$, which we abusively denote simply as $T^{\times K}$. Identities then determine maps of monads 
-$T^{\times J} \to T^{\times K}$ whenever $J \subset K$
-and, moreover, there are identifications
-$T^{\times \alpha^{-1}(K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$.
-One then has the following.
-
-
-\begin{proposition}\label{MONADICFUN PROP}
-	The functor
-\begin{equation}\label{MONADFUNCTORALPHA EQ}
-	T^{\times \alpha^{-1} (K)} \Rightarrow \alpha^{\**} T^{\times K} \alpha_{!}
-\end{equation}
-adjoint to the identification 
-$T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$
-is a map of monads on $\C^{\times n}$.
-\end{proposition}
-
-
-\begin{proof}
-We first note that there are identifications of functors
-$(FG)^{\times K} \simeq F^{\times K} G^{\times K}$ which are compatible with the identifications
-$F^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} F^{\times K}$
-in the sense that the identification
-$(F G)^{\times \alpha^{-1} (K)} \circ \alpha^{\**} \simeq 
-\alpha^{\**} (FG)^{\times K}$
-matches the composite identification
-$F^{\times \alpha^{-1} (K)} G^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq
-F^{\times \alpha^{-1} (K)}\alpha^{\**}G^{\times K} \simeq
-\alpha^{\**} F^{\times K} G^{\times K}$.
-
-Letting $\eta, \epsilon$ denote the unit and counit for the 
-$(\alpha_{!},\alpha^{\**})$ adjunction, 
-(\ref{MONADFUNCTORALPHA EQ})
-is then the composite
-\[
-	T^{\times \alpha^{-1} (K)} \xrightarrow{\eta} 
-	T^{\times \alpha^{-1} (K)} \alpha^{\**} \alpha_{!} \simeq
-	\alpha^{\**} T^{\times K}\alpha_{!}.
-\]
-That this is a monad map is the condition that the following multiplication and unit diagrams commute.
-\[
-\begin{tikzcd}
-	T^{\times \alpha^{-1} (K)} \circ T^{\times \alpha^{-1} (K)} \ar{d} \ar{r} &
-	\alpha^{\**} T^{\times K} \alpha_{!} \circ 
-	\alpha^{\**} T^{\times K} \alpha_{!} \ar{d} &
-	I^{\times n} \ar{d} \ar{rd}& 	
-\\
-	T^{\times \alpha^{-1} (K)} \ar{r} &
-	\alpha^{\**} T^{\times K} \alpha_{!} &
-	T^{\times \alpha^{-1} (K)} \ar{r} &
-	\alpha^{\**} T^{\times K} \alpha_{!}
-\end{tikzcd}
-\]
-We argue only the case of the leftmost multiplication diagram, with commutativity of the unit diagram following by a similar but simpler argument. Since precomposition
-$(\minus) \circ \alpha^{\**}$
-is left adjoint to precomposition
-$(\minus) \circ \alpha_{!}$
-this follows from the following commutative diagram.
-\[
-\begin{tikzcd}[column sep=1.5em]
-	T^{\times \alpha^{-1} (K)}  T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{r}{\simeq} \ar{dd}&
-	T^{\times \alpha^{-1} (K)}  \alpha^{*}  T^{\times K} \ar{r}{\eta}
-	\ar[equal]{rd} &
-	T^{\times \alpha^{-1} (K)} \alpha^{\**} \alpha_{!} \alpha^{*} T^{\times K} \ar{d}{\epsilon} \ar{r}{\simeq}&
-	\alpha^{\**} T^{\times K} \alpha_{!} \alpha^{\**}  T^{\times K} \ar{d}{\epsilon}
-\\
-	& &
-	T^{\times \alpha^{-1} (K)}  \alpha^{*}  T^{\times K} \ar{r}{\simeq} &
-	\alpha^{*}  T^{\times K}  T^{\times K} \ar{d}
-\\
-	T^{\times \alpha^{-1} (K)}  \alpha^{*} \ar{rrr}{\simeq} &&&
-	\alpha^{*} T^{\times K}
-\end{tikzcd}
-\]
-\end{proof}
-
-
-\begin{remark}\label{TALPHAKMOD REM}
-	Since $T^{\times K} \alpha_{!}$ is a right 
-	$\alpha^{\**} T^{\times K}\alpha_{!}$-module,
-	Proposition \ref{MONADICFUN PROP} implies that it is also a 
-	right $T^{\times \alpha^{-1}(K)}$-module or, moreover, a 
-	right $T^{\times J}$-module whenever $\alpha(J) \subset K$.
-\end{remark}
-
-
-\begin{remark}\label{PRECOMPPOSTCOMP REM}
-Combining the precomposition and postcomposition adjunctions,
-the identification 
-$T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$
-is then adjoint to a functor
-$	\alpha_{!} T^{\times \alpha^{-1} (K)} 
-	\to
-	T^{\times K} \alpha_{!}$
-which is readily checked to be a map of right $T^{\times \alpha^{-1} (K)}$-modules.
-
-More generally, for $\alpha(J) \subset K$, the composite 
-$T^{\times J}\alpha^{\**} \to T^{\times \alpha^{-1} (K)} \alpha^{\**} \simeq \alpha^{\**} T^{\times K}$ is thus adjoint to a map of right $T^{\times J}$-modules
-\begin{equation}\label{RIGHTMODULETMAP EQ}
-	\alpha_{!} T^{\times J} \to T^{\times K} \alpha_{!}.
-\end{equation}
-We now unpack the content of (\ref{RIGHTMODULETMAP EQ}) when 
-$\alpha \colon \underline{l} \to \**$ is the unique map to the simpleton $\** = \underline{1}$. In this case we can instead write $\alpha_{!} = \coprod$, $\alpha^{\**}=\Delta$,
-and we thus have commutative diagrams
-\begin{equation}\label{RIGHTMODULETMAPAUX EQ}
-\begin{tikzcd}
-	\coprod_{J} TT A_j \amalg \coprod_{\underline{l}-J} A_j
-	\ar{r} \ar{d} &
-	T\left( \coprod_{J} T A_j \amalg \coprod_{\underline{l}-J} A_j \right) \ar{d}
-\\
-	\coprod_{J} T A_j \amalg \coprod_{\underline{l}-J} A_j
-	\ar{r} &
-		T\left( \coprod_{J} A_j \amalg \coprod_{\underline{l}-J} A_j \right)
-\end{tikzcd}
-\end{equation}
-for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
-where the vertical maps
-come from the right $T^{\times J}$-module structure.
-Writing $\amalg^a$ for the coproduct of $T$-algebras and recalling the canonical identifications 
-$\coprod^a_K (T A_k) \simeq T\left( \coprod_K A_k \right)$, 
-(\ref{RIGHTMODULETMAPAUX EQ}) in fact shows that the 
-right $T^{\times J}$-module structure on $T \circ \coprod$
-in fact codifies the multiplication maps
-\[
-\coprod^a_J TT A_j \amalg^a \coprod^a_{\underline{l}-J} T A_j
-	\to
-\coprod^a_J T A_j \amalg^a \coprod^a_{\underline{l}-J} T A_j.
-\] 
-\end{remark}
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -10537,6 +10543,34 @@ $s([n],i_n)= [0,i_n]$.
 %\end{tikzcd}
 %\]
 %\end{lemma}
+
+
+
+\[
+\begin{tikzcd}
+	\coprod_i \Omega_G \wr A_i \ar{rr} \ar{rd} \ar{dd}& &
+	\coprod \Fin \wr A_i \ar{rd} \ar[dashed]{dd}
+\\
+	&
+	\Omega_G^{0,0} \ar{rr} \ar{dd} & &
+	\Fin \wr \coprod A_i \ar{dd}
+\\
+	\coprod \Omega_G \ar[dashed]{rr} \ar{rd} \ar{dd} & &
+	\coprod \Fin \wr \Sigma_G \ar[dashed]{rd}
+\\
+	&
+	\Omega_G \ar{rr} \ar{dd} \ & &
+	\Fin \wr \Sigma_G
+\\
+	\coprod \Sigma_G \ar{rd}
+\\
+	& 
+	\Sigma_G
+\end{tikzcd}
+\]
+
+
+
 
 
 \bibliography{biblio}{}
