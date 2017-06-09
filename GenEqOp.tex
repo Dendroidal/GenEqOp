@@ -4334,13 +4334,14 @@ is unchanged by replacing $\Fin_s$ with $\Fin$.
 As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
 \end{remark}
 
+
 {\color{red} Expand on if necessary}
 
 Our primary interest here will be in the 
 $\Omega_{G}^{0}\wr (\minus)$ construction,
 which can be iterated thanks to the existence of the composite maps
 $\Omega_{G}^{0} \wr A \to \Omega_{G}^{0} \to \Sigma_G$.
-The role of the higher strings $\Omega_{G,n}^{(A)}$ will then be to provide more convenient models for iterated 
+The role of the higher strings $\Omega_{G}^{n} \wr A $1 will then be to provide more convenient models for iterated 
 $\Omega_{G}^{0}\wr (\minus)$ constructions.
 Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as providing a canonical identification
 $\Omega_{G}^{0} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+1}$,
@@ -4486,7 +4487,7 @@ Proposition \ref{PIIPROP PROP} when
 using one of the generalized claims.
 \end{remark}
 
-\begin{corollary}
+\begin{corollary}\label{IDEN COR}
 One has identifications 
 $\Omega_G^k \wr \Omega_G^n \wr A \simeq \Omega_{G}^{n+k+1} \wr A$ which identify $V_G^k \wr \Omega_G^n \wr A$ with 
 $V_G^k \wr A$.
@@ -4504,12 +4505,38 @@ Further, these are associative in the sense that the identifications
 coincide.
 Lastly, one obtains identifications
 \[
-	d_i \wr \Omega_G^n \simeq d_i \qquad
-	s_j \wr \Omega_G^n \simeq s_j \qquad
-	\Omega_G^k \wr d_i \simeq d_{i+k+1} \qquad
+	d_i \wr \Omega_G^n \simeq d_i \quad
+	\pi_i \wr \Omega_G^n \simeq \pi_i \quad
+	s_j \wr \Omega_G^n \simeq s_j \quad
+	\Omega_G^k \wr d_i \simeq d_{i+k+1} \quad
+	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} \quad
 	\Omega_G^k \wr s_j \simeq s_{j+k+1}
 \]
 \end{corollary}
+
+\begin{proof}
+The identification $\Omega_G^k \wr \Omega_G^n \wr A \simeq \Omega_{G}^{n+k+1} \wr A$ follows since by 
+Proposition \ref{PIIPROP PROP}(a)
+both expressions 
+compute the limit of the solid part of the diagram below.
+\[
+\begin{tikzcd}[row sep = 1.5em]
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\Fin^{\wr 2} \wr A \ar{r}{\sigma^0} \ar{d}&
+	\Fin \wr A \ar{d}
+\\
+	\Omega_G^{n+k+1} \ar{r}[swap]{V_G^k} \ar{d}&
+	\Fin \wr \Omega^n_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}&
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r}[swap]{\sigma^0} &
+	\Fin \wr \Sigma_G &
+\\
+	\Omega_G^k \ar{r}[swap]{V_G^k} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\]
+Associativity follows similarly. The remaining identifications are obvious.
+\end{proof}
 
 We now have all the necessary ingredients to define our monad on 
 spans.
@@ -5527,6 +5554,8 @@ However, such counter-examples all require the use of trees with stumps. Indeed,
 is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \end{remark}
 
+
+
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
 
@@ -5553,21 +5582,20 @@ in the underlying category $\mathsf{Sym}_G$.
 To explain how this filtration is obtained,
 and abbreviating 
 $\mathbb{F}_G$ as $\mathbb{F}$,
-note first that $\mathcal{P}[u]$ is the coequalizer
+note first that $\mathcal{P}[u]$ is given by a coequalizer
 \begin{equation}\label{REFLCOEQ EQ}
 \begin{tikzcd}
 	\mathcal{P} \mathbin{\check{\amalg}}
 	\mathbb{F} X \mathbin{\check{\amalg}} \mathbb{F} Y
 	\ar[shift right=4pt]{r} \ar[shift right=-4pt]{r}
 &
-	\mathcal{P} \mathbin{\check{\amalg}} \mathbb{F} Y
+	\mathbb{F} Y \mathbin{\check{\amalg}} \mathcal{P}
 	\ar[dashed]{l}
 \end{tikzcd}
 \end{equation}
 where $\check{\amalg}$ denotes the algebraic coproduct, 
-i.e. the coproduct in $\mathsf{Op}_G$.
-The coequalizer (\ref{REFLCOEQ EQ})
-is a priori also calculated in $\mathsf{Op}_G$. However, this is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
+i.e. the coproduct in $\mathsf{Op}_G$, and, a priori,
+the coequalizer is also calculated in $\mathsf{Op}_G$. However, (\ref{REFLCOEQ EQ}) is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
 and standard arguments show that 
 it is hence also an underlying coequalizer in 
 $\mathsf{Sym}_G$.
@@ -5597,10 +5625,10 @@ For technical reasons, we prefer the double bar construction
 	(\mathbb{F} X)^{\check{\amalg} 2l+1} 
 	\mathbin{\check{\amalg}} \mathbb{F} Y.
 \end{equation}
-To actually describe the individual levels 
+To actually describe the individual levels  of
 (\ref{DOUBAR EQ}) one further resolves $\mathcal{P}$
-so as to obtain
-\[
+so as to obtain the bisimplicial object
+\begin{equation}\label{FURRES EQ}
 	B_l(\mathbb{F}^{n+1}\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
 =
 	\mathbb{F}^{n+1}\mathcal{P} \mathbin{\check{\amalg}}
@@ -5610,25 +5638,66 @@ so as to obtain
 	\mathbb{F}\left(
 		\mathbb{F}^{n} \mathcal{P} \amalg
 		X^{\amalg 2l+1} \amalg Y
+	\right),
+\end{equation}
+where $\amalg$ denotes the coproduct in $\mathsf{Sym}_G$.
+As in Remark \ref{REPACKAGERES REM}, each level of 
+(\ref{FURRES EQ})
+can then be described as 
+\begin{equation}\label{LANLEVELFOR EQ}
+\mathsf{Lan} N (N^{n} \iota \mathcal{P} 
+\amalg \iota X^{\amalg 2l+1} \amalg \iota Y),
+\end{equation}
+for $N$ the span monad (cf. Definition \ref{WSPAN_MONAD_DEFINITION}) and $\amalg$ now the coproduct of spans.
+In particular, each level of 
+(\ref{FURRES EQ})
+is thus a left Kan extension over some category
+$\Omega_G^{n,\lambda_l}$, which we explicitly identify in 
+\S \ref{LABELSTRI SEC}, giving the first identification below.
+\begin{align*}
+	\mathcal{P} \coprod_{\mathbb{F} X} \mathbb{F} Y \simeq &
+	\colim_{(\Delta \times \Delta)^{op}}
+	\left(
+	\mathsf{Lan}_{\left( \Omega_{G}^{n,\lambda_l} \to \Sigma_G \right)^{op}}
+	N_{n,l}^{(\mathcal{P},X,Y)}
 	\right)
-\]
+%\\
+	\simeq 
+%&
+	\mathsf{Lan}_{\left( \Omega_{G}^{e} \to \Sigma_G \right)^{op}}
+	\tilde{N}^{(\mathcal{P},X,Y)}
+\end{align*}
 
 
 
 {\color{red} HERE}
 
 
-
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
-We now translate the results in the previous section to the context of the monad $N$ on $\mathsf{WSpan}^l(\Sigma^{op},\mathcal{V})$. In analogy to the planar string models $\Omega_{G,n}^{(A)}$ for iterations $N^{\circ n+1}$ of the monad $N$,
-we will find it convenient to build similar string models
-$\Omega_{G,n}^{(\underline{A}_J)}$ for 
-$N \circ \coprod \circ (N^{\times J})^{\circ n}$.
 
+In this section we explicitly identify the categories underlying the left Kan extensions in (\ref{LANLEVELFOR EQ}).
+
+
+In the notation 
+of Remark \ref{PRECOMPPOSTCOMP REM},
+letting 
+$\langle l \rangle = 
+\{-\infty,-l,\cdots, -1, 0, 1, \cdots, l, \infty\}$ and writing
+$\lambda_{l}$ for the partition
+$\lambda_{l,a} = \{-\infty\}$,
+$\lambda_{l,i} = \langle l \rangle - \{-\infty\}$,
+(\ref{LANLEVELFOR EQ})
+can be repackaged as an instance of the functor
+$\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle l \rangle}$.
+Our goal is thus to understand 
+the underlying categories of the spans in the image of the functor
+$N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}$,
+though we will find it preferable and no harder to tackle the more general case of the functors 
+$N^{s+1} \circ \coprod \circ (N^{\times \lambda})^{\circ n-s}$.
 
 \begin{definition}
-A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) $G$-tree is a pair $(T,V_G(T) \to \{1,\cdots,l\})$ with $T \in \Omega_G$, which we think of as a $G$-tree together with $G$-vertices labels in $1,\cdots,l$.
+A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) is a pair $(T,V_G(T) \to \{1,\cdots,l\})$ with $T \in \Omega_G$, which we think of as a $G$-tree together with $G$-vertices labels in $1,\cdots,l$.
 
 Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if for each $G$-vertex $v_{G e}$ of $T$ with label $j$, the vertices of the subtree $S_{v_{G e}}$ are all labeled by $j$.
 
@@ -5648,7 +5717,7 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 	\tikzstyle{level 2}=[sibling distance=3.5em]%
 	\tikzstyle{level 3}=[sibling distance=2.25em]%
 	\tikzstyle{level 4}=[sibling distance=1.25em]%
-	\tikzstyle{level 5}=[sibling distance=0.875em]%
+	\tikzstyle{level 5}=[sibling distance=1.25em]%
 		\node at (5.5,0) {$U$}
 			child{node [dummy] {}
 				child[sibling distance =5em]{node [dummy] {}
@@ -5688,175 +5757,515 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 				edge from parent node {$a_2$}}
 			edge from parent node [swap] {$e$}};
 	\end{scope}
-	\draw [->] (1.3,1.25) -- node[swap] {$\varphi$} (3.5,1.25);
+	\draw [->] (1.4,1.5) -- node[swap] {$\varphi$} (3.4,1.5);
 	\end{tikzpicture}
 \end{equation}
 \end{example}
 
 
-
 \begin{definition}
-Let $0 \leq s \leq n$ and $J \subset \underline{l}$ be a subset.
+Let $-1 \leq s \leq n$ and 
+$\lambda = \lambda_a \amalg \lambda_i$
+a partition of $\{1,2,\cdots,l\}$.
 
-We define $\Omega_{G,n,s}^{J}$ to have as objects $n$-planar strings
+We define $\Omega_{G}^{n,s,\lambda}$ to have as objects $n$-planar strings (where $T_{-1} = \mathsf{lr}(T_0)$ as in (\ref{STRINGOBJALT EQ}))
 \begin{equation}\label{NSTRINGLAB EQ}
-	T_0 \xrightarrow{f_1}
-	T_1 \xrightarrow{f_2}
-	\cdots \xrightarrow{f_s}
-	T_s \xrightarrow{f_{s+1}}
-	T_{s+1} \xrightarrow{f_{s+2}}
-	\cdots \xrightarrow{f_n}
+	T_{-1} \xrightarrow{\varphi_0}
+	T_0 \xrightarrow{\varphi_1}
+	T_1 \xrightarrow{\varphi_2}
+	\cdots \xrightarrow{\varphi_s}
+	T_s \xrightarrow{\varphi_{s+1}}
+	T_{s+1} \xrightarrow{\varphi_{s+2}}
+	\cdots \xrightarrow{\varphi_n}
 	T_{n}
 \end{equation}
 together with
-$l$-labelings of $T_s, T_{s+1},\cdots, T_{n}$ such that the $f_r,r>s$ are $(\underline{l}-J)$-inert label maps.
+$l$-labelings of $T_s, T_{s+1},\cdots, T_{n}$ such that the $\varphi_r,r>s$ are $\lambda_i$-inert label maps.
 
-Arrows in $\Omega_{G,n,s}^{J}$ are quotients of strings
-$(q_r \colon T_r \to T'_r)$ such that 
-$q_r,r\leq s$ are label maps.
+Arrows in $\Omega_{G}^{n,s,\lambda}$ are quotients of strings
+$(\pi_r \colon T_r \to T'_r)$ such that 
+$\pi_r, r\geq s$ are label maps.
+
+Further, for any $s<0$ or $n<s'$ we write
+\begin{equation}\label{EXTRACASES EQ}
+	\Omega_{G}^{n,s,\lambda} = 
+		\Omega_{G}^{n,-1,\lambda},
+\qquad
+	\Omega_{G}^{n,s',\lambda} = \Omega_{G}^{n}.
+\end{equation}
 \end{definition}
 
-Informally, $\Omega_{G,n,s}^{\underline{l}}$ consists of $n$-strings such that trees and maps after $T_s$ are $l$-labeled.
+Intuitively, $\Omega_G^{n,s,\lambda}$ consists of strings that are labeled in the range $s \leq r \leq n$,
+with the extra cases (\ref{EXTRACASES EQ}) interpreted by infinitely prepending and postpending copies of $T_{-1}$ and $T_n$ to (\ref{NSTRINGLAB EQ}).
 
-\begin{remark} 
-Our main case of interest will that of $s=0$, in which case we abbreviate 
-$\Omega_{G,n}^{J} = \Omega_{G,n,0}^{J}$.
-Indeed, such strings will suffice to build models for $N \circ \coprod \circ (N^{\times J})^{\circ n}$.
+The main case of interest is that of $s=0$, which we abbreviate as $\Omega_{G}^{n,\lambda} = \Omega_{G}^{n,0,\lambda}$,
+with the remaining
+$\Omega_{G}^{n,s,\lambda}$ playing an auxiliary role.
+The $s=-1$ case also deserves special attention.
 
-However, to unpack the right $N^{\times J}$-module structure as in Remark \ref{TALPHAKMOD REM} one further needs to encode composites $NN \circ \coprod \circ (N^{\times J})^{\circ n-1}$, 
-a role played by strings $\Omega_{G,n,1}^{J}$.
+\begin{remark}
+	For $s<0$ there are identifications 
+\begin{equation}\label{OMEGANMINUSONE EQ}
+	\Omega_{G}^{n,s,\lambda} = 
+	\Omega_{G}^{n,-1,\lambda} \simeq
+		\coprod_{\lambda_a} \Omega_{G}^{n} \amalg
+		\coprod_{\lambda_i} \Sigma_G.
+\end{equation}
+Indeed, since $T_{-1}$ is a $G$-corolla, the label of its unique $G$-vertex determines all other labels.
 \end{remark}
 
 \begin{notation}
-	We will further write 
-\begin{equation}\label{OMEGANMINUSONE EQ}
-	\Omega_{G,n,-1}^{J} = \coprod_J \Omega_{G,n} \amalg \coprod_{\underline{l}-J} \Sigma_G,
-	\qquad
-	\Omega_{G,n,n+1}^{J} = \Omega_{G,n}
-\end{equation}
-To justify this convention, we note that a string as in (\ref{NSTRINGLAB EQ}) can be extended by prepending to it the map $\mathsf{lr}(T_0) = T_{-1} \xrightarrow{f_0} T_0$. If one then attempts to define $\Omega_{G,n,-1}^{J}$ by insisting that  $T_{-1}$ also be labeled, it follows that all node labels in each string must coincide, resulting in the coproduct decomposition in (\ref{OMEGANMINUSONE EQ}).
+We will write $(\Omega_G^n)^{\times \lambda}$ to denote the $l$-tuple with 
+$(\Omega_G^n)^{\times \lambda}_j = \Omega_G^n$ if 
+$j \in \lambda_a$ and
+$(\Omega_G^n)^{\times \lambda}_j = \Sigma_G$ if
+$j \in \lambda_i$.
+As such, (\ref{OMEGANMINUSONE EQ}) is abbreviated as
+$\Omega_{G}^{n,-1,\lambda} = \coprod (\Omega_G^n)^{\times \lambda}$.
 \end{notation}
 
+The $\Omega_G^{n,s,\lambda}$ categories are related by a number of obvious functors, which we now catalog.
 
-There are a number of obvious functors relating the $\Omega_{G,n,s}^{J}$ categories, which we now make explicit.
-Given $s\leq s'$ or $J \subset J'$ there are forgetful functors
+Firstly, if $s \leq s'$ there are forgetful functors
 \begin{equation}\label{NKNFGT EQ}
-	\Omega_{G,n,s}^{J} \to \Omega_{G,n,s'}^{J}
-\qquad
-	\Omega_{G,n,s}^{J} \to \Omega_{G,n,s}^{J'}
+	\Omega_{G}^{n,s,\lambda} \to \Omega_{G}^{n,s',\lambda}
 \end{equation}
-The simplicial operators in Notation \ref{SIMPOPERATORS NOT}
-generalize to operators (where $0 \leq i \leq n$, $-1\leq j \leq n$)
-\[
+and the simplicial operators
+in Notation \ref{SIMPOPERATORS NOT}
+generalize to operators (for $0 \leq i \leq n$, $-1\leq j \leq n$)
+\begin{equation}\label{LABSTSIM EQ}
 \begin{tikzcd}[row sep =0,column sep =1em]
 	d_i \colon 
-	\Omega_{G,n,s}^{J} \ar{r} &
-	\Omega_{G,n-1,s-1}^{J} &
+	\Omega_{G}^{n,s,\lambda} \ar{r} &
+	\Omega_{G}^{n-1,s-1,\lambda} &
 	i < s & & & &
 	s_j \colon 
-	\Omega_{G,n,s}^{J} \ar{r} &
-	\Omega_{G,n+1,s+1}^{J} &
+	\Omega_{G}^{n,s,\lambda} \ar{r} &
+	\Omega_{G}^{n+1,s+1,\lambda} &
 	j < s
 \\
 	d_i \colon 
-	\Omega_{G,n,s}^{J} \ar{r} &
-	\Omega_{G,n-1,s}^{J} &
+	\Omega_{G}^{n,s,\lambda} \ar{r} &
+	\Omega_{G}^{n-1,s,\lambda} &
 	s \leq i & & & &
 	s_j \colon 
-	\Omega_{G,n,s}^{J} \ar{r} &
-	\Omega_{G,n+1,s}^{J} &
+	\Omega_{G}^{n,s,\lambda} \ar{r} &
+	\Omega_{G}^{n+1,s,\lambda} &
 	s \leq j
 \end{tikzcd}
-\]
+\end{equation}
 which are compatible with the forgetful functors in the obvious way.
+
+We will prefer to reorganize 
+(\ref{NKNFGT EQ}) and (\ref{LABSTSIM EQ}) somewhat.
+Defining functions 
+$d_i \colon \mathbb{Z} \to \mathbb{Z}$
+and 
+$s_j \colon \mathbb{Z} \to \mathbb{Z}$
+by
+\begin{equation}\label{INTERMAPDEF EQ}
+d_i(s) = 
+	\begin{cases}
+		s-1, & i<s
+	\\
+		s, & s \leq i
+	\end{cases}
+\qquad
+s_j(s) = 
+	\begin{cases}
+		s+1, & j<s
+	\\
+		s, & s \leq j
+	\end{cases}
+\end{equation}
+(\ref{LABSTSIM EQ}) is rewritten as maps
+$
+	d_i \colon 
+	\Omega_{G}^{n,s,\lambda} \to
+	\Omega_{G}^{n-1,d_i(s),\lambda}
+$
+and 
+$
+	s_j \colon 
+	\Omega_{G}^{n,s,\lambda} \to
+	\Omega_{G}^{n+1,s_j(s),\lambda}
+$.
+Therefore, we henceforth write simply
+$\Omega_G^{n,\bullet,\lambda}$ to denote the string of categories $\Omega_G^{n,s,\lambda}$
+and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
+\begin{equation}\label{LABSTSIM2 EQ}
+\begin{tikzcd}[row sep =0,column sep =1em]
+	d_i \colon 
+	\Omega_{G}^{n,\bullet,\lambda} \ar{r} &
+	\Omega_{G}^{n-1,\bullet,\lambda} & & & &
+	s_j \colon 
+	\Omega_{G}^{n,\bullet,\lambda} \ar{r} &
+	\Omega_{G}^{n+1,\bullet,\lambda}
+\end{tikzcd}
+\end{equation}
+
+\begin{remark}
+Considering the ordered sets 
+$\langle n \rangle =\{0 < 1 < \cdots < n < +\infty\}$, the formulas (\ref{INTERMAPDEF EQ}) 
+define functions
+$d_i \colon \langle n \rangle  \to \langle n-1 \rangle$
+,
+$s_j \colon \langle n \rangle  \to \langle n+1 \rangle$
+which preserve $0$ and $+\infty$, except for 
+$s_{-1}$ which preserves only
+$+\infty$.
+This recovers the description of $\Delta^{op}$
+as the category of intervals (i.e. ordered finite sets with a minimum and maximum and maps preserving them).
+\end{remark}
+
+
+Next, the vertex functors $V_G^k$ of
+(\ref{VGNISO EQ}) generalize to functors
+$
+	V_G^k \colon
+	\Omega_G^{n,s,\lambda} \to
+	\Fin_s \wr \Omega_G^{n-k-1,s-k-1,\lambda}
+$
+given by the same formula
+\begin{equation}
+	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
+\end{equation}
+as in (\ref{VGNISO EQ}),
+except now with the $T_m,v_{G e}$ inheriting the node labels from $T_m$ (if any).
+
+The diagrams in (\ref{PIIDEFDI EQ})
+for $i<k$ and $i>k$ now generalize to diagrams
+\begin{equation}\label{PIIDEFDILAB EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda}
+	\ar[equal]{d} 
+&
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda}
+	\ar{d}{d_{i-k-1}} 
+\\
+	|[alias=G2]|
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^{k-1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda}  
+&
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^{k}}&
+	\Fin_s \wr \Omega_{G}^{n-k-2,\bullet,\lambda}  
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
+\end{tikzcd}
+\end{equation}
+while the diagrams in (\ref{PIIDEFDI2 EQ})
+for $j<k$ and $j>k$ generalize to diagrams
+\begin{equation}\label{PIIDEFDI2LAB EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{s_{j}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda}
+	\ar[equal]{d} 
+&
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{s_{j}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda}
+	\ar{d}{s_{j-k-1}} 
+\\
+	|[alias=G2]|
+	\Omega_{G}^{n+1,\bullet,\lambda} \ar{r}[swap]{V_G^{k+1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet, \lambda}  
+&
+	\Omega_{G}^{n+1,\bullet, \lambda} \ar{r}[swap]{V_G^{k}}&
+	\Fin_s \wr \Omega_{G}^{n-k,\bullet,\lambda}  
+\end{tikzcd}
+\end{equation}
+where we note that in all cases the $s$-index $\bullet$
+varies according to (\ref{LABSTSIM EQ}).
+
+Lastly, the $\Omega_G^{n,s,\lambda}$ are also functorial in $\lambda$. Explicitly, given 
+$\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$
+and partitions such that 
+$\lambda' \leq \alpha^{\**} \lambda$
+one has forgetful functors
+\begin{equation}\label{LAMBINC EQ}
+	\Omega_G^{n,s,\lambda'}
+\to
+	\Omega_G^{n,s,\lambda}
+\end{equation}
+compatible with the forgeful functors (\ref{NKNFGT EQ}),
+the simplicial operators $d_i$, $s_j$ and the isomorphisms
+$\pi_i$.
+
+\begin{remark}
+	When $\alpha$ is the identity 
+and $\lambda' \leq \lambda$ the forgetful functors 	
+(\ref{LAMBINC EQ}) are fully faithful inclusions.
+	However, this is not the case for the (\ref{NKNFGT EQ}) forgetful functors. Indeed, regarding the map $T \to U$ in
+	(\ref{SUBSDATUMTREESLAB EQ})
+	as an object in $\Omega_G^{1,0,\lambda}$
+	for $\lambda = 
+	\lambda_a \amalg \lambda_i = \{2\} \amalg \{1\}
+	=\{\bullet\} \amalg \{\circ\}$,
+	changing the label of $a_1 \leq a_2$ to a 
+	$\bullet$-label produces a non isomorphic object
+	$\bar{T} \to U$ of $\Omega_G^{1,0,\lambda}$
+	that forgets to the same object of 
+	$\Omega_G^{1,1,\lambda}$.
+\end{remark}
+
+
+We now extend Notation \ref{OMEGAGNA NOT}.
+
+\begin{notation}
+Let $(A_j)=(A_j \to \Sigma_G)_{1\leq j \leq l}$ be a $l$-tuple of maps over $\Sigma_G$.
+We define 
+$\Omega_{G}^{n,s,\lambda} \wr (A_j) $
+as the pullback
+\begin{equation}\label{OMEGAWRTUP EQ}
+\begin{tikzcd}[row sep=1em]
+	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{dd}& 
+	\Fin \wr \coprod A_j \ar{d}
+\\
+	& \Fin \wr \coprod_l \Sigma_G \ar{d}
+\\
+	\Omega_{G}^{n,s,\lambda} \ar{r}[swap]{V_{G}^{n}} &
+	\Fin \wr \Omega_G^{-1,s-n-1,\lambda}
+\end{tikzcd}
+\end{equation}
+\end{notation}
+
+\begin{remark}
+To unpack \ref{OMEGAWRTUP EQ},
+note first that by (\ref{EXTRACASES EQ}) $\Omega_G^{-1,r,\lambda}$ is simply either 
+$\Sigma_G^{\amalg l}$ if $r<0$ or 
+$\Sigma_G$ for $r \geq 0$.
+We can thus break down
+(\ref{OMEGAWRTUP EQ})
+into the three cases
+$s<0$, $0 \leq s \leq n$ and $n < s$,
+depicted below.
+\begin{equation}
+\begin{tikzcd}[column sep =1.4em]
+	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
+	\Fin \wr \coprod_j A_j \ar{d}
+&
+	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
+	\Fin \wr \coprod_j A_j \ar{d}
+&
+	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
+	\Fin \wr \coprod_j A_j \ar{d}
+\\
+	\coprod (\Omega_{G}^{n})^{\times \lambda} \ar{r}[swap]{V_{G}^{n}} &
+	\Fin \wr \coprod_l \Sigma_G
+&
+	\Omega_{G}^{n,s,\lambda} \ar{r}[swap]{V_{G}^{n}} &
+	\Fin \wr \coprod_l \Sigma_G
+&
+	\Omega_{G}^{n} \ar{r}[swap]{V_{G}^{n}} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\end{equation}
+Therefore, for $s>n$ (\ref{OMEGAWRTUP EQ}) 
+coincides with 
+$\Omega_G^{n} \wr (\coprod_j A_j)$
+as defined in Notation \ref{OMEGAGNA NOT}.
+Moreover, for $s<0$ both squares in the diagram below
+are pullbacks and the bottom composites is $V_G^n$,
+\begin{equation}\label{BOTTOM EQ}
+\begin{tikzcd}[column sep = 4em]
+	\coprod (\Omega_{G}^{n})^{\times \lambda} \wr (A_j) 
+	\ar{r}{\coprod (V_{G}^{n})^{\times \lambda}} \ar{d}&
+	\coprod \Fin \wr A_j \ar{r} \ar{d} & 
+	\Fin \wr \coprod_j A_j \ar{d}
+\\
+	\coprod (\Omega_{G}^{n})^{\times \lambda} \ar{r}[swap]{\coprod (V_{G}^{n})^{\times \lambda}} &
+	\coprod_l \Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \coprod_l \Sigma_G
+\end{tikzcd}
+\end{equation}
+so that there is an identification
+$\Omega_{G}^{n,s,\lambda} \wr (A_j)\simeq 
+\coprod (\Omega_{G}^{n})^{\times \lambda} \wr (A_j)$, 
+where in the right side $(\minus)\wr (\minus)$ is computed entry-wise.
+\end{remark}
+
+\begin{remark}
+The naturality of
+the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
+with regards to $\lambda$ interacts with the tuple $(A_j)$
+in the obvious way, i.e.,
+given $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$,
+$\lambda' \leq \alpha^{\**} \lambda$
+and a map $(B_k) \to \alpha^{\**}(A_j)$ one obtains a natural map
+\[\Omega_{G}^{n,s,\lambda'} \wr (B_k) \to 
+\Omega_{G}^{n,s,\lambda} \wr (A_j).\]
+\end{remark}
+
+
+\begin{proposition}
+All the analogue statements of Proposition \ref{PIIPROP PROP}
+hold for the 
+$\Omega_{G}^{n,s,\lambda}$
+and the 
+$\Omega_{G}^{n,s,\lambda} \wr (A_j)$
+constructions.
+Additionally, the natural squares  (for $n \geq -1$)
+\begin{equation}\label{ADDSQUARE EQ}
+\begin{tikzcd}
+	\Omega_{G}^{n,n,\lambda}
+	\ar{r}{V_{G}^{n}} \ar{d}& 
+	\Fin \wr \coprod_l \Sigma_G \ar{d}
+\\
+	\Omega_{G}^{n} \ar{r}[swap]{V_{G}^{n}} &
+	\Fin \wr \Sigma_G
+\end{tikzcd}
+\end{equation}
+are also pullback squares.
+\end{proposition}
+
+\begin{proof}
+	Firstly, we note that the $\Omega_{G}^{n,s,\lambda}$
+	analogues, as well as the claim for (\ref{ADDSQUARE EQ}), all follow by keeping track of the labels on the strings, with the only part worthy of note being the analogue of (d), stating that the right squares in 
+	(\ref{PIIDEFDILAB EQ}) and
+	(\ref{PIIDEFDI2LAB EQ}) are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble to the correct labels on the top left corner, so that the claim follows by the unlabeled one.
+	
+	For the more general $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions, one can either build the
+	general $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
+	explicitly, or simply mimic the argument in Proposition \ref{PIIPROPA PROP}, thereby reducing to the 
+	$\Omega_{G}^{n,s,\lambda}$ case.
+\end{proof}
+
+\begin{corollary}\label{LABIDEN COR}
+For $-1 \leq s \leq n$ there are natural identifications
+\[
+	\Omega_G^{k} \wr \Omega_G^{n,s,\lambda} \wr (A_j) \simeq
+	\Omega_G^{n+k+1,s+k+1,\lambda} \wr (A_j)
+\qquad
+	\Omega_G^{n,s,\lambda} \wr 
+	(\Omega_G^k)^{\times \lambda}
+	\wr (A_j)
+\simeq
+	\Omega_G^{n+k+1,s,\lambda} \wr (A_j)
+\]
+which identify 
+$V^k_G \wr \Omega_G^{n,s,\lambda} \wr (A_j) $ with 
+$V^k_G \wr (A_j) $
+and 
+$V_G^n \wr (\Omega_G^k)^{\times \lambda}\wr (A_j) $
+with 
+$V_G^n \wr (A_j)$.
+
+Further, these identifications are compatible with each other and associative in the obvious ways, and they induce identifications
+\[
+	d_i \wr \Omega_G^{n,\bullet,\lambda} \simeq d_i 
+\phantom{m}
+	\pi_i \wr \Omega_G^{n,\bullet,\lambda} \simeq \pi_i 
+\phantom{m}
+	s_j \wr \Omega_G^{n,\bullet,\lambda} \simeq s_j 
+\phantom{m}
+	\Omega_G^k \wr d_i \simeq d_{i+k+1} 
+\phantom{m}
+	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} 
+\phantom{m}
+	\Omega_G^k \wr s_j \simeq s_{j+k+1}
+\]
+as well as obvious identifications of forgeful functors.
+\end{corollary}
+
+\begin{proof}
+This is analogous to Corollary \ref{IDEN COR}. For the first identification, the case $s \geq 0$ follows from the diagram below, where we note that the bottom arrow is
+$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
+\[
+\begin{tikzcd}[row sep = 1.5em]
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\Fin^{\wr 2} \wr \coprod (A_j) \ar{r}{\sigma^0} \ar{d}&
+	\Fin \wr \coprod (A_j) \ar{d}
+\\
+	\Omega_G^{n+k+1,s+k+1,\lambda} \ar{r}[swap]{V_G^k} \ar{d}&
+	\Fin \wr \Omega^{n,s,\lambda}_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}&
+	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0} &
+	\Fin \wr \coprod_l \Sigma_G &
+\\
+	\Omega_G^{k,k+1,\lambda} \ar{r}[swap]{V_G^k} &
+	\Fin \wr \Omega_G^{-1,0,\lambda}
+\end{tikzcd}
+\]
+In the $s=-1$ case, the bottom arrow is instead 
+$V_G^k \colon \Omega_G^{k,k,\lambda} \to 
+\Fin \wr \Omega_G^{-1,-1,\lambda} =
+\Fin \wr \coprod_l \Sigma_G$,
+in which case one further attaches (\ref{ADDSQUARE EQ})
+to the diagram.
+
+The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using (\ref{BOTTOM EQ}).
+\[
+\begin{tikzcd}[row sep = 1.5em,column sep =3em]
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\Fin \wr \coprod \Fin \wr A_j \ar{r} \ar{d}&
+	\Fin^{\wr 2} \wr \coprod A_j \ar{r}{\sigma^0} \ar{d}&
+	\Fin \wr \coprod A_j \ar{d}
+\\
+	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}&
+	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{r}[swap]{\Fin \wr \coprod (V_G^n)^{\times \lambda}} \ar{d}&
+	\Fin \wr \coprod_l \Fin \wr \Sigma_G \ar{r} &
+	\Fin^{\wr 2} \wr \coprod \Sigma_G \ar{r}[swap]{\sigma^0}  &
+	\Fin \wr \coprod_l \Sigma_G &
+\\
+	\Omega_G^{n,s,\lambda} \ar{r}[swap]{V_G^n} &
+	\Fin \wr \coprod_l \Sigma_G
+\end{tikzcd}
+\]
+The additional claims are straightforward.
+\end{proof}
 
 
 \begin{remark}
-	For $J \subset J'$ the forgetful functor in (\ref{NKNFGT EQ}) is a fully faithful inclusion. 
-	However, and somewhat subtly, this is not the case the for the $ s \leq s'$ forgetful functors. Indeed, regarding
-	$T \to U$ in Examples \ref{LABELEDTREES EX} as an object in 
-	$\Omega_{\**,n,0}^{\underline{2}}$, changing the label of the $a_1 \leq a_2$ vertex of $T$ from a $\circ$-label to a $\bullet$-label yields an alternate object $\bar{T} \to U$
-	of $\Omega_{\**,n,0}^{\underline{2}}$ forgetting to the same object of $\Omega_{\**,n,1}^{\underline{2}}$, yet $T \to U$ and $\bar{T} \to U$ are not isomorphic.
-	
-	We note that this is a consequence of the fact that substitution data can replace unary nodes by stumps, which have no nodes.
-\end{remark}
-
-Generalizing Notation \ref{INDVNG NOT} there is a commutative diagram 
+The identifications in Corollary \ref{LABIDEN COR} allow for the case $n=-1$,
+which is non-trivial due to the existence of
+ $\Omega_G^{-1,-1,\lambda} = \coprod_l \Sigma_G$,
+ in which case $\Omega_G^{-1,-1,\lambda} \wr (A_j) \simeq \coprod A_j$.
+For $-1\leq s \leq n$ the identifications
 \[
-\begin{tikzcd}
-	\Omega_{G,n,s}^{J} \ar{r}{V_{G,n}} \ar{d}& 
-	\Fin \wr \Sigma_G^{\amalg l} \ar{d}
+	\Omega_G^{n,s,\lambda} =
+	\Omega_G^{s} \wr \Omega_G^{-1,-1} \wr (\Omega_G^{n-s-1})^{\times \lambda}
+\]
+then show that 
+$\Omega_G^{n,s,\lambda} \wr (\minus)$
+encodes (the underlying category of) the functor
+$N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
+Furthermore, the left commutative square below, where vertical arrows are forgetful functors 
+(and the right diagram merely unpacks notation)
+\[
+\begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
+	\Omega^{0,-1,\lambda}_G 
+	\ar{r}{\coprod (V_G^0)^{\times \lambda}} \ar{d} &
+	\coprod \Fin \wr (\Omega_G^{-1})^{\times \lambda} \ar{r} & 
+	\Fin \wr \Omega_G^{-1,-2,\lambda} \ar[equal]{d} 
+&
+	\coprod (\Omega^0_G)^{\times \lambda} \ar{r} \ar{d} &
+	\coprod \Fin \wr \Sigma_G \ar{d}
 \\
-	\Omega_{G,n} \ar{r}[swap]{V_{G,n}} &
-	\Fin \wr \Sigma_G
+	\Omega^{0,0,\lambda}_G \ar{rr}{V_G^0} \ar{d} &&
+	\Fin \wr \Omega_G^{-1,-1,\lambda} \ar{d}
+&
+	\Omega_G^{0,0,\lambda} \ar{r} \ar{d} & 
+	\Fin \wr \coprod \Sigma_G \ar{d}
+\\
+	\Omega^{0,1,\lambda}_G \ar{rr}{V_G^0} &&
+	 \Fin \wr \Omega_G^{-1,0,\lambda}
+&
+	\Omega_G^0 \ar{r} &
+	 \Fin \wr \Sigma_G
 \end{tikzcd}
 \]
-where for a labeled string it is 
-$V_G(T_0 \to \cdots \to T_n) =
-(T_{n,v_{Ge}})_{V_G(T_n)}$, where we regard 
-$T_{n,v_{Ge}} \in \Sigma_G^{\amalg l} \simeq \Omega_{G,-1,-1}^{\underline{l}}$ by using the label in $1,\cdots, l$.
-
-We now expand Notation \ref{OMEGAGNA NOT}.
-
-\begin{notation}
-	Let $\underline{A}$ denote a $\underline{l}$-tuple 
-	$(\pi_j \colon A_j \to \Sigma_G)_{\underline{l}}$ of categories over $\Sigma_G$. We define $\Omega_{G,n,s}^{(\underline{A}),J}$ by the pullback diagram
-\begin{equation}\label{LTUPLEAPULL EQ}
-\begin{tikzcd}
-	\Omega_{G,n,s}^{(\underline{A}),J} \ar{r}{V_{G,n}^{(\underline{A})}} \ar{d}& 
-	\Fin \wr \coprod A_j \ar{d}
-\\
-	\Omega_{G,n,s}^{J} \ar{r}[swap]{V_{G,n}} & 
-	\Fin \wr \Sigma_G^{\amalg l} 
-\end{tikzcd}
-\end{equation}
-Explicitly, an object of $\Omega_{G,n,s}^{(\underline{A}),J}$ consists of a labeled string $T_0 \to \cdots T_n$ as in (\ref{NSTRINGLAB EQ})
-together with 
-a tuple $(a_{v_{Ge}})_{V_G(T_n)}$ such that
-$a_{v_{Ge}} \in A_j$ if $v_{Ge}$ has label $j$ and 
-$\pi_j (a_{v_{Ge}}) = T_{n,v_{Ge}}$.
-\end{notation}
+shows that the forgetful functor
+$\Omega_G^{0,-1,\lambda} \wr (A_j) \to 
+\Omega_G^{0,0,\lambda} \wr (A_j)$
+encodes the natural map
+$\coprod \circ N \Rightarrow N \circ \coprod $.
+\end{remark}
 
 
-The reader may have noticed a certain asymmetry between our definition of the $V_{G,n}$ functors here versus their analogues in \S \ref{PLANARSTRING SEC}, where they were defined iteratively in terms of simpler functors $V_G$. This is because of the possibility that $s=-1$, in which case (\ref{OMEGANMINUSONE EQ}) applies and some caution is needed in that the following result fails.
-
-
-\begin{proposition}\label{ALLSQUARESJ PROP}
-Suppose $0\leq s \leq n$. One has a diagram of pullback squares
-(generalizing (\ref{ALLSQUARES EQ}))
-\begin{equation}\label{ALLSQUARESJ EQ}
-\begin{tikzcd}[column sep = 3em]
-	\Omega^{(\underline{A}),J}_{G,n,s} \ar{r}{V_G^{(A)}} \ar{d}& 
-	\Fin \wr \Omega^{(\underline{A}),J}_{G,n-1,s-1} \ar{r}{\Fin \wr V_{G,n}^{(A)}} \ar{d}&
-	\Fin \wr \Fin \wr \coprod A_j  \ar{d} \ar{r}{\sigma^0} &
-	\Fin \wr \coprod A_j \ar{d}
-\\
-	\Omega_{G,n,s}^J \ar{r}{V_G} \ar{d} &
-	\Fin \wr \Omega_{G,n-1,s-1}^J \ar{r}{\Fin \wr V_{G,n}} \ar{d} &
-	\Fin \wr \Fin \wr \Sigma_G^{\amalg l} \ar{r}{\sigma^0} &
-	\Fin \wr \Sigma_G^{\amalg l}
-\\
-	\Omega_{G,0} \ar{r}{V_G} &
-	\Fin \wr \Sigma_G
-\end{tikzcd}
-\end{equation}
-such that the composite of the top squares is (\ref{LTUPLEAPULL EQ}).
-\end{proposition}
-
-
-\begin{proof}
-	The $V_G$ functors are defined just as in (\ref{VGDEF EQ}) via the formula
-	\[
-	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
-	(T_{1,v_{Ge}} \to \cdots \to
-	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}\]
-with the strings 
-$T_{1,v_{Ge}} \to \cdots \to T_{n,v_{Ge}}$
-inheriting the extra structure in the obvious way.
-
-Since the top composite square, top center square and top right square are all pullback squares, it remains only to show that the bottom left square is a pullback.
-This last claim is simply a variation of Proposition \ref{SUBSASPULL PROP}, and follows from the same proof, since both labels and inertness conditions are inherited when assembling substitution data into trees via Proposition \ref{SUBDATAUNDERPLAN PROP}.
-\end{proof}
+{\color{red} HERE}
 
 
 \subsection{Bar constructions on spans}
