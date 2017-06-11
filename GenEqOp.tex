@@ -3734,7 +3734,7 @@ our substitution results in a format that will be more convenient for our discus
 \S \ref{GENUINE_OP_MONAD_SECTION}.
 
 
-\begin{definition}
+\begin{definition}\label{PLANSTR DEF}
 	The category $\Omega_{G}^n$ of 
 	\textit{planar $n$-strings} is the category whose objects are strings
 \begin{equation}\label{STRINGOBJ EQ}
@@ -5651,21 +5651,29 @@ In particular, each level of
 is thus a left Kan extension over some category
 $\Omega_G^{n,\lambda_l}$, which we explicitly identify in 
 \S \ref{LABELSTRI SEC}, giving the first identification below.
-\begin{align*}
-	\mathcal{P} \coprod_{\mathbb{F} X} \mathbb{F} Y \simeq &
+\begin{equation}\label{EXTTREEFOR EQ}
+	\mathcal{P} \coprod_{\mathbb{F} X} \mathbb{F} Y 
+\simeq 
 	\colim_{(\Delta \times \Delta)^{op}}
 	\left(
 	\mathsf{Lan}_{\left( \Omega_{G}^{n,\lambda_l} \to \Sigma_G \right)^{op}}
 	N_{n,l}^{(\mathcal{P},X,Y)}
 	\right)
-%\\
-	\simeq 
-%&
+\simeq 
 	\mathsf{Lan}_{\left( \Omega_{G}^{e} \to \Sigma_G \right)^{op}}
 	\tilde{N}^{(\mathcal{P},X,Y)}
-\end{align*}
-
-
+\end{equation}
+The second identification, 
+which reduces the calculation to a single left Kan extension, is an instance of 
+Proposition \ref{RANTRANS PROP}, 
+a result whose proof is straightforward but lengthy, 
+and thus postponed to the appendix.
+The category $\Omega_G^e$ of \textit{extensions} trees 
+appearing on the right side
+is obtained as a categorical realization
+$\Omega_G^e = |\Omega_{G}^{n,\lambda_l}|$,
+which we explicitly describe and analyze in 
+\S \ref{EXTTREE SEC}.
 
 {\color{red} HERE}
 
@@ -5693,7 +5701,7 @@ $N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}$,
 though we will find it preferable and no harder to tackle the more general case of the functors 
 $N^{s+1} \circ \coprod \circ (N^{\times \lambda})^{\circ n-s}$.
 
-\begin{definition}
+\begin{definition}\label{LABMAP DEF}
 A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) is a pair $(T,V_G(T) \to \{1,\cdots,l\})$ with $T \in \Omega_G$, which we think of as a $G$-tree together with $G$-vertices labels in $1,\cdots,l$.
 
 Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if for each $G$-vertex $v_{G e}$ of $T$ with label $j$, the vertices of the subtree $S_{v_{G e}}$ are all labeled by $j$.
@@ -5901,7 +5909,7 @@ and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
 \end{tikzcd}
 \end{equation}
 
-\begin{remark}
+\begin{remark}\label{ORDLABEL REM}
 Considering the ordered sets 
 $\langle n \rangle =\{0 < 1 < \cdots < n < +\infty\}$, the formulas (\ref{INTERMAPDEF EQ}) 
 define functions
@@ -6083,7 +6091,7 @@ $\Omega_{G}^{n,s,\lambda} \wr (A_j)\simeq
 where in the right side $(\minus)\wr (\minus)$ is computed entry-wise.
 \end{remark}
 
-\begin{remark}
+\begin{remark} \label{ORDLABEL REM}
 The naturality of
 the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
 with regards to $\lambda$ interacts with the tuple $(A_j)$
@@ -6097,12 +6105,14 @@ and a map $(B_k) \to \alpha^{\**}(A_j)$ one obtains a natural map
 
 
 \begin{proposition}
-All the analogue statements of Proposition \ref{PIIPROP PROP}
+The analogue statements of Proposition \ref{PIIPROP PROP}
 hold for the 
 $\Omega_{G}^{n,s,\lambda}$
 and the 
 $\Omega_{G}^{n,s,\lambda} \wr (A_j)$
-constructions.
+constructions, where in the latter case
+we exclude the statements involving $d_n$.
+
 Additionally, the natural squares  (for $n \geq -1$)
 \begin{equation}\label{ADDSQUARE EQ}
 \begin{tikzcd}
@@ -6151,17 +6161,19 @@ $V_G^n \wr (A_j)$.
 
 Further, these identifications are compatible with each other and associative in the obvious ways, and they induce identifications
 \[
-	d_i \wr \Omega_G^{n,\bullet,\lambda} \simeq d_i 
-\phantom{m}
-	\pi_i \wr \Omega_G^{n,\bullet,\lambda} \simeq \pi_i 
-\phantom{m}
-	s_j \wr \Omega_G^{n,\bullet,\lambda} \simeq s_j 
-\phantom{m}
+\begin{tikzcd}[row sep =0]
+	d_i \wr (\Omega_G^{n})^{\times \lambda} \simeq d_i 
+&
+	\pi_i \wr (\Omega_G^{n})^{\times \lambda} \simeq \pi_i 
+&
+	s_j \wr (\Omega_G^{n})^{\times \lambda} \simeq s_j 
+\\
 	\Omega_G^k \wr d_i \simeq d_{i+k+1} 
-\phantom{m}
+&
 	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} 
-\phantom{m}
+&
 	\Omega_G^k \wr s_j \simeq s_{j+k+1}
+\end{tikzcd}
 \]
 as well as obvious identifications of forgeful functors.
 \end{corollary}
@@ -6231,7 +6243,7 @@ encodes (the underlying category of) the functor
 $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 Furthermore, the left commutative square below, where vertical arrows are forgetful functors 
 (and the right diagram merely unpacks notation)
-\[
+\begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
 	\ar{r}{\coprod (V_G^0)^{\times \lambda}} \ar{d} &
@@ -6253,7 +6265,7 @@ Furthermore, the left commutative square below, where vertical arrows are forget
 	\Omega_G^0 \ar{r} &
 	 \Fin \wr \Sigma_G
 \end{tikzcd}
-\]
+\end{equation}
 shows that the forgetful functor
 $\Omega_G^{0,-1,\lambda} \wr (A_j) \to 
 \Omega_G^{0,0,\lambda} \wr (A_j)$
@@ -6262,452 +6274,177 @@ $\coprod \circ N \Rightarrow N \circ \coprod $.
 \end{remark}
 
 
-{\color{red} HERE}
 
+\subsection{The category of extension trees}
+\label{EXTTREE SEC}
 
-\subsection{Bar constructions on spans}
+The purpose of this section is to make (\ref{EXTTREEFOR EQ}) explicit. We start by discussing 
+realizations of simplicial objects in $\mathsf{Cat}$.
 
-We use the results in the previous sections to obtain a string description of the bar constructions
-\[
-N \circ \amalg \circ (N^{\times J})^{\circ n} \underline{A} = 
-\coprod_J^a N^{n +1} A_j \amalg^a
-\coprod_{\underline{l}-J}^a N A_j
-\]
-for $\underline{A} = \left(A_j \right)$ a tuple of $N$-algebras.
+Recalling the standard cosimplicial object
+$[\bullet] \in \mathsf{Cat}^{\Delta}$ given by 
+$[n]=(0 \to 1 \to \cdots \to n)$
+yields the following definition.
 
-For simplicity, we discuss first the particular case 
-$\coprod^a N^{n+1} A$. Writing the span as 
-$\Sigma_G \leftarrow A \xrightarrow{F} \mathcal{V}$
-the identifications 
-$\Omega_{G,0}^{\left( \Omega_{G,n}^{(A)} \right)} \simeq \Omega_{G,n+1}^{(A)}$
-iteratively identify the operator in the bar construction
-$N^{n+1} A$ as follows.
+\begin{definition}
+	The left adjoint below is called the 
+	\textit{realization} functor.
+	\[
+	|\minus|\colon
+	\mathsf{Cat}^{\Delta^{op}} 
+		\rightleftarrows
+	\mathsf{Cat} 
+	\colon (\minus)^{[\bullet]}
+	\]
+\end{definition}
 
-The top boundaries $d_n$ have natural transformation given by
-\begin{equation}
-	\begin{tikzcd}[column sep=3.7em]
-	\Omega_{G,n}^{(A)} \ar{d} \ar{r}{V_G^{\circ n}} &
-	\Fin^{\wr n} \wr \Omega_{G,0}^{(A)} \ar{r}{\Fin^{\wr n}\wr F_1} \ar{d}&
-	|[alias=dog2]|
-	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar[equal]{d} &
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n}} &
-	|[alias=cat3]|
-	\Fin^{\wr n} \wr A \ar{r}[swap]{\Fin^{\wr n} \wr F} &
-	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n}} &
-	|[alias=dog]|
-	\mathcal{V}^{op}
-	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\Fin^{\wr n} \wr m"]
-	\end{tikzcd}
-\end{equation}
-where $m$ is the natural transformation component of the multiplication $NA \to A$, and the remaining differentials
-$d_i$ for $0 \leq i < n$ are given by
-\begin{equation}\label{REMAINDIFF EQ}
-	\begin{tikzcd}[column sep=3.7em]
-	\Omega_{G,n}^{(A)} \ar{d}[swap]{d_i^{(A)}} \ar{r}{V_G^{\circ n + 1}} &
-	|[alias=dog2]|
-	\Fin^{\wr n+1} \wr A \ar{r}{F} \ar{d}{\sigma^i}&
-	\Fin^{\wr n+1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n+1}}  \ar{d}{\sigma^i} &
-	|[alias=dog3]|
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	|[alias=cat2]|
-	\Omega_{G,n-1}^{(A)} \ar{r}[swap]{V_G^{\circ n}} &
-	\Fin^{\wr n} \wr A \ar{r}[swap]{F} &
-	|[alias=cat3]|
-	\Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n}} &
-	|[alias=dog]|
-	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(A)}"]
-	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
-	\end{tikzcd}
-\end{equation}
-where $\pi_i^{(A)}$ interchanges lexicographic orders on the $i$-th $\Fin$ coordinate of $F^{\wr n}$ and $\alpha_i$ is the natural associativity isomorphism.
+\begin{remark}\label{REALEX REM}
+Suppose that $\C \in \mathsf{Cat}$ contains subcategories 
+$\C_h$, $\C^v$ whose arrows span those of $\C$.
+Defining 
+$\mathcal{C}^{v}_{h,\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
+so that the objects of $\mathcal{C}^{v}_{h,n}$ are $n$-strings in $\C_h$ and the arrows are compatible $n$-tuples of
+arrows in $\C^v$, it is straightforward to show
+that it is
+$|\mathcal{C}^{v}_{h,\bullet}| = \C$.
 
-{\color{blue} Maybe add degeneracies}
+An immediate example is given by the planar strings in Definition \ref{PLANSTR DEF}. Writing 
+$\C = \Omega_G^{\mathsf{t}}$ the category of tall maps,
+$\C_h = \Omega_G^{\mathsf{pt}}$ the category of planar tall maps and
+$\C^v = \Omega_G^{0}$ the category of quotients,
+one has $\C_{h,\bullet}^{v} = \Omega_G^n$ and thus
+$|\Omega_G^n| = \Omega_G^{\mathsf{t}}$.
 
-Similarly, Proposition \ref{ALLSQUARESJ PROP} shows that
-$\Omega_{G,n}^{(\underline{A})} \simeq
-\Omega_{G,0}^{\left( \coprod \Omega_{G,n-1}^{(A_j)} \right)}$
-so that the top boundaries $d_n$ in the bar construction
-$N \circ \amalg \circ (N^{\times l})^{\circ n} \underline{A}$
-are given by
-\begin{equation}
-	\begin{tikzcd}[column sep=2em]
-	\Omega_{G,n}^{(\underline{A})} \ar{d} \ar{r}{V_G} &
-	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{r}{V_G^{\circ n-1}}&
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \Omega_{G,0}^{(A_j)} \ar{r}{F_1} \ar{d}&
-	|[alias=dog2]|
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n-1}}  \ar[equal]{d} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi} &
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	\Omega_{G,n-1}^{(\underline{A})} \ar{r}[swap]{V_G} &
-	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r}[swap]{V_G^{\circ n-1}}&
-	|[alias=cat3]|
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr A_j \ar{r}[swap]{F} &
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi} &
-	|[alias=dog]|
-	\mathcal{V}^{op}
-	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\underline{m}"]
-	\end{tikzcd}
-\end{equation}
-where $\underline{m}$ stands for the functor induced by the tuple of multiplication maps $m_j \colon N A_j \to A_j$, 
-and the other boundaries $d_i$ for $0 \leq i < n$ are given by
-\begin{equation}\label{DISJBARDN EQ}
-	\begin{tikzcd}[column sep=2em,row sep=3em]
-	\Omega_{G,n}^{(\underline{A})} 
-	\ar{d}[swap]{d_i^{(\underline{A})}} \ar{r}{V_G} &
-	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{r}{V_G^{\circ n}} &
-	|[alias=dog2]|
-	\Fin \wr \coprod \Fin^{\wr n} \wr A \ar{r}{F} \ar{d}{\sigma^i}&
-	\Fin \wr \coprod \Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}{\Pi^{\circ n}}  \ar{d}{\sigma^i} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\Pi} &
-	|[alias=dog3]|
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	|[alias=cat3]|
-	\Omega_{G,n-1}^{(\underline{A})} \ar{r}[swap]{V_G} &
-	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r}[swap]{V_G^{\circ n-1}}&
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr A \ar{r}[swap]{F} &
-	|[alias=cat2]|
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi^{\circ n-1}} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\Pi} &
-	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(\underline{A})}"]
-	\arrow[Leftrightarrow, from=dog3, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
-	\end{tikzcd}
-\end{equation}
-where again $\pi_i^{(\underline{A})}$ interchanges lexicographic orders on the $i$-th $\Fin$ coordinate and $\alpha_i$ is again an associativity isomorphism.
-We note that (\ref{DISJBARDN EQ}) follows directly from 
-(\ref{REMAINDIFF EQ}) for $0<i<n$, but that the case $i=0$, which uses the $N^{\times l}$ right action on $N \circ \amalg$ (cf. Remark \ref{TALPHAKMOD REM}), which after unpacked leads to the composite diagram below.
-\begin{equation}\label{ASSOCSPANJ1 EQ}
-	\begin{tikzcd}[column sep=0.5em]
-	\Omega_{G,n}^{(\underline{A})}  \ar{d} \ar{r} &
-	\Fin \wr \coprod \Omega_{G,n-1}^{(A_j)} \ar{d} \ar{rr} &&
-	\Fin \wr \coprod \Fin^{\wr n-1} A_j \ar{d} \ar{r}&
-	\Fin \wr \coprod \Fin^{\wr n-1} \mathcal{V}^{op} \ar{d}\ar{rr} & &
-	|[alias=cat3]|
-	\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	\Omega_{G,n,1}^{(\underline{A})} \ar{r} \ar{d}[swap]{d_0^{(\underline{A}}} &
-	|[alias=cat2]|
-	\Fin \wr \Omega_{G,n-1}^{(\underline{A})} \ar{r} &
-	|[alias=FFOmega]| \Fin^{\wr 2} \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{d}{\sigma^0} \ar{r} &
-	\Fin^{\wr 2} \wr \coprod \Fin^{\wr n-2} A_j \ar{d}{\sigma^0} \ar{r} &
-	\Fin^{\wr 2} \wr \coprod \Fin^{\wr n-2} \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r}&
-	|[alias=dog3]|
-	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r} &
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
-	|[alias=dog]|
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	|[alias=Omega]|\Omega_{G,n-1}^{(\underline{A})} \ar{rr} &&
-	\Fin \wr \coprod \Omega_{G,n-2}^{(A_j)} \ar{r} &
-	\Fin \wr \coprod \Fin^{\wr n-2} A_j \ar{r} &
-	\Fin \wr \coprod \Fin^{\wr n-2} \mathcal{V}^{op} \ar{r}&
-	|[alias=cat]|
-	\Fin \wr \mathcal{V}^{op} \ar{rr} &&
-	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi_0"]
-	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha_0"]
-	\end{tikzcd}
-\end{equation}
-%Note: the top section can be factored by
-%\[
-%\begin{tikzcd}
-%	\coprod \Omega_{n+1}^{(A_j)} \ar{r} \ar{d}&
-%	\coprod \Fin \wr \Omega_{n}^{(A_j)} \ar{d}
-%\\
-%	\coprod \Omega_{n+1}^{(\underline{A})} \ar{r} \ar{d} &
-%	\coprod \Fin \wr \coprod \Omega_{n}^{(A_j)} \ar{d}
-%\\
-%	\Omega_{n+1}^{(\underline{A})} \ar{r} &
-%	\Fin \wr \coprod \Omega_{n}^{(A_j)}
-%\end{tikzcd}
-%\]
-Finally, using the inclusions $\Omega_{G,n}^{(\underline{A}),J} \hookrightarrow \Omega_{G,n}^{(\underline{A})}$,
-one obtains analogous descriptions of the bar constructions 
-$N \circ \amalg \circ (N^{\times J})^{\circ n} \underline{A}$, 
-depicted below.
-\begin{equation}
-	\begin{tikzcd}[column sep=2em]
-	\Omega_{G,n}^{(\underline{A}),J} \ar{d} \ar{r} &
-	\Fin \wr \left( \coprod_J \Fin^{\wr n-1} \wr \Omega_{G,0}^{(A_j)} 
-	\amalg \coprod_{\underline{l}-J} A_j \right)
-	\ar{r}{F_1} \ar{d}&
-	|[alias=dog2]|
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r}  \ar[equal]{d} &
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	\Omega_{G,n-1}^{(\underline{A}),J} \ar{r} &
-	|[alias=cat3]|
-	\Fin \wr \left( \coprod_J \Fin^{\wr n-1} \wr A_j
-	\amalg \coprod_{\underline{l}-J} A_j \right)
-	\ar{r}[swap]{F} &
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r} &
-	\mathcal{V}^{op}
-	\arrow[Rightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\underline{m}"]
-	\end{tikzcd}
-\end{equation}
-
-\begin{equation}\label{DISJBARDNJ EQ}
-	\begin{tikzcd}[column sep=2em,row sep=3em]
-	\Omega_{G,n}^{(\underline{A}),J} 
-	\ar{d}[swap]{d_i^{\underline{A}}} \ar{r} &
-	|[alias=dog2]|
-	\Fin \wr \left( \coprod_J \Fin^{\wr n} \wr A_j 
-	\amalg \coprod_{\underline{l}-J} A_j \right)
-	\ar{r}{F} \ar{d}{\sigma^i}&
-	\Fin \wr \coprod \Fin^{\wr n} \wr \mathcal{V}^{op} \ar{r}  \ar{d}{\sigma^i} &
-	|[alias=dog3]|
-	\mathcal{V}^{op} \ar[equal]{d}
-\\
-	|[alias=cat3]|
-	\Omega_{G,n-1}^{(\underline{A}),J} \ar{r} &
-	\Fin \wr \left( \coprod_J \Fin^{\wr n-1} \wr A_j
-	\amalg \coprod_{\underline{l}-J} A_j \right) \ar{r}[swap]{F} &
-	|[alias=cat2]|
-	\Fin \wr \coprod \Fin^{\wr n-1} \wr \mathcal{V}^{op} \ar{r} &
-	\mathcal{V}^{op}
-	\arrow[Leftrightarrow, from=dog2, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\pi_i^{(\underline{A})}"]
-	\arrow[Leftrightarrow, from=dog3, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\alpha_i"]
-	\end{tikzcd}
-\end{equation}
-
-
-\subsection{Transferring simplicial colimits of left Kan extensions} \label{TRANSFSIMP SEC}
-
-
-Given genuine equivariant operads 
-$X,Y \in \mathsf{Op}_G$
-one has an isomorphism
-\[
-	X \amalg^a Y 
-\simeq
-	\colim_{\Delta^{op}} 
-	\left(
-	\mathbb{F}_G^{\bullet+1} X \amalg^a \mathbb{F}_G^{\bullet+1} Y
-	\right)
-\]
-so that combining Remarks \ref{REPACKAGERES REM}
-and
-Remark \ref{PRECOMPPOSTCOMP REM}
-with the results in the previous section one obtains isomorphisms
-\begin{align}
-	X \amalg^a Y  
-\simeq &
-	\colim_{\Delta^{op}} 
-	\left(
-	\mathsf{Lan} \left(
-	N^{\bullet+1} \iota X \amalg^a N^{\bullet+1} \iota Y
-	\right) \right)
-\\
-\simeq &
-	\colim_{\Delta^{op}} 
-	\left(
-	\mathsf{Lan} \left(
-	N \circ \amalg \circ (N^{\times 2})^{\bullet} (\iota X,\iota Y)
-	\right) \right)
-\\ \label{COLIMLAN EQ}
-\simeq &
-	\colim_{\Delta^{op}} 
-	\left(
-	\mathsf{Lan}_{\Omega_{G,\bullet}^{\underline{2},op} \to \Sigma_G^{op}}
-	N_{\bullet}^{(X,Y)}
-	\right)
-\end{align}
-where we write 
-$N_{\bullet}^{(X,Y)} \colon \Omega_{G,\bullet}^{\underline{2},op} \to \mathcal{V}$
-for the induced functor.
-
-The purpose of this section will be show that one can repackage 
-formulas such as (\ref{COLIMLAN EQ})
-with a single left Kan extension over a category
-$\Omega_G^{\underline{2}} = |\Omega_{G,\bullet}^{\underline{2}}|$
-obtained from 
-$\Omega_{G,\bullet}^{\underline{2}}$
-via realization in $\mathsf{Cat}$.
-
-We note that $\Omega_{G,\bullet}^{\underline{2}}$ together with the corresponding functors to $\Sigma_G$, $\mathcal{V}^{op}$
-can be viewed as a simplicial object 
-$\Delta^{op} \to \mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$,
-and our first task will be to repackage such functors in terms of Grothendieck constructions.
-
-
-
-
-
-
-\subsection{The category of extension trees}\label{EXTTREE SEC}
-
-In this section we combine the previous sections to obtain a compact description of free extension pushouts
-\begin{equation}\label{FREEEXT EQ}
-\begin{tikzcd}
-	\mathbb{F}_G A \ar{r} \ar{d} & X \ar{d}
-\\
-	\mathbb{F}_G B \ar{r} & Y
-\end{tikzcd}
-\end{equation}
-as a left Kan extension over a convenient category of trees.
-
-For motivation, we first explain how to obtain a similar description for the simpler case of a coproduct $X \amalg^a Y$.
-By (\ref{COLIMLAN EQ}), one has a description 
-\begin{align*}
-	X \amalg^a Y \simeq  &
-	\colim_{\Delta^{op}}
-	\left(
-	\mathsf{Lan}_{\Omega_{G,\bullet}^{\underline{2},op} \to \Sigma_G^{op}}
-	N_{\bullet}^{(X,Y)}
-	\right)
-\\
-	\simeq &
-	\mathsf{Lan}_{\Delta^{op} \ltimes \Omega_{G,\bullet}^{\underline{2},op} \to \Sigma_G^{op}}
-	N_{\bullet}^{(X,Y)}
-\end{align*}
-where the second identification follows from formal properties of Grothendieck constructions.
-
-Combining the fact that (\ref{DISJBARDNJ EQ}) consists of natural isomorphisms with (the Remark \ref{DUALRESULTS REM} dual of) Lemma \ref{TWISTING LEMMA}, yields an isomorphic twisted functor $\tilde{N}_{\bullet}^{(X,Y)}$ with strictly commutative $s_i$ and $d_i$ for $i \neq n$. The dual of Lemma \ref{SOURCEFACT LEM} now says that $\tilde{N}_{\bullet}^{(X,Y)}$ factors via the target map $t$ though 
-$\Omega_G^{\underline{2},op} \simeq
- |\Omega_{G,\bullet}^{\underline{2},op}|$
-(writing $\tilde{N}^{(X,Y)}$ for the factorization)
-and thus the dual of 
-Corollary \ref{SOURCELANFINAL COR}
-finally yields
-\begin{equation}
-	X \amalg^a Y \simeq 
-	\mathsf{Lan}_{\Omega_{G}^{\underline{2},op} \to \Sigma_G^{op}}
-	\tilde{N}^{(X,Y)}.
-\end{equation}
-We recall that by Example \ref{PLANARSTRING EX}, $\Omega_{G}^{\underline{2}}$ is simply the category of $\underline{2}$-labeled trees and tall label maps.
-
-More generally, one has 
-\begin{equation}\label{LANCOPRODDESC}
-	\coprod^a_{J} X_j \amalg^a \coprod^a_{\underline{l}-J}
-	\mathbb{F}_G X_j \simeq 
-	\mathsf{Lan}_{\Omega_{G}^{J,op} \to \Sigma_G^{op}}
-	\tilde{N}^{(\underline{X})}.
-\end{equation}
-where $\Omega_{G}^{J}$ is the category of $\underline{l}$-labeled trees and tall $(\underline{l}-J)$-inert label maps.
-
-
-\begin{remark}
-We note that the twisting $\tilde{N}_{\bullet}^{(X,Y)}$ is fairly harmless. 
-For explicitness, we focus on the simplest case of a ``unary coprodut'', in which case (\ref{LANCOPRODDESC})
-is simply recovering the genuine equivariant operad $X$ from its bar resolution. 
-In that case $N^X_2 \colon \Omega_{G,2}^{op} \to \mathcal{V}$
-is given by the top map in 
-(\ref{ASSOCSPAN1 EQ}) or, equivalently, by the top map in 
-(\ref{ASSOCSPAN2 EQ}) (we note that, in the notation therein, it is $A=\Sigma_G$). On the other hand, the twisted map
-$\tilde{N}^X_2 \colon \Omega_{G,2}^{op} \to \mathcal{V}$
-is given by the left bottom composite in either of (\ref{ASSOCSPAN1 EQ}), (\ref{ASSOCSPAN2 EQ}).
-Informally, the role of this twisting is therefore simply that of replacing the order on $V_G(T_n)$ induced lexicographically by planar strings 
-$T_0 \to \cdots \to T_n$
-with the simpler order induced directly from $T_n$.
-
-In what follows we will largely be able to ignore this technicality. Indeed, the role of lexicographic orders
-in building (\ref{LANCOPRODDESC}) is that of guaranteeing that 
-$\tilde{N}_{\bullet}$ satisfies the necessary simplicial identities, which are ensured by appealing to the bar construction for the monad $N$.
+Similarly, noting that the
+$\Omega_G^{n,\lambda} = \Omega_G^{n,0,\lambda}$
+form a simplicial object,
+we have that the
+$|\Omega_G^{n,\lambda}| = \Omega_G^{\mathsf{t},\lambda}$
+is the category of tall maps between
+$l$-labeled trees that induce quotients on 
+nodes with $\lambda$-inert labels.
 \end{remark}
 
+In the following statement, we note that 
+it is shown in Lemma \ref{OBJGENREL LEMMA}
+that $ob(|A_{\bullet}|) \simeq ob(A_0)$
+and that arrows in $|A_{\bullet}|$ are generated by
+the arrows in $A_0$ together with arrows 
+$d_1(a) \to d_0(a)$ for each $a \in A_1$.
 
-We now turn to the task of building (\ref{FREEEXT EQ})
-as a left Kan extension. One has a colimit description
-\begin{equation}\label{FREEEXTUSEFCOL EQ}
-	\mathbb{F} B \coprod_{\mathbb{F} A} X
-\simeq
-	\colim_{\Delta^{op}} \left(
-\begin{tikzcd}[column sep = 1em]
-	\mathbb{F} B \amalg \mathbb{F} A \amalg X &
-	\mathbb{F} B \amalg \mathbb{F} A \amalg \mathbb{F} A \amalg \mathbb{F} A  \amalg X
-	\ar[l,shift left=2pt] \ar[l,shift left=-2pt] &	
-	\mathbb{F} B \amalg \mathbb{F} A \amalg \mathbb{F} A \amalg \mathbb{F} A \amalg \mathbb{F} A \amalg \mathbb{F} A  \amalg X
-	\ar[l,shift left=4pt] \ar[l,shift left=-4pt]  \ar[l] &
-	\cdots
-\end{tikzcd}
+
+\begin{proposition}\label{RANTRANS PROP}
+Given a simplicial object
+$\Sigma_G \leftarrow A_\bullet \xrightarrow{N_{\bullet}} \mathcal{V}^{op}$ 
+in $ \mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$
+such that the natural transformation components of the differential operators 
+$d_i$, $0\leq i < n$ and $s_j$, $0 \leq j \leq n$
+are isomorphisms,
+there is an identification
+\begin{align*}
+	\colim_{\Delta^{op}}
+	\left(
+	\mathsf{Ran}_{A_n \to \Sigma_G}
+	N_{n}
 	\right)
-\end{equation}
-where all differentials are fold maps of $\mathbb{F} A$ except the $n$-th differential $d_n$, which is induced by the two maps $\mathbb{F}A \to X$, $\mathbb{F}A \to \mathbb{F}B$.
-
-By the previous discussion each individual object 
-$X \amalg (\mathbb{F}A)^{\amalg 2n+1} \amalg \mathbb{F}B$ in
-(\ref{FREEEXTUSEFCOL EQ})
-can be described as a left Kan extension over the tree category 
-$\Omega_{G}^{\{X\}}$ where 
-$\{X\} \subset \{B,A,\cdots,A,X\}$ is a simpleton.
-The maps in (\ref{FREEEXTUSEFCOL EQ}) can themselves be encoded as span maps between the $\Omega_{G}^{\{X\}}$.
-To see this, we make (\ref{FREEEXTUSEFCOL EQ}) more precise.
-Firstly, we write $\langle n \rangle$ for the poset
+%\\
+	\simeq 
+%&
+	\mathsf{Ran}_{ |A_{\bullet}| \to \Sigma_G }
+	\tilde{N}
+\end{align*}
+where $\tilde{N}\colon |A_{\bullet}| \to \mathcal{V}^{op}$
+is given by $N_0$ on objects and generating arrows 
+in $A_0$, and on generating arrows $d_1(a) \to d_0(a)$
+for $a \in A_1$ as the composite
 \[
-	- \infty \leq -n \leq -n+1 \leq
-\cdots
-	\leq -1 \leq 0 \leq 1 \leq
-\cdots
-	\leq n-1 \leq n \leq + \infty.
+\begin{tikzcd}[column sep =3em]
+	|[alias=TA]|
+	A_0 \ar{rd} & 
+	A_1 \ar{l}[swap]{d_1} \ar{d}[name=T]{}[swap,name=B]{}
+	\ar{r}{d_0} &
+	|[alias=BA]|
+	A_0 \ar{ld}
+\\
+	& \mathcal{V}^{op}
+	\arrow[Rightarrow,from=TA,to=T,shorten <=0.15cm,,shorten >=0.15cm]
+	\arrow[Leftrightarrow,from=BA,to=B,shorten <=0.15cm,,shorten >=0.15cm]
+\end{tikzcd}
 \]
-The posets $\langle n \rangle$ together with antisymmetric (i.e. such that $f(-x)=-f(x)$) poset maps preserving all three of $-\infty, 0, +\infty$
-then form a simplicial object\footnote{Indeed, we recall that the opposite simplex category $\Delta^{op}$ can equivalently described as the category of \textit{intervals}, i.e. finite ordered posets with distinct top and bottom, along with order maps preserving both top and bottom.
-$\langle n \rangle$ can then be regarded as obtained by gluing the interval $0\leq 1 \leq \cdots \leq n \leq + \infty$ with its opposite.}
-$\langle \minus \rangle \colon \Delta^{op} \to \Fin$.
+\end{proposition}
 
 
-(\ref{FREEEXT EQ}) thus induces a simplicial object
-$(B,A,X)_{\langle n \rangle} \in \Fin \wr \mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$.
+Proposition \ref{RANTRANS PROP} applies to both directions of 
+the bisimplicial object
+$N ( N^{\circ n} \iota \mathcal{P} \amalg
+ \iota X^{\amalg 2l+1}) \amalg Y)$
+in (\ref{LANLEVELFOR EQ}).
+Indeed, in the $n$ direction all $d_i$ with $0 < i < n$
+are induced by the multiplication $NN \to N$ defined in 
+(\ref{MULTDEFSPAN EQ}) while $d_0$
+is induced by the composite
+$N \circ \coprod \circ N \to N N \circ \coprod \to N \circ \coprod$, with the second map again given by composition
+and the first induced
+by the natural map 
+$\coprod \circ N \to N \circ \coprod$, which is encoded by a strictly commutative diagram of spans,
+as seen using the top part of (\ref{NATCOP EQ})
+(or, more abstractly, 
+it also suffices to note that 
+$N$ preserves arrows in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$ given by strictly commutative diagrams).
+Degeneracies are similar.
 
-Each level of $(\iota B,\iota A,\iota X)_{\langle n \rangle}$ is then a $N^{\times \{+\infty\}}$-algebra on 
-$\left(
-\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})
-\right)^{\times \langle n \rangle}$, compatibly with the simplicial maps. One thus obtains a \textit{bisimplicial} object 
-\[
-	\Sigma_G^{op} \leftarrow 
-	\Omega_{G,\bullet}^{\{+\infty\}_{\langle \bullet \rangle},op}
-	\xrightarrow{N_{\bullet}^{(B,A,X)_{\langle \bullet \rangle}}}
-	\mathcal{V}
-\]
-on $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
-whose realization along the string direction yields the
-spans 
-\begin{equation}\label{PARTREALSPAN EQ}
-	\Sigma_G^{op} \leftarrow 
-	\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle},op}
-	\xrightarrow{N^{(B,A,X)_{\langle \bullet \rangle}}}
-	\mathcal{V}
-\end{equation}
-discussed above, except now assembled into a simplicial object in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$.
+As for the $l$ direction, we note that our convention on 
+the double bar construction 
+$B_l(\mathcal{P}, \mathbb{F}X, \mathbb{F}X, \mathbb{F}X, \mathbb{F} Y)$,
+is symmetric, 
+with $d_l$ encoding both of the maps
+$\mathbb{F}X \to \mathbb{F} Y$ 
+and 
+$\mathbb{F}X \to \mathbb{F} \mathcal{P}$
+and the remaining differentials given by fold maps.
+Or, more precisely, the action of the differential operators
+on the sets of labels
+$\langle l \rangle = 
+\{-\infty,-l, \cdots -1,0,1,\cdots,l,+\infty\}$
+is given by extending the functions in 
+Remark \ref{ORDLABEL REM} anti-symmetrically.
+But then the differential operators 
+$d_i$, $s_j$ for $0\leq i<l$ and $0\leq j \leq l$
+correspond to instances of the naturality in 
+Remark \ref{ORDLABEL REM}
+when $(B_k) =\alpha^{\**}(A_j)$,
+and are hence given by strictly commutative maps of spans.
 
+Our next task is thus that of identifying the category of extension trees $\Omega_G^e$ appearing
+in (\ref{EXTTREEFOR EQ}),
+i.e. to produce an explicit model for the double realization
+$|\Omega_G^{n,\lambda_l}|$.
+By Remark \ref{REALEX REM}
+we can first perform the realization in the $n$ direction, so as to obtain
+$|\Omega_G^{n,\lambda_l}|=|\Omega_G^{\mathsf{t},\lambda_l}|$,
+where we recall that 
+$\Omega_G^{\mathsf{t},\lambda_l}$
+consists of $\langle l \rangle$-labelled trees
+together with tall maps that induce quotients on all nodes not labeled by $-\infty$.
 
+We now identify $\Omega_G^{e}$ directly.
 
-All degeneracies $s_i$ and differentials $d_i$ of 
-(\ref{PARTREALSPAN EQ}) other than the top differential $d_n$ are induced by maps $\alpha^{\**}$ described in \S \ref{EXTGENMON SEC} and thus given by strictly commutative diagrams, so that Lemma \ref{SOURCEFACT LEM} and Corollary \ref{SOURCELANFINAL COR} can be applied (this time with no need to appeal to Lemma \ref{TWISTING LEMMA}) so as to allow 
-(\ref{FREEEXTUSEFCOL EQ}) to be repackaged as 
-\begin{equation}\label{FREEEXTUSEFCOLNEW EQ}
-	\mathbb{F} B \coprod_{\mathbb{F} A} X
-\simeq
-	\mathsf{Lan}_{\Omega_G^{e,op} \to \Sigma_G^{op}} 
-	N^{(B,A,X)}
-\end{equation}
-where we write $\Omega_G^e$ for 
-$|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|$.
-We now turn to the task of describing $\Omega_G^e$, starting with by defining it directly.
 
 \begin{definition}\label{EXTTREECAT DEF}
-	The \textit{extension tree category $\Omega_G^e$} is the category whose objects are $\{B,A,X\}$-labeled trees and whose maps $\varphi \colon T \to S$ are tall maps of trees such that
+	The \textit{extension tree category $\Omega_G^e$} is the category whose objects are $\{\mathcal{P},X,Y\}$-labeled trees and whose maps $\varphi \colon T \to S$ are tall maps of trees such that
 	\begin{itemize}
-		\item[(i)] if $T_{v_{Ge}}$ has an $A$-label, then 
-		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has an $A$-label;
-		\item[(ii)] if $T_{v_{Ge}}$ has a $B$-label, then 
-		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has either an $A$-label or a $B$-label;
-		\item[(iii)] if $T_{v_{Ge}}$ has a $X$-label, then 
-		$S_{v_{Ge}}$ has only $A$ and $X$-labels.
+		\item[(i)] if $T_{v_{Ge}}$ has a $X$-label, then 
+		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has a $X$-label;
+		\item[(ii)] if $T_{v_{Ge}}$ has a $Y$-label, then 
+		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has either an $X$-label or a $Y$-label;
+		\item[(iii)] if $T_{v_{Ge}}$ has a $\mathcal{P}$-label, then 
+		$S_{v_{Ge}}$ has only $X$ and $\mathcal{P}$-labels.
 	\end{itemize}
 \end{definition}
 
 
 \begin{example}
-The following  is an example of a planar map in $\Omega_G^e$, where black nodes represent $X$-labeled nodes, grey nodes represent $B$-labeled nodes and white nodes represent $A$-labeled nodes.
+The following  is an example of a planar map in $\Omega_G^e$ for $G=\**$, where black nodes represent $\mathcal{P}$-labeled nodes, grey nodes represent $Y$-labeled nodes and white nodes represent $X$-labeled nodes.
 \begin{equation}\label{REGALTERNMAP EQ}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
@@ -6780,45 +6517,77 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 \end{example}
 
 
+\begin{remark}
+By changing any $X$-labels in $S_{v_{G e}}$ 
+into $Y$-labels (resp. $\mathcal{P}$-labels)
+whenever $T_{v_{G}}$  has a 
+$Y$-label (resp. $\mathcal{P}$-label), one obtains a factorization
+\begin{equation}\label{LABRE EQ}
+T \to \bar{S} \to S
+\end{equation}
+such that $T \to \bar{S}$ is a label map 
+(cf. Definition \ref{LABMAP DEF})
+and $\bar{S} \to S$ is an underlying identity of trees that
+merely changes some if the $Y$ and $\mathcal{P}$ labels into 
+$X$ labels.
+We refer to the latter kind of map as a \textit{relabel map}.
+It is clear that the label-relabel factorization 
+(\ref{LABRE EQ}) is unique.
+\end{remark}
+
+
 \begin{proposition}
-One has an identification
+There is an identification
 \[
-\Omega_G^e \simeq 
-|\Omega_{G}^{\{+\infty\}_{\langle \bullet \rangle}}|.
+	\Omega_G^e \simeq 
+	|\Omega_{G}^{\mathsf{t},\lambda_l}|.
 \]
 \end{proposition}
 
 
 \begin{proof}
-We note first that $\Omega_{G}^e$ contains all label maps that are $\{A,B\}$-inert. In fact, any map of $\Omega_{G}^e$ clearly has a unique factorization as such a label map followed by an underlying planar isomorphism of trees that replaces some of the $X$ and $B$ labels with $A$ labels.
-We will refer to the former as label maps and to the latter as relabel maps.
+We will show that Remark \ref{REALEX REM} applies to 
+$\mathcal{C} = \Omega_G^e$,
+with $\mathcal{C}_h$ and $\mathcal{C}^v$ the categories of 
+relabel and label maps.
+More precisely, we claim that there is an isomorphism 
+$\mathcal{C}_{h,l}^{v} \simeq 
+\Omega_{G}^{\mathsf{t},\lambda_l}$
+of objects in $\mathsf{Cat}^{\Delta^{op}}$.
+Unpacking notation, one must first show that strings
+\begin{equation}\label{RELABSTR EQ}
+T_0 \to T_1 \to \cdots \to T_l
+\end{equation}
+ of relabel arrows in $\Omega_G^e$
+ are in bijection with objects of 
+ $\Omega_{G}^{\mathsf{t},\lambda_l}$,
+ i.e., with trees labeled by
+ $\langle l \rangle =
+  \{-\infty, -l, \cdots, -1,0,1,\cdots,l,+ \infty\}$.
+Noting that the maps in
+(\ref{RELABSTR EQ})
+are simply underlying identities on some fixed tree $T$
+that convert some of the $\mathcal{P}$, $Y$ labels into $X$ labels,
+we label a vertex $T_{v_{Ge}}$ by 
+\begin{inparaenum}
+\item[(i)]
+$0 < j \leq +\infty$
+if the last $j$ labels of $T_{v_{Ge}}$ in 
+(\ref{RELABSTR EQ}) are $Y$ labels (where $+\infty = l+1$); 
+\item[(ii)]
+$-\infty \leq -j < 0$
+if the last $j$ labels of $T_{v_{Ge}}$ in 
+(\ref{RELABSTR EQ}) are $\mathcal{P}$ labels;
+\item[(iii)] $j=0$ if all labels in (\ref{RELABSTR EQ})
+are $X$ labels.
+\end{inparaenum}
+ This process clearly established the desired bijection on objects.
 
-We recall that 
-$\Omega_{G}^{\{+\infty\}_{\langle n \rangle}}$
-consists of trees with $2n+3$ types of labels: 
-$X$-labels, $B$-labels and $2n+1$ distinct types of $A$-labels.
-One can equivalently encode such a tree as a string 
-$T_0 \to \cdots \to T_n$
-of relabel maps. Indeed, the $A$-label nodes of $T_n$ in such a string are partitioned into $2n+1$ types according to that node's labels one the $T_i$ (which are either all $A$'s, some $X$'s and then $A$'s or some $B$'s and then $A$'s).
-Moreover, a diagram
-\[
-\begin{tikzcd}
-	T_0 \ar{r} \ar{d}[swap]{f_0} & 
-	T_1 \ar{r} \ar{d}[swap]{f_1} & 
-	\cdots \ar{r} &
-	T_n \ar{d}[swap]{f_n} &
-\\
-	T'_0 \ar{r} &
-	T'_1 \ar{r} &
-	\cdots \ar{r} &
-	T'_n 
-\end{tikzcd}
-\]
-with $f_i$ label maps of $\Omega^{e}_G$ is then equivalent to a label map $f_n \colon T_n \to T'_n$ respecting all $2n+3$ labels 
-in $\Omega_{G}^{\{+\infty\}_{\langle n \rangle}}$.
-Since the string description above is also compatible with the simplicial structure maps in the obvious way, 
-the result is now clear. 
+The compatibilities with arrows and with the simplicial structure are straightforward.
 \end{proof}
+
+{\color{red} HERE}
+
 
 
 Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
@@ -6848,7 +6617,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (0,0.85) {$T$}
+	\node at (0,0.75) {$T$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
@@ -6875,8 +6644,8 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 	\tikzstyle{level 4}=[sibling distance = 4em]
 	\tikzstyle{level 5}=[sibling distance = 3em]
 	\tikzstyle{level 6}=[sibling distance = 1.5em]
-	\tikzstyle{level 7}=[sibling distance = 0.75em]
-	\node at (9,0) {$S$}
+	\tikzstyle{level 7}=[sibling distance = 1em]
+	\node at (8,0) {$S$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill = white] {}
 				child{node [dummy,fill = black] {}
@@ -6914,11 +6683,11 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 			}
 		};
 \end{scope}
-	\draw [->] (3,2) -- node [swap] {$\varphi$} (6,2);
+	\draw [->] (2.5,2) -- node [swap] {$\varphi$} (5,2);
 \end{tikzpicture}
 \end{equation}
-The term ``alternating'' comes from the fact that no adjacent nodes have the same color. We note, however, that there is additional restriction: the ``outer'' vertices, i.e. those immediately below a leaf or the one immediately above the root, are necessarily black/active
-(not, however, that this does \textit{not} apply to stumps).
+The term ``alternating'' comes from the fact that no adjacent nodes have the same color. Note, however, that there is an additional restriction: the ``outer'' vertices, i.e. those immediately below a leaf or the one immediately above the root, are necessarily black/active
+(note, however, that this does \textit{not} apply to stumps).
 %As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
 \end{example}
 
@@ -11108,30 +10877,6 @@ $s([n],i_n)= [0,i_n]$.
 %\]
 %\end{lemma}
 
-
-
-\[
-\begin{tikzcd}
-	\coprod_i \Omega_G \wr A_i \ar{rr} \ar{rd} \ar{dd}& &
-	\coprod \Fin \wr A_i \ar{rd} \ar[dashed]{dd}
-\\
-	&
-	\Omega_G^{0,0} \ar{rr} \ar{dd} & &
-	\Fin \wr \coprod A_i \ar{dd}
-\\
-	\coprod \Omega_G \ar[dashed]{rr} \ar{rd} \ar{dd} & &
-	\coprod \Fin \wr \Sigma_G \ar[dashed]{rd}
-\\
-	&
-	\Omega_G \ar{rr} \ar{dd} \ & &
-	\Fin \wr \Sigma_G
-\\
-	\coprod \Sigma_G \ar{rd}
-\\
-	& 
-	\Sigma_G
-\end{tikzcd}
-\]
 
 
 
