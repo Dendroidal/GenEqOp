@@ -1625,18 +1625,20 @@ We thus have commutative diagrams
 for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
 where the vertical maps
 come from the right $T^{\times \lambda}$-module structure.
-Writing $\amalg^T$ for the coproduct of $T$-algebras and recalling the canonical identifications 
-$\coprod^T_{k \in K} (T A_k) \simeq T
+Writing $\mathbin{\check{\amalg}}$ for the coproduct of $T$-algebras and recalling the canonical identifications 
+$\mathbin{\check{\coprod}}_{k \in K} (T A_k) \simeq T
 \left( \coprod_{k \in K} A_k \right)$, 
 (\ref{RIGHTMODULETMAPAUX EQ}) shows that the 
 right $T^{\times \lambda}$-module structure on $T \circ \coprod$
 codifies the multiplication maps
 \[
-\coprod^T_{j \in \lambda_a} TT A_j \amalg^T 
-\coprod^T_{j \in \lambda_i} T A_j
+\mathbin{\check{\coprod}}_{j \in \lambda_a} TT A_j 
+	\mathbin{\check{\amalg}} 
+\mathbin{\check{\coprod}}_{j \in \lambda_i} T A_j
 	\to
-\coprod^T_{j \in \lambda_a} T A_j \amalg^T 
-\coprod^T_{j \in \lambda_i} T A_j.
+\mathbin{\check{\coprod}}_{j \in \lambda_a} T A_j 
+	\mathbin{\check{\amalg}}  
+\mathbin{\check{\coprod}}_{j \in \lambda_i} T A_j.
 \] 
 \end{remark}
 
@@ -3054,6 +3056,22 @@ Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$
 is the unique $T_{t^{\uparrow}\leq t}$ such that
 there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
 so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
+\end{remark}
+
+\begin{remark}\label{INPPATH REM}
+Suppose that $e \in T$ has input path
+$I_T(e) = (e=e_n < e_{n-1} < \cdots < e_0)$.
+It is intuitively clear that for a tall map 
+$\varphi \colon T \to U$ the input path of $\varphi(e)$ is built by gluing input paths in the $U_{t^{\uparrow} \leq t}$. More precisely (and omitting $\varphi$ for readability), one has
+\[
+	I_U\left(e_n \right) \simeq 
+	I_{n-1}(e_n) \amalg_{e_{n-1}} I_{n-2}(e_{n-1})
+	\amalg_{e_{n-2}} \cdots
+	\amalg_{e_1} I_1(e_0).
+\]
+where $I_k(\minus)$ denotes the input path in $U_{e_k^{\uparrow} \leq e_k}$.
+More formally, this follows from the characterization of 
+predecessors in Proposition \ref{INPUTPREDECESSORPROP PROP}(b).
 \end{remark}
 
 
@@ -5690,11 +5708,13 @@ In this section we explicitly identify the categories underlying the left Kan ex
 In the notation 
 of Remark \ref{PRECOMPPOSTCOMP REM},
 letting 
-$\langle l \rangle = 
+$\langle \langle l 
+\rangle \rangle = 
 \{-\infty,-l,\cdots, -1, 0, 1, \cdots, l, \infty\}$ and writing
 $\lambda_{l}$ for the partition
 $\lambda_{l,a} = \{-\infty\}$,
-$\lambda_{l,i} = \langle l \rangle - \{-\infty\}$,
+$\lambda_{l,i} = 
+\langle \langle l \rangle \rangle - \{-\infty\}$,
 (\ref{LANLEVELFOR EQ})
 can be repackaged as an instance of the functor
 $\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle l \rangle}$.
@@ -6407,7 +6427,7 @@ $\mathbb{F}X \to \mathbb{F} \mathcal{P}$
 and the remaining differentials given by fold maps.
 Or, more precisely, the action of the differential operators
 on the sets of labels
-$\langle l \rangle = 
+$\langle \langle l \rangle \rangle = 
 \{-\infty,-l, \cdots -1,0,1,\cdots,l,+\infty\}$
 is given by extending the functions in 
 Remark \ref{ORDLABEL REM} anti-symmetrically.
@@ -6589,16 +6609,14 @@ are $X$ labels.
 The compatibilities with arrows and with the simplicial structure are straightforward.
 \end{proof}
 
-{\color{red} HERE}
-
-
 
 Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 We first introduce the auxiliary notion of alternating trees.
-We recall the notion of input path (Notation \ref{INPUTPATH NOT})
+Recall the notion of input path (Notation \ref{INPUTPATH NOT})
 $I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\in \Omega, \Phi, \Omega_G, \Phi_G$.
 
-\begin{definition}\
+
+\begin{definition}
 A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, for all leafs $l \in T$ one has that the input path $I(l)$ has an even number of elements.
 
 Further, a vertex $e^{\uparrow} \leq e$ is called \textit{active}
@@ -6607,11 +6625,15 @@ if $|I(e)|$ is odd and \textit{inert} otherwise.
 Finally, a tall map $T \xrightarrow{\varphi} T'$ between alternating $G$-trees is called a 
 \textit{tall alternating map}
 if for any inert vertex $e^{\uparrow} \leq e$ of $T$ one has that 
-$T'_{ e^{\uparrow} \leq e)}$ is an inert vertex of $T'$.
+$T'_{e^{\uparrow} \leq e}$ is an inert vertex of $T'$.
 
 We will denote the category of alternating $G$-trees and tall alternating maps by $\Omega_G^a$.
 \end{definition}
 
+\begin{remark}
+	A $G-tree$ (resp. map of $G$-trees) is alternating
+	(resp. an alternating map) iff each component is.
+\end{remark}
 
 \begin{example}
 Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
@@ -6689,43 +6711,72 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 	\draw [->] (2.5,2) -- node [swap] {$\varphi$} (5,2);
 \end{tikzpicture}
 \end{equation}
-The term ``alternating'' comes from the fact that no adjacent nodes have the same color. Note, however, that there is an additional restriction: the ``outer'' vertices, i.e. those immediately below a leaf or the one immediately above the root, are necessarily black/active
-(note, however, that this does \textit{not} apply to stumps).
+The term ``alternating'' reflects the fact that adjacent nodes have different colors, though there is an additional restriction: the ``outer vertices'', i.e. those immediately below a leaf or above the root, are necessarily black/active
+(this does not, however, apply to stumps).
 %As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
 \end{example}
 
+
 \begin{remark}
-	One can extend Definition \ref{SUBSTITUTIONDATUM} to the alternating context by defining a substitution datum to be alternating if it is given by isomorphisms for inert nodes and by alternating maps for active nodes. It is then straightforward to check that Proposition \ref{SUBDATAUNDERPLAN PROP} and its equivariant analogue Corollary \ref{SUBDATAUNDERPLANG COR} extend to give alternating analogues.
+	If $T \in \Omega$ is alternating, it follows from 
+	Remark \ref{INPPATH REM} that a tall map 
+	$\varphi \colon T \to U$ is an alternating map
+	iff the corresponding substitution datum 
+	under Proposition \ref{SUBDATAUNDERPLAN PROP}
+	is given by the identity 
+	$U_{e^{\uparrow} \leq e } = T_{e^{\uparrow} \leq e}$
+	when $e^{\uparrow} \leq e$ is inert 
+	and by an alternating tree
+	$U_{e^{\uparrow} \leq e }$ when 
+	$e^{\uparrow} \leq e$ is active.
 \end{remark}
 
+
 \begin{definition}
-	$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(B,A,X)$-labeled trees whose underlying trees is alternating, active nodes are labeled by $X$, and passive nodes are labeled by $A$ or $B$. 
+	$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
+	whose underlying tree is alternating, active nodes are labeled by $\mathcal{P}$,
+	and passive nodes are labeled by $X$ or $Y$. 
 \end{definition}
 
-We note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} imply that maps in 
-$\bar{\Omega}_G^e$ are underlying alternating maps.
+Note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} 
+imply that for any map in $\bar{\Omega}_G^e$
+the underlying map is an alternating map.
 
 The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega_G^e$.
 
+
 \begin{proposition}\label{LXP PROP}
 	For each $U \in \Omega_G^e$ there exists a unique 
-	$\mathsf{lr}_X (U) \in \bar{\Omega}_G^e$ together with a unique planar label map of $\Omega_G^e$
-	\[\mathsf{lr}_X (U) \to U.\]
-	Furthermore, $\mathsf{lr}_X$ extends to a right retraction $\mathsf{lr}_X \colon \Omega_G^e \to \bar{\Omega}_G^e$.
+	$\mathsf{lr}_{\mathcal{P}} (U) \in \bar{\Omega}_G^e$ together with a unique planar label map in $\Omega_G^e$
+	\[\mathsf{lr}_{\mathcal{P}} (U) \to U.\]
+	Furthermore, $\mathsf{lr}_{\mathcal{P}}$ extends to a right retraction 
+	$\mathsf{lr}_{\mathcal{P}} \colon \Omega_G^e \to \bar{\Omega}_G^e$.
 \end{proposition}
 
+{\color{red} HERE}
+
 \begin{proof}
-	Given $U$, we form a collection of outer faces
-	$\{U_i^A\} \amalg \{U_j^B\} \amalg \{U_k^X\}$
-where the $U_i^A, U_j^b$ are simply the $A,B$-labeled nodes
-and the $\{U_k^X\}$ are the maximal outer subtrees whose nodes have only $X$-labels (we note that these may possible be sticks). 
-Lemma \ref{OUTERFACEUNION LEM} then guarantees that the $V_G(U_k^{X})$ are disjoint, so that one can apply (the equivariant version of Proposition \ref{BUILDABLE PROP})
-to build 
+	We first address the non-equivariant case $U \in \Omega^e$.
+
+	To build $\mathsf{lr}_{\mathcal{P}}(U)$, consider the collection of outer faces
+	$\{U_i^X\} \amalg \{U_j^Y\} \amalg \{U_k^{\mathcal{P}}\}$
+where the $U_i^X, U_j^Y$ are simply the $X,Y$-labeled nodes
+and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
+Lemma \ref{OUTERFACEUNION LEM} guarantees that the $V_G(U_k^{X})$ are disjoint, and applying 
+Proposition \ref{BUILDABLE PROP}(iii)
+one builds a planar tall map
 \begin{equation}\label{LRXDEF EQ}
-T = \mathsf{lr}(U) \to U
+T = \mathsf{lr}_{\mathcal{P}}(U) \to U
 \end{equation}
-such that $\{U_{v_{G e}}\} = \{U_i^A\} \amalg \{U_j^B\} \amalg \{U_k^X\}$. $T$ has an obvious $(B,A,X)$-labeling making 
-(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that $T$ is alternating with the $X$-labeled vertices being precisely the $X$-labeled vertices.
+such that $\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e) \in V(T)}
+ = \{U_i^X\} \amalg \{U_j^Y\} \amalg 
+ \{U_k^{\mathcal{P}}\}$. 
+ $T$ has an obvious $(\mathcal{P},X,Y)$-labeling making 
+(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that 
+$T$ is alternating with active vertices precisely those labeled by $\mathcal{P}$.
+
+{\color{red} HERE}
+
 Let us now write any input path of $T$ as 
 $I(e) = (e = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$.
 By Lemma \ref{OUTERFACEUNION LEM} and maximality of the $U_k^X$, no pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ can be both $X$-labeled.
