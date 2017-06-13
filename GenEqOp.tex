@@ -575,13 +575,13 @@ In \S \ref{OP_G_EXISTS_SECTION}, we show these categories of algebras have a pro
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
 Let $\V$ be a strongly cellular model category with diagonals.
-Then the projective genuine semi model structure on $\mathsf{Op}_{G}(\V)$ exists, and is determined by the forgetful functor
+Then the projective semi model structure on $\mathsf{Op}_{G}(\V)$ exists, and is determined by the forgetful functor
 \[
 \Op_G(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_G(\V).
 \]
 
 More generally, for any weak indexing system $\Sigma_{\mathcal F} \subseteq \Sigma_G$, 
-the projective genuine semi model structure on $\mathsf{Op}_{\mathcal F}(\V)$ exists, and is determined by the forgetful functor
+the projective semi model structure on $\mathsf{Op}_{\mathcal F}(\V)$ exists, and is determined by the forgetful functor
 \[
 \Op_{\mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_{\mathcal F}(\V).
 \]
@@ -682,9 +682,9 @@ We now give a brief overview of the remaining sections.
 
 \textbf{\hyperref[GENUINE_OP_MONAD_SECTION]{Section \ref{GENUINE_OP_MONAD_SECTION}: The genuine equivariant operad monad.}} Defining $\mathbb{F}_G$ as an endofunctor is fairly straightforward, as is defining composition and unit maps. However, showing that this data forms a monad requires a more subtle analysis. We define a more general monad $N$ on the category of weak spans $\mathsf{WSpan}(\Sigma_G, \V)$, and simplify the discussion through the flexibility of this more general category. It is also here that the concept of ``planar strings'' of maps are introduced.
 
-\textbf{\hyperref[FREE_EXTENSIONS_SECTION]{Section \ref{FREE_EXTENSIONS_SECTION}: Free extensions.}} In this section, we develop the technology to produce free $T$-extensions for a particular class of monads $T$, utilizing the realizations of simplicial categories of planar strings.
+\textbf{\hyperref[FREE_EXTENSIONS_SECTION]{Section \ref{FREE_EXTENSIONS_SECTION}: Free extensions and the existence of model structures.}} In this section, we develop the technology to produce free $T$-extensions for a particular class of monads $T$, utilizing the realizations of simplicial categories of planar strings. After providing a filtration of such constructions, we prove the existence of variuos model structures on our categories of algebras.
 
-\textbf{\hyperref[MODEL_STRUCTURES_SECTION]{Section \ref{MODEL_STRUCTURES_SECTION}: Model structures.}} Using the description of free extensions developed in the previous section, we produce a filtration of free extensions, and exploit this to transfer model structures from the categories of sequences $\Sym^G$ and $\Sym_G$ onto our categories of operads $\Op^G$ and $\Op_G$.
+%\textbf{\hyperref[MODEL_STRUCTURES_SECTION]{Section \ref{MODEL_STRUCTURES_SECTION}: Model structures.}} Using the description of free extensions developed in the previous section, we produce a filtration of free extensions, and exploit this to transfer model structures from the categories of sequences $\Sym^G$ and $\Sym_G$ onto our categories of operads $\Op^G$ and $\Op_G$.
 
 \textbf{\hyperref[COFIB SEC]{Section \ref{COFIB SEC}: Cofibrancy and Quillen equivalences.}} This section contains the bulk of the homotopical analysis. It is here that we show that weak indexing systems $\mathcal F$ provide sufficient structure so that their associated $\mathcal F$-model structures are well-behaved, in particular proving the desired Quillen equivalences. We end this section, and this paper, by providing two proofs of the $N_\infty$ realization conjecture.
 
@@ -5882,7 +5882,6 @@ yields an adjunction comparing all partially-genuine operads with regular $G$-op
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
 
-
 In order to prove all of our main theorems
 we will need to homotopically analyze free extensions 
 of genuine equivariant operads,
@@ -5896,7 +5895,8 @@ i.e. pushouts of the form
   \end{tikzcd}
 \end{equation}
 in the category $\mathsf{Op}_G$.
-The key technical ingredient will be the identification of a suitable filtration
+As is standard practice (e.g \cite{SS00, Spitz01, BM03, Whi14, Pe16}),
+the key technical ingredient will be the identification of a suitable filtration
 \begin{equation}
 	\mathcal{P}=\mathcal{P}_0 \to 
 	\mathcal{P}_1 \to \mathcal{P}_2 \to
@@ -6011,6 +6011,13 @@ $\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$
 that is $\mathsf{Lan}$-final, 
 so that $\Omega_G^e$ can be replaced with $\bar{\Omega}_G^e$
 in (\ref{EXTTREEFOR EQ}).
+
+The desired filtration (\ref{}) of the map $\P \to \P[u]$ will be induced by a
+suitable filtration on this category $\bar{\Omega}_G^e$.
+The accessable description of this filtration then allows us to transfer
+the model structures on $\Sym^G_\F$ and $\Sym_\F$ to the categories of algebras $\Op^G$ and $\Op_\F$
+using the technology of \cite{SS00}. 
+The detailed cofibrancy analysis of these model structures, as well as their comparison and the proofs of our main result, are addressed in \S \ref{COFIB SEC}. 
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -7250,21 +7257,19 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 
 {\color{red} HERE}
 
-\newpage
 
 
 
-\section{Existence of model structures}
-\label{MODEL_STRUCTURES_SECTION}
+
 
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumi}{(\roman{enumi})}%
 
-In order to encode the homotopical information inspired by $N_\infty$-operads discussed in the introduction, 
-we will introduce and transfer several associated (semi) model structures on the categories $\Op_G(\V)$ and $\Op^G(\V)$ for a wide range of $\V$. 
+\subsection{Filtrations of free extensions}
+\label{FILTRATION_SECTION}
 
-As identified in, for example, \cite{SS00}, analysis of free extensions is paramount when transferring model structures.
-Summarizing the results in the previous section, we have that the free $\mathbb{F}_G$-extension $\P[u]$ defined by the pushout
+Summarizing the results in the previous subsection, 
+we have that the free $\mathbb{F}_G$-extension $\P[u]$ defined by the pushout
 \begin{equation}\label{CELLEXTPUSH EQ}
 \begin{tikzcd}
   \mathbb{F}_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
@@ -7273,14 +7278,8 @@ Summarizing the results in the previous section, we have that the free $\mathbb{
 \end{equation}
 is given by a left Kan extension along 
 $(\bar{\Omega}_{G}^e)^{op} \xrightarrow{\mathsf{lr}} \Sigma_G^{op}$. 
-Now,
-so as to study the homotopical properties of the map $\P \to \P[u]$, we follow standard practice 
-(e.g \cite{SS00, Spitz01, BM03, Har09, Whi14, WY15, HP15, Pe16}) 
-and identity a suitable filtration of this map, which will in turn be induced by a suitable filtration of the extension tree category $\bar{\Omega}_{G}^e$.
+We will now use this description to a build a filtration of the map $\P \to \P[u]$ in the category $\Sym_G(\V)$. 
 
-
-\subsection{Filtration pieces}
-\label{FILTRATION_SECTION}
 First, given $T\in \Omega_G^e$, we write $V_X(T)$ (resp. $V_Y(T)$) to denote the sets of $X$-labeled and $Y$-labeled (non-equivariant) vertices of $T$.
 The \textit{degree} of $T \in \bar{\Omega}_{G}^e$,
 denoted $|T|$, is defined to be the sum $|T|_X + |T|_Y$, where $|T|_X$, $|T|_Y$ are defined by
@@ -8267,7 +8266,7 @@ We now turn our consideration to the homotopy theory of genuine $G$-operads from
       For this subsection, we fix 
       a weak indexing system $\Sigma_{\F} \subseteq \Sigma_G$ (see Definition \ref{INDEXSYS DEF}),
       and let $\Sym_\F(\V)$ denote the model category
-      $\V^{\Sigma_{\F}^{op}}_{\text{gen}}$, if it exists. 
+      $\V^{\Sigma_{\F}^{op}}$, if it exists. 
 \end{notation}
 
 %As $\Sym_{\F}(\V) \simeq \prod_{n \geq 0} \V^{O_{\F_n}^{op}}$,
@@ -8282,9 +8281,9 @@ We identify the following maps in $\Op_\F(\V)$ (cf. Definitions \ref{F_MODEL_DEF
 \begin{definition} 
       We say a map $f: \O \to \P$ in $\Op_\F(\V)$ is an  
       \begin{itemize} 
-      \item[(i)] \textit{projective genuine weak equivalence} (resp. \textit{projective genuine fibration}) if 
+      \item[(i)] \textit{projective weak equivalence} (resp. \textit{projective fibration}) if 
             $f(C):\O(C) \to \P(C)$ is a weak equivalence (fibration) in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $\F$-corollas $C\in\Sigma_{\F}$. 
-      \item[(ii)] \textit{projective genuine cofibration} if 
+      \item[(ii)] \textit{projective cofibration} if 
             it has the left lifting property against all maps which are projective genuine as both weak equivalences and fibrations.
             % \item[(iii)] \textit{$\Sigma_{\F}$-cofibration} if 
             %       $f$ is an cofibration in $\Sym_{G / \F}(\V)$ 
@@ -8297,8 +8296,8 @@ We identify the following maps in $\Op_\F(\V)$ (cf. Definitions \ref{F_MODEL_DEF
 % In particular, $\P\in \V\Op_G$ will be called \textit{$\F$-cofibrant} if $\varnothing \to \P$ is an $\F$-cofibration. 
 
 \begin{definition} 
-      The \textit{projective genuine (semi) model structure} on $\Op_\F(\V)$, if it exists, 
-      is the unique (semi) model structure with projective genuine weak equivalences, fibrations, and cofibrations.        
+      The \textit{projective (semi) model structure} on $\Op_\F(\V)$, if it exists, 
+      is the unique (semi) model structure with projective weak equivalences, fibrations, and cofibrations.        
       Equivalently, it is the (semi) model structure transferred along the adjunction.
       \[ 
       \begin{tikzcd} 
@@ -8408,7 +8407,7 @@ The key technical step in the proof of Theorem \ref{MAINEXIST2 THM}, written out
 \end{proof}
   
 \begin{example} 
-      The projective genuine model structure exists on $\sOp_\F := \Op_\F(\sSet)$ for any weak indexing system $\F$.
+      The projective model structure exists on $\sOp_\F := \Op_\F(\sSet)$ for any weak indexing system $\F$.
 \end{example} 
 
 
@@ -8428,13 +8427,15 @@ The key technical step in the proof of Theorem \ref{MAINEXIST2 THM}, written out
 
 
 
-The key ingredient required to prove our desired Quillen equivalence
+The key ingredient required to prove our desired Quillen equivalences
 \[
 	\iota^{\**} \colon
-	\mathsf{Op}_G \rightleftarrows \mathsf{Op}^G
+	\mathsf{Op}_\F \rightleftarrows \mathsf{Op}^G_\F
 	\colon \iota_{\**}
 \]
-will be an analysis of cofibrant objects in $\mathsf{Op}_G$, which we now provide.
+will be an analysis of cofibrant objects in $\mathsf{Op}_\F$, provided by Lemma \ref{MAINLEM LEM}. 
+%which we now provide.
+To do so will require an intricate discussion of the interplay between different classes of cofibrations, box products, and $G$-trees.
 
 
 \subsection{Families of subgroups}
@@ -9652,7 +9653,7 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 
 
 \begin{remark}
-\todo[inline]{come back}
+\todo[inline]{this was moved}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
 coincides with \cite[Lemma 5.9]{BM08}.
 Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
