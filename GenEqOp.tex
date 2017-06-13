@@ -5869,7 +5869,7 @@ note first that $\mathcal{P}[u]$ is given by a coequalizer
 	\mathbb{F} X \mathbin{\check{\amalg}} \mathbb{F} Y
 	\ar[shift right=4pt]{r} \ar[shift right=-4pt]{r}
 &
-	\mathbb{F} Y \mathbin{\check{\amalg}} \mathcal{P}
+	\mathcal{P} \mathbin{\check{\amalg}} \mathbb{F} Y 
 	\ar[dashed]{l}
 \end{tikzcd}
 \end{equation}
@@ -5951,7 +5951,7 @@ which reduces the calculation to a single left Kan extension, is an instance of
 Proposition \ref{RANTRANS PROP}, 
 a result whose proof is straightforward but lengthy, 
 and thus postponed to the appendix.
-The category $\Omega_G^e$ of \textit{extensions} trees 
+The category $\Omega_G^e$ of \textit{extension trees}
 appearing on the right side
 is obtained as a categorical realization
 $\Omega_G^e = |\Omega_{G}^{n,\lambda_l}|$,
@@ -5959,6 +5959,13 @@ which we explicitly describe and analyze in
 \S \ref{EXTTREE SEC}.
 
 {\color{red} HERE}
+
+In particular, we identify a smaller
+subcategory 
+$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$
+that is $\mathsf{Lan}$-final, 
+so that $\Omega_G^e$ can be replaced with $\bar{\Omega}_G^e$
+in (\ref{EXTTREEFOR EQ}).
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -6884,10 +6891,10 @@ A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, for all leafs $l 
 Further, a vertex $e^{\uparrow} \leq e$ is called \textit{active}
 if $|I(e)|$ is odd and \textit{inert} otherwise.
 
-Finally, a tall map $T \xrightarrow{\varphi} T'$ between alternating $G$-trees is called a 
+Finally, a tall map $T \xrightarrow{\varphi} S$ between alternating $G$-trees is called a 
 \textit{tall alternating map}
 if for any inert vertex $e^{\uparrow} \leq e$ of $T$ one has that 
-$T'_{e^{\uparrow} \leq e}$ is an inert vertex of $T'$.
+$S_{e^{\uparrow} \leq e}$ is an inert vertex of $S$.
 
 We will denote the category of alternating $G$-trees and tall alternating maps by $\Omega_G^a$.
 \end{definition}
@@ -6979,7 +6986,7 @@ The term ``alternating'' reflects the fact that adjacent nodes have different co
 \end{example}
 
 
-\begin{remark}
+\begin{remark}\label{ALTSUB REM}
 	If $T \in \Omega$ is alternating, it follows from 
 	Remark \ref{INPPATH REM} that a tall map 
 	$\varphi \colon T \to U$ is an alternating map
@@ -7015,7 +7022,6 @@ The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega
 	$\mathsf{lr}_{\mathcal{P}} \colon \Omega_G^e \to \bar{\Omega}_G^e$.
 \end{proposition}
 
-{\color{red} HERE}
 
 \begin{proof}
 	We first address the non-equivariant case $U \in \Omega^e$.
@@ -7024,9 +7030,11 @@ The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega
 	$\{U_i^X\} \amalg \{U_j^Y\} \amalg \{U_k^{\mathcal{P}}\}$
 where the $U_i^X, U_j^Y$ are simply the $X,Y$-labeled nodes
 and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
-Lemma \ref{OUTERFACEUNION LEM} guarantees that the $V_G(U_k^{X})$ are disjoint, and applying 
+Lemma \ref{OUTERFACEUNION LEM} guarantees that 
+each edge and each $\mathcal{P}$-labeled node belong to exactly
+one of the $V_G(U_k^{X})$, and applying 
 Proposition \ref{BUILDABLE PROP}(iii)
-one builds a planar tall map
+yields a planar tall map
 \begin{equation}\label{LRXDEF EQ}
 T = \mathsf{lr}_{\mathcal{P}}(U) \to U
 \end{equation}
@@ -7036,41 +7044,76 @@ such that $\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e) \in V(T)}
  $T$ has an obvious $(\mathcal{P},X,Y)$-labeling making 
 (\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that 
 $T$ is alternating with active vertices precisely those labeled by $\mathcal{P}$.
+But since the image of each $e \in T$
+belongs to precisely one $U_k^{\mathcal{P}}$,
+$e$ belongs to precisely one of the $\mathcal{P}$-labeled nodes of $T$, so that any leaf input path
+$I(l) = (l = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$
+must start with, end with, and alternate between 
+$\mathcal{P}$-nodes, and thus have even length.
 
-{\color{red} HERE}
+To check uniqueness, note that for any other planar label map $S \to U$ with $S$ alternating
+and $e^{\uparrow} \leq e$ a $\mathcal{P}$ vertex of $S$
+the outer face 
+$U_{e^{\uparrow} \leq e}$
+must be a maximal 
+$\mathcal{P}$-labeled outer face since the vertices adjacent to its root and leaves are labeled by either $X$ or $Y$.
+The condition 
+$V(U) = \coprod_{V(S)} V(U_{e^{\uparrow} \leq e})$
+thus guarantees that the collection of outer faces determined by $S$ matches that determined by $T$
+except perhaps in the number of stick faces, so that 
+the degeneracy-face factorizations
+$S \to F \to U$, $T \to F \to U$
+factor through the same planar inner face $F$, with the  unique labeling that makes the inclusion a label map.
+$S$, $T$ are thus both trees in $\bar{\Omega}_G^e$ obtained from $F$ by adding degenerate $\mathcal{P}$ vertices, 
+and since this can be done in at most one way, we conclude 
+$S=T$. 
 
-Let us now write any input path of $T$ as 
-$I(e) = (e = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$.
-By Lemma \ref{OUTERFACEUNION LEM} and maximality of the $U_k^X$, no pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ can be both $X$-labeled.
-On the other hand, again by Lemma \ref{OUTERFACEUNION LEM} any edge of $U$ belongs to some $U^X_k$ and therefore:
-\begin{inparaenum}
-	\item[(i)] at least one of in each pair of consecutive vertices $v_{Ge_i}$ and $v_{Ge_{i+1}}$ is $X$-labeled;
-	\item[(ii)] if $r \in T$ is a root, $v_{G r}$ is $X$-labeled;
-	\item[(iii)] if $l \in T$ is a leaf $v_{G l_{n-1}}$ is $X$-labeled.
-\end{inparaenum}
-This suffices to conclude $T \in \bar{\Omega}_{G}^e$, and
-uniqueness of $T$ is immediate from the uniqueness in Lemma \ref{OUTERFACEUNION LEM}. 
-
-
-It remains to check that $\mathsf{lr}_X$ in fact defines a functor. We consider the following diagram.
-\[
+To check functoriality,
+consider the diagram below, where $T \to U$ is the map defined above and $\varphi \colon U \to V$ any map in $\Omega_G^e$.
+\begin{equation}\label{LRPFUN EQ}
 \begin{tikzcd}
-	\mathsf{lr}_X(U) \ar{r} \ar[dashed]{d}[swap]{\mathsf{lr}_X(f)} & U \ar{d}{f}
+	T \ar{r} \ar[dashed]{d} &  U \ar{d}{\varphi}
 \\
-	\mathsf{lr}_X(V) \ar{r} & V
+	S \ar[dashed]{r} & V
 \end{tikzcd}
-\]
-When $f$ is a root pullback map, we define $\mathsf{lr}_X(f)$ to likewise be a root pullback map. When $f$ is a rooted tall map, writing $T=\mathsf{lr}_X(U)$ one has a map of rooted $T$-substitution data
-$\{\mathsf{lr}_X(V_{v_{G_e}})\} \to \{V_{v_{G_e}}\}$,
-which after converted to a tree map yields the desired map 
-$\mathsf{lr}_X(f)$.
-To check that $\mathsf{lr}_X$ respects composition of maps, 
-the only non immediate case is that of a root pullback followed by a rooted map, in which case this follows from Remark \ref{PULLCOMP REM}.
+\end{equation}
+The composite $T \to V$ is encoded by a substitution datum
+$\{T_{e^{\uparrow} \leq e} \to V_{e^{\uparrow} \leq e}\}$
+which is given by an isomorphism
+if $e^{\uparrow} \leq e$ has label $X$ or $Y$ (possibly changing a $Y$ label to a $X$ label),
+and by some $X,\mathcal{P}$-labeled tree 
+$V_{e^{\uparrow} \leq e}$ if $e^{\uparrow} \leq e$
+has a $\mathcal{P}$-label.
+We now consider the factorization problem 
+in (\ref{LRPFUN EQ}), where we want $S \in \bar{\Omega}_G^e$
+and for the map $S \to V$ to the a planar label map.
+Combining Remark \ref{ALTSUB REM} with the uniqueness of the
+$\mathsf{lr}_{\mathcal{P}}(V_{e^{\uparrow} \leq e})$,
+the only possibility is for $S$ to be defined using the 
+$T$ substitution datum
+that replaces 
+$T_{e^{\uparrow} \leq e} \to V_{e^{\uparrow} \leq e}$
+with 
+$T_{e^{\uparrow} \leq e} \to 
+\mathsf{lr}_{\mathcal{P}}(V_{e^{\uparrow} \leq e})$
+whenever $e^{\uparrow} \leq e$ has a $\mathcal{P}$-label.
+Uniqueness of $\mathsf{lr}_{\mathcal{P}} (V)$ then implies 
+$S=\mathsf{lr}_{\mathcal{P}} (V)$, and one sets 
+$\mathsf{lr}_{\mathcal{P}} (\varphi)$
+to be the map $T\to S$.
+Associativity and unitality are automatic from the uniqueness of the factorization of (\ref{LRPFUN EQ}).
+
+In the case of $T = (T_x)_{x \in X}$ in 
+$\Omega_G^e$ for a general group $G$,
+one sets
+$\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
 
 
+{\color{red} HERE}
+
 \begin{example}
-The following illustrates the $\mathsf{lr}_X$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}).
+The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}).
 \begin{equation}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
