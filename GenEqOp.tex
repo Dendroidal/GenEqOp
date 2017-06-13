@@ -922,79 +922,6 @@ We also record the following, the proof of which is straightforward.
 
 
 
-{\color{red} HERE}
-
-
-
-We now discuss a basic property of over and under categories that will be used in \S \ref{TRANSFSIMP SEC}.
-
-
-Given $\mathcal{J},\C \in \mathsf{Cat}$ and $j \in \mathcal{J}$ we will let $\C^{ \downarrow j}$ denote the Grothendieck construction for the functor
-\[
-\begin{tikzcd}[row sep = 0.25em]
-	\mathcal{J} \ar{r} & \mathsf{Cat} \\
-	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}
-\end{tikzcd}
-\]
-Explicitly, an object of $\C^{\downarrow j}$ is a pair
-$\left(i,\mathcal{J}(i,j)\xrightarrow{\varphi} \C\right)$
-and an arrow 
-$(i,\varphi) \to (i',\varphi')$
-is a pair
-$(I \colon i \to i', 
-\gamma \colon \varphi\circ I^{\**} \to \varphi')$.
-
-
-
-\begin{lemma}\label{UNDERLEFTADJ LEM}
-Let $\mathcal{J} \in \mathsf{Cat}$ be a small category and 
-$j \in \mathcal{J}$. One then has adjunctions
-\[
-	(\minus \downarrow j) 
-		\colon
-	\mathsf{Cat}_{/\mathcal{J}}
-		\rightleftarrows
-	\mathsf{Cat}
-		\colon
-	(\minus)^{\downarrow j},
-\qquad
-	(j \downarrow \minus) 
-		\colon
-	\mathsf{Cat}_{/\mathcal{J}}
-		\rightleftarrows
-	\mathsf{Cat}
-		\colon
-	(\minus)^{j \downarrow}.
-\]
-\end{lemma}
-
-\begin{proof}
-Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
-
-	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
-	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
-correspond to functors
-	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
-	
-	On objects, $F$ associates to each pair 
-	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
-
-	On arrows $F$ associates to 
-	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
-	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
-	One thus defines
-\[
-	G(I) = \left(
-	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
-	F\left(i,(\minus)\circ \pi(i)\right)
-		\xrightarrow{F(I)}
-	F\left(i',\minus \right)
-	\right)
-\]
-and again it is clear that these are inverse processes.
-	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
-\end{proof}
-
 
 \subsection{Wreath product over finite sets}
 
@@ -6630,7 +6557,7 @@ $[\bullet] \in \mathsf{Cat}^{\Delta}$ given by
 $[n]=(0 \to 1 \to \cdots \to n)$
 yields the following definition.
 
-\begin{definition}
+\begin{definition}\label{REAL DEF}
 	The left adjoint below is called the 
 	\textit{realization} functor.
 	\[
@@ -6686,7 +6613,7 @@ $d_i$, $0\leq i < n$ and $s_j$, $0 \leq j \leq n$
 are isomorphisms,
 there is an identification
 \begin{align*}
-	\colim_{\Delta^{op}}
+	\lim_{\Delta}
 	\left(
 	\mathsf{Ran}_{A_n \to \Sigma_G}
 	N_{n}
@@ -10771,67 +10698,16 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 \appendix
 
 
-\section{Transferring left Kan extensions}
+\section{Transferring Kan extensions}
 
 The purpose of this appendix is to provide the
 somewhat long proof of Proposition \ref{RANTRANS PROP}, 
 which is needed when repackaging free extensions of
 genuine equivariant operads in (\ref{EXTTREEFOR EQ}).
 
-{\color{red} HERE}
 
-We start by
-
-
-
-\begin{lemma}\label{SIMPSPANREIN LEMMA}
-Functors $F \colon \mathcal{D} \ltimes \mathcal{I}_{\bullet} \to \C$ are in bijection with lifts
-\[
-\begin{tikzcd}
-    & \mathsf{WSpan}^l(\**,\C) \ar{d}{\mathsf{fgt}} \\
-\mathcal{D} \ar{r}[swap]{\mathcal{I}_{\bullet}} \ar[dashed]{ru}{\mathcal{I}_{\bullet}^F} & \mathsf{Cat}.
-\end{tikzcd}
-\]
-where $\mathsf{fgt}$ is the functor forgetting the maps to $\**$ and $\C$.
-\end{lemma}
-
-
-\begin{proof}
-	This is a matter of unpacking notation. The restrictions 
-	$F|_{\mathcal{I}_d}$ to the fibers 
-	$\mathcal{I}_d \subset D \ltimes \mathcal{I}_{\bullet}$
-	are precisely the functors 
-	$\mathcal{I}^F_d \colon \mathcal{I}_d \to \C$ describing $\mathcal{I}_{\bullet}^F(d)$.
-	
-	Furthermore, the images
-	$F \left( (d,i) \to (d',f_{\**}(i)) \right)$	
-	of the pushout arrows over a fixed arrow $f \colon d \to d'$ of $\mathcal{D}$
-assemble to a natural transformation 
-\begin{equation}
-	\begin{tikzcd}[row sep=0.4em]
-		\mathcal{I}_d 
-		\ar{dr}[name=F1]{I_d^F} \ar{dd}[swap]{f_{\**}} &
-	\\
- & \C 
-	\\
-|[alias=G2]| \mathcal{I}_{d'}  \ar{ur}[swap]{I_{d'}^F} & 
-		\arrow[Rightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm]
-	\end{tikzcd}
-\end{equation}
-which describes $\mathcal{I}_{\bullet}^F(f)$. It is straightforward to check that the associativity and unitality conditions coincide.
-\end{proof}
-
-
-In the cases of interest we will have $\mathcal{D}=\Delta^{op}$,
-so that $\mathcal{I}_{\bullet}$ can be interpreted as an object $\mathcal{I}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$.
-By recalling the standard cosimplicial object
-$[\bullet] \in \mathsf{Cat}^{\Delta}$ given by 
-$[n]=(0 \to 1 \to \cdots \to n)$
-one obtains the following definition.
-
-
-\begin{definition}
-	The left adjoint
+We start with a more detailed discussion of the realization functor $|\minus|$
+defined by the adjunction
 	\[
 	|\minus|\colon
 	\mathsf{Cat}^{\Delta^{op}} 
@@ -10839,30 +10715,25 @@ one obtains the following definition.
 	\mathsf{Cat} 
 	\colon (\minus)^{[\bullet]}
 	\]
-	will be called the \textit{realization} functor.
-\end{definition}
-
-
-\begin{remark}
+in Definition \ref{REAL DEF}.
 More explicitly, one has
 \begin{equation}\label{REALDEF EQ}
 	 |\mathcal{I}_{\bullet}| =
-	 coeq \left(\coprod_{[n] \to [m]}
+	coeq \left(\coprod_{[n] \to [m]}
 	 [n] \times \mathcal{I}_m
 	 	\rightrightarrows
 	 \coprod_{[n]} [n] \times \mathcal{I}_n
 	 \right).
 \end{equation}
-\end{remark}
 
-\begin{example}
-Any $\mathcal{I} \in \mathsf{Cat}$ induces objects 
-$\mathcal{I},\mathcal{I}_{\bullet},\mathcal{I}^{[\bullet]} \in \mathsf{Cat}^{\Delta^{op}}$ 
-where $\mathcal{I}$ is the constant simplicial object and $\mathcal{I}_{\bullet}$ is the nerve $N \mathcal{I}$ with each level regarded as a discrete category.
-It is straightforward to check that 
-$|\mathcal{I}|=|\mathcal{I}_{\bullet}| =
-|\mathcal{I}^{[\bullet]}| = \mathcal{I}$.
-\end{example}
+%\begin{example}
+%Any $\mathcal{I} \in \mathsf{Cat}$ induces objects 
+%$\mathcal{I},\mathcal{I}_{\bullet},\mathcal{I}^{[\bullet]} \in \mathsf{Cat}^{\Delta^{op}}$ 
+%where $\mathcal{I}$ is the constant simplicial object and $\mathcal{I}_{\bullet}$ is the nerve $N \mathcal{I}$ with each level regarded as a discrete category.
+%It is straightforward to check that 
+%$|\mathcal{I}|=|\mathcal{I}_{\bullet}| =
+%|\mathcal{I}^{[\bullet]}| = \mathcal{I}$.
+%\end{example}
 
 
 \begin{lemma}\label{OBJGENREL LEMMA}
@@ -10914,9 +10785,9 @@ in $[1]\times \mathcal{I}_1$. The result follows.
 \begin{remark}
 	Given $\mathcal{I}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$, $\mathcal{C} \in \mathsf{Cat}$, the isomorphisms
 	\[
-	Hom_{\mathsf{Cat}}(|\mathcal{I}_{\bullet}|,\mathcal{C})
+	\Hom_{\mathsf{Cat}}\left(|\mathcal{I}_{\bullet}|,\mathcal{C}\right)
 		\simeq
-	Hom_{\mathsf{Cat}^{\Delta^{op}}}(\mathcal{I}_{\bullet},\mathcal{C}^{[\bullet]})
+	\Hom_{\mathsf{Cat}^{\Delta^{op}}}\left(\mathcal{I}_{\bullet},\mathcal{C}^{[\bullet]}\right)
 	\]
 	together with the fact that $\mathcal{C}^{[\bullet]}$ is always $2$-coskeletal show that $|\mathcal{I}_{\bullet}|$
 	is determined by the categories 
@@ -10924,11 +10795,11 @@ in $[1]\times \mathcal{I}_1$. The result follows.
 	and maps between them, i.e. by the truncated version of
 	formula $(\ref{REALDEF EQ})$ with $n,m \leq 2$.
 
-Indeed, it can be shown that a sufficient set of generating relations in $|\mathcal{I}_{\bullet}|$ is given by
+Indeed, one can show that a sufficient set of generating relations in $|\mathcal{I}_{\bullet}|$ is given by
 \begin{inparaenum}
 \item[(i)]
  the relations in $\mathcal{I}_0$
-(including relations stating that identities of  
+rela(including relations stating that identities of  
 $\mathcal{I}_0$ are identities of $|\mathcal{I}_{\bullet}|$);
 \item[(ii)] relations stating that for each $i_0 \in \mathcal{I}_0$ the arrow 
 $i_0 = d_1(s_0(i_0)) \xrightarrow{s_0(i_0)} d_1(s_0(i_0)) = i_0$
@@ -10954,18 +10825,63 @@ and
 \end{inparaenum}
 \end{remark}
 
+%\begin{example}\label{PLANARSTRING EX}
+%For $\Omega_{G,\bullet}$ the simplicial object of planar strings one has $|\Omega_{G,\bullet}| = \Omega_G^t$, the category of $G$-trees and tall maps. Indeed, arrows of $\Omega_{G,0}$ and objects of $\Omega_{G,1}$ are naturally identified with the quotient arrows and planar tall arrows of $\Omega_G^t$, which are a generating set of arrows.
+%And likewise, relations in $\Omega_{G,0}$, 
+%arrows in $\Omega_{G,1}$ and 
+%objects in $\Omega_{G,2}$ are identified with the relations of $\Omega_G^t$.
 
-\begin{example}\label{PLANARSTRING EX}
-For $\Omega_{G,\bullet}$ the simplicial object of planar strings one has $|\Omega_{G,\bullet}| = \Omega_G^t$, the category of $G$-trees and tall maps. Indeed, arrows of $\Omega_{G,0}$ and objects of $\Omega_{G,1}$ are naturally identified with the quotient arrows and planar tall arrows of $\Omega_G^t$, which are a generating set of arrows.
-And likewise, relations in $\Omega_{G,0}$, 
-arrows in $\Omega_{G,1}$ and 
-objects in $\Omega_{G,2}$ are identified with the relations of $\Omega_G^t$.
+%Analogously, for $\Omega_{G,\bullet}^J$ the simplicial object of planar $\underline{l}$-labeled strings that are 
+%$(\{l\}-J)$-inert, one has $|\Omega_{G,\bullet}^J| = \Omega_G^{J,t}$,
+%the category of $\underline{l}$-labeled $G$-trees and $(\{l\}-J)$-inert tall maps.
+%\end{example}
 
-Analogously, for $\Omega_{G,\bullet}^J$ the simplicial object of planar $\underline{l}$-labeled strings that are 
-$(\{l\}-J)$-inert, one has $|\Omega_{G,\bullet}^J| = \Omega_G^{J,t}$,
-the category of $\underline{l}$-labeled $G$-trees and $(\{l\}-J)$-inert tall maps.
-\end{example}
 
+We now relate diagrams in 
+the span categories with 
+the Grothendieck constructions 
+in Definition \ref{GROTHCONS DEF}.
+
+\begin{lemma}\label{SIMPSPANREIN LEMMA}
+Functors $F \colon \mathcal{D} \ltimes \mathcal{I}_{\bullet} \to \C$ are in bijection with lifts
+\[
+\begin{tikzcd}
+    & \mathsf{WSpan}^l(\**,\C) \ar{d}{\mathsf{fgt}} \\
+\mathcal{D} \ar{r}[swap]{\mathcal{I}_{\bullet}} \ar[dashed]{ru}{\mathcal{I}_{\bullet}^F} & \mathsf{Cat}.
+\end{tikzcd}
+\]
+where $\mathsf{fgt}$ is the functor forgetting the maps to $\**$ and $\C$.
+\end{lemma}
+
+
+\begin{proof}
+	This is a matter of unpacking notation. The restrictions 
+	$F|_{\mathcal{I}_d}$ to the fibers 
+	$\mathcal{I}_d \subset \mathcal{D} \ltimes \mathcal{I}_{\bullet}$
+	are precisely the functors 
+	$\mathcal{I}^F_d \colon \mathcal{I}_d \to \C$ describing $\mathcal{I}_{\bullet}^F(d)$.
+	
+	Furthermore, the images
+	$F \left( (d,i) \to (d',f_{\**}(i)) \right)$	
+	of the pushout arrows over a fixed arrow $f \colon d \to d'$ of $\mathcal{D}$
+assemble to a natural transformation 
+\begin{equation}
+	\begin{tikzcd}[row sep=0.4em]
+		\mathcal{I}_d 
+		\ar{dr}[name=F1]{I_d^F} \ar{dd}[swap]{f_{\**}} &
+	\\
+ & \C 
+	\\
+|[alias=G2]| \mathcal{I}_{d'}  \ar{ur}[swap]{I_{d'}^F} & 
+		\arrow[Rightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm]
+	\end{tikzcd}
+\end{equation}
+which describes $\mathcal{I}_{\bullet}^F(f)$. 
+One readily checks that the associativity and unitality conditions coincide.
+\end{proof}
+
+
+In the cases of interest we have $\mathcal{D}=\Delta^{op}$.
 The following is the key result in this section.
 
 \begin{proposition}\label{SOURCEFINAL PROP}
@@ -10983,7 +10899,7 @@ Further, $s$ is final.
 
 \begin{remark}
 	The $s$ in the result above stands for \textit{source}. 
-	This is because, for any $\mcI \in \mathsf{Cat}$, the map
+	This is because, for $\mcI \in \mathsf{Cat}$, the map
 	$\Delta^{op} \ltimes \mcI^{[\bullet]}
 	\to \left| \mcI^{[\bullet]} \right|
 	\simeq \mcI$ is given by $s(i_0\to \cdots \to i_n) = i_0$.
@@ -10991,19 +10907,19 @@ Further, $s$ is final.
 
 
 \begin{proof}
-Recall that $|\mcI_{\bullet}|$ is the coequalizer (\ref{REALDEF EQ}). Given $(k,g_m) \in [n] \times \mcI_m$, we will write 
+Recall that $|\mcI_{\bullet}|$ is the coequalizer (\ref{REALDEF EQ}). Given $(k,g_m) \in [n] \times \mcI_m$, we write 
 $[k,g_m]$ for the corresponding object in $|\mcI_{\bullet}|$.
-To simplify notation, we will write objects of $\mcI_n$ as $i_n$
+To simplify notation, we write objects of $\mcI_n$ as $i_n$
 and implicitly assume that $[k,i_n]$ refers to the class of the object $(k,i_n) \in [n] \times \mcI_n$.
 
 
 We define $s$ on objects by 
 $s([n],i_n)=[0,i_n]$ and on an arrow 
 $(\phi,I_m)\colon (n,i_n) \to (m,i'_m)$ as the composite
-(note that $\phi\colon [m] \to [n]$ and $I_m\colon \phi^{\**}(i_n)\to i_m$)
+(note that $\phi\colon [m] \to [n]$ and $I_m\colon \phi^{\**}i_n\to i_m$)
 \begin{equation}\label{TARGETDEFINITON EQ}
 	[0,i_n] \to [\phi(0),i_n] =
-	[0,\phi^{\**}(i_n)]	
+	[0,\phi^{\**}i_n]	
 	 \xrightarrow{I_m} 
 	[0,i'_m].
 \end{equation}
@@ -11011,40 +10927,40 @@ To check compatibility with composition,
 the cases of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from (\ref{TARGETDEFINITON EQ}), 
 hence we are left with the case 
 $([n],i_n) \xrightarrow{I_n} ([n],i'_n) \to 
-([m],\phi^{\**}(i'_n))$
+([m],\phi^{\**} i'_n)$
  of a fiber arrow followed by a pushforward arrow. 
  Noting that in $\Delta^{op} \ltimes \mcI_{\bullet}$
 this composite can be rewritten as
-$([n],i_n) \to ([m],\phi^{\**}(i_n))
-\xrightarrow{\phi^{\**}(I_n)} 
-([m],\phi^{\**}(i'_n))$
+$([n],i_n) \to ([m],\phi^{\**} i_n)
+\xrightarrow{\phi^{\**}I_n} 
+([m],\phi^{\**}i'_n)$
  this amounts to checking that
 \begin{equation}
 \begin{tikzcd}
 \left[0,i_n\right] \ar{r} \ar{d}[swap]{I_n} &
 \left[\phi(0),i_n) \right] \ar[equal]{r} \ar{d}[swap]{I_n} &
-\left[0,\phi^{\**}(i_n) \right] \ar{d}{\phi^{\**}(I_n)}
+\left[0,\phi^{\**} i_n \right] \ar{d}{\phi^{\**} I_n}
 	\\
 \left[0,i'_n\right] \ar{r} &
 \left[\phi(0),i'_n\right] \ar[equal]{r} &
-\left[0,\phi^{\**}(i_n)\right]
+\left[0,\phi^{\**} i_n \right]
 \end{tikzcd}
 \end{equation}
 commutes in $|\mcI_{\bullet}|$,
 which is the case since the left square is encoded by a square in $[n]\times \mcI_n$
 and the right square is encoded by an arrow in $[m]\times \mathcal{I}_n$.
 
-We now turn to showing that $s$ is final.
-
-Fix $j \in \mcI_0$. We will show that 
-$[0,j] \downarrow \Delta^{op} \ltimes \mcI_{\bullet}$ is indeed connected.
+We now show that $s$ is final.
+Fix $h \in \mcI_0$. We must check that 
+$[0,h] \downarrow \Delta^{op} \ltimes \mcI_{\bullet}$ is connected.
 By Lemma \ref{OBJGENREL LEMMA} any object 
  in this undercategory has a description (not necessarily unique) as a pair
-\[\left(\left([n],i_n\right), [0,j] \xrightarrow{f_1} \cdots \xrightarrow{f_r} s([n],i_n) \right)\]
+\begin{equation}\label{UNDERCATOB EQ}
+\left(\left([n],i_n\right), [0,h] \xrightarrow{f_1} \cdots \xrightarrow{f_r} s([n],i_n) \right)
+\end{equation}
 where each $f_i$ is a generating arrow of $|\mcI_{\bullet}|$
 induced by either an arrow $I_0$ of $\mcI_0$ or object $i_1\in \mcI_1$.
-
- We will connect this object to the canonical object 
+ We will connect (\ref{UNDERCATOB EQ}) to the canonical object 
  $\left(([0],h),[0,h]=[0,h]\right)$, arguing by induction on $r$. 
 If $n \neq 0$, the map 
 $d_{\hat{0}} \colon ([n],i_n) \to ([0],d_{\hat{0}}^{\**}(i_n))$
@@ -11060,7 +10976,98 @@ If $n=0$, one can apply the induction hypothesis by lifting $f_r$ to $\Delta^{op
 \end{proof}
 
 
-In practice, we will need to know that $s$ satisfies the following stronger finality condition with respect to left Kan extensions.
+\begin{remark}\label{DUALRESULTS REM}
+	The involution
+	\[\Delta \xrightarrow{\tau} \Delta\]
+	which sends $[n]$ to itself and $d_i,s_i$ to $d_{n-i},s_{n-i}$
+	induces vertical isomorphisms
+\[
+\begin{tikzcd}
+	\Delta^{op} \ltimes \left(\mathcal{I}_{\bullet} \circ \tau \right) \ar{r}{s} \ar{d}[swap]{\simeq} &
+	\left|\mathcal{I}_{\bullet} \circ \tau \right|
+	\ar{d}{\simeq}
+\\
+	\Delta^{op} \ltimes \mathcal{I}_{\bullet} \ar{r}[swap]{t} &
+	\left| \mathcal{I}_{\bullet}^{op} \right|^{op}
+\end{tikzcd}
+\]
+which reinterpret the ``source'' functor as what one might call the ``target'' functor, with $t([n],i_n)= [n,i_n]$ rather than 
+$s([n],i_n)= [0,i_n]$.
+The target functor is thus also final.
+
+Moreover, the source/target formulations of 
+all the results that follow are equivalent.
+\end{remark}
+
+In practice, we will need to know that the source $s$ and target $t$ satisfy a stronger finality condition with respect to left Kan extensions.
+
+
+\begin{lemma}\label{UNDERLEFTADJ LEM}
+Let $\mathcal{J} \in \mathsf{Cat}$ be a small category and 
+$j \in \mathcal{J}$. 
+Then the under and over category functors
+\begin{equation}\label{UNDEROVER EQ}
+	\mathsf{Cat} \downarrow \mathcal{J}
+		\xrightarrow{(\minus) \downarrow j}
+	\mathsf{Cat},
+\qquad
+	\mathsf{Cat} \downarrow \mathcal{J}
+		\xrightarrow{j \downarrow (\minus)}
+	\mathsf{Cat}
+\end{equation}
+preserve colimits.
+\end{lemma}
+
+\begin{proof}
+The result can easily be shown directly,
+so here we note instead that one can in fact
+ write explicit formulas for the right adjoints
+of
+$(\minus) \downarrow j$,
+$j \downarrow (\minus)$.
+Moreover, since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ 
+it suffices to do so for $(\minus) \downarrow j$.
+The right adjoint
+$(\minus)^{\downarrow j} \colon
+\mathsf{Cat}
+	\to 
+\mathsf{Cat} \downarrow \mathcal{J}
+$
+is then defined on objects by the Grothendieck constructions
+$\mathcal{C}^{\downarrow j}
+= \mathcal{J} \ltimes \mathcal{C}^{\mathcal{J}(\minus,j)}$
+for the functors
+\[
+\begin{tikzcd}[row sep = 0em]
+	\mathcal{J} \ar{r} & \mathsf{Cat} \\
+	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}.
+\end{tikzcd}
+\]
+%Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
+%
+%	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
+%	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
+%correspond to functors
+%	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
+%	
+%	On objects, $F$ associates to each pair 
+%	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
+%
+%	On arrows $F$ associates to 
+%	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
+%	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
+%	One thus defines
+%\[
+%	G(I) = \left(
+%	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
+%	F\left(i,(\minus)\circ \pi(i)\right)
+%		\xrightarrow{F(I)}
+%	F\left(i',\minus \right)
+%	\right)
+%\]
+%and again it is clear that these are inverse processes.
+%	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
+\end{proof}
 
 %In the following statement note that when 
 %$\mathcal{J}=\mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
@@ -11076,15 +11083,21 @@ In practice, we will need to know that $s$ satisfies the following stronger fina
 	$\mcI_{\bullet} \to \mathcal{J}$
 	between $\mcI_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
 	and a constant object
-	$\mathcal{J} = \mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$. Then the source map $s$
+	$\mathcal{J} = \mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$. Then the source and target maps 
 \[
 	\begin{tikzcd}
-	\Delta^{op} \ltimes \mcI_{\bullet} \ar{rr}{s}  \ar{rd}&& \left|\mcI_{\bullet} \right|\ar{dl} \\
-	& \mathcal{J}
+	\Delta^{op} \ltimes \mcI_{\bullet} \ar{rr}{s}  \ar{rd}&& \left|\mcI_{\bullet} \right|\ar{dl}
+& &
+	\Delta^{op} \ltimes \mcI_{\bullet} \ar{rr}{t}  \ar{rd}&& \left|\mcI_{\bullet}^{op} \right|^{op}\ar{dl}
+\\
+	& \mathcal{J} &
+& &
+	& \mathcal{J} &
 	\end{tikzcd}	
 \]
-is $\Lan$-final over $\mathcal{J}$, i.e. the functors 
-$s \downarrow j\colon (\Delta^{op} \ltimes \mcI_{\bullet})\downarrow j \to |\mcI_{\bullet}|\downarrow j$ are final for all $j\in \mathcal{J}$.
+are $\Lan$-final over $\mathcal{J}$, i.e. the functors 
+$s \downarrow j \colon (\Delta^{op} \ltimes \mcI_{\bullet})\downarrow j \to |\mcI_{\bullet}|\downarrow j$ are final for all $j\in \mathcal{J}$,
+and similarly for $t$.
 \end{corollary}
 
 \begin{proof}
@@ -11094,13 +11107,12 @@ guarantees that, since $(\minus) \downarrow j$ is a left adjoint, $|\mcI_{\bulle
 \end{proof}
 
 
-We end this section with two basic lemmas that will allows us to apply Corollary \ref{SOURCELANFINAL COR}
-to the tree categories we will be interested in.
+We will require two additional straightforward lemmas.
 
 \begin{lemma}\label{TWISTING LEMMA}
 	Let $\mcI_{\bullet}^F \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ be such that the diagrams
 	\begin{equation}\label{IDENTSIMPRELSISO EQ}
-	\begin{tikzcd}[row sep=0.4em,column sep = 3.5em]
+	\begin{tikzcd}[row sep=0.4em,column sep = 4.5em]
 		\mathcal{I}_n
 		\ar{dr}[name=F1]{F_n} \ar{dd}[swap]{d_i} & &
 		\mathcal{I}_n
@@ -11114,8 +11126,7 @@ to the tree categories we will be interested in.
 		\arrow[Leftrightarrow, from=F2, to=G3,shorten >=0.25cm,shorten <=0.25cm,"\sigma_{j}"]
 	\end{tikzcd}
 \end{equation}
-commute up to isomorphism for $0 < i \leq n$, $0 \leq j \leq n$.
-
+are given by natural isomorphisms for $0 < i \leq n$, $0 \leq j \leq n$.
 Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
 \[
 \mcI_n \xrightarrow{d_{1,\cdots,n}} 
@@ -11124,6 +11135,13 @@ Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
 \]
 assemble to an object 
 $\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams (\ref{IDENTSIMPRELSISO EQ}) for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
+
+Dually, if (\ref{IDENTSIMPRELSISO EQ})
+are natural isomorphisms for
+$0\leq i <n$ and $0\leq j \leq n$
+one can form 
+$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ 
+such that the corresponding diagrams are strictly commutative.
 \end{lemma}
 
 
@@ -11136,8 +11154,8 @@ This follows by a straightforward verification.
 	A (necessarily unique) factorization
 \begin{equation}\label{SOURCEFACT EQ}
 	\begin{tikzcd}[row sep = 0.5em]
-	\Delta^{op} \ltimes \mcI_{\bullet} \ar{rr} \ar{rd}[swap]{s}& & \C \\
-	& \left|\mcI_{\bullet}\right| \ar[dashed]{ru}
+	\Delta^{op} \ltimes \mcI_{\bullet} \ar{rr}{F_{\bullet}} \ar{rd}[swap]{s}& & \C \\
+	& \left|\mcI_{\bullet}\right| \ar[dashed]{ru}[swap]{F}
 	\end{tikzcd}
 \end{equation}
 	exists iff for the associated object 
@@ -11161,24 +11179,32 @@ This follows by a straightforward verification.
 		\arrow[Rightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\varphi_n"]
 	\end{tikzcd}
 \end{equation}
+Dually, a factorization through the target 
+$t \colon \Delta^{op} \ltimes \mathcal{I}_{\bullet}
+\to |\mathcal{I}_{\bullet}^{op}|^{op}$
+exists iff the faces $d_i$ and degeneracies 
+$s_j$ are strictly commutative for
+$0\leq i <n$, $0\leq j \leq n$.
 \end{lemma}
 
 
 \begin{proof}
-For the ``if'' direction, it suffices to note that $s$ sends all pushout arrows of $\Delta^{op} \ltimes \mcI_{\bullet}$ for faces $d_i$, $0<i\leq n$ and degeneracies
-$s_j$, $0\leq j \leq n$ to identities
-and this yields the commutative diagrams (\ref{IDENTSIMPRELS EQ}).
+For the ``only if'' direction, it suffices to note that $s$ sends all pushout arrows of $\Delta^{op} \ltimes \mcI_{\bullet}$ for faces $d_i$, $0<i\leq n$ and degeneracies
+$s_j$, $0\leq j \leq n$ to identities,
+yielding the required commutative diagrams in (\ref{IDENTSIMPRELS EQ}).
 
-For the ``only if''  direction, this will follow by building a 
+For the ``if''  direction, this will follow by building a 
 functor
-$\mcI_{\bullet} \xrightarrow{\bar{F}} \C^{[\bullet]}$ together with the naturality of the source map $s$ (recall that $|\C^{[\bullet]}|\simeq \C)$. We define
+$\mcI_{\bullet} \xrightarrow{\bar{F}_{\bullet}} \C^{[\bullet]}$ together with the naturality of the source map $s$ (recall that $|\C^{[\bullet]}|\simeq \C)$. We define
 $\bar{F}_n|_{k \to k+1}$ as the map
 \begin{equation}\label{EQUIVALENCEDEF EQ}
 F_{n-k} d_{0,\cdots,k-1}
 	\xrightarrow{\varphi_{n-k} d_{0,\cdots,k-1}}
 F_{n-k-1} d_{0,\cdots,k}.
 \end{equation}
-The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal map in (\ref{SOURCEFACT EQ}) is straightforward, hence the real task is to prove that (\ref{EQUIVALENCEDEF EQ}) indeed defines a map of simplicial objects.
+The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal map in (\ref{SOURCEFACT EQ}) is straightforward, hence the real task is to prove that (\ref{EQUIVALENCEDEF EQ}) defines a map of simplicial objects.
+First, functoriality of the original $F_{\bullet}$
+yields identities
 \begin{equation}
 	\varphi_{n-1}d_i = \varphi_n,\phantom{1}1<i
 		\qquad
@@ -11227,28 +11253,65 @@ The case of degeneracies is similar.
 %\end{itemize}
 \end{proof}
 
-\begin{remark}\label{DUALRESULTS REM}
-	One can twist all results by the opposite functor
-	\[\Delta \xrightarrow{(\minus)^{op}} \Delta\]
-	which sends $[n]$ to itself and $d_i,s_i$ to $d_{n-i},s_{n-i}$, respectively.
-	In doing so, one obtains vertical isomorphisms	
-\[
-\begin{tikzcd}
-	\Delta^{op} \ltimes \left(\mathcal{J}_{\bullet} \circ (\minus)^{op} \right) \ar{r}{s} \ar{d}[swap]{\simeq} &
-	\left|\mathcal{J}_{\bullet} \circ (\minus)^{op}\right|
-	\ar{d}{\simeq}
+
+\begin{proof}[proof of Proposition \ref{RANTRANS PROP}]
+The result follows from the following string of identifications.
+\begin{align*}
+	\lim_{\Delta}
+	\left(
+	\mathsf{Ran}_{A_n \to \Sigma_G}
+	N_{n}
+	\right)
+	\simeq &
+	\mathsf{Ran}_{\Delta \times \Sigma_G \to \Sigma_G}
+	\left(
+	\mathsf{Ran}_{A_n \to \Sigma_G}
+	N_n
+	\right) \simeq
 \\
-	\Delta^{op} \ltimes \mathcal{J}_{\bullet} \ar{r}[swap]{t} &
-	\left| \mathcal{J}_{\bullet} \right|
-\end{tikzcd}
-\]
-which reinterpret the ``source'' functor as what one might call the ``target'' functor, with $t([n],i_n)= [n,i_n]$ rather than 
-$s([n],i_n)= [0,i_n]$.
-
-	Corollary \ref{SOURCELANFINAL COR} now says that $t$ is Lan-final
-	and Lemmas \ref{TWISTING LEMMA}, \ref{SOURCEFACT LEM} generalize in the obvious way by replacing $s$ with $t$ and $d_0$ with $d_n$.
-\end{remark}
-
+	\simeq &
+	\mathsf{Ran}_{\Delta \times \Sigma_G \to \Sigma_G}
+	\left(
+	\mathsf{Ran}_{(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to
+	\Delta \times \Sigma_G}
+	N_{\bullet}
+	\right) \simeq
+\\
+	\simeq &
+	\mathsf{Ran}_{
+	(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to
+	\Sigma_G}
+	N_{\bullet}
+	\simeq 
+	\mathsf{Ran}_{
+	(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to \Sigma_G}
+	\tilde{N}_{\bullet}
+	\simeq
+	\mathsf{Ran}_{
+	|A_{\bullet}| \to \Sigma_G}
+	\tilde{N}
+\end{align*}
+The first step simply rewrites 
+$\lim_{\Delta}$. 
+The second step 
+follows from Proposition \ref{FIBERKANMAP PROP} applied to the map 
+$(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to
+\Delta \times \Sigma_G$
+of Grothendieck fibrations over $\Delta$.
+The third step follows since iterated Kan extensions are again Kan extensions.
+The fourth step twists $N_{\bullet}$
+as in Lemma \ref{TWISTING LEMMA}
+to obtain $\tilde{N}_{\bullet}$
+such that the $d_i$, $s_j$ are given by strictly commutative diagrams for
+$0\leq i < n$, $0\leq j \leq n$.
+Lastly, the final step uses Lemma \ref{SOURCEFACT LEM}
+to conclude that 
+$\tilde{N}_{\bullet}$ factors through the
+target functor $t$, obtaining $\tilde{N}$, 
+and then uses 
+Corollary \ref{SOURCELANFINAL COR}
+to conclude that the Kan extensions indeed coincide.
+\end{proof}
 
 
 %\subsection{Grothendieck fibrations}
