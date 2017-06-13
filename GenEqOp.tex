@@ -557,12 +557,20 @@ Our first result, proved in Section \ref{G_OP_EXISTS_SECTION}, shows that $G$-op
         If moreover $\V$ is underlying strongly cellular, these are actual model structures.
 \end{customthm}
 
-Next, the analogous projective model structures on the category of genuine equivariant operads also exist. 
-Before the statement, we first highlight that, in the result above, the sets $\mathcal F_n$ can contain \textit{arbitrary} subgroups of $G\times \Sigma_n$. 
-However, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. 
-Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of \textit{families} of \textit{graph} subgroups, or equivalently \textit{sieve} subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. 
+One important remark to make after this
+existence result is that these model structures need not be ``well-behaved'', 
+specifically with respect to the forgetful functors preserving cofibrancy, 
+unless the collections ${\mathcal F}$ are highly structured.
+The necessary condition, found in Section \ref{MAINTHM_PROOF_SECTION} that $\mathcal \F$ is a \textit{weak} indexing system,
+is also precisely the necessary condition from Section \ref{F_GEN_OP_SECTION} to build the new algebraic structures of genuine equivariant operads.
+%Our main result, proved in Section \ref{MAINTHM_PROOF_SECTION}, shows that assuming $\mathcal F$ is a \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}) is sufficient.
 
-The following is proved in Section \ref{OP_G_EXISTS_SECTION}.
+%Next, the analogous projective model structures on the category of genuine equivariant operads also exist. 
+%Before the statement, we first highlight that, in the result above, the sets $\mathcal F_n$ can contain \textit{arbitrary} subgroups of $G\times \Sigma_n$. 
+%However, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. 
+%Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of \textit{families} of \textit{graph} subgroups, or equivalently \textit{sieve} subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. 
+
+In Section \ref{OP_G_EXISTS_SECTION}, we show these categories of algebras have a projective model structure.
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
 Let $\V$ be a strongly cellular model category with diagonals.
@@ -571,11 +579,10 @@ Then there exists a projective semi model structure on $\mathsf{Op}_{G}(\V)$, de
 \Op_G(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_G(\V).
 \]
 
-More generally, for any sieve subcategory $\Sigma_{\mathcal F} \subseteq \Sigma_G$, 
-there exists a $\Sigma_{\mathcal F}$-projective semi model structure on $\Op_G(\V)$, denoted $\Op_{G / {\mathcal F}}(\V)$,
-determined by the forgetful functor 
+More generally, for any weak indexing system $\Sigma_{\mathcal F} \subseteq \Sigma_G$, 
+there exists a projective semi model structure on $\mathsf{Op}_{\mathcal F}(\V)$, determined by the forgetful functor
 \[
-\Op_{G / \mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_{G / \mathcal F}(\V).
+\Op_{\mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_{\mathcal F}(\V).
 \]
 
 % either composite of forgetful functors
@@ -591,21 +598,9 @@ determined by the forgetful functor
 If additionally $\V$ is underlying strongly cellular, these are both actual model structures.
 \end{customthm}
 
-One important remark to make after these 
-existence results is that these model structures need not be ``well-behaved'', 
-specifically with respect to the forgetful functors preserving cofibrancy, 
-unless the collections ${\mathcal F}$ are highly structured.
-Our main result, proved in Section \ref{MAINTHM_PROOF_SECTION}, shows that assuming $\mathcal F$ is a \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}) is sufficient.
+Our main result, proved in Section \ref{MAINTHM_PROOF_SECTION}, says both notions of equivariant operads are Quillen equivalent.
 
-\begin{customthm}{III}\label{MAINEXIST3 THM}
-        For any weak indexing system $\mathcal F$,
-        there exists a projective semi model structure on $\Op_{\mathcal F}(\V)$, determined by the forgetful functor
-        \[
-        \Op_{\mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_{\mathcal F}(\V).
-        \]
-\end{customthm}
-
-\begin{customthm}{IV}\label{MAINQUILLENEQUIV THM}
+\begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
 Let $\mathcal{V}$ be a underlying strongly cellular model category with diagonals.
 %a strongly cofibrantly generated cartesian closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 
@@ -620,15 +615,11 @@ Then the adjunction
 \end{equation}
 is a Quillen equivalence.
 
-More generally, for $\mathcal{F}$ a (weak) indexing system, both analogue adjunctions
+More generally, for $\mathcal{F}$ a weak indexing system, the analogue adjunction
 \begin{equation}
       \begin{tikzcd}[column sep =5em]
-            \mathsf{Op}_{G / \mathcal F}(\V) 
-            \arrow[r, shift right=1.5, "\upgamma^*"'] 
-            &
             \mathsf{Op}_{\mathcal F}(\mathcal{V}) 
             \ar[shift left=1.5]{r}{\iota^{\**}} 
-            \arrow[l, shift right=1.5, "\upgamma_!"']
             &
             \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
             \ar[shift left=1.5]{l}{\iota_{\**}} .
@@ -665,22 +656,22 @@ In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of 
 
 There are multiple distinct steps along the path to proving our main result.  Specifically, we need better understanding and control of the interplay between the subtle equivariant structures and the combinatorics which underly operads. To that end, we rebuild operads in a way which allows us to exploit the equivariant generalization $\Omega_G$ of the dendroidal category $\Omega$ discussed in \cite{Pe17}. 
 
-We begin by observing that the free operad $\mathbb F X$ generated by a symmetric sequence $X \in \Sym(\V)$, discussed in \cite{Spitz01, BM03, Rub17} etc., can be repackaged as a left Kan extension out of $\Omega$.
+We begin by observing that the free operad $\mathbb{F} X$ generated by a symmetric sequence $X \in \Sym(\V)$, discussed in \cite{Spitz01, BM03, Rub17} etc., can be repackaged as a left Kan extension out of $\Omega$.
 \[
 \begin{tikzcd}
         |[alias=U]| \Omega^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_X"] & \V & \qquad & |[alias=A]| \Omega_G^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_Y"] & \V\\
-        \Sigma^{op} \arrow[ur, "\mathbb F X"', ""{name=V}] & && \Sigma_G^{op} \arrow[ur, "\mathbb F_G Y"', ""{name=B}]
+        \Sigma^{op} \arrow[ur, "\mathbb{F} X"', ""{name=V}] & && \Sigma_G^{op} \arrow[ur, "\mathbb{F}_G Y"', ""{name=B}]
         \arrow[Rightarrow, from=U, to=V] 
         \arrow[Rightarrow, from=A, to=B]
 \end{tikzcd}
 \]
 Here, $\mathsf{lr}$ is the ``leaf-root'' or ``valence'' functor, and $N_X$ sends $T$ to $\prod_{v\in V(T)} X(v)$.
 
-This can be equivariantly generalized, replacing $\Omega$ and $\Sigma$ with $\Omega_G$ and $\Sigma_G$, as seen on the right-hand-side. This yields our ``genuine $G$-operad'' monad $\mathbb F_G$, acting on the new category of $G$-sequences $Y\in \Sym_G(\V) = \V^{\Sigma_G^{op}}$. Now, having defined our notion of ``coefficient systems'', we can begin further analysis. As is often the case, we desire a clear understanding of free $\mathbb F_G$-extensions (\ref{FREE_FG_EXT_EQ}). 
+This can be equivariantly generalized, replacing $\Omega$ and $\Sigma$ with $\Omega_G$ and $\Sigma_G$, as seen on the right-hand-side. This yields our ``genuine $G$-operad'' monad $\mathbb{F}_G$, acting on the new category of $G$-sequences $Y\in \Sym_G(\V) = \V^{\Sigma_G^{op}}$. Now, having defined our notion of ``coefficient systems'', we can begin further analysis. As is often the case, we desire a clear understanding of free $\mathbb{F}_G$-extensions (\ref{FREE_FG_EXT_EQ}). 
 
-First, we produce multiple categorical manipulations of this functor. We modify both $\Omega_G$ and $\mathbb F_G$ to construct a description of coproducts of $\mathbb F_G$-algebras as a similar looking left Kan extension. Then, we``add in relations'' found in our free $\mathbb F_G$-extension by inserting new maps into this modified $\Omega_G$, via a realization of a simplicial category of strings of such maps. Finally, using this description, we can build a filtration of such free extensions.
+First, we produce multiple categorical manipulations of this functor. We modify both $\Omega_G$ and $\mathbb{F}_G$ to construct a description of coproducts of $\mathbb{F}_G$-algebras as a similar looking left Kan extension. Then, we``add in relations'' found in our free $\mathbb{F}_G$-extension by inserting new maps into this modified $\Omega_G$, via a realization of a simplicial category of strings of such maps. Finally, using this description, we can build a filtration of such free extensions.
 
-Secondly, we consider the homotopical characteristics of $\mathbb F_G$, in particular a detailed study of the interactions of cofibrancy with composition. We also compare $\mathbb F$ and $\mathbb F_G$, categorically and homotopically, in order to display the Quillen equivalence.
+Secondly, we consider the homotopical characteristics of $\mathbb{F}_G$, in particular a detailed study of the interactions of cofibrancy with composition. We also compare $\mathbb{F}$ and $\mathbb{F}_G$, categorically and homotopically, in order to display the Quillen equivalence.
 
 We now give a brief overview of the remaining sections.
 
@@ -688,7 +679,7 @@ We now give a brief overview of the remaining sections.
 
 \textbf{\hyperref[PLANAR_SECTION]{Section \ref{PLANAR_SECTION}: Planar and tall maps.}} Our machery requires our trees to record an additional structure, namely a planarization. In this section, we define this notion for $G$-trees, and explore the notion of ``substitution'', a second operad-like structure on the class of trees, which many of our constructions employ.
 
-\textbf{\hyperref[GENUINE_OP_MONAD_SECTION]{Section \ref{GENUINE_OP_MONAD_SECTION}: The genuine equivariant operad monad.}} Defining $\mathbb F_G$ as an endofunctor is fairly straightforward, as is defining composition and unit maps. However, showing that this data forms a monad requires a more subtle analysis. We define a more general monad $N$ on the category of weak spans $\mathsf{WSpan}(\Sigma_G, \V)$, and simplify the discussion through the flexibility of this more general category. It is also here that the concept of ``planar strings'' of maps are introduced.
+\textbf{\hyperref[GENUINE_OP_MONAD_SECTION]{Section \ref{GENUINE_OP_MONAD_SECTION}: The genuine equivariant operad monad.}} Defining $\mathbb{F}_G$ as an endofunctor is fairly straightforward, as is defining composition and unit maps. However, showing that this data forms a monad requires a more subtle analysis. We define a more general monad $N$ on the category of weak spans $\mathsf{WSpan}(\Sigma_G, \V)$, and simplify the discussion through the flexibility of this more general category. It is also here that the concept of ``planar strings'' of maps are introduced.
 
 \textbf{\hyperref[FREE_EXTENSIONS_SECTION]{Section \ref{FREE_EXTENSIONS_SECTION}: Free extensions.}} In this section, we develop the technology to produce free $T$-extensions for a particular class of monads $T$, utilizing the realizations of simplicial categories of planar strings.
 
@@ -697,9 +688,9 @@ We now give a brief overview of the remaining sections.
 \textbf{\hyperref[COFIB SEC]{Section \ref{COFIB SEC}: Cofibrancy and Quillen equivalences.}} This section contains the bulk of the homotopical analysis. It is here that we show that weak indexing systems $\mathcal F$ provide sufficient structure so that their associated $\mathcal F$-model structures are well-behaved, in particular proving the desired Quillen equivalences. We end this section, and this paper, by providing two proofs of the $N_\infty$ realization conjecture.
 
 % \begin{itemize}
-% \item Defining $\mathbb F_G$, and rigorously showing it is a monad on $\Sym_G(\V)$ (Section \ref{GENUINE_OP_MONAD_SECTION}).
-% \item Conveniently expressing free $\mathbb F_G$-extensions (Section \ref{FREE_EXTENSIONS_SECTION}).
-% \item Analyzing filtrations of free $\mathbb F_G$-extensions to build various model structures (Section \ref{MODEL_STRUCTURES_SECTION}).
+% \item Defining $\mathbb{F}_G$, and rigorously showing it is a monad on $\Sym_G(\V)$ (Section \ref{GENUINE_OP_MONAD_SECTION}).
+% \item Conveniently expressing free $\mathbb{F}_G$-extensions (Section \ref{FREE_EXTENSIONS_SECTION}).
+% \item Analyzing filtrations of free $\mathbb{F}_G$-extensions to build various model structures (Section \ref{MODEL_STRUCTURES_SECTION}).
 % \item Exploring the interplay between grafting of trees and cofibrancy to prove the above model structures are well-behaved (Section \ref{COFIB SEC}).
 % \end{itemize}
 
@@ -5022,7 +5013,7 @@ id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
 \Rightarrow
 \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
 \]
-We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb F_G}(\V)$ of \textit{genuine equivariant operads}.
+We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb{F}_G}(\V)$ of \textit{genuine equivariant operads}.
 \end{definition}
 
 \begin{remark}
@@ -5574,6 +5565,277 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 
 
+
+
+\renewcommand{\F}{\mathcal{F}}
+
+\subsection{Indexing systems and $\F$-genuine $G$-operads}
+\label{INDEXING_SECTION}
+
+Recalling $N_\infty$-operads from the introduction, we observe that they arose from an insight, 
+that the fully genuine $G$-$E_\infty$-operads of \cite{CW91} and the $G$-trivial $E_\infty$-operads
+were not the only options for equivariant commutativity,
+but instead they were the maximum and minimum respectively of an entire lattice of ``partially genuine'' options.
+
+Similarly, the genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are not the only options for equivariant operads, 
+but instead there is an additional lattice of ``partially genuine operads''. 
+
+In this subsection, we will explore this second lattice. We begin by identifying certain useful subcategories of $\Sigma_G$.
+
+
+\begin{definition}
+      \label{COROLLA_FAMILY_DEF}
+	A \textit{family} $\Sigma_{\mathcal{F}}$ of $G$-corollas is a sieve 
+	$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$, i.e., a full subcategory such that for any quotient morphism $C \to C'$ with $C' \in \Sigma_{\mathcal{F}}$ it is also $C \in \Sigma_{\mathcal{F}}$.
+\end{definition}
+
+\begin{remark}
+        \label{FAMILY_COROLLAS_REMARK}
+	Equivalenty, a family of corollas $\Sigma_{\mathcal{F}}$
+	can be encoded by
+	a collection $\F = \set{\F_n}$  of $G$-graph families $\mathcal{F}_n$ of $G \times \Sigma_n$ for each $n \geq 0$ so that $C \in \Sigma_{\mathcal{F}}$ if 
+	\[C \simeq G \cdot_H C_e\]
+        for $C_e$ a $H$-equivariant corolla 
+        (i.e. $C_e \in \Sigma^H$)
+        encoded by a partial homomorphism $G \geq H \to \Sigma_n$ corresponding to a subgroup in $\mathcal{F}_n$ 
+	(cf. Remark \ref{GRAPH REM}). 
+\end{remark}
+
+Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate either set of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
+
+
+\begin{definition}\label{FTREE DEF}
+Let $\mathcal{F}$ be a family of $G$-corollas.
+
+We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
+if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
+$\Sigma_{\mathcal{F}}$.
+
+Denote the full subcategory spanned by the $\F$-trees by $\Omega_\F$. 
+\end{definition}
+
+
+\begin{remark}\label{VACUOUSNESS REM}
+	By vacuousness the stick $G$-trees
+	$G \cdot_H \eta \simeq G/H \cdot \eta$ are always $\mathcal{F}$-trees.
+\end{remark}
+
+%The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
+Now, given a family $\mathcal{F}$ of $G$-corollas and writing 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ 
+for the partial $G$-symmetric sequences determined by $\mathcal{F}$, one may then ask under which conditions the construction of the monad
+$\mathbb{F}_G$ on $\mathsf{Sym}_{G}(\mathcal{V})$
+of \S \ref{FGMON SEC}
+can be adapted to build a monad
+$\mathbb{F}_{\mathcal{F}}$ on 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+
+Writing $\Omega_{\mathcal{F}}^0 \hookrightarrow \Omega_{G}^0$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
+this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
+$V_G \colon \Omega_{\mathcal{F},0} \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
+$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
+$(V_{G})^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
+Compatibility with the leaf-root functor, however, 
+requires an additional closure condition on $\mathcal{F}$,
+which we now formally introduce.
+
+
+\begin{definition}\label{INDEXSYS DEF}
+	A family $\mathcal{F}$ of $G$-corollas is called a 
+	\textit{weak indexing system}
+	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F},0}$ it is 
+	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e., if the leaf-root functor restricts to a functor
+	$\mathsf{lr} \colon \Omega_{\mathcal{F},0} \to \Sigma_{\mathcal{F}}$.
+	
+	Additionally, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
+$(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
+\end{definition}
+
+
+\begin{remark}
+	In light of Remark \ref{VACUOUSNESS REM} any weak coefficient system must contain the $1$-corollas $(G/H) \cdot C_1$.
+\end{remark}
+
+
+\begin{remark}
+The notion and terminology of indexing system
+was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
+Moreover, an alternate third definition of indexing systems, also in terms of $G$-trees but differing slightly from Definition \ref{INDEXSYS DEF}, was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
+\cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the description in \cite[\S 9]{Pe17}.
+
+In \cite[Def. 9.5]{Pe17}, $\mathcal{F}$ was defined to be an indexing system if $\mathcal{F}$-trees form a sieve
+$\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$ 
+(cf. \ref{SIEVE REM}). The existence of canonical maps 
+$\mathsf{lr}(T) \to T$ then imply that the condition in 
+\cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
+Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
+planar tall strings $\Omega_{\mathcal{F},1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
+$\Omega_{\mathcal{F}}^0 \to
+\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
+\Fin \wr \Omega_{\mathcal{F}}^0
+$.
+\end{remark}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We may now build a monad on $\Sym_{\F}(\V)$. 
+
+For any family of corollas $\F$, let $\upgamma: \Sigma_{\F} \into \Sigma_G$ denote the inclusion.
+We then have a pair of adjunctions
+\begin{equation}
+      \label{F_TWOADJOINTS_EQ}
+      \begin{tikzcd}[column sep =5em]
+            \mathsf{Sym}_\F(\mathcal{V})
+            \arrow[r, bend left, "\upgamma_{!}"]
+            \arrow[r, bend right, "\upgamma_{\**}"']
+            &
+            \mathsf{Sym}_{\F}(\mathcal{V}) 
+            \arrow[l, "\upgamma^{\**}"] 
+      \end{tikzcd}
+\end{equation}
+
+\begin{remark}
+      \label{UPGAMMA_REM}
+      For any $\F$, $\upgamma^{\**}$ is easy to describe explicitly. 
+      However, only when $\Sigma_\F$ is a sieve subcategory of $\Sigma_G$ 
+      (which holds in particular if $\F$ is a weak indexing system)
+      do we have a handle on $\upgamma_!$. 
+      In this case, for $Y\in \Sym_\F(\V)$, we have
+      \[
+      \upgamma_!Y(C) =
+      \begin{cases}
+      Y(C) \qquad & C\in \Sigma_\F\\
+      \varnothing & C \notin \Sigma_\F.
+\end{cases}
+\]
+However, $\upgamma_{\**}$ remains mysterious. 
+\end{remark}
+
+\begin{definition}
+        Let $\mathbb{F}_{\F}$ denote the endofunctor $\upgamma^{\**} \mathbb{F}_G \upgamma_!$ on $\Sym_{\F}(\V)$.
+\end{definition}
+
+It is immediate from Proposition \ref{MONADADJ1 PROP} that $\mathbb{F}_{\F}$ is a monad for any full subcategory $\Sigma_{\F} \subseteq \Sigma_G$.
+However, in order to have a nice comparison with $\mathbb{F}_G$ (and later, to have nice homotopical properties), we will need to require that $\Sigma_{\F}$ has the proper closure conditions.
+\begin{definition}
+      Let $\Op_{\F}(\V)$ denote the category $\mathsf{Alg}_{\mathbb{F}_{\F}}(\V)$ of \textit{$\F$-genuine $G$-operads}.
+\end{definition}
+
+We have the following adjustments of Proposition \ref{MONAD_COMPARISON_PROP} and (\ref{TWOADJOINTSOP EQ}).
+
+\begin{lemma}
+        \label{F_MONAD_COMPARISON_PROP}
+        Let $\F$ be a weak indexing system.
+        \begin{itemize}
+        \item[(i)]
+                the map 
+                $\upgamma^{\**} \mathbb{F}_G
+                \xrightarrow{\eta_{\**}}
+                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \upgamma^{\**}$
+                is an isomorphism, 
+                and thus (cf. Prop. \ref{MONADADJ PROP})
+                $\upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$
+                is a monad.
+        \item[(ii)] the map 
+                $\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
+                \xrightarrow{\beta}	
+                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$ is an isomorphism of monads;
+        \item[(iii)] the map 
+                $\upgamma_{!}\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
+                \xrightarrow{\epsilon_!}
+                \mathbb{F}_G \upgamma_{!}$ is an isomorphism.
+        \end{itemize}
+\end{lemma}
+\begin{proof}
+        This follows identically as in the proof of Proposition \ref{MONAD_COMPARISON_PROP},
+        by replacing the use of 
+        $\mathsf{lr}: \Omega_G^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$ with
+        $\mathsf{lr}: \Omega_{\F}^0 \to \Sigma_{\F}$. 
+        For example, using the description of $\Omega_{\F}$ as a sieve of $\Omega_G$, it is immediate that for each $C \in \Sigma_{\F}$ one has an equality of rooted undercategories between
+        $C \downarrow_{\mathsf r} \Omega_G^0$
+        and
+        $C \downarrow_{\mathsf r} \Omega_{\F}^0$.
+        Thus for $X\in \Sym_G(\V)$, $\upgamma^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram,
+        \begin{equation}
+              \label{F_F_LAN_EQ}
+              \begin{tikzcd}
+                    \Omega_{\F}^{0} \ar{d} \ar{r} &
+                    \Fin \wr \Sigma_{\F} \ar{r}{\Fin \wr X} &
+                    \Fin \wr \mathcal{V}^{op} \ar{r} &
+                    \mathcal{V}^{op}
+                    \\
+                    \Sigma_{\F}
+              \end{tikzcd}
+        \end{equation}
+        and the result follows since $X \to \upgamma_{\**} \upgamma^{\**} X$ is a isomorphism when restricted to $\Sigma_{\F}$. 
+        
+        The remaining results follow from similarly analogous proofs.
+\end{proof}
+
+\begin{corollary}
+      The adjunction (\ref{F_TWOADJOINTS_EQ}) extends to an adjunction on algebras
+      \[
+      \begin{tikzcd}[column sep =5em]
+            \mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
+            &
+            \mathsf{Op}^G(\mathcal{V})
+            \ar[bend right]{l}[swap,midway]{\iota_{!}}
+            \ar[bend left]{l}{\iota_{\**}}.
+      \end{tikzcd}
+      \] \qed
+\end{corollary}
+
+\begin{remark}
+      As a consequence of the proof above, we have that $\mathbb F_\F$ is isomorphic to the (possibly more natural) endofunctor given by the left Kan extension from (\ref{F_F_LAN_EQ}).
+      While we could have defined it as this endofunctor, and just repeated Section \ref{FMON SEC} mutatis mutandis, 
+      the gynmastics with adjoints required to compare it with $\mathbb F_G$ and analyze it homotopically is required anyway, and will be cleaner with this definition. 
+\end{remark}
+
+\begin{remark}
+      We observe that regular $G$-operads are a type of partially genuine $G$-operads. 
+      Indeed, 
+      the family of free $G$-corollas
+      $\Sigma_G^{\text{fr}} = \Sigma_{\F_{\text{fr}}}$       
+      is an indexing system, and the proof of Proposition \ref{MONAD_COMPARISON_PROP} yields that $\mathbb F \simeq \mathbb F_{\F_{\text{fr}}}$.
+\end{remark}
+
+Comparison between different classes of partially-genuine operads can be difficult. 
+As hinted at in Remark \ref{UPGAMMA_REM}, the adjunction maps become less tractible. 
+However, combining (\ref{TWOADJOINTS EQ}) with (\ref{F_TWOADJOINTS_EQ}) as below
+\[
+\begin{tikzcd}[column sep =5em]
+      \mathsf{Sym}_\F(\mathcal{V})
+      \arrow[r, bend left, "\upgamma_{!}"]
+      \arrow[r, bend right, dashed, "\upgamma_{\**}"']
+      &
+      \mathsf{Sym}_{G}(\mathcal{V}) 
+      \arrow[l, "\upgamma^{\**}"] 
+      \arrow[r, "\iota^{\**}"']
+      &
+      \mathsf{Sym}^G(\mathcal{V})
+      \ar[bend right]{l}[swap,midway,dashed]{\iota_{!}}
+      \ar[bend left]{l}{\iota_{\**}}
+\end{tikzcd}
+\]
+allows us to compare all partially-genuine operads with regular $G$-operads.
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\F}{\mathbb{F}}
+
 \section{Free extensions}
 \label{FREE_EXTENSIONS_SECTION}
 
@@ -5592,9 +5854,11 @@ i.e. pushouts of the form
 \end{equation}
 in the category $\mathsf{Op}_G$.
 The key technical ingredient will be the identification of a suitable filtration
-$\mathcal{P}=\mathcal{P}_0 \to 
-\mathcal{P}_1 \to \mathcal{P}_2 \to
-\cdots \to \mathcal{P}[u] $
+\begin{equation}
+	\mathcal{P}=\mathcal{P}_0 \to 
+	\mathcal{P}_1 \to \mathcal{P}_2 \to
+	\cdots \to \mathcal{P}_{\infty}=\mathcal{P}[u]
+\end{equation}
 of the map $\mathcal{P} \to \mathcal{P}[u]$
 in the underlying category $\mathsf{Sym}_G$.
 To explain how this filtration is obtained,
@@ -5673,7 +5937,7 @@ is thus a left Kan extension over some category
 $\Omega_G^{n,\lambda_l}$, which we explicitly identify in 
 \S \ref{LABELSTRI SEC}, giving the first identification below.
 \begin{equation}\label{EXTTREEFOR EQ}
-	\mathcal{P} \coprod_{\mathbb{F} X} \mathbb{F} Y 
+	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
 \simeq 
 	\colim_{(\Delta \times \Delta)^{op}}
 	\left(
@@ -6848,18 +7112,22 @@ $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
 
 
-{\color{red} HERE}
-
 \begin{example}
-The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}).
+The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}). Intuitively, the functor
+$\mathsf{lr}_{\mathcal{P}}$ replaces each of the maximal 
+$mathcal{P}$-labeled subtrees 
+$T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
+$\mathsf{lr}(T^{\mathcal{P}}_k)$,
+$\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
+$\mathcal{P}$-labeled.
 \begin{equation}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
-every node/.style = {font=\footnotesize},
+every node/.style = {font=\footnotesize,inner sep=2pt},
 dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 	\tikzstyle{level 2}=[sibling distance = 6em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (0,0.85) {$\mathsf{lr}_X(T)$}
+	\node at (0,0.85) {$\mathsf{lr}_{\mathcal{P}}(T)$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill=white] {}
 				child{node [dummy,fill = black] {}
@@ -6887,40 +7155,13 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 				}
 			edge from parent node {$b$}}
 		};
-\begin{scope}
-	\tikzstyle{level 2}=[sibling distance = 4em]
-	\tikzstyle{level 3}=[sibling distance = 3em]
-	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (0,-3) {$T$}
-		child{node [dummy,fill = black] {}
-			child{node [dummy,fill=white] {}
-				child{node [dummy,fill = black!20] {}
-					child
-					child
-				}
-				child{node [dummy,fill = black] {}
-				edge from parent node [near end] {$d$}}
-			edge from parent node [swap] {$e$}}
-			child{node [dummy,fill=black] {}
-			edge from parent node [swap, near end] {$c$}}
-			child{node [dummy,fill=white] {}
-				child{node [dummy,fill = black] {}
-					child
-				edge from parent node [swap, near end] {$a\phantom{d}$}}
-				child{node [dummy,fill = black!20] {}
-					child
-					child
-				}
-			edge from parent node {$b$}}
-		};
-\end{scope}
 \begin{scope}[level distance=1.75em]
 	\tikzstyle{level 3}=[sibling distance = 6em]
 	\tikzstyle{level 4}=[sibling distance = 4em]
 	\tikzstyle{level 5}=[sibling distance = 3em]
 	\tikzstyle{level 6}=[sibling distance = 1.5em]
-	\tikzstyle{level 7}=[sibling distance = 1em]
-	\node at (7.5,0.85) {$\mathsf{lr}_X(S)$}
+	\tikzstyle{level 7}=[sibling distance = 1.5em]
+	\node at (8,0.85) {$\mathsf{lr}_{\mathcal{P}}(S)$}
 		child{node [dummy,fill = black] {}
 			child{node [dummy,fill = white] {}
 				child{node [dummy,fill = black] {}
@@ -6958,51 +7199,13 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 			}
 		};
 \end{scope}
-\begin{scope}[level distance=1.75em]
-	\tikzstyle{level 3}=[sibling distance = 6em]
-	\tikzstyle{level 4}=[sibling distance = 4em]
-	\tikzstyle{level 5}=[sibling distance = 3em]
-	\tikzstyle{level 6}=[sibling distance = 1.5em]
-	\tikzstyle{level 7}=[sibling distance = 0.75em]
-	\node at (7.5,-3.5) {$S$}
-		child{node [dummy,fill = white] {}
-			child{node [dummy,fill = black] {}
-				child{node [dummy,fill = black] {}
-					child{node [dummy,fill=white] {}
-						child{node [dummy,fill = white] {}
-							child
-							child
-						}
-						child{node [dummy,fill = black] {}
-							child{node [dummy,fill=black] {}
-						}
-							child{node [dummy,fill=white] {}}
-						edge from parent node [near end] {$d$}}
-					edge from parent node [swap] {$e\phantom{1}$}}
-				}
-				child{node [dummy,fill = black] {}
-					child{node [dummy,fill=white] {}
-					edge from parent node [swap, near end] {$c\phantom{1}$}}
-					child{node [dummy,fill=white] {}
-						child{
-						edge from parent node [swap,near end] {$a\phantom{d}$}}
-						child{node [dummy,fill = black!20] {}
-							child
-							child
-						}
-					edge from parent node [near end] {$\phantom{1}b$}}
-				}
-			}
-		};
-\end{scope}
-	\draw [->] (2.25,2.5) -- node [swap] {$\mathsf{lr}_X(\varphi)$} (5.25,2.5);
-	\draw [->] (2.25,-2) -- node [swap] {$\varphi$} (5.25,-2);
+	\draw [->] (2.5,2.5) -- node [swap] {$\mathsf{lr}_{\mathcal{P}}(\varphi)$} (5.5,2.5);
 \end{tikzpicture}
 \end{equation}
 \end{example}
 
 
-
+{\color{red} HERE}
 
 \newpage
 
@@ -7017,11 +7220,11 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 In order to encode the homotopical information inspired by $N_\infty$-operads dicussed in the introduction, 
 we will introduce aand transfer several associated (semi) model structures on the categories $\Op_G(\V)$ and $\Op^G(\V)$ for a wide range of $\V$. 
 As identified in, for example, \cite{SS00}, analysis of free extensions is paramount when transferring model structures.
-Summarizing the results in the previous section, we have that the free $\mathbb F_G$-extension $\P[u]$ defined by the pushout
+Summarizing the results in the previous section, we have that the free $\mathbb{F}_G$-extension $\P[u]$ defined by the pushout
 \begin{equation}\label{CELLEXTPUSH EQ}
 \begin{tikzcd}
-  \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-  \mathbb F_G Y \arrow[r] & \P[u]
+  \mathbb{F}_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+  \mathbb{F}_G Y \arrow[r] & \P[u]
 \end{tikzcd}
 \end{equation}
 is given by a left Kan extension along 
@@ -7252,9 +7455,9 @@ Now, suppose we are given any rooted tall map $T \to S$ with
 $T \in \bar{\Omega}_G^e[k-1]$ (which gives a rooted isomorphism on $\mathsf{lr}$ and thus encodes a unique object of (\ref{UNDERCATPR EQ})). One can then form a diagram
 \begin{equation}\label{K-1LANFINAL EQ}
 \begin{tikzcd}
-	      & S & \mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \ar{l}
-\\
-	T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{inert}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
+      & S & \mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \ar{l}
+      \\
+      T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{inert}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
 \end{tikzcd}
 \end{equation}
 where $T \to T' \to S$ is the natural factorization such that the second map is $Y$-inert, 
@@ -7530,13 +7733,67 @@ are groupoids.
 \end{proof}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Filtration on Op_F
+
+
+\begin{proposition}
+        \label{FF_LEVEL_FILTRATION}
+        For any $\mathbb{F}_{\F}$-free extension
+        \begin{equation}
+                \label{FF_FREE_EXTENSION}
+                \begin{tikzcd}
+                        \mathbb{F}_{\F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+                        \mathbb{F}_{\F} Y \arrow[r] & \P[u]
+                \end{tikzcd}
+        \end{equation}
+        in $\Op_{\F}(\V)$, the map $\P \to \P[u]$ has a filtration
+        \[
+        \P = \P_0 \to \P_1 \to \P_2 \to \cdots \to \colim_k \P_k = \P[u].
+        \]
+        Moreover, for each $\F$-corolla $C\in \Sigma_{\F}$, the map 
+        $\P_{k-1}(C) \to \P_k(C)$
+        is given by a pushout in $\V^{\mathsf{Aut}(C)}$ as in (\ref{FILTRATION_LAN_LEVEL}), replacing all instances of $\Omega_G^a$ with $\Omega_{\F}^a$, 
+        where $\Omega_{\F}^a[k]$ denotes alternating $\F$-trees with exactly $k$ passive vertices. 
+\end{proposition}
+\begin{proof}
+        Any span defining the pushout in (\ref{FF_FREE_EXTENSION}) is equivalent to the data of the solid span in the following pushout diagram in $\Op_G(\V)$.
+        \[
+        \begin{tikzcd}
+                \mathbb{F}_G \upgamma_! X \arrow[d, "u"'] \arrow[r] & \upgamma_{\**} \P \arrow[d, dashed]\\
+                \mathbb{F}_G \upgamma_! Y \arrow[r, dashed] & (\upgamma_{\**}\P)[u]
+        \end{tikzcd}
+        \]
+        Since $\upgamma^{\**}$ is a left adjoint into $\Op_{\F}(\V)$, the filtration and its pushout description from (\ref{FILTRATION_LAN_LEVEL}) induce a filtration and pushout description on the map
+        \[
+        \P \to \P[u] = \upgamma^{\**}((\upgamma_{\**} \P)[u]).
+        \]
+        Thus, we see that for any $C \in \Sigma_{\F}$, the map $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout in $\Sym_{\F}(\V)$ over the map (cf. (\ref{FILTINTALT EQ}))
+        \begin{equation}
+              \label{F_FILTINTALT_EQ}
+              \upgamma^{\**} \Lan_{\Omega_G^a[k]^{op}}
+              \left(
+                    \bigotimes\limits_{v \in V^{ac}_G(T)}\upgamma_{\**}\P(T_v) \otimes \mathop{\square}\limits_{v \in V^{in}_G(T)} \upgamma_! u(T_v)
+              \right)
+        \end{equation}
+        However, since $\Omega_{\F}$ is a seive of $\Omega_G$, for any $C\in \Sigma_{\F}$ we again have an equality of undercategories between 
+        $C \downarrow \Omega_G^a[k]$
+        and
+        $C \downarrow \Omega_{\F}^a[k]$,
+        and thus (\ref{F_FILTINTALT_EQ}) is isomorphic to the left Kan extension over $\Omega_{\F}^a[k]^{op}$ of the same functor, 
+        yielding the desired filtration. 
+\end{proof}
+
+
+
+
+
  
 \subsection{Projective model structures}
 \label{EXISTENCE_SECTION}
 
 %In this section, $\V$ will always denote a cofibrantly generated model category. 
 
-\renewcommand{\F}{\ensuremath{\mathcal F}} 
+\renewcommand{\F}{\mathcal{F}}
 \let\barr\bar
 \renewcommand{\bar}{\overline}
 
@@ -7558,7 +7815,7 @@ If $\F$ is the set of all subgroups of $\Pi$, this is called the \textit{genuine
 \begin{definition}
       We say $\V$ is \textit{admissible for finite groups} if, 
       for any finite group $\Pi$ and any collection of subgroups $\F$, 
-      the $\F$ model structure $\V^\Pi_\F$ exists.
+      the $\F$ model structure $\V^\Pi_{\F}$ exists.
       In this case, the generating (trivial) cofibrations for $\V^\Pi_{\F}$ are given by 
       $\Pi/H \cdot i$
       for $H\in \F$ and $i$ a generating (trivial) cofibration of $\V$.
@@ -7584,144 +7841,156 @@ In particular, if $\V$ has \textit{cellular fixed points} (see Definition \ref{C
       \end{itemize}
 \end{remark} 
 
-\begin{definition}
-      \label{SUBD_PROJ_F_MODEL_STRUCTURE}
-      Now, let $\mathcal D$ be any small category,
-      $\bar{\mathcal D} \subseteq \mathcal D$ any subcategory,
-      and $\F = \set{\F_d}_{d\in\bar{\mathcal D}}$ a collection of sets $\F_d$ of subgroups of $\mathrm{Aut}(d)$ for each $d\in \bar{\mathcal D}$.
 
-      The \textit{$\F$-projective model structure} on $\V^{\mathcal D}$, 
-      denoted $\V^{\mathcal D}_\F$,
-      is the unique model structure, if it exists,
-      where a map $f$ is a weak equivalence (resp. fibration) 
-      iff 
-      $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \bar{\mathcal D}$.
-      
-      Equivalently, this is the model structure transfered, via the technology of Kan \cite[11.3.2]{Hi03} or Schwede-Shipley \cite[2.3]{SS00} along either composite of adjunctions
-      \begin{equation}
-            \label{D_BARD_F_EQ}
-            \begin{tikzcd}
-                  \V^{\mathcal D}_\F
-                  \arrow[d, shift right] 
-                  \arrow[r, shift right, "i^*"'] 
-                  &
-                  \V^{\bar{\mathcal D}}_{\F} 
-                  \arrow[l, shift right, "i_!"'] 
-                  \arrow[d, shift right]
-                  \\
-                  \V^{\mathrm{Ob}(\mathcal D)}_\F
-                  \arrow[r, shift right, "i^*"'] 
-                  \arrow[u, shift right] & 
-                  \V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} 
-                  \arrow[l, shift right, "i_!"'] 
-                  \arrow[u, shift right]
-            \end{tikzcd}
-      \end{equation}
-      where we give
-      \begin{enumerate}
-          \item $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} = \mathop{\prod}\limits_{d\in \bar{\mathcal D}}\V^{\mathrm{Aut}(d)}_{\F_d}$ 
-            the level $\F_d$-model structure, if it exists, and
-          \item $\V^{\mathrm{Ob}(\mathcal D)}_\F$ and $\V^{\bar{\mathcal D}}_\F$ 
-            the transfered model structures from $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F}$, if they exist.
-      \end{enumerate}
-      
-      If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\bar{\mathcal D}$-projective \textit{genuine} model structure; if additionally $\bar{\mathcal D} = \D$, we write $\V^{\mathcal D}_{\text{gen}}$. %, and write $\V^{\mathcal D}_{\bar{\mathcal D}}$. 
-      
-      % If $\bar{\mathcal D} = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
-      % If instead, each $\F_d$ is just the trivial group, we refer to the above as simply the $\bar{\mathcal D}$-projective model structure (with $\bar{\mathcal D}$ omitted if $\bar{\mathcal D} = \mathcal D$). 
-\end{definition}
-
-If $\V$ is admissible for finite groups, then the generating (trivial) cofibrations of $\V^{\bar{\mathcal D}}_\F$ are of the form
-\[
-\bar{\mathcal D}(d,-)/H \cdot i, \qquad \mbox{$H\in \F_d,$ $d\in \bar{\mathcal D}$, $i$ a generating (trivial) cofibration in $\V$}.
-\]
-
-In certain situations, this allows us to identify $\V^{\mathcal D}_\F$. 
-
-\begin{proposition}
-      \label{DBAR_PROJ_MODEL_PROP}
-      If the model category $\V^{\bar{\mathcal D}}_\F$ exists and 
-      $\bar{\mathcal D}$ is a \textit{cosieve}
-      \footnote{Any arrow $\bar d \to d$ with $\bar d \in \bar{\mathcal D}$ implies both $d$ and the arrow are in $\bar{\mathcal D}$}
-      of $\mathcal D$, then 
-      the model cateogry $\V^{\mathcal D}_{\F}$ exists, and 
-      the transfer adjunction (the top row of (\ref{D_BARD_F_EQ})) is a Quillen equivalence.
-\end{proposition}
-\begin{proof}
-      It is easy to check, using the fact that pushouts are levelwise, that the machinery of Kan \cite[11.3.2]{Hi03} applies, 
-      and so the model structure $\V^{\mathcal D}_{\F}$ exists, 
-      with generating cofibrations naturally of the form
-      $\mathcal D(d,-)/H \cdot i$.
-      
-      Moreover, is it similarly easy to show, using that the image of $\varnothing$ is again $\varnothing$, that 
-      cofibrant objects in $\V^{\mathcal D}_{\F}$ are precisely the essential image of cofibrant objects in $\V^{\bar{\mathcal D}}_\F$, and hence, 
-      as $i_!i^*$ is then the identity on cofibrant objects, 
-      the verification of the Quillen equivalence is immediate.
-\end{proof}
-
-We note that if we instead are analyzing presheaf categories $\V^{\mathcal D^{op}}$, the result above follows if $\bar{\mathcal D}\subseteq \mathcal D$ has the dual property of being a \textit{sieve}.
-
-% \begin{definition}
-%   \todo[inline]{come back}
-%   Given two subcategories $\bar{\mathcal D}$ and $\mathcal C$ of $\mathcal D$, define $\V_{\bar{\mathcal D}}^{\mathcal C^{op}}$ to have the transferred model structure, if it exists.
-%   \[
-%   \V_{\bar{\mathcal D}}^{\mathcal C^{op}} \leftrightarrows \V_{\bar{\mathcal D}}^{\mathcal D^{op}} \leftrightarrows \V^{\bar{\mathcal D}^{op}}.
-%   \]
-% \end{definition}
-
-% We note that, in the case $\mathcal C = \bar{\mathcal D}$, there is no contradiction of notation, as both definitions would give the genuine projective model structure.
-
-\begin{example}
-      \label{TWOCOEFFS_MODEL_EX}
-      Following the work of \cite{Ste16}, 
-      for any sieve subcategory $O_\F$ of the orbit category $O_G$
-      \footnote{equivalently, any \textit{family} $\mathcal F$ of subgroups of $G$; see Remark \ref{SIEVE REM}},
-      % fix any pair of families $\mathcal F$, $\bar{\mathcal F}$ of subgroups of $G$. 
-      if the projective model structure on  $\V^{O_\F^{op}}$ exists (in particular if $\V$ has \textit{cellular fixed points} (see Definition \ref{CELL DEF})), 
-      then the $O_{\mathcal F}$-model structure on $\V^{O_G^{op}}$ 
-      % and $\V^{O_{\bar{\mathcal F}}^{op}}$ also 
-      exists, and the transfer adjunction
-      \[
-      % \V^{O_{\bar{\mathcal F}}^{op}}_\F \leftrightarrows \V^{O_G^{op}}_\F \leftrightarrows \V^{O_\F^{op}}
-      \V^{O_G^{op}}_\F \leftrightarrows \V^{O_\F^{op}}
-      \]
-      is a Quillen equivalence by Proposition \ref{DBAR_PROJ_MODEL_PROP}.
-      % Furthermore, following Stephan's description of cofibrant objects (expanded upon in Proposition \ref{COFESSIM PROP}), the left-most transfer adjunction is also a Quillen equivalence
-      % whenever the model category $\V^{O_\F^{op}}$ exists; in particular if $\V$ has cellular fixed points (see \ref{CELL DEF}). 
-      % Verifying the conditions needed for the machinery of Kan \cite[11.6.1]{Hi03} is immediate as pushouts are computed levelwise.
-      % Moreover, it is straightforward to show that the transfer adjunction is a Quillen equivalence, 
-      % as the category of cofibrant objects in $\V^{O_G^{op}}_\F$ is precisely the essential image of $i_!$. 
-      Moreover, the category of cofibrant objects in $\V^{O_G^{op}}_\F$ is precisely the essential image of $\V^{O_F^{op}}$. 
-\end{example}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% No $\bar\D$-$\F$-model structures, just $\D$-$\F$-ones.
 
+\begin{definition}
+      Now, let $\mathcal D$ be any small category, 
+      and let $\F = \set{\mathcal F_d}_{d\in \mathcal D}$ be a collection of sets $\mathcal F_d$ of subgroups of $\mathsf{Aut}(d)$.
+      The \textit{projective $\F$ model structure} on $\V^{\mathcal D}$, if it exists, 
+      is the model structure denoted $\V^{\mathcal D}_{\F}$, 
+      where a map $f$ is a weak equivalence (resp. fibration) 
+      iff 
+      each level $f(d)$ is an $\F_d$-weak equivalence (resp. $\F_d$-fibration). 
+      Equivalently, this is the model structure transferred, via the technology of Kan \cite[11.3.2]{Hi03} or Schwede-Shipley \cite[2.3]{SS00} along the adjunction
+      \[
+      \V^{\mathcal D}_{\F} \leftrightarrows \V^{\text{Ob}(\mathcal D)}_{\F} = \prod_{d\in \mathcal D}\V^{\mathsf{Aut}(d)}_{\mathcal F_d}.
+      \]
+      We will let $\V^{\mathcal D}$ denote the usual projective model structure, 
+      (where each $\F_d$ just contains the trivial subgroup),
+      and 
+      $\V^{\mathcal D}_{\text{gen}}$ denote the \textit{genuine} projective model structure, 
+      where each $\F_d$ is the complete set of subgroups of $\mathsf{Aut}(d)$. 
+\end{definition}
+
+If $\V$ is admissible for finite groups, then generating (trivial) cofibrations of $\V^{\mathcal D}_{\F}$ are of the form 
+\[
+\mathcal D(d,-)/H \cdot i,\qquad d\in \mathcal D,\ H\in \mathcal F_d,\ i \mbox{ a generating (trivial) cofibration of $\V$}.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOO MANY PROJECTIVE MODEL STRUCTURES
 % \begin{definition}
-%       Now, let $\mathcal D$ be any small category, 
-%       and let $\F = \set{\mathcal F_d}_{d\in \mathcal D}$ be a collection of sets $\mathcal F_d$ of subgroups of $\mathsf{Aut}(d)$.
-%       The \textit{projective $\F$ model structure} on $\V^{\mathcal D}$, if it exists, 
-%       is the model structured denoted $\V^{\mathcal D}_\F$, 
+%       \label{SUBD_PROJ_F_MODEL_STRUCTURE}
+%       Now, let $\mathcal D$ be any small category,
+%       %$\bar{\mathcal D} \subseteq \mathcal D$ any subcategory,
+%       and $\F = \set{\F_d}_{d\in\bar{\mathcal D}}$ a collection of sets $\F_d$ of subgroups of $\mathrm{Aut}(d)$ for each $d\in \bar{\mathcal D}$.
+
+%       The \textit{$\F$-projective model structure} on $\V^{\mathcal D}$, 
+%       denoted $\V^{\mathcal D}_{\F}$,
+%       is the unique model structure, if it exists,
 %       where a map $f$ is a weak equivalence (resp. fibration) 
 %       iff 
-%       each level $f(d)$ is an $\F_d$-weak equivalence (resp. $\F_d$-fibration). 
-%       Equivalently, this is the model structure transferred, via the technology of Kan \cite[11.3.2]{Hi03} or Schwede-Shipley \cite[2.3]{SS00} along the adjunction
-%       \[
-%       \V^{\mathcal D}_{\F} \leftrightarrows \V^{\text{Ob}(\mathcal D)}_\F = \prod_{d\in \mathcal D}\V^{\mathsf{Aut}(d)}_{\mathcal F_d}.
-%       \]
-%       We will let $\V^{\mathcal D}$ denote the usual projective model structure, 
-%       (where each $\F_d$ just contains the trivial subgroup),
-%       and 
-%       $\V^{\mathcal D}_{\text{gen}}$ denote the \textit{genuine} projective model structure, 
-%       where each $\F_d$ is the complete set of subgroups of $\mathsf{Aut}(d)$. 
+%       $f(d)$ is so in $\V^{\mathrm{Aut}(d)}_{\F_d}$ for all $d\in \bar{\mathcal D}$.
+      
+%       Equivalently, this is the model structure transfered, via the technology of Kan \cite[11.3.2]{Hi03} or Schwede-Shipley \cite[2.3]{SS00} along either composite of adjunctions
+%       \begin{equation}
+%             \label{D_BARD_F_EQ}
+%             \begin{tikzcd}
+%                   \V^{\mathcal D}_{\F}
+%                   \arrow[d, shift right] 
+%                   \arrow[r, shift right, "i^*"'] 
+%                   &
+%                   \V^{\bar{\mathcal D}}_{\F} 
+%                   \arrow[l, shift right, "i_!"'] 
+%                   \arrow[d, shift right]
+%                   \\
+%                   \V^{\mathrm{Ob}(\mathcal D)}_{\F}
+%                   \arrow[r, shift right, "i^*"'] 
+%                   \arrow[u, shift right] & 
+%                   \V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} 
+%                   \arrow[l, shift right, "i_!"'] 
+%                   \arrow[u, shift right]
+%             \end{tikzcd}
+%       \end{equation}
+%       where we give
+%       \begin{enumerate}
+%           \item $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F} = \mathop{\prod}\limits_{d\in \bar{\mathcal D}}\V^{\mathrm{Aut}(d)}_{\F_d}$ 
+%             the level $\F_d$-model structure, if it exists, and
+%           \item $\V^{\mathrm{Ob}(\mathcal D)}_{\F}$ and $\V^{\bar{\mathcal D}}_{\F}$ 
+%             the transfered model structures from $\V^{\mathrm{Ob}(\bar{\mathcal D})}_{\F}$, if they exist.
+%       \end{enumerate}
+      
+%       If each $\F_d$ is the set of all subgroups of $\mathrm{Aut}(d)$, we refer to the above as the $\bar{\mathcal D}$-projective \textit{genuine} model structure; if additionally $\bar{\mathcal D} = \D$, we write $\V^{\mathcal D}_{\text{gen}}$. %, and write $\V^{\mathcal D}_{\bar{\mathcal D}}$. 
+      
+%       % If $\bar{\mathcal D} = \mathcal D$, we refer to the above as simply the \textit{projective $\F$-model structure}.
+%       % If instead, each $\F_d$ is just the trivial group, we refer to the above as simply the $\bar{\mathcal D}$-projective model structure (with $\bar{\mathcal D}$ omitted if $\bar{\mathcal D} = \mathcal D$). 
 % \end{definition}
 
-% If $\V$ is admissible for finite groups, then generating (trivial) cofibrations of $\V^{\mathcal D}_{\F}$ are of the form 
+% If $\V$ is admissible for finite groups, then the generating (trivial) cofibrations of $\V^{\bar{\mathcal D}}_{\F}$ are of the form
 % \[
-% \mathcal D(d,-)/H \cdot i,\qquad d\in \mathcal D,\ H\in \mathcal F_d,\ i \mbox{ a generating (trivial) cofibration of $\V$}.
+% \bar{\mathcal D}(d,-)/H \cdot i, \qquad \mbox{$H\in \F_d,$ $d\in \bar{\mathcal D}$, $i$ a generating (trivial) cofibration in $\V$}.
 % \]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% In certain situations, this allows us to identify $\V^{\mathcal D}_{\F}$. 
+
+% \begin{proposition}
+%       \label{DBAR_PROJ_MODEL_PROP}
+%       If the model category $\V^{\bar{\mathcal D}}_{\F}$ exists and 
+%       $\bar{\mathcal D}$ is a \textit{cosieve}
+%       \footnote{Any arrow $\bar d \to d$ with $\bar d \in \bar{\mathcal D}$ implies both $d$ and the arrow are in $\bar{\mathcal D}$}
+%       of $\mathcal D$, then 
+%       the model cateogry $\V^{\mathcal D}_{\F}$ exists, and 
+%       the transfer adjunction (the top row of (\ref{D_BARD_F_EQ})) is a Quillen equivalence.
+% \end{proposition}
+% \begin{proof}
+%       It is easy to check, using the fact that pushouts are levelwise, that the machinery of Kan \cite[11.3.2]{Hi03} applies, 
+%       and so the model structure $\V^{\mathcal D}_{\F}$ exists, 
+%       with generating cofibrations naturally of the form
+%       $\mathcal D(d,-)/H \cdot i$.
+      
+%       Moreover, is it similarly easy to show, using that the image of $\varnothing$ is again $\varnothing$, that 
+%       cofibrant objects in $\V^{\mathcal D}_{\F}$ are precisely the essential image of cofibrant objects in $\V^{\bar{\mathcal D}}_{\F}$, and hence, 
+%       as $i_!i^*$ is then the identity on cofibrant objects, 
+%       the verification of the Quillen equivalence is immediate.
+% \end{proof}
+
+% We note that if we instead are analyzing presheaf categories $\V^{\mathcal D^{op}}$, the result above follows if $\bar{\mathcal D}\subseteq \mathcal D$ has the dual property of being a \textit{sieve}.
+
+% % \begin{definition}
+% %   \todo[inline]{come back}
+% %   Given two subcategories $\bar{\mathcal D}$ and $\mathcal C$ of $\mathcal D$, define $\V_{\bar{\mathcal D}}^{\mathcal C^{op}}$ to have the transferred model structure, if it exists.
+% %   \[
+% %   \V_{\bar{\mathcal D}}^{\mathcal C^{op}} \leftrightarrows \V_{\bar{\mathcal D}}^{\mathcal D^{op}} \leftrightarrows \V^{\bar{\mathcal D}^{op}}.
+% %   \]
+% % \end{definition}
+
+% % We note that, in the case $\mathcal C = \bar{\mathcal D}$, there is no contradiction of notation, as both definitions would give the genuine projective model structure.
+
+% \begin{example}
+%       \label{TWOCOEFFS_MODEL_EX}
+%       Following the work of \cite{Ste16}, 
+%       for any sieve subcategory $O_{\F}$ of the orbit category $O_G$
+%       \footnote{equivalently, any \textit{family} $\mathcal F$ of subgroups of $G$; see Remark \ref{SIEVE REM}},
+%       % fix any pair of families $\mathcal F$, $\bar{\mathcal F}$ of subgroups of $G$. 
+%       if the projective model structure on  $\V^{O_{\F}^{op}}$ exists (in particular if $\V$ has \textit{cellular fixed points} (see Definition \ref{CELL DEF})), 
+%       then the $O_{\mathcal F}$-model structure on $\V^{O_G^{op}}$ 
+%       % and $\V^{O_{\bar{\mathcal F}}^{op}}$ also 
+%       exists, and the transfer adjunction
+%       \[
+%       % \V^{O_{\bar{\mathcal F}}^{op}}_{\F} \leftrightarrows \V^{O_G^{op}}_{\F} \leftrightarrows \V^{O_{\F}^{op}}
+%       \V^{O_G^{op}}_{\F} \leftrightarrows \V^{O_{\F}^{op}}
+%       \]
+%       is a Quillen equivalence by Proposition \ref{DBAR_PROJ_MODEL_PROP}.
+%       % Furthermore, following Stephan's description of cofibrant objects (expanded upon in Proposition \ref{COFESSIM PROP}), the left-most transfer adjunction is also a Quillen equivalence
+%       % whenever the model category $\V^{O_{\F}^{op}}$ exists; in particular if $\V$ has cellular fixed points (see \ref{CELL DEF}). 
+%       % Verifying the conditions needed for the machinery of Kan \cite[11.6.1]{Hi03} is immediate as pushouts are computed levelwise.
+%       % Moreover, it is straightforward to show that the transfer adjunction is a Quillen equivalence, 
+%       % as the category of cofibrant objects in $\V^{O_G^{op}}_{\F}$ is precisely the essential image of $i_!$. 
+%       Moreover, the category of cofibrant objects in $\V^{O_G^{op}}_{\F}$ is precisely the essential image of $\V^{O_F^{op}}$. 
+% \end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END: TOO MANY PROJECTIVE MODEL STRUCTURES
 
 
 
@@ -7776,13 +8045,13 @@ For the remainder of this subsection, fix a collection $\F = \set{\F_n}$ of sets
 \begin{definition}
   The \textit{$\F$-model structure} on $\Sym^G(\V)$, if it exists, is the model structure
 \[
-\Sym^G_\F(\V) := \prod\limits_n \V^{G\times \Sigma_n}_{\F_n}.
+\Sym^G_{\F}(\V) := \prod\limits_n \V^{G\times \Sigma_n}_{\F_n}.
 \]
 %If $\F$ is the complete $G$-vertex system, this will be refered to as the \textit{genuine} model structure.
 \end{definition}
 
 \begin{lemma}
-        If $\V$ is admissible for finite groups, the model category $\Sym^G_\F(\V)$ exists. \qed
+        If $\V$ is admissible for finite groups, the model category $\Sym^G_{\F}(\V)$ exists. \qed
 \end{lemma}
 
 We identify the following maps in $\Op^G(\V)$ (cf. Definition \ref{F_MODEL_DEFN}).
@@ -7799,7 +8068,7 @@ We identify the following maps in $\Op^G(\V)$ (cf. Definition \ref{F_MODEL_DEFN}
 \end{definition}
 
 \begin{definition}
-        The \textit{$\F$ (semi) model structure} is the unique (semi) model structure on $\Op^G(\V)$, if it exists, with $\F$-fibrations, $\F$-cofibrations, and $\F$-weak equivalences, and will be denoted $\Op^G_\F(\V)$. 
+        The \textit{$\F$ (semi) model structure} is the unique (semi) model structure on $\Op^G(\V)$, if it exists, with $\F$-fibrations, $\F$-cofibrations, and $\F$-weak equivalences, and will be denoted $\Op^G_{\F}(\V)$. 
         
         If each $\F_n$ is the complete lattice of subgroups of $G\times \Sigma_n$, we call the above the \textit{complete} model structure.%, denoted $\Op^G_{\text{com}}(\V)$. 
         % If $\F$ is the complete $G$-vertex family, we call this the \textit{genuine} model structure on $\V\Op^G$.
@@ -7807,11 +8076,11 @@ We identify the following maps in $\Op^G(\V)$ (cf. Definition \ref{F_MODEL_DEFN}
 Equivalently, the $\F$-model structure is the (semi) model structure transferred across the adjunction
 \[
 \begin{tikzcd}
-        \Op^G_\F(\V) 
+        \Op^G_{\F}(\V) 
         \arrow[r, shift right] 
         & 
-        \Sym^G_\F(\V)
-        \arrow[l, shift right, "\mathbb F_G"'] 
+        \Sym^G_{\F}(\V)
+        \arrow[l, shift right, "\mathbb{F}_G"'] 
 \end{tikzcd}
 \]
 % Again, the machinery of \cite{SS00} says the right hand side has generating (trivial) cofibrations of the form
@@ -7819,14 +8088,14 @@ Equivalently, the $\F$-model structure is the (semi) model structure transferred
 % G \times \Sigma(-,n)/\Gamma \cdot i, \qquad \Gamma \in \F_n,\ n\geq 0,\ i \mbox{a generating (trivial) cofibration in $\V$}.
 % \]
 % % \begin{align*}
-% %         I_\F &= \sets{G \times \Sigma(-,n)/\Gamma \cdot i}{\Gamma \in \F_n,\ i \in I}\\
-% %         J_\F &= \sets{G \times \Sigma(-,n)/\Gamma \cdot j}{\Gamma \in \F_n,\ j \in J}
+% %         I_{\F} &= \sets{G \times \Sigma(-,n)/\Gamma \cdot i}{\Gamma \in \F_n,\ i \in I}\\
+% %         J_{\F} &= \sets{G \times \Sigma(-,n)/\Gamma \cdot j}{\Gamma \in \F_n,\ j \in J}
 % % \end{align*}
-% so $\Op^G_\F(\V)$ would have generating (trivial) cofibrations of the form 
+% so $\Op^G_{\F}(\V)$ would have generating (trivial) cofibrations of the form 
 % \[
-% \mathbb F(G \times \Sigma(-,n)/\Gamma \cdot i).
+% \mathbb{F}(G \times \Sigma(-,n)/\Gamma \cdot i).
 % \]
-% %$\mathbb F I_\F = \sets{\mathbb F (i_\F)}{i_\F\in I_\F}$, and similarly for trivial cofibrations.
+% %$\mathbb{F} I_{\F} = \sets{\mathbb{F} (i_{\F})}{i_{\F}\in I_{\F}}$, and similarly for trivial cofibrations.
 
 
 \begin{theorem}
@@ -7849,11 +8118,11 @@ The key technical step in the proof follows as an easy particular case, which we
 \end{proposition}
 
 \begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP2} 
-        For $\V$ strongly cellular with diagonals, and for any free $\mathbb F$-extension  
+        For $\V$ strongly cellular with diagonals, and for any free $\mathbb{F}$-extension  
         \[ 
         \begin{tikzcd} 
-                \mathbb F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
-                \mathbb F Y \arrow[r] & \P[u] 
+                \mathbb{F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
+                \mathbb{F} Y \arrow[r] & \P[u] 
         \end{tikzcd} 
         \] 
         where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym^G(\V)$, $\P \to \P[u]$ is a level cofibration, trivial if $u$ is so. 
@@ -7869,7 +8138,7 @@ The key technical step in the proof follows as an easy particular case, which we
 % \begin{remark}
 %         It also follows in a more complicated fashion. 
 
-%         We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_\F$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb F \simeq i^*\mathbb F_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
+%         We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_{\F}$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb{F} \simeq i^*\mathbb{F}_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
 % \end{remark}
 
 \begin{remark}
@@ -7920,43 +8189,48 @@ Finally, if our base category $\V$ is even nicer, these semi model structures ar
 
 
 
-\subsection{Genuine $G$-operads}
+\subsection{Genuine $\F$-operads}
 \label{OP_G_EXISTS_SECTION}
 % \subsubsection{The $\F$-model structures}
 
 We now turn our consideration to the homotopy theory of genuine $G$-operads from Section \ref{GENUINE_OP_MONAD_SECTION}.
 As above, we prove the main result Theorem \ref{MAINEXIST2 THM} in two parts: Corollary \ref{OP_F_SEMI_MODEL_THM} and Theorem \ref{OP_F_Q_MODEL_THM}. 
 
-\begin{notation}
-        In this subsection, we will let $\Sigma_\F$ denote a fixed \textit{family of corollas}, i.e. a \textit{sieve} subcategory of $\Sigma_G$
-        \footnote{In Remark \ref{FAMILY_COROLLAS_REMARK}, we show this is equivalent to a collection $\F = \set{\F_n}$ of families $\F_n$ of graph subgroups of $G\times \Sigma_n$.},
-        and we let $\Sym_\F(\V)$ denote the model category 
-        $\V^{\Sigma_\F^{op}}_{\text{gen}}$, if it exists. 
+Throughout this subsection, fix a weak indexing system $\Sigma_{\F} \subseteq \Sigma_G$ (see Definition \ref{INDEXSYS DEF}).
 
-        Additionally, we write $\Sym_{G / \F}(\V)$ for the category $\Sym_G(\V)$ endowed with the $\Sigma_\F$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE}. 
-        Equivalently, if we let $\upgamma: \Sigma_\F \into \Sigma_G$ denote the inclusion, this is the model structure transfered from the adjunction
+
+COME BACK HERE
+
+\begin{notation}
+        In this subsection, we will let $\Sigma_{\F}$ denote a fixed \textit{family of corollas}, i.e. a \textit{sieve} subcategory of $\Sigma_G$
+        
+        and we let $\Sym_{\F}(\V)$ denote the model category 
+        $\V^{\Sigma_{\F}^{op}}_{\text{gen}}$, if it exists. 
+
+        Additionally, we write $\Sym_{G / \F}(\V)$ for the category $\Sym_G(\V)$ endowed with the $\Sigma_{\F}$-projective genuine model structure from Definition \ref{SUBD_PROJ_F_MODEL_STRUCTURE}. 
+        Equivalently, if we let $\upgamma: \Sigma_{\F} \into \Sigma_G$ denote the inclusion, this is the model structure transfered from the adjunction
         \begin{equation}
                 \label{SYM_F_ADJ_EQ1}
                 \begin{tikzcd}
                         \Sym_{G / \F}(\V)
                         \arrow[r, shift right, "\upgamma^{\**}"']
                         &
-                        \Sym_\F(\V)
+                        \Sym_{\F}(\V)
                         \arrow[l, shift right, "\upgamma_!"'].
                 \end{tikzcd}
         \end{equation}
 \end{notation}
 
-As $\Sym_\F(\V) \simeq \prod_{n \geq 0} \V^{O_{\F_n}^{op}}$,
+As $\Sym_{\F}(\V) \simeq \prod_{n \geq 0} \V^{O_{\F_n}^{op}}$,
 Proposition \ref{DBAR_PROJ_MODEL_PROP} immediately implies the following.
 \begin{corollary}
         \label{SYM_F_Q_COR}
         If $\V$ is admissible for finite groups, then 
-        both $\Sym_\F(\V)$ and $\Sym_{G / \F}(\V)$ exist and are Quillen equivalent. \qed
+        both $\Sym_{\F}(\V)$ and $\Sym_{G / \F}(\V)$ exist and are Quillen equivalent. \qed
 \end{corollary}
 
 \begin{remark}
-      More generally, the above holds for any two nested sieve subcategories $\Sigma_{\bar \F}\subseteq \Sigma_\F$ of  $\Sigma_G$, not just $\Sigma_\F$ with $\Sigma_G$ itself.
+      More generally, the above holds for any two nested sieve subcategories $\Sigma_{\bar \F}\subseteq \Sigma_{\F}$ of  $\Sigma_G$, not just $\Sigma_{\F}$ with $\Sigma_G$ itself.
 \end{remark}
 
 We identify the following maps in $\Op_G(\V)$ (cf. Definitions \ref{F_MODEL_DEFN}, \ref{F_MAPS_DEFN}).
@@ -7964,12 +8238,12 @@ We identify the following maps in $\Op_G(\V)$ (cf. Definitions \ref{F_MODEL_DEFN
         We say a map $f: \O \to \P$ in $\Op_G(\V)$ is an  
         \begin{itemize} 
         \item[(i)] \textit{$\F$-weak equivalence} (resp. \textit{$\F$-fibration}) if 
-                $f(C):\O(C) \to \P(C)$ is one in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $\F$-corollas $C\in\Sigma_\F$. 
+                $f(C):\O(C) \to \P(C)$ is one in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $\F$-corollas $C\in\Sigma_{\F}$. 
         \item[(ii)] \textit{$\F$-cofibration} if 
                 it has the left lifting property against all maps which are both $\F$-fibrations and $\F$-weak equivalences. 
-                % \item[(iii)] \textit{$\Sigma_\F$-cofibration} if 
+                % \item[(iii)] \textit{$\Sigma_{\F}$-cofibration} if 
                 %         $f$ is an cofibration in $\Sym_{G / \F}(\V)$ 
-                %         (equivalently, $\upgamma^{\**}f$ is a cofibration in $\Sym_\F(\V)$). 
+                %         (equivalently, $\upgamma^{\**}f$ is a cofibration in $\Sym_{\F}(\V)$). 
         \item[(iv)] \textit{level genuine cofibration} if 
                 $f(C)$ is a cofibration in $\V^{\mathrm{Aut}(C)}_{gen}$ for all $C\in \Sigma_\G$. 
         \end{itemize} 
@@ -7988,23 +8262,23 @@ We identify the following maps in $\Op_G(\V)$ (cf. Definitions \ref{F_MODEL_DEFN
                 \arrow[r, shift right, "\mathsf{fgt}"'] 
                 & 
                 \Sym_{G / \F}(\V) 
-                \arrow[l, shift right, "\mathbb F_G"'] 
+                \arrow[l, shift right, "\mathbb{F}_G"'] 
         \end{tikzcd} 
         \] 
 \end{definition} 
 
 % Again by \cite{SS00}, this structure would be cofibrantly generated, with generating arrows of the form
 % \[
-% \mathbb F_G(\Sigma_G(-,C)/H \cdot i) \qquad C\in \Sigma_\F,\ H\leq \mathsf{Aut}(C),\ i \mbox{a generating (trivial) cofibration in $\V$}.
+% \mathbb{F}_G(\Sigma_G(-,C)/H \cdot i) \qquad C\in \Sigma_{\F},\ H\leq \mathsf{Aut}(C),\ i \mbox{a generating (trivial) cofibration in $\V$}.
 % \]
 % % \begin{align*} 
-% %         I_\F &= \sets{\mathbb F_G(\Sigma_G(-,C)/H \cdot i)}{C \in \Sigma_\F,\ H\leq \mathsf{Aut}(C),\ i\in I}\\ 
-% %         J_\F &= \sets{\mathbb F_G(\Sigma_G(-,C)/H \cdot j)}{C \in \Sigma_\F,\ H\leq \mathsf{Aut}(C),\ j\in J}, 
+% %         I_{\F} &= \sets{\mathbb{F}_G(\Sigma_G(-,C)/H \cdot i)}{C \in \Sigma_{\F},\ H\leq \mathsf{Aut}(C),\ i\in I}\\ 
+% %         J_{\F} &= \sets{\mathbb{F}_G(\Sigma_G(-,C)/H \cdot j)}{C \in \Sigma_{\F},\ H\leq \mathsf{Aut}(C),\ j\in J}, 
 % % \end{align*} 
 % % for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$. 
 
 \begin{notation} 
-      If $\Sigma_\F = \Sigma_G$, we refer to the $\F$ model structure as the \textit{genuine} model structure, and denote it simply $\Op_G(\V)$. 
+      If $\Sigma_{\F} = \Sigma_G$, we refer to the $\F$ model structure as the \textit{genuine} model structure, and denote it simply $\Op_G(\V)$. 
 \end{notation} 
 
 We can now state the first part of our main result for this section.
@@ -8072,11 +8346,11 @@ Again, the key technical step written out below follows from the simple case of 
 \end{proof} 
 
 \begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP} 
-        For $\V$ strongly cellular with diagonals, and for any free $\mathbb F_G$-extension  
+        For $\V$ strongly cellular with diagonals, and for any free $\mathbb{F}_G$-extension  
         \[ 
         \begin{tikzcd} 
-                \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
-                \mathbb F_G Y \arrow[r] & \P[u] 
+                \mathbb{F}_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
+                \mathbb{F}_G Y \arrow[r] & \P[u] 
         \end{tikzcd} 
         \] 
         where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym_G(\V)$, $\P \to \P[u]$ is a level genuine cofibration, trivial if $u$ is so. 
@@ -8099,7 +8373,7 @@ Indeed, \ref{LEVEL_COFIB_REMARK} also implies that cofibrations in $\Sym_{G / \F
         \label{OP_F_SEMI_MODEL_THM}
         If $\V$ is strongly cellular with diagonals, 
         the $\F$ semi model structure on $\Op_G(\V)$ exists
-        for any sieve subcategory $\Sigma_\F \subseteq \Sigma_G$. \qed
+        for any sieve subcategory $\Sigma_{\F} \subseteq \Sigma_G$. \qed
 \end{corollary} 
 
 Precisely as for Theorem \ref{F_OP_Q_MODEL_THM}, if our base category $\V$ is even nicer, these semi model structures are in fact Quillen model structures.
@@ -8111,14 +8385,14 @@ Precisely as for Theorem \ref{F_OP_Q_MODEL_THM}, if our base category $\V$ is ev
         % \item every object in $\V$ is cofibrant,
         % \end{itemize}
         then the $\F$-model structure $\Op_{G / \F}(\V)$ exists 
-        for any sieve subcategory $\Sigma_\F \subseteq \Sigma_G$. \qed
+        for any sieve subcategory $\Sigma_{\F} \subseteq \Sigma_G$. \qed
 \end{theorem} 
 % \begin{proof} 
 %         The definition of \textit{underlying} strongly cellular is precisely designed so that the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied. 
 % \end{proof} 
 
 \begin{example} 
-      The $\F$-model structure exists on $\sOp_G := \Op_G(\sSet)$ for any sieve subcategory $\Sigma_\F \subseteq \Sigma_G$.
+      The $\F$-model structure exists on $\sOp_G := \Op_G(\sSet)$ for any sieve subcategory $\Sigma_{\F} \subseteq \Sigma_G$.
 \end{example} 
 
 
@@ -8467,6 +8741,8 @@ the projections.
 	\mathcal{F} \sqcap \bar{\mathcal{F}}}
 \end{equation}
 \end{remark}
+
+
 
 
 \subsection{Pushout powers}
@@ -9060,42 +9336,9 @@ a cofibration (resp. trivial cofibration) in
 \end{remark}
 
 
-The $G$-graph families we will be interested in encode certain families of $G$-trees. We start with the case of corollas.
+The $G$-graph families we will be interested in encode certain families of $G$-trees. We start with the case of families of corollas (see Definition \ref{COROLLA_FAMILY_DEF}).
 
 
-\begin{definition}
-	A \textit{family} $\Sigma_{\mathcal{F}}$ of $G$-corollas is a sieve 
-	$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$, i.e., a full subcategory such that for any quotient morphism $C \to C'$ with $C' \in \Sigma_{\mathcal{F}}$ it is also $C \in \Sigma_{\mathcal{F}}$.
-\end{definition}
-
-\begin{remark}
-        \label{FAMILY_COROLLAS_REMARK}
-	Equivalenty, a family of corollas $\Sigma_{\mathcal{F}}$
-	can be encoded by
-	a collection $\F = \set{\F_n}$  of $G$-graph families $\mathcal{F}_n$ of $G \times \Sigma_n$ for each $n \geq 0$ so that $C \in \Sigma_{\mathcal{F}}$ if 
-	\[C \simeq G \cdot_H C_e\]
-for $C_e$ a $H$-equivariant corolla 
-(i.e. $C_e \in \Sigma^H$)
-encoded by a partial homomorphism $G \geq H \to \Sigma_n$ corresponding to a subgroup in $\mathcal{F}_n$ 
-	(cf. Remark \ref{GRAPH REM}). 
-\end{remark}
-
-Since $\Sigma_{\mathcal{F}}$ is determined by the families $\{\mathcal{F}_n\}_{n \geq 0}$, we will abuse notation and abbreviate either set of data simply as $\mathcal{F}$ (alternatively, the reader can think of $\mathcal{F}$ as a ``family in the groupoid $\Sigma$ of finite sets''). 
-
-
-\begin{definition}\label{FTREE DEF}
-Let $\mathcal{F}$ be a family of $G$-corollas.
-
-We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
-if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
-$\Sigma_{\mathcal{F}}$.
-\end{definition}
-
-
-\begin{remark}\label{VACUOUSNESS REM}
-	By vacuousness the stick $G$-trees
-	$G \cdot_H \eta \simeq G/H \cdot \eta$ are always $\mathcal{F}$-trees.
-\end{remark}
 
 
 \begin{proposition}
@@ -9117,6 +9360,28 @@ Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with aut
 	$\mathcal{F}_T$ is thus closed under subgroups since the $G$-vertices of $ G \cdot_H T$ are quotients of those of $G \cdot_K T$.
 \end{proof}
 
+
+
+\begin{remark}
+\todo[inline]{come back}
+The closure condition required of weak indexing systems from 
+Definition \ref{INDEXSYS DEF}
+can be translated in terms of families as saying that for any tree $T \in \Omega$ and letting 
+$\phi \colon \Sigma_T \to \Sigma_{\mathsf{lr}(T)}$ 
+be the natural homomorphism, one has
+$(G \times \phi)(\Gamma) \in \mathcal{F}_{\mathsf{lr}(T)}$
+for any $\Gamma \in \mathcal{F}_{T}$. 
+Proposition \ref{FGTRIGHT PROP} then says that
+\begin{equation}\label{LRLEFTQUILLEN EQ}
+	\phi_{!}
+		\colon
+	\mathcal{V}^{G\times \Sigma_T}_{\mathcal{F}_T}
+		\to
+	\mathcal{V}^{G\times \mathsf{lr}(T)}
+	_{\mathcal{F}_{\mathsf{lr}(T)}}
+\end{equation}
+is a left Quillen functor.
+\end{remark}
 
 \begin{remark}\label{UNPACKFTYPE REM}
 Unpacking definitions, a partial homomorphism 
@@ -9336,6 +9601,97 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 \end{proof}
 
 
+\begin{remark}
+\todo[inline]{come back}
+When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
+coincides with \cite[Lemma 5.9]{BM08}.
+Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
+However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
+Indeed, this is reflected 
+on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
+uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
+to deduce the much simpler condition
+$\Gamma \cap \prod \Sigma_{T_i} = \**$
+that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} mentioned above.
+One may thus wonder if the $\mathcal{F}^{\ltimes_G n}$
+families are indeed required 
+to prove Proposition \ref{AUTTCOFPUSH PROP},
+or whether a more direct adaptation of the proof of \cite[Lemma 5.9]{BM08} is possible.
+Reverse engineering our proofs, the most natural ``simplification'' would be to replace the condition (\ref{KEYLEMMAGECOR EQ}) with the condition
+\begin{equation}\label{WRONGCONJ}
+\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
+\in   \mathcal{F},
+\end{equation}
+thus replacing the families 
+$\mathcal{F}^{\ltimes n}$ of (\ref{FLTIMESN EQ}) with the families
+$(\iota_{G^{\times n}})_{\**}
+(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
+However, it is not hard to build indexing systems $\mathcal{F}$ (other than the universal one) for which these simpler families do not satisfy the analogue of 
+Lemma \ref{KEYLEMMAGECO LEM}, 
+and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
+%However, the following example shows that  
+%(\ref{WRONGCONJ}) 
+%is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
+%and $\mathcal{F}$ be the indexing system generated
+%(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
+%Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
+%Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
+%\begin{equation}
+%\begin{tikzpicture}
+%[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+%	\tikzstyle{level 2}=[sibling distance = 1.75em]
+%	\tikzstyle{level 3}=[sibling distance = 0.75em]
+%	\node at (0,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child{
+%				edge from parent node [swap] {$G/A_3$} }
+%			edge from parent node [swap] {$G/\Sigma_3$} }
+%		edge from parent node [swap] {G/G}
+%		};
+%	\node at (5,0) {$T$}
+%		child{node [dummy] {}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%			child{node [dummy] {}
+%				child
+%				child
+%			}
+%		};
+%\end{tikzpicture}
+%\end{equation}
+%$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
+%since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
+\end{remark}
+
+
+
 
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
@@ -9452,321 +9808,9 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 
 
 \subsection{Indexing systems and $\F$-genuine $G$-operads}
-\label{MAINTHM_PROOF_SECTION}
-
-The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
-More concretely, given a family $\mathcal{F}$ of $G$-corollas and writing 
-$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ 
-for the partial $G$-symmetric sequences determined by $\mathcal{F}$, one may then ask under which conditions the construction of the monad
-$\mathbb{F}_G$ on $\mathsf{Sym}_{G}(\mathcal{V})$
-of \S \ref{FGMON SEC}
-can be adapted to build a monad
-$\mathbb{F}_{\mathcal{F}}$ on 
-$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
-
-Writing $\Omega_{\mathcal{F},0} \hookrightarrow \Omega_{G,0}$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
-this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
-$V_G \colon \Omega_{\mathcal{F},0} \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
-$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
-$V_{G}^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
-Compatibility with the leaf-root functor, however, 
-requires an additional closure condition on $\mathcal{F}$,
-which we now formally introduce.
 
 
-\begin{definition}\label{INDEXSYS DEF}
-	A family $\mathcal{F}$ of $G$-corollas is called a 
-	\textit{weak indexing system}
-	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F},0}$ it is 
-	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e., if the leaf-root functor restricts to a functor
-	$\mathsf{lr} \colon \Omega_{\mathcal{F},0} \to \Sigma_{\mathcal{F}}$.
-	
-	Additionally, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
-$(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
-\end{definition}
-
-
-\begin{remark}
-	In light of Remark \ref{VACUOUSNESS REM} any weak coefficient system must contain the $1$-corollas $(G/H) \cdot C_1$.
-\end{remark}
-
-
-\begin{remark}
-The notion and terminology of indexing system
-was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
-Moreover, an alternate third definition of indexing systems, also in terms of $G$-trees but differing slightly from Definition \ref{INDEXSYS DEF}, was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
-\cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the description in \cite[\S 9]{Pe17}.
-
-In \cite[Def. 9.5]{Pe17}, $\mathcal{F}$ was defined to be an indexing system if $\mathcal{F}$-trees form a sieve
-$\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$ 
-(cf. \ref{SIEVE REM}). The existence of canonical maps 
-$\mathsf{lr}(T) \to T$ then imply that the condition in 
-\cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
-Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-planar tall strings $\Omega_{\mathcal{F},1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
-$\Omega_{\mathcal{F},0} \to
-\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
-\Fin \wr \Omega_{\mathcal{F},0}
-$.
-\end{remark}
-
-\begin{remark}
-The closure condition in 
-Definition \ref{INDEXSYS DEF}
-can be translated in terms of families as saying that for any tree $T \in \Omega$ and letting 
-$\phi \colon \Sigma_T \to \Sigma_{\mathsf{lr}(T)}$ 
-be the natural homomorphism, one has
-$(G \times \phi)(\Gamma) \in \mathcal{F}_{\mathsf{lr}(T)}$
-for any $\Gamma \in \mathcal{F}_{T}$. 
-Proposition \ref{FGTRIGHT PROP} then says that
-\begin{equation}\label{LRLEFTQUILLEN EQ}
-	\phi_{!}
-		\colon
-	\mathcal{V}^{G\times \Sigma_T}_{\mathcal{F}_T}
-		\to
-	\mathcal{V}^{G\times \mathsf{lr}(T)}
-	_{\mathcal{F}_{\mathsf{lr}(T)}}
-\end{equation}
-is a left Quillen functor.
-\end{remark}
-
-
-\begin{remark}
-When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
-coincides with \cite[Lemma 5.9]{BM08}.
-Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
-However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
-Indeed, this is reflected 
-on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
-uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
-to deduce the much simpler condition
-$\Gamma \cap \prod \Sigma_{T_i} = \**$
-that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} mentioned above.
-One may thus wonder if the $\mathcal{F}^{\ltimes_G n}$
-families are indeed required 
-to prove Proposition \ref{AUTTCOFPUSH PROP},
-or whether a more direct adaptation of the proof of \cite[Lemma 5.9]{BM08} is possible.
-Reverse engineering our proofs, the most natural ``simplification'' would be to replace the condition (\ref{KEYLEMMAGECOR EQ}) with the condition
-\begin{equation}\label{WRONGCONJ}
-\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
-\in   \mathcal{F},
-\end{equation}
-thus replacing the families 
-$\mathcal{F}^{\ltimes n}$ of (\ref{FLTIMESN EQ}) with the families
-$(\iota_{G^{\times n}})_{\**}
-(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
-However, it is not hard to build indexing systems $\mathcal{F}$ (other than the universal one) for which these simpler families do not satisfy the analogue of 
-Lemma \ref{KEYLEMMAGECO LEM}, 
-and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
-%However, the following example shows that  
-%(\ref{WRONGCONJ}) 
-%is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
-%and $\mathcal{F}$ be the indexing system generated
-%(described in the $H$-set language of \cite{BH15}) by the $G$-set $G/\Sigma_3$.
-%Explicitly, all orbital sets in $\mathcal{F}$ can be built via self inductions of restrictions of $G/\Sigma_3$.
-%Now consider the $G$-tree $T$ (with unlabeled expanded representation on the right) below.
-%\begin{equation}
-%\begin{tikzpicture}
-%[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-%	\tikzstyle{level 2}=[sibling distance = 1.75em]
-%	\tikzstyle{level 3}=[sibling distance = 0.75em]
-%	\node at (0,0) {$T$}
-%		child{node [dummy] {}
-%			child{node [dummy] {}
-%				child{
-%				edge from parent node [swap] {$G/A_3$} }
-%			edge from parent node [swap] {$G/\Sigma_3$} }
-%		edge from parent node [swap] {G/G}
-%		};
-%	\node at (5,0) {$T$}
-%		child{node [dummy] {}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%			child{node [dummy] {}
-%				child
-%				child
-%			}
-%		};
-%\end{tikzpicture}
-%\end{equation}
-%$T$ easily satisfies (\ref{WRONGCONJ}) since no element of $G$ fixes the lower corolla. On the other hand, $\Sigma_3/A_3 \nin \mathcal{F}$ since it is not a restriction of $G/\Sigma_3$ and indecomposable sets of size $2$ can not be inductions. Indeed, it must also be $G/A_3 \nin \mathcal{F}$
-%since then it would be possible to build $G/A_3^g$ (for some possibly non trivial $g \in G$) using a $G$-tree with lower corolla as in $T$, and it is now clear that $T$ is the only possible such tree.
-\end{remark}
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Extending (\ref{SYM_F_ADJ_EQ1}), we have a pair of adjunctions
-\[
-\begin{tikzcd}[column sep =5em]
-        \mathsf{Sym}_G(\mathcal{V})
-        \ar{r}[swap]{\upgamma^{\**}} 
-        &
-        \mathsf{Sym}_\F(\mathcal{V}) 
-        \ar[bend right]{l}[swap,midway]{\upgamma_{!}}
-        \ar[bend left]{l}{\upgamma_{\**}},
-\end{tikzcd}
-\]
-% where $\Sym_\F(\V)$ denotes the category of \textit{$\F$-symmetric sequences}
-% $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$.
-\begin{definition}
-        Let $\mathbb F_\F$ denote the endofunctor $\upgamma^{\**} \mathbb F_G \upgamma_!$ on $\Sym_\F(\V)$.
-\end{definition}
-
-The following is immediate from Proposition \ref{MONADADJ1 PROP}.
-\begin{lemma}
-        For any family of corollas $\F$, the endofunctor $\mathbb F_\F$ is in fact a monad, and the above adjunction lifts to an adjunction on algebras
-        \[
-        \begin{tikzcd}[column sep =5em]
-                \mathsf{Op}_G(\mathcal{V})
-                \arrow[r, shift right, "\upgamma^{\**}"'] 
-                &
-                \mathsf{Op}_\F(\mathcal{V}) 
-                \arrow[l, shift right, "\upgamma_{!}"']
-        \end{tikzcd}
-        \]
-        where $\Op_\F(\V)$ is the category $\mathsf{Alg}_{\mathbb F_\F}(\V)$ of \textit{$\F$-genuine equivariant operads}. \qed
-\end{lemma}
-
-In order to homotopically analyze this modified monad, we would like to mimic the filtration (\ref{FILTRATION_LAN_LEVEL}) but for free $\mathbb F_\F$-extensions. Here, we will need to use the new closure condition on weak indexing systems.
-
-We first analyze the compositions of $\mathbb F_G$ with the $\upgamma$ derivatives.
-\begin{lemma}
-        \label{F_MONAD_COMPARISON_PROP}
-        Let $\F$ be a weak indexing system.
-        \begin{itemize}
-        \item[(i)]
-                the map 
-                $\upgamma^{\**} \mathbb{F}_G
-                \xrightarrow{\eta_{\**}}
-                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \upgamma^{\**}$
-                is an isomorphism, 
-                and thus (cf. Prop. \ref{MONADADJ PROP})
-                $\upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$
-                is a monad, and we have an induced adjunction
-                \[
-                \begin{tikzcd}[column sep =5em]
-                        \mathsf{Op}_G(\mathcal{V})
-                        \arrow[r, shift left, "\upgamma^{\**}"] 
-                        &
-                        \mathsf{Op}_\F(\mathcal{V}) 
-                        \arrow[l, shift left, "\upgamma_{\**}"];
-                \end{tikzcd}
-                \]
-        \item[(ii)] the map 
-                $\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
-                \xrightarrow{\beta}	
-                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$ is an isomorphism of monads;
-        \item[(iii)] the map 
-                $\upgamma_{!}\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
-                \xrightarrow{\epsilon_!}
-                \mathbb{F}_G \upgamma_{!}$ is an isomorphism.
-        \end{itemize}
-\end{lemma}
-\begin{proof}
-        This follows identically as in the proof of Proposition \ref{MONAD_COMPARISON_PROP},
-        by replacing the use of 
-        $\mathsf{lr}: \Omega_G^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$ with
-        $\mathsf{lr}: \Omega_\F^0 \to \Sigma_\F$. 
-        For example, using the description of $\Omega_\F$ as a sieve of $\Omega_G$, it is immediate that for each $C \in \Sigma_\F$ one has an equality of rooted undercategories between
-        $C \downarrow_{\mathsf r} \Omega_G^0$
-        and
-        $C \downarrow_{\mathsf r} \Omega_\F^0$.
-        Thus for $X\in \Sym_G(\V)$, $\upgamma^{\**} \mathbb F_G X$ is computed by the Kan extension of the following diagram,
-        \[
-        \begin{tikzcd}
-                \Omega_{\F}^{0} \ar{d} \ar{r} &
-                \Fin \wr \Sigma_\F \ar{r}{\Fin \wr X} &
-                \Fin \wr \mathcal{V}^{op} \ar{r} &
-                \mathcal{V}^{op}
-                \\
-                \Sigma_\F
-        \end{tikzcd}
-        \]
-        and the result follows since $X \to \upgamma_{\**} \upgamma^{\**} X$ is a isomorphism when restricted to $\Sigma_\F$. 
-        
-        The remaining results follow through similarly analogous proofs.
-\end{proof}
-
-\begin{proposition}
-        \label{FF_LEVEL_FILTRATION}
-        For any $\mathbb F_\F$-free extension
-        \begin{equation}
-                \label{FF_FREE_EXTENSION}
-                \begin{tikzcd}
-                        \mathbb F_\F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-                        \mathbb F_\F Y \arrow[r] & \P[u]
-                \end{tikzcd}
-        \end{equation}
-        in $\Op_\F(\V)$, the map $\P \to \P[u]$ has a filtration
-        \[
-        \P = \P_0 \to \P_1 \to \P_2 \to \cdots \to \colim_k \P_k = \P[u].
-        \]
-        Moreover, for each $\F$-corolla $C\in \Sigma_\F$, the map 
-        $\P_{k-1}(C) \to \P_k(C)$
-        is given by a pushout in $\V^{\mathsf{Aut}(C)}$ as in (\ref{FILTRATION_LAN_LEVEL}), replacing all instances of $\Omega_G^a$ with $\Omega_\F^a$, 
-        where $\Omega_\F^a[k]$ denotes alternating $\F$-trees with exactly $k$ passive vertices. 
-\end{proposition}
-\begin{proof}
-        Any span defining the pushout in (\ref{FF_FREE_EXTENSION}) is equivalent to the data of the solid span in the following pushout diagram in $\Op_G(\V)$.
-        \[
-        \begin{tikzcd}
-                \mathbb F_G \upgamma_! X \arrow[d, "u"'] \arrow[r] & \upgamma_{\**} \P \arrow[d, dashed]\\
-                \mathbb F_G \upgamma_! Y \arrow[r, dashed] & (\upgamma_{\**}\P)[u]
-        \end{tikzcd}
-        \]
-        Since $\upgamma^{\**}$ is a left adjoint into $\Op_\F(\V)$, the filtration and its pushout description from (\ref{FILTRATION_LAN_LEVEL}) induce a filtration and pushout description on the map
-        \[
-        \P \to \P[u] = \upgamma^{\**}((\upgamma_{\**} \P)[u]).
-        \]
-        Thus, we see that for any $C \in \Sigma_\F$, the map $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout in $\Sym_\F(\V)$ over the map (cf. (\ref{FILTINTALT EQ}))
-        \begin{equation}
-              \label{F_FILTINTALT_EQ}
-              \upgamma^{\**} \Lan_{\Omega_G^a[k]^{op}}
-              \left(
-                    \bigotimes\limits_{v \in V^{ac}_G(T)}\upgamma_{\**}\P(T_v) \otimes \mathop{\square}\limits_{v \in V^{in}_G(T)} \upgamma_! u(T_v)
-              \right)
-        \end{equation}
-        However, since $\Omega_\F$ is a seive of $\Omega_G$, for any $C\in \Sigma_\F$ we again have an equality of undercategories between 
-        $C \downarrow \Omega_G^a[k]$
-        and
-        $C \downarrow \Omega_\F^a[k]$,
-        and thus (\ref{F_FILTINTALT_EQ}) is isomorphic to the left Kan extension over $\Omega_\F^a[k]^{op}$ of the same functor, 
-        yielding the desired filtration. 
-\end{proof}
+%%%%%% Model structures on Op_F
 
 We can now build model structures onto this new category of algebras.
 
@@ -9775,14 +9819,14 @@ We can now build model structures onto this new category of algebras.
 \renewcommand{\bar}{\overline}
 
 \begin{definition}
-        Let $\Sigma_{\bar\F} \subseteq \Sigma_\F$ be a sieve subcategory, i.e. $\bar\F\subseteq \F$ a subfamily of corollas.
-        We say a map $f: \O \to \P$ in $\Op_\F(\V)$ is a 
+        Let $\Sigma_{\bar\F} \subseteq \Sigma_{\F}$ be a sieve subcategory, i.e. $\bar\F\subseteq \F$ a subfamily of corollas.
+        We say a map $f: \O \to \P$ in $\Op_{\F}(\V)$ is a 
         \begin{enumerate}
         \item \textit{$\bar\F$-weak equivalence} (resp. \textit{$\bar\F$-fibration}) if $f(C): \O(C) \to \P(C)$ is one in $\V^{\mathsf{Aut}(C)}_{\text{gen}}$ for all $\bar\F$-corollas $C \in \Sigma_{\bar \F}$.
-                % \item \textit{$\Sigma_{\bar \F}$-cofibration} iff it is so after forgetting to $\Sym_{\bar \F}(\V) \subseteq \Sym_\F(\V)$.
+                % \item \textit{$\Sigma_{\bar \F}$-cofibration} iff it is so after forgetting to $\Sym_{\bar \F}(\V) \subseteq \Sym_{\F}(\V)$.
         \item \textit{$\bar\F$-level genuine cofibration} iff $f(C)$ is a cofibration in $\V^{\mathsf{Aut}(C)}_{\text{gen}}$ for all $C\in \Sigma_{\bar \F}$. 
         \end{enumerate}
-        The \textit{$\bar\F$ (semi) model structure} on $\Op_\F(\V)$, if it exists, is the (semi) model structure denoted $\Op_{\F/\bar\F}(\V)$ with the above $\bar\F$-weak equivalences and $\bar\F$-fibrations. 
+        The \textit{$\bar\F$ (semi) model structure} on $\Op_{\F}(\V)$, if it exists, is the (semi) model structure denoted $\Op_{\F/\bar\F}(\V)$ with the above $\bar\F$-weak equivalences and $\bar\F$-fibrations. 
         Equivalently, this is the model structure transferred across either composition of free-forgetful adjunctions
         \[
         \begin{tikzcd}
@@ -9795,29 +9839,29 @@ We can now build model structures onto this new category of algebras.
                 \arrow[l, shift right, "\nu_{!}"']
                 \\
                 \Sym_{\F/\bar\F}(\V) 
-                \arrow[u, shift right, "\mathbb F_\F"'] 
+                \arrow[u, shift right, "\mathbb{F}_{\F}"'] 
                 \arrow[r, shift right, "\nu^{\**}"'] 
                 & 
                 \Sym_{\bar \F}(\V) 
                 \arrow[l, shift right, "\nu_!"']
-                \arrow[u, shift right, "\mathbb F_{\bar F}"']
+                \arrow[u, shift right, "\mathbb{F}_{\bar F}"']
         \end{tikzcd}
         \]
 \end{definition}
 
 % Using general arguments of \cite{SS00}, this structure would be cofibrantly generated, with generating arrows
 % \begin{align*} 
-%         I_{\F/ \bar \F} &= \sets{\mathbb F_\F(\Sigma_\F(-,C)/H \cdot i)}{C \in \Sigma_{\bar \F},\ H\leq \mathsf{Aut}(C),\ i\in I}\\
-%         J_{\F/ \bar \F} &= \sets{\mathbb F_\F(\Sigma_\F(-,C)/H \cdot j)}{C \in \Sigma_{\bar \F},\ H\leq \mathsf{Aut}(C),\ j\in J}.
+%         I_{\F/ \bar \F} &= \sets{\mathbb{F}_{\F}(\Sigma_{\F}(-,C)/H \cdot i)}{C \in \Sigma_{\bar \F},\ H\leq \mathsf{Aut}(C),\ i\in I}\\
+%         J_{\F/ \bar \F} &= \sets{\mathbb{F}_{\F}(\Sigma_{\F}(-,C)/H \cdot j)}{C \in \Sigma_{\bar \F},\ H\leq \mathsf{Aut}(C),\ j\in J}.
 % \end{align*} 
 
-If $\bar \F = \F$, this is referred to as the \textit{projective} (semi) model structure on $\Op_\F(\V)$. 
+If $\bar \F = \F$, this is referred to as the \textit{projective} (semi) model structure on $\Op_{\F}(\V)$. 
 
-Replacing (\ref{FILTRATION_LAN_LEVEL}) with (\ref{FF_LEVEL_FILTRATION}), we have that the statement analogous to Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} but for free $\mathbb F_\F$-extensions remains true.
+Replacing (\ref{FILTRATION_LAN_LEVEL}) with (\ref{FF_LEVEL_FILTRATION}), we have that the statement analogous to Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} but for free $\mathbb{F}_{\F}$-extensions remains true.
 % \begin{corollary}
-%         For $\V$ strongly cellular with diagonals, and for any free $\mathbb F_\F$-extension (\ref{FF_FREE_EXTENSION})
+%         For $\V$ strongly cellular with diagonals, and for any free $\mathbb{F}_{\F}$-extension (\ref{FF_FREE_EXTENSION})
 %         where $u: X\to Y$ is a level genuine cofibration and
-%         $\P$ is level genuine cofibrant in $\Sym_\F(\V)$,
+%         $\P$ is level genuine cofibrant in $\Sym_{\F}(\V)$,
 %         the map $\P \to \P[u]$ is a level genuine cofibration as well, trivial if $u$ is so.
 % \end{corollary}
 Thus, mimicking the proofs of Theorem \ref{OP_G_SEMI_MODEL_THM}, Corollary \ref{OP_F_SEMI_MODEL_THM}, and Theorem \ref{OP_F_Q_MODEL_THM} together yields the following result.
@@ -9851,6 +9895,7 @@ Thus, mimicking the proofs of Theorem \ref{OP_G_SEMI_MODEL_THM}, Corollary \ref{
 
 
 \subsection{Cofibrancy and the proof of Theorem \ref{MAINQUILLENEQUIV THM}}
+\label{MAINTHM_PROOF_SECTION}
 
 One of the last steps to completing the proof of our Elmendorf-type result is the following refinement of the key argument in the proof of
 %The following is a refinement of the key argument in the proof of
@@ -10054,7 +10099,7 @@ most of the argument in the proof of
 Proposition \ref{COFESSIM PROP}
 applies mutatis mutandis
 except for the claim that 
-$\mathbb{F}_\F (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$, which is readily checked directly, 
+$\mathbb{F}_{\F} (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$, which is readily checked directly, 
 and the comparison of cellular extensions,
 which is the key claim.
 
@@ -10082,13 +10127,13 @@ $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
 are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
 
 Noting that $\gamma \iota = \iota_G$
-(where we now let $\iota_G$ denote the composite injection $G \times \Sigma \to \Sigma_\F \to \Sigma_{G}$)
+(where we now let $\iota_G$ denote the composite injection $G \times \Sigma \to \Sigma_{\F} \to \Sigma_{G}$)
 and recalling that there are natural isomorphisms 
 \[
 (\iota_G)^{\**} \mathbb{F}_{G} (\iota_{G})_{\**}
 \simeq  \mathbb{F} (\iota_G)^{\**} (\iota_{G})_{\**} \simeq \mathbb{F}
 \qquad
-\upgamma^{\**} \mathbb F_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb F_G \upgamma_!,
+\upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
 \]
 we see that the two solid subdiagrams in 
 (\ref{TWOCELLEXT EQ})
@@ -10097,14 +10142,14 @@ We claim that it now suffices to check that all four objects in the leftmost dia
 are in the essential image of $\iota_{\**}$.
 Indeed, if that is the case then
 \[
-\upgamma^{\**} \mathbb F_G \upgamma_! \iota_{\**} Z \simeq
+\upgamma^{\**} \mathbb{F}_G \upgamma_! \iota_{\**} Z \simeq
 \upgamma^{\**} \mathbb{F}_G \upgamma_* \iota_{\**} Z \simeq 
-\iota_{\**} \iota^{\**} \upgamma^{\**} \mathbb F_G \upgamma_{\**} \iota_{\**} Z \simeq
-\iota_{\**} \iota_G^{\**} \mathbb F_G \iota{G,\**} Z \simeq
-\iota_{\**} \mathbb F Z
+\iota_{\**} \iota^{\**} \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \iota_{\**} Z \simeq
+\iota_{\**} \iota_G^{\**} \mathbb{F}_G \iota{G,\**} Z \simeq
+\iota_{\**} \mathbb{F} Z
 % \mathbb{F}_G \iota_{\**} Z \simeq 
 % \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
-% \iota_{\**} \mathbb F Z
+% \iota_{\**} \mathbb{F} Z
 \]
 for $Z=X,Y$
 (where the last isomorphism can be checked directly)
@@ -10133,7 +10178,7 @@ $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
 the required condition that
 $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**}\mathcal{P}[\iota_{\**} u]$
 is an isomorphism can be checked by forgetting to 
-$\mathsf{Sym}_\F(\mathcal{V})$, and we can thus appeal to the filtration 
+$\mathsf{Sym}_{\F}(\mathcal{V})$, and we can thus appeal to the filtration 
 (\ref{FILT EQ}) of the map
 $ \mathcal{P} \to \mathcal{P}[\iota_{\**} u]$ (modified by Proposition \ref{FF_LEVEL_FILTRATION}). It thus suffices to verify by induction on $k$ that each 
 $\mathcal{P}_k$ is in the essential image of 
@@ -10230,39 +10275,6 @@ are closed under cellular extensions of operads.
         But then the functor $\iota_{\**} \iota^{\**} Y$ 
         is also already derived (since $\iota^{\**} Y \simeq \iota^{\**}\iota_{\**} X \simeq X$ is fibrant) and the derived unit is thus the isomorphism
         $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
-
-        \todo[inline]{come back}
-
-        The final part, that the adjunction
-        \[
-        \Op_{G / \F}(\V) \leftrightarrows \Op_\F(\V)
-        \]
-        is a Quillen equivalence,
-        follows by building on Example \ref{TWOCOEFFS_MODEL_EX}, and combining Corollary \ref{SYM_F_Q_COR} and the above Lemma \ref{MAINLEM LEM}.
-        From the cited results, it is immediate that the category of cofibrant objects in $\Sym_{G / \F}(\V)$ is precisely the essential image under $\upgamma_!$ of $\Sym_\F(\V)$, and hence of $\Sym^G_\F(\V)$. 
-        We now show that the analogous result hold for operads, that the cofibrant objects in $\Op_G^\F(\V)$ are the essential image under $i_!$ of $\Op_\F(\V)$. 
-        Following the proof and notation of Lemma \ref{MAINLEM LEM}, since $\mathbb F_G(\varnothing) \simeq \upgamma^*\mathbb F_G \upgamma_*(\varnothing)$, is suffices to show that cellular extensions of objects in $\upgamma_!(C^\F)$, such as those on the left below
-        \[
-        \begin{tikzcd}
-                \mathbb F_G \upgamma_! X \arrow[d] \arrow[r] &
-                \upgamma_! \O \arrow[dashed, d] & & 
-                \upgamma^*\mathbb F_G \upgamma_! X \arrow[d] \arrow[r] &
-                \O \arrow[d, dashed]
-                \\
-                \mathbb F_G \upgamma_! Y \arrow[r, dashed] &
-                (\upgamma_!\O)[\upgamma_! u] &&
-                \upgamma^* \mathbb F_G \upgamma_* Y \arrow[r, dashed] & \O[u]
-        \end{tikzcd}
-        \]
-        are precisely the essential image under $\upgamma_!$ of cellular extensions of objects in $C^\F$, as on the right above. 
-        However, by Proposition \ref{F_MONAD_COMPARISON_PROP}(iii), we have
-        $\upgamma_!\upgamma^* \mathbb F_G \upgamma_! X \simeq \mathbb F_G \upgamma_! X$,
-        and hence there is an adjointunction bijection between the data of the solid spans.
-        Again, it remains to show that all objects in the diagram on the left are in the image of $i_!$; this is immediate.
-
-        Now, to finish the result, we must show that the derived unit and counit are weak equivalences.        
-        For the counit, if $X\in \Op_G^\F(\V)$ is bifibrant then $X \simeq \upgamma_! Y$ for some cofibrant $Y \in \Op_\F(\V)$, and hence $\upgamma_!\upgamma^*$ is already derived, and so we may identify the derived counit with the counit isomorphism $\upgamma_!\upgamma^*\upgamma_! Y \to \upgamma_! Y$. 
-        For the unit, as fibrations in $\Op_G^\F(\V)$ are detected by $\upgamma^*$, it is immediate that the derived unit agrees with the unit isomorphism $Y \to \upgamma^*\upgamma_! Y$.
 \end{proof}
 
 \subsection{$N_{\infty}$-operads}
@@ -10275,17 +10287,17 @@ are closed under cellular extensions of operads.
 
 %\begin{theorem}
 % \label{COFIBRANT_G_OPS_THEOREM}
- % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_\F(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_\F(\V)$.
+ % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_{\F}(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_{\F}(\V)$.
 %\end{theorem}
 
 %The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
 %\begin{proposition}
 %  \label{F_COFIB_OP_CLOSURE_THM}
-%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_\F(\V)$, then the free $\mathbb F$-extension $\P \to \P[u]$
+%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_{\F}(\V)$, then the free $\mathbb{F}$-extension $\P \to \P[u]$
   % \[
   % \begin{tikzcd}
-  %   \mathbb F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-  %   \mathbb F Y \arrow[r] & \P[u]
+  %   \mathbb{F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+  %   \mathbb{F} Y \arrow[r] & \P[u]
   % \end{tikzcd}
   % \]
 %is a level $\F$-cofibration, trivial if $u$ is so.
@@ -10304,7 +10316,7 @@ are closed under cellular extensions of operads.
 %Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
 %\end{proof}
 
-%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb F$-extensions.
+%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb{F}$-extensions.
 
 %\begin{proof}
 %  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
@@ -10327,18 +10339,18 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
     \varnothing \arrow[r, rightarrowtail] & N\F \arrow[r, "\sim"] & \mathsf{Comm}
   \end{tikzcd}
   \]
-  in $\Op^{G}_\F(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
+  in $\Op^{G}_{\F}(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
 \end{proof}
 
 \todo[inline]{come back}
 \begin{theorem}
   \label{N_INFINITY_BAR}
-  $B(\mathbb F_G, \mathbb F_G, \delta_\F)$ is 
+  $B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is 
   \begin{itemize}
   \item in the image of $i_*$
-  \item weakly equivalent to $\delta_\F$.
+  \item weakly equivalent to $\delta_{\F}$.
   \end{itemize}
-  Hence, $i^*(B(\mathbb F_G, \mathbb F_G, \delta_\F)$ is an $N\F$-operad.
+  Hence, $i^*(B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is an $N\F$-operad.
 \end{theorem}
 
 
@@ -10364,21 +10376,21 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 %We repackage the description of cofibrant objects from \cite{Ste16}.
 %\begin{lemma}
 %  \label{ORBIT_COFIB}
-%  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_\F^{op}}$ is cofibrant iff
+%  For a family $\F$ of subgroups of $\Pi$ and $\V$ with cellular fixed points, $Y\in \V^{O_{\F}^{op}}$ is cofibrant iff
 %  \begin{itemize}
-%  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_\F$.
-%  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_\F^{op}}$. 
+%  \item[(i)] $Y(G/e)$ is $\F$-cofibrant in $\V^G_{\F}$.
+%  \item[(ii)] $Y$ is in the image of $i_*: \V^G \to \V^{\O_{\F}^{op}}$. 
 %  \end{itemize}
 %\end{lemma}
 %\begin{proof}
 %  Ignoring retracts as usual, cofibrant $Y$ are built by a transfinite composition of pushouts of the form of the first diagram from the left below. Evaluating at $G/e$ yields the second, and further taking $K$-fixed points yields the third by cellularity; as $(-)^K$ is preserved by transfinite composition by cellularity, $(i)$ follows. The fourth diagram is evaluation at $G/K$, and hence $Y_\alpha(G/K) \simeq Y_\alpha(G/e)^K$ for all $K\in \F$, and again cellularity implies this holds true for $Y$ as well.
 %\[
 %  \begin{tikzcd}
-%    O_\F(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
+%    O_{\F}(-, G/H) \cdot A \arrow[r] \arrow[d] & Y_\alpha \arrow[d] && 
 %    G/H\cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e) \arrow[d] &&
 %    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/e)^K \arrow[d] &&
 %    (G/H)^K \cdot A \arrow[r] \arrow[d] & Y_\alpha(G/K) \arrow[d]\\
-%    O_\F(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
+%    O_{\F}(-, G/H) \cdot B \arrow[r] & Y_{\alpha + 1} && 
 %    G/H \cdot B \arrow[r] & Y_{\alpha+1}(G/e) &&
 %    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/e)^K&&
 %    (G/H)^K \cdot B \arrow[r] & Y_{\alpha+1}(G/K)
@@ -10393,7 +10405,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 %  the adjunction
 %  \[
 %  \begin{tikzcd}
-%    \Sym^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
+%    \Sym^G_{\F}(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
 %  \end{tikzcd}
 %  \]
 %  from (\ref{TWOADJOINTS EQ}) is Quillen.
@@ -10504,18 +10516,18 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % That is, we need to synthesize the equivariant stories of \cite{Elm83, Pia91, Ste16} with the operadic story of \cite{MW07}, specifically building a suitable replacement for the notion of ``coefficient systems'' for operads over some ``nice'' base category $\V$.
 
 % To that end, we exploit the equivariant generalization $\Omega_G$ of the dendroidal category $\Omega$ discussed in \cite{Pe17}.
-% First, we observe that the free operad $\mathbb F X$ generated by a symmetric sequence $X \in \Sym(\V) = \V^\Sigma$, found in \cite{Spitz01, BM03}, can be repackaged as the left-most left Kan extension
+% First, we observe that the free operad $\mathbb{F} X$ generated by a symmetric sequence $X \in \Sym(\V) = \V^\Sigma$, found in \cite{Spitz01, BM03}, can be repackaged as the left-most left Kan extension
 % \[
 % \begin{tikzcd}
 %         |[alias=U]| \Omega^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_X"] & \V & \qquad & |[alias=A]| \Omega_G^{op} \arrow[d, "\mathsf{lr}"'] \arrow[r, "N_Y"] & \V\\
-%         \Sigma^{op} \arrow[ur, "\mathbb F X"', ""{name=V}] & && \Sigma_G^{op} \arrow[ur, "\mathbb F_G Y"', ""{name=B}]
+%         \Sigma^{op} \arrow[ur, "\mathbb{F} X"', ""{name=V}] & && \Sigma_G^{op} \arrow[ur, "\mathbb{F}_G Y"', ""{name=B}]
 %         \arrow[Rightarrow, from=U, to=V] 
 %         \arrow[Rightarrow, from=A, to=B]
 % \end{tikzcd}
 % \]
 % where $\mathsf{lr}$ is the ``leaf-root'' or ``valence'' functor, and $N_X$ sends $T$ to $\prod_{v\in V(T)} X(v)$.
 
-% We generalize this to the equivariant setting using our $G$-trees $\Omega_G$ and $G$-corollas $\Sigma_G$ from \cite{Pe17}, and define an endofuctor $\mathbb F_G$ on the category of $G$-symmetric sequences $\Sym_G(\V) = \V^{\Sigma_G^{op}}$ by the right-most left Kan extension above; here, $\mathsf{lr}$ is the equivariant leaf-root functor.
+% We generalize this to the equivariant setting using our $G$-trees $\Omega_G$ and $G$-corollas $\Sigma_G$ from \cite{Pe17}, and define an endofuctor $\mathbb{F}_G$ on the category of $G$-symmetric sequences $\Sym_G(\V) = \V^{\Sigma_G^{op}}$ by the right-most left Kan extension above; here, $\mathsf{lr}$ is the equivariant leaf-root functor.
 
 % Intuitively speaking, $G$-symetric sequences $Y\in \Sym_G(\V)$ can be evaluated at any finite $H$-set for $H\leq G$ (more accurately, at any $G$-corolla), and genuine $G$-operads $Y\in \Op_G(\V)$ have composition maps, e.g. of the form
 % \[
@@ -10524,8 +10536,8 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 
 % There are natural inclusions $\Sym^G(\V) \into \Sym_G(\V)$ and $\Op^G(\V) \into \Op_G(\V)$, with essential image those $\O$ satisfying a rigid fixed-point condition of the form $\O(A) \simeq \O(|A|)^{\Gamma_A}$; in this way, we see $\Sym_G$ and $\Op_G$ playing the roles of ``coefficient systems''.
 
-% Moving forward, we note that an indexing system $\F$ corresponds to a highly-structured subcategory $\Sigma_\F \subseteq \Sigma_G$.  
-% Operadically extending the work of \cite{Pia91, Ste16}, we prove the existence of an $\F$-model structure for \textit{any} subcategory $\Sigma_\F$.
+% Moving forward, we note that an indexing system $\F$ corresponds to a highly-structured subcategory $\Sigma_{\F} \subseteq \Sigma_G$.  
+% Operadically extending the work of \cite{Pia91, Ste16}, we prove the existence of an $\F$-model structure for \textit{any} subcategory $\Sigma_{\F}$.
 % \begin{theorem*}
 %         [\ref{GENUINE_SEMI_VOP_G_THM}, \ref{GEN_SEMI_GOP_THM}]
 %         For any collection $\F = \set{\F_n}$ of graph subgroups of $G\times\Sigma_n$ closed under conjugation (equivalently, any full subcategory $\Sigma_F \subseteq \Sigma_G$, the $\F$-model structures on $\Op^G(\V)$ and $\Op_G(\V)$ exist.
@@ -10541,27 +10553,27 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % % \substack{
 % %   \set{\substack{\mbox{collections $\F = \set{\F_n}$} \\ \mbox{of sets} \\ \mbox{$\F_n \subseteq \mathbb G(G\times\Sigma_n)$}}}\\[6pt]
 % %   {\text{\large =}}\\[6pt]
-% %   \set{\substack{\mbox{full subcategories}\\ \mbox{$\Sigma_\F \subseteq \Sigma_G$}}}
+% %   \set{\substack{\mbox{full subcategories}\\ \mbox{$\Sigma_{\F} \subseteq \Sigma_G$}}}
 % % }
 % % \supseteq
 % % % \set{\substack{\mbox{collections $\F = \set{\F_n}$ of families $\F_n$} \\ \mbox{of graph subgroups of $G\times\Sigma_n$} \\ \mbox{closed under conjugation}}}
 % % \substack{
 % %   \set{\substack{\mbox{collections $\F = \set{\F_n}$} \\ \mbox{of families} \\ \mbox{$\F_n \subseteq \mathbb G(G\times\Sigma_n)$}}}\\[6pt]
 % %   {\text{\large =}}\\[6pt]
-% %   \set{\substack{\mbox{sieve subcategories} \\ \mbox{$\Sigma_\F \subseteq \Sigma_G$}}}
+% %   \set{\substack{\mbox{sieve subcategories} \\ \mbox{$\Sigma_{\F} \subseteq \Sigma_G$}}}
 % % }
 % % \]
 % % \supseteq
-% % \set{\mbox{weak indexing systems: $\Sigma_\F$ closed under leaf-root induction}}
+% % \set{\mbox{weak indexing systems: $\Sigma_{\F}$ closed under leaf-root induction}}
 % % \supseteq
-% % \set{\mbox{indexing systems: $\Sigma_\F$ closed under self-induction}}
+% % \set{\mbox{indexing systems: $\Sigma_{\F}$ closed under self-induction}}
 
-% %that the $\F$-model structures exist on $\Op^G$ and $\Op_G$ for any full subcategory of $G$-corollas $\Sigma_\F \subseteq \Sigma_G$ (where subsystems of $\underline{\Fin}$ correspond to \textit{sieves} $\Sigma_F \subseteq \Sigma_G$).
+% %that the $\F$-model structures exist on $\Op^G$ and $\Op_G$ for any full subcategory of $G$-corollas $\Sigma_{\F} \subseteq \Sigma_G$ (where subsystems of $\underline{\Fin}$ correspond to \textit{sieves} $\Sigma_F \subseteq \Sigma_G$).
 % However, just an the systems $\F(\O)$ were not arbitrary, not all of the above model structures will be well-behaved.
-% The construction of $\mathbb F_G$ naturally inspires a closure condition with respect to the equivariant leaf-root functor, that we could ask our $\Sigma_\F$ to satisfy:
+% The construction of $\mathbb{F}_G$ naturally inspires a closure condition with respect to the equivariant leaf-root functor, that we could ask our $\Sigma_{\F}$ to satisfy:
 % \begin{definition*}
 %         [\ref{INDEXSYS DEF}]
-%         $\Sigma_\F\subseteq \Sigma_G$ is a \textit{weak indexing system} iff
+%         $\Sigma_{\F}\subseteq \Sigma_G$ is a \textit{weak indexing system} iff
 %         \begin{itemize}
 %         \item it is a sieve subcategory (corresponding to the associated $\F_n$ being \textit{families} of graph subgroups); and
 %         \item it is closed under leaf-root induction.
@@ -10573,11 +10585,11 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % \begin{theorem*}
 %         If $\F$ is a weak indexing system, then
 %         \begin{itemize}
-%         \item[(i)] The forgetful functors $\Op^G_\F(\V) \to \Sym^G_\F(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
+%         \item[(i)] The forgetful functors $\Op^G_{\F}(\V) \to \Sym^G_{\F}(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
 %         \item[(ii)] The comparison adjuction
 %                 \[
 %                 \begin{tikzcd}
-%                         \Op^G_\F(\V) \arrow[r, shift right, "i_*"'] & \Op_G^\F(\V) \arrow[l, shift right, "i^*"']
+%                         \Op^G_{\F}(\V) \arrow[r, shift right, "i_*"'] & \Op_G^\F(\V) \arrow[l, shift right, "i^*"']
 %                 \end{tikzcd}
 %                 \]
 %                 is a Quillen equivalence. In particular, the cofibrant objects in $\Op_G^\F(\V)$ are precisely the essential immage of $i_*$.
@@ -10585,28 +10597,28 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % \end{theorem*}
 
 % Relating back to the $N_\infty$-operads, we have that a weak indexing system $\F$ is an indexing system of \cite{BH15} iff it contains $\F_{triv}$. Thus, 
-% Part (i) is sufficient to resolve in the affirmative the conjecutre of Blumberg-Hill, using a cofibrant replacement in $\Op^G_\F$ (\ref{N_INFINITY_REALIZATION_COROLLARY}). However, again ``mimicing'' \cite{Elm83}, we build an explicit cofibrant replacement of $i_*\mathsf{Comm}$ in $\Op_G(\V)$ using a bar construction (\ref{N_INFINITY_BAR}). 
+% Part (i) is sufficient to resolve in the affirmative the conjecutre of Blumberg-Hill, using a cofibrant replacement in $\Op^G_{\F}$ (\ref{N_INFINITY_REALIZATION_COROLLARY}). However, again ``mimicing'' \cite{Elm83}, we build an explicit cofibrant replacement of $i_*\mathsf{Comm}$ in $\Op_G(\V)$ using a bar construction (\ref{N_INFINITY_BAR}). 
 % \todo[inline]{come back}
 
 % We end this introduction with a brief discussion on the general context of ``$G$-infinity operads''. We recall that $\infty$-operads, intuitively, can be thought of as operads where composition is ``weakly defined'', and $G$-coefficient systems spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is a suitable notion of $G$-$\infty$-operad in the true pre-sheaf category $\Set^{\Omega_G^{op}}$:
 % \[
 % \begin{tikzcd}
-%         \Op^G_\F(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^\F(\V) \arrow[d, "hcN_G", "\simeq ?"']\\
-%         \mathsf{dSet}^G_\F \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^\F
+%         \Op^G_{\F}(\V) \arrow[r, "i_*", "\simeq_Q"'] \arrow[d, "hcN^G"', "\simeq_Q ?"] & \Op_G^\F(\V) \arrow[d, "hcN_G", "\simeq ?"']\\
+%         \mathsf{dSet}^G_{\F} \arrow[r, "i_*"', "\simeq_Q ?"] & \mathsf{dSet}_G^\F
 % \end{tikzcd}
 % \]
 % We expect to make a full comparison between these notions in sequels.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% In order to compare $\Op^G$ and $\Op_G$, we extend the framework defining $\mathbb F_G$ in order to build, in particular, a filtration of free extensions of gen1uine operads. We then spend the rest of the paper investigating this filtration, and in particular how cofibrancy interacts with the equivariance restrictions. 
+% In order to compare $\Op^G$ and $\Op_G$, we extend the framework defining $\mathbb{F}_G$ in order to build, in particular, a filtration of free extensions of gen1uine operads. We then spend the rest of the paper investigating this filtration, and in particular how cofibrancy interacts with the equivariance restrictions. 
 
-% As a consequence of this framework, we prove the existence of various $\F$-model structures on both $\Op_G(\V)$ and $\Op^G(\V)$ for sufficiently nice $\V$. Moreover, along the way, there is a natural closure condition on a subcategory $\Sigma_\F\subseteq \Sigma_G$ over which the machinery of this paper still runs as expected. These are the \textit{weak indexing systems}, and are equivalent to well-structured collections of either
+% As a consequence of this framework, we prove the existence of various $\F$-model structures on both $\Op_G(\V)$ and $\Op^G(\V)$ for sufficiently nice $\V$. Moreover, along the way, there is a natural closure condition on a subcategory $\Sigma_{\F}\subseteq \Sigma_G$ over which the machinery of this paper still runs as expected. These are the \textit{weak indexing systems}, and are equivalent to well-structured collections of either
 % \begin{itemize}
 % \item families $\F_n$ of graph subgroups of $G\times \Sigma_n$ for each $n$; or
 % \item subcategories $\F(G/H) \subseteq \Fin^H$ for each $H\leq G$.
 % \end{itemize}
-% This closure condition implies that cofibrancy is well-behaved and well-adjusted, and moreover that the natural inclusion $\Op^G_\F(\V) \into \Op_G^\F(\V)$ is a Quillen equivalence.
+% This closure condition implies that cofibrancy is well-behaved and well-adjusted, and moreover that the natural inclusion $\Op^G_{\F}(\V) \into \Op_G^\F(\V)$ is a Quillen equivalence.
 
 
 
@@ -10615,17 +10627,17 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % We fix a strongly cofibrantly generated Cartesian monoidal model category $\V$ with cellular fixed points and genuine pushout products. 
 
 % \begin{theorem}
-%         For any collection $\F = \set{\F_n}$ of subgroups of $G\times\Sigma_n$, the $\F$-model structure on $\Op^G$ exsits. Similarly, for any full subcategory $\Sigma_\F \subseteq \Sigma_G$, the $\Sigma_\F$-model structure on $\Op_G$ exists. 
+%         For any collection $\F = \set{\F_n}$ of subgroups of $G\times\Sigma_n$, the $\F$-model structure on $\Op^G$ exsits. Similarly, for any full subcategory $\Sigma_{\F} \subseteq \Sigma_G$, the $\Sigma_{\F}$-model structure on $\Op_G$ exists. 
 % \end{theorem}        
 
 % \begin{theorem}
 %         If $\F$ is a weak indexing system, then
 %         \begin{itemize}
-%         \item[(i)] The forgetful functors $\Op^G_\F(\V) \to \Sym^G_\F(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
+%         \item[(i)] The forgetful functors $\Op^G_{\F}(\V) \to \Sym^G_{\F}(\V)$ and $\Op_G^\F(\V) \to \Sym_G^\F(\V)$ preserve cofibrations between cofibrant objects.
 %         \item[(ii)] The comparison adjuction
 %                 \[
 %                 \begin{tikzcd}
-%                         \Op^G_\F(\V) \arrow[r, "i_*"'] & \Op_G^\F(\V) \arrow[l, "i^*"']
+%                         \Op^G_{\F}(\V) \arrow[r, "i_*"'] & \Op_G^\F(\V) \arrow[l, "i^*"']
 %                 \end{tikzcd}
 %                 \]
 %                 is a Quillen equivalence.
@@ -10647,8 +10659,8 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 %   By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extension $\P \to \P[u]$, each built by pushouts
 % \[
 % \begin{tikzcd}
-%   \mathbb F_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-%   \mathbb F_G Y \arrow[r] & \P[u]
+%   \mathbb{F}_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
+%   \mathbb{F}_G Y \arrow[r] & \P[u]
 % \end{tikzcd}
 % \]
 % where $u: X \to Y$ is a generating trivial cofibration in $\sSet^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $\sSet^{\Sigma_G^{op}}_{gen}$. 
@@ -10684,16 +10696,16 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % \begin{theorem}
 %   [{\cite[Theorem 2.2.2]{WhYa15}}]
 %   \label{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM}
-%   Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb F}(\mathcal C) \leftrightarrows \C: \mathbb F$ for some monad $\mathbb F$ on $\mathcal C$. Further assume that, for any $\mathbb F(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
+%   Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb{F}}(\mathcal C) \leftrightarrows \C: \mathbb{F}$ for some monad $\mathbb{F}$ on $\mathcal C$. Further assume that, for any $\mathbb{F}(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
 % \[
 % \begin{tikzcd}
-%   \mathbb F(X) \arrow[d, "u"'] \arrow[r, "h"] & \P \arrow[d] \\
-%   \mathbb F(Y) \arrow[r] & \P[u]
+%   \mathbb{F}(X) \arrow[d, "u"'] \arrow[r, "h"] & \P \arrow[d] \\
+%   \mathbb{F}(Y) \arrow[r] & \P[u]
 % \end{tikzcd}
 % \]
-% is an underlying cofibration in $\C$, which is trivial whenever $u$ is. Then $\mathsf{Alg}_{\mathbb F}(\mathcal C)$ has the transfered cofibrationaly-generated semi-model structure, with weak equivalences and fibrations detected by $U$, generating cofibrations $\mathbb F(I)$ and trivial cofibrations $\mathbb F(J)$, and such that $\mathsf{fgt}$ sends cofibrations with cofibrant domain to cofibrations.
+% is an underlying cofibration in $\C$, which is trivial whenever $u$ is. Then $\mathsf{Alg}_{\mathbb{F}}(\mathcal C)$ has the transfered cofibrationaly-generated semi-model structure, with weak equivalences and fibrations detected by $U$, generating cofibrations $\mathbb{F}(I)$ and trivial cofibrations $\mathbb{F}(J)$, and such that $\mathsf{fgt}$ sends cofibrations with cofibrant domain to cofibrations.
 
-% If the result holds for any $\P\in \mathsf{Alg}_{\mathbb F}(\mathcal C)$, then this is in fact a true model structure.
+% If the result holds for any $\P\in \mathsf{Alg}_{\mathbb{F}}(\mathcal C)$, then this is in fact a true model structure.
 % \end{theorem}
 % \todo[inline]{come back: edit this!}
 % \begin{theorem}
@@ -10706,7 +10718,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 
 % \begin{theorem}
 %   \label{CELLULAR_EXTENSION_COFIBRATION_THEOREM}
-%   Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb F_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
+%   Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb{F}_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
 % \end{theorem}
 % \begin{proof}
 %   We use the filtration from the previous section. In particular, it suffices to show that the map
@@ -10716,7 +10728,7 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 % induced by the inclusion $p[k]: \Omega_G^e[k,-]\into \Omega_G^e[k]$, is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
 % \[
 % \begin{tikzcd}
-%   \V^{\Omega_G^e[k,-]^{op}}_\F \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_\F \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_\F \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
+%   \V^{\Omega_G^e[k,-]^{op}}_{\F} \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_{\F} \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_{\F} \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
 % \end{tikzcd}
 % \]
 % where each category is equipped with the $\F$-projective model structure, if we use the fact that
@@ -10791,7 +10803,19 @@ Combining the existence of $\F$-model structures and the above cofibrancy result
 
 
 \appendix
-\section{Appendix}
+
+
+\section{Transferring left Kan extensions}
+
+The purpose of this appendix is to provide the
+somewhat long proof of Proposition \ref{RANTRANS PROP}, 
+which is needed when repackaging free extensions of
+genuine equivariant operads in (\ref{EXTTREEFOR EQ}).
+
+{\color{red} HERE}
+
+We start by
+
 
 
 \begin{lemma}\label{SIMPSPANREIN LEMMA}
