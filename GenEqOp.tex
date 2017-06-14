@@ -8107,11 +8107,20 @@ If each $\F_n$ is the complete lattice of subgroups of $G\times \Sigma_n$, we ca
 % \]
 % %$\mathbb{F} I_{\F} = \sets{\mathbb{F} (i_{\F})}{i_{\F}\in I_{\F}}$, and similarly for trivial cofibrations.
 
+In order to show this model structure exists, we will attempt to use the machinery of Kan \cite[11.3.2]{Hi03} (or equivalently Schwede-Shipley \cite[2.3]{SS00}).
+However, as is often the case (e.g. \cite{Spitz01, BM03, Fre09, Whi14, WY15}), one of the necessary conditions will fail to hold in the strongest of generality. 
+In many of these situations, including all of those cited above, while a full model structure is not attainable, the mildly weaker structure of a \textit{semi} model category \textit{can} be transferred. 
+Hence, abusing citations somewhat, the remaining references to \cite[11.3.2]{Hi03} may refer to either that lemma or the analogous semi-model category result\footnote{
+  which replaces Condition (2) with the weaker requirement that the forgetful functor only takes bona fide $F(J)$-cell complexes to weak equivalences, and has an identical proof.}.
+
+See Section 2.2 of \cite{WY15} for a detailed definition and further analysis of semi model structures.
+
 
 \begin{theorem}
         \label{G_OP_SEMI_MODEL_THM}
         For $\V$ strongly cellular with diagonals, the complete semi model structure on $\Op^G(\V)$ exists.
 \end{theorem}
+
 
 The key technical step in the proof follows as an easy particular case, which we now state, of the stronger result Proposition \ref{AUTTCOFPUSH PROP}.
 
@@ -8144,7 +8153,9 @@ The key technical step in the proof follows as an easy particular case, which we
 \end{proof} 
 
 \begin{proof}[Proof of Theorem \ref{G_OP_SEMI_MODEL_THM}]
-        Using \cite[Lemma 2.3]{SS00}, the fact that weak equivalences and transfinite compositions are levelwise implies that Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) are sufficient.  
+        Using \cite[11.3.2]{Hi03},
+        %\cite[Lemma 2.3]{SS00}
+        the fact that weak equivalences and transfinite compositions are levelwise implies that Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) are sufficient.  
 \end{proof}
 
 % \begin{remark}
