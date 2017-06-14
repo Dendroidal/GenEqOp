@@ -5797,11 +5797,6 @@ yields an adjunction comparing all partially-genuine operads with regular $G$-op
 
 
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\F}{\mathbb{F}}
@@ -5822,9 +5817,9 @@ i.e. pushouts of the form
   \end{tikzcd}
 \end{equation}
 in the category $\mathsf{Op}_G$.
-As is standard practice (e.g \cite{SS00, Spitz01, BM03, Whi14, Pe16}),
+As is common in the literature (e.g. \cite{SS00, Spitz01, BM03, Whi14, Pe16}),
 the key technical ingredient will be the identification of a suitable filtration
-\begin{equation}
+\begin{equation}\label{FILTR EQ}
 	\mathcal{P}=\mathcal{P}_0 \to 
 	\mathcal{P}_1 \to \mathcal{P}_2 \to
 	\cdots \to \mathcal{P}_{\infty}=\mathcal{P}[u]
@@ -5929,23 +5924,20 @@ is obtained as a categorical realization
 $\Omega_G^e = |\Omega_{G}^{n,\lambda_l}|$,
 which we explicitly describe and analyze in 
 \S \ref{EXTTREE SEC}.
-
-{\color{red} HERE}
-
-In particular, we identify a smaller
+In particular, we identify a smaller and more convenient
 subcategory 
-$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$
-that is $\mathsf{Lan}$-final, 
-so that $\Omega_G^e$ can be replaced with $\bar{\Omega}_G^e$
+$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$
+that is suitably initial,
+so that $\Omega_G^e$ can be replaced with $\widehat{\Omega}_G^e$
 in (\ref{EXTTREEFOR EQ}).
 
-The desired filtration (\ref{}) of the map $\P \to \P[u]$ will be induced by a
-suitable filtration on this category $\bar{\Omega}_G^e$.
-The accessable description of this filtration then allows us to transfer
-the model structures on $\Sym^G_\F$ and $\Sym_\F$ to the categories of algebras $\Op^G$ and $\Op_\F$
-using the technology of \cite{SS00}. 
-The detailed cofibrancy analysis of these model structures, as well as their comparison and the proofs of our main result, are addressed in \S \ref{COFIB SEC}. 
+The desired filtration (\ref{FILTR EQ})
+then follows from a filtration of the 
+category $\widehat{\Omega}_G^e$ itself,
+and this is the subject of
+\S \ref{FILTRATION_SECTION}.
 
+{\color{red} HERE}
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
@@ -6858,7 +6850,7 @@ The compatibilities with arrows and with the simplicial structure are straightfo
 \end{proof}
 
 
-Our next task will be that of identifying a convenient Lan-final subcategory $\bar{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
+Our next task will be that of identifying a convenient Lan-final subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 We first introduce the auxiliary notion of alternating trees.
 Recall the notion of input path (Notation \ref{INPUTPATH NOT})
 $I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\in \Omega, \Phi, \Omega_G, \Phi_G$.
@@ -6981,24 +6973,25 @@ The term ``alternating'' reflects the fact that adjacent nodes have different co
 
 
 \begin{definition}
-	$\bar{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
+	$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
 	whose underlying tree is alternating, active nodes are labeled by $\mathcal{P}$,
 	and passive nodes are labeled by $X$ or $Y$. 
 \end{definition}
 
 Note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} 
-imply that for any map in $\bar{\Omega}_G^e$
+imply that for any map in $\widehat{\Omega}_G^e$
 the underlying map is an alternating map.
 
-The following establishes the required finality of $\bar{\Omega}_G^e$ in $\Omega_G^e$.
+The following is the key to establishing the desired initiality of 
+$\widehat{\Omega}_G^e$ in $\Omega_G^e$.
 
 
 \begin{proposition}\label{LXP PROP}
 	For each $U \in \Omega_G^e$ there exists a unique 
-	$\mathsf{lr}_{\mathcal{P}} (U) \in \bar{\Omega}_G^e$ together with a unique planar label map in $\Omega_G^e$
+	$\mathsf{lr}_{\mathcal{P}} (U) \in \widehat{\Omega}_G^e$ together with a unique planar label map in $\Omega_G^e$
 	\[\mathsf{lr}_{\mathcal{P}} (U) \to U.\]
 	Furthermore, $\mathsf{lr}_{\mathcal{P}}$ extends to a right retraction 
-	$\mathsf{lr}_{\mathcal{P}} \colon \Omega_G^e \to \bar{\Omega}_G^e$.
+	$\mathsf{lr}_{\mathcal{P}} \colon \Omega_G^e \to \widehat{\Omega}_G^e$.
 \end{proposition}
 
 
@@ -7021,7 +7014,7 @@ such that $\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e) \in V(T)}
  = \{U_i^X\} \amalg \{U_j^Y\} \amalg 
  \{U_k^{\mathcal{P}}\}$. 
  $T$ has an obvious $(\mathcal{P},X,Y)$-labeling making 
-(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \bar{\Omega}^{e}_G$, i.e. that 
+(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \widehat{\Omega}^{e}_G$, i.e. that 
 $T$ is alternating with active vertices precisely those labeled by $\mathcal{P}$.
 But since the image of each $e \in T$
 belongs to precisely one $U_k^{\mathcal{P}}$,
@@ -7043,7 +7036,7 @@ except perhaps in the number of stick faces, so that
 the degeneracy-face factorizations
 $S \to F \to U$, $T \to F \to U$
 factor through the same planar inner face $F$, with the  unique labeling that makes the inclusion a label map.
-$S$, $T$ are thus both trees in $\bar{\Omega}_G^e$ obtained from $F$ by adding degenerate $\mathcal{P}$ vertices, 
+$S$, $T$ are thus both trees in $\widehat{\Omega}_G^e$ obtained from $F$ by adding degenerate $\mathcal{P}$ vertices, 
 and since this can be done in at most one way, we conclude 
 $S=T$. 
 
@@ -7064,7 +7057,7 @@ and by some $X,\mathcal{P}$-labeled tree
 $V_{e^{\uparrow} \leq e}$ if $e^{\uparrow} \leq e$
 has a $\mathcal{P}$-label.
 We now consider the factorization problem 
-in (\ref{LRPFUN EQ}), where we want $S \in \bar{\Omega}_G^e$
+in (\ref{LRPFUN EQ}), where we want $S \in \widehat{\Omega}_G^e$
 and for the map $S \to V$ to the a planar label map.
 Combining Remark \ref{ALTSUB REM} with the uniqueness of the
 $\mathsf{lr}_{\mathcal{P}}(V_{e^{\uparrow} \leq e})$,
@@ -7182,18 +7175,32 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
 \end{example}
 
 
-{\color{red} HERE}
+\begin{corollary}
+The inclusion 
+$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ 
+is $\mathsf{Ran}$-initial over $\Sigma_G$.
+I.e., for $\C$ any a complete category and 
+functor $N \colon \Omega_G^e \to \C$ it is
+\[
+\mathsf{Ran}_{\Omega_G^e \to \Sigma_G} N
+	\simeq 
+\mathsf{Ran}_{\widehat{\Omega}_G^e \to \Sigma_G} N.
+\]
+\end{corollary}
 
-
-
-
-
+\begin{proof}
+	Since $\mathsf{lr}_{\mathcal{P}}$ is a right retraction over $\Sigma_G$, the undercategories 
+	$C \downarrow \widehat{\Omega}_G^e$ are right retractions of 
+	$C \downarrow \Omega_G^e$ for any $C \in \Sigma_G$.
+\end{proof}
 
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumi}{(\roman{enumi})}%
 
 \subsection{Filtrations of free extensions}
 \label{FILTRATION_SECTION}
+
+{\color{red} HERE}
 
 Summarizing the results in the previous subsection, 
 we have that the free $\mathbb{F}_G$-extension $\P[u]$ defined by the pushout
@@ -10726,14 +10733,14 @@ More explicitly, one has
 	 \right).
 \end{equation}
 
-%\begin{example}
-%Any $\mathcal{I} \in \mathsf{Cat}$ induces objects 
-%$\mathcal{I},\mathcal{I}_{\bullet},\mathcal{I}^{[\bullet]} \in \mathsf{Cat}^{\Delta^{op}}$ 
-%where $\mathcal{I}$ is the constant simplicial object and $\mathcal{I}_{\bullet}$ is the nerve $N \mathcal{I}$ with each level regarded as a discrete category.
-%It is straightforward to check that 
-%$|\mathcal{I}|=|\mathcal{I}_{\bullet}| =
-%|\mathcal{I}^{[\bullet]}| = \mathcal{I}$.
-%\end{example}
+\begin{example}
+Any $\mathcal{I} \in \mathsf{Cat}$ induces objects 
+$\mathcal{I},\mathcal{I}_{\bullet},\mathcal{I}^{[\bullet]} \in \mathsf{Cat}^{\Delta^{op}}$ 
+where $\mathcal{I}$ is the constant simplicial object and $\mathcal{I}_{\bullet}$ is the nerve $N \mathcal{I}$ with each level regarded as a discrete category.
+It is straightforward to check that 
+$|\mathcal{I}|\simeq |\mathcal{I}_{\bullet}| \simeq
+|\mathcal{I}^{[\bullet]}| \simeq \mathcal{I}$.
+\end{example}
 
 
 \begin{lemma}\label{OBJGENREL LEMMA}
