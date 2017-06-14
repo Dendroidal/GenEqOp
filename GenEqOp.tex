@@ -8377,9 +8377,10 @@ The key ingredient required to prove our desired Quillen equivalences
 	\mathsf{Op}_\F \rightleftarrows \mathsf{Op}^G_\F
 	\colon \iota_{\**}
 \]
-will be an analysis of cofibrant objects in $\mathsf{Op}_\F$, provided by Lemma \ref{MAINLEM LEM}. 
+will be an analysis of cofibrant objects in $\mathsf{Op}_\F$.
 %which we now provide.
-To do so will require an intricate discussion of the interplay between different classes of cofibrations, box products, and $G$-trees.
+To do so will require an intricate discussion of the interplay between different classes of cofibrations, box products, and $G$-trees, 
+leading to the characterization provided by Lemma \ref{MAINLEM LEM}.
 
 
 \subsection{Families of subgroups}
@@ -8405,7 +8406,9 @@ This section establishes some useful properties of the model structures associat
 	of those orbital $G$-sets $G/H$ for 
 	$H \in \mathcal{F}$.
 	
-	Moreover, $\mathsf{O}_{\mathcal{F}}$ is a sieve, i.e., for any map $G/K \to G/H$ in $\mathsf{O}_G$ such that $G/H \in \mathsf{O}_{\mathcal{F}}$ it is also $G/K \in \mathsf{O}_{\mathcal{F}}$. In fact, it is easy to check that families are in bijection with sieves.
+	Moreover, $\mathsf{O}_{\mathcal{F}}$ is a sieve.
+        %i.e., for any map $G/K \to G/H$ in $\mathsf{O}_G$ such that $G/H \in \mathsf{O}_{\mathcal{F}}$ it is also $G/K \in \mathsf{O}_{\mathcal{F}}$. 
+        In fact, it is easy to check that families are in bijection with sieves.
 \end{remark}
 
 
@@ -8510,13 +8513,13 @@ with regards to change of group and pushout products.
 	Then the adjunction
 \begin{equation}
 \begin{tikzcd}
-	\bar{G}\cdot_G(\minus)
+	\phi_{!} = \bar{G}\cdot_G(\minus)
 	\colon
 	\mathcal{V}^{G}_{\mathcal{F}} \ar[shift left=1]{r}
 &
 	\mathcal{V}^{\bar{G}}_{\bar{\mathcal{F}}}
 	\colon \ar[shift left=1]{l}
-	\mathsf{fgt}
+	\mathsf{fgt} = \phi^{\**}
 \end{tikzcd}
 \end{equation}
 is a Quillen adjunction if for any 
@@ -8535,14 +8538,13 @@ it is immediate that the right adjoint preserves fibrations and trivial fibratio
 	Then the adjunction
 \begin{equation}
 \begin{tikzcd}
-	\mathsf{fgt}
+	\phi^{\**} = \mathsf{fgt}
 	\colon
 	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar[shift left=1]{r}
 &
 	\mathcal{V}^{G}_{\mathcal{F}}
 	\colon
-	\mathsf{Hom}_G(\bar{G},\minus)
-	\colon \ar[shift left=1]{l}
+	\mathsf{Hom}_G(\bar{G},\minus) = \phi_{\**}
 \end{tikzcd}
 \end{equation}
 is a Quillen adjunction if for any 
@@ -9807,7 +9809,8 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 \subsection{Cofibrancy and the proof of Theorem \ref{MAINQUILLENEQUIV THM}}
 \label{MAINTHM_PROOF_SECTION}
 
-One of the last steps to completing the proof of our Elmendorf-type result is the following refinement of the key argument in the proof of
+Propositions \ref{AUTTCOFPUSH PROP} and \ref{FIXPT PROP} from the previous section provide most of the backbone of the main technical step in the proof of our Elmendrof-type result Theorem \ref{MAINQUILLENEQUIV THM}. 
+The last remaining step is the following refinement of the key argument in the proof of
 %The following is a refinement of the key argument in the proof of
 \cite[Thm. 2.10]{Ste16}.
 
