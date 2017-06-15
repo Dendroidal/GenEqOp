@@ -5498,8 +5498,20 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 \renewcommand{\F}{\mathcal{F}}
 
-\subsection{Indexing systems and $\F$-genuine $G$-operads}
+\subsection{Indexing systems and partial genuine operads}
 \label{INDEXING_SECTION}
+
+As noted in (\ref{}), 
+one possible interpretation of the discussion surrounding indexing systems from \cite{BH15}
+is that these conditions are required in order to be able to.
+
+In a parallel vein, one interpretation of the previous section, 
+in particular (\ref{TWOADJOINTSOP EQ}), is that we may think of 
+$\Sym^G \xrightarrow{\iota_!} \Sym_G$
+as the inclusion of a full subcategory, and that
+the monad $\mathbb F_G$ on $\Sym_G$ \textit{restricts} to a monad on $\Sym^G$, yielding
+the inclusion of an algebraic subcategory
+$\Op^G \xrightarrow{\iota_!} \Op_G$.
 
 The genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are in fact not the only possible algebraic structures for encoding equivariant operads.
 Instead there is a lattice of ``partially genuine operads'', 
@@ -10085,11 +10097,11 @@ preserve cofibrant objects.
         Moreover, the counit
         $( \iota^{\**} \upgamma_! ) ( \upgamma^{\**} \iota_{\**} ) X \to X$ 
         is the identity on cofibrant $X\in \Sym^G_\F(\V)$.
+        
         We note also that
-        \begin{itemize}
-        \item[(c)] the unit of the adjunction is the identity on the image of $\upgamma^{\**}\iota_{\**}$,
+        the unit of the adjunction is the identity on the image of $\upgamma^{\**}\iota_{\**}$,
         as the composite $\upgamma^{\**} \upgamma_! \upgamma^{\**}$ is the identity. 
-        \end{itemize}
+        
         
         For the operad adjunction in (\ref{COFADJ2 EQ}),
         most of the argument in the proof of
