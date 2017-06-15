@@ -4,5 +4,4 @@
 *.bib~
 *.log
 *.tex#
-*.aux
-*.bbl
+*.pdf
