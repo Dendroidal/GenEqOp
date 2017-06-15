@@ -5501,30 +5501,34 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \subsection{Indexing systems and partial genuine operads}
 \label{INDEXING_SECTION}
 
-As noted in (\ref{}), 
-one possible interpretation of the discussion surrounding indexing systems from \cite{BH15}
-is that these conditions are required in order to be able to.
+The construction in (\ref{COFADJINT EQ}) of universal spaces for families $E\F$, 
+given by cofibrantly replacing a coefficient system $\delta_\F$ in $\V^{O_G^{op}}$,
+is equivalent to cofibrantly replace $\mathsf{Comm}$ in a category of \textit{partial} coefficient systems $\V^{O_\F^{op}}$, 
+which moreover are the natural target for the Quillen adjunction (equivalence) in \cite{Ste16}
+\[
+\V^{O_\F^{op}} \rightleftarrows \V^G_\F.
+\]
 
-In a parallel vein, one interpretation of the previous section, 
-in particular (\ref{TWOADJOINTSOP EQ}), is that we may think of 
-$\Sym^G \xrightarrow{\iota_!} \Sym_G$
-as the inclusion of a full subcategory, and that
-the monad $\mathbb F_G$ on $\Sym_G$ \textit{restricts} to a monad on $\Sym^G$, yielding
-the inclusion of an algebraic subcategory
-$\Op^G \xrightarrow{\iota_!} \Op_G$.
+In the parallel operadic story, $N_\infty$-operads replace the universal spaces, and the category $\Op_G$ just built plays the role of $\V^{O_G^{op}}$. 
+To complete our investigation, and to provide the most natural setting for the construction of $N\F$, we now develop the notion of \textit{partial} genuine operads.
 
-The genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are in fact not the only possible algebraic structures for encoding equivariant operads.
-Instead there is a lattice of ``partially genuine operads'', 
-containing the lattice of types of $N_\infty$-operads,
-with each choice having a description as in (\ref{IFGI EQ}) as some ``restriction'' of (\ref{FGXDEF EQ}).
+% The genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are in fact not the only possible algebraic structures for encoding equivariant operads.
+% Instead there is a lattice of ``partially genuine operads'', 
+% containing the lattice of types of $N_\infty$-operads,
+% with each choice having a description as in (\ref{IFGI EQ}) as some ``restriction'' of (\ref{FGXDEF EQ}).
 
-In this subsection, we will explore this lattice. We begin by identifying certain useful subcategories of $\Sigma_G$.
+% In this subsection, we will explore this lattice. 
+We begin by identifying certain useful subcategories of $\Sigma_G$.
 
 \begin{definition}
       For any category $\mathcal D$, a subcategory $\bar{\mathcal D}$ is called a \textit{sieve} if 
       for all maps $f: d \to \bar d$, knowing $\bar d \in \bar{\mathcal D}$ implies both $d$ and the map $f$ are also in $\bar{\mathcal D}$.
       In particular, sieve subcategories are full.
 \end{definition}
+
+In \S \ref{FAMILY_SEC}, we will identify sieve subcategories of the orbit category $O_G$ with
+\textit{families} of subgroups of $G$.
+Following this nomenclature, we make the following definition.
 
 \begin{definition}
       \label{FAMILY_COROLLAS_DEF}
@@ -5534,11 +5538,20 @@ In this subsection, we will explore this lattice. We begin by identifying certai
 
 \begin{remark}
       \label{FAMILY_COROLLAS_REM}
-      Equivalenty, a family of corollas $\Sigma_{\mathcal{F}}$
-      can be encoded by
-      a collection $\F = \set{\F_n}_{n \geq 0}$ of 
-      \textit{families} $\mathcal F_n$ of \textit{graph subgroups} of $G \times \Sigma_n$
-      (see Lemma \ref{FAMILY_COROLLAS_LEM}).
+      In fact, families of corollas $\Sigma_\F$ are particular examples of (coproducts of) families of subgroups,
+      with an equivalence of categories of the form
+      \[
+      \coprod {O_{\F_n}} \xrightarrow{\simeq} \Sigma_\F.
+      \]
+      See Lemma \ref{FAMILY_COROLLAS_LEM}) for more details.
+
+      % A family of corollas $\Sigma_{\mathcal{F}}$
+      % can equivalently be encoded by
+      % a collection $\F = \set{\F_n}_{n \geq 0}$ of 
+      % families $\mathcal F_n$ of graph subgroups of $G \times \Sigma_n$,
+      % and we have a canonical equivalence of categories
+      % $\Sigma_\F \simeq \amalg O_{\F_n}$
+      % (see Lemma 
       
       Due to this, we will often abuse notation and abbreviate either set of data simply as $\F$. 
 \end{remark}
@@ -5609,7 +5622,7 @@ The existence of canonical maps
 $\mathsf{lr}(T) \to T$ then imply that the condition in 
 \cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
 Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-planar tall strings $\Omega_{\mathcal{F},1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
+planar tall strings $\Omega_{\mathcal{F}}^1$ between $\mathcal{F}$-trees can be defined as the pullback of 
 $\Omega_{\mathcal{F}}^0 \to
 \Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
 \Fin \wr \Omega_{\mathcal{F}}^0
@@ -5623,16 +5636,16 @@ $.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We may now build a ``restricted'' monad $\mathbb F_\F$ on $\Sym_{\F}(\V)$. 
+%We may now build a ``restricted'' monad $\mathbb F_\F$ on $\Sym_{\F}(\V)$. 
 
-\begin{remark}
-      The definition below will not immeditely be of a form analogous to (\ref{FGXDEF EQ}). 
-      This is because the \textit{existence} of such a monad is in fact more general, and the given definition will make cleaner both the gynmastics with adjoints required to compare it with $\mathbb F_G$ and the homotopical analysis.
-      However, any depth of understanding $\mathbb F_\F$ will require $\F$ to be a weak indexing system,
-      and in this case, the monad is indeed (isomophic to one) given by an analogous left Kan extension (see (\ref{F_F_LAN_EQ})).
-\end{remark}
+% \begin{remark}
+%       The definition below will not immeditely be of a form analogous to (\ref{FGXDEF EQ}). 
+%       This is because the \textit{existence} of such a monad is in fact more general, and the given definition will make cleaner both the gynmastics with adjoints required to compare it with $\mathbb F_G$ and the homotopical analysis.
+%       However, any depth of understanding $\mathbb F_\F$ will require $\F$ to be a weak indexing system,
+%       and in this case, the monad is indeed (isomophic to one) given by an analogous left Kan extension (see (\ref{F_F_LAN_EQ})).
+% \end{remark}
 
-For any family of corollas $\F$, let $\upgamma: \Sigma_{\F} \into \Sigma_G$ denote the inclusion.
+Now, for any family of corollas $\F$, let $\upgamma: \Sigma_{\F} \into \Sigma_G$ denote the inclusion.
 We then have a pair of adjunctions
 \begin{equation}
       \label{F_TWOADJOINTS_EQ}
@@ -5661,9 +5674,9 @@ We then have a pair of adjunctions
             \varnothing & C \notin \Sigma_\F.
       \end{cases}
       \]
-      However, $\upgamma_{\**}$ remains inaccessible\footnote{
-        In fact, this formula holds for any $\upgamma_!: \V^{\bar{\mathcal D}^{op}} \to \V^{\mathcal D^{op}}$ when $\bar{\mathcal D}$ is a sieve of $\mathcal D$,
-        while $\upgamma_{\**}$ is only very rarely \textit{not} inaccessible (e.g. for $G \into O_G$).}.      
+      However, $\upgamma_{\**}$ remains hard to unpack in general\footnote{
+        In fact, this formula holds for any $\upgamma_!: \V^{\bar{\mathcal D}^{op}} \to \V^{\mathcal D^{op}}$ when $\bar{\mathcal D}$ is a sieve of $\mathcal D$.
+        One case where $\upgamma_{\**}$ is easy to describe is for $\upgamma:G \into O_G$, where it is the fixed-point system functor.}.      
       % This follows the what we know in coefficient systems:
       % just as the explicit description from (\ref{TWOADJOINTS EQ}) extends the left double adjunction below, 
       % the above is precisely what we can get from the right one.
@@ -5763,6 +5776,20 @@ we have the following adjustments of Proposition \ref{MONAD_COMPARISON_PROP} and
         \]
 \end{corollary}
 
+\begin{remark}
+        Part (iii) above can be interpreted as saying that
+        the monad $\mathbb F_G$ restricts to $\Sym_\F$,
+        where we view $\Sym_\F \xrightarrow{\upgamma_!} \Sym_G$ as the inclusion of a full subcategory,
+        when $\F$ is a weak indexing system.
+        
+        This mimics one possible interpretation of the main results from \cite[\S 4]{BH15},
+        where indexing systems provide the closure conditions necessary to ensure that 
+        composite operations $f(g_1,\ldots,g_n)$ have $\F$-admissible isotropy whenever the $x$ and $y_i$ do;
+        that is, the operadic structure ``restricts'' to indexing systems.
+
+        This view of Part (iii) also indicates why we chose to define $\mathbb F_\F$ in this way, as opposed to building an entirely new operad given by left Kan extensions as in (\ref{F_F_LAN_EQ}) and repeating the arguments from \S \ref{FGMON SEC} mutatis mutandis.
+\end{remark}
+
 % \begin{remark}
 %       As a consequence of the proof above, we have that $\mathbb F_\F$ is isomorphic to the (possibly more natural) endofunctor given by the left Kan extension from (\ref{F_F_LAN_EQ}).
 %       While we could have defined it as this endofunctor, and just repeated \S \ref{FMON SEC} mutatis mutandis, 
@@ -5774,7 +5801,7 @@ we have the following adjustments of Proposition \ref{MONAD_COMPARISON_PROP} and
       Indeed, 
       the family of free $G$-corollas
       $\Sigma_G^{\text{fr}} = \Sigma_{\F_{\text{fr}}}$       
-      is an indexing system, and the proof of Proposition \ref{MONAD_COMPARISON_PROP}(i) yields that $\mathbb F \simeq \mathbb F_{\F_{\text{fr}}}$.
+      is an indexing system, and the proof of Proposition \ref{MONAD_COMPARISON_PROP}(i) yields that $\Op^G \simeq \Op_{\F_{\text{fr}}}$.
 \end{remark}
 
 Comparison between different classes of partially-genuine operads can be quite difficult:
@@ -5798,13 +5825,13 @@ However, the solid arrows in the combination of (\ref{TWOADJOINTS EQ}) and (\ref
 yields an adjunction comparing all partially-genuine operads with regular $G$-operads in a managable fashion.
 
 \begin{remark}
-        While this composite is always ``managable'', it can nevertheless be quite poorly behaved.
-        In particular, if $\Sigma_\F$ does not contain the free $G$-tree $G \cdot C_n$ for some $n \geq 0$
-        (which is certainly  possible even for indexing systems),
+        A minor warning:
+        if $\Sigma_\F$ does not contain the free $G$-tree $G \cdot C_n$ for some $n \geq 0$
+        (which is possible even for indexing systems),
         then the composite $\upgamma^{\**} \iota_{\**}$ is no longer injective on objects out of $\Sym^G_\F(\V)$. 
         and hence this adjunction is no longer reflective.
         
-        Instead, we will see that it is reflective on \textit{cofibrant} objects in $\Sym^G_\F(\V)$. 
+        Instead, we will see that it is reflective only on \textit{cofibrant} objects in $\Sym^G_\F(\V)$. 
 \end{remark}
 
 
@@ -8460,10 +8487,9 @@ leading to the characterization provided by Lemma \ref{MAINLEM LEM}.
 
 
 \subsection{Families of subgroups}
-
+\label{FAMILY_SEC}
 
 This section establishes some useful properties of the model structures associated to families of subgroups. Throughout all groups will be assumed finite.
-
 
 \begin{definition}\label{FAMILY DEF}
 	A \textit{family} $\mathcal{F}$ of subgroups of $G$ is a collection of subgroups 
@@ -9379,15 +9405,15 @@ a cofibration (resp. trivial cofibration) in
 
 The $G$-graph families we will be interested in encode certain families of $G$-trees. We start with the case of families of corollas (see Definition \ref{FAMILY_COROLLAS_DEF}).
 
-We expand on Remark \ref{FAMILY_COROLLAS_REM} here. 
 \begin{lemma}
         \label{FAMILY_COROLLAS_LEM}
         The set of families of corollas $\Sigma_{\mathcal F}$ is in bijection with the set of collections $\mathcal F = \set{\mathcal F_n}_{n \geq 0}$ of $G$-graph families $\mathcal F_n$ of $G\times\Sigma_n$.
+        Moreover, $\amalg O_{\F_n} \xrightarrow{\simeq} \Sigma_\F$. 
 \end{lemma}
 \begin{proof}
         We define $\mathcal F_n$ so that any $G$-corolla $C$ with $n$ leaves per component is in $\Sigma_{\mathcal F}$ iff
         \[
-        C \simeq G \cdot_H C_\Gamma
+        C \simeq (C_\Gamma)_{G/H}
         \]
         for some $C_\Gamma \in \Sigma^H$ encoded by a partial homomophism 
         $G \leq H \to \Sigma_n$ 
@@ -9395,13 +9421,15 @@ We expand on Remark \ref{FAMILY_COROLLAS_REM} here.
         conversely, any $\mathcal F$ dually defines a full subcategory $\Sigma_{\mathcal F}$ of $\Sigma_G$, 
         and these operations are clearly inverse.
 
-        Finally, 
+        Further, 
         $\Gamma_1$ is subconjugate to $\Gamma_2$ iff we have a quotient map 
         \[
         G \cdot_{H_1} C_{\Gamma_1} \to G \cdot_{H_2} C_{\Gamma_2},
         \]
         where $H_i = \pi_G(\Gamma_i)$,
-        and hence $\F$ is a collection of families iff $\Sigma_\F$ is a sieve of $\Sigma_G$.
+        and hence $\F$ is a collection of \textit{families} iff $\Sigma_\F$ is a sieve of $\Sigma_G$.
+
+        Finally, the equivalence of categories just sends $\Gamma \leq H \times \Sigma_n$ to $(C_\Gamma)_{G/H}$.
         % Given a family of corollas $\Sigma_\F$, we define
         % $G$-graph families $\mathcal{F}_n$ 
         % so that $C \in \Sigma_{\mathcal{F}}$ if 
@@ -9771,7 +9799,7 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
 	$\mathcal{V}$ is strongly cofibrantly generated (so $\V$ is strongly cellular)
-	and that $\V$ is symmetric monoidal with diagonals.
+	and that $\V$ is Cartesian monoidal.
 
 	Let  
 	$f_i \colon A \to B$, $1\leq i \leq l$ be 
@@ -9826,7 +9854,7 @@ One then has identifications
 \simeq 
 	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
 	\left(
-	\bigotimes\limits_{v \in [v]}
+	\prod\limits_{v \in [v]}
 	f_{\bullet}(v)
 	\right)^G
 \simeq
