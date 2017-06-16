@@ -3,7 +3,5 @@
 *.tex~
 *.bib~
 *.log
-GenEqOp.toc
-GenEqOp.pdf
-*.aux
+*.tex#
 *.pdf
