@@ -53,7 +53,20 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, or more so up to ``all higher'' homotopies. To capture these more complex algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ encodes a ``generalized multiplication'', and consist of sets (or spaces) $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations.'' The structures of monoids, commutative monoids, Lie algebras, algebras with a module, and many more, can be all captured using operads. Moreover, in \cite{May72}, May introduced $E_\infty$-operads, ``homotopical replacements'' for the commutative operad, which encode the above monoids up to higher homotopies; in particular, an $E_\infty$-algebra structure on $X$ doesn't give unique maps $X^n \to X$, but instead ``homotopy unique'' such maps. 
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
+consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+The purpose of the theory is then the study of 
+``objects $X$ with operations indexed by $\O$'',
+refereed to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, and more,
+all being recovered as algebras over some fixed operad in an appropriate category.
+Of special importance are the 
+$E_\infty$-operads, introduced by 
+May in \cite{May72}, which are 
+``homotopical replacements'' for the commutative operad
+ and encode the aforementioned commutative monoids up to homotopy.
+In particular, while an
+ $E_\infty$-algebra structure on $X$ does not specify unique maps $X^n \to X$, 
+ it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
 $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible; that is, for each subgroup $\Gamma \leq \Sigma_n$,
@@ -70,13 +83,12 @@ $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)
 % Operads encode a variety of algebraic structures, such as monoids, commutative monoids or (depending on the ambient category) Lie algebras, $E_n$-algebras, etc. Indeed, all such instances can be regarded as categories of algebras for some (fixed) suitable operad.
 % Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 
-Notably, when studying the homotopy theory of operads
-(in, say, spaces)
+Notably, when studying the homotopy theory of operads in topological spaces
 the preferred notion of weak equivalence is 
-usually that of ``naive equivalences'',
-i.e. a map of operads 
+usually that of ``naive equivalence'',
+with a map of operads 
 $\O \to \O'$
-is called a weak equivalence if each of the maps
+called a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 after forgetting the $\Sigma_n$-actions.

@@ -9,3 +9,7 @@
 GenEqOp.log
 *.pdf
 *.toc
+*.aux
+GenEqOp.log
+*.pdf
+GenEqOp.toc
