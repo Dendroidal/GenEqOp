@@ -5,3 +5,7 @@
 *.log
 *.tex#
 *.pdf
+*.aux
+GenEqOp.log
+*.pdf
+*.toc
