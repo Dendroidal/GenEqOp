@@ -5495,11 +5495,14 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 
 
+\subsection{Indexing systems and partial genuine operads}
+\label{INDEXING_SECTION}
+
+
 
 \renewcommand{\F}{\mathcal{F}}
 
-\subsection{Indexing systems and $\F$-genuine $G$-operads}
-\label{INDEXING_SECTION}
+{\color{red} HERE}
 
 The genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are in fact not the only possible algebraic structures for encoding equivariant operads.
 Instead there is a lattice of ``partially genuine operads'', 
@@ -5511,7 +5514,7 @@ In this subsection, we will explore this lattice. We begin by identifying certai
 \begin{definition}
       For any category $\mathcal D$, a subcategory $\bar{\mathcal D}$ is called a \textit{sieve} if 
       for all maps $f: d \to \bar d$, knowing $\bar d \in \bar{\mathcal D}$ implies both $d$ and the map $f$ are also in $\bar{\mathcal D}$.
-      In particular, sieve subcategories are full.
+      In particular, sieves are full subcategories.
 \end{definition}
 
 \begin{definition}
@@ -5528,16 +5531,16 @@ In this subsection, we will explore this lattice. We begin by identifying certai
       \textit{families} $\mathcal F_n$ of \textit{graph subgroups} of $G \times \Sigma_n$
       (see Lemma \ref{FAMILY_COROLLAS_LEM}).
       
-      Due to this, we will often abuse notation and abbreviate either set of data simply as $\F$. 
+      Due to this, we will abuse notation and abbreviate either set of data simply as $\F$. 
 \end{remark}
 
 \begin{definition}\label{FTREE DEF}
 Let $\mathcal{F}$ be a family of $G$-corollas.
 
-We say that a $G$-tree $T$ is an \textit{$\mathcal{F}$-tree}
+We say that a $G$-tree $T$ is a \textit{$\mathcal{F}$-tree}
 if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
 $\Sigma_{\mathcal{F}}$,
-and we denote the full subcategory spanned by the $\F$-trees $\Omega_\F \subseteq \Omega_G$. 
+and we denote the full subcategory spanned by the $\F$-trees $\Omega_\F \hookrightarrow \Omega_G$. 
 \end{definition}
 
 
@@ -5597,7 +5600,7 @@ The existence of canonical maps
 $\mathsf{lr}(T) \to T$ then imply that the condition in 
 \cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
 Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-planar tall strings $\Omega_{\mathcal{F},1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
+planar tall strings $\Omega_{\mathcal{F}}^{1}$ between $\mathcal{F}$-trees can be defined as the pullback of 
 $\Omega_{\mathcal{F}}^0 \to
 \Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
 \Fin \wr \Omega_{\mathcal{F}}^0
