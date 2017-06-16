@@ -16,7 +16,6 @@
 \title{Genuine equivariant operads}%
 
 \usepackage{showkeys}
-
 \usepackage{stmaryrd}
 
 \usepackage{upgreek}
@@ -44,7 +43,7 @@
 
 
 \abstract{We build new algebraic structures, which we call genuine equivariant operads, which can be thought of as a hybrid between equivariant operads and coefficient systems.
-We then prove an Elmendorf type theorem stating that equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads with their projective model structure.
+We then prove an Elmendorf-Piacenza type theorem stating that equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads with their projective model structure.
 
 As an application, we build explicit models for the $N_{\infty}$-operads of Blumberg and Hill.
 }
@@ -53,7 +52,7 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, only consisting of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
 consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
@@ -63,38 +62,38 @@ Of special importance are the
 $E_\infty$-operads, introduced by 
 May in \cite{May72}, which are 
 ``homotopical replacements'' for the commutative operad
- and encode the aforementioned commutative monoids up to homotopy.
+ and encode the aforementioned
+ ``commutative monoids up to homotopy''.
 In particular, while an
  $E_\infty$-algebra structure on $X$ does not specify unique maps $X^n \to X$, 
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible; that is, for each subgroup $\Gamma \leq \Sigma_n$,
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible. That is, for each subgroup $\Gamma \leq \Sigma_n$ one has
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
 \begin{cases}
-        * & \Gamma = *  \\
-        \varnothing \qquad & \Gamma \neq *
+        * & \Gamma = \{*\} , \\
+        \varnothing \qquad & \Gamma \neq \{*\} .
 \end{cases}
 \]
-
-
 % Operads encode a variety of algebraic structures, such as monoids, commutative monoids or (depending on the ambient category) Lie algebras, $E_n$-algebras, etc. Indeed, all such instances can be regarded as categories of algebras for some (fixed) suitable operad.
 % Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
-
 Notably, when studying the homotopy theory of operads in topological spaces
 the preferred notion of weak equivalence is 
 usually that of ``naive equivalence'',
 with a map of operads 
 $\O \to \O'$
-called a weak equivalence if each of the maps
+deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
-after forgetting the $\Sigma_n$-actions.
-Using this theory, any cofibrant replacement of $\mathsf{Comm}$ is in fact an $E_\infty$-operad, providing a context for the notion of a ``homotopical replacement''.
-This is in contrast with so called ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is considered a $G$-weak equivalence only if all the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
-This contrast hints at a number of novel subtleties that appear when studying equivariant operads, which we now discuss.
+upon forgetting the $\Sigma_n$-actions.
+In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Comm}$ and, moreover, 
+any cofibrant replacement of $\mathsf{Comm}$
+is $E_{\infty}$.
+However, naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
+This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
 
 
 Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
@@ -126,28 +125,33 @@ determined by
 \begin{equation}\label{NAIVEGEINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
-	\** & \text{if } \Gamma \leq G
+	\** & \text{if } \Gamma \leq G,
 \\
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
 However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equivariant infinite loop spaces,
 the \textit{$G$-trivial $E_\infty$-operads} of (\ref{NAIVEGEINFTY EQ}) do not provide 
-the correct replacement in the $G$-equivariant context. Instead, %notion of $G$-$E_{\infty}$-operads, by which we mean 
-%up-to-homotopy replacements of $\mathsf{Comm}$ in the $G$-equivariant context. Instead, 
-the correct notion, dubbed \textit{$G$-$E_{\infty}$-operads}, are characterized by the fixed point conditions
+the correct replacement of $\mathsf{Comm}$
+ in the $G$-equivariant context. 
+ %Instead, %notion of $G$-$E_{\infty}$-operads, by which we mean 
+%up-to-homotopy replacements of $\mathsf{Comm}$ in the $G$-equivariant context. 
+Rather, that replacement is provided instead by the 
+\textit{$G$-$E_{\infty}$-operads}, characterized by the fixed point conditions
 \begin{equation}\label{GENGEINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
-	\** & \text{if } \Gamma \cap \Sigma_n = \{\**\}
+	\** & \text{if } \Gamma \cap \Sigma_n = \{\**\},
 \\
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
+
 In contrasting 
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}),
-we note the easy, but subtle, observation that the subgroups such that $\Gamma \cap \Sigma_n = \{\**\}$ 
-are precisely the graphs of partial homomorphisms 
+we note that 
+the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
+are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
 and that $\Gamma \leq G$ iff $\Gamma$ is the graph of such a trivial homomorphism. 
 However, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
@@ -166,12 +170,11 @@ so that $\O \to \O'$ is considered a weak equivalence only if
 \end{equation}
 are weak equivalences.
 
-
-As mentioned above, the original evidence (cf. \cite{CW91}) 
+As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up-to-homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
-For our purposes, however, we will instead focus on the perspective of Blumberg-Hill in \cite{BH15},
+provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
+For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
 Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
@@ -179,9 +182,9 @@ the corresponding \textit{norm} is a $G$-spectrum $N^X R$
 whose underlying spetrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$
 but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
-Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e. strictly commutative ring $G$-spectrum, 
+Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e. strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
-ring multiplication then induces so called \textit{norm maps}
+ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X R \to R.
 \end{equation}
@@ -191,7 +194,6 @@ natural equivariance and associativity conditions.
 Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for varying $H$
 (for an example packaged in operadic language,
 see (\ref{INTFIXPTCOMP EQ}) below).
-Furthermore, there is an analagous story for $G$-spaces.
 
 The key observation at the source of the work in 
 \cite{BH15} is then that, operadically, 
@@ -206,7 +208,8 @@ $\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
 The flaw with the $G$-trivial $E_{\infty}$-operad
-described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$, missing data encoded by $\mathsf{Comm}$.
+described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$, thus lacking 
+some of the data encoded by $\mathsf{Comm}$.
 Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
 according to which (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}) are equivalent,
 as studying ``operads without norm maps''
@@ -216,64 +219,65 @@ study ``operads with norm maps''.
 
 Our first main result, Theorem \ref{MAINEXIST1 THM}, 
 establishes the existence of a model structure on operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
-though our analysis here goes significantly further, again guided by Blumberg-Hill's analysis in \cite{BH15}.
+though our analysis goes significantly further, again guided by Blumberg-Hill's work in \cite{BH15}.
 
-The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of specialized operads, which they dub $N_{\infty}$-operads.
+The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of new types of equivariant operads, which they dub $N_{\infty}$-operads.
 The minimum type of $N_{\infty}$-operads is that of the 
 $G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
 while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
-The remaining partially genuine types, which interpolate between 
+The remaining types, which interpolate between 
 $G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$, 
-can be thought of as encoding varying degrees of up-to-homotopy ``equivariant commutativity''.
-
-
+can hence be thought of as encoding varying degrees of ``up to homotopy equivariant commutativity''.
 More concretely, each type of $N_{\infty}$-operad is determined by a collection $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$, with an operad $\O$ being called a $N \mathcal{F}$-operad if it satisfies the fixed point condition
 \begin{equation}\label{NFINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
-	\** & \text{if } \Gamma \in \mathcal{F}_n
+	\** & \text{if } \Gamma \in \mathcal{F}_n,
 \\
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
+
 Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that such $\mathcal{F}$ must satisfy.
-The simplest of these conditions, that each 
-$\mathcal{F}_n$ be closed under subgroups and conjugation 
-(so that each $\mathcal{F}_n$ is an example of a \textit{family}),
-are simply consequences of the fact that each $\O(n)$ is a space, and are routinely found in equivariant theory.
-However, the remaining conditions,
-all of which involve $\mathcal{F}_n$ for varying $n$ simultaneously and are a consequence of operadic multiplication,
+The simplest of these conditions
+state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first conditions, which are common in equivariant homotopy theory,
+are a simple consequence of each $\O(n)$ being a space.
+However, the remaining conditions, 
+all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
 are both novel and subtle.
 In loose terms, these conditions, 
 which are more easily described in terms of the $H$-sets $X$ associated to graph subgroups,
 concern closure of those under 
 disjoint union, cartesian product, subobjects,
-and a key entirely novel condition called \textit{self-induction}.
+and an entirely novel key condition called \textit{self-induction}.
 The precise conditions are collected in
 \cite[Def. 3.22]{BH15},
 which also introduces the term \textit{indexing system} for 
 a $\mathcal{F}$ satisfying all such conditions.
-The main result of \cite[\S 4]{BH15} is then that whenever an $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists, the associated collection $\mathcal{F}$ must be an indexing system;
-however, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, is left as a conjecture.
+The main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists, the associated collection $\mathcal{F}$ must be an indexing system.
+However, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, was left as a conjecture.
+
 
 One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain in
 Corollary \ref{NINFTY_REAL_COR_MAIN},
 and, moreover, to produce models of $N \mathcal{F}$-operads that
-are as explicit as possible. 
-\footnote{This conjecture has been independently verified in \cite{Rub17} and announced by Gutierrez-White. However, their methods differ from ours: Rubin builds each $N\mathcal F$-operad explicitly using a free operad construction and verifies its properties directly, while Gutierrez-White use a ``cofibrant replacement'' technique similar to our first proof of \ref{NINFTY_REAL_COR_MAIN}; neither approach is as controlled or direct as Theorem \ref{N_INFINITY_BAR}.}
+are as explicit as possible.
+%\footnote{This conjecture has been independently verified in \cite{Rub17} and announced by Gutierrez-White. However, their methods differ from ours: Rubin builds each $N\mathcal F$-operad explicitly using a free operad construction and verifies its properties directly, while Gutierrez-White use a ``cofibrant replacement'' technique similar to our first proof of \ref{NINFTY_REAL_COR_MAIN}; neither approach is as controlled or direct as Theorem \ref{N_INFINITY_BAR}.}
 
 
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
 Given a family $\mathcal{F}$ of subgroups of $G$ 
 (i.e. a collection closed under conjugation and subgroups), a \textit{universal space} $X$ for $\mathcal{F}$, 
 also called a $E \mathcal{F}$-space,
-is a space with fixed points $X^H$ are defined just as in (\ref{NFINFTY EQ}).
+is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
 In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
 each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
-The existence of $E \mathcal{F}$-spaces for any family is 
-best understood in light Elmendorf's classical result from \cite{Elm83}
-stating that there is a Quillen equivalence 
-\footnote{While Elmendorf did not use this language, the main result of \cite{Elm83} is the essential non-trivial step needed in such a proof. The first complete writeup to use the language of model structures is found in \cite{Pia91}, though the proof is by another method.}
+The existence of $E \mathcal{F}$-spaces for any
+choice of the family $\mathcal{F}$ is 
+best understood in light of Piacenza's classical result
+from \cite{Pia91}
+(with the key insight dating back to Elmendorf in \cite{Elm83})
+stating that there is a Quillen equivalence
 (where $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
 \begin{tikzcd}[column sep =5em,row sep=0.3em]
@@ -303,31 +307,33 @@ $\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise,
 $E \mathcal{F}$-spaces can then be built as
 $\iota^{\**}(C \delta_{\mathcal{F}}) = 
 C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
-Moreover, we note that in \cite{Elm83}, cofibrant replacements are built via explicit simplicial realizations.
+Moreover, we note that, as in \cite{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
 
-The overarching goal of this paper is then that of proving the analogue of Elmendorf's Theorem (\ref{COFADJINT EQ})
+The overarching goal of this paper is then that of proving the analogue of Elmendorf-Piacenza's Theorem (\ref{COFADJINT EQ})
 in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
 which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
 However, in trying to formulate such a result one immediately runs into a fundamental issue: 
 it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in that context.
 This last remark likely requires justification. 
 Indeed, it may at first seem tempting to simply 
-employ one of the known formal generalizations of Elmendorf's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
+employ one of the known formal generalizations of Elmendorf-Piacenza's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
 $\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
 with a more general model category $\mathcal{V}$.
-However, if one applies such a result when $\mathcal{V}=\mathsf{Op}$
+However, if one applies such a result when 
+$\mathcal{V}=\mathsf{Op}$
 to establish a Quillen equivalence
 $\mathsf{Op}^{\mathsf{O}_G^{op}}
 \rightleftarrows
 \mathsf{Op}^G$, 
-%the fact that 
-the levels of each object
+the fact that 
+the levels of each 
 $\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
-correspond only to those fixed-point spaces appearing in (\ref{NAIVEOPEQ EQ}),
-and hence this requires working in the context of operads \textit{without} norm maps,
+correspond only to those fixed-point spaces appearing in (\ref{NAIVEOPEQ EQ})
+would require working in the context of operads \textit{without} norm maps,
 %and in doing so one forgoes
-forgoing the ability to distinguish 
+and thereby forgo the ability to distinguish 
 the many types of $N \mathcal{F}$-operads.
+
 
 In order to work in the context of operads with norm maps we will need to replace 
 $\mathsf{Top}^{\mathsf{O}_G^{op}}$
@@ -339,7 +345,8 @@ of new algebraic objects we dub
 $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
-will consist of a list of spaces indexed by those appearing in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+will consist of a list of spaces indexed
+in the same way as in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
 When analyzing the proofs of the results in 
@@ -356,14 +363,14 @@ when performing an operadic composition
 	f(g_1,\cdots,g_n)
 \end{tikzcd}
 \end{equation}
-a careful choice of fixed point conditions on the operations $f,g_1,\cdots,g_n$ 
+careful choices of fixed point conditions on the operations $f,g_1,\cdots,g_n$ 
 yield a fixed point condition on the composite operation
 $f(g_1,\cdots,g_n)$.
 The desired multiplication maps for a genuine equivariant operad
 $\mathcal{P} \in \mathsf{Op}_G$
 will then abstract such interactions between multiplication and fixed points for a equivariant operad 
 $\mathcal{O} \in \mathsf{Op}^G$.
-However, such interactions can be quite challenging to write down explicitly and, indeed, 
+However, these interactions can be challenging to write down explicitly and, indeed, 
 the arguments in \cite[\S 4]{BH15}
 do not quite provide the sort of unified conceptual approach
 to these needed for our purposes.
@@ -373,7 +380,7 @@ such a conceptual framework: equivariant trees.
 
 
 Non-equivariantly, it has long been known that
-the combinatorics of operadic composition is best visualized by means of trees diagrams. For instance, the tree
+the combinatorics of operadic composition is best visualized by means of tree diagrams. For instance, the tree
 \[%
 	\begin{tikzpicture}[grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
 	\tikzstyle{level 2}=[sibling distance=3.75em]%
@@ -477,7 +484,7 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably intertwined $H$-action ($K$-action).
+where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 (\ref{INTFIXPTCOMP EQ})
@@ -491,8 +498,9 @@ self-induction (cf. \cite[Def. 3.20]{BH15}),
 and similar tree descriptions exist for all other closure properties, as detailed by the second author in 
 \cite[\S 9]{Pe17}.
 
+{\color{red} HERE}
 
-We can now finally give a complete informal description of the category $\mathsf{Op}_G$ featured in 
+We can now finally give a full informal description of the category $\mathsf{Op}_G$ featured in 
 our main result Theorem \ref{MAINQUILLENEQUIV THM}.
 A genuine equivariant operad
 $\mathcal{P} \in \mathsf{Op}_G$
@@ -504,7 +512,7 @@ $\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq L$,
 isomorphisms
 $\mathcal{P}(X)\simeq \mathcal{P}(g X)$
 where $gX$ denotes the conjugate $gHg^{-1}$-set,
-and composition mapsk e.g. %, for example,
+and composition maps e.g. %, for example,
 \[
 \P(H/K) \times \P(K/L \amalg K/K) \to \P(H/L \amalg H/K)
 \]
@@ -536,10 +544,7 @@ must satisfy associativity, unitality, compatibility with restriction maps (noti
 
 \subsection{Main results}
 
-
-
-We now present the highlights of this paper. 
-%, each of which proves the existence of certain model structures, or makes comparisons between them. 
+ 
 For much of the discussion, our base model category will need to been sufficiently nice, either \textit{strongly cellular} or \textit{underlying strongly cellular} (see Definitions \ref{STRONGLY_CELLULAR} and \ref{UNDERLYING_STRONGLY_CELLULAR}). In particular, the strongest statements all hold when $\V = \sSet$.
 
 Our first result, proved in \S \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads can be endowed with a (semi) model structure encoding the theory of operads with norm maps. In fact, it shows more, in particular that the partially-genuine (semi) model structures also exist.
@@ -646,7 +651,7 @@ If $\V = \sSet$ or $\sSet_*$, then the above are equivalences of Quillen model c
 We lastly return to the conjecture of \cite{BH15}, which we resolve in the affirmative using two different methods in \S \ref{NINFTY_SECTION}. In fact, we show the existence of a larger class of operads, realizing any weak indexing system.
 %(see Definition \ref{INDEXSYS DEF}).
 
-\begin{customcor}{V}\label{NINFTY_REAL_COR_MAIN}
+\begin{customcor}{IV}\label{NINFTY_REAL_COR_MAIN}
 For $\V = \sSet$ or $\mathsf{Top}$ and 
 $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 any weak indexing system,
