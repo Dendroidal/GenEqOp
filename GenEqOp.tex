@@ -544,8 +544,10 @@ must satisfy associativity, unitality, compatibility with restriction maps (noti
 
 \subsection{Main results}
 
- 
-For much of the discussion, our base model category will need to been sufficiently nice, either \textit{strongly cellular} or \textit{underlying strongly cellular} (see Definitions \ref{STRONGLY_CELLULAR} and \ref{UNDERLYING_STRONGLY_CELLULAR}). In particular, the strongest statements all hold when $\V = \sSet$.
+
+We now present the highlights of this paper. 
+%, each of which proves the existence of certain model structures, or makes comparisons between them. 
+For much of the discussion, our base model category will need to been sufficiently nice (see Definition \ref{STRONGLY_CELLULAR}). In particular, the strongest statements all hold when $\V = \sSet$.
 
 Our first result, proved in \S \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads can be endowed with a (semi) model structure encoding the theory of operads with norm maps. In fact, it shows more, in particular that the partially-genuine (semi) model structures also exist.
 
@@ -572,7 +574,7 @@ Our first result, proved in \S \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads
         % on 
         % the category $\mathsf{Op}^G(\mathcal{V})$ exists.
 
-        If moreover $\V$ is underlying strongly cellular, these are actual model structures.
+        In the cases $\V = \sSet$ or $\sSet_*$, these are actual model structures.
 \end{customthm}
 
 One important remark to make after this
@@ -631,7 +633,7 @@ Then the adjunction
 	\ar[shift left=1.5]{l}{\iota_{\**}} .
 \end{tikzcd}
 \end{equation}
-is a Quillen equivalence.
+is a Quillen equivalence of semi model categories.
 
 More generally, for $\mathcal{F}$ a weak indexing system, the analogue adjunction
 \begin{equation}
@@ -8151,7 +8153,7 @@ In what follows, we will need our base model category $\V$ to be sufficiently we
 
 We begin by analyzing the homotopy theory of regular $G$-operads.
 %which will be more flexible than their genuine $G$-operad counterparts.
-The proof of Theorem \ref{MAINEXIST1 THM} will be split into three parts: Corollary \ref{F_OP_SEMI_MODEL_THM}, Theorem \ref{F_OP_Q_MODEL_THM}, and Corollary \ref{F_OP_Q_MODEL_THM}.
+%The proof of Theorem \ref{MAINEXIST1 THM} will be split into three parts: Corollary \ref{F_OP_SEMI_MODEL_THM}, Theorem \ref{F_OP_Q_MODEL_THM}, and Corollary \ref{F_OP_Q_MODEL_THM}.
 
 For the remainder of this subsection, fix a collection $\F = \set{\F_n}$ of sets $\F_n$ of subgroups, closed under conjugation, of $G\times \Sigma_n$.
 
@@ -8225,13 +8227,13 @@ If each $\F_n$ is the complete lattice of subgroups of $G\times \Sigma_n$, we ca
         See Section 2.2 of \cite{WY15} for a complete definition and further analysis of semi model structures.
 \end{remark}
 
-\begin{theorem}
-        \label{G_OP_SEMI_MODEL_THM}
-        For $\V$ strongly cellular with diagonals, the complete semi model structure on $\Op^G(\V)$ exists.
-\end{theorem}
+% \begin{theorem}
+%         \label{G_OP_SEMI_MODEL_THM}
+%         For $\V$ strongly cellular with diagonals, the complete semi model structure on $\Op^G(\V)$ exists.
+% \end{theorem}
 
 
-The key technical step in the proof follows as an easy particular case, which we now state, of the stronger result Proposition \ref{AUTTCOFPUSH PROP}.
+The key technical step in the proof of Theorem \ref{MAINEXIST1 THM} follows as an easy particular case, which we now state, of the stronger result Proposition \ref{AUTTCOFPUSH PROP}.
 
 \begin{proposition}
         \label{AUTTCOFPUSH_GEN_PROP} 
@@ -8246,7 +8248,7 @@ The key technical step in the proof follows as an easy particular case, which we
 \end{proposition}
 
 \begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP2} 
-        For $\V$ strongly cellular with diagonals, and for any free $\mathbb{F}$-extension  
+        For $\V$ strongly cellular, and for any free $\mathbb{F}$-extension  
         \[ 
         \begin{tikzcd} 
                 \mathbb{F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
@@ -8261,10 +8263,24 @@ The key technical step in the proof follows as an easy particular case, which we
         as any map $f \otimes \P(T_v)$ is equivalently given by $f \Box (\varnothing \to \P(T_v))$.
 \end{proof} 
 
-\begin{proof}[Proof of Theorem \ref{G_OP_SEMI_MODEL_THM}]
+\begin{remark}
+        Note that the ``with diagonals'' condition was not necessary for the above proof,
+        even though the cited filtration normally requires it. 
+        Indeed, when restricting the machinery of \S \ref{GENUINE_OP_MONAD_SECTION} to $G = *$ and $\V = \V^G$, Remark \ref{NEED_WREATH_REMARK} no longer applies, and hence 
+        we may reformulate the monad on spans from Definition \ref{WSPAN_MONAD_DEFINITION} by replacing $\Fin_s$ with $\Sigma$ and using the natural map $\Sigma \wr \V^{op} \xrightarrow{\otimes} \V^{op}$ which exists for \textit{any} symmetric monoidal product $\otimes$ on $\V$ (see Remark \ref{SIGMA_WR_REM}).
+\end{remark}
+
+
+%\begin{proof}[Proof of Theorem \ref{G_OP_SEMI_MODEL_THM}]
+\begin{proof}[Proof of Theorem \ref{MAINEXIST1 THM}]
         Using \cite[11.3.2]{Hi03},
         %\cite[Lemma 2.3]{SS00}
-        the fact that weak equivalences and transfinite compositions are levelwise implies that Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) are sufficient.  
+        the fact that weak equivalences and transfinite compositions are levelwise implies that 
+        Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) 
+        are sufficient,
+        as for any such $\F$, $\F$-(trivial) cofibrations are, in particular, \textit{level} (trivial) genuine cofibrations.
+        
+        Finally, in the case $\V = \sSet$ or $\sSet_{\**}$, for any group $\Pi$ every object in $\V^{\Pi}_{\text{gen}}$ is cofibrant, and thus the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied.
 \end{proof}
 
 % \begin{remark}
@@ -8273,45 +8289,22 @@ The key technical step in the proof follows as an easy particular case, which we
 %         We note that if $u: X \to Y$ is a genuine cofibration in $\V^{G\times \Sigma}_{\F}$, then $i_! u$ is certainly a genuine level cofibration in $\V^{\Sigma_G^{op}}$. Further, by Lemma \ref{SYM_QUI_ADJ}, $\P$ level cofibrant implies $i_*\P$ level cofibrant, so by Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}, $i_*\P \to (i_*\P)[u]$ is a level genuine trivial cofibration. Lastly, since $\mathbb{F} \simeq i^*\mathbb{F}_G i_!$, and $i^*$ preserves both pushouts and cofibrations, the result follows.
 % \end{remark}
 
-\begin{remark}
-        The ``with diagonals'' condition can be dropped from the above theorem. 
-        Indeed, when restricting the machinery of \S \ref{GENUINE_OP_MONAD_SECTION} to $G = *$ and $\V = \V^G$, Remark \ref{NEED_WREATH_REMARK} no longer applies, and hence 
-        we may reformulate the monad on spans from Definition \ref{WSPAN_MONAD_DEFINITION} by replacing $\Fin_s$ with $\Sigma$ and using the natural map $\Sigma \wr \V^{op} \xrightarrow{\otimes} \V^{op}$ which exists for \textit{any} symmetric monoidal product $\otimes$ on $\V$ (see Remark \ref{SIGMA_WR_REM}).
-\end{remark}
+% Somewhat surprisingly, the existence of $\F$-model structures for non-complete $\F$ also follow analogously from \ref{CELLULAR_LEVEL_COFIB_PROP2}, as level (trivial) $\F$-cofibrations are also level (trivial) genuine cofibrations.
+% \begin{corollary} 
+%         \label{F_OP_SEMI_MODEL_THM}
+%         If $\V$ is strongly cellular, then 
+%         the $\F$ semi model structure on $\Op^G(\V)$ exists. \qed
+% \end{corollary} 
 
-Somewhat surprisingly, the existence of $\F$-model structures for non-complete $\F$ also follow analogously from \ref{CELLULAR_LEVEL_COFIB_PROP2}, as level (trivial) $\F$-cofibrations are also level (trivial) genuine cofibrations.
-\begin{corollary} 
-        \label{F_OP_SEMI_MODEL_THM}
-        If $\V$ is strongly cellular, then 
-        the $\F$ semi model structure on $\Op^G(\V)$ exists. \qed
-\end{corollary} 
-% \begin{proof} 
-%         It suffices to show that if $u: X\to Y$ is a level trivial $\F$-cofibration and $\P$ is level $\F$-cofibrant in $\V^{G \times \Sigma}$, then the cellular extension $\P \to \P[u]$ is a level trivial $\F$-cofibration. However, such $u$ are level genuine cofibrations, and such $\P$ are level genuine cofibrant, and hence $\P \to \P[u]$ is a level trivial genuine cofibration by said corollary, and thus is a level trivial $\F$-cofibration. 
-% \end{proof} 
-
-
-Finally, in certain special cases,
-%if our base category $\V$ is even nicer, 
-these semi model structures are in fact Quillen.
-
-\% begin{definition}
-%         \label{UNDERLYING_STRONGLY_CELLULAR}
-%         We say a model category $\V$ is \textit{underlying strongly cellular} if $\V$ is strongly cellular (Definition \ref{STRONGLY_CELLULAR}) and additionally
-%         \begin{enumerate}
-%         \item genuine cofibrations in $\V^\Pi$ are underlying cofibrations in $\V$ for all finite groups $\Pi$, and
-%         \item every object in $\V$ is cofibrant.
-%         \end{enumerate}
-% \end{definition}
-
-\begin{corollary}
-      \label{F_OP_Q_MODEL_THM}
-        If $\V = \sSet$ or $\sSet_*$,
-        then the $\F$-model structure exists on $\Op^G(\V)$. \qed
-\end{corollary}
-\begin{proof}
-        In these cases, for any group $\Pi$ every object in $\V^\Pi_{\text{gen}}$ is cofibrant,
-        and thus the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied. 
-\end{proof}
+% \begin{corollary}
+%       \label{F_OP_Q_MODEL_THM}
+%         If $\V = \sSet$ or $\sSet_*$,
+%         then the $\F$-model structure exists on $\Op^G(\V)$. \qed
+% \end{corollary}
+% \begin{proof}
+%         In these cases, for any group $\Pi$ every object in $\V^\Pi_{\text{gen}}$ is cofibrant,
+%         and thus the technical hypotheses on $\P$ needed for Corollary \ref{CELLULAR_LEVEL_COFIB_PROP} are always satisfied. 
+% \end{proof}
 
 
 
@@ -8364,10 +8357,10 @@ We identify the following maps in $\Op_\F(\V)$ (cf. Definitions \ref{F_MODEL_DEF
       \[ 
       \begin{tikzcd} 
             \Op_\F(\V) 
-            \arrow[r, shift right, "\mathsf{fgt}"'] 
+            \arrow[r, shift right]
             & 
             \Sym_{\F}(\V) 
-            \arrow[l, shift right]
+            \arrow[l, shift right, "\mathbb F_G"']
       \end{tikzcd} 
       \] 
 \end{definition} 
@@ -8463,14 +8456,13 @@ The key technical step in the proof of Theorem \ref{MAINEXIST2 THM}, written out
 \end{proof} 
 
 \begin{proof}[Proof of Theorem \ref{MAINEXIST2 THM}]
-      The first two parts follow precisely as in the proof of Theorem \ref{G_OP_SEMI_MODEL_THM}, 
-      replacing the use of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP2} with Corollary \ref{CELLULAR_LEVEL_COFIB_PROP},
-      while the third part follows from the same argument found in the proof of Corollary \ref{F_OP_Q_MODEL_THM}.
+        All three parts follow precisely as in the proof of Theorem \ref{MAINEXIST1 THM},
+        replacing the use of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP2} with Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}.
 \end{proof}
   
-\begin{example} 
-      The projective genuine model structure exists on $\sOp_\F := \Op_\F(\sSet)$ for any weak indexing system $\F$.
-\end{example} 
+% \begin{example} 
+%       The projective genuine model structure exists on $\sOp_\F := \Op_\F(\sSet)$ for any weak indexing system $\F$.
+% \end{example} 
 
 
 
@@ -9684,7 +9676,7 @@ by using label isomorphism classes.
 
 	Let $\mathcal{F}$ be a family of corollas 
 	and suppose that 
-	$f_i \colon A \to B$, $1\leq i \leq l$ are $\mathcal{F}$-cofibrations (resp. trivial cofibrations)
+	$f_i \colon A \to B$, $1\leq i \leq l$ are level $\mathcal{F}$-cofibrations (resp. trivial cofibrations)
 	in $\mathsf{Sym}^G(\mathcal{V})$, i.e. that 
 	$f_i(r) \colon A(r) \to B(r)$ are cofibrations (resp. trivial cofibrations) in 
 	$\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$.
@@ -9824,18 +9816,17 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 	$\mathsf{Sym}^G(\mathcal{V})$. 
 	For each $T \in \Omega_{G,0}^{\underline{l}}$ define
 	\begin{equation}
-	f^{\square V_G(T)} = 
-		\underset{1\leq i \leq l, v \in V_{G,i}(T)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**}f_i(v).
+                    f^{\square V_G(T)} = 
+                    \underset{1\leq i \leq l, v \in V_{G,i}(T)}{\mathlarger{\mathlarger{\square}}}
+                    \iota_{\**}f_i(v).
 	\end{equation}
 	Then the canonical map
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-	f^{\square V_G(T)} \to
-	\iota_{\**} \iota^{\**} f^{\square V_G(T)}
+                    f^{\square V_G(-)} \to
+                    \iota_{\**} \iota^{\**} f^{\square V_G(-)}
 	\end{equation}
-is an isomorphism.	
+            is an isomorphism in $\V^{\Omega_G^{0,\underline{l},op}}$ (with $G \times \Omega_0^{\underline{l}} \xrightarrow{\iota} \Omega_G^{0,\underline{l}}$ the inclusion).
 \end{proposition}
-
 \begin{proof}
 Note first that there is a coproduct decomposition
 \[\Omega_{G,0}^{\underline{l}}
@@ -9963,11 +9954,11 @@ Moreover, the analogous statement for cofibrations between cofibrant objects als
         $\mathcal{V}^{G}(\mathcal{F})$ as a reflexive 
         subcategory of $\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$, 
         it is 
-        $X \simeq \iota^{\**}Y$ for some 
+        $X \simeq \iota_{\**}Y$ for some 
         $Y \in \mathcal{V}^{G}(\mathcal{F})$
         (i.e. $X \in \mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$
-        is in the essential image of $\iota^{\**}$)
-        iff both $\iota_{\**}X \simeq Y$ and the unit map 
+        is in the essential image of $\iota_{\**}$)
+        iff both $\iota^{\**}X \simeq Y$ and the unit map 
         $X \xrightarrow{\simeq} \iota_{\**} \iota^{\**}X$
         is an isomorphism.
 
@@ -10138,17 +10129,7 @@ preserve cofibrant objects.
         Proposition \ref{COFESSIM PROP}.
         
         \todo[inline]{come back: fix, and fix notation}
-        We note that by Remark \ref{F_MODEL_REM}, 
-        cofibrant sequences $X$ in $\Sym^G_\F(\V)$ must have $X(n) \simeq \varnothing$ whenever $\F_n$ is empty.
-        Moreover, the counit
-        $( \iota^{\**} \upgamma_! ) ( \upgamma^{\**} \iota_{\**} ) X \to X$ 
-        is the identity on cofibrant $X\in \Sym^G_\F(\V)$.
-        
-        We note also that
-        the unit of the adjunction is the identity on the image of $\upgamma^{\**}\iota_{\**}$,
-        as the composite $\upgamma^{\**} \upgamma_! \upgamma^{\**}$ is the identity. 
-        
-        
+                 
         For the operad adjunction in (\ref{COFADJ2 EQ}),
         most of the argument in the proof of
         Proposition \ref{COFESSIM PROP}
@@ -10172,7 +10153,7 @@ preserve cofibrant objects.
                         \ar{d}[swap]{\iota_{\**}u} 
                         \ar{r} 
                         &
-                        \iota_{\**} \mathcal{O} 
+                        \upgamma^{\**} \iota_{\**} \mathcal{O} 
                         \ar[dashed]{d} 
                         & &
                         \mathbb{F} X 
@@ -10185,7 +10166,7 @@ preserve cofibrant objects.
                         (\upgamma^* \mathbb{F}_G \upgamma_!) \upgamma^{\**} \iota_{\**} Y  
                         \ar[dashed]{r}
                         &
-                        (\iota_{\**} \mathcal{O})[\iota_{\**} u]
+                        (\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]
                         & &
                         \mathbb{F} Y 
                         \ar[dashed]{r}
@@ -10194,43 +10175,69 @@ preserve cofibrant objects.
                 \end{tikzcd}
         \end{equation}
         are precisely the essential image under $\upgamma^{\**} \iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
+        {\color{blue} 
+          In fact, it suffices to show this just when $\O \in C^{\Sigma_\F}$, the subcategory of operads in $\Op^G$ which forget to cofibrant sequences in $\Sym^G_\F$.
+          Indeed, this would imply that $\iota_{\**}(C^{\Sigma_\F})$ is closed under free extensions, all of which are images of free extensions in $C^{\Sigma_\F}$,
+          and hence the same is true for $\iota_{\**}(C^\F)$ (where we can identify this as those objects in $\iota_{\**}(C^{\Sigma_\F})$ isomorphic to retracts of those which have a cellular decomposition beginning with $\varnothing$).
+        }% COLOR: BLUE
 
-        Recalling that there are natural isomorphisms 
+        To begin, we first note that by Remark \ref{F_MODEL_REM}, 
+        % cofibrant sequences $X$ in $\Sym^G_\F(\V)$ must have $X(n) \simeq \varnothing$ whenever $\F_n$ is empty,
+        % and moreover
+        the unit map
+        $X \to \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} X$
+        is an isomorphism of cofibrant objects.
+        
+        Now, recalling that there are natural isomorphisms 
+        % \[
+        % \iota^{\**} \mathbb{F}_{G} \iota_{\**}
+        % \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+        % \qquad
+        % \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
+        % \]
         \[
-        \iota^{\**} \mathbb{F}_{G} \iota_{\**}
-        \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+        \upgamma_! \upgamma^{\**} \mathbb F_G \upgamma_! \simeq \mathbb F_G \upgamma_!
         \qquad
-        \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
+        \iota^{\**} \mathbb F_G \simeq \iota^{\**} \mathbb F_G \iota_{\**} \iota^{\**}
+        \qquad
+        \iota^{\**} \mathbb F_G \iota_{\**} \simeq \mathbb F
         \]
         we see that the two solid subdiagrams in 
         (\ref{TWOCELLEXT EQ})
         are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
         We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
-        are in the essential image of $\iota_{\**}$.
-        Indeed, if that is the case then
+        are in the essential image of $\upgamma^*\iota_{\**}$.
+        Indeed, as we also have a natural isomorphism
         \[
-        \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq
-        \upgamma^{\**} \mathbb{F}_G \upgamma_* \upgamma^{\**} \iota_{\**} Z \simeq 
-        \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \mathbb{F}_G \upgamma_* \upgamma^{\**} \iota_{\**} Z \simeq 
-        \iota_{\**} \iota_G^{\**} \mathbb{F}_G \iota{G,\**} Z \simeq
-        \iota_{\**} \mathbb{F} Z
-        % \mathbb{F}_G \iota_{\**} Z \simeq 
-        % \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
-        % \iota_{\**} \mathbb{F} Z
+        \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} \xrightarrow{\simeq}
+        \upgamma^{\**} \iota_{\**},
         \]
+        if that is the case then
+        \begin{align*}
+                \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z & \simeq
+                \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
+                \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
+                \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} Z 
+                \\
+                & \simeq \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq 
+                \upgamma^{\**} \iota_{\**} \mathbb{F} Z
+                % \mathbb{F}_G \iota_{\**} Z \simeq 
+                % \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
+                % \iota_{\**} \mathbb{F} Z
+        \end{align*}
         for $Z=X,Y$
-        (where the second isomorphism follows from observation (c), and the last one can be checked directly)
-        and since $\iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\iota_{\**}$ must have already been a colimit diagram.},
+        and since $\upgamma^{\**} \iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\upgamma^{\**} \iota_{\**}$ must have already been a colimit diagram.} on diagrams of cofibrant objects in $\Sym^G_\F$,%
+        \todo[inline]{blue: need that cofibrant $\O \in \Op^G_\F$ are cofibrant in $\Sym^G_\F$, as $\upgamma^{\**} \iota_{\**}$ does not in general reflect colimits}%
         it must then
         indeed be that
         $(\iota_{\**} \mathcal{O})[\iota_{\**} u]
         \simeq \iota_{\**} (\mathcal{O}[u])$.
-
+        
 
         To establish the remaining claim that the objects 
         in the leftmost diagram in
         (\ref{TWOCELLEXT EQ})
-        are in the essential image of $\iota_{\**}$,
+        are in the essential image of $\upgamma^{\**} \iota_{\**}$,
         we claim
         it suffices to show this for the bottom right corner 
         $(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
@@ -10256,7 +10263,7 @@ preserve cofibrant objects.
         (\ref{FILTRATION_LAN_LEVEL})
         it suffices by
         Proposition \ref{COFESSIM PROP}
-        to check that the leftmost map in (\ref{F_FILTRATION_LAN_LEVEL}) is
+        to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
         a cofibration between cofibrant objects in 
         $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
         We now recall that that map can also be described 
@@ -10285,6 +10292,7 @@ preserve cofibrant objects.
         \mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
         \to
         \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
+        \todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
         Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
         can now be identified with an instance of the functor $\phi_!$ 
         in Corollary \ref{FINALCOR COR} one has 
@@ -10292,7 +10300,8 @@ preserve cofibrant objects.
         $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
         \prod_{T \in \mathsf{Iso}(\Omega^a[k])}
         \mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
-        that the main claim now follows by Corollary \ref{FINALCOR COR}.
+        that the main claim now follows by Corollary \ref{FINALCOR COR} 
+        with Propositions \ref{COFESSIM PROP} and \ref{FGTRIGHT PROP}.
 
         As for the additional claim concerning the forgetful functors
         in (\ref{FGTFUNC EQ}),
