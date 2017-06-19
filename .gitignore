@@ -15,3 +15,6 @@ GenEqOp.log
 GenEqOp.toc
 GenEqOp.aux
 GenEqOp.pdf
+*.aux
+GenEqOp.log
+*.toc
