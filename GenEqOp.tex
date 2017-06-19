@@ -517,7 +517,7 @@ and composition maps given by
 in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
 %and multiplication maps
 %\begin{align*}%\label{FIXEDPOINTMUL EQ}
-\[
+\begin{equation}\label{GENGENMULT EQ}
 \begin{tikzcd}
   \mathcal{P}(H/K_1 \amalg \cdots \amalg H/K_n)
   \times
@@ -532,7 +532,7 @@ in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
   H / L_{n1} \amalg \cdots \amalg H/L_{n m_n}
   ).
 \end{tikzcd}
-\]
+\end{equation}
 %\end{align*}
 %generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
 Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
@@ -542,112 +542,209 @@ must satisfy associativity, unitality, compatibility with restriction maps, and 
 
 \subsection{Main results}
 
-
-For much of the discussion, our base model category will need to been sufficiently nice (see Definition \ref{STRONGLY_CELLULAR}). In particular, the strongest statements all hold when $\V = \sSet$.
-
-Our first result, proved in \S \ref{G_OP_EXISTS_SECTION}, shows that $G$-operads can be endowed with a (semi) model structure encoding the theory of operads with norm maps. In fact, it shows more, in particular that the partially-genuine (semi) model structures also exist.
+We now discuss our main results.
+ 
+Recall that 
+$\mathsf{Op}^G(\mathcal{V})
+=
+\left(\mathsf{Op}(\mathcal{V})\right)^G$
+denotes $G$-objects in 
+$\mathsf{Op}(\mathcal{V})$.
 
 \begin{customthm}{I}\label{MAINEXIST1 THM}
-        Let $\V$ be a strongly cellular model category.
+Let $(\mathcal{V},\otimes)$
+denote either 
+$(\mathsf{sSet}, \times)$
+or
+$(\mathsf{sSet}_{\**}, \wedge)$.
 
-        Then there exists a semi model structure on $\Op^G(\V)$ where weak equivalences and fibrations are determined by graph subgroup fixed points as in \ref{GENEOPEQ EQ}; that is, by the forgetful functor
-        \[
-        \Op^G(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym^G(\V) \cong \prod_n \V^{G \times \Sigma_n}_{\Gamma_n}.
-        \]
-        More generally, for any collection 
-        $\mathcal F = \set{\mathcal F_n}_{n\geq 0}$ of sets $\mathcal F_n$ of arbitrary subgroups of $G\times \Sigma_n$ closed under conjugation, 
-        there exists an $\mathcal F$ semi model structure on $\Op^G(\V)$, 
-        where weak equivalences and fibrations determined as in \ref{NFINFTY EQ};
-        that is, by the forgetful functor
-        \[
-        \Op^G_{\mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym^G_{\mathcal F}(\V) \cong \prod_n \V^{G\times \Sigma_n}_{\mathcal F_n}.
-        \]
-        % denoted $\Op^G_{\mathcal F}(\V)$, exists; t
-        % and fix a collection ${\mathcal F} = \set{{\mathcal F}_n}$ of sets ${\mathcal F}_n$ of subgroups of $G\times \Sigma_n$, each closed under conjugation. 
-        % Then the $\mathcal{F}$-semi-model structure, 
-        % denoted
-        % $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
-        % on 
-        % the category $\mathsf{Op}^G(\mathcal{V})$ exists.
+Then there exists a model structure on 
+$\mathsf{Op}^G(\mathcal{V})$ such that 
+$\O \to \O'$ is a weak equivalence (resp. fibration)
+if all the maps
+\begin{equation}\label{GENEOPEQMT EQ}
+	\O(n)^{\Gamma} \to \O'(n)^{\Gamma}
+\end{equation}
+for 
+$\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}$, 
+are weak equivalences (fibrations) in $\mathcal{V}$.
 
-        In the cases $\V = \sSet$ or $\sSet_*$, these are actual model structures.
+More generally, for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ with $\mathcal{F}_n$ an arbitrary collection of subgroups of $G \times \Sigma_n$ there exists a model structure on 
+$\mathsf{Op}^G(\mathcal{V})$,
+which we denote
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
+with weak equivalences (resp. fibrations)
+determined by (\ref{GENEOPEQMT EQ}) for $\Gamma \in \mathcal{F}_n$.
+
+Lastly, 
+analogous 
+semi-model structures
+$\mathsf{Op}^G(\mathcal{V})$,
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
+exist
+provided that
+$(\mathcal{V},\otimes)$:
+\begin{inparaenum}
+\item[(i)] is a strongly cofibrantly generated model category;
+\item [(ii)] is a closed monoidal model category;
+\item[(iii)] has cellular fixed points;
+\item[(iv)] has cofibrant symmetric pushout powers.
+\end{inparaenum}
 \end{customthm}
 
-One important remark to make after this
-existence result is that these model structures need not be ``well-behaved'', 
-specifically with respect to the forgetful functors preserving cofibrancy, 
-unless the collections ${\mathcal F}$ are highly structured.
-The necessary condition, found in \S \ref{MAINTHM_PROOF_SECTION} that $\mathcal \F$ is a \textit{weak} indexing system,
-is also precisely the necessary condition from \S \ref{INDEXING_SECTION} to build the new algebraic structures of genuine equivariant operads.
-%Our main result, proved in \S \ref{MAINTHM_PROOF_SECTION}, shows that assuming $\mathcal F$ is a \textit{weak} indexing system (see Definition \ref{INDEXSYS DEF}) is sufficient.
+Theorem \ref{MAINEXIST1 THM}
+is proven in {\color{red} \S \ref{G_OP_EXISTS_SECTION},
+where the additional conditions are also discussed.
+}
 
-%Next, the analogous projective model structures on the category of genuine equivariant operads also exist. 
-%Before the statement, we first highlight that, in the result above, the sets $\mathcal F_n$ can contain \textit{arbitrary} subgroups of $G\times \Sigma_n$. 
-%However, this flexibility does not exist (or make sense) when considering our genuine $G$-operads. 
-%Instead, we must restrict to collections ${\mathcal F} = \set{{\mathcal F}_n}$ of \textit{families} of \textit{graph} subgroups, or equivalently \textit{sieve} subcategories $\Sigma_{\mathcal F}$ of $\Sigma_G$. 
+Our next result concerns the model structure
+on the category 
+$\mathsf{Op}_G (\mathcal{V})$ of genuine equivariant operads
+introduced in this paper, the construction of which we now briefly outline.
+Firstly, the levels of each 
+$\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
+i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
+are encoded by a category $\Sigma_G$ of 
+$G$-corollas, introduced in \S \ref{LRVERT SEC},
+which generalizes the usual category 
+$\Sigma$ of finite sets and isomorphisms.
+We then define $G$-symmetric sequences by
+$\mathsf{Sym}_G(\mathcal{V})=
+\mathcal{V}^{\Sigma_G^{op}}$ and,
+whenever $\mathcal{V}$ is a closed symmetric monoidal category with diagonals 
+(cf. Remark \ref{FINSURJ REM}),
+we define in \S \ref{FGMON SEC}
+a \textit{free genuine equivariant operad} monad 
+$\mathbb{F}_G$ on 
+$\mathsf{Sym}_G(\mathcal{V})$
+whose algebras form the desired category 
+$\mathsf{Op}_G(\mathcal{V})$.
 
-In \S \ref{OP_G_EXISTS_SECTION}, we show these categories of algebras have a projective model structure.
+Moreover, inspired by the analogues
+$\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}
+	\rightleftarrows 
+\mathsf{Top}^G_{\mathcal{F}}$
+of the Elmendorf-Piacenza equivalence
+where 
+$\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+are partial coefficient systems determined by a family $\mathcal{F}$, 
+we show in \S \ref{INDEXING_SECTION}
+that (a slight generalization of)
+Blumberg-Hill's indexing systems $\mathcal{F}$
+give rise to sieves 
+$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
+and partial symmetric sequences
+$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
+=
+\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ which are suitably compatible with the monad
+$\mathbb{F}_G$,
+thus giving rise to categories
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+of \textit{partial genuine equivariant operads}.
+
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
-Let $\V$ be a strongly cellular model category with diagonals.
-Then the projective genuine semi model structure on $\mathsf{Op}_{G}(\V)$ exists, and is determined by the forgetful functor
-\[
-\Op_G(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_G(\V).
-\]
+Let $(\mathcal{V},\otimes)$
+denote either 
+$(\mathsf{sSet}, \times)$
+or
+$(\mathsf{sSet}_{\**}, \wedge)$.
+Then the projective model structure on 
+$\mathsf{Op}_G(\mathcal{V})$ exists. Explicitly,
+a map $\mathcal{P} \to \mathcal{P}'$ is a weak equivalence (resp. fibration) if all maps
+\begin{equation}\label{GENEQTHM EQ}
+\mathcal{P}(C)
+	\to
+\mathcal{P}'(C)
+\end{equation}
+are weak equivalences (fibrations) in $\mathcal{V}$
+for each $C \in \Sigma_G$.
 
-More generally, for any weak indexing system $\Sigma_{\mathcal F} \subseteq \Sigma_G$, 
-the projective genuine semi model structure on $\mathsf{Op}_{\mathcal F}(\V)$ exists, and is determined by the forgetful functor
-\[
-\Op_{\mathcal F}(\V) \xrightarrow{\mathmakebox[5em]{\mathsf{fgt}}} \Sym_{\mathcal F}(\V).
-\]
+More generally, for $\mathcal{F}$ a weak indexing system, a projective model structure on 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exists. Explicitly, weak equivalences (resp. fibrations) are
+determined by (\ref{GENEQTHM EQ})
+for $C \in \Sigma_{\mathcal{F}}$.
 
-% either composite of forgetful functors
-% \[
-% \begin{tikzcd}
-%         \Op_G^{\mathcal F}(\V) \arrow[d, "\mathsf{fgt}"'] \arrow[r] & \Op_{\mathcal F}(\V) \arrow[d, "\mathsf{fgt}"]\\
-%         \Sym_G^{\mathcal F}(\V) \arrow[r] & \Sym_{\mathcal F}(\V).
-% \end{tikzcd}
-% \]  
-
-%Equivalently, the $\Sigma_{\mathcal F}$-semi-model structure, denoted $\Op_G^{\mathcal F}(\V)$, on $\Op_G(\V)$ exists.
-
-In the cases $\V = \sSet$ or $\sSet_*$, these are both actual model structures.
+Lastly, 
+analogous 
+semi-model structures
+$\mathsf{Op}^G(\mathcal{V})$,
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
+exist
+provided that
+$(\mathcal{V},\otimes)$:
+\begin{inparaenum}
+\item[(i)] is a strongly cofibrantly generated model category;
+\item [(ii)] is a closed monoidal model category;
+\item[(iii)] has cellular fixed points;
+\item[(iv)] has cofibrant symmetric pushout powers;
+\item[(v)] $(\mathcal{V},\otimes)$ has diagonals.
+\end{inparaenum}
 \end{customthm}
 
-Our main result, proved in \S \ref{MAINTHM_PROOF_SECTION}, says both notions of equivariant operads are Quillen equivalent.
+Theorem \ref{MAINEXIST2 THM} is proven in 
+{\color{red} \S \ref{OP_G_EXISTS_SECTION}}.
+We note that the condition that 
+$(\mathcal{V},\otimes)$ has diagonals (cf. Remark \ref{FINSURJ REM}), which is not needed in 
+Theorem \ref{MAINEXIST1 THM}, is required to build
+$\mathsf{Op}_G(\mathcal{V})$,
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$.
+
+The following is our main result.
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
-Let $\mathcal{V}$ be strongly cellular with diagonals.
-%a strongly cofibrantly generated cartesian closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
+Let $(\mathcal{V},\otimes)$
+denote either 
+$(\mathsf{sSet}, \times)$
+or
+$(\mathsf{sSet}_{\**}, \wedge)$.
 
-Then the adjunction 
+Then the adjunctions, 
+where in the more general rightmost case 
+$\mathcal{F}$ is a weak indexing system,
 \begin{equation}
-\begin{tikzcd}[column sep =5em]
+\begin{tikzcd}[column sep =4em]
 	\mathsf{Op}_G(\mathcal{V}) \ar[shift left=1.5]{r}{\iota^{\**}} 
 	&
 	\mathsf{Op}^G(\mathcal{V})
-	\ar[shift left=1.5]{l}{\iota_{\**}} .
+	\ar[shift left=1.5]{l}{\iota_{\**}},
+&
+	\mathsf{Op}_{\mathcal F}(\mathcal{V}) 
+	\ar[shift left=1.5]{r}{\iota^{\**}} 
+	&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}.
 \end{tikzcd}
 \end{equation}
-is a Quillen equivalence of semi model categories.
+are Quillen equivalences.
 
-More generally, for $\mathcal{F}$ a weak indexing system, the analogue adjunction
-\begin{equation}
-      \begin{tikzcd}[column sep =5em]
-            \mathsf{Op}_{\mathcal F}(\mathcal{V}) 
-            \ar[shift left=1.5]{r}{\iota^{\**}} 
-            &
-            \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
-            \ar[shift left=1.5]{l}{\iota_{\**}} .
-      \end{tikzcd}
-\end{equation}
-are also Quillen equivalences.
+Morover, 
+analogous Quillen equivalences of
+semi-model structures
+$\mathsf{Op}^G(\mathcal{V})$,
+$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
+exist
+provided that
+$(\mathcal{V},\otimes)$:
+\begin{inparaenum}
+\item[(i)] is a strongly cofibrantly generated model category;
+\item [(ii)] is a closed monoidal model category;
+\item[(iii)] has cellular fixed points;
+\item[(iv)] has cofibrant symmetric pushout powers;
+\item[(v)] $(\mathcal{V},\otimes)$ has diagonals;
+\item[(vi)] $(\mathcal{V},\otimes)$ has cartesian fixed points.
+\end{inparaenum}
 \end{customthm}
 
-If $\V = \sSet$ or $\sSet_*$, then the above are equivalences of Quillen model categories.
+Theorem \ref{MAINQUILLENEQUIV THM}
+is proven in 
+{\color{red} \S \ref{MAINTHM_PROOF_SECTION}}.
 
-We lastly return to the conjecture of \cite{BH15}, which we resolve in the affirmative using two different methods in \S \ref{NINFTY_SECTION}. In fact, we show the existence of a larger class of operads, realizing any weak indexing system.
-%(see Definition \ref{INDEXSYS DEF}).
+Lastly, our techniques also confirm 
+the main conjecture of \cite{BH15},
+as we discuss in \S \ref{NINFTY_SECTION}.
+Moreover, we note that our models for
+$N \mathcal{F}$-operads are given by explicit bar constructions.
 
 \begin{customcor}{IV}\label{NINFTY_REAL_COR_MAIN}
 For $\V = \sSet$ or $\mathsf{Top}$ and 
@@ -663,7 +760,9 @@ such that
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}  
-In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
+In particular, the map $\mathrm{Ho}(N_\infty$-$\Op) \to \mathcal I$
+in \cite[Cor. 5.6]{BH15}
+ is an equivalence of categories.
 \end{customcor}
 
 \subsection{Outline}
