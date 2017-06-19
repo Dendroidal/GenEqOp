@@ -5537,7 +5537,7 @@ identifies $\mathsf{Op}^G(\mathcal{V})$ as a reflexive subcategory of
 $\mathsf{Op}_G(\mathcal{V})$.
 \end{corollary}
 
-\begin{remark}
+\begin{remark}\label{MUTMUT REM}
 	Remark \ref{REFLCOREFL REM} extends to operads mutatis mutandis.
 	
 Moreover, the isomorphism
@@ -5613,156 +5613,87 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \subsection{Indexing systems and partial genuine operads}
 \label{INDEXING_SECTION}
 
-In (\ref{COFADJINT EQ}), universal spaces for families $E\F$ are constructed by
-cofibrantly replacing the coefficient system $\delta_\F$ in $\V^{O_G^{op}}$ (where, to construct $EG$, $\delta_\F$ is in fact the terminal object).
-Equivalently, we could have cofibrantly replaced the terminal object in the category of \textit{partial} coefficient systems $\V^{O_\F^{op}}$, 
-which moreover are the natural target for the Quillen adjunction (equivalence) in \cite{Ste16}
-\[
-\V^{O_\F^{op}} \rightleftarrows \V^G_\F.
-\]
+As discussed preceding Theorem \ref{MAINEXIST2 THM},
+the Elmendorf-Piacenza equivalence
+(\ref{COFADJINT EQ}) has analogues
+\begin{equation}
+\begin{tikzcd}[column sep =4em,row sep=0.3em]
+	\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}
+	\ar[shift left=1]{r}{\iota^{\**}} 
+&
+	\mathsf{Top}_{\mathcal{F}}^G
+	\ar[shift left=1]{l}{\iota_{\**}}
+\end{tikzcd}
+\end{equation}
+for each family $\mathcal{F}$ of subgroups of $G$.
+Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ so that 
+$\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+consists of partial coefficient systems.
+These specialized equivalences provide an alternative approach to universal 
+$E \mathcal{F}$ spaces: rather than cofibrantly replacing the object
+$\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$
+discussed in the introduction,
+one builds an $E \mathcal{F}$-space by
+$\iota^{\**}(C \**) = (C *) (G)$
+where now $\** \in \mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
+is the terminal object and $C$ the cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$.
 
-In the parallel operadic story, 
-$N_\infty$-operads replace the $E\F$, 
-and the category $\Op_G$ just built plays the role of $\V^{O_G^{op}}$.
-To complete our investigation, we need to characterize those ``$\delta_\F$'' which \textit{can} exist in $\Op_G$,
-and moreover develop the notion of \textit{partial} genuine operads,
-to provide a natural setting for the construction of the $N\F$.
+In keeping with the motivation that the Blumberg-Hill $N \mathcal{F}$ operads are the operadic analogues of universal $E \mathcal{F}$ spaces,
+we will now show that the closure conditions for 
+indexing systems
+identified in \cite[Def. 3.22]{BH15}
+are (almost exactly) the necessary conditions to define categories 
+$\mathsf{Op}_{\mathcal{F}}$
+of partial genuine equivariant operads.
 
-% The genuine $G$-operad monad $\mathbb{F}_G$ and the regular $G$-operad monad $\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ are in fact not the only possible algebraic structures for encoding equivariant operads.
-% Instead there is a lattice of ``partially genuine operads'', 
-% containing the lattice of types of $N_\infty$-operads,
-% with each choice having a description as in (\ref{IFGI EQ}) as some ``restriction'' of (\ref{FGXDEF EQ}).
+We start by recalling that 
+in the classic setting
+$\mathcal{F}$ is a family of subgroups of $G$
+iff the associated subcategory 
+$\mathsf{O}_{\mathcal{F}} \hookrightarrow
+\mathsf{O}_G$ is a sieve, defined as follows.
 
-% In this subsection, we will explore this lattice. 
-We begin by identifying certain useful subcategories of $\Sigma_G$.
 
 \begin{definition}
-      For any category $\mathcal D$, a subcategory $\widehat{\mathcal D}$ is called a \textit{sieve} if 
-      for all maps $f: d \to \widehat d$, knowing $\widehat d \in \widehat{\mathcal D}$ implies both $d$ and the map $f$ are also in $\widehat{\mathcal D}$.
-      In particular, sieve subcategories are full.
+	A \textit{sieve} of a category $\mathcal{D}$
+	is a subcategory $\mathcal{S}$ such that
+	for any arrow $f \colon d \to s$ of $\mathcal{D}$ with
+	$s \in \mathcal{S}$ then both $d$ and $f$ are also in $\mathcal{S}$.
+      In particular, sieves are full subcategories.
 \end{definition}
 
-In \S \ref{FAMILY_SEC}, we will identify sieve subcategories of the orbit category $O_G$ with
-\textit{families} of subgroups of $G$.
-Following this nomenclature, we make the following definition.
 
 \begin{definition}
       \label{FAMILY_COROLLAS_DEF}
-	A \textit{family} of $G$-corollas is a sieve subcategory
-	$\Sigma_{\mathcal{F}}$ of $\Sigma_G$.
+	A \textit{family} of $G$-corollas is a sieve
+	$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$.
 \end{definition}
 
 \begin{remark}
       \label{FAMILY_COROLLAS_REM}
-      In fact, families of corollas $\Sigma_\F$ are particular examples of (coproducts of) families of subgroups;
+%      In fact, families of corollas $\Sigma_\F$ are particular examples of (coproducts of) families of subgroups;
       % with an equivalence of categories of the form
       % \[
       % \coprod {O_{\F_n}} \xrightarrow{\simeq} \Sigma_\F.
       % \]
-      see Lemma \ref{FAMILY_COROLLAS_LEM}) for more details.
-
-      % A family of corollas $\Sigma_{\mathcal{F}}$
-      % can equivalently be encoded by
-      % a collection $\F = \set{\F_n}_{n \geq 0}$ of 
-      % families $\mathcal F_n$ of graph subgroups of $G \times \Sigma_n$,
-      % and we have a canonical equivalence of categories
-      % $\Sigma_\F \simeq \amalg O_{\F_n}$
-      % (see Lemma 
-      
-      Due to this, we will abuse notation and abbreviate either set of data simply as $\F$. 
+%      see Lemma \ref{FAMILY_COROLLAS_LEM}) for more details.
+A family of corollas $\Sigma_{\mathcal{F}}$
+can equivalently be encoded by
+a collection $\F = \set{\F_n}_{n \geq 0}$ of 
+families $\mathcal F_n$ of graph subgroups of $G \times \Sigma_n$, so that there is an equivalence of categories
+$\Sigma_\F \simeq \coprod \mathsf{O}_{\F_n}$.
+	As such, we abuse notation and abbreviate either set of data as $\F$. 
 \end{remark}
 
-\begin{definition}\label{FTREE DEF}
-Let $\mathcal{F}$ be a family of $G$-corollas.
-
-We say that a $G$-tree $T$ is a \textit{$\mathcal{F}$-tree}
-if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
-$\Sigma_{\mathcal{F}}$,
-and we denote the full subcategory spanned by the $\F$-trees $\Omega_\F \hookrightarrow \Omega_G$. 
-\end{definition}
-
-
-\begin{remark}\label{VACUOUSNESS REM}
-	By vacuousness the stick $G$-trees
-	$G \cdot_H \eta \simeq G/H \cdot \eta$ are always $\mathcal{F}$-trees.
-\end{remark}
-
-%The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
-Now, given a family $\mathcal{F}$ of $G$-corollas and writing 
-$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ 
-for the partial $G$-symmetric sequences determined by $\mathcal{F}$, one may then ask under which conditions the construction of the monad
-$\mathbb{F}_G$ on $\mathsf{Sym}_{G}(\mathcal{V})$
-of \S \ref{FGMON SEC}
-can be adapted to build a monad
-$\mathbb{F}_{\mathcal{F}}$ on 
-$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
-
-Writing $\Omega_{\mathcal{F}}^0 \hookrightarrow \Omega_{G}^0$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
-this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
-$V_G \colon \Omega_{\mathcal{F}}^0 \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
-$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
-$(V_{G})^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
-Compatibility with the leaf-root functor, however, 
-requires an additional closure condition on $\mathcal{F}$,
-which we now formally introduce.
-
-
-\begin{definition}\label{INDEXSYS DEF}
-	A family $\mathcal{F}$ of $G$-corollas is called a 
-	\textit{weak indexing system}
-	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F}}^0$ it is 
-	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e. if the leaf-root functor restricts to a functor
-	$\mathsf{lr} \colon \Omega_{\mathcal{F}}^0 \to \Sigma_{\mathcal{F}}$.
-	
-	Additionally, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
-$(G/H)\cdot C_n$ are in $\Sigma_{\mathcal{F}}$.
-\end{definition}
-
-
-\begin{remark}
-	In light of Remark \ref{VACUOUSNESS REM} any weak coefficient system must contain the $1$-corollas $(G/H) \cdot C_1$.
-\end{remark}
-
-
-\begin{remark}
-The notion and terminology of indexing system
-was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
-Moreover, an alternate third definition of indexing systems, also in terms of $G$-trees but differing slightly from Definition \ref{INDEXSYS DEF}, was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
-\cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the description in \cite[\S 9]{Pe17}.
-
-In \cite[Def. 9.5]{Pe17}, $\mathcal{F}$ was defined to be an indexing system if $\mathcal{F}$-trees form a sieve
-$\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$ 
-(cf. \ref{FAMILY_COROLLAS_DEF}). 
-%(cf. \ref{SIEVE REM}). 
-The existence of canonical maps 
-$\mathsf{lr}(T) \to T$ is sufficient to show that the condition in 
-\cite[Def. 9.5]{Pe17} implies that in Definition \ref{INDEXSYS DEF}. 
-Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-planar tall strings $\Omega_{\mathcal{F}}^1$ between $\mathcal{F}$-trees can be defined as the pullback of 
-$\Omega_{\mathcal{F}}^0 \to
-\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
-\Fin \wr \Omega_{\mathcal{F}}^0
-$.
-\end{remark}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%We may now build a ``restricted'' monad $\mathbb F_\F$ on $\Sym_{\F}(\V)$. 
-
-% \begin{remark}
-%       The definition below will not immeditely be of a form analogous to (\ref{FGXDEF EQ}). 
-%       This is because the \textit{existence} of such a monad is in fact more general, and the given definition will make cleaner both the gynmastics with adjoints required to compare it with $\mathbb F_G$ and the homotopical analysis.
-%       However, any depth of understanding $\mathbb F_\F$ will require $\F$ to be a weak indexing system,
-%       and in this case, the monad is indeed (isomophic to one) given by an analogous left Kan extension (see (\ref{F_F_LAN_EQ})).
-% \end{remark}
-
-Now, for any family of corollas $\F$, let $\upgamma: \Sigma_{\F} \into \Sigma_G$ denote the inclusion.
-We then have a pair of adjunctions
+Writing 
+$\upgamma \colon 
+\Sigma_{\mathcal{F}}
+\hookrightarrow
+\Sigma_G$
+for the inclusion and 
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = 
+\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$,
+we thus have a pair of standard adjunctions
 \begin{equation}
       \label{F_TWOADJOINTS_EQ}
       \begin{tikzcd}[column sep =5em]
@@ -5774,195 +5705,255 @@ We then have a pair of adjunctions
             \arrow[l, "\upgamma^{\**}"] 
       \end{tikzcd}
 \end{equation}
+Our focus will be on the $(\upgamma_!,\upgamma^{\**})$ adjunction.
+The requirement that $\Sigma_{\mathcal{F}}$ be a sieve then implies that $\upgamma_!$ simply extends presheaves by the initial object 
+$\emptyset \in \mathcal{V}$,
+so that $\gamma_!$ identifies 
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+with a (coreflexive) subcategory of 
+$\mathsf{Op}_G(\mathcal{V})$.
+One may then ask for conditions on the family 
+of corollas $\mathcal{F}$ such that 
+the genuine operad monad $\mathbb{F}_G$
+preserves this subcategory and, as it turns out,
+the answer is almost exactly given by the Blumberg-Hill indexing systems.
 
-\begin{remark}
-      \label{UPGAMMA_REM}
-      The forgetful map $\upgamma^{\**}$ is always easy to describe.
-      However, only when $\Sigma_\F$ is a sieve subcategory of $\Sigma_G$ 
-      (which holds in particular if $\F$ is a weak indexing system)
-      do we have a handle on $\upgamma_!$. 
-      In this case
-      for $Y\in \Sym_\F(\V)$, we have
-      \[
-      \upgamma_!Y(C) =
-      \begin{cases}
-            Y(C) \qquad & C\in \Sigma_\F\\
-            \varnothing & C \notin \Sigma_\F.
-      \end{cases}
-      \]
-      However, $\upgamma_{\**}$ remains hard to unpack in general\footnote{
-        In fact, this formula holds for any $\upgamma_!: \V^{\widehat{\mathcal D}^{op}} \to \V^{\mathcal D^{op}}$ when $\widehat{\mathcal D}$ is a sieve of $\mathcal D$.
-        One case where $\upgamma_{\**}$ is easy to describe is for $\upgamma:G \into O_G$, where it is the fixed-point system functor.}.      
-      % This follows the what we know in coefficient systems:
-      % just as the explicit description from (\ref{TWOADJOINTS EQ}) extends the left double adjunction below, 
-      % the above is precisely what we can get from the right one.
-      % \[
-      % \begin{tikzcd}[column sep =5em]
-      %       \V^{O_G^{op}}
-      %       \ar{r}[swap]{\iota^{\**}} 
-      %       &
-      %       \V^G
-      %       \ar[bend right]{l}[swap,midway]{\iota_{!}}
-      %       \ar[bend left]{l}{\iota_{\**}}
-      %       &&
-      %       \V^{O_\F^{op}}
-      %       \arrow[r, bend left, "\upgamma_{!}"]
-      %       \arrow[r, bend right, "\upgamma_{\**}"']
-      %       &
-      %       \V^{O_G^{op}}
-      %       \arrow[l, "\upgamma^{\**}"] 
-      % \end{tikzcd}
-      % \]
+
+\begin{definition}\label{FTREE DEF}
+Let $\mathcal{F}$ be a family of $G$-corollas.
+
+We say that a $G$-tree $T$ is a \textit{$\mathcal{F}$-tree}
+if all of its $G$-vertices $T_{v}$, $v \in V_G(T)$ are in 
+$\Sigma_{\mathcal{F}}$,
+and we denote by 
+$\Omega_\F \hookrightarrow \Omega_G$,
+$\Omega_\F^0 \hookrightarrow \Omega_G^0$
+the full subcategories spanned by the $\F$-trees.
+\end{definition}
+
+
+\begin{remark}\label{VACUOUSNESS REM}
+	By vacuousness the stick $G$-trees
+	$G \cdot_H \eta \simeq (\eta)_{G/H}$ are always $\mathcal{F}$-trees.
 \end{remark}
 
-\begin{definition}
-        Let $\mathbb{F}_{\F}$ denote the endofunctor $\upgamma^{\**} \mathbb{F}_G \upgamma_!$ on $\Sym_{\F}(\V)$.
+%The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
+
+%Now, given a family $\mathcal{F}$ of $G$-corollas and writing 
+%$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = %\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ 
+%for the partial $G$-symmetric sequences determined by $\mathcal{F}$, one may then ask under which conditions the construction of the monad
+%$\mathbb{F}_G$ on $\mathsf{Sym}_{G}(\mathcal{V})$
+%of \S \ref{FGMON SEC}
+%can be adapted to build a monad
+%$\mathbb{F}_{\mathcal{F}}$ on 
+%$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+
+%Writing $\Omega_{\mathcal{F}}^0 \hookrightarrow \Omega_{G}^0$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
+%this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
+%$V_G \colon \Omega_{\mathcal{F}}^0 \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
+%$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
+%$(V_{G})^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
+%Compatibility with the leaf-root functor, however, 
+%requires an additional closure condition on $\mathcal{F}$,
+%which we now formally introduce.
+
+
+\begin{definition}\label{INDEXSYS DEF}
+	A family $\mathcal{F}$ of $G$-corollas is called a 
+	\textit{weak indexing system}
+	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F}}^0$ it is 
+	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e. if the leaf-root functor restricts to a functor
+	$\mathsf{lr} \colon \Omega_{\mathcal{F}}^0 \to \Sigma_{\mathcal{F}}$.
+Moreover, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
+$(G/H)\cdot C_n \simeq (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
 \end{definition}
 
-It is immediate from Proposition \ref{MONADADJ1 PROP} that $\mathbb{F}_{\F}$ is a monad for any subcategory $\Sigma_{\F} \subseteq \Sigma_G$.
 
-\begin{definition}
-      Let $\Op_{\F}(\V)$ denote the category $\mathsf{Alg}_{\mathbb{F}_{\F}}(\V)$ of \textit{$\F$-genuine $G$-operads}.
-\end{definition}
+\begin{remark}
+	In light of Remark \ref{VACUOUSNESS REM} any weak indexing system must contain the $1$-corollas $(G/H) \cdot C_1 \simeq (C_1)_{G/H}$.
+\end{remark}
 
-If $\F$ is not a weak indexing system, our discussion ends here.
-However, 
-we have the following adjustments of Proposition \ref{MONAD_COMPARISON_PROP} and Corollary \ref{TWOADJOINTSOP_COR}) for highly-structured $\F$.
+\begin{remark}
+The notion of indexing system
+was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
+Moreover, a third definition of (weak) indexing systems as the sieves 
+$\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$
+was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
+\cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the sieve definition in \cite[\S 9]{Pe17}.
 
-\begin{lemma}
-        \label{F_MONAD_COMPARISON_PROP}
-        Let $\F$ be a weak indexing system.
-        \begin{itemize}
-        \item[(i)]
-                the map 
-                $\upgamma^{\**} \mathbb{F}_G
-                \xrightarrow{\eta_{\**}}
-                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \upgamma^{\**}$
-                is an isomorphism, 
-                and thus (cf. Prop. \ref{MONADADJ PROP})
-                $\upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$
-                is a monad.
-        \item[(ii)] the map 
-                $\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
-                \xrightarrow{\beta}	
-                \upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$ is an isomorphism of monads;
-        \item[(iii)] the map 
-                $\upgamma_{!}\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
-                \xrightarrow{\epsilon_!}
-                \mathbb{F}_G \upgamma_{!}$ is an isomorphism.
-        \end{itemize}
-\end{lemma}
+The existence of canonical maps 
+$\mathsf{lr}(T) \to T$ shows that the sieve condition
+implies the $\mathsf{lr}$ condition
+in Definition \ref{INDEXSYS DEF}. 
+Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
+planar tall strings $\Omega_{\mathcal{F}}^1$ between $\mathcal{F}$-trees match the pullback 
+$\Omega_{\mathcal{F}}^0 \to
+\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
+\Fin \wr \Omega_{\mathcal{F}}^0
+$.
+\end{remark}
+
+
+The connection between weak indexing systems and $\mathbb{F}_G$ is given by the following,
+which generalizes 
+Proposition \ref{MONAD_COMPARISON_PROP}.
+
+\begin{proposition}\label{F_MONAD_COMPARISON_PROP}
+	Let $\F$ be a weak indexing system. Then:
+	\begin{itemize}
+	\item[(i)] the map 
+		$\upgamma^{\**} \mathbb{F}_G
+		\xrightarrow{\eta_{\**}}
+		\upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \upgamma^{\**}$
+		is an isomorphism,
+		and thus (cf. Prop. \ref{MONADADJ PROP})
+		$\upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$
+		is a monad;
+	\item[(ii)] the map
+		$\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
+		\xrightarrow{\beta}
+		\upgamma^{\**} \mathbb{F}_G \upgamma_{\**}$ is an isomorphism of monads;
+	\item[(iii)] the map
+		$\upgamma_{!}\upgamma^{\**} \mathbb{F}_G \upgamma_{!}
+		\xrightarrow{\epsilon_!}
+		\mathbb{F}_G \upgamma_{!}$ is an isomorphism.
+	\end{itemize}
+\end{proposition}
+
 \begin{proof}
-        This follows identically as in the proof of Proposition \ref{MONAD_COMPARISON_PROP},
-        by replacing the use of 
-        $\mathsf{lr}: \Omega_G^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$ with
-        $\mathsf{lr}: \Omega_{\F}^0 \to \Sigma_{\F}$. 
-        For example, using the description of $\Omega_{\F}$ as a sieve of $\Omega_G$, it is immediate that for each $C \in \Sigma_{\F}$ one has an equality of rooted undercategories between
-        $C \downarrow_{\mathsf r} \Omega_G^0$
-        and
-        $C \downarrow_{\mathsf r} \Omega_{\F}^0$.
-        Thus for $X\in \Sym_G(\V)$, $\upgamma^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram,
-        \begin{equation}
-              \label{F_F_LAN_EQ}
-              \begin{tikzcd}
-                    \Omega_{\F}^{0} \ar{d} \ar{r} &
-                    \Fin \wr \Sigma_{\F} \ar{r}{\Fin \wr X} &
-                    \Fin \wr \mathcal{V}^{op} \ar{r} &
-                    \mathcal{V}^{op}
-                    \\
-                    \Sigma_{\F}
-              \end{tikzcd}
-        \end{equation}
-        and the result follows since $X \to \upgamma_{\**} \upgamma^{\**} X$ is a isomorphism when restricted to $\Sigma_{\F}$. 
-        
-        The remaining results follow from similarly analogous proofs.
+	This follows just like the analogous parts of
+	Proposition \ref{MONAD_COMPARISON_PROP} by
+	replacing
+	$\mathsf{lr}: \Omega_G^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$
+	with
+	$\mathsf{lr}: \Omega_{\F}^0 \to \Sigma_{\F}$. 
+	For (i), note that if $C \in \Sigma_{\mathcal{F}}$
+	there is an identification between
+	$C \downarrow_{\mathsf r} \Omega_G^0$
+	and
+	$C \downarrow_{\mathsf r} \Omega_{\F}^0$,
+	so that $\mathbb{F}_G X (C)$
+	only depends on the values of $X$ on $\Sigma_{\mathcal{F}}$.
+	(ii) is immediate.	
+	Lastly, (iii) follows 
+	since if $C \nin \Sigma_{\mathcal{F}}$ then
+	any tree in $C \downarrow_{\mathsf r} \Omega_G^0$ must contain at least one $G$-vertex not in $\Sigma_{\mathcal{F}}$,
+	so that indeed $\mathbb{F}_G \upgamma_{!}Y(C)=\emptyset$.
+%        Thus for $X\in \Sym_G(\V)$, $\upgamma^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram,
+%        \begin{equation}
+%              \label{F_F_LAN_EQ}
+%              \begin{tikzcd}
+%                    \Omega_{\F}^{0} \ar{d} \ar{r} &
+%                    \Fin \wr \Sigma_{\F} \ar{r}{\Fin \wr X} &
+%                    \Fin \wr \mathcal{V}^{op} \ar{r} &
+%                    \mathcal{V}^{op}
+%                    \\
+%                    \Sigma_{\F}
+%              \end{tikzcd}
+%        \end{equation}
+%        and the result follows since $X \to \upgamma_{\**} \upgamma^{\**} X$ is a isomorphism when restricted to $\Sigma_{\F}$. 
+%        
+%        The remaining results follow from similarly analogous proofs.
 \end{proof}
 
+\begin{notation}
+We write 
+$\mathbb{F}_{\mathcal{F}} = \upgamma^{\**} \mathbb{F}_G \upgamma_!$ for the induced monad
+on
+$\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$,
+and $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
+for the corresponding algebras.
+\end{notation}
+
 \begin{corollary}
-        \label{F_TWOADJOINTSOP_COR}
-        The adjunction (\ref{F_TWOADJOINTS_EQ}) extends to an adjunction on algebras
-        \[
-        \begin{tikzcd}[column sep =5em]
-                \mathsf{Op}_\F(\mathcal{V})
-                \arrow[r, bend left, "\upgamma_{!}"]
-                \arrow[r, bend right, "\upgamma_{\**}"']
-                &
-                \mathsf{Op}_{G}(\mathcal{V}) 
-                \arrow[l, "\upgamma^{\**}"] 
-        \end{tikzcd}
-        \]
+The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
+	\begin{equation}\label{TWOADJOINTSOPF EQ}
+	\begin{tikzcd}[column sep =5em]
+		\mathsf{Op}_\F(\mathcal{V})
+			\arrow[r, bend left, "\upgamma_{!}"]
+			\arrow[r, bend right, "\upgamma_{\**}"']
+		&
+		\mathsf{Op}_{G}(\mathcal{V})
+		\arrow[l, "\upgamma^{\**}"]
+	\end{tikzcd}
+	\end{equation}
 \end{corollary}
 
 \begin{remark}
-        Part (iii) above can be interpreted as saying that
-        the monad $\mathbb F_G$ restricts to $\Sym_\F$,
-        where we view $\Sym_\F \xrightarrow{\upgamma_!} \Sym_G$ as the inclusion of a full subcategory,
-        when $\F$ is a weak indexing system.
-        
-        This mimics one possible interpretation of the main results from \cite[\S 4]{BH15},
-        where indexing systems provide the closure conditions necessary to ensure that 
-        composite operations $f(g_1,\ldots,g_n)$ have $\F$-admissible isotropy whenever the $x$ and $y_i$ do;
-        that is, the operadic structure ``restricts'' to indexing systems.
-
-        This view of Part (iii) also indicates a reason why we chose to define $\mathbb F_\F$ in this way, as opposed to building an entirely new operad given by left Kan extensions as in (\ref{F_F_LAN_EQ}) and repeating the arguments from \S \ref{FGMON SEC} mutatis mutandis.
+Part (iii) of Proposition \ref{F_MONAD_COMPARISON_PROP}
+states that if $\mathcal{F}$ is a weak indexing system then $\mathbb{F}_G$ essentially preserves the image of $\upgamma_!$ (moreover, the converse is easily seen to also hold).
+As such, we will sometimes find it conceptually convenient
+to regard $\mathbb{F}_{\mathcal{F}}$ as
+``restricting $\mathbb{F}_G$''.
 \end{remark}
 
-% \begin{remark}
-%       As a consequence of the proof above, we have that $\mathbb F_\F$ is isomorphic to the (possibly more natural) endofunctor given by the left Kan extension from (\ref{F_F_LAN_EQ}).
-%       While we could have defined it as this endofunctor, and just repeated \S \ref{FMON SEC} mutatis mutandis, 
-%       the gynmastics with adjoints required to compare it with $\mathbb F_G$ and analyze it homotopically will be cleaner with the given definition. 
-% \end{remark}
+%This mimics one possible interpretation of the main results from \cite[\S 4]{BH15},
+%where indexing systems provide the closure conditions necessary to ensure that 
+%composite operations $f(g_1,\ldots,g_n)$ have $\F$-admissible isotropy whenever the $x$ and $y_i$ do;
+%that is, the operadic structure ``restricts'' to indexing systems.
+%
+%This view of Part (iii) also indicates a reason why we chose to define $\mathbb F_\F$ in this way, as opposed to building an entirely new operad given by left Kan extensions as in (\ref{F_F_LAN_EQ}) and repeating the arguments from \S \ref{FGMON SEC} mutatis mutandis.
+        
+\begin{remark}        
+	The free corollas of \S	\ref{COMPARISON_REGULAR_SECTION}
+	form a weak indexing system
+	$\Sigma_G^{\text{fr}} = \Sigma_{\F_{\text{fr}}}$
+	and, moreover, there is an equivalence of categories
+	$\Op^G \simeq \Op_{\F_{\text{fr}}}$,
+	so that (\ref{TWOADJOINTSOP EQ})
+	is a particular case of (\ref{TWOADJOINTSOPF EQ}).
+	However, while our discussion of 
+	(\ref{TWOADJOINTSOP EQ})
+	focuses on the $(\iota^{\**},\iota_{\**})$-adjunction, due to the fact that the intended model structures on $\mathsf{Op}^G(\mathcal{V})$ in
+	Theorem \ref{MAINEXIST1 THM} are defined via fixed point conditions, 
+	our discussion of (\ref{TWOADJOINTSOPF EQ})
+	focuses on the $(\iota_{!},\iota^{\**})$-adjunction, due to the model structures in 
+	Theorem \ref{MAINEXIST2 THM} being projective.
+\end{remark}
 
 \begin{remark}
-      We observe that regular $G$-operads are a type of partially genuine $G$-operads. 
-      Indeed, 
-      the family of free $G$-corollas
-      $\Sigma_G^{\text{fr}} = \Sigma_{\F_{\text{fr}}}$       
-      is an indexing system, and the proof of Proposition \ref{MONAD_COMPARISON_PROP}(i) yields that $\Op^G \simeq \Op_{\F_{\text{fr}}}$.
-\end{remark}
-
-Comparison between different classes of partially-genuine operads can be quite difficult:
-as hinted at in Remark \ref{UPGAMMA_REM}, the adjunction maps become less tractible. 
-However, the solid arrows in the combination of (\ref{TWOADJOINTS EQ}) and (\ref{F_TWOADJOINTS_EQ}) below
-\[
+	In most cases, the rightmost $(\iota^{\**},\iota_{\**})$-adjunction appearing in Theorem \ref{MAINQUILLENEQUIV THM}
+	is induced by an inclusion 
+	$\iota \colon \Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$.
+	However, it is possible for  
+	$\Sigma_G^{\text{fr}} \nsubset \Sigma_{\mathcal{F}}$ (the most interesting case being that of $\Sigma_{G}^{\geq 1} \hookrightarrow \Sigma_G$ the corollas of arity $\geq 1$, which models non-unital operads),
+	in which case (and compatibly with the 
+	$\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$ case), we instead use the composite adjunction
+\begin{equation}\label{COMPADJ EQ}
 \begin{tikzcd}[column sep =5em]
-      \mathsf{Op}_\F(\mathcal{V})
-      \arrow[r, bend left, "\upgamma_{!}"]
-      \arrow[r, bend right, dashed, "\upgamma_{\**}"']
-      &
-      \mathsf{Op}_{G}(\mathcal{V}) 
-      \arrow[l, "\upgamma^{\**}"] 
-      \arrow[r, "\iota^{\**}"']
-      &
-      \mathsf{Op}^G(\mathcal{V})
-      \arrow[l, bend right, dashed, "\iota_{!}"']
-      \ar[bend left]{l}{\iota_{\**}}
+	\mathsf{Op}_\F(\mathcal{V})
+	\ar[shift left=1.5]{r}{\upgamma_!} 
+&
+	\mathsf{Op}_{G}(\mathcal{V}) 
+	\arrow[l, shift left=1.5, "\upgamma^{\**}"] 
+	\arrow[r, shift left=1.5,swap,"\iota^{\**}"']
+&
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}
 \end{tikzcd}
-\]
-yields an adjunction comparing all partially-genuine operads with regular $G$-operads in a managable fashion.
-
-\begin{remark}
-        A minor warning:
-        if $\Sigma_\F$ does not contain the free $G$-tree $G \cdot C_n$ for some $n \geq 0$
-        (which is possible even for indexing systems),
-        then the composite $\upgamma^{\**} \iota_{\**}$ is no longer injective on objects out of $\Sym^G_\F(\V)$. 
-        and hence this adjunction is no longer reflective.
-        
-        Instead, we will see that it is reflective only on \textit{cofibrant} objects in $\Sym^G_\F(\V)$. 
+\end{equation}
+We note that the right adjoint 
+$\gamma^{\**} \iota_{\**}$
+is still defined by computing fixed points while the 
+left adjoint
+$\iota^{\**}\gamma_!$
+is still essentially a forgetful functor, with levels not present in $\mathcal{F}$ declared to be $\emptyset$.
+In practice, however, the use of the composite adjunction
+(\ref{COMPADJ EQ})
+is fairly benign, requiring only minor
+adjustments to the notation of the proofs in 
+\S \ref{MAINTHM_PROOF_SECTION}.
 \end{remark}
 
-
-\begin{notation}
-        \label{I_STAR_ABUSE}
-        In all statements of results, including the main theorems, we will abuse notation, and denote the composite adjunctions above as simply
-        \[
-        \iota^{\**}: \Op_\F(\V) \rightleftarrows \Op^G(\V): \iota_{\**}
-        \qquad
-        \iota^{\**}: \Sym_\F(\V) \rightleftarrows \Sym^G(\V): \iota_{\**}.
-        \]
-\end{notation}
-
-
+%\begin{remark}
+%       A minor warning:
+%       if $\Sigma_\F$ does not contain the free $G$-tree $G \cdot C_n$ for some $n \geq 0$
+%        (which is possible even for indexing systems),
+%        then the composite $\upgamma^{\**} \iota_{\**}$ is no longer injective on objects out of $\Sym^G_\F(\V)$. 
+%        and hence this adjunction is no longer reflective.
+%        
+%        Instead, we will see that it is reflective only on \textit{cofibrant} objects in $\Sym^G_\F(\V)$. 
+%\end{remark}
 
 
 
