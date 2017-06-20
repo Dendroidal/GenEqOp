@@ -5937,7 +5937,8 @@ $\gamma^{\**} \iota_{\**}$
 is still defined by computing fixed points while the 
 left adjoint
 $\iota^{\**}\gamma_!$
-is still essentially a forgetful functor, with levels not present in $\mathcal{F}$ declared to be $\emptyset$.
+is still essentially a forgetful functor, with levels not present in $\mathcal{F}$ declared to be $\emptyset$
+(and hence this adjoint restricts to an inclusion of a reflective subcategory $\Op^{G \cap \F}(\V)$ of those $\O \in \Op^G(\V)$ such that $\O(C) = \varnothing$ for all $C\notin \Sigma_\F$).
 In practice, however, the use of the composite adjunction
 (\ref{COMPADJ EQ})
 is fairly benign, requiring only minor
@@ -8538,7 +8539,7 @@ The key technical step in the proof of Theorem \ref{MAINEXIST2 THM}, written out
         where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym_\F(\V)$, the map $\P \to \P[u]$ is a level genuine cofibration, trivial if $u$ is so. 
 \end{corollary}  
 \begin{proof} 
-        As we know $\upgamma_!$ preserves pushouts of operads by Corollary \ref{F_TWOADJOINTSOP_COR},
+        As $\upgamma_!$ preserves pushouts of operads by (\ref{TWOADJOINTSOPF EQ},
         applying $\upgamma_!$ to the free $\mathbb F_\F$-extension above yields a pushout
         \[
         \begin{tikzcd}
@@ -10201,13 +10202,6 @@ Moreover, both forgetful functors
 \end{equation}
 preserve cofibrant objects.
 \end{lemma}
-
-\begin{remark}
-        We recall from Notation \ref{I_STAR_ABUSE} that $\iota_{\**}$, $\iota^{\**}$ in the statement abusively denote 
-        $\upgamma^{\**}\iota_{\**}$, $\iota^{\**}\upgamma_!$; 
-        we will not use this abusive notation in the proof.
-\end{remark}
-
 \begin{proof}
         We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
         is not really new. Indeed, as
@@ -10231,26 +10225,39 @@ preserve cofibrant objects.
         Proposition \ref{COFESSIM PROP}
         applies mutatis mutandis
         except for the claim that 
-        $\mathbb{F}_{\F} (\emptyset) \simeq \upgamma^{\**} \iota_{\**} \mathbb{F} (\emptyset)$, 
+        $\mathbb{F}_{\F} (\emptyset) \simeq \iota_{\**} \mathbb{F} (\emptyset)$, 
         which is readily checked directly, 
         and the comparison of cellular extensions,
         which is the key claim.
+        
+        Now, borrowing the notation from Proposition \ref{COFESSIM PROP},
+        let $C^\F$ and $C_\F$ denote the classes of cofibrant objects in $\Op^G_\F(\V)$ and $\Op_\F$.
+        % and $\upgamma_!(C_\F) \subseteq \Op_G$ the essential image under $\upgamma_!$ of cofibrant objects in $\Op_\F(\V)$.
+        We note that 
+        the generating cofibrations for $\Op_\F(\V)$ are precisely those for $\Op_G(\V)$ which are generated from those in $\Sym^G_\F(\V)$,
+        as $\upgamma_!$ includes $\Op_\F(\V)$ as a reflective subcategory
+        and moreover detects cofibrations,
+        since Remark \ref{F_MODEL_REM} implies
+        \begin{equation}
+                \label{UPGAMMA_COFIB_EQ}
+                \upgamma_!(\upgamma^{\**} \mathbb F_G \upgamma_! \upgamma^{\**} \iota_{\**} (f)) = \mathbb F_G \iota_{\**}(f)
+        \end{equation}
+        for $f$ a generating cofibration (with cofibrant source by assumption) in $\Sym^G_\F(\V)$.
 
-        Explicitly, and borrowing the notation
-        $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) used in Proposition \ref{COFESSIM PROP} for the 
-        classes of cofibrant objects in 
-        $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
-        (resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$),
-        we need to show that cellular extensions of objects in 
-        $\upgamma^{\**} \iota_{\**}(C^{\mathcal{F}})$, such as on the left below
+        Thus, 
+        recalling that $\iota_{\**}$ in the statement of the lemma abusively denotes the composite $\upgamma^{\**} \iota_{\**}$,
+        to prove the desired equality $\upgamma^{\**} \iota_{\**}(C^\F) = C_\F$,
+        we may equivalently prove $\iota_{\**}(C^\F) = \upgamma_!(C_\F)$,
+        for which in turn it suffices by (\ref{UPGAMMA_COFIB_EQ}) to show that 
+        cellular extensions of objects in 
+        $\iota_{\**}(C^{\mathcal{F}})$, such as on the left below
         \begin{equation}\label{TWOCELLEXT EQ}
                 \begin{tikzcd}
-                         \upgamma^{\**} \mathbb F_G \iota_{\**} X 
-                         = (\upgamma^* \mathbb{F}_G \upgamma_!) \upgamma^{\**} \iota_{\**} X 
+                        \mathbb F_G \iota_{\**} X 
                         \ar{d}[swap]{\iota_{\**}u} 
                         \ar{r} 
                         &
-                        \upgamma^{\**} \iota_{\**} \mathcal{O} 
+                        \iota_{\**} \mathcal{O} 
                         \ar[dashed]{d} 
                         & &
                         \mathbb{F} X 
@@ -10260,11 +10267,10 @@ preserve cofibrant objects.
                         \mathcal{O} 
                         \ar[dashed]{d}
                         \\
-                        \upgamma^{\**} \mathbb F_G \iota_{\**} Y
-                        = (\upgamma^* \mathbb{F}_G \upgamma_!) \upgamma^{\**} \iota_{\**} Y  
+                        \mathbb F_G \iota_{\**} Y
                         \ar[dashed]{r}
                         &
-                        (\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]
+                        (\iota_{\**} \mathcal{O})[\iota_{\**} u]
                         & &
                         \mathbb{F} Y 
                         \ar[dashed]{r}
@@ -10272,129 +10278,51 @@ preserve cofibrant objects.
                         \mathcal{O}[u]
                 \end{tikzcd}
         \end{equation}
-        {(where the equalities are given by the observation, based on Remark \ref{F_MODEL_REM}, that the unit maps
-          \begin{equation}
-                  \label{COFIB_UNIT_ISOS}
-                  X \to \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} X 
-                  \qquad \qquad 
-                  \iota_{\**} X \to \upgamma_! \upgamma^{\**} \iota_{\**} X
-          \end{equation}
-          are isomorphisms for all cofibrant objects $X \in \Sym^G_\F(\V)$)}
-        are precisely the essential image under $\upgamma^{\**} \iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
-                
-        {\color{blue} 
-          In fact, it suffices to show this just when $\O \in C^{\Sigma_\F}$, the subcategory of operads in $\Op^G$ which forget to cofibrant sequences in $\Sym^G_\F$.
-          Indeed, this would imply that $\iota_{\**}(C^{\Sigma_\F})$ is closed under free extensions, compatibly with $\iota_{\**}$ and free extensions in $C^{\Sigma_\F}$.
-          In turn, this would allow us to conclude the same is true for $\iota_{\**}(C^\F)$, identified as those objects in $\iota_{\**}(C^{\Sigma_\F})$ isomorphic to retracts of those which have a cellular decomposition beginning with $\varnothing$.
-        }% COLOR: BLUE
+        are precisely the essential image under $\iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above, with $u: X \to Y$ a cofibration in $\Sym^G_\F(\V)$.
+        Moreover, by induction on the minimum number of cellular extensions needed to generate $\O$, we may assume $\mathsf{fgt}(\O)$ is cofibrant in $\Sym^G_\F(\V)$.        
         
         Now, recalling that there are natural isomorphisms 
-        % \[
-        % \iota^{\**} \mathbb{F}_{G} \iota_{\**}
-        % \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
-        % \qquad
-        % \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
-        % \]
         \[
-        \upgamma_! \upgamma^{\**} \mathbb F_G \upgamma_! \simeq \mathbb F_G \upgamma_!
+        \iota^{\**} \mathbb{F}_{G} \iota_{\**}
+        \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
         \qquad
-        \iota^{\**} \mathbb F_G \simeq \iota^{\**} \mathbb F_G \iota_{\**} \iota^{\**}
-        \qquad
-        \iota^{\**} \mathbb F_G \iota_{\**} \simeq \mathbb F
+        \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
         \]
         we see that the two solid subdiagrams in 
         (\ref{TWOCELLEXT EQ})
         are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
         We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
-        are in the essential image of $\upgamma^*\iota_{\**}$.
-        Indeed, as we also have a natural isomorphism
-        \[
-        \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} \xrightarrow{\simeq}
-        \upgamma^{\**} \iota_{\**},
-        \]
-        if that is the case then
+        are in the essential image of $\iota_{\**}$.
+        Indeed, if that is the case then
         \begin{align*}
-                \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z & \simeq
-                \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
-                \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
-                \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} Z 
-                \\
-                & \simeq \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq 
-                \upgamma^{\**} \iota_{\**} \mathbb{F} Z
-                % \mathbb{F}_G \iota_{\**} Z \simeq 
-                % \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
-                % \iota_{\**} \mathbb{F} Z
+                \mathbb{F}_G \iota_{\**} Z \simeq 
+                \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
+                \iota_{\**} \mathbb{F} Z
         \end{align*}
         for $Z=X,Y$
-        and since $\upgamma^{\**} \iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\upgamma^{\**} \iota_{\**}$ must have already been a colimit diagram.} on diagrams of cofibrant objects in $\Sym^G_\F$,%
-        \todo[inline]{blue: need that cofibrant $\O \in \Op^G_\F$ are cofibrant in $\Sym^G_\F$, as $\upgamma^{\**} \iota_{\**}$ does not in general reflect colimits}%
+        and since $\iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\upgamma^{\**} \iota_{\**}$ must have already been a colimit diagram.}
         it must then
         indeed be that
-        $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]
-        \simeq \upgamma^{\**} \iota_{\**} (\mathcal{O}[u])$.
-        
+        $(\iota_{\**} \mathcal{O})[\iota_{\**} u]
+        \simeq \iota_{\**} (\mathcal{O}[u])$.
 
         To establish the remaining claim that the objects 
         in the leftmost diagram in
         (\ref{TWOCELLEXT EQ})
-        are in the essential image of $\upgamma^{\**} \iota_{\**}$,
+        are in the essential image of $\iota_{\**}$,
         we claim
         it suffices to show this for the bottom right corner 
-        $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\upgamma^{\**} \iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
+        $(\iota_{\**} \mathcal{O})[\iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
         $\mathsf{Sym}^{G}_{\mathcal{F}}(\mathcal{V})$.
         Indeed, setting  $X=\emptyset$ and $\O=\mathbb{F} (\emptyset)$, 
         one has 
-        $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\upgamma^{\**} \iota_{\**} u] = 
-        \upgamma^* \mathbb{F}_{G} \upgamma_* \iota_{\**} Y$, and similarly for $\upgamma^* \mathbb{F}_{G} \upgamma_* \iota_{\**} X$.
-
-        For our final reduction,
-        we note that it suffices to show that cellular extensions of objects in $\iota_{\**}(C^{\F})$,
-        such as the pushout below, 
-        are in the image of $\iota_{\**}$.
-        \begin{equation}\label{TWOCELLEXT2 EQ}
-                \begin{tikzcd}
-                        \mathbb F_G \iota_{\**} X 
-                        \ar{d}[swap]{\iota_{\**}u} 
-                        \ar{r} 
-                        &
-                        \iota_{\**} \mathcal{O} 
-                        \ar[dashed]{d} 
-                        % & &
-                        % \mathbb{F} X 
-                        % \ar{d}[swap]{u} 
-                        % \ar{r} 
-                        % &
-                        % \mathcal{O} 
-                        % \ar[dashed]{d}
-                        \\
-                        \mathbb F_G \iota_{\**} Y
-                        \ar[dashed]{r}
-                        &
-                        (\iota_{\**} \mathcal{O})[\iota_{\**} u]
-                        % & &
-                        % \mathbb{F} Y 
-                        % \ar[dashed]{r}
-                        % &
-                        % \mathcal{O}[u]
-                \end{tikzcd}
-        \end{equation}
-        Indeed, for any $Z \in \Sym_G(\V)$, we have 
-        \[
-        Z \simeq \iota_{\**}\iota^{\**} Z, \quad 
-        Z \simeq \upgamma_! \upgamma^{\**} Z 
-        \qquad \mbox {iff} \qquad
-        \upgamma^{\**} Z \simeq \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! (\upgamma^{\**} Z),
-        \] 
-        and we immediately have $Z \simeq \upgamma_! \upgamma^{\**}$ for 
-        \[
-        Z = \upgamma_! ((\upgamma^{\**} \iota_{\**} \O)[\iota_{\**} u]) \simeq (\iota_{\**} \O)[\iota_{\**} u]
-        \]
-        (where the second equality follows from (\ref{COFIB_UNIT_ISOS}) and the fact that $\upgamma_!$ preserves pushouts).
+        $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = 
+        \mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\mathbb{F}_{G} \iota_{\**} X$.
 
         Now, writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
         $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
         the required condition that
-        $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \upgamma_! \mathcal{P}[\iota_{\**} u]$
+        $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \mathcal{P}[\iota_{\**} u]$
         is an isomorphism 
         can be checked by forgetting to 
         $\Sym_G(\V)$,
@@ -10404,7 +10332,7 @@ preserve cofibrant objects.
         It thus suffices to verify by induction on $k$ that each 
         $\mathcal{P}_k$ is in the essential image of 
         $\iota_{\**} \colon \mathsf{Sym}^G(\mathcal{V})
-        \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+        \to \mathsf{Sym}_{G}(\mathcal{V})$.
         Using the iterative description 
         of the $\mathcal{P}_k$ in
         (\ref{FILTRATION_LAN_LEVEL})
@@ -10412,7 +10340,7 @@ preserve cofibrant objects.
         Proposition \ref{COFESSIM PROP}
         to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
         a cofibration between cofibrant objects in 
-        $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+        $\mathsf{Sym}_{G}(\mathcal{V})$.
         We now recall that that map can also be described 
         (cf. (\ref{FILTINTALT EQ})) as
         \begin{equation}\label{FILTINTALTAG EQ}
@@ -10421,11 +10349,12 @@ preserve cofibrant objects.
                         \bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
                         \underset{v \in V_{G}^{in}(T)}
                         {\mathlarger{\mathlarger{\mathlarger{\square}}}}
-                        u(T_v)
+                        \iota_{\**} u(T_v)
                 \right).
         \end{equation}
-        where we have replaced $\Omega_G^a[k]$ with $\Omega_\F^a[k]$ in the left Kan extension
-        since both $\P$ and $\iota_{\**} u$ are in the image of $\upgamma_!$. 
+        where we have been able to replace $\Omega_G^a[k]$ with $\Omega_\F^a[k]$ in the left Kan extension,
+        as both $\P$ and $\iota_{\**} u$ are in the image of $\upgamma_!$ 
+        (cf. proof of Proposition \ref{F_MONAD_COMPARISON_PROP}). 
         Noting that there is an equivalence
         $\mathcal{V}^{\Omega_{\mathcal{F}}^a[k]^{op}} \simeq
         \prod_{T \in \mathsf{Iso}(\Omega_{\mathcal{F}}^a[k])}
@@ -10441,7 +10370,7 @@ preserve cofibrant objects.
         \mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
         \to
         \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
-        \todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
+        %\todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
         Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
         can now be identified with an instance of the functor $\phi_!$ 
         in Corollary \ref{FINALCOR COR} one has 
@@ -10458,16 +10387,275 @@ preserve cofibrant objects.
         \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
         \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
         preserves cofibrant objects is precisely what was argued in the previous paragraph
-        {\color{blue}
-          (and is an immediate consequence of $\iota_{\**}(C^\F)$ being closed under retracts and free extensions)
-        }% END COLOR BLUE
-        But since the forgetful functors commute with $\iota_{\**}$, the claim that
+        (and independently is immediate from the main result and the fact that $\iota^{\**} \iota_{\**} = id$).
+        Moreover, since the forgetful functors commute with $\iota_{\**}$, the claim that
         $\mathsf{fgt} \colon
         \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
         \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
         also preserves cofibrant objects follows from the
         ``essential image characterization'' of cofibrant objects in
         (\ref{COFADJ2 EQ}).%
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECOND PROOF
+        % We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
+        % is not really new. Indeed, as
+        % there are equivalences of categories
+        % $
+        % \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+        % \simeq \prod_{n \geq 0}
+        % \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_n}}
+        % $,
+        % $
+        % \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
+        % \simeq \prod_{n \geq 0}
+        % \mathcal{V}_{\mathcal{F}_n}^{G \times \Sigma_n}
+        % $,
+        % compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ adjunctions,
+        % the symmetric sequence statement merely repackages 
+        % Proposition \ref{COFESSIM PROP}.
+        
+        % For the operad adjunction in (\ref{COFADJ2 EQ}),
+        % most of the argument in the proof of
+        % Proposition \ref{COFESSIM PROP}
+        % applies mutatis mutandis
+        % except for the claim that 
+        % $\mathbb{F}_{\F} (\emptyset) \simeq \upgamma^{\**} \iota_{\**} \mathbb{F} (\emptyset)$, 
+        % which is readily checked directly, 
+        % and the comparison of cellular extensions,
+        % which is the key claim.
+
+        % Explicitly, and borrowing the notation
+        % $C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) used in Proposition \ref{COFESSIM PROP} for the 
+        % classes of cofibrant objects in 
+        % $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
+        % (resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$),
+        % we need to show that cellular extensions of objects in 
+        % $\upgamma^{\**} \iota_{\**}(C^{\mathcal{F}})$, such as on the left below
+        % \begin{equation}\label{TWOCELLEXT EQ}
+        %         \begin{tikzcd}
+        %                  \upgamma^{\**} \mathbb F_G \iota_{\**} X 
+        %                  = (\upgamma^* \mathbb{F}_G \upgamma_!) \upgamma^{\**} \iota_{\**} X 
+        %                 \ar{d}[swap]{\iota_{\**}u} 
+        %                 \ar{r} 
+        %                 &
+        %                 \upgamma^{\**} \iota_{\**} \mathcal{O} 
+        %                 \ar[dashed]{d} 
+        %                 & &
+        %                 \mathbb{F} X 
+        %                 \ar{d}[swap]{u} 
+        %                 \ar{r} 
+        %                 &
+        %                 \mathcal{O} 
+        %                 \ar[dashed]{d}
+        %                 \\
+        %                 \upgamma^{\**} \mathbb F_G \iota_{\**} Y
+        %                 = (\upgamma^* \mathbb{F}_G \upgamma_!) \upgamma^{\**} \iota_{\**} Y  
+        %                 \ar[dashed]{r}
+        %                 &
+        %                 (\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]
+        %                 & &
+        %                 \mathbb{F} Y 
+        %                 \ar[dashed]{r}
+        %                 &
+        %                 \mathcal{O}[u]
+        %         \end{tikzcd}
+        % \end{equation}
+        % where the equalities are given by the observation extending Remark \ref{F_MODEL_REM} that the unit maps
+        % \begin{equation}
+        %         \label{COFIB_UNIT_ISOS}
+        %         X \to \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} X 
+        %         \qquad \qquad 
+        %         \iota_{\**} X \to \upgamma_! \upgamma^{\**} \iota_{\**} X
+        % \end{equation}
+        % are isomorphisms for all cofibrant objects $X \in \Sym^G_\F(\V)$,
+        % are precisely the essential image under $\upgamma^{\**} \iota_{\**}$ of cellular extensions of objects in $C^{\mathcal{F}}$, as on the right above.
+                
+        % {\color{blue} 
+        %   In fact, it suffices to show this just when $\O \in C^{\Sigma_\F}$, the subcategory of operads in $\Op^G$ which forget to cofibrant sequences in $\Sym^G_\F$.
+        %   Indeed, this would imply that $\iota_{\**}(C^{\Sigma_\F})$ is closed under free extensions, compatibly with $\iota_{\**}$ and free extensions in $C^{\Sigma_\F}$.
+        %   In turn, this would allow us to conclude the same is true for $\iota_{\**}(C^\F)$, identified as those objects in $\iota_{\**}(C^{\Sigma_\F})$ isomorphic to retracts of those which have a cellular decomposition beginning with $\varnothing$.
+        % }% COLOR: BLUE
+        
+        % Now, recalling that there are natural isomorphisms 
+        % % \[
+        % % \iota^{\**} \mathbb{F}_{G} \iota_{\**}
+        % % \simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+        % % \qquad
+        % % \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
+        % % \]
+        % \[
+        % \upgamma_! \upgamma^{\**} \mathbb F_G \upgamma_! \simeq \mathbb F_G \upgamma_!
+        % \qquad
+        % \iota^{\**} \mathbb F_G \simeq \iota^{\**} \mathbb F_G \iota_{\**} \iota^{\**}
+        % \qquad
+        % \iota^{\**} \mathbb F_G \iota_{\**} \simeq \mathbb F
+        % \]
+        % we see that the two solid subdiagrams in 
+        % (\ref{TWOCELLEXT EQ})
+        % are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
+        % We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+        % are in the essential image of $\upgamma^*\iota_{\**}$.
+        % Indeed, as we also have a natural isomorphism
+        % \[
+        % \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} \xrightarrow{\simeq}
+        % \upgamma^{\**} \iota_{\**},
+        % \]
+        % if that is the case then
+        % \begin{align*}
+        %         \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z & \simeq
+        %         \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \upgamma^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
+        %         \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \upgamma_! \upgamma^{\**} \iota_{\**} Z \simeq 
+        %         \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**} \upgamma_! \upgamma^{\**} \iota_{\**} Z 
+        %         \\
+        %         & \simeq \upgamma^{\**} \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq 
+        %         \upgamma^{\**} \iota_{\**} \mathbb{F} Z
+        %         % \mathbb{F}_G \iota_{\**} Z \simeq 
+        %         % \iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**} Z \simeq
+        %         % \iota_{\**} \mathbb{F} Z
+        % \end{align*}
+        % for $Z=X,Y$
+        % and since $\upgamma^{\**} \iota_{\**}$ reflects colimits\footnote{I.e. any diagram that becomes a colimit upon applying $\upgamma^{\**} \iota_{\**}$ must have already been a colimit diagram.} on diagrams of cofibrant objects in $\Sym^G_\F$,%
+        % \todo[inline]{blue: need that cofibrant $\O \in \Op^G_\F$ are cofibrant in $\Sym^G_\F$, as $\upgamma^{\**} \iota_{\**}$ does not in general reflect colimits}%
+        % it must then
+        % indeed be that
+        % $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]
+        % \simeq \upgamma^{\**} \iota_{\**} (\mathcal{O}[u])$.
+        
+
+        % To establish the remaining claim that the objects 
+        % in the leftmost diagram in
+        % (\ref{TWOCELLEXT EQ})
+        % are in the essential image of $\upgamma^{\**} \iota_{\**}$,
+        % we claim
+        % it suffices to show this for the bottom right corner 
+        % $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u]$ when $u \colon X \to Y$ is a general cofibration between cofibrant objects in 
+        % $\mathsf{Sym}^{G}_{\mathcal{F}}(\mathcal{V})$.
+        % Indeed, setting  $X=\emptyset$ and $\O=\mathbb{F} (\emptyset)$, 
+        % one has 
+        % $(\upgamma^{\**} \iota_{\**} \mathcal{O})[\iota_{\**} u] = 
+        % \upgamma^* \mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\upgamma^* \mathbb{F}_{G} \iota_{\**} X$.
+
+        % For our final reduction,
+        % we note that it suffices to show that cellular extensions of objects in $\iota_{\**}(C^{\F})$,
+        % such as the pushout below, 
+        % are in the image of $\iota_{\**}$.
+        % \begin{equation}\label{TWOCELLEXT2 EQ}
+        %         \begin{tikzcd}
+        %                 \mathbb F_G \iota_{\**} X 
+        %                 \ar{d}[swap]{\iota_{\**}u} 
+        %                 \ar{r} 
+        %                 &
+        %                 \iota_{\**} \mathcal{O} 
+        %                 \ar[dashed]{d} 
+        %                 % & &
+        %                 % \mathbb{F} X 
+        %                 % \ar{d}[swap]{u} 
+        %                 % \ar{r} 
+        %                 % &
+        %                 % \mathcal{O} 
+        %                 % \ar[dashed]{d}
+        %                 \\
+        %                 \mathbb F_G \iota_{\**} Y
+        %                 \ar[dashed]{r}
+        %                 &
+        %                 (\iota_{\**} \mathcal{O})[\iota_{\**} u]
+        %                 % & &
+        %                 % \mathbb{F} Y 
+        %                 % \ar[dashed]{r}
+        %                 % &
+        %                 % \mathcal{O}[u]
+        %         \end{tikzcd}
+        % \end{equation}
+        % Indeed, for any $Z \in \Sym_G(\V)$, we have 
+        % \[
+        % Z \simeq \iota_{\**}\iota^{\**} Z, \quad 
+        % Z \simeq \upgamma_! \upgamma^{\**} Z 
+        % \qquad \mbox {iff} \qquad
+        % \upgamma^{\**} Z \simeq \upgamma^{\**} \iota_{\**} \iota^{\**} \upgamma_! (\upgamma^{\**} Z),
+        % \] 
+        % and we immediately have $Z \simeq \upgamma_! \upgamma^{\**}$ for 
+        % \[
+        % Z = \upgamma_! ((\upgamma^{\**} \iota_{\**} \O)[\iota_{\**} u]) \simeq (\iota_{\**} \O)[\iota_{\**} u]
+        % \]
+        % (where the second equality follows from (\ref{COFIB_UNIT_ISOS}) and the fact that $\upgamma_!$ preserves pushouts).
+
+        % Now, writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
+        % $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
+        % the required condition that
+        % $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \upgamma_! \mathcal{P}[\iota_{\**} u]$
+        % is an isomorphism 
+        % can be checked by forgetting to 
+        % $\Sym_G(\V)$,
+        % and we can thus appeal to the filtration 
+        % (\ref{FILT EQ}) of
+        % $\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$.
+        % It thus suffices to verify by induction on $k$ that each 
+        % $\mathcal{P}_k$ is in the essential image of 
+        % $\iota_{\**} \colon \mathsf{Sym}^G(\mathcal{V})
+        % \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+        % Using the iterative description 
+        % of the $\mathcal{P}_k$ in
+        % (\ref{FILTRATION_LAN_LEVEL})
+        % it suffices by
+        % Proposition \ref{COFESSIM PROP}
+        % to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
+        % a cofibration between cofibrant objects in 
+        % $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+        % We now recall that that map can also be described 
+        % (cf. (\ref{FILTINTALT EQ})) as
+        % \begin{equation}\label{FILTINTALTAG EQ}
+        %         \Lan_{\Omega_{\mathcal{F}}^a[k]^{op} \to \Sigma_G^{op}}
+        %         \left(
+        %                 \bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+        %                 \underset{v \in V_{G}^{in}(T)}
+        %                 {\mathlarger{\mathlarger{\mathlarger{\square}}}}
+        %                 u(T_v)
+        %         \right).
+        % \end{equation}
+        % where we have replaced $\Omega_G^a[k]$ with $\Omega_\F^a[k]$ in the left Kan extension
+        % since both $\P$ and $\iota_{\**} u$ are in the image of $\upgamma_!$. 
+        % Noting that there is an equivalence
+        % $\mathcal{V}^{\Omega_{\mathcal{F}}^a[k]^{op}} \simeq
+        % \prod_{T \in \mathsf{Iso}(\Omega_{\mathcal{F}}^a[k])}
+        % \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
+        % Propositions \ref{AUTTCOFPUSH PROP}
+        % and \ref{FIXPT PROP} show that the 
+        % inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+        % is in the essential image
+        % of the cofibrations between cofibrant objects of
+        % $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
+        % under the functor
+        % $\iota_{\**} \colon
+        % \mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
+        % \to
+        % \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
+        % \todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
+        % Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+        % can now be identified with an instance of the functor $\phi_!$ 
+        % in Corollary \ref{FINALCOR COR} one has 
+        % (using the further identification
+        % $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} \simeq
+        % \prod_{T \in \mathsf{Iso}(\Omega^a[k])}
+        % \mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$)
+        % that the main claim now follows by Corollary \ref{FINALCOR COR} 
+        % with Propositions \ref{COFESSIM PROP} and \ref{FGTRIGHT PROP}.
+
+        % As for the additional claim concerning the forgetful functors
+        % in (\ref{FGTFUNC EQ}),
+        % that $\mathsf{fgt} \colon
+        % \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
+        % \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
+        % preserves cofibrant objects is precisely what was argued in the previous paragraph
+        % {\color{blue}
+        %   (and is an immediate consequence of $\iota_{\**}(C^\F)$ being closed under retracts and free extensions)
+        % }% END COLOR BLUE
+        % But since the forgetful functors commute with $\iota_{\**}$, the claim that
+        % $\mathsf{fgt} \colon
+        % \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+        % \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
+        % also preserves cofibrant objects follows from the
+        % ``essential image characterization'' of cofibrant objects in
+        % (\ref{COFADJ2 EQ}).%
         %%%%%%%%%%%%%%%%%%%%%%%%% ORIGINAL PROOF
         % We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
         % is not really new. Indeed, as
