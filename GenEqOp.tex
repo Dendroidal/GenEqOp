@@ -8002,7 +8002,7 @@ are groupoids.
 
 
 \subsection{Proof of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}}
-
+\label{MAINEXIST SEC}
 
 In this section we use the filtrations just developed to prove our first two main results,
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
@@ -8946,58 +8946,70 @@ instead of Lemma \ref{EXMAINLEM LEM}.
 
 \section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-{\color{red} HERE}
-
-The key ingredient required to prove our desired Quillen equivalences
+In this final section we prove our main result Theorem \ref{MAINQUILLENEQUIV THM}, i.e. we show that there are Quillen equivalences
 \[
-	\iota^{\**} \colon
-	\mathsf{Op}_\F \rightleftarrows \mathsf{Op}^G_\F
-	\colon \iota_{\**}
+\begin{tikzcd}[column sep =4.5em]
+	\mathsf{Op}_{G}(\mathcal{V}) 
+	\arrow[r, shift left=1.5,swap,"\iota^{\**}"']
+&
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}
+&
+	\mathsf{Op}_{\mathcal{F}}(\mathcal{V}) 
+	\arrow[r, shift left=1.5,swap,"\iota^{\**}"']
+&
+	\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
+	\ar[shift left=1.5]{l}{\iota_{\**}}
+\end{tikzcd}
 \]
-will be an analysis of cofibrant objects in $\mathsf{Op}_\F$.
-%which we now provide.
-To do so will require an intricate discussion of the interplay between different classes of cofibrations, box products, and $G$-trees, 
-leading to the characterization provided by Lemma \ref{MAINLEM LEM}.
+In contrast to the existence of model structure results shown in \S \ref{MAINEXIST SEC},
+this will require a far more careful analysis of the  
+genuine model structures
+$\mathcal{V}^G_{\mathcal{F}}$ mentioned in 
+Remark \ref{GENCOFGEN REM}. This analysis is the subject of \S \ref{FAMILY DEF} and \S \ref{PUSHPOW SEC}, the results of which are converted 
+to the setup of $G$-trees in \S
+\ref{G_GRAPH_SECTION},
+and culminate in 
+the characterization of cofibrant objects in
+$\mathsf{Op}_{G}$,
+$\mathsf{Op}_{\mathcal{F}}$ given by
+Lemma \ref{MAINLEM LEM}
+in \S \ref{MAINTHM_PROOF_SECTION},
+with this final lemma tantamount to 
+Theorem \ref{MAINQUILLENEQUIV THM}.
 
 
 \subsection{Families of subgroups}
 \label{FAMILY_SEC}
 
-This section establishes some useful properties of the model structures associated to families of subgroups. Throughout all groups will be assumed finite.
-
-\begin{definition}\label{FAMILY DEF}
-	A \textit{family} $\mathcal{F}$ of subgroups of $G$ is a collection of subgroups 
-	$H \leq G$ such that
-	\begin{itemize}
-	\item if $H \in \mathcal{F}$ then 
-	$H^g = gHg^{-1} \in \mathcal{F}$ for all $g \in G$;
-	\item if $K \leq H$ and $H \in \mathcal{F}$ then
-	$K \in \mathcal{F}$.
-	\end{itemize} 
-\end{definition}
-
-\begin{remark}\label{SIEVE REM}
-	Any collection of subgroups $\F$ determines a full subcategory 
-	$\mathsf{O}_{\mathcal{F}} \hookrightarrow \mathsf{O}_G$
-	of those orbital $G$-sets $G/H$ for 
-	$H \in \mathcal{F}$.	
-	Moreover, it is easy to check that $\F$ is a family iff $\mathsf{O}_{\mathcal{F}}$ is a sieve.
-        %i.e., for any map $G/K \to G/H$ in $\mathsf{O}_G$ such that $G/H \in \mathsf{O}_{\mathcal{F}}$ it is also $G/K \in \mathsf{O}_{\mathcal{F}}$. 
-        % In fact, it is easy to check that families are in bijection with sieves.
-\end{remark}
-
+Throughout 
+$\mathcal{F}$ denotes a family of subgroups of a finite group $G$, i.e. a collection of subgroups closed under conjugation and inclusion or, equivalently
+(cf. \S \ref{INDEXING_SECTION}),
+a sieve 
+$
+\mathsf{O}_{\mathcal{F}}
+	\hookrightarrow 
+\mathsf{O}_G
+$.
 
 \begin{remark}
 For fixed $G$ families form a lattice, ordered by inclusion, 
 with meet and join given by intersection and union.
 \end{remark}
 
+As mentioned in Remark \ref{GENCOFGEN REM},
+whenever $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
+\cite[Prop. 2.6]{Ste16} shows the existence of a model structure
+$\mathcal{V}^{G}_{\mathcal{F}}$
+on the $G$-object category
+$\mathcal{V}^G$
+whose fibrations and weak equivalences are determined by fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
 
-We now recall the following basic notion and result concerning model structures induced by families (cf. \cite[Prop. 2.6]{Ste16}).
-
+Our analysis will require an explicit understanding of this cellularity condition,
+which we now recall.
 
 \begin{definition}\label{CELL DEF}
-	We say a model category $\mathcal{V}$ has 
+	A model category $\mathcal{V}$ is said to have 
 	\textit{cellular fixed points} if for all finite groups $G$ and subgroups $H,K\leq G$ one has that:
 \begin{itemize}
 	\item[(i)] fixed points $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserve direct colimits;
@@ -9009,43 +9021,35 @@ We now recall the following basic notion and result concerning model structures 
 \end{definition}
 
 
-\begin{proposition}\label{FMODELEXIST PROP}
-	If $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points, then for any finite group $G$ and family $\mathcal{F}$, there is a model structure $\mathcal{V}^G_{\mathcal{F}}$ on the category 
-	$\mathcal{V}^G$, called the 
-	\emph{$\mathcal{F}$-model structure}
-	such that both weak equivalences and fibrations are determined by the fixed points $(\minus)^H$ for 
-	$H \in \mathcal{F}$.
-\end{proposition}
-
-When $\mathcal{F}$ is the family of all subgroups the model structure in Proposition \ref{FMODELEXIST PROP} is called simply the \textit{$G$-genuine model structure}.
-
-We will find it convenient to strengthen the cellularity conditions in Definition \ref{CELL DEF}.
-
+This section will establish some simple useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
+cellularity conditions in Definition \ref{CELL DEF}.
 
 \begin{proposition}\label{STRONGCELL PROP}
-	Suppose that $\mathcal{V}$ is a cofibrantly generated model category with cellular fixed points. Then:
+	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
 			 is a genuine cofibration;
 		\item[(ii)] if $X$ is $G$-genuine cofibrant the map 
 			$(G/K)^H \cdot X^H \to (G \cdot_K X)^H$ is an isomorphism.
 	\end{itemize}
-Suppose additionally that $\mathcal{V}$ is a 
-closed monoidal model category
-as well as strongly cofibrantly generated
-(i.e. that the domains of the generating (trivial) cofibrations are cofibrant). Then:
-	\begin{itemize}
-		\item[(iii)] for $f,g$ genuine cofibrations between genuine cofibrant objects the natural map 
-\[f^H \square g^H \xrightarrow{\simeq} (f \square g)^H\]
- is an isomorphism.
- In particular, $X^H \otimes Y^H \xrightarrow{\simeq} 
- (X \otimes Y)^H$ is an isomorphism when $X,Y$ are genuine cofibrant.
-	\end{itemize}
+%Suppose additionally that $\mathcal{V}$ is a 
+%closed monoidal model category
+%as well as strongly cofibrantly generated
+%(i.e. that the domains of the generating (trivial) cofibrations are cofibrant). Then:
+%	\begin{itemize}
+%		\item[(iii)] for $f,g$ genuine cofibrations between genuine cofibrant objects the natural map 
+%\[f^H \square g^H \xrightarrow{\simeq} (f \square g)^H\]
+% is an isomorphism.
+% In particular, $X^H \otimes Y^H \xrightarrow{\simeq} 
+% (X \otimes Y)^H$ is an isomorphism when $X,Y$ are genuine cofibrant.
+%	\end{itemize}
 \end{proposition}
 
 
 \begin{proof}
-Since all conditions are compatible with retracts, we are free to assume each cofibration $f\colon X \to Y$
+Since 
+%all
+both conditions are compatible with retracts, we are free to assume each cofibration $f\colon X \to Y$
 (or, for $Y$ cofibrant, the map $\emptyset \to Y$)
 is a transfinite composition
 \begin{equation}\label{TRANSFCOMP EQ}
@@ -9061,26 +9065,26 @@ is the pushout of a generating cofibration
 $(G/H) \cdot i_{\alpha}$. Both (i) and (ii) now follow by transfinite induction on $\alpha$ in the partial composite map
 $X_0 \to X_{\alpha}$, with the successor ordinal case following by Def. \ref{CELL DEF} (ii), (iii) and the limit ordinal case by
 Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X_0=\emptyset$.
-To prove (iii), we consider first the case of $g$ a generating cofibration. The exact same induction argument now applies to any $f$ as in (\ref{TRANSFCOMP EQ}), contingently on a base case $f=(\emptyset \to X)$. But this base case now follows by the exact same argument, now contingent on the base case $f=(\emptyset \to \emptyset)$, which is obvious.
-The general case now follows by repeating the same argument, now using the analogous filtration (\ref{TRANSFCOMP EQ}) for $g$.
+%To prove (iii), we consider first the case of $g$ a generating cofibration. The exact same induction argument now applies to any $f$ as in (\ref{TRANSFCOMP EQ}), contingently on a base case $f=(\emptyset \to X)$. But this base case now follows by the exact same argument, now contingent on the base case $f=(\emptyset \to \emptyset)$, which is obvious.
+%The general case now follows by repeating the same argument, now using the analogous filtration (\ref{TRANSFCOMP EQ}) for $g$.
 \end{proof}
 
+
 %%%%%%
-  As property $(iii)$ above (and the related Proposition \ref{POWERF PROP}) will be of increasing importance, we  give a name to such categories where it is true.
-\begin{definition}
-  \label{STRONGLY_CELLULAR}
-  We say a category $\V$ is \textit{strongly cellular} if the following hold: 
-  \begin{enumerate} 
-  \item $\V$ is a strongly cofibrantly-generated closed monoidal model category,
-  \item $\V$ has cellular fixed points,
-  \item $\V$ has cofibrant symmetric pushout powers (see Definition \ref{COFSYMPUSHPOW}).
-  \end{enumerate} 
-\end{definition} 
+%  As property $(iii)$ above (and the related Proposition \ref{POWERF PROP}) will be of increasing importance, we  give a name to such categories where it is true.
+%\begin{definition}
+%  \label{STRONGLY_CELLULAR}
+%  We say a category $\V$ is \textit{strongly cellular} if the following hold: 
+%  \begin{enumerate} 
+%  \item $\V$ is a strongly cofibrantly-generated closed monoidal model category,
+%  \item $\V$ has cellular fixed points,
+%  \item $\V$ has cofibrant symmetric pushout powers (see Definition \ref{COFSYMPUSHPOW}).
+%  \end{enumerate} 
+%\end{definition} 
 %%%%%%
 
 
-We end this section by cataloging some straightforward interactions of $\mathcal{F}$-model structures
-with regards to change of group and pushout products.
+%We end this section by cataloging some straightforward interactions of $\mathcal{F}$-model structures with regards to change of group and pushout products.
 
 
 \begin{proposition}\label{FGTRIGHT PROP}
@@ -9094,16 +9098,16 @@ with regards to change of group and pushout products.
 &
 	\mathcal{V}^{\bar{G}}_{\bar{\mathcal{F}}}
 	\colon \ar[shift left=1]{l}
-	\mathsf{fgt} = \phi^{\**}
+	\mathsf{res}^{\bar{G}}_G = \phi^{\**}
 \end{tikzcd}
 \end{equation}
-is a Quillen adjunction if for any 
+is a Quillen adjunction provided that for any 
 $H \in \mathcal{F}$ it is $\phi(H) \in \bar{\mathcal{F}}$.
 \end{proposition}
 
 \begin{proof}
 Since one has a canonical isomorphism of fixed points
-$\left(\mathsf{fgt}(X)\right)^H \simeq X^{\phi(H)}$,
+$\left(\mathsf{res}(X)\right)^H \simeq X^{\phi(H)}$,
 it is immediate that the right adjoint preserves fibrations and trivial fibrations.
 \end{proof}
 
@@ -9113,7 +9117,7 @@ it is immediate that the right adjoint preserves fibrations and trivial fibratio
 	Then the adjunction
 \begin{equation}
 \begin{tikzcd}
-	\phi^{\**} = \mathsf{fgt}
+	\phi^{\**} = \mathsf{res}^{\bar{G}}_G
 	\colon
 	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar[shift left=1]{r}
 &
@@ -9122,25 +9126,25 @@ it is immediate that the right adjoint preserves fibrations and trivial fibratio
 	\mathsf{Hom}_G(\bar{G},\minus) = \phi_{\**}
 \end{tikzcd}
 \end{equation}
-is a Quillen adjunction if for any 
+is a Quillen adjunction provided that for any 
 $H \in \bar{\mathcal{F}}$ it is 
 $\phi^{-1}(H) \in \mathcal{F}$.
 \end{proposition}
 
 
 \begin{proof}
-	Since the double coset formula yields that that
+	Since the double coset formula yields that
 \[
-	\mathsf{fgt}\left(\bar{G}/H \cdot f\right)
+	\mathsf{res}\left(\bar{G}/H \cdot f\right)
 		\simeq 
-	\mathsf{fgt}\left(\bar{G}/H\right) \cdot f
+	\mathsf{res}\left(\bar{G}/H\right) \cdot f
 		\simeq
 	\left(
 		\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
 		{G/\phi^{-1}(H^{a})}
 	\right)	\cdot f
 \]
-it is immediate that the left adjoint $\mathsf{fgt}$ preserves cofibrations and trivial cofibrations.
+it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
 \end{proof}
 
 
@@ -9173,7 +9177,7 @@ motivate the following definition.
 The $\phi^{\**}(\bar{\mathcal{F}})$, $\phi_{!}(\mathcal{F})$, $\phi_{\**}(\mathcal{F})$ just defined are 
 themselves families. Furthermore
 \begin{itemize}
-\item[(i)] The ``if'' condition in Proposition \ref{FGTRIGHT PROP} holds iff 
+\item[(i)] The ``provided that'' condition in Proposition \ref{FGTRIGHT PROP} holds iff 
 $\mathcal{F} \subset \phi^{\**} (\bar{\mathcal{F}})$
 iff
 $\phi_{!}(\mathcal{F}) \subset \bar{\mathcal{F}}$.
@@ -9205,7 +9209,7 @@ $\bar{\mathcal{F}} \subset \phi_{\**}(\mathcal{F})$.
         \bar{\mathcal F} \subset \phi_{\**}(\mathcal F)
 % 	\phi^{\**} (\bar{\mathcal{F}}) \subset \mathcal{F}
 \]
-Note that the second equivalence follows since 
+Here the second equivalence follows since 
 $H \leq \phi^{-1}(\phi(H))$ and $\mathcal{F}$ is closed under subgroups while the third equivalence follows since 
 $\bar{\mathcal{F}}$ is closed under conjugation. 
 \end{proof}
@@ -9226,7 +9230,7 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 
 
 \begin{proof}
-	The double coset formula now yields
+	The double coset formula yields
 \begin{equation}
 	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
@@ -9242,7 +9246,7 @@ and hence the result follows since families are closed under conjugation and sub
 
 
 \begin{definition}\label{EXTERINT DEF}
-Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families in $G$ and $G$, respectively.
+Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families of $G$ and $G$, respectively.
 
 We define their \textit{external intersection} to be the 
 family of $G \times \bar{G}$ given by
@@ -9268,7 +9272,7 @@ the projections.
 	\mathcal{V}^{G}_{\mathcal{F}}
 		\times
 	\mathcal{V}^{\bar{G}}_{\bar{\mathcal{F}}}
-		\xrightarrow{\mathsf{fgt}}
+		\xrightarrow{\mathsf{res}}
 	\mathcal{V}^{G \times \bar{G}}_{
 	(\pi_G)^{\**}(\mathcal{F})}
 		\times
@@ -9281,20 +9285,22 @@ the projections.
 \end{remark}
 
 
-
-
-\subsection{Pushout powers}
-
+\subsection{Pushout powers}\label{PUSHPOW SEC}
 
 That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and the group) are allowed to change. However, when those cofibrations (and hence $G$) coincide there is an additional symmetric group action that  we will need to consider.
 
-To handle such actions we introduce the following notion.
+To handle these actions we will need two new axioms, 
+each concerning cofibrancy and fixed point properties. We start by discussing the cofibrancy axiom.
+
+{\color{red} HERE}
+
 
 \begin{definition}\label{COFSYMPUSHPOW}
-	We say a monoidal model category $\mathcal{V}$ has 
+	We say that a symmetric monoidal model category $\mathcal{V}$ has 
 	\textit{cofibrant symmetric pushout powers}
-	if for each cofibration (resp. trivial cofibration) $f$ the pushout product 
-	$f^{\square n}$ is a genuine $\Sigma_n$-cofibration (resp. trivial cofibration).
+	if for each (trivial) cofibration $f$ the pushout product power 
+	$f^{\square n}$ is a $\Sigma_n$-genuine 
+	(trivial) cofibration.
 \end{definition}
 
 
