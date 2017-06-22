@@ -9292,8 +9292,6 @@ That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher 
 To handle these actions we will need two new axioms, 
 each concerning cofibrancy and fixed point properties. We start by discussing the cofibrancy axiom.
 
-{\color{red} HERE}
-
 
 \begin{definition}\label{COFSYMPUSHPOW}
 	We say that a symmetric monoidal model category $\mathcal{V}$ has 
@@ -9307,11 +9305,11 @@ each concerning cofibrancy and fixed point properties. We start by discussing th
 \begin{remark}
 When $\mathcal{V}$ is cofibrantly generated
 the condition in Definition \ref{COFSYMPUSHPOW} needs only be checked for generating cofibrations. 
-However, the argument needed is somewhat harder than usual due to $(-)^{\square n}$ not preserving composition of maps:
+However, the argument needed is harder than usual
+(see, e.g., \cite[Lemma 2.1.20]{Ho98}) due to $(-)^{\square n}$ not preserving composition of maps:
 one instead follows the argument in the proof of 
 Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
-
 
 %\begin{remark}
 %	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
@@ -9319,11 +9317,10 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 %the proof of Proposition \ref{POWERF PROP}.
 %\end{remark}
 
-
 We now turn to describing the symmetric power analogue of 
 Definition \ref{EXTERINT DEF}.
 
-We start with some notation. Letting 
+We start with notation. Letting 
 $\lambda$ be a partition 
 $E = \lambda_1 \amalg\cdots \amalg \lambda_k$
 of a finite set $E$, 
@@ -9332,7 +9329,6 @@ we write
  \Sigma_{\lambda_k} \leq \Sigma_E$ for the subgroup of permutations preserving $\lambda$. 
  In addition, given any $e \in E$ we write
 $\lambda_e$ for the partition $E = \{e\} \amalg (E-e)$, so that $\Sigma_{\lambda_e}$ is then the isotropy of $e$.
-
 
 
 \begin{definition}
@@ -9360,12 +9356,10 @@ and $\pi$ the projection
 $\Sigma_{\lambda_e} \wr G = \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$.
 
-
 More explicitly, since in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
 $\left( \iota_{\Sigma_{\lambda_e} \wr G}\right)_{\**}$
 one needs only conjugate by coset representatives of 
 $\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so that
-
 \begin{equation}\label{FLTIMESN2 EQ}
 	K \in \mathcal{F}^{\ltimes E} 
 	\text{ iff }
@@ -9378,7 +9372,6 @@ $\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so
 showing that in particular (\ref{FLTIMESN EQ})
 is independent of the choice of $e \in E$.
 \end{definition}
-
 
 
 \begin{remark}
@@ -9413,7 +9406,6 @@ It then suffices, and is notationally far more convenient, to establish the requ
 	\mathcal{V}^{\Sigma_{E \amalg \bar{E}} \wr G}
 \end{equation}
 \end{proposition}
-
 
 
 \begin{proof}
@@ -9465,7 +9457,7 @@ Proposition \ref{FGTRIGHT PROP}.
 	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 	
 	Then, for all $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
-	one has that $f^{\square n}$ is a cofibration (resp. trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
+	one has that $f^{\square n}$ is a cofibration (trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
 
@@ -9476,17 +9468,19 @@ of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor.
 
 
 \begin{proof}
-	We first note that in the case of 
-	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, a generating (trivial) cofibration it is 
+	We first note that in the case of a generating
+	(trivial) cofibration
+	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, it is 
 	\[i^{\square n} = 
 	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
 	\simeq \Sigma_n \wr G 
 	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
-$\bar{\imath}^{\square n}$ is thus a $\Sigma_n \wr-H$-genuine (trivial) cofibration by the cofibrant symmetric pushout powers hypothesis combined with Proposition \ref{FGTLEFT PROP} and hence 
+But $\bar{\imath}^{\square n}$ is now a $\Sigma_n \wr-H$-genuine (trivial) cofibration by 
+combining the cofibrant symmetric pushout powers hypothesis with Proposition \ref{FGTLEFT PROP}
+ and hence 
 $i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
 (trivial) cofibration by Proposition \ref{FGTRIGHT PROP}
 since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
-
 
 	For the general case, we start by making the key observation that for composable arrows 
 	$\bullet \xrightarrow{g} \bullet \xrightarrow{h} \bullet$ the $n$-fold pushout product $(hg)^{\square n}$ has a factorization
@@ -9499,7 +9493,7 @@ since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
 		\xrightarrow{k_n}
 	\bullet
 \end{equation}
-where each $k_i$, $0 \leq i \leq n$, fits into a pushout product
+where each $k_i$, $0 \leq i \leq n$, fits into a pushout diagram
 \begin{equation}\label{COMPNFOLDFACTPUSH EQ}
 \begin{tikzcd}
 	\bullet \ar{r} \ar{d}[swap] 
@@ -9514,12 +9508,13 @@ where each $k_i$, $0 \leq i \leq n$, fits into a pushout product
 	\bullet.
 \end{tikzcd}
 \end{equation}
-Briefly, (\ref{COMPNFOLDFACT EQ}) follows from suitable $\Sigma_n$-symmetric convex subposets 
+Briefly, (\ref{COMPNFOLDFACT EQ}) follows from
+a filtration 
+% suitable $\Sigma_n$-symmetric convex subposets 
 $P_0 \subset P_1 \subset \cdots \subset P_n$
 of the poset $P_n = (0 \to 1 \to 2)^{\times n}$ 
 where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_i$ is obtained from $P_{i-1}$ by adding the ``tuples with $n-i$ $1$-coordinates and $i$ $2$-coordinates''.
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
-
 
 The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
 As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
@@ -9535,7 +9530,6 @@ $\colim_{\alpha < \beta} X_{\alpha} \xrightarrow{\simeq} X_{\beta}$ for limit or
 $X_{\kappa} = \colim_{\beta < \kappa} X_{\beta}$, 
 $f$ equals the transfinite composite $X_0 \to X_{\kappa}$.
 \end{inparaenum}
-
 
 We argue by transfinite induction on $\kappa$.
 Writing $\bar{f}_{\beta} \colon X_0 \to X_{\beta}$ for the partial composites, it suffices to check that the natural transformation of $\kappa$-diagrams (rightmost map not included)
@@ -9567,13 +9561,13 @@ Writing $\bar{f}_{\beta} \colon X_0 \to X_{\beta}$ for the partial composites, i
 		X_{\kappa}^{\otimes n},
 \end{tikzcd}
 \]
-is $\kappa$-cofibrant, i.e. that the maps 
+is (trivial) $\kappa$-cofibrant, i.e. that the maps 
 $Q^n(\bar{f}_{\beta})
 \amalg_{\colim_{\alpha < \beta} Q^n(\bar{f}_{\alpha}) }
 \colim_{\alpha < \beta} X_{\alpha}^{\otimes n} 
 	\to
 X_{\beta}^{\otimes n} 
-$ are cofibrations in 
+$ are (trivial) cofibrations in 
 $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 Condition (ii) above implies that this map is an isomorphism for $\beta$ a limit ordinal 
 while for $\beta+1$ a successor ordinal it is the map
@@ -9589,77 +9583,106 @@ X_{\beta}^{\otimes n}$
 is precisely the map $k_0$ of (\ref{COMPNFOLDFACT EQ}) for 
 $g=\bar{f}_{\beta}$, $h=f_{\beta}$, this last map is the composite $k_nk_{n-1}\cdots k_1$ so that the result now follows from (\ref{COMPNFOLDFACTPUSH EQ}) combined with 
 (\ref{LTIMESPRODQUI EQ}), the induction hypothesis applied to $\bar{f}_{\beta}$, the fact that $f_{\beta}^{\square k}$ is a pushout of $i_{\beta}^{\square k}$
-(cf. \cite[Lemma 4.11]{Pe16}) and the cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
+(cf. \cite[Lemma 4.11]{Pe16}) and the (trivial) cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
 \end{proof}
 
 
-We will also need to understand the fixed points of $f^{\square n}$ for general subgroups $K \leq \Sigma_n \wr G$.
+We now turn to discussing the fixed points of
+pushout powers $f^{\square n}$.
 
-To do so recall first that $f^{\square n}$ can be built 
-from the composite 
+Firstly, we assume throughout the following discussion that 
+$(\mathcal{V},\otimes)$
+has diagonal maps, as in
+Remark \ref{FINSURJ REM}.
+More explicitly, one has compatible
+$\Sigma_n$-equivariant
+maps $X \to X^{\otimes n}$.
+
+Consider now a $K$-object
+$(X_e)_{e \in E}$ in $(\Fin_s \wr \mathcal{V})^K$.
+Explicitly, this consists of an action of $K$ on the indexing set $E$ together with suitably associative and unital isomorphisms
+$X_e \to X_{g e}$.
+Moreover, writing $K_e$ for the isotropy of $e \in X$,
+note that the induced fixed point isomorphism
+$X_e^{K_e} \to X_{g e}^{K_{ge}}$
+does not depend on the choice of coset representative $g \in g K_e$,
+and we will thus abuse notation
+by writing
+$X_{[e]}^{K_{[e]}} = X_f^{K_f}$ for an arbitary choice of representative $f \in [e] = Ge$
+(more formally, we mean that 
+$X_{[e]}^{K_{[e]}} = \left(\coprod_{f\in[e]}
+X_f^{K_f}\right)/\Sigma_{[e]}$).
+
+Diagonal maps then induce canonical composites
 \[
-f^{\otimes n} \colon 
-(0\to 1)^{\times n}
-	\xrightarrow{f^{\times n}}
-\mathcal{V}^{\times n}
-	\xrightarrow{\otimes}
-\mathcal{V}
+	X_{[e]}^{K_{[e]}}
+\to
+	\left( X_{[e]}^{K_{[e]}} \right)^{\otimes [e]}
+\simeq
+	\bigotimes_{f \in [e]} X_f^{K_f}
+\to
+	\bigotimes_{f \in [e]} X_f,
 \]
-as the map
-\[
-\colim_{(0 \to 1)^{\times n} - (1,\cdots,1)} f^{\otimes n}
-	\to 
-Y^{\otimes n},
-\]
-where $Y$ is the target of $f$.
-Any $K \leq \Sigma_n \wr G$ acts on the poset 
-$(0 \to 1)^{\times n}$ itself 
-(via $K \to \Sigma_n \wr G \to \Sigma_n$).
-Moreover, the fixed subposet  
-$\left((0 \to 1)^{\times n}\right)^K$
-then consists of those tuples in $\{0,1\}^{\times n}$
-whose coordinates coincide if their indexes are in the same coset of $n/K$, i.e. there is an identification
-$\left((0 \to 1)^{\times n}\right)^K \simeq (0 \to 1)^{\times n/K}$.
+leading to the following axiom.
 
-
-
-\begin{example}
-When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$ the fixed subposet $(0 \to 1)^{n/K}$ is displayed on the right below.
-\[
-\begin{tikzcd}[column sep=1em, row sep=1em]
-	& 000 \ar{rr} \ar{ld} \ar[dashed]{dd} && 010 \ar{ld} \ar{dd}&
-	&&&& 000 \ar{dd} \ar{rd}
-\\
-	100 \ar{rr} \ar{dd} && 110 \ar{dd}&&
-	&&&& & 110 \ar{dd}
-\\
-	& 001 \ar[dashed]{rr} \ar[dashed]{ld} && 011 \ar{ld}&
-	&&&& 001 \ar{rd}
-\\
-	101 \ar{rr} && 111 &&
-	&&&& & 111
+\begin{definition}\label{CARTFIX DEF}
+We say that a symmetric monoidal category
+with diagonals $\mathcal{V}$ has \textit{cartesian fixed points} if the canonical maps
+\begin{equation}\label{CARTFIX EQ}
+\begin{tikzcd}
+\bigotimes_{[e] \in E/G} X_{[e]}^{K_{[e]}}
+	\ar{r}{\simeq} &
+\left( \bigotimes_{e \in E} X_e \right)^K
 \end{tikzcd}
-\]
-\end{example}
+\end{equation}
+are isomorphisms.
+\end{definition}
 
+\begin{remark}
+As the name implies, the condition in the previous definition is automatic for cartesian 
+$\mathcal{V}$. Moreover, this condition is easily seen to hold for $\mathcal{V} = \mathsf{sSet}_{\**}$.
 
-It will be key for our purposes to know that fixed points 
-$\left( f^{\square n} \right)^K$ can be computed by first restricting to the smaller cube 
-$(0 \to 1)^{\times n/K}$,
-resulting in a cube of objects with $K$-actions,
-and then computing a pushout over that smaller cube.
-The formal result follows.
+The condition (\ref{CARTFIX EQ}) naturally breaks down into two conditions.
+
+The first condition, which makes sense in the absence of diagonals, corresponds to the case where $K$ acts trivially on $E$ and says that
+$X^H \otimes Y^H \xrightarrow{\simeq} (X \otimes Y)^H$, for $X,Y \in \mathcal{V}^H$.
+
+The second condition, corresponding to the case where $K$ acts transitively, 
+concerns the fixed points of what is more often called the norm object
+$N_{K_e}^K X_e \simeq \bigotimes_{e \in E} X_e$.
+
+These two conditions roughly correspond 
+to the two parts of Proposition \ref{STRONGCELL PROP},
+though now without cofibrancy requirements.
+In fact, if one modifies
+Definition \ref{CARTFIX DEF} 
+by requiring that
+(\ref{CARTFIX EQ})
+be an isomorphism only when the
+$X_e$ are $K_e$-cofibrant,
+it is not hard to show that
+this modified condition can be deduced from
+the requirement that $\mathcal{V}$ be strongly
+cofibrantly generated (i.e. that the domains/codomains of the (trivial) generating cofibrations be cofibrant)
+together with
+isomorphisms
+$X^{\otimes (G/H)^K} \xrightarrow{\simeq} 
+\left( X^{\otimes G/H} \right)^K$
+for $X \in \mathcal{V}$
+(i.e. a power analogue of 
+Definition \ref{CELL DEF} (iii)).
+\end{remark}
 
 
 \begin{proposition}\label{FIXEDPUSH PROP}
-	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP} and that it is also strongly cofibrantly generated
-        --- that is, $\V$ is strongly cellular (see Definition \ref{STRONGLY_CELLULAR}).
+	Suppose that $\mathcal{V}$ is as in Proposition \ref{POWERF PROP},
+	and also has diagonals and cartesian fixed points.
         % (cf. Prop. \ref{STRONGCELL PROP}(iii)) 
 	Let $K \leq \Sigma_n \wr G$ be a subgroup, 
 	$f \colon X \to Y$ a map in $\mathcal{V}^G$ and consider the natural maps (in the arrow category)
 \begin{equation}\label{FIXEDPUSH EQ}
 	\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
-	\left( f^{\otimes [i]} \right)^K
+	f_{[i]}^{K_{[i]}}
 %\to 
 %	\left( \underset{[j] \in n/K}
 %{\mathlarger{\mathlarger{\square}}}
@@ -9667,15 +9690,84 @@ The formal result follows.
 \to
 	\left( f^{\square n} \right)^K.
 \end{equation}
-If $f$ is a cofibration between cofibrant objects then 
+If $f$ is a genuine $G$-cofibration between cofibrant objects then 
 (\ref{FIXEDPUSH EQ}) is an isomorphism.
 \end{proposition}
 
+At first sight, it may seem that 
+the desired isomorphism
+(\ref{FIXEDPUSH EQ})
+should be an immediate consequence of (\ref{CARTFIX DEF}). However, the real content here is that the two pushout products in 
+(\ref{FIXEDPUSH EQ}) are computed over cubes of different sizes. Namely, while the right hand side is computed using the cube
+$(0 \to 1)^{\times n}$,
+the left hand side is computed over the fixed point cube
+$\left((0 \to 1)^{\times n} \right)^K
+\simeq (0 \to 1)^{\times n/K}$ formed by those tuples
+whose coordinates coincide if their indices are in the same coset of $n/K$.
 
-\begin{proof}
+
+%We will also need to understand the fixed points of $f^{\square n}$ for general subgroups $K \leq \Sigma_n \wr G$.
+
+%To do so recall first that $f^{\square n}$ can be built 
+%from the composite 
+%\[
+%f^{\otimes n} \colon 
+%(0\to 1)^{\times n}
+%	\xrightarrow{f^{\times n}}
+%\mathcal{V}^{\times n}
+%	\xrightarrow{\otimes}
+%\mathcal{V}
+%\]
+%as the map
+%\[
+%\colim_{(0 \to 1)^{\times n} - (1,\cdots,1)} f^{\otimes n}
+%	\to 
+%Y^{\otimes n},
+%\]
+%where $Y$ is the target of $f$.
+%Any $K \leq \Sigma_n \wr G$ acts on the poset 
+%$(0 \to 1)^{\times n}$ itself 
+%(via $K \to \Sigma_n \wr G \to \Sigma_n$).
+%Moreover, the fixed subposet  
+%$\left((0 \to 1)^{\times n}\right)^K$
+%then consists of those tuples in $\{0,1\}^{\times n}$
+%whose coordinates coincide if their indexes are in the same coset of $n/K$, i.e. there is an identification
+%$\left((0 \to 1)^{\times n}\right)^K \simeq (0 \to 1)^{\times n/K}$.
+
+
+
+
+\begin{example}
+When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$ the fixed subposet $(0 \to 1)^{\times n/K}$ is displayed on the right below.
+\[
+\begin{tikzcd}[column sep=1em, row sep=1em]
+	& 000 \ar{rr} \ar{ld} \ar{dd} && 010 \ar{ld} \ar{dd}&
+	&&&& 000 \ar{dd} \ar{rd}
+\\
+	100 \ar[crossing over]{rr} \ar{dd} && 110 &&
+	&&&& & 110 \ar{dd}
+\\
+	& 001 \ar{rr} \ar{ld} && 011 \ar{ld}&
+	&&&& 001 \ar{rd}
+\\
+	101 \ar{rr} && 111 \ar[leftarrow,crossing over]{uu} &&
+	&&&& & 111 
+\end{tikzcd}
+\]
+\end{example}
+
+
+%It will be key for our purposes to know that fixed points 
+%$\left( f^{\square n} \right)^K$ can be computed by first restricting to the smaller cube 
+%$(0 \to 1)^{\times n/K}$,
+%resulting in a cube of objects with $K$-actions,
+%and then computing a pushout over that smaller cube.
+%The formal result follows.
+
+\begin{proof}[proof of Proposition \ref{FIXEDPUSH PROP}]
 The result will follow by induction on $n$. The base case $n=1$ is obvious.
 
-Moreover, it is obvious that (\ref{FIXEDPUSH EQ}), which is a map of arrows, is an isomorphism on the target objects, hence the real claim is that this map is also an isomorphism on sources.
+Moreover, it is clear from (\ref{CARTFIX DEF}) that (\ref{FIXEDPUSH EQ}), which is a map of arrows, is an isomorphism on the target objects, hence the real claim is that this map is also an isomorphism on sources.
 
 We now note that by considering (\ref{COMPNFOLDFACT EQ}) for
 $g=\emptyset \to X$, $h=f$ and removing the last map $k_n$
@@ -9689,43 +9781,44 @@ one has isomorphisms
 	{\cdot} X^{\otimes n-i} \otimes f^{\square i}
 	\right)^K
 \simeq &
-	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
+	\coprod_{\substack{n/K=A/K \amalg B/K \\
 	|A|=n-i,|B|=i}}
 	\left( X^{\otimes A} \otimes f^{\square B} \right)^K
 \simeq
-	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
+	\coprod_{\substack{n/K=A/K \amalg B/K \\
 	|A|=n-i,|B|=i}} 
 	\left( X^{\otimes A}\right)^K \otimes \left( f^{\square B} \right)^K
 \\
 \simeq &
-	\coprod_{\substack{\underline{n}/K=A/K \amalg B/K \\
+	\coprod_{\substack{n/K=A/K \amalg B/K \\
 	|A|=n-i,|B|=i}} 
 	\left(
-	\bigotimes_{[j]\in A/K}\left( X^{\otimes [j]}\right)^K
+	\bigotimes_{[j]\in A/K} X_{[j]}^{K_{[j]}}
 	\right)
 \otimes 
 	\left(
 	\underset{[k] \in B/K}
 	{\mathlarger{\mathlarger{\square}}}
-	\left(  f^{\otimes [k]} \right)^K
+	f_{[k]}^{K_{[k]}}
 	\right)
 \end{align*}
-where the first step is an instance of Prop. \ref{STRONGCELL PROP}(ii), 
-the second step follows from Prop. \ref{STRONGCELL PROP}(iii)
-(with the required cofibrancy of the objects following from Propositions \ref{BIQUILLENG PROP} and \ref{POWERF PROP}),
-and the last step follows by Prop. \ref{STRONGCELL PROP}(iii) together with the induction hypothesis (which applies since $|B|\leq i <n$).
+Here the first step is an instance of Proposition \ref{STRONGCELL PROP}(ii),
+with the required cofibrancy conditions following from Proposition \ref{POWERF PROP}. The second step follows from (\ref{CARTFIX EQ}).
+Lastly, the third step follows by
+(\ref{CARTFIX EQ}) together with the induction hypothesis, which applies since $|B|=i<n$.
 
-We have thus shown that the leftmost map in the pushouts (\ref{COMPNFOLDFACTPUSH EQ}) for 
+Noting that Proposition \ref{POWERF PROP} guarantees that all required maps are cofibrations
+so that fixed points $(\minus)^K$ commute with pushouts by Proposition \ref{STRONGCELL PROP}(i),
+we have just shown that 
+the leftmost maps in the pushout diagrams (\ref{COMPNFOLDFACTPUSH EQ}) for 
 $\left( f^{\square n} \right)^K$
-is isomorphic to the leftmost map in the pushouts for the corresponding filtration of 	
+are isomorphic to the leftmost maps in the pushout diagrams for the corresponding filtration of 	
 $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
-\left( f^{\otimes [i]} \right)^K$,
-and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(i)), the result now follows.
+ f_{[i]}^{K_{[i]}}$
 \end{proof}
 
 
 \begin{corollary}\label{FIXEDPUSH COR}
-        Let $\V$ be strongly ceullar.
 	Given a partition $\lambda$ given by
 	$\{1,2,\cdots,n\} = \lambda_1 \amalg \cdots \amalg \lambda_k$, cofibrations between cofibrant objects $f_i$ in $\mathcal{V}^{G_i}$, $1\leq i \leq k$ and a subgroup
 	$K \leq 
@@ -9737,7 +9830,7 @@ and since $(\minus)^K$ preserves such pushouts (cf. Prop. \ref{STRONGCELL PROP}(
 \begin{equation}
 	\underset{1\leq i\leq k}{\mathlarger{\mathlarger{\square}}}
 	\underset{[j] \in \lambda_i/K}{\mathlarger{\mathlarger{\square}}}
-	\left( f_i^{\otimes [j]} \right)^K
+	f_{i, [j]}^{K_{[j]}}
 %\to 
 %	\left( \underset{[j] \in n/K}
 %{\mathlarger{\mathlarger{\square}}}
@@ -9749,14 +9842,21 @@ is an isomorphism.
 \end{corollary}
 
 \begin{proof}
-This simply combines Propositions \ref{STRONGCELL PROP}(iii) and \ref{FIXEDPUSH PROP}.
+This combines Proposition \ref{FIXEDPUSH PROP}
+with the easier isomorphisms
+$f^K \square g^K \xrightarrow{\simeq} 
+(f \square g)^K$,
+which follow by (\ref{CARTFIX EQ})
+together with the observation that $(\minus)^K$
+commutes with pushouts thanks to the cofibrancy conditions and Proposition \ref{STRONGCELL PROP}(i).
 \end{proof}
-
 
 
 
 \subsection{$G$-graph families and $G$-trees}
 \label{G_GRAPH_SECTION}
+
+{\color{red} HERE}
 
 We will now convert the results in the previous sections to the context of the type of families we are mainly interested in: graph families. 
 We note that in this section we use $\Sigma$ to denote a general group (usually meant to be some type of permutation group).
