@@ -10332,33 +10332,37 @@ is a left Quillen multifunctor.
 The result now follows by Proposition \ref{POWERFG PROP} together with the induction hypothesis.
 \end{proof}
 
-{\color{red} HERE}
+
 
 \begin{remark}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
-coincides with \cite[Lemma 5.9]{BM08}.
-Moreover, it is not hard to adapt the proof of that non-equivariant result to provide a proof of Proposition \ref{AUTTCOFPUSH PROP} in the case of the universal family $\Sigma_G$ of all $G$-corollas.
-However, the reader of \cite{BM08} may note that the proof therein is technically less involved, using no analogue of the rather subtle $\mathcal{F}^{\ltimes_G n}$ families.
+matches \cite[Lemma 5.9]{BM08}.
+Moreover, it is not hard to modify the proof of \cite[Lemma 5.9]{BM08} to show Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas.
+However, our arguments are more subtle than those in 
+\cite{BM08}, which need no analogue
+of the $\mathcal{F}^{\ltimes_G n}$ families.
 Indeed, this is reflected 
-on the last paragraph of our proof of Lemma \ref{KEYLEMMAGECO LEM}, which effectively 
-uses the subtle condition (\ref{KEYLEMMAGECOR EQ})
-to deduce the much simpler condition
-$\Gamma \cap \prod \Sigma_{T_i} = \**$
-that would suffice for the direct generalization of \cite[Lemma 5.9]{BM08} mentioned above.
-One may thus wonder if the $\mathcal{F}^{\ltimes_G n}$
-families are indeed required 
-to prove Proposition \ref{AUTTCOFPUSH PROP},
-or whether a more direct adaptation of the proof of \cite[Lemma 5.9]{BM08} is possible.
-Reverse engineering our proofs, the most natural simplification would be to replace the condition (\ref{KEYLEMMAGECOR EQ}) with the condition
+at the end of our proof of Lemma \ref{KEYLEMMAGECO LEM}, where (\ref{KEYLEMMAGECOR EQ})
+is used to deduce the simpler condition
+$\Gamma \cap \prod \Sigma_{T_i} = \**$,
+a condition that would suffice
+if directly adapting \cite[Lemma 5.9]{BM08}
+to obtain the $\Sigma_G$ case.
+
+One might thus hope for similarly easier proofs of the general $\Sigma_{\mathcal{F}}$ case and,
+reverse engineering our arguments,
+the most natural such attempt would replace 
+(\ref{KEYLEMMAGECOR EQ}) with
 \begin{equation}\label{WRONGCONJ}
-\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
-\in   \mathcal{F},
+	\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
+\in \mathcal{F},
 \end{equation}
-thus replacing the families 
+which is tantamount to 
+replacing the families 
 $\mathcal{F}^{\ltimes n}$ of (\ref{FLTIMESN EQ}) with the families
 $(\iota_{G^{\times n}})_{\**}
 (\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
-However, it is not hard to build indexing systems $\mathcal{F}$ (other than the universal one) for which these simpler families do not satisfy the analogue of 
+However, one can build indexing systems $\Sigma_{\mathcal{F}}$ (other than $\Sigma_G$) for which these simpler families do not satisfy the analogue of 
 Lemma \ref{KEYLEMMAGECO LEM}, 
 and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 %However, the following example shows that  
@@ -10423,76 +10427,91 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 \end{remark}
 
 
-
-
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
-	$\mathcal{V}$ is strongly cofibrantly generated (so $\V$ is strongly cellular)
-	and that $\V$ is Cartesian monoidal.
+	$\mathcal{V}$ has diagonal maps and cartesian fixed points.
 
 	Let  
-	$f_i \colon A \to B$, $1\leq i \leq l$ be 
+	$f_s \colon A_s \to B_s$, $1\leq s \leq l$ be 
 	genuine cofibrations between genuine cofibrant objects in 
-	$\mathsf{Sym}^G(\mathcal{V})$. 
-	For each $T \in \Omega_{G,0}^{\underline{l}}$ define
+	$\mathsf{Sym}^G(\mathcal{V})$.
+	For each $T \in \Omega_{G}^{\underline{l}}$ define
 	\begin{equation}
-                    f^{\square V_G(T)} = 
-                    \underset{1\leq i \leq l, v \in V_{G,i}(T)}{\mathlarger{\mathlarger{\square}}}
-                    \iota_{\**}f_i(v).
+		f^{\square V_G(T)} = 
+		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
+			\phantom{!}
+		\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
+		\iota_{\**}f_s(v).
 	\end{equation}
-	Then the canonical map
+	Then the canonical natural transformation
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-                    f^{\square V_G(-)} \to
-                    \iota_{\**} \iota^{\**} f^{\square V_G(-)}
+		f^{\square V_G(-)} \to
+		\iota_{\**} \iota^{\**} f^{\square V_G(-)}
 	\end{equation}
-            is an isomorphism in $\V^{\Omega_G^{0,\underline{l},op}}$ (with $G \times \Omega_0^{\underline{l}} \xrightarrow{\iota} \Omega_G^{0,\underline{l}}$ the inclusion).
+		is a natural isomorphism in $\V^{\Omega_G^{\underline{l},op}}$ (with $G \times \Omega^{\underline{l}} \xrightarrow{\iota} \Omega_G^{\underline{l}}$ the inclusion).
 \end{proposition}
+
 
 \begin{proof}
 Note first that there is a coproduct decomposition
-\[\Omega_{G,0}^{\underline{l}}
+\[\Omega_{G}^{\underline{l}}
 \simeq \coprod_{U \in \mathsf{Iso}
-\left(\Omega^{\underline{l}}_0\right)}
-\Omega_{G,0}^{\underline{l}}[U]\]
-where $\Omega_{G,0}^{\underline{l}}[U]$ is the full subcategory
+\left(\Omega^{\underline{l}}\right)}
+\Omega_{G}^{\underline{l}}[U]\]
+where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
 formed by the quotients of $G \cdot U$.
-It suffices to establish (\ref{FIXEDPOINT1 EQ}) for each subcategory 
-$\Omega_{G,0}^{\underline{l}}[U]$. 
+It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each subcategory 
+$\Omega_{G}^{\underline{l}}[U]$. 
 
-Moreover, writing $T$ as $T \simeq G \cdot_H T_e$ for $T_e \in \Omega^H$, we are free by induction on $|G|$ to assume $H=G$.
+All such $G$-trees can be written as 
+$T = G \cdot_H U_H$,
+where $U_H$ denotes the underlying tree
+$U \in \Omega^{\underline{l}}$
+together with a $H$-action. 
+By induction on 
+$|G|$ we are free 
+ to assume $H=G$.
 Indeed, otherwise there are identifications
-$V_G(T) \simeq V_H(T_e)$ and 
-$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(T_e)}$ from which the desired isomorphism follows.
+$V_G(T) \simeq V_H(U_H)$ and 
+$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(U_H)}$ from which the desired isomorphism follows by induction.
 
-We thus reduce to the case where there is a quotient map 
-$G \cdot U \to U_G$
-where $U_G$ denotes the underlying tree $U$ together a $G$-action. Moreover, the automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
-are the subgroup $K \leq G \times \Sigma_U$
+We have thus reduced to the case 
+$T=U_G$.
+Consider now the quotient map
+$(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
+The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
+are the $G$-graph subgroup $K \leq G \times \Sigma_U$
 encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
-One then has identifications
+
+We now have identifications
 \begin{align*}
-\left(
-	\underset{[v] \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**} f_{\bullet}([v])
-	\right)^K
-\simeq 
+	f^{\square V_G(U_G)}
+\simeq
+	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
+	\iota_{\**}f_{\bullet}([v])
+\simeq
+	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet,[v]}^{G_{[v]}}
+\simeq
 	\left(
 	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
 	f_{\bullet}(v)
 	\right)^G
-\simeq 
-	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
-	\left(
-	\prod\limits_{v \in [v]}
-	f_{\bullet}(v)
-	\right)^G
 \simeq
-	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**}
-	f_{\bullet}([v])
+	\left(
+	\underset{G v \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
+	\iota_{\**} f_{\bullet}(G v)
+	\right)^K
 \end{align*}
-where the middle step is Corollary \ref{FIXEDPUSH COR}
-establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
+Here the second identification combines the formula for $\iota_{\**}$ in 
+\S \ref{COMPARISON_REGULAR_SECTION}
+with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
+The third step follows by 
+Corollary \ref{FIXEDPUSH COR}.
+The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
+Noting that this last term is
+$ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+\right) (U_G)$ finishes the proof.
 %\begin{align*}
 %	\left(
 %	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
@@ -10539,10 +10558,11 @@ establishing the desired isomorphim (\ref{FIXEDPOINT1 EQ}).
 
 
 
-
-
 \subsection{Cofibrancy and the proof of Theorem \ref{MAINQUILLENEQUIV THM}}
 \label{MAINTHM_PROOF_SECTION}
+
+{\color{red} HERE}
+
 
 Propositions \ref{AUTTCOFPUSH PROP} and \ref{FIXPT PROP} from the previous section provide most of the backbone of the main technical step in the proof of our Elmendrof-type result Theorem \ref{MAINQUILLENEQUIV THM}. 
 The last remaining step is the following refinement of the key argument in the proof of
