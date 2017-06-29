@@ -585,7 +585,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers.
@@ -674,7 +674,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
@@ -727,7 +727,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
@@ -11664,81 +11664,212 @@ are closed under cellular extensions of operads.
         $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 \end{proof}
 
-\subsection{$N_{\infty}$-operads}
+
+
+\subsection{Realizing $N_{\infty}$-operads}
 \label{NINFTY_SECTION}
+
+
+We now explain how the $N\mathcal{F}$-operads of 
+Blumberg-Hill can be built from the theory of genuine equivariant operads.
+
+We start with an abstract argument. 
+Writing 
+$\mathcal{I} = \mathbb{F} (\emptyset)$
+for the initial equivariant operad in 
+$\mathsf{Op}^G(\mathsf{sSet})$,
+i.e. the operad consisting of a single operation at level $1$,
+consider any Quillen small object argument ``cofibration followed by trivial fibration factorization''
+\begin{equation}\label{OFCONST EQ}
+\begin{tikzcd}
+	\mathcal{I} \arrow[r, rightarrowtail] &
+	\O_{\mathcal{F}}
+	\arrow[r,twoheadrightarrow, "\sim"] &
+	\mathsf{Comm}
+\end{tikzcd}
+\end{equation}
+in the model structure 
+$\mathsf{Op}^G_{\mathcal{F}}(\mathsf{sSet})$.
+We claim that $\mathcal{O}_{\mathcal{F}}$
+is a $N \mathcal{F}$-operad, i.e.
+that it has fixed points as described in 
+Corollary \ref{NINFTY_REAL_COR_MAIN}.
+That $\mathcal{O}_{\mathcal{F}}(n)^{\Gamma} \sim \**$
+whenever $\Gamma \in \mathcal{F}_n$
+follows from the fact that the map
+$\mathcal{O}_{\mathcal{F}} \xrightarrow{\sim} \mathsf{Comm}$
+is a $\mathcal{F}$-equivalence.
+On the other hand, by Lemma \ref{MAINLEM LEM}
+the map 
+$\mathcal{I} \rightarrowtail \O_{\mathcal{F}}$
+is also an underlying cofibration in 
+$\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$, and thus
+$\mathcal{O}_{\mathcal{F}}$ is underlying cofibrant in 
+$\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$.
+The required condition 
+$\mathcal{O}_{\mathcal{F}} (n)^{\Gamma}
+= \emptyset $
+whenever $\Gamma \nin \mathcal{F}_n$
+now follows since this holds for any cofibrant object in $\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$,
+as can readily be checked via a cellular argument.
+
+One drawback of the 
+$N \mathcal{F}$-operad $\mathcal{O}_{\mathcal{F}}$
+built in (\ref{OFCONST EQ}),
+however, is that it is not explicit,
+due to the need to use the small object argument.
+To obtain a more explicit model, we make use of the theory of genuine equivariant operads.
+
+Firstly, any weak indexing system $\mathcal{F}$
+gives rise to a genuine equivariant operad
+$\partial_{\mathcal{F}}
+\in \mathsf{Op}_G(\mathsf{Set})
+$
+such that
+$\partial_{\mathcal{F}}(C) = \**$
+if $C \in \Sigma_{\mathcal{F}}$
+and 
+$\partial_{\mathcal{F}}(C) = \emptyset$
+if $C \nin \Sigma_{\mathcal{F}}$.
+Alternatively,  
+$\partial_{\mathcal{F}}$
+can also be regarded as the terminal object of
+$\mathsf{Op}_{\mathcal{F}}(\mathsf{Set})
+	\hookrightarrow 
+\mathsf{Op}_{G}(\mathsf{Set})$.
+The characterization of the cofibrant objects
+in $\mathsf{Op}_{G}(\mathsf{sSet})$
+given by Lemma \ref{MAINLEM LEM}
+now shows that the unique map
+$\iota_{\**} \mathcal{O}_{\mathcal{F}} 
+\xrightarrow{\simeq} \delta_{\mathcal{F}}$
+is a cofibrant replacement in
+$\mathsf{Op}_G(\mathsf{sSet})$ and, moreover,
+it is clear from the argument 
+in the previous paragraph that for any
+other cofibrant replacement 
+$C \delta_{\mathcal{F}} 
+\xrightarrow{\simeq} \delta_{\mathcal{F}}$
+the equivariant operad
+$\iota^{\**} (C \delta_{\mathcal{F}})
+\in \mathsf{Op}^G (\mathsf{sSet})$
+is a $N \mathcal{F}$-operad.
+We will now build an explicit model for such
+$C \delta_{\mathcal{F}}$.
+We start by considering the following
+adjunctions, where both of the right adjoints, which we write at the bottom, are forgetful functors.
+\begin{equation}\label{MAINPFADJVAR EQ}
+\begin{tikzcd}[column sep =9em]
+	\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}
+	\ar[shift left=1.5]{r}
+	{(X_C) \mapsto
+	\coprod_C \mathsf{Hom}(\minus,C) \times X_C}
+&
+	\mathsf{Sym}_{G}(\mathsf{Set}) 
+	\arrow[l, shift left=1.5] 
+	\arrow[r, shift left=1.5,swap,"\mathbb{F}_G"']
+&
+	\mathsf{Op}_G(\mathsf{Set})
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation}
+We will find it convenient in the following discussion to abuse notation by omitting
+occurrences of the forgetful functors.
+As such, we write
+$\delta_{\mathcal{F}}$ not only for the object in 
+$\mathsf{Op}_G(\mathsf{Set})$,
+but also for any of the underlying objects in 
+$\mathsf{Sym}_G(\mathsf{Set})$, 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
+Similarly, $\mathbb{F}_G$
+will denote both the functor in 
+(\ref{MAINPFADJVAR EQ})
+and the monad on 
+$\mathsf{Sym}_{G}(\mathsf{Set})$
+while 
+$\widetilde{\mathbb{F}}_G$
+will denote both the top composite functor in 
+(\ref{MAINPFADJVAR EQ})
+and the composite monad on 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
+
+Since both adjunctions in 
+(\ref{MAINPFADJVAR EQ})
+restrict to their $\mathcal{F}$ versions,
+in which case $\delta_{\mathcal{F}}$ denotes the terminal object of any of the $\mathcal{F}$ analogue categories,
+it follows that 
+$\delta_{\mathcal{F}} \in \mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$
+is a 
+$\widetilde{\mathbb{F}}_G$-algebra, 
+and we now consider the bar construction
+\[B_n(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+= \widetilde{\mathbb{F}}_G \circ
+\widetilde{\mathbb{F}}_G ^{\circ n} 
+(\partial_{\mathcal{F}}),
+\]
+where we regard the outer $\widetilde{\mathbb{F}}_G$ as the top composite functor in (\ref{MAINPFADJVAR EQ}).
+We now have
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\in
+\mathsf{Op}_{\mathcal{F}}(\mathsf{Set})^{\Delta^{op}}
+	\hookrightarrow
+\in \mathsf{Op}_G(\mathsf{Set})^{\Delta^{op}}
+\simeq \mathsf{Op}_G(\mathsf{sSet})$
+and, moreover, the unique genuine operad map
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\to 
+\partial_{\mathcal{F}}$
+is a weak equivalence in 
+$\mathsf{Op}_G(\mathsf{sSet})$
+thanks to the usual extra degeneracy argument
+(which applies after forgetting to 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$).
+Therefore, 
+the following result suffices to show that
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$
+is a $N \mathcal{F}$-operad.
+
+\begin{proposition}
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\in \mathsf{Op}_G(\mathsf{sSet})
+$
+is cofibrant.
+\end{proposition}
+
+
 
 {\color{red} HERE}
 
-%\subsubsection{$\F$-Cofibrant $G$-Operads}
-
-%We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
-
-%\begin{theorem}
-% \label{COFIBRANT_G_OPS_THEOREM}
- % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_{\F}(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_{\F}(\V)$.
-%\end{theorem}
-
-%The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
-%\begin{proposition}
-%  \label{F_COFIB_OP_CLOSURE_THM}
-%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_{\F}(\V)$, then the free $\mathbb{F}$-extension $\P \to \P[u]$
-  % \[
-  % \begin{tikzcd}
-  %   \mathbb{F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-  %   \mathbb{F} Y \arrow[r] & \P[u]
-  % \end{tikzcd}
-  % \]
-%is a level $\F$-cofibration, trivial if $u$ is so.
-%\end{proposition}
-%\begin{proof}
-%  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
-% Thus, it suffices to that that, for all $T\in \Omega$, the map
-% \[
-% \left( 
-%   \mathop{\bigotimes}\limits_{v \in V^{ac}(T)}\P(T_v) \otimes \mathop{\Box}\limits_{v\in V^{in}(T)}u(T_v)
-% \right) \mathop{\cdot}\limits_{\mathrm{\Sigma_T}}\Sigma_n
-% \]
-% is a (trivial) cofibration in $\V^{G\times \Sigma_n}_{\F_n}$ given our assumptions.
-
-%By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
-%Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
-%\end{proof}
-
-%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb{F}$-extensions.
-
-%\begin{proof}
-%  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
-%  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
-%\end{proof}
 
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
+\[
+\widetilde{\mathbb{F}}_G X (C) \simeq
+\coprod_{T \in 
+\mathsf{Iso}(C \downarrow_{\mathsf{r}} \Omega_G)}
+\left(
+\prod_{v \in V_G(T)}
+\left(
+	\coprod_{D\in \Sigma_G} \mathsf{Hom}(T_v,D) \times X(D)
+\right)
+\right) 
+\cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C)
+\]
 
-% \begin{corollary}
-%   \label{N_INFINITY_REALIZATION_COROLLARY}
-%   For $\V = \sSet$ and $\F$ any weak indexing system, there exists an operad $N\F$ such that $N\F(n)^\Gamma \simeq *$ if $\Gamma \in \F(n)$, and is empty otherwise. In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
-% \end{corollary}
 
-\begin{proof}[Proof of Corollary \ref{NINFTY_REAL_COR_MAIN}, version one]
-  Recall that $\mathsf{Comm}(n) = *$ for all $n$. Consider the functorial factorization 
-  \[
-  \begin{tikzcd}
-    \varnothing \arrow[r, rightarrowtail] & N\F \arrow[r, "\sim"] & \mathsf{Comm}
-  \end{tikzcd}
-  \]
-  in $\Op^{G}_{\F}(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
-\end{proof}
+{\color{red} HERE}
 
-\todo[inline]{come back}
-\begin{theorem}
-  \label{N_INFINITY_BAR}
-  $B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is 
-  \begin{itemize}
-  \item in the image of $i_*$
-  \item weakly equivalent to $\delta_{\F}$.
-  \end{itemize}
-  Hence, $i^*(B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is an $N\F$-operad.
-\end{theorem}
+
 
 
 %\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
