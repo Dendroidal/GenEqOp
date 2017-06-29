@@ -53,10 +53,10 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 \section{Introduction}
 
 A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
-consists of sets or spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
-referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loops spaces, and more,
+referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loop spaces, and more,
 all being recovered as algebras over some fixed operad in an appropriate category.
 Of special importance are the 
 $E_\infty$-operads, introduced by 
@@ -173,7 +173,7 @@ are all weak equivalences.
 As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces (mimicking the original source of $E_\infty$-algebras). 
+provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
@@ -246,7 +246,8 @@ However, the remaining conditions,
 all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
 are both novel and subtle.
 In loose terms, these conditions, 
-which are more easily described in terms of the associated $H$-sets $X$ produced from the graph subgroups,
+which are more easily described in terms of the 
+$H$-sets $X$ associated to the graph subgroups,
 concern closure of those under 
 disjoint union, cartesian product, subobjects,
 and an entirely novel key condition called \textit{self-induction}.
@@ -275,7 +276,7 @@ each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any
 choice of the family $\mathcal{F}$ is 
 best understood in light of Elmendorf's classical result from \cite{Elm83}
-(modernized and reproved by Piacenza in \cite{Pia91})
+(modernized by Piacenza in \cite{Pia91})
 %Piacenza's classical result
 %from \cite{Pia91}
 %(with the key insight dating back to Elmendorf in \cite{Elm83})
@@ -348,8 +349,7 @@ $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
 will consist of a list of spaces indexed
-by those fixed-point spaces which appear in 
-%in the same way as in 
+in the same way as in 
 (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
@@ -672,7 +672,7 @@ $\mathsf{Op}_G (\mathcal{V})$ of genuine equivariant operads
 introduced in this paper, the construction of which we now briefly outline.
 Firstly, the levels of each 
 $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-seen earlier as the $H$-sets in (\ref{GENGENMULT EQ}),
+i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
 are encoded by a category $\Sigma_G$ of 
 $G$-corollas, introduced in \S \ref{LRVERT SEC},
 which generalizes the usual category 
@@ -700,7 +700,7 @@ are partial coefficient systems determined by a family $\mathcal{F}$,
 we show in \S \ref{INDEXING_SECTION}
 that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
-give rise to a lattice of sieves 
+give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
 and partial symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
@@ -752,8 +752,8 @@ $(\mathcal{V},\otimes)$:
 \end{customthm}
 
 Theorem \ref{MAINEXIST2 THM} is proven in 
-\color{red} \S \ref{MAINEXIST SEC}
-in parallel with Theorem \ref{MAINEXIST1 THM}.
+{\color{red} \S \ref{MAINEXIST SEC}
+in parallel with Theorem \ref{MAINEXIST1 THM}}.
 We note that the condition that 
 $(\mathcal{V},\otimes)$ has diagonals (cf. Remark \ref{FINSURJ REM}), which is not needed in 
 Theorem \ref{MAINEXIST1 THM}, is required to build
