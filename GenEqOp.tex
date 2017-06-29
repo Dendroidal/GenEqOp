@@ -53,10 +53,10 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 \section{Introduction}
 
 A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
-consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+consists of sets or spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
-refereed to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, and more,
+referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loops spaces, and more,
 all being recovered as algebras over some fixed operad in an appropriate category.
 Of special importance are the 
 $E_\infty$-operads, introduced by 
@@ -153,7 +153,7 @@ we note that
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
-and that $\Gamma \leq G$ iff $\Gamma$ is the graph of such a trivial homomorphism. 
+and that $\Gamma \leq G$ iff $\Gamma$ is the graph of a trivial homomorphism. 
 However, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
 and indeed it is possible
@@ -161,19 +161,19 @@ to build maps $\O \to \O'$ where
 $\O$ is a $G$-trivial $E_{\infty}$-operad (as in (\ref{NAIVEGEINFTY EQ}))
 and $\O'$ is a $G$-$E_{\infty}$-operad 
 (as in (\ref{GENGEINFTY EQ})).
-Therefore, in order to distinguish such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
-with the notion of \textit{graph equivalence}, 
+Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
+with the finer notion of \textit{graph equivalence}, 
 so that $\O \to \O'$ is considered a weak equivalence only if
 \begin{equation}\label{GENEOPEQ EQ}
 	\O(n)^{\Gamma} \xrightarrow{\sim} \O'(n)^{\Gamma}, \qquad
 	\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}.
 \end{equation}
-are weak equivalences.
+are all weak equivalences.
 
 As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces.
+provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces (mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
@@ -246,7 +246,7 @@ However, the remaining conditions,
 all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
 are both novel and subtle.
 In loose terms, these conditions, 
-which are more easily described in terms of the $H$-sets $X$ associated to graph subgroups,
+which are more easily described in terms of the associated $H$-sets $X$ produced from the graph subgroups,
 concern closure of those under 
 disjoint union, cartesian product, subobjects,
 and an entirely novel key condition called \textit{self-induction}.
@@ -274,9 +274,11 @@ In particular, whenever $\O$ is a $N \mathcal{F}$-operad,
 each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any
 choice of the family $\mathcal{F}$ is 
-best understood in light of Piacenza's classical result
-from \cite{Pia91}
-(with the key insight dating back to Elmendorf in \cite{Elm83})
+best understood in light of Elmendorf's classical result from \cite{Elm83}
+(modernized and reproved by Piacenza in \cite{Pia91})
+%Piacenza's classical result
+%from \cite{Pia91}
+%(with the key insight dating back to Elmendorf in \cite{Elm83})
 stating that there is a Quillen equivalence
 (where $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
@@ -346,7 +348,9 @@ $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
 will consist of a list of spaces indexed
-in the same way as in (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+by those fixed-point spaces which appear in 
+%in the same way as in 
+(\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
 When analyzing the proofs of the results in 
@@ -538,6 +542,56 @@ in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
 Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
 must satisfy associativity, unitality, compatibility with restriction maps, and equivariance conditions, as encoded by the theory of $G$-trees. Rather than making such compatibilities explicit, it will be more convenient and effective for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
+We conclude this introduction with an alternative interpretation of our main result, again inspired by Elmendorf-Piacenza.
+One consequence of their result is that $\pi_0$ (and more generally all homotopy groups $\pi_n$) of a $G$-space 
+is not just $G$-set, but instead can be given the structure of a non-trivial coefficient system, 
+recorded by the fact that the diagram on the left below does \textit{not} commute in general.
+\newcommand\dnc[2][\ncirclearrowleft]{%
+  \arrow[start anchor = center, end anchor = center, draw = none]{#2}[description]{#1}}
+\begin{equation}
+        \label{PI_O_EQ}
+        \begin{tikzcd}
+                \Top^{O_G^{op}} 
+                \arrow[d, "\pi_0"'] 
+                \dnc{dr}
+                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
+                &
+                \Top^G 
+                \arrow[d, "\pi_0"] 
+                \arrow[l, "\iota_{\**}"'] 
+                &&
+                \Op_G(\Top) 
+                \arrow[d, "\pi_0"']
+                \dnc{dr}
+                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
+                &
+                \Op^G(\Top)
+                \arrow[d, "\pi_0"]
+                \arrow[l, "\iota_{\**}"'] 
+                \\
+                \Set^{O_G^{op}} 
+                & 
+                \Set^G 
+                \arrow[l, "\iota_{\**}"'] 
+                &&
+                \Op_G(\Set)
+                &
+                \Op^G(\Set)
+                \arrow[l, "\iota_{\**}"'] 
+        \end{tikzcd}
+\end{equation}
+Similarly, the main theorem from \cite{GM13} concerning the model category of $G$-spectra
+%characterizing the homotopy theory of $G$-spectra,
+%that the category of $G$-spectra is Quillen equivalent to the category of spectral Mackey functors, 
+homotopically packages the fact that $\pi_0$ of a $G$-spectrum has the further structure of a Mackey functor.
+
+Analogously, our main result shows that 
+the homotopy operad $\pi_0\O$ associated to a topological $G$-operad 
+$\O \in \Op^G(\Top)$
+is not a coefficient system of (set) operads, but instead has the additional algebraic structure of a non-trivial genuine $G$-operad,
+as again the rightmost diagram in (\ref{PI_O_EQ}) does \textit{not} commute.
+
+
 
 
 \subsection{Main results}
@@ -597,13 +651,28 @@ is proven in {\color{red} \S \ref{MAINEXIST SEC},
 where the additional conditions are also discussed.
 }
 
+The referenced \textit{semi}-model structures 
+are a mild weakening of Quillen model structures, 
+for which half the lifting and factorization axioms only hold for maps with cofibrant source.
+This structure was formally introduced in \cite{Hov98} and \cite{Spi01}.
+and has been exploited in, for example,
+\cite{EKMM, Hov98, Spi01, BM03, GH04, Fre09, Whi14, WY15}.
+{\color{blue}
+  Moreover,
+  the introduced weakness will not affect the applications of our results,
+  as, in particular, 
+  the initial operad is cofibrant in our cases of interest,
+  and Reedy semi model structures remain well behaved \cite[Prop. 3]{Spi01}.
+}%COLOR:BLUE
+See \cite[\S 2.2]{WY15} for a precise definition and further discussion.
+
 Our next result concerns the model structure
 on the category 
 $\mathsf{Op}_G (\mathcal{V})$ of genuine equivariant operads
 introduced in this paper, the construction of which we now briefly outline.
 Firstly, the levels of each 
 $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
+seen earlier as the $H$-sets in (\ref{GENGENMULT EQ}),
 are encoded by a category $\Sigma_G$ of 
 $G$-corollas, introduced in \S \ref{LRVERT SEC},
 which generalizes the usual category 
@@ -631,7 +700,7 @@ are partial coefficient systems determined by a family $\mathcal{F}$,
 we show in \S \ref{INDEXING_SECTION}
 that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
-give rise to sieves 
+give rise to a lattice of sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
 and partial symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
@@ -667,9 +736,9 @@ for $C \in \Sigma_{\mathcal{F}}$.
 
 Lastly, 
 analogous 
-semi-model structures
-$\mathsf{Op}^G(\mathcal{V})$,
-$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
+semi-model structures on
+$\mathsf{Op}_G(\mathcal{V})$,
+$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 exist
 provided that
 $(\mathcal{V},\otimes)$:
@@ -678,15 +747,17 @@ $(\mathcal{V},\otimes)$:
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
-\item[(v)] $(\mathcal{V},\otimes)$ has diagonals.
+\item[(v)] has diagonals.
 \end{inparaenum}
 \end{customthm}
 
 Theorem \ref{MAINEXIST2 THM} is proven in 
-{\color{red} \S \ref{MAINEXIST SEC}} in parallel with Theorem \ref{MAINEXIST1 THM}.
+\color{red} \S \ref{MAINEXIST SEC}
+in parallel with Theorem \ref{MAINEXIST1 THM}.
 We note that the condition that 
 $(\mathcal{V},\otimes)$ has diagonals (cf. Remark \ref{FINSURJ REM}), which is not needed in 
 Theorem \ref{MAINEXIST1 THM}, is required to build
+the monad $\mathbb F_G$, and hence the categories
 $\mathsf{Op}_G(\mathcal{V})$,
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$.
 
@@ -721,8 +792,8 @@ are Quillen equivalences.
 Morover, 
 analogous Quillen equivalences of
 semi-model structures
-$\mathsf{Op}^G(\mathcal{V})$,
-$\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
+$\mathsf{Op}_{\mathcal F}(\mathcal{V}) \simeq
+\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
 provided that
 $(\mathcal{V},\otimes)$:
@@ -731,8 +802,8 @@ $(\mathcal{V},\otimes)$:
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
-\item[(v)] $(\mathcal{V},\otimes)$ has diagonals;
-\item[(vi)] $(\mathcal{V},\otimes)$ has cartesian fixed points.
+\item[(v)] has diagonals;
+\item[(vi)] has cartesian fixed points.
 \end{inparaenum}
 \end{customthm}
 
@@ -1399,17 +1470,19 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	satisfying the analogues of  
 	(\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}).
 	Further, the dual of such $\mathcal{V}$ is called a 
-	\textit{symmetric monoidal category with diagonals}.
+	\textit{symmetric monoidal category with diagonals}\footnote{
+            These have also been called \textit{relevance} monoidal categories \cite{DP07}}.
 \end{remark}
 
 {\color{red} Maybe mention that if both folds and inclusions then cocartesian}
 
 \begin{remark}
 Replacing $\Fin_s$ in the previous remark with the subcategory
-$\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with diagonals}.
-\end{remark}
+$\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}\footnote{
+These are equivalent to \textit{semicartesian} symmetric monoidal categories \cite{EK66, Lei16}}.
 
-\todo[inline]{maybe mention that ``cat with diagonals'' is the same as semi-cartesian}
+Finally, if a symmetric monoidal category has both diagonals and projections, it must in fact be \textit{cartesian} monoidal \cite{EK66}.
+\end{remark}
 
 
 We end this section by collecting some straightforward lemmas
@@ -2612,7 +2685,7 @@ that $\varphi$ reflects $\leq_d$-comparability.
 \label{SUBS SEC}
 
 One of the key ideas needed for our description of operads is 
-the notion of substitution of tree nodes,
+the notion of \textit{substitution} of tree nodes,
 a process that we will prefer to repackage in terms of maps of trees.
 
 In preparation for that discussion,
@@ -6128,6 +6201,9 @@ and this is the subject of
 
 {\color{red} HERE}
 
+This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
+
+
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
 
@@ -6777,6 +6853,7 @@ $l$-labeled trees that induce quotients on
 nodes with $\lambda$-inert labels.
 \end{remark}
 
+\todo[inline]{We delay the techincal proof of the following statement to the Appendix.}
 In the following statement, we note that 
 it is shown in Lemma \ref{OBJGENREL LEMMA}
 that $ob(|A_{\bullet}|) \simeq ob(A_0)$
@@ -7274,7 +7351,7 @@ $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \begin{example}
 The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}). Intuitively, the functor
 $\mathsf{lr}_{\mathcal{P}}$ replaces each of the maximal 
-$mathcal{P}$-labeled subtrees 
+$\mathcal{P}$-labeled subtrees 
 $T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
 $\mathsf{lr}(T^{\mathcal{P}}_k)$,
 $\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
@@ -8022,7 +8099,7 @@ $X^H \to Y^H$ is a weak equivalence (fibration)
 for all $H \leq \Sigma$.
 
 Our main proof will require some auxiliary results concerning the above genuine model structures.
-However, since these results are particular instances of subtler results from \S \ref{COFIB SEC},
+However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
 we defer these %harder
 proofs to those
@@ -8161,7 +8238,7 @@ $
 $
 as in Remark \ref{WREATHFIXED REM}.
 A further application of Remark \ref{GEN_FGTRIGHT_REM}(ii)
-yields that the required conditions need only be independently checked for the
+yields that the required conditions need only be checked independently for the
 partial pushout product indexed by each $\lambda_i$,
 thus reducing to 
 Proposition \ref{POWERF PROP}
@@ -8218,7 +8295,7 @@ $(X_D) \mapsto \coprod_{D \in \Sigma_G}
 \mathsf{Hom}_{\Sigma_G} (\minus, D) 
 \cdot_{\mathsf{Aut(D)}} X_D$
 and using either 
-\cite[Thm. 11.3.2]{Hi03}
+\cite[Thm. 11.3.2]{Hi03} (or equivalently \cite[Thm A.1]{Ste16})
 in the model structure case
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$
 or 
@@ -8290,14 +8367,19 @@ The desired projective model structure thus
 has both less generating (trivial) cofibrations
 and more weak equivalences than the ``genuine projective'' model structure defined by (\ref{MAINPFADJ EQ}).
 Therefore, transfinite composites of pushouts of generating projective trivial cofibrations 
-are genuine projective equivalences and hence also projective equivalences, showing that the condition in \cite[Lemma 2.3(1)]{SS00} holds,
-establishing the existence of the projective model structure\footnote{
-The condition in \cite[Lemma 2.3(1)]{SS00}
-is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
-By contrast, the condition in 
-\cite[Thm. 11.3.2]{Hi03}, while more convenient to state, is merely a sufficient condition.}.
+are genuine projective equivalences and hence also projective equivalences, showing that the condition in 
+\cite[Thm. 11.3.2(2)]{Hi03}
+%\cite[Lemma 2.3(1)]{SS00} 
+holds,
+establishing the existence of the projective model structure% \footnote{
+% The condition in \cite[Lemma 2.3(1)]{SS00}
+% is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
+% By contrast, the condition in 
+% \cite[Thm. 11.3.2]{Hi03}, while more convenient to state, is merely a sufficient condition.}.
 In the semi-model structure case,
-one replaces \cite[Lemma 2.3(1)]{SS00} with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical).
+one replaces \cite[Thm. 11.3.2(2)]{Hi03}
+%\cite[Lemma 2.3(1)]{SS00} 
+with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical).
 
 To address the remaining cases in 
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, note first that by replacing 
@@ -8338,7 +8420,9 @@ defining $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 can be regarded as a restriction of
 $\mathbb{F}_G$,
 the desired condition in 
-\cite[Lemma 2.3(1)]{SS00} when
+\cite[Thm. 11.3.2(2)]{Hi03}
+%\cite[Lemma 2.3(1)]{SS00} 
+when
 applied to the intended model structure on 
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 turns out to coincide with the corresponding  condition for the $\mathcal{F}$-projective model structure on $\mathsf{Op}_{G}(\mathcal{V})$.
