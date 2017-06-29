@@ -38,26 +38,20 @@ A.~D. Elmendorf.
 \newblock {\em Transactions of the American Mathematical Society},
   277:275--284, 1983.
 
-\bibitem{Har09}
-J.~E. Harper.
-\newblock Homotopy theory of modules over operads in symmetric spectra.
-\newblock {\em Algebr. Geom. Topol.}, 9(3):1637--1680, 2009.
+\bibitem{Gui06}
+B.~Guillou.
+\newblock A short note on models for equivariant homotopy theory.
+\newblock Available at:
+  \texttt{http://www.ms.uky.edu/~guillou/EquivModels.pdf}, 2006.
 
 \bibitem{Hatcher}
 A.~Hatcher.
 \newblock {\em Algebraic topology}.
 \newblock Cambridge University Press, Cambridge, 2002.
 
-\bibitem{HP15}
-M.~Hausmann and L.~A. Pereira.
-\newblock Graph stable equivalences and operadic constructions in equivariant
-  spectra.
-\newblock {Available at: \texttt{http://www.faculty.virginia.edu/luisalex/}},
-  2015.
-
 \bibitem{HHR}
 M.~A. Hill, M.~J. Hopkins, and D.~C. Ravenel.
-\newblock On the non-existence of elements of kervaire invariant one.
+\newblock On the non-existence of elements of {K}ervaire invariant one.
 \newblock {\em Annals of Mathematics}, 184:1--262, 2016.
 
 \bibitem{Hi03}
@@ -65,6 +59,12 @@ P.~S. Hirschhorn.
 \newblock {\em Model categories and their localizations}, volume~99 of {\em
   Mathematical Surveys and Monographs}.
 \newblock American Mathematical Society, Providence, RI, 2003.
+
+\bibitem{Ho98}
+M.~Hovey.
+\newblock {\em Model categories}, volume~63 of {\em Mathematical Surveys and
+  Monographs}.
+\newblock American Mathematical Society, Providence, RI, 1999.
 
 \bibitem{McL}
 S.~Mac~Lane.
@@ -95,12 +95,12 @@ L.~A. Pereira.
 
 \bibitem{Pia91}
 R.~J. Piacenza.
-\newblock Homotopy theory of diagrams and cw-complexes over a category.
+\newblock Homotopy theory of diagrams and {CW}-complexes over a category.
 \newblock {\em Canadian Journal of Mathematics}, 43:814--824, 1991.
 
 \bibitem{Rub17}
 J.~Rubin.
-\newblock On the realization problem for $n_\infty$ operads.
+\newblock On the realization problem for {$N_\infty$} operads.
 \newblock arXiv preprint: 1705.03585, 2017.
 
 \bibitem{SS00}
@@ -108,7 +108,7 @@ S.~Schwede and B.~E. Shipley.
 \newblock Algebras and modules in monoidal model categories.
 \newblock {\em Proc. London Math. Soc. (3)}, 80(2):491--511, 2000.
 
-\bibitem{Spitz01}
+\bibitem{Spi01}
 M.~Spitzweck.
 \newblock Operads, algebras and modules in general model categories.
 \newblock arXiv preprint: 0101102, 2001.
@@ -125,7 +125,7 @@ I.~Weiss.
 
 \bibitem{Whi14}
 D.~White.
-\newblock Monoidal bousfield localizations and algebras over operads.
+\newblock Monoidal {B}ousfield localizations and algebras over operads.
 \newblock arXiv preprint: 1404.5197v1, 2014.
 
 \bibitem{WY15}
