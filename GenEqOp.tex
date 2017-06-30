@@ -546,54 +546,78 @@ in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
 Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
 must satisfy associativity, unitality, compatibility with restriction maps, and equivariance conditions, as encoded by the theory of $G$-trees. Rather than making such compatibilities explicit, it will be more convenient and effective for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
-We conclude this introduction with an alternative interpretation of our main result, again inspired by Elmendorf-Piacenza.
-One consequence of their result is that $\pi_0$ (and more generally all homotopy groups $\pi_n$) of a $G$-space 
-is not just $G$-set, but instead can be given the structure of a non-trivial coefficient system, 
-recorded by the fact that the diagram on the left below does \textit{not} commute in general.
-\newcommand\dnc[2][\ncirclearrowleft]{%
-  \arrow[start anchor = center, end anchor = center, draw = none]{#2}[description]{#1}}
-\begin{equation}
-        \label{PI_O_EQ}
-        \begin{tikzcd}
-                \Top^{O_G^{op}} 
-                \arrow[d, "\pi_0"'] 
-                \dnc{dr}
-                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
-                &
-                \Top^G 
-                \arrow[d, "\pi_0"] 
-                \arrow[l, "\iota_{\**}"'] 
-                &&
-                \Op_G(\Top) 
-                \arrow[d, "\pi_0"']
-                \dnc{dr}
-                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
-                &
-                \Op^G(\Top)
-                \arrow[d, "\pi_0"]
-                \arrow[l, "\iota_{\**}"'] 
-                \\
-                \Set^{O_G^{op}} 
-                & 
-                \Set^G 
-                \arrow[l, "\iota_{\**}"'] 
-                &&
-                \Op_G(\Set)
-                &
-                \Op^G(\Set)
-                \arrow[l, "\iota_{\**}"'] 
-        \end{tikzcd}
-\end{equation}
-Similarly, the main theorem from \cite{GM13} concerning the model category of $G$-spectra
-%characterizing the homotopy theory of $G$-spectra,
-%that the category of $G$-spectra is Quillen equivalent to the category of spectral Mackey functors, 
-homotopically packages the fact that $\pi_0$ of a $G$-spectrum has the further structure of a Mackey functor.
 
-Analogously, our main result shows that 
-the homotopy operad $\pi_0\O$ associated to a topological $G$-operad 
-$\O \in \Op^G(\Top)$
-is not a coefficient system of (set) operads, but instead has the additional algebraic structure of a non-trivial genuine $G$-operad,
-as again the rightmost diagram in (\ref{PI_O_EQ}) does \textit{not} commute.
+We end this introduction with an alternative perspective on the role of genuine equivariant operads.
+The Elmendorf-Piacenza theorem in 
+(\ref{COFADJINT EQ})
+is ultimately a strengthening of the basic observation that the homotopy groups
+$\pi_n(X)$ of a $G$-space $X$ are coefficient systems rather than just $G$-objects.
+Similarly, the generalized 
+Elmendorf-Piacenza result \cite[Thm. 3.17]{Ste16}
+applied to the category 
+$\mathcal{V}=\mathsf{sCat}$
+of simplicial categories strengthens 
+the observation that 
+for a $G$-simplcial category $\C$
+the associated homotopy category
+$\text{ho}(\mathcal{C})$
+is a coefficient system of categories rather than just a $G$-category.
+Likewise, Theorem \ref{MAINQUILLENEQUIV THM}
+strengthens the (not so basic) observation that for a simplicial operad $\O$ the associated homotopy operad 
+$\text{ho}(\mathcal{O})$
+is neither just a $G$-operad nor 
+just a coefficient system of operads
+but rather a genuine equivariant operad.
+
+
+%We conclude this introduction with an alternative interpretation of our main result, again inspired by Elmendorf-Piacenza.
+%One consequence of their result is that $\pi_0$ (and more generally all homotopy groups $\pi_n$) of a $G$-space 
+%is not just $G$-set, but instead can be given the structure of a non-trivial coefficient system, 
+%recorded by the fact that the diagram on the left below does \textit{not} commute in general.
+%\newcommand\dnc[2][\ncirclearrowleft]{%
+%  \arrow[start anchor = center, end anchor = center, draw = none]{#2}[description]{#1}}
+%\begin{equation}
+%        \label{PI_O_EQ}
+%        \begin{tikzcd}
+%                \Top^{O_G^{op}} 
+%                \arrow[d, "\pi_0"'] 
+%                \dnc{dr}
+                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
+%                &
+%                \Top^G 
+%                \arrow[d, "\pi_0"] 
+%                \arrow[l, "\iota_{\**}"'] 
+%                &&
+%                \Op_G(\Top) 
+%                \arrow[d, "\pi_0"']
+%                \dnc{dr}
+                % \arrow[dr, start anchor=center,end anchor=center,draw=none, "\ncirclearrowleft"] 
+%                &
+%                \Op^G(\Top)
+%                \arrow[d, "\pi_0"]
+%                \arrow[l, "\iota_{\**}"'] 
+%                \\
+%                \Set^{O_G^{op}} 
+%                & 
+%                \Set^G 
+%                \arrow[l, "\iota_{\**}"'] 
+%                &&
+%                \Op_G(\Set)
+%                &
+%                \Op^G(\Set)
+%                \arrow[l, "\iota_{\**}"'] 
+%        \end{tikzcd}
+%\end{equation}
+%Similarly, the main theorem from \cite{GM13} concerning the model category of $G$-spectra
+%%%characterizing the homotopy theory of $G$-spectra,
+%%%that the category of $G$-spectra is Quillen equivalent to the category of spectral Mackey functors, 
+%homotopically packages the fact that $\pi_0$ of a $G$-spectrum has the further structure of a Mackey functor.
+
+%Analogously, our main result shows that 
+%the homotopy operad $\pi_0\O$ associated to a topological $G$-operad 
+%$\O \in \Op^G(\Top)$
+%is not a coefficient system of (set) operads, but instead has the additional algebraic structure of a non-trivial genuine $G$-operad,
+%as again the rightmost diagram in (\ref{PI_O_EQ}) does \textit{not} commute.
 
 
 
@@ -616,7 +640,7 @@ $(\mathsf{sSet}, \times)$
 or
 $(\mathsf{sSet}_{\**}, \wedge)$.
 
-Then there exists a model structure on 
+Then there exists a model category structure on 
 $\mathsf{Op}^G(\mathcal{V})$ such that 
 $\O \to \O'$ is a weak equivalence (resp. fibration)
 if all the maps
@@ -627,7 +651,7 @@ for
 $\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}$, 
 are weak equivalences (fibrations) in $\mathcal{V}$.
 
-More generally, for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ with $\mathcal{F}_n$ an arbitrary collection of subgroups of $G \times \Sigma_n$ there exists a model structure on 
+More generally, for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ with $\mathcal{F}_n$ an arbitrary collection of subgroups of $G \times \Sigma_n$ there exists a model category structure on 
 $\mathsf{Op}^G(\mathcal{V})$,
 which we denote
 $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
@@ -636,7 +660,7 @@ determined by (\ref{GENEOPEQMT EQ}) for $\Gamma \in \mathcal{F}_n$.
 
 Lastly, 
 analogous 
-semi-model structures
+semi-model category structures
 $\mathsf{Op}^G(\mathcal{V})$,
 $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
@@ -651,25 +675,31 @@ $(\mathcal{V},\otimes)$:
 \end{customthm}
 
 Theorem \ref{MAINEXIST1 THM}
-is proven in {\color{red} \S \ref{MAINEXIST SEC},
-where the additional conditions are also discussed.
-} 
+is proven in \S \ref{MAINEXIST SEC}.
+The additional conditions (iii) and (iv),
+which are less standard, are discussed in 
+\S \ref{FAMILY_SEC} and
+\S \ref{PUSHPOW SEC}, respectively.
+Further, by \textit{semi-model category}
+we mean the notion introduced in 
+\cite{Hov98} and \cite{Spi01}, 
+which relaxes the model structure axioms by requiring that some of the axioms need only apply
+if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
 
-
-The referenced \textit{semi}-model structures 
-are a mild weakening of Quillen model structures, 
-for which half the lifting and factorization axioms only hold for maps with cofibrant source.
-This structure was formally introduced in \cite{Hov98} and \cite{Spi01},
-and has been exploited in, for example,
-\cite{EKMM, Hov98, Spi01, BM03, GH04, Fre09, Whi14, WY15}.
-{\color{blue}
-  Moreover,
-  the introduced weakness will not affect the applications of our results,
-  as, in particular, 
-  the initial operad is cofibrant in our cases of interest,
-  and Reedy semi model structures remain well behaved \cite[Prop. 3]{Spi01}.
-}%COLOR:BLUE
-See \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09} for precise definitions and further discussion.
+%The referenced \textit{semi}-model structures 
+%are a mild weakening of Quillen model structures, 
+%for which half the lifting and factorization axioms only hold for maps with cofibrant source.
+%This structure was formally introduced in \cite{Hov98} and \cite{Spi01},
+%and has been exploited in, for example,
+%\cite{EKMM, Hov98, Spi01, BM03, GH04, Fre09, Whi14, WY15}.
+%{\color{blue}
+%  Moreover,
+%  the introduced weakness will not affect the applications of our results,
+%  as, in particular, 
+%  the initial operad is cofibrant in our cases of interest,
+%  and Reedy semi model structures remain well behaved \cite[Prop. 3]{Spi01}.
+%}%COLOR:BLUE
+%See \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09} for precise definitions and further discussion.
 
 Our next result concerns the model structure
 on the category 
@@ -757,9 +787,9 @@ $(\mathcal{V},\otimes)$:
 \end{customthm}
 
 Theorem \ref{MAINEXIST2 THM} is proven in 
-{\color{red} \S \ref{MAINEXIST SEC}
-in parallel with Theorem \ref{MAINEXIST1 THM}}.
-We note that the condition that 
+\S \ref{MAINEXIST SEC}
+in parallel with Theorem \ref{MAINEXIST1 THM}.
+We note that the condition (v) that 
 $(\mathcal{V},\otimes)$ has diagonals (cf. Remark \ref{FINSURJ REM}), which is not needed in 
 Theorem \ref{MAINEXIST1 THM}, is required to build
 the monad $\mathbb F_G$, and hence the categories
@@ -797,7 +827,7 @@ are Quillen equivalences.
 Morover, 
 analogous Quillen equivalences of
 semi-model structures\footnote{
-See \cite[\S 12.1.8]{Fre09} for a precise definition.}%
+See \cite[\S 12.1.8]{Fre09} for a precise definition.}
 $\mathsf{Op}_{\mathcal F}(\mathcal{V}) \simeq
 \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
@@ -816,10 +846,16 @@ $(\mathcal{V},\otimes)$:
 Theorem \ref{MAINQUILLENEQUIV THM}
 is proven in 
 \S \ref{MAINTHM_PROOF_SECTION}.
+Condition (vi), which is not 
+needed in either of
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM}
+is discussed in 
+\S \ref{PUSHPOW SEC}.
+
 
 Lastly, our techniques also confirm 
 the main conjecture of \cite{BH15},
-as we discuss in \S \ref{NINFTY_SECTION}.
+which we discuss in \S \ref{NINFTY_SECTION}.
 Moreover, we note that our models for
 $N \mathcal{F}$-operads are given by explicit bar constructions.
 
@@ -846,64 +882,98 @@ in \cite[Cor. 5.6]{BH15}
 
 \subsection{Future Work}
 
-\todo[inline]{come back here}
+In order to simplify our discussion this
+paper focuses exclusively on the theory of 
+single colored (genuine) equivariant operads.
+Nonetheless, we conjecture that all three of 
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},
+\ref{MAINQUILLENEQUIV THM}
+extend to the colored setting,
+and intend to show this in upcoming work.
+We note, however, that the colored setting comes with an important new subtlety: 
+while usual colored equivariant operads have $G$-sets of objects,
+colored genuine equivariant operads will instead have \textit{coefficient systems} of objects.
 
-While this paper focuses soley on \textit{single coloured} operads, 
-we expect the theory to extend immediately to the coloured setting. 
-One key difference is that coloured genuine $G$-operads will have a 
-\textit{coefficient system} of colours: 
-evaluation at a $G$-corolla will include the additional data of 
-a colour for each $G$-orbit of edges, 
-and the isotropy of the colours must match that of its asscoatied edge.
-This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate. 
+This paper and \cite{Pe17} are the first pieces of a broader project aimed at understanding different models for equivariant operads. 
+In upcoming work we intend to connect the two papers by
+generalizing the main theorem of
+Cisinski and Moerdijk in \cite{CM13b} and 
+ showing the existence of a Quillen equivalence
+\begin{equation}
+\begin{tikzcd}[column sep =4em]
+	\mathsf{dSet}^G \ar[shift left=1.5]{r} 
+	&
+	\mathsf{sOp}^G
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation} 
+where $\mathsf{dSet}^G$ is the
+category of equivariant dendroidal sets of
+\cite{Pe17} and 
+$\mathsf{sOp}^G$ the category of equivariant colored simplicial operads with its (conjectural) ``with norms'' model structure,
+as discussed in the previous paragraph.
+
+
+
+
+%While this paper focuses soley on \textit{single coloured} operads, 
+%we expect the theory to extend immediately to the coloured setting. 
+%One key difference is that coloured genuine $G$-operads will have a 
+%\textit{coefficient system} of colours: 
+%evaluation at a $G$-corolla will include the additional data of 
+%a colour for each $G$-orbit of edges, 
+%and the isotropy of the colours must match that of its asscoatied edge.
+%This feature is inspired by those seen in other models for $G$-operads, on which we now elaborate. 
 %More than just for completeness, such an extension will allow for more complete comparisons with the other models for $G$-operads.
 
 %We end this introduction with a brief discussion on the context of this paper. 
-The major goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. 
-This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, 
-whose work culminates in the square of Quillen-equivalent categories below. 
-%generalizating the work of, e.g. \cite{Joy01}, \cite{Lu09}, \cite{Bergner}, and Rezk on $\infty$-categories.
-\begin{equation}
-  \label{CM_EQ}
-  \tag{$\filledstar$}
-  \begin{tikzcd}
-    \mathsf{PreOp} 
-    \arrow[d] 
-    & 
-    \mathsf{sOp} 
-    \arrow[l] 
-    \arrow[d, "hcN_d"]
-    \\
-    \mathsf{sdSet} 
-    & 
-    \mathsf{dSet} 
-    \arrow[l]
-  \end{tikzcd}
-\end{equation}
-An additional common feature is the construction of a strict ``homotopy'' category/operad from an $\infty$-category/operad.
 
-Sequels will extend both of these to the $G$-equivariant context. 
-In particular, we expect the categories $\Op^G_{\mathcal F}(\sSet)$ and $\mathsf{dSet}^G_{\mathcal F}$ to be Quillen equivalent.
-Further, mimicking our alternative interpretation from the end of the introduction,
-multicoloured genuine $G$-operads will provide 
-the natural (and most highly structured) target for the strictification of $G$-$\infty$-operads from \cite{Pe17}. 
-In both cases, we have that 
-the $G$-$\infty$-operads in $\mathsf{dSet}^G$ 
-or the operads in $\Op^G(\Top)$ 
-themselves satisfy a rigid fixed-point condition, 
-but their homotopy operads do \textit{not}.
 
-Moreover, we note that, as in \cite{Pe17}, there are both 
-multiple possible \textit{categorical} generalizations 
-(i.e. $\mathsf{dSet}^G$ vs. $\mathsf{dSet}_G$, $\Op^G$ vs. $\Op_G$)
-and multiple possible \textit{model categorical} generalizations 
-(i.e $\mathsf{dSet}^G_{\mathcal F}$, $\Op^G_{\mathcal F}$) 
-for each corner of the equivariant version of (\ref{CM_EQ}). 
-Analogous to the main result of this paper, 
-we expect all compatible notions at each corner to be Quillen equivalent 
-(i.e. $\mathsf{dSet}^G_{\mathcal F} \simeq_Q \mathsf{dSet}_{\mathcal F}$). 
+%The major goal of the authors' current project is to detail the full story of the homotopy theory of equivariant operads. 
+%This paper and \cite{Pe17} form the basis of a generalization of the work of Cisinski-Moerdijk-Weiss, 
+%whose work culminates in the square of Quillen-equivalent categories below. 
+%%%generalizating the work of, e.g. \cite{Joy01}, \cite{Lu09}, \cite{Bergner}, and Rezk on $\infty$-categories.
+%\begin{equation}
+%  \label{CM_EQ}
+%  \tag{$\filledstar$}
+%  \begin{tikzcd}
+%    \mathsf{PreOp} 
+%    \arrow[d] 
+%    & 
+%    \mathsf{sOp} 
+%    \arrow[l] 
+%    \arrow[d, "hcN_d"]
+%    \\
+%    \mathsf{sdSet} 
+%    & 
+%    \mathsf{dSet} 
+%    \arrow[l]
+%  \end{tikzcd}
+%\end{equation}
+%An additional common feature is the construction of a strict ``homotopy'' category/operad from an $\infty$-category/operad.
 
-A full exploration of this and the other above topics will be discussed in future papers.
+%Sequels will extend both of these to the $G$-equivariant context. 
+%In particular, we expect the categories $\Op^G_{\mathcal F}(\sSet)$ and $\mathsf{dSet}^G_{\mathcal F}$ to be Quillen equivalent.
+%Further, mimicking our alternative interpretation from the end of the introduction,
+%multicoloured genuine $G$-operads will provide 
+%the natural (and most highly structured) target for the strictification of $G$-$\infty$-operads from \cite{Pe17}. 
+%In both cases, we have that 
+%the $G$-$\infty$-operads in $\mathsf{dSet}^G$ 
+%or the operads in $\Op^G(\Top)$ 
+%themselves satisfy a rigid fixed-point condition, 
+%but their homotopy operads do \textit{not}.
+
+%Moreover, we note that, as in \cite{Pe17}, there are both 
+%multiple possible \textit{categorical} generalizations 
+%(i.e. $\mathsf{dSet}^G$ vs. $\mathsf{dSet}_G$, $\Op^G$ vs. $\Op_G$)
+%and multiple possible \textit{model categorical} generalizations 
+%(i.e $\mathsf{dSet}^G_{\mathcal F}$, $\Op^G_{\mathcal F}$) 
+%for each corner of the equivariant version of (\ref{CM_EQ}). 
+%Analogous to the main result of this paper, 
+%we expect all compatible notions at each corner to be Quillen equivalent 
+%(i.e. $\mathsf{dSet}^G_{\mathcal F} \simeq_Q \mathsf{dSet}_{\mathcal F}$). 
+
+%A full exploration of this and the other above topics will be discussed in future papers.
 %we will study this precise question, as well as comparisons between the different models.
 
 % \[
@@ -914,47 +984,124 @@ A full exploration of this and the other above topics will be discussed in futur
 % \]
 
 
-
-
 %We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph.
-
-{\color{red} Mention colored operad versions, equivalence with dendroidal sets}
 
 
 \subsection{Outline}
 
-\todo[inline]{come back here}
+This paper roughly consists of two major halves, 
+with 
+\S \ref{PLANAR_SECTION},\S \ref{GENUINE_OP_MONAD_SECTION}
+addressing the definition of the novel structure of
+genuine equivariant operads,
+and 
+\S \ref{FREE_EXTENSIONS_SECTION},\S \ref{COFIB SEC}
+addressing the proofs of the main results
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},
+\ref{MAINQUILLENEQUIV THM}.
+A more detailed outline follows.
 
-The remainder of this paper is organized as follows. 
-In the first section, we recall background categorical material which will play a role throughout the paper,
-as well as establish notation.
-In Section \ref{PLANAR_SECTION}, 
-we introduce a number of concepts related to $G$-treees, 
-in particular planarity, substitutions, and leaf-root and vertex functors, 
-which are all necessary to build the monad $\mathbb F_G$.
-Further, we use these structures to identify certain pullbacks as categories of strings of maps, 
-which we then use to conveniently package both substitutions and iterations of $\mathbb F_G$.
-After defining the endofunctor $\mathbb F_G$, 
-Section \ref{GENUINE_OP_MONAD_SECTION}
-uses the 
-tools from
-%results and technical framework of 
-the previous section to both prove $\mathbb F_G$ is in fact a monad and compare it to the usual free operad monad.
-Section \ref{FREE_EXTENSIONS_SECTION} 
-begins our homotopical discussion by 
-analysing and building filtrations of free $\mathbb F_G$-extensions, 
-%using the realization of the simplicial object in categories of strings of maps,
-%and building a filtration of such maps.
-through which we prove the main existence results.%, Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
-Finally, in Section \ref{COFIB SEC}
-we investigate the delicate interplay involved when combining cofibrancy between different equivariant categories, 
-yielding the primary argument of our main result, a characterization of cofibrant genuine $G$-operads.
-We end this section, and the paper, by constructing an explicit $N\mathcal F$-operad for any weak indexing system $\mathcal F$.
+\S \ref{PRELIM_SECTION}
+discusses some preliminary notions and notation that will be used throughout.
+Of particular importance are the notion of 
+split Grothendieck fibration,
+which we recall in \S \ref{GROTHFIB REF},
+and the categorical wreath product defined in 
+\S \ref{WREATH SEC}, which we use when defining
+symmetric monoidal categories with diagonals
+(Remark \ref{FINSURJ REM}).
 
-We delay the proof of a lengthy result from Section \ref{FREE_EXTENSIONS_SECTION}, 
-which provides the technical backbone to our description of free extensions,
-% constructing free extensions using a realization of a simplicial object in categories
-to the appendix.
+\S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
+\S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
+ in the context of equivariant trees. The key idea, which is captured in diagram (\ref{SUBSDATUMTREES EQ}), 
+is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent defining these terms, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encoded iterated substitution.
+
+\S \ref{GENUINE_OP_MONAD_SECTION} then provides the formal definition of the category 
+$\mathsf{Op}_G(\mathcal{V})$
+of genuine equivariant operads in a 
+two step process in 
+\S \ref{MONSPAN SEC}, \S \ref{FGMON SEC}.
+\S \ref{COMPARISON_REGULAR_SECTION} then compares 
+the genuine equivariant operad category
+$\mathsf{Op}_G(\mathcal{V})$
+with the usual equivariant operad category
+$\mathsf{Op}^G(\mathcal{V})$,
+establishing the necessary adjunction to formulate
+Theorem \ref{MAINQUILLENEQUIV THM}.
+\S \ref{INDEXING_SECTION}
+discusses the notion of partial genuine equivariant operads, which are very closely related to the indexing systems of Blumberg-Hill.
+
+
+\S \ref{FREE_EXTENSIONS_SECTION} 
+proves 
+Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
+As is often the case when proving existence of projective model structures,
+the key to this section is a careful analysis of  the free extensions in diagram
+(\ref{FREE_FG_EXT_EQ}),
+with 
+\S \ref{LABELSTRI SEC}, 
+\S \ref{EXTTREE SEC},
+\S \ref{FILTRATION_SECTION}
+dedicated to providing a suitable filtration of such free extensions,
+and \S \ref{MAINEXIST SEC} concluding the proofs.
+
+\S \ref{COFIB SEC} proves our main result 
+Theorem \ref{MAINQUILLENEQUIV THM}.
+The core of the technical analysis 
+is given in 
+\S \ref{FAMILY_SEC},
+\S \ref{PUSHPOW SEC}
+and \S \ref{G_GRAPH_SECTION}, 
+which carefully study the interplay between families of subgroups, fixed points, and pushout products,
+and provide the necessary ingredients for
+the characterization of the cofibrant objects
+in $\mathsf{Op}_G (\mathcal{V})$
+given in Lemma \ref{MAINLEM LEM},
+and from which 
+Theorem \ref{MAINQUILLENEQUIV THM}
+easily follows.
+\S \ref{NINFTY_SECTION}
+then establishes Corollary 
+\ref{NINFTY_REAL_COR_MAIN}
+by using the theory of genuine equivariant operads
+to build explicit cofibrant models for 
+$N \mathcal{F}$-operads.
+
+Lastly,
+Appendix \ref{TRANSKAN AP}
+provides the proof of a lengthy technical result needed when establishing the filtrations in \S \ref{FREE_EXTENSIONS_SECTION}.
+
+
+
+%In the first section, we recall background categorical material which will play a role throughout the paper,
+%as well as establish notation.
+%In Section \ref{PLANAR_SECTION}, 
+%we introduce a number of concepts related to $G$-treees, 
+%in particular planarity, substitutions, and leaf-root and vertex functors, 
+%which are all necessary to build the monad $\mathbb F_G$.
+%Further, we use these structures to identify certain pullbacks as categories of strings of maps, 
+%which we then use to conveniently package both substitutions and iterations of $\mathbb F_G$.
+%After defining the endofunctor $\mathbb F_G$, 
+%Section \ref{GENUINE_OP_MONAD_SECTION}
+%uses the 
+%tools from
+%%%results and technical framework of 
+%the previous section to both prove $\mathbb F_G$ is in fact a monad and compare it to the usual free operad monad.
+%Section \ref{FREE_EXTENSIONS_SECTION} 
+%begins our homotopical discussion by 
+%analysing and building filtrations of free $\mathbb F_G$-extensions, 
+%%%using the realization of the simplicial object in categories of strings of maps,
+%%%and building a filtration of such maps.
+%through which we prove the main existence results.%, Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
+%Finally, in Section \ref{COFIB SEC}
+%we investigate the delicate interplay involved when combining cofibrancy between different equivariant categories, 
+%yielding the primary argument of our main result, a characterization of cofibrant genuine $G$-operads.
+%We end this section, and the paper, by constructing an explicit $N\mathcal F$-operad for any weak indexing system $\mathcal F$.
+
+%We delay the proof of a lengthy result from Section \ref{FREE_EXTENSIONS_SECTION}, 
+%which provides the technical backbone to our description of free extensions,
+%%%% constructing free extensions using a realization of a simplicial object in categories
+%to the appendix.
 
 
 
@@ -1009,11 +1156,9 @@ to the appendix.
 \section{Preliminaries}
 \label{PRELIM_SECTION}
 
-This section lists some elementary concepts
-and results that will be used throughout the paper,
-but may not be entirely standard.
+%This section lists some elementary concepts and results that will be used throughout the paper, but may not be entirely standard.
 
-\subsection{Grothendieck fibrations}
+\subsection{Grothendieck fibrations}\label{GROTHFIB REF}
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
 is called a \textit{Grothendieck fibration}
@@ -1179,6 +1324,7 @@ We also record the following, the proof of which is straightforward.
 
 
 \subsection{Wreath product over finite sets}
+\label{WREATH SEC}
 
 Throughout we will let $\Fin$ denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 
@@ -4441,7 +4587,7 @@ which we then transfer via the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{
 
 
 
-\subsection{A monad on spans}
+\subsection{A monad on spans}\label{MONSPAN SEC}
 
 \begin{definition}\label{WSPAN DEF}
 We will write 
@@ -12783,6 +12929,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 
 
 \section{Transferring Kan extensions}
+\label{TRANSKAN AP}
 
 The purpose of this appendix is to provide the
 somewhat long proof of Proposition \ref{RANTRANS PROP}, 
