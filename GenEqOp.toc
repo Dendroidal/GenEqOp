@@ -27,4 +27,4 @@
 \contentsline {subsection}{\numberline {6.3}$G$-graph families and $G$-trees}{67}{subsection.6.3}
 \contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{72}{subsection.6.4}
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{75}{subsection.6.5}
-\contentsline {section}{\numberline {A}Transferring Kan extensions}{76}{appendix.A}
+\contentsline {section}{\numberline {A}Transferring Kan extensions}{78}{appendix.A}
