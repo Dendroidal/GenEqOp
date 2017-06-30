@@ -53,10 +53,10 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 \section{Introduction}
 
 A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
-consists of sets or spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
-referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loops spaces, and more,
+referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loop spaces, and more,
 all being recovered as algebras over some fixed operad in an appropriate category.
 Of special importance are the 
 $E_\infty$-operads, introduced by 
@@ -173,7 +173,7 @@ are all weak equivalences.
 As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces (mimicking the original source of $E_\infty$-algebras). 
+provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
@@ -246,7 +246,8 @@ However, the remaining conditions,
 all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
 are both novel and subtle.
 In loose terms, these conditions, 
-which are more easily described in terms of the associated $H$-sets $X$ produced from the graph subgroups,
+which are more easily described in terms of the 
+$H$-sets $X$ associated to the graph subgroups,
 concern closure of those under 
 disjoint union, cartesian product, subobjects,
 and an entirely novel key condition called \textit{self-induction}.
@@ -275,7 +276,7 @@ each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any
 choice of the family $\mathcal{F}$ is 
 best understood in light of Elmendorf's classical result from \cite{Elm83}
-(modernized and reproved by Piacenza in \cite{Pia91})
+(modernized by Piacenza in \cite{Pia91})
 %Piacenza's classical result
 %from \cite{Pia91}
 %(with the key insight dating back to Elmendorf in \cite{Elm83})
@@ -348,8 +349,7 @@ $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
 will consist of a list of spaces indexed
-by those fixed-point spaces which appear in 
-%in the same way as in 
+in the same way as in 
 (\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
@@ -639,7 +639,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers.
@@ -672,7 +672,7 @@ $\mathsf{Op}_G (\mathcal{V})$ of genuine equivariant operads
 introduced in this paper, the construction of which we now briefly outline.
 Firstly, the levels of each 
 $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-seen earlier as the $H$-sets in (\ref{GENGENMULT EQ}),
+i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
 are encoded by a category $\Sigma_G$ of 
 $G$-corollas, introduced in \S \ref{LRVERT SEC},
 which generalizes the usual category 
@@ -700,7 +700,7 @@ are partial coefficient systems determined by a family $\mathcal{F}$,
 we show in \S \ref{INDEXING_SECTION}
 that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
-give rise to a lattice of sieves 
+give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
 and partial symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
@@ -743,7 +743,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
@@ -752,8 +752,8 @@ $(\mathcal{V},\otimes)$:
 \end{customthm}
 
 Theorem \ref{MAINEXIST2 THM} is proven in 
-\color{red} \S \ref{MAINEXIST SEC}
-in parallel with Theorem \ref{MAINEXIST1 THM}.
+{\color{red} \S \ref{MAINEXIST SEC}
+in parallel with Theorem \ref{MAINEXIST1 THM}}.
 We note that the condition that 
 $(\mathcal{V},\otimes)$ has diagonals (cf. Remark \ref{FINSURJ REM}), which is not needed in 
 Theorem \ref{MAINEXIST1 THM}, is required to build
@@ -798,7 +798,7 @@ exist
 provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
-\item[(i)] is a strongly cofibrantly generated model category;
+\item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
@@ -11748,81 +11748,519 @@ are closed under cellular extensions of operads.
         $Y \xrightarrow{\simeq} \iota_{\**} \iota^{\**} Y$.
 \end{proof}
 
-\subsection{$N_{\infty}$-operads}
+
+
+\subsection{Realizing $N_{\infty}$-operads}
 \label{NINFTY_SECTION}
 
-{\color{red} HERE}
 
-%\subsubsection{$\F$-Cofibrant $G$-Operads}
+We now explain how the $N\mathcal{F}$-operads of 
+Blumberg-Hill can be built from the theory of genuine equivariant operads.
 
-%We will show that the $\F$-model structure of Theorem \ref{OP_F_SEMI_MODEL_THM} inherits cofibrancy conditions from $\Sym^G_F(\V)$ precisely if $\F$ is a weak indexing system. In particular:
+We start with an abstract argument. 
+Writing 
+$\mathcal{I} = \mathbb{F} (\emptyset)$
+for the initial equivariant operad in 
+$\mathsf{Op}^G(\mathsf{sSet})$,
+i.e. the operad consisting of a single operation at level $1$,
+consider any Quillen small object argument ``cofibration followed by trivial fibration factorization''
+\begin{equation}\label{OFCONST EQ}
+\begin{tikzcd}
+	\mathcal{I} \arrow[r, rightarrowtail] &
+	\O_{\mathcal{F}}
+	\arrow[r,twoheadrightarrow, "\sim"] &
+	\mathsf{Comm}
+\end{tikzcd}
+\end{equation}
+in the model structure 
+$\mathsf{Op}^G_{\mathcal{F}}(\mathsf{sSet})$.
+We claim that $\mathcal{O}_{\mathcal{F}}$
+is a $N \mathcal{F}$-operad, i.e.
+that it has fixed points as described in 
+Corollary \ref{NINFTY_REAL_COR_MAIN}.
+That $\mathcal{O}_{\mathcal{F}}(n)^{\Gamma} \sim \**$
+whenever $\Gamma \in \mathcal{F}_n$
+follows from the fact that the map
+$\mathcal{O}_{\mathcal{F}} \xrightarrow{\sim} \mathsf{Comm}$
+is a $\mathcal{F}$-equivalence.
+On the other hand, by Lemma \ref{MAINLEM LEM}
+the map 
+$\mathcal{I} \rightarrowtail \O_{\mathcal{F}}$
+is also an underlying cofibration in 
+$\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$, and thus
+$\mathcal{O}_{\mathcal{F}}$ is underlying cofibrant in 
+$\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$.
+The required condition 
+$\mathcal{O}_{\mathcal{F}} (n)^{\Gamma}
+= \emptyset $
+whenever $\Gamma \nin \mathcal{F}_n$
+now follows since this holds for any cofibrant object in $\mathsf{Sym}^G_{\mathcal{F}}(\mathsf{sSet})$,
+as can readily be checked via a cellular argument.
 
-%\begin{theorem}
-% \label{COFIBRANT_G_OPS_THEOREM}
- % Suppose $\F$ is a weak indexing system and $\V$ is strongly cellular. If $\O \in \Op^G_{\F}(\V)$ is cofibrant, then so is $\mathsf{fgt}(\O) \in \Sym^G_{\F}(\V)$.
-%\end{theorem}
+One drawback of the 
+$N \mathcal{F}$-operad $\mathcal{O}_{\mathcal{F}}$
+built in (\ref{OFCONST EQ}),
+however, is that it is not explicit,
+due to the need to use the small object argument.
+To obtain a more explicit model, we make use of the theory of genuine equivariant operads.
 
-%The bridge between the previous section and this result is the following adaptation of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}:
-%\begin{proposition}
-%  \label{F_COFIB_OP_CLOSURE_THM}
-%  If $\O\in \Op^G(\V)$ is level $\F$-cofibrant, and $u: X \to Y$ is a cofibration in $\Sym^G_{\F}(\V)$, then the free $\mathbb{F}$-extension $\P \to \P[u]$
-  % \[
-  % \begin{tikzcd}
-  %   \mathbb{F} X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-  %   \mathbb{F} Y \arrow[r] & \P[u]
-  % \end{tikzcd}
-  % \]
-%is a level $\F$-cofibration, trivial if $u$ is so.
-%\end{proposition}
-%\begin{proof}
-%  As in \ref{CELLULAR_LEVEL_COFIB_PROP2}, we use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
-% Thus, it suffices to that that, for all $T\in \Omega$, the map
-% \[
-% \left( 
-%   \mathop{\bigotimes}\limits_{v \in V^{ac}(T)}\P(T_v) \otimes \mathop{\Box}\limits_{v\in V^{in}(T)}u(T_v)
-% \right) \mathop{\cdot}\limits_{\mathrm{\Sigma_T}}\Sigma_n
-% \]
-% is a (trivial) cofibration in $\V^{G\times \Sigma_n}_{\F_n}$ given our assumptions.
+Firstly, any weak indexing system $\mathcal{F}$
+gives rise to a genuine equivariant operad
+$\partial_{\mathcal{F}}
+\in \mathsf{Op}_G(\mathsf{Set})
+$
+such that
+$\partial_{\mathcal{F}}(C) = \**$
+if $C \in \Sigma_{\mathcal{F}}$
+and 
+$\partial_{\mathcal{F}}(C) = \emptyset$
+if $C \nin \Sigma_{\mathcal{F}}$.
+Alternatively,  
+$\partial_{\mathcal{F}}$
+can also be regarded as the terminal object of
+$\mathsf{Op}_{\mathcal{F}}(\mathsf{Set})
+	\hookrightarrow 
+\mathsf{Op}_{G}(\mathsf{Set})$.
+The characterization of the cofibrant objects
+in $\mathsf{Op}_{G}(\mathsf{sSet})$
+given by Lemma \ref{MAINLEM LEM}
+now shows that the unique map
+$\iota_{\**} \mathcal{O}_{\mathcal{F}} 
+\xrightarrow{\simeq} \delta_{\mathcal{F}}$
+is a cofibrant replacement in
+$\mathsf{Op}_G(\mathsf{sSet})$ and, moreover,
+it is clear from the argument 
+in the previous paragraph that for any
+other cofibrant replacement 
+$C \delta_{\mathcal{F}} 
+\xrightarrow{\simeq} \delta_{\mathcal{F}}$
+the equivariant operad
+$\iota^{\**} (C \delta_{\mathcal{F}})
+\in \mathsf{Op}^G (\mathsf{sSet})$
+is a $N \mathcal{F}$-operad.
+We will now build an explicit model for such
+$C \delta_{\mathcal{F}}$.
+We start by considering the following
+adjunctions, where both of the right adjoints, which we write at the bottom, are forgetful functors.
+\begin{equation}\label{MAINPFADJVAR EQ}
+\begin{tikzcd}[column sep =9em]
+	\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}
+	\ar[shift left=1.5]{r}
+	{(X_C) \mapsto
+	\coprod_C \mathsf{Hom}(\minus,C) \times X_C}
+&
+	\mathsf{Sym}_{G}(\mathsf{Set}) 
+	\arrow[l, shift left=1.5] 
+	\arrow[r, shift left=1.5,swap,"\mathbb{F}_G"']
+&
+	\mathsf{Op}_G(\mathsf{Set})
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation}
+We will find it convenient in the following discussion to abuse notation by omitting
+occurrences of the forgetful functors.
+As such, we write
+$\delta_{\mathcal{F}}$ not only for the object in 
+$\mathsf{Op}_G(\mathsf{Set})$,
+but also for any of the underlying objects in 
+$\mathsf{Sym}_G(\mathsf{Set})$, 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
+Similarly, $\mathbb{F}_G$
+will denote both the functor in 
+(\ref{MAINPFADJVAR EQ})
+and the monad on 
+$\mathsf{Sym}_{G}(\mathsf{Set})$
+while 
+$\widetilde{\mathbb{F}}_G$
+will denote both the top composite functor in 
+(\ref{MAINPFADJVAR EQ})
+and the composite monad on 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
 
-%By Proposition \ref{FGTRIGHT PROP}, $\Sigma_n \cdot_{\Sigma_T}(-): \V^{G \times \Sigma_T}_{\F_T} \to \V^{G\times\Sigma_n}_{\F_n}$ is left Quillen if and only if $\mathsf{lr}(\Gamma)\in \F_n$ whenever $\Gamma \leq G \times \Sigma_T$ defines an $\F$-admissible tree with $n$ leaves; that is, precisely if $\F$ is a weak indexing system.
-%Thus, the result follows from Proposition \ref{AUTTCOFPUSH PROP} (with two labels for ``active'' and ``inert'' nodes).
-%\end{proof}
+Since both adjunctions in 
+(\ref{MAINPFADJVAR EQ})
+restrict to their $\mathcal{F}$ versions,
+in which case $\delta_{\mathcal{F}}$ denotes the terminal object of any of the $\mathcal{F}$ analogue categories,
+it follows that 
+$\delta_{\mathcal{F}} \in \mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$
+is a 
+$\widetilde{\mathbb{F}}_G$-algebra, 
+and we now consider the bar construction
+\[B_n(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+= \widetilde{\mathbb{F}}_G \circ
+\widetilde{\mathbb{F}}_G ^{\circ n} 
+(\partial_{\mathcal{F}}),
+\]
+where we regard the outer $\widetilde{\mathbb{F}}_G$ as the top composite functor in (\ref{MAINPFADJVAR EQ}).
+We now have
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\in
+\mathsf{Op}_{\mathcal{F}}(\mathsf{Set})^{\Delta^{op}}
+	\hookrightarrow
+\in \mathsf{Op}_G(\mathsf{Set})^{\Delta^{op}}
+\simeq \mathsf{Op}_G(\mathsf{sSet})$
+and, moreover, the unique genuine operad map
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\to 
+\partial_{\mathcal{F}}$
+is a weak equivalence in 
+$\mathsf{Op}_G(\mathsf{sSet})$
+thanks to the usual extra degeneracy argument
+(which applies after forgetting to 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$).
+Therefore, 
+the following result suffices to show that
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$
+is a $N \mathcal{F}$-operad.
 
-%Repackaging, this says the class of level $\F$-cofibrant operads in $\Op^G(\V)$ is closed under free $\mathbb{F}$-extensions.
+\begin{proposition}\label{BARCOF PROP}
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+\in \mathsf{Op}_G(\mathsf{sSet})
+$
+is cofibrant.
+\end{proposition}
 
-%\begin{proof}
-%  [Proof of Theorem \ref{COFIBRANT_G_OPS_THEOREM}]
-%  Since the initial operad is always $\F$-cofibrant, and any $\F$-cofibrant operad can be built out of a retract of a composite of cellular extensions starting withe initial operad, this follows from Corollary \ref{F_COFIB_OP_CLOSURE_THM} and the observation that level $\F$-cofibrations are closed under retracts.
-%\end{proof}
+The proof of Proposition \ref{BARCOF PROP}
+will follow by analyzing the skeletal filtration of
+$B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$ and showing that the corresponding latching maps,
+which are built using cubical diagrams, are cofibrations.
 
+Recall that a $n$-\textit{cube} on $\mathsf{sSet}$
+is a functor
+$X_{(\minus)} \colon \mathsf{P}_n \to 
+\mathsf{sSet}$
+for $\mathsf{P}_n$ the poset of subsets of 
+$\{1,\cdots,n\}$.
+We call a $n$-cube a \textit{monomorphism $n$-cube}
+if the latching maps
+\[
+\colim_{V \subsetneq U} X_V = L_U X
+\xrightarrow{l_U X} 
+X_U
+\]
+are monomorphisms for all $U \in \mathsf{P}_n$.
+Cubes and monomorphism cubes in
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$
+are defined identically.
 
-Combining the existence of $\F$-model structures and the above cofibrancy result, we give our first proof of the following conjecture of Blumberg-Hill  in \cite{BH15}.
+\begin{remark}\label{MONOCUBE REM}
+Using model category language, monomorphism $n$-cubes
+are the cofibrant objects for the projective model structure on $n$-cubes. As such, they are characterized as the $n$-cubes with the left lifting property against maps of $n$-cubes $Y_{(\minus)} \to Z_{(\minus)}$ that are levelwise trivial fibrations.
+\end{remark}
 
-% \begin{corollary}
-%   \label{N_INFINITY_REALIZATION_COROLLARY}
-%   For $\V = \sSet$ and $\F$ any weak indexing system, there exists an operad $N\F$ such that $N\F(n)^\Gamma \simeq *$ if $\Gamma \in \F(n)$, and is empty otherwise. In particular, $\mathrm{Ho}(N_\infty$-$\Op) \to \mathbb I$ is an equivalence of categories.%, proving Conjecture \ref{N_INFINITY_REALIZATION_CONJ}.
-% \end{corollary}
+\begin{lemma}\label{MONOCUBE LEM}
+\begin{itemize}
+\item[(a)]
+The monad 
+$\widetilde{\mathbb{F}}_G \colon 
+\mathsf{Set}^{\times \text{Ob}(\Sigma_G)} 
+\to \mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$
+sends monomorphism $n$-cubes
+to monomorphism $n$-cubes.
+\item[(b)]
+Letting $\eta \colon id \to \widetilde{\mathbb{F}}_G $ denote the unit and
+$A \to B$ be a monomorphism in 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$ the square
+\[
+\begin{tikzcd}
+	A \ar{r} \ar{d}[swap]{f} &
+	\widetilde{\mathbb{F}}_G A 
+	\ar{d}{\widetilde{\mathbb{F}}_G f}
+\\
+	B \ar{r} & \widetilde{\mathbb{F}}_G B 
+\end{tikzcd}
+\]
+is a monomorphism square (i.e monomorphism $2$-cube).
+\end{itemize}
+\end{lemma}
 
-\begin{proof}[Proof of Corollary \ref{NINFTY_REAL_COR_MAIN}, version one]
-  Recall that $\mathsf{Comm}(n) = *$ for all $n$. Consider the functorial factorization 
-  \[
-  \begin{tikzcd}
-    \varnothing \arrow[r, rightarrowtail] & N\F \arrow[r, "\sim"] & \mathsf{Comm}
-  \end{tikzcd}
-  \]
-  in $\Op^{G}_{\F}(\sSet)$ of the unique map into a cofibration and trivial fibration. Since the initial operad is cofibrant, Theorem \ref{MAINLEM LEM} implies that $\varnothing \to N\F$ is a level $\F$-cofibration, and hence each $N\F(n)$ is cofibrant in $\sSet^{G\times \Sigma_n}_{\F_n}$; thus, for all $\Gamma \not\in\F_n$, $N\F(n)^\Gamma = \varnothing$. Further, since $N\F$ is $\F$-equivalent to $*$, $N\F(n)^\Gamma \simeq *$ for all $\Gamma \in \F_n$. Hence, each $N\F(n)$ is a universal space for $\F_n$, as desired.
+\begin{proof}
+	Combining the definition of 
+	$\mathbb{F}_G$ in (\ref{FGXDEF EQ})
+	with Proposition \ref{FIBERKANMAP PROP}
+	and the fact that 
+	the rooted under categories
+	$C \downarrow_{\mathsf{r}} \Omega_G^0$
+	are groupoids 
+	(compare with (\ref{FILTRATION_LAN_LEVEL}))
+	yields the formula
+\begin{equation}\label{TILF EQ}
+\widetilde{\mathbb{F}}_G X (C) \simeq
+\coprod_{T \in 
+\mathsf{Iso}(C \downarrow_{\mathsf{r}} \Omega_G^0)}
+\left(
+\prod_{v \in V_G(T)}
+\left(
+	\coprod_{D\in \Sigma_G} \mathsf{Hom}(T_v,D) \times X(D)
+\right)
+\right) 
+\cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C),
+\end{equation}
+	where we note that the innermost expression
+	is the top left functor in (\ref{MAINPFADJVAR EQ}).
+	Distributing the inner $\coprod$ over the 
+	$\prod$ in (\ref{TILF EQ})
+	shows that 
+	$\widetilde{\mathbb{F}}_G f$
+	is a coproduct of monomorphisms with the map
+	$f \colon A \to B$
+	corresponding to the summand with $C=T=D$, and hence (b) follows.
+	
+	To show (a), note first that there are three types of operations in (\ref{TILF EQ}):
+	coproducts, inductions and products.
+	Since coproducts and inductions preserve both colimits and monomorphisms, they preserve monomorphism cubes,
+	and it thus remains to show that so do products.
+	Given monomorphism $n$-cubes
+	$Y_{(\minus)}, Z_{(\minus)}$
+	consider first the $2n$-cube 
+	$(Y \times Z)_{(U,V)} = Y_U \times Z_V$.
+	It is straightforward to check that this $2n$-cube has latching maps
+	$l_{(U,V)} Y \times Z = l_U Y \square l_V Z$,
+	and is thus a monormorphism $2n$-cube.
+	It remains to check that
+	the diagonal $n$-cube $\Delta^{\**} (Y \times Z)$
+	is a monomorphism $n$-cube.
+Considering the adjuntion
+	$\Delta^{\**}\colon 
+	\mathsf{sSet}^{\mathsf{P}_n \times \mathsf{P}_n}
+		\rightleftarrows
+	\mathsf{sSet}^{\mathsf{P}_n}
+	\colon \Delta_{\**}
+	$
+and Remark \ref{MONOCUBE REM} it suffices to check that
+$\Delta_{\**}$ preserves level trivial fibrations of cubes. But this is obvious from the formula
+$(\Delta_{\**} X)_{(U,V)} = X_{U \cup V}$.	
 \end{proof}
 
-\todo[inline]{come back}
-\begin{theorem}
-  \label{N_INFINITY_BAR}
-  $B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is 
-  \begin{itemize}
-  \item in the image of $i_*$
-  \item weakly equivalent to $\delta_{\F}$.
-  \end{itemize}
-  Hence, $i^*(B(\mathbb{F}_G, \mathbb{F}_G, \delta_{\F})$ is an $N\F$-operad.
-\end{theorem}
+
+\begin{proof}[proof of Proposition \ref{BARCOF PROP}]
+We start by analyzing the latching maps
+for 
+$B_{\bullet}
+=
+B_{\bullet}(\widetilde{\mathbb{F}}_G,
+\widetilde{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$.
+To describe the $n$-th latching map, we start with the natural $n$-cube in 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$ 
+given by
+$X^n_U = 
+\widetilde{\mathbb{F}}_G^{\circ U}
+(\partial_{\mathcal{F}})$
+and where maps 
+are induced by the unit
+$\eta \colon id \to \widetilde{\mathbb{F}}_G$.
+For example, in 
+$X^5_{(\minus)}$,
+the map 
+$X^5_{\{1,4\}} \to X^5_{\{1,3,4,5\}}$
+is 
+\[
+\widetilde{\mathbb{F}}_G^{\circ 2}
+(\partial_{\mathcal{F}})
+\xrightarrow{
+\widetilde{\mathbb{F}}_G
+\eta
+\widetilde{\mathbb{F}}_G
+\eta}
+\widetilde{\mathbb{F}}_G^{\circ 4}
+(\partial_{\mathcal{F}}).
+\]
+Since degeneracies of $B_{\bullet}$
+are also induced by $\eta$,
+and writing $\underline{n}=\{1,\cdots,n\}$ for the maximum in $\mathsf{P}_n$,
+one has that the $n$-th latching map of $B_{\bullet}$ is given by
+\[
+\check{l}_n B_{\bullet} = 
+\check{l}_{\underline{n}}
+(\widetilde{\mathbb{F}}_G
+ X^n) \simeq
+\widetilde{\mathbb{F}}_G
+(l_{\underline{n}} X^n).
+\]
+where the check decoration on $\check{l}$
+for the two leftmost latching maps indicates that the colimits defining those latching maps are taken 
+in $\mathsf{Op}_{G}(\mathsf{Set})$, while the rightmost latching map is computed in 
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
+
+The key to the proof is the claim that the maps
+$l_{\underline{n}} X^n$
+are monomorphisms. This will follow from the stronger claim that the $X^n$
+are monomorphim $n$-cubes, which we argue by induction on $n$.
+When $n=0$ there is nothing to show.
+Otherwise, for any 
+$U \subsetneq \{1,\cdots,n,n+1\}$
+the restriction of $X^{n+1}$ to subsets of
+$U$ is isomorphic to the cube $X^{|U|}$,
+so that we need only analyze the top
+latching map $l_{\underline{n_+1}} X^{n+1}$.
+We now write
+$X^{n+1} = (X^n \to 
+\widetilde{\mathbb{F}}_G X^n)$, regarding the $(n+1)$-cube as a map of $n$-cubes.
+The top latching map $l_{\underline{n_+1}} X^{n+1}$
+is then the latching map of the composite square
+\begin{equation}\label{BARCOFSQ EQ}
+\begin{tikzcd}
+ 	L_{\underline{n}} X^n \ar{d} \ar[equal]{r}
+&
+	L_{\underline{n}} X^n \ar{d}
+	\ar{r}
+&
+	X^n_{\underline{n}}
+	\ar{d}
+\\
+	L_{\underline{n}} (\widetilde{\mathbb{F}}_G X^n)
+	\ar{r}
+&
+	\widetilde{\mathbb{F}}_G(L_{\underline{n}}  X^n)
+	\ar{r}
+&
+	\widetilde{\mathbb{F}}_G X^n_{\underline{n}}
+\end{tikzcd}
+\end{equation}
+The latching map in the rightmost square
+(\ref{BARCOFSQ EQ})
+is a monomorphism since it is an instance of
+Lemma \ref{MONOCUBE LEM}(b)
+applied to the map
+$l_{\underline{n}} X^n \colon 
+L_{\underline{n}} X^n \to X^n_{\underline{n}}$, which is a monomorphism by the induction hypothesis.
+On the other hand, the left bottom horizontal map in 
+(\ref{BARCOFSQ EQ})
+is a monomorphism
+by applying Lemma \ref{MONOCUBE LEM}(a)
+to the cube $\tilde{X}^n$ obtained from 
+$X^n$ by replacing the top level
+$X^n_{\underline{n}}$ with
+$L_{\underline{n}} X^n$.
+Hence the latching maps in both squares
+in (\ref{BARCOFSQ EQ}) are monomorphisms, 
+and thus so is the monomorphism of the composite, showing that $l_{\underline{n_+1}} X^{n+1}$
+is a monomorphism, as desired.
+
+To finish the proof, one now simply notes that the skeletal filtration of $B_{\bullet}$ is 
+then iteratively described by the pushouts
+in $\mathsf{Op}_{G}(\mathsf{sSet})$
+below, where the vertical maps are cofibrations in 
+$\mathsf{Op}_{G}(\mathsf{sSet})$
+since the maps 
+$l_{\underline{n}} X^n \colon 
+L_{\underline{n}} X^n \to X^n_{\underline{n}}$
+are monomorphisms.
+\[
+\begin{tikzcd}
+	\widetilde{\mathbb{F}}_G 
+	(L_{\underline{n}} X^n \times \Delta^n) 
+	\ar{r} \ar{d} &
+	\mathsf{sk}_{n-1} B_{\bullet} \ar{d}
+\\
+	\widetilde{\mathbb{F}}_G 
+	(X^n_{\underline{n}} \times \Delta^n) 
+	\ar{r} & \mathsf{sk}_{n} B_{\bullet}
+\end{tikzcd}
+\]
+\end{proof}
+
+
+\begin{remark}
+If one appends the adjunction
+$\iota^{\**} \colon
+	\mathsf{Op}_G(\mathsf{Set})
+	\rightleftarrows
+	\mathsf{Op}^G(\mathsf{Set})
+\colon \iota_{\**}$
+to (\ref{MAINPFADJVAR EQ}) one obtains
+an additional composite monad
+$\widehat{\mathbb{F}}_G$
+on
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
+Moreover, Lemma \ref{MAINLEM LEM}
+guarantees that the top composite in 
+(\ref{MAINPFADJVAR EQ})
+lands in the essential image of $\iota_{\**}$,
+so that the monads 
+$\widetilde{\mathbb{F}}_G$ and
+$\widehat{\mathbb{F}}_G$
+are in fact isomorphic.
+This observation now hints at how 
+one can build a model for 
+$N \mathcal{F}$-operads 
+directly in terms of (regular) equivariant operads,
+i.e. without making use of genuine equivariant operads.
+Namely, consider the adjunctions
+\begin{equation}\label{MAINPFADJVARVAR EQ}
+\begin{tikzcd}[column sep =3.3em]
+	\prod_{n \geq 0}
+	\mathsf{Set}^{\times \text{Ob}
+	\left(\mathsf{O}^{op}_{\mathcal{F}_n^{\Gamma}}\right)}
+	\ar[shift left=1.5]{r}
+&
+	\prod_{n \geq 0}
+	\mathsf{Set}^{\mathsf{O}^{op}_{\mathcal{F}_n^{\Gamma}}} 
+	\arrow[l, shift left=1.5]
+	\ar[r, shift left=1.5,swap,"\iota^{\**}"']
+&
+	\mathsf{Sym}^{G}(\mathsf{Set}) 
+	\ar[l, shift left=1.5,swap,"\iota_{\**}"']
+	\arrow[r, shift left=1.5,swap,"\mathbb{F}"']
+&
+	\mathsf{Op}^G(\mathsf{Set})
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation}
+Abusing notation by again writing 
+$\widehat{\mathbb{F}}_G$
+for the composite monad and
+$\delta_{\mathcal{F}}$
+for the obvious object on 
+the leftmost category,
+it is not hard to
+use the equivalence in 
+Lemma \ref{FAMILY_COROLLAS_LEM}
+to leverage our analysis so as to conclude that
+the bar construction
+$B_{\bullet}(\widehat{\mathbb{F}}_G,
+\widehat{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$
+built using (\ref{MAINPFADJVARVAR EQ})
+is also a cofibrant $N \mathcal{F}$-operad.
+
+This latter model may seem deceptively simple. 
+However, it is not easy to prove directly that
+$B_{\bullet}(\widehat{\mathbb{F}}_G,
+\widehat{\mathbb{F}}_G,
+\partial_{\mathcal{F}})
+$
+is a $N \mathcal{F}$-operad,
+since the required claim that
+$\partial_{\mathcal{F}}$ is a 
+$\widehat{\mathbb{F}}_G$-algebra
+is itself not obvious.
+More precisely, the issue is that 
+in building $\widehat{\mathbb{F}}_G$
+one must compute fixed points of free operads, which is a non trivial task. 
+In  the present paper, this fixed point analysis 
+is built into Lemma \ref{MAINLEM LEM}.
+Alternatively, a more direct fixed point analysis is given by Rubin in \cite{Rub17} and, in fact, the key technical analysis therein is tantamount to the claim that 
+$\partial_{\mathcal{F}})$
+is indeed a $\widehat{\mathbb{F}}_G$-algebra.
+\end{remark}
 
 
 %\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
