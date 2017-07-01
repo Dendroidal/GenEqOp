@@ -52,11 +52,11 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy, and moreover up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
 consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
-referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, loop spaces, and more,
+referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, and more,
 all being recovered as algebras over some fixed operad in an appropriate category.
 Of special importance are the 
 $E_\infty$-operads, introduced by 
@@ -154,7 +154,7 @@ the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = 
 are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
 and that $\Gamma \leq G$ iff $\Gamma$ is the graph of a trivial homomorphism. 
-However, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
+As it turns out, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
 and indeed it is possible
 to build maps $\O \to \O'$ where
@@ -182,7 +182,8 @@ the corresponding \textit{norm} is a $G$-spectrum $N^X R$
 whose underlying spetrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$
 but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
-Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e. strictly commutative $G$-ring spectrum, 
+Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e.
+any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
 ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
@@ -191,13 +192,14 @@ ring multiplication further induces so called \textit{norm maps}
 Furthermore, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
 then satisfy a number of 
 natural equivariance and associativity conditions.
-Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for varying $H$
+Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for various $H$ simultaneously
 (for an example packaged in operadic language,
 see (\ref{INTFIXPTCOMP EQ}) below).
 
 The key observation at the source of the work in 
 \cite{BH15} is then that, operadically, 
-norm maps are encoded by the graph fixed points as in (\ref{GENEOPEQ EQ}).
+norm maps are encoded by the graph fixed points 
+appearing in (\ref{GENEOPEQ EQ}).
 More explicitly, noting that a $H$-set $X$ with $n$ elements 
 is encoded by a partial homomorphism 
 $G \geq H \to \Sigma_n$, 
@@ -207,7 +209,7 @@ $\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follo
 $\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
-The flaw with the $G$-trivial $E_{\infty}$-operad
+The flaw of the $G$-trivial $E_{\infty}$-operad
 described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$, thus lacking 
 some of the data encoded by $\mathsf{Comm}$.
 Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
@@ -218,11 +220,11 @@ while the equivalences (\ref{GENEOPEQ EQ})
 study ``operads with norm maps''.
 
 Our first main result, Theorem \ref{MAINEXIST1 THM}, 
-establishes the existence of a model structure on operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
-though our analysis goes significantly further, again guided by Blumberg-Hill's work in \cite{BH15}.
+establishes the existence of a model structure on $G$-operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
+though our analysis goes significantly further, again guided by Blumberg and Hill's work in \cite{BH15}.
 
 The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of new types of equivariant operads, which they dub $N_{\infty}$-operads.
-The minimum type of $N_{\infty}$-operads is that of the 
+The minimal type of $N_{\infty}$-operads is that of the 
 $G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
 while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
 The remaining types, which interpolate between 
@@ -237,8 +239,7 @@ More concretely, each type of $N_{\infty}$-operad is determined by a collection 
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
-
-Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that such $\mathcal{F}$ must satisfy.
+Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that these $\mathcal{F}$ must satisfy.
 The simplest of these conditions
 state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first conditions, which are common in equivariant homotopy theory,
 are a simple consequence of each $\O(n)$ being a space.
@@ -250,21 +251,31 @@ which are more easily described in terms of the
 $H$-sets $X$ associated to the graph subgroups,
 concern closure of those under 
 disjoint union, cartesian product, subobjects,
-and an entirely novel key condition called \textit{self-induction}.
+and an entirely new key condition called \textit{self-induction}.
 The precise conditions are collected in
 \cite[Def. 3.22]{BH15},
 which also introduces the term \textit{indexing system} for 
-a $\mathcal{F}$ satisfying all such conditions.
+a $\mathcal{F}$ satisfying all of those conditions.
 The main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists, the associated collection $\mathcal{F}$ must be an indexing system.
 However, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, was left as a conjecture.
 
 
 One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain in
 Corollary \ref{NINFTY_REAL_COR_MAIN}.
-This conjecutre has been independently confirmed in \cite{Rub17} and announced by Gutierrez-White \cite{GW},
-both by different methods.
-Consequently, Rubin obtains models of $N\mathcal F$-operads which are explicit, while the models of Gutierrez-White are cofibrant;
-our model have the advantage of satisfying both properties.
+We note here that this conjecture has also been concurrently verified
+by Gutierrez-White in announced work 
+and by Rubin in \cite{Rub17}, 
+with each of their approaches having different advantages:
+the Gutierrez-White's
+model for $N \mathcal{F}$
+is cofibrant 
+while Rubin's model is explicit.
+Our model, which emerges from a more conceptual approach, satisfies both of these desiderata.
+
+%This conjecutre has been independently confirmed in \cite{Rub17} and announced by Gutierrez-White \cite{GW},
+%both by different methods.
+%Consequently, Rubin obtains models of $N\mathcal F$-operads which are explicit, while the models of Gutierrez-White are cofibrant;
+%our model have the advantage of satisfying both properties.
 %and, moreover, to produce models of $N \mathcal{F}$-operads that
 %are as explicit as possible.
 %\footnote{This conjecture has been independently verified in \cite{Rub17} and announced by Gutierrez-White. However, their methods differ from ours: Rubin builds each $N\mathcal F$-operad explicitly using a free operad construction and verifies its properties directly, while Gutierrez-White use a ``cofibrant replacement'' technique similar to our first proof of \ref{NINFTY_REAL_COR_MAIN}; neither approach is as controlled or direct as Theorem \ref{N_INFINITY_BAR}.}
@@ -273,10 +284,10 @@ our model have the advantage of satisfying both properties.
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
 Given a family $\mathcal{F}$ of subgroups of $G$ 
 (i.e. a collection closed under conjugation and subgroups), a \textit{universal space} $X$ for $\mathcal{F}$, 
-also called a $E \mathcal{F}$-space,
+also called an $E \mathcal{F}$-space,
 is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
 In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
-each $\O(n)$ is necessarily a $E \mathcal{F}_n$-space.
+each $\O(n)$ is necessarily an $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any
 choice of the family $\mathcal{F}$ is 
 best understood in light of Elmendorf's classical result from \cite{Elm83}
@@ -492,14 +503,14 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
+where $\O(X)$ for a $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 (\ref{INTFIXPTCOMP EQ})
 correspond to the nodes of the orbital representation
-in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing edge \textit{orbits}, while the output 
+in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing \textit{edge orbits}, while the output 
 $\O(H/L \amalg H/K)^{H}$
-is similarly determined by both the leaf and root edge \textit{orbits}.
+is similarly determined by both the leaf and root edge orbits.
 The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
@@ -514,7 +525,7 @@ has levels $\mathcal{P}(X)$ for each $H$-set $X$, $H\leq G$,
 that mimic the role of the fixed points $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$ for 
 $\mathcal{O} \in \mathsf{Op}^G$.
 More explicitly, there are restriction maps 
-$\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq L$,
+$\mathcal{P}(X) \to \mathcal{P}(X|_{K})$ for $K \leq H$,
 isomorphisms
 $\mathcal{P}(X)\simeq \mathcal{P}(g X)$
 where $gX$ denotes the conjugate $gHg^{-1}$-set,
@@ -544,7 +555,8 @@ in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
 %\end{align*}
 %generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
 Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
-must satisfy associativity, unitality, compatibility with restriction maps, and equivariance conditions, as encoded by the theory of $G$-trees. Rather than making such compatibilities explicit, it will be more convenient and effective for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
+must satisfy associativity, unitality, compatibility with restriction maps, and equivariance conditions, as encoded by the theory of $G$-trees. 
+Rather than making such compatibilities explicit, however, we will find it preferable for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
 
 We end this introduction with an alternative perspective on the role of genuine equivariant operads.
@@ -567,7 +579,7 @@ strengthens the (not so basic) observation that for a simplicial operad $\O$ the
 $\text{ho}(\mathcal{O})$
 is neither just a $G$-operad nor 
 just a coefficient system of operads
-but rather a genuine equivariant operad.
+but rather the richer algebraic structure that we refer to as a ``genuine equivariant operad''.
 
 
 %We conclude this introduction with an alternative interpretation of our main result, again inspired by Elmendorf-Piacenza.
@@ -682,7 +694,7 @@ which are less standard, are discussed in
 \S \ref{PUSHPOW SEC}, respectively.
 Further, by \textit{semi-model category}
 we mean the notion introduced in 
-\cite{Hov98} and \cite{Spi01}, 
+\cite{Ho98} and \cite{Spi01}, 
 which relaxes the model structure axioms by requiring that some of the axioms need only apply
 if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
 
@@ -702,14 +714,16 @@ if the domains of certain cofibrations are cofibrant. For further details, we re
 %See \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09} for precise definitions and further discussion.
 
 Our next result concerns the model structure
-on the category 
+on the new category 
 $\mathsf{Op}_G (\mathcal{V})$ of genuine equivariant operads
-introduced in this paper, the construction of which we now briefly outline.
+introduced in this paper. Before stating the result, we must first outline how 
+$\mathsf{Op}_G (\mathcal{V})$
+itself is built.
 Firstly, the levels of each 
 $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
 i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
 are encoded by a category $\Sigma_G$ of 
-$G$-corollas, introduced in \S \ref{LRVERT SEC},
+\textit{$G$-corollas}, introduced in \S \ref{LRVERT SEC},
 which generalizes the usual category 
 $\Sigma$ of finite sets and isomorphisms.
 We then define $G$-symmetric sequences by
@@ -764,7 +778,7 @@ a map $\mathcal{P} \to \mathcal{P}'$ is a weak equivalence (resp. fibration) if 
 are weak equivalences (fibrations) in $\mathcal{V}$
 for each $C \in \Sigma_G$.
 
-More generally, for $\mathcal{F}$ a weak indexing system, a projective model structure on 
+More generally, for $\mathcal{F}$ a weak indexing system, the projective model structure on 
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exists. Explicitly, weak equivalences (resp. fibrations) are
 determined by (\ref{GENEQTHM EQ})
 for $C \in \Sigma_{\mathcal{F}}$.
@@ -853,7 +867,7 @@ is discussed in
 \S \ref{PUSHPOW SEC}.
 
 
-Lastly, our techniques also confirm 
+Lastly, our techniques also verify 
 the main conjecture of \cite{BH15},
 which we discuss in \S \ref{NINFTY_SECTION}.
 Moreover, we note that our models for
@@ -886,8 +900,7 @@ In order to simplify our discussion this
 paper focuses exclusively on the theory of 
 single colored (genuine) equivariant operads.
 Nonetheless, we conjecture that all three of 
-Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},
-\ref{MAINQUILLENEQUIV THM}
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}
 extend to the colored setting,
 and intend to show this in upcoming work.
 We note, however, that the colored setting comes with an important new subtlety: 
@@ -895,7 +908,8 @@ while usual colored equivariant operads have $G$-sets of objects,
 colored genuine equivariant operads will instead have \textit{coefficient systems} of objects.
 
 This paper and \cite{Pe17} are the first pieces of a broader project aimed at understanding different models for equivariant operads. 
-In upcoming work we intend to connect the two papers by
+In the next major step of the project, 
+we intend to connect the two papers by
 generalizing the main theorem of
 Cisinski and Moerdijk in \cite{CM13b} and 
  showing the existence of a Quillen equivalence
@@ -989,16 +1003,17 @@ as discussed in the previous paragraph.
 
 \subsection{Outline}
 
-This paper roughly consists of two major halves, 
+This paper is comprised of two major halves, 
 with 
-\S \ref{PLANAR_SECTION},\S \ref{GENUINE_OP_MONAD_SECTION}
+\S \ref{PLANAR_SECTION},
+\S \ref{GENUINE_OP_MONAD_SECTION}
 addressing the definition of the novel structure of
 genuine equivariant operads,
 and 
-\S \ref{FREE_EXTENSIONS_SECTION},\S \ref{COFIB SEC}
-addressing the proofs of the main results
-Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},
-\ref{MAINQUILLENEQUIV THM}.
+\S \ref{FREE_EXTENSIONS_SECTION},
+\S \ref{COFIB SEC}
+addressing the proofs of the main results,
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}.
 A more detailed outline follows.
 
 \S \ref{PRELIM_SECTION}
@@ -1007,20 +1022,20 @@ Of particular importance are the notion of
 split Grothendieck fibration,
 which we recall in \S \ref{GROTHFIB REF},
 and the categorical wreath product defined in 
-\S \ref{WREATH SEC}, which we use when defining
+\S \ref{WREATH SEC}, which we use to define
 symmetric monoidal categories with diagonals
 (Remark \ref{FINSURJ REM}).
 
 \S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
 \S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
  in the context of equivariant trees. The key idea, which is captured in diagram (\ref{SUBSDATUMTREES EQ}), 
-is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent defining these terms, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encoded iterated substitution.
+is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent defining these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
 
-\S \ref{GENUINE_OP_MONAD_SECTION} then provides the formal definition of the category 
+\S \ref{GENUINE_OP_MONAD_SECTION} then uses planar strings to provide the formal definition of the category 
 $\mathsf{Op}_G(\mathcal{V})$
 of genuine equivariant operads in a 
 two step process in 
-\S \ref{MONSPAN SEC}, \S \ref{FGMON SEC}.
+\S \ref{MONSPAN SEC} and \S \ref{FGMON SEC}.
 \S \ref{COMPARISON_REGULAR_SECTION} then compares 
 the genuine equivariant operad category
 $\mathsf{Op}_G(\mathcal{V})$
@@ -1045,7 +1060,7 @@ with
 dedicated to providing a suitable filtration of such free extensions,
 and \S \ref{MAINEXIST SEC} concluding the proofs.
 
-\S \ref{COFIB SEC} proves our main result 
+\S \ref{COFIB SEC} proves our main result,
 Theorem \ref{MAINQUILLENEQUIV THM}.
 The core of the technical analysis 
 is given in 
@@ -1056,7 +1071,7 @@ which carefully study the interplay between families of subgroups, fixed points,
 and provide the necessary ingredients for
 the characterization of the cofibrant objects
 in $\mathsf{Op}_G (\mathcal{V})$
-given in Lemma \ref{MAINLEM LEM},
+given by Lemma \ref{MAINLEM LEM},
 and from which 
 Theorem \ref{MAINQUILLENEQUIV THM}
 easily follows.
