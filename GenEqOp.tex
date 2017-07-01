@@ -491,7 +491,7 @@ given by the (single) tree on the right.
 					edge from parent node [right] {$(G/K) \cdot c$}}%
 				edge from parent node [right] {$(G/H) \cdot d$}};%
 		\end{scope}%
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway]{$T$}; %
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$}; %
 		\node at (9.15,-0.15) {$T$};
 	\end{tikzpicture}%
 \end{equation}%
@@ -2034,8 +2034,16 @@ using the algebraic model of
 introduced by Weiss in \cite{We12} and further worked out by the second author in \cite[\S 5]{Pe17}.
 This latter will be our ``official'' model,
 though a detailed understanding of broad posets is needed only
-to follow our formal discussion of planar structures in \S \ref{PLASTR SEC},
-and the reader willing to accept the results therein should be able to read the remainder of the paper.
+to follow our formal discussion of planar structures in \S \ref{PLASTR SEC}.
+Otherwise, the reader willing to accept the results of \S \ref{PLASTR SEC} should 
+need only an intuitive grasp of the notations 
+$\underline{e} \leq e$,
+$f \leq_d e$ and $e^{\uparrow}$
+to read the remainder of the paper.
+Such understanding can be obtained by 
+reading \cite[Example 5.10]{Pe17}
+and Example \ref{PLANAREX EX} below.
+
 
 Given a finite group $G$, there is also a category $\Omega_G$
 of $G$-trees, jointly discovered by the authors and first discussed by the second author in 
@@ -2076,9 +2084,9 @@ definitions of \textit{planar trees} along those lines
 are found throughout the literature.
 However, to allow for precise proofs of some key results 
 concerning the interaction of planar structures with the maps in $\Omega$ 
-(namely Propositions \ref{PLANARPULL PROP} and  \ref{SUBDATAUNDERPLAN PROP})
+(namely Propositions \ref{PLANARPULL PROP},  \ref{SUBDATAUNDERPLAN PROP})
 we will instead use a combinatorial definition 
-of planar structure in the context of broad posets.
+of planar structures in the context of broad posets.
 
 In what follows a tree will be a 
 \textit{dendroidally ordered broad poset}
@@ -2094,9 +2102,9 @@ as in \cite{We12}, \cite[Def. 5.9]{Pe17}.
 \end{definition}
 
 
-\begin{example}
+\begin{example}\label{PLANAREX EX}
 An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the number labels.
-\begin{equation}\label{PLANAREX EQ}
+\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -2128,7 +2136,7 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 				edge from parent node {$7$}}
 			edge from parent node [swap] {$13$}};
 	\end{tikzpicture}
-\end{equation}
+\]
 Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$
 and $e \leq_p f$ holds if either
 $e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured at the node where the paths intersect).
@@ -2258,47 +2266,50 @@ $I(e_1) \cap I(e_2) \cap I(e_3)$.
 \end{example}
 
 
-\begin{notation}
-	Given a set $S$ of size $n$ we write
-	$\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will freely abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order in $S$.
-\end{notation}
+Given a set $S$ of size $n$ we write
+$\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will also abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order on $S$.
+
 
 
 \begin{proposition}\label{PLANARIZATIONCHAR PROP}
 	Let $T \in \Omega$ be a tree. There is a bijection
-	\begin{equation}\label{PLANAR EQ}
-	\begin{tikzcd}[row sep = 0.5em]
+\[
+	\begin{tikzcd}[row sep = 0em]
 		\{\text{planar structures }(T,\leq_p)\} \ar{r}{\simeq} &
 		\prod_{(a^{\uparrow} \leq a) \in V(T)} \mathsf{Ord}(a^{\uparrow}) \\
 		\leq_p \ar[mapsto]{r} & (\leq_p|_{a^{\uparrow}})
 	\end{tikzcd}	
-	\end{equation}
+\]
 \end{proposition}
 
 
 \begin{proof}
-We will keep the notation of Proposition \ref{INPUTPREDECESSORPROP PROP} throughout: $e, f$ are $\leq_d$-incomparable edges and we write $b = e \vee f$. 
+We will keep the notation of Proposition \ref{INPUTPREDECESSORPROP PROP} throughout,
+i.e. $e, f$ are $\leq_d$-incomparable edges and we write $b = e \vee f$. 
 
-	We first show that (\ref{PLANAR EQ}) is injective, i.e. that the restrictions $\leq_p|_{a^{\uparrow}}$ determine if 
+	We first show injectivity,
+	i.e. that the restrictions $\leq_p|_{a^{\uparrow}}$ determine if 
 	$e <_p f$ holds or not.
 If $b^{\uparrow}_e <_p b^{\uparrow}_f$, the relations
 $e \leq_d b^{\uparrow}_e <_p b^{\uparrow}_f \geq_d f$
 and Definition \ref{PLANARIZE DEF} imply it must be $e <_p f$.
 Dually, if $b^{\uparrow}_f <_p b^{\uparrow}_e$ then 
 $f <_p e$. Thus 
-$b^{\uparrow}_e <_p b^{\uparrow}_f \Leftrightarrow e <_p f$ and hence (\ref{PLANAR EQ}) is indeed injective.
+$b^{\uparrow}_e <_p b^{\uparrow}_f \Leftrightarrow e <_p f$ and injectivity follows.
 
-To check that (\ref{PLANAR EQ}) is surjective, it suffices (recall that $e,f$ are assumed $\leq_d$-incomparable) to check that
+To check surjectivity, 
+%that (\ref{PLANAR EQ}) is surjective,
+ it suffices (recall that $e,f$ are assumed $\leq_d$-incomparable) to check that
 defining $e \leq_p f$ to hold iff $b^{\uparrow}_e < b^{\uparrow}_f$ holds in $b^{\uparrow}$ yields a planar structure.
 
 Antisymmetry and the total order conditions are immediate, and it thus remains to check the transitivity and planar conditions.
 Transitivity of $\leq_p$ in the case $e' \leq_d e <_p f$ and the planar condition, which is the case $e <_p f \geq_d f'$, follow from Proposition \ref{INPUTPREDECESSORPROP PROP}(c). Transitivity of $\leq_p$ in the case $e <_p f \leq_d f'$
-follows since either $e \leq_d f'$ or else $e,f'$ are $\leq_d$-incomparable, in which case one can apply \ref{INPUTPREDECESSORPROP PROP}(c) with the roles of $f,f'$ reversed.
+follows since either $e \leq_d f'$ or else $e,f'$ are $\leq_d$-incomparable, in which case one can apply Proposition \ref{INPUTPREDECESSORPROP PROP}(c) with the roles of $f,f'$ reversed.
 
 It remains to check transitivity in the hardest case, that of 
 $e <_p f <_p g$ with $\leq_d$-incomparable $f,g$.
 We write $c = e \vee f \vee g$.
-By the ``therefore'' part of Proposition \ref{TERNARYJOIN PROP}, either
+By the ``therefore'' part of Proposition \ref{TERNARYJOIN PROP}, either:
 \begin{inparaenum}
 	\item[(i)] $e \vee f <_d c$, in which case 
 	Proposition \ref{TERNARYJOIN PROP}
@@ -2326,19 +2337,19 @@ Definition \ref{PLANARIZE DEF}.
 
 
 The discussion of the substitution procedure in \S \ref{SUBS SEC} 
-will be significantly simplified by working with 
+will be simplified by working with 
 a model for the category $\Omega$
-possessing exactly one representative
+with exactly one representative
 of each possible planar structure on each tree or, more precisely, if the only isomorphisms preserving the planar structure are the identities.
 On the other hand, exclusively using such a model for $\Omega$ throughout would, among other issues, make the discussion of faces in \S \ref{OUTTALL SEC} rather awkward.
-We now outline our conventions to address such issues.
+We now describe our conventions to address such issues.
 
 Let $\Omega^p$, the category of \textit{planarized trees}, denote the category with objects pairs $T_{\leq_p}=(T,\leq_p)$ of trees together with a planar structure  and morphisms the \textit{underlying} maps of trees (so that the planar structures are ignored).
 There is a full subcategory $\Omega^s \hookrightarrow \Omega^p$, whose objects we call \textit{standard models}, of those $T_{\leq_p}$ whose underlying set is one of the sets $\underline{n} = \{1,2,\cdots,n\}$ and for which $\leq_p$ coincides with the canonical order.
 
 \begin{example}\label{STANDMODEL EX}
-	Some examples of standard models, i.e. objects of $\Omega^s$, follow (further, (\ref{PLANAREX EQ}) can also be interpreted as such an example).
-\begin{equation}\label{PLANAROMEGAEX1 EQ}
+	Some examples of standard models, i.e. objects of $\Omega^s$, follow (further, Example \ref{PLANAREX EX} can also be interpreted as such an example).
+\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -2390,7 +2401,7 @@ There is a full subcategory $\Omega^s \hookrightarrow \Omega^p$, whose objects w
 				edge from parent node {$3$}}
 			edge from parent node [swap] {$7$}};
 	\end{tikzpicture}
-\end{equation}
+\]
 Here $T_1$ and $T_2$ are isomorphic to each other but not isomorphic to any other standard model in $\Omega^s$ while both $C$ and $U$ are the unique objects in their isomorphism classes. 
 \end{example}
 
@@ -2399,7 +2410,7 @@ $(\minus)^s \colon \Omega^p \to \Omega^s$
 and a natural transformation 
 $\sigma \colon id \Rightarrow (\minus)^s$
 given by isomorphisms preserving the planar structure
-(in fact, the pair $\left((\minus)^s, \sigma \right)$ is  unique characterized by this property).
+(in fact, the pair $\left((\minus)^s, \sigma \right)$ is  uniquely characterized by this property).
 
 
 \begin{remark}\label{FORESTPLAN REM}
@@ -2412,9 +2423,7 @@ equivalent to total orderings of the nodes of $F$ together with a total ordering
 There are thus two competing notions of standard forests: the \cite[Def. 5.27]{Pe17} model $\Phi^s$ whose objects are planar forest structures on one of the standard sets $\{1,\cdots,n\}$ and (following the discussion at the start of \S \ref{PLANAR_SECTION})
 the model $\Fin \wr \Omega^s$, whose objects are tuples, indexed by a standard set, of planar tree structures on standard sets.
 An illustration follows.
-
-
-\begin{equation}\label{TWOPLAFORCONV EQ}
+\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -2459,11 +2468,14 @@ An illustration follows.
 					edge from parent node [near end] {$1$}}
 				edge from parent node {$3$}}
 			edge from parent node [swap] {$5$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (2.1,-0.2) -- (-0.1,-0.2) node[midway]{$F$}; %
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (8.1,-0.2) -- (5.9,-0.2) node[midway]{$F$}; %
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (2.1,-0.2) -- (-0.1,-0.2) node[midway,inner sep=4pt]{$F$}; %
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (8.1,-0.2) -- (5.9,-0.2) node[midway,inner sep=4pt]{$F$}; %
 	\end{tikzpicture}
-\end{equation}
-It is however clear that there is a \textit{canonical} isomorphism $\Phi^s \simeq \Fin \wr \Omega^s$ (with the two side of (\ref{TWOPLAFORCONV EQ}) representing the same planar forest). 
+\]
+However, there is a 
+\textit{canonical} isomorphism $\Phi^s \simeq \Fin \wr \Omega^s$ 
+(with both sides of the diagram above then
+depicting the same planar forest). 
 Moreover, while the similarly defined categories $\Phi^p$
 and $\Fin \wr \Omega^p$ are only equivalent (rather than isomorphic), their retractions onto $\Phi^s \simeq \Fin \wr \Omega^s$ are compatible, and we will thus henceforth not distinguish between 
 $\Phi^s$ and $\Fin \wr \Omega^s$.
@@ -2476,7 +2488,7 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
 	From now on we write simply $\Omega$, $\Omega_G$ to denote the categories $\Omega^s$, $\Omega_G^s$ of standard models (where planar structures are defined in the underlying forest as in Remark \ref{FORESTPLAN REM}). 
 Therefore, whenever a construction produces an object/diagram in $\Omega^p$, $\Omega^p_G$ (of trees, $G$-trees) we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
 
-Similarly, any finite set or orbital finite $G$-set together with a total order is implicitly reinterpreted as an object in 
+Similarly, any finite set or orbital finite $G$-set together with a total order is implicitly reinterpreted as an object of
 $\Fin$, $\mathsf{O}_G^p$.
 \end{convention}
 
@@ -2515,7 +2527,7 @@ Applying $(\minus)^s$ to the diagram of underlying identities on the left yields
 
 \begin{example}
 An additional reason to leave the use of $(\minus)^s$ implicit
-as detailed in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
+as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
 
 For example, when $G = \mathbb{Z}_{/4}$, 
 $\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees $T_1,T_2 \in \Omega_G$ on the right.
@@ -2580,7 +2592,7 @@ $\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation
 				child[sibling distance=1.75em]{
 				edge from parent node [near end]  {$a+1$}}
 			edge from parent node [swap] {$b+1$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,-2) -- (2.4,-2) node[midway]{$T_1$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,-2) -- (2.4,-2) node[midway,inner sep=4pt]{$T_1$};
 		\node at (7.5,-2) {}
 			child{node [dummy] {}
 				child[sibling distance=1.75em]{
@@ -2595,7 +2607,7 @@ $\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation
 				child[sibling distance=1.75em]{
 				edge from parent node [near end]  {$a+3$}}
 			edge from parent node [swap] {$b+1$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (9.85,-2) -- (7.4,-2) node[midway]{$T_2$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (9.85,-2) -- (7.4,-2) node[midway,inner sep=4pt]{$T_2$};
 		\node at (-1,-4.25) {}
 			child{node [dummy] {}
 				child[sibling distance=1.75em]{
@@ -2628,7 +2640,7 @@ trees in the isomorphism class of the tree depicted in
 (\ref{D6SMALLER EQ}).
 \end{example}
 
-The attentive reader may have noted
+The reader may have noted
 that it follows from 
 Proposition \ref{GROTHSTAB PROP}
 that both vertical maps in (\ref{OGDEF EQ})
@@ -2647,10 +2659,10 @@ note first that unpacking definitions shows that
 $\mathsf{r}(T)$ is the ordered set of tree components of  
 $T\in \Omega_G$,
 which coincides with the ordered set of roots.
-The exact choice of name is further meant to accentuate 
-the connection with another key functor
-which we call the \textit{leaf-root functor},
-described in \S \ref{LRVERT SEC}.
+The exact name choice is meant to accentuate the connection with another key functor
+described in \S \ref{LRVERT SEC},
+which we call the \textit{leaf-root functor}.
+
 
 Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
@@ -2715,7 +2727,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [near end] {$i a$}}
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$};
 	\end{scope}
 	\begin{scope}[yshift=4em]
 		\node at  (3,0) {}
@@ -2748,7 +2760,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [near end] {$i a$}}
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\tau^{\**}T$};
 	\end{scope}
 	\begin{scope}[yshift=-4em]
 		\node at  (0,0) {}
@@ -2781,7 +2793,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [near end] {$\phantom{+1}-i d$}}
 				edge from parent node {$i e$}}
 			edge from parent node [swap] {$i f$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\tau^{\**}T$};
 	\end{scope}
 	\begin{scope}[yshift=12em,xshift=20em]
 		\node at  (1.5,0) {$S$}
@@ -2831,7 +2843,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [near end] {$\phantom{+1}a'$}}
 				edge from parent node {$b'$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\pi^{\**}S$};
 	\end{scope}
 	\begin{scope}[yshift=-4em,xshift=20em]
 		\node at  (0,0) {}
@@ -2864,7 +2876,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [near end] {$\phantom{+1}i d$}}
 				edge from parent node {$i e$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway]{$\pi^{\**}S$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\pi^{\**}S$};
 	\end{scope}
 	\end{tikzpicture}
 \]
@@ -2914,7 +2926,7 @@ that $\varphi$ reflects $\leq_d$-comparability.
 
 
 \begin{remark}\label{PULLPLANAR REM}
-	Proposition \ref{PLANARPULL PROP} says that planar structures  can be pulled back along independent maps. However, they can not always be pushed forward. As an example, in the notation of (\ref{PLANAROMEGAEX1 EQ}), consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back along independent maps. However, they can not always be pushed forward. As a counter-example, in the setting of Example \ref{STANDMODEL EX}, consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
 \end{remark}
 
 
