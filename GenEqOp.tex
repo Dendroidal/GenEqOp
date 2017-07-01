@@ -209,7 +209,7 @@ $\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follo
 $\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
-The flaw of the $G$-trivial $E_{\infty}$-operad
+The flaw of the $G$-trivial $E_{\infty}$-operads
 described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$, thus lacking 
 some of the data encoded by $\mathsf{Comm}$.
 Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
@@ -1029,7 +1029,7 @@ symmetric monoidal categories with diagonals
 \S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
 \S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
  in the context of equivariant trees. The key idea, which is captured in diagram (\ref{SUBSDATUMTREES EQ}), 
-is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent defining these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
+is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent studying these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
 
 \S \ref{GENUINE_OP_MONAD_SECTION} then uses planar strings to provide the formal definition of the category 
 $\mathsf{Op}_G(\mathcal{V})$
@@ -1202,9 +1202,13 @@ $e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute
 
 In most contexts the cartesian arrows $f^{\**} e \to e$ are assumed to be defined only up to unique isomorphism, 
 but in all examples considered in this paper
-we will in fact be able so identify preferred choices of cartesian arrows to which we will refer to as \textit{pullbacks}.
+we will be able to identify preferred choices of cartesian arrows, and we will refer to those preferred choices as \textit{pullbacks}.
 Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
-As a terminological note, one sometimes encounters the term \textit{split fibration} to refer to a Grothendieck fibration together with such a choice of pullbacks, though we will rarely have need to make the distinction outside of the present discussion. 
+On a terminological note, 
+a Grothendieck fibration together with 
+such choices of pullbacks is sometimes called a 
+\textit{split fibration}, but we will have no need to distinguish the two concepts outside
+of the present discussion.
 
 A map of Grothendieck fibrations (resp. split fibrations) is then a commutative diagram
 \begin{equation}
@@ -1220,7 +1224,7 @@ such that $\delta$ preserves cartesian arrows (pullbacks).
 
 There is a well known equivalence between Grothendieck fibrations over $\mathcal{B}$ and contravariant pseudo-functors
 $\mathcal{B}^{op} \to \mathsf{Cat}$
-with split fibrations corresponding to (regular) contravariant functors. We now recall how this works in the (covariant) split case.
+with split fibrations corresponding to (regular) contravariant functors. We recall how this works in the split case, starting with the covariant version.
 
 \begin{definition}\label{GROTHCONS DEF}
 Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
@@ -1230,7 +1234,7 @@ Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 	b \ar[mapsto]{r} & \mathcal{E}_b
 \end{tikzcd}
 \end{equation}
-the (covariant) Grothendieck construction 
+the covariant Grothendieck construction 
 $\mathcal{B} \ltimes \mathcal{E}_{\bullet}$
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
 $e \in \mathcal{E}_d$ and 
@@ -1240,10 +1244,17 @@ where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the 
 
 Note that the chosen pushforward of $(b,e)$ along 
 $\colon b \to b'$ is then $(b',f_{\**} e)$.
+
+Further, for a contravariant functor
+$\mathcal{E}_{\bullet} \colon
+\mathcal{B}^{op} \to \mathsf{Cat}$,
+the contravariant Grothendieck construction is
+$(\mathcal{B}^{op} \ltimes 
+\mathcal{E}_{\bullet})^{op}$.
 \end{definition}
 
 
-One useful property of Grothendieck constructions is that
+One useful property of Grothendieck fibrations is that
 right Kan extensions can be computed using fibers, i.e., 
 given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category $\mathcal{V}$ one has
 \begin{equation}\label{FIBERKAN EQ}
@@ -1347,7 +1358,7 @@ Throughout we will let $\Fin$ denote the usual skeleton of the category of (orde
 \begin{definition}
 	For a category $\C$, we write 
 	$\Fin \wr \C = (\Fin^{op} \ltimes \C^{\times \bullet})^{op}$ 
-	for the opposite of the Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
+	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
 \[
 \begin{tikzcd}[row sep=0pt]
 	\Fin^{op} \ar{r} & \mathsf{Cat}
@@ -1444,8 +1455,8 @@ Firstly, there is a natural isomorphism $\alpha$ as on the left below
 \arrow[Leftrightarrow, from=Vt, to=FV,shorten <=0.10cm,shorten >=0.10cm,"\alpha"]
 \end{tikzcd}
 \end{equation}
-that encodes both changes in parenthesizing of coproducts and removal of initial objects 
-(note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ maps under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of (\ref{COHER EQ}) strictly commutes, i.e. 
+that encodes both reparenthesizing of coproducts and removal of initial objects 
+(note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ is mapped under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of (\ref{COHER EQ}) strictly commutes, i.e. 
 that ``unary coproducts'' of simpletons $(v)$ are given simply by $v$ itself.
 $\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
 $\Fin^{\wr 3} \wr \mathcal{V} \to \mathcal{V}$
@@ -1494,7 +1505,7 @@ in the diagrams below coincide.
 \arrow[Leftrightarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\Fin \wr \alpha"]
 \end{tikzcd}
 \end{equation}
-Similarly, $\alpha$ is also unital in the sense that both of the following diagrams strictly commute or, more precisely, if the composite natural transformation in either diagram is the identify for the functor 
+Similarly, $\alpha$ is unital in the sense that both of the following diagrams strictly commute or, more precisely, if the composite natural transformation in either diagram is the identity for the functor 
 $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 \begin{equation}\label{COHER3 EQ}
 \begin{tikzcd}
@@ -1536,7 +1547,7 @@ $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 More generally, if $\mathcal{V}$ is an arbitrary
 symmetric monoidal category, one instead has a functor 
 $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
-(where as usual $\Sigma \hookrightarrow \Fin$ denotes finite sets and isomorphisms) satisfying the obvious analogues of
+(where as usual $\Sigma \hookrightarrow \Fin$ denotes the skeleton of finite sets and isomorphisms) satisfying the obvious analogues of
 (\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}),
 as is readily shown using the standard coherence results for symmetric monoidal categories 
 (moreover, we note that $\alpha$ itself encodes all associativity, unital and symmetry isomorphisms, with the 
@@ -1700,15 +1711,14 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	(\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}).
 	Further, the dual of such $\mathcal{V}$ is called a 
 	\textit{symmetric monoidal category with diagonals}\footnote{
-            These have also been called \textit{relevant} monoidal categories \cite{DP07}}.
+	These have also been called \textit{relevant monoidal categories} \cite{DP07}.}.
 \end{remark}
 
-{\color{red} Maybe mention that if both folds and inclusions then cocartesian}
 
 \begin{remark}
 Replacing $\Fin_s$ in the previous remark with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}\footnote{
-These are equivalent to \textit{semicartesian} symmetric monoidal categories \cite{Lei16}}.
+These are equivalent to \textit{semicartesian symmetric monoidal categories} \cite{Lei16}.}.
 
 Finally, if a symmetric monoidal category has both diagonals and projections, it must in fact be \textit{cartesian} monoidal \cite[IV.2]{EK66}.
 \end{remark}
@@ -1800,7 +1810,7 @@ so that
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{G(c_j)}\right)}
 		\simeq	
-	\underset{((d_i) \to (kc_i))\in
+	\underset{(d_i \to kc_i)\in
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
 	\left(\coprod_i{G(c_i)}\right)
 	\]
@@ -1821,7 +1831,7 @@ $
 L \colon \mathcal{C} \rightleftarrows \mathcal{D} \colon R
 $
 be an adjunction and $T$ a monad on $\mathcal{D}$.
-Then
+Then:
 \begin{itemize}
 \item[(i)] $RTL$ is a monad and $R$ induces a functor
 $R \colon \mathsf{Alg}_T(\mathcal{D}) \to \mathsf{Alg}_{RTL}(\mathcal{C})$;
@@ -1848,8 +1858,7 @@ be an adjunction, $T$ a monad on $\mathcal{C}$, and suppose further that
 \]
 are natural isomorphisms 
 (so that in particular $\mathcal{D}$ is a reflexive subcategory of $\mathcal{C}$).
-
-Then
+Then:
 \begin{itemize}
 \item[(i)] $LTR$ is a monad, with multiplication and unit given by
 \[LTRLTR \xrightarrow{\eta^{-1}} LTTR \to LTR,\qquad
