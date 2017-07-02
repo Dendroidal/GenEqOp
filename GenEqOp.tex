@@ -5184,13 +5184,13 @@ Since
 $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op}) \simeq 
 \mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$,
 Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
-\begin{equation}\label{LANIOTAADJ EQ}
+\[
 	\mathsf{Lan} \colon
 	\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})
 		\rightleftarrows
 	\mathsf{Fun}(\Sigma^{op}_G, \mathcal{V})
 	\colon \iota
-\end{equation}
+\]
 together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$.
 
 
@@ -5224,7 +5224,7 @@ such that $A \to \Sigma_G$ is a map of split fibrations.
 Similarly, arrows are maps of spans that induce maps of split fibrations.
 \end{definition}
 
-We refer split fibrations $A \to \mathsf{O}_G$
+We refer to split fibrations $A \to \mathsf{O}_G$
 as \textit{root fibrations}
 and to maps between them as \textit{root fibration maps}.
 
@@ -5245,11 +5245,11 @@ $\Omega_G^0 \wr A \to \Omega_G^0$, naturally in $A$.
 \end{lemma}
 
 \begin{proof}
-The hypothesis that $A \to \Sigma_G$ is root fibration map
-implies that the rightmost map below in 
+The hypothesis that $A \to \Sigma_G$ is a root fibration map
+implies that the rightmost vertical map below 
 is a map of split fibrations over
 $\Fin \wr \mathsf{O}_G$.
-\begin{equation}\label{ROOTIMPLIESROOT EQ}
+\[
 \begin{tikzcd}
 	\Omega_{G}^0 \wr A \ar{r}{V_G} \ar{d} &
 	\Fin \wr A \ar{d}
@@ -5257,9 +5257,9 @@ $\Fin \wr \mathsf{O}_G$.
 	\Omega_{G}^0 \ar{r}[swap]{V_G} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
-\end{equation}
+\]
 Since by Lemma \ref{VGPULL LEM} the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
-(over $\mathsf{O}_G$) to pullback arrows of $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), 
+(over $\mathsf{O}_G$) to pullback arrows in $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), 
 the root pullback arrows in 
 $\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin \wr A$,
 and the result follows.
@@ -5284,19 +5284,19 @@ as in Remark \ref{PULLCOMP REM}.
 
 \begin{lemma}\label{LANPULLCOMA LEM}
 	Suppose that $\mathcal{V}$ is complete and that $\rho \colon A \to \Sigma_G$ is a root fibration map. If the rightmost triangle in 
-	\begin{equation}
-	\begin{tikzcd}
-		\Omega_{G}^{0} \wr A \ar{r}{V_G} 
-		\ar{d} & 
-		\Fin \wr A  
-		\ar{d}  \ar{r}[swap,name=F]{}&
-		\mathcal{V}^{op}
-	\\
-		\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
-		|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
-	\arrow[Rightarrow, from=FEG, to=F,shorten <=0.15cm]
-	\end{tikzcd}
-	\end{equation}
+\[
+\begin{tikzcd}
+	\Omega_{G}^{0} \wr A \ar{r}{V_G} 
+	\ar{d} & 
+	\Fin \wr A  
+	\ar{d}  \ar{r}[swap,name=F]{}&
+	\mathcal{V}^{op}
+\\
+	\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
+	|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
+\arrow[Rightarrow, from=FEG, to=F,shorten <=0.15cm]
+\end{tikzcd}
+\]
 is a right Kan extension diagram then so is the composite diagram.
 \end{lemma}
 
@@ -5304,16 +5304,16 @@ is a right Kan extension diagram then so is the composite diagram.
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
 	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
-\begin{equation}\label{LANPULLCOMA EQ}
+\[
 \begin{tikzcd}
 	T \downarrow \Omega_{G}^{0} \wr A \ar{r}{V_G} & 
 	V_G(T) \downarrow \Fin \wr A
 \end{tikzcd}
-\end{equation}
+\]
 is initial.
 We will slightly abuse notation by writing 
 $(T \to U, (A_{v_{G f}})_{V_G(U)})$ for the objects of 
-$T \downarrow \Omega_{G}^{0}$,
+$T \downarrow \Omega_{G}^{0} \wr A$,
 as well as 
 $
 \left(
@@ -5342,7 +5342,7 @@ i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$,
 which is built using pullbacks. 
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
-$T_{v_Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
+$T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
 \[
 \begin{tikzcd}[column sep =1.5em , row sep =0em]
 	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
@@ -5366,26 +5366,30 @@ Since rooted quotients are isomorphisms, the $\psi$
 and $\psi_{Ge}$ appearing above are isomorphisms, 
 and hence the natural transformation
 $i \circ r \circ V_G \Rightarrow V_G$
-is a natural isomorphism. Therefore, to check that $V_G$ is initial it suffices to verify that 
+is a natural isomorphism. 
+Therefore,
+$V_G$ will be initial provided that so is
+$i \circ r \circ V_G$,
+and since the inclusion $i$ is initial, it suffices to show that
 $r \circ V_G$ is an isomorphism.
 
 But now note that an arbitrary choice of rooted isomorphisms
 $T_{v_{G_e}} \to U^{\mathsf{r}}_{v_{G_e}}$
-uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon U$.
+uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon T \to U$.
 Therefore, arbitrary choices of 
 $\psi_{G e}^{\**} U_{{G \psi(e)}}$,
 $\psi_{G e}^{\**} A_{{G \psi(e)}}$
 uniquely determine $U$, $A_{G f}$, finishing the proof.
 \end{proof}
 
-Lemmas \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
+Lemma \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
 on
 $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$
 lifting the monad $N$.
 
 \begin{corollary}
 Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable or, more generally, that 
-$\mathcal{V}$ is a monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
+$\mathcal{V}$ is a symmetric monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
 Then the functors
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
@@ -5403,7 +5407,7 @@ This follows by combining Lemma \ref{LANPULLCOMA LEM} with Lemma \ref{FINWREATPR
 
 \begin{definition}\label{THEMONAD DEF}
 The \textit{genuine equivariant operad monad} is the monad
-$\F_G$ on $\mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$
+$\F_G$ on $\mathsf{Sym}_G(\mathcal{V})=\mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$
 given by
 \[
 	\F_G = \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota
@@ -5422,7 +5426,8 @@ id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
 \Rightarrow
 \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
 \]
-We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb{F}_G}(\V)$ of \textit{genuine equivariant operads}.
+We will write $\Op_G(\V)$ for the category 
+$\mathsf{Alg}_{\mathbb{F}_G}(\mathsf{Sym}_G(\mathcal{V}))$ of \textit{genuine equivariant operads}.
 \end{definition}
 
 \begin{remark}
@@ -5436,11 +5441,12 @@ We will write $\Op_G(\V)$ for the category $\mathsf{Alg}_{\mathbb{F}_G}(\V)$ of 
 Since a map 
 \[\F_G X =\mathsf{Lan} \circ N \circ \iota X \to X\]
 is adjoint to a map
-\[N \circ \iota X \to \iota X\]
+\[N \circ \iota X \to \iota X \]
 one easily verifies that 
 $X$ is a genuine equivariant operad, i.e. 
 a $\F_G$-algebra, iff 
-$\iota X$ is a $N$-algebra.
+$\iota X$ is a $N$-algebra
+(cf. Proposition \ref{MONADADJ PROP}(ii)).
 
 Moreover, the bar resolution
 $ \F_G^{\circ n +1} X $
@@ -5453,7 +5459,7 @@ $.
 \subsection{Comparison with (regular) equivariant operads}
 \label{COMPARISON_REGULAR_SECTION}
 
-We start by noting that in the case $G = \**$, genuine operads simply recover the usual notion of symmetric operads, i.e. 
+In the case $G = \**$, genuine operads coincide with the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
 \simeq \mathsf{Sym}(\mathcal{V})$
 and
@@ -5463,13 +5469,13 @@ and in what follows we will adopt the notations
 $\mathsf{Sym}^G(\mathcal{V})$ and
 $\mathsf{Op}^G(\mathcal{V})$ 
 for the corresponding categories of $G$-objects.
-Our goal will be to relate these to the categories
+Our goal in this section will be to relate these to the categories
 $\mathsf{Sym}_G(\mathcal{V})$ and $\mathsf{Op}_G(\mathcal{V})$
-of genuine equivariant sequences and genuine operads.
+of genuine equivariant sequences and genuine equivariant operads.
 
-We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions in this section.
+We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions described herein.
 
-We thus have an inclusion functor
+We now have an inclusion functor
 \[
 \begin{tikzcd}[row sep =0]
 	\iota \colon G \times \Sigma \ar[hookrightarrow]{r} &
@@ -5513,19 +5519,20 @@ Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for
 	\iota_{\**}Y ((C_i)_I)=
 	\left(\prod_{I} Y(C_i)\right)^G,
 \]
-where in the formula for $\iota_{\**}(\minus)$
+where in the formula for $\iota_{\**}$
 the action of $G$ interchanges factors according to the action on the indexing set $I$.
-As a side note, note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
+As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
 \begin{remark}\label{REFLCOREFL REM}
 	$\iota_!$ essentially identifies 
 	$\mathsf{Sym}^G(\mathcal{V})$ as the coreflexive subcategory of sequences 
 	$X \in \mathsf{Sym}_G(\mathcal{V})$ such that $X(C)=\emptyset$ whenever $C$ is not a free corolla.
 
-By contrast, $\iota_{\**}$ identifies 
-$\mathsf{Sym}^G(\mathcal{V})$ with a far more interesting reflexive subcategory of sequences 
+On the other hand, $\iota_{\**}$ identifies 
+$\mathsf{Sym}^G(\mathcal{V})$ with the more interesting reflexive subcategory of those sequences 
 $X \in \mathsf{Sym}_G(\mathcal{V})$ 
-such that $X(C)$ for each $C$ not a free corolla must satisfy a fixed point condition. Concretely, letting 
+such that $X(C)$ for each $C$ not a free corolla must satisfy a fixed point condition. 
+Explicitly, letting 
 $\varphi \colon G \to \mathsf{r}(C)$
 denote the unique map preserving the minimal element, one has
 \[X(C) \xrightarrow{\simeq} X(\varphi^{\**}C)^{\Gamma}\]
@@ -5561,8 +5568,8 @@ it is straightforward to check that the following diagram commutes.
 		\iota_{\**} \iota^{\**} \iota_{!}
 \end{tikzcd}
 \end{equation}
-\begin{remark} An exercise in adjunctions shows that any outer square as in (\ref{BETADEFSQUARE EQ})
- commutes provided at least one of the adjunctions in \ref{TWOADJOINTS EQ} is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
+\begin{remark} An exercise in adjunctions shows the outer square in (\ref{BETADEFSQUARE EQ})
+ commutes provided at least one of the adjunctions in (\ref{TWOADJOINTS EQ}) is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
 \end{remark}
 
 %By adjunction, one needs compare the composites
@@ -5620,7 +5627,7 @@ and
 $C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$,
 and thus 
 $\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following diagram.
-\begin{equation}\label{IFGI EQ}
+\[
 \begin{tikzcd}
 	\Omega_{G}^{0,\text{fr}} \ar{d} \ar{r} &
 	\Fin \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin \wr X} &
@@ -5629,7 +5636,7 @@ $\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following d
 \\
 	\Sigma_G^{\text{fr}}
 \end{tikzcd}
-\end{equation}
+\]
 (i) now follows by noting that 
 $X \to \iota_{\**} \iota^{\**} X$
 is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
@@ -5637,7 +5644,8 @@ is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
 For (ii), to show that 
 	$\iota^{\**} \mathbb{F}_G \iota_{!}
 	\to	
-	\iota^{\**} \mathbb{F}_G \iota_{\**}$ is an isomorphism one just repeats the argument in the previous paragraph by noting  that $\iota_! \to \iota_{\**}$ is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
+	\iota^{\**} \mathbb{F}_G \iota_{\**}$ 
+is an isomorphism of functors one just repeats the argument in the previous paragraph by noting that $\iota_! \to \iota_{\**}$ is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
 	To check that this is a map of monads, we recall first that the monad structure on $\iota^{\**} \mathbb{F}_G \iota_{\**}$
 is given as described in Proposition \ref{MONADADJ PROP}.
 Unpacking definitions, compatibility with multiplication reduces to showing that the composite 
@@ -5655,7 +5663,7 @@ $
 is the identity. Both of these are a consequence of 
 (\ref{BETADEFSQUARE EQ}), following from the diagrams below 
 (where the top composites are identities).
-\begin{equation}
+\[
 \begin{tikzcd}[column sep =3em]
 		\iota_! \iota^{\**}
 		\ar[Rightarrow]{r}{\iota_! \iota^{\**} \eta_{\**}}
@@ -5690,13 +5698,13 @@ is the identity. Both of these are a consequence of
 		\iota^{\**} \iota_!
 		\ar[Rightarrow]{ru}[swap]{\iota^{\**} \beta}
 \end{tikzcd}
-\end{equation}
+\]
 
 (iii) amounts to showing that if $X(C) =\emptyset$ whenever 
 $C \nin \Sigma_G^{\text{fr}}$
 then it is also 
 $\mathbb{F}_G X(C) =\emptyset$.
-But since for such 
+But since for  
 $C \nin \Sigma_G^{\text{fr}}$
 the undercategory
 $C \downarrow \Omega_{G}^{0}$
@@ -5884,12 +5892,11 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 \end{proof}
 
 Combining the previous result with
-Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the following.
+Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
-\begin{corollary}
-        \label{TWOADJOINTSOP_COR}
-        The adjunctions (\ref{TWOADJOINTS EQ}) extends to  adjunctions
-\begin{equation}\label{TWOADJOINTSOP EQ}
+\begin{corollary}\label{TWOADJOINTSOP_COR}
+	The adjunctions (\ref{TWOADJOINTS EQ}) extend to  adjunctions
+\[
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
 	&
@@ -5897,7 +5904,7 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now gives the followin
 	\ar[bend right]{l}[swap,midway]{\iota_{!}}
 	\ar[bend left]{l}{\iota_{\**}}.
 \end{tikzcd}
-\end{equation}
+\]
 In particular, $\iota_{\**}$
 identifies $\mathsf{Op}^G(\mathcal{V})$ as a reflexive subcategory of 
 $\mathsf{Op}_G(\mathcal{V})$.
@@ -5919,10 +5926,11 @@ However, the analogous statement fails for $\iota_{\**}$, i.e., one does not alw
 	\iota_{\**}\iota^{\**} \mathbb{F}_G \iota_{\**}
 \end{equation}
 is an isomorphism. 
-In fact, showing that (\ref{KEYNONISO EQ})
-\textit{does} become an isomorphism when restricted to suitably cofibrant objects is one of the key technical ingredients for our proof of the Quillen equivalence between 
+In fact, the claim that (\ref{KEYNONISO EQ})
+\textit{does} become an isomorphism when restricted to  cofibrant objects is one of the key ingredients of our proof of the Quillen equivalence between 
 $\mathsf{Op}_G(\mathcal{V})$ and
-$\mathsf{Op}^G(\mathcal{V})$, 
+$\mathsf{Op}^G(\mathcal{V})$
+given by Theorem \ref{MAINQUILLENEQUIV THM}, 
 and will be the subject of \S \ref{COFIB SEC}.
 
 For now, we end this section with a minimal counterexample to  the more general claim.
@@ -5930,7 +5938,9 @@ For now, we end this section with a minimal counterexample to  the more general 
 Let $G=\mathbb{Z}_{/2}$ and 
 $Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the simpleton.
 
-	When evaluating $\mathbb{F}_G Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$, the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot T_0$).
+	When evaluating $\mathbb{F}_G Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
+	(where $C_0 \in \Sigma$ denotes the $0$-th corolla),
+	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot T_0$).
 \[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 	\node at (0,0) {$G/G \cdot C_0$}
@@ -6231,9 +6241,9 @@ and $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 for the corresponding algebras.
 \end{notation}
 
-\begin{corollary}
+\begin{corollary}\label{TWOADJOINTSOPF COR}
 The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
-	\begin{equation}\label{TWOADJOINTSOPF EQ}
+\[
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
 			\arrow[r, bend left, "\upgamma_{!}"]
@@ -6242,7 +6252,7 @@ The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
 		\mathsf{Op}_{G}(\mathcal{V})
 		\arrow[l, "\upgamma^{\**}"]
 	\end{tikzcd}
-	\end{equation}
+\]
 \end{corollary}
 
 \begin{remark}
@@ -6266,13 +6276,17 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	$\Sigma_G^{\text{fr}} = \Sigma_{\F_{\text{fr}}}$
 	and, moreover, there is an equivalence of categories
 	$\Op^G \simeq \Op_{\F_{\text{fr}}}$,
-	so that (\ref{TWOADJOINTSOP EQ})
-	is a particular case of (\ref{TWOADJOINTSOPF EQ}).
+	so that Corollary \ref{TWOADJOINTSOP_COR}
+%	(\ref{TWOADJOINTSOP EQ})
+	is a particular case of 
+	Corollary \ref{TWOADJOINTSOPF COR}.
 	However, while our discussion of 
-	(\ref{TWOADJOINTSOP EQ})
+	Corollary \ref{TWOADJOINTSOP_COR}
 	focuses on the $(\iota^{\**},\iota_{\**})$-adjunction, due to the fact that the intended model structures on $\mathsf{Op}^G(\mathcal{V})$ in
 	Theorem \ref{MAINEXIST1 THM} are defined via fixed point conditions, 
-	our discussion of (\ref{TWOADJOINTSOPF EQ})
+	our discussion of 
+	Corollary \ref{TWOADJOINTSOPF COR}
+%	(\ref{TWOADJOINTSOPF EQ})
 	focuses on the $(\iota_{!},\iota^{\**})$-adjunction, due to the model structures in 
 	Theorem \ref{MAINEXIST2 THM} being projective.
 \end{remark}
@@ -11988,7 +12002,11 @@ that forget to cofibrant symmetric sequences
 (in either 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$ or
 $\mathsf{Sym}_{\mathcal{F}}^G(\mathcal{V})$)
-are closed under cellular extensions of operads. 
+are closed under cellular extensions of operads.
+
+Morever, and as mentioned in Remark \ref{MUTMUT REM},
+it now follows that (\ref{KEYNONISO EQ})
+is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 \end{remark}
 
 
