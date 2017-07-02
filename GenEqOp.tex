@@ -5992,7 +5992,7 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 As discussed preceding Theorem \ref{MAINEXIST2 THM},
 the Elmendorf-Piacenza equivalence
 (\ref{COFADJINT EQ}) has analogues
-\begin{equation}
+\[
 \begin{tikzcd}[column sep =4em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}
 	\ar[shift left=1]{r}{\iota^{\**}} 
@@ -6000,15 +6000,16 @@ the Elmendorf-Piacenza equivalence
 	\mathsf{Top}_{\mathcal{F}}^G
 	\ar[shift left=1]{l}{\iota_{\**}}
 \end{tikzcd}
-\end{equation}
+\]
 for each family $\mathcal{F}$ of subgroups of $G$.
-Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ so that 
+Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ 
+and thus the objects of
 $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
-consists of partial coefficient systems.
+are partial coefficient systems.
 These specialized equivalences provide an alternative approach to universal 
-$E \mathcal{F}$ spaces: rather than cofibrantly replacing the object
+$E \mathcal{F}$-spaces: rather than cofibrantly replacing the object
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$
-discussed in the introduction,
+as in the introduction,
 one builds an $E \mathcal{F}$-space by
 $\iota^{\**}(C \**) = (C *) (G)$
 where now $\** \in \mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
@@ -6039,21 +6040,13 @@ $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \end{definition}
 
 
-\begin{definition}
-      \label{FAMILY_COROLLAS_DEF}
+\begin{definition}\label{FAMILY_COROLLAS_DEF}
 	A \textit{family} of $G$-corollas is a sieve
 	$\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$.
 \end{definition}
 
-\begin{remark}
-      \label{FAMILY_COROLLAS_REM}
-%      In fact, families of corollas $\Sigma_\F$ are particular examples of (coproducts of) families of subgroups;
-      % with an equivalence of categories of the form
-      % \[
-      % \coprod {O_{\F_n}} \xrightarrow{\simeq} \Sigma_\F.
-      % \]
-%      see Lemma \ref{FAMILY_COROLLAS_LEM}) for more details.
-A family of corollas $\Sigma_{\mathcal{F}}$
+\begin{remark}\label{FAMILY_COROLLAS_REM}
+A family of $G$-corollas $\Sigma_{\mathcal{F}}$
 can equivalently be encoded by
 a collection $\F = \set{\F_n}_{n \geq 0}$ of 
 families $\mathcal F_n$ of \textit{graph subgroups} of $G \times \Sigma_n$, so that there is an equivalence of categories
@@ -6069,17 +6062,16 @@ $\upgamma \colon
 for the inclusion and 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = 
 \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$,
-we thus have a pair of standard adjunctions
-\begin{equation}
-      \label{F_TWOADJOINTS_EQ}
-      \begin{tikzcd}[column sep =5em]
-            \mathsf{Sym}_\F(\mathcal{V})
-            \arrow[r, bend left, "\upgamma_{!}"]
-            \arrow[r, bend right, "\upgamma_{\**}"']
-            &
-            \mathsf{Sym}_{G}(\mathcal{V}) 
-            \arrow[l, "\upgamma^{\**}"] 
-      \end{tikzcd}
+we thus have a pair of adjunctions
+\begin{equation}\label{F_TWOADJOINTS_EQ}
+	\begin{tikzcd}[column sep =5em]
+		\mathsf{Sym}_\F(\mathcal{V})
+		\arrow[r, bend left, "\upgamma_{!}"]
+		\arrow[r, bend right, "\upgamma_{\**}"']
+	&
+		\mathsf{Sym}_{G}(\mathcal{V}) 
+		\arrow[l, "\upgamma^{\**}"] 
+	\end{tikzcd}
 \end{equation}
 Our focus will be on the $(\upgamma_!,\upgamma^{\**})$ adjunction.
 The requirement that $\Sigma_{\mathcal{F}}$ be a sieve then implies that $\upgamma_!$ simply extends presheaves by the initial object 
@@ -6110,7 +6102,7 @@ the full subcategories spanned by the $\F$-trees.
 
 \begin{remark}\label{VACUOUSNESS REM}
 	By vacuousness the stick $G$-trees
-	$G \cdot_H \eta \simeq (\eta)_{G/H}$ are always $\mathcal{F}$-trees.
+	$(G/H) \cdot \eta = (\eta)_{G/H}$ are always $\mathcal{F}$-trees.
 \end{remark}
 
 %The primary purpose of the notion of $\mathcal{F}$-tree is to classify notions of ``partial genuine operads''.
@@ -6141,7 +6133,7 @@ the full subcategories spanned by the $\F$-trees.
 	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$, i.e. if the leaf-root functor restricts to a functor
 	$\mathsf{lr} \colon \Omega_{\mathcal{F}}^0 \to \Sigma_{\mathcal{F}}$.
 Moreover, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
-$(G/H)\cdot C_n \simeq (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
+$(G/H)\cdot C_n = (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
 \end{definition}
 
 
@@ -6154,7 +6146,7 @@ The notion of indexing system
 was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
 Moreover, a third definition of (weak) indexing systems as the sieves 
 $\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$
-was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} was addressed in 
+was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} is addressed in 
 \cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the sieve definition in \cite[\S 9]{Pe17}.
 
 The existence of canonical maps 
@@ -6162,7 +6154,9 @@ $\mathsf{lr}(T) \to T$ shows that the sieve condition
 implies the $\mathsf{lr}$ condition
 in Definition \ref{INDEXSYS DEF}. 
 Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-planar tall strings $\Omega_{\mathcal{F}}^1$ between $\mathcal{F}$-trees match the pullback 
+planar tall strings 
+$\Omega_{\mathcal{F}}^1 \hookrightarrow \Omega^1_G$ 
+between $\mathcal{F}$-trees match the pullback 
 $\Omega_{\mathcal{F}}^0 \to
 \Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
 \Fin \wr \Omega_{\mathcal{F}}^0
@@ -6296,7 +6290,7 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	is induced by an inclusion 
 	$\iota \colon \Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$.
 	However, it is possible for  
-	$\Sigma_G^{\text{fr}} \nsubset \Sigma_{\mathcal{F}}$ (the most interesting case being that of $\Sigma_{G}^{\geq 1} \hookrightarrow \Sigma_G$ the corollas of arity $\geq 1$, which models non-unital operads),
+	$\Sigma_G^{\text{fr}} \nsubset \Sigma_{\mathcal{F}}$ (the most interesting case being that of $\Sigma_{G}^{\geq 1} \hookrightarrow \Sigma_G$ the corollas of arity $\geq 1$, which model non-unital operads),
 	in which case (and compatibly with the 
 	$\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$ case), we instead use the composite adjunction
 \begin{equation}\label{COMPADJ EQ}
@@ -6312,7 +6306,7 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	\ar[shift left=1.5]{l}{\iota_{\**}}
 \end{tikzcd}
 \end{equation}
-We note that the right adjoint 
+Note that the right adjoint 
 $\gamma^{\**} \iota_{\**}$
 is still defined by computing fixed points while the 
 left adjoint
