@@ -7130,15 +7130,13 @@ An immediate example is given by the planar strings in Definition \ref{PLANSTR D
 $\C = \Omega_G^{\mathsf{t}}$ the category of tall maps,
 $\C_h = \Omega_G^{\mathsf{pt}}$ the category of planar tall maps and
 $\C^v = \Omega_G^{0}$ the category of quotients,
-one has $\C_{h,\bullet}^{v} = \Omega_G^n$ and thus
-$|\Omega_G^n| = \Omega_G^{\mathsf{t}}$.
+one has $\C_{h,\bullet}^{v} = \Omega_G^{\bullet}$ and thus
+$|\Omega_G^{\bullet}| = \Omega_G^{\mathsf{t}}$.
 
-Similarly, noting that the
-$\Omega_G^{n,\lambda} = \Omega_G^{n,0,\lambda}$
-form a simplicial object,
-we have that the
-$|\Omega_G^{n,\lambda}| = \Omega_G^{\mathsf{t},\lambda}$
-is the category of tall maps between
+Similarly, noting that the $\Omega_G^{n,\lambda} = \Omega_G^{n,0,\lambda}$
+categories of \S \ref{LABELSTRI SEC} form a simplicial object, we have that the
+$|\Omega_G^{\bullet,\lambda}| = \Omega_G^{\mathsf{t},\lambda}$
+is the category of tall label maps between
 $l$-labeled trees that induce quotients on 
 nodes with $\lambda$-inert labels.
 \end{remark}
@@ -7196,8 +7194,12 @@ for $a \in A_1$ as the composite
 Proposition \ref{RANTRANS PROP} applies to both directions of 
 the bisimplicial object
 $N ( N^{\circ n} \iota \mathcal{P} \amalg
- \iota X^{\amalg 2l+1}) \amalg Y)$
-in (\ref{LANLEVELFOR EQ}).
+ \iota X^{\amalg 2l+1} \amalg \iota Y)$
+in (\ref{LANLEVELFOR EQ}),
+whose underlying categories are 
+$\Omega_G^{n,\lambda_l}$
+for $\lambda_l$ the partitions described at the beginning of
+\S \ref{LABELSTRI SEC}.
 Indeed, in the $n$ direction all $d_i$ with $0 < i < n$
 are induced by the multiplication $NN \to N$ defined in 
 (\ref{MULTDEFSPAN EQ}) while $d_0$
@@ -7211,15 +7213,18 @@ as seen using the top part of (\ref{NATCOP EQ})
 it also suffices to note that 
 $N$ preserves arrows in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$ given by strictly commutative diagrams).
 Degeneracies are similar.
+Moreover, that the functor component of $d_n$
+matches the functor defined in (\ref{LABSTSIM EQ})
+follows from the presence of the $\iota$ in (\ref{LANLEVELFOR EQ}).
 
 As for the $l$ direction, we note that our convention on 
 the double bar construction 
 $B_l(\mathcal{P}, \mathbb{F}X, \mathbb{F}X, \mathbb{F}X, \mathbb{F} Y)$,
 is symmetric, 
-with $d_l$ encoding both of the maps
+with $d_l$ given by combining the maps
 $\mathbb{F}X \to \mathbb{F} Y$ 
 and 
-$\mathbb{F}X \to \mathbb{F} \mathcal{P}$
+$\mathbb{F}X \to \mathcal{P}$
 and the remaining differentials given by fold maps.
 Or, more precisely, the action of the differential operators
 on the sets of labels
@@ -7243,28 +7248,30 @@ we can first perform the realization in the $n$ direction, so as to obtain
 $|\Omega_G^{n,\lambda_l}|=|\Omega_G^{\mathsf{t},\lambda_l}|$,
 where we recall that 
 $\Omega_G^{\mathsf{t},\lambda_l}$
-consists of $\langle l \rangle$-labelled trees
+consists of $\langle \langle l \rangle \rangle$-labeled trees
 together with tall maps that induce quotients on all nodes not labeled by $-\infty$.
 
-We now identify $\Omega_G^{e}$ directly.
+We first identify $\Omega_G^{e}$ directly.
 
 
 \begin{definition}\label{EXTTREECAT DEF}
-	The \textit{extension tree category $\Omega_G^e$} is the category whose objects are $\{\mathcal{P},X,Y\}$-labeled trees and whose maps $\varphi \colon T \to S$ are tall maps of trees such that
+	The \textit{extension tree category $\Omega_G^e$}
+	has as objects $\{\mathcal{P},X,Y\}$-labeled trees
+	and as maps tall maps $\varphi \colon T \to S$ such that:
 	\begin{itemize}
 		\item[(i)] if $T_{v_{Ge}}$ has a $X$-label, then 
-		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has a $X$-label;
+		$S_{v_{Ge}} \in \Sigma_G$ and $S_{v_{Ge}}$ has a $X$-label;
 		\item[(ii)] if $T_{v_{Ge}}$ has a $Y$-label, then 
-		$S_{v_{Ge}}=T_{v_{Ge}}$ and $S_{v_{Ge}}$ has either an $X$-label or a $Y$-label;
+		$S_{v_{Ge}} \in \Sigma_G$ and $S_{v_{Ge}}$ has either a $X$-label or a $Y$-label;
 		\item[(iii)] if $T_{v_{Ge}}$ has a $\mathcal{P}$-label, then 
 		$S_{v_{Ge}}$ has only $X$ and $\mathcal{P}$-labels.
 	\end{itemize}
 \end{definition}
 
 
-\begin{example}
+\begin{example}\label{REGALTERNMAP EX}
 The following  is an example of a planar map in $\Omega_G^e$ for $G=\**$, where black nodes represent $\mathcal{P}$-labeled nodes, grey nodes represent $Y$-labeled nodes and white nodes represent $X$-labeled nodes.
-\begin{equation}\label{REGALTERNMAP EQ}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
 dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
@@ -7332,7 +7339,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 \end{scope}
 	\draw [->] (2.5,1.5) -- node [swap] {$\varphi$} (5.5,1.5);
 \end{tikzpicture}
-\end{equation}
+\]
 \end{example}
 
 
@@ -7639,7 +7646,8 @@ $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 
 
 \begin{example}
-The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in (\ref{REGALTERNMAP EQ}). Intuitively, the functor
+The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in
+Example \ref{REGALTERNMAP EX}. Intuitively, the functor
 $\mathsf{lr}_{\mathcal{P}}$ replaces each of the maximal 
 $\mathcal{P}$-labeled subtrees 
 $T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
