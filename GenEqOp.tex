@@ -2663,7 +2663,6 @@ The exact name choice is meant to accentuate the connection with another key fun
 described in \S \ref{LRVERT SEC},
 which we call the \textit{leaf-root functor}.
 
-
 Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
@@ -2934,7 +2933,9 @@ Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back
 \subsection{Outer faces, tall maps, and substitution}\label{OUTTALL SEC}
 \label{SUBS SEC}
 
-One of the key ideas needed for our description of operads is 
+One of the key ideas needed 
+to describe the free operad monad is
+%for our description of operads is 
 the notion of \textit{substitution} of tree nodes,
 a process that we will prefer to repackage in terms of maps of trees.
 
@@ -2958,7 +2959,7 @@ and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANA
 
 
 \begin{remark}
-If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pullback planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
 \end{remark}
 
 
@@ -3029,22 +3030,24 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 		S \xrightarrow{\varphi^t} U \xrightarrow{\varphi^u} T
 	\]
 	as a tall map followed by an outer face (in fact, 
-	$U= T_{\varphi(\underline{l}_S) \leq r_S}$).
+	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called inner if is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
+We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
 
 \begin{corollary}
 	Any map $S \xrightarrow{\varphi} T$ in $\Omega$ has a factorization, unique up to unique isomorphisms,
-	\begin{equation}\label{TRIPLEFACT EQ}
-		S \xrightarrow{\varphi^-} U \xrightarrow{\varphi^i} V \xrightarrow{\varphi^u} T
-	\end{equation}
+\[
+	S \xrightarrow{\varphi^-} U
+	\xrightarrow{\varphi^i} V
+	\xrightarrow{\varphi^u} T
+\]
 	as a degeneracy followed by an inner face followed by an outer face.
 \end{corollary}
 	
 \begin{proof}
-	The factorization (\ref{TRIPLEFACT EQ}) can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
+	The factorization can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
 \end{proof}
 
 
@@ -3065,7 +3068,7 @@ and isomorphisms.
 \end{notation}
 
 
-We now turn to discussing the substitution operation. We start with an example, focused on the closely related notion of 
+We now turn to discussing the substitution operation. We start with an example focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
 
@@ -3188,7 +3191,8 @@ U = \left(
 \end{scope}
 	\end{tikzpicture}
 \end{equation}
-We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reorder operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
+We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reparenthesize
+operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
 
 
 One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
@@ -3287,11 +3291,11 @@ One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as bein
 	\end{scope}
 	\end{tikzpicture}
 \end{equation}
-From this perspective, $U$ can then be thought of as obtained from $T$ by \textit{substituting} each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
+From this perspective, $U$ can now be thought of as obtained from $T$ by \textit{substituting} each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
 $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto e$), which likewise encodes the same information.
 
-One of the fundamental ideas that shape our perspective on operads
-is then that data for substitution of nodes as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
+One of the fundamental ideas shaping our perspective on operads
+is then that substitution data as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
 repackaged using planar tall maps. 
 \end{example}
 
@@ -3319,8 +3323,8 @@ repackaged using planar tall maps.
 
 
 \begin{remark}
-Note that the only maps in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
-In particular, there are no pairs of composable non-identity relations in $\mathsf{Sc}(T)$. 
+Note that the only arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
+In particular, there are no pairs of composable non-identity arrows in $\mathsf{Sc}(T)$. 
 \end{remark}
 
 Given a $T$-substitution datum $\{U_{\{e^{\uparrow}\leq e\}}\}$ we abuse notation by writing
@@ -3337,7 +3341,7 @@ U_{e^{\uparrow} \leq e}.\]
 
 \begin{proposition}\label{SUBDATAUNDERPLAN PROP}
 Let $T \in \Omega$ be a tree. There is an isomorphism of categories
-\begin{equation}\label{SUBDATAUNDERPLAN EQ}
+\[
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega^{\mathsf{pt}} \ar[l,shift left=2pt]
@@ -3348,7 +3352,7 @@ Let $T \in \Omega$ be a tree. There is an isomorphism of categories
 	\left(U_{\varphi(e^{\uparrow}) \leq \varphi(e)}\right) &
 	(T \xrightarrow{\varphi} U) \ar[l,mapsto]
 \end{tikzcd}
-\end{equation}
+\]
 where $T \downarrow \Omega^{\mathsf{pt}}$ denotes
 the category of planar tall maps under $T$
 and $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is chosen in the unique way that makes the inclusions of the $U_{e^{\uparrow} \leq e}$ planar. 
@@ -3403,19 +3407,21 @@ and that
 $T \to \colim_{\mathsf{Sc}(T)}U_{(\minus)}$
 is planar tall follow.
 
-The fact that the two functors in (\ref{SUBDATAUNDERPLAN EQ})
+The fact that the two functors in the statement
 are inverse to each other is clear from the same inductive argument.
 \end{proof}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
-Let $T \in \Omega$ be a tree. The formulas in (\ref{SUBDATAUNDERPLAN EQ}) give an isomorphism of categories
-\begin{equation}\label{SUBDATAUNDERNONPL EQ}
+Let $T \in \Omega$ be a tree. The formulas in
+Proposition \ref{SUBDATAUNDERPLAN PROP}
+give an isomorphism of categories
+\[
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega^{\mathsf{t}} \ar[l,shift left=2pt]
 \end{tikzcd}
-\end{equation}
+\]
 where $T \downarrow \Omega^{\mathsf{t}}$ denotes
 the category of tall maps under $T$.
 \end{corollary}
@@ -3495,10 +3501,10 @@ $\{U_i\} = \{U_i|U_i \hookrightarrow V\}
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
-\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
+\cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
 Proposition \ref{PLANARPULL PROP}.
 
-(iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique decomposition 
+(iii) follows by combining (i) and (ii). Indeed, any planar tall map $T \to U$ has a unique factorization 
 $T \twoheadrightarrow \bar{T} \hookrightarrow U$
 as a planar degeneracy followed by a planar inner face, and each  of these maps is classified by the data in (b) and (a).
 \end{proof}
@@ -3510,7 +3516,10 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \end{lemma}
 
 \begin{proof}
-	If either $T$ is a corolla or one of $T_1,T_2$ consists only of the root or a leaf  stick subtrees the result is obvious.
+	The result is obvious if either
+	$T$ is a corolla or if one of $T_1,T_2$
+	is one of the root or leaf stick subtrees.
+
 	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
 \end{proof}
 
@@ -3519,7 +3528,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 
-This section introduces two functors that are the very center of our definition of the category $\mathsf{Op}_G$ of
+This section introduces two functors that are central to our definition of the category $\mathsf{Op}_G$ of
 genuine equivariant operads: the leaf-root and vertex functors.
 
 We start by recalling a key class of maps of $G$-trees.
@@ -3573,7 +3582,8 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 	The leaf-root functor extends 
 	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
 	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows in $\Omega_G$.
-	However, we will mostly be concerned with the restriction  
+	Nonetheless, we will be primarily interested in the 
+ restriction  
 	$\Omega_{G}^0 \xrightarrow{\mathsf{lr}} \Sigma_G$.
 \end{remark}
 
@@ -3642,7 +3652,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 				child[level distance=1.3em,sibling distance=2.75em]{
 				edge from parent node {$c+3$}}
 			edge from parent node [swap] {$d+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,0) -- (3.9,0) node[midway]{$U$};
+			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,0) -- (3.9,0) node[midway,inner sep=4pt]{$U$};
 		\node at (4,-2) {}
 			child{node [dummy] {}
 				child[sibling distance=2em, level distance=1em]{
@@ -3665,7 +3675,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 				child[sibling distance=2em, level distance=1em]{
 				edge from parent node {$\phantom{1+}c+3$}}
 			edge from parent node [swap] {$d+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,-2) -- (3.9,-2) node[midway]{$\mathsf{lr}(U)$};
+\draw[decorate,decoration={brace,amplitude=2.5pt}] (7.1,-2) -- (3.9,-2) node[midway,inner sep=4pt]{$\mathsf{lr}(U)$};
 	\end{scope}
 	\begin{scope}[xshift=-2em]
 			\node at (10,0) {}
@@ -3674,7 +3684,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 			\node at (11,0) {}
 				child{
 				edge from parent node [swap] {$a+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (9.9,0) node[midway]{$V$};
+\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,0) -- (9.9,0) node[midway,inner sep=4pt]{$V$};
 			\node at (10,-2) {}
 				child{node[dummy]{}
 					child{
@@ -3685,7 +3695,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 					child{
 					edge from parent node [swap] {$a+1$}}
 				edge from parent node [swap] {$\bar{a}+1$}};
-			\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,-2) -- (9.9,-2) node[midway]{$\mathsf{lr}(V)$};
+\draw[decorate,decoration={brace,amplitude=2.5pt}] (11.1,-2) -- (9.9,-2) node[midway,inner sep=4pt]{$\mathsf{lr}(V)$};
 	\end{scope}
 	\end{tikzpicture}
 \]	
@@ -3751,7 +3761,7 @@ A minimal example follows.
 					edge from parent node [near end]{$a$}}
 				edge from parent node {$e$}}
 			edge from parent node [swap] {$d$}};
-		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
+		\draw[->] (2.1,1) -- node [above] {$\varphi$} (3.8,1) ;
 		\end{tikzpicture}
 		\]
 In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
@@ -3779,12 +3789,12 @@ We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following defi
 
 \begin{definition}
 The \textit{$G$-vertex functor} is the functor
-	\begin{equation}\label{VFUNCTOR EQ}
-		\begin{tikzcd}[row sep=tiny]
-		\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
-		T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
-		\end{tikzcd}	
-	\end{equation}
+\[
+	\begin{tikzcd}[row sep=0]
+	\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
+	T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
+	\end{tikzcd}	
+\]
 where $\Fin_s$ is the category of finite sets and surjections of
 Remark \ref{FINSURJ REM}.
 \end{definition}
@@ -3854,7 +3864,7 @@ are pullbacks for the split fibration $\Sigma_G \to \mathsf{O}_G$.
 
 The pullback
 $\psi^{\**} T \xrightarrow{\bar{\psi}} T$
-of $T = (T_x)_{x \in X} \in \Omega_{G,0}$
+of $T = (T_x)_{x \in X} \in \Omega_{G}^{0}$
 over $\psi \colon Y \to X$
 has the form 
 $(T_{\psi(y)})_{y \in Y} \to (T_x)_{x \in X}$
@@ -3882,7 +3892,7 @@ T_{x,\bar{\psi}(f)^{\uparrow} \leq \bar{\psi}(f)}$, where $x=\psi(y)$, finishing
 The following depicts one of the maps 
 (\ref{VGPULL EQ})
 for the pullback $\tau^{\**} T \to T$
-appearing in Example \ref{ROOTPULL EX}.
+in Example \ref{ROOTPULL EX}.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -3996,7 +4006,7 @@ $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
 The need to include $\mathsf{r}$ (which stands for ``rooted'')
 in the notation is explained by Remark \ref{WHYR REM}.
 
-Further, the $T$-substitution datum is planar iff the so are the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+Further, the $T$-substitution datum is planar iff so are the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
 \end{remark}
 
 
@@ -4012,17 +4022,17 @@ Further, the $T$-substitution datum is planar iff the so are the maps $T_{v_{Ge}
 	We again write
 	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
 	and note that these are compatible with the $G$-action in the sense that the obvious diagram
-\begin{equation}\label{EQUIVSCMAP EQ}
+\[
 \begin{tikzcd}[row sep =3pt]
 	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
 	\Omega
 \\
 	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{U_{gx,(\minus)}}
 \end{tikzcd}
-\end{equation}
+\]
 commutes.
 Writing $\mathsf{Sc}(T) = \coprod_x \mathsf{Sc}(T_x)$,
-(\ref{EQUIVSCMAP EQ}) is then equivalent to a functor
+these diagrams assemble into a functor
 $G \ltimes \mathsf{Sc}(T) \to \Omega$,
 where $G \ltimes \mathsf{Sc}(T)$ is the Grothendieck construction for the $G$-action
 (which, explicitly, adds arrows 
@@ -4042,7 +4052,7 @@ in $\Phi = \Fin \wr \Omega$ rather than in $\Omega$
 
 \begin{corollary}\label{SUBDATAUNDERPLANG COR}
 Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
-\begin{equation}\label{SUBDATAUNDERPLANG EQ}
+\[
 \begin{tikzcd}[row sep =0pt]
 	\mathsf{Sub}_{\mathsf{p}}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{pt}} \ar[l,shift left=2pt] &
@@ -4054,7 +4064,7 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
 	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
 \end{tikzcd}
-\end{equation}
+\]
 where $T \downarrow \Omega_G^{\mathsf{pt}}$ 
 (resp. $T \downarrow \Omega_G^{\mathsf{rt}}$)
 is the category of planar tall (resp. rooted tall) maps under $T$.
@@ -4115,7 +4125,7 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 	U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}}
 \end{tikzcd}	
 \]
-defining the left vertical functors (with the right functors defined analogously) in the commutative diagrams below.
+defining the left vertical functors (with the right functors defined analogously) in each of the commutative diagrams below.
 \begin{equation}\label{SUBDATAUNDERPLANG2 EQ}
 \begin{tikzcd}[row sep =12pt,column sep= 14pt]
 	\mathsf{Sub}_{\mathsf{p}}(\psi^{\**} T) \ar[r,shift left=2pt] &
