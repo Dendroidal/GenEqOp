@@ -4576,7 +4576,7 @@ where the left square is in the case $k=0$,
 the middle square is a pullback by induction 
 (and since $\Fin \wr (\minus)$ preserves pullback squares),
 and the rightmost square is clearly a pullback.
-\begin{equation}
+\begin{equation}\label{PROOFD EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 2.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G} &
 	\Fin_s \wr \Omega_{G}^{n-1}
@@ -4611,7 +4611,7 @@ $d_{0,\cdots,n-1}$) replaced with $s_j$.
 In this section we now build the category 
 $\mathsf{Op}_G (\mathcal{V})$
 of genuine equivariant operads.
-We will do so by building a monad $\mathbb{F}_G$
+We do so by building a monad $\mathbb{F}_G$
 on the category
 $\mathsf{Sym}_G(\mathcal{V}) = 
 \mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$,
@@ -4624,22 +4624,25 @@ that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. Th
 \\
 	|[alias=G2]|
 	\Sigma_G^{op}  \ar{urrr}[swap]{\mathbb{F}_G X} & &
-\arrow[Rightarrow, from=F1, to=G2,shorten >=0.45cm,shorten <=0.45cm]
+\arrow[Rightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.35cm]
 \end{tikzcd}
 \end{equation}
 To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension 
 step from the remaining construction.
-As such, we will first build a monad 
+As such, we will in \S \ref{MONSPAN SEC} first build a monad 
 $N$ on a larger category
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
-which we then transfer via the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
+which we then transfer
+to $\mathsf{Sym}_G(\mathcal{V})$
+in \S \ref{FGMON SEC} 
+by using the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
 
 
 
 \subsection{A monad on spans}\label{MONSPAN SEC}
 
 \begin{definition}\label{WSPAN DEF}
-We will write 
+We write 
 $\mathsf{WSpan}^l(\C,\D)$
 (resp.
 $\mathsf{WSpan}^r(\C,\D)$),
@@ -4650,7 +4653,8 @@ to denote the category with objects the spans
 \C & A \ar{l}[swap]{k} \ar{r}{X} & \D,
 \end{tikzcd}
 \]
-arrows the diagrams as on the left (resp. right) below \begin{equation}\label{TWISTEDARROWRIGHT EQ}
+arrows the diagrams as on the left (resp. right) below 
+\[
 	\begin{tikzcd}[row sep=small]
 	&
 	A_1 \ar{dl}[swap,name=k1]{k_1} \ar{dr}[name=F11]{X_1} \ar{dd}[swap]{i} & &
@@ -4665,21 +4669,23 @@ arrows the diagrams as on the left (resp. right) below \begin{equation}\label{TW
 		\arrow[Leftarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 		\arrow[Rightarrow, from=F11, to=G21,shorten >=0.25cm,shorten <=0.25cm,"\varphi"]
 	\end{tikzcd}
-\end{equation}
+\]
 which we write as $(i,\varphi) \colon (k_1,X_1) \to (k_2,X_2)$, and composition given in the obvious way.
 \end{definition}
 
 
 \begin{remark}
 There are canonical natural isomorphisms
-\begin{equation}\label{LRSPANISO EQ}
-\mathsf{WSpan}^r(\C,\D) \simeq \mathsf{WSpan}^l(\C^{op},\D^{op}).
-\end{equation}
+\[
+	\mathsf{WSpan}^r(\C,\D) \simeq 
+	\mathsf{WSpan}^l(\C^{op},\D^{op}).
+\]
 \end{remark}
 
 
 \begin{remark}\label{RANLANADJ REM}
-The terms \textit{left/right} are motivated by the existence of adjunctions (which are seen to be equivalent by using (\ref{LRSPANISO EQ}))
+The terms \textit{left/right} are motivated by the existence of adjunctions (which are seen to be equivalent by 
+the previous remark)
 \[
 	\mathsf{Lan} \colon
 	\mathsf{WSpan}^l(\C, \D)
@@ -4751,13 +4757,11 @@ As such, to avoid cluttering the diagrams in this section we will from now on ab
 \end{remark}
 
 
-{\color{red} Expand on if necessary}
-
 Our primary interest here will be in the 
 $\Omega_{G}^{0}\wr (\minus)$ construction,
 which can be iterated thanks to the existence of the composite maps
 $\Omega_{G}^{0} \wr A \to \Omega_{G}^{0} \to \Sigma_G$.
-The role of the higher strings $\Omega_{G}^{n} \wr A $1 will then be to provide more convenient models for iterated 
+The role of the higher strings $\Omega_{G}^{n} \wr A $ will then be to provide more convenient models for iterated 
 $\Omega_{G}^{0}\wr (\minus)$ constructions.
 Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as providing a canonical identification
 $\Omega_{G}^{0} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+1}$,
@@ -4801,12 +4805,13 @@ Proposition \ref{PIIPROP PROP}.
 
 
 \begin{proof}
-While not hard to explicitly write formulas for $V_G^k$, $d_i$, $s_j$, $\pi_i$ (which we list in Remark \ref{VGDEFA REM}),
+While not hard to explicitly write formulas for $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
+(see Remark \ref{VGDEFA REM} below),
 and then verify the desired properties,
-we here instead argue that the desired properties themselves can be used to uniquely, and coherently, define those functors. 
+we here instead argue that the desiderata themselves can be used to uniquely, and coherently, define those functors. 
 
-Firstly, the functors $V_G$ are defined from the following diagram
-\begin{equation}\label{ALLSQUARES2 EQ}
+Firstly, the functors $V_G = V_G^0$ are defined from the following diagram
+\[
 \begin{tikzcd}[row sep = 1.3em,column sep = 3em]
 	\Omega_{G}^{n+1} \wr A \ar[dashed]{r}{V_G} \ar{d}& 
 	\Fin \wr \Omega_G^n \wr A \ar{r}{\Fin \wr V_{G}^n} \ar{d}&
@@ -4818,8 +4823,8 @@ Firstly, the functors $V_G$ are defined from the following diagram
 	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
 	\Fin \wr \Sigma_G
 \end{tikzcd}
-\end{equation}
-by noting that the center and right squares are pullbacks, 
+\]
+by noting that the middle and right squares are pullbacks, 
 and choosing $V_G$ to be the unique functor such that the top composite is $V_G^{n+1}.$
 The higher functors $V_G^k$ are defined exactly as in (\ref{VGDEF EQ}), and the analogue of Proposition \ref{PIIPROP PROP}(a) follows by the same proof.
 
@@ -4829,7 +4834,7 @@ are defined as compatible pairs of pullbacks in
 $\Omega_G^n$ and $\Fin \wr A$.
 
 To define $d_i$ we consider the diagram below (for some $i<k$).
-\begin{equation}\label{PICUBOIDAB EQ}
+\[
 \begin{tikzcd}[column sep = small, row sep = small]
 	\Omega_{G}^n \wr A \ar{rrrr}{V_G^{k}} \ar[dashed]{rd}[swap,near end]{d_i} \ar{dd}
 	&&
@@ -4852,18 +4857,20 @@ To define $d_i$ we consider the diagram below (for some $i<k$).
 	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm]
 	\arrow[from=Omeganp1, to=Omegan,crossing over]
 \end{tikzcd}
-\end{equation}
-The desiderata that the top $\pi_i$ consist of pullback arrows lifting the lower $\pi_i$ implies that it is uniquely defined by the top $V_G^k$ functor, and hence so is the top composite 
+\]
+The desiderata that the top $\pi_i$ consist of pullback arrows lifting the lower $\pi_i$ implies that it is uniquely determined by the top $V_G^k$ functor, and hence so is the top composite 
 $V_G^{k-1}d_i$. But since the front face is a pullback square
-(by arguing by induction on $k$), there is a unique choice for $d_i$. 
-The fact that this definition of $d_i \wr A$ is not dependent on $k$ is ensured by natural transformation in (\ref{INDPI1 EQ}) is $\pi_i$.
+(by arguing by induction on $k$ as in (\ref{PROOFD EQ})), there is a unique choice for $d_i$. 
+That this definition of $d_i \wr A$ is
+independent of $k$ 
+is a consequence of the fact that the composite natural transformation in (\ref{INDPI1 EQ}) is $\pi_i$.
 Similarly, that the analogues of the left diagrams in 
 (\ref{PIIDEFDI2 EQ})
 hold follows by an identical argument from the fact that the composites of (\ref{INDPI2 EQ}) are $\pi_{i+1}$.
 
 The definitions of the $s_j$ are similar, except easier since there are no $\pi_i$ to contend with.
 
-The analogue of Proposition \ref{PIIPROP PROP}(c),(e),(f) are then tautological, and the analogue of 
+The analogues of Proposition \ref{PIIPROP PROP}(c),(e),(f) are then tautological, and the analogue of 
 Proposition \ref{PIIPROP PROP}(d)
 follows by an identical argument.
 \end{proof}
@@ -4873,7 +4880,7 @@ Explicitly,
 $V_G^{k} \colon \Omega_{G}^{n} \wr A
 \to \Fin \wr \Omega_{G}^{n-k-1} \wr A $
 is defined by sending (\ref{OMEGAGNA EQ}) to
-\begin{equation}\label{VGDEFA EQ}
+\[
 	\left(
 		\left(
 		T_{k,v_{G f}} \to \cdots \to T_{n,v_{G f}},
@@ -4882,7 +4889,7 @@ is defined by sending (\ref{OMEGAGNA EQ}) to
 		\right)_{v_{G e} \in V_G\left(T_{n,v_{G f}}\right)}
 		\right)
 	\right)_{v_{G f} \in V_G(T_k)}
-\end{equation}
+\]
 where both $V_G(T_k)$ and $T_{n,v_{G f}}$ are ordered lexicographically accordind to the obvious strings.
 
 Similarly, functors 
@@ -4891,9 +4898,9 @@ for $0 \leq i < n$
 and 
 $s_j \colon \Omega_{G}^{n} \wr A \to \Omega_{G}^{n+1} \wr A$
 for $-1 \leq j \leq n$
-are defined on (\ref{OMEGAGNA EQ})
-by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate and, in the $d_i$ case suitably reordering
-$V_G(T_n)$.
+are defined on the object in (\ref{OMEGAGNA EQ})
+by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate and, in the $d_i$ case,
+ suitably reordering $V_G(T_n)$.
 \end{remark}
 
 \begin{remark}
@@ -4964,7 +4971,7 @@ spans.
 	We define an endofunctor $N$ of 
 	$\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$
 	by letting $N(\Sigma_G \leftarrow A \to \mathcal{V}^{op})$
-	be the span $\Sigma_G \leftarrow \Omega_G^0 \wr A \to \mathcal{V}^{op}$ given composition along the diagram
+	be the span $\Sigma_G \leftarrow \Omega_G^0 \wr A \to \mathcal{V}^{op}$ given by composition of the diagram
 \[
 	\begin{tikzcd}
 	\Omega_G^0 \wr A \ar{r}{V_G} \ar{d}&
@@ -5007,7 +5014,7 @@ $\pi_0$ square is indeed $V_{G}^{1}$
 using the inductive description in (the $(\minus) \wr A$ analogue of) Notation \ref{INDVNG NOT}.
 
 Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly commutative diagrams
-(where to see that the second square commutes we recall that $V_G^{-1} = \delta^0$)
+%(where to see that the second square commutes we recall that $V_G^{-1} = \delta^0$)
 \begin{equation}\label{UNITSPAN EQ}
 	\begin{tikzcd}
 	\Sigma_G \ar[equal]{d} &
@@ -5027,7 +5034,7 @@ Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly com
 
 
 \begin{proposition}\label{MONSPAN PROP}
-$(N,\mu,\eta)$ form a monad on $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$.
+$(N,\mu,\eta)$ is a monad on $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$.
 \end{proposition}
 
 
@@ -5109,13 +5116,8 @@ On the other hand, the leftmost sections coincide since they are instances of th
 (\ref{INDPI1 EQ}) and (\ref{INDPI2 EQ})
 to reinterpret the top left sections.
 
-% note first that, in either diagram,
-%the top right and bottom left paths $\Omega_{G,2}^{(A)} \to \Fin \wr A$ differ only by the induced order on $V_G(T_2)$ for each string $T_0 \to T_1 \to T_2$. More explicitly, the top right paths use the order induced lexicographically from the string $T_0 \to T_1 \to T_2$
-%while the bottom left paths use the order induced exclusively by $T_2$.
-%The two left sections then coincide since are both given by the permutation interchanging these orders, the only difference being that the intermediate stage of (\ref{ASSOCSPAN1 EQ}) uses the order induced lexicographically from $T_0 \to T_2$
-%while (\ref{ASSOCSPAN2 EQ}) uses the order induced lexicographically from $T_1 \to T_2$.
 
-As for unit conditions, $\mu \circ (N \eta)$ is represented by
+As for the unit conditions, $\mu \circ (N \eta)$ is represented by
 \begin{equation}\label{UNITSPAN1 EQ}
 	\begin{tikzcd}[column sep=1.05em]
 	\Omega_G^0 \wr A \ar{d}[swap]{s_{0}} \ar{r} &
@@ -5170,7 +5172,7 @@ while $\mu \circ (\eta N)$ is represented by
 	\end{tikzcd}
 \end{equation}
 That (\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) coincide follows analogously by the unital condition for $\alpha$
-and the face degeneracy relations in 
+and the face-degeneracy relations in 
 Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
 
