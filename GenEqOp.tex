@@ -4620,7 +4620,7 @@ that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. Th
 \begin{tikzcd}[row sep=2em,column sep = 3.3em]
 	(\Omega_{G}^{0})^{op} \ar{r}{V_{G}^{op}} \ar{d}[swap]{\mathsf{lr}} &
 	|[alias=F1]|
-(\Fin \wr \Sigma_G)^{op} \ar{r}[swap,name=F2]{}{(\Fin \wr X^{op})^{op}}& (\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} & \mathcal{V}
+(\Fin_s \wr \Sigma_G)^{op} \ar{r}[swap,name=F2]{}{(\Fin_s \wr X^{op})^{op}}& (\Fin_s \wr \mathcal{V}^{op})^{op} \ar{r}{\otimes} & \mathcal{V}
 \\
 	|[alias=G2]|
 	\Sigma_G^{op}  \ar{urrr}[swap]{\mathbb{F}_G X} & &
@@ -6351,7 +6351,7 @@ i.e. pushouts of the form
     \mathbb{F}_G Y \ar{r} & \mathcal{P}[u]
   \end{tikzcd}
 \end{equation}
-in the category $\mathsf{Op}_G$.
+in the category $\mathsf{Op}_G(\mathcal{V})$.
 As is common in the literature (e.g. \cite{SS00, Spi01, BM03, Whi14, Pe16}),
 the key technical ingredient will be the identification of a suitable filtration
 \begin{equation}\label{FILTR EQ}
@@ -6360,7 +6360,7 @@ the key technical ingredient will be the identification of a suitable filtration
 	\cdots \to \mathcal{P}_{\infty}=\mathcal{P}[u]
 \end{equation}
 of the map $\mathcal{P} \to \mathcal{P}[u]$
-in the underlying category $\mathsf{Sym}_G$.
+in the underlying category $\mathsf{Sym}_G(\mathcal{V})$.
 To explain how this filtration is obtained,
 and abbreviating 
 $\mathbb{F}_G$ as $\mathbb{F}$,
@@ -6376,11 +6376,18 @@ note first that $\mathcal{P}[u]$ is given by a coequalizer
 \end{tikzcd}
 \end{equation}
 where $\check{\amalg}$ denotes the algebraic coproduct, 
-i.e. the coproduct in $\mathsf{Op}_G$, and, a priori,
-the coequalizer is also calculated in $\mathsf{Op}_G$. However, (\ref{REFLCOEQ EQ}) is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
-and standard arguments show that 
+i.e. the coproduct in $\mathsf{Op}_G(\mathcal{V})$, and, a priori,
+the coequalizer is also calculated in $\mathsf{Op}_G(\mathcal{V})$. However, (\ref{REFLCOEQ EQ}) is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
+and standard arguments\footnote{
+For example, by the proof of 
+\cite[Prop. 3.27]{Ha09}
+it suffices to check that 
+$\mathbb{F}_G$ preserves reflexive coequalizers.
+This follows from (\ref{FGXDEF EQ}) and the fact that if $\otimes$ preserves colimits in each variable then
+it preserves reflexive coequalizers.}
+ show that 
 it is hence also an underlying coequalizer in 
-$\mathsf{Sym}_G$.
+$\mathsf{Sym}_G(\mathcal{V})$.
 
 In practice, we will need to enlarge 
 (\ref{REFLCOEQ EQ}) somewhat.
@@ -6422,7 +6429,7 @@ so as to obtain the bisimplicial object
 		X^{\amalg 2l+1} \amalg Y
 	\right),
 \end{equation}
-where $\amalg$ denotes the coproduct in $\mathsf{Sym}_G$.
+where $\amalg$ denotes the coproduct in $\mathsf{Sym}_G(\mathcal{V})$.
 As in Remark \ref{REPACKAGERES REM}, each level of 
 (\ref{FURRES EQ})
 can then be described as 
@@ -6469,12 +6476,14 @@ in (\ref{EXTTREEFOR EQ}).
 The desired filtration (\ref{FILTR EQ})
 then follows from a filtration of the 
 category $\widehat{\Omega}_G^e$ itself,
-and this is the subject of
+and this discussion is the subject of
 \S \ref{FILTRATION_SECTION}.
 
-{\color{red} HERE}
+Lastly, \S \ref{MAINEXIST SEC} concludes this section
+by using these filtrations to prove 
+Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 
-This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
+%This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -6515,10 +6524,11 @@ Lastly, given a subset $J\subset \underline{l}$, a planar label map $\varphi \co
 Consider the $2$-labeled trees below (for $G=\**$ the trivial group), with black nodes ($\bullet$) denoting labels by the number $1$ and white nodes ($\circ$) labels by the number $2$.
 The planar map $\varphi$ (sending $a_i\mapsto a$, 
 $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which is $\{1\}$-inert.
-\begin{equation}\label{SUBSDATUMTREESLAB EQ}
+\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
-	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	dummy/.style={circle,draw,inner sep=0pt,
+	minimum size=2.1mm}]
 	\begin{scope}[level distance=2.3em]
 	\tikzstyle{level 2}=[sibling distance=3.5em]%
 	\tikzstyle{level 3}=[sibling distance=2.25em]%
@@ -6565,7 +6575,7 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 	\end{scope}
 	\draw [->] (1.4,1.5) -- node[swap] {$\varphi$} (3.4,1.5);
 	\end{tikzpicture}
-\end{equation}
+\]
 \end{example}
 
 
@@ -6626,7 +6636,7 @@ $(\Omega_G^n)^{\times \lambda}_j = \Omega_G^n$ if
 $j \in \lambda_a$ and
 $(\Omega_G^n)^{\times \lambda}_j = \Sigma_G$ if
 $j \in \lambda_i$.
-As such, (\ref{OMEGANMINUSONE EQ}) is abbreviated as
+As such, (\ref{OMEGANMINUSONE EQ}) can be abbreviated as
 $\Omega_{G}^{n,-1,\lambda} = \coprod (\Omega_G^n)^{\times \lambda}$.
 \end{notation}
 
@@ -6699,7 +6709,7 @@ $.
 Therefore, we henceforth write simply
 $\Omega_G^{n,\bullet,\lambda}$ to denote the string of categories $\Omega_G^{n,s,\lambda}$
 and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
-\begin{equation}\label{LABSTSIM2 EQ}
+\[
 \begin{tikzcd}[row sep =0,column sep =1em]
 	d_i \colon 
 	\Omega_{G}^{n,\bullet,\lambda} \ar{r} &
@@ -6708,7 +6718,7 @@ and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
 	\Omega_{G}^{n,\bullet,\lambda} \ar{r} &
 	\Omega_{G}^{n+1,\bullet,\lambda}
 \end{tikzcd}
-\end{equation}
+\]
 
 \begin{remark}\label{ORDLABEL REM}
 Considering the ordered sets 
@@ -6733,11 +6743,11 @@ $
 	\Fin_s \wr \Omega_G^{n-k-1,s-k-1,\lambda}
 $
 given by the same formula
-\begin{equation}
+\[
 	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
-\end{equation}
+\]
 as in (\ref{VGNISO EQ}),
-except now with the $T_m,v_{G e}$ inheriting the node labels from $T_m$ (if any).
+except with $T_{m,v_{G e}}$ for $k \leq m \leq n$ inheriting the node labels from $T_m$ (if any).
 
 The diagrams in (\ref{PIIDEFDI EQ})
 for $i<k$ and $i>k$ now generalize to diagrams
@@ -6801,10 +6811,11 @@ $\pi_i$.
 
 \begin{remark}
 	When $\alpha$ is the identity 
-and $\lambda' \leq \lambda$ the forgetful functors 	
+and $\lambda' \leq \lambda$ the forgetful functors in
 (\ref{LAMBINC EQ}) are fully faithful inclusions.
-	However, this is not the case for the (\ref{NKNFGT EQ}) forgetful functors. Indeed, regarding the map $T \to U$ in
-	(\ref{SUBSDATUMTREESLAB EQ})
+	However, this is not the case for the  forgetful functors in (\ref{NKNFGT EQ}).
+	Indeed, regarding the map $T \to U$ in
+	Example \ref{LABELEDTREES EX}
 	as an object in $\Omega_G^{1,0,\lambda}$
 	for $\lambda = 
 	\lambda_a \amalg \lambda_i = \{2\} \amalg \{1\}
@@ -6838,10 +6849,11 @@ as the pullback
 \end{notation}
 
 \begin{remark}
-To unpack \ref{OMEGAWRTUP EQ},
+To unpack (\ref{OMEGAWRTUP EQ}),
 note first that by (\ref{EXTRACASES EQ}) $\Omega_G^{-1,r,\lambda}$ is simply either 
 $\Sigma_G^{\amalg l}$ if $r<0$ or 
-$\Sigma_G$ for $r \geq 0$.
+$\Sigma_G$ if $r \geq 0$,
+while $\Omega_G^{n,s,\lambda} = \coprod (\Omega_{G}^{n})^{\times \lambda}$ is $s<0$.
 We can thus break down
 (\ref{OMEGAWRTUP EQ})
 into the three cases
@@ -6873,7 +6885,7 @@ coincides with
 $\Omega_G^{n} \wr (\coprod_j A_j)$
 as defined in Notation \ref{OMEGAGNA NOT}.
 Moreover, for $s<0$ both squares in the diagram below
-are pullbacks and the bottom composites is $V_G^n$,
+are pullbacks and the bottom composite is $V_G^n$,
 \begin{equation}\label{BOTTOM EQ}
 \begin{tikzcd}[column sep = 4em]
 	\coprod (\Omega_{G}^{n})^{\times \lambda} \wr (A_j) 
@@ -6892,7 +6904,7 @@ $\Omega_{G}^{n,s,\lambda} \wr (A_j)\simeq
 where in the right side $(\minus)\wr (\minus)$ is computed entry-wise.
 \end{remark}
 
-\begin{remark} \label{ORDLABEL REM}
+\begin{remark} \label{NATTLABEL REM}
 The naturality of
 the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
 with regards to $\lambda$ interacts with the tuple $(A_j)$
@@ -6912,7 +6924,7 @@ $\Omega_{G}^{n,s,\lambda}$
 and the 
 $\Omega_{G}^{n,s,\lambda} \wr (A_j)$
 constructions, where in the latter case
-we exclude the statements involving $d_n$.
+we exclude statements involving $d_n$.
 
 Additionally, the natural squares  (for $n \geq -1$)
 \begin{equation}\label{ADDSQUARE EQ}
@@ -6930,13 +6942,16 @@ are also pullback squares.
 
 \begin{proof}
 	Firstly, we note that the $\Omega_{G}^{n,s,\lambda}$
-	analogues, as well as the claim for (\ref{ADDSQUARE EQ}), all follow by keeping track of the labels on the strings, with the only part worthy of note being the analogue of (d), stating that the right squares in 
+	analogues, as well as the claim for (\ref{ADDSQUARE EQ}), all follow from the previous results
+	by keeping track of the labels on the strings, 
+	with the only non immediate part
+	being the analogue of (d), stating that the right squares in 
 	(\ref{PIIDEFDILAB EQ}) and
-	(\ref{PIIDEFDI2LAB EQ}) are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble to the correct labels on the top left corner, so that the claim follows by the unlabeled one.
-	
+	(\ref{PIIDEFDI2LAB EQ}) are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble into the required labels on the top left corner, hence the result follows.
+		
 	For the more general $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions, one can either build the
 	general $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
-	explicitly, or simply mimic the argument in Proposition \ref{PIIPROPA PROP}, thereby reducing to the 
+	explicitly, or mimic the argument in Proposition \ref{PIIPROPA PROP}, reducing to the 
 	$\Omega_{G}^{n,s,\lambda}$ case.
 \end{proof}
 
@@ -6989,8 +7004,8 @@ $V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
 	\Fin^{\wr 2} \wr \coprod (A_j) \ar{r}{\sigma^0} \ar{d}&
 	\Fin \wr \coprod (A_j) \ar{d}
 \\
-	\Omega_G^{n+k+1,s+k+1,\lambda} \ar{r}[swap]{V_G^k} \ar{d}&
-	\Fin \wr \Omega^{n,s,\lambda}_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}&
+	\Omega_G^{n+k+1,s+k+1,\lambda} \ar{r}[swap]{V_G^k} \ar{d}[swap]{d_{k+1,\cdots,n+k+1}}&
+	\Fin \wr \Omega^{n,s,\lambda}_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}{d_{0,\cdots,n}}&
 	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0} &
 	\Fin \wr \coprod_l \Sigma_G &
 \\
@@ -7007,15 +7022,15 @@ to the diagram.
 
 The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using (\ref{BOTTOM EQ}).
 \[
-\begin{tikzcd}[row sep = 1.5em,column sep =3em]
+\begin{tikzcd}[row sep = 1.5em,column sep =2.05em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
-	\bullet \ar[dashed]{r} \ar[dashed]{d}&
+	\bullet \ar[dashed]{rr} \ar[dashed]{d}& &
 	\Fin \wr \coprod \Fin \wr A_j \ar{r} \ar{d}&
 	\Fin^{\wr 2} \wr \coprod A_j \ar{r}{\sigma^0} \ar{d}&
 	\Fin \wr \coprod A_j \ar{d}
 \\
-	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}&
-	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{r}[swap]{\Fin \wr \coprod (V_G^n)^{\times \lambda}} \ar{d}&
+	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}[swap]{d_{n+1,\cdots,n+k+1}}&
+	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^n)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
 	\Fin \wr \coprod_l \Fin \wr \Sigma_G \ar{r} &
 	\Fin^{\wr 2} \wr \coprod \Sigma_G \ar{r}[swap]{\sigma^0}  &
 	\Fin \wr \coprod_l \Sigma_G &
@@ -7029,7 +7044,7 @@ The additional claims are straightforward.
 
 
 \begin{remark}
-The identifications in Corollary \ref{LABIDEN COR} allow for the case $n=-1$,
+The identifications in Corollary \ref{LABIDEN COR} do allow for the case $n=-1$,
 which is non-trivial due to the existence of
  $\Omega_G^{-1,-1,\lambda} = \coprod_l \Sigma_G$,
  in which case $\Omega_G^{-1,-1,\lambda} \wr (A_j) \simeq \coprod A_j$.
@@ -7042,8 +7057,9 @@ then show that
 $\Omega_G^{n,s,\lambda} \wr (\minus)$
 encodes (the underlying category of) the functor
 $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
-Furthermore, the left commutative square below, where vertical arrows are forgetful functors 
-(and the right diagram merely unpacks notation)
+Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
+the bottom square is one of the pullback squares 
+(\ref{ADDSQUARE EQ}), and the right diagram unpacks notation
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
@@ -7071,7 +7087,8 @@ shows that the forgetful functor
 $\Omega_G^{0,-1,\lambda} \wr (A_j) \to 
 \Omega_G^{0,0,\lambda} \wr (A_j)$
 encodes the natural map
-$\coprod \circ N \Rightarrow N \circ \coprod $.
+$\coprod \circ N \Rightarrow N \circ \coprod $
+of (\ref{MONADFUNCTORALPHADOU EQ}).
 \end{remark}
 
 
@@ -7126,10 +7143,10 @@ $l$-labeled trees that induce quotients on
 nodes with $\lambda$-inert labels.
 \end{remark}
 
-\todo[inline]{We delay the techincal proof of the following statement to the Appendix.}
-In the following statement, we note that 
+
+In the following statement, whose proof is delayed to the appendix, we note that 
 it is shown in Lemma \ref{OBJGENREL LEMMA}
-that $ob(|A_{\bullet}|) \simeq ob(A_0)$
+that $\text{Ob}(|A_{\bullet}|) \simeq \text{Ob}(A_0)$
 and that arrows in $|A_{\bullet}|$ are generated by
 the arrows in $A_0$ together with arrows 
 $d_1(a) \to d_0(a)$ for each $a \in A_1$.
@@ -7213,7 +7230,7 @@ Remark \ref{ORDLABEL REM} anti-symmetrically.
 But then the differential operators 
 $d_i$, $s_j$ for $0\leq i<l$ and $0\leq j \leq l$
 correspond to instances of the naturality in 
-Remark \ref{ORDLABEL REM}
+Remark \ref{NATTLABEL REM}
 when $(B_k) =\alpha^{\**}(A_j)$,
 and are hence given by strictly commutative maps of spans.
 
@@ -7250,7 +7267,7 @@ The following  is an example of a planar map in $\Omega_G^e$ for $G=\**$, where 
 \begin{equation}\label{REGALTERNMAP EQ}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
-dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
+dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
@@ -7417,7 +7434,7 @@ We will denote the category of alternating $G$-trees and tall alternating maps b
 \begin{example}
 Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
 \begin{equation}\label{REGALTERNMAPLR EQ}
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
@@ -7632,7 +7649,7 @@ $\mathcal{P}$-labeled.
 \begin{equation}
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize,inner sep=2pt},
-dummy/.style={circle,draw,inner sep=0pt,minimum size=2.25mm}]
+dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 	\tikzstyle{level 2}=[sibling distance = 6em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
 	\tikzstyle{level 4}=[sibling distance = 1.5em]
@@ -7870,7 +7887,7 @@ We illustrate this for the tree $T \in \widehat{\Omega}^e$ below (so that $G=\**
 \begin{tikzpicture}
   [grow=up,auto,level distance=2.1em,
   every node/.style = {font=\footnotesize,inner sep=2pt},
-  dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+  dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
   % [grow=up, level distance = .8cm, auto, every node/.style={font=\small}, dummy/.style={circle,draw,inner sep=0.4mm, minimum size=2.25}]
   \tikzstyle{level 2}=[sibling distance=6em]
   \tikzstyle{level 3}=[sibling distance=4em]
