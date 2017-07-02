@@ -3589,7 +3589,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 
 \begin{remark}\label{LEAFROOTEXAMP REM}
 	Generalizing the remark in Notation \ref{UNIQCOR NOT},
-	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique tall planar map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
+	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique planar tall map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
 	$T=(\eta_x)_{x \in X}$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
@@ -4145,8 +4145,7 @@ defining the left vertical functors (with the right functors defined analogously
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
 We now use the leaf-root and vertex functors to repackage 
-our substitution results in a format that will be more convenient for our discussion of operads in 
-\S \ref{GENUINE_OP_MONAD_SECTION}.
+our substitution results in a format that will be more convenient for our definition of genuine equivariant operads in \S \ref{GENUINE_OP_MONAD_SECTION}.
 
 
 \begin{definition}\label{PLANSTR DEF}
@@ -4157,7 +4156,7 @@ our substitution results in a format that will be more convenient for our discus
 	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
 \end{equation}
-	where $T_i \in \Omega_G$ and the $\varphi_i$ are tall planar maps, while arrows are commutative diagrams 
+	where $T_i \in \Omega_G$ and the $\varphi_i$ are planar tall maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
 	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\pi_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\pi_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\pi_n}
@@ -4175,7 +4174,7 @@ where each $\pi_i$ is a quotient map.
 	it follows that 
 	$\Omega_{G}^{\bullet}$
 	forms a simplicial object in $\mathsf{Cat}$, 
-	with faces given by composing and degeneracies by inserting identities. 
+	with faces given by composition and degeneracies by inserting identities. 
 
 	Further setting 
 	$\Omega_{G}^{-1} = \Sigma_G$, the leaf-root functor $\Omega_{G}^{0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
@@ -4221,7 +4220,7 @@ by
 \end{equation}
 where we abuse notation by writing $T_{i,v_{Ge}}$
 for 
-$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in v_{Ge}}$, where 
+$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in Ge}$, where 
 $\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
 
 Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n-1$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
@@ -4230,11 +4229,11 @@ can be thought of as the image of the inverse functor in
 Corollary \ref{SUBDATAUNDERPLANG COR},
 written according to the reformulation in 
 Remark \ref{SUBSGREF DEF}
-(where since we are in the planar case we need not distinguish between 
-$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notation
+(where since we are in the planar case we need not distinguish between the
+$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notations
 (cf. Remark \ref{WHYR REM})).
 Note however that from this perspective
-functoriality needs to be checked separately.
+functoriality needs to be addressed separately.
 \end{notation}
 
 We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
@@ -4305,7 +4304,7 @@ The alternative description of $V_G$ in
 Notation \ref{VGDEF NOT} combined with
 (\ref{SUBDATAUNDERPLANG2 EQ}) 
 then show that 
-$\Omega_{G}^{n} \to P$ preserves pullbacks,
+$\Omega_{G}^{n} \to P$ preserves pullback arrows,
 so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
 But since a quotient is an isomorphism iff it is so on roots,
@@ -4313,7 +4312,7 @@ we further have that
 a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
 is a rooted isomorphism and
 each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
-But now rewriting \ref{PTNARROWLOC EQ} as a tuple of diagrams indexed by
+But now reinterpreting (\ref{PTNARROWLOC EQ}) as a tuple of diagrams indexed by
 $f \in G e$
 one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
@@ -4348,7 +4347,7 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 
 
 \begin{notation}\label{INDVNG NOT}
-	For $0 \leq k \leq n$ we will let 
+	For $0 \leq k \leq n$ we let 
 \[
 	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
@@ -4383,7 +4382,7 @@ $V_{G}^{n}(T_0 \to \cdots \to T_n)$ is identified with the tuple
 \begin{equation}\label{VGNISO EQ}
 	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
 \end{equation}
-where we note that strings are written in prepended notation as in (\ref{STRINGOBJALT EQ}), so that $T_{i,v_{G e}}$ is superfluous unless $k=n$.
+where we note that strings are written in prepended notation as in (\ref{STRINGOBJALT EQ}), so that $T_{k,v_{G e}}$ is superfluous unless $k=n$.
 Further, note that this requires changing the order of $V_G(T_k)$.
 Rather than using the order induced by $T_k$, one instead equips 
 $V_G(T_k)$ with the order induced lexicographically
@@ -4397,7 +4396,7 @@ lexicographical order on the indexing set $V_G(T_k)$
 induced by the string
 $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
 with the one induced by the string that omits $V_G(T_i)$.
-For $d_i$ with $i>k$ one has a commutative diagram as on the right below.
+For $d_i$ with $i>k$ one has commutative diagrams as on the right below.
 Note that no such diagram is defined for $d_k$.
 \begin{equation}\label{PIIDEFDI EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3em]
@@ -4444,7 +4443,7 @@ $s_{k-k-1}=s_{-1}$.
 \end{equation}
 \end{remark}
 
-The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of useful conditions that we now catalog.
+The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of compatibilities that we now catalog.
 
 \begin{proposition}\label{PIIPROP PROP}
 \begin{enumerate}[label=(\alph*)]
@@ -4459,16 +4458,16 @@ The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of useful conditi
 \]
 equals the functor $V_{G}^{k+l+1}$.
 
-\item The functors $V_G^k$ send pullbacks for the split Grothendieck fibration $\Omega_G^k \to \mathsf{O}_G$
-to pullbacks for $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$.
+\item The functors $V_G^k$ send pullback arrows for the split Grothendieck fibration $\Omega_G^k \to \mathsf{O}_G$
+to pullback arrows for $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$.
 
 \item The isomorphisms $\pi_i(T_0 \to \cdots \to T_n)$
-are pullbacks for the split Grothendieck fibration 
+are pullback arrows for the split Grothendieck fibration 
 $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$. Moreover, the projection of $\pi_i(T_0 \to \cdots \to T_n)$ onto $\Fin_s$
 depends only on $T_0 \to \cdots \to T_i$.
 
 \item The rightmost diagrams in both (\ref{PIIDEFDI EQ})
-and (\ref{PIIDEFDI2 EQ}) are pullbacks diagrams in $\mathsf{Cat}$.
+and (\ref{PIIDEFDI2 EQ}) are pullback diagrams in $\mathsf{Cat}$.
 
 \item
 For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
@@ -4504,7 +4503,7 @@ For $k< i < k+l+1$ the composite natural transformation in the diagram below is 
 	\Fin_s \wr \Omega_{G}^{n-k-2} \ar{r}[swap]{\Fin_s \wr V_{G}^{l-1}} &
 	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2} \ar{r}[swap]{\sigma^0} &
 	\Fin_s \wr  \Omega_G^{n-k-l-2}
-\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i}"]
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i-k-1}"]
 \end{tikzcd}
 \end{equation}
 
@@ -4514,7 +4513,7 @@ Explicitly, for $0 \leq i' < i < n$
 the composite natural transformations
 in the diagrams
 \begin{equation}\label{SIMPPI EQ}
-\begin{tikzcd}[row sep=1.7em,column sep = 2em]
+\begin{tikzcd}[row sep=1.7em,column sep = 3em]
 	\Omega_{G}^{n} \ar{r}{} \ar{d}[swap]{d_{i}} &
 	|[alias=F1]|
 	\Fin_s \wr \Sigma_G \ar[equal]{d}
@@ -4562,17 +4561,21 @@ one has
 	= & \sigma^0 \sigma^1 (\Fin^{\wr 2} \wr V_G^l)(\Fin \wr V_G^k) V_G =
 	\sigma^0 (\Fin \wr \sigma^0)  (\Fin^{\wr 2} \wr V_G^l)(\Fin \wr V_G^k) V_G 
 \\
-	= & \sigma^0 \left(\Fin \wr \left( \sigma^0 (\Fin \wr V_G^l) V_G^k \right)\right) V_G = \sigma^0 \left(\Fin \wr V_G^{k+l-1}\right) V_G =
-V_G^{k+l}.
+	= & \sigma^0 \left(\Fin \wr \left( \sigma^0 (\Fin \wr V_G^l) V_G^k \right)\right) V_G = \sigma^0 \left(\Fin \wr V_G^{k+l+1}\right) V_G =
+V_G^{k+l+2}.
 \end{align*}
 
 (b) generalizes Lemma \ref{VGPULL LEM}, and follows by induction using that result, Lemma \ref{FWRGROTH LEM},
 and the obvious claim that $\Fin \wr \Fin \wr A \xrightarrow{\sigma^0} \Fin \wr A$ sends pullbacks over $\Fin \wr \Fin$ to pullbacks over $\Fin$.
 
-(c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullbacks, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
+(c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullback arrows, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
 
-Lastly, (d) is argued by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in (\ref{PIIDEFDI EQ}) follows by the diagram on the left below, combined with
-Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, with the left square being in the case $k=0$, the middle square being a pullback by induction (and since $\Fin \wr (\minus)$ preserves pullback squares), and the rightmost square by direct verification.
+Lastly, we argue (d) by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in (\ref{PIIDEFDI EQ}) follows by the diagram on the left below, combined with
+Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, 
+where the left square is in the case $k=0$,
+the middle square is a pullback by induction 
+(and since $\Fin \wr (\minus)$ preserves pullback squares),
+and the rightmost square is clearly a pullback.
 \begin{equation}
 \begin{tikzcd}[row sep=1.7em,column sep = 2.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G} &
@@ -4595,8 +4598,8 @@ Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The g
 	\Fin_s \wr \Sigma_G 
 \end{tikzcd}
 \end{equation}
-The claim for the rightmost diagram in (\ref{PIIDEFDI2 EQ}) follows by the analogous diagrams with the $d_i$ (but not $d_{1,\cdots,n}$, 
-$d_{0,\cdots,n-1}$) replaced by $s_j$.
+The claim for the rightmost square in (\ref{PIIDEFDI2 EQ}) follows by the analogous diagrams with the $d_i$ (but not $d_{1,\cdots,n}$, 
+$d_{0,\cdots,n-1}$) replaced with $s_j$.
 \end{proof}
 
 
