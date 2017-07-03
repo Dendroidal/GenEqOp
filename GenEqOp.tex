@@ -7348,26 +7348,22 @@ By changing any $X$-labels in $S_{v_{G e}}$
 into $Y$-labels (resp. $\mathcal{P}$-labels)
 whenever $T_{v_{G}}$  has a 
 $Y$-label (resp. $\mathcal{P}$-label), one obtains a factorization
-\begin{equation}\label{LABRE EQ}
-T \to \bar{S} \to S
-\end{equation}
+\[ T \to \bar{S} \to S \]
 such that $T \to \bar{S}$ is a label map 
 (cf. Definition \ref{LABMAP DEF})
 and $\bar{S} \to S$ is an underlying identity of trees that
-merely changes some if the $Y$ and $\mathcal{P}$ labels into 
-$X$ labels.
+merely changes some of the $Y$ and $\mathcal{P}$ labels into 
+$X$-labels.
 We refer to the latter kind of map as a \textit{relabel map}.
 It is clear that the label-relabel factorization 
-(\ref{LABRE EQ}) is unique.
+ is unique.
 \end{remark}
 
 
 \begin{proposition}
 There is an identification
-\[
-	\Omega_G^e \simeq 
-	|\Omega_{G}^{\mathsf{t},\lambda_l}|.
-\]
+$\Omega_G^e \simeq 
+|\Omega_{G}^{\mathsf{t},\lambda_l}|$.
 \end{proposition}
 
 
@@ -7377,8 +7373,8 @@ $\mathcal{C} = \Omega_G^e$,
 with $\mathcal{C}_h$ and $\mathcal{C}^v$ the categories of 
 relabel and label maps.
 More precisely, we claim that there is an isomorphism 
-$\mathcal{C}_{h,l}^{v} \simeq 
-\Omega_{G}^{\mathsf{t},\lambda_l}$
+$\mathcal{C}_{h,\bullet}^{v} \simeq 
+\Omega_{G}^{\mathsf{t},\lambda_{\bullet}}$
 of objects in $\mathsf{Cat}^{\Delta^{op}}$.
 Unpacking notation, one must first show that strings
 \begin{equation}\label{RELABSTR EQ}
@@ -7388,35 +7384,37 @@ T_0 \to T_1 \to \cdots \to T_l
  are in bijection with objects of 
  $\Omega_{G}^{\mathsf{t},\lambda_l}$,
  i.e., with trees labeled by
- $\langle l \rangle =
+ $\langle \langle l \rangle \rangle =
   \{-\infty, -l, \cdots, -1,0,1,\cdots,l,+ \infty\}$.
 Noting that the maps in
 (\ref{RELABSTR EQ})
 are simply underlying identities on some fixed tree $T$
 that convert some of the $\mathcal{P}$, $Y$ labels into $X$ labels,
-we label a vertex $T_{v_{Ge}}$ by 
+we label a vertex $T_{v_{Ge}}$ by:
 \begin{inparaenum}
 \item[(i)]
+$j$ such that
 $0 < j \leq +\infty$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
 (\ref{RELABSTR EQ}) are $Y$ labels (where $+\infty = l+1$); 
 \item[(ii)]
+$-j$ such that
 $-\infty \leq -j < 0$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
 (\ref{RELABSTR EQ}) are $\mathcal{P}$ labels;
 \item[(iii)] $j=0$ if all labels in (\ref{RELABSTR EQ})
-are $X$ labels.
+are $X$-labels.
 \end{inparaenum}
- This process clearly established the desired bijection on objects.
+ This process clearly establishes the desired bijection on objects.
 
 The compatibilities with arrows and with the simplicial structure are straightforward.
 \end{proof}
 
 
-Our next task will be that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
+Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 We first introduce the auxiliary notion of alternating trees.
 Recall the notion of input path (Notation \ref{INPUTPATH NOT})
-$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\in \Omega, \Phi, \Omega_G, \Phi_G$.
+$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi_G$.
 
 
 \begin{definition}\label{OMEGAA DEF}
@@ -7440,7 +7438,7 @@ We will denote the category of alternating $G$-trees and tall alternating maps b
 
 \begin{example}
 Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
-\begin{equation}\label{REGALTERNMAPLR EQ}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
@@ -7513,7 +7511,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 \end{scope}
 	\draw [->] (2.5,2) -- node [swap] {$\varphi$} (5,2);
 \end{tikzpicture}
-\end{equation}
+\]
 The term ``alternating'' reflects the fact that adjacent nodes have different colors, though there is an additional restriction: the ``outer vertices'', i.e. those immediately below a leaf or above the root, are necessarily black/active
 (this does not, however, apply to stumps).
 %As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
@@ -7567,7 +7565,7 @@ where the $U_i^X, U_j^Y$ are simply the $X,Y$-labeled nodes
 and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
 Lemma \ref{OUTERFACEUNION LEM} guarantees that 
 each edge and each $\mathcal{P}$-labeled node belong to exactly
-one of the $V_G(U_k^{X})$, and applying 
+one of the $U_k^{\mathcal{P}}$, and applying 
 Proposition \ref{BUILDABLE PROP}(iii)
 yields a planar tall map
 \begin{equation}\label{LRXDEF EQ}
@@ -7586,7 +7584,7 @@ $I(l) = (l = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$
 must start with, end with, and alternate between 
 $\mathcal{P}$-nodes, and thus have even length.
 
-To check uniqueness, note that for any other planar label map $S \to U$ with $S$ alternating
+To check uniqueness, note that for any other planar label map $S \to U$ with $S \in \widehat{\Omega}_G^e$
 and $e^{\uparrow} \leq e$ a $\mathcal{P}$ vertex of $S$
 the outer face 
 $U_{e^{\uparrow} \leq e}$
@@ -7638,8 +7636,8 @@ $\mathsf{lr}_{\mathcal{P}} (\varphi)$
 to be the map $T\to S$.
 Associativity and unitality are automatic from the uniqueness of the factorization of (\ref{LRPFUN EQ}).
 
-In the case of $T = (T_x)_{x \in X}$ in 
-$\Omega_G^e$ for a general group $G$,
+For $T = (T_x)_{x \in X}$ in 
+$\Omega_G^e$ with $G$ a general group,
 one sets
 $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
@@ -7654,7 +7652,7 @@ $T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
 $\mathsf{lr}(T^{\mathcal{P}}_k)$,
 $\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
 $\mathcal{P}$-labeled.
-\begin{equation}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize,inner sep=2pt},
 dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
@@ -7735,7 +7733,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 \end{scope}
 	\draw [->] (2.5,2.5) -- node [swap] {$\mathsf{lr}_{\mathcal{P}}(\varphi)$} (5.5,2.5);
 \end{tikzpicture}
-\end{equation}
+\]
 \end{example}
 
 
@@ -7768,7 +7766,7 @@ Summarizing the previous section,
 the discussion following Proposition \ref{RANTRANS PROP}
 establishes (\ref{EXTTREEFOR EQ}), and hence 
 Corollary \ref{KANRED COR} 
-gives the alternate formula
+gives the alternative formula
 \begin{equation}\label{ALTFOR EQ}
 	\mathcal{P}[u] \simeq
 	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
@@ -7864,7 +7862,7 @@ for $V_G^{in}(T)$ the set of inert $G$-vertices.
 
 Note that though 
 $|V^{in}(T_i)| = k$
-for each $T_i$ composing $T=(T_i)_{i \in I}$,
+for each of the $T_i$ that constitute $T=(T_i)_{i \in I}$,
 one can only guarantee $|V_G^{in}(T)| \leq k$.
 \end{remark}
 
@@ -7883,12 +7881,12 @@ $\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the resu
 	of Proposition \ref{LXP PROP},
 	the $(\minus)_{\mathcal{P}}$ construction 
 	does not define a full functor
-  $\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the $Y$-inert maps of $\Omega_G^e$.
+  $\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the
+maps of $\Omega_G^e$ that preserve $Y$-labels.
 \end{remark}
 
 
 \begin{example}
-%  We observe that this construction is symmetric across all tree components, and hence, to give an example, it suffices to show want happens on a single component (i.e. when $G = \set{e}$).
 Combining the $(\minus)_{\mathcal{P}}$ and $\mathsf{lr}_{\mathcal{P}}$ constructions one obtains a construction sending trees in $\widehat{\Omega}^e_G$ to trees in $\widehat{\Omega}^e_G$.
 We illustrate this for the tree $T \in \widehat{\Omega}^e$ below (so that $G=\**$), where black nodes are $\P$-labeled, white nodes are $X$-labeled, and grey nodes are $Y$-labeled.
 \[
@@ -8048,14 +8046,14 @@ $T \in \widehat{\Omega}_G^e[\leq\! k-1]$. One can form a diagram
 \begin{tikzcd}
       & S & \mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \ar{l}
       \\
-      T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{inert}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
+      T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{pres}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
 \end{tikzcd}
 \end{equation}
-where $T \to T' \to S$ is the natural factorization such that $ T' \to S$ is $Y$-inert, 
+where $T \to T' \to S$ is the natural factorization such that $ T' \to S$ preserves $Y$-labels, 
 i.e., $T'$ is obtained from $T$ by simply relabeling to $X$ those $Y$-labeled vertices of $T$ that become $X$-vertices in $S$.
 Note that by Remark \ref{YINERT REM}, the existence
 of the right square relies on 
-$T' \to S$ being $Y$-inert.
+$T' \to S$ preserving $Y$-labels.
 Since all maps in 
 (\ref{K-1LANFINAL EQ})
 are rooted tall, 
@@ -8396,10 +8394,10 @@ those maps $X \to Y$ such that
 $X^H \to Y^H$ is a weak equivalence (fibration)
 for all $H \leq \Sigma$.
 
-Our main proof will require some auxiliary results concerning the above genuine model structures.
+Our main proof will require some auxiliary results concerning genuine model structures.
 However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
-we defer these %harder
+we defer their %harder
 proofs to those
 of the stronger results in \S \ref{COFIB SEC}.
 
@@ -8478,10 +8476,10 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	with cofibrant symmetric pushout powers 
 	(cf. Proposition \ref{POWERF PROP}).
 	
-	Suppose that $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
-	is level genuine cofibrant
-	and that 
-	$u: X \to Y$ in $\Sym_G(\V)$ is a level genuine cofibration. 
+	Let $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
+	be level genuine cofibrant
+	and  
+	$u: X \to Y$ in $\Sym_G(\V)$ a level genuine cofibration. 
 	Then for each $T \in \Omega^a_G[k]$ and writing
 	$C = \mathsf{lr}(T)$, the map	
 \begin{equation}\label{EXMAINLEM EQ}
@@ -8547,9 +8545,9 @@ Proposition \ref{POWERF PROP}
 \begin{remark}\label{EXMAINLEM REM}
 If %When
 $T \in \Omega^a[k]$ is a non-equivariant alternating tree, 
-$\mathcal{P}$ is cofibrant in $\mathsf{Sym}^G(\V)$,
+$\mathcal{P}$ is level genuine cofibrant in $\mathsf{Sym}^G(\V)$,
 and
-$u \colon X \to Y$ is a (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
+$u \colon X \to Y$ is a level genuine (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
 the previous result applied to
 $G \cdot T = (T)_{g \in G}$,
 $\iota_{!} \mathcal{P}$,
@@ -8557,10 +8555,10 @@ $\iota_{!} u$,
 yields that
 the analogue of the map
 (\ref{EXMAINLEM EQ})
-is a $\mathsf{Aut}(G \cdot C_n) 
+is an $\mathsf{Aut}(G \cdot C_n) 
 \simeq G 
 \times \mathsf{Aut}(C_n)=
-G \times \Sigma_n$ genuine cofibration,
+G \times \Sigma_n$ level genuine (trivial) cofibration,
 where $C_n = \mathsf{lr}(T)$.
 \end{remark}
 
@@ -8593,7 +8591,8 @@ $(X_D) \mapsto \coprod_{D \in \Sigma_G}
 \mathsf{Hom}_{\Sigma_G} (\minus, D) 
 \cdot_{\mathsf{Aut(D)}} X_D$
 and using either 
-\cite[Thm. 11.3.2]{Hi03} (or equivalently \cite[Thm A.1]{Ste16})
+\cite[Thm. 11.3.2]{Hi03} 
+%(or equivalently \cite[Thm A.1]{Ste16})
 in the model structure case
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$
 or 
@@ -8639,7 +8638,7 @@ Remark \ref{ALLCOF REM}
 guarantees that any 
 $\mathcal{P}$ is level genuine cofibrant,
 and thus the conditions in
-\cite[Thm. 11.3.2]{Hi03} are met,
+\cite[Thm. 11.3.2]{Hi03} are met (since transfinite composites of trivial cofibrations are again trivial cofibrations),
 showing the existence of the model structure.
 In the semi-model structure case, the condition that 
 $\mathcal{P}$ is level genuine cofibrant
@@ -8659,7 +8658,7 @@ on $\mathsf{Op}_G(\mathcal{V})$.
 This model structure is transferred from the exact same adjunction
 (\ref{MAINPFADJ EQ}), except equipping the 
 leftmost $\mathcal{V}^{\mathsf{Aut}(C)}$
-with their naive model structure, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
+with their naive model structures, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
 and ignoring fixed point conditions.
 The desired projective model structure thus
 has both less generating (trivial) cofibrations
@@ -8669,7 +8668,9 @@ are genuine projective equivalences and hence also projective equivalences, show
 \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
 holds,
-establishing the existence of the projective model structure% \footnote{
+establishing the existence of the projective model structure
+. 
+% \footnote{
 % The condition in \cite[Lemma 2.3(1)]{SS00}
 % is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
 % By contrast, the condition in 
@@ -8727,7 +8728,7 @@ turns out to coincide with the corresponding  condition for the $\mathcal{F}$-pr
 The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 finishing the proof of Theorem \ref{MAINEXIST2 THM}.
 
-We now turn for Theorem \ref{MAINEXIST1 THM}.
+We now turn to Theorem \ref{MAINEXIST1 THM}.
 Should it be the case that 
 $(\mathcal{V},\otimes)$ has diagonals 
 (which is not a requirement of Theorem \ref{MAINEXIST1 THM}),
@@ -8741,7 +8742,7 @@ starting with the obvious $\mathsf{Op}^G(\mathcal{V})$ analogue
 of (\ref{MAINPFADJ EQ})
 and using Remark \ref{EXMAINLEM REM}
 instead of Lemma \ref{EXMAINLEM LEM}
-(as in this case, we may use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
+(as in this case, we may still use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
 \end{proof}
 
 
