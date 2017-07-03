@@ -7766,7 +7766,7 @@ Summarizing the previous section,
 the discussion following Proposition \ref{RANTRANS PROP}
 establishes (\ref{EXTTREEFOR EQ}), and hence 
 Corollary \ref{KANRED COR} 
-gives the alternate formula
+gives the alternative formula
 \begin{equation}\label{ALTFOR EQ}
 	\mathcal{P}[u] \simeq
 	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
@@ -7862,7 +7862,7 @@ for $V_G^{in}(T)$ the set of inert $G$-vertices.
 
 Note that though 
 $|V^{in}(T_i)| = k$
-for each $T_i$ composing $T=(T_i)_{i \in I}$,
+for each of the $T_i$ that constitute $T=(T_i)_{i \in I}$,
 one can only guarantee $|V_G^{in}(T)| \leq k$.
 \end{remark}
 
@@ -7881,12 +7881,12 @@ $\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the resu
 	of Proposition \ref{LXP PROP},
 	the $(\minus)_{\mathcal{P}}$ construction 
 	does not define a full functor
-  $\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the $Y$-inert maps of $\Omega_G^e$.
+  $\Omega_G^e \to \Omega_G^e$, instead being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ natural, only with respect to the
+maps of $\Omega_G^e$ that preserve $Y$-labels.
 \end{remark}
 
 
 \begin{example}
-%  We observe that this construction is symmetric across all tree components, and hence, to give an example, it suffices to show want happens on a single component (i.e. when $G = \set{e}$).
 Combining the $(\minus)_{\mathcal{P}}$ and $\mathsf{lr}_{\mathcal{P}}$ constructions one obtains a construction sending trees in $\widehat{\Omega}^e_G$ to trees in $\widehat{\Omega}^e_G$.
 We illustrate this for the tree $T \in \widehat{\Omega}^e$ below (so that $G=\**$), where black nodes are $\P$-labeled, white nodes are $X$-labeled, and grey nodes are $Y$-labeled.
 \[
@@ -8046,14 +8046,14 @@ $T \in \widehat{\Omega}_G^e[\leq\! k-1]$. One can form a diagram
 \begin{tikzcd}
       & S & \mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \ar{l}
       \\
-      T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{inert}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
+      T \ar{ur} \ar{r} & T' \ar{u}[swap]{Y-\text{pres}} & \mathsf{lr}_{\mathcal{P}}(T'_{\mathcal{P}}) \ar{l} \ar{u}
 \end{tikzcd}
 \end{equation}
-where $T \to T' \to S$ is the natural factorization such that $ T' \to S$ is $Y$-inert, 
+where $T \to T' \to S$ is the natural factorization such that $ T' \to S$ preserves $Y$-labels, 
 i.e., $T'$ is obtained from $T$ by simply relabeling to $X$ those $Y$-labeled vertices of $T$ that become $X$-vertices in $S$.
 Note that by Remark \ref{YINERT REM}, the existence
 of the right square relies on 
-$T' \to S$ being $Y$-inert.
+$T' \to S$ preserving $Y$-labels.
 Since all maps in 
 (\ref{K-1LANFINAL EQ})
 are rooted tall, 
