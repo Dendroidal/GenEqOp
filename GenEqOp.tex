@@ -6237,7 +6237,7 @@ for the corresponding algebras.
 
 \begin{corollary}\label{TWOADJOINTSOPF COR}
 The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
-\[
+\begin{equation}\label{TWOADJOINTSOPF EQ}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
 			\arrow[r, bend left, "\upgamma_{!}"]
@@ -6246,7 +6246,7 @@ The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
 		\mathsf{Op}_{G}(\mathcal{V})
 		\arrow[l, "\upgamma^{\**}"]
 	\end{tikzcd}
-\]
+\end{equation}
 \end{corollary}
 
 \begin{remark}
@@ -8692,7 +8692,7 @@ the exact same argument as in the previous paragraph yields a transferred
 $\{\mathcal{F}_C\}$ model structure in $\mathsf{Op}_G(\mathcal{V})$.
 
 Letting $\mathcal{F}$ now denote a weak indexing system as in Theorem \ref{MAINEXIST2 THM}
-and (\ref{TWOADJOINTSOPF EQ}),
+and Corollary \ref{TWOADJOINTSOPF COR},
 one concludes in particular that there exists a 
 ``$\mathcal{F}$-projective''
 (semi-)model structure on 
@@ -10310,7 +10310,7 @@ for some partial homomorphism $G \geq K \xrightarrow{\varphi} \Sigma$, thus moti
 
 
 \begin{remark}
-	The collection of all $G$-graph subgroups is itself a family. Indeed, it coincides with 
+	The collection of all $G$-graph subgroups is itself a family $\mathcal{F}^{\Gamma}$. Indeed, this family  coincides with 
 	$(\iota_{\Sigma})_{\**}(\{\**\})$
 for the inclusion homomorphism 
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
@@ -10356,7 +10356,7 @@ as subgroups of $\Sigma_n \wr (G \times \Sigma)$,
 	G \times \Sigma_{\lambda_e} \wr \Sigma
 \]
  one has  
-\begin{equation}\label{FLTIMESN2G EQ}
+\[
 	K \in \mathcal{F}^{\ltimes_G E} 
 	\text{ iff }
 	\underset{e \in E}{\forall} \pi_{G \times \Sigma}
@@ -10365,7 +10365,7 @@ as subgroups of $\Sigma_n \wr (G \times \Sigma)$,
 		\left(G \times \Sigma_{\lambda_e} \wr \Sigma \right)
 	\right)
 	\in \mathcal{F}.
-\end{equation}
+\]
 \end{remark}
 
 
@@ -10379,14 +10379,14 @@ Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model cate
 Let $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of 
 $G \times \Sigma$ and $G \times \bar{\Sigma}$. Then the following (with diagonal $G$-action on the images) 
 is a left Quillen bifunctor.
-	\begin{equation}\label{EXTERINTADJG EQ}
+\[
 	\mathcal{V}^{G \times \Sigma}_{\mathcal{F}}
 		\times
 	\mathcal{V}^{G \times \bar{\Sigma}}_{\bar{\mathcal{F}}}
 		\xrightarrow{\otimes}
 		\mathcal{V}^{G \times \Sigma \times \bar{\Sigma}}_{
 	\mathcal{F} \sqcap_G \bar{\mathcal{F}}}
-\end{equation}
+\]
 \end{proposition}
 
 
@@ -10423,7 +10423,7 @@ $G \geq H \to \Sigma_n$
 defines a $H$-action on the $n$-corolla $C_n \in \Sigma$
 and hence, by choosing an arbitrary order of 
 $G/H$ and coset representatives $g_i$ for $G/H$, a $G$-corolla
-$(g_i C_n)_{G/H}$ in $\Sigma_G$. The following is then elementary.
+$(g_i C_n)_{[g_i] \in G/H}$ in $\Sigma_G$. The following is then elementary.
 
 
 \begin{lemma}\label{FAMILY_COROLLAS_LEM}
@@ -10496,7 +10496,8 @@ Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with aut
 	Write $\mathcal{F}_T$ for the collection of $G$-graph subgroups of 
 	$G \times \Sigma_T$ encoded by partial homomorphisms
 	$G \geq H \to \Sigma_T$ such that the associated $G$-tree
-	$G \cdot_H T$ is a $\mathcal{F}$-tree.
+	$G \cdot_H T$ is a $\mathcal{F}$-tree
+	(cf. Definition \ref{FTREE DEF}).
 	
 	Then $\mathcal{F}_T$ is a $G$-graph family.
 \end{proposition}
@@ -10507,23 +10508,23 @@ Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with aut
 	as thus also restrict the stabilizer actions on each vertex $T_{e^{\uparrow} \leq e}$.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{LRLEFTQUILLEN REM}
 The closure condition defining weak indexing systems in Definition \ref{INDEXSYS DEF}
-can be translated in terms of families as saying that for any tree $T \in \Omega$ and 
-$\phi \colon \Sigma_T \to \Sigma_{\mathsf{lr}(T)}$ 
+can be translated in terms of families as saying that for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
+$\phi \colon \Sigma_T \to \Sigma_n$ 
 the natural homomorphism, one has
-$(G \times \phi)(\Gamma) \in \mathcal{F}_{\mathsf{lr}(T)}$
+$(G \times \phi)(\Gamma) \in \mathcal{F}_n$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Hence, by
 Proposition \ref{FGTRIGHT PROP} 
-\begin{equation}\label{LRLEFTQUILLEN EQ}
+\[
 	\phi_{!}
 		\colon
-	\mathcal{V}^{G\times \Sigma_T}_{\mathcal{F}_T}
+	\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}
 		\to
-	\mathcal{V}^{G\times \mathsf{lr}(T)}
-	_{\mathcal{F}_{\mathsf{lr}(T)}}
-\end{equation}
+	\mathcal{V}^{G \times \Sigma_n}
+	_{\mathcal{F}_{n}}
+\]
 is a left Quillen functor.
 \end{remark}
 
@@ -10556,13 +10557,13 @@ $\{1,\cdots,n\} = \lambda_1 \amalg\cdots \amalg \lambda_k$
  \Sigma_{\lambda_k}$
 and picking representatives $i_j \in \lambda_j$ 
 one then has isomorphisms
-\begin{equation}\label{TREEISOT EQ}
+\[
 	\Sigma_T \simeq \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}
 		\simeq
 	\Sigma_{|\lambda_1|} \wr \Sigma_{T_{i_1}}
 		\times \cdots \times	
 	\Sigma_{|\lambda_k|} \wr \Sigma_{T_{i_k}}
-\end{equation}
+\]
 where the second isomorphism, while not canonical 
 (it depends on choices of isomorphisms $T_{i_j} \simeq T_l$ for each $i_j \neq l \in \lambda_j$) is nonetheless well defined up to conjugation.
 \end{remark}
@@ -10612,7 +10613,7 @@ As for the condition
 	\right)	$, by unpacking it by combining 
 	Remarks \ref{UNPACKINGSQCAP REM} and 
 	\ref{UNPACKINGLTIMES REM},
-	this translates to the condition that, for each $i \in \{1,\cdots,n\}$, one has
+	this translates to the condition that, for each $i \in \{1,\cdots,k\}$, one has
 	\begin{equation}\label{KEYLEMMAGECOR EQ}
 	\pi_{G \times \Sigma_{T_i}}
 	\left(
@@ -10629,7 +10630,7 @@ where $\lambda - \{i\}$ denotes the induced partition of
 $\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in (\ref{KEYLEMMAGECOR EQ}) can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
-we see that this is the graph subgroup encoded by the restriction $H_i \leq H \to \Sigma_T$, where $H_i$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
+we see that this is the graph subgroup encoded by the restriction $H \geq H_i \to \Sigma_T$, where $H_i$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
 But since for any edge $e \in T_i$ its isotropy $H_e$ 
 (cf. (\ref{PARTIALHOMEDGE EQ})) is a subgroup of $H_i$, the induction hypothesis implies that (\ref{KEYLEMMAGECOR EQ})
 is equivalent to condition (\ref{PARTIALHOMEDGE EQ}) 
@@ -10638,8 +10639,8 @@ across all vertices other than the root vertex.
 The previous paragraphs show that 
 (\ref{KEYLEMMAGECO EQ})
 indeed holds when restricted to $G$-graph subgroups. However, it still remains to show that any group $\Gamma$ in the rightmost family in (\ref{KEYLEMMAGECO EQ}) is indeed
-a $G$-graph subgroup, i.e. $\Gamma \cap \Sigma_T =\**$ or,
-in other words, that any element 
+a $G$-graph subgroup, i.e. $\Gamma \cap \Sigma_T =\**$.
+In other words, we need to show that any element 
 $\gamma \in \Gamma \leq
 G \times \Sigma_{\lambda} \wr \prod_{i} \Sigma_{T_i}$
 whose $G$-coordinate is 
@@ -10662,7 +10663,7 @@ More concretely,
 and writing 
 $p(T_v) \colon \emptyset \to \mathcal{P}(T_v)$,
 we analyze the cofibrancy of the maps
-\begin{equation}\label{COFIBMAPSTREE EQ}
+\[
 	\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
 	\underset{v \in V_{G}^{in}(T)}
 	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
@@ -10677,7 +10678,7 @@ we analyze the cofibrancy of the maps
 	\underset{v \in V_{G}^{in}(T)}
 	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
 	u(T_v)
-\end{equation}
+\]
 that constitute the inner part of (\ref{FILTINTALT EQ}), and where we recall that $T \in \Omega_G^a$ is an alternating tree.
 This analysis will consist of two parts, to be combined in the next section:
 \begin{inparaenum}
@@ -10780,10 +10781,12 @@ One might thus hope for similarly easier proofs of the general $\Sigma_{\mathcal
 reverse engineering our arguments,
 the most natural such attempt would replace 
 (\ref{KEYLEMMAGECOR EQ}) with
-\begin{equation}\label{WRONGCONJ}
-	\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
+\[
+%\begin{equation}\label{WRONGCONJ}
+\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
 \in \mathcal{F},
-\end{equation}
+\]
+%\end{equation}
 which is tantamount to 
 replacing the families 
 $\mathcal{F}^{\ltimes n}$ of Definition \ref{FLTIMESN DEF} with the families
@@ -10791,7 +10794,7 @@ $(\iota_{G^{\times n}})_{\**}
 (\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
 However, one can build indexing systems $\Sigma_{\mathcal{F}}$ (other than $\Sigma_G$) for which these simpler families do not satisfy the analogue of 
 Lemma \ref{KEYLEMMAGECO LEM}, 
-and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
+and thus for which the analogue of Remark \ref{LRLEFTQUILLEN REM} fails.
 %However, the following example shows that  
 %(\ref{WRONGCONJ}) 
 %is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
@@ -10863,13 +10866,13 @@ and thus for which (\ref{LRLEFTQUILLEN EQ}) fails.
 	genuine cofibrations between genuine cofibrant objects in 
 	$\mathsf{Sym}^G(\mathcal{V})$.
 	For each $T \in \Omega_{G}^{\underline{l}}$ define
-	\begin{equation}
+\[
 		f^{\square V_G(T)} = 
 		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
 			\phantom{!}
 		\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
 		\iota_{\**}f_s(v).
-	\end{equation}
+\]
 	Then the canonical natural transformation
 	\begin{equation}\label{FIXEDPOINT1 EQ}
 		f^{\square V_G(-)} \to
@@ -10907,10 +10910,12 @@ $T=U_G$.
 Consider now the quotient map
 $(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
 The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
-are the $G$-graph subgroup $K \leq G \times \Sigma_U$
+are the elements of the
+$G$-graph subgroup $K \leq G \times \Sigma_U$
 encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
 
 We now have identifications
+(recall that $V_G(U_G) = V(U)/G$)
 \begin{align*}
 	f^{\square V_G(U_G)}
 \simeq
