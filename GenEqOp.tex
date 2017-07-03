@@ -9337,7 +9337,7 @@ instead of Lemma \ref{EXMAINLEM LEM}
 
 \section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-In this final section we prove our main result Theorem \ref{MAINQUILLENEQUIV THM}, i.e. we show that there are Quillen equivalences
+In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}. I.e. we show that there are Quillen equivalences
 \[
 \begin{tikzcd}[column sep =4.5em]
 	\mathsf{Op}_{G}(\mathcal{V}) 
@@ -9369,6 +9369,8 @@ in \S \ref{MAINTHM_PROOF_SECTION},
 with this final lemma tantamount to 
 Theorem \ref{MAINQUILLENEQUIV THM}.
 
+Lastly, \S \ref{NINFTY_SECTION} discusses our models for the 
+$N \mathcal{F}$-operads of Blumberg-Hill.
 
 \subsection{Families of subgroups}
 \label{FAMILY_SEC}
@@ -9389,13 +9391,12 @@ with meet and join given by intersection and union.
 \end{remark}
 
 As mentioned in Remark \ref{GENCOFGEN REM},
-whenever $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
-\cite[Prop. 2.6]{Ste16} shows the existence of a model structure
+when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
+\cite[Prop. 2.6]{Ste16} shows that there exists a model structure
 $\mathcal{V}^{G}_{\mathcal{F}}$
 on the $G$-object category
 $\mathcal{V}^G$
-whose fibrations and weak equivalences are determined by fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
-
+whose fibrations and weak equivalences are determined by the fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
 Our analysis will require an explicit understanding of this cellularity condition,
 which we now recall.
 
@@ -9481,7 +9482,7 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 \begin{proposition}\label{FGTRIGHT PROP}
 	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ be cofibrantly generated with cellular fixed points.	
 	Then the adjunction
-\begin{equation}
+\[
 \begin{tikzcd}
 	\phi_{!} = \bar{G} \cdot_G(\minus)
 	\colon
@@ -9491,7 +9492,7 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 	\colon \ar[shift left=1]{l}
 	\mathsf{res}^{\bar{G}}_G = \phi^{\**}
 \end{tikzcd}
-\end{equation}
+\]
 is a Quillen adjunction provided that for any 
 $H \in \mathcal{F}$ it is $\phi(H) \in \bar{\mathcal{F}}$.
 \end{proposition}
@@ -9506,17 +9507,17 @@ it is immediate that the right adjoint preserves fibrations and trivial fibratio
 \begin{proposition}\label{FGTLEFT PROP}
 	Let $\phi \colon G \to \bar{G}$ be a homomorphism and $\mathcal{V}$ be cofibrantly generated with cellular fixed points.		
 	Then the adjunction
-\begin{equation}
+\[
 \begin{tikzcd}
 	\phi^{\**} = \mathsf{res}^{\bar{G}}_G
 	\colon
 	\mathcal{V}^{\bar{G}}_{\mathcal{\bar{F}}} \ar[shift left=1]{r}
 &
 	\mathcal{V}^{G}_{\mathcal{F}}
-	\colon
+	\colon \ar[shift left=1]{l}
 	\mathsf{Hom}_G(\bar{G},\minus) = \phi_{\**}
 \end{tikzcd}
-\end{equation}
+\]
 is a Quillen adjunction provided that for any 
 $H \in \bar{\mathcal{F}}$ it is 
 $\phi^{-1}(H) \in \mathcal{F}$.
@@ -9609,20 +9610,20 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 \begin{proposition}\label{BIQUILLENG PROP}
 	Suppose that $\mathcal{V}$ is cofibrantly generated, has cellular fixed points, and is also a closed monoidal model category. 	
 	Then the bifunctor
-\begin{equation}\label{BIQUILLENG EQ}
+\[
 	\mathcal{V}^G_{\mathcal{F}}
 		\times
 	\mathcal{V}^G_{\bar{\mathcal{F}}}
 		\xrightarrow{\otimes}
 	\mathcal{V}^G_{\mathcal{F} \cap \bar{\mathcal{F}}}
-\end{equation}
+\]
 	is a left Quillen bifunctor.
 \end{proposition}
 
 
 \begin{proof}
 	The double coset formula yields
-\begin{equation}
+\[
 	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
 	\left(G/H \times G/\bar{H}\right) \cdot \left(f \square g\right)
@@ -9631,7 +9632,7 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 		\coprod_{[a]\in H \backslash G /\bar{H}}
 		{G/H\cap \bar{H}^a} \cdot (f \square g)
 	\right)
-\end{equation}
+\]
 and hence the result follows since families are closed under conjugation and subgroups.
 \end{proof}
 
