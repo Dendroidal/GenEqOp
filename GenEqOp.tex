@@ -8394,10 +8394,10 @@ those maps $X \to Y$ such that
 $X^H \to Y^H$ is a weak equivalence (fibration)
 for all $H \leq \Sigma$.
 
-Our main proof will require some auxiliary results concerning the above genuine model structures.
+Our main proof will require some auxiliary results concerning genuine model structures.
 However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
-we defer these %harder
+we defer their %harder
 proofs to those
 of the stronger results in \S \ref{COFIB SEC}.
 
@@ -8476,10 +8476,10 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	with cofibrant symmetric pushout powers 
 	(cf. Proposition \ref{POWERF PROP}).
 	
-	Suppose that $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
-	is level genuine cofibrant
-	and that 
-	$u: X \to Y$ in $\Sym_G(\V)$ is a level genuine cofibration. 
+	Let $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
+	be level genuine cofibrant
+	and  
+	$u: X \to Y$ in $\Sym_G(\V)$ a level genuine cofibration. 
 	Then for each $T \in \Omega^a_G[k]$ and writing
 	$C = \mathsf{lr}(T)$, the map	
 \begin{equation}\label{EXMAINLEM EQ}
@@ -8545,9 +8545,9 @@ Proposition \ref{POWERF PROP}
 \begin{remark}\label{EXMAINLEM REM}
 If %When
 $T \in \Omega^a[k]$ is a non-equivariant alternating tree, 
-$\mathcal{P}$ is cofibrant in $\mathsf{Sym}^G(\V)$,
+$\mathcal{P}$ is level genuine cofibrant in $\mathsf{Sym}^G(\V)$,
 and
-$u \colon X \to Y$ is a (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
+$u \colon X \to Y$ is a level genuine (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
 the previous result applied to
 $G \cdot T = (T)_{g \in G}$,
 $\iota_{!} \mathcal{P}$,
@@ -8555,10 +8555,10 @@ $\iota_{!} u$,
 yields that
 the analogue of the map
 (\ref{EXMAINLEM EQ})
-is a $\mathsf{Aut}(G \cdot C_n) 
+is an $\mathsf{Aut}(G \cdot C_n) 
 \simeq G 
 \times \mathsf{Aut}(C_n)=
-G \times \Sigma_n$ genuine cofibration,
+G \times \Sigma_n$ level genuine (trivial) cofibration,
 where $C_n = \mathsf{lr}(T)$.
 \end{remark}
 
@@ -8591,7 +8591,8 @@ $(X_D) \mapsto \coprod_{D \in \Sigma_G}
 \mathsf{Hom}_{\Sigma_G} (\minus, D) 
 \cdot_{\mathsf{Aut(D)}} X_D$
 and using either 
-\cite[Thm. 11.3.2]{Hi03} (or equivalently \cite[Thm A.1]{Ste16})
+\cite[Thm. 11.3.2]{Hi03} 
+%(or equivalently \cite[Thm A.1]{Ste16})
 in the model structure case
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$
 or 
@@ -8637,7 +8638,7 @@ Remark \ref{ALLCOF REM}
 guarantees that any 
 $\mathcal{P}$ is level genuine cofibrant,
 and thus the conditions in
-\cite[Thm. 11.3.2]{Hi03} are met,
+\cite[Thm. 11.3.2]{Hi03} are met (since transfinite composites of trivial cofibrations are again trivial cofibrations),
 showing the existence of the model structure.
 In the semi-model structure case, the condition that 
 $\mathcal{P}$ is level genuine cofibrant
@@ -8657,7 +8658,7 @@ on $\mathsf{Op}_G(\mathcal{V})$.
 This model structure is transferred from the exact same adjunction
 (\ref{MAINPFADJ EQ}), except equipping the 
 leftmost $\mathcal{V}^{\mathsf{Aut}(C)}$
-with their naive model structure, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
+with their naive model structures, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
 and ignoring fixed point conditions.
 The desired projective model structure thus
 has both less generating (trivial) cofibrations
@@ -8667,7 +8668,9 @@ are genuine projective equivalences and hence also projective equivalences, show
 \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
 holds,
-establishing the existence of the projective model structure% \footnote{
+establishing the existence of the projective model structure
+. 
+% \footnote{
 % The condition in \cite[Lemma 2.3(1)]{SS00}
 % is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
 % By contrast, the condition in 
@@ -8725,7 +8728,7 @@ turns out to coincide with the corresponding  condition for the $\mathcal{F}$-pr
 The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 finishing the proof of Theorem \ref{MAINEXIST2 THM}.
 
-We now turn for Theorem \ref{MAINEXIST1 THM}.
+We now turn to Theorem \ref{MAINEXIST1 THM}.
 Should it be the case that 
 $(\mathcal{V},\otimes)$ has diagonals 
 (which is not a requirement of Theorem \ref{MAINEXIST1 THM}),
@@ -8739,7 +8742,7 @@ starting with the obvious $\mathsf{Op}^G(\mathcal{V})$ analogue
 of (\ref{MAINPFADJ EQ})
 and using Remark \ref{EXMAINLEM REM}
 instead of Lemma \ref{EXMAINLEM LEM}
-(as in this case, we may use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
+(as in this case, we may still use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
 \end{proof}
 
 
