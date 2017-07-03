@@ -7348,26 +7348,22 @@ By changing any $X$-labels in $S_{v_{G e}}$
 into $Y$-labels (resp. $\mathcal{P}$-labels)
 whenever $T_{v_{G}}$  has a 
 $Y$-label (resp. $\mathcal{P}$-label), one obtains a factorization
-\begin{equation}\label{LABRE EQ}
-T \to \bar{S} \to S
-\end{equation}
+\[ T \to \bar{S} \to S \]
 such that $T \to \bar{S}$ is a label map 
 (cf. Definition \ref{LABMAP DEF})
 and $\bar{S} \to S$ is an underlying identity of trees that
-merely changes some if the $Y$ and $\mathcal{P}$ labels into 
-$X$ labels.
+merely changes some of the $Y$ and $\mathcal{P}$ labels into 
+$X$-labels.
 We refer to the latter kind of map as a \textit{relabel map}.
 It is clear that the label-relabel factorization 
-(\ref{LABRE EQ}) is unique.
+ is unique.
 \end{remark}
 
 
 \begin{proposition}
 There is an identification
-\[
-	\Omega_G^e \simeq 
-	|\Omega_{G}^{\mathsf{t},\lambda_l}|.
-\]
+$\Omega_G^e \simeq 
+|\Omega_{G}^{\mathsf{t},\lambda_l}|$.
 \end{proposition}
 
 
@@ -7377,8 +7373,8 @@ $\mathcal{C} = \Omega_G^e$,
 with $\mathcal{C}_h$ and $\mathcal{C}^v$ the categories of 
 relabel and label maps.
 More precisely, we claim that there is an isomorphism 
-$\mathcal{C}_{h,l}^{v} \simeq 
-\Omega_{G}^{\mathsf{t},\lambda_l}$
+$\mathcal{C}_{h,\bullet}^{v} \simeq 
+\Omega_{G}^{\mathsf{t},\lambda_{\bullet}}$
 of objects in $\mathsf{Cat}^{\Delta^{op}}$.
 Unpacking notation, one must first show that strings
 \begin{equation}\label{RELABSTR EQ}
@@ -7388,35 +7384,37 @@ T_0 \to T_1 \to \cdots \to T_l
  are in bijection with objects of 
  $\Omega_{G}^{\mathsf{t},\lambda_l}$,
  i.e., with trees labeled by
- $\langle l \rangle =
+ $\langle \langle l \rangle \rangle =
   \{-\infty, -l, \cdots, -1,0,1,\cdots,l,+ \infty\}$.
 Noting that the maps in
 (\ref{RELABSTR EQ})
 are simply underlying identities on some fixed tree $T$
 that convert some of the $\mathcal{P}$, $Y$ labels into $X$ labels,
-we label a vertex $T_{v_{Ge}}$ by 
+we label a vertex $T_{v_{Ge}}$ by:
 \begin{inparaenum}
 \item[(i)]
+$j$ such that
 $0 < j \leq +\infty$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
 (\ref{RELABSTR EQ}) are $Y$ labels (where $+\infty = l+1$); 
 \item[(ii)]
+$-j$ such that
 $-\infty \leq -j < 0$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
 (\ref{RELABSTR EQ}) are $\mathcal{P}$ labels;
 \item[(iii)] $j=0$ if all labels in (\ref{RELABSTR EQ})
-are $X$ labels.
+are $X$-labels.
 \end{inparaenum}
- This process clearly established the desired bijection on objects.
+ This process clearly establishes the desired bijection on objects.
 
 The compatibilities with arrows and with the simplicial structure are straightforward.
 \end{proof}
 
 
-Our next task will be that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
+Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 We first introduce the auxiliary notion of alternating trees.
 Recall the notion of input path (Notation \ref{INPUTPATH NOT})
-$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\in \Omega, \Phi, \Omega_G, \Phi_G$.
+$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi_G$.
 
 
 \begin{definition}\label{OMEGAA DEF}
@@ -7440,7 +7438,7 @@ We will denote the category of alternating $G$-trees and tall alternating maps b
 
 \begin{example}
 Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternating map between them follow, with active nodes in black ($\bullet$) and white nodes in white ($\circ$).
-\begin{equation}\label{REGALTERNMAPLR EQ}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 	\tikzstyle{level 2}=[sibling distance = 4em]
 	\tikzstyle{level 3}=[sibling distance = 3em]
@@ -7513,7 +7511,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 \end{scope}
 	\draw [->] (2.5,2) -- node [swap] {$\varphi$} (5,2);
 \end{tikzpicture}
-\end{equation}
+\]
 The term ``alternating'' reflects the fact that adjacent nodes have different colors, though there is an additional restriction: the ``outer vertices'', i.e. those immediately below a leaf or above the root, are necessarily black/active
 (this does not, however, apply to stumps).
 %As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
@@ -7567,7 +7565,7 @@ where the $U_i^X, U_j^Y$ are simply the $X,Y$-labeled nodes
 and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
 Lemma \ref{OUTERFACEUNION LEM} guarantees that 
 each edge and each $\mathcal{P}$-labeled node belong to exactly
-one of the $V_G(U_k^{X})$, and applying 
+one of the $U_k^{\mathcal{P}}$, and applying 
 Proposition \ref{BUILDABLE PROP}(iii)
 yields a planar tall map
 \begin{equation}\label{LRXDEF EQ}
@@ -7586,7 +7584,7 @@ $I(l) = (l = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$
 must start with, end with, and alternate between 
 $\mathcal{P}$-nodes, and thus have even length.
 
-To check uniqueness, note that for any other planar label map $S \to U$ with $S$ alternating
+To check uniqueness, note that for any other planar label map $S \to U$ with $S \in \widehat{\Omega}_G^e$
 and $e^{\uparrow} \leq e$ a $\mathcal{P}$ vertex of $S$
 the outer face 
 $U_{e^{\uparrow} \leq e}$
@@ -7638,8 +7636,8 @@ $\mathsf{lr}_{\mathcal{P}} (\varphi)$
 to be the map $T\to S$.
 Associativity and unitality are automatic from the uniqueness of the factorization of (\ref{LRPFUN EQ}).
 
-In the case of $T = (T_x)_{x \in X}$ in 
-$\Omega_G^e$ for a general group $G$,
+For $T = (T_x)_{x \in X}$ in 
+$\Omega_G^e$ with $G$ a general group,
 one sets
 $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
@@ -7654,7 +7652,7 @@ $T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
 $\mathsf{lr}(T^{\mathcal{P}}_k)$,
 $\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
 $\mathcal{P}$-labeled.
-\begin{equation}
+\[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize,inner sep=2pt},
 dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
@@ -7735,7 +7733,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 \end{scope}
 	\draw [->] (2.5,2.5) -- node [swap] {$\mathsf{lr}_{\mathcal{P}}(\varphi)$} (5.5,2.5);
 \end{tikzpicture}
-\end{equation}
+\]
 \end{example}
 
 
