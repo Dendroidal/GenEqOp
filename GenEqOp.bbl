@@ -32,17 +32,34 @@ S.~R. Costenoble and S.~Waner.
 \newblock Fixed set systems of equivariant infinite loop spaces.
 \newblock {\em Trans. Amer. Math. Soc.}, 326(2):485--505, 1991.
 
+\bibitem{DP07}
+K.~Do\v~sen and Z.~Petri\'c.
+\newblock Relevant categories and partial functions.
+\newblock {\em Publ. Inst. Math. (Beograd) (N.S.)}, 82(96):17--23, 2007.
+
+\bibitem{EK66}
+S.~Eilenberg and G.~M. Kelly.
+\newblock Closed categories.
+\newblock In {\em Proc. {C}onf. {C}ategorical {A}lgebra ({L}a {J}olla,
+  {C}alif., 1965)}, pages 421--562. Springer, New York, 1966.
+
 \bibitem{Elm83}
 A.~D. Elmendorf.
 \newblock Systems of fixed point sets.
 \newblock {\em Transactions of the American Mathematical Society},
   277:275--284, 1983.
 
+\bibitem{Fre09}
+B.~Fresse.
+\newblock {\em Modules over operads and functors}, volume 1967 of {\em Lecture
+  Notes in Mathematics}.
+\newblock Springer-Verlag, Berlin, 2009.
+
 \bibitem{Gui06}
 B.~Guillou.
 \newblock A short note on models for equivariant homotopy theory.
-\newblock Available at:
-  \texttt{http://www.ms.uky.edu/~guillou/EquivModels.pdf}, 2006.
+\newblock Available at: \url{http://www.ms.uky.edu/~guillou/EquivModels.pdf},
+  2006.
 
 \bibitem{Hatcher}
 A.~Hatcher.
@@ -60,11 +77,24 @@ P.~S. Hirschhorn.
   Mathematical Surveys and Monographs}.
 \newblock American Mathematical Society, Providence, RI, 2003.
 
+\bibitem{Hov98}
+M.~Hovey.
+\newblock Monoidal model categories.
+\newblock arXiv preprint: 9803002, 1998.
+
 \bibitem{Ho98}
 M.~Hovey.
 \newblock {\em Model categories}, volume~63 of {\em Mathematical Surveys and
   Monographs}.
 \newblock American Mathematical Society, Providence, RI, 1999.
+
+\bibitem{Lei16}
+T.~Leister.
+\newblock Monoidal categories with projections.
+\newblock
+  \url{https://golem.ph.utexas.edu/category/2016/08/monoidal_categories_with_proje.html},
+  2016.
+\newblock From "The n-{C}ategory {C}af\'e".
 
 \bibitem{McL}
 S.~Mac~Lane.
