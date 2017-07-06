@@ -15,7 +15,7 @@
 \author{Peter Bonventre, Lu\'is A. Pereira}%
 \title{Genuine equivariant operads}%
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 \usepackage{stmaryrd}
 
 \usepackage{upgreek}
@@ -89,8 +89,8 @@ deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 upon forgetting the $\Sigma_n$-actions.
-In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$ and, moreover, 
-any cofibrant replacement of $\mathsf{Com}$
+In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Comm}$ and, moreover, 
+any cofibrant replacement of $\mathsf{Comm}$
 is $E_{\infty}$.
 However, naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
 This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
@@ -109,11 +109,11 @@ i.e. if the maps
 \end{equation}
 are weak equivalences of spaces. 
 However, the notion of equivalence suggested in (\ref{NAIVEOPEQ EQ}) turns out to not be ``genuine enough''.
-To see why, we first consider a homotopical replacement for $\mathsf{Com}$ using this theory: 
+To see why, we first consider a homotopical replacement for $\mathsf{Comm}$ using this theory: 
 %recall that the class of (non-equivariant)
 %$E_{\infty}$-operads,
 %which are up-to-homotopy replacements for the commutative operad
-%$\mathsf{Com}(n)=\**$,
+%$\mathsf{Comm}(n)=\**$,
 %consists of those operads 
 %$\O$ such that:
 %\begin{inparaenum}
@@ -132,10 +132,10 @@ determined by
 \end{equation}
 However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equivariant infinite loop spaces,
 the \textit{$G$-trivial $E_\infty$-operads} of (\ref{NAIVEGEINFTY EQ}) do not provide 
-the correct replacement of $\mathsf{Com}$
+the correct replacement of $\mathsf{Comm}$
  in the $G$-equivariant context. 
  %Instead, %notion of $G$-$E_{\infty}$-operads, by which we mean 
-%up-to-homotopy replacements of $\mathsf{Com}$ in the $G$-equivariant context. 
+%up-to-homotopy replacements of $\mathsf{Comm}$ in the $G$-equivariant context. 
 Rather, that replacement is provided instead by the 
 \textit{$G$-$E_{\infty}$-operads}, characterized by the fixed point conditions
 \begin{equation}\label{GENGEINFTY EQ}
@@ -173,7 +173,7 @@ are all weak equivalences.
 As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up to homotopy replacement for $\mathsf{Com}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
+provides the best up to homotopy replacement for $\mathsf{Comm}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
@@ -182,9 +182,9 @@ the corresponding \textit{norm} is a $G$-spectrum $N^X R$
 whose underlying spetrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$
 but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
-Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
+Moreover, for any $\mathsf{Comm}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
-%(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
+%(i.e. if $R$ is an algebra over $\mathsf{Comm}$ in $G$-spectra),
 ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X R \to R.
@@ -211,7 +211,7 @@ are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
 The flaw of the $G$-trivial $E_{\infty}$-operads
 described in (\ref{NAIVEGEINFTY EQ}) is then that it lacks all norms maps other than those for $H$-trivial $X$, thus lacking 
-some of the data encoded by $\mathsf{Com}$.
+some of the data encoded by $\mathsf{Comm}$.
 Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
 according to which (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}) are equivalent,
 as studying ``operads without norm maps''
@@ -270,7 +270,7 @@ the Gutierrez-White's
 model for $N \mathcal{F}$
 is cofibrant 
 while Rubin's model is explicit.
-Our model, which emerges from a broader framework, satisfies both of these desiderata.
+Our model, which emerges from a more conceptual approach, satisfies both of these desiderata.
 
 %This conjecutre has been independently confirmed in \cite{Rub17} and announced by Gutierrez-White \cite{GW},
 %both by different methods.
@@ -342,9 +342,7 @@ $\mathcal{V}=\mathsf{Op}$
 to establish a Quillen equivalence
 $\mathsf{Op}^{\mathsf{O}_G^{op}}
 \rightleftarrows
-\mathsf{Op}^G$
-(the existence of this equivalence is due to
-upcoming work of Bergner-Gutierrez), 
+\mathsf{Op}^G$, 
 the fact that 
 the levels of each 
 $\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
@@ -682,19 +680,14 @@ provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
 \item[(i)] is a cofibrantly generated model category;
-\item [(ii)] is a closed monoidal model category with cofibrant unit;
+\item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers.
 \end{inparaenum}
 \end{customthm}
 
-We note that a similar result has also been proven by Gutierrez-White in \cite{GW}.
-
 Theorem \ref{MAINEXIST1 THM}
 is proven in \S \ref{MAINEXIST SEC}.
-Condition (i) can be found in 
-\cite[Def. 2.1.17]{Ho98} while (ii) 
-can be found in \cite[Def. 4.2.6]{Ho98}.
 The additional conditions (iii) and (iv),
 which are less standard, are discussed in 
 \S \ref{FAMILY_SEC} and
@@ -800,7 +793,7 @@ provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
 \item[(i)] is a cofibrantly generated model category;
-\item [(ii)] is a closed monoidal model category with cofibrant unit;
+\item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
 \item[(v)] has diagonals.
@@ -856,7 +849,7 @@ provided that
 $(\mathcal{V},\otimes)$:
 \begin{inparaenum}
 \item[(i)] is a cofibrantly generated model category;
-\item [(ii)] is a closed monoidal model category with cofibrant unit;
+\item [(ii)] is a closed monoidal model category;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
 \item[(v)] has diagonals;
@@ -6175,7 +6168,6 @@ The connection between weak indexing systems and $\mathbb{F}_G$ is given by the 
 which generalizes 
 Proposition \ref{MONAD_COMPARISON_PROP}.
 
-
 \begin{proposition}\label{F_MONAD_COMPARISON_PROP}
 	Let $\F$ be a weak indexing system. Then:
 	\begin{itemize}
@@ -11145,10 +11137,6 @@ More explicitly, this natural transformation is the composite
 where the last two maps are always isomorphisms. But when restricting to cofibrant objects the previous result guarantees both that $\phi_! \iota_{\**}$ lands in cofibrant objects and that cofibrant objects are in the essential image of the bottom $\iota_{\**}$. The result follows.
 \end{proof}
 
-The following is the main lemma. We note that the 
-operad half of (\ref{FGTFUNC EQ})
-was also obtained by Gutierrez-White in \cite{GW}.
-
 
 \begin{lemma}\label{MAINLEM LEM}
 	Let $\mathcal{V}$ be as in 	
@@ -12116,7 +12104,7 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 We now explain how the $N\mathcal{F}$-operads of 
 Blumberg-Hill can be built from the theory of genuine equivariant operads.
 
-We start with an abstract argument, which has also been used by Gutierrez-White in \cite{GW}. 
+We start with an abstract argument. 
 Writing 
 $\mathcal{I} = \mathbb{F} (\emptyset)$
 for the initial equivariant operad in 
@@ -12131,7 +12119,7 @@ Quillen small object argument)
 	\mathcal{I} \arrow[r, rightarrowtail] &
 	\O_{\mathcal{F}}
 	\arrow[r,twoheadrightarrow, "\sim"] &
-	\mathsf{Com}
+	\mathsf{Comm}
 \end{tikzcd}
 \end{equation}
 in the model structure 
@@ -12143,7 +12131,7 @@ Corollary \ref{NINFTY_REAL_COR_MAIN}.
 That $\mathcal{O}_{\mathcal{F}}(n)^{\Gamma} \sim \**$
 whenever $\Gamma \in \mathcal{F}_n$
 follows from the fact that the map
-$\mathcal{O}_{\mathcal{F}} \xrightarrow{\sim} \mathsf{Com}$
+$\mathcal{O}_{\mathcal{F}} \xrightarrow{\sim} \mathsf{Comm}$
 is a $\mathcal{F}$-equivalence.
 On the other hand, by Lemma \ref{MAINLEM LEM}
 the map 
@@ -12730,7 +12718,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 % \end{cases}
 % \]
 
-% This homotopical replacement has since been encoded as a \textit{cofibrant} replacement $\O \to \mathsf{Com}$ in a model structure on topological operads (see, for example, \cite{Vogt03}). This model structure is levelwise, forgetting the $\Sigma_n$-action: $f:\O \to \P$ is a weak equivalence or fibration iff each $f(n)$ is so in spaces.
+% This homotopical replacement has since been encoded as a \textit{cofibrant} replacement $\O \to \mathsf{Comm}$ in a model structure on topological operads (see, for example, \cite{Vogt03}). This model structure is levelwise, forgetting the $\Sigma_n$-action: $f:\O \to \P$ is a weak equivalence or fibration iff each $f(n)$ is so in spaces.
 
 % Now, given a finite group, we can consider $G$-operads $\O\in \Op^G$; that is, operads equipped with a $G$-action that commutes with all of the algebraic structure. In this case, commutative $G$-monoids $X$ have additional structure, namely unique multiplicative \textit{norm maps} $N^A X \to X$, where $A$ is a finite $H$-set for some subgroup $H\leq G$, and $N^A X$ is the Hill-Hopkins-Ravenel Norm; in particular, these norm maps in the context of spectra were instrumental in the proof of the Kervaire Invariant One problem \cite{HHR, BH15}.
 
@@ -12783,7 +12771,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 % \end{conjecture*}
 % The affirmation of this conjecture will be a consequence of one of our main results.
 
-% Indeed, one main goal when the authors began this paper was to build $\F$-model structures on $\Op^G$ for any indexing system $\F$, where a map $f$ is a weak equivalence or fibration iff $f(n)^\Gamma$ is so for all $\Gamma \in \F_n$ for all $n$. This would provide a solution to the above by taking a homotopical (i.e. cofibrant) replacement of $\mathsf{Com}$. However, this bridged into a large analysis of the equivariant homotopy theory of operads. 
+% Indeed, one main goal when the authors began this paper was to build $\F$-model structures on $\Op^G$ for any indexing system $\F$, where a map $f$ is a weak equivalence or fibration iff $f(n)^\Gamma$ is so for all $\Gamma \in \F_n$ for all $n$. This would provide a solution to the above by taking a homotopical (i.e. cofibrant) replacement of $\mathsf{Comm}$. However, this bridged into a large analysis of the equivariant homotopy theory of operads. 
 
 % In particular, in order to arrive at this result, we need a better understanding of the interplay between the subtle equivariance structures we just discussed, and the combinatorics which underly operads. 
 % That is, we need to synthesize the equivariant stories of \cite{Elm83, Pia91, Ste16} with the operadic story of \cite{MW07}, specifically building a suitable replacement for the notion of ``coefficient systems'' for operads over some ``nice'' base category $\V$.
@@ -12870,7 +12858,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 % \end{theorem*}
 
 % Relating back to the $N_\infty$-operads, we have that a weak indexing system $\F$ is an indexing system of \cite{BH15} iff it contains $\F_{triv}$. Thus, 
-% Part (i) is sufficient to resolve in the affirmative the conjecutre of Blumberg-Hill, using a cofibrant replacement in $\Op^G_{\F}$ (\ref{N_INFINITY_REALIZATION_COROLLARY}). However, again ``mimicing'' \cite{Elm83}, we build an explicit cofibrant replacement of $i_*\mathsf{Com}$ in $\Op_G(\V)$ using a bar construction (\ref{N_INFINITY_BAR}). 
+% Part (i) is sufficient to resolve in the affirmative the conjecutre of Blumberg-Hill, using a cofibrant replacement in $\Op^G_{\F}$ (\ref{N_INFINITY_REALIZATION_COROLLARY}). However, again ``mimicing'' \cite{Elm83}, we build an explicit cofibrant replacement of $i_*\mathsf{Comm}$ in $\Op_G(\V)$ using a bar construction (\ref{N_INFINITY_BAR}). 
 % \todo[inline]{come back}
 
 % We end this introduction with a brief discussion on the general context of ``$G$-infinity operads''. We recall that $\infty$-operads, intuitively, can be thought of as operads where composition is ``weakly defined'', and $G$-coefficient systems spaces with a ``relaxed'' fixed-point condition. In this fashion, genuine $G$-operads can be thought of as $G$-operads where composition is still rigidly defined, but with relaxed fixed-point conditions. Comparitively, the $G$-$\infty$-operads of \cite{Pe17} have rigid fixed-point conditions but weak composition. The remaining missing link is a suitable notion of $G$-$\infty$-operad in the true pre-sheaf category $\Set^{\Omega_G^{op}}$:
