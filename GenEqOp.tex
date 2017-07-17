@@ -42,7 +42,7 @@
 \begin{document}	\maketitle%
 
 
-\abstract{We build new algebraic structures, which we call genuine equivariant operads, which can be thought of as a hybrid between equivariant operads and coefficient systems.
+\abstract{We build new algebraic structures, which we call genuine equivariant operads and which can be thought of as a hybrid between equivariant operads and coefficient systems.
 We then prove an Elmendorf-Piacenza type theorem stating that equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads, with their projective model structure.
 
 As an application, we build explicit models for the $N_{\infty}$-operads of Blumberg and Hill.
@@ -52,7 +52,7 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
+A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g. \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
 consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
@@ -130,7 +130,7 @@ determined by
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
-However, as first noted by Costenoble-Waner in \cite{CW91} in their study of equivariant infinite loop spaces,
+However, as first noted by Costenoble-Waner \cite{CW91} in their study of equivariant infinite loop spaces,
 the \textit{$G$-trivial $E_\infty$-operads} of (\ref{NAIVEGEINFTY EQ}) do not provide 
 the correct replacement of $\mathsf{Com}$
  in the $G$-equivariant context. 
@@ -146,7 +146,6 @@ Rather, that replacement is provided instead by the
 	\emptyset & \text{otherwise}.
 \end{cases}
 \end{equation}
-
 In contrasting 
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}),
 we note that 
@@ -164,6 +163,7 @@ and $\O'$ is a $G$-$E_{\infty}$-operad
 Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
 with the finer notion of \textit{graph equivalence}, 
 so that $\O \to \O'$ is considered a weak equivalence only if
+the maps
 \begin{equation}\label{GENEOPEQ EQ}
 	\O(n)^{\Gamma} \xrightarrow{\sim} \O'(n)^{\Gamma}, \qquad
 	\Gamma \leq G\times \Sigma_n, \Gamma \cap \Sigma_n = \{\**\}.
@@ -241,7 +241,7 @@ More concretely, each type of $N_{\infty}$-operad is determined by a collection 
 \end{equation}
 Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that these $\mathcal{F}$ must satisfy.
 The simplest of these conditions
-state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first conditions, which are common in equivariant homotopy theory,
+state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first two conditions, which are common in equivariant homotopy theory,
 are a simple consequence of each $\O(n)$ being a space.
 However, the remaining conditions, 
 all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
@@ -296,7 +296,7 @@ best understood in light of Elmendorf's classical result from \cite{Elm83}
 %from \cite{Pia91}
 %(with the key insight dating back to Elmendorf in \cite{Elm83})
 stating that there is a Quillen equivalence
-(where $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
+(recall that $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
 \begin{equation}\label{COFADJINT EQ}
 \begin{tikzcd}[column sep =5em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_G^{op}}
@@ -331,7 +331,7 @@ The overarching goal of this paper is then that of proving the analogue of Elmen
 in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
 which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
 However, in trying to formulate such a result one immediately runs into a fundamental issue: 
-it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in that context.
+it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in this context.
 This last remark likely requires justification. 
 Indeed, it may at first seem tempting to simply 
 employ one of the known formal generalizations of Elmendorf-Piacenza's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
@@ -428,7 +428,7 @@ encodes the operadic composition
 where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
 and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
 Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
-A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include a single representative example.
+A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include only a single representative example.
 Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
 and $G \geq H \geq K \geq L$ denote the subgroups %
 $H = \langle j \rangle$, %
@@ -516,7 +516,7 @@ is similarly determined by both the leaf and root edge orbits.
 The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
-and similar tree descriptions exist for all other closure properties, as detailed by the second author in 
+and similar tree descriptions exist for all other closure properties, as detailed in 
 \cite[\S 9]{Pe17}.
 
 We can now at last give a full informal description of the category $\mathsf{Op}_G$ featured in 
@@ -572,7 +572,7 @@ applied to the category
 $\mathcal{V}=\mathsf{sCat}$
 of simplicial categories strengthens 
 the observation that 
-for a $G$-simplcial category $\C$
+for a $G$-simplicial category $\C$
 the associated homotopy category
 $\text{ho}(\mathcal{C})$
 is a coefficient system of categories rather than just a $G$-category.
@@ -758,7 +758,7 @@ that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
 give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
-and partial symmetric sequences
+and partial $G$-symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
 =
 \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ which are suitably compatible with the monad
@@ -1063,7 +1063,7 @@ discusses the notion of partial genuine equivariant operads, which are very clos
 proves 
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 As is often the case when proving existence of projective model structures,
-the key to this section is a careful analysis of  the free extensions in diagram
+the key to this section is a careful analysis of  the free extensions in $\mathsf{Op}_G$ as in diagram
 (\ref{FREE_FG_EXT_EQ}),
 with 
 \S \ref{LABELSTRI SEC}, 
@@ -1083,7 +1083,7 @@ which carefully study the interplay between families of subgroups, fixed points,
 and provide the necessary ingredients for
 the characterization of the cofibrant objects
 in $\mathsf{Op}_G (\mathcal{V})$
-given by Lemma \ref{MAINLEM LEM},
+given in Lemma \ref{MAINLEM LEM},
 and from which 
 Theorem \ref{MAINQUILLENEQUIV THM}
 easily follows.
