@@ -886,7 +886,7 @@ $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 any weak indexing system,
 $N \mathcal{F}$-operads exist. That is, there exist explicit operads $\O$
 such that
-\begin{equation}%\label{NFINFTY EQ}
+\begin{equation}\label{NFINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
 	\** & \text{if } \Gamma \in \mathcal{F}_n
@@ -897,6 +897,11 @@ such that
 In particular, the map $\mathrm{Ho}(N_\infty$-$\Op) \to \mathcal I$
 in \cite[Cor. 5.6]{BH15}
  is an equivalence of categories.
+ 
+ Moreover, if $\mathcal{O}'$ has fixed points as in 
+ (\ref{NFINFTY EQ}) for some collection of graph subgroups 
+ $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$, then 
+ $\mathcal{F}$ must be a weak indexing system.
 \end{customcor}
 
 %Independently, using different techniques, Rubin \cite{Rub17} and Gutierrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
@@ -4634,7 +4639,26 @@ that we refer to as the category of $G$-symmetric sequences on $\mathcal{V}$. Th
 \arrow[Rightarrow, from=F1, to=G2,shorten >=0.25cm,shorten <=0.35cm]
 \end{tikzcd}
 \end{equation}
-To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension 
+Explicitly, using Proposition \ref{FIBERKANMAP PROP}
+	and the fact that 
+	the rooted under categories
+	$C \downarrow_{\mathsf{r}} \Omega_G^0$
+	are groupoids 
+	yields the formula
+\begin{equation}\label{FGXDEFEXP EQ}
+\mathbb{F}_G X (C) \simeq
+\coprod_{T \in 
+\mathsf{Iso}(C \downarrow_{\mathsf{r}} \Omega_G^0)}
+\left(
+\bigotimes_{v \in V_G(T)}
+ X(T_v)
+\right) 
+\cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C),
+\end{equation}
+though we will prefer to work with (\ref{FGXDEF EQ}) throughout.
+
+
+To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension in (\ref{FGXDEF EQ})
 step from the remaining construction.
 As such, we will in \S \ref{MONSPAN SEC} first build a monad 
 $N$ on a larger category
@@ -8317,7 +8341,7 @@ Iteratively computing left Kan extensions by first left Kan extending to $\Omega
 The desired description of the leftmost map given in (\ref{FILTRATION_LAN_LEVEL})
 now follows by noting that the rooted undercategories
 $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
-are groupoids.
+are groupoids (compare with (\ref{FGXDEFEXP EQ})).
 \end{proof}
 
 
@@ -12114,7 +12138,7 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 
 
 We now explain how the $N\mathcal{F}$-operads of 
-Blumberg-Hill can be built from the theory of genuine equivariant operads.
+Blumberg-Hill can be built from the theory of genuine equivariant operads, thus proving Corollary \ref{NINFTY_REAL_COR_MAIN}.
 
 We start with an abstract argument, which has also been used by Gutierrez-White in \cite{GW}. 
 Writing 
@@ -12351,14 +12375,8 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 \end{lemma}
 
 \begin{proof}
-	Combining the definition of 
-	$\mathbb{F}_G$ in (\ref{FGXDEF EQ})
-	with Proposition \ref{FIBERKANMAP PROP}
-	and the fact that 
-	the rooted under categories
-	$C \downarrow_{\mathsf{r}} \Omega_G^0$
-	are groupoids 
-	(compare with (\ref{FILTRATION_LAN_LEVEL}))
+	Combining (\ref{FGXDEFEXP EQ}) with
+	the top left functor in (\ref{MAINPFADJVAR EQ})
 	yields the formula
 \begin{equation}\label{TILF EQ}
 \widetilde{\mathbb{F}}_G X (C) \simeq
@@ -12370,12 +12388,10 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 	\coprod_{D\in \Sigma_G} \mathsf{Hom}(T_v,D) \times X(D)
 \right)
 \right) 
-\cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C),
+\cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C).
 \end{equation}
-	where we note that the innermost expression
-	is the top left functor in (\ref{MAINPFADJVAR EQ}).
 	Distributing the inner $\coprod$ over the 
-	$\prod$ in (\ref{TILF EQ})
+	$\prod$ %in (\ref{TILF EQ})
 	shows that 
 	$\widetilde{\mathbb{F}}_G f$
 	is a coproduct of monomorphisms with the map
@@ -12539,6 +12555,16 @@ are monomorphisms.
 \end{tikzcd}
 \]
 \end{proof}
+
+\begin{remark}
+We now address the "moreover" claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
+For any $\mathcal{O} \in \mathsf{Op}^G(\mathsf{sSet})$
+one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. Therefore, if $\mathcal{O}$ has fixed points as in (\ref{NFINFTY EQ}) then 
+$\pi_0 (\iota_{\**} \mathcal{O}) = \delta_{\mathcal{F}}$
+for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
+a collection of families of graph subgroups.
+But the condition that $\delta_{\mathcal{F}}\in \mathsf{Op}_G(\mathsf{Set})$ simply repackages Definition \ref{INDEXSYS DEF}.
+\end{remark}
 
 
 \begin{remark}
