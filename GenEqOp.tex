@@ -42,18 +42,29 @@
 \begin{document}	\maketitle%
 
 
+
 \abstract{We build new algebraic structures, which we call genuine equivariant operads and which can be thought of as a hybrid between equivariant operads and coefficient systems.
 We then prove an Elmendorf-Piacenza type theorem stating that equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads, with their projective model structure.
 
 As an application, we build explicit models for the $N_{\infty}$-operads of Blumberg and Hill.
-}
+
 
 \tableofcontents
 
 \section{Introduction}
 
-A surprising feature of topological algebra is that the category of (connected) topological commutative monoids is quite small, consisting only of products of Eilenberg-MacLane spaces (e.g. \cite[4K.6]{Hatcher}). Instead, the more interesting structures are those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''. To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed the theory of \textit{operads}. Informally, an operad $\O$ 
-consists of sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
+
+A surprising feature of topological algebra is that
+the category of (connected) topological commutative monoids is quite small,
+consisting only of products of Eilenberg-MacLane spaces (e.g. \cite[4K.6]{Hatcher}).
+Instead, the more interesting structures are
+those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''.
+To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed
+the theory of \textit{operads}.
+Informally, an operad $\O$ consists of
+sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording
+``reordering the inputs of the operations'',
+and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
 referred to as \textit{algebras}, with the notions of monoid, commutative monoid, Lie algebra, algebra with a module, and more,
@@ -74,8 +85,8 @@ $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
 \begin{cases}
-        * & \Gamma = \{*\} , \\
-        \varnothing \qquad & \Gamma \neq \{*\} .
+        * & \text{if } \Gamma = \{*\} , \\
+        \varnothing \qquad & \text{otherwise.}
 \end{cases}
 \]
 % Operads encode a variety of algebraic structures, such as monoids, commutative monoids or (depending on the ambient category) Lie algebras, $E_n$-algebras, etc. Indeed, all such instances can be regarded as categories of algebras for some (fixed) suitable operad.
@@ -88,7 +99,7 @@ $\O \to \O'$
 deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
-upon forgetting the $\Sigma_n$-actions.
+upon forgetting the $\Sigma_n$-actions (e.g. \cite[3.2]{BM03}).
 In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$ and, moreover, 
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
@@ -96,7 +107,7 @@ However, naive equivalences differ from the equivalences in ``genuine equivarian
 This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
 
 
-Firstly, noting that for a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
+Firstly, noting that for any finite group $G$, a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure)
 the $n$-th level $\O(n)$ has a $G \times \Sigma_n$-action,
 one might guess that a map of $G$-operads
 $\O \to \O'$
@@ -173,15 +184,15 @@ are all weak equivalences.
 As mentioned above, the original evidence \cite{CW91}
 that (\ref{GENGEINFTY EQ}), 
 rather than (\ref{NAIVEGEINFTY EQ}), 
-provides the best up to homotopy replacement for $\mathsf{Com}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
+provides the best up-to-homotopy replacement for $\mathsf{Com}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
 
 Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
-the corresponding \textit{norm} is a $G$-spectrum $N^X R$
-whose underlying spetrum is 
-$R^{\wedge X} \simeq R^{\wedge n}$
-but equipped with a mixed $G$-action that combines the actions on $R$ and $X$ in the natural way.
+the corresponding \textit{norm} is another $G$-spectrum $N^X R$
+whose underlying spectrum is 
+$R^{\wedge X} \simeq R^{\wedge n}$,
+but which is equipped with a ``mixed''$G$-action that combines the actions on $R$ and $X$ in the natural way.
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
@@ -228,9 +239,14 @@ The minimal type of $N_{\infty}$-operads is that of the
 $G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
 while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
 The remaining types, which interpolate between 
-$G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$, 
+% $G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$,
+the two,
 can hence be thought of as encoding varying degrees of ``up to homotopy equivariant commutativity''.
-More concretely, each type of $N_{\infty}$-operad is determined by a collection $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$ where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$, with an operad $\O$ being called a $N \mathcal{F}$-operad if it satisfies the fixed point condition
+More concretely, each type of $N_{\infty}$-operad is determined by a collection
+$\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
+where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$,
+with an operad $\O$ being called an
+\textit{$N \mathcal{F}$-operad} if it satisfies the fixed point condition
 \begin{equation}\label{NFINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
@@ -255,8 +271,9 @@ and an entirely new key condition called \textit{self-induction}.
 The precise conditions are collected in
 \cite[Def. 3.22]{BH15},
 which also introduces the term \textit{indexing system} for 
-a $\mathcal{F}$ satisfying all of those conditions.
-The main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists, the associated collection $\mathcal{F}$ must be an indexing system.
+an $\mathcal{F}$ satisfying all of those conditions.
+A main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists,
+the associated collection $\mathcal{F}$ must be an indexing system.
 However, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, was left as a conjecture.
 
 
@@ -284,7 +301,7 @@ Our model, which emerges from a broader framework, satisfies both of these desid
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
 Given a family $\mathcal{F}$ of subgroups of $G$ 
 (i.e. a collection closed under conjugation and subgroups), a \textit{universal space} $X$ for $\mathcal{F}$, 
-also called an $E \mathcal{F}$-space,
+also called an \textit{$E \mathcal{F}$-space},
 is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
 In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
 each $\O(n)$ is necessarily an $E \mathcal{F}_n$-space.
@@ -372,13 +389,13 @@ suitable \textit{composition maps}. Precisely identifying the required compositi
 
 When analyzing the proofs of the results in 
 \cite[\S 4]{BH15}
-concerning the closure properties for indexing systems $\mathcal F$
+concerning the closure properties for indexing systems $\mathcal F$,
 a common motif emerges:
 when performing an operadic composition
 \begin{equation}
 \begin{tikzcd}[row sep=0]
 	\O(n) \times \O(m_1) \times \cdots \times \O(m_n) \ar{r} &
-	\O(m_1 + \cdots + m_n)
+	\O(m_1 + \cdots + m_n),
 \\
 	(f,g_1,\cdots,g_n) \ar[mapsto]{r} &
 	f(g_1,\cdots,g_n)
@@ -391,7 +408,7 @@ The desired multiplication maps for a genuine equivariant operad
 $\mathcal{P} \in \mathsf{Op}_G$
 will then abstract such interactions between multiplication and fixed points for an equivariant operad 
 $\mathcal{O} \in \mathsf{Op}^G$.
-However, these interactions can be challenging to write down explicitly and, indeed, 
+However, these interactions can be challenging to write down explicitly and indeed, 
 the arguments in \cite[\S 4]{BH15}
 do not quite provide the sort of unified conceptual approach
 to these interactions needed for our purposes.
@@ -505,7 +522,7 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-where $\O(X)$ for a $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
+where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 (\ref{INTFIXPTCOMP EQ})
@@ -639,8 +656,9 @@ but rather the richer algebraic structure that we refer to as a ``genuine equiva
 \subsection{Main results}
 
 We now discuss our main results.
- 
-Recall that 
+
+Fixing a finite group $G$, we
+recall that 
 $\mathsf{Op}^G(\mathcal{V})
 =
 \left(\mathsf{Op}(\mathcal{V})\right)^G$
@@ -703,7 +721,8 @@ Further, by \textit{semi-model category}
 we mean the notion introduced in 
 \cite{Ho98} and \cite{Spi01}, 
 which relaxes the model structure axioms by requiring that some of the axioms need only apply
-if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
+if the domains of certain cofibrations are cofibrant.
+For further details, we recommend the discussiona in \cite[\S 2.2]{WY15} and \cite[\S 12.1]{Fre09}.
 
 %The referenced \textit{semi}-model structures 
 %are a mild weakening of Quillen model structures, 
@@ -908,8 +927,8 @@ in \cite[Cor. 5.6]{BH15}
 
 \subsection{Future Work}
 
-In order to simplify our discussion this
-paper focuses exclusively on the theory of 
+In order to simplify our discussion,
+this paper focuses exclusively on the theory of 
 single colored (genuine) equivariant operads.
 Nonetheless, we conjecture that all three of 
 Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}
@@ -929,7 +948,7 @@ Cisinski and Moerdijk in \cite{CM13b} and
 \begin{tikzcd}[column sep =4em]
 	\mathsf{dSet}^G \ar[shift left=1.5]{r} 
 	&
-	\mathsf{sOp}^G
+	\mathsf{sOp}^G,
 	\ar[shift left=1.5]{l}
 \end{tikzcd}
 \end{equation} 
@@ -1030,8 +1049,8 @@ A more detailed outline follows.
 
 \S \ref{PRELIM_SECTION}
 discusses some preliminary notions and notation that will be used throughout.
-Of particular importance are the notion of 
-split Grothendieck fibration,
+Of particular importance are the notions of 
+split Grothendieck fibrations,
 which we recall in \S \ref{GROTHFIB REF},
 and the categorical wreath product defined in 
 \S \ref{WREATH SEC}, which we use to define
@@ -1040,7 +1059,8 @@ symmetric monoidal categories with diagonals
 
 \S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
 \S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
- in the context of equivariant trees. The key idea, which is captured in diagram (\ref{SUBSDATUMTREES EQ}), 
+in the context of equivariant trees. The key idea, which is captured in diagram
+(\ref{SUBSDATUMTREES EQ}) and Propositions \ref{SUBDATAUNDERPLAN PROP},\ref{SUBDATAUNDERPLANG COR}, 
 is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent studying these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
 
 \S \ref{GENUINE_OP_MONAD_SECTION} then uses planar strings to provide the formal definition of the category 
@@ -1193,7 +1213,7 @@ if for every arrow
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
 there exists a cartesian arrow 
-$f^{\**} e \to e$ lifting $f$, meaning that for any choice of solid arrows 
+$f^{\**} e \to e$ lifting $f$, meaning that for any choice of horizontal arrows 
 \[
 \begin{tikzcd}[row sep=7pt]
 	e'' \ar{rr} \ar[dashed]{rd}[swap]{\exists !} & & 
@@ -1208,7 +1228,7 @@ $f^{\**} e \to e$ lifting $f$, meaning that for any choice of solid arrows
 \end{tikzcd}
 \]
 such that the rightmost diagram commutes and 
-$e'' \to e$ lifts $b'' \to b$
+$e'' \to e$ lifts $b'' \to b$,
 there exists a unique dashed arrow
 $e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute.
 
@@ -1217,7 +1237,7 @@ but in all examples considered in this paper
 we will be able to identify preferred choices of cartesian arrows, and we will refer to those preferred choices as \textit{pullbacks}.
 Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
 On a terminological note, 
-a Grothendieck fibration together with 
+the data of Grothendieck fibration together with 
 such choices of pullbacks is sometimes called a 
 \textit{split fibration}, but we will have no need to distinguish the two concepts outside
 of the present discussion.
@@ -1246,8 +1266,8 @@ Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 	b \ar[mapsto]{r} & \mathcal{E}_b
 \end{tikzcd}
 \end{equation}
-the covariant Grothendieck construction 
-$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$
+the \textit{covariant Grothendieck construction}
+$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$ (over $\mathcal B$)
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
 $e \in \mathcal{E}_d$ and 
 arrows $(b,e) \to (b',e')$ given by pairs
@@ -1255,14 +1275,15 @@ arrows $(b,e) \to (b',e')$ given by pairs
 where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the functor $\mathcal{E}_{\bullet}(f)$.
 
 Note that the chosen pushforward of $(b,e)$ along 
-$\colon b \to b'$ is then $(b',f_{\**} e)$.
+$f \colon b \to b'$ is then $(b',f_{\**} e)$.
 
 Further, for a contravariant functor
 $\mathcal{E}_{\bullet} \colon
 \mathcal{B}^{op} \to \mathsf{Cat}$,
-the contravariant Grothendieck construction is
+the \textit{contravariant Grothendieck construction} is
 $(\mathcal{B}^{op} \ltimes 
-\mathcal{E}_{\bullet})^{op}$.
+\mathcal{E}_{\bullet})^{op}$
+(over $\mathcal B$).
 \end{definition}
 
 
@@ -1295,9 +1316,9 @@ such that $\bar{\pi}(f) = \bar{\pi}(\bar{e})$.
 
 
 \begin{proposition}\label{FIBERKANMAP PROP}
-	Given a map of Grothendieck fibrations
+	Given a map of Grothendieck fibrations,
 	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$ is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
-	so that for each functor 
+	and hence for each functor 
 	$\mathcal{E} \to \mathcal{V}$
 	with $\mathcal{V}$ complete one has
 \begin{equation}\label{FIBERKANMAP EQ}
@@ -1320,7 +1341,8 @@ $
 $
 (where $\delta \pi(f)^{\**} = \bar{\pi}^{\**}(f) \delta$) is  right adjoint to the inclusion
 $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
-\bar{e} \downarrow \mathcal{E}$, so that the claim follows by coreflexivity (note that if not in the split case pullbacks may be chosen arbitrarily).
+\bar{e} \downarrow \mathcal{E}$, so that the claim follows by coreflexivity 
+(note that if we're not in the split case, pullbacks may be chosen arbitrarily).
 \end{proof}
 
 %\begin{proof}
@@ -1347,15 +1369,16 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 We also record the following, the proof of which is straightforward.
 \begin{proposition}\label{GROTHSTAB PROP}
 	Suppose that $\mathcal{E} \to \mathcal{B}$ is a (split) Grothendieck fibration. Then so is the map of functor categories 
-	$\mathcal{E}^{\mathcal{C}} \to \mathcal{B}^{\mathcal{C}}$ for any category $\mathcal{C}$ as well as the map 
+	$\mathcal{E}^{\mathcal{C}} \to \mathcal{B}^{\mathcal{C}}$ for any category $\mathcal{C}$,
+        as well as the map 
 	$\bar{\mathcal{E}} \to \bar{\mathcal{B}}$ in any pullback of categories
-\[
-\begin{tikzcd}
-	\bar{\mathcal{E}} \ar{r} \ar{d} & \mathcal{E} \ar{d}
-\\
-	\bar{\mathcal{B}} \ar{r} & \mathcal{B}.
-\end{tikzcd}
-\]	
+        \[
+              \begin{tikzcd}
+                    \bar{\mathcal{E}} \ar{r} \ar{d} & \mathcal{E} \ar{d}
+                    \\
+                    \bar{\mathcal{B}} \ar{r} & \mathcal{B}.
+              \end{tikzcd}
+        \]	
 \end{proposition}
 
 
@@ -1412,7 +1435,8 @@ $(c_i)_{i \in I}$ is given by
 
  
 \begin{notation}
-Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
+      \label{FIN_COA_COS_NOT}
+Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the simpleton $\{1\} \in \Fin$
 one can regard the collection of categories 
 $\Fin^{\wr n+1 }\wr \C = \Fin^{\wr \{0,\cdots,n\}} \wr \C $ for $n \geq -1$
  as a coaugmented cosimplicial object in $\mathsf{Cat}$.
@@ -1517,7 +1541,8 @@ in the diagrams below coincide.
 \arrow[Leftrightarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\Fin \wr \alpha"]
 \end{tikzcd}
 \end{equation}
-Similarly, $\alpha$ is unital in the sense that both of the following diagrams strictly commute or, more precisely, if the composite natural transformation in either diagram is the identity for the functor 
+Similarly, $\alpha$ is unital in the sense that both of the following diagrams strictly commute or, more precisely,
+the composite natural transformation in either diagram is the identity for the functor 
 $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 \begin{equation}\label{COHER3 EQ}
 \begin{tikzcd}
@@ -1557,7 +1582,7 @@ $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 \begin{remark}
 \label{SIGMA_WR_REM}
 More generally, if $\mathcal{V}$ is an arbitrary
-symmetric monoidal category, one instead has a functor 
+symmetric monoidal category, one always has a functor 
 $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 (where as usual $\Sigma \hookrightarrow \Fin$ denotes the skeleton of finite sets and isomorphisms) satisfying the obvious analogues of
 (\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}),
@@ -1576,7 +1601,7 @@ We will however have no direct need to use this fact, and as such include only a
 Firstly, it becomes convenient to write expressions such as
 $(A \otimes B) \otimes C$ instead as 
 $(A \otimes B) \otimes (C)$, so as to encode notationally the fact that this is the image of 
-$((A,B),(C)) \in \Fin^{\wr 2} \wr \mathcal{V}$ under the top map in (\ref{COHER EQ}). The associativity isomorphisms are hence given by the composites
+$((A,B),(C)) \in \Sigma^{\wr 2} \wr \mathcal{V}$ under the top map in (\ref{COHER EQ}). The associativity isomorphisms are hence given by the composites
 $
 (A \otimes B) \otimes (C) \xrightarrow{\simeq} 
 A \otimes B \otimes C \xleftarrow{\simeq}
@@ -1735,17 +1760,25 @@ These are equivalent to \textit{semicartesian symmetric monoidal categories} \ci
 Finally, if a symmetric monoidal category has both diagonals and projections, it must in fact be \textit{cartesian} monoidal \cite[IV.2]{EK66}.
 \end{remark}
 
+\begin{remark}
+      As analogues of Notation (\ref{FIN_COA_COS_NOT}) also hold when replacing $\Fin$ with
+      $\Sigma = \Fin_{iso}$, $\mathsf{F}_s$, $\mathsf{F}_i$, and their duals,
+      we have that every one of these $\F_{\**} \wr (-)$ is a monad on the category of categories,
+      the free symmetric monoidal category with the appropriate additional structure specified by the above remarks.
+      %/(co)cartesian monoidal category (with folds/diagonals/injections/projections)
+\end{remark}
+
 
 We end this section by collecting some straightforward lemmas
 that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
 
 \begin{lemma}\label{FWRGROTH LEM}
 	If $\mathcal{E} \to \mathcal{B}$ a (split) Grothendieck fibration then so is 
-	$\Fin \wr \mathcal{E} \to \Fin \wr \mathcal{B}$.
+	$\Fin_s \wr \mathcal{E} \to \Fin_s \wr \mathcal{B}$.
 
 	Moreover, if 
 	$\mathcal{E} \to \bar{\mathcal{E}}$ is a map of (split) Grothendieck fibrations over $\mathcal{B}$ then
-	$\Fin \wr \mathcal{E} \to \Fin \wr \bar{\mathcal{E}}$ is a map of (split) Grothendieck fibrations over $\Fin \wr \mathcal{B}$.
+	$\Fin_s \wr \mathcal{E} \to \Fin_s \wr \bar{\mathcal{E}}$ is a map of (split) Grothendieck fibrations over $\Fin_s \wr \mathcal{B}$.
 \end{lemma}
 
 \begin{proof}
@@ -1758,42 +1791,45 @@ and object $(e_j)_{j \in J}$ one readily checks that its pullback can be defined
 
 
 \begin{lemma}\label{FINWREATPRODLIM LEM}
-Suppose that $\mathcal{V}$ is a bicomplete category such that 
-coproducts commute with limits in each variable. If the leftmost diagram
+Suppose that $\mathcal{V}$ is a bicomplete category with fold maps such that
+the monoidal product %coproducts
+commute with limits in each variable. If the leftmost diagram
 \begin{equation}\label{WRRAN EQ}
 	\begin{tikzcd}[column sep = 3.5em]
 	\mathcal{C} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k} &
 	\mathcal{V} & 
 	& 
-	\Fin \wr \mathcal{C} \ar{r}[swap,name=FF]{}{\Fin \wr G} \ar{d}[swap]{\Fin \wr k}&
-	\Fin \wr \mathcal{V} \ar{r}{\amalg} &
+	\Fin_s \wr \mathcal{C} \ar{r}[swap,name=FF]{}{\Fin_s \wr G} \ar{d}[swap]{\Fin_s \wr k}&
+	\Fin_s \wr \mathcal{V} \ar{r}{\otimes} &
 	\mathcal{V}
 		\\
 	|[alias=D]|\mathcal{D} \ar{ru}[swap]{H} &
 	& & 
-	|[alias=FD]|\Fin \wr \mathcal{D} \ar{ru}[swap]{\Fin \wr H}
-	\ar[bend right=13]{rru}[swap]{\amalg \circ \Fin \wr H}
+	|[alias=FD]|\Fin_s \wr \mathcal{D} \ar{ru}[swap]{\Fin_s \wr H}
+	\ar[bend right=13]{rru}[swap]{\otimes \circ \Fin_s \wr H}
 	\arrow[Rightarrow, from=D, to=F,shorten <=0.10cm,"\eta"]
-	\arrow[Rightarrow, from=FD, to=FF,shorten <=0.10cm,"\Fin \wr \eta"]
+	\arrow[Rightarrow, from=FD, to=FF,shorten <=0.10cm,"\Fin_s \wr \eta"]
 	\end{tikzcd}
 \end{equation}
 is a right Kan extension diagram then so is the composite of the rightmost diagram. 
 
-Dually, if in $\mathcal{E}$ products commute with colimits in each variable, and the leftmost diagram
+Dually, if in $\mathcal{E}$
+the monoidal product %products
+commute with colimits in each variable, and the leftmost diagram
 \begin{equation}\label{WRLAN EQ}
 	\begin{tikzcd}[column sep = 4.5em]
 	\mathcal{C}^{op} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k^{op}} & 
 	\mathcal{V} & 
-	(\Fin \wr \mathcal{C})^{op} \ar{d}[swap]{(\Fin \wr k)^{op}} 
-	\ar{r}[swap,name=FF]{}{(\Fin \wr G^{op})^{op}} & 
-	(\Fin \wr \mathcal{V}^{op})^{op} \ar{r}{\Pi} &
+	(\Fin_s \wr \mathcal{C})^{op} \ar{d}[swap]{(\Fin_s \wr k)^{op}} 
+	\ar{r}[swap,name=FF]{}{(\Fin_s \wr G^{op})^{op}} & 
+	(\Fin_s \wr \mathcal{V}^{op})^{op} \ar{r}{\otimes} &
 	\mathcal{V}
 \\
 	|[alias=D]|\mathcal{D}^{op} \ar{ru}[swap]{H} &
 	& 
-	|[alias=FD]|(\Fin \wr \mathcal{D})^{op} 
-	\ar{ru}[swap]{(\Fin \wr H^{op})^{op}}
-	\ar[bend right=13]{rru}[swap]{\Pi \circ (\Fin \wr H^{op})^{op}}
+	|[alias=FD]|(\Fin_s \wr \mathcal{D})^{op} 
+	\ar{ru}[swap]{(\Fin_s \wr H^{op})^{op}}
+	\ar[bend right=13]{rru}[swap]{\otimes \circ (\Fin_s \wr H^{op})^{op}}
 	&
 	\arrow[Leftarrow, from=D, to=F,shorten <=0.10cm,"\epsilon"]
 	\arrow[Leftarrow, from=FD, to=FF,shorten <=0.10cm]
@@ -1804,32 +1840,34 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin \wr \mathcal{D}$ one has natural isomorphisms
+	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
-	\left( (d_i) \downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{G(c_j)}\right)}
+	\left( (d_i) \downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
 		\simeq	
-	\coprod_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
+	\bigotimes_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
 	\left(G(c_i)\right).
 	\end{equation}
 Proposition \ref{FIBERKANMAP PROP} now applies to 
-the map $\Fin \wr \mathcal{C} \to \Fin \wr \mathcal{D}$ of Grothendieck fibrations over $\Fin$ and one readily checks that
-$(d_i)\downarrow_{\pi} \Fin \wr \mathcal{C} \simeq
+the map $\Fin_s \wr \mathcal{C} \to \Fin_s \wr \mathcal{D}$ of Grothendieck fibrations over $\Fin_s$ and one readily checks that
+$(d_i)\downarrow_{\pi} \Fin_s \wr \mathcal{C} \simeq
 \prod_{i}{(d_i\downarrow \mathcal{C})}
 $
 so that 
 	\[
 	\underset{((d_i) \to (kc_j))\in
-	\left( (d_i)\downarrow \Fin \wr \C \right) }{\lim} {\left(\coprod_j{G(c_j)}\right)}
+	\left( (d_i)\downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
 		\simeq	
 	\underset{(d_i \to kc_i)\in
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
-	\left(\coprod_i{G(c_i)}\right)
+	\left(\bigotimes_i{G(c_i)}\right)
 	\]
 and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that coproducts commute with limits in each variable.
 \end{proof}
 
-
+\begin{remark}
+      The above results also work if we replace $\Fin_s$ with $\Fin$,$\Fin_i$, or $\Sigma$, and appropriately update the requirements on $(\mathcal V, \otimes)$.
+\end{remark}
 
 \subsection{Monads and adjunctions}
 
@@ -1896,7 +1934,7 @@ a partition
 $\{1,\cdots,l\} = \lambda_a \amalg \lambda_i$,
 which we denote by $\lambda$,
 determines a monad 
-$T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mathcal{C}$.
+$T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mathcal{C}^{\times l}$.
 Here ``$a$'' stands for ``active'' and ``$i$'' for ``inert''.
 
 Such monads satisfy a number of compatibility conditions. 
@@ -2032,10 +2070,22 @@ codifies the multiplication maps
 
 
 
-\section{Planar and tall maps}\label{PLANAR_SECTION}
+\section{Planar and tall maps, and substitution}\label{PLANAR_SECTION}
 
+{\color{blue} %%%%% COLOR: BLUE
+  In this section, we will investigate the concepts of node substitution, mediated by the notions of planar tall maps.
+We will see that node substitution provides access to the structure maps of the free operad monad.
+Informally, the free operad on a sequence $X = \set{X_n}$, denoted $\mathbb F X$,
+consists of trees with nodes labeled by $X$,
+while $\mathbb F \mathbb F X$ has trees with nodes labeled by trees labeled by $X$,
+or precisely a ``substitution datum'' labeled by $X$.
+Moreover, the monad multiplcation is given, intuitively, by
+collapsing the distinctions between the multiple layers of trees,
+and this operation will be captured by performing node substitution on this datum. 
+This story will be made rigorous in this section and the next.
+}%%% COLOR: BLUE
 
-Throughout we will assume that the reader is familiar with the category $\Omega$ of trees.
+Throughout, we will assume that the reader is familiar with the category $\Omega$ of trees.
 %While not hard to correctly guess the objects of $\Omega$, the exact definition of the arrows can be more surprising.
 A good introduction to $\Omega$ is given by 
 \cite[\S 3]{MW07}, where arrows are described both via 
@@ -2063,19 +2113,23 @@ of $G$-trees, jointly discovered by the authors and first discussed by the secon
 Firstly, we let $\Phi$ denote the category of forests, i.e.
 ``formal coproducts of trees''.
 A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
-but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$. The category of $G$-forests is then 
+but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$
+(as $\Omega$ has no coproducts, the free cocartesian monoidal category is the coproduct completion).
+The category of $G$-forests is then 
 $\Phi^G$, i.e. the category of $G$-objects in $\Phi$. 
 Identifying the $G$-orbit category as the subcategory
 $\mathsf{O}_G \hookrightarrow \Fin^G$
 of those sets with transitive actions, $\Omega_G$ can then be described as given by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
 \begin{tikzcd}
-	\Omega_G \ar{r} \ar{d} & \Phi^G \ar{d}
+	\Omega_G \ar{r} \ar{d} & \Phi^G \arrow[d, "r^G"]
 \\
-	\mathsf{O}_G \ar{r} & \Fin^G,
+	\mathsf{O}_G \ar{r} & \Fin^G
 \end{tikzcd}
 \end{equation}
-which is a repackaging of \cite[Prop. 5.46]{Pe17}. Explicitly, a $G$-tree $T$ is then a tuple 
+(where $r: \Phi \to \Fin$ is the root functor),
+which is a repackaging of \cite[Prop. 5.46]{Pe17}.
+Explicitly, a $G$-tree $T$ is then a tuple 
 $T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
 together with isomorphisms
 $T_x \to T_{g x}$ that are suitably associative and unital.
@@ -2156,7 +2210,7 @@ $e \leq_d f$ or if the downward path from $e$ is to the left of the downward pat
 
 It is visually clear that a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
 
-While we will not need to make this last statement precise, we will nonetheless find it convenient to show that Definition \ref{PLANARIZE DEF} is equivalent to such choices of total orders for each of the sets of input edges.
+While we will not need to make this last statement precise, we will nonetheless find it convenient to show that our Definition \ref{PLANARIZE DEF} of planarity is equivalent to such choices of total orders for each of the sets of input edges.
 To do so, we first introduce some notation.
 
 
@@ -2183,7 +2237,8 @@ If $e \leq_d f$, $e \leq_d f'$, then $f,f'$ are $\leq_d$-comparable.
 
 \begin{proof}
 	(a) is immediate from Lemma \ref{INCOMPNOTOP}.
-To prove (b) we note that 
+        To prove (b) we note that
+        the root edge is in every input path, hence
 	$\min (\bigcap_{i} I(e_i))$ exists by (a), and that this is clearly the join $\bigvee_i {e_i}$.
 \end{proof}
 
@@ -2342,8 +2397,10 @@ $c = e \vee g$ and transitivity follows.
 
 \begin{remark}\label{CLOSURE REM}
 Proposition \ref{PLANARIZATIONCHAR PROP} states in particular that $\leq_p$
-is the closure of the relations in $\leq_d$	and on the vertices
-$a^{\uparrow}$ under the planar condition in 
+is the closure of the relations in $\leq_d$
+and those in $\leq_p$ internal to every
+$a^{\uparrow}$
+under the planar condition in 
 Definition \ref{PLANARIZE DEF}.
 \end{remark}
 
@@ -2356,7 +2413,9 @@ of each possible planar structure on each tree or, more precisely, if the only i
 On the other hand, exclusively using such a model for $\Omega$ throughout would, among other issues, make the discussion of faces in \S \ref{OUTTALL SEC} rather awkward.
 We now describe our conventions to address such issues.
 
-Let $\Omega^p$, the category of \textit{planarized trees}, denote the category with objects pairs $T_{\leq_p}=(T,\leq_p)$ of trees together with a planar structure  and morphisms the \textit{underlying} maps of trees (so that the planar structures are ignored).
+Let $\Omega^p$ denote the category of \textit{planarized trees},
+with objects pairs $T_{\leq_p}=(T,\leq_p)$ of trees together with a planar structure,
+and morphisms \textit{underlying} maps of trees (i.e. ignoring the planar structures).
 There is a full subcategory $\Omega^s \hookrightarrow \Omega^p$, whose objects we call \textit{standard models}, of those $T_{\leq_p}$ whose underlying set is one of the sets $\underline{n} = \{1,2,\cdots,n\}$ and for which $\leq_p$ coincides with the canonical order.
 
 \begin{example}\label{STANDMODEL EX}
@@ -2497,11 +2556,12 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
 
 
 \begin{convention}\label{PLANARCONV CON}
-	From now on we write simply $\Omega$, $\Omega_G$ to denote the categories $\Omega^s$, $\Omega_G^s$ of standard models (where planar structures are defined in the underlying forest as in Remark \ref{FORESTPLAN REM}). 
-Therefore, whenever a construction produces an object/diagram in $\Omega^p$, $\Omega^p_G$ (of trees, $G$-trees) we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
-
-Similarly, any finite set or orbital finite $G$-set together with a total order is implicitly reinterpreted as an object of
-$\Fin$, $\mathsf{O}_G^p$.
+      From now on we write simply $\Omega$, $\Omega_G$ to denote the categories $\Omega^s$, $\Omega_G^s$ of standard models (where planar structures are defined in the underlying forest as in Remark \ref{FORESTPLAN REM}). 
+      Therefore, whenever a construction produces an object or diagram in $\Omega^p$ or $\Omega^p_G$,
+      we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
+      
+      Similarly, any finite set (resp. orbital finite $G$-set) together with a total order is implicitly reinterpreted as an object of
+      $\Fin$ ($\mathsf{O}_G^p$).
 \end{convention}
 
 
@@ -2651,8 +2711,58 @@ $3 \cdot 3! \cdot 2 \cdot 3! \cdot 3!$
 trees in the isomorphism class of the tree depicted in 
 (\ref{D6SMALLER EQ}).
 \end{example}
+%%%% CUT : root pullback stuffs
 
-The reader may have noted
+
+\begin{definition}
+      \label{PLANARMAP_DEF}
+	A map $S \xrightarrow{\varphi} T$ in $\Omega$ preserving the planar structure $\leq_p$
+	is called a \textit{planar map}.
+	
+	More generally, a map $F \to G$ in one of the categories $\Phi$, $\Phi^G$, $\Omega_G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
+\end{definition}
+
+
+\begin{remark}
+	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect $\leq_d$-comparability.
+ 
+However, we note that in the case of $\Omega_G$
+independence admits simpler characterizations:
+$\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\varphi$ is injective on the root orbit.
+\end{remark}
+
+
+\begin{proposition}
+\label{PLANARPULL PROP}
+	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
+	\[F \xrightarrow{\simeq} \bar{F} \to G\]
+	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
+\end{proposition}
+
+\begin{proof}
+We need to show that there is a unique planar structure 
+$\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
+Simplicity of the broad poset $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
+By (the forest version of) Proposition
+\ref{PLANARIZATIONCHAR PROP}
+the only possible planar structure $\leq_p^{\bar{F}}$
+is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
+The claim that $\varphi$ is then planar follows from 
+Remark \ref{CLOSURE REM}
+together with the fact (\cite[Lemma 5.33]{Pe17})
+that $\varphi$ reflects $\leq_d$-comparability.
+\end{proof}
+
+
+\begin{remark}\label{PULLPLANAR REM}
+Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back along independent maps. However, they can not always be pushed forward. As a counter-example, in the setting of Example \ref{STANDMODEL EX}, consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+\end{remark}
+
+
+%%% PASTE: root pullback stuffs
+
+We end this section with a different type of pullback.
+Indeed, the reader may have noted
 that it follows from 
 Proposition \ref{GROTHSTAB PROP}
 that both vertical maps in (\ref{OGDEF EQ})
@@ -2675,7 +2785,7 @@ The exact name choice is meant to accentuate the connection with another key fun
 described in \S \ref{LRVERT SEC},
 which we call the \textit{leaf-root functor}.
 
-Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
+Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree (or $G$-forest)
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
 $\varphi \colon Y \to X$
@@ -2688,16 +2798,17 @@ $T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
 \begin{example}\label{ROOTPULL EX}
 Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$, 
 $H = \langle j \rangle$ and $K = \langle -1 \rangle$.
-Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees 
-$T$ and $S$ along the 
+Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees, 
+$T$ and $S$,
+along the 
 twist map $\tau \colon G/H \to G/H$
-and the unique map $\pi \colon G/H \to G/G$
+and the unique map $\pi \colon G/H \to G/G$, respectively
 (or, more precisely, noting that in our model the underlying set 
 of $G/H$ is actually $\{1,2\}$,
 $\tau$ is the permutation $(12)$).
 We note that the stabilizers of $a,b,c$ are $\{1\},K,H$ for $T$
 and $K,H,G$ for $S$.
-The top depictions of $\tau^{\**} T$, $\pi^{\**} (S)$ then use the edge orbit generators suggested by $T$, $S$ 
+The top depictions of $\tau^{\**} T$, $\pi^{\**} S$ then use the edge orbit generators suggested by $T$, $S$ 
 while the bottom depictions
 choose generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
 $d = i c$, $e = i b$, $f = i a$
@@ -2897,51 +3008,6 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 \end{example}
 
 
-\begin{definition}
-	A map $S \xrightarrow{\varphi} T$ in $\Omega$ preserving the planar structure $\leq_p$
-	is called a \textit{planar map}.
-	
-	More generally, a map $F \to G$ in one of the categories $\Phi$, $\Phi^G$, $\Omega^G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
-\end{definition}
-
-
-\begin{remark}
-	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect $\leq_d$-comparability.
- 
-However, we note that in the case of $\Omega_G$
-independence admits simpler characterizations:
-$\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\varphi$ is injective on the root orbit.
-\end{remark}
-
-
-\begin{proposition}
-\label{PLANARPULL PROP}
-	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
-	\[F \xrightarrow{\simeq} \bar{F} \to G\]
-	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
-\end{proposition}
-
-\begin{proof}
-We need to show that there is a unique planar structure 
-$\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
-Simplicity of the broad poset $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
-By (the forest version of) Proposition
-\ref{PLANARIZATIONCHAR PROP}
-the only possible planar structure $\leq_p^{\bar{F}}$
-is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
-The claim that $\varphi$ is then planar follows from 
-Remark \ref{CLOSURE REM}
-together with the fact (\cite[Lemma 5.33]{Pe17})
-that $\varphi$ reflects $\leq_d$-comparability.
-\end{proof}
-
-
-\begin{remark}\label{PULLPLANAR REM}
-Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back along independent maps. However, they can not always be pushed forward. As a counter-example, in the setting of Example \ref{STANDMODEL EX}, consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
-\end{remark}
-
-
-
 \subsection{Outer faces, tall maps, and substitution}\label{OUTTALL SEC}
 \label{SUBS SEC}
 
@@ -2964,9 +3030,10 @@ we first recall some basic definitions and results concerning outer subtrees and
 \begin{equation}\label{OUTERFACE EQ}
 	f \leq_d e,\quad \forall_i f \nless_d e_i,
 \end{equation}
-generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying (\ref{OUTERFACE EQ}) but 
-$\forall_i f\neq e_i$,
-and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
+with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying
+$\forall_i f\neq e_i$
+in addition to (\ref{OUTERFACE EQ}),
+with planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
 \end{definition}
 
 
@@ -2981,14 +3048,14 @@ We now recap some basic results.
 Let $T \in \Omega$ be a tree.
 \begin{itemize}
 \item[(a)] $T_{\underline{e} \leq e}$ is a tree with root $e$
-and edge tuple $\underline{e}$;
+and leaf tuple $\underline{e}$;
 \item[(b)] there is a bijection
 \[
 	\{\text{planar outer faces of $T$} \} 
 \leftrightarrow 
 	\{\text{broad relations of $T$}\};
 \]
-\item[(c)] if $R \to S$ and $S \to T$ are outer face maps then so is $R \to T$;
+\item[(c)] if $R \to S$ and $S \to T$ are (planar) outer face maps then so is $R \to T$;
 \item[(d)] any pair of broad relations $\underline{g} \leq v$, $\underline{f}v \leq e$ induces a grafting pushout diagram
 \begin{equation}\label{GRAPTPUSH EQ}
 \begin{tikzcd}
@@ -3008,7 +3075,7 @@ unique choice of pushout that makes the maps in (\ref{GRAPTPUSH EQ}) planar.
 \begin{proof}
 We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe17}: more precisely, 
 $T_{\underline{e} \leq e} = (T^{\leq e})_{\less \underline{e}}$
-in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the root tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe17}.
+in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the leaf tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe17}.
 
  (b) follows from (a), which shows that $\underline{e} \leq e$ can be recovered from
 $T_{\underline{e} \leq e}$.
@@ -3024,7 +3091,7 @@ V(T_{\underline{f} v \leq e}) \amalg V(T_{\underline{g} \leq v})$.
 %Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
 
-
+We now label another class of important maps in $\Omega$. 
 \begin{definition}
 	A map $S \xrightarrow{\varphi} T$ in $\Omega$ is called a \textit{tall map} if 
 	\[\varphi(\underline{l}_S) = \underline{l}_T, 
@@ -3058,9 +3125,9 @@ We recall that a face $F \to T$ is called \textit{inner} if it is obtained by it
 	as a degeneracy followed by an inner face followed by an outer face.
 \end{corollary}
 	
-\begin{proof}
-	The factorization can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
-\end{proof}
+% \begin{proof}
+% 	The factorization can be built by first performing the degeneracy-\-face decomposition and then performing the tall-outer decomposition on the face map.
+% \end{proof}
 
 
 We will find it convenient  throughout to regard the 
@@ -3083,7 +3150,7 @@ and isomorphisms.
 We now turn to discussing the substitution operation. We start with an example focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
-
+\todo[inline]{is it important to relate node substitution to iterated grafting?}
 \begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
 More precisely (among other possible grafting orders), one has
 \begin{equation}\label{UFORMULA EQ}
@@ -3306,11 +3373,13 @@ One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as bein
 From this perspective, $U$ can now be thought of as obtained from $T$ by \textit{substituting} each of its nodes with the corresponding $U_i$. Moreover, the $\varphi_i$ assemble to a planar tall map 
 $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto e$), which likewise encodes the same information.
 
-One of the fundamental ideas shaping our perspective on operads
-is then that substitution data as in (\ref{SUBSDATUMTREES2 EQ}) can equivalently be 
-repackaged using planar tall maps. 
 \end{example}
 
+One of the fundamental ideas shaping our perspective on operads
+is then that substitution data as in (\ref{SUBSDATUMTREES2 EQ})
+is \textit{equivalent} to the data of said planar tall maps.
+% can equivalently be repackaged using planar tall maps. 
+We begin by formalizing the above process.
 
 \begin{definition}\label{SUBSTITUTIONDATUM}
 	Let $T \in \Omega$ be a tree.
@@ -3321,8 +3390,11 @@ repackaged using planar tall maps.
 	Further, a map of $T$-substitution data 
 	$\left(U_{e^{\uparrow} \leq e}\right) \to \left(V_{e^{\uparrow} \leq e}\right)$ is a tuple of tall maps $\left(U_{e^{\uparrow} \leq e}\to V_{e^{\uparrow} \leq e}\right)$ compatible with the substitution maps.
 	
-	Lastly, a substitution datum is called a $\textit{planar $T$-substitution datum}$ if the chosen maps are planar (so that 
-	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$) and a morphism of planar data is called a planar morphism if it consists of a tuple of planar maps.
+	Lastly, a substitution datum is called \textit{planar}
+        % a \textit{planar $T$-substitution datum}
+        if the chosen maps are planar (so that 
+	$\mathsf{lr}(U_{e^{\uparrow} \leq e}) = T_{e^{\uparrow} \leq e}$),
+        and a morphism between planar data is called a \textit{planar morphism} if it consists of a tuple of planar maps.
 	
 	We denote the category of (resp. planar) $T$-substitution data 
 	by $\mathsf{Sub}(T)$ (resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
@@ -3386,7 +3458,7 @@ Otherwise, one can choose a non trivial grafting decomposition so as to write $T
 in identifications 
 $\mathsf{Sc}(R) \subset \mathsf{Sc}(T)$, 
 $\mathsf{Sc}(S) \subset \mathsf{Sc}(T)$
-so that 
+with  % so that 
 $\mathsf{Sc}(R) \cup \mathsf{Sc}(S) = \mathsf{Sc}(T)$
 and 
 $\mathsf{Sc}(R) \cap \mathsf{Sc}(S) = \{\eta_e \}$.
@@ -3444,21 +3516,22 @@ the category of tall maps under $T$.
 	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness of $\mathsf{Sub}(T) \to T \downarrow \Omega^{\mathsf{t}}$ reduces to that in the previous result.
 \end{proof}
 
-
 \begin{remark}\label{VERTEXDECOMP REM}
 As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
 	one has 
 \begin{equation}\label{VERTEXDECOMP EQ}
 	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
 	V(U_{e^{\uparrow} \leq e}).
-\end{equation}
-Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
-$\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
-$\varphi \colon T \to U$.
-Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$ 
-is the unique $T_{t^{\uparrow}\leq t}$ such that
-there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
-so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
+  \end{equation}
+  {\color{red} %%%% COLOR: RED
+    Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
+    $\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
+    $\varphi \colon T \to U$.
+    Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$ 
+    is the unique $T_{t^{\uparrow}\leq t}$ such that
+    there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
+    so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
+  }%%%%%%% COLOR: RED
 \end{remark}
 
 \begin{remark}\label{INPPATH REM}
@@ -3486,7 +3559,7 @@ and will be needed in \S \ref{EXTTREE SEC}.
 \begin{proposition}\label{BUILDABLE PROP}
 	Let $U \in \Omega$ be a tree. Then:
 \begin{itemize}
-	\item[(i)] given non stick outer subtrees $U_i$ such that 
+	\item[(i)] given non-stick outer subtrees $U_i$ such that 
 	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that the sets $\{U_i\}$, $\{U_{e^{\uparrow}\leq e}\}$ coincide;
 	\item[(ii)] given multiplicities $m_e \geq 1$ for each edge $e \in U$, there is a unique planar degeneracy $\rho \colon T \to U$ such that $\rho^{-1}(e)$ has $m_e$ elements;
 	\item[(iii)] planar tall maps $T \to U$ are in bijection with collections $\{U_i\}$ of outer subtrees such that $V(U) = \coprod_i V(U_i)$ and $U_j$ is not an inner edge of any $U_i$ whenever $U_j \simeq \eta$ is a stick.
@@ -3540,7 +3613,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 
-This section introduces two functors that are central to our definition of the category $\mathsf{Op}_G$ of
+This section builds off the previous, introduces two functors that are central to our definition of the category $\mathsf{Op}_G$ of
 genuine equivariant operads: the leaf-root and vertex functors.
 
 We start by recalling a key class of maps of $G$-trees.
@@ -3566,7 +3639,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 \begin{remark}
 	Quotients can alternatively be described as the cartesian arrows for the Grothendieck fibration
 	$\Omega_G \xrightarrow{\mathsf{r}} \mathsf{O}_G$.
-	We note that this differs from the notion of root pullbacks, which are the \textit{chosen} cartesian arrows, and include only those quotients such that each
+	We note that this is strictly more general than the notion of root pullbacks (Figure \ref{FIGURE}), which are the \textit{chosen} cartesian arrows: those quotients such that each
 	$\varphi_y \colon S_y \to T_{\phi(y)}$
 	is a planar isomorphism, i.e., an identity.
 \end{remark}
@@ -3736,6 +3809,7 @@ $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of th
 
 
 \begin{remark}\label{VERTEXDECOMPG REM}
+      {\color{red} %%%%%%%%%%% COLOR: RED
 	Following Remark \ref{VERTEXDECOMP REM},
 	a tall map $\varphi \colon T \to U$ of $G$-trees
 	induces a $G$-equivariant map
@@ -3779,6 +3853,7 @@ A minimal example follows.
 In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
 $\varphi^{\**} \colon V(U) \to V(T)$ is given by 
 $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
+}%%%%%%%%%%% COLOR: RED
 \end{remark}
 
 
@@ -3989,7 +4064,7 @@ Definition \ref{SUBSTITUTIONDATUM}.
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{(resp. planar) $T$-substitution datum} is a tuple 
-	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ of $G$-trees together with
+	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ of trees together with
 \begin{itemize}	
 \item[(i)] associative and unital $G$-action maps
 $U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
@@ -4008,7 +4083,8 @@ $U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$;
 
 
 Recall that a map of $G$-trees is called 
-\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}).
+\textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}),
+and we note that by Definition \ref{PLANARMAP_DEF} planar tall maps of $G$-trees are always rooted.
 
 \begin{remark}\label{SUBSGREF DEF}
 Writing $U^{\mathsf{r}}_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in Ge}$
@@ -4018,7 +4094,7 @@ $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
 The need to include $\mathsf{r}$ (which stands for ``rooted'')
 in the notation is explained by Remark \ref{WHYR REM}.
 
-Further, the $T$-substitution datum is planar iff so are the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
+Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$ are as well.
 \end{remark}
 
 
@@ -4119,7 +4195,7 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
 	are compatible with root pullbacks of trees. 
-	More concretely, as in the proof of Lemma \ref{VGPULL LEM}
+	More concretely, as in the proof of Lemma \ref{VGPULL LEM},
 	each pullback 
 	$\bar{\psi} \colon \psi^{\**} T \to T$
 	determines pullback maps
@@ -4209,10 +4285,10 @@ where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
 
 
 \begin{remark}\label{ALLSPLITMAPS REM}
-Since for any planar $n$-string it is 
+Since for any planar $n$-string we have 
 $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
-one has a well defined functor
+there is a well defined functor
 $\mathsf{r} \colon \Omega_{G}^{n} \to \mathsf{O}_G$,
 which is readily seen to be a split Grothendieck fibration.
 Furthermore, generalizing Remark \ref{LRROOTMAP REM},
@@ -4223,7 +4299,7 @@ are maps of split Grothendieck fibrations.
 
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
-$V_G \colon \Omega_{G}^{n+1} \to \Fin_s \wr \Omega_{G}^{n}$
+$V_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
 by
 \begin{equation}\label{VGDEF EQ}
 	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
@@ -4235,7 +4311,7 @@ for
 $(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in Ge}$, where 
 $\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
 
-Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n-1$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
+Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
 the object $V_G(T_0 \to \cdots \to T_n)$
 can be thought of as the image of the inverse functor in
 Corollary \ref{SUBDATAUNDERPLANG COR},
