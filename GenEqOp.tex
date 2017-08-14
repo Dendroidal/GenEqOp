@@ -42,20 +42,17 @@
 \begin{document}	\maketitle%
 
 
-\abstract{% We build new algebraic structures, which we call genuine equivariant operads
-  We define and build the new algebraic structure of genuine equivariant operads,
-  which can be thought of as a hybrid between equivariant operads and coefficient systems.
-  We then prove an Elmendorf-Piacenza type theorem stating that
-  % equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads, with their projective model structure.
-  the projective model structure on genuine equivariant operads is Quillen equivalent to
-  the graph model structure on equivariant operads. 
-  
-  As an application, we build explicit models for the $N_{\infty}$-operads of Blumberg and Hill.
-}
+
+\abstract{We build new algebraic structures, which we call genuine equivariant operads and which can be thought of as a hybrid between equivariant operads and coefficient systems.
+We then prove an Elmendorf-Piacenza type theorem stating that equivariant operads, with their graph model structure, are equivalent to genuine equivariant operads, with their projective model structure.
+
+As an application, we build explicit models for the $N_{\infty}$-operads of Blumberg and Hill.
+
 
 \tableofcontents
 
 \section{Introduction}
+
 
 A surprising feature of topological algebra is that
 the category of (connected) topological commutative monoids is quite small,
@@ -352,7 +349,7 @@ in the context of operads with norm maps (i.e. with equivalences as in (\ref{GEN
 which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
 However, in trying to formulate such a result one immediately runs into a fundamental issue: 
 it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in this context.
-% This last remark likely requires justification. 
+This last remark likely requires justification. 
 Indeed, it may at first seem tempting to simply 
 employ one of the known formal generalizations of Elmendorf-Piacenza's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
 $\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
@@ -1447,7 +1444,7 @@ As such, we will denote by
 \[
 	\delta^i\colon \Fin^{\wr n } \wr \C \to \Fin^{n+1} \wr \C, \qquad 0 \leq i \leq n
 \]
-the cofaces obtained by inserting simpletons $\{1\} \in \Fin$ and by 
+the cofaces obtained by inserting singletons $\{1\} \in \Fin$ and by 
 \[
 	\sigma^i \colon \Fin^{n+2} \wr \C \to \Fin^{n+1} \wr \C, \qquad 0 \leq i \leq n
 \]
@@ -1496,8 +1493,8 @@ Firstly, there is a natural isomorphism $\alpha$ as on the left below
 \end{equation}
 that encodes both reparenthesizing of coproducts and removal of initial objects 
 (note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ is mapped under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of (\ref{COHER EQ}) strictly commutes, i.e. 
-that ``unary coproducts'' of simpletons $(v)$ are given simply by $v$ itself.
-This $\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
+that ``unary coproducts'' of singletons $(v)$ are given simply by $v$ itself.
+$\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
 $\Fin^{\wr 3} \wr \mathcal{V} \to \mathcal{V}$
 in the diagrams below coincide.
 \begin{equation}\label{COHER2 EQ}
@@ -2035,7 +2032,7 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 
 \begin{remark}\label{PRECOMPPOSTCOMP REM}
 We unpack the content of (\ref{MONADFUNCTORALPHADOU EQ}) when 
-$\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the simpleton $\**$, in which case we write $\alpha_{!} = \coprod$.
+$\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the singleton $\**$, in which case we write $\alpha_{!} = \coprod$.
 We thus have commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
 \begin{tikzcd}
@@ -4849,7 +4846,7 @@ according to the string $T_0 \to \cdots \to T_n$.
 \begin{remark}
 	Generalizing the notation $\Omega_{G}^{-1} = \Sigma_G$, we will also write $\Omega_G^{-1} \wr A  = A$, in which case
 	$V_{G}^{-1} \wr A \colon \Omega_G^{-1} \wr A \to \Fin_s \wr A$
-	is the obvious ``simpleton map'' $\delta^0 \colon A \to \Fin_s \wr A$.
+	is the obvious ``singleton map'' $\delta^0 \colon A \to \Fin_s \wr A$.
 \end{remark}
 
 \begin{remark}
@@ -6046,7 +6043,7 @@ and will be the subject of \S \ref{COFIB SEC}.
 For now, we end this section with a minimal counterexample to  the more general claim.
 
 Let $G=\mathbb{Z}_{/2}$ and 
-$Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the simpleton.
+$Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the singleton.
 
 	When evaluating $\mathbb{F}_G Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
 	(where $C_0 \in \Sigma$ denotes the $0$-th corolla),
