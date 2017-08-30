@@ -7593,7 +7593,7 @@ The compatibilities with arrows and with the simplicial structure are straightfo
 \end{proof}
 
 \begin{corollary}
-      $\mathcal P \limits\coprod_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$. \qed
+      $\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$. \qed
 \end{corollary}
 
 Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
@@ -7799,7 +7799,7 @@ The composite $T \to V$ is encoded by a substitution datum
 $\{T_{e^{\uparrow} \leq e} \to V_{e^{\uparrow} \leq e}\}$
 which is given by an isomorphism
 if $e^{\uparrow} \leq e$ has label $X$ or $Y$ (possibly changing a $Y$ label to a $X$ label),
-and by some $X,\mathcal{P}$-labeled tree 
+and by some $(X,\mathcal{P})$-labeled tree 
 $V_{e^{\uparrow} \leq e}$ if $e^{\uparrow} \leq e$
 has a $\mathcal{P}$-label.
 We now consider the factorization problem 
@@ -8572,7 +8572,7 @@ $\mathsf{Op}^G(\mathcal{V})$
 and
 $\mathsf{Op}_G(\mathcal{V})$.
 
-Recall that given a group $\Sigma$, the genuine model structure (if it exists)
+Recall that for any group $\Sigma$, the genuine model structure (if it exists)
 on $\mathcal{V}^{\Sigma}$,
 which we denote $\mathcal{V}^{\Sigma}_{\text{gen}}$,
 has weak equivalences (resp. fibrations)
@@ -8602,7 +8602,7 @@ $\Sigma/H \cdot i$
 for $H\leq \Sigma$
 and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
 
-More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then exists a model structure 
+More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
 $\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
 $\mathcal{F}$.
 \end{remark}
@@ -8696,9 +8696,9 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{ac}(T)}\right) \times 
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{in}(T)}\right)$
 	combined with the rightmost left Quillen functor in Remark \ref{GEN_FGTRIGHT_REM}(i) and Remark \ref{GEN_FGTRIGHT_REM}(ii)
-	then yield that it suffices to check that
+	then yield that it suffices to check that the two maps
 \[
-\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v)
+\left( \varnothig \to \bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \right)
 =
 \underset{v \in V_{G}^{ac}(T)}{\mathlarger{\mathlarger{\mathlarger{\square}}}}
 (\emptyset \to \P)(T_v),
