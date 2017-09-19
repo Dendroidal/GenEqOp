@@ -3811,7 +3811,6 @@ $[e^{\uparrow} \leq e]$ are ordered according to the planar order $\leq_p$ of th
 
 
 \begin{remark}\label{VERTEXDECOMPG REM}
-      {\color{red} %%%%%%%%%%% COLOR: RED
 	Following Remark \ref{VERTEXDECOMP REM},
 	a tall map $\varphi \colon T \to U$ of $G$-trees
 	induces a $G$-equivariant map
@@ -3855,7 +3854,6 @@ A minimal example follows.
 In $V(T)$ the vertices are ordered as $a<c<d$ while in $V(U)$ they are ordered as $a<e<c<d$ but the map 
 $\varphi^{\**} \colon V(U) \to V(T)$ is given by 
 $a \mapsto a, c \mapsto c, d \mapsto d, e \mapsto d$.
-}%%%%%%%%%%% COLOR: RED
 \end{remark}
 
 
@@ -3892,13 +3890,13 @@ Remark \ref{FINSURJ REM}.
 \begin{remark}\label{NEED_WREATH_REMARK}
       We note that the composite
       $\Omega_G^0 \to \Fin_s \wr \Sigma_G \to \Fin_s$
-      is equal on objects to the map from Remark \ref{VERTEXDECOMPG REM}.
-      However, the variance here is reversed. 
-      Indeed, in the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$,
-      where the variance is irrelevant.
+      coincides on objects with the functor described in Remark \ref{VERTEXDECOMPG REM},
+      though the variance is now reversed. 
+%      Indeed, in the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$,
+%      where the variance is irrelevant.
       The need to introduce the $\Fin \wr (\minus)$ construction comes from the fact that
 	in general quotient maps do not preserve the number of $G$-vertices.
-	For a simple example of this observation and to demonstrate the functoriality and variance of $V_G$,
+	For a simple example,
         let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
 	$\varphi \colon \pi^{\**} S \to S$ of Example \ref{ROOTPULL EX}
 	determined by the assignments
@@ -4263,10 +4261,10 @@ our substitution results in a format that will be more convenient for our defini
 where each $\pi_i$ is a quotient map.
 \end{definition}
 
-\begin{remark}
-      While these could be called ``planar tall $n$-strings'', we will never use strings on non-tall maps,
-      and so there is no ambiguity.
-\end{remark}
+%\begin{remark}
+%	While these could be called ``planar tall $n$-strings'', we will never use strings on non-tall maps,
+%	and so there is no ambiguity.
+%\end{remark}
 
 \begin{notation}\label{SIMPOPERATORS NOT}
 	Since compositions of planar tall arrows are planar tall
@@ -4715,7 +4713,8 @@ We do so by building a monad $\mathbb{F}_G$
 on the category
 $\mathsf{Sym}_G(\mathcal{V}) = 
 \mathsf{Fun}(\Sigma_G^{op},\mathcal{V})$
-of $G$-symmetric sequences on $\mathcal{V}$, for $\V$ a symmetric monoidal category with diagonals.
+of $G$-symmetric sequences on $\mathcal{V}$, for $\V$ a symmetric monoidal category with diagonals 
+(cf. Remark \ref{FINSURJ REM}).
 The underlying endofunctor of $\mathbb{F}_G$ is easy to describe:
 given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left Kan extension diagram
 \begin{equation}\label{FGXDEF EQ}
@@ -4733,8 +4732,8 @@ Explicitly, using Proposition \ref{FIBERKANMAP PROP}
 	and the fact that 
 	the rooted under categories
 	$C \downarrow_{\mathsf{r}} \Omega_G^0$
-	are groupoids,
-	we have the formula
+	are groupoids
+	yields the formula
 \begin{equation}\label{FGXDEFEXP EQ}
 \mathbb{F}_G X (C) \simeq
 \coprod_{T \in 
@@ -4751,21 +4750,24 @@ though we will prefer to work with (\ref{FGXDEF EQ}) throughout.
 To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension step in (\ref{FGXDEF EQ})
 from the remaining construction.
 As such, we will 
-build a monad $N$ (Proposition \ref{MONSPAN PROP})
+build a monad $N$ 
 on a larger category
-$N$ on a larger category
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$
-in \S \ref{MONSPAN SEC},
+in \S \ref{MONSPAN SEC}
+(see Proposition \ref{MONSPAN PROP}),
 which we then transfer
 to $\mathsf{Sym}_G(\mathcal{V})$
 in \S \ref{FGMON SEC} 
 by using the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
-In \S \ref{COMPARISON_REGULAR_SECTION}, we use Proposition \ref{MONAD_COMPARISON_PROP} to show that the usual ``free $G$-operad'' monad is
-isomorphic to one transfered from $\mathbb F_G$,
-yeilding a comparison between the two notions of equivariant operad.
-We end this section by enumerating other adjunctions along which transfers of $\mathbb F_G$ can occur, 
-building the notions of ``partial genuine $G$-operads''.
-The roles  of ``weak indexing systems'' in this process are illuminated in Remark \ref{WINDEX_GAMMA_REM}.
+\S \ref{COMPARISON_REGULAR_SECTION} then compares genuine equivariant operads with regular equivariant operads, obtaining   the pair of adjunctions in Corollary \ref{TWOADJOINTSOP_COR}, which are required when formulating and proving our main results.
+%In \S \ref{COMPARISON_REGULAR_SECTION}, we use Proposition \ref{MONAD_COMPARISON_PROP} to show that the usual ``free $G$-operad'' monad is
+%isomorphic to one transfered from $\mathbb F_G$,
+%yeilding a comparison between the two notions of equivariant operad.
+Lastly, \ref{INDEXING_SECTION} shows that the indexing systems of Blumberg-Hill (or, more precisely, a slight generalization called ``weak indexing systems''; see Remark \ref{WINDEX_GAMMA_REM}) naturally give rise to notions of ``partial genuine operads''.
+
+%We end this section by enumerating other adjunctions along which transfers of $\mathbb F_G$ can occur, 
+%building the notions of ``partial genuine $G$-operads''.
+%The roles  of ``weak indexing systems'' in this process are illuminated in Remark \ref{WINDEX_GAMMA_REM}.
 
 
 \subsection{A monad on spans}\label{MONSPAN SEC}
@@ -5020,7 +5022,8 @@ is defined by sending (\ref{OMEGAGNA EQ}) to
 		\right)
 	\right)_{v_{G f} \in V_G(T_k)}
 \]
-where both $V_G(T_k)$ and $T_{n,v_{G f}}$ are ordered lexicographically according to the associated strings of maps out of (subtrees of) $T_0$.
+where both $V_G(T_k)$ and $T_{n,v_{G f}}$ are ordered lexicographically according to the associated planar strings.
+% of maps out of (subtrees of) $T_0$.
 %to the obvious strings.
 
 Similarly, functors 
@@ -5407,7 +5410,7 @@ the pullback $\psi^{\**} \tilde{T}$ is given by
 \]
 where $\bar{\psi}$ is the map 
 $\bar{\psi} \colon \psi^{\**}T \to T$
-and $\bar{\psi}_{G e}$ denotes the restrictions
+and $\bar{\psi}_{G e}$ denotes the restriction
 $\bar{\psi} \colon G e \to G \bar{\psi}(e)$, 
 as in Remark \ref{PULLCOMP REM}.
 \end{remark}
@@ -5535,7 +5538,7 @@ are natural isomorphisms.
 This follows by combining Lemma \ref{LANPULLCOMA LEM} with Lemma \ref{FINWREATPRODLIM LEM}.
 \end{proof}
 
-By Proposition \ref{MONADADJ PROP}, we thus have the following.
+Recalling Proposition \ref{MONADADJ PROP} now leads to the following.
 \begin{definition}\label{THEMONAD DEF}
 The \textit{genuine equivariant operad monad} is the monad
 $\F_G$ on $\mathsf{Sym}_G(\mathcal{V})=\mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$
@@ -5830,10 +5833,9 @@ is the identity. Both of these are a consequence of
 		\ar[Rightarrow]{ru}[swap]{\iota^{\**} \beta}
 \end{tikzcd}
 \]
-
 (iii) amounts to showing that if $X(C) =\emptyset$ whenever 
 $C \nin \Sigma_G^{\text{fr}}$
-then we must have that
+then we must also have that
 $\mathbb{F}_G X(C) =\emptyset$.
 Indeed, since for  
 $C \nin \Sigma_G^{\text{fr}}$
@@ -5850,7 +5852,7 @@ consists of trees with at least one non-free vertex (namely the root vertex), th
 \]
 is constant equal to $\emptyset$, and (iii) follows.
 
-While showing (iv), we will slightly abuse notation by writing 
+Finally, we show (iv). We will slightly abuse notation by writing 
 $G \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
 and similarly
 $G \times \Omega^0 \hookrightarrow \Omega_{G}^{0}$ for the image of the obvious analogous functor
@@ -6092,8 +6094,9 @@ $Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the singleton.
 		edge from parent node [swap] {$r+G/G$}};
 \end{tikzpicture}
 \]
-However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point
-in $\mathbb F_G \iota_{\**} Y(G \cdot C_0)^{\Gamma} = \iota_{\**} \iota^{\**} \mathbb F_G \iota_{\**} Y(G/G \cdot C_0)$,
+However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point in 
+$\mathbb F_G \iota_{\**} Y(G \cdot C_0)$,
+%$^{\Gamma} = \iota_{\**} \iota^{\**} \mathbb F_G \iota_{\**} Y(G/G \cdot C_0)$
 namely that encoded by the $G$-tree $T$ below.
 \[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
@@ -6167,17 +6170,17 @@ $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \begin{definition}
 	A \textit{sieve} of a category $\mathcal{D}$
 	is a subcategory $\mathcal{S}$ such that
-	if an arrow $f \colon d \to s$ in $\mathcal{D}$ has
-	$s \in \mathcal{S}$, then both $d$ and $f$ are also in $\mathcal{S}$.
-      In particular, sieves are full subcategories.
+	for any arrow $f \colon d \to s$ in $\mathcal{D}$ with 
+	$s \in \mathcal{S}$ then both $d$ and $f$ are also in $\mathcal{S}$. 
+	In particular, sieves are full subcategories.
 \end{definition}
 
 
 \begin{definition}\label{FAMILY_COROLLAS_DEF}
-      We will call a sieve
+      We call a sieve
       %A \textit{family} of $G$-corollas is a sieve
       $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
-      a \textit{family} of $G$-corollas.
+      a \textit{family of $G$-corollas}.
 \end{definition}
 
 \begin{remark}\label{FAMILY_COROLLAS_REM}
@@ -6294,7 +6297,7 @@ Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve 
 the subcategory 
 $\Omega_{\mathcal{F}}^1 \hookrightarrow \Omega^1_G$ 
 of planar tall strings between $\mathcal{F}$-trees
-matches the pullback 
+matches the pullback of
 $\Omega_{\mathcal{F}}^0 \to
 \Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
 \Fin \wr \Omega_{\mathcal{F}}^0
@@ -6388,8 +6391,7 @@ The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
 \end{equation}
 \end{corollary}
 
-\begin{remark}
-      \label{WINDEX_GAMMA_REM}
+\begin{remark}\label{WINDEX_GAMMA_REM}
 Part (iii) of Proposition \ref{F_MONAD_COMPARISON_PROP}
 states that if $\mathcal{F}$ is a weak indexing system then $\mathbb{F}_G$ essentially preserves the image of $\upgamma_!$ (moreover, the converse is easily seen to also hold).
 As such, we will sometimes find it conceptually convenient
@@ -6431,8 +6433,8 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	$\iota \colon \Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$.
 	However, it is possible for  
 	$\Sigma_G^{\text{fr}} \nsubset \Sigma_{\mathcal{F}}$ (the most interesting case being that of
-        $\Sigma_{\mathcal F} = \Sigma_{G}^{\geq 1}$
-        the corollas of arity $\geq 1$, which model non-unital operads).
+	$\Sigma_{\mathcal F} = \Sigma_{G}^{\geq 1}$
+	the corollas of arity $\geq 1$, which model non-unital operads).
 	In these cases (and compatibly with the 
 	$\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_{\mathcal{F}}$ case), we instead use the composite adjunction
 \begin{equation}\label{COMPADJ EQ}
@@ -6540,7 +6542,7 @@ $B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} Y)=
 (\mathbb{F} X)^{\check{\amalg} l} 
 \mathbin{\check{\amalg}} \mathbb{F} Y$,
 whose colimit (over $\Delta^{op}$) is again $\mathcal{P}[u]$.
-For technical reasons, we prefer a ``doubled'' bar construction
+For technical reasons, we prefer the double bar construction
 \begin{equation}\label{DOUBAR EQ}
 	B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
 =
@@ -6576,8 +6578,10 @@ As in Remark \ref{REPACKAGERES REM}, each level of
 (\ref{FURRES EQ})
 can then be described as 
 \begin{equation}\label{LANLEVELFOR EQ}
-\Lan N^{(\mathcal P, X, Y)}_{n,l} =: \mathsf{Lan} N (N^{n} \iota \mathcal{P} 
-\amalg \iota X^{\amalg 2l+1} \amalg \iota Y),
+ \mathsf{Lan} N (N^{n} \iota \mathcal{P} 
+\amalg \iota X^{\amalg 2l+1} \amalg \iota Y)
+=
+\mathsf{Lan} N^{(\mathcal P, X, Y)}_{n,l},
 \end{equation}
 for $N$ the span monad (cf. Definition \ref{WSPAN_MONAD_DEFINITION}) and $\amalg$ now the coproduct of spans.
 In particular, each level of 
@@ -6631,7 +6635,7 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
 
-In this section, we build towards Remark \ref{NPXY_REM}, where we explicitly identify the categories underlying the left Kan extensions in (\ref{LANLEVELFOR EQ}).
+In this section, we explicitly identify the categories underlying the left Kan extensions in (\ref{LANLEVELFOR EQ}).
 
 
 In the notation 
@@ -6724,7 +6728,7 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 \begin{definition}
 Let $-1 \leq s \leq n$ and 
 $\lambda = \lambda_a \amalg \lambda_i$
-a partition of $\underline{l} = \{1,2,\cdots,l\}$.
+a partition of $\{1,2,\cdots,l\}$.
 
 We define $\Omega_{G}^{n,s,\lambda}$ to have as objects $n$-planar strings (where $T_{-1} = \mathsf{lr}(T_0)$ as in (\ref{STRINGOBJALT EQ}))
 \begin{equation}\label{NSTRINGLAB EQ}
@@ -7199,33 +7203,31 @@ For $-1\leq s \leq n$ the identifications
 then show that 
 $\Omega_G^{n,s,\lambda} \wr (\minus)$
 encodes (the underlying category of) the functor
-$N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$;
-that is, for spans $(\Sigma_G \leftarrow A_i \to \V)$, we have
-\begin{equation}
-      \begin{tikzcd}
-            N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}((A_i)) \arrow[r, phantom, "="]
-            &
-            \Omega_G^{n,s,\lambda} \wr (A_i) \arrow[d, "d_{1,2,\ldots,n}"] \arrow[r]
-            &
-            \Fin_s \wr \amalg A_i \arrow[d] \arrow[r]
-            &
-            \Fin_s \wr \amalg_i \V \arrow[r, "\amalg"]
-            &
-            \Fin_s \wr \V \arrow[r, "\otimes"]
-            &
-            \V
-            \\
-            &
-            \Omega_G^0 \arrow[r] \arrow[d]
-            &
-            \Fin_s \wr \Sigma_G
-            \\
-            &
-            \Sigma_G.
-      \end{tikzcd}
-\end{equation}
-% We denote the top horizontal composite as the morphism $N^{(A_i)}_{n,l}$
-% (and note that this agrees with the notation from (\ref{LANLEVELFOR EQ})).
+$N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
+%that is, for spans $(\Sigma_G \leftarrow A_i \to \V)$, we have
+%\begin{equation}
+%      \begin{tikzcd}
+%            N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}((A_i)) \arrow[r, phantom, "="]
+%            &
+%            \Omega_G^{n,s,\lambda} \wr (A_i) \arrow[d, "d_{1,2,\ldots,n}"] \arrow[r]
+%            &
+%            \Fin_s \wr \amalg A_i \arrow[d] \arrow[r]
+%            &
+%            \Fin_s \wr \amalg_i \V \arrow[r, "\amalg"]
+%            &
+%            \Fin_s \wr \V \arrow[r, "\otimes"]
+%            &
+%            \V
+%            \\
+%            &
+%            \Omega_G^0 \arrow[r] \arrow[d]
+%            &
+%            \Fin_s \wr \Sigma_G
+%            \\
+%           &
+%            \Sigma_G.
+%      \end{tikzcd}
+%\end{equation}
 
 Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
 the bottom square is one of the pullback squares 
@@ -7532,20 +7534,10 @@ It is clear that the label-relabel factorization
  is unique.
 \end{remark}
 
-\begin{definition}
-      Let $\tilde N^{(\mathcal P,X,Y)}$ denote the (a priori, set) map
-      \[
-            \Omega_G^e \to \mathsf F \wr \Sigma_G^{\amalg\set{\mathcal P, X,Y}} \xrightarrow{\mathcal P, X, Y}
-            \mathsf F \wr \V^{\amalg 3} \xrightarrow{\amalg}
-            \mathsf F \wr \V \to \V.
-      \]      
-\end{definition}
-
 \begin{proposition}
 There is an identification
 $\Omega_G^e \simeq 
-|\Omega_{G}^{\mathsf{t},\lambda_l}|$,
-which identifies $\tilde N^{(\mathcal P,X,Y)}_{\bullet,\bullet}$ with $\tilde N^{(\mathcal P,X,Y)}$.
+|\Omega_{G}^{\mathsf{t},\lambda_l}|$.
 \end{proposition}
 
 
@@ -7592,8 +7584,17 @@ are $X$-labels.
 The compatibilities with arrows and with the simplicial structure are straightforward.
 \end{proof}
 
+Letting 
+$\tilde{N}^{(\mathcal P, X,Y)}$
+be built from
+$N_{\bullet,\bullet}^{(\mathcal P, X,Y)}$
+via a double application of Proposition \ref{RANTRANS PROP}  thus yields the following, establishing 
+(\ref{EXTTREEFOR EQ}).
+
 \begin{corollary}
       $\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$. \qed
+=======
+	$\mathcal P \coprod_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$.
 \end{corollary}
 
 Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
@@ -7746,7 +7747,7 @@ $\widehat{\Omega}_G^e$ in $\Omega_G^e$.
 
 	To build $\mathsf{lr}_{\mathcal{P}}(U)$, consider the collection of outer faces
 	$\{U_i^X\} \amalg \{U_j^Y\} \amalg \{U_k^{\mathcal{P}}\}$
-where the $U_i^X$ and $U_j^Y$ are simply the $X$- and $Y$-labeled nodes,
+where the $U_i^X$, $U_j^Y$ are simply the $X,Y$-labeled nodes,
 and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
 Lemma \ref{OUTERFACEUNION LEM} guarantees that 
 each edge and each $\mathcal{P}$-labeled node belong to exactly
@@ -8731,9 +8732,9 @@ Proposition \ref{POWERF PROP}
 \begin{remark}\label{EXMAINLEM REM}
 If %When
 $T \in \Omega^a[k]$ is a non-equivariant alternating tree, 
-$\mathcal{P}$ level genuine cofibrant in $\mathsf{Sym}^G(\V)$,
+$\mathcal{P}$ is level genuine cofibrant in $\mathsf{Sym}^G(\V)$,
 and
-$u \colon X \to Y$ a level genuine (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
+$u \colon X \to Y$ is a level genuine (trivial) cofibration in $\mathsf{Sym}^G(\V)$,
 the previous result applied to
 $G \cdot T = (T)_{g \in G}$,
 $\iota_{!} \mathcal{P}$,
