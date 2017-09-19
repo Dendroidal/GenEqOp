@@ -1284,7 +1284,7 @@ $\mathcal{E}_{\bullet} \colon
 \mathcal{B}^{op} \to \mathsf{Cat}$,
 the \textit{contravariant Grothendieck construction} is
 $(\mathcal{B}^{op} \ltimes 
-\mathcal{E}_{\bullet})^{op}$
+\mathcal{E}_{\bullet}^{op})^{op}$
 (over $\mathcal B$).
 \end{definition}
 
@@ -1394,13 +1394,13 @@ Throughout we will let $\Fin$ denote the usual skeleton of the category of (orde
 
 \begin{definition}
 	For a category $\C$, we write 
-	$\Fin \wr \C = (\Fin^{op} \ltimes \C^{\times \bullet})^{op}$ 
+	$\Fin \wr \C = (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$ 
 	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
 \[
 \begin{tikzcd}[row sep=0pt]
 	\Fin^{op} \ar{r} & \mathsf{Cat}
 \\
-	I \ar[r,mapsto] & \C^{\times I}
+	I \ar[r,mapsto] & (\C^{op})^{\times I}
 \end{tikzcd}	
  \]
 Explicitly, the objects of $\Fin \wr \C$ are tuples $(c_i)_{i \in I}$ and a map 
@@ -2074,17 +2074,17 @@ codifies the multiplication maps
 
 \section{Planar and tall maps, and substitution}\label{PLANAR_SECTION}
 
-{\color{blue} %%%%% COLOR: BLUE
-  In this section, we will investigate the concepts of node substitution, mediated by the notions of planar tall maps.
-We will see that node substitution provides access to the structure maps of the free operad monad.
-Informally, the free operad on a sequence $X = \set{X_n}$, denoted $\mathbb F X$,
-consists of trees with nodes labeled by $X$,
-while $\mathbb F \mathbb F X$ has trees with nodes labeled by trees labeled by $X$,
-or precisely a ``substitution datum'' labeled by $X$.
-Moreover, the monad multiplcation is given, intuitively, by
-collapsing the distinctions between the multiple layers of trees,
-and this operation will be captured by performing node substitution on this datum. 
-This story will be made rigorous in this section and the next.
+%{\color{blue} %%%%% COLOR: BLUE
+%  In this section, we will investigate the concepts of node substitution, mediated by the notions of planar tall maps.
+%We will see that node substitution provides access to the structure maps of the free operad monad.
+%Informally, the free operad on a sequence $X = \set{X_n}$, denoted $\mathbb F X$,
+%consists of trees with nodes labeled by $X$,
+%while $\mathbb F \mathbb F X$ has trees with nodes labeled by trees labeled by $X$,
+%or precisely a ``substitution datum'' labeled by $X$.
+%Moreover, the monad multiplcation is given, intuitively, by
+%collapsing the distinctions between the multiple layers of trees,
+%and this operation will be captured by performing node substitution on this datum. 
+%This story will be made rigorous in this section and the next.
 }%%% COLOR: BLUE
 
 Throughout, we will assume that the reader is familiar with the category $\Omega$ of trees.
@@ -2124,12 +2124,13 @@ $\mathsf{O}_G \hookrightarrow \Fin^G$
 of those sets with transitive actions, $\Omega_G$ can then be described as given by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
 \begin{tikzcd}
-	\Omega_G \ar{r} \ar{d} & \Phi^G \arrow[d, "r^G"]
+	\Omega_G \ar{r} \ar{d} & 
+	\Phi^G \arrow{d}{\mathsf{r}^G}
 \\
 	\mathsf{O}_G \ar{r} & \Fin^G
 \end{tikzcd}
 \end{equation}
-(where $r: \Phi \to \Fin$ is the root functor),
+(where $\mathsf{r}: \Phi \to \Fin$ is the root functor),
 which is a repackaging of \cite[Prop. 5.46]{Pe17}.
 Explicitly, a $G$-tree $T$ is then a tuple 
 $T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
@@ -2139,6 +2140,8 @@ $T_x \to T_{g x}$ that are suitably associative and unital.
 
 
 \subsection{Planar structures}\label{PLASTR SEC}
+
+
 
 The specific model for the orbit category $\mathsf{O}_G$
 used in (\ref{OGDEF EQ}) has extra structure not found in the usual model (i.e. that of the $G$-sets $G/H$ for $H \leq G$),
@@ -3152,7 +3155,6 @@ and isomorphisms.
 We now turn to discussing the substitution operation. We start with an example focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
-\todo[inline]{is it important to relate node substitution to iterated grafting?}
 \begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
 More precisely (among other possible grafting orders), one has
 \begin{equation}\label{UFORMULA EQ}
@@ -3525,7 +3527,6 @@ As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \
 	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
 	V(U_{e^{\uparrow} \leq e}).
   \end{equation}
-  {\color{red} %%%% COLOR: RED
     Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
     $\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
     $\varphi \colon T \to U$.
@@ -3533,7 +3534,6 @@ As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \
     is the unique $T_{t^{\uparrow}\leq t}$ such that
     there is an inclusion of outer faces $U_{u^{\uparrow} \leq u} \hookrightarrow U_{t^{\uparrow} \leq t}$,
     so that $\varphi^{\**}$ indeed depends contravariantly on the tall map $\varphi$.
-  }%%%%%%% COLOR: RED
 \end{remark}
 
 \begin{remark}\label{INPPATH REM}
@@ -4746,8 +4746,21 @@ Explicitly, using Proposition \ref{FIBERKANMAP PROP}
 \end{equation}
 though we will prefer to work with (\ref{FGXDEF EQ}) throughout.
 
+To intuitively motivate the monad structure of $\mathbb{F}_G X$, note that 
+(\ref{FGXDEFEXP EQ}) roughly states that 
+$\mathbb{F}_G X$ consists of ``$G$-trees $T$ with $G$-nodes suitably labelled by $X$'', 
+and thus that $\mathbb{F}_G \mathbb{F}_G X$
+consists of ``$G$-trees $T_0$ with $G$-nodes labelled 
+by $G$-trees $T_{1,i}$ with $G$-nodes labelled by $X$''.
+The substitution discussion in 
+\S \ref{OUTTALL SEC}, 
+\S \ref{PLANARSTRING SEC}
+then says that $\mathbb{F}_G \mathbb{F}_G X$ roughly consists of ``planar tall maps of $G$-trees $T_0 \to T_1$ with $G$-nodes of $T_1$ labelled by $X$'' (for a precise statemen, see Remark \ref{REPACKAGERES REM}),
+so that the monad multiplication
+$\mathbb{F}_G \mathbb{F}_G \to \mathbb{F}_G$
+is obtained by ``forgetting $T_0$''.
 
-To describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension step in (\ref{FGXDEF EQ})
+To rigorously describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension step in (\ref{FGXDEF EQ})
 from the remaining construction.
 As such, we will 
 build a monad $N$ 
