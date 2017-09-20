@@ -3621,7 +3621,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \subsection{Equivariant leaf-root and vertex functors}\label{LRVERT SEC}
 
 
-This section builds off the previous, introduces two functors that are central to our definition of the category $\mathsf{Op}_G$ of
+This section introduces two functors that are central to our definition of the category $\mathsf{Op}_G$ of
 genuine equivariant operads: the leaf-root and vertex functors.
 
 We start by recalling a key class of maps of $G$-trees.
@@ -3869,7 +3869,7 @@ and $(e^{\uparrow} \leq e) \in V(T)$
 we write $T_{e^{\uparrow}\leq e}$
 as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
 
-Further, each element $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
+Further, each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
 We will prefer to write $G$-vertices as $v_{Ge}$, and write
 \begin{equation}\label{TVGE DEF}
 T_{v_{Ge}} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
@@ -3892,18 +3892,19 @@ where $\Fin_s$ is the category of finite sets and surjections of
 Remark \ref{FINSURJ REM}.
 \end{definition}
 
+\begin{remark}
+	Note that though the composite
+	$\Omega_G^0 \to \Fin_s \wr \Sigma_G \to \Fin_s$
+	coincides on objects with the functor described in Remark \ref{VERTEXDECOMPG REM},
+	the variance is now reversed. 
+\end{remark}
 
 \begin{remark}\label{NEED_WREATH_REMARK}
-      We note that the composite
-      $\Omega_G^0 \to \Fin_s \wr \Sigma_G \to \Fin_s$
-      coincides on objects with the functor described in Remark \ref{VERTEXDECOMPG REM},
-      though the variance is now reversed. 
-%      Indeed, in the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$,
-%      where the variance is irrelevant.
-      The need to introduce the $\Fin \wr (\minus)$ construction comes from the fact that
+	In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
+	The need to introduce the $\Fin_s \wr (\minus)$ construction comes from the fact that
 	in general quotient maps do not preserve the number of $G$-vertices.
-	For a simple example,
-        let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
+	As an example,
+	let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
 	$\varphi \colon \pi^{\**} S \to S$ of Example \ref{ROOTPULL EX}
 	determined by the assignments
 	$a \mapsto a$, $b \mapsto b$, $c \mapsto c$, $d \mapsto i a$, $e \mapsto i b$,	
@@ -3931,7 +3932,7 @@ Remark \ref{FINSURJ REM}.
 		\draw[->] (2.6,1) -- node [above] {$\varphi$} (3.6,1) ;
 		\end{tikzpicture}
 		\]
-We note that $T = \pi^{\**} S$ has three $G$-vertices $v_{G c}$, $v_{G b}$, $v_{G e}$ while $S$ has only two $G$-vertices $v_{G c}$ and $v_{G b}$. $V_G(\varphi)$ then maps the two $G$-corollas 
+Note that $T = \pi^{\**} S$ has three $G$-vertices $v_{G c}$, $v_{G b}$, $v_{G e}$ while $S$ has only two $G$-vertices $v_{G c}$ and $v_{G b}$. $V_G(\varphi)$ then maps the two $G$-corollas 
 $T_{v_{G b}}$ and $T_{v_{G e}}$
 isomorphically onto $S_{v_{G b}}$
 and the $G$-corolla $T_{v_{Gc}}$ by a non-isomorphism quotient onto $S_{v_{G c}}$.
@@ -4080,15 +4081,15 @@ Definition \ref{SUBSTITUTIONDATUM}.
 \begin{itemize}	
 \item[(i)] associative and unital $G$-action maps
 $U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
-\item[(ii)]	(resp. planar) tall maps 
+\item[(ii)]	(planar) tall maps 
 	$T_{f^{\uparrow} \leq f} \to U_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
 \end{itemize}	
-	Further, a map of (resp. planar) $T$-substitution data 
+	Further, a map of (planar) $T$-substitution data 
 	$\left(U_{f^{\uparrow} \leq f}\right) \to
-	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (resp. planar) tall maps 
+	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (planar) tall maps 
 	$\left(U_{f^{\uparrow} \leq f} \to V_{f^{\uparrow} \leq f} \right)$.
 	
-	We denote the category of (resp. planar) $T$-substitution data 
+	We denote the category of (planar) $T$-substitution data 
 	by $\mathsf{Sub}(T)$
 	(resp. $\mathsf{Sub}_{\mathsf{p}}(T)$).
 \end{definition}
@@ -4213,7 +4214,7 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 	determines pullback maps
 	$\bar{\psi}_{G e} \colon
 	(\psi^{\**} T)_{v_{Ge}} \to T_{v_{G \bar{\psi}(e)}}$,
-	which we now note are pullbacks over the maps
+	which we note are pullbacks over the maps
 	$\bar{\psi}_{G e} \colon Ge \to G \bar{\psi}(e)$
 	in $\mathsf{O}_G$. The definition of pullback then allows us to uniquely fill any diagram (where we reformulate substitution data as in Remark \ref{SUBSGREF DEF})
 \[
@@ -4290,7 +4291,7 @@ $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degene
 
 
 \begin{remark}
-The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string  (\ref{STRINGOBJ EQ}) is equivalent to a string
+The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string as in (\ref{STRINGOBJ EQ}) is equivalent to a string
 \begin{equation}\label{STRINGOBJALT EQ}
 	\begin{tikzcd}
 	T_{-1} \ar{r}{\varphi_0} & T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
@@ -4592,7 +4593,7 @@ For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-For $k< i < k+l+1$ the composite natural transformation in the diagram below is $\pi_{i+1}$.
+For $k< i < k+l+1$ the composite natural transformation in the diagram below is $\pi_{i}$.
 \begin{equation}\label{INDPI2 EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
@@ -4761,8 +4762,8 @@ by $G$-trees $T_{1,i}$ with $G$-nodes labelled by $X$''.
 The substitution discussion in 
 \S \ref{OUTTALL SEC}, 
 \S \ref{PLANARSTRING SEC}
-then says that $\mathbb{F}_G \mathbb{F}_G X$ roughly consists of ``planar tall maps of $G$-trees $T_0 \to T_1$ with $G$-nodes of $T_1$ labelled by $X$'' (for a precise statemen, see Remark \ref{REPACKAGERES REM}),
-so that the monad multiplication
+then says that $\mathbb{F}_G \mathbb{F}_G X$ roughly consists of ``planar tall maps of $G$-trees $T_0 \to T_1$ with $G$-nodes of $T_1$ labelled by $X$'' (for a precise statement, see Remark \ref{REPACKAGERES REM}),
+so that the multiplication
 $\mathbb{F}_G \mathbb{F}_G \to \mathbb{F}_G$
 is obtained by ``forgetting $T_0$''.
 
@@ -4904,7 +4905,7 @@ However, we will prefer $\Omega_{G}^n \wr A$ due to space concerns.
 \begin{remark}
 The definition of $\Omega_{G}^{n} \wr A$ in (\ref{OMGGNA})
 is unchanged by replacing $\Fin_s$ with $\Fin$. 
-As such, to avoid cluttering the diagrams in this section we will from now on abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
+As such, to avoid cluttering the larger diagrams in this section we will from now on often abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
 \end{remark}
 
 
@@ -4956,7 +4957,7 @@ Proposition \ref{PIIPROP PROP}.
 
 
 \begin{proof}
-While not hard to explicitly write formulas for $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
+Though it is not hard to explicitly write formulas for $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
 (see Remark \ref{VGDEFA REM} below),
 and then verify the desired properties,
 we here instead argue that the desiderata themselves can be used to uniquely, and coherently, define those functors. 
@@ -5011,7 +5012,7 @@ To define $d_i$ we consider the diagram below (for some $i<k$).
 \]
 The desiderata that the top $\pi_i$ consist of pullback arrows lifting the lower $\pi_i$ implies that it is uniquely determined by the top $V_G^k$ functor, and hence so is the top composite 
 $V_G^{k-1}d_i$. But since the front face is a pullback square
-(by arguing by induction on $k$ as in (\ref{PROOFD EQ})), there is a unique choice for $d_i$. 
+(by arguing via induction on $k$ as in (\ref{PROOFD EQ})), there is a unique choice for $d_i$. 
 That this definition of $d_i \wr A$ is
 independent of $k$ 
 is a consequence of the fact that the composite natural transformation in (\ref{INDPI1 EQ}) is $\pi_i$.
@@ -5264,8 +5265,8 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-That the rightmost sections of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from the associativity of the isomorphisms $\alpha$ in (\ref{COHER2 EQ}).
-On the other hand, the leftmost sections coincide since they are instances of the ``simplicial relation'' diagrams in (\ref{SIMPPI EQ}), as is seen by using 
+That the rightmost sides of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from the associativity of the isomorphisms $\alpha$ in (\ref{COHER2 EQ}).
+On the other hand, the leftmost sides coincide since they are instances of the ``simplicial relation'' diagrams in (\ref{SIMPPI EQ}), as is seen by using 
 (\ref{INDPI1 EQ}) and (\ref{INDPI2 EQ})
 to reinterpret the top left sections.
 
@@ -5421,7 +5422,7 @@ and the result follows.
 
 \begin{remark}
 Explicitly, if $\psi \colon Y \to X$ is a map in $\mathsf{O}_G$,
-and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$ over $X$,
+and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$ lies over $X$,
 the pullback $\psi^{\**} \tilde{T}$ is given by
 \[
 \left(\psi^{\**}T,(\bar{\psi}^{\**}_{Ge}
@@ -5585,9 +5586,9 @@ $\mathsf{Alg}_{\mathbb{F}_G}(\mathsf{Sym}_G(\mathcal{V}))$ of \textit{genuine eq
 
 \begin{remark}
 	The functor $\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota$ is isomorphic to 
-	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and hence we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
+	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and as such we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
 	
-	From this point of view, the role of root fibrations is to guarantee that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, though unnecessary to describe the monad structure itself.
+	From this point of view, root fibrations play an auxiliary role in verifying that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, but are unnecessary to describe the monad structure itself.
 \end{remark}
 
 \begin{remark}\label{REPACKAGERES REM}
@@ -5799,7 +5800,7 @@ For (ii), to show that
 	\to	
 	\iota^{\**} \mathbb{F}_G \iota_{\**}$ 
 is an isomorphism of functors one just repeats the argument in the previous paragraph by noting that $\iota_! \to \iota_{\**}$ is an isomorphism when restricted to $\Sigma_G^{\text{fr}}$.
-	To check that this is a map of monads, we recall first that the monad structure on $\iota^{\**} \mathbb{F}_G \iota_{\**}$
+	To check that this is a map of monads, we first recall  that the monad structure on $\iota^{\**} \mathbb{F}_G \iota_{\**}$
 is given as described in Proposition \ref{MONADADJ PROP}.
 Unpacking definitions, compatibility with multiplication reduces to showing that the composite 
 $\iota_! \iota^{\**} \xrightarrow{\epsilon_!} 
@@ -5984,7 +5985,7 @@ The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writ
 	\mathsf{Fun}(\Omega_G^{op},\mathcal{V})
 	\colon j_G
 \]
-for the span functor adjunctions,  
+for the span-functor adjunctions,  
 $\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$ can then be written as the composite
 \[
 	\mathsf{Lan} N j \to 
@@ -6092,7 +6093,7 @@ $Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the singleton.
 
 	When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
 	(where $C_0 \in \Sigma$ denotes the $0$-corolla),
-	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot T_0$).
+	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
 \[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 	\node at (0,0) {$G/G \cdot C_0$}
@@ -6312,8 +6313,7 @@ The existence of canonical maps
 $\mathsf{lr}(T) \to T$ shows that the sieve condition
 implies the $\mathsf{lr}$ condition
 in Definition \ref{INDEXSYS DEF}. 
-Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since 
-the subcategory 
+Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since the subcategory 
 $\Omega_{\mathcal{F}}^1 \hookrightarrow \Omega^1_G$ 
 of planar tall strings between $\mathcal{F}$-trees
 matches the pullback of
@@ -6996,7 +6996,7 @@ and $\lambda' \leq \lambda$ the forgetful functors in
 We now extend Notation \ref{OMEGAGNA NOT}.
 
 \begin{notation}
-Let $(A_j)=(A_j \to \Sigma_G)_{1\leq j \leq l}$ be a $l$-tuple of maps over $\Sigma_G$.
+Let $(A_j)=(A_j \to \Sigma_G)_{1\leq j \leq l}$ be a $l$-tuple of categories over $\Sigma_G$.
 We define 
 $\Omega_{G}^{n,s,\lambda} \wr (A_j) $
 as the pullback
@@ -7183,7 +7183,7 @@ $V_G^k \colon \Omega_G^{k,k,\lambda} \to
 \Fin \wr \Omega_G^{-1,-1,\lambda} =
 \Fin \wr \coprod_l \Sigma_G$,
 in which case one further attaches (\ref{ADDSQUARE EQ})
-to the diagram.
+to the diagram above.
 
 The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using (\ref{BOTTOM EQ}).
 \[
@@ -7250,7 +7250,7 @@ $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 
 Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
 the bottom square is one of the pullback squares 
-(\ref{ADDSQUARE EQ}), and the right diagram unpacks notation
+(\ref{ADDSQUARE EQ}), and the right diagram merely unpacks notation
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
@@ -7382,7 +7382,7 @@ for $a \in A_1$ as the composite
 \end{proposition}
 
 
-Proposition \ref{RANTRANS PROP} applies to both directions of 
+Proposition \ref{RANTRANS PROP} applies to both simplicial directions of 
 the bisimplicial object
 \[
       N^{(\mathcal P,X,Y)}_{n,l} =
@@ -7635,8 +7635,8 @@ We will denote the category of alternating $G$-trees and tall alternating maps b
 \end{definition}
 
 \begin{remark}
-	A $G-tree$ (resp. map of $G$-trees) is alternating
-	(resp. an alternating map) iff each component is.
+	A $G$-tree (resp. map) is alternating
+	iff each component is.
 \end{remark}
 
 \begin{example}
@@ -10090,7 +10090,7 @@ of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor.
 	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
 	\simeq \Sigma_n \wr G 
 	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
-But $\bar{\imath}^{\square n}$ is now a $\Sigma_n \wr-H$-genuine (trivial) cofibration by 
+But $\bar{\imath}^{\square n}$ is now a $\Sigma_n \wr H$-genuine (trivial) cofibration by 
 combining the cofibrant symmetric pushout powers hypothesis with Proposition \ref{FGTLEFT PROP}
  and hence 
 $i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
@@ -10399,7 +10399,7 @@ The result will follow by induction on $n$. The base case $n=1$ is obvious.
 Moreover, it is clear from (\ref{CARTFIX EQ}) that (\ref{FIXEDPUSH EQ}), which is a map of arrows, is an isomorphism on the target objects, hence the real claim is that this map is also an isomorphism on sources.
 
 We now note that by considering (\ref{COMPNFOLDFACT EQ}) for
-$g=\emptyset \to X$, $h=f$ and removing the last map $k_n$
+$g= (\emptyset \to X)$, $h=f$ and removing the last map $k_n$
 one obtains a filtration of the source of $f^{\square n}$.
 Applying $(\minus)^K$ to the leftmost map in 
 (\ref{COMPNFOLDFACTPUSH EQ})
@@ -10615,7 +10615,7 @@ a cofibration (trivial cofibration) in
 \end{remark}
 
 The $G$-graph families we will be interested in
-will encode the families of $G$-corollas 
+encode the families of $G$-corollas 
  $\Sigma_{\mathcal{F}}$
 of Definition \ref{FAMILY_COROLLAS_DEF} and,
 more generally, the families of $G$-trees 
@@ -10634,7 +10634,7 @@ $(g_i C_n)_{[g_i] \in G/H}$ in $\Sigma_G$. The following is then elementary.
 Writing $\mathcal{F}_{n}^{\Gamma}$ for the family  of $G$-graph subgroups
 of $G \times \Sigma_n$,
 there is an equivalence of categories
-(for any arbitrary choice of order of the $G/H$ and coset representatives)
+(for any arbitrary choice of order of the $G/H$ and of coset representatives)
 \[\coprod_{n \geq 0} \mathsf{O}_{\F_n^{\Gamma}} \xrightarrow{\simeq} \Sigma_G.\] 
 Hence, families of corollas $\Sigma_{\mathcal{F}}$
 are in bijection with collections
@@ -10692,7 +10692,7 @@ In what follows, given a tree with a $H$-action
 $T \in \Omega^H$,
 we will abbreviate 
 $G \cdot_H T = (g_i T)_{[g_i] \in G/H}$
-for some arbitrary (and inconsequential for the remaining discussion) choice of order on $G/H$ and coset representatives.
+for some arbitrary (and inconsequential for the remaining discussion) choice of order on $G/H$ and of coset representatives.
 
 
 \begin{proposition}
