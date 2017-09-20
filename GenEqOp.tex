@@ -1314,7 +1314,7 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$
 for the full subcategory of those pairs 
 $\left(e,f \colon \bar{e} \to \delta(e)\right)$
-such that $\bar{\pi}(f) = \bar{\pi}(\bar{e})$.
+such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 
 
 \begin{proposition}\label{FIBERKANMAP PROP}
@@ -1344,7 +1344,7 @@ $
 (where $\delta \pi(f)^{\**} = \bar{\pi}^{\**}(f) \delta$) is  right adjoint to the inclusion
 $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$, so that the claim follows by coreflexivity 
-(note that if we're not in the split case, pullbacks may be chosen arbitrarily).
+(note that if we are not in the split case, pullbacks may be chosen arbitrarily).
 \end{proof}
 
 %\begin{proof}
@@ -1400,7 +1400,7 @@ Throughout we will let $\Fin$ denote the usual skeleton of the category of (orde
 \begin{tikzcd}[row sep=0pt]
 	\Fin^{op} \ar{r} & \mathsf{Cat}
 \\
-	I \ar[r,mapsto] & (\C^{op})^{\times I}
+	I \ar[r,mapsto] & \C^{\times I}
 \end{tikzcd}	
  \]
 Explicitly, the objects of $\Fin \wr \C$ are tuples $(c_i)_{i \in I}$ and a map 
@@ -1751,22 +1751,27 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	Further, the dual of such $\mathcal{V}$ is called a 
 	\textit{symmetric monoidal category with diagonals}\footnote{
 	These have also been called \textit{relevant monoidal categories} \cite{DP07}.}.
-\end{remark}
-
-
-\begin{remark}
-Replacing $\Fin_s$ in the previous remark with the subcategory
+	
+	Similarly, replacing $\Fin_s$ with the subcategory
 $\Fin_i \hookrightarrow \Fin$ of injections yields the notion of a \textit{symmetric monoidal category with injection maps} or, dually, \textit{symmetric monoidal category with projections}\footnote{
 These are equivalent to \textit{semicartesian symmetric monoidal categories} \cite{Lei16}.}.
 
-Finally, if a symmetric monoidal category has both diagonals and projections, it must in fact be \textit{cartesian} monoidal \cite[IV.2]{EK66}.
+Finally, we note that if a symmetric monoidal category has both diagonals and projections, it must in fact be \textit{cartesian monoidal} \cite[IV.2]{EK66}.
 \end{remark}
 
+
 \begin{remark}
-      As analogues of Notation (\ref{FIN_COA_COS_NOT}) also hold when replacing $\Fin$ with
-      $\Sigma = \Fin_{iso}$, $\mathsf{F}_s$, $\mathsf{F}_i$, and their duals,
-      we have that every one of these $\F_{\**} \wr (-)$ is a monad on the category of categories,
-      the free symmetric monoidal category with the appropriate additional structure specified by the above remarks.
+	Extending Notation \ref{FIN_COA_COS_NOT} one sees that 
+	$\Fin \wr (\minus)$, 
+	$\Fin_i \wr (\minus)$,
+	$\Fin_s \wr (\minus)$,
+	$\Sigma \wr (\minus)$
+define monads in the category of categories.
+%	
+%      As analogues of Notation (\ref{FIN_COA_COS_NOT}) also hold when replacing $\Fin$ with
+%      $\Sigma = \Fin_{iso}$, $\mathsf{F}_s$, $\mathsf{F}_i$, and their duals,
+%      we have that every one of these $\F_{\**} \wr (-)$ is a monad on the category of categories,
+%      the free symmetric monoidal category with the appropriate additional structure specified by the above remarks.
       %/(co)cartesian monoidal category (with folds/diagonals/injections/projections)
 \end{remark}
 
@@ -1868,7 +1873,8 @@ and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that cop
 \end{proof}
 
 \begin{remark}
-      The above results also work if we replace $\Fin_s$ with $\Fin$,$\Fin_i$, or $\Sigma$, and appropriately update the requirements on $(\mathcal V, \otimes)$.
+      The previous results also hold if we replace $\Fin_s$ with $\Fin$, $\Fin_i$, $\Sigma$.
+      %, and appropriately update the requirements on $(\mathcal V, \otimes)$.
 \end{remark}
 
 \subsection{Monads and adjunctions}
@@ -2104,8 +2110,8 @@ need only an intuitive grasp of the notations
 $\underline{e} \leq e$,
 $f \leq_d e$ and $e^{\uparrow}$
 to read the remainder of the paper.
-Such understanding can be obtained by 
-reading \cite[Example 5.10]{Pe17}
+Such understanding can be obtained from 
+\cite[Example 5.10]{Pe17}
 and Example \ref{PLANAREX EX} below.
 
 
@@ -2115,8 +2121,7 @@ of $G$-trees, jointly discovered by the authors and first discussed by the secon
 Firstly, we let $\Phi$ denote the category of forests, i.e.
 ``formal coproducts of trees''.
 A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
-but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$
-(as $\Omega$ has no coproducts, the free cocartesian monoidal category is the coproduct completion).
+but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$.
 The category of $G$-forests is then 
 $\Phi^G$, i.e. the category of $G$-objects in $\Phi$. 
 Identifying the $G$-orbit category as the subcategory
@@ -2402,8 +2407,8 @@ $c = e \vee g$ and transitivity follows.
 
 \begin{remark}\label{CLOSURE REM}
 Proposition \ref{PLANARIZATIONCHAR PROP} states in particular that $\leq_p$
-is the closure of the relations in $\leq_d$
-and those in $\leq_p$ internal to every
+is the closure of the $\leq_d$ relations  
+and the $\leq_p$ relations within each
 $a^{\uparrow}$
 under the planar condition in 
 Definition \ref{PLANARIZE DEF}.
@@ -2414,7 +2419,7 @@ The discussion of the substitution procedure in \S \ref{SUBS SEC}
 will be simplified by working with 
 a model for the category $\Omega$
 with exactly one representative
-of each possible planar structure on each tree or, more precisely, if the only isomorphisms preserving the planar structure are the identities.
+of each possible planar structure on each tree or, more precisely, a model where the only isomorphisms preserving the planar structure are the identities.
 On the other hand, exclusively using such a model for $\Omega$ throughout would, among other issues, make the discussion of faces in \S \ref{OUTTALL SEC} rather awkward.
 We now describe our conventions to address such issues.
 
@@ -2607,7 +2612,10 @@ An additional reason to leave the use of $(\minus)^s$ implicit
 as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
 
 For example, when $G = \mathbb{Z}_{/4}$, 
-$\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees $T_1,T_2 \in \Omega_G$ on the right.
+$\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees 
+$T_1,T_2 \in \Omega_G$
+$\bar{T}_1,\bar{T}_2 \in \Omega_{\bar{G}}$
+ on the right.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -2690,7 +2698,7 @@ $\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation
 				child[sibling distance=1.75em]{
 				edge from parent node [swap]  {$a+\tilde{G}$}}
 			edge from parent node [swap] {$b+\tilde{G}/\tilde{G}$}};
-		\node at (3.6725,-4.25) {$T_1$}
+		\node at (3.6725,-4.25) {$\bar{T}_1$}
 			child{node [dummy] {}
 				child[sibling distance = 2.75em,level distance= 1.75em]{
 				edge from parent node [swap, near end] {$a+2$}}
@@ -2699,7 +2707,7 @@ $\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation
 				child[sibling distance = 2.75em,level distance= 1.75em]{
 				edge from parent node [near end] {$\phantom{1+}a$}}
 			edge from parent node [swap] {$b$}};
-		\node at (8.6725,-4.25) {$T_2$}
+		\node at (8.6725,-4.25) {$\bar{T}_2$}
 			child{node [dummy] {}
 				child[sibling distance = 2.75em,level distance= 1.75em]{
 				edge from parent node [swap, near end] {$a+1$}}
@@ -2790,7 +2798,7 @@ The exact name choice is meant to accentuate the connection with another key fun
 described in \S \ref{LRVERT SEC},
 which we call the \textit{leaf-root functor}.
 
-Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree (or $G$-forest)
+Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
 $\varphi \colon Y \to X$
@@ -3038,7 +3046,7 @@ we first recall some basic definitions and results concerning outer subtrees and
 with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying
 $\forall_i f\neq e_i$
 in addition to (\ref{OUTERFACE EQ}),
-with planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
+and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
 \end{definition}
 
 
@@ -3096,7 +3104,7 @@ V(T_{\underline{f} v \leq e}) \amalg V(T_{\underline{g} \leq v})$.
 %Since $\underline{e} \leq e$ is a broad relation in $T_{\underline{e} \leq e}$ (this follows from (a) together with \cite[Lemma 5.13]{Pe17})
 \end{proof}
 
-We now label another class of important maps in $\Omega$. 
+ 
 \begin{definition}
 	A map $S \xrightarrow{\varphi} T$ in $\Omega$ is called a \textit{tall map} if 
 	\[\varphi(\underline{l}_S) = \underline{l}_T, 
@@ -3381,9 +3389,7 @@ $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto 
 
 One of the fundamental ideas shaping our perspective on operads
 is then that substitution data as in (\ref{SUBSDATUMTREES2 EQ})
-is \textit{equivalent} to the data of said planar tall maps.
-% can equivalently be repackaged using planar tall maps. 
-We begin by formalizing the above process.
+can equivalently be repackaged using planar tall maps. 
 
 \begin{definition}\label{SUBSTITUTIONDATUM}
 	Let $T \in \Omega$ be a tree.
@@ -3607,7 +3613,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 	$T$ is a corolla or if one of $T_1,T_2$
 	is one of the root or leaf stick subtrees.
 
-	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all of three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
 \end{proof}
 
 
@@ -7605,7 +7611,7 @@ via a double application of Proposition \ref{RANTRANS PROP}  thus yields the fol
 (\ref{EXTTREEFOR EQ}).
 
 \begin{corollary}
-        $\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$.
+	$\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$.
 \end{corollary}
 
 Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
@@ -8584,7 +8590,7 @@ $\mathsf{Op}^G(\mathcal{V})$
 and
 $\mathsf{Op}_G(\mathcal{V})$.
 
-Recall that for any group $\Sigma$, the genuine model structure (if it exists)
+Recall that for a group $\Sigma$, the genuine model structure (if it exists)
 on $\mathcal{V}^{\Sigma}$,
 which we denote $\mathcal{V}^{\Sigma}_{\text{gen}}$,
 has weak equivalences (resp. fibrations)
