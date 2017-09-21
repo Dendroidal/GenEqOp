@@ -1880,7 +1880,7 @@ and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that cop
 
 \subsection{Monads and adjunctions}
 
-Whenever possible and by default, all depictions of adjunctions $\mathcal C \rightleftarrows \mathcal D$ will have the right adjoint on the bottom.
+%Whenever possible and by default, all depictions of adjunctions $\mathcal C \rightleftarrows \mathcal D$ will have the right adjoint on the bottom.
 
 In \S 4 we will make use of the following straightforward results concerning the transfer of monads along adjunctions
 (note that $L$ (resp. $R$) denotes the left (right) adjoint).
@@ -9544,7 +9544,7 @@ instead of Lemma \ref{EXMAINLEM LEM}
 
 \section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}, %. I.e. we show 
+In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}. I.e. we show 
 that there are Quillen equivalences
 \[
 \begin{tikzcd}[column sep =4.5em]
@@ -9613,7 +9613,7 @@ which we now recall.
 	\textit{cellular fixed points} if for all finite groups $G$ and subgroups $H,K\leq G$ one has that:
 \begin{itemize}
 	\item[(i)] fixed points $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserve direct colimits;
-	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration in $\mathcal V$;
+	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration;
 	\item[(iii)] for each object $X \in \mathcal{V}$, the natural map 
 	$(G/K)^H \cdot X \to ((G/K) \cdot X)^H$
 	is an isomorphism.
@@ -9628,7 +9628,7 @@ cellularity conditions in Definition \ref{CELL DEF}.
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
-			 is a genuine cofibration in $\mathcal V^G$;
+			 is a genuine cofibration;
 		\item[(ii)] if $X$ is genuine cofibrant, the map 
 			$(G/K)^H \cdot X^H \to (G \cdot_K X)^H$ is an isomorphism.
 	\end{itemize}
@@ -10695,9 +10695,8 @@ encoding a group in $\mathcal{F}_n$.
 
 In what follows, given a tree with a $H$-action
 $T \in \Omega^H$,
-we will abbreviate with 
-$G \cdot_H T$
-the $G$-tree $(g_i T)_{[g_i] \in G/H}$
+we will abbreviate
+$G \cdot_H T = (g_i T)_{[g_i] \in G/H}$
 for some arbitrary (and inconsequential for the remaining discussion) choice of order on $G/H$ and of coset representatives.
 
 
