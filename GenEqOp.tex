@@ -299,8 +299,9 @@ Our model, which emerges from a broader framework, satisfies both of these desid
 
 
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
-Given a family $\mathcal{F}$ of subgroups of $G$ 
-(i.e. a collection closed under conjugation and subgroups), a \textit{universal space} $X$ for $\mathcal{F}$, 
+Given a family $\mathcal{F}$ of subgroups of $G$, 
+% (i.e. a collection closed under conjugation and subgroups), 
+a \textit{universal space} $X$ for $\mathcal{F}$, 
 also called an \textit{$E \mathcal{F}$-space},
 is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
 In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
@@ -1878,6 +1879,8 @@ and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that cop
 \end{remark}
 
 \subsection{Monads and adjunctions}
+
+Whenever possible and by default, all depictions of adjunctions $\mathcal C \rightleftarrows \mathcal D$ will have the right adjoint on the bottom.
 
 In \S 4 we will make use of the following straightforward results concerning the transfer of monads along adjunctions
 (note that $L$ (resp. $R$) denotes the left (right) adjoint).
@@ -9541,7 +9544,8 @@ instead of Lemma \ref{EXMAINLEM LEM}
 
 \section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}. I.e. we show that there are Quillen equivalences
+In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}, %. I.e. we show 
+that there are Quillen equivalences
 \[
 \begin{tikzcd}[column sep =4.5em]
 	\mathsf{Op}_{G}(\mathcal{V}) 
@@ -9580,7 +9584,7 @@ $N \mathcal{F}$-operads of Blumberg-Hill.
 \label{FAMILY_SEC}
 
 Throughout 
-$\mathcal{F}$ denotes a family of subgroups of a finite group $G$, i.e. a collection of subgroups closed under conjugation and inclusion or, equivalently
+$\mathcal{F}$ denotes a \textit{family} of subgroups of a finite group $G$, i.e. a collection of subgroups closed under conjugation and inclusion, or, equivalently
 (cf. \S \ref{INDEXING_SECTION}),
 a sieve 
 $
@@ -9609,7 +9613,7 @@ which we now recall.
 	\textit{cellular fixed points} if for all finite groups $G$ and subgroups $H,K\leq G$ one has that:
 \begin{itemize}
 	\item[(i)] fixed points $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserve direct colimits;
-	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration;
+	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration in $\mathcal V$;
 	\item[(iii)] for each object $X \in \mathcal{V}$, the natural map 
 	$(G/K)^H \cdot X \to ((G/K) \cdot X)^H$
 	is an isomorphism.
@@ -9624,8 +9628,8 @@ cellularity conditions in Definition \ref{CELL DEF}.
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
-			 is a genuine cofibration;
-		\item[(ii)] if $X$ is $G$-genuine cofibrant the map 
+			 is a genuine cofibration in $\mathcal V^G$;
+		\item[(ii)] if $X$ is genuine cofibrant, the map 
 			$(G/K)^H \cdot X^H \to (G \cdot_K X)^H$ is an isomorphism.
 	\end{itemize}
 %Suppose additionally that $\mathcal{V}$ is a 
@@ -9698,7 +9702,7 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 \end{tikzcd}
 \]
 is a Quillen adjunction provided that for any 
-$H \in \mathcal{F}$ it is $\phi(H) \in \bar{\mathcal{F}}$.
+$H \in \mathcal{F}$ we have $\phi(H) \in \bar{\mathcal{F}}$.
 \end{proposition}
 
 \begin{proof}
@@ -9914,7 +9918,7 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 %\end{remark}
 
 
-\begin{remark}
+\begin{example}
 	Both $(\mathsf{sSet},\times)$ and 
 	$(\mathsf{sSet}_{\**},\wedge)$ have cofibrant symmetric pushout powers. To see this, we note first that the case of (non-trivial)
 	cofibrations is immediate since genuine cofibrations
@@ -9929,7 +9933,7 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 	$f^{\square n} = k_n$,
 	to show by induction on $n$ that 
 	$f^{\square n}$ is also a trivial cofibration.
-\end{remark}
+\end{example}
 
 
 We now turn to describing the symmetric power analogue of 
@@ -10008,7 +10012,7 @@ It then suffices, and is notationally far more convenient, to establish the requ
 		\subset
 	\iota^{\**}\left(\mathcal{F}^{\ltimes E \amalg \bar{E}}\right).
 \]
-	Hence, the following is a left Quillen bifunctor.
+	Hence, the following is a left Quillen bifunctor for $\mathcal V$ as in Proposition \ref{BIQUILLENG PROP}.
 \begin{equation}\label{LTIMESPRODQUI EQ}
 	\Sigma_{E \amalg \bar{E}} 
 	\underset{\Sigma_E \times \Sigma_{\bar{E}}}{\cdot}
@@ -10319,7 +10323,7 @@ Definition \ref{CELL DEF} (iii)).
 \to
 	\left( f^{\square n} \right)^K.
 \end{equation}
-If $f$ is a genuine $G$-cofibration between cofibrant objects then 
+If $f$ is a genuine cofibration between genuine cofibrant objects then 
 (\ref{FIXEDPUSH EQ}) is an isomorphism.
 \end{proposition}
 
@@ -10506,10 +10510,10 @@ $\Gamma$ is a $G$-graph subgroup iff it can be written as
 \[
 	\Gamma = 
 	\{
-	(k,\varphi(k)) : k \in K \leq G
+	(h,\varphi(h)) : h \in H \leq G
 	\}
 \]
-for some partial homomorphism $G \geq K \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
+for some partial homomorphism $G \geq H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
 \end{remark}
 
 
@@ -10542,7 +10546,7 @@ $\Delta \colon G \times \Sigma_n \wr \Sigma \to
 \begin{remark}\label{UNPACKINGSQCAP REM}
 	Unpacking Definition \ref{EXTERINT DEF} one has that 
 	$\Gamma \in \mathcal{F} \sqcap_G \bar{\mathcal{F}}$ iff
-	$\pi_{G \times \Sigma}(\Gamma) \in \mathcal{F}$,
+	$\pi_{G \times \Sigma}(\Gamma) \in \mathcal{F}$ and
 	$\pi_{G \times \bar{\Sigma}}(\Gamma) \in \bar{\mathcal{F}}$.
 \end{remark}
 
@@ -10598,9 +10602,10 @@ is a left Quillen bifunctor.
         Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 	
 	Let $\mathcal{F}$ be a $G$-graph family of $G \times \Sigma$. If $f$ is a cofibration (resp. trivial cofibration) in
-	$\mathcal{V}^{G \times \Sigma}_{\mathcal{F}}$
+	$\mathcal{V}^{G \times \Sigma}_{\mathcal{F}}$,
 	then so is $f^{\square n}$
-a cofibration (trivial cofibration) in 
+        % a cofibration (trivial cofibration) 
+        in 
 	$\mathcal{V}^{G \times \Sigma_n \wr \Sigma}_{\mathcal{F}^{\ltimes_{G} n}}$.
 \end{proposition}
 
@@ -10690,8 +10695,9 @@ encoding a group in $\mathcal{F}_n$.
 
 In what follows, given a tree with a $H$-action
 $T \in \Omega^H$,
-we will abbreviate 
-$G \cdot_H T = (g_i T)_{[g_i] \in G/H}$
+we will abbreviate with 
+$G \cdot_H T$
+the $G$-tree $(g_i T)_{[g_i] \in G/H}$
 for some arbitrary (and inconsequential for the remaining discussion) choice of order on $G/H$ and of coset representatives.
 
 
@@ -12532,7 +12538,7 @@ to monomorphism $n$-cubes.
 \item[(b)]
 Letting $\eta \colon id \to \widetilde{\mathbb{F}}_G $ denote the unit and
 $A \to B$ be a monomorphism in 
-$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$ the square
+$\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$, the square
 \[
 \begin{tikzcd}
 	A \ar{r} \ar{d}[swap]{f} &
