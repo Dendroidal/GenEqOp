@@ -10,12 +10,11 @@
 
 \input{commands.tex}%
 
-
+%\usepackage{showkeys}
 
 \author{Peter Bonventre, Lu\'is A. Pereira}%
 \title{Genuine equivariant operads}%
 
-\usepackage{showkeys}
 \usepackage{stmaryrd}
 
 \usepackage{upgreek}
@@ -1880,7 +1879,7 @@ and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that cop
 
 \subsection{Monads and adjunctions}
 
-Whenever possible and by default, all depictions of adjunctions $\mathcal C \rightleftarrows \mathcal D$ will have the right adjoint on the bottom.
+%Whenever possible and by default, all depictions of adjunctions $\mathcal C \rightleftarrows \mathcal D$ will have the right adjoint on the bottom.
 
 In \S 4 we will make use of the following straightforward results concerning the transfer of monads along adjunctions
 (note that $L$ (resp. $R$) denotes the left (right) adjoint).
@@ -9544,7 +9543,7 @@ instead of Lemma \ref{EXMAINLEM LEM}
 
 \section{Cofibrancy and Quillen equivalences}\label{COFIB SEC}
 
-In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}, %. I.e. we show 
+In this final section we prove our main result, Theorem \ref{MAINQUILLENEQUIV THM}. I.e. we show 
 that there are Quillen equivalences
 \[
 \begin{tikzcd}[column sep =4.5em]
@@ -9613,7 +9612,7 @@ which we now recall.
 	\textit{cellular fixed points} if for all finite groups $G$ and subgroups $H,K\leq G$ one has that:
 \begin{itemize}
 	\item[(i)] fixed points $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserve direct colimits;
-	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration in $\mathcal V$;
+	\item[(ii)] fixed points $(\minus)^H$ preserve pushouts where one leg is $(G/K)\cdot f$, for $f$ a cofibration;
 	\item[(iii)] for each object $X \in \mathcal{V}$, the natural map 
 	$(G/K)^H \cdot X \to ((G/K) \cdot X)^H$
 	is an isomorphism.
@@ -9628,7 +9627,7 @@ cellularity conditions in Definition \ref{CELL DEF}.
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
 	\begin{itemize}
 		\item[(i)] $(\minus)^H \colon \mathcal{V}^G \to \mathcal{V}$ preserves cofibrations and pushouts where one leg
-			 is a genuine cofibration in $\mathcal V^G$;
+			 is a genuine cofibration;
 		\item[(ii)] if $X$ is genuine cofibrant, the map 
 			$(G/K)^H \cdot X^H \to (G \cdot_K X)^H$ is an isomorphism.
 	\end{itemize}
@@ -10695,9 +10694,8 @@ encoding a group in $\mathcal{F}_n$.
 
 In what follows, given a tree with a $H$-action
 $T \in \Omega^H$,
-we will abbreviate with 
-$G \cdot_H T$
-the $G$-tree $(g_i T)_{[g_i] \in G/H}$
+we will abbreviate
+$G \cdot_H T = (g_i T)_{[g_i] \in G/H}$
 for some arbitrary (and inconsequential for the remaining discussion) choice of order on $G/H$ and of coset representatives.
 
 
@@ -12657,38 +12655,38 @@ in $\mathsf{Op}_{G}(\mathsf{Set})$, while the rightmost latching map is computed
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
 
 The key to the proof is the claim that the maps
-$l_{\underline{n}} X^n$
-are monomorphisms. This will follow from the stronger claim that the $X^n$
+$l_{\underline{n}} \mathcal{X}^n$
+are monomorphisms. This will follow from the stronger claim that the $\mathcal{X}^n$
 are monomorphim $n$-cubes, which we argue by induction on $n$.
 When $n=0$ there is nothing to show.
 Otherwise, for any 
 $U \subsetneq \{1,\cdots,n,n+1\}$
-the restriction of $X^{n+1}$ to subsets of
-$U$ is isomorphic to the cube $X^{|U|}$,
+the restriction of $\mathcal{X}^{n+1}$ to subsets of
+$U$ is isomorphic to the cube $\mathcal{X}^{|U|}$,
 so that we need only analyze the top
-latching map $l_{\underline{n+1}} X^{n+1}$.
+latching map $l_{\underline{n+1}} \mathcal{X}^{n+1}$.
 We now write
-$X^{n+1} = (X^n \to 
-\widetilde{\mathbb{F}}_G X^n)$, regarding the $(n+1)$-cube as a map of $n$-cubes.
-The top latching map $l_{\underline{n_+1}} X^{n+1}$
+$\mathcal{X}^{n+1} = (\mathcal{X}^n \to 
+\widetilde{\mathbb{F}}_G \mathcal{X}^n)$, regarding the $(n+1)$-cube as a map of $n$-cubes.
+The top latching map $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
 is then the latching map of the composite square
 \begin{equation}\label{BARCOFSQ EQ}
 \begin{tikzcd}
- 	L_{\underline{n}} X^n \ar{d} \ar[equal]{r}
+ 	L_{\underline{n}} \mathcal{X}^n \ar{d} \ar[equal]{r}
 &
-	L_{\underline{n}} X^n \ar{d}
+	L_{\underline{n}} \mathcal{X}^n \ar{d}
 	\ar{r}
 &
-	X^n_{\underline{n}}
+	\mathcal{X}^n_{\underline{n}}
 	\ar{d}
 \\
-	L_{\underline{n}} (\widetilde{\mathbb{F}}_G X^n)
+	L_{\underline{n}} (\widetilde{\mathbb{F}}_G \mathcal{X}^n)
 	\ar{r}
 &
-	\widetilde{\mathbb{F}}_G(L_{\underline{n}}  X^n)
+	\widetilde{\mathbb{F}}_G(L_{\underline{n}}  \mathcal{X}^n)
 	\ar{r}
 &
-	\widetilde{\mathbb{F}}_G X^n_{\underline{n}}
+	\widetilde{\mathbb{F}}_G \mathcal{X}^n_{\underline{n}}
 \end{tikzcd}
 \end{equation}
 The latching map in the rightmost square
@@ -12696,19 +12694,19 @@ The latching map in the rightmost square
 is a monomorphism since it is an instance of
 Lemma \ref{MONOCUBE LEM}(b)
 applied to the map
-$l_{\underline{n}} X^n \colon 
-L_{\underline{n}} X^n \to X^n_{\underline{n}}$, which is a monomorphism by the induction hypothesis.
+$l_{\underline{n}} \mathcal{X}^n \colon 
+L_{\underline{n}} \mathcal{X}^n \to \mathcal{X}^n_{\underline{n}}$, which is a monomorphism by the induction hypothesis.
 On the other hand, the left bottom horizontal map in 
 (\ref{BARCOFSQ EQ})
 is a monomorphism
 by applying Lemma \ref{MONOCUBE LEM}(a)
-to the cube $\tilde{X}^n$ obtained from 
-$X^n$ by replacing the top level
-$X^n_{\underline{n}}$ with
-$L_{\underline{n}} X^n$.
+to the cube $\tilde{\mathcal{X}}^n$ obtained from 
+$\mathcal{X}^n$ by replacing the top level
+$\mathcal{X}^n_{\underline{n}}$ with
+$L_{\underline{n}} \mathcal{X}^n$.
 Hence the latching maps in both squares
 in (\ref{BARCOFSQ EQ}) are monomorphisms, 
-and thus so is the latching map of the composite square, showing that $l_{\underline{n_+1}} X^{n+1}$
+and thus so is the latching map of the composite square, showing that $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
 is a monomorphism, as desired.
 
 To finish the proof, one now simply notes that the skeletal filtration of $B_{\bullet}$ is 
@@ -12717,18 +12715,20 @@ in $\mathsf{Op}_{G}(\mathsf{sSet})$
 below, where the vertical maps are cofibrations in 
 $\mathsf{Op}_{G}(\mathsf{sSet})$
 since the maps 
-$l_{\underline{n}} X^n \colon 
-L_{\underline{n}} X^n \to X^n_{\underline{n}}$
+$l_{\underline{n}} \mathcal{X}^n \colon 
+L_{\underline{n}} \mathcal{X}^n \to \mathcal{X}^n_{\underline{n}}$
 are monomorphisms.
 \[
 \begin{tikzcd}
 	\widetilde{\mathbb{F}}_G 
-	(L_{\underline{n}} X^n \times \Delta^n) 
+	(L_{\underline{n}} \mathcal{X}^n \times \Delta^n
+	\amalg_{L_{\underline{n}} \mathcal{X}^n \times \partial\Delta^n}
+	\mathcal{X}^n_{\underline{n}} \times \partial \Delta^n) 
 	\ar{r} \ar{d} &
 	\mathsf{sk}_{n-1} B_{\bullet} \ar{d}
 \\
 	\widetilde{\mathbb{F}}_G 
-	(X^n_{\underline{n}} \times \Delta^n) 
+	(\mathcal{X}^n_{\underline{n}} \times \Delta^n) 
 	\ar{r} & \mathsf{sk}_{n} B_{\bullet}
 \end{tikzcd}
 \]
