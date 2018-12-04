@@ -1869,7 +1869,7 @@ so that
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
 	\left(\bigotimes_i{G(c_i)}\right)
 	\]
-and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that coproducts commute with limits in each variable.
+and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that the monoidal product commutes with limits in each variable.
 \end{proof}
 
 \begin{remark}
@@ -3591,8 +3591,8 @@ where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the 
 Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
 it follows from the definition of outer face that there is a
 nontrivial partition 
-$\{U_i\} = \{U_i|U_i \hookrightarrow V\} 
-\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
+$\{U_i\} = \{U_i|U_i \hookrightarrow U^{\leq e}\} 
+\amalg \{U_i|U_i \hookrightarrow U_{\not \langle e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
@@ -4412,7 +4412,7 @@ Notation \ref{VGDEF NOT} combined with
 (\ref{SUBDATAUNDERPLANG2 EQ}) 
 then show that 
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
-so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
+so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
 But since a quotient is an isomorphism iff it is so on roots,
 we further have that 
