@@ -1,0 +1,3 @@
+- Updated Gutierrez-White reference
+
+- Fixed last square diagram in the proof of Lemma 6.69
