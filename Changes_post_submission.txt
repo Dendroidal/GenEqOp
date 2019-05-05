@@ -7,3 +7,5 @@
 - clarified diagram in Example 3.18
 - Defn 3.19 and Example 3.20 became Defn 3.23 and Example 3.24, while 
 Defn 3.21, Remark 3.22, Prop 3.23 became Defn 3.19, Remark 3.20, Prop 3.21
+
+Fixed some typos in Lemma 2.21
