@@ -1,0 +1,95 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{article} 
+% the margin option causes section titles to appear to the left of body text 
+\textwidth=5.2in % increase textwidth to get smaller right margin
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  % colorlinks,
+  final,
+  pdftitle={Equivariant Dendroidal Segal Spaces},
+  pdfauthor={Bonventre, P. and Pereira, L. A.},
+  % pdfsubject={Your subject here},
+  % pdfkeywords={keyword1, keyword2},
+  linktoc=page
+}
+
+\usepackage{xr}
+\externaldocument{EqSegSp&G-infty-ops}
+
+\input{commands.tex}%
+
+%-------- TIKZ -----------------------------------------
+\usepackage{tikz}%
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,
+cd,patterns,calc}
+\tikzset{%
+  treenode/.style = {shape=rectangle, rounded corners,%
+                     draw, align=center,%
+                     top color=white, bottom color=blue!20},%
+  root/.style     = {treenode, font=\Large, bottom color=red!30},%
+  env/.style      = {treenode, font=\ttfamily\normalsize},%
+  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
+}%
+
+\usetikzlibrary[decorations.pathreplacing]
+% \usetikzlibrary{external}\tikzexternalize
+% \makeatletters
+% \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+
+% \makeatother
+
+\begin{document} 
+ 
+\title{Edits to ``Genuine Equivariant Operads'' (v.2)
+\\[12pt]} % the \\[12pt] adds a blank line after name
+ 
+\author{Bonventre, P. and Pereira, L. A.}
+ 
+\maketitle
+ 
+The referee's preliminary report had two main sections:
+high level comments and in line comments.
+
+
+
+\section{High level}
+
+
+
+      
+
+\section{In line comments} 
+
+
+\begin{itemize}
+\item[4.] to fill in.
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+\bibliography{biblio}{}
+
+\bibliographystyle{alpha}
+
+
+\end{document} 
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
