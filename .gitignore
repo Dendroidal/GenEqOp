@@ -22,6 +22,6 @@ GenEqOp.aux
 GenEqOp.aux
 GenEqOp.aux
 GenEqOp.log
-*.blg
-*.out
 *.gz
+*.out
+*.blg
