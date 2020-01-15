@@ -25,3 +25,8 @@ GenEqOp.log
 *.gz
 *.out
 *.blg
+*.aux
+*.aux
+GenEqOp.aux
+*.log
+*.pdf
