@@ -594,7 +594,7 @@ the associated homotopy category
 $\text{ho}(\mathcal{C})$
 is a coefficient system of categories rather than just a $G$-category.
 Likewise, Theorem \ref{MAINQUILLENEQUIV THM}
-strengthens the (not so basic) observation that for a simplicial operad $\O$ the associated homotopy operad 
+strengthens the (not so basic) observation that for a $G$-simplicial operad $\O$ the associated homotopy operad 
 $\text{ho}(\mathcal{O})$
 is neither just a $G$-operad nor 
 just a coefficient system of operads
@@ -1261,7 +1261,7 @@ $\mathcal{B}^{op} \to \mathsf{Cat}$
 with split fibrations corresponding to (regular) contravariant functors. We recall how this works in the split case, starting with the covariant version.
 
 \begin{definition}\label{GROTHCONS DEF}
-Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
+Given a small category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 \begin{equation}
 \begin{tikzcd}[row sep = 0em]
 	\mathcal{B} \ar{r}{\mathcal{E}_{\bullet}} & \mathsf{Cat} \\
@@ -1271,9 +1271,9 @@ Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 the \textit{covariant Grothendieck construction}
 $\mathcal{B} \ltimes \mathcal{E}_{\bullet}$ (over $\mathcal B$)
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
-$e \in \mathcal{E}_d$ and 
+$e \in \mathcal{E}_b$ and 
 arrows $(b,e) \to (b',e')$ given by pairs
-\[(f\colon b \to b', g \colon g_{\**}(e) \to e'),\]
+\[(f\colon b \to b', g \colon f_{\**}(e) \to e'),\]
 where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the functor $\mathcal{E}_{\bullet}(f)$.
 
 Note that the chosen pushforward of $(b,e)$ along 
@@ -1438,7 +1438,7 @@ $(c_i)_{i \in I}$ is given by
  
 \begin{notation}
       \label{FIN_COA_COS_NOT}
-Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the simpleton $\{1\} \in \Fin$
+Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
 one can regard the collection of categories 
 $\Fin^{\wr n+1 }\wr \C = \Fin^{\wr \{0,\cdots,n\}} \wr \C $ for $n \geq -1$
  as a coaugmented cosimplicial object in $\mathsf{Cat}$.
@@ -6972,7 +6972,7 @@ one has forgetful functors
 \to
 	\Omega_G^{n,s,\lambda}
 \end{equation}
-compatible with the forgeful functors (\ref{NKNFGT EQ}),
+compatible with the forgetful functors (\ref{NKNFGT EQ}),
 the simplicial operators $d_i$, $s_j$ and the isomorphisms
 $\pi_i$.
 
@@ -9845,7 +9845,7 @@ and hence the result follows since families are closed under conjugation and sub
 
 
 \begin{definition}\label{EXTERINT DEF}
-Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families of $G$ and $G$, respectively.
+Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families of $G$ and $\bar{G}$, respectively.
 
 We define their \textit{external intersection} to be the 
 family of $G \times \bar{G}$ given by
