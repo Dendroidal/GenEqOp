@@ -7946,7 +7946,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 The inclusion 
 $\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ 
 is $\mathsf{Ran}$-initial over $\Sigma_G$.
-I.e., for $\C$ any a complete category and 
+In other words, for $\C$ any complete category and 
 functor $N \colon \Omega_G^e \to \C$ it is
 \[
 \mathsf{Ran}_{\Omega_G^e \to \Sigma_G} N
@@ -7967,11 +7967,14 @@ functor $N \colon \Omega_G^e \to \C$ it is
 \subsection{Filtrations of free extensions}
 \label{FILTRATION_SECTION}
 
-Summarizing the previous section, 
-the discussion following Proposition \ref{RANTRANS PROP}
+Summarizing \S \ref{EXTTREE SEC},
+%the previous section, 
+the discussion after Proposition \ref{RANTRANS PROP}
 establishes (\ref{EXTTREEFOR EQ}), and hence 
 Corollary \ref{KANRED COR} 
 gives the alternative formula
+(the use of opposite categories turns 
+$\mathsf{Ran}$ into $\mathsf{Lan}$)
 \begin{equation}\label{ALTFOR EQ}
 	\mathcal{P}[u] \simeq
 	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
@@ -8073,7 +8076,7 @@ one can only guarantee $|V_G^{in}(T)| \leq k$.
 
 
 \begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
-  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$.
+  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
 \end{lemma}
 
 The proof will make use of an additional  construction on 
@@ -8867,7 +8870,7 @@ leftmost $\mathcal{V}^{\mathsf{Aut}(C)}$
 with their naive model structures, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
 and ignoring fixed point conditions.
 The desired projective model structure thus
-has both less generating (trivial) cofibrations
+has both fewer generating (trivial) cofibrations
 and more weak equivalences than the ``genuine projective'' model structure defined by (\ref{MAINPFADJ EQ}).
 Therefore, transfinite composites of pushouts of generating projective trivial cofibrations 
 are genuine projective equivalences and hence also projective equivalences, showing that the condition in 
@@ -10074,7 +10077,7 @@ Proposition \ref{FGTRIGHT PROP}.
 \begin{proposition}\label{POWERF PROP}
 	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 	
-	Then, for all $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
+	Then, for every $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
 	one has that $f^{\square n}$ is a cofibration (trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
@@ -10135,7 +10138,8 @@ where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_r$ is
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
 
 The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
-As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
+As usual, retracts preserve weak equivalences,
+and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
 such that 
 \begin{inparaenum}
@@ -10490,7 +10494,7 @@ commutes with pushouts thanks to the cofibrancy conditions and Proposition \ref{
 \label{G_GRAPH_SECTION}
 
 
-We now convert the results in the previous sections to the context we are trully interested in:
+We now convert the results in the previous sections to the context we are truly interested in:
 graph families. 
 Throughout this section $\Sigma$ will denote a general group,
 usually meant to be some type of permutation group.
