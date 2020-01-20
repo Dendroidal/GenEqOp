@@ -2618,11 +2618,12 @@ Applying $(\minus)^s$ to the diagram of underlying identities on the left yields
 An additional reason to leave the use of $(\minus)^s$ implicit
 as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
 
-For example, when $G = \mathbb{Z}_{/4}$, 
-$\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees 
-$T_1,T_2 \in \Omega_G$
+For example, for the two groups 
+$G = \mathbb{Z}_{/4}$ and 
+$\bar{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees 
+$T_1,T_2 \in \Omega_G$ and
 $\bar{T}_1,\bar{T}_2 \in \Omega_{\bar{G}}$
- on the right.
+on the right.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -2703,8 +2704,8 @@ $\bar{T}_1,\bar{T}_2 \in \Omega_{\bar{G}}$
 		\node at (-1,-4.25) {}
 			child{node [dummy] {}
 				child[sibling distance=1.75em]{
-				edge from parent node [swap]  {$a+\tilde{G}$}}
-			edge from parent node [swap] {$b+\tilde{G}/\tilde{G}$}};
+				edge from parent node [swap]  {$a+\bar{G}$}}
+			edge from parent node [swap] {$b+\bar{G}/\bar{G}$}};
 		\node at (3.6725,-4.25) {$\bar{T}_1$}
 			child{node [dummy] {}
 				child[sibling distance = 2.75em,level distance= 1.75em]{
