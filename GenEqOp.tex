@@ -1210,12 +1210,13 @@ provides the proof of a lengthy technical result needed when establishing the fi
 \subsection{Grothendieck fibrations}\label{GROTHFIB REF}
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
-is called a \textit{Grothendieck fibration}
+is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
 if for every arrow 
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
-there exists a cartesian arrow 
-$f^{\**} e \to e$ lifting $f$, meaning that for any choice of horizontal arrows 
+there exists a \emph{cartesian arrow} 
+$f^{\**} e \to e$ lifting $f$,
+i.e. an arrow such that for any choice of horizontal arrows 
 \[
 \begin{tikzcd}[row sep=7pt]
 	e'' \ar{rr} \ar[dashed]{rd}[swap]{\exists !} & & 
@@ -1229,7 +1230,7 @@ $f^{\**} e \to e$ lifting $f$, meaning that for any choice of horizontal arrows
 	& b' \ar{ru}[swap]{f} &
 \end{tikzcd}
 \]
-such that the rightmost diagram commutes and 
+for which the rightmost diagram commutes and 
 $e'' \to e$ lifts $b'' \to b$,
 there exists a unique dashed arrow
 $e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute.
@@ -1239,7 +1240,7 @@ but in all examples considered in this paper
 we will be able to identify preferred choices of cartesian arrows, and we will refer to those preferred choices as \textit{pullbacks}.
 Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
 On a terminological note, 
-the data of Grothendieck fibration together with 
+the data of a Grothendieck fibration together with 
 such choices of pullbacks is sometimes called a 
 \textit{split fibration}, but we will have no need to distinguish the two concepts outside
 of the present discussion.
@@ -1318,8 +1319,11 @@ such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 
 
 \begin{proposition}\label{FIBERKANMAP PROP}
-	Given a map of Grothendieck fibrations,
-	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$ is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
+	Given a map of Grothendieck fibrations
+	as in \eqref{GROTHFIBMAP EQ},
+	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$
+	for $\bar{e} \in \bar{\mathcal{E}}$
+	is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
 	and hence for each functor 
 	$\mathcal{E} \to \mathcal{V}$
 	with $\mathcal{V}$ complete one has
@@ -1369,6 +1373,7 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 
 
 We also record the following, the proof of which is straightforward.
+
 \begin{proposition}\label{GROTHSTAB PROP}
 	Suppose that $\mathcal{E} \to \mathcal{B}$ is a (split) Grothendieck fibration. Then so is the map of functor categories 
 	$\mathcal{E}^{\mathcal{C}} \to \mathcal{B}^{\mathcal{C}}$ for any category $\mathcal{C}$,
