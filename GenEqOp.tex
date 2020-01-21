@@ -1300,7 +1300,7 @@ given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category 
 \simeq
 	\mathsf{lim} F|_{\mathcal{E}_b}
 \end{equation}
-where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3.1]{McL})
+where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL})
 and the second identification follows by noting that due to the existence of cartesian arrows the fibers
 $\mathcal{E}_b$ are initial (in the sense of \cite[IX.3]{McL})
 in the undercategories $b \downarrow \mathcal{E}$.
@@ -1852,7 +1852,7 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
+	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i) \downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
@@ -3055,11 +3055,16 @@ with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f
 $\forall_i f\neq e_i$
 in addition to (\ref{OUTERFACE EQ}),
 and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
+
+Moreover, inclusions of the form 
+$T_{\underline{e} \leq e}
+\hookrightarrow T$
+are called \emph{planar outer face maps}.
 \end{definition}
 
 
 \begin{remark}
-If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face map}.
 \end{remark}
 
 
@@ -3133,7 +3138,9 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
+We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual degeneracy-face decomposition
+(cf. \cite[Lemma 3.1]{MW07} or \cite[Prop. 5.37]{Pe17})
+thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
 
 \begin{corollary}
@@ -5465,7 +5472,7 @@ is a right Kan extension diagram then so is the composite diagram.
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
+	Unpacking definitions using the pointwise formula for right  Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), 
 	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
 \[
 \begin{tikzcd}
@@ -8228,7 +8235,7 @@ C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k-1]
 C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]
 \]
 is initial, i.e. 
-(cf. (\cite[X.3.1]{McL})) that for each
+(cf. \cite[IX.3]{McL}) that for each
 $(S,\pi \colon C \to \mathsf{lr}(S))$ in 
 $C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]$
 the overcategory
@@ -10732,7 +10739,7 @@ The closure condition defining weak indexing systems in Definition \ref{INDEXSYS
 can be translated in terms of families as saying that for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
 $\phi \colon \Sigma_T \to \Sigma_n$ 
 the natural homomorphism, one has
-$(G \times \phi)(\Gamma) \in \mathcal{F}_n$
+$(id_G \times \phi)(\Gamma) \in \mathcal{F}_n$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Hence, by
 Proposition \ref{FGTRIGHT PROP} 
@@ -11158,7 +11165,8 @@ Here the second identification combines the formula for $\iota_{\**}$ in
 \S \ref{COMPARISON_REGULAR_SECTION}
 with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
 The third step follows by 
-Corollary \ref{FIXEDPUSH COR}.
+Corollary \ref{FIXEDPUSH COR} 
+(this is the step requiring the cofibrancy of the $f_s$).
 The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
 Noting that this last term is
 $ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
@@ -12520,6 +12528,7 @@ $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 is a weak equivalence in 
 $\mathsf{Op}_G(\mathsf{sSet})$
 thanks to the usual extra degeneracy argument
+\cite[\S 4.5]{Ri14}
 (which applies after forgetting to 
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$).
 Therefore, 
@@ -12631,7 +12640,7 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 	It is straightforward to check that this $2n$-cube has latching maps
 	$l_{(U,V)} \mathcal{Y} \times \mathcal{Z} =
 	 l_U \mathcal{Y} \square l_V \mathcal{Z}$,
-	and is thus a monormorphism $2n$-cube.
+	and is thus a monomorphism $2n$-cube.
 	It remains to check that
 	the diagonal $n$-cube 
 	$\Delta^{\**} (\mathcal{Y} \times \mathcal{Z})$
