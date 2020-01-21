@@ -10732,7 +10732,7 @@ The closure condition defining weak indexing systems in Definition \ref{INDEXSYS
 can be translated in terms of families as saying that for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
 $\phi \colon \Sigma_T \to \Sigma_n$ 
 the natural homomorphism, one has
-$(G \times \phi)(\Gamma) \in \mathcal{F}_n$
+$(id_G \times \phi)(\Gamma) \in \mathcal{F}_n$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Hence, by
 Proposition \ref{FGTRIGHT PROP} 
@@ -11158,7 +11158,8 @@ Here the second identification combines the formula for $\iota_{\**}$ in
 \S \ref{COMPARISON_REGULAR_SECTION}
 with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
 The third step follows by 
-Corollary \ref{FIXEDPUSH COR}.
+Corollary \ref{FIXEDPUSH COR} 
+(this is the step requiring the cofibrancy of the $f_s$).
 The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
 Noting that this last term is
 $ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
@@ -12520,6 +12521,7 @@ $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 is a weak equivalence in 
 $\mathsf{Op}_G(\mathsf{sSet})$
 thanks to the usual extra degeneracy argument
+\cite[\S 4.5]{Ri14}
 (which applies after forgetting to 
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$).
 Therefore, 
@@ -12631,7 +12633,7 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 	It is straightforward to check that this $2n$-cube has latching maps
 	$l_{(U,V)} \mathcal{Y} \times \mathcal{Z} =
 	 l_U \mathcal{Y} \square l_V \mathcal{Z}$,
-	and is thus a monormorphism $2n$-cube.
+	and is thus a monomorphism $2n$-cube.
 	It remains to check that
 	the diagonal $n$-cube 
 	$\Delta^{\**} (\mathcal{Y} \times \mathcal{Z})$
