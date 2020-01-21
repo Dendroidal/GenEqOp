@@ -11504,11 +11504,46 @@ $\mathcal{O}$
 are underlying cofibrant in 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$,
 $\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$.
-Now, recalling that there are natural isomorphisms 
+%
+%Next, consider the diagram below consisting of natural transformations introduced in \S \ref{COMPARISON_REGULAR_SECTION}
+%(see \eqref{BETADEFSQUARE EQ};
+%$\tilde{\alpha}$ is the adjoint of $\alpha$ in 
+%Proposition \ref{MONAD_COMPARISON_PROP}(iv)
+%discussed in the proof of that claim).
+%The natural transformations in \eqref{NATISONOTE EQ} labeled 
+%$\eta_!$, $\epsilon_{\**}$
+%are natural isomorphisms 
+%(as the adjunctions in \eqref{TWOADJOINTS EQ} are (co)reflexive),
+%as are the left vertical map $\beta$
+%and the top horizontal composite $\alpha$, 
+%cf. Proposition \ref{MONAD_COMPARISON_PROP}(ii)(iv).
+%It now follows that 
+%\eqref{NATISONOTE EQ} consists entirely of natural isomorphisms.
+%
+%
+%\begin{equation}\label{NATISONOTE EQ}
+%	\begin{tikzcd}
+%	\iota^{\**} \mathbb{F}_G \iota_! \ar{d}[swap]{\simeq}{\beta} &
+%	\mathbb{F} \iota^{\**} \iota_! \ar{d}[swap]{\simeq}{\beta}
+%	\ar{l}[swap]{\simeq}{\tilde{\alpha}} &
+%	\mathbb{F} \ar[equal]{d} \ar{l}[swap]{\simeq}{\eta_!}
+%\\
+%	\iota^{\**} \mathbb{F}_G \iota_{\**} &
+%	\mathbb{F} \iota^{\**} \iota_{\**} \ar{l}[swap]{\simeq}{\tilde{\alpha}} \ar{r}{\simeq}[swap]{\epsilon_{\**}} &
+%	\mathbb{F}
+%	\end{tikzcd}
+%\end{equation}
+%
+Now, recalling that Proposition \ref{MONAD_COMPARISON_PROP}(ii)(iv) gives natural isomorphisms 
 \[
-\iota^{\**} \mathbb{F}_{G} \iota_{\**}
-\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+\iota^{\**} \mathbb{F}_{G} \iota_{\**} \simeq
+\iota^{\**} \mathbb{F}_{G} \iota_{!} \simeq
+\mathbb{F}
 \]
+%\[
+%\iota^{\**} \mathbb{F}_{G} \iota_{\**}
+%\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+%\]
 we see that the two solid subdiagrams in 
 (\ref{TWOCELLEXT EQ})
 are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
