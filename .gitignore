@@ -22,3 +22,15 @@ GenEqOp.aux
 GenEqOp.aux
 GenEqOp.aux
 GenEqOp.log
+*.gz
+*.out
+*.blg
+*.aux
+*.aux
+GenEqOp.aux
+*.log
+*.pdf
+GenEqOp.aux
+GenEqOp.log
+GenEqOp.pdf
+GenEqOp.synctex.gz

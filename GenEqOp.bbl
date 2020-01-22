@@ -22,6 +22,13 @@ M.~Boardman and R.~Vogt.
   volume 347 of {\em Lecture Notes in Mathematics}.
 \newblock Springer-Verlag, 1973.
 
+\bibitem{Bo94}
+F.~Borceux.
+\newblock {\em Handbook of categorical algebra. 2}, volume~51 of {\em
+  Encyclopedia of Mathematics and its Applications}.
+\newblock Cambridge University Press, Cambridge, 1994.
+\newblock Categories and structures.
+
 \bibitem{CM13b}
 D.-C. Cisinski and I.~Moerdijk.
 \newblock Dendroidal sets and simplicial operads.
@@ -132,6 +139,12 @@ L.~A. Pereira.
 R.~J. Piacenza.
 \newblock Homotopy theory of diagrams and {CW}-complexes over a category.
 \newblock {\em Canadian Journal of Mathematics}, 43:814--824, 1991.
+
+\bibitem{Ri14}
+E.~Riehl.
+\newblock {\em Categorical homotopy theory}, volume~24 of {\em New Mathematical
+  Monographs}.
+\newblock Cambridge University Press, Cambridge, 2014.
 
 \bibitem{Rub17}
 J.~Rubin.

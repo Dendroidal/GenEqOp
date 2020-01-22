@@ -279,22 +279,22 @@ However, the converse statement, that given any indexing system $\mathcal{F}$ su
 One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain in
 Corollary \ref{NINFTY_REAL_COR_MAIN}.
 We note here that this conjecture has also been concurrently verified
-by Gutierrez-White in \cite{GW17} 
+by Guti\'{e}rrez-White in \cite{GW17} 
 and by Rubin in \cite{Rub17}, 
 with each of their approaches having different advantages:
-Gutierrez-White's
+Guti\'{e}rrez-White's
 model for $N \mathcal{F}$
 is cofibrant 
 while Rubin's model is explicit.
 Our model, which emerges from a broader framework, satisfies both of these desiderata.
 
-%This conjecutre has been independently confirmed in \cite{Rub17} and announced by Gutierrez-White \cite{GW},
+%This conjecutre has been independently confirmed in \cite{Rub17} and announced by Guti\'{e}rrez-White \cite{GW},
 %both by different methods.
-%Consequently, Rubin obtains models of $N\mathcal F$-operads which are explicit, while the models of Gutierrez-White are cofibrant;
+%Consequently, Rubin obtains models of $N\mathcal F$-operads which are explicit, while the models of Guti\'{e}rrez-White are cofibrant;
 %our model have the advantage of satisfying both properties.
 %and, moreover, to produce models of $N \mathcal{F}$-operads that
 %are as explicit as possible.
-%\footnote{This conjecture has been independently verified in \cite{Rub17} and announced by Gutierrez-White. However, their methods differ from ours: Rubin builds each $N\mathcal F$-operad explicitly using a free operad construction and verifies its properties directly, while Gutierrez-White use a ``cofibrant replacement'' technique similar to our first proof of \ref{NINFTY_REAL_COR_MAIN}; neither approach is as controlled or direct as Theorem \ref{N_INFINITY_BAR}.}
+%\footnote{This conjecture has been independently verified in \cite{Rub17} and announced by Guti\'{e}rrez-White. However, their methods differ from ours: Rubin builds each $N\mathcal F$-operad explicitly using a free operad construction and verifies its properties directly, while Guti\'{e}rrez-White use a ``cofibrant replacement'' technique similar to our first proof of \ref{NINFTY_REAL_COR_MAIN}; neither approach is as controlled or direct as Theorem \ref{N_INFINITY_BAR}.}
 
 
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
@@ -361,7 +361,7 @@ $\mathsf{Op}^{\mathsf{O}_G^{op}}
 \rightleftarrows
 \mathsf{Op}^G$
 (the existence of this equivalence is due to
-upcoming work of Bergner-Gutierrez), 
+upcoming work of Bergner-Guti\'{e}rrez), 
 the fact that 
 the levels of each 
 $\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
@@ -594,7 +594,7 @@ the associated homotopy category
 $\text{ho}(\mathcal{C})$
 is a coefficient system of categories rather than just a $G$-category.
 Likewise, Theorem \ref{MAINQUILLENEQUIV THM}
-strengthens the (not so basic) observation that for a simplicial operad $\O$ the associated homotopy operad 
+strengthens the (not so basic) observation that for a $G$-simplicial operad $\O$ the associated homotopy operad 
 $\text{ho}(\mathcal{O})$
 is neither just a $G$-operad nor 
 just a coefficient system of operads
@@ -706,7 +706,7 @@ $(\mathcal{V},\otimes)$:
 \end{inparaenum}
 \end{customthm}
 
-We note that a similar result has also been proven by Gutierrez-White in \cite{GW17}.
+We note that a similar result has also been proven by Guti\'{e}rrez-White in \cite{GW17}.
 
 Theorem \ref{MAINEXIST1 THM}
 is proven in \S \ref{MAINEXIST SEC}.
@@ -923,7 +923,7 @@ in \cite[Cor. 5.6]{BH15}
  $\mathcal{F}$ must be a weak indexing system.
 \end{customcor}
 
-%Independently, using different techniques, Rubin \cite{Rub17} and Gutierrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
+%Independently, using different techniques, Rubin \cite{Rub17} and Guti\'{e}rrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
 
 \subsection{Future Work}
 
@@ -1210,12 +1210,13 @@ provides the proof of a lengthy technical result needed when establishing the fi
 \subsection{Grothendieck fibrations}\label{GROTHFIB REF}
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
-is called a \textit{Grothendieck fibration}
+is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
 if for every arrow 
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
-there exists a cartesian arrow 
-$f^{\**} e \to e$ lifting $f$, meaning that for any choice of horizontal arrows 
+there exists a \emph{cartesian arrow} 
+$f^{\**} e \to e$ lifting $f$,
+i.e. an arrow such that for any choice of horizontal arrows 
 \[
 \begin{tikzcd}[row sep=7pt]
 	e'' \ar{rr} \ar[dashed]{rd}[swap]{\exists !} & & 
@@ -1229,7 +1230,7 @@ $f^{\**} e \to e$ lifting $f$, meaning that for any choice of horizontal arrows
 	& b' \ar{ru}[swap]{f} &
 \end{tikzcd}
 \]
-such that the rightmost diagram commutes and 
+for which the rightmost diagram commutes and 
 $e'' \to e$ lifts $b'' \to b$,
 there exists a unique dashed arrow
 $e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute.
@@ -1239,7 +1240,7 @@ but in all examples considered in this paper
 we will be able to identify preferred choices of cartesian arrows, and we will refer to those preferred choices as \textit{pullbacks}.
 Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
 On a terminological note, 
-the data of Grothendieck fibration together with 
+the data of a Grothendieck fibration together with 
 such choices of pullbacks is sometimes called a 
 \textit{split fibration}, but we will have no need to distinguish the two concepts outside
 of the present discussion.
@@ -1261,7 +1262,7 @@ $\mathcal{B}^{op} \to \mathsf{Cat}$
 with split fibrations corresponding to (regular) contravariant functors. We recall how this works in the split case, starting with the covariant version.
 
 \begin{definition}\label{GROTHCONS DEF}
-Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
+Given a small category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 \begin{equation}
 \begin{tikzcd}[row sep = 0em]
 	\mathcal{B} \ar{r}{\mathcal{E}_{\bullet}} & \mathsf{Cat} \\
@@ -1271,9 +1272,9 @@ Given a diagram category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 the \textit{covariant Grothendieck construction}
 $\mathcal{B} \ltimes \mathcal{E}_{\bullet}$ (over $\mathcal B$)
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
-$e \in \mathcal{E}_d$ and 
+$e \in \mathcal{E}_b$ and 
 arrows $(b,e) \to (b',e')$ given by pairs
-\[(f\colon b \to b', g \colon g_{\**}(e) \to e'),\]
+\[(f\colon b \to b', g \colon f_{\**}(e) \to e'),\]
 where $f_{\**}\colon \mathcal{E}_b \to \mathcal{E}_{b'}$ is a shorthand for the functor $\mathcal{E}_{\bullet}(f)$.
 
 Note that the chosen pushforward of $(b,e)$ along 
@@ -1299,7 +1300,7 @@ given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category 
 \simeq
 	\mathsf{lim} F|_{\mathcal{E}_b}
 \end{equation}
-where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3.1]{McL})
+where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL})
 and the second identification follows by noting that due to the existence of cartesian arrows the fibers
 $\mathcal{E}_b$ are initial (in the sense of \cite[IX.3]{McL})
 in the undercategories $b \downarrow \mathcal{E}$.
@@ -1318,8 +1319,11 @@ such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 
 
 \begin{proposition}\label{FIBERKANMAP PROP}
-	Given a map of Grothendieck fibrations,
-	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$ is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
+	Given a map of Grothendieck fibrations
+	as in \eqref{GROTHFIBMAP EQ},
+	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$
+	for $\bar{e} \in \bar{\mathcal{E}}$
+	is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
 	and hence for each functor 
 	$\mathcal{E} \to \mathcal{V}$
 	with $\mathcal{V}$ complete one has
@@ -1369,6 +1373,7 @@ $\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
 
 
 We also record the following, the proof of which is straightforward.
+
 \begin{proposition}\label{GROTHSTAB PROP}
 	Suppose that $\mathcal{E} \to \mathcal{B}$ is a (split) Grothendieck fibration. Then so is the map of functor categories 
 	$\mathcal{E}^{\mathcal{C}} \to \mathcal{B}^{\mathcal{C}}$ for any category $\mathcal{C}$,
@@ -1438,7 +1443,7 @@ $(c_i)_{i \in I}$ is given by
  
 \begin{notation}
       \label{FIN_COA_COS_NOT}
-Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the simpleton $\{1\} \in \Fin$
+Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
 one can regard the collection of categories 
 $\Fin^{\wr n+1 }\wr \C = \Fin^{\wr \{0,\cdots,n\}} \wr \C $ for $n \geq -1$
  as a coaugmented cosimplicial object in $\mathsf{Cat}$.
@@ -1798,9 +1803,9 @@ and object $(e_j)_{j \in J}$ one readily checks that its pullback can be defined
 
 
 \begin{lemma}\label{FINWREATPRODLIM LEM}
-Suppose that $\mathcal{V}$ is a bicomplete category with fold maps such that
+Suppose that $\mathcal{V}$ is a bicomplete monoidal category with fold maps such that
 the monoidal product %coproducts
-commute with limits in each variable. If the leftmost diagram
+commutes with limits in each variable. If the leftmost diagram
 \begin{equation}\label{WRRAN EQ}
 	\begin{tikzcd}[column sep = 3.5em]
 	\mathcal{C} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k} &
@@ -1820,9 +1825,9 @@ commute with limits in each variable. If the leftmost diagram
 \end{equation}
 is a right Kan extension diagram then so is the composite of the rightmost diagram. 
 
-Dually, if in $\mathcal{E}$
+Dually, if $\mathcal{V}$ has diagonals,
 the monoidal product %products
-commute with colimits in each variable, and the leftmost diagram
+commutes with colimits in each variable, and the leftmost diagram
 \begin{equation}\label{WRLAN EQ}
 	\begin{tikzcd}[column sep = 4.5em]
 	\mathcal{C}^{op} \ar{r}[swap,name=F]{}{G} \ar{d}[swap]{k^{op}} & 
@@ -1847,7 +1852,7 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for Kan extensions (\cite[X.3.1]{McL}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
+	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i) \downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
@@ -1948,7 +1953,7 @@ $T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mat
 Here ``$a$'' stands for ``active'' and ``$i$'' for ``inert''.
 
 Such monads satisfy a number of compatibility conditions. 
-Firstly, if $\lambda'_a \subset \lambda_a$
+Firstly, if $\lambda'_a \subseteq \lambda_a$
 there is a monad map
 $T^{\times \lambda'} \Rightarrow T^{\times \lambda}$,
 and we write $\lambda' \leq \lambda$.
@@ -1978,7 +1983,16 @@ is a map of monads on $\C^{\times l}$.
 
 Hence, since $T^{\times \lambda} \alpha_!$ is a right 
 $\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module, 
-it is also a right $T^{\times \lambda'}$ whenever
+it is also a right $T^{\times \lambda'}$-module\footnote{
+Recall that a right (resp. left) module
+over a monad $T$ on $\mathcal{C}$
+is a functor $M \colon \mathcal{C} \to \mathcal{D}$
+(resp. $N \colon \mathcal{D} \to \mathcal{C}$)
+together with an action natural transformation
+$M \circ T \Rightarrow M$
+(resp. $T \circ N \Rightarrow N$)
+that is suitably associative and unital.}
+whenever
 $\lambda' \leq \alpha^{\**} \lambda$.
 Finally, the natural map 
 \begin{equation}\label{MONADFUNCTORALPHADOU EQ}
@@ -2126,19 +2140,22 @@ A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
 but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$.
 The category of $G$-forests is then 
 $\Phi^G$, i.e. the category of $G$-objects in $\Phi$. 
-Identifying the $G$-orbit category as the subcategory
+Similarly writing
+$\Fin^G$ for the category of $G$-objects in $\Fin$ and
+identifying the $G$-orbit category as the subcategory
 $\mathsf{O}_G \hookrightarrow \Fin^G$
-of those sets with transitive actions, $\Omega_G$ can then be described as given by the pullback of categories
+of those sets with transitive actions, $\Omega_G$ can be described as given by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
 \begin{tikzcd}
-	\Omega_G \ar{r} \ar{d} & 
-	\Phi^G \arrow{d}{\mathsf{r}^G}
+	\Omega_G \ar{r} \ar{d}[swap]{\mathsf{r}} & 
+	\Phi^G \arrow{d}{\mathsf{r}}
 \\
 	\mathsf{O}_G \ar{r} & \Fin^G
 \end{tikzcd}
 \end{equation}
-(where $\mathsf{r}: \Phi \to \Fin$ is the root functor),
-which is a repackaging of \cite[Prop. 5.46]{Pe17}.
+(where $\mathsf{r}: \Phi \to \Fin$ is the \emph{root functor},
+sending a forest to its set of roots),
+which is a repackaging of \cite[Def. 5.44]{Pe17}.
 Explicitly, a $G$-tree $T$ is then a tuple 
 $T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
 together with isomorphisms
@@ -2573,7 +2590,7 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
       we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
       
       Similarly, any finite set (resp. orbital finite $G$-set) together with a total order is implicitly reinterpreted as an object of
-      $\Fin$ (resp. $\mathsf{O}_G^p$).
+      $\Fin$ (resp. $\mathsf{O}_G$).
 \end{convention}
 
 
@@ -2613,11 +2630,12 @@ Applying $(\minus)^s$ to the diagram of underlying identities on the left yields
 An additional reason to leave the use of $(\minus)^s$ implicit
 as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
 
-For example, when $G = \mathbb{Z}_{/4}$, 
-$\tilde{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees 
-$T_1,T_2 \in \Omega_G$
+For example, for the two groups 
+$G = \mathbb{Z}_{/4}$ and 
+$\bar{G} = \mathbb{Z}_{/3}$, in both diagrams below the orbital representation on the left represents the isomorphism class consisting only of the two trees 
+$T_1,T_2 \in \Omega_G$ and
 $\bar{T}_1,\bar{T}_2 \in \Omega_{\bar{G}}$
- on the right.
+on the right.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -2698,8 +2716,8 @@ $\bar{T}_1,\bar{T}_2 \in \Omega_{\bar{G}}$
 		\node at (-1,-4.25) {}
 			child{node [dummy] {}
 				child[sibling distance=1.75em]{
-				edge from parent node [swap]  {$a+\tilde{G}$}}
-			edge from parent node [swap] {$b+\tilde{G}/\tilde{G}$}};
+				edge from parent node [swap]  {$a+\bar{G}$}}
+			edge from parent node [swap] {$b+\bar{G}/\bar{G}$}};
 		\node at (3.6725,-4.25) {$\bar{T}_1$}
 			child{node [dummy] {}
 				child[sibling distance = 2.75em,level distance= 1.75em]{
@@ -2803,7 +2821,7 @@ which we call the \textit{leaf-root functor}.
 Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
-$\varphi \colon Y \to X$
+$\varphi \colon Y \to X$ in $\mathsf{O}_G$
 is simply the $G$-tree
 $(T_{\varphi(y)})_{y \in Y}$
 with structure maps 
@@ -3049,15 +3067,27 @@ with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f
 $\forall_i f\neq e_i$
 in addition to (\ref{OUTERFACE EQ}),
 and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
+
+Moreover, inclusions of the form 
+$T_{\underline{e} \leq e}
+\hookrightarrow T$
+are called \emph{planar outer face maps}.
 \end{definition}
 
 
 \begin{remark}
-If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face}.
+If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face map}.
 \end{remark}
 
 
 We now recap some basic results.
+
+
+\begin{notation}\label{STICKTRE NOT}
+	We write $\eta \in \Omega$
+	for the \emph{stick tree} 
+	consisting of a single edge and no vertices.
+\end{notation}
 
 \begin{proposition}
 Let $T \in \Omega$ be a tree.
@@ -3127,7 +3157,9 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual face-degeneracy decomposition thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
+We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual degeneracy-face decomposition
+(cf. \cite[Lemma 3.1]{MW07} or \cite[Prop. 5.37]{Pe17})
+thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
 
 \begin{corollary}
@@ -3564,7 +3596,8 @@ predecessors in Proposition \ref{INPUTPREDECESSORPROP PROP}(b).
 We end this section with a couple of lemmas that will allow us to reverse the substitution procedure of 
 Proposition \ref{SUBDATAUNDERPLAN PROP}
 and will be needed in \S \ref{EXTTREE SEC}.
-
+Recall that the single edge tree $\eta \in \Omega$ is called the stick tree,
+cf. Notation \ref{STICKTRE NOT}.
 
 \begin{proposition}\label{BUILDABLE PROP}
 	Let $U \in \Omega$ be a tree. Then:
@@ -3939,6 +3972,7 @@ $T_{v_{G b}}$ and $T_{v_{G e}}$
 isomorphically onto $S_{v_{G b}}$
 and the $G$-corolla $T_{v_{Gc}}$ by a non-isomorphism quotient onto $S_{v_{G c}}$.
 \end{remark}
+
 
 The following elementary statement will play an important auxiliary role.
 
@@ -5458,7 +5492,7 @@ is a right Kan extension diagram then so is the composite diagram.
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for right  Kan extensions (\cite[X.3.1]{McL}), 
+	Unpacking definitions using the pointwise formula for right  Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), 
 	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
 \[
 \begin{tikzcd}
@@ -6972,7 +7006,7 @@ one has forgetful functors
 \to
 	\Omega_G^{n,s,\lambda}
 \end{equation}
-compatible with the forgeful functors (\ref{NKNFGT EQ}),
+compatible with the forgetful functors (\ref{NKNFGT EQ}),
 the simplicial operators $d_i$, $s_j$ and the isomorphisms
 $\pi_i$.
 
@@ -7946,7 +7980,7 @@ dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
 The inclusion 
 $\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ 
 is $\mathsf{Ran}$-initial over $\Sigma_G$.
-I.e., for $\C$ any a complete category and 
+In other words, for $\C$ any complete category and 
 functor $N \colon \Omega_G^e \to \C$ it is
 \[
 \mathsf{Ran}_{\Omega_G^e \to \Sigma_G} N
@@ -7967,11 +8001,14 @@ functor $N \colon \Omega_G^e \to \C$ it is
 \subsection{Filtrations of free extensions}
 \label{FILTRATION_SECTION}
 
-Summarizing the previous section, 
-the discussion following Proposition \ref{RANTRANS PROP}
+Summarizing \S \ref{EXTTREE SEC},
+%the previous section, 
+the discussion after Proposition \ref{RANTRANS PROP}
 establishes (\ref{EXTTREEFOR EQ}), and hence 
 Corollary \ref{KANRED COR} 
 gives the alternative formula
+(the use of opposite categories turns 
+$\mathsf{Ran}$ into $\mathsf{Lan}$)
 \begin{equation}\label{ALTFOR EQ}
 	\mathcal{P}[u] \simeq
 	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
@@ -8073,7 +8110,7 @@ one can only guarantee $|V_G^{in}(T)| \leq k$.
 
 
 \begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
-  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$.
+  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
 \end{lemma}
 
 The proof will make use of an additional  construction on 
@@ -8218,7 +8255,7 @@ C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k-1]
 C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]
 \]
 is initial, i.e. 
-(cf. (\cite[X.3.1]{McL})) that for each
+(cf. \cite[IX.3]{McL}) that for each
 $(S,\pi \colon C \to \mathsf{lr}(S))$ in 
 $C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]$
 the overcategory
@@ -8867,7 +8904,7 @@ leftmost $\mathcal{V}^{\mathsf{Aut}(C)}$
 with their naive model structures, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
 and ignoring fixed point conditions.
 The desired projective model structure thus
-has both less generating (trivial) cofibrations
+has both fewer generating (trivial) cofibrations
 and more weak equivalences than the ``genuine projective'' model structure defined by (\ref{MAINPFADJ EQ}).
 Therefore, transfinite composites of pushouts of generating projective trivial cofibrations 
 are genuine projective equivalences and hence also projective equivalences, showing that the condition in 
@@ -9772,7 +9809,7 @@ motivate the following definition.
 \end{align}
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{REWORFAM LEM}
 The $\phi^{\**}(\bar{\mathcal{F}})$, $\phi_{!}(\mathcal{F})$, $\phi_{\**}(\mathcal{F})$ just defined are 
 themselves families. Furthermore
 \begin{itemize}
@@ -9845,7 +9882,7 @@ and hence the result follows since families are closed under conjugation and sub
 
 
 \begin{definition}\label{EXTERINT DEF}
-Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families of $G$ and $G$, respectively.
+Let $\mathcal{F}$ and $\bar{\mathcal{F}}$ be families of $G$ and $\bar{G}$, respectively.
 
 We define their \textit{external intersection} to be the 
 family of $G \times \bar{G}$ given by
@@ -10074,7 +10111,7 @@ Proposition \ref{FGTRIGHT PROP}.
 \begin{proposition}\label{POWERF PROP}
 	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 	
-	Then, for all $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
+	Then, for every $n$ and cofibration (resp. trivial cofibration) $f$ of $\mathcal{V}^{G}_{\mathcal{F}}$
 	one has that $f^{\square n}$ is a cofibration (trivial cofibration) of $\mathcal{V}^{\Sigma_n \wr G}_{\mathcal{F}^{\ltimes n}}$.
 \end{proposition}
 
@@ -10135,7 +10172,8 @@ where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_r$ is
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
 
 The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
-As usual, retracts can be ignored, and we can hence assume that there is an ordinal $\kappa$
+As usual, retracts preserve weak equivalences,
+and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
 such that 
 \begin{inparaenum}
@@ -10490,7 +10528,7 @@ commutes with pushouts thanks to the cofibrancy conditions and Proposition \ref{
 \label{G_GRAPH_SECTION}
 
 
-We now convert the results in the previous sections to the context we are trully interested in:
+We now convert the results in the previous sections to the context we are truly interested in:
 graph families. 
 Throughout this section $\Sigma$ will denote a general group,
 usually meant to be some type of permutation group.
@@ -10721,7 +10759,7 @@ The closure condition defining weak indexing systems in Definition \ref{INDEXSYS
 can be translated in terms of families as saying that for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
 $\phi \colon \Sigma_T \to \Sigma_n$ 
 the natural homomorphism, one has
-$(G \times \phi)(\Gamma) \in \mathcal{F}_n$
+$(id_G \times \phi)(\Gamma) \in \mathcal{F}_n$
 for any $\Gamma \in \mathcal{F}_{T}$. 
 Hence, by
 Proposition \ref{FGTRIGHT PROP} 
@@ -11147,7 +11185,8 @@ Here the second identification combines the formula for $\iota_{\**}$ in
 \S \ref{COMPARISON_REGULAR_SECTION}
 with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
 The third step follows by 
-Corollary \ref{FIXEDPUSH COR}.
+Corollary \ref{FIXEDPUSH COR} 
+(this is the step requiring the cofibrancy of the $f_s$).
 The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
 Noting that this last term is
 $ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
@@ -11347,7 +11386,7 @@ where the last two maps are always isomorphisms. But when restricting to cofibra
 
 The following is the main lemma. We note that the 
 operad half of (\ref{FGTFUNC EQ})
-was also obtained by Gutierrez-White in \cite{GW17}.
+was also obtained by Guti\'{e}rrez-White in \cite{GW17}.
 
 
 \begin{lemma}\label{MAINLEM LEM}
@@ -11493,11 +11532,46 @@ $\mathcal{O}$
 are underlying cofibrant in 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$,
 $\mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$.
-Now, recalling that there are natural isomorphisms 
+%
+%Next, consider the diagram below consisting of natural transformations introduced in \S \ref{COMPARISON_REGULAR_SECTION}
+%(see \eqref{BETADEFSQUARE EQ};
+%$\tilde{\alpha}$ is the adjoint of $\alpha$ in 
+%Proposition \ref{MONAD_COMPARISON_PROP}(iv)
+%discussed in the proof of that claim).
+%The natural transformations in \eqref{NATISONOTE EQ} labeled 
+%$\eta_!$, $\epsilon_{\**}$
+%are natural isomorphisms 
+%(as the adjunctions in \eqref{TWOADJOINTS EQ} are (co)reflexive),
+%as are the left vertical map $\beta$
+%and the top horizontal composite $\alpha$, 
+%cf. Proposition \ref{MONAD_COMPARISON_PROP}(ii)(iv).
+%It now follows that 
+%\eqref{NATISONOTE EQ} consists entirely of natural isomorphisms.
+%
+%
+%\begin{equation}\label{NATISONOTE EQ}
+%	\begin{tikzcd}
+%	\iota^{\**} \mathbb{F}_G \iota_! \ar{d}[swap]{\simeq}{\beta} &
+%	\mathbb{F} \iota^{\**} \iota_! \ar{d}[swap]{\simeq}{\beta}
+%	\ar{l}[swap]{\simeq}{\tilde{\alpha}} &
+%	\mathbb{F} \ar[equal]{d} \ar{l}[swap]{\simeq}{\eta_!}
+%\\
+%	\iota^{\**} \mathbb{F}_G \iota_{\**} &
+%	\mathbb{F} \iota^{\**} \iota_{\**} \ar{l}[swap]{\simeq}{\tilde{\alpha}} \ar{r}{\simeq}[swap]{\epsilon_{\**}} &
+%	\mathbb{F}
+%	\end{tikzcd}
+%\end{equation}
+%
+Now, recalling that Proposition \ref{MONAD_COMPARISON_PROP}(ii)(iv) gives natural isomorphisms 
 \[
-\iota^{\**} \mathbb{F}_{G} \iota_{\**}
-\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+\iota^{\**} \mathbb{F}_{G} \iota_{\**} \simeq
+\iota^{\**} \mathbb{F}_{G} \iota_{!} \simeq
+\mathbb{F}
 \]
+%\[
+%\iota^{\**} \mathbb{F}_{G} \iota_{\**}
+%\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
+%\]
 we see that the two solid subdiagrams in 
 (\ref{TWOCELLEXT EQ})
 are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
@@ -12316,7 +12390,7 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 We now explain how the $N\mathcal{F}$-operads of 
 Blumberg-Hill can be built from the theory of genuine equivariant operads, thus proving Corollary \ref{NINFTY_REAL_COR_MAIN}.
 
-We start with an abstract argument, which has also been used by Gutierrez-White in \cite{GW17}. 
+We start with an abstract argument, which has also been used by Guti\'{e}rrez-White in \cite{GW17}. 
 Writing 
 $\mathcal{I} = \mathbb{F} (\emptyset)$
 for the initial equivariant operad in 
@@ -12474,6 +12548,7 @@ $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 is a weak equivalence in 
 $\mathsf{Op}_G(\mathsf{sSet})$
 thanks to the usual extra degeneracy argument
+\cite[\S 4.5]{Ri14}
 (which applies after forgetting to 
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$).
 Therefore, 
@@ -12585,7 +12660,7 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 	It is straightforward to check that this $2n$-cube has latching maps
 	$l_{(U,V)} \mathcal{Y} \times \mathcal{Z} =
 	 l_U \mathcal{Y} \square l_V \mathcal{Z}$,
-	and is thus a monormorphism $2n$-cube.
+	and is thus a monomorphism $2n$-cube.
 	It remains to check that
 	the diagonal $n$-cube 
 	$\Delta^{\**} (\mathcal{Y} \times \mathcal{Z})$
@@ -12735,7 +12810,7 @@ are monomorphisms.
 \end{proof}
 
 \begin{remark}
-We now address the "moreover" claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
+We now address the ``moreover'' claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
 For any $\mathcal{O} \in \mathsf{Op}^G(\mathsf{sSet})$
 one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. Therefore, if $\mathcal{O}$ has fixed points as in (\ref{NFINFTY2 EQ}) then 
 $\pi_0 (\iota_{\**} \mathcal{O}) = \delta_{\mathcal{F}}$
@@ -13338,9 +13413,13 @@ $|\mathcal{I}_{\bullet}|$ induced by the arrow in $[1] \times \{i_1\}$ by
 	$[0]\xrightarrow{0 \mapsto k} [n]$,
 	$[1]\xrightarrow{0 \mapsto k,1 \mapsto l} [n]$
 	which can informally be thought of as the ``composite of all faces other than $d_k$, $d_l$''.
-Using (\ref{REALDEF EQ}) one has equivalence relations of objects  
-\[ [n] \times \mathcal{I}_n \ni (k,i_n) \sim (0,d_{\hat{k}}(i_n))
-\in [0] \times \mathcal{I}_0 \]
+Using (\ref{REALDEF EQ}) one has equivalence relations
+between the objects  
+$(k,i_n) \in [n] \times \mathcal{I}_n$
+and 
+$(0,d_{\hat{k}}(i_n))
+\in [0] \times \mathcal{I}_0$
+%\[ [n] \times \mathcal{I}_n \ni (k,i_n) \sim (0,d_{\hat{k}}(i_n))\in [0] \times \mathcal{I}_0 \]
 and since for any generating relation $(k,i_n)\sim (l,i'_m)$
 it is $d_{\hat{k}}(i_n) = d_{\hat{l}}(i'_m)$ the identification 
 $\text{Ob}(|\mathcal{I}_{\bullet}|) \simeq \text{Ob}(\mathcal{I}_0)$
@@ -13883,7 +13962,14 @@ The second step
 follows from Proposition \ref{FIBERKANMAP PROP} applied to the map 
 $(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to
 \Delta \times \Sigma_G$
-of Grothendieck fibrations over $\Delta$.
+of Grothendieck fibrations over $\Delta$,
+since for each
+$(n,C) \in \Delta \times \Sigma_G$
+one has a natural identification
+between
+$(n,a) \downarrow_{\pi} (\Delta^{op} \ltimes A^{op}_{\bullet})^{op}$
+and
+$C \downarrow A_n$.
 The third step follows since iterated Kan extensions are again Kan extensions.
 The fourth step twists $N_{\bullet}$
 as in Lemma \ref{TWISTING LEMMA}

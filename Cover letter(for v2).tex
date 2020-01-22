@@ -1,0 +1,265 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{article} 
+% the margin option causes section titles to appear to the left of body text 
+\textwidth=5.2in % increase textwidth to get smaller right margin
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  % colorlinks,
+  final,
+  pdftitle={Equivariant Dendroidal Segal Spaces},
+  pdfauthor={Bonventre, P. and Pereira, L. A.},
+  % pdfsubject={Your subject here},
+  % pdfkeywords={keyword1, keyword2},
+  linktoc=page
+}
+
+\usepackage{xr}
+\externaldocument{GenEqOp}
+
+\input{commands.tex}%
+
+%-------- TIKZ -----------------------------------------
+\usepackage{tikz}%
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,
+cd,patterns,calc}
+\tikzset{%
+  treenode/.style = {shape=rectangle, rounded corners,%
+                     draw, align=center,%
+                     top color=white, bottom color=blue!20},%
+  root/.style     = {treenode, font=\Large, bottom color=red!30},%
+  env/.style      = {treenode, font=\ttfamily\normalsize},%
+  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
+}%
+
+\usetikzlibrary[decorations.pathreplacing]
+% \usetikzlibrary{external}\tikzexternalize
+% \makeatletters
+% \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+
+% \makeatother
+
+\begin{document} 
+ 
+\title{Edits to ``Genuine Equivariant Operads'' (v.2)
+\\[12pt]} % the \\[12pt] adds a blank line after name
+ 
+\author{Bonventre, P. and Pereira, L. A.}
+ 
+\maketitle
+ 
+The referee's preliminary report had two main sections:
+high level comments and in line comments.
+
+
+
+\section{High level}
+
+
+\section{Changes before report}
+
+\begin{itemize}
+\item Updated Gutierrez-White reference
+
+\item Fixed last square diagram in the proof of Lemma 6.69
+
+\item clarified diagram (3.1)
+
+\item clarified 2 sentences after Remark 3.13
+
+\item clarified diagram in Example 3.18
+
+\item Defn 3.19 and Example 3.20 became Defn 3.23 and Example 3.24, while 
+Defn 3.21, Remark 3.22, Prop 3.23 became Defn 3.19, Remark 3.20, Prop 3.21
+
+\item Fixed some typos in Lemma 2.21
+\end{itemize}
+
+
+\section{Not changed}
+
+\begin{itemize}
+
+\item[34.] We are unsure how the notation in 
+Remark \ref{LRROOTMAP REM} clashed with the notation in 
+\eqref{OGDEF EQ} and Definition \ref{ROOTPULL DEF}.
+
+\end{itemize}
+
+\section{Direct response to comments}
+
+\begin{itemize}
+	\item[21.] we are unaware of any reference for Props. 
+	\ref{FIBERKANMAP PROP} and \ref{GROTHSTAB PROP}.
+	Certainly these results are elementary enough that they are probably already known (especially Prop. \ref{GROTHSTAB PROP}),
+	but the results were new to us. 
+	
+	\item[24.] While these results are straightforward 
+	and their proofs are generic, 
+	we are unaware of any references for Propositions \ref{MONADADJ1 PROP}, \ref{MONADADJ PROP}, \ref{MONADICFUN PROP}. The likely references we are familiar with, such as 
+	\cite{Bo94} or {\color{red} Rhiel} do not quite discuss the framework we need.
+	As with Props. 
+	\ref{FIBERKANMAP PROP} and \ref{GROTHSTAB PROP},
+	these results were new to us.
+	
+	\item[27.] In the intro to \S \ref{PLANAR_SECTION} we
+	clarified that $\mathsf{F}^G$ denotes $G$-objects in $\mathsf{F}$,
+	which is not a skeletal category (rather, it is the subcategory of $\mathsf{F}^G$ consisting of \emph{order preserving maps} that is skeletal).
+	%
+	This may seem pedantic,
+	but it took us a fair amount of time to figure out the best level of ``skeletalness'' for the categories 
+	$\Omega, \Phi, \mathsf{F}, \Omega_G, \cdots$, 
+	which seems to be to demand that only planar/ordered maps are skeletal.
+	
+	\item[31.] the $\mathsf{O}^p_G$ notation in 
+	Convention \ref{PLANARCONV CON}
+	was a typo and should have been simply $\mathsf{O}_G$.
+	The intended meaning is that we reinterpret totally ordered finite sets as having underlying set of the form
+	$\{1<2<3<\cdots <n\}$,
+	but this is already built into the definition of 
+	$\mathsf{O}_G$ given in the introduction to
+	\S \ref{PLANAR_SECTION}.
+	
+	\item[46.] \eqref{PIIDEFDI2 EQ} does not need natural isomorphisms on the left, i.e. the square strictly commutes. The intuition is that since degeneracies merely duplicate one layer of vertex data, they do not change the way the vertex data is planarized. 
+	
+	\item[64.]
+	In Corollary \ref{KANRED COR} the sentence immediately after ``$\widehat{\Omega}^e_G \hookrightarrow \Omega^e_G$ is
+	$\mathsf{Ran}$-initial over $\Sigma_G$''
+	is the definition of $\mathsf{Ran}$-initial,
+	so it seems the comment was already addressed.
+	In addition, Lemma \ref{MINUS_LAN_FINAL_LEMMA} where ``$\mathsf{Ran}$-initial'' also appears was altered to refer to Corollary \ref{KANRED COR}.
+	\item[82.] the proof of Prop. \ref{POWERF PROP} is terse since the overall argument is technically identical to that in the proof of [22, Thm 1.2] (one just modifies the hypothesis to get different conclusions).
+	We would be happy to add extra detail if deemed necessary. 
+\end{itemize} 
+
+\section{Slight math fixes}
+
+\begin{itemize}
+	\item[28.] In the intro to \S \ref{PLANAR_SECTION}
+	we replaced the reference to 
+	\cite[Prop. 5.47]{Pe17}
+	with a reference to 
+	\cite[Def. 5.44]{Pe17},
+	which in hindsight is indeed closer 
+	to the formulation of the pullback \eqref{OGDEF EQ}.
+	The connection to \cite[Prop. 5.47]{Pe17}
+	does indeed require a little argument concerning Grothendieck constructions {\color{red} which can be found in one of our sequel papers}, 
+	but we know of no canonical source.
+	
+	\item[85.] changed the $G \times \phi$ notation 
+	to $id_G \times \phi$ in Remark \ref{LRLEFTQUILLEN REM}
+	
+	\item[89.] slightly modified the natural isomorphisms and added reference to Proposition \ref{MONAD_COMPARISON_PROP} 
+\end{itemize}
+
+
+\section{Minor and typos} 
+
+
+\begin{itemize}
+\item[1.] added accent to Guti\'{e}rrez's name throughout.
+
+\item[14.] replaced ``simplicial operad'' with  ``$G$-simplicial operad''
+
+\item[19.] added reference for the notion of ``Grothendieck fibration'' and reworded the definition of ``cartesian arrow''; fixed indicated grammar typo
+
+\item[20.] fixed typos in Definition \ref{GROTHCONS DEF}
+
+\item[21.] edited Prop. \ref{FIBERKANMAP PROP} to refer to the notation for a map of Grothendieck fibrations in \eqref{GROTHFIBMAP EQ}
+
+\item[22.] fixed ``singleton''
+
+\item[23.] fixed ``commute''. Wrong references were compilation error.
+Fixed ``coproducts'' to ``monoidal product at the end of the proof''. {\color{red} need to think about $\pi$ in $\downarrow_{\pi}$ notation}
+
+\item[25.] Fixed typo. Added short description of the notion of ``module over a monad'' ({\color{red} add nLab reference? or find different one?})
+
+\item[26.] the wrong reference seems to have been a compilation error
+
+\item[29.] confirmed that the word ``predecessor'' (rather than ``sucessor'') is correct
+
+\item[32.] fixed the $\tilde{G}$ notation to $\bar{G}$ and reworded the example to clarify that $G,\bar{G}$ are two unrelated groups
+
+\item[34.] revised the root functor $\mathsf{r}$ notation in pullback \eqref{OGDEF EQ} 
+to match that in Definition \ref{ROOTPULL DEF}.
+Following Definition \ref{ROOTPULL DEF},
+added an indication to the category where 
+$\varphi \colon Y \to X$ lives in.
+
+\item[37.] added a line introducing the ``planar outer face map'' terminology. Provided references for the ``degeneracy-face decomposition'' 
+
+\item[38.] no change was requested
+
+\item[40.] added Notation \ref{STICKTRE NOT} introducing the ``stick tree'' terminology and referenced this notation before
+Proposition \ref{BUILDABLE PROP},
+clarifying the meaning of ``non-stick subtree''
+
+\item[41.] the wrong reference seems to have been a compilation error
+
+\item[42.] the wrong reference seems to have been a compilation error
+
+\item[43.] the wrong reference seems to have been a compilation error
+
+\item[50.] clarified references to \cite[X.3.1]{McL} as \cite[X.3 Thm. 1]{McL}, which should make the ``pointwise formula for Ran'' easier to identify, and further referenced uses of this formula to \eqref{FIBERKAN EQ}.
+Fixed one reference to \cite[X.3.1]{McL}
+to be a reference to \cite[IX.3]{McL}.
+
+
+\item[57.] fixed ``forgetful''
+
+\item[65.] noted that the use of opposite categories turns $\mathsf{Ran}$ into $\mathsf{Lan}$
+
+\item[70.] replaced ``less generating'' with ``fewer generating''
+
+\item[75.] Made sure the statement of Lemma \ref{REWORFAM LEM} makes sense
+
+\item[77.] fixed $G$ to be $\bar{G}$
+
+\item[80.] reworded ``for all'' as ``for every'' in Prop. \ref{POWERF PROP}
+
+\item[82.] rephrased ``retracts can be ignored''
+as ``retracts preserve weak equivalences''
+
+\item[83.] fixed ``trully'' to ``truly''
+
+\item[87.] clarified which step requires cofibrancy of the 
+$f_s$
+
+\item[93.] added accent to Gutierrez's name throughout.
+
+\item[94.] added \cite{Ri14} reference to the ``extra degeneracy argument''; fixed ``monormorphism'' typo
+
+\item[97.] fixed wrong way quotation mark
+
+\item[98.] rephrased the proof of Lemma \ref{OBJGENREL LEMMA}
+to avoid $\in$ symbols in opposite directions
+
+\item[100.] clarified the reference to Prop. \ref{FIBERKANMAP PROP} by specifying the relevant undercategories
+
+\end{itemize}
+
+
+
+
+
+
+
+
+\bibliography{biblio}{}
+
+\bibliographystyle{alpha}
+
+
+\end{document} 
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

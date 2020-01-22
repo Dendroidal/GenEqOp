@@ -1,0 +1,444 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{article} 
+% the margin option causes section titles to appear to the left of body text 
+\textwidth=5.2in % increase textwidth to get smaller right margin
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  % colorlinks,
+  final,
+  pdftitle={Equivariant Dendroidal Segal Spaces},
+  pdfauthor={Bonventre, P. and Pereira, L. A.},
+  % pdfsubject={Your subject here},
+  % pdfkeywords={keyword1, keyword2},
+  linktoc=page
+}
+
+\usepackage{xr}
+\externaldocument{EqSegSp&G-infty-ops}
+
+\input{commands.tex}%
+
+%-------- TIKZ -----------------------------------------
+\usepackage{tikz}%
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,
+cd,patterns,calc}
+\tikzset{%
+  treenode/.style = {shape=rectangle, rounded corners,%
+                     draw, align=center,%
+                     top color=white, bottom color=blue!20},%
+  root/.style     = {treenode, font=\Large, bottom color=red!30},%
+  env/.style      = {treenode, font=\ttfamily\normalsize},%
+  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
+}%
+
+\usetikzlibrary[decorations.pathreplacing]
+% \usetikzlibrary{external}\tikzexternalize
+% \makeatletters
+% \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+
+% \makeatother
+
+\begin{document} 
+ 
+\title{Referee report on `Genuine Equivariant Operads'', by Bonventre and Pereira
+\\[12pt]} % the \\[12pt] adds a blank line after name
+ 
+
+ 
+\maketitle
+
+\section{High level feedback}
+
+This paper introduces the new machinery of equivariant trees and ``genuine'' equivariant operads, works out the necessary model categorical foundation for the homotopy theory of genuine equivariant operads, and includes an as an application a proof of the Blumberg-Hill conjecture. The paper is very long, and much of it amounts to a bookkeeping device, for keeping track of fixed point compositions. These compositions can also be read off from a careful study of trees with G-actions, using the classical definition of an equivariant operad. If there is some example where such information is being missed by the classical definition, that would be worth including (the closest the paper gets is in Section 6.5, but it seems Rubin's approach gets the same application without genuine equivariant operads). The notion of genuine equivariant operads is certainly not needed to prove the Blumberg-Hill conjecture.
+
+A more exciting application of the ideas in this paper is to the authors' 2018 preprint on G-infinity operads. While the notion of a ``genuine'' equivariant operad is not required for the study of G-infinity operads, one does need a ``genuine'' theory for G-equivariant dendroidal sets. Perhaps the current paper could explain whether the technicalities on G-trees and genuine G-equivariant operads are necessary for the study of ``genuine'' G-equivariant dendroidal sets. Another potential application is a recent preprint of Asaf Horev on genuine equivariant factorization homology. Horev leans heavily on Bonventre's 2019 preprint about the genuine operadic nerve, which in turn relies on the present paper.
+
+Regarding the length of the paper: much of the paper is rephrasing the non-equivariant case to facilitate the equivariant generalization. The examples do help and are worth keeping, and I don't see much way to make the paper any shorter and still readable. Honestly, it might be better as a book or monograph. But, if the authors can rewrite the introduction to make it clear that this work has real applications, then I think it would be appropriate for the Advances. I've also created a large list of in-line comments that I think would help the readability of the paper.
+
+
+\section{In-line comments}
+
+\begin{enumerate}
+
+\item
+Throughout, Gutierrez's name is misspelled. There's an accent on the 2nd e.
+
+\item
+The abstract mentions ``new algebraic structures'' - it would be nice to have some examples of categories of algebras over genuine equivariant operads that cannot be described as algebras over G-operads.
+
+\item
+It would be better to write ``if and only if'' instead of ``iff'', e.g. on page 2, right before the displayed math. This appears several other times in the paper, too.
+
+\item
+I found the abbreviated notation $G \geq H \to \Sigma_n$ rather confusing. I think it would avoid confusion to write ``$H\to \Sigma_n$, for subgroups $H \leq G$''. This occurs twice on page 3, and in many other places.
+
+\item
+There are many, many, sentences that are hard to parse because they don't contain enough commas. I encourage you to add more commas as you go through it making revisions.
+
+\item
+Through the experience of reading the paper, I often had to go hunting for some notation that had been defined long above, and was now being used. For a paper this length, perhaps a notational index at the end would help the reader, especially since it's hard to search for notation.
+
+\item
+Page 3, above (1.5), I think ``combines the actions of $R$ and $X$ in the natural way'' could be expanded upon, to spell out that the $G$-action is permutating copies of $R$.
+
+\item
+Page 4 is the first time ``family'' is used. There are different definitions in the literature, so please spell out what you mean by ``family''
+
+\item
+Page 5, ``as in [9]'' - please give a more specific reference within [9]
+
+\item
+Page 5, ``In order to work in the context of operads with norm maps we will
+need to replace \dots'' - this statement does not appear to be true. Indeed, ``non-genuine'' equivariant operads do appear sufficient to encode ``operads with norm maps'' and indeed were used by Blumberg and Hill. 
+
+\item
+Page 6, I was not able to figure out the idea of equivariant trees from this brief discussion, so I ended up reading [23], and this is part of the reason this report took so long. You cite [23] some 30 times in this paper. Until [23] becomes standard, you will probably need to go a bit more into equivariant trees in the present paper, because many readers won't be able to follow the discussion as currently written. For example, even having read the other paper, I could not follow (1.10) until I wrote out exactly what all these sets, e.g. $O(H/K)^H$, represented in the tree above. And, having done that, I still don't know what you mean when you say ``arity is now determined by both incoming and outgoing edge orbits'' (the outgoing, and root, part is what I don't follow). I think a lot more is needed for the reader to be able to follow this.
+
+\item 
+It is good to include examples like (1.9), but it was a lengthy exercise to figure out WHY the displayed tree is the orbital representation, and also to figure out how to go back and forth between the two. I would recommend a lot more text here. Most readers don't think about coset manipulations on a daily basis. In fact, to finally understand this, I had to read [23], which works up to this complicated example with many simpler ones. The sorts of notes I had to make for myself (which you could give to a future reader) had to do with the size and index of $H$ and $K$, how taking $H$ fixed points compresses two branches into one, how $a$ is obtained from $K/L$, and $b$ from $K/K$, what taking $K$ fixed points means for the tree, and the meaning of $H/L$ cup $H/K$. Similarly, in (1.10), it took some guesswork to figure out the significance of the fixed points, and if I even agreed that this map existed. Hence, I think more detail is required.
+
+\item
+Page 6, below (1.10), ``a suitably mixed $H$-action'' - this is very vague, and I think you should spell out the action.
+
+
+\item
+Page 7, line 4, ``for a simplicial operad'' should say $G$-operad
+
+\item
+Page 7, paragraph after Theorem I: when semi-model categories are discussed, the definition needs to be made a bit more precise (specifically, the ``certain cofibrations''). For example, they don't seem to appear in [17] at all, and in [27] there are six different variants! Do you mean $J$-semi model-categories? Or $I$-semi? Is it a semi-model structure *over* something? Also, the definitions in [31] and [10] are different from each other.
+
+\item
+Theorem II: I was surprised that different $\mathcal{F}$'s give different categories, as this is a departure from the classical case (where only the homotopy theory changes). Is there an equivalence of categories between the categories associated to different $\mathcal{F}$'s?
+
+
+\item
+Page 8, Theorem III - this is the first place $i^*$ and $i_*$ have appeared. These notations should be defined.
+
+\item
+When you mention section 6.5, I think you should advertise that the explicit model needs the theory of genuine equivariant operads. That's important motivation.
+
+\item
+Page 9, last line, should be ``a Grothendieck fibration''. Also, it might be nice to give a reference for the notion of Grothendieck fibration, or to define the notation $f^*e$ and ``cartesian arrow''
+
+\item
+Page 10, Defn 2.2 - why do you call $B$ a ``diagram category''? This works for any small category, $B$, right? Also, $E_d$ should be $E_b$, and $g: f_*(e) \to e'$
+
+
+\item
+Page 10, are Props 2.5 and 2.7 new? Or were they known before?
+
+You cite prop 2.5 in the last paragraph of the paper, by which time the reader has surely forgotten the setup. I think you should clarify Prop 2.5 to clearly state the ``map of Grothendieck fibrations'', i.e. give it notation, $\gamma \colon \pi \to \pi'$
+
+
+\item
+Page 11, should ``simpleton'' be ``singleton''?
+
+
+\item
+Page 13, In the statement of 2.21, ``commute'' should be ``commutes'' in both statements.
+In the proof, (2.25) should be (2.24), and I think (2.23) should be (2.22), i.e. you are verifying the ``limits'' part. 
+You should clarify what is meant by $\pi$, since it hasn't been used in this context.
+When did you make ``the assumption that coproducts commute with limits in each variable.''? Probably you meant the monoidal product.
+
+\item
+Surely 2.26-28 are not new. A reference should be given. Perhaps Borceaux?
+
+\item
+Page 14, 2.28, ``also a right $T^{\times \lambda'}$'' is missing ``module''
+Also, why did you switch from ``algebra'' to ``module''? If you mean ``module over a monad'' you should spell this out, since you only discussed algebras before.
+
+\item
+Remark 2.31 points to (2.31) wrongly.
+
+
+
+\item
+Page 15 should define the notation $F^G$ since it hasn't appeared yet. Must be skeleton of finite $G$-sets, I guess.
+
+
+\item
+Page 15, even having read [23], where 5.46 is not proven, it was not clear why 5.46 is equivalent to the pullback formulation given here. Perhaps this is a well-known property of the Grothendieck construction. If so, I recommend citing some canonical source that proves the equivalence. I worked it out for pullbacks of sets (rather than of categories), to convince myself.
+
+\item
+Page 16, please check that ``predecessor'' shouldn't be ``successor''. It always throws me off that $a \leq b$ means a is above b in the tree.
+
+\item
+Page 17, in 3.12, you should introduce $V(T)$ first. 
+
+
+\item
+Page 18, $O_G^p$ appears for the first time. What does this mean?
+
+\item
+Page 18, 2nd line from the bottom, what is meant by $\tilde{G}$? Maybe you should say ``two groups'' to be clear this is not an operation on groups. Also, below you switch to an overline instead of a tilde.
+
+\item
+Page 19 says ``however, we note that \dots'' is there a reference for this claim? It seems pretty important.
+
+\item
+Page 19, the notation in Def 3.23 doesn't match (3.1). And, in the last paragraph, it would be good to say more about the map $\phi$, e.g. what category it lives in.
+
+Also, 3.56 has different notation.
+
+\item
+Page 20, you should say that this is the quaternion group. Otherwise, the reader might think it's a product of four $C_2$ groups.
+
+I don't understand example 3.24, and I'm not willing to pour time into it like I did for (1.9). It's not clear why pulling back along tau permutes $1,i,j,k$ cyclically, but that seems to be what the 2nd row of trees is saying. I would think that j should be gone, because you are working with $G/H$.
+
+
+\item
+I think 3.25 and 3.27 would be clearer if you explained the meaning in terms of trees instead of broad posets. I basically couldn't parse 3.25 as written. 
+
+\item
+Page 21, you haven't said what an ``(planar) outer face map'' is
+Can you cite a source for ``usual face-degeneracy decomposition''?
+
+\item
+Page 22 was very clear.
+
+\item
+Page 23, Remark 3.40: why can't one vertex subtree include into another? E.G. in example 3.34, $U_4$ includes into the tree above $d$, which includes into the tree above $e$, etc. Maybe I am misunderstanding the meaning of $e^\uparrow$, but if so, then other readers will too.
+
+
+\item
+Page 24, what's a ``non-stick outer subtree''?
+
+\item
+Page 27 - in and above 3.66, where you say (3.64) you probably mean (3.65)
+
+\item
+Page 28 - ``iff''
+Also: there is no Remark 3.70
+
+\item
+Page 30, another numbering error (``Corollary 3.69'') - maybe just recompile and check the whole document.
+
+\item
+Page 30, need to define the notation $d_{1,\cdots,n}$ in 3.83
+Below 3.85, you say ``injectivity needs only be checked'' but this is the proof of surjectivity.
+Another ``iff''
+``after converted'' is off, grammatically
+I didn't check the accuracy of this proof of 3.83, but nothing seemed fishy.
+
+\item
+Notation 3.86: has $\sigma^0$ been defined?
+It's clear from 3.87 what is meant, at least.
+
+\item
+Page 31, in 3.90, are there also natural isomorphisms on the left?
+
+\item
+Page 32, I think a sentence about (c) would help.
+
+\item
+Page 33, since you write ``localization'' instead of ``localisation'', probably ``labeled'' is better than ``labelled''
+
+\item
+Page 33, would be good to say what $C$ and $D$ are in Defn 4.3
+
+Above 4.2, why does it matter that these rooted undercategories are groupoids (i.e. why is it easy for groupoids)?
+
+\item
+Page 38 - I could not find the pointwise formula you are using in Mac Lane. Perhaps you could just replicate the formula you have in mind.
+
+\item
+Page 39, the end of the proof of 4.28 was a bit unclear, maybe because you didn't construct $r$.
+
+When you say ``Lemma 4.26'' do you mean 4.28? I really can't tell, but it seemed an odd place to reference the lemma two ago.
+Cor 4.30 are those functors or natural transformations?
+
+\item
+Page 41, in the interests of time, I did not check the proof of 4.38
+
+\item
+Page 43, if all counterexamples require trees with stumps, it seems you could have a result in the setting of reduced operads.
+
+\item
+Page 44 - Even though it's tempting to try to cut this paper down to a more manageable size, the text after 4.46, about Blumberg-Hill, was neat. Still, is there some reason the third defn, from [23], cannot be used, to save space?
+
+\item
+Page 46, I don't think it's wise to abbreviate $F_G$ to $F$, as the difference may be important in section 6 (e.g. my comment on page 73)
+Maybe a reference can be given for the double bar construction, since this notion hasn't appeared in the paper till now.
+Line -3 has $\langle l \rangle$ instead of 
+$\langle \langle l \rangle \rangle$: is that right? I see the notation defined on page 48, in remark 5.19
+
+\item
+Page 47, it might be good to remind the reader of the meaning of things like $S_{v_{G e}}$, because it's easy to forget and hard to search for notation like this. Or, you could use a notational index.
+
+
+\item
+Page 48 ``forgeful''
+
+\item
+Page 49, would be good to spell out the statement of 5.30
+
+\item
+Page 50 ``forgeful''
+Also, the proof of 5.32 is very thin.
+Line -1: what is the ``right diagram''?
+
+\item
+Page 51, line 3, what ``shows that the forgetful\dots''?
+
+\item
+Page 52, the extension tree category seems very similar to things that have appeared before in the literature for these types of filtration arguments. I know you cite many at the start of section 5, but maybe you can clarify the connection. For example, is this analogous to the approach in Berger-Moerdijk's ``Axiomatic Homotopy''? Or the types of filtrations is Batanin-Berger's paper on tame polynomial monads?
+
+\item
+Page 54, has ``passive node'' been used before?
+Proof of 5.49, Is there a simple description of lr in terms of labels in the tree?
+Proof of 5.49, since it has been 30 pages since Proposition 3.47(iii), it might be good to remind the reader a bit here. But, you do mention ``outer subtrees'' a few lines above.
+
+\item
+Page 55, I don't really understand the picture. It seems backwards from the tree structure in Example 5.39. Could you clarify why the map doesn't go the other way, and what effect lr(-) has? Is it just adding degree 1 things in?
+
+\item
+Cor 5.53: I think you should remind the reader what is meant by ``Ran-initial'', as this concept is not very standard.
+
+\item
+5.54: why is it Lan here but was Ran above?
+
+\item
+Page 56, 5.61, why does $lr(S)$ appear here?
+
+
+\item
+Page 57, I don't understand the notation $\tilde{N}$. Does 5.54 really define it?
+Also, when you invoke Lemma 5.58 towards the end of the page, I don't understand this, because you are using ``Ran initial'' to say something about Lan.
+
+\item
+Page 58, more detail is needed in the proof of 5.67
+
+\item
+Page 59, I find all the forwards-references confusing, but I can see why you wanted to do this.
+
+\item
+Page 60, when you say ``less generating'', I think you mean ``fewer''
+
+\item
+Page 60 - I believe an analogue of [16, 11.3.2] would be Theorem 2 in Spitzweck's paper (your [27])
+
+\item
+Page 60, when you write that one monad can be regarded as a restriction of another, ``the desired condition\dots turns out to coincide'' - I did not check why this is true, and I think the way it's written makes it sound like magic. Perhaps you should spell it out.
+
+\item
+I found the last paragraph of page 60 very sketchy. It would be good to say more about what needs to change, instead of making ``the obvious'' changes.
+
+\item
+Page 62: can you give a reference for the double coset formula in the proof of Prop 6.6? Normally, I think of this as a formula for restriction of a (co)induction. Is the formulation you are using recorded somewhere?
+Same for 6.12, which also needs another set of parentheses on the far right.
+
+\item
+Page 62, 6.11 statement - there is no ``if'' in 6.6
+
+\item
+Section 6 has ``iff'' all over.
+
+\item
+Page 63: Defn 6.13, the second $G$ is missing a bar.
+
+
+\item if Definition 6.16 has appeared in the literature before (maybe in work of Lurie?), then a reference should be given. Same for Example 6.18 (maybe it appears in work of Marc Stephan?)
+
+\item I'm was worried about whether or not the cellular fixed point condition is really satisfied by sSet, till I realized you were talking about fixed point model structures and not projective. It might be wise to hammer in this point to the reader, to prevent others from raising a red flag.
+
+\item
+Page 64, Prop 6.24: should be ``for all $n$ and cofibrations" or "for every" instead of "for all"
+
+
+\item
+Proof of 6.24: where did the wreath product come from? Isn't it just a cross product?
+
+\item
+Page 65, it takes the same space to say ``retracts preserve weak equivalences'' as it does to say ``retracts can be ignored''
+This proof was terse, but I eventually understood it.
+
+\item
+Page 67: ``trully''
+``iff''
+
+\item
+Remark 6.39: I did not understand this. What's $E$? Why is this intersection true? Maybe you could give a reference?
+
+
+\item
+Page 68, Remark 6.45: did you really mean ``$G \times \phi$'' or did you want an induced functor?
+
+\item
+Page 70: if Remark 6.53 is important, you might want to include the actual example. If it's not important, maybe it should be cut, since the paper is already extremely long.
+
+\item
+Page 71: in the proof of 6.54, it would be good to make it explicit where you use the cofibrancy assumptions on the $f_s$
+
+\item
+Page 71: I did not understand the last line of the proof of 6.54. After much searching, I found the formulas for $i_*$ and $i^*$ on page 40. Maybe you should remind the reader where those formulas are. Also, if you're working in the arrow category, so that product means pushout product, you should say this. Or, if you're using different formulas for $i_*$ and $i^*$, maybe you can remind me where to look. Again, these things are hard to search, and a notational index would help.
+
+\item
+Page 73: where you say ``recalling that there are natural isomorphisms'', maybe you can recall where precisely.
+
+\item
+Page 73, that $i* F_G = F i^*$ suggests we can get by without $F_G$. I worry that the reader who is primarily concerned with Corollary IV will lose motivation for understanding the genuine equivariant operads, if you can prove this without them.
+
+\item
+Page 74, I found it hard to follow the end of this ``parallel proof.'' I do believe it's correct, but I think your reader would be happier if you had some line about how the argument connects to the two claims in (6.61).
+
+\item
+Proof of Theorem III: Does $i_*$ here have the same meaning on the pages above? Perhaps you could give a reference for why it detects fibrations (probably to where you defined the model structures). I worry a little bit that you didn't have to say anything about Kan complexes.
+
+\item
+Page 74: Gutierrez's name has an accent
+
+\item
+Page 75: can you give a reference for the ``usual extra degeneracy argument''?
+``monormorphism''
+
+\item
+Page 76, you should define the notation $\underline{n}$ when talking about latching maps, or remind the reader if you did this in the front matter on posets.
+
+\item
+Page 77: on your appeal to 6.69(a), I do not understand how this gets the $F_G$ on the outside of the latching procedure. I am ok with the part where you replace the top level of the cube. Please clarify a bit.
+
+\item
+Page 77: quotation mark going the wrong way in Remark 6.72
+
+\item
+Page 78: the appendix was mostly clear, but the displayed line in the proof of A.3 was confusing due to the $\in$ symbols going in opposite directions.
+
+\item
+Page 80 - proof of A.12 has $\downarrow$ in a superscript. Also, this proof doesn't check that it forms an adjunction.
+
+\item
+Page 82: I can't quite follow this appeal to 2.5. Prop 2.5 says Ran is the same as a limit, but you want an equivalence of the two Ran's. Maybe you can clarify at least which thing is initial in which other thing. 
+
+\item
+References:
+Several of the references listed on arxiv have journal citations, including one listed as ``In preparation'', so the References section needs to be updated.
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\bibliography{biblio}{}
+
+\bibliographystyle{alpha}
+
+
+\end{document} 
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
