@@ -8110,10 +8110,24 @@ one can only guarantee $|V_G^{in}(T)| \leq k$.
 
 
 \begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
-  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
+%  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
+% 
+The horizontal inclusion below 
+\[
+\begin{tikzcd}
+	\widehat{\Omega}_G^e[\leq\! k-1]
+	\arrow{dr}[swap]{\mathsf{lr}} \arrow[rr, hookrightarrow] &&
+	\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y] \arrow{dl}{\mathsf{lr}}
+\\
+	&
+	\Sigma_G
+\end{tikzcd}
+\]  
+is $\mathsf{Ran}$-initial (in the sense of Corollary \ref{KANRED COR})
+over $\Sigma_G$.  
 \end{lemma}
 
-The proof will make use of an additional  construction on 
+The proof will make use of an additional construction on 
 $\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
 
 \begin{remark}\label{YINERT REM}
