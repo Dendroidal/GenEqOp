@@ -2147,13 +2147,14 @@ $\mathsf{O}_G \hookrightarrow \Fin^G$
 of those sets with transitive actions, $\Omega_G$ can be described as given by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
 \begin{tikzcd}
-	\Omega_G \ar{r} \ar{d} & 
-	\Phi^G \arrow{d}{\mathsf{r}^G}
+	\Omega_G \ar{r} \ar{d}[swap]{\mathsf{r}} & 
+	\Phi^G \arrow{d}{\mathsf{r}}
 \\
 	\mathsf{O}_G \ar{r} & \Fin^G
 \end{tikzcd}
 \end{equation}
-(where $\mathsf{r}: \Phi \to \Fin$ is the root functor),
+(where $\mathsf{r}: \Phi \to \Fin$ is the \emph{root functor},
+sending a forest to its set of roots),
 which is a repackaging of \cite[Def. 5.44]{Pe17}.
 Explicitly, a $G$-tree $T$ is then a tuple 
 $T = (T_x)_{x \in X}$ with $X \in \mathsf{O}_G$
@@ -2589,7 +2590,7 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
       we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
       
       Similarly, any finite set (resp. orbital finite $G$-set) together with a total order is implicitly reinterpreted as an object of
-      $\Fin$ (resp. $\mathsf{O}_G^p$).
+      $\Fin$ (resp. $\mathsf{O}_G$).
 \end{convention}
 
 
@@ -2820,7 +2821,7 @@ which we call the \textit{leaf-root functor}.
 Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
-$\varphi \colon Y \to X$
+$\varphi \colon Y \to X$ in $\mathsf{O}_G$
 is simply the $G$-tree
 $(T_{\varphi(y)})_{y \in Y}$
 with structure maps 
