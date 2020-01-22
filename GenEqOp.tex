@@ -7882,15 +7882,25 @@ $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
 
 
-\begin{example}
-The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in
+\begin{example}\label{LRP EX}
+The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction applied to the map $\varphi$ in
 Example \ref{REGALTERNMAP EX}. Intuitively, the functor
 $\mathsf{lr}_{\mathcal{P}}$ replaces each of the maximal 
 $\mathcal{P}$-labeled subtrees 
-$T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
-$\mathsf{lr}(T^{\mathcal{P}}_k)$,
-$\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
+$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ with the corresponding leaf-root
+$\mathsf{lr}(T^{\mathcal{P}}_k),
+\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
 $\mathcal{P}$-labeled.
+Pictorially, this results in the following two effects:
+when
+$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ are single edge subtrees of $T,S$ (necessarily not adjacent to a $\mathcal{P}$ vertex), 
+one adds a $\mathcal{P}$ vertex of degree $1$;
+when
+$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ have vertices,
+so that they are subtrees composed of adjacent 
+$\mathcal{P}$ vertices of $T,S$,
+those vertices are collapsed into a single  
+$\mathcal{P}$ vertex.
 \[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize,inner sep=2pt},
