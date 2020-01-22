@@ -9769,7 +9769,15 @@ $\phi^{-1}(H) \in \mathcal{F}$.
 
 
 \begin{proof}
-	Since the double coset formula yields that
+	A choice $\{a\}$ of double coset representatives of 
+	$\phi(G)\backslash \bar{G} /H$
+	gives $G$-orbit representatives of
+	$\bar{G}/H$, yielding the formula
+	$\mathsf{res}(\bar{G}/H) \simeq 
+	\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
+	{G/\phi^{-1}(H^{a})}$.
+%	
+	Hence
 \[
 	\mathsf{res}\left(\bar{G}/H \cdot f\right)
 		\simeq 
@@ -9780,7 +9788,7 @@ $\phi^{-1}(H) \in \mathcal{F}$.
 		{G/\phi^{-1}(H^{a})}
 	\right)	\cdot f
 \]
-it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
+from which it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
 \end{proof}
 
 
@@ -9866,7 +9874,19 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 
 
 \begin{proof}
-	The double coset formula yields
+	A choice $\{a\}$ of double coset representatives
+	of $H \backslash G /\bar{H}$
+	gives orbit representatives
+	$\left\{([e],[a])\right\}$ of
+	$G/H \times G/\bar{H}$,
+	yielding the formula
+	$G/H \times G/\bar{H}
+	\simeq 
+	\coprod_{[a]\in H \backslash G /\bar{H}}
+	{G/H\cap \bar{H}^a}
+	$.
+%
+	Hence	
 \[
 	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
@@ -9874,10 +9894,10 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 		\simeq
 	\left(
 		\coprod_{[a]\in H \backslash G /\bar{H}}
-		{G/H\cap \bar{H}^a} \cdot (f \square g)
+		{\left(G/H\cap \bar{H}^a\right)} \cdot (f \square g)
 	\right)
 \]
-and hence the result follows since families are closed under conjugation and subgroups.
+and the result follows since families are closed under conjugation and subgroups.
 \end{proof}
 
 
@@ -13681,6 +13701,8 @@ Then the under and over category functors
 \]
 preserve colimits.
 \end{lemma}
+
+{\color{red} HERE}
 
 \begin{proof}
 The result can easily be shown directly,
