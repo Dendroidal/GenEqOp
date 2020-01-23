@@ -3197,7 +3197,8 @@ and isomorphisms.
 We now turn to discussing the substitution operation. We start with an example focused on the closely related notion of 
  iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
 
-\begin{example} The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
+\begin{example}\label{GRAFTSUB EX}
+The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
 More precisely (among other possible grafting orders), one has
 \begin{equation}\label{UFORMULA EQ}
 U = \left(
@@ -4791,14 +4792,14 @@ though we will prefer to work with (\ref{FGXDEF EQ}) throughout.
 
 To intuitively motivate the monad structure of $\mathbb{F}_G X$, note that 
 (\ref{FGXDEFEXP EQ}) roughly states that 
-$\mathbb{F}_G X$ consists of ``$G$-trees $T$ with $G$-nodes suitably labelled by $X$'', 
+$\mathbb{F}_G X$ consists of ``$G$-trees $T$ with $G$-nodes suitably labeled by $X$'', 
 and thus that $\mathbb{F}_G \mathbb{F}_G X$
-consists of ``$G$-trees $T_0$ with $G$-nodes labelled 
-by $G$-trees $T_{1,i}$ with $G$-nodes labelled by $X$''.
+consists of ``$G$-trees $T_0$ with $G$-nodes labeled 
+by $G$-trees $T_{1,i}$ with $G$-nodes labeled by $X$''.
 The substitution discussion in 
 \S \ref{OUTTALL SEC}, 
 \S \ref{PLANARSTRING SEC}
-then says that $\mathbb{F}_G \mathbb{F}_G X$ roughly consists of ``planar tall maps of $G$-trees $T_0 \to T_1$ with $G$-nodes of $T_1$ labelled by $X$'' (for a precise statement, see Remark \ref{REPACKAGERES REM}),
+then says that $\mathbb{F}_G \mathbb{F}_G X$ roughly consists of ``planar tall maps of $G$-trees $T_0 \to T_1$ with $G$-nodes of $T_1$ labeled by $X$'' (for a precise statement, see Remark \ref{REPACKAGERES REM}),
 so that the multiplication
 $\mathbb{F}_G \mathbb{F}_G \to \mathbb{F}_G$
 is obtained by ``forgetting $T_0$''.
@@ -7118,14 +7119,14 @@ and a map $(B_k) \to \alpha^{\**}(A_j)$ one obtains a natural map
 \end{remark}
 
 
-\begin{proposition}
+\begin{proposition}\label{PIIPROPAB PROP}
 The analogue statements of Proposition \ref{PIIPROP PROP}
-hold for the 
-$\Omega_{G}^{n,s,\lambda}$
-and the 
-$\Omega_{G}^{n,s,\lambda} \wr (A_j)$
-constructions, where in the latter case
-we exclude statements involving $d_n$.
+hold for the $\Omega_{G}^{n,s,\lambda}$
+and the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$
+constructions, 
+with the caveat that in the latter case we
+exclude the cases in Proposition \ref{PIIPROP PROP}(d)(e)(f)
+that involve $d_n$.
 
 Additionally, the natural squares  (for $n \geq -1$)
 \begin{equation}\label{ADDSQUARE EQ}
@@ -7753,7 +7754,7 @@ Two alternating trees (for $G=\**$ the trivial group) and a planar tall alternat
 \]
 The term ``alternating'' reflects the fact that adjacent nodes have different colors, though there is an additional restriction: the ``outer vertices'', i.e. those immediately below a leaf or above the root, are necessarily black/active
 (this does not, however, apply to stumps).
-%As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labelled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
+%As for the map $\varphi$, we assume additionally that it is a planar map (so that by the tallness condition the root is sent to the root and leaves are sent to leaves while respecting the planar order) and that it sends the labeled edges of $T$ to the eponymous edges of $S$ (though this information is in fact redundant: only one such planar tall alternating map exists).
 \end{example}
 
 
@@ -7775,7 +7776,7 @@ The term ``alternating'' reflects the fact that adjacent nodes have different co
 \begin{definition}\label{HATOMEGAE DEF}
 	$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
 	whose underlying tree is alternating, active nodes are labeled by $\mathcal{P}$,
-	and passive nodes are labeled by $X$ or $Y$. 
+	and inert nodes are labeled by $X$ or $Y$. 
 \end{definition}
 
 Note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} 
@@ -7789,13 +7790,137 @@ $\widehat{\Omega}_G^e$ in $\Omega_G^e$.
 \begin{proposition}\label{LXP PROP}
 	For each $U \in \Omega_G^e$ there exists a unique 
 	$\mathsf{lr}_{\mathcal{P}} (U) \in \widehat{\Omega}_G^e$ together with a unique planar label map in $\Omega_G^e$
-	\[\mathsf{lr}_{\mathcal{P}} (U) \to U.\]
+\begin{equation}\label{LXP EQ}
+	\mathsf{lr}_{\mathcal{P}} (U) \to U.
+\end{equation}
 	Furthermore, $\mathsf{lr}_{\mathcal{P}}$ extends to a right retraction 
 	$\mathsf{lr}_{\mathcal{P}} \colon \Omega_G^e \to \widehat{\Omega}_G^e$.
 \end{proposition}
 
 
-\begin{proof}
+Formally, the map \eqref{LXP EQ} in  Proposition \ref{LXP PROP}
+will be built using Proposition \ref{BUILDABLE PROP}(iii),
+which loosely says that planar tall maps $T \to U$
+are determined by certain collections $\{U_i\}$
+of outer faces of $U$,
+with $T$ obtained by replacing 
+$U_i$ with $\mathsf{lr}(U_i)$
+(for the pictorial intuition, see Example \ref{GRAFTSUB EX}).
+For the sake of intuition,
+we first present an example.
+
+
+\begin{example}\label{LRP EX}
+	The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction applied to the map $\varphi$ in
+	Example \ref{REGALTERNMAP EX}. 
+	Intuitively, 
+	for each of the maximal $\mathcal{P}$-labeled outer subtrees
+	$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$
+	of $T,S$,
+	the functor
+	$\mathsf{lr}_{\mathcal{P}}$ replaces 
+	$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ with the corresponding leaf-root
+	$\mathsf{lr}(T^{\mathcal{P}}_k),
+	\mathsf{lr}(S^{\mathcal{P}}_k)$, which is again 
+	$\mathcal{P}$-labeled.
+	Pictorially, this results in the following two effects:
+	when
+	$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ are single edge subtrees of $T,S$ (necessarily not adjacent to a $\mathcal{P}$-vertex)
+	one degenerates that edge, adding a new $\mathcal{P}$-vertex of degree $1$;
+	when
+	$T^{\mathcal{P}}_k, S^{\mathcal{P}}_k$ have vertices,
+	so that they are subtrees composed of adjacent 
+	$\mathcal{P}$-vertices of $T,S$,
+	those vertices are collapsed into a single  
+	$\mathcal{P}$-vertex.
+	\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
+	\tikzstyle{level 2}=[sibling distance = 6em]
+	\tikzstyle{level 3}=[sibling distance = 3em]
+	\tikzstyle{level 4}=[sibling distance = 1.5em]
+	\node at (0,0.85) {$\mathsf{lr}_{\mathcal{P}}(T)$}
+	child{node [dummy,fill = black] {}
+		child{node [dummy,fill=white] {}
+			child{node [dummy,fill = black] {}
+				child{node [dummy,fill = black!20] {}
+					child{node [dummy,fill = black] {}
+						child}
+					child{node [dummy,fill = black] {}
+						child}
+				}
+			}
+			child{node [dummy,fill = black] {}
+				edge from parent node [near end] {$d$}}
+			edge from parent node [swap] {$e$}}
+		child{node [dummy,fill=white] {}
+			child{node [dummy,fill = black] {}
+				child
+				edge from parent node [swap, near end] {$a\phantom{d}$}}
+			child{node [dummy,fill = black] {}
+				child{node [dummy,fill = black!20] {}
+					child{node [dummy,fill = black] {}
+						child}
+					child{node [dummy,fill = black] {}
+						child}
+				}
+			}
+			edge from parent node {$b$}}
+	};
+	\begin{scope}[level distance=1.75em]
+	\tikzstyle{level 3}=[sibling distance = 6em]
+	\tikzstyle{level 4}=[sibling distance = 4em]
+	\tikzstyle{level 5}=[sibling distance = 3em]
+	\tikzstyle{level 6}=[sibling distance = 1.5em]
+	\tikzstyle{level 7}=[sibling distance = 1.5em]
+	\node at (8,0.85) {$\mathsf{lr}_{\mathcal{P}}(S)$}
+	child{node [dummy,fill = black] {}
+		child{node [dummy,fill = white] {}
+			child{node [dummy,fill = black] {}
+				child{node [dummy,fill=white] {}
+					child{node [dummy,fill = black] {}
+						child{node [dummy,fill = white] {}
+							child{node [dummy,fill = black] {}
+								child}
+							child{node [dummy,fill = black] {}
+								child}
+						}
+					}
+					child{node [dummy,fill = black] {}
+						child{node [dummy,fill=white] {}}
+						edge from parent node [near end] {$d$}}
+					edge from parent node [swap] {$e\phantom{1}$}}
+				child{node [dummy,fill=white] {}
+					edge from parent node [swap, near end] {$c\phantom{1}$}}
+				child{node [dummy,fill=white] {}
+					child{node [dummy,fill=black] {}
+						child
+						edge from parent node [swap,near end] {$a\phantom{d}$}}
+					child{node [dummy,fill=black] {}
+						child{node [dummy,fill = black!20] {}
+							child{node [dummy,fill=black] {}
+								child
+							}
+							child{node [dummy,fill=black] {}
+								child
+							}
+						}
+					}
+					edge from parent node {$\phantom{1}b$}}
+			}
+		}
+	};
+	\end{scope}
+	\draw [->] (2.5,2.5) -- node [swap] {$\mathsf{lr}_{\mathcal{P}}(\varphi)$} (5.5,2.5);
+	\end{tikzpicture}
+	\]
+\end{example}
+
+
+
+
+\begin{proof}[Proof of Proposition \ref{LXP PROP}]
 	We first address the non-equivariant case $U \in \Omega^e$.
 
 	To build $\mathsf{lr}_{\mathcal{P}}(U)$, consider the collection of outer faces
@@ -7881,99 +8006,6 @@ one sets
 $\mathsf{lr}_{\mathcal{P}}(T) = (\mathsf{lr}_{\mathcal{P}}(T_x))_{x \in X}$.
 \end{proof}
 
-
-\begin{example}
-The following illustrates the $\mathsf{lr}_{\mathcal{P}}$ construction when applied to the map $\varphi$ in
-Example \ref{REGALTERNMAP EX}. Intuitively, the functor
-$\mathsf{lr}_{\mathcal{P}}$ replaces each of the maximal 
-$\mathcal{P}$-labeled subtrees 
-$T^{\mathcal{P}}_k$, $S^{\mathcal{P}}_k$ with the corresponding leaf-root
-$\mathsf{lr}(T^{\mathcal{P}}_k)$,
-$\mathsf{lr}(S^{\mathcal{P}}_k)$, which is then 
-$\mathcal{P}$-labeled.
-\[
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
-every node/.style = {font=\footnotesize,inner sep=2pt},
-dummy/.style={circle,draw,inner sep=0pt,minimum size=2.1mm}]
-	\tikzstyle{level 2}=[sibling distance = 6em]
-	\tikzstyle{level 3}=[sibling distance = 3em]
-	\tikzstyle{level 4}=[sibling distance = 1.5em]
-	\node at (0,0.85) {$\mathsf{lr}_{\mathcal{P}}(T)$}
-		child{node [dummy,fill = black] {}
-			child{node [dummy,fill=white] {}
-				child{node [dummy,fill = black] {}
-					child{node [dummy,fill = black!20] {}
-						child{node [dummy,fill = black] {}
-							child}
-						child{node [dummy,fill = black] {}
-							child}
-					}
-				}
-				child{node [dummy,fill = black] {}
-				edge from parent node [near end] {$d$}}
-			edge from parent node [swap] {$e$}}
-			child{node [dummy,fill=white] {}
-				child{node [dummy,fill = black] {}
-					child
-				edge from parent node [swap, near end] {$a\phantom{d}$}}
-				child{node [dummy,fill = black] {}
-					child{node [dummy,fill = black!20] {}
-						child{node [dummy,fill = black] {}
-							child}
-						child{node [dummy,fill = black] {}
-							child}
-					}
-				}
-			edge from parent node {$b$}}
-		};
-\begin{scope}[level distance=1.75em]
-	\tikzstyle{level 3}=[sibling distance = 6em]
-	\tikzstyle{level 4}=[sibling distance = 4em]
-	\tikzstyle{level 5}=[sibling distance = 3em]
-	\tikzstyle{level 6}=[sibling distance = 1.5em]
-	\tikzstyle{level 7}=[sibling distance = 1.5em]
-	\node at (8,0.85) {$\mathsf{lr}_{\mathcal{P}}(S)$}
-		child{node [dummy,fill = black] {}
-			child{node [dummy,fill = white] {}
-				child{node [dummy,fill = black] {}
-					child{node [dummy,fill=white] {}
-						child{node [dummy,fill = black] {}
-							child{node [dummy,fill = white] {}
-								child{node [dummy,fill = black] {}
-									child}
-								child{node [dummy,fill = black] {}
-									child}
-							}
-						}
-						child{node [dummy,fill = black] {}
-							child{node [dummy,fill=white] {}}
-						edge from parent node [near end] {$d$}}
-					edge from parent node [swap] {$e\phantom{1}$}}
-					child{node [dummy,fill=white] {}
-					edge from parent node [swap, near end] {$c\phantom{1}$}}
-					child{node [dummy,fill=white] {}
-						child{node [dummy,fill=black] {}
-							child
-						edge from parent node [swap,near end] {$a\phantom{d}$}}
-						child{node [dummy,fill=black] {}
-							child{node [dummy,fill = black!20] {}
-								child{node [dummy,fill=black] {}
-									child
-								}
-								child{node [dummy,fill=black] {}
-									child
-								}
-							}
-						}
-					edge from parent node {$\phantom{1}b$}}
-				}
-			}
-		};
-\end{scope}
-	\draw [->] (2.5,2.5) -- node [swap] {$\mathsf{lr}_{\mathcal{P}}(\varphi)$} (5.5,2.5);
-\end{tikzpicture}
-\]
-\end{example}
 
 
 \begin{corollary}\label{KANRED COR}
@@ -8110,10 +8142,24 @@ one can only guarantee $|V_G^{in}(T)| \leq k$.
 
 
 \begin{lemma}\label{MINUS_LAN_FINAL_LEMMA}
-  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
+%  $\widehat{\Omega}_G^e[\leq\! k-1]$ is $\mathsf{Ran}$-initial in $\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y]$ over $\Sigma_G$ (cf. Corollary \ref{KANRED COR}).
+% 
+The horizontal inclusion below 
+\[
+\begin{tikzcd}
+	\widehat{\Omega}_G^e[\leq\! k-1]
+	\arrow{dr}[swap]{\mathsf{lr}} \arrow[rr, hookrightarrow] &&
+	\widehat{\Omega}_G^{e}[\leq\! k \mathbin{\backslash} Y] \arrow{dl}{\mathsf{lr}}
+\\
+	&
+	\Sigma_G
+\end{tikzcd}
+\]  
+is $\mathsf{Ran}$-initial (in the sense of Corollary \ref{KANRED COR})
+over $\Sigma_G$.  
 \end{lemma}
 
-The proof will make use of an additional  construction on 
+The proof will make use of an additional construction on 
 $\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
 
 \begin{remark}\label{YINERT REM}
@@ -8581,7 +8627,7 @@ are groupoids (compare with (\ref{FGXDEFEXP EQ})).
 %         $\P_{k-1}(C) \to \P_k(C)$
 %         is given by a pushout in $\V^{\mathsf{Aut}(C)}$ as in (\ref{FILTRATION_LAN_LEVEL}), 
 %         except replacing both instances of $\Omega_G^a$ (used in indexing the coproduct) with $\Omega_{\F}^a$, 
-%         where $\Omega_{\F}^a[k]$ denotes alternating $\F$-trees with exactly $k$ passive vertices. 
+%         where $\Omega_{\F}^a[k]$ denotes alternating $\F$-trees with exactly $k$ inert vertices. 
 % \end{corollary}
 % \begin{proof}
 %         Any span defining the pushout in (\ref{FF_FREE_EXTENSION}) is equivalent to the data of the solid span of the following pushout diagram in $\Op_G(\V)$.
@@ -9769,7 +9815,15 @@ $\phi^{-1}(H) \in \mathcal{F}$.
 
 
 \begin{proof}
-	Since the double coset formula yields that
+	A choice $\{a\}$ of double coset representatives of 
+	$\phi(G)\backslash \bar{G} /H$
+	gives $G$-orbit representatives of
+	$\bar{G}/H$, yielding the formula
+	$\mathsf{res}(\bar{G}/H) \simeq 
+	\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
+	{G/\phi^{-1}(H^{a})}$.
+%	
+	Hence
 \[
 	\mathsf{res}\left(\bar{G}/H \cdot f\right)
 		\simeq 
@@ -9780,7 +9834,7 @@ $\phi^{-1}(H) \in \mathcal{F}$.
 		{G/\phi^{-1}(H^{a})}
 	\right)	\cdot f
 \]
-it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
+from which it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
 \end{proof}
 
 
@@ -9866,7 +9920,19 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 
 
 \begin{proof}
-	The double coset formula yields
+	A choice $\{a\}$ of double coset representatives
+	of $H \backslash G /\bar{H}$
+	gives orbit representatives
+	$\left\{([e],[a])\right\}$ of
+	$G/H \times G/\bar{H}$,
+	yielding the formula
+	$G/H \times G/\bar{H}
+	\simeq 
+	\coprod_{[a]\in H \backslash G /\bar{H}}
+	{G/H\cap \bar{H}^a}
+	$.
+%
+	Hence	
 \[
 	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
@@ -9874,10 +9940,10 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 		\simeq
 	\left(
 		\coprod_{[a]\in H \backslash G /\bar{H}}
-		{G/H\cap \bar{H}^a} \cdot (f \square g)
+		{\left(G/H\cap \bar{H}^a\right)} \cdot (f \square g)
 	\right)
 \]
-and hence the result follows since families are closed under conjugation and subgroups.
+and the result follows since families are closed under conjugation and subgroups.
 \end{proof}
 
 
@@ -13681,6 +13747,8 @@ Then the under and over category functors
 \]
 preserve colimits.
 \end{lemma}
+
+{\color{red} HERE}
 
 \begin{proof}
 The result can easily be shown directly,
