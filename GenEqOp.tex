@@ -12687,7 +12687,7 @@ is a functor
 $\mathcal{X}_{(\minus)} \colon \mathsf{P}_n \to 
 \mathsf{sSet}$
 for $\mathsf{P}_n$ the poset of subsets of 
-$\{1,\cdots,n\}$.
+$\underline{n} = \{1,\cdots,n\}$.
 We call a $n$-cube a \textit{monomorphism $n$-cube}
 if the latching maps
 \[
@@ -12820,16 +12820,16 @@ is
 \]
 Since degeneracies of $B_{\bullet}$
 are also induced by $\eta$,
-and writing $\underline{n}=\{1,\cdots,n\}$ for the maximum in $\mathsf{P}_n$,
+and recalling the notation $\underline{n}=\{1,\cdots,n\}$ for the maximum in $\mathsf{P}_n$,
 one has that the $n$-th latching map of $B_{\bullet}$ is given by
-\[
-\check{l}_n B_{\bullet} = 
-\check{l}_{\underline{n}}
-(\widetilde{\mathbb{F}}_G
- \mathcal{X}^n) \simeq
-\widetilde{\mathbb{F}}_G
-(l_{\underline{n}} \mathcal{X}^n)
-\]
+\begin{equation}\label{MONLATCH EQ}
+	\check{l}_n B_{\bullet} = 
+	\check{l}_{\underline{n}}
+	(\widetilde{\mathbb{F}}_G
+	\mathcal{X}^n) \simeq
+	\widetilde{\mathbb{F}}_G
+	(l_{\underline{n}} \mathcal{X}^n)
+\end{equation}
 where the check decoration on $\check{l}$
 for the two leftmost latching maps indicates that the colimits defining those latching maps are taken 
 in $\mathsf{Op}_{G}(\mathsf{Set})$, while the rightmost latching map is computed in 
@@ -12851,6 +12851,9 @@ $\mathcal{X}^{n+1} = (\mathcal{X}^n \to
 \widetilde{\mathbb{F}}_G \mathcal{X}^n)$, regarding the $(n+1)$-cube as a map of $n$-cubes.
 The top latching map $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
 is then the latching map of the composite square
+(the check decoration
+$\check{L}$ again denotes a latching object computed in
+$\mathsf{Op}_G(\mathsf{Set})$)
 \begin{equation}\label{BARCOFSQ EQ}
 \begin{tikzcd}
  	L_{\underline{n}} \mathcal{X}^n \ar{d} \ar[equal]{r}
@@ -12861,7 +12864,7 @@ is then the latching map of the composite square
 	\mathcal{X}^n_{\underline{n}}
 	\ar{d}
 \\
-	L_{\underline{n}} (\widetilde{\mathbb{F}}_G \mathcal{X}^n)
+	\check{L}_{\underline{n}} (\widetilde{\mathbb{F}}_G \mathcal{X}^n)
 	\ar{r}
 &
 	\widetilde{\mathbb{F}}_G(L_{\underline{n}}  \mathcal{X}^n)
@@ -12877,14 +12880,31 @@ Lemma \ref{MONOCUBE LEM}(b)
 applied to the map
 $l_{\underline{n}} \mathcal{X}^n \colon 
 L_{\underline{n}} \mathcal{X}^n \to \mathcal{X}^n_{\underline{n}}$, which is a monomorphism by the induction hypothesis.
-On the other hand, the left bottom horizontal map in 
-(\ref{BARCOFSQ EQ})
-is a monomorphism
-by applying Lemma \ref{MONOCUBE LEM}(a)
-to the cube $\tilde{\mathcal{X}}^n$ obtained from 
+On the other hand, writing 
+$\tilde{\mathcal{X}}^n$ for the cube obtained from 
 $\mathcal{X}^n$ by replacing the top level
 $\mathcal{X}^n_{\underline{n}}$ with
-$L_{\underline{n}} \mathcal{X}^n$.
+$L_{\underline{n}} \mathcal{X}^n$,
+the left bottom horizontal map in 
+\eqref{BARCOFSQ EQ}
+can be described as
+$
+\check{l}_{\underline{n}}
+(\widetilde{\mathbb{F}}_G
+\tilde{\mathcal{X}}^n) \simeq
+\widetilde{\mathbb{F}}_G
+(l_{\underline{n}} \tilde{\mathcal{X}}^n)
+$
+(compare with \eqref{MONLATCH EQ}),
+which is a monomorphism by
+Lemma \ref{MONOCUBE LEM}(a).
+%On the other hand, the left bottom horizontal map in 
+%(\ref{BARCOFSQ EQ})
+%is a monomorphism by applying Lemma \ref{MONOCUBE LEM}(a)
+%to the cube $\tilde{\mathcal{X}}^n$ obtained from 
+%$\mathcal{X}^n$ by replacing the top level
+%$\mathcal{X}^n_{\underline{n}}$ with
+%$L_{\underline{n}} \mathcal{X}^n$.
 Hence the latching maps in both squares
 in (\ref{BARCOFSQ EQ}) are monomorphisms, 
 and thus so is the latching map of the composite square, showing that $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
