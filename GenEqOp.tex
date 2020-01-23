@@ -79,7 +79,7 @@ In particular, while an
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible, i.e., for each subgroup $\Gamma \leq \Sigma_n$ one has
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible, i.e., for each subgroup $\Gamma \leq \Sigma_n$ one has
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
@@ -162,7 +162,7 @@ we note that
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
-and that $\Gamma \leq G$ iff $\Gamma$ is the graph of a trivial homomorphism. 
+and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
 and indeed it is possible
@@ -342,7 +342,7 @@ $\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise,
 $E \mathcal{F}$-spaces can then be built as
 $\iota^{\**}(C \delta_{\mathcal{F}}) = 
 C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
-Moreover, we note that, as in \cite{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
+Moreover, we note that, as in \cite[\S 3]{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
 
 The overarching goal of this paper is then that of proving the analogue of Elmendorf-Piacenza's Theorem (\ref{COFADJINT EQ})
 in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
@@ -3157,7 +3157,8 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual degeneracy-face decomposition
+We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner if and only if it is tall. 
+The usual degeneracy-face decomposition
 (cf. \cite[Lemma 3.1]{MW07} or \cite[Prop. 5.37]{Pe17})
 thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
@@ -6257,7 +6258,7 @@ of partial genuine equivariant operads.
 We start by recalling that 
 in the classic setting
 $\mathcal{F}$ is a family of subgroups of $G$
-iff the associated subcategory 
+if and only if the associated subcategory 
 $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \mathsf{O}_G$ is a sieve, defined as follows.
 
@@ -8517,7 +8518,7 @@ Indeed, this follows since
 	= \widehat{\Omega}_G^{e}[\leq\! k],
 \]
 and since a map $T \to S$ in 
-$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in (\ref{INCDIAG EQ}) iff $T$ is.
+$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in (\ref{INCDIAG EQ}) if and only if $T$ is.
 
 Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification 
 $\mathsf{Lan}_{\widehat{\Omega}_{G}^{e}[\leq\! k \mathbin{\backslash} Y]^{op}}\tilde{N} \simeq
@@ -11047,7 +11048,8 @@ $l$-labeled trees and quotients
 Moreover, $l$-labeled $\mathcal{F}$-trees 
 $\Omega_{\mathcal{F}}^{\underline{l}}$ are
 defined exactly as in Definition \ref{FTREE DEF},
-so that a labeled $G$-tree is a $\mathcal{F}$-tree iff the underlying $G$-tree is.
+so that a labeled $G$-tree is a $\mathcal{F}$-tree 
+if and only if the underlying $G$-tree is.
 Lastly, note that Remarks \ref{UNPACKFTYPE REM}, \ref{TREEINDUCDESC REM}
 and Lemma \ref{KEYLEMMAGECO LEM} then extend to the $l$-labeled context, by now writing $\Sigma_T$ for the group of label isomorphisms and defining the partition $\lambda$ 
 in Remark \ref{TREEINDUCDESC REM}
