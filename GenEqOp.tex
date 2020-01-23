@@ -4493,9 +4493,20 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \[
 	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
-be inductively defined by $V_{G}^{0} = V_G$ and
-$V_{G}^{n+1} = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+be inductively defined by setting $V_{G}^{0} = V_G$ and
+letting
+$V_{G}^{k+1}$ be the composite
+% = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+\[
+\begin{tikzcd}[column sep =1.7em]
+\Omega_{G}^{n} \ar{r}{V_G} &
+\Fin_s \wr \Omega_{G}^{n-1} \ar{r}{V^k_G} &
+\Fin_s \wr \Fin_s \wr \Omega_{G}^{n-k-2} \ar{r}{\sigma^0} &
+\Fin_s \wr \Omega_{G}^{n-k-2}.
+\end{tikzcd}
+\]
 \end{notation}
+
 
 
 \begin{remark}\label{VGN REM}
@@ -5531,6 +5542,33 @@ of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover,
 (\ref{INITCAT EQ}) comes together with a right retraction $r$,
 i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
 which is built using pullbacks. 
+Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
+
+{\color{red} HERE}
+
+\[
+\left(
+	(T_{v_{Ge}})_{V_G(T)}
+	\xrightarrow{\tau}
+	(U_x)_{X},
+	(A_x)_{X}
+\right)
+\mapsto
+\left(
+	\left(
+	T_{v_{G e}} \to 
+	(\mathsf{r} \tau_{v_{Ge}})^{\**}
+	U_{\tau(v_{Ge})}
+	\right),
+	\left(
+	(\mathsf{r} \tau_{v_{Ge}})^{\**}
+	A_{\tau(v_{Ge})}
+	\right)
+\right)
+\]
+
+{\color{red} HERE}
+
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
 $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
@@ -5578,10 +5616,10 @@ on
 $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$
 lifting the monad $N$.
 
-\begin{corollary}
+\begin{corollary}\label{MONDEFCOR COR}
 Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable or, more generally, that 
 $\mathcal{V}$ is a symmetric monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
-Then the functors
+Then the natural transformations
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
 	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ \mathsf{Lan},
