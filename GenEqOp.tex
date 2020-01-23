@@ -4493,8 +4493,18 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \[
 	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
-be inductively defined by $V_{G}^{0} = V_G$ and
-$V_{G}^{n+1} = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+be inductively defined by setting $V_{G}^{0} = V_G$ and
+letting
+$V_{G}^{k+1}$ be the composite
+% = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+\[
+\begin{tikzcd}[column sep =1.7em]
+\Omega_{G}^{n} \ar{r}{V_G} &
+\Fin_s \wr \Omega_{G}^{n-1} \ar{r}{V^k_G} &
+\Fin_s \wr \Fin_s \wr \Omega_{G}^{n-k-2} \ar{r}{\sigma^0} &
+\Fin_s \wr \Omega_{G}^{n-k-2}.
+\end{tikzcd}
+\]
 \end{notation}
 
 
