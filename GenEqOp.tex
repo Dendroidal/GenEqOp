@@ -4379,6 +4379,20 @@ Note however that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
 
+
+\begin{notation}\label{DDDDD NOT}
+	For $X \subseteq \{0,1,\cdots,n\}$
+	we write
+	$d_X \colon \Omega^n_G \to \Omega^{n-|X|}_G$
+	for the functor which sends 
+	$T_0 \to T_1 \to \cdots \to T_n$
+	to the string with $T_x, x\in X$ omitted.
+	
+	Note that, in light of \eqref{STRINGOBJALT EQ},
+	this makes sense even when
+	$X = \{0,1,\cdots,n\}$.
+\end{notation}
+
 We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
 
@@ -4448,7 +4462,7 @@ Notation \ref{VGDEF NOT} combined with
 (\ref{SUBDATAUNDERPLANG2 EQ}) 
 then show that 
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
-so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
+so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
 But since a quotient is an isomorphism iff it is so on roots,
 we further have that 
@@ -4457,7 +4471,7 @@ is a rooted isomorphism and
 each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
 But now reinterpreting (\ref{PTNARROWLOC EQ}) as a tuple of diagrams indexed by
 $f \in G e$
-one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
+one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
 yields the desired rooted map (\ref{PTNARROW EQ})
