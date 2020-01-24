@@ -4379,6 +4379,20 @@ Note however that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
 
+
+\begin{notation}\label{DDDDD NOT}
+	For $X \subseteq \{0,1,\cdots,n\}$
+	we write
+	$d_X \colon \Omega^n_G \to \Omega^{n-|X|}_G$
+	for the functor which sends 
+	$T_0 \to T_1 \to \cdots \to T_n$
+	to the string with $T_x, x\in X$ omitted.
+	
+	Note that, in light of \eqref{STRINGOBJALT EQ},
+	this makes sense even when
+	$X = \{0,1,\cdots,n\}$.
+\end{notation}
+
 We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
 
@@ -4448,7 +4462,7 @@ Notation \ref{VGDEF NOT} combined with
 (\ref{SUBDATAUNDERPLANG2 EQ}) 
 then show that 
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
-so that injectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
+so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
 But since a quotient is an isomorphism iff it is so on roots,
 we further have that 
@@ -4457,7 +4471,7 @@ is a rooted isomorphism and
 each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
 But now reinterpreting (\ref{PTNARROWLOC EQ}) as a tuple of diagrams indexed by
 $f \in G e$
-one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
+one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
 yields the desired rooted map (\ref{PTNARROW EQ})
@@ -13805,61 +13819,120 @@ Then the under and over category functors
 		\xrightarrow{j \downarrow (\minus)}
 	\mathsf{Cat}
 \]
-preserve colimits.
+are left adjoints, and hence preserve colimits.
 \end{lemma}
 
-{\color{red} HERE}
 
 \begin{proof}
-The result can easily be shown directly,
-so here we note instead that one can in fact
- write explicit formulas for the right adjoints
-of
-$(\minus) \downarrow j$,
-$j \downarrow (\minus)$.
-Moreover, since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ 
-it suffices to do so for $(\minus) \downarrow j$.
-The right adjoint
+The right adjoint to $(\minus) \downarrow j$,
+which we denote
 $(\minus)^{\downarrow j} \colon
 \mathsf{Cat}
 	\to 
 \mathsf{Cat} \downarrow \mathcal{J}
-$
-is then defined on objects by the Grothendieck constructions
+$,
+is given on a category $\mathcal{C} \in \mathsf{Cat}$
+by the Grothendieck construction
 $\mathcal{C}^{\downarrow j}
-= \mathcal{J} \ltimes \mathcal{C}^{\mathcal{J}(\minus,j)}$
-for the functors
+= \mathcal{J} \ltimes \mathcal{C}^{\times \mathcal{J}(\minus,j)}$
+for the functor
 \[
 \begin{tikzcd}[row sep = 0em]
 	\mathcal{J} \ar{r} & \mathsf{Cat} \\
-	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}.
+	k \ar[mapsto]{r} & \C^{\times \mathcal{J}(k,j)}.
 \end{tikzcd}
 \]
+Given 
+$(\mcI \xrightarrow{\pi} \mathcal{J})
+\in (\mathsf{Cat} \downarrow \mathcal{J})$ and 
+$\C \in \mathsf{Cat}$ we will show that functors 
+$F \colon (\mathcal{I} \downarrow j) \to\C$
+are in bijection with functors
+$\hat{F} \colon \mathcal{I} \to \C^{\downarrow j}$ over $\mathcal{J}$.
+%
+Given $F$, we now describe the corresponding 
+$\hat{F}$.
+
+First, $F$ associates to each object
+$(i,J\colon \pi(i) \to j)$ of
+$\mathcal{I} \downarrow j$
+an object
+$F(i,J)\in \mathcal{C}$.
+Write
+$F_i \in \C^{\times \mathcal{J}(\pi(i),j)}$
+for the assignment
+$J \mapsto F(i,J)$,
+i.e. $F_i(J) = F(i,J)$.
+%
+On objects $i \in \mathcal{I}$
+one then sets
+$\hat{F}(i) = (\pi(i), F_i)$.
+
+Next, 
+recall that arrows in 
+$\mathcal{I} \downarrow j$
+have the form
+$(i',J \circ \pi(I)) \to (i,J)$
+for some arrow $I \colon i' \to i$
+in $\mathcal{I}$.
+To each such arrow,
+$F$ associates an arrow
+$F_{i'}(J \circ \pi(I)) 
+\to
+F_i(J)$.
+Fixing $I$ and allowing 
+$J \in \mathcal{J}(\pi(i),j)$
+to vary these arrows form a natural transformation
+$F_I \colon F_{i'} \circ \pi(I)^{\**} 
+\Rightarrow
+F_i$,
+where 
+$\pi(I)^{\**} \colon \mathcal{J}(\pi(i),j) 
+\to 
+\mathcal{J}(\pi(i'),j)$
+denotes precomposition with $\pi(I)$.
+On arrows
+$I \colon i' \to i$
+one now sets
+$\hat{F}(I) \colon 
+(\pi(i'), F_{i'}) \to  (\pi(i), F_i)$
+to be 
+$(\pi(I) \colon \pi(i') \to \pi(i),
+F_I \colon F_{i'} \circ \pi(I)^{\**} 
+\Rightarrow
+F_i)$.
+
+It is clear that the procedures above relating the values of 
+$F,\hat{F}$ on objects and arrows are invertible. 
+One can readily check that
+the functoriality requirements on 
+$F,\hat{F}$ match.
+
+Noting that 
+$j \downarrow (-)$ is the composite
+$
+\mathsf{Cat} \downarrow \mathcal{J}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat} \downarrow \mathcal{J}^{op}
+\xrightarrow{(-) \downarrow j}
+\mathsf{Cat}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat}
+$
+yields that
+its right adjoint
+is the composite
+$
+\mathsf{Cat}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat}
+\xrightarrow{(-)^{\downarrow j}}
+\mathsf{Cat} \downarrow \mathcal{J}^{op}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat} \downarrow \mathcal{J}
+$.
 \end{proof}
-%Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
-%
-%	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
-%	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
-%correspond to functors
-%	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
-%	
-%	On objects, $F$ associates to each pair 
-%	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
-%
-%	On arrows $F$ associates to 
-%	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
-%	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
-%	One thus defines
-%\[
-%	G(I) = \left(
-%	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
-%	F\left(i,(\minus)\circ \pi(i)\right)
-%		\xrightarrow{F(I)}
-%	F\left(i',\minus \right)
-%	\right)
-%\]
-%and again it is clear that these are inverse processes.
-%	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
+
 
 
 %In the following statement note that when 
