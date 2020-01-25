@@ -298,8 +298,8 @@ Our model, which emerges from a broader framework, satisfies both of these desid
 
 
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
-Given a family $\mathcal{F}$ of subgroups of $G$, 
-% (i.e. a collection closed under conjugation and subgroups), 
+Given a family $\mathcal{F}$ of subgroups of $G$
+(i.e. a collection closed under conjugation and subgroups), 
 a \textit{universal space} $X$ for $\mathcal{F}$, 
 also called an \textit{$E \mathcal{F}$-space},
 is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
@@ -837,6 +837,12 @@ $\mathsf{Op}_G(\mathcal{V})$,
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$.
 
 The following is our main result.
+The explicit formulas for
+the functors 
+$\iota^{\**},\iota_{\**}$
+are found in \eqref{IOTAFUNS EQ}
+(also, see Corollaries \ref{TWOADJOINTSOP_COR}
+and \ref{TWOADJOINTSOPF COR}).
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
 Let $(\mathcal{V},\otimes)$
@@ -5751,7 +5757,7 @@ We now consider the associated adjunctions.
 \end{tikzcd}
 \end{equation}
 Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for $I \in \mathsf{O}_G$)
-\[
+\begin{equation}\label{IOTAFUNS EQ}
 	\iota_!Y\left( (C_i)_I \right)=
 	\begin{cases}
 	Y(C_1), & (C_i)_I \in \Sigma_G^{\text{fr}} \\
@@ -5762,7 +5768,7 @@ Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for
 \quad
 	\iota_{\**}Y ((C_i)_I)=
 	\left(\prod_{I} Y(C_i)\right)^G,
-\]
+\end{equation}
 where in the formula for $\iota_{\**}$
 the action of $G$ interchanges factors according to the action on the indexing set $I$.
 As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
@@ -6138,7 +6144,7 @@ Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
-	The adjunctions (\ref{TWOADJOINTS EQ}) extend to  adjunctions
+The adjunctions (\ref{TWOADJOINTS EQ}) lift to adjunctions
 \[
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
@@ -6487,7 +6493,7 @@ for the corresponding categories of algebras.
 \end{notation}
 
 \begin{corollary}\label{TWOADJOINTSOPF COR}
-The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
+The adjunctions (\ref{F_TWOADJOINTS_EQ}) lift to adjunctions
 \begin{equation}\label{TWOADJOINTSOPF EQ}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
@@ -10242,19 +10248,59 @@ of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor.
 
 
 \begin{proof}
-	We first note that in the case of a generating
+	Consider first the case of a generating
 	(trivial) cofibration
-	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, it is 
-	\[i^{\square n} = 
+	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, so that 
+\begin{equation}\label{GENCOFWR EQ}
+	i^{\square n} = 
 	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
 	\simeq \Sigma_n \wr G 
-	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
-But $\bar{\imath}^{\square n}$ is now a $\Sigma_n \wr H$-genuine (trivial) cofibration by 
-combining the cofibrant symmetric pushout powers hypothesis with Proposition \ref{FGTLEFT PROP}
- and hence 
-$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
-(trivial) cofibration by Proposition \ref{FGTRIGHT PROP}
-since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
+	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n},
+\end{equation}
+	where the action of 
+	$\Sigma_n \wr G$
+	(resp. $\Sigma_n \wr H$)
+	on $\bar{\imath}^{\square n}$
+	in the second (resp. third) term
+	is given by the projection to $\Sigma_n$.
+%
+	To justify the second identification 
+	in \eqref{GENCOFWR EQ},
+	note that the inclusion 
+	$\bar{\imath}^{\square n}
+	\to 
+	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}$
+	onto the 
+	$([e],\cdots,[e])$
+	component
+	is $(\Sigma \wr H)$-equivariant
+	and thus induces
+	a $(\Sigma \wr G)$-equivariant map 
+	$\Sigma_n \wr G 
+	\cdot_{\Sigma_n \wr H}
+%	\underset{\Sigma_n \wr H}{\cdot} 
+	\bar{\imath}^{\square n}
+	\to 
+	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}$.
+	This latter map is an isomorphism since,
+	non-equivariantly,
+	both sides are a coproduct of
+	$|\Sigma_n \wr G : \Sigma_n \wr H|
+	= |G \colon H|^{\times n}$
+	copies of $\bar{\imath}^{\square n}$.
+%	
+	Next, note that 
+	$\bar{\imath}^{\square n}$
+	is a $\Sigma_n$-genuine (trivial) cofibration
+	by the cofibrant symmetric pushout powers assumption
+	and thus, by Proposition \ref{FGTLEFT PROP},
+	also a 
+	$(\Sigma_n \wr H)$-genuine (trivial) cofibration. 
+	Thus, since 
+	$\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$,
+	Proposition \ref{FGTRIGHT PROP} implies that
+	$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
+	(trivial) cofibration, as desired.
 
 	For the general case, we start by making the key observation that for composable arrows 
 	$\bullet \xrightarrow{g} \bullet \xrightarrow{h} \bullet$ the $n$-fold pushout product $(hg)^{\square n}$ has a factorization
