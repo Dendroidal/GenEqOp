@@ -837,6 +837,12 @@ $\mathsf{Op}_G(\mathcal{V})$,
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$.
 
 The following is our main result.
+The explicit formulas for
+the functors 
+$\iota^{\**},\iota_{\**}$
+are found in \eqref{IOTAFUNS EQ}
+(also, see Corollaries \ref{TWOADJOINTSOP_COR}
+and \ref{TWOADJOINTSOPF COR}).
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
 Let $(\mathcal{V},\otimes)$
@@ -5751,7 +5757,7 @@ We now consider the associated adjunctions.
 \end{tikzcd}
 \end{equation}
 Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for $I \in \mathsf{O}_G$)
-\[
+\begin{equation}\label{IOTAFUNS EQ}
 	\iota_!Y\left( (C_i)_I \right)=
 	\begin{cases}
 	Y(C_1), & (C_i)_I \in \Sigma_G^{\text{fr}} \\
@@ -5762,7 +5768,7 @@ Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for
 \quad
 	\iota_{\**}Y ((C_i)_I)=
 	\left(\prod_{I} Y(C_i)\right)^G,
-\]
+\end{equation}
 where in the formula for $\iota_{\**}$
 the action of $G$ interchanges factors according to the action on the indexing set $I$.
 As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
@@ -6138,7 +6144,7 @@ Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
-	The adjunctions (\ref{TWOADJOINTS EQ}) extend to  adjunctions
+The adjunctions (\ref{TWOADJOINTS EQ}) lift to adjunctions
 \[
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
@@ -6487,7 +6493,7 @@ for the corresponding categories of algebras.
 \end{notation}
 
 \begin{corollary}\label{TWOADJOINTSOPF COR}
-The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
+The adjunctions (\ref{F_TWOADJOINTS_EQ}) lift to adjunctions
 \begin{equation}\label{TWOADJOINTSOPF EQ}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
