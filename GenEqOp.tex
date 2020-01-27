@@ -11732,14 +11732,15 @@ which is the key claim.
 
 
 Further, we will argue the left claim in (\ref{FGTFUNC EQ}) in parallel over the same cellular extensions
-(note that the underlying cofibrancy of
+(the underlying cofibrancy of
 $\mathbb{F}(\emptyset)$, 
 $\mathbb{F}_G(\emptyset)$
 follows from the cofibrancy of the unit 
 $I \in \mathcal{V}$).
  
 Explicitly, and borrowing the notation
-$C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) used in Proposition \ref{COFESSIM PROP} for the 
+$C_{\mathcal{F}}$ (resp. $C^{\mathcal{F}}$) 
+used in the proof of Proposition \ref{COFESSIM PROP} for the 
 classes of cofibrant objects in 
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ 
 (resp. $\mathsf{Op}_{\mathcal{F}}^G(\mathcal{V})$),
@@ -11854,21 +11855,21 @@ one has
 $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = 
 \mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\mathbb{F}_{G} \iota_{\**} X$.
 
-{\color{red} HERE}
-
-In the remainder of the proof we abbreviate
+In the remainder of the proof we write
 $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
 $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$.
-The previous paragraphs can then be summarized as saying that,
+The previous paragraphs can be summarized as saying that,
 to establish the operad half of 
 \eqref{COFADJ2 EQ},
 it remains only to show that 
 $\mathcal{P}[\iota_{\**} u] $
 is in the essential image of $\iota_{\**}$.
-Equivalently, this means that
+And since this means that
 $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \mathcal{P}[\iota_{\**} u]$
-is an isomorphism, 
-and can thus be checked by forgetting to $\Sym_G(\V)$.
+is an isomorphism,
+this can be checked by forgetting to $\Sym_G(\V)$.
+
+
 On the other hand, to establish the left side of 
 \eqref{FGTFUNC EQ} it suffices to show that,
 under the inductive hypothesis that
@@ -11876,35 +11877,25 @@ $\mathcal{P}$ is cofibrant in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$,
 the map
 $\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$
 is a cofibration in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
-As such, and in light of the already established
+Moreover, in light of the 
+(already established)
 symmetric sequence half of \eqref{COFADJ2 EQ},
- 
-
-
-{\color{red} HERE}
-
-
-
-
-the condition that
-$\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \mathcal{P}[\iota_{\**} u]$
-is an isomorphism 
-can be checked by forgetting to 
-$\Sym_G(\V)$.
-Moreover, and tautologically,
-the same is true for the underlying cofibrancy condition in 
-(\ref{FGTFUNC EQ}).
-We can thus appeal to the filtration 
-(\ref{FILT EQ}) of
-$\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$,
-and by
-Proposition \ref{COFESSIM PROP}
-it suffices
-to verify by induction on $k$
+the claim in the previous sentence suffices to show that 
+$\mathcal{P}[\iota_{\**} u] $ is in the essential image of $\iota_{\**}$,
+i.e. it suffices 
+to establish the remaining claims in both
+\eqref{COFADJ2 EQ} and \eqref{FGTFUNC EQ},
+and thus to finish the proof.
+Hence, using the filtrations in
+\eqref{FILT EQ}
+it remains only to show,
+assuming $\mathcal{P}$ is cofibrant in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
+and arguing by induction on $k \geq 1$,
 that the maps 
 $\mathcal{P}_{k-1} \to \mathcal{P}_k$ 
 are cofibrations between cofibrant objects in
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+
 
 Using the iterative description 
 of the $\mathcal{P}_k$ in
@@ -11927,7 +11918,7 @@ We now recall that that map can also be described
 Now consider the left square below, which is equivalent to the right square and thus, 
 by Corollary \ref{FINALCOR COR},
 commutative on cofibrant objects.
-\[
+\begin{equation}\label{COMCOFOB EQ}
 \begin{tikzcd}
 	\mathcal{V}^{\Omega_{\mathcal{F}}^a[k]^{op}} \ar{d}[swap]{\phi_!} &
 	\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}} 
@@ -11949,36 +11940,21 @@ commutative on cofibrant objects.
 	\mathcal{V}^{G \times \Sigma_n^{op}}_{\mathcal{F}}
 	\ar{l}{\iota_{\**}}&
 \end{tikzcd}
-\]
+\end{equation}
 Propositions \ref{AUTTCOFPUSH PROP}
 and \ref{FIXPT PROP} 
 now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
 is in the essential image 
 of the cofibrations between cofibrant objects
 under the top $\iota_{\**}$ map.
-But since the 
-$\mathsf{Lan}$ in (\ref{FILTINTALTAG EQ})
-is the leftmost $\phi_!$ functor, the
-result, including the underlying cofibrancy claims in (\ref{FGTFUNC EQ}), now follows by 
-Corollary \ref{FINALCOR COR}.
 %
-%
-%As for the additional claim concerning the forgetful functors
-%in (\ref{FGTFUNC EQ}),
-%that $\mathsf{fgt} \colon
-%\mathsf{Op}_{\mathcal{F}}(\mathcal{V})
-%\to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
-%preserves cofibrant objects is precisely what was argued in the previous paragraph.
-%But since the forgetful functors commute with $%\iota_{\**}$, the claim that
-%$\mathsf{fgt} \colon
-%\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})
-%\to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
-%also preserves cofibrant objects follows from the
-%``essential image characterization'' of cofibrant objects in (\ref{COFADJ2 EQ}).
-%
-%
-%
-%
+But since \eqref{COMCOFOB EQ} commutes on cofibrant objects
+and the $\mathsf{Lan}$ in (\ref{FILTINTALTAG EQ})
+is the leftmost $\phi_!$ functor, 
+Proposition \ref{COFESSIM PROP} implies that the 
+overall map in \eqref{FILTINTALTAG EQ}
+is a cofibration between cofibrant objects
+in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$, finishing the proof.
 %
 %
 %
@@ -12618,7 +12594,7 @@ Corollary \ref{FINALCOR COR}.
         % (\ref{COFADJ2 EQ}).%
 \end{proof}
 
-{\color{red} HERE}
+
 
 \begin{remark}
 The previous proof in fact establishes 
