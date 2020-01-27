@@ -109,7 +109,7 @@ In particular, while an
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ iff each $\O(n)$ is $\Sigma_n$-free and contractible, i.e., for each subgroup $\Gamma \leq \Sigma_n$ one has
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible, i.e., for each subgroup $\Gamma \leq \Sigma_n$ one has
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
@@ -194,7 +194,7 @@ we note that
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
-and that $\Gamma \leq G$ iff $\Gamma$ is the graph of a trivial homomorphism. 
+and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
 (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
 and indeed it is possible
@@ -332,8 +332,8 @@ Our model, which emerges from a broader framework, satisfies both of these desid
 
 
 To motivate our approach, we first recall the solution of a closely related but simpler problem: that of building universal spaces for families of subgroups. 
-Given a family $\mathcal{F}$ of subgroups of $G$, 
-% (i.e. a collection closed under conjugation and subgroups), 
+Given a family $\mathcal{F}$ of subgroups of $G$
+(i.e. a collection closed under conjugation and subgroups), 
 a \textit{universal space} $X$ for $\mathcal{F}$, 
 also called an \textit{$E \mathcal{F}$-space},
 is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
@@ -378,7 +378,7 @@ $\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise,
 $E \mathcal{F}$-spaces can then be built as
 $\iota^{\**}(C \delta_{\mathcal{F}}) = 
 C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
-Moreover, we note that, as in \cite{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
+Moreover, we note that, as in \cite[\S 3]{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
 
 The overarching goal of this paper is then that of proving the analogue of Elmendorf-Piacenza's Theorem (\ref{COFADJINT EQ})
 in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
@@ -898,6 +898,12 @@ $\mathsf{Op}_G(\mathcal{V})$,
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$.
 
 The following is our main result.
+The explicit formulas for
+the functors 
+$\iota^{\**},\iota_{\**}$
+are found in \eqref{IOTAFUNS EQ}
+(also, see Corollaries \ref{TWOADJOINTSOP_COR}
+and \ref{TWOADJOINTSOPF COR}).
 
 \begin{customthm}{III}\label{MAINQUILLENEQUIV THM}
 Let $(\mathcal{V},\otimes)$
@@ -3227,7 +3233,8 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner iff it is tall. The usual degeneracy-face decomposition
+We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner if and only if it is tall. 
+The usual degeneracy-face decomposition
 (cf. \cite[Lemma 3.1]{MW07} or \cite[Prop. 5.37]{Pe17})
 thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
@@ -4448,6 +4455,20 @@ Note however that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
 
+
+\begin{notation}\label{DDDDD NOT}
+	For $X \subseteq \{0,1,\cdots,n\}$
+	we write
+	$d_X \colon \Omega^n_G \to \Omega^{n-|X|}_G$
+	for the functor which sends 
+	$T_0 \to T_1 \to \cdots \to T_n$
+	to the string with $T_x, x\in X$ omitted.
+	
+	Note that, in light of \eqref{STRINGOBJALT EQ},
+	this makes sense even when
+	$X = \{0,1,\cdots,n\}$.
+\end{notation}
+
 We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
 
@@ -4526,7 +4547,7 @@ is a rooted isomorphism and
 each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
 But now reinterpreting (\ref{PTNARROWLOC EQ}) as a tuple of diagrams indexed by
 $f \in G e$
-one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, after converted to a diagram in 
+one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
 yields the desired rooted map (\ref{PTNARROW EQ})
@@ -4563,9 +4584,20 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \[
 	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
-be inductively defined by $V_{G}^{0} = V_G$ and
-$V_{G}^{n+1} = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+be inductively defined by setting $V_{G}^{0} = V_G$ and
+letting
+$V_{G}^{k+1}$ be the composite
+% = \sigma^0 \circ (\Fin_s \wr V_{G}^{n}) \circ V_G$.
+\[
+\begin{tikzcd}[column sep =1.7em]
+\Omega_{G}^{n} \ar{r}{V_G} &
+\Fin_s \wr \Omega_{G}^{n-1} \ar{r}{V^k_G} &
+\Fin_s \wr \Fin_s \wr \Omega_{G}^{n-k-2} \ar{r}{\sigma^0} &
+\Fin_s \wr \Omega_{G}^{n-k-2}.
+\end{tikzcd}
+\]
 \end{notation}
+
 
 
 \begin{remark}\label{VGN REM}
@@ -5601,6 +5633,33 @@ of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover,
 (\ref{INITCAT EQ}) comes together with a right retraction $r$,
 i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
 which is built using pullbacks. 
+Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
+
+{\color{red} HERE}
+
+\[
+\left(
+	(T_{v_{Ge}})_{V_G(T)}
+	\xrightarrow{\tau}
+	(U_x)_{X},
+	(A_x)_{X}
+\right)
+\mapsto
+\left(
+	\left(
+	T_{v_{G e}} \to 
+	(\mathsf{r} \tau_{v_{Ge}})^{\**}
+	U_{\tau(v_{Ge})}
+	\right),
+	\left(
+	(\mathsf{r} \tau_{v_{Ge}})^{\**}
+	A_{\tau(v_{Ge})}
+	\right)
+\right)
+\]
+
+{\color{red} HERE}
+
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
 $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
@@ -5648,10 +5707,10 @@ on
 $\mathsf{Wspan}^l_{\mathsf{r}}(\Sigma_G^{op},\mathcal{V})$
 lifting the monad $N$.
 
-\begin{corollary}
+\begin{corollary}\label{MONDEFCOR COR}
 Suppose that finite products in $\mathcal{V}$ commute with colimits in each variable or, more generally, that 
 $\mathcal{V}$ is a symmetric monoidal category with diagonals such that $\otimes$ preserves colimits in each variable.
-Then the functors
+Then the natural transformations
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
 	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ \mathsf{Lan},
@@ -5768,7 +5827,7 @@ We now consider the associated adjunctions.
 \end{tikzcd}
 \end{equation}
 Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for $I \in \mathsf{O}_G$)
-\[
+\begin{equation}\label{IOTAFUNS EQ}
 	\iota_!Y\left( (C_i)_I \right)=
 	\begin{cases}
 	Y(C_1), & (C_i)_I \in \Sigma_G^{\text{fr}} \\
@@ -5779,7 +5838,7 @@ Explicitly, we have the formulas (where we write $G$-corollas as $(C_i)_{I}$ for
 \quad
 	\iota_{\**}Y ((C_i)_I)=
 	\left(\prod_{I} Y(C_i)\right)^G,
-\]
+\end{equation}
 where in the formula for $\iota_{\**}$
 the action of $G$ interchanges factors according to the action on the indexing set $I$.
 As a side note, we note that the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
@@ -6155,7 +6214,7 @@ Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
-	The adjunctions (\ref{TWOADJOINTS EQ}) extend to  adjunctions
+The adjunctions (\ref{TWOADJOINTS EQ}) lift to adjunctions
 \[
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
@@ -6289,7 +6348,7 @@ of partial genuine equivariant operads.
 We start by recalling that 
 in the classic setting
 $\mathcal{F}$ is a family of subgroups of $G$
-iff the associated subcategory 
+if and only if the associated subcategory 
 $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \mathsf{O}_G$ is a sieve, defined as follows.
 
@@ -6504,7 +6563,7 @@ for the corresponding categories of algebras.
 \end{notation}
 
 \begin{corollary}\label{TWOADJOINTSOPF COR}
-The adjunction (\ref{F_TWOADJOINTS_EQ}) lifts to an adjunction on algebras
+The adjunctions (\ref{F_TWOADJOINTS_EQ}) lift to adjunctions
 \begin{equation}\label{TWOADJOINTSOPF EQ}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
@@ -8549,7 +8608,7 @@ Indeed, this follows since
 	= \widehat{\Omega}_G^{e}[\leq\! k],
 \]
 and since a map $T \to S$ in 
-$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in (\ref{INCDIAG EQ}) iff $T$ is.
+$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in (\ref{INCDIAG EQ}) if and only if $T$ is.
 
 Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification 
 $\mathsf{Lan}_{\widehat{\Omega}_{G}^{e}[\leq\! k \mathbin{\backslash} Y]^{op}}\tilde{N} \simeq
@@ -10259,19 +10318,59 @@ of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor.
 
 
 \begin{proof}
-	We first note that in the case of a generating
+	Consider first the case of a generating
 	(trivial) cofibration
-	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, it is 
-	\[i^{\square n} = 
+	$i = (G/H) \cdot \bar{\imath}$, $H\in \mathcal{F}$, so that 
+\begin{equation}\label{GENCOFWR EQ}
+	i^{\square n} = 
 	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}
 	\simeq \Sigma_n \wr G 
-	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n}.\]
-But $\bar{\imath}^{\square n}$ is now a $\Sigma_n \wr H$-genuine (trivial) cofibration by 
-combining the cofibrant symmetric pushout powers hypothesis with Proposition \ref{FGTLEFT PROP}
- and hence 
-$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
-(trivial) cofibration by Proposition \ref{FGTRIGHT PROP}
-since $\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$.
+	\underset{\Sigma_n \wr H}{\cdot} \bar{\imath}^{\square n},
+\end{equation}
+	where the action of 
+	$\Sigma_n \wr G$
+	(resp. $\Sigma_n \wr H$)
+	on $\bar{\imath}^{\square n}$
+	in the second (resp. third) term
+	is given by the projection to $\Sigma_n$.
+%
+	To justify the second identification 
+	in \eqref{GENCOFWR EQ},
+	note that the inclusion 
+	$\bar{\imath}^{\square n}
+	\to 
+	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}$
+	onto the 
+	$([e],\cdots,[e])$
+	component
+	is $(\Sigma \wr H)$-equivariant
+	and thus induces
+	a $(\Sigma \wr G)$-equivariant map 
+	$\Sigma_n \wr G 
+	\cdot_{\Sigma_n \wr H}
+%	\underset{\Sigma_n \wr H}{\cdot} 
+	\bar{\imath}^{\square n}
+	\to 
+	(G/H)^{\times n} \cdot \bar{\imath}^{\square n}$.
+	This latter map is an isomorphism since,
+	non-equivariantly,
+	both sides are a coproduct of
+	$|\Sigma_n \wr G : \Sigma_n \wr H|
+	= |G \colon H|^{\times n}$
+	copies of $\bar{\imath}^{\square n}$.
+%	
+	Next, note that 
+	$\bar{\imath}^{\square n}$
+	is a $\Sigma_n$-genuine (trivial) cofibration
+	by the cofibrant symmetric pushout powers assumption
+	and thus, by Proposition \ref{FGTLEFT PROP},
+	also a 
+	$(\Sigma_n \wr H)$-genuine (trivial) cofibration. 
+	Thus, since 
+	$\Sigma_n \wr H \in \mathcal{F}^{\ltimes n}$,
+	Proposition \ref{FGTRIGHT PROP} implies that
+	$i^{\square n}$ is a $\mathcal{F}^{\ltimes n}$ 
+	(trivial) cofibration, as desired.
 
 	For the general case, we start by making the key observation that for composable arrows 
 	$\bullet \xrightarrow{g} \bullet \xrightarrow{h} \bullet$ the $n$-fold pushout product $(hg)^{\square n}$ has a factorization
@@ -11079,7 +11178,8 @@ $l$-labeled trees and quotients
 Moreover, $l$-labeled $\mathcal{F}$-trees 
 $\Omega_{\mathcal{F}}^{\underline{l}}$ are
 defined exactly as in Definition \ref{FTREE DEF},
-so that a labeled $G$-tree is a $\mathcal{F}$-tree iff the underlying $G$-tree is.
+so that a labeled $G$-tree is a $\mathcal{F}$-tree 
+if and only if the underlying $G$-tree is.
 Lastly, note that Remarks \ref{UNPACKFTYPE REM}, \ref{TREEINDUCDESC REM}
 and Lemma \ref{KEYLEMMAGECO LEM} then extend to the $l$-labeled context, by now writing $\Sigma_T$ for the group of label isomorphisms and defining the partition $\lambda$ 
 in Remark \ref{TREEINDUCDESC REM}
@@ -11589,6 +11689,7 @@ $\mathsf{Sym}_G(\mathcal{V})$,
 $\mathsf{Op}_G(\mathcal{V})$.
 
 
+
 \begin{proof}
 We first observe that the claim concerning the symmetric sequence adjunction in (\ref{COFADJ2 EQ})
 is not really new. Indeed, 
@@ -11610,7 +11711,16 @@ Proposition \ref{COFESSIM PROP}
 (with an obvious empty family case if 
 $\mathcal{F}_n =\emptyset$ for some $n$).
 
-For the operad adjunction in (\ref{COFADJ2 EQ}),
+
+Moreover, when assuming the claims in \eqref{COFADJ2 EQ}
+one has that
+the two forgetful functor claims in \eqref{FGTFUNC EQ}
+become equivalent,
+so we need only establish the
+left claim in \eqref{FGTFUNC EQ}.
+
+
+For the operad adjunction in \eqref{COFADJ2 EQ},
 most of the argument in the proof of
 Proposition \ref{COFESSIM PROP}
 applies mutatis mutandis
@@ -11620,7 +11730,8 @@ which is readily checked directly,
 and the comparison of cellular extensions,
 which is the key claim.
 
-Further, we will argue the forgetful functor claim (\ref{FGTFUNC EQ}) in parallel over the same cellular extensions
+
+Further, we will argue the left claim in (\ref{FGTFUNC EQ}) in parallel over the same cellular extensions
 (note that the underlying cofibrancy of
 $\mathbb{F}(\emptyset)$, 
 $\mathbb{F}_G(\emptyset)$
@@ -11743,8 +11854,38 @@ one has
 $(\iota_{\**} \mathcal{O})[\iota_{\**} u] = 
 \mathbb{F}_{G} \iota_{\**} Y$, and similarly for $\mathbb{F}_{G} \iota_{\**} X$.
 
-Now, writing $\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
-$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$,
+{\color{red} HERE}
+
+In the remainder of the proof we abbreviate
+$\mathcal{P} = \iota_{\**} \mathcal{O}$, so that 
+$(\iota_{\**} \mathcal{O})[\iota_{\**} u] = \mathcal{P}[\iota_{\**} u]$.
+The previous paragraphs can then be summarized as saying that,
+to establish the operad half of 
+\eqref{COFADJ2 EQ},
+it remains only to show that 
+$\mathcal{P}[\iota_{\**} u] $
+is in the essential image of $\iota_{\**}$.
+Equivalently, this means that
+$\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \mathcal{P}[\iota_{\**} u]$
+is an isomorphism, 
+and can thus be checked by forgetting to $\Sym_G(\V)$.
+On the other hand, to establish the left side of 
+\eqref{FGTFUNC EQ} it suffices to show that,
+under the inductive hypothesis that
+$\mathcal{P}$ is cofibrant in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$,
+the map
+$\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$
+is a cofibration in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
+As such, and in light of the already established
+symmetric sequence half of \eqref{COFADJ2 EQ},
+ 
+
+
+{\color{red} HERE}
+
+
+
+
 the condition that
 $\mathcal{P}[\iota_{\**} u] \to \iota_{\**} \iota^{\**} \mathcal{P}[\iota_{\**} u]$
 is an isomorphism 
@@ -12477,6 +12618,7 @@ Corollary \ref{FINALCOR COR}.
         % (\ref{COFADJ2 EQ}).%
 \end{proof}
 
+{\color{red} HERE}
 
 \begin{remark}
 The previous proof in fact establishes 
@@ -12717,7 +12859,7 @@ is a functor
 $\mathcal{X}_{(\minus)} \colon \mathsf{P}_n \to 
 \mathsf{sSet}$
 for $\mathsf{P}_n$ the poset of subsets of 
-$\{1,\cdots,n\}$.
+$\underline{n} = \{1,\cdots,n\}$.
 We call a $n$-cube a \textit{monomorphism $n$-cube}
 if the latching maps
 \[
@@ -12850,16 +12992,16 @@ is
 \]
 Since degeneracies of $B_{\bullet}$
 are also induced by $\eta$,
-and writing $\underline{n}=\{1,\cdots,n\}$ for the maximum in $\mathsf{P}_n$,
+and recalling the notation $\underline{n}=\{1,\cdots,n\}$ for the maximum in $\mathsf{P}_n$,
 one has that the $n$-th latching map of $B_{\bullet}$ is given by
-\[
-\check{l}_n B_{\bullet} = 
-\check{l}_{\underline{n}}
-(\widetilde{\mathbb{F}}_G
- \mathcal{X}^n) \simeq
-\widetilde{\mathbb{F}}_G
-(l_{\underline{n}} \mathcal{X}^n)
-\]
+\begin{equation}\label{MONLATCH EQ}
+	\check{l}_n B_{\bullet} = 
+	\check{l}_{\underline{n}}
+	(\widetilde{\mathbb{F}}_G
+	\mathcal{X}^n) \simeq
+	\widetilde{\mathbb{F}}_G
+	(l_{\underline{n}} \mathcal{X}^n)
+\end{equation}
 where the check decoration on $\check{l}$
 for the two leftmost latching maps indicates that the colimits defining those latching maps are taken 
 in $\mathsf{Op}_{G}(\mathsf{Set})$, while the rightmost latching map is computed in 
@@ -12881,6 +13023,9 @@ $\mathcal{X}^{n+1} = (\mathcal{X}^n \to
 \widetilde{\mathbb{F}}_G \mathcal{X}^n)$, regarding the $(n+1)$-cube as a map of $n$-cubes.
 The top latching map $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
 is then the latching map of the composite square
+(the check decoration
+$\check{L}$ again denotes a latching object computed in
+$\mathsf{Op}_G(\mathsf{Set})$)
 \begin{equation}\label{BARCOFSQ EQ}
 \begin{tikzcd}
  	L_{\underline{n}} \mathcal{X}^n \ar{d} \ar[equal]{r}
@@ -12891,7 +13036,7 @@ is then the latching map of the composite square
 	\mathcal{X}^n_{\underline{n}}
 	\ar{d}
 \\
-	L_{\underline{n}} (\widetilde{\mathbb{F}}_G \mathcal{X}^n)
+	\check{L}_{\underline{n}} (\widetilde{\mathbb{F}}_G \mathcal{X}^n)
 	\ar{r}
 &
 	\widetilde{\mathbb{F}}_G(L_{\underline{n}}  \mathcal{X}^n)
@@ -12907,14 +13052,31 @@ Lemma \ref{MONOCUBE LEM}(b)
 applied to the map
 $l_{\underline{n}} \mathcal{X}^n \colon 
 L_{\underline{n}} \mathcal{X}^n \to \mathcal{X}^n_{\underline{n}}$, which is a monomorphism by the induction hypothesis.
-On the other hand, the left bottom horizontal map in 
-(\ref{BARCOFSQ EQ})
-is a monomorphism
-by applying Lemma \ref{MONOCUBE LEM}(a)
-to the cube $\tilde{\mathcal{X}}^n$ obtained from 
+On the other hand, writing 
+$\tilde{\mathcal{X}}^n$ for the cube obtained from 
 $\mathcal{X}^n$ by replacing the top level
 $\mathcal{X}^n_{\underline{n}}$ with
-$L_{\underline{n}} \mathcal{X}^n$.
+$L_{\underline{n}} \mathcal{X}^n$,
+the left bottom horizontal map in 
+\eqref{BARCOFSQ EQ}
+can be described as
+$
+\check{l}_{\underline{n}}
+(\widetilde{\mathbb{F}}_G
+\tilde{\mathcal{X}}^n) \simeq
+\widetilde{\mathbb{F}}_G
+(l_{\underline{n}} \tilde{\mathcal{X}}^n)
+$
+(compare with \eqref{MONLATCH EQ}),
+which is a monomorphism by
+Lemma \ref{MONOCUBE LEM}(a).
+%On the other hand, the left bottom horizontal map in 
+%(\ref{BARCOFSQ EQ})
+%is a monomorphism by applying Lemma \ref{MONOCUBE LEM}(a)
+%to the cube $\tilde{\mathcal{X}}^n$ obtained from 
+%$\mathcal{X}^n$ by replacing the top level
+%$\mathcal{X}^n_{\underline{n}}$ with
+%$L_{\underline{n}} \mathcal{X}^n$.
 Hence the latching maps in both squares
 in (\ref{BARCOFSQ EQ}) are monomorphisms, 
 and thus so is the latching map of the composite square, showing that $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
@@ -13815,61 +13977,120 @@ Then the under and over category functors
 		\xrightarrow{j \downarrow (\minus)}
 	\mathsf{Cat}
 \]
-preserve colimits.
+are left adjoints, and hence preserve colimits.
 \end{lemma}
 
-{\color{red} HERE}
 
 \begin{proof}
-The result can easily be shown directly,
-so here we note instead that one can in fact
- write explicit formulas for the right adjoints
-of
-$(\minus) \downarrow j$,
-$j \downarrow (\minus)$.
-Moreover, since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ 
-it suffices to do so for $(\minus) \downarrow j$.
-The right adjoint
+The right adjoint to $(\minus) \downarrow j$,
+which we denote
 $(\minus)^{\downarrow j} \colon
 \mathsf{Cat}
 	\to 
 \mathsf{Cat} \downarrow \mathcal{J}
-$
-is then defined on objects by the Grothendieck constructions
+$,
+is given on a category $\mathcal{C} \in \mathsf{Cat}$
+by the Grothendieck construction
 $\mathcal{C}^{\downarrow j}
-= \mathcal{J} \ltimes \mathcal{C}^{\mathcal{J}(\minus,j)}$
-for the functors
+= \mathcal{J} \ltimes \mathcal{C}^{\times \mathcal{J}(\minus,j)}$
+for the functor
 \[
 \begin{tikzcd}[row sep = 0em]
 	\mathcal{J} \ar{r} & \mathsf{Cat} \\
-	i \ar[mapsto]{r} & \C^{\mathcal{J}(i,j)}.
+	k \ar[mapsto]{r} & \C^{\times \mathcal{J}(k,j)}.
 \end{tikzcd}
 \]
+Given 
+$(\mcI \xrightarrow{\pi} \mathcal{J})
+\in (\mathsf{Cat} \downarrow \mathcal{J})$ and 
+$\C \in \mathsf{Cat}$ we will show that functors 
+$F \colon (\mathcal{I} \downarrow j) \to\C$
+are in bijection with functors
+$\hat{F} \colon \mathcal{I} \to \C^{\downarrow j}$ over $\mathcal{J}$.
+%
+Given $F$, we now describe the corresponding 
+$\hat{F}$.
+
+First, $F$ associates to each object
+$(i,J\colon \pi(i) \to j)$ of
+$\mathcal{I} \downarrow j$
+an object
+$F(i,J)\in \mathcal{C}$.
+Write
+$F_i \in \C^{\times \mathcal{J}(\pi(i),j)}$
+for the assignment
+$J \mapsto F(i,J)$,
+i.e. $F_i(J) = F(i,J)$.
+%
+On objects $i \in \mathcal{I}$
+one then sets
+$\hat{F}(i) = (\pi(i), F_i)$.
+
+Next, 
+recall that arrows in 
+$\mathcal{I} \downarrow j$
+have the form
+$(i',J \circ \pi(I)) \to (i,J)$
+for some arrow $I \colon i' \to i$
+in $\mathcal{I}$.
+To each such arrow,
+$F$ associates an arrow
+$F_{i'}(J \circ \pi(I)) 
+\to
+F_i(J)$.
+Fixing $I$ and allowing 
+$J \in \mathcal{J}(\pi(i),j)$
+to vary these arrows form a natural transformation
+$F_I \colon F_{i'} \circ \pi(I)^{\**} 
+\Rightarrow
+F_i$,
+where 
+$\pi(I)^{\**} \colon \mathcal{J}(\pi(i),j) 
+\to 
+\mathcal{J}(\pi(i'),j)$
+denotes precomposition with $\pi(I)$.
+On arrows
+$I \colon i' \to i$
+one now sets
+$\hat{F}(I) \colon 
+(\pi(i'), F_{i'}) \to  (\pi(i), F_i)$
+to be 
+$(\pi(I) \colon \pi(i') \to \pi(i),
+F_I \colon F_{i'} \circ \pi(I)^{\**} 
+\Rightarrow
+F_i)$.
+
+It is clear that the procedures above relating the values of 
+$F,\hat{F}$ on objects and arrows are invertible. 
+One can readily check that
+the functoriality requirements on 
+$F,\hat{F}$ match.
+
+Noting that 
+$j \downarrow (-)$ is the composite
+$
+\mathsf{Cat} \downarrow \mathcal{J}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat} \downarrow \mathcal{J}^{op}
+\xrightarrow{(-) \downarrow j}
+\mathsf{Cat}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat}
+$
+yields that
+its right adjoint
+is the composite
+$
+\mathsf{Cat}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat}
+\xrightarrow{(-)^{\downarrow j}}
+\mathsf{Cat} \downarrow \mathcal{J}^{op}
+\xrightarrow{(-)^{op}}
+\mathsf{Cat} \downarrow \mathcal{J}
+$.
 \end{proof}
-%Since $j \downarrow \mcI = (\mcI^{op} \downarrow j)^{op}$ by  defining $(\C^{j \downarrow}) = ((\C^{op})^{\downarrow j})^{op}$ one reduces to the leftmost adjuntion.
-%
-%	Given $\mcI \xrightarrow{\pi} \mathcal{J}$ and $\C$ we will show that functors 
-%	$\mathcal{I} \downarrow j \xrightarrow{F} \C$
-%correspond to functors
-%	$\mathcal{I} \xrightarrow{G} \C^{\downarrow j}$ over $\mathcal{J}$.
-%	
-%	On objects, $F$ associates to each pair 
-%	$(i,J\colon \pi(i) \to j)$ an object $F(i,J)\in \C$. One thus sets $G(i)=(\pi(i), F(i,\minus))$ and these are clearly inverse processes.
-%
-%	On arrows $F$ associates to 
-%	$(i,J' \circ \pi(I)) \xrightarrow{I} (i',J')$ an arrow
-%	$F(i,J' \circ \pi(I)) \xrightarrow{F(I)} F(i',J')$.
-%	One thus defines
-%\[
-%	G(I) = \left(
-%	\pi(i) \xrightarrow{\pi(I)} \pi(i'),
-%	F\left(i,(\minus)\circ \pi(i)\right)
-%		\xrightarrow{F(I)}
-%	F\left(i',\minus \right)
-%	\right)
-%\]
-%and again it is clear that these are inverse processes.
-%	Finally, the fact that the associativity and unit conditions for $F,G$ coincide is likewise clear.
+
 
 
 %In the following statement note that when 
