@@ -1,0 +1,34 @@
+% arara: pdflatex
+% arara: pdflatex
+% arara: nomencl
+% arara: pdflatex
+% arara: pdflatex
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+ 
+\usepackage[intoc, spanish]{nomencl}
+\makenomenclature
+ 
+\begin{document}
+\tableofcontents
+ 
+\section{Primera Sección}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent imperdie...
+ 
+\clearpage
+\mbox{}
+ 
+\nomenclature{$c$}{Speed of light in a vacuum inertial frame}
+\nomenclature{$h$}{Planck constant}
+ 
+\printnomenclature
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

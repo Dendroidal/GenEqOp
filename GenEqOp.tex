@@ -1,3 +1,6 @@
+% arara: pdflatex
+% arara: makeindex
+% arara: pdflatex
 \documentclass[a4paper,10pt]{article}%
 
 \usepackage[hidelinks]{hyperref}
@@ -10,7 +13,7 @@
 
 \input{commands.tex}%
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \author{Peter Bonventre, Lu\'is A. Pereira}%
 \title{Genuine equivariant operads}%
@@ -30,13 +33,40 @@
   root/.style     = {treenode, font=\Large, bottom color=red!30},%
   env/.style      = {treenode, font=\ttfamily\normalsize},%
   dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
-}%
+}
 
-\usetikzlibrary[decorations.pathreplacing]
+\usetikzlibrary[decorations.pathreplacing,patterns,cd]
 % \usetikzlibrary{external}\tikzexternalize
 % \makeatletter
 % \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
 % \makeatother
+
+
+
+% ---------- notational index ----------
+% \usepackage[intoc]{nomencl}
+% \makenomenclature
+% \renewcommand{\nomname}{Notational Index} 
+% \renewcommand{\nompreamble}{The following list describes several symbols and maps that are used within the body of the article.}
+
+% \usepackage{etoolbox}
+% \renewcommand\nomgroup[1]{%
+%   \item[\bfseries
+%   \ifstrequal{#1}{C}{Categories}{%
+%   \ifstrequal{#1}{M}{Morphisms}{%
+%   \ifstrequal{#1}{O}{Other}{}}}%
+% ]}
+ 
+% % This will add the units
+% \newcommand{\nomunit}[1]{%
+% \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Glossary of Notation, intoc]
+ 
+
+
+
 
 \begin{document}	\maketitle%
 
@@ -59,7 +89,7 @@ consisting only of products of Eilenberg-MacLane spaces (e.g. \cite[4K.6]{Hatche
 Instead, the more interesting structures are
 those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''.
 To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed
-the theory of \textit{operads}.
+the theory of \textit{operads}\index{categories!Operad@$\O \in \Op(\V)$}.
 Informally, an operad $\O$ consists of
 sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action recording
 ``reordering the inputs of the operations'',
@@ -99,7 +129,9 @@ deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 upon forgetting the $\Sigma_n$-actions (e.g. \cite[3.2]{BM03}).
-In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$ and, moreover, 
+In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$
+\index{categories!Com@$\mathsf{Com}$}
+and, moreover, 
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
 However, naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'', where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
@@ -214,7 +246,8 @@ More explicitly, noting that a $H$-set $X$ with $n$ elements
 is encoded by a partial homomorphism 
 $G \geq H \to \Sigma_n$, 
 one obtains an associated graph subgroup 
-$\Gamma_X \leq G \times \Sigma_n$, 
+$\Gamma_X \leq G \times \Sigma_n$,
+% \index{subgroups!GammaX@$\Gamma_X$}
 $\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follows that for $R$ an 
 $\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
 are parametrized by the fixed point space
@@ -243,6 +276,7 @@ the two,
 can hence be thought of as encoding varying degrees of ``up to homotopy equivariant commutativity''.
 More concretely, each type of $N_{\infty}$-operad is determined by a collection
 $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
+\index{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
 where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$,
 with an operad $\O$ being called a
 \textit{$N \mathcal{F}$-operad} if it satisfies the fixed point condition
@@ -314,6 +348,7 @@ best understood in light of Elmendorf's classical result from \cite{Elm83}
 %(with the key insight dating back to Elmendorf in \cite{Elm83})
 stating that there is a Quillen equivalence
 (recall that $\mathsf{O}_G$ is the \textit{orbit} category, formed by the $G$-sets $G/H$)
+\index{categories!OrbitG@$\mathsf O_G$}
 \begin{equation}\label{COFADJINT EQ}
 \begin{tikzcd}[column sep =5em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_G^{op}}
@@ -336,7 +371,8 @@ on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of
 \textit{coefficient systems}
 are detected at each presheaf level.
 Noting that the fixed point characterization of $E \mathcal{F}$-spaces defines an obvious object 
-$\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by 
+$\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by
+\index{DeltaF@$\delta_{\mathcal F}$}
 $\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
 $\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise, 
 $E \mathcal{F}$-spaces can then be built as
@@ -376,6 +412,7 @@ In order to work in the context of operads with norm maps we will need to replac
 $\mathsf{Top}^{\mathsf{O}_G^{op}}$
 with a category
 $\mathsf{Op}_G$
+\index{categories!OpG@$\mathcal P \in \Op_G$}
 of new algebraic objects we dub 
 \textit{genuine equivariant operads}
 (as opposed to (regular) equivariant operads
@@ -664,6 +701,27 @@ $\mathsf{Op}^G(\mathcal{V})
 \left(\mathsf{Op}(\mathcal{V})\right)^G$
 denotes $G$-objects in 
 $\mathsf{Op}(\mathcal{V})$.
+% \nomenclature[C]{$\V = (\V, \otimes)$}{Symmetric monoidal category}
+% \nomenclature[C]{$\O \in \Op^G(\V) = \Op(\V^G)$}{Equivariant Operads in $\V$}
+% \nomenclature[C]{$\Sigma = \amalg \Sigma_n$}{Symmetric category}
+% \nomenclature[C]{$X \in \Sym^G(\V)  = \Sym(\V^G) = \V^{\Sigma^{op} \times G}$}{Symmetric sequences in $\V$}
+% \nomenclature[O]{$H \leq G$}{Finite group and an arbitrary subgroup}
+% \nomenclature[O]{$\Lambda \leq \Sigma_m$}{Symmetric group on $m$ letters and an arbitrary subgroup}
+% \nomenclature[O]{$\Gamma \leq \Sigma_m$}{Graph subgroup \eqref{GENEOPEQ EQ} of $\Sigma_m$}
+% \nomenclature[O]{$\F_n$}{Family of subgroups of $G \times \Sigma_m$ \nomunit{$\F = \set{\F_n}$ collection of families}}
+% \nomenclature[C]{$\Op^G_\F(\V)$}{$\F$-model structure \eqref{GENEOPEQMT EQ} on $\Op^G(\V)$}
+
+% \nomenclature[C]{$\mathcal P \in \Op_G(\V)$, $\Op_\F(\V)$}{Genuine equivariant operads in $\V$}
+% \nomenclature[C]{$T \in \Omega_G$, $\Omega_\F$}{$G$-trees or $\F$-trees (\S \ref{LRVERT SEC})}
+% \nomenclature[C]{$C \in \Sigma_G$, $\Sigma_\F$}{$G$-corollas or $\F$-trees, and quotients (\S \ref{LRVERT SEC})}
+
+% \nomenclature[C]{$\Sym_G(\V) = \V^{\Sigma_G^{op}}$, $\Sym_\F(\V) = \V^{\Sigma_\F^{op}}$}{Genuine symmetric sequences}
+% \nomenclature[O]{$\mathbb F$, $\mathbb F_G$}{Free operad and free genuine equivariant operad monads}
+
+% \nomenclature[C]{$\Top$}{Topological spaces}
+% \nomenclature[C]{$(\sSet, \times)$, $(\sSet_{\**}, \wedge)$}{Simplicial sets}
+COME BACK
+
 
 \begin{customthm}{I}\label{MAINEXIST1 THM}
 Let $(\mathcal{V},\otimes)$
@@ -754,12 +812,15 @@ which generalizes the usual category
 $\Sigma$ of finite sets and isomorphisms.
 We then define $G$-symmetric sequences by
 $\mathsf{Sym}_G(\mathcal{V})=
-\mathcal{V}^{\Sigma_G^{op}}$ and,
+\mathcal{V}^{\Sigma_G^{op}}$
+\index{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}
+and,
 whenever $\mathcal{V}$ is a closed symmetric monoidal category with diagonals 
 (cf. Remark \ref{FINSURJ REM}),
 we define in \S \ref{FGMON SEC}
 a \textit{free genuine equivariant operad} monad 
-$\mathbb{F}_G$ on 
+$\mathbb{F}_G$ on
+\index{monads!FG@$\mathbb F_G$}
 $\mathsf{Sym}_G(\mathcal{V})$
 whose algebras form the desired category 
 $\mathsf{Op}_G(\mathcal{V})$.
@@ -933,6 +994,10 @@ in \cite[Cor. 5.6]{BH15}
 
 \subsection{Future Work}
 
+% \nomenclature[C]{$\mathsf{dSet} = \Set^{\Omega^{op}}$, $\mathsf{dSet}^G = \Set^{\Omega^{op} \times G}$}{Dendroidal sets}
+
+
+
 In order to simplify our discussion,
 this paper focuses exclusively on the theory of 
 single colored (genuine) equivariant operads.
@@ -1040,6 +1105,8 @@ as discussed in the previous paragraph.
 
 
 \subsection{Outline}
+
+\todo[inline]{when do different pieces of the machine happen?}
 
 This paper is comprised of two major halves, 
 with 
@@ -1214,6 +1281,9 @@ provides the proof of a lengthy technical result needed when establishing the fi
 %This section lists some elementary concepts and results that will be used throughout the paper, but may not be entirely standard.
 
 \subsection{Grothendieck fibrations}\label{GROTHFIB REF}
+
+% \nomenclature[M]{$\pi \colon \mathcal E \to \mathcal B$}{Grothendieck fibration (\S \ref{GROTHFIB REF})}
+
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
 is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
@@ -3632,8 +3702,8 @@ where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the 
 Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
 it follows from the definition of outer face that there is a
 nontrivial partition 
-$\{U_i\} = \{U_i|U_i \hookrightarrow V\} 
-\amalg \{U_i|U_i \hookrightarrow W\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
+$\{U_i\} = \{U_i|U_i \hookrightarrow U^{\leq e}\} 
+\amalg \{U_i|U_i \hookrightarrow U_{\not \langle e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
@@ -14278,14 +14348,27 @@ to conclude that the Kan extensions indeed coincide.
 
 
 
+% ---------- Notational Index ----------
+\newpage
+% \nomenclature[C]{$c$}{Speed of light in a vacuum inertial frame
+%   \nomunit{$\hat\Omega_G^e$}}
+% \nomenclature[M]{$h$}{Planck constant}
+
+% \printnomenclature
+% \backmatter
+\printindex
 
 
+% ---------- Bibliography ----------
+\newpage
 \bibliography{biblio}{}
-
-
-
 \bibliographystyle{abbrv}
 
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
