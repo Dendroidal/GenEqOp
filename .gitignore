@@ -34,3 +34,10 @@ GenEqOp.aux
 GenEqOp.log
 GenEqOp.pdf
 GenEqOp.synctex.gz
+*.ilg
+GenEqOp.idx
+*.idx
+*.ind
+*.aux
+*.idx
+*.log

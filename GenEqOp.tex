@@ -2972,7 +2972,7 @@ $T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
 
 
 \begin{example}\label{ROOTPULL EX}
-Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$, 
+Let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ be the group of quaternionic units, 
 $H = \langle j \rangle$ and $K = \langle -1 \rangle$.
 Figure \ref{FIGURE} illustrates the pullbacks of two $G$-trees, 
 $T$ and $S$,
@@ -2984,11 +2984,33 @@ of $G/H$ is actually $\{1,2\}$,
 $\tau$ is the permutation $(12)$).
 We note that the stabilizers of $a,b,c$ are $\{1\},K,H$ for $T$
 and $K,H,G$ for $S$.
-The top depictions of $\tau^{\**} T$, $\pi^{\**} S$ then use the edge orbit generators suggested by $T$, $S$ 
-while the bottom depictions
-choose generators that are minimal with regard to the planar structure, so that in $\tau^{\**}T$ it is
-$d = i c$, $e = i b$, $f = i a$
-and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
+
+The pullback $\tau^{\**} T$ along the map $\tau$
+is obtained by interchanging the two tree components of $T$,
+as in the top depiction of $\tau^{\**} T$. 
+However, one drawback of this top depiction 
+is that the edge orbit generators $a,b,c$
+appear in the middle of the forest.
+By choosing the leftmost 
+%(i.e. minimal with respect to $\leq_p$)
+edge orbit generators
+$d = i a$, $e = i b$, $f = i c$ one obtains the
+bottom depiction of $\tau^{\**} T$. 
+
+For the pullback $\pi^{\**} S$,
+since $\pi$ folds two points into one,
+the underlying forest of $\pi^{\**} S$
+consists of two copies of the underlying tree of $S$,
+with $\pi^{\**}S \to S$
+folding those copies while respecting the planarizations.
+Top depiction of $\pi^{\**} S$ then
+chooses edge orbit generators 
+$a,b,c,\bar{a},\bar{b}$
+that are as left as possible among edges 
+lifting the generators $a,b,c$ of $S$.
+The bottom depiction of $\pi^{\**} S$,
+which sets $d = i \bar{a}$, $e = i \bar{b}$, 
+chooses the leftmost possible generators.
 \begin{figure}[ht]
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
@@ -3007,7 +3029,7 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					child[sibling distance = 1em]{
 					edge from parent node [swap,near end] {$-a\phantom{j}$}}
 					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}a$}}
+					edge from parent node [near end] {$\phantom{j}a$}}
 				edge from parent node {$b$}}
 			edge from parent node [swap] {$c$}};
 		\node at  (3,0) {}
@@ -3115,16 +3137,16 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$k a'$}}
+					edge from parent node [swap,near end] {$k \bar{a}$}}
 					child[sibling distance = 1em]{
-					edge from parent node [near end] {$i a'$}}
-				edge from parent node [swap] {$i b'$}}
+					edge from parent node [near end] {$i \bar{a}$}}
+				edge from parent node [swap] {$i \bar{b}$}}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
 					edge from parent node [swap,near end] {$j a\phantom{j}$}}
 					child[sibling distance = 1em]{
 					edge from parent node [near end] {$\phantom{+1}a$}}
-				edge from parent node {$\phantom{j}b$}}
+				edge from parent node {$\phantom{\bar{b}j}b$}}
 			edge from parent node [swap] {$c$}};
 		\node at  (3,0) {}
 			child{node [dummy] {}
@@ -3133,13 +3155,13 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					edge from parent node [swap,near end] {$k a$}}
 					child[sibling distance = 1em]{
 					edge from parent node [near end] {$i a$}}
-				edge from parent node [swap] {$i b$}}
+				edge from parent node [swap] {$i b\phantom{\bar{b}}$}}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
-					edge from parent node [swap,near end] {$j a'\phantom{j}$}}
+					edge from parent node [swap,near end] {$j \bar{a}\phantom{j}$}}
 					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}a'$}}
-				edge from parent node {$b'$}}
+					edge from parent node [near end] {$\phantom{j}\bar{a}$}}
+				edge from parent node {$\bar{b}$}}
 			edge from parent node [swap] {$i c$}};
 		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\pi^{\**}S$};
 	\end{scope}
@@ -3150,13 +3172,13 @@ and in $\pi^{\**}S$ it is $e = i b'$, $d = i a'$.
 					child[sibling distance = 1em]{
 					edge from parent node [swap,near end] {$j d$}}
 					child[sibling distance = 1em]{
-					edge from parent node [near end] {$d $}}
+					edge from parent node [near end] {$\phantom{j}d$}}
 				edge from parent node [swap] {$e{\phantom{b}}$}}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
 					edge from parent node [swap,near end] {$j a\phantom{j}$}}
 					child[sibling distance = 1em]{
-					edge from parent node [near end] {$\phantom{+1}a$}}
+					edge from parent node [near end] {$\phantom{j}a$}}
 				edge from parent node {$\phantom{j}b$}}
 			edge from parent node [swap] {$c$}};
 		\node at  (3,0) {}
@@ -3768,11 +3790,11 @@ cf. Notation \ref{STICKTRE NOT}.
 where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the edges $u \leq_d e$ (resp. $u \nless_d e$).
 Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
 it follows from the definition of outer face that there is a
-nontrivial partition 
+non trivial partition 
 $\{U_i\} = \{U_i|U_i \hookrightarrow U^{\leq e}\} 
-\amalg \{U_i|U_i \hookrightarrow U_{\not \langle e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
+\amalg \{U_i|U_i \hookrightarrow U_{\nless e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
 
-For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(V)|,|V(W)|<|V(U)|$ or one of $V,W$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
+For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(U^{\leq e})|,|V(U_{\nless e})|<|V(U)|$ or one of $U^{\leq e},U_{\nless e}$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
 \cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
 Proposition \ref{PLANARPULL PROP}.
