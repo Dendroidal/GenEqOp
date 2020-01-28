@@ -2750,24 +2750,88 @@ $3 \cdot 3! \cdot 2 \cdot 3! \cdot 3!$
 trees in the isomorphism class of the tree depicted in 
 (\ref{D6SMALLER EQ}).
 \end{example}
-%%%% CUT : root pullback stuffs
 
 
-\begin{definition}
-      \label{PLANARMAP_DEF}
-	A map $S \xrightarrow{\varphi} T$ in $\Omega$ preserving the planar structure $\leq_p$
+We now turn to the notion of \emph{planar map}.
+In order to cover the case of forests, 
+we need to recall
+the notion of \emph{independent map} of forests
+introduced in \cite[Def. 5.28]{Pe17}.
+However, rather than work with the definition in 
+\cite{Pe17}, we prefer a different characterization, as follows.
+
+\begin{proposition}\label{INDMAPCHAR PROP}
+	Let $F \xrightarrow{\varphi} F'$ be a map of forests.
+	The following are equivalent:
+\begin{enumerate}
+	\item[(i)] $\varphi$ is an independent map in the sense of
+	\cite[Def. 5.28]{Pe17};
+	\item[(ii)] for any edges $e,\bar{e}$ of $F$,
+	the edges
+	$\varphi(e),\varphi(\bar{e})$ of $F'$
+	are $\leq_d$-incomparable iff 
+	$e,\bar{e}$ are;
+	\item[(iii)] for distinct roots $r,\bar{r}$ of $F$,
+	the edges
+	$\varphi(r),\varphi(\bar{r})$ of $F'$
+	are $\leq_d$-incomparable.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	$(i) \Rightarrow (ii)$
+	is the content of \cite[Lemma 5.32]{Pe17}.
+	$(ii) \Rightarrow (iii)$ is clear.
+	%, since distinct roots are necessarily $\leq_d$-incomparable.
+	Lastly, 
+	$(iii) \Rightarrow (i)$ follows by applying 
+	\cite[Lemma 5.24]{Pe17} to each of the tree components of $F'$.
+\end{proof}
+
+
+\begin{remark}
+	By (iii) above
+	the map $F \xrightarrow{\varphi} F'$ is independent whenever $F$ is a tree. 
+	More generally, (ii) can hence only fail
+	if $e,\bar{e}$ are in distinct tree components of $F$.
+	Thus, independent maps admit the following informal description:
+	$\varphi$ is independent if, for any two tree components
+	$T,\bar{T}$ of $F$,
+	the images of $T,\bar{T}$ are ``in separate branches of $F'$'',
+	in the sense that the image of $T$ contains no edges above (or on) the image of $\bar{T}$, and vice versa.
+\end{remark}
+
+
+\begin{definition}\label{PLANARMAP_DEF}
+	A map $S \xrightarrow{\varphi} T$ in the category $\Omega$ of forests preserving the planar structure $\leq_p$
 	is called a \textit{planar map}.
 	
-	More generally, a map $F \to G$ in one of the categories $\Phi$, $\Phi^G$, $\Omega_G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map (cf. \cite[Def. 5.28]{Pe17}) compatible with the planar structures $\leq_p$.
+	More generally, a map $F \xrightarrow{\varphi} F'$ in one of the categories $\Phi$, $\Phi^G$, $\Omega_G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map compatible with the planar structures $\leq_p$.
 \end{definition}
 
 
 \begin{remark}
-	The need for the independence condition is justified by \cite[Lemma 5.33]{Pe17} and its converse, since non independent maps do not reflect $\leq_d$-comparability.
- 
-However, we note that in the case of $\Omega_G$
+The need for independence is justified by
+condition (iii) in Proposition \ref{INDMAPCHAR PROP}.
+\end{remark}
+
+
+\begin{remark}\label{INDOMGALT REM}
+In the case of $\Omega_G$
 independence admits simpler characterizations:
 $\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\varphi$ is injective on the root orbit.
+
+To see this, note first that distinct edges $e, g e$ in the same orbit must be $\leq_d$-incomparable.
+Indeed, if it were 
+$e \leq_d g e$ (the $g e \leq_d e$ case is similar)
+it would be
+$e \leq_d g e \leq_d g^2 e \leq_d \cdots
+\leq_d g^n e = e$ (here $n$ is the order of $g$),
+requiring $e=ge$.
+The given characterizations now follow from
+Proposition \ref{INDMAPCHAR PROP}(ii)(iii)
+%, the fact that orbits map to orbits,
+and the fact that for $F \in \Omega_G$ the roots form a single orbit.
 \end{remark}
 
 
@@ -2788,9 +2852,12 @@ the only possible planar structure $\leq_p^{\bar{F}}$
 is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
 The claim that $\varphi$ is then planar follows from 
 Remark \ref{CLOSURE REM}
-together with the fact (\cite[Lemma 5.33]{Pe17})
-that $\varphi$ reflects $\leq_d$-comparability.
+together with the
+fact that $\varphi$ reflects $\leq_d$-comparability,
+cf. Proposition \ref{INDMAPCHAR PROP}(ii).
 \end{proof}
+
+
 
 
 \begin{remark}\label{PULLPLANAR REM}
