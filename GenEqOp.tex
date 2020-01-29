@@ -6781,16 +6781,16 @@ the key technical ingredient will be the identification of a suitable filtration
 of the map $\mathcal{P} \to \mathcal{P}[u]$
 in the underlying category $\mathsf{Sym}_G(\mathcal{V})$.
 To explain how this filtration is obtained,
-and abbreviating 
-$\mathbb{F}_G$ as $\mathbb{F}$,
+%and abbreviating 
+%$\mathbb{F}_G$ as $\mathbb{F}$,
 note first that $\mathcal{P}[u]$ is given by a coequalizer
 \begin{equation}\label{REFLCOEQ EQ}
 \begin{tikzcd}
 	\mathcal{P} \mathbin{\check{\amalg}}
-	\mathbb{F} X \mathbin{\check{\amalg}} \mathbb{F} Y
+	\mathbb{F}_G X \mathbin{\check{\amalg}} \mathbb{F}_G Y
 	\ar[shift right=4pt]{r} \ar[shift right=-4pt]{r}
 &
-	\mathcal{P} \mathbin{\check{\amalg}} \mathbb{F} Y 
+	\mathcal{P} \mathbin{\check{\amalg}} \mathbb{F}_G Y 
 	\ar[dashed]{l}
 \end{tikzcd}
 \end{equation}
@@ -6812,12 +6812,23 @@ In practice, we will need to enlarge
 (\ref{REFLCOEQ EQ}) somewhat.
 Firstly, note that (\ref{REFLCOEQ EQ})
 corresponds to the two bottom levels of the bar construction
-$B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} Y)=
+$B_l(\mathcal{P}, \mathbb{F}_G X, \mathbb{F}_G Y)=
 \mathcal{P} \mathbin{\check{\amalg}}
-(\mathbb{F} X)^{\check{\amalg} l} 
-\mathbin{\check{\amalg}} \mathbb{F} Y$,
+(\mathbb{F}_G X)^{\check{\amalg} l} 
+\mathbin{\check{\amalg}} \mathbb{F}_G Y$,
 whose colimit (over $\Delta^{op}$) is again $\mathcal{P}[u]$.
 For technical reasons, we prefer the double bar construction
+\footnote{
+More formally,
+$B_{\bullet}(\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)$
+is the diagonal
+of the iterated bar construction
+$B^{op}_{\bullet}\left(\mathcal{P}, \mathbb{F} X, 
+B_{\bullet}(\mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)\right)$,
+where the $op$ indicates that in the outer bar construction we reverse the order of the simplicial operators.
+}
+(where to increase readability, we 
+abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 \begin{equation}\label{DOUBAR EQ}
 	B_l(\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
 =
@@ -6836,6 +6847,7 @@ For technical reasons, we prefer the double bar construction
 To actually describe the individual levels  of
 (\ref{DOUBAR EQ}) one further resolves $\mathcal{P}$
 so as to obtain the bisimplicial object
+(we again abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 \begin{equation}\label{FURRES EQ}
 	B_l(\mathbb{F}^{n+1}\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)
 =
@@ -6865,7 +6877,7 @@ is thus a left Kan extension over some category
 $\Omega_G^{n,\lambda_l}$, which we explicitly identify in 
 \S \ref{LABELSTRI SEC}, giving the first identification below.
 \begin{equation}\label{EXTTREEFOR EQ}
-	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
+	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F}_G X} \mathbb{F}_G Y 
 \simeq 
 	\colim_{(\Delta \times \Delta)^{op}}
 	\left(
@@ -6925,7 +6937,7 @@ $\lambda_{l,i} =
 \langle \langle l \rangle \rangle - \{-\infty\}$,
 (\ref{LANLEVELFOR EQ})
 can be repackaged as an instance of the functor
-$\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle l \rangle}$.
+$\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle \langle l \rangle \rangle}$.
 Our goal is thus to understand 
 the underlying categories of the spans in the image of the functor
 $N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}$,
@@ -7669,12 +7681,12 @@ follows from the presence of the $\iota$ in (\ref{LANLEVELFOR EQ}).
 
 As for the $l$ direction, we note that our convention on 
 the double bar construction 
-$B_l(\mathcal{P}, \mathbb{F}X, \mathbb{F}X, \mathbb{F}X, \mathbb{F} Y)$,
+$B_l(\mathcal{P}, \mathbb{F}_G X, \mathbb{F}_G X, \mathbb{F}_G X, \mathbb{F}_G Y)$,
 is symmetric, 
 with $d_l$ given by combining the maps
-$\mathbb{F}X \to \mathbb{F} Y$ 
+$\mathbb{F}_G X \to \mathbb{F}_G Y$ 
 and 
-$\mathbb{F}X \to \mathcal{P}$
+$\mathbb{F}_G X \to \mathcal{P}$
 and the remaining differentials given by fold maps.
 Or, more precisely, the action of the differential operators
 on the sets of labels
@@ -8262,7 +8274,7 @@ gives the alternative formula
 $\mathsf{Ran}$ into $\mathsf{Lan}$)
 \begin{equation}\label{ALTFOR EQ}
 	\mathcal{P}[u] \simeq
-	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F} X} \mathbb{F} Y 
+	\mathcal{P} \mathbin{\check{\coprod}}_{\mathbb{F}_G X} \mathbb{F}_G Y 
 \simeq 
 	\mathsf{Lan}_{\left( \widehat{\Omega}_{G}^{e} \to \Sigma_G \right)^{op}}
 	\tilde{N}^{(\mathcal{P},X,Y)},
@@ -9672,9 +9684,6 @@ instead of Lemma \ref{EXMAINLEM LEM}
 
 
 
-
-
-
 %\subsection{Model structures on genuine $G$-operads}
 %\label{OP_G_EXISTS_SECTION}
 % \subsubsection{The $\F$-model structures}
@@ -9739,106 +9748,8 @@ instead of Lemma \ref{EXMAINLEM LEM}
 % % \end{align*} 
 % % for $I$ (resp. $J$) the generating (trivial) cofibrations of $\V$. 
 
-% We can now state our main result for this section.
-% \begin{theorem}\label{OP_G_SEMI_MODEL_THM} 
-%       For $\V$ strongly cellular with diagonals, the projective genuine semi model structure on $\Op_\F(\V)$ exists.
-% \end{theorem} 
-
-%The key technical step in the proof of Theorem \ref{MAINEXIST2 THM}, written out below, is a corollary of the simplest case of a result from \S \ref{COFIB SEC}.
-%\begin{corollary}
-%        \label{GENUINE_TREE_BOX_COFIBRANT_PROP} 
-%        Suppose $\V$ is strongly cellular with diagonals, 
-%        and we are given $T\in \Omega_\F^a$ 
-%       along with level genuine cofibrations $f_{ac}: \mathcal Q \to \P$ and $f_{in}: X \to Y$ in $\Sym_\F(\V)$. 
-%        Then the iterated box product
-%        \[ 
-%        f^{\Box V_G(T)} = \mathop{\Box}\limits_{[v] \in V_G^{ac}(T)} f_{ac}([v]) \Box \mathop{\Box}\limits_{[v]\in V_G^{in}(T)}f_{in}([v]) 
-        % f^{\Box V_G(T)} = \mathop{\Box}\limits_{Gv \in V_G(T)} f(Gv) 
-%        \] 
-%        is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$.  
-%\end{corollary}
-
-%\begin{proof}
-%        Given $[v]\in V_G(T)$, let $\llbracket v \rrbracket$ denote the orbit in $V_G(T)/\mathsf{Aut(T)}$. 
-%        Then we have a natural group homomorphism
-%        \[ 
-%        \beta: \mathsf{Aut}(T) 
-%        \to 
-%        \prod\limits_{\llbracket v \rrbracket} \Sigma_{|\llbracket v \rrbracket |} \wr \mathsf{Aut}(T_{[v]}),
-%        \]
-%        and the forgetful functor 
-%        \[
-%        \beta^*: V^{\Pi \Sigma_{\llbracket v \rrbracket} \wr \mathsf{Aut}(T_{[v]})}_{\text{gen}} 
-%        \to 
-%        \V^{\mathsf{Aut}(T)}_{\text{gen}}
-%        \]
-%        preserves genuine cofibrations by Remark \ref{GEN_FGTRIGHT_REMARK}(i). 
-%        Thus, it suffices to show that $f^{\Box V_G(T)}$ is cofibrant when considered as a map in the category on the left hand side. 
-%        This follows immediately by Proposition \ref{POWERF PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}(ii).
-        % \[
-        % \prod \V^{\mathsf{Aut}(T_{[v]})}_{gen} \to \V^{\Sigma_{|\llbracket v \rrbracket|} \wr \mathsf{Aut}(T_{[v]})}
-        % \]
-        % is left Quillen, and by inspection, 
-        % \[
-        % \prod_i \V^{G_i}_{gen} \to \V^{\prod G_i}_{gen}
-        % \]
-        % is left Quillen, completing the proof.
-        %%%%%%%%%%%%%%%%%%%% OLD PROOF       (c.f. the proof of Proposition \ref{AUTTCOFPUSH PROP})
-        % \todo[inline]{This result isn't actually a particular case of loc cite; or the precise statement of a family version.}
-        % Using grafting composition $T \simeq C \circ (T^1_1, \ldots, T^{k_1}_1, T^1_2, \ldots, T^{k_r}_r)$, we go by induction on $|V_G(T)|$. The base cases of $|V_G(T)| = 0$ or 1 are trivial. Now, we note that we have a decomposition 
-
-        % \[ 
-        % f^{\Box V_G(T)} = f([v_r]) \Box \mathop{\Box}\limits_{i=1}^r\left( \left( f^{\Box V_G(T_i)} \right) ^{\Box k_i} \right) 
-        % \] 
-
-        % where $[v_r]$ is the root orbit. We will build this map in stages, preserving cofibrancy in each step. 
-
-        % \begin{itemize} 
-        % \item By induction, for each $i$, $f^{\Box V_G(T_i)}$ is a cofibration in $\V^{\mathrm{Aut}(T_i)}_{gen}$. 
-        % \item By Proposition \ref{POWERF PROP}, each $\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}$ is a cofibration in $\V^{\Sigma_{k_i}\wr \mathrm{Aut}(T_i)}_{gen}$. 
-        % \item By Remark \ref{EXTERINTADJ EQ}, $\mathop{\Box}\limits_{i=1}^r\left(\left( f^{\Box V_G(T_i)} \right)^{\Box k_i}\right)$ is a cofibration in $\V^{\Pi \Sigma_{k_i} \wr \mathrm{Aut}(T_i)}_{gen}$. 
-        % \item By Proposition \ref{FGTLEFT PROP}, $f([v_r])$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$. 
-        % \item Finally, by the decomposotion of $\mathrm{Aut}(T)$ and Proposition \ref{BIQUILLENG PROP}, we have the full $f^{\Box V_G(T)}$ is a cofibration in $\V^{\mathrm{Aut}(T)}_{gen}$, as desired. 
-        % \end{itemize} 
-
-        % If any $f([v])$ were trivial, then, during the appropriate step above, the resulting box product would again be trivial, by the same referenced results. 
-%\end{proof} 
-
-%\begin{corollary}\label{CELLULAR_LEVEL_COFIB_PROP} 
-%        For $\V$ strongly cellular with diagonals, and for any free $\mathbb{F}_\F$-extension  
-%        \[ 
-%        \begin{tikzcd} 
-%                \mathbb{F}_\F X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\ 
-%                \mathbb{F}_\F Y \arrow[r] & \P[u] 
-%        \end{tikzcd} 
-%        \] 
-%        where $u: X \to Y$ is a level genuine cofibration and $\P$ is level genuine cofibrant in $\Sym_\F(\V)$, the map $\P \to \P[u]$ is a level genuine cofibration, trivial if $u$ is so. 
-%\end{corollary}  
-
-%\begin{proof} 
-%        As we know $\upgamma_!$ preserves pushouts of operads by Corollary \ref{F_TWOADJOINTSOP_COR},
-%        applying $\upgamma_!$ to the free $\mathbb F_\F$-extension above yields a pushout
-%        \[
-%        \begin{tikzcd}
-%                \mathbb F_G \upgamma_! X \arrow[r] \arrow[d] & \upgamma_!\P \arrow[d]\\
-%                \mathbb F_G \upgamma_! Y \arrow[r] & \upgamma_! \P[u].
-%        \end{tikzcd}
-%        \]
-%        It is clear that, given the starting assumptions, $\upgamma_! u$ and $\upgamma_! \P$ are level cofibrations and level cofibrant, respectively. 
-%        Hence, since $\upgamma^{\**}$ also preserves pushouts of operads (and level cofibrations), 
-%        the result follows by using the levelwise filtration from %(\ref{FF_FREE_EXTENSION}),
-%        (\ref{FILTRATION_LAN_LEVEL}), 
-%        and applying Corollary \ref{GENUINE_TREE_BOX_COFIBRANT_PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}(i). 
-%\end{proof} 
-
-%\begin{proof}[Proof of Theorem \ref{MAINEXIST2 THM}]
-%        All three parts follow precisely as in the proof of Theorem \ref{MAINEXIST1 THM},
-%        replacing the use of Corollary \ref{CELLULAR_LEVEL_COFIB_PROP2} with Corollary \ref{CELLULAR_LEVEL_COFIB_PROP}.
-%\end{proof}
 
 
-
-%\renewcommand{\bar}{\barr}
 
 
 
@@ -9948,9 +9859,8 @@ cellularity conditions in Definition \ref{CELL DEF}.
 
 
 \begin{proof}
-Since 
-%all
-both conditions are compatible with retracts, we are free to assume each cofibration $f\colon X \to Y$
+Since both conditions are compatible with retracts, 
+we are free to assume each cofibration $f\colon X \to Y$
 (or, for $Y$ cofibrant, the map $\emptyset \to Y$)
 is a transfinite composition
 \begin{equation}\label{TRANSFCOMP EQ}
@@ -9971,21 +9881,7 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 \end{proof}
 
 
-%%%%%%
-%  As property $(iii)$ above (and the related Proposition \ref{POWERF PROP}) will be of increasing importance, we  give a name to such categories where it is true.
-%\begin{definition}
-%  \label{STRONGLY_CELLULAR}
-%  We say a category $\V$ is \textit{strongly cellular} if the following hold: 
-%  \begin{enumerate} 
-%  \item $\V$ is a strongly cofibrantly-generated closed monoidal model category,
-%  \item $\V$ has cellular fixed points,
-%  \item $\V$ has cofibrant symmetric pushout powers (see Definition \ref{COFSYMPUSHPOW}).
-%  \end{enumerate} 
-%\end{definition} 
-%%%%%%
 
-
-%We end this section by cataloging some straightforward interactions of $\mathcal{F}$-model structures with regards to change of group and pushout products.
 
 
 \begin{proposition}\label{FGTRIGHT PROP}
