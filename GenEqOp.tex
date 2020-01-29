@@ -4072,9 +4072,10 @@ we write $T_{e^{\uparrow}\leq e}$
 as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
 
 Further, each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
-We will prefer to write $G$-vertices as $v_{Ge}$, and write
+We will prefer to write $G$-vertices as $v_{Ge}$\index{Gvertex@$v_{Ge}$}, 
+and write
 \begin{equation}\label{TVGE DEF}
-T_{v_{Ge}} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+	T_{v_{Ge}}\index{Gvertexsubtree@$T_{v_{Ge}}$} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
 \end{equation}
 where $Ge$ inherits the planar order.
 \end{notation}
@@ -6934,7 +6935,7 @@ $N^{s+1} \circ \coprod \circ (N^{\times \lambda})^{\circ n-s}$.
 \begin{definition}\label{LABMAP DEF}
 A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) is a pair $(T,V_G(T) \to \{1,\cdots,l\})$ with $T \in \Omega_G$, which we think of as a $G$-tree together with $G$-vertices labels in $1,\cdots,l$.
 
-Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if for each $G$-vertex $v_{G e}$ of $T$ with label $j$, the vertices of the subtree $S_{v_{G e}}$ are all labeled by $j$.
+Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if, for each $G$-vertex $v_{G e}$ of $T$ with label $j$, all vertices of the subtree $S_{v_{G e}}$ (cf. \eqref{TVGE DEF}) are labeled by $j$.
 
 Lastly, given a subset $J\subset \underline{l}$, a planar label map $\varphi \colon T \to S$ is said to be $J$-inert if for every $G$-vertex $v_{G e}$ of $T$ with label $j \in J$, we have $S_{v_{Ge}} = T_{v_{Ge}}$.
 \end{definition}
@@ -10899,7 +10900,8 @@ $\Delta \colon
 G \times \Sigma \times \bar{\Sigma} \to 
 G \times \Sigma \times G \times \bar{\Sigma}$
 or 
-$\Delta \colon G \times \Sigma_n \wr \Sigma \to 
+$\Delta \colon G \times (\Sigma_n \wr \Sigma)
+ \to 
 \Sigma_n \wr (G \times \Sigma)$.
 \end{notation}
 
@@ -10912,26 +10914,41 @@ $\Delta \colon G \times \Sigma_n \wr \Sigma \to
 \end{remark}
 
 
+
 \begin{remark}\label{UNPACKINGLTIMES REM}
-Unpacking (\ref{FLTIMESN2 EQ}) and noting that,
-as subgroups of $\Sigma_n \wr (G \times \Sigma)$,
+Given a finite set $E$
+the image of the inclusion	
+$\Delta \colon G \times (\Sigma_E \wr \Sigma)
+\to 
+\Sigma_E \wr (G \times \Sigma)$
+consists of the elements
+$(\sigma,(g_e,\tau_e)_{e \in E}),
+\sigma \in \Sigma_n,
+g_e \in G,
+\tau_e \in \Sigma$
+such that all $g_e, e \in E$ coincide.
+Hence, for fixed $e\in E$,
+and when viewed as subgroups of $\Sigma_E \wr (G \times \Sigma)$,
+one has an identification
 \[
 	\left(G \times \Sigma_E \wr \Sigma\right)
-\cap
+	\cap
 	\left(
 	\Sigma_{\lambda_e} \wr (G \times \Sigma)
 	\right)
 =
-	G \times \Sigma_{\lambda_e} \wr \Sigma
+	G \times (\Sigma_{\lambda_e} \wr \Sigma)
 \]
- one has  
+(the subgroup $\Sigma_{\lambda_e} \leq \Sigma_E$ is as described prior to Definition \ref{FLTIMESN DEF}).
+
+Thus, unpacking (\ref{FLTIMESN2 EQ}) one has  
 \[
 	K \in \mathcal{F}^{\ltimes_G E} 
 	\text{ iff }
 	\underset{e \in E}{\forall} \pi_{G \times \Sigma}
 	\left(
 		K \cap 
-		\left(G \times \Sigma_{\lambda_e} \wr \Sigma \right)
+		\left(G \times (\Sigma_{\lambda_e} \wr \Sigma) \right)
 	\right)
 	\in \mathcal{F}.
 \]
