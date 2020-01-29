@@ -9190,8 +9190,7 @@ are genuine projective equivalences and hence also projective equivalences, show
 \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
 holds,
-establishing the existence of the projective model structure
-. 
+establishing the existence of the projective model structure. 
 % \footnote{
 % The condition in \cite[Lemma 2.3(1)]{SS00}
 % is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
@@ -9202,53 +9201,56 @@ one replaces \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
 with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical).
 
-To address the remaining cases in 
-Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, note first that by replacing 
-the model structure in the leftmost category of (\ref{MAINPFADJ EQ})
-with
-$\prod_{C \in \Sigma_G} \mathcal{V}^{\mathsf{Aut}(C)}_{\mathcal{F}_C}$
-for an arbitrary choice of collections of 
-subgroups $\mathcal{F}_C$ of $\mathsf{Aut}(C)$ for
-$C \in \Sigma_G$, 
-the exact same argument as in the previous paragraph yields a transferred 
-$\{\mathcal{F}_C\}$ model structure in $\mathsf{Op}_G(\mathcal{V})$.
-
-Letting $\mathcal{F}$ now denote a weak indexing system as in Theorem \ref{MAINEXIST2 THM}
-and Corollary \ref{TWOADJOINTSOPF COR},
-one concludes in particular that there exists a 
-``$\mathcal{F}$-projective''
-(semi-)model structure on 
-$\mathsf{Op}_G(\mathcal{V})$,
-with weak equivalences and fibrations determined by evaluation at $C$ for $C \in \Sigma_{\mathcal{F}}$.
-This does not quite coincide with the 
-$\mathcal{F}$-projective model structure on
-$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
-appearing in Theorem \ref{MAINEXIST2 THM},
-since $\mathsf{Op}_G(\mathcal{V})$ is a larger category.
-But, since the inclusions
-$\upgamma_! \colon 
-\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
-	\to
-\mathsf{Sym}_{G}(\mathcal{V})$, 
+The general case of Theorem \ref{MAINEXIST2 THM}
+with $\mathcal{F}$ an arbitrary weak indexing system
+slightly refines the argument in the previous paragraph.
+Namely, the inclusion
+%$\upgamma_! \colon 
+%\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})
+%\to
+%\mathsf{Sym}_{G}(\mathcal{V})$, 
 $\upgamma_! \colon 
 \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
-	\to
+\to
 \mathsf{Op}_{G}(\mathcal{V})$
-in (\ref{F_TWOADJOINTS_EQ}), (\ref{TWOADJOINTSOPF EQ}) 
-preserve colimits and the monad 
-$\mathbb{F}_{\mathcal{F}}$
-defining $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
-can be regarded as a restriction of
-$\mathbb{F}_G$,
-the desired condition in 
-\cite[Thm. 11.3.2(2)]{Hi03}
-%\cite[Lemma 2.3(1)]{SS00} 
-when
-applied to the intended model structure on 
-$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
-turns out to coincide with the corresponding  condition for the $\mathcal{F}$-projective model structure on $\mathsf{Op}_{G}(\mathcal{V})$.
-The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
-finishing the proof of Theorem \ref{MAINEXIST2 THM}.
+(which is an extension by $\emptyset$)
+has the following key properties:
+\begin{inparaenum}
+	\item[(i)] it preserves colimits;
+	\item[(ii)] it sends the generating (trivial) cofibrations
+	of $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
+	i.e. the maps
+	$\mathbb{F}_{\mathcal{F}}
+	\left(
+	\mathsf{Hom}_{\Sigma_{\mathcal{F}}}(-,D) \cdot u
+	\right)$
+	with $D \in \Sigma_{\mathcal{F}}$
+	and $u$ a generating (trivial) cofibration in $\mathcal{V}$,
+	to generating (trivial) cofibrations
+	in the genuine projective model structure
+	on $\mathsf{Op}_G(\mathcal{V})$
+	defined by \eqref{MAINPFADJ EQ};
+	\item[(iii)] maps in $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ which become genuine projective 
+	weak equivalences in $\mathsf{Op}_{G}(\mathcal{V})$
+	are $\mathcal{F}$-projective weak equivalences.
+\end{inparaenum}
+	Thus, if $f$ is a transfinite 
+	composite of pushouts of generating trivial cofibrations
+	in $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
+	properties (i),(ii) show that 
+	$\gamma_!(f)$
+	is a genuine projective trivial cofibration in 
+	$\mathsf{Op}_{G}(\mathcal{V})$
+	and thus (iii) implies
+	that $f$ is a $\mathcal{F}$-projective weak equivalence in
+	$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
+	establishing the required condition in 
+	\cite[Thm. 11.3.2(2)]{Hi03}.
+%
+	The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
+	finishing the proof of Theorem \ref{MAINEXIST2 THM}.
+
+{\color{red} HERE}
 
 We now turn to Theorem \ref{MAINEXIST1 THM}.
 Should it be the case that 
