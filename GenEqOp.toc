@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {6.1}Families of subgroups}{62}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6.2}Pushout powers}{64}{subsection.6.2}% 
 \contentsline {subsection}{\numberline {6.3}$G$-graph families and $G$-trees}{68}{subsection.6.3}% 
-\contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{72}{subsection.6.4}% 
+\contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{73}{subsection.6.4}% 
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{76}{subsection.6.5}% 
 \contentsline {section}{\numberline {A}Transferring Kan extensions}{79}{appendix.A}% 
-\contentsline {section}{Glossary of Notation}{84}{section*.3}% 
+\contentsline {section}{Glossary of Notation}{85}{section*.3}% 
