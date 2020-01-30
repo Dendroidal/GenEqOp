@@ -9250,8 +9250,6 @@ has the following key properties:
 	The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 	finishing the proof of Theorem \ref{MAINEXIST2 THM}.
 
-{\color{red} HERE}
-
 We now turn to Theorem \ref{MAINEXIST1 THM}.
 Should it be the case that 
 $(\mathcal{V},\otimes)$ has diagonals 
@@ -9259,15 +9257,96 @@ $(\mathcal{V},\otimes)$ has diagonals
 one can simply use the inclusion
 $\iota_{!} \colon \mathsf{Op}^G(\mathcal{V})
 \to 
-\mathsf{Op}_G(\mathcal{V})$ of (\ref{TWOADJOINTS EQ}) and repeat the argument in the previous paragraph, except now for an arbitrary collection
-$\{\mathcal{F}_C\}$.
-Otherwise, one instead adapts the entire proof,
-starting with the obvious $\mathsf{Op}^G(\mathcal{V})$ analogue
-of (\ref{MAINPFADJ EQ})
-and using Remark \ref{EXMAINLEM REM}
-instead of Lemma \ref{EXMAINLEM LEM}
-(as in this case, we may still use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
+\mathsf{Op}_G(\mathcal{V})$ of (\ref{TWOADJOINTS EQ}) and repeat the argument in the previous paragraph
+since $\iota_!$ satisfies (i),(ii),(iii) therein
+for any choice of 
+$\mathcal{F} = \{\mathcal{F}_n\}$
+as in Theorem \ref{MAINEXIST1 THM}.
+%
+Otherwise, 
+one can readily adapt the entire proof with only minor changes required, as follows.
+First, one has the following analogue of
+\eqref{MAINPFADJ EQ}
+\begin{equation}\label{MAINPFADJAL EQ}
+\begin{tikzcd}[column sep =5em]
+	\prod_{n \geq 0}
+	\mathcal{V}^{G \times \Sigma_n^{op}}_{\text{gen}}
+	\ar[shift left=1.5]{r}
+&
+	\mathsf{Sym}^{G}(\mathcal{V}) 
+	\arrow[l, shift left=1.5, "\left(\text{ev}_n(\minus)\right)"] 
+	\arrow[r, shift left=1.5,swap,"\mathbb{F}"']
+&
+	\mathsf{Op}^G(\mathcal{V})
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation}
+which we use to induce a 
+``genuine projective'' model structure on 
+$\mathsf{Op}^G(\mathcal{V})$. This again uses
+\cite[Thm. 11.3.2(2)]{Hi03},
+with the main step being an analysis of 
+free $\mathbb{F}$-extension diagrams in 
+$\mathsf{Op}^G(\mathcal{V})$
+\[ 
+	\begin{tikzcd} 
+	\mathbb{F}
+	\left(
+	(G \times \Sigma_n^{op})/K \cdot A 
+	\right) \arrow[d, "u"'] \arrow[r] 
+&
+	\mathcal{O} \arrow[d]
+\\ 
+	\mathbb{F}
+	\left(
+	(G \times \Sigma_n^{op})/K \cdot B 
+	\right)
+	\arrow[r]
+&
+	\mathcal{O}[u] 
+\end{tikzcd} 
+\]
+for $K \leq G \times \Sigma_n^{op}$
+and $u \colon A \to B$
+a generating trivial (trivial) cofibration of $\mathcal{V}$.
+Using the identification
+$\mathsf{Op}^G(\mathcal{V}) \simeq 
+\mathsf{Op}(\mathcal{V}^G)$
+one can apply the filtration
+(\ref{FILTRATION_LAN_LEVEL}) when $G = \**$ and 
+$\mathcal{V} = \mathcal{V}^G$.
+The key fact that the filtration maps 
+$\mathcal{O}_{k-1}(n) \to \mathcal{O}_{k}(n)$
+are $G\times \Sigma_n^{op}$-genuine cofibrations 
+follows by Remark \ref{EXMAINLEM REM}
+(replacing the role of Lemma \ref{EXMAINLEM LEM} in the $\mathsf{Op}_G(\mathcal{V})$ argument),
+so that \cite[Thm. 11.3.2(2)]{Hi03}
+applies to establish the 
+genuine projective model structure on 
+$\mathsf{Op}^G(\mathcal{V})$
+lifted along \eqref{MAINPFADJAL EQ}.
+To finish the argument
+note that, compared to this genuine projective model structure,
+a choice of 
+$\mathcal{F} = \{\mathcal{F}_n\}$
+as in Theorem \ref{MAINEXIST1 THM}
+decreases generating (trivial) cofibrations and
+increases weak equivalences,
+so that the argument
+in the previous paragraph concerning the
+projective model structure on
+$\mathsf{Op}_{G}(\mathcal{V})$
+applies mutatis mutandis.
+%
+%Otherwise, one instead adapts the entire proof,
+%starting with the obvious $\mathsf{Op}^G(\mathcal{V})$ analogue
+%of (\ref{MAINPFADJ EQ})
+%and using Remark \ref{EXMAINLEM REM}
+%instead of Lemma \ref{EXMAINLEM LEM}
+%(as in this case, we may still use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
 \end{proof}
+
+
 
 
 
