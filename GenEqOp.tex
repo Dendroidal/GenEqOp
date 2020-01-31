@@ -5908,9 +5908,12 @@ uniquely determined by the condition that they
 are the identity on the first tree component $C_1$.
 
 
+
 We now consider the associated adjunctions.
 \begin{equation}\label{TWOADJOINTS EQ}
 \begin{tikzcd}[column sep =5em]
+\index{iotau@$\iota^{\**}$}
+\index{iotal@$\iota_{\**}$}
 	\mathsf{Sym}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
 	&
 	\mathsf{Sym}^G(\mathcal{V})
@@ -5971,7 +5974,7 @@ As a side note, the formulas for $\iota_!$ and $\iota_{\**}$ are independent of 
 	$\phi \colon H \to \Sigma_n$
 	encoding the action of $H$ on $C_1$.
 	We then have the formulas 
-\begin{equation}
+\begin{equation}\label{IOTAFUNSALT EQ}
 	\iota_{\**}Y ((C_i)_I)
 	=
 	\left(\prod_{I} Y(C_i)\right)^G
@@ -5987,7 +5990,7 @@ $A \to Y(C_1)^H$
 onto the first factor.
 \end{remark}
 
-{\color{red} HERE}
+
 
 \begin{remark}\label{REFLCOREFL REM}
 	$\iota_!$ essentially identifies 
@@ -12786,12 +12789,17 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
         For the counit, it is immediate from Lemma \ref{MAINLEM LEM} that if $X \in \mathsf{Op}^G(\mathcal{V})$ is bifibrant
         the functor $\iota^{\**} \iota_{\**} X$ is already derived, and hence the derived counit is identified with the counit isomorphism $\iota^{\**} \iota_{\**} X \xrightarrow{\simeq} X$.
 
-        For the unit, note first that it is immediate from the definitions that 
+        For the unit, note first that it is immediate from the definitions
+        of the model structures in Theorems 
+        \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM} 
+        and the formula for $\iota_{\**}$ in \eqref{IOTAFUNSALT EQ}
+        that 
         $\iota_{\**} \colon 
         \mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})\to  
        \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
-        detects fibrations (as well as weak equivalences), 
-        and thus by Lemma \ref{MAINLEM LEM}
+        detects fibrations (as well as weak equivalences)
+        and thus, by Lemma \ref{MAINLEM LEM},
+        that 
         $Y \in \mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
         is bifibrant iff $Y \simeq \iota_{\**} X$
         for $X \in \mathsf{Op}^{G}_{\mathcal{F}}(\mathcal{V})$ bifibrant.
