@@ -5890,7 +5890,7 @@ We will throughout this section fix a total order of $G$ such that the identity 
 We now have an inclusion functor
 \[
 \begin{tikzcd}[row sep =0]
-	\iota \colon G \times \Sigma \ar[hookrightarrow]{r} &
+	\iota \colon G^{op} \times \Sigma \ar[hookrightarrow]{r} &
 	\Sigma_G
 \\
 	C \ar[mapsto]{r} & G \cdot C
@@ -5899,7 +5899,7 @@ We now have an inclusion functor
 where $G \cdot C$ is the constant tuple $(C)_{g \in G}$,
 which we think of as $|G|$ copies of $C$, planarized according to $C$ and the order on $G$.
 Moreover, letting $\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_G$ denote the full subcategory of $G$-free corollas, there is an induced retraction 
-$\rho \colon \Sigma_{G}^{\text{fr}} \to G \times \Sigma$
+$\rho \colon \Sigma_{G}^{\text{fr}} \to G^{op} \times \Sigma$
 defined by 
 $\rho\left( (C_i)_{1\leq i \leq |G|} \right) = G \cdot C_1$
 together with isomorphisms 
@@ -5946,16 +5946,48 @@ $Y$.
 As a side note, the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
 
 
-{\color{red} HERE}
-
-\begin{remark}
-	something more on the formula for 
-	$\iota_{\**}$
+\begin{remark}\label{IOTAFUNSALT REM}
+	The formula for 
+	$\iota_{\**}$ in \eqref{IOTAFUNS EQ}
+	emphasizes functoriality on
+	$C = (C_i)_{I}$,
+	but in practice we will find it more convenient to use 
+	alternative formulas.
+	
+	To obtain these formulas,
+	write $1 \in I$ for the first element and 
+	$H \leq G$ for its isotropy,
+	and note that the $G$-action described after \eqref{IOTAFUNS EQ} defines an action on $Y(C_1)$.
+	Moreover, viewing 
+	$C_1 \in \Sigma$ as an integer arity $n\geq 0$,
+	so that $Y(C_1) = Y(n)$
+	comes with a natural
+	$G \times \Sigma_n^{op}$-action,
+	the $H$-action on $Y(C_1)$
+	is identified with the action of the graph subgroup
+	$\Gamma = \{(h,\phi(h)^{-1}) | h \in H \}$
+	of $G \times \Sigma_n^{op}$
+	associated to the homomorphism
+	$\phi \colon H \to \Sigma_n$
+	encoding the action of $H$ on $C_1$.
+	We then have the formulas 
+\begin{equation}
+	\iota_{\**}Y ((C_i)_I)
+	=
+	\left(\prod_{I} Y(C_i)\right)^G
+	\simeq
+	Y(C_1)^H
+	\simeq
+	Y(n)^{\Gamma}
+\end{equation}
+where the second identification follows by unpacking universal properties to show that a map
+$A \to \left(\prod_{I} Y(C_i)\right)^G$
+is equivalent to the induced map
+$A \to Y(C_1)^H$
+onto the first factor.
 \end{remark}
 
 {\color{red} HERE}
-
-
 
 \begin{remark}\label{REFLCOREFL REM}
 	$\iota_!$ essentially identifies 
@@ -11351,39 +11383,65 @@ The result now follows by Proposition \ref{POWERFG PROP} together with the induc
 
 
 
-\begin{remark}
+\begin{remark}\label{WRONGSTRAT REM}
 When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
 matches \cite[Lemma 5.9]{BM08}.
-Moreover, it is not hard to modify the proof of \cite[Lemma 5.9]{BM08} to show Proposition \ref{AUTTCOFPUSH PROP} for the universal family $\Sigma_G$ of all $G$-corollas.
-However, our arguments are more subtle than those in 
-\cite{BM08}, which need no analogue
-of the $\mathcal{F}^{\ltimes_G n}$ families.
-Indeed, this is reflected 
-at the end of our proof of Lemma \ref{KEYLEMMAGECO LEM}, where (\ref{KEYLEMMAGECOR EQ})
-is used to deduce the simpler condition
-$\Gamma \cap \prod \Sigma_{T_i} = \**$,
-a condition that would suffice
-if directly adapting \cite[Lemma 5.9]{BM08}
-to obtain the $\Sigma_G$ case.
-
-One might thus hope for similarly easier proofs of the general $\Sigma_{\mathcal{F}}$ case and,
-reverse engineering our arguments,
-the most natural such attempt would replace 
-(\ref{KEYLEMMAGECOR EQ}) with
-\[
-%\begin{equation}\label{WRONGCONJ}
-\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
-\in \mathcal{F},
-\]
-%\end{equation}
-which is tantamount to 
-replacing the families 
-$\mathcal{F}^{\ltimes n}$ of Definition \ref{FLTIMESN DEF} with the families
-$(\iota_{G^{\times n}})_{\**}
-(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
-However, one can build indexing systems $\Sigma_{\mathcal{F}}$ (other than $\Sigma_G$) for which these simpler families do not satisfy the analogue of 
-Lemma \ref{KEYLEMMAGECO LEM}, 
-and thus for which the analogue of Remark \ref{LRLEFTQUILLEN REM} fails.
+In fact, it is not hard to modify the proof of \cite[Lemma 5.9]{BM08} to show Proposition \ref{AUTTCOFPUSH PROP} for the %universal 
+family $\Sigma_G$ of all $G$-corollas.
+Indeed, 
+%the arguments in
+the last paragraph of our proof of
+Lemma \ref{KEYLEMMAGECO LEM}
+is very close to the arguments in 
+\cite{BM08}.
+However, the case of a general $\Sigma_{\mathcal{F}}$
+is intrinsically more subtle,
+with the rest of our proof of 
+Lemma \ref{KEYLEMMAGECO LEM} 
+depending heavily on the 
+$\mathcal{F}^{\ltimes_G n}$ families,
+which have no analogue in \cite{BM08}.
+%
+%
+%However, our arguments are subtler than those in 
+%\cite{BM08}, which need no analogue
+%of the $\mathcal{F}^{\ltimes_G n}$ families.
+%More precisely, 
+%the last paragraph of the proof of
+%Lemma \ref{KEYLEMMAGECO LEM}
+%
+%Indeed, this is reflected in
+%at the end of 
+%our proof of Lemma \ref{KEYLEMMAGECO LEM}, 
+%where (\ref{KEYLEMMAGECOR EQ})
+%is used to deduce the simpler condition
+%$\Gamma \cap \prod \Sigma_{T_i} = \**$,
+%which is sufficient to 
+%a condition that would suffice
+%directly adapting \cite[Lemma 5.9]{BM08}
+%to obtain the $\Sigma_G$ case.
+%
+%
+%One might thus hope for similarly easier proofs of the general $\Sigma_{\mathcal{F}}$ case and,
+%reverse engineering our arguments,
+%the most natural such attempt would replace 
+%(\ref{KEYLEMMAGECOR EQ}) with
+%\[
+%%\begin{equation}\label{WRONGCONJ}
+%\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
+%\in \mathcal{F},
+%\]
+%%\end{equation}
+%which is tantamount to 
+%replacing the families 
+%$\mathcal{F}^{\ltimes n}$ of Definition \ref{FLTIMESN DEF} with the families
+%$(\iota_{G^{\times n}})_{\**}
+%(\mathcal{F} \sqcap \cdots \sqcap \mathcal{F})$.
+%However, one can build indexing systems $\Sigma_{\mathcal{F}}$ (other than $\Sigma_G$) for which these simpler families do not satisfy the analogue of 
+%Lemma \ref{KEYLEMMAGECO LEM}, 
+%and thus for which the analogue of Remark \ref{LRLEFTQUILLEN REM} fails.
+%
+%
 %However, the following example shows that  
 %(\ref{WRONGCONJ}) 
 %is insufficient. Let $G = \Sigma_3 \wr \mathbb{Z}_{/2}$
