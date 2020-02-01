@@ -5999,16 +5999,20 @@ onto the first factor.
 On the other hand, $\iota_{\**}$ identifies 
 $\mathsf{Sym}^G(\mathcal{V})$ with the more interesting reflexive subcategory of those sequences 
 $X \in \mathsf{Sym}_G(\mathcal{V})$ 
-such that $X(C)$ for each $C$ not a free corolla must satisfy a fixed point condition. 
-Explicitly, letting 
-$\varphi \colon G \to \mathsf{r}(C)$
-denote the unique map preserving the minimal element, one has
-\[X(C) \xrightarrow{\simeq} X(\varphi^{\**}C)^{\Gamma}\]
-for 
-$\Gamma \leq \mathsf{Aut}(\varphi^{\**}C)$
+such that $X(C)$ for each $C = (C_i)_I$ not a free corolla must satisfy a fixed point condition. 
+%
+Explicitly, letting $G \cdot C_1 \to C$
+be the quotient map determined by the inclusion
+$C_1 \to C$, one has
+\[
+	X(C) \xrightarrow{\simeq}
+	X(G \cdot C_1)^{\Gamma}
+\]
+for $\Gamma \leq \mathsf{Aut}(G \cdot C_1)$
 the subgroup preserving the quotient map
-$\varphi^{\**}C \to C$
-under precomposition (note that $\varphi^{\**}C \in \Sigma_G^{\text{fr}}$).
+$G \cdot C_1 \to C$
+under precomposition 
+(note that $(G \cdot C_1) \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
