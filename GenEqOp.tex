@@ -11508,12 +11508,46 @@ which have no analogue in \cite{BM08}.
 \end{remark}
 
 
+By allowing $T \in \Omega^{\underline{l}}$
+to vary \eqref{FSQVT EQ}
+defines an arrow
+$f^{\square V(-)}$ in $\mathcal{V}^{G \times \Omega^{\underline{l},op}}$.
+Our next step is to compare this construction with an analogue construction for $G$-trees.
+
+
+To do so, and in analogy with the functor
+$\iota \colon G^{op} \times \Sigma \to 
+\Sigma_G$
+in \S \ref{COMPARISON_REGULAR_SECTION},
+we likewise define
+$\iota \colon G^{op} \times \Omega^{\underline{l}} \to 
+\Omega^{\underline{l}}_G$
+via $T \mapsto G \cdot T$.
+We then write
+$\iota_{\**} 
+\colon
+\mathcal{V}^{G \times \Omega^{\underline{l},op}}
+\to 
+\mathcal{V}^{\Omega^{\underline{l},op}_G}
+$
+for the right adjoint to precomposition.
+Just as in \eqref{IOTAFUNSALT EQ}, we then have
+that for $Y \in \mathcal{V}^{G \times \Omega^{\underline{l},op}}$
+and $T = (T_i)_{i \in I}$
+in $\mathcal{V}^{\Omega^{\underline{l}}}_G$ it is
+\begin{equation}\label{IOTAFUNSALTBIG EQ}
+	\iota_{\**}Y (T)
+=
+	\left(\prod_{I} Y(T_i)\right)^G
+\simeq
+	Y(T_1)^H
+\end{equation}
+where $T_1$ is the first component of $T$
+and $H \leq G$ is the isotropy of the first element of $I$.
+
+
 {\color{red} HERE}
 
-\eqref{FSQVT EQ}
-
-
-{\color{red} HERE}
 
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
@@ -11523,129 +11557,205 @@ which have no analogue in \cite{BM08}.
 	$f_s \colon A_s \to B_s$, $1\leq s \leq l$ be 
 	genuine cofibrations between genuine cofibrant objects in 
 	$\mathsf{Sym}^G(\mathcal{V})$.
-	For each $T \in \Omega_{G}^{\underline{l}}$ define
-\[
+	Define a map
+	$f^{\square V_G(-)}$ in
+	$\mathcal{V}^{\Omega^{\underline{l},op}_G}$
+	by setting, for each $T \in \Omega_{G}^{\underline{l}}$,
+\begin{equation}\label{FSQVTG EQ}
 		f^{\square V_G(T)} = 
 		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
 			\phantom{!}
 		\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
 		\iota_{\**}f_s(v).
-\]
-	Then the canonical natural transformation
+\end{equation}
+	One then has a natural identification
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-		f^{\square V_G(-)} \to
-		\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+		f^{\square V_G(-)} \simeq
+		\iota_{\**} \left(f^{\square V(-)}\right).
 	\end{equation}
-		is a natural isomorphism in $\V^{\Omega_G^{\underline{l},op}}$ (with $G \times \Omega^{\underline{l}} \xrightarrow{\iota} \Omega_G^{\underline{l}}$ the inclusion).
 \end{proposition}
 
-
 \begin{proof}
-Note first that there is a coproduct decomposition
-\[\Omega_{G}^{\underline{l}}
-\simeq \coprod_{U \in \mathsf{Iso}
-\left(\Omega^{\underline{l}}\right)}
-\Omega_{G}^{\underline{l}}[U]\]
-where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
-formed by the quotients of $G \cdot U$.
-It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each subcategory 
-$\Omega_{G}^{\underline{l}}[U]$. 
-
-All such $G$-trees can be written as 
-$T = G \cdot_H U_H$,
-where $U_H$ denotes the underlying tree
-$U \in \Omega^{\underline{l}}$
-together with a $H$-action. 
-By induction on 
-$|G|$ we are free 
- to assume $H=G$.
-Indeed, otherwise there are identifications
-$V_G(T) \simeq V_H(U_H)$ and 
-$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(U_H)}$ from which the desired isomorphism follows by induction.
-
-We have thus reduced to the case 
-$T=U_G$.
-Consider now the quotient map
-$(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
-The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
-are the elements of the
-$G$-graph subgroup $K \leq G \times \Sigma_U$
-encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
-
-We now have identifications
-(recall that $V_G(U_G) = V(U)/G$)
-\begin{align*}
-	f^{\square V_G(U_G)}
+	For brevity, let us abbreviate \eqref{FSQVT EQ} as
+	$\left(f^{\square V(-)}\right) = \underset{v \in V(T)}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet}(v)$,
+	leaving the label data implicit in the vertex data,
+	and likewise for \eqref{FSQVTG EQ}.
+	Letting 
+	$T = (T_i)_I$ and $H\leq G$ be as in 
+	\eqref{IOTAFUNSALTBIG EQ}
+	we then have
+\[
+	\left(\iota_{\**} \left(f^{\square V(-)}\right)\right)(T)
 \simeq
-	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**}f_{\bullet}([v])
-\simeq
-	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
-	f_{\bullet,[v]}^{G_{[v]}}
-\simeq
-	\left(
-	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+	\left(f^{\square V(T_1)}\right)^H
+=
+	\left(\underset{v \in V(T)}{\mathlarger{\mathlarger{\square}}}
 	f_{\bullet}(v)
-	\right)^G
+	\right)^H
 \simeq
-	\left(
-	\underset{G v \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**} f_{\bullet}(G v)
-	\right)^K
-\end{align*}
-Here the second identification combines the formula for $\iota_{\**}$ in 
-\S \ref{COMPARISON_REGULAR_SECTION}
-with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
-The third step follows by 
-Corollary \ref{FIXEDPUSH COR} 
-(this is the step requiring the cofibrancy of the $f_s$).
-The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
-Noting that this last term is
-$ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
-\right) (U_G)$ finishes the proof.
+	\underset{[v] \in V(T_1)/H}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet}(v)^{H_v}
+\simeq
+	\underset{[v] \in V_G(T)}{\mathlarger{\mathlarger{\square}}}
+\iota_{\**}f_{\bullet}([v])
+\]
+where the first step is 
+\eqref{IOTAFUNSALTBIG EQ},
+the third step is
+Corollary \ref{FIXEDPUSH COR}
+with $H_v$
+the $H$-isotropy of $v \in V(T_1)$
+(where we simplify the notation
+$f_{\bullet}([v])^{H_{[v]}}$
+to 
+$f_{\bullet}(v)^{H_v}$
+by picking the first representative $v$ of $[v]$),
+and the final step is
+\eqref{IOTAFUNSALT EQ}
+together with the observation that
+$H_v \leq G$
+is also the $G$-isotropy of $v \in V(T)$
+and the identification
+$V(T_1)/H \simeq V_G(T)$.
+Noting that the last term is 
+$f^{\square V_G(T)}$
+finishes the proof.	
+\end{proof}
+
+
+
+%\begin{proposition}\label{FIXPT PROP}
+%	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
+%	$\mathcal{V}$ has diagonal maps and cartesian fixed points.
+%	
+%	Let  
+%	$f_s \colon A_s \to B_s$, $1\leq s \leq l$ be 
+%	genuine cofibrations between genuine cofibrant objects in 
+%	$\mathsf{Sym}^G(\mathcal{V})$.
+%	For each $T \in \Omega_{G}^{\underline{l}}$ define
+%	\[
+%	f^{\square V_G(T)} = 
+%	\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
+%	\phantom{!}
+%	\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**}f_s(v).
+%	\]
+%	Then the canonical natural transformation
+%	\begin{equation}\label{FIXEDPOINT1 EQ}
+%	f^{\square V_G(-)} \to
+%	\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+%	\end{equation}
+%	is a natural isomorphism in $\V^{\Omega_G^{\underline{l},op}}$ (with $G \times \Omega^{\underline{l}} \xrightarrow{\iota} \Omega_G^{\underline{l}}$ the inclusion).
+%\end{proposition}
+
+
+%\begin{proof}
+%Note first that there is a coproduct decomposition
+%\[\Omega_{G}^{\underline{l}}
+%\simeq \coprod_{U \in \mathsf{Iso}
+%\left(\Omega^{\underline{l}}\right)}
+%\Omega_{G}^{\underline{l}}[U]\]
+%where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
+%formed by the quotients of $G \cdot U$.
+%It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each %subcategory 
+%$\Omega_{G}^{\underline{l}}[U]$. 
+%
+%All such $G$-trees can be written as 
+%$T = G \cdot_H U_H$,
+%where $U_H$ denotes the underlying tree
+%$U \in \Omega^{\underline{l}}$
+%together with a $H$-action. 
+%By induction on 
+%$|G|$ we are free 
+% to assume $H=G$.
+%Indeed, otherwise there are identifications
+%$V_G(T) \simeq V_H(U_H)$ and 
+%$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(U_H)}$ from which the desired isomorphism follows by induction.
+
+%We have thus reduced to the case 
+%$T=U_G$.
+%Consider now the quotient map
+%$(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
+%The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
+%are the elements of the
+%$G$-graph subgroup $K \leq G \times \Sigma_U$
+%encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
+
+%We now have identifications
+%(recall that $V_G(U_G) = V(U)/G$)
 %\begin{align*}
+%	f^{\square V_G(U_G)}
+%\simeq
+%	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**}f_{\bullet}([v])
+%\simeq
+%	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet,[v]}^{G_{[v]}}
+%\simeq
 %	\left(
 %	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
 %	f_{\bullet}(v)
 %	\right)^G
-%\simeq &
+%\simeq
 %	\left(
-%	f(n) \square
-%	\underset{1 \leq j \leq n}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq & 
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq &
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq &
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{v \in V(U_{\lambda})}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
+%	\underset{G v \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**} f_{\bullet}(G v)
+%	\right)^K
 %\end{align*}
-\end{proof}
+%Here the second identification combines the formula for $\iota_{\**}$ in 
+%\S \ref{COMPARISON_REGULAR_SECTION}
+%with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
+%The third step follows by 
+%Corollary \ref{FIXEDPUSH COR} 
+%(this is the step requiring the cofibrancy of the $f_s$).
+%The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
+%Noting that this last term is
+%$ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+%\right) (U_G)$ finishes the proof.
+%%\begin{align*}
+%%	\left(
+%%	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\simeq &
+%%	\left(
+%%	f(n) \square
+%%	\underset{1 \leq j \leq n}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq & 
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq &
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq &
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{v \in V(U_{\lambda})}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\end{align*}
+%\end{proof}
 
 
 
