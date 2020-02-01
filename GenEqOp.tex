@@ -6008,7 +6008,8 @@ $C_1 \to C$, one has
 	X(C) \xrightarrow{\simeq}
 	X(G \cdot C_1)^{\Gamma}
 \]
-for $\Gamma \leq \mathsf{Aut}(G \cdot C_1)$
+for $\Gamma \leq \mathsf{Aut}(G \cdot C_1) \simeq 
+G^{op} \times \mathsf{Aut}(C_1)$
 the subgroup preserving the quotient map
 $G \cdot C_1 \to C$
 under precomposition 
@@ -11549,8 +11550,6 @@ where $T_1$ is the first component of $T$
 and $H \leq G$ is the isotropy of the first element of $I$.
 
 
-{\color{red} HERE}
-
 
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
@@ -12232,7 +12231,18 @@ commutative on cofibrant objects.
 \end{equation}
 Propositions \ref{AUTTCOFPUSH PROP}
 and \ref{FIXPT PROP} 
-now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ}), which can be rewritten as
+\[
+	\underset{v \in V_{G}^{ac}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	p(T_v) 
+\square
+	\underset{v \in V_{G}^{in}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+u(T_v)
+\]
+for $p(T_v)$ the map
+$\emptyset \to \P(T_v)$,
 is in the essential image 
 of the cofibrations between cofibrant objects
 under the top $\iota_{\**}$ map.
