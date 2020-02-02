@@ -2298,10 +2298,32 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 			edge from parent node [swap] {$d$}};
 	\end{tikzpicture}
 \]
-Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$
-and $e \leq_p f$ holds if either
+Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$.
+For example, $3 \leq_d 7$ but $7 \not \leq_d 9$.
+On the other hand, $e \leq_p f$ holds if either
 $e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured at the node where the paths intersect).
+
+For $\underline{e}$ a tuple of edges and $e$ an edge,
+we write $\underline{e} \leq e$
+if there is a subtree diagram with leaf tuple 
+$\underline{e}$ and root $e$.
+For example, one has 
+$789ab \leq d$,
+$34 \leq 7$, 
+$2346 \leq 7$.
+
+For each edge $e$ topped by a vertex, the notation $e^{\uparrow}$ denotes the tuple of edges immediately above $e$.
+In our example, 
+$d^{\uparrow} = 78c$,
+$7^{\uparrow} = 1256$,
+$2^{\uparrow} = \epsilon$ 
+(where $\epsilon$ is the empty tuple),
+and $9^{\uparrow}$ is undefined.
+The vertex above $e$ is then encoded by the \emph{broad relation}
+$e^{\uparrow} \leq e$.
 \end{example}
+
+{\color{red} HERE}
 
 It is visually clear that a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
 
@@ -3235,6 +3257,95 @@ are called \emph{planar outer face maps}.
 \begin{remark}
 If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face map}.
 \end{remark}
+
+
+{\color{red} HERE}
+
+
+
+\begin{example}
+	\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) {$T$}
+		child[sibling distance = 8em]{node [dummy] {}
+			child[sibling distance =2.25em, level distance = 1.25 em]{node [dummy] {}
+			edge from parent node [swap] {$6$}}
+			child[sibling distance = 1.5em]{node [dummy] {}
+				child[sibling distance =1em]{
+				edge from parent node [swap,near end] {$4$}}
+				child[sibling distance =1em]{
+				edge from parent node [near end] {$3$}}
+			edge from parent node [very near end,swap] {$5$}}
+			child[sibling distance =1.5em]{node [dummy] {}
+			edge from parent node [very near end] {$2$}}
+			child[sibling distance =2.25em,level distance =1.25em]{node [dummy] {}
+			edge from parent node {$1$}}
+		edge from parent node [swap] {$7$}};
+\begin{scope}[xshift=8.5em]
+\node at (0,0) {$T$}
+child[sibling distance = 8em]{node [dummy] {}
+	child[sibling distance =2.25em, level distance = 1.25 em]{
+	edge from parent node [swap] {$6$}}
+	child[sibling distance = 1.5em]{node [dummy] {}
+		child[sibling distance =1em]{
+		edge from parent node [swap,near end] {$4$}}
+		child[sibling distance =1em]{
+		edge from parent node [near end] {$3$}}
+	edge from parent node [very near end,swap] {$5$}}
+	child[sibling distance =1.5em]{node {}
+	edge from parent node [very near end] {$2$}}
+	child[sibling distance =2.25em,level distance =1.25em]{node [dummy] {}
+	edge from parent node {$1$}}
+edge from parent node [swap] {$7$}};
+\end{scope}
+\begin{scope}[xshift=17em]
+\node at (0,0) {$T$}
+child[sibling distance = 8em]{node [dummy] {}
+	child[sibling distance =2.25em, level distance = 1.25 em]{node {}
+	edge from parent node [swap] {$6$}}
+	child[sibling distance = 1.5em]{node {}
+	edge from parent node [very near end,swap] {$5$}}
+	child[sibling distance =1.5em]{node {}
+	edge from parent node [very near end] {$2$}}
+	child[sibling distance =2.25em,level distance =1.25em]{node {}
+	edge from parent node {$1$}}
+edge from parent node [swap] {$7$}};
+\end{scope}
+\begin{scope}[xshift=22em]
+\node at (0,0) {$T$}
+child[sibling distance = 8em]{node [dummy] {}
+edge from parent node [swap] {$2$}};
+\end{scope}
+\begin{scope}[xshift=25em]
+\node at (0,0) {$T$}
+child[sibling distance = 8em]{node {}
+	edge from parent node [swap] {$2$}};
+\end{scope}
+\begin{scope}[xshift=30em]
+\node at (0,0) {$T$}
+child{node [dummy] {}
+	child[sibling distance = 3em]{node [dummy] {}
+		child[sibling distance = 1.75em]{
+		edge from parent node [near end,swap] {$b$}}
+		child[level distance=2.5em]{
+		edge from parent node [very near end,swap] {$a$}}				
+		child[sibling distance = 1.75em]{
+		edge from parent node [near end] {$9$}}
+	edge from parent node [swap] {c}}
+	child[level distance =2.5em]{
+	edge from parent node [swap] {$8$}}
+	child[sibling distance = 3em]{
+	edge from parent node {$7$}}
+edge from parent node [swap] {$d$}};
+\end{scope}
+	\end{tikzpicture}
+	\]
+\end{example}
+
+
+{\color{red} HERE}
 
 
 We now recap some basic results.
