@@ -775,11 +775,31 @@ The additional conditions (iii) and (iv),
 which are less standard, are discussed in 
 \S \ref{FAMILY_SEC} and
 \S \ref{PUSHPOW SEC}, respectively.
+
 Further, by \textit{semi-model category}
-we mean the notion introduced in 
-\cite{Ho98} and \cite{Spi01}, 
-which relaxes the definition of model structure by requiring that some of the axioms need only apply
-if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
+we mean the notion a weaker, relative notion of model category
+% introduced in \cite{Spi01} as a \textit{$J$-semi-model category over $\mathcal M$}
+% (interpreting work of \cite{Ho98})
+discussed in \cite[\S 2.2]{WY15} and \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY15} recovers that from \cite{Fre09} by choosing $\mathcal M$ to be the unique model structure on the terminal category.}
+Given an adjunction $F \colon \mathcal M \rightleftarrows \mathcal D \colon G$
+where $\mathcal M$ is a model category,
+one may ask if the model structure transfers along $F$ from $\mathcal M$ to $\mathcal D$.
+There are several results of this form (e.g. \cite[Thm. 11.3.2]{Hi03}),
+with demanding hypotheses.
+In many cases where a full model structure does not transfer,
+a weaker structure exists on $\mathcal D$,
+where we relax the requirements of a model structure to ask that
+some of the axioms only apply if the domains of certain cofibrations are cofibrant;
+this relative structure is precisely the data of a semi-model structure.
+For Theorem \ref{MAINEXIST1 THM}, $\mathcal M$ will be the category of \textit{symmetric sequences}
+$\Sym^G(\V) = \V^{\Sigma^{op} \times G}$ equipped with a certain fixed-point model structure (\S \ref{MAINEXIST SEC}).
+
+% Further, by \textit{semi-model category}
+% we mean the notion introduced in 
+% \cite{Ho98} and \cite{Spi01}, 
+% which relaxes the definition of model structure by requiring that some of the axioms need only apply
+% if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cit
+% e[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
 
 
 %The referenced \textit{semi}-model structures 
@@ -9256,7 +9276,11 @@ establishing the existence of the projective model structure.
 In the semi-model structure case,
 one replaces \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
-with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical).
+with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical)\footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
+%
+
+
+  
 
 The general case of Theorem \ref{MAINEXIST2 THM}
 with $\mathcal{F}$ an arbitrary weak indexing system
