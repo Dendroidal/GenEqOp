@@ -2171,18 +2171,6 @@ codifies the multiplication maps
 
 \section{Planar and tall maps, and substitution}\label{PLANAR_SECTION}
 
-%{\color{blue} %%%%% COLOR: BLUE
-%  In this section, we will investigate the concepts of node substitution, mediated by the notions of planar tall maps.
-%We will see that node substitution provides access to the structure maps of the free operad monad.
-%Informally, the free operad on a sequence $X = \set{X_n}$, denoted $\mathbb F X$,
-%consists of trees with nodes labeled by $X$,
-%while $\mathbb F \mathbb F X$ has trees with nodes labeled by trees labeled by $X$,
-%or precisely a ``substitution datum'' labeled by $X$.
-%Moreover, the monad multiplcation is given, intuitively, by
-%collapsing the distinctions between the multiple layers of trees,
-%and this operation will be captured by performing node substitution on this datum. 
-%This story will be made rigorous in this section and the next.
-%%% COLOR: BLUE
 
 Throughout, we will assume that the reader is familiar with the category $\Omega$ of trees.
 %While not hard to correctly guess the objects of $\Omega$, the exact definition of the arrows can be more surprising.
@@ -2271,9 +2259,12 @@ as in \cite{We12}, \cite[Def. 5.9]{Pe17}.
 	\end{itemize} 
 \end{definition}
 
+{\color{red} HERE}
+
 
 \begin{example}\label{PLANAREX EX}
-An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the number labels.
+An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the hexadecimal number labels
+(so that $9<a<b<c<d$).
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
@@ -2282,12 +2273,12 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 			child{node [dummy] {}
 				child[sibling distance = 9em]{node [dummy] {}
 					child[sibling distance = 2.5em]{
-					edge from parent node [near end,swap] {$11$}}
+					edge from parent node [near end,swap] {$b$}}
 					child[level distance=2.5em]{
-					edge from parent node [very near end,swap] {$10$}}				
+					edge from parent node [very near end,swap] {$a$}}				
 					child[sibling distance = 2.3em]{
 					edge from parent node [near end] {$9$}}
-				edge from parent node [swap] {12}}
+				edge from parent node [swap] {c}}
 				child[level distance =2.5em]{
 				edge from parent node [swap] {$8$}}
 				child[sibling distance = 8em]{node [dummy] {}
@@ -2304,7 +2295,7 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 					child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
 					edge from parent node {$1$}}
 				edge from parent node {$7$}}
-			edge from parent node [swap] {$13$}};
+			edge from parent node [swap] {$d$}};
 	\end{tikzpicture}
 \]
 Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$
