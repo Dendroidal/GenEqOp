@@ -1386,7 +1386,7 @@ $b \downarrow \mathcal{E}$,
 a well known sufficient condition for initiality.
 In practice, we will also need a generalization of the Kan extension formula (\ref{FIBERKAN EQ}) for maps of Grothendieck fibrations as in (\ref{GROTHFIBMAP EQ}).
 Keeping the notation therein, given an $\bar{e} \in \bar{\mathcal{E}}$ we will write 
-$\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
+$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$
 for the full subcategory of those pairs 
 $\left(e,f \colon \bar{e} \to \delta(e)\right)$
@@ -1396,7 +1396,7 @@ such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 \begin{proposition}\label{FIBERKANMAP PROP}
 	Given a map of Grothendieck fibrations
 	as in \eqref{GROTHFIBMAP EQ},
-	each subcategory $\bar{e} \downarrow_{\pi} \mathcal{E}$
+	each subcategory $\bar{e} \downarrow_{\mathcal{B}} \mathcal{E}$
 	for $\bar{e} \in \bar{\mathcal{E}}$
 	is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
 	and hence for each functor 
@@ -1407,7 +1407,7 @@ such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 \simeq
 	\mathsf{lim} F{|_{\bar{e} \downarrow \mathcal{E}}}
 \simeq
-	\mathsf{lim} F|_{\bar{e} \downarrow_{\pi} \mathcal{E}}.
+	\mathsf{lim} F|_{\bar{e} \downarrow_{\mathcal{B}} \mathcal{E}}.
 \end{equation}	
 \end{proposition}
 
@@ -1421,7 +1421,7 @@ $
 	\right)
 $
 (where $\delta \pi(f)^{\**} = \bar{\pi}^{\**}(f) \delta$) is  right adjoint to the inclusion
-$\bar{e} \downarrow_{\pi} \mathcal{E} \hookrightarrow
+$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$, so that the claim follows by coreflexivity 
 (note that if we are not in the split case, pullbacks may be chosen arbitrarily).
 \end{proof}
@@ -1937,7 +1937,7 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 	\end{equation}
 Proposition \ref{FIBERKANMAP PROP} now applies to 
 the map $\Fin_s \wr \mathcal{C} \to \Fin_s \wr \mathcal{D}$ of Grothendieck fibrations over $\Fin_s$ and one readily checks that
-$(d_i)\downarrow_{\pi} \Fin_s \wr \mathcal{C} \simeq
+$(d_i)\downarrow_{\Fin_s} \Fin_s \wr \mathcal{C} \simeq
 \prod_{i}{(d_i\downarrow \mathcal{C})}
 $
 so that 
@@ -4632,6 +4632,7 @@ are maps of split Grothendieck fibrations.
 \end{remark}
 
 
+
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
 $V_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
@@ -4670,8 +4671,26 @@ functoriality needs to be addressed separately.
 	
 	Note that, in light of \eqref{STRINGOBJALT EQ},
 	this makes sense even when
-	$X = \{0,1,\cdots,n\}$.
+	$X = \{0,1,\cdots,n\}$,
+	resulting in a functor
+	$\mathsf{lr} = d_{0,1,\cdots,n}
+	\colon \Omega_G^n \to \Sigma_G$.
 \end{notation}
+
+
+
+\begin{notation}\label{ROOTUNDER NOT}
+	For the maps 
+	$\mathsf{lr} \colon \Omega_G^n \to \Sigma_G$
+	of Grothendieck fibrations over $\mathsf{O}_G$
+	we abbreviate the partial undercategories
+	$C \downarrow_{\mathsf{O}_G} \Omega^n_G$
+	for $C \in \Sigma_G$
+	defined before Proposition \ref{FIBERKANMAP PROP}
+	as $C \downarrow_{\mathsf{r}} \Omega^n_G$,
+	and refer to this as the \emph{rooted undercategory}.
+\end{notation}
+
 
 We now obtain a key reinterpretation (and slight strengthening) of Corollary \ref{SUBDATAUNDERPLANG COR}.
 
@@ -5080,10 +5099,14 @@ given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left
 \end{equation}
 Explicitly, using Proposition \ref{FIBERKANMAP PROP}
 	and the fact that 
-	the rooted under categories
+	the rooted undercategories
 	$C \downarrow_{\mathsf{r}} \Omega_G^0$
-	are groupoids
-	yields the formula
+	only depend on the isomorphisms
+	in $\Omega^0_G,\Sigma_G$,
+	the left Kan extension can be computed by
+	replacing both of $\Omega^0_G,\Sigma_G$ 
+	with their groupoids of isomorphims,
+	yielding the formula
 \begin{equation}\label{FGXDEFEXP EQ}
 \mathbb{F}_G X (C) \simeq
 \coprod_{T \in 
@@ -5136,7 +5159,7 @@ Lastly, \ref{INDEXING_SECTION} shows that the indexing systems of Blumberg-Hill 
 \subsection{A monad on spans}\label{MONSPAN SEC}
 
 \begin{definition}\label{WSPAN DEF}
-We write 
+For categories $\C,\D$ we write 
 $\mathsf{WSpan}^l(\C,\D)$
 (resp.
 $\mathsf{WSpan}^r(\C,\D)$),
@@ -14703,7 +14726,7 @@ since for each
 $(n,C) \in \Delta \times \Sigma_G$
 one has a natural identification
 between
-$(n,a) \downarrow_{\pi} (\Delta^{op} \ltimes A^{op}_{\bullet})^{op}$
+$(n,C) \downarrow_{\Delta} (\Delta^{op} \ltimes A^{op}_{\bullet})^{op}$
 and
 $C \downarrow A_n$.
 The third step follows since iterated Kan extensions are again Kan extensions.
