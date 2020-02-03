@@ -6,5 +6,7 @@
 \indexentry{categories!OpG@$\mathcal P \in \Op_G$}{5}
 \indexentry{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}{7}
 \indexentry{monads!FG@$\mathbb F_G$}{7}
-\indexentry{Gvertex@$v_{Ge}$}{27}
-\indexentry{Gvertexsubtree@$T_{v_{Ge}}$}{27}
+\indexentry{Gvertex@$v_{Ge}$}{28}
+\indexentry{Gvertexsubtree@$T_{v_{Ge}}$}{28}
+\indexentry{iotau@$\iota^{\**}$}{42}
+\indexentry{iotal@$\iota_{\**}$}{42}

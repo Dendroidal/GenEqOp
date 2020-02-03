@@ -2191,18 +2191,6 @@ codifies the multiplication maps
 
 \section{Planar and tall maps, and substitution}\label{PLANAR_SECTION}
 
-%{\color{blue} %%%%% COLOR: BLUE
-%  In this section, we will investigate the concepts of node substitution, mediated by the notions of planar tall maps.
-%We will see that node substitution provides access to the structure maps of the free operad monad.
-%Informally, the free operad on a sequence $X = \set{X_n}$, denoted $\mathbb F X$,
-%consists of trees with nodes labeled by $X$,
-%while $\mathbb F \mathbb F X$ has trees with nodes labeled by trees labeled by $X$,
-%or precisely a ``substitution datum'' labeled by $X$.
-%Moreover, the monad multiplcation is given, intuitively, by
-%collapsing the distinctions between the multiple layers of trees,
-%and this operation will be captured by performing node substitution on this datum. 
-%This story will be made rigorous in this section and the next.
-%%% COLOR: BLUE
 
 Throughout, we will assume that the reader is familiar with the category $\Omega$ of trees.
 %While not hard to correctly guess the objects of $\Omega$, the exact definition of the arrows can be more surprising.
@@ -2293,21 +2281,22 @@ as in \cite{We12}, \cite[Def. 5.9]{Pe17}.
 
 
 \begin{example}\label{PLANAREX EX}
-An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the number labels.
+An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the hexadecimal number labels
+(so that $9<a<b<c<d$).
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
+		\node[font=\normalsize] at (0,0) {$T$}
 			child{node [dummy] {}
 				child[sibling distance = 9em]{node [dummy] {}
 					child[sibling distance = 2.5em]{
-					edge from parent node [near end,swap] {$11$}}
+					edge from parent node [near end,swap] {$b$}}
 					child[level distance=2.5em]{
-					edge from parent node [very near end,swap] {$10$}}				
+					edge from parent node [very near end,swap] {$a$}}				
 					child[sibling distance = 2.3em]{
 					edge from parent node [near end] {$9$}}
-				edge from parent node [swap] {12}}
+				edge from parent node [swap] {c}}
 				child[level distance =2.5em]{
 				edge from parent node [swap] {$8$}}
 				child[sibling distance = 8em]{node [dummy] {}
@@ -2324,13 +2313,46 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 					child[sibling distance =3em,level distance =1.5em]{node [dummy] {}
 					edge from parent node {$1$}}
 				edge from parent node {$7$}}
-			edge from parent node [swap] {$13$}};
+			edge from parent node [swap] {$d$}};
 	\end{tikzpicture}
 \]
-Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$
-and $e \leq_p f$ holds if either
+Intuitively, given a planar depiction of a tree $T$, $e \leq_d f$ holds when the downward path from $e$ passes through $f$.
+For example, $3 \leq_d 7$ but $7 \not \leq_d 9$.
+On the other hand, $e \leq_p f$ holds if either
 $e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured at the node where the paths intersect).
+
+For each edge $e$ topped by a vertex, the notation $e^{\uparrow}$ denotes the tuple of edges immediately above $e$.
+In our example, 
+$d^{\uparrow} = 78c$,
+$7^{\uparrow} = 1256$,
+$2^{\uparrow} = \epsilon$ 
+(where $\epsilon$ is the empty tuple),
+and $9^{\uparrow}$ is undefined.
+The vertex above $e$ is then encoded by the \emph{broad relation}
+$e^{\uparrow} \leq e$.
+
+The broad relation notation is meant to suggest a form of 
+\emph{broad associativity}. For example,
+$78c \leq d$ and $1256 \leq 7$ combine to yield
+$12568c \leq d$,
+which
+%and this combined relation
+in turn combines with $\epsilon \leq 2$
+to yield $1568c \leq d$.
+The broad relations of $T$ are those relations that are obtained from the vertex relations $e^{\uparrow} \leq e$
+via broad transitivity, together with reflexive relations
+$e \leq e$.
+Pictorially, a relation 
+$\underline{e} \leq e$ holds 
+if there is an outer subtree
+(i.e. a tree subdiagram 
+which contains all edges of $T$ adjacent to its vertices;
+see \S \ref{OUTTALL SEC} for a rigorous discussion)
+with leaf tuple 
+$\underline{e}$ and root $e$.
+For an illustration, see Example \ref{OUTERTREE EX}.
 \end{example}
+
 
 It is visually clear that a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
 
@@ -2928,16 +2950,15 @@ and the fact that for $F \in \Omega_G$ the roots form a single orbit.
 
 \begin{proposition}
 \label{PLANARPULL PROP}
-	Let $F \xrightarrow{\varphi} G$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
-	\[F \xrightarrow{\simeq} \bar{F} \to G\]
-	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to G$ is planar.
+	Let $F \xrightarrow{\varphi} F'$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
+	\[F \xrightarrow{\simeq} \bar{F} \to F'\]
+	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to F'$ is planar.
 \end{proposition}
-
 
 \begin{proof}
 We need to show that there is a unique planar structure 
 $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
-Simplicity of the broad poset $G$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
+Simplicity of the broad poset $F'$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
 By (the forest version of) Proposition
 \ref{PLANARIZATIONCHAR PROP}
 the only possible planar structure $\leq_p^{\bar{F}}$
@@ -3265,6 +3286,97 @@ are called \emph{planar outer face maps}.
 \begin{remark}
 If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with the pulled back planar structure, the inclusion $T_{\underline{e} \leq e} \hookrightarrow T$ is usually called simply an \textit{outer face map}.
 \end{remark}
+
+
+
+
+\begin{example}\label{OUTERTREE EX}
+	The following illustrates some outer faces of the tree $T$ in Example \ref{PLANAREX EX}.
+	Pictorially, Definition \ref{OUTFACE DEF}
+	says that $T_{\underline{e} \leq e}$
+	is obtained from $T$ by removing those edges and vertices that are either
+	not above $e$ or
+	above one of the $e_i$ in $\underline{e}$.
+	\[
+	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
+	every node/.style = {font=\footnotesize,inner sep=2pt},
+	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node[font=\normalsize] at (0,0) {$T_{34 \leq 7}$}
+		child[sibling distance = 8em]{node [dummy] {}
+			child[sibling distance =2.25em, level distance = 1.25 em]{node [dummy] {}
+			edge from parent node [swap] {$6$}}
+			child[sibling distance = 1.5em]{node [dummy] {}
+				child[sibling distance =1em]{
+				edge from parent node [swap,near end] {$4$}}
+				child[sibling distance =1em]{
+				edge from parent node [near end] {$3$}}
+			edge from parent node [very near end,swap] {$5$}}
+			child[sibling distance =1.5em]{node [dummy] {}
+			edge from parent node [very near end] {$2$}}
+			child[sibling distance =2.25em,level distance =1.25em]{node [dummy] {}
+			edge from parent node {$1$}}
+		edge from parent node [swap] {$7$}};
+\begin{scope}[xshift=8.5em]
+\node[font=\normalsize] at (0,0) {$T_{2346 \leq 7}$}
+child[sibling distance = 8em]{node [dummy] {}
+	child[sibling distance =2.25em, level distance = 1.25 em]{
+	edge from parent node [swap] {$6$}}
+	child[sibling distance = 1.5em]{node [dummy] {}
+		child[sibling distance =1em]{
+		edge from parent node [swap,near end] {$4$}}
+		child[sibling distance =1em]{
+		edge from parent node [near end] {$3$}}
+	edge from parent node [very near end,swap] {$5$}}
+	child[sibling distance =1.5em]{node {}
+	edge from parent node [very near end] {$2$}}
+	child[sibling distance =2.25em,level distance =1.25em]{node [dummy] {}
+	edge from parent node {$1$}}
+edge from parent node [swap] {$7$}};
+\end{scope}
+\begin{scope}[xshift=17em]
+\node[font=\normalsize] at (0,0) {$T_{1256 \leq 7}$}
+child[sibling distance = 8em]{node [dummy] {}
+	child[sibling distance =2.25em, level distance = 1.25 em]{node {}
+	edge from parent node [swap] {$6$}}
+	child[sibling distance = 1.5em]{node {}
+	edge from parent node [very near end,swap] {$5$}}
+	child[sibling distance =1.5em]{node {}
+	edge from parent node [very near end] {$2$}}
+	child[sibling distance =2.25em,level distance =1.25em]{node {}
+	edge from parent node {$1$}}
+edge from parent node [swap] {$7$}};
+\end{scope}
+\begin{scope}[xshift=22em]
+\node[font=\normalsize] at (0,0) {$T_{\epsilon \leq 2}$}
+child[sibling distance = 8em]{node [dummy] {}
+edge from parent node [swap] {$2$}};
+\end{scope}
+\begin{scope}[xshift=25em]
+\node[font=\normalsize] at (0,0) {$T_{2 \leq 2}$}
+child[sibling distance = 8em]{node {}
+	edge from parent node [swap] {$2$}};
+\end{scope}
+\begin{scope}[xshift=30em]
+\node[font=\normalsize] at (0,0) {$T_{789ab \leq d}$}
+child{node [dummy] {}
+	child[sibling distance = 3em]{node [dummy] {}
+		child[sibling distance = 1.75em]{
+		edge from parent node [near end,swap] {$b$}}
+		child[level distance=2.5em]{
+		edge from parent node [very near end,swap] {$a$}}				
+		child[sibling distance = 1.75em]{
+		edge from parent node [near end] {$9$}}
+	edge from parent node [swap] {c}}
+	child[level distance =2.5em]{
+	edge from parent node [swap] {$8$}}
+	child[sibling distance = 3em]{
+	edge from parent node {$7$}}
+edge from parent node [swap] {$d$}};
+\end{scope}
+	\end{tikzpicture}
+	\]
+\end{example}
+
 
 
 We now recap some basic results.
@@ -3639,7 +3751,7 @@ can equivalently be repackaged using planar tall maps.
 \end{definition}
 
 
-\begin{remark}
+\begin{remark}\label{SCTARR REM}
 Note that the only arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
 In particular, there are no pairs of composable non-identity arrows in $\mathsf{Sc}(T)$. 
 \end{remark}
@@ -6020,16 +6132,21 @@ onto the first factor.
 On the other hand, $\iota_{\**}$ identifies 
 $\mathsf{Sym}^G(\mathcal{V})$ with the more interesting reflexive subcategory of those sequences 
 $X \in \mathsf{Sym}_G(\mathcal{V})$ 
-such that $X(C)$ for each $C$ not a free corolla must satisfy a fixed point condition. 
-Explicitly, letting 
-$\varphi \colon G \to \mathsf{r}(C)$
-denote the unique map preserving the minimal element, one has
-\[X(C) \xrightarrow{\simeq} X(\varphi^{\**}C)^{\Gamma}\]
-for 
-$\Gamma \leq \mathsf{Aut}(\varphi^{\**}C)$
+such that $X(C)$ for each $C = (C_i)_I$ not a free corolla must satisfy a fixed point condition. 
+%
+Explicitly, letting $G \cdot C_1 \to C$
+be the quotient map determined by the inclusion
+$C_1 \to C$, one has
+\[
+	X(C) \xrightarrow{\simeq}
+	X(G \cdot C_1)^{\Gamma}
+\]
+for $\Gamma \leq \mathsf{Aut}(G \cdot C_1) \simeq 
+G^{op} \times \mathsf{Aut}(C_1)$
 the subgroup preserving the quotient map
-$\varphi^{\**}C \to C$
-under precomposition (note that $\varphi^{\**}C \in \Sigma_G^{\text{fr}}$).
+$G \cdot C_1 \to C$
+under precomposition 
+(note that $(G \cdot C_1) \in \Sigma_G^{\text{fr}}$).
 \end{remark}
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
@@ -6639,7 +6756,7 @@ $(G/H)\cdot C_n = (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
 \begin{remark}
 The notion of indexing system
 was first introduced in \cite[Def. 3.22]{BH15}, though packaged quite differently.
-Moreover, a third definition of (weak) indexing systems as the sieves 
+Moreover, a third definition of (weak) indexing systems as certain sieves 
 $\Omega_{\mathcal{F}} \hookrightarrow \Omega_G$
 was presented by the second author in \cite[\S 9]{Pe17}. The equivalence between the definitions in \cite{BH15} and \cite{Pe17} is addressed in 
 \cite[Rmk. 9.7]{Pe17}, hence here we address only the easier equivalence between Definition \ref{INDEXSYS DEF} and the sieve definition in \cite[\S 9]{Pe17}.
@@ -11362,12 +11479,13 @@ by using label isomorphism classes.
 	$f_s(r) \colon A_s(r) \to B_s(r)$ are cofibrations (trivial cofibrations) in 
 	$\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$.
 	Then for any $l$-labeled tree $T \in \Omega^{\underline{l}}$ the map
-	\[
+	\begin{equation}\label{FSQVT EQ}
 	f^{\square V(T)} = 
 		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
 		\phantom{!}
 		\underset{v \in V_s(T)}{\mathlarger{\mathlarger{\square}}}
-	f_s(v)\]
+	f_s(v)
+	\end{equation}
 	(where $V_s(T)$ denotes vertices with label $s$) is a cofibration (resp. trivial cofibration) in 
 	$\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$.
 \end{proposition}
@@ -11415,10 +11533,10 @@ When $G=\**$, Proposition \ref{AUTTCOFPUSH PROP}
 matches \cite[Lemma 5.9]{BM08}.
 In fact, it is not hard to modify the proof of \cite[Lemma 5.9]{BM08} to show Proposition \ref{AUTTCOFPUSH PROP} for the %universal 
 family $\Sigma_G$ of all $G$-corollas.
-Indeed, 
+Indeed, the key to proving Proposition \ref{AUTTCOFPUSH PROP}
+is Lemma \ref{KEYLEMMAGECO LEM} and
 %the arguments in
-the last paragraph of our proof of
-Lemma \ref{KEYLEMMAGECO LEM}
+the last paragraph of our proof of that lemma
 is very close to the arguments in 
 \cite{BM08}.
 However, the case of a general $\Sigma_{\mathcal{F}}$
@@ -11531,6 +11649,45 @@ which have no analogue in \cite{BM08}.
 \end{remark}
 
 
+By allowing $T \in \Omega^{\underline{l}}$
+to vary \eqref{FSQVT EQ}
+defines an arrow
+$f^{\square V(-)}$ in $\mathcal{V}^{G \times \Omega^{\underline{l},op}}$.
+Our next step is to compare this construction with an analogue construction for $G$-trees.
+
+
+To do so, and in analogy with the functor
+$\iota \colon G^{op} \times \Sigma \to 
+\Sigma_G$
+in \S \ref{COMPARISON_REGULAR_SECTION},
+we likewise define
+$\iota \colon G^{op} \times \Omega^{\underline{l}} \to 
+\Omega^{\underline{l}}_G$
+via $T \mapsto G \cdot T$.
+We then write
+$\iota_{\**} 
+\colon
+\mathcal{V}^{G \times \Omega^{\underline{l},op}}
+\to 
+\mathcal{V}^{\Omega^{\underline{l},op}_G}
+$
+for the right adjoint to precomposition.
+Just as in \eqref{IOTAFUNSALT EQ}, we then have
+that for $Y \in \mathcal{V}^{G \times \Omega^{\underline{l},op}}$
+and $T = (T_i)_{i \in I}$
+in $\mathcal{V}^{\Omega^{\underline{l}}}_G$ it is
+\begin{equation}\label{IOTAFUNSALTBIG EQ}
+	\iota_{\**}Y (T)
+=
+	\left(\prod_{I} Y(T_i)\right)^G
+\simeq
+	Y(T_1)^H
+\end{equation}
+where $T_1$ is the first component of $T$
+and $H \leq G$ is the isotropy of the first element of $I$.
+
+
+
 \begin{proposition}\label{FIXPT PROP}
 	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
 	$\mathcal{V}$ has diagonal maps and cartesian fixed points.
@@ -11539,129 +11696,205 @@ which have no analogue in \cite{BM08}.
 	$f_s \colon A_s \to B_s$, $1\leq s \leq l$ be 
 	genuine cofibrations between genuine cofibrant objects in 
 	$\mathsf{Sym}^G(\mathcal{V})$.
-	For each $T \in \Omega_{G}^{\underline{l}}$ define
-\[
+	Define a map
+	$f^{\square V_G(-)}$ in
+	$\mathcal{V}^{\Omega^{\underline{l},op}_G}$
+	by setting, for each $T \in \Omega_{G}^{\underline{l}}$,
+\begin{equation}\label{FSQVTG EQ}
 		f^{\square V_G(T)} = 
 		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
 			\phantom{!}
 		\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
 		\iota_{\**}f_s(v).
-\]
-	Then the canonical natural transformation
+\end{equation}
+	One then has a natural identification
 	\begin{equation}\label{FIXEDPOINT1 EQ}
-		f^{\square V_G(-)} \to
-		\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+		f^{\square V_G(-)} \simeq
+		\iota_{\**} \left(f^{\square V(-)}\right).
 	\end{equation}
-		is a natural isomorphism in $\V^{\Omega_G^{\underline{l},op}}$ (with $G \times \Omega^{\underline{l}} \xrightarrow{\iota} \Omega_G^{\underline{l}}$ the inclusion).
 \end{proposition}
 
-
 \begin{proof}
-Note first that there is a coproduct decomposition
-\[\Omega_{G}^{\underline{l}}
-\simeq \coprod_{U \in \mathsf{Iso}
-\left(\Omega^{\underline{l}}\right)}
-\Omega_{G}^{\underline{l}}[U]\]
-where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
-formed by the quotients of $G \cdot U$.
-It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each subcategory 
-$\Omega_{G}^{\underline{l}}[U]$. 
-
-All such $G$-trees can be written as 
-$T = G \cdot_H U_H$,
-where $U_H$ denotes the underlying tree
-$U \in \Omega^{\underline{l}}$
-together with a $H$-action. 
-By induction on 
-$|G|$ we are free 
- to assume $H=G$.
-Indeed, otherwise there are identifications
-$V_G(T) \simeq V_H(U_H)$ and 
-$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(U_H)}$ from which the desired isomorphism follows by induction.
-
-We have thus reduced to the case 
-$T=U_G$.
-Consider now the quotient map
-$(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
-The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
-are the elements of the
-$G$-graph subgroup $K \leq G \times \Sigma_U$
-encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
-
-We now have identifications
-(recall that $V_G(U_G) = V(U)/G$)
-\begin{align*}
-	f^{\square V_G(U_G)}
+	For brevity, let us abbreviate \eqref{FSQVT EQ} as
+	$\left(f^{\square V(-)}\right) = \underset{v \in V(T)}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet}(v)$,
+	leaving the label data implicit in the vertex data,
+	and likewise for \eqref{FSQVTG EQ}.
+	Letting 
+	$T = (T_i)_I$ and $H\leq G$ be as in 
+	\eqref{IOTAFUNSALTBIG EQ}
+	we then have
+\[
+	\left(\iota_{\**} \left(f^{\square V(-)}\right)\right)(T)
 \simeq
-	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**}f_{\bullet}([v])
-\simeq
-	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
-	f_{\bullet,[v]}^{G_{[v]}}
-\simeq
-	\left(
-	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+	\left(f^{\square V(T_1)}\right)^H
+=
+	\left(\underset{v \in V(T)}{\mathlarger{\mathlarger{\square}}}
 	f_{\bullet}(v)
-	\right)^G
+	\right)^H
 \simeq
-	\left(
-	\underset{G v \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
-	\iota_{\**} f_{\bullet}(G v)
-	\right)^K
-\end{align*}
-Here the second identification combines the formula for $\iota_{\**}$ in 
-\S \ref{COMPARISON_REGULAR_SECTION}
-with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
-The third step follows by 
-Corollary \ref{FIXEDPUSH COR} 
-(this is the step requiring the cofibrancy of the $f_s$).
-The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
-Noting that this last term is
-$ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
-\right) (U_G)$ finishes the proof.
+	\underset{[v] \in V(T_1)/H}{\mathlarger{\mathlarger{\square}}}
+	f_{\bullet}(v)^{H_v}
+\simeq
+	\underset{[v] \in V_G(T)}{\mathlarger{\mathlarger{\square}}}
+\iota_{\**}f_{\bullet}([v])
+\]
+where the first step is 
+\eqref{IOTAFUNSALTBIG EQ},
+the third step is
+Corollary \ref{FIXEDPUSH COR}
+with $H_v$
+the $H$-isotropy of $v \in V(T_1)$
+(where we simplify the notation
+$f_{\bullet}([v])^{H_{[v]}}$
+to 
+$f_{\bullet}(v)^{H_v}$
+by picking the first representative $v$ of $[v]$),
+and the final step is
+\eqref{IOTAFUNSALT EQ}
+together with the observation that
+$H_v \leq G$
+is also the $G$-isotropy of $v \in V(T)$
+and the identification
+$V(T_1)/H \simeq V_G(T)$.
+Noting that the last term is 
+$f^{\square V_G(T)}$
+finishes the proof.	
+\end{proof}
+
+
+
+%\begin{proposition}\label{FIXPT PROP}
+%	Let $\mathcal{V}$ be as in Proposition \ref{AUTTCOFPUSH PROP}, and suppose additionally that 
+%	$\mathcal{V}$ has diagonal maps and cartesian fixed points.
+%	
+%	Let  
+%	$f_s \colon A_s \to B_s$, $1\leq s \leq l$ be 
+%	genuine cofibrations between genuine cofibrant objects in 
+%	$\mathsf{Sym}^G(\mathcal{V})$.
+%	For each $T \in \Omega_{G}^{\underline{l}}$ define
+%	\[
+%	f^{\square V_G(T)} = 
+%	\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
+%	\phantom{!}
+%	\underset{v \in V_{G,s}(T)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**}f_s(v).
+%	\]
+%	Then the canonical natural transformation
+%	\begin{equation}\label{FIXEDPOINT1 EQ}
+%	f^{\square V_G(-)} \to
+%	\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+%	\end{equation}
+%	is a natural isomorphism in $\V^{\Omega_G^{\underline{l},op}}$ (with $G \times \Omega^{\underline{l}} \xrightarrow{\iota} \Omega_G^{\underline{l}}$ the inclusion).
+%\end{proposition}
+
+
+%\begin{proof}
+%Note first that there is a coproduct decomposition
+%\[\Omega_{G}^{\underline{l}}
+%\simeq \coprod_{U \in \mathsf{Iso}
+%\left(\Omega^{\underline{l}}\right)}
+%\Omega_{G}^{\underline{l}}[U]\]
+%where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
+%formed by the quotients of $G \cdot U$.
+%It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each %subcategory 
+%$\Omega_{G}^{\underline{l}}[U]$. 
+%
+%All such $G$-trees can be written as 
+%$T = G \cdot_H U_H$,
+%where $U_H$ denotes the underlying tree
+%$U \in \Omega^{\underline{l}}$
+%together with a $H$-action. 
+%By induction on 
+%$|G|$ we are free 
+% to assume $H=G$.
+%Indeed, otherwise there are identifications
+%$V_G(T) \simeq V_H(U_H)$ and 
+%$f^{\square V_G(T)}\simeq (\mathsf{res}^G_H f)^{\square V_H(U_H)}$ from which the desired isomorphism follows by induction.
+
+%We have thus reduced to the case 
+%$T=U_G$.
+%Consider now the quotient map
+%$(U)_{g\in G} = G \cdot U \to U_G$ given by the identity on the $e$ component.
+%The automorphisms of $G \cdot U$ compatible with the quotient map $G \cdot U \to U_G$
+%are the elements of the
+%$G$-graph subgroup $K \leq G \times \Sigma_U$
+%encoding the action $G \to \Sigma_U$ of $G$ on $U_G$.
+
+%We now have identifications
+%(recall that $V_G(U_G) = V(U)/G$)
 %\begin{align*}
+%	f^{\square V_G(U_G)}
+%\simeq
+%	\underset{[v] \in V_G(U_G)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**}f_{\bullet}([v])
+%\simeq
+%	\underset{[v] \in V(U)/G}{\mathlarger{\mathlarger{\square}}}
+%	f_{\bullet,[v]}^{G_{[v]}}
+%\simeq
 %	\left(
 %	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
 %	f_{\bullet}(v)
 %	\right)^G
-%\simeq &
+%\simeq
 %	\left(
-%	f(n) \square
-%	\underset{1 \leq j \leq n}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq & 
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq &
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
-%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
-%\\
-%	\simeq &
-%	f_{\bullet}(n)^G
-%	\square
-%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
-%	\left(
-%	\underset{v \in V(U_{\lambda})}{\mathlarger{\mathlarger{\square}}}
-%	f_{\bullet}(v)
-%	\right)^G
+%	\underset{G v \in V_G(G \cdot U)}{\mathlarger{\mathlarger{\square}}}
+%	\iota_{\**} f_{\bullet}(G v)
+%	\right)^K
 %\end{align*}
-\end{proof}
+%Here the second identification combines the formula for $\iota_{\**}$ in 
+%\S \ref{COMPARISON_REGULAR_SECTION}
+%with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
+%The third step follows by 
+%Corollary \ref{FIXEDPUSH COR} 
+%(this is the step requiring the cofibrancy of the $f_s$).
+%The last step repackages notation, again using the cartesian fixed point formula for $\iota_{\**}$.
+%Noting that this last term is
+%$ \left(\iota_{\**} \iota^{\**} f^{\square V_G(-)}
+%\right) (U_G)$ finishes the proof.
+%%\begin{align*}
+%%	\left(
+%%	\underset{v \in V(U)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\simeq &
+%%	\left(
+%%	f(n) \square
+%%	\underset{1 \leq j \leq n}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq & 
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq &
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{j \in \lambda}{\mathlarger{\mathlarger{\square}}}
+%%	\underset{v \in V(U_j)}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\\
+%%	\simeq &
+%%	f_{\bullet}(n)^G
+%%	\square
+%%	\underset{\lambda \in n/G}{\mathlarger{\mathlarger{\square}}}
+%%	\left(
+%%	\underset{v \in V(U_{\lambda})}{\mathlarger{\mathlarger{\square}}}
+%%	f_{\bullet}(v)
+%%	\right)^G
+%%\end{align*}
+%\end{proof}
 
 
 
@@ -12135,7 +12368,18 @@ commutative on cofibrant objects.
 \end{equation}
 Propositions \ref{AUTTCOFPUSH PROP}
 and \ref{FIXPT PROP} 
-now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ}), which can be rewritten as
+\[
+	\underset{v \in V_{G}^{ac}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	p(T_v) 
+\square
+	\underset{v \in V_{G}^{in}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+u(T_v)
+\]
+for $p(T_v)$ the map
+$\emptyset \to \P(T_v)$,
 is in the essential image 
 of the cofibrations between cofibrant objects
 under the top $\iota_{\**}$ map.
