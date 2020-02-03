@@ -2259,8 +2259,6 @@ as in \cite{We12}, \cite[Def. 5.9]{Pe17}.
 	\end{itemize} 
 \end{definition}
 
-{\color{red} HERE}
-
 
 \begin{example}\label{PLANAREX EX}
 An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by the hexadecimal number labels
@@ -2269,7 +2267,7 @@ An example of a planar structure on a tree $T$ follows, with $\leq_p$ encoded by
 	\begin{tikzpicture}[grow=up,auto,level distance=2.1em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-		\node at (0,0) {$T$}
+		\node[font=\normalsize] at (0,0) {$T$}
 			child{node [dummy] {}
 				child[sibling distance = 9em]{node [dummy] {}
 					child[sibling distance = 2.5em]{
@@ -2303,15 +2301,6 @@ For example, $3 \leq_d 7$ but $7 \not \leq_d 9$.
 On the other hand, $e \leq_p f$ holds if either
 $e \leq_d f$ or if the downward path from $e$ is to the left of the downward path from $f$ (as measured at the node where the paths intersect).
 
-For $\underline{e}$ a tuple of edges and $e$ an edge,
-we write $\underline{e} \leq e$
-if there is a subtree diagram with leaf tuple 
-$\underline{e}$ and root $e$.
-For example, one has 
-$789ab \leq d$,
-$34 \leq 7$, 
-$2346 \leq 7$.
-
 For each edge $e$ topped by a vertex, the notation $e^{\uparrow}$ denotes the tuple of edges immediately above $e$.
 In our example, 
 $d^{\uparrow} = 78c$,
@@ -2321,9 +2310,29 @@ $2^{\uparrow} = \epsilon$
 and $9^{\uparrow}$ is undefined.
 The vertex above $e$ is then encoded by the \emph{broad relation}
 $e^{\uparrow} \leq e$.
+
+The broad relation notation is meant to suggest a form of 
+\emph{broad associativity}. For example,
+$78c \leq d$ and $1256 \leq 7$ combine to yield
+$12568c \leq d$,
+which
+%and this combined relation
+in turn combines with $\epsilon \leq 2$
+to yield $1568c \leq d$.
+The broad relations of $T$ are those relations that are obtained from the vertex relations $e^{\uparrow} \leq e$
+via broad transitivity, together with reflexive relations
+$e \leq e$.
+Pictorially, a relation 
+$\underline{e} \leq e$ holds 
+if there is an outer subtree
+(i.e. a tree subdiagram 
+which contains all edges of $T$ adjacent to its vertices;
+see \S \ref{OUTTALL SEC} for a rigorous discussion)
+with leaf tuple 
+$\underline{e}$ and root $e$.
+For an illustration, see Example \ref{OUTERTREE EX}.
 \end{example}
 
-{\color{red} HERE}
 
 It is visually clear that a planar depiction of a tree amounts to choosing a total order for each of the sets of \textit{input edges} of each node (i.e. those edges immediately above that node).
 
@@ -3259,16 +3268,20 @@ If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with 
 \end{remark}
 
 
-{\color{red} HERE}
 
 
-
-\begin{example}
+\begin{example}\label{OUTERTREE EX}
+	The following illustrates some outer faces of the tree $T$ in Example \ref{PLANAREX EX}.
+	Pictorially, Definition \ref{OUTFACE DEF}
+	says that $T_{\underline{e} \leq e}$
+	is obtained from $T$ by removing those edges and vertices that are either
+	not above $e$ or
+	above one of the $e_i$ in $\underline{e}$.
 	\[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 	every node/.style = {font=\footnotesize,inner sep=2pt},
 	dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {$T$}
+	\node[font=\normalsize] at (0,0) {$T_{34 \leq 7}$}
 		child[sibling distance = 8em]{node [dummy] {}
 			child[sibling distance =2.25em, level distance = 1.25 em]{node [dummy] {}
 			edge from parent node [swap] {$6$}}
@@ -3284,7 +3297,7 @@ If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with 
 			edge from parent node {$1$}}
 		edge from parent node [swap] {$7$}};
 \begin{scope}[xshift=8.5em]
-\node at (0,0) {$T$}
+\node[font=\normalsize] at (0,0) {$T_{2346 \leq 7}$}
 child[sibling distance = 8em]{node [dummy] {}
 	child[sibling distance =2.25em, level distance = 1.25 em]{
 	edge from parent node [swap] {$6$}}
@@ -3301,7 +3314,7 @@ child[sibling distance = 8em]{node [dummy] {}
 edge from parent node [swap] {$7$}};
 \end{scope}
 \begin{scope}[xshift=17em]
-\node at (0,0) {$T$}
+\node[font=\normalsize] at (0,0) {$T_{1256 \leq 7}$}
 child[sibling distance = 8em]{node [dummy] {}
 	child[sibling distance =2.25em, level distance = 1.25 em]{node {}
 	edge from parent node [swap] {$6$}}
@@ -3314,17 +3327,17 @@ child[sibling distance = 8em]{node [dummy] {}
 edge from parent node [swap] {$7$}};
 \end{scope}
 \begin{scope}[xshift=22em]
-\node at (0,0) {$T$}
+\node[font=\normalsize] at (0,0) {$T_{\epsilon \leq 2}$}
 child[sibling distance = 8em]{node [dummy] {}
 edge from parent node [swap] {$2$}};
 \end{scope}
 \begin{scope}[xshift=25em]
-\node at (0,0) {$T$}
+\node[font=\normalsize] at (0,0) {$T_{2 \leq 2}$}
 child[sibling distance = 8em]{node {}
 	edge from parent node [swap] {$2$}};
 \end{scope}
 \begin{scope}[xshift=30em]
-\node at (0,0) {$T$}
+\node[font=\normalsize] at (0,0) {$T_{789ab \leq d}$}
 child{node [dummy] {}
 	child[sibling distance = 3em]{node [dummy] {}
 		child[sibling distance = 1.75em]{
@@ -3344,8 +3357,6 @@ edge from parent node [swap] {$d$}};
 	\]
 \end{example}
 
-
-{\color{red} HERE}
 
 
 We now recap some basic results.
@@ -3720,7 +3731,7 @@ can equivalently be repackaged using planar tall maps.
 \end{definition}
 
 
-\begin{remark}
+\begin{remark}\label{SCTARR REM}
 Note that the only arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
 In particular, there are no pairs of composable non-identity arrows in $\mathsf{Sc}(T)$. 
 \end{remark}

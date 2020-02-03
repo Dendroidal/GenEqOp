@@ -69,9 +69,9 @@ B.~Guillou.
   2006.
 
 \bibitem{GW17}
-J.~Guti\'errez and D.~White.
+J.~J. Guti\'{e}rrez and D.~White.
 \newblock Encoding equivariant commutativity via operads.
-\newblock arXiv preprint: 1707.02130, 2017.
+\newblock {\em Algebr. Geom. Topol.}, 18(5):2919--2962, 2018.
 
 \bibitem{Ha09}
 J.~E. Harper.
@@ -133,7 +133,7 @@ L.~A. Pereira.
 \bibitem{Pe17}
 L.~A. Pereira.
 \newblock Equivariant dendroidal sets.
-\newblock arXiv preprint: 1702.08119, 2017.
+\newblock {\em Algebr. Geom. Topol.}, 18(4):2179--2244, 2018.
 
 \bibitem{Pia91}
 R.~J. Piacenza.
@@ -148,8 +148,9 @@ E.~Riehl.
 
 \bibitem{Rub17}
 J.~Rubin.
-\newblock On the realization problem for {$N_\infty$} operads.
-\newblock arXiv preprint: 1705.03585, 2017.
+\newblock Combinatorial {$N_\infty$} operads.
+\newblock arXiv preprint:
+  \href{https://arxiv.org/abs/1705.03585}{\texttt{1705.03585}}, 2017.
 
 \bibitem{SS00}
 S.~Schwede and B.~E. Shipley.
@@ -159,7 +160,8 @@ S.~Schwede and B.~E. Shipley.
 \bibitem{Spi01}
 M.~Spitzweck.
 \newblock Operads, algebras and modules in general model categories.
-\newblock arXiv preprint: 0101102, 2001.
+\newblock arXiv preprint:
+  \href{https://arxiv.org/abs/math/0101102}{\texttt{0101102}}, 2001.
 
 \bibitem{Ste16}
 M.~Stephan.
@@ -169,7 +171,8 @@ M.~Stephan.
 \bibitem{We12}
 I.~Weiss.
 \newblock Broad posets, trees, and the dendroidal category.
-\newblock Available at: \texttt{https://arxiv.org/abs/1201.3987}, 2012.
+\newblock arXiv preprint:
+  \href{https://arxiv.org/abs/1201.3987}{\texttt{1201.3987}}, 2012.
 
 \bibitem{Whi14}
 D.~White.
@@ -179,6 +182,6 @@ D.~White.
 \bibitem{WY15}
 D.~White and D.~Yau.
 \newblock Bousfield localization and algebras over colored operads.
-\newblock arXiv preprint: 1503.06720v2, 2015.
+\newblock {\em Appl. Categ. Structures}, 26(1):153--203, 2018.
 
 \end{thebibliography}
