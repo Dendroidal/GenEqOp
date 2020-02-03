@@ -313,7 +313,7 @@ However, the converse statement, that given any indexing system $\mathcal{F}$ su
 One of the key motivating goals of the present work was to verify this conjecture of Blumberg-Hill, which we obtain in
 Corollary \ref{NINFTY_REAL_COR_MAIN}.
 We note here that this conjecture has also been concurrently verified
-by Guti\'{e}rrez-White in \cite{GW17} 
+by Guti\'{e}rrez-White in \cite{GW18} 
 and by Rubin in \cite{Rub17}, 
 with each of their approaches having different advantages:
 Guti\'{e}rrez-White's
@@ -764,7 +764,7 @@ $(\mathcal{V},\otimes)$:
 \end{inparaenum}
 \end{customthm}
 
-We note that a similar result has also been proven by Guti\'{e}rrez-White in \cite{GW17}.
+We note that a similar result has also been proven by Guti\'{e}rrez-White in \cite{GW18}.
 
 Theorem \ref{MAINEXIST1 THM}
 is proven in \S \ref{MAINEXIST SEC}.
@@ -775,11 +775,31 @@ The additional conditions (iii) and (iv),
 which are less standard, are discussed in 
 \S \ref{FAMILY_SEC} and
 \S \ref{PUSHPOW SEC}, respectively.
+
 Further, by \textit{semi-model category}
-we mean the notion introduced in 
-\cite{Ho98} and \cite{Spi01}, 
-which relaxes the definition of model structure by requiring that some of the axioms need only apply
-if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
+we mean the notion a weaker, relative notion of model category
+% introduced in \cite{Spi01} as a \textit{$J$-semi-model category over $\mathcal M$}
+% (interpreting work of \cite{Ho98})
+discussed in \cite[\S 2.2]{WY15} and \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY15} recovers that from \cite{Fre09} by choosing $\mathcal M$ to be the unique model structure on the terminal category.}
+Given an adjunction $F \colon \mathcal M \rightleftarrows \mathcal D \colon G$
+where $\mathcal M$ is a model category,
+one may ask if the model structure transfers along $F$ from $\mathcal M$ to $\mathcal D$.
+There are several results of this form (e.g. \cite[Thm. 11.3.2]{Hi03}),
+with demanding hypotheses.
+In many cases where a full model structure does not transfer,
+a weaker structure exists on $\mathcal D$,
+where we relax the requirements of a model structure to ask that
+some of the axioms only apply if the domains of certain cofibrations are cofibrant;
+this relative structure is precisely the data of a semi-model structure.
+For Theorem \ref{MAINEXIST1 THM}, $\mathcal M$ will be the category of \textit{symmetric sequences}
+$\Sym^G(\V) = \V^{\Sigma^{op} \times G}$ equipped with a certain fixed-point model structure (\S \ref{MAINEXIST SEC}).
+
+% Further, by \textit{semi-model category}
+% we mean the notion introduced in 
+% \cite{Ho98} and \cite{Spi01}, 
+% which relaxes the definition of model structure by requiring that some of the axioms need only apply
+% if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cit
+% e[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
 
 
 %The referenced \textit{semi}-model structures 
@@ -9105,13 +9125,26 @@ $\mathsf{Op}^G(\mathcal{V})$
 and
 $\mathsf{Op}_G(\mathcal{V})$.
 
-Recall that for a group $\Sigma$, the genuine model structure (if it exists)
-on $\mathcal{V}^{\Sigma}$,
-which we denote $\mathcal{V}^{\Sigma}_{\text{gen}}$,
-has weak equivalences (resp. fibrations)
-those maps $X \to Y$ such that 
-$X^H \to Y^H$ is a weak equivalence (fibration)
-for all $H \leq \Sigma$.
+We begin by recalling genuine equivariant model structures.
+\begin{definition}
+      \label{GENUINEMS_DEF}
+      Let $\Sigma$ be a group, and $\V$ a model category.
+      The \textit{genuine model structure} (if it exists)
+      on $\mathcal{V}^{\Sigma}$,
+      denoted $\mathcal{V}^{\Sigma}_{\text{gen}}$,
+      has as weak equivalences (resp. fibrations)
+      those maps $X \to Y$ such that 
+      $X^H \to Y^H$ is a weak equivalence (fibration)
+      for all $H \leq \Sigma$.
+
+      More generally, given any family $\F$ (or even collection of subgroups) of $\Sigma$,
+      the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^\Sigma_{\F}$,
+      has weak equivalences and fibrations defined by restricted $H$ to $\F$.
+\end{definition}
+
+In particular, when $\F$ is trivial family just containing the trivial subgroup,
+the $\F$-model structure is the \textit{projective} model structure, where weak equivalences (resp. fibrations) are those maps which forget to weak equivalences (resp. fibrations) in $\V$.
+As $\F$ increaes in size, so does to class of (trivial) cofibrations.
 
 Our main proof will require some auxiliary results concerning genuine model structures.
 However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
@@ -9124,7 +9157,8 @@ of the stronger results in \S \ref{COFIB SEC}.
 \begin{remark}\label{GENCOFGEN REM}
 The genuine model structure
 $\mathcal{V}^{\Sigma}_{\text{gen}}$
-exists whenever $\mathcal{V}$ has
+and the $\F$-model structure for a family $\V^\Sigma_\F$
+exist whenever $\mathcal{V}$ has
 \textit{cellular fixed points}.
 The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
 For our immediate purposes, however, we will only need to know that 
@@ -9135,9 +9169,9 @@ $\Sigma/H \cdot i$
 for $H\leq \Sigma$
 and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
 
-More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
-$\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
-$\mathcal{F}$.
+% More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
+% $\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
+% $\mathcal{F}$.
 \end{remark}
 
 \begin{remark}\label{ALLCOF REM}
@@ -9396,7 +9430,11 @@ establishing the existence of the projective model structure.
 In the semi-model structure case,
 one replaces \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
-with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical).
+with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical)\footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
+%
+
+
+  
 
 The general case of Theorem \ref{MAINEXIST2 THM}
 with $\mathcal{F}$ an arbitrary weak indexing system
@@ -10395,7 +10433,7 @@ which will concern cofibrancy and fixed point properties. We start by discussing
 	\textit{cofibrant symmetric pushout powers}
 	if for each (trivial) cofibration $f$ the pushout product power 
 	$f^{\square n}$ is a $\Sigma_n$-genuine 
-	(trivial) cofibration.
+	(trivial) cofibration in $\V^{\Sigma_n}_{\text{gen}}$.
 \end{definition}
 
 
@@ -10408,6 +10446,25 @@ one instead follows the argument in the proof of
 Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
 
+\begin{remark}
+      \label{CSPP_REM}
+      There are several notions which have a similar form to ``cofibrant symmetric pushout powers''
+      which appear in the literature, for example
+      the \textit{freely powered} condition of \cite[Def. 4.5.4.2]{Lur17} 
+      and the \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
+      % symmetric $h$-monoidal of Pavlov-Scholbach,
+      % and the cofibration hypothesis of \cite{MMSS},
+      % to name a few.
+
+      The main distinction of our condition from these two is that
+      cofibrant symmetric pushout powers concerns cofibrations in the genuine fixed-point model structure $\V^{\Sigma_n}$;
+      freely powered is a much stronger condition, as in particular it demands that $f^{\square n}$ is a cofibration in the \textit{projective} model structure,
+      while the commutative monoid axiom is mildly weaker by reducing to information in $\V$.
+      For our analysis in \S \cite{COFIB SEC}, it is critical that we remain in the genuine equivariant setting.     
+\end{remark}
+
+
+
 %\begin{remark}
 %	Alternatively, we could also have insisted that $f^{\square n}$ be a trivial cofibration if $f$ is. However, while this holds in the examples of interest, it is usually not as helpful from a technical standpoint. Indeed, the main role of pushout powers $f^{\square n}$ is to help study powers $f^{\otimes n}$, but it is often easier to first check directly that $f^{\otimes n}$ is a weak equivalence, and then argue that so is
 %$f^{\square n}$ using $2$-out-of-$3$ and the filtration in 
@@ -10417,9 +10474,9 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 \begin{example}
 	Both $(\mathsf{sSet},\times)$ and 
-	$(\mathsf{sSet}_{\**},\wedge)$ have cofibrant symmetric pushout powers. To see this, we note first that the case of (non-trivial)
-	cofibrations is immediate since genuine cofibrations
-	are precisely the monomorphisms.
+	$(\mathsf{sSet}_{\**},\wedge)$ have cofibrant symmetric pushout powers.
+        To see this, we note first that the case of (non-trivial) cofibrations is immediate since
+        the genuine cofibrations in $\sSet^{\Sigma_n}$ are precisely the monomorphisms (e.g. Remark \ref{ALLCOF REM}, \cite[Prop. 2.16]{Ste16}).
 	For the case of $f \colon X \to Y$ a trivial cofibration, it is easier to first show directly that 
 	$f^{\otimes n} \colon X^{\otimes n} \to Y^{\otimes n}$
 	is a trivial cofibration, 
@@ -12046,7 +12103,7 @@ where the last two maps are always isomorphisms. But when restricting to cofibra
 
 The following is the main lemma. We note that the 
 operad half of (\ref{FGTFUNC EQ})
-was also obtained by Guti\'{e}rrez-White in \cite{GW17}.
+was also obtained by Guti\'{e}rrez-White in \cite{GW18}.
 
 
 \begin{lemma}\label{MAINLEM LEM}
@@ -13084,7 +13141,7 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 We now explain how the $N\mathcal{F}$-operads of 
 Blumberg-Hill can be built from the theory of genuine equivariant operads, thus proving Corollary \ref{NINFTY_REAL_COR_MAIN}.
 
-We start with an abstract argument, which has also been used by Guti\'{e}rrez-White in \cite{GW17}. 
+We start with an abstract argument, which has also been used by Guti\'{e}rrez-White in \cite{GW18}. 
 Writing 
 $\mathcal{I} = \mathbb{F} (\emptyset)$
 for the initial equivariant operad in 
