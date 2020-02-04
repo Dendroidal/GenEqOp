@@ -68,8 +68,8 @@
 
 
 \documentclass[a4paper,10pt
-%,draft
-, final
+,draft
+% , final
 ]{article}%
 
 
@@ -79,7 +79,7 @@
 \usepackage{ifdraft}[pos=0.8]
 \ifdraft{
   \color[RGB]{63,63,63}
-%  \pagecolor[RGB]{220,220,204}
+  \pagecolor[RGB]{220,220,204}
   \usepackage[notref]{showkeys}
   \usepackage{todonotes}
 }
@@ -6896,7 +6896,8 @@ the Elmendorf-Piacenza equivalence
 	\ar[shift left=1]{l}{\iota_{\**}}
 \end{tikzcd}
 \]
-for each family $\mathcal{F}$ of subgroups of $G$.
+for each \textit{family} $\mathcal{F}$ of subgroups of $G$
+(i.e. a collection closed under conjugation and subgroup).
 Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ 
 and thus the objects of
 $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
@@ -6919,8 +6920,10 @@ $\mathsf{Op}_{\mathcal{F}}$
 of partial genuine equivariant operads.
 
 We start by recalling that 
-in the classic setting
-$\mathcal{F}$ is a family of subgroups of $G$
+% in the classic setting
+a collection $\mathcal F$ of subgroups of $G$
+% $\mathcal{F}$
+is a family % of subgroups of $G$
 if and only if the associated subcategory 
 $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \mathsf{O}_G$ is a sieve, defined as follows.
@@ -6933,7 +6936,6 @@ $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 	$s \in \mathcal{S}$ then both $d$ and $f$ are also in $\mathcal{S}$. 
 	In particular, sieves are full subcategories.
 \end{definition}
-
 
 \begin{definition}\label{FAMILY_COROLLAS_DEF}
       We call a sieve
@@ -9401,16 +9403,17 @@ We begin by recalling genuine equivariant model structures.
       $X^H \to Y^H$ is a weak equivalence (fibration)
       for all $H \leq \Sigma$.
 
-      More generally, given any family $\F$ (or even collection of subgroups) of $\Sigma$,
+      More generally, given any family (\S \ref{INDEXING_SECTION}) $\F$ of subgroups of $\Sigma$,
       the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^\Sigma_{\F}$,
       has weak equivalences and fibrations defined by restricting $H$ to $\F$.
 \end{definition}
 
-In particular, when $\F$ is trivial family just containing the trivial subgroup,
+In particular, when $\F$ just contains the trivial subgroup,
 the $\F$-model structure is the \textit{projective} model structure, where weak equivalences (resp. fibrations) are those maps which forget to weak equivalences (resp. fibrations) in $\V$.
-As $\F$ increases in size, so does to class of (trivial) cofibrations.
+As $\F$ increases in size, so does to class of (trivial) cofibrations.\\
 
-Our main proof will require some auxiliary results concerning genuine model structures.
+Our main proof will require some auxiliary results concerning genuine model structures and related hypotheses.
+% collected in Remark \ref{GEN_FGTRIGHT_REM}.
 However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
 we defer their %harder
@@ -9418,67 +9421,95 @@ proofs to those
 of the stronger results in \S \ref{COFIB SEC}.
 
 
-\begin{remark}\label{GENCOFGEN REM}
-The genuine model structure
-$\mathcal{V}^{\Sigma}_{\text{gen}}$
-and the $\F$-model structure for a family $\V^\Sigma_\F$
-exist whenever $\mathcal{V}$ has
-\textit{cellular fixed points}.
-The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
-For our immediate purposes, however, we will only need to know that 
-$\mathcal{V}^{\Sigma}_{\text{gen}}$
-is then cofibrantly generated with 
-generating (trivial) cofibrations the maps
-$\Sigma/H \cdot i$
-for $H\leq \Sigma$
-and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
+
+% \begin{remark}\label{GENCOFGEN REM}
+% The genuine model structure
+% $\mathcal{V}^{\Sigma}_{\text{gen}}$
+% and the $\F$-model structure for a family $\V^\Sigma_\F$
+% exist whenever $\mathcal{V}$ has
+% \textit{cellular fixed points}.
+% The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
+% For our immediate purposes, however, we will only need to know that 
+% $\mathcal{V}^{\Sigma}_{\text{gen}}$
+% is then cofibrantly generated with 
+% generating (trivial) cofibrations the maps
+% $\Sigma/H \cdot i$
+% for $H\leq \Sigma$
+% and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
 
 % More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
 % $\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
 % $\mathcal{F}$.
-\end{remark}
+% \end{remark}
 
-\begin{remark}\label{ALLCOF REM}
-A skeletal filtration argument shows that all objects in 
-$\mathsf{sSet}^{\Sigma}_{\text{gen}}$,
-$\mathsf{sSet}^{\Sigma}_{\**,\text{gen}}$
-are cofibrant.
-\end{remark}
 
+The statements of our main theorems include two conditions that we will introduce in \S \ref{COFIB SEC},
+namely \textit{cellular fixed points} (Definition \ref{CELL DEF}) and
+\textit{cofibrant symmetric pushout powers} (Definition \ref{COFSYMPUSHPOW}).
+These in particular have the following consequences:
 
 \begin{remark}\label{GEN_FGTRIGHT_REM}
-Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
-\begin{itemize}
-	\item [(i)] Propositions \ref{FGTRIGHT PROP} and
-	\ref{FGTLEFT PROP} imply that for a group homomorphism 
-$\phi: \Sigma \to \bar \Sigma$ 
-the functors
-\[
-\begin{tikzcd}
-	\bar{\Sigma} \cdot_{\Sigma} (\minus)
-		\colon
-	\mathcal{V}_{\text{gen}}^{\Sigma}
-	\ar{r}
-&
-	\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-&
-	\mathsf{res}^{\bar{\Sigma}}_{\Sigma}
-		\colon
-	\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-	\ar{r}
-&
-	\mathcal{V}_{\text{gen}}^{\Sigma}
-\end{tikzcd}
-\]
-	are left Quillen functors. 
-	\item[(ii)] \eqref{EXTERINTADJ EQ} says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
-	\[
-	\V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
-	\xrightarrow{\otimes}
-	\V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
-	\]
-\end{itemize}
+      Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
+      \begin{enumerate}[label = (\roman*)]
+      \item \label{CELL_ITEM}
+            By \cite[Prop. 2.6]{Ste16},
+            the genuine model structure $\V^\Sigma_{\text{gen}}$ and the $\F$-model structure for a family $\V^\Sigma_\F$.
+            Moreover, in this case
+            $\mathcal{V}^{\Sigma}_{\F}$
+            is cofibrantly generated with 
+            generating (trivial) cofibrations the maps
+            $\Sigma/H \cdot i$
+            for $H\leq \Sigma$ in $\F$ 
+            and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
+      \item \label{GROUPHOM_ITEM}
+            Propositions \ref{FGTRIGHT PROP} and
+            \ref{FGTLEFT PROP} imply that for a group homomorphism 
+            $\phi: \Sigma \to \bar \Sigma$ 
+            the functors
+            \[
+                  \begin{tikzcd}
+                        \bar{\Sigma} \cdot_{\Sigma} (\minus)
+                        \colon
+                        \mathcal{V}_{\text{gen}}^{\Sigma}
+                        \ar{r}
+                        &
+                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+                        &
+                        \mathsf{res}^{\bar{\Sigma}}_{\Sigma}
+                        \colon
+                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+                        \ar{r}
+                        &
+                        \mathcal{V}_{\text{gen}}^{\Sigma}
+                  \end{tikzcd}
+            \]
+            are left Quillen functors. 
+      \item \label{TENSORLEFT_ITEM}
+            \eqref{EXTERINTADJ EQ} says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
+            \[
+                  \V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
+                  \xrightarrow{\otimes}
+                  \V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
+            \]
+      \item \label{CSPP_ITEM}
+            If additionally $\V$ has \textit{cofibrant symmetric pushout powers}
+            (a technical condition to be introduced in \S \ref{PUSHPOW SEC}),
+            then Example \ref{F_ALL_EX} and Proposition \ref{POWERF PROP} imply that
+            if $f$ is a (trivial) cofibration in $\V^G_{\text{gen}}$, then $f^{\square n}$ is a (trivial) cofibration in $\V^{\Sigma_n \wr G}_{\text{gen}}$ for any $n$.
+      \end{enumerate}
 \end{remark} 
+
+\begin{remark}\label{ALLCOF REM}
+        A skeletal filtration argument shows that all objects in
+        $\mathsf{sSet}^{\Sigma}_{\text{gen}}$ and
+        $\mathsf{sSet}^{\Sigma}_{\**,\text{gen}}$
+        are cofibrant.
+        Moreover, Example \ref{SSET_CSPP_EX} says that $(\mathsf{sSet},\times)$, $(\mathsf{sSet}_{\**},\wedge)$ have
+        cofibrant symmetric pushout powers.
+        % A skeletal filtration argument shows that all objects in 
+        % are cofibrant.
+\end{remark}
+
 
 The following lemma is the key to our main proof. 
 Here, a map $f$ in 
@@ -9490,8 +9521,8 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 \begin{lemma}\label{EXMAINLEM LEM}
 	Suppose $\mathcal{V}$ is a cofibrantly generated closed monoidal model category
 	with cellular fixed points and
-	with cofibrant symmetric pushout powers 
-	(cf. Proposition \ref{POWERF PROP}).
+	with cofibrant symmetric pushout powers.
+	% (cf. Proposition \ref{POWERF PROP}).
 	
 	Let $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
 	be level genuine cofibrant
@@ -9516,7 +9547,7 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 
 \begin{proof}
 	Combining the homomorphism $\mathsf{Aut}(T) \to \mathsf{Aut}(C)$ with the leftmost left Quillen functor in 
-	Remark \ref{GEN_FGTRIGHT_REM}(i),
+	Remark \ref{GEN_FGTRIGHT_REM}\ref{GROUPHOM_ITEM},
 	it suffices to check that the parenthesized 
 	expression in \eqref{EXMAINLEM EQ}
 	is a (trivial) genuine 
@@ -9526,7 +9557,7 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	$\mathsf{Aut}(T) \to 
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{ac}(T)}\right) \times 
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{in}(T)}\right)$
-	combined with the rightmost left Quillen functor in Remark \ref{GEN_FGTRIGHT_REM}(i) and Remark \ref{GEN_FGTRIGHT_REM}(ii)
+	combined with the rightmost left Quillen functor in Remark \ref{GEN_FGTRIGHT_REM}\ref{GROUPHOM_ITEM} and Remark \ref{GEN_FGTRIGHT_REM}\ref{TENSORLEFT_ITEM}
 	then yield that it suffices to check that the two maps
 \[
 \left( \varnothing \to \bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \right)
@@ -9550,12 +9581,13 @@ $
 	\mathsf{Aut}(T_{v_k})
 $
 as in Remark \ref{WREATHFIXED REM}.
-A further application of Remark \ref{GEN_FGTRIGHT_REM}(ii)
+A further application of Remark \ref{GEN_FGTRIGHT_REM}\ref{TENSORLEFT_ITEM}
 yields that the required conditions need only be checked independently for the
-partial pushout product indexed by each $\lambda_i$,
-thus reducing to 
-Proposition \ref{POWERF PROP}
-(when $\mathcal{F}$ is the family of all subgroups).
+partial pushout product indexed by each $\lambda_i$.
+Thus the result follows by Remark \ref{GEN_FGTRIGHT_REM}\ref{CSPP_ITEM}.
+% thus reducing to 
+% Proposition \ref{POWERF PROP}
+% (when $\mathcal{F}$ is the family of all subgroups).
 \end{proof}
 
 
@@ -9641,7 +9673,7 @@ $\mathsf{Hom}_{\Sigma_G}(C,D)/H \cdot u$
 is a (trivial) cofibration in 
 $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$
 for all $C \in \Sigma_G$ 
-(cf. Remark \ref{GENCOFGEN REM}),
+(cf. Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}) % Remark \ref{GENCOFGEN REM}
 combining the inductive description of the filtration in (\ref{FILTRATION_LAN_LEVEL})
 with Lemma \ref{EXMAINLEM LEM} shows that if
 $\mathcal{P}$ is level genuine cofibrant
@@ -10218,7 +10250,7 @@ applies mutatis mutandis.
 %\end{corollary}  
 %\begin{proof} 
 %        As $\Op(\V^G) = \Op^G(V)$, we consider the filtration in (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
-%        Then the result follows from Corollary \ref{AUTTCOFPUSH_GEN_PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) applied to $\V^{G \times \Sigma_T}_{\text{gen}} \to \V^{G \times \Sigma_n}_{\text{gen}}$,
+%        Then the result follows from Corollary \ref{AUTTCOFPUSH_GEN_PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}\ref{GROUPHOM_ITEM} applied to $\V^{G \times \Sigma_T}_{\text{gen}} \to \V^{G \times \Sigma_n}_{\text{gen}}$,
 %        as any map $f \otimes \P(T_v)$ is equivalently given by $f \Box (\varnothing \to \P(T_v))$, and trivial cofibrations are closed under transfinite composition.
 %\end{proof} 
 
@@ -10235,7 +10267,7 @@ applies mutatis mutandis.
 %        Using \cite[11.3.2]{Hi03},
  %%       %\cite[Lemma 2.3]{SS00}
 %        the fact that weak equivalences and transfinite compositions are levelwise implies that 
- %       Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) 
+ %       Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}\ref{GROUPHOM_ITEM}
 %        are sufficient,
 %        as for any such $\F$, (trival) $\F$-cofibrations are, in particular, \textit{level} genuine (trivial) cofibrations (see Remark \ref{LEVEL_COFIB_REMARK}).
         
@@ -10358,9 +10390,12 @@ that there are Quillen equivalences
 \]
 In contrast to the existence of model structure results shown in \S \ref{MAINEXIST SEC},
 this will require a far more careful analysis of the  
-genuine model structures
-$\mathcal{V}^G_{\mathcal{F}}$ mentioned in 
-Remark \ref{GENCOFGEN REM}. This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
+fixed-point model structures
+$\mathcal{V}^G_{\mathcal{F}}$
+from Definition \ref{GENUINEMS_DEF}.
+% mentioned in 
+% Remark \ref{GENCOFGEN REM}.
+This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
 to the setup of $G$-trees in \S
 \ref{G_GRAPH_SECTION},
 and culminate in 
@@ -10378,8 +10413,9 @@ $N \mathcal{F}$-operads of Blumberg-Hill.
 \subsection{Families of subgroups}
 \label{FAMILY_SEC}
 
-Throughout 
-$\mathcal{F}$ denotes a \textit{family} of subgroups of a finite group $G$, i.e. a collection of subgroups closed under conjugation and inclusion, or, equivalently
+Throughout,
+$\mathcal{F}$ denotes a \textit{family} of subgroups of a finite group $G$,
+i.e. a collection of subgroups closed under conjugation and inclusion, or, equivalently
 (cf. \S \ref{INDEXING_SECTION}),
 a sieve 
 $
@@ -10389,19 +10425,22 @@ $
 $.
 
 \begin{remark}
-For fixed $G$ families form a lattice, ordered by inclusion, 
+For fixed $G$, families form a lattice, ordered by inclusion, 
 with meet and join given by intersection and union.
 \end{remark}
 
-As mentioned in Remark \ref{GENCOFGEN REM},
-when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
-\cite[Prop. 2.6]{Ste16} shows that there exists a model structure
-$\mathcal{V}^{G}_{\mathcal{F}}$
-on the $G$-object category
-$\mathcal{V}^G$
-whose fibrations and weak equivalences are determined by the fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
-Our analysis will require an explicit understanding of this cellularity condition,
-which we now recall.
+We begin our investigation of $\F$-model categories
+by revisiting cellular fixed points,
+the first of the two extra hypotheses introduced in Remark \ref{GEN_FGTRIGHT_REM}.
+% As mentioned in Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}, % Remark \ref{GENCOFGEN REM},
+% when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
+% \cite[Prop. 2.6]{Ste16} shows that there exists a model structure
+% $\mathcal{V}^{G}_{\mathcal{F}}$
+% on the $G$-object category
+% $\mathcal{V}^G$
+% whose fibrations and weak equivalences are determined by the fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
+% Our analysis will require an explicit understanding of this cellularity condition,
+% which we now recall.
 
 \begin{definition}\label{CELL DEF}
 	A model category $\mathcal{V}$ is said to have 
@@ -10415,6 +10454,8 @@ which we now recall.
 \end{itemize}
 \end{definition}
 
+This condition, originally from \cite{Gui06} and updated in \cite{Ste16}, guarentees that
+the $\F$-model structure $\V^G_{\F}$ from Definition \ref{GENUINEMS_DEF} exists for any family $\F$ and cofibrantly generated $\V$.
 
 This section will establish some simple useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
 cellularity conditions in Definition \ref{CELL DEF}.
@@ -10754,10 +10795,11 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 
 \begin{example}
+      \label{SSET_CSPP_EX}
 	Both $(\mathsf{sSet},\times)$ and 
 	$(\mathsf{sSet}_{\**},\wedge)$ have cofibrant symmetric pushout powers.
         To see this, we note first that the case of (non-trivial) cofibrations is immediate since
-        the genuine cofibrations in $\sSet^{\Sigma_n}$ are precisely the monomorphisms (e.g. Remark \ref{ALLCOF REM}, \cite[Prop. 2.16]{Ste16}).
+        the genuine cofibrations in $\sSet^{\Sigma_n}$ are precisely the monomorphisms (e.g. \cite[Prop. 2.16]{Ste16}).
 	For the case of $f \colon X \to Y$ a trivial cofibration, it is easier to first show directly that 
 	$f^{\otimes n} \colon X^{\otimes n} \to Y^{\otimes n}$
 	is a trivial cofibration, 
@@ -10827,6 +10869,11 @@ showing that in particular $\mathcal{F}^{\ltimes E}$
 is independent of the choice of $e \in E$.
 \end{definition}
 
+\begin{example}
+      \label{F_ALL_EX}
+      In the case $\F = \F_{\text{all}}$ is all subgroups of $G$,
+      \eqref{FLTIMESN2 EQ} makes it clear that $\F^{\ltimes E}$ is all subgroups of $\Sigma_n \wr G$.
+\end{example}
 
 \begin{remark}
 The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
