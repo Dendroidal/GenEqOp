@@ -101,7 +101,9 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	but we do not have a strong objection to changing it.
 	
 	\item[8.] The meaning of the term ``family''
-	was already spelled out the first time the term was used.
+              was already spelled out the first time the term was used.
+
+        \item[15.] Clarifed references and definition of semi-model structures. In particular, we are using the (relative) notion as described in \cite{WY15}, and added a footnote comparing this to the stronger notion of a $J$-semi-model structure from \cite{Spi01}.
 
 	\item[19.] Added a justification for 
 	the characterization of ``independent maps in $\Omega_G$''
@@ -247,7 +249,16 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	Lemma \ref{MINUS_LAN_FINAL_LEMMA}
 	to highlight that the forgetful functors to $\Sigma_G$
 	are denoted $\mathsf{lr}$
-	
+
+  \item[71.] Spitzweck's notion of a $J$-semi-model structure from \cite{Spi01} includes as part of the \textit{definition}
+        that transfered cofibrations with cofibrant domain forget to cofibrations;
+        more recent accounts (e.g. \cite{Fre09,WY15}) prove this as a property of well-behaved semi-model categories,
+        as do we in our key Lemma \ref{MAINLEM LEM}).
+        After accounting for this difference (i.e. modifying the hypotheses to remove the condition on $\mathbb F I$-cells), the analogue result is \cite[Thm. 2]{Spi01}.
+        The relevant observation is that the proof of \cite[Thm. 2]{Spi01} is completely analogous to the proof of \cite[Thm. 11.3.2]{Hi03}.
+        
+        To circumvent this digression, we have added to our parenthetical comment a reference to \cite[Thm. 2]{Spi01} and its similar proof.
+        
 	\item[72.] the argument in the proof of Theorem \ref{MAINEXIST2 THM}
 	concerning the case with $\mathcal{F}$
 	a general weak indexing system has been entirely rewritten and hopefully made clearer
@@ -259,8 +270,13 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	has been expanded
 	({\color{red} should add extra remarks somewhere about how the existence of the needed filtrations does not require $\V$ to have diagonals})
 
-	\item[74.] Added short explanations of the double coset formulas used in 
-	Propositions \ref{FGTLEFT PROP} and \ref{BIQUILLENG PROP}.
+        \item[74.] Added short explanations of the double coset formulas used in 
+        Propositions \ref{FGTLEFT PROP} and \ref{BIQUILLENG PROP}.
+
+        \item[78.] added Remark \ref{CSPP_REM}, which compares the cofibrant symmetric pushout powers condition to other model categorical conditions of a similar form, and describe the utility of our definition.
+
+        \item[79.] added Definition \ref{GENUINEMS_DEF} explicitly defining the genuine, $\F$, and projective model structures,
+              and added language in \S \ref{PUSHPOW SEC} to emphasize which we are using.
 	
 	\item[81.] We are not sure what was meant by the 
 	``where did the wreath product come from?'' comment
@@ -351,8 +367,6 @@ to refer to
 \cite[\S 3]{Elm83}
 
 \item[14.] replaced ``simplicial operad'' with  ``$G$-simplicial operad''
-
-\item[15.] Clarifed references and definition of semi-model structures.
       
 \item[17.] 
 added the reference to the formulas for 
@@ -440,18 +454,12 @@ are introduced, especially in the relative case}
 \item[65.] noted that the use of opposite categories turns $\mathsf{Ran}$ into $\mathsf{Lan}$
 
 \item[70.] replaced ``less generating'' with ``fewer generating''
-
-\item[71.] Added a comment referencing Spitzweck's Theorem 2 and its relation to the desired analogue.
       
 \item[75.] Made sure the statement of Lemma \ref{REWORFAM LEM} makes sense
 
 \item[76.] addressed in the answer to [3.]
 
 \item[77.] fixed $G$ to be $\bar{G}$
-
-\item[78.] added Remark \ref{CSPP_REM} to address conditions similar to cofibrant symmetric pushout powers
-
-\item[79.] added Definition \ref{GENUINEMS_DEF} and modified Remark \ref{GENCOFGEN REM} in \S \ref{MAINEXIST SEC}, and added Remark \ref{CSPP_REM} to \S \ref{PUSHPOW SEC} to emphasis genuine vs projective model structures.
       
 \item[80.] reworded ``for all'' as ``for every'' in Prop. \ref{POWERF PROP}
 
