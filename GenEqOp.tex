@@ -1,74 +1,338 @@
 % arara: pdflatex
 % arara: makeindex
 % arara: pdflatex
-\documentclass[a4paper,10pt]{article}%
+% \documentclass[a4paper,10pt]{article}%
 
-\usepackage[hidelinks]{hyperref}
-\hypersetup{
-%  colorlinks,
-  linktoc=page
+% \usepackage[hidelinks]{hyperref}
+% \hypersetup{
+% %  colorlinks,
+%   linktoc=page
+% }
+% \usepackage{bookmark}
+
+
+% \input{commands.tex}%
+
+% \usepackage{showkeys}
+
+% \author{Peter Bonventre, Lu\'is A. Pereira}%
+% \title{Genuine equivariant operads}%
+
+% \usepackage{stmaryrd}
+
+% \usepackage{upgreek}
+% \usepackage{mathtools}
+
+% \usepackage{geometry}
+
+% \usepackage{tikz}%
+% \tikzset{%
+%   treenode/.style = {shape=rectangle, rounded corners,%
+%                      draw, align=center,%
+%                      top color=white, bottom color=blue!20},%
+%   root/.style     = {treenode, font=\Large, bottom color=red!30},%
+%   env/.style      = {treenode, font=\ttfamily\normalsize},%
+%   dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
+% }
+
+% \usetikzlibrary[decorations.pathreplacing,patterns,cd]
+% % \usetikzlibrary{external}\tikzexternalize
+% % \makeatletter
+% % \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
+% % \makeatother
+
+
+
+% % ---------- notational index ----------
+% % \usepackage[intoc]{nomencl}
+% % \makenomenclature
+% % \renewcommand{\nomname}{Notational Index} 
+% % \renewcommand{\nompreamble}{The following list describes several symbols and maps that are used within the body of the article.}
+
+% % \usepackage{etoolbox}
+% % \renewcommand\nomgroup[1]{%
+% %   \item[\bfseries
+% %   \ifstrequal{#1}{C}{Categories}{%
+% %   \ifstrequal{#1}{M}{Morphisms}{%
+% %   \ifstrequal{#1}{O}{Other}{}}}%
+% % ]}
+ 
+% % % This will add the units
+% % \newcommand{\nomunit}[1]{%
+% % \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+
+
+
+
+
+
+\documentclass[a4paper,10pt
+,draft
+% , final
+]{article}%
+
+
+% ---- Commands on draft --------
+
+\usepackage[dvipsnames]{xcolor}% adds colors
+\usepackage{ifdraft}[pos=0.8]
+\ifdraft{
+  \color[RGB]{63,63,63}
+  \pagecolor[RGB]{220,220,204}
+  \usepackage[notref]{showkeys}
+  \usepackage{todonotes}
 }
-\usepackage{bookmark}
+{
+  \usepackage[disable]{todonotes}
+}
+
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
+
+%\usepackage{xr-hyper}
+\usepackage[pagebackref, colorlinks, citecolor=PineGreen, linkcolor=PineGreen]{hyperref}
+\hypersetup{
+  final,
+  pdftitle={Genuine equivariant operads},
+  pdfauthor={Bonventre, P. and Pereira, L. A.},
+  linktoc=page,
+  pdfpagemode=UseNone,
+  pdfpagelayout=SinglePage,
+}
+
+\usepackage{amsmath, amsthm}% {amsfonts, amssymb}
+
+% ------ New Characters --------------------------------------
+
+\let\llhook\lhook
+\usepackage[latin1]{inputenc}%
+%\usepackage[T1]{fontenc}
+\usepackage{MnSymbol}
+\usepackage[
+cal = cm,
+bb = ams,
+frak = euler,
+scr = rsfs
+]{mathalpha}
+
+% \DeclareMathAlphabet\mathbb{U}{msb}{m}{n}
+% %\usepackage{stmaryrd}
+\usepackage{upgreek}
+% \usepackage{mathrsfs}
+% % \usepackage[english]{babel}
+% % \usepackage{fouriernc}
+% % \DeclareMathAlphabet{\mathscr}{U}{mathrsfs}{m}{n}`
+% %\usepackage{pifont}
+% %\newcommand{\cmark}{\text{\ding{51}}}
+% %\newcommand{\xmark}{\text{\ding{55}}}
+
+\usepackage[normalem]{ulem} % underlining
+% \usepackage{dsfont} % double strike-through
+% \usepackage{bbm} % more blackboard bold
 
 
-\input{commands.tex}%
 
-\usepackage{showkeys}
+%----- Enumerate ---------------------------------------------
+\usepackage{paralist} % for inparaenum
+% \usepackage{enumerate}%
+\usepackage[inline,shortlabels]{enumitem}%
+\setenumerate{label=(\roman*)}
+
+% ---------- Page Typesetting ----------
+\usepackage[final]{microtype}
+\usepackage{relsize}
+\usepackage{geometry}
+
+%-------- Tikz ---------------------------
+
+\usepackage{tikz}%
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing,
+cd,patterns,calc}
+\tikzset{%
+  % treenode/.style = {shape=rectangle, rounded corners, draw, align=center, font=\footnotesize,
+  %                    top color=white, bottom color=blue!20},%
+  % root/.style     = {treenode, font=\Large, bottom color=red!30},%
+  % env/.style      = {treenode, font=\ttfamily\normalsize},%
+  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
+}%
+
+\usetikzlibrary[decorations.pathreplacing]
+
+
+
+
+% ----- Labels Changed? --------
+
+\makeatletter
+
+\def\@testdef #1#2#3{%
+  \def\reserved@a{#3}\expandafter \ifx \csname #1@#2\endcsname
+  \reserved@a  \else
+  \typeout{^^Jlabel #2 changed:^^J%
+    \meaning\reserved@a^^J%
+    \expandafter\meaning\csname #1@#2\endcsname^^J}%
+  \@tempswatrue \fi}
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%% INTERNAL REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\numberwithin{equation}{section} 
+\numberwithin{figure}{section}
+
+\usepackage{mathtools}
+% \mathtoolsset{showonlyrefs,showmanualtags} % Only number equations which are referenced with eqref
+
+
+% ------- New Theorems/ Definition/ Names-----------------------
+
+ % \theoremstyle{plain} % bold name, italic text
+\newtheorem{theorem}[equation]{Theorem}%
+\newtheorem*{theorem*}{Theorem}%
+\newtheorem{lemma}[equation]{Lemma}%
+\newtheorem{proposition}[equation]{Proposition}%
+\newtheorem{corollary}[equation]{Corollary}%
+\newtheorem{conjecture}[equation]{Conjecture}%
+\newtheorem*{conjecture*}{Conjecture}%
+\newtheorem{claim}[equation]{Claim}%
+
+%%%%%% Fancy Numbering for Theorems
+\newtheorem{innercustomgeneric}{\customgenericname}
+\providecommand{\customgenericname}{}
+\newcommand{\newcustomtheorem}[2]{%
+  \newenvironment{#1}[1]
+  {%
+   \renewcommand\customgenericname{#2}%
+   \renewcommand\theinnercustomgeneric{##1}%
+   \innercustomgeneric
+  }
+  {\endinnercustomgeneric}
+}
+
+\newcustomtheorem{customthm}{Theorem}
+\newcustomtheorem{customcor}{Corollary}
+%%%%%%%%%%%%%
+
+\theoremstyle{definition} % bold name, plain text
+\newtheorem{definition}[equation]{Definition}%
+\newtheorem*{definition*}{Definition}%
+\newtheorem{example}[equation]{Example}%
+\newtheorem{remark}[equation]{Remark}%
+\newtheorem{notation}[equation]{Notation}%
+\newtheorem{convention}[equation]{Convention}%
+\newtheorem{assumption}[equation]{Assumption}%
+\newtheorem{exercise}{Exercise}%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------------ COMMANDS ------------------------------
+
+% ---------- macros
+
+\newcommand{\set}[1]{\left\{#1\right\}}%
+\newcommand{\sets}[2]{\left\{ #1 \;|\; #2\right\}}%
+\newcommand{\longto}{\longrightarrow}%
+\newcommand{\into}{\hookrightarrow}%
+\newcommand{\onto}{\twoheadrightarrow}%
+
+\usepackage{harpoon}
+\newcommand{\vect}[1]{\text{\overrightharp{\ensuremath{#1}}}}
+
+
+% ---------- operators
+
+\newcommand{\Sym}{\ensuremath{\mathsf{Sym}}}%
+\newcommand{\Fin}{\mathsf{F}}%
+\newcommand{\Set}{\ensuremath{\mathsf{Set}}}
+\newcommand{\Top}{\ensuremath{\mathsf{Top}}}
+\newcommand{\sSet}{\ensuremath{\mathsf{sSet}}}%
+\newcommand{\Cat}{\mathsf{Cat}}
+\newcommand{\sCat}{\mathsf{sCat}}
+\newcommand{\Op}{\mathsf{Op}}%
+\newcommand{\sOp}{\ensuremath{\mathsf{sOp}}}%
+\newcommand{\sSym}{\ensuremath{\mathsf{sSym}}}%
+\newcommand{\fgt}{\ensuremath{\mathsf{fgt}}}%
+\newcommand{\dSet}{\mathsf{dSet}}
+\newcommand{\sdSet}{\mathsf{sdSet}}
+\newcommand{\PreOp}{\mathsf{PreOp}}
+\newcommand{\Fun}{\mathsf{Fun}}
+\newcommand{\Fib}{\mathsf{Fib}}
+\newcommand{\Alg}{\mathsf{Alg}}
+\newcommand{\Kl}{\mathsf{Kl}}
+
+
+
+\DeclareMathOperator{\hocmp}{hocmp}%
+\DeclareMathOperator{\cmp}{cmp}%
+\DeclareMathOperator{\hofiber}{hofiber}%
+\DeclareMathOperator{\fiber}{fiber}%
+\DeclareMathOperator{\hocofiber}{hocof}%
+\DeclareMathOperator{\hocof}{hocof}%
+\DeclareMathOperator{\holim}{holim}%
+\DeclareMathOperator{\hocolim}{hocolim}%
+\DeclareMathOperator{\colim}{colim}%
+\DeclareMathOperator{\Lan}{Lan}%
+\DeclareMathOperator{\Ran}{Ran}%
+\DeclareMathOperator{\Map}{Map}%
+\DeclareMathOperator{\Id}{Id}%
+\DeclareMathOperator{\mlf}{mlf}%
+\DeclareMathOperator{\Hom}{Hom}%
+\DeclareMathOperator{\Ho}{Ho}
+\DeclareMathOperator{\Aut}{Aut}%
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\Ob}{Ob}
+
+% ---------- shortcuts
+
+\newcommand{\F}{\ensuremath{\mathcal F}}
+\newcommand{\V}{\ensuremath{\mathcal V}}
+\newcommand{\Q}{\ensuremath{\mathcal Q}}
+\renewcommand{\O}{\ensuremath{\mathcal O}}
+\renewcommand{\P}{\ensuremath{\mathcal P}}
+\newcommand{\C}{\ensuremath{\mathcal C}}
+\newcommand{\A}{\ensuremath{\mathcal A}}
+\newcommand{\D}{\mathcal D}
+\newcommand{\mcI}{\ensuremath{\mathcal{I}}}%
+
+\newcommand{\del}{\partial}%
+
+\newcommand{\ki}{\chi}
+\newcommand{\ksi}{\xi}
+\newcommand{\Ksi}{\Xi}
+
+\newcommand{\lltimes}{\underline{\ltimes}}
+
+% detecting $\V$-categories:
+
+\newcommand{\I}{\mathbb I}
+\newcommand{\J}{\mathbb J}
+\newcommand{\1}{\ensuremath{\mathbbm 1}}%{\ensuremath{\mathbb{id}}} %\eta
+
+% lazy shortcuts
+
+\newcommand{\SC}{\Sigma_{\mathfrak C}}
+\newcommand{\OC}{\Omega_{\mathfrak C}}
+\newcommand{\UV}{\underline{\mathcal V}}
+\newcommand{\UC}{\underline{\mathfrak C}}
+
+
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Glossary of Notation, intoc]
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ---------- MAIN BODY ----------
 
 \author{Peter Bonventre, Lu\'is A. Pereira}%
 \title{Genuine equivariant operads}%
 
-\usepackage{stmaryrd}
+\begin{document}
 
-\usepackage{upgreek}
-\usepackage{mathtools}
-
-\usepackage{geometry}
-
-\usepackage{tikz}%
-\tikzset{%
-  treenode/.style = {shape=rectangle, rounded corners,%
-                     draw, align=center,%
-                     top color=white, bottom color=blue!20},%
-  root/.style     = {treenode, font=\Large, bottom color=red!30},%
-  env/.style      = {treenode, font=\ttfamily\normalsize},%
-  dummy/.style    = {circle,draw,inner sep=0pt,minimum size=2mm}%
-}
-
-\usetikzlibrary[decorations.pathreplacing,patterns,cd]
-% \usetikzlibrary{external}\tikzexternalize
-% \makeatletter
-% \renewcommand{\todo}[2][]{\tikzexternaldisable\@todo[#1]{#2}\tikzexternalenable}
-% \makeatother
-
-
-
-% ---------- notational index ----------
-% \usepackage[intoc]{nomencl}
-% \makenomenclature
-% \renewcommand{\nomname}{Notational Index} 
-% \renewcommand{\nompreamble}{The following list describes several symbols and maps that are used within the body of the article.}
-
-% \usepackage{etoolbox}
-% \renewcommand\nomgroup[1]{%
-%   \item[\bfseries
-%   \ifstrequal{#1}{C}{Categories}{%
-%   \ifstrequal{#1}{M}{Morphisms}{%
-%   \ifstrequal{#1}{O}{Other}{}}}%
-% ]}
- 
-% % This will add the units
-% \newcommand{\nomunit}[1]{%
-% \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
-
-\usepackage{imakeidx}
-\makeindex[columns=3, title=Glossary of Notation, intoc]
- 
-
-
-
-
-\begin{document}	\maketitle%
+\maketitle%
 
 
 
@@ -150,7 +414,7 @@ i.e. if the maps
 	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
 \end{equation}
 are weak equivalences of spaces. 
-However, the notion of equivalence suggested in (\ref{NAIVEOPEQ EQ}) turns out to not be ``genuine enough''.
+However, the notion of equivalence suggested in \eqref{NAIVEOPEQ EQ} turns out to not be ``genuine enough''.
 To see why, we first consider a homotopical replacement for $\mathsf{Com}$ using this theory: 
 %recall that the class of (non-equivariant)
 %$E_{\infty}$-operads,
@@ -173,7 +437,7 @@ determined by
 \end{cases}
 \end{equation}
 However, as first noted by Costenoble-Waner \cite{CW91} in their study of equivariant infinite loop spaces,
-the \textit{$G$-trivial $E_\infty$-operads} of (\ref{NAIVEGEINFTY EQ}) do not provide 
+the \textit{$G$-trivial $E_\infty$-operads} of \eqref{NAIVEGEINFTY EQ} do not provide 
 the correct replacement of $\mathsf{Com}$
  in the $G$-equivariant context. 
  %Instead, %notion of $G$-$E_{\infty}$-operads, by which we mean 
@@ -189,20 +453,20 @@ Rather, that replacement is provided instead by the
 \end{cases}
 \end{equation}
 In contrasting 
-(\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}),
+\eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ},
 we note that 
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
 $G \geq H \to \Sigma_n$,
 and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
-As it turns out, the notion of weak equivalence described in (\ref{NAIVEOPEQ EQ}) fails to distinguish
-(\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}), 
+As it turns out, the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
+\eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
 and indeed it is possible
 to build maps $\O \to \O'$ where
-$\O$ is a $G$-trivial $E_{\infty}$-operad (as in (\ref{NAIVEGEINFTY EQ}))
+$\O$ is a $G$-trivial $E_{\infty}$-operad (as in \eqref{NAIVEGEINFTY EQ})
 and $\O'$ is a $G$-$E_{\infty}$-operad 
-(as in (\ref{GENGEINFTY EQ})).
-Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in (\ref{NAIVEOPEQ EQ}) 
+(as in \eqref{GENGEINFTY EQ}).
+Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in \eqref{NAIVEOPEQ EQ} 
 with the finer notion of \textit{graph equivalence}, 
 so that $\O \to \O'$ is considered a weak equivalence only if
 the maps
@@ -213,8 +477,8 @@ the maps
 are all weak equivalences.
 
 As mentioned above, the original evidence \cite{CW91}
-that (\ref{GENGEINFTY EQ}), 
-rather than (\ref{NAIVEGEINFTY EQ}), 
+that \eqref{GENGEINFTY EQ}, 
+rather than \eqref{NAIVEGEINFTY EQ}, 
 provides the best up-to-homotopy replacement for $\mathsf{Com}$ in the equivariant context comes from the study of equivariant infinite loop spaces. %(mimicking the original source of $E_\infty$-algebras). 
 For our purposes, however, we instead focus on the perspective of Blumberg-Hill in \cite{BH15},
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire invariant problem \cite{HHR}.
@@ -231,17 +495,17 @@ ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X R \to R.
 \end{equation}
-Furthermore, by reducing structure on $R$ the maps (\ref{NORMMAPS EQ}) are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps (\ref{NORMMAPS EQ})
+Furthermore, by reducing structure on $R$ the maps \eqref{NORMMAPS EQ} are also defined when $X$ is only a $H$-set for some subgroup $H \leq G$, and the maps \eqref{NORMMAPS EQ}
 then satisfy a number of 
 natural equivariance and associativity conditions.
 Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for various $H$ simultaneously
 (for an example packaged in operadic language,
-see (\ref{INTFIXPTCOMP EQ}) below).
+see \eqref{INTFIXPTCOMP EQ} below).
 
 The key observation at the source of the work in 
 \cite{BH15} is then that, operadically, 
 norm maps are encoded by the graph fixed points 
-appearing in (\ref{GENEOPEQ EQ}).
+appearing in \eqref{GENEOPEQ EQ}.
 More explicitly, noting that a $H$-set $X$ with $n$ elements 
 is encoded by a partial homomorphism 
 $G \geq H \to \Sigma_n$, 
@@ -249,27 +513,27 @@ one obtains an associated graph subgroup
 $\Gamma_X \leq G \times \Sigma_n$,
 % \index{subgroups!GammaX@$\Gamma_X$}
 $\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follows that for $R$ an 
-$\mathcal{O}$-algebra, maps of the form (\ref{NORMMAPS EQ})
+$\mathcal{O}$-algebra, maps of the form \eqref{NORMMAPS EQ}
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
 The flaw of the $G$-trivial $E_{\infty}$-operads
-described in (\ref{NAIVEGEINFTY EQ}) is then that they lack all norms maps other than those for $H$-trivial $X$, thus lacking 
+described in \eqref{NAIVEGEINFTY EQ} is then that they lack all norms maps other than those for $H$-trivial $X$, thus lacking 
 some of the data encoded by $\mathsf{Com}$.
-Further, from this perspective one may regard the more naive notion of weak equivalence in (\ref{NAIVEOPEQ EQ}),
-according to which (\ref{NAIVEGEINFTY EQ}) and (\ref{GENGEINFTY EQ}) are equivalent,
+Further, from this perspective one may regard the more naive notion of weak equivalence in \eqref{NAIVEOPEQ EQ},
+according to which \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ} are equivalent,
 as studying ``operads without norm maps''
 (in the sense that equivalences ignore norm maps), 
-while the equivalences (\ref{GENEOPEQ EQ})
+while the equivalences \eqref{GENEOPEQ EQ}
 study ``operads with norm maps''.
 
 Our first main result, Theorem \ref{MAINEXIST1 THM}, 
-establishes the existence of a model structure on $G$-operads with weak equivalences the graph equivalences of (\ref{GENEOPEQ EQ}),
+establishes the existence of a model structure on $G$-operads with weak equivalences the graph equivalences of \eqref{GENEOPEQ EQ},
 though our analysis goes significantly further, again guided by Blumberg and Hill's work in \cite{BH15}.
 
 The main novelty of \cite{BH15} is the definition, for each finite group $G$, of a finite lattice of new types of equivariant operads, which they dub $N_{\infty}$-operads.
 The minimal type of $N_{\infty}$-operads is that of the 
-$G$-trivial $E_{\infty}$-operads in (\ref{NAIVEGEINFTY EQ}) 
-while the maximal type is that of the $G$-$E_{\infty}$-operads in (\ref{GENGEINFTY EQ}).
+$G$-trivial $E_{\infty}$-operads in \eqref{NAIVEGEINFTY EQ} 
+while the maximal type is that of the $G$-$E_{\infty}$-operads in \eqref{GENGEINFTY EQ}.
 The remaining types, which interpolate between 
 % $G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$,
 the two,
@@ -305,7 +569,7 @@ The precise conditions are collected in
 \cite[Def. 3.22]{BH15},
 which also introduces the term \textit{indexing system} for 
 an $\mathcal{F}$ satisfying all of those conditions.
-A main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in (\ref{NFINFTY EQ}) exists,
+A main result of \cite[\S 4]{BH15} is then that whenever a $N\mathcal F$-operad $\O$ as in \eqref{NFINFTY EQ} exists,
 the associated collection $\mathcal{F}$ must be an indexing system.
 However, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, was left as a conjecture.
 
@@ -336,7 +600,7 @@ Given a family $\mathcal{F}$ of subgroups of $G$
 (i.e. a collection closed under conjugation and subgroups), 
 a \textit{universal space} $X$ for $\mathcal{F}$, 
 also called an \textit{$E \mathcal{F}$-space},
-is a space with fixed points $X^H$ characterized  just as in (\ref{NFINFTY EQ}).
+is a space with fixed points $X^H$ characterized  just as in \eqref{NFINFTY EQ}.
 In particular, whenever $\O$ is a $N \mathcal{F}$-operad, 
 each $\O(n)$ is necessarily an $E \mathcal{F}_n$-space.
 The existence of $E \mathcal{F}$-spaces for any
@@ -380,15 +644,15 @@ $\iota^{\**}(C \delta_{\mathcal{F}}) =
 C \delta_{\mathcal{F}}(G)$, where $C$ denotes cofibrant replacement in $\mathsf{Top}^{\mathsf{O}_G^{op}}$.
 Moreover, we note that, as in \cite[\S 3]{Elm83}, these cofibrant replacements can be built via explicit simplicial realizations.
 
-The overarching goal of this paper is then that of proving the analogue of Elmendorf-Piacenza's Theorem (\ref{COFADJINT EQ})
-in the context of operads with norm maps (i.e. with equivalences as in (\ref{GENEOPEQ EQ})),
+The overarching goal of this paper is then that of proving the analogue of Elmendorf-Piacenza's Theorem \eqref{COFADJINT EQ}
+in the context of operads with norm maps (i.e. with equivalences as in \eqref{GENEOPEQ EQ}),
 which we state as our main result, Theorem \ref{MAINQUILLENEQUIV THM}.
 However, in trying to formulate such a result one immediately runs into a fundamental issue: 
 it is unclear which category should take the role of the coefficient systems $\mathsf{Top}^{\mathsf{O}_G^{op}}$ in this context.
 This last remark likely requires justification. 
 Indeed, it may at first seem tempting to simply 
 employ one of the known formal generalizations of Elmendorf-Piacenza's result (see, e.g. \cite[Thm. 3.17]{Ste16}) which simply replace
-$\mathsf{Top}$ on either side of $(\ref{COFADJINT EQ})$
+$\mathsf{Top}$ on either side of $\eqref{COFADJINT EQ}$
 with a more general model category $\mathcal{V}$.
 However, if one applies such a result when 
 $\mathcal{V}=\mathsf{Op}$
@@ -401,7 +665,7 @@ upcoming work of Bergner-Guti\'{e}rrez),
 the fact that 
 the levels of each 
 $\mathcal{P} \in \mathsf{Op}^{\mathsf{O}_G^{op}}$
-correspond only to those fixed-point spaces appearing in (\ref{NAIVEOPEQ EQ})
+correspond only to those fixed-point spaces appearing in \eqref{NAIVEOPEQ EQ}
 would require working in the context of operads \textit{without} norm maps,
 %and in doing so one forgoes
 and thereby forgo the ability to distinguish 
@@ -421,7 +685,7 @@ Each genuine equivariant operad
 $\mathcal{P} \in \mathsf{Op}_G$
 will consist of a list of spaces indexed
 in the same way as in 
-(\ref{GENEOPEQ EQ}) along with obvious restriction maps and, more importantly, 
+\eqref{GENEOPEQ EQ} along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
 Analyzing the proofs of the results in 
@@ -562,12 +826,12 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
-(\ref{INTFIXPTCOMP EQ})
+\eqref{INTFIXPTCOMP EQ}
 correspond to the nodes of the orbital representation
-in (\ref{D6SMALLER EQ}), though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing \textit{edge orbits}, while the output 
+in \eqref{D6SMALLER EQ}, though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing \textit{edge orbits}, while the output 
 $\O(H/L \amalg H/K)^{H}$
 is similarly determined by both the leaf and root edge orbits.
-The existence of maps of the form (\ref{INTFIXPTCOMP EQ}) is essentially tantamount to the subtlest 
+The existence of maps of the form \eqref{INTFIXPTCOMP EQ} is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
 and similar tree descriptions exist for all other closure properties, as detailed in 
@@ -589,7 +853,7 @@ and composition maps given by
 \[
 \P(H/K) \times \P(K/L \amalg K/K) \to \P(H/L \amalg H/K)
 \]
-in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
+in the case of the abstraction of \eqref{INTFIXPTCOMP EQ}, and more generally by
 %and multiplication maps
 %\begin{align*}%\label{FIXEDPOINTMUL EQ}
 \begin{equation}\label{GENGENMULT EQ}
@@ -609,15 +873,15 @@ in the case of the abstraction of (\ref{INTFIXPTCOMP EQ}), and more generally by
 \end{tikzcd}
 \end{equation}
 %\end{align*}
-%generalizing (\ref{INTFIXPTCOMP EQ}) (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
-Lastly, these composition maps %(\ref{FIXEDPOINTMUL EQ})
+%generalizing \eqref{INTFIXPTCOMP EQ} (which corresponds to the case $n=1$, $m_1 = 2$, $L_1 = L$, $L_2 = K$).
+Lastly, these composition maps %\eqref{FIXEDPOINTMUL EQ}
 must satisfy associativity, unitality, compatibility with restriction maps, and equivariance conditions, as encoded by the theory of $G$-trees. 
 Rather than making such compatibilities explicit, however, we will find it preferable for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
 
 We end this introduction with an alternative perspective on the role of genuine equivariant operads.
 The Elmendorf-Piacenza theorem in 
-(\ref{COFADJINT EQ})
+\eqref{COFADJINT EQ}
 is ultimately a strengthening of the basic observation that the homotopy groups
 $\pi_n(X)$ of a $G$-space $X$ are coefficient systems rather than just $G$-objects.
 Similarly, the generalized 
@@ -720,7 +984,7 @@ $\mathsf{Op}(\mathcal{V})$.
 
 % \nomenclature[C]{$\Top$}{Topological spaces}
 % \nomenclature[C]{$(\sSet, \times)$, $(\sSet_{\**}, \wedge)$}{Simplicial sets}
-COME BACK
+
 
 
 \begin{customthm}{I}\label{MAINEXIST1 THM}
@@ -746,7 +1010,7 @@ $\mathsf{Op}^G(\mathcal{V})$,
 which we denote
 $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$,
 with weak equivalences (resp. fibrations)
-determined by (\ref{GENEOPEQMT EQ}) for $\Gamma \in \mathcal{F}_n$.
+determined by \eqref{GENEOPEQMT EQ} for $\Gamma \in \mathcal{F}_n$.
 
 Lastly, 
 analogous 
@@ -777,10 +1041,10 @@ which are less standard, are discussed in
 \S \ref{PUSHPOW SEC}, respectively.
 
 Further, by \textit{semi-model category}
-we mean the notion a weaker, relative notion of model category
+we mean the weaker, relative notion of model category
 % introduced in \cite{Spi01} as a \textit{$J$-semi-model category over $\mathcal M$}
 % (interpreting work of \cite{Ho98})
-discussed in \cite[\S 2.2]{WY15} and \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY15} recovers that from \cite{Fre09} by choosing $\mathcal M$ to be the unique model structure on the terminal category.}
+discussed in \cite[\S 2.2]{WY18} and \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY18} recovers that from \cite{Fre09} by choosing $\mathcal M$ to be the unique model structure on the terminal category.}.
 Given an adjunction $F \colon \mathcal M \rightleftarrows \mathcal D \colon G$
 where $\mathcal M$ is a model category,
 one may ask if the model structure transfers along $F$ from $\mathcal M$ to $\mathcal D$.
@@ -799,7 +1063,7 @@ $\Sym^G(\V) = \V^{\Sigma^{op} \times G}$ equipped with a certain fixed-point mod
 % \cite{Ho98} and \cite{Spi01}, 
 % which relaxes the definition of model structure by requiring that some of the axioms need only apply
 % if the domains of certain cofibrations are cofibrant. For further details, we recommend the discussion in \cit
-% e[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09}.
+% e[\S 2.2]{WY18} or \cite[\S 12.1]{Fre09}.
 
 
 %The referenced \textit{semi}-model structures 
@@ -807,7 +1071,7 @@ $\Sym^G(\V) = \V^{\Sigma^{op} \times G}$ equipped with a certain fixed-point mod
 %for which half the lifting and factorization axioms only hold for maps with cofibrant source.
 %This structure was formally introduced in \cite{Hov98} and \cite{Spi01},
 %and has been exploited in, for example,
-%\cite{EKMM, Hov98, Spi01, BM03, GH04, Fre09, Whi14, WY15}.
+%\cite{EKMM, Hov98, Spi01, BM03, GH04, Fre09, Whi14, WY18}.
 %{\color{blue}
 %  Moreover,
 %  the introduced weakness will not affect the applications of our results,
@@ -815,7 +1079,7 @@ $\Sym^G(\V) = \V^{\Sigma^{op} \times G}$ equipped with a certain fixed-point mod
 %  the initial operad is cofibrant in our cases of interest,
 %  and Reedy semi model structures remain well behaved \cite[Prop. 3]{Spi01}.
 %}%COLOR:BLUE
-%See \cite[\S 2.2]{WY15} or \cite[\S 12.1]{Fre09} for precise definitions and further discussion.
+%See \cite[\S 2.2]{WY18} or \cite[\S 12.1]{Fre09} for precise definitions and further discussion.
 
 Our next result concerns the model structure
 on the new category 
@@ -825,7 +1089,7 @@ $\mathsf{Op}_G (\mathcal{V})$
 itself is built.
 Firstly, the levels of each 
 $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-i.e. the $H$-sets in (\ref{GENGENMULT EQ}),
+i.e. the $H$-sets in \eqref{GENGENMULT EQ},
 are encoded by a category $\Sigma_G$ of 
 \textit{$G$-corollas}, introduced in \S \ref{LRVERT SEC},
 which generalizes the usual category 
@@ -887,7 +1151,7 @@ for each $C \in \Sigma_G$.
 
 More generally, for $\mathcal{F}$ a weak indexing system, the projective model structure on 
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ exists. Explicitly, weak equivalences (resp. fibrations) are
-determined by (\ref{GENEQTHM EQ})
+determined by \eqref{GENEQTHM EQ}
 for $C \in \Sigma_{\mathcal{F}}$.
 
 Lastly, 
@@ -1005,7 +1269,7 @@ in \cite[Cor. 5.6]{BH15}
  is an equivalence of categories.
  
  Moreover, if $\mathcal{O}'$ has fixed points as in 
- (\ref{NFINFTY2 EQ}) for some collection of graph subgroups 
+ \eqref{NFINFTY2 EQ} for some collection of graph subgroups 
  $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$, then 
  $\mathcal{F}$ must be a weak indexing system.
 \end{customcor}
@@ -1154,7 +1418,7 @@ symmetric monoidal categories with diagonals
 \S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
 \S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
 in the context of equivariant trees. The key idea, which is captured in diagram
-(\ref{SUBSDATUMTREES EQ}) and Proposition \ref{SUBSASPULL PROP}
+\eqref{SUBSDATUMTREES EQ} and Proposition \ref{SUBSASPULL PROP}
 % \ref{SUBDATAUNDERPLAN PROP},\ref{SUBDATAUNDERPLANG COR}, 
 is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent studying these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
 
@@ -1179,7 +1443,7 @@ proves
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 As is often the case when proving existence of projective model structures,
 the key to this section is a careful analysis of  the free extensions in $\mathsf{Op}_G$ as in diagram
-(\ref{FREE_FG_EXT_EQ}),
+\eqref{FREE_FG_EXT_EQ},
 with 
 \S \ref{LABELSTRI SEC}, 
 \S \ref{EXTTREE SEC},
@@ -1404,7 +1668,7 @@ yields a right adjoint to the inclusion
 $\mathcal{E}_b \hookrightarrow b \downarrow \mathcal{E}$, so that $\mathcal{E}_b$ is a coreflexive subcategory of 
 $b \downarrow \mathcal{E}$,
 a well known sufficient condition for initiality.
-In practice, we will also need a generalization of the Kan extension formula (\ref{FIBERKAN EQ}) for maps of Grothendieck fibrations as in (\ref{GROTHFIBMAP EQ}).
+In practice, we will also need a generalization of the Kan extension formula \eqref{FIBERKAN EQ} for maps of Grothendieck fibrations as in \eqref{GROTHFIBMAP EQ}.
 Keeping the notation therein, given an $\bar{e} \in \bar{\mathcal{E}}$ we will write 
 $\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$
@@ -1594,7 +1858,7 @@ Firstly, there is a natural isomorphism $\alpha$ as on the left below
 \end{tikzcd}
 \end{equation}
 that encodes both reparenthesizing of coproducts and removal of initial objects 
-(note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ is mapped under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of (\ref{COHER EQ}) strictly commutes, i.e. 
+(note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ is mapped under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of \eqref{COHER EQ} strictly commutes, i.e. 
 that ``unary coproducts'' of singletons $(v)$ are given simply by $v$ itself.
 $\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
 $\Fin^{\wr 3} \wr \mathcal{V} \to \mathcal{V}$
@@ -1687,23 +1951,23 @@ More generally, if $\mathcal{V}$ is an arbitrary
 symmetric monoidal category, one always has a functor 
 $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 (where as usual $\Sigma \hookrightarrow \Fin$ denotes the skeleton of finite sets and isomorphisms) satisfying the obvious analogues of
-(\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}),
+\eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ},
 as is readily shown using the standard coherence results for symmetric monoidal categories 
 (moreover, we note that $\alpha$ itself encodes all associativity, unital and symmetry isomorphisms, with the 
-right side of (\ref{COHER EQ}) and (\ref{COHER3 EQ})
+right side of \eqref{COHER EQ} and \eqref{COHER3 EQ}
 being mere common sense desiderata for ``unary products'').
 
 It is likely no surprise that the converse is also true, i.e. 
 that a functor 
 $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 satisfying the analogues of 
-(\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ})
+\eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ}
 endows $\mathcal{V}$ with a symmetric monoidal structure.
 We will however have no direct need to use this fact, and as such include only a few pointers concerning the associativity pentagon axiom (the hardest condition to check) that the interested reader may find useful. 
 Firstly, it becomes convenient to write expressions such as
 $(A \otimes B) \otimes C$ instead as 
 $(A \otimes B) \otimes (C)$, so as to encode notationally the fact that this is the image of 
-$((A,B),(C)) \in \Sigma^{\wr 2} \wr \mathcal{V}$ under the top map in (\ref{COHER EQ}). The associativity isomorphisms are hence given by the composites
+$((A,B),(C)) \in \Sigma^{\wr 2} \wr \mathcal{V}$ under the top map in \eqref{COHER EQ}. The associativity isomorphisms are hence given by the composites
 $
 (A \otimes B) \otimes (C) \xrightarrow{\simeq} 
 A \otimes B \otimes C \xleftarrow{\simeq}
@@ -1713,7 +1977,7 @@ obtained by combining
 $\alpha_{((A,B),(C))}$ 
 and
 $\alpha_{((A),(B,C))}$.
-The pentagon axiom is then checked by combining \textit{six} instances of each of the squares in (\ref{COHER2 EQ}) (i.e. twelve squares total), most of which are obvious except for the fact that the $(A\otimes B) \otimes (C \otimes D)$ vertex of the pentagon contributes two pairs of squares rather than just one, with each pair corresponding to the two alternate expressions 
+The pentagon axiom is then checked by combining \textit{six} instances of each of the squares in \eqref{COHER2 EQ} (i.e. twelve squares total), most of which are obvious except for the fact that the $(A\otimes B) \otimes (C \otimes D)$ vertex of the pentagon contributes two pairs of squares rather than just one, with each pair corresponding to the two alternate expressions 
 $((A \otimes B)) \otimes ((C) \otimes (D))$ and 
 $((A) \otimes (B)) \otimes ((C \otimes D))$.
 \end{remark}
@@ -1847,7 +2111,7 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	as a category $\mathcal{V}$ together with a functor
 	$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 	satisfying the analogues of  
-	(\ref{COHER EQ}), (\ref{COHER2 EQ}), (\ref{COHER3 EQ}).
+	\eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ}.
 	Further, the dual of such $\mathcal{V}$ is called a 
 	\textit{symmetric monoidal category with diagonals}\footnote{
 	These have also been called \textit{relevant monoidal categories} \cite{DP07}.}.
@@ -1947,7 +2211,7 @@ is a left Kan extension diagram then so is the composite of the rightmost diagra
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning (\ref{WRRAN EQ}) amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
+	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning \eqref{WRRAN EQ} amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i) \downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
@@ -1969,7 +2233,7 @@ so that
 	\prod_{i} \left( {d_i \downarrow \mathcal{D}} \right)}{\lim}
 	\left(\bigotimes_i{G(c_i)}\right)
 	\]
-and the isomorphisms (\ref{POINTKAN EQ}) now follow from the assumption that the monoidal product commutes with limits in each variable.
+and the isomorphisms \eqref{POINTKAN EQ} now follow from the assumption that the monoidal product commutes with limits in each variable.
 \end{proof}
 
 \begin{remark}
@@ -2105,7 +2369,7 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 
 %Letting $\eta, \epsilon$ denote the unit and counit for the 
 %$(\alpha_{!},\alpha^{\**})$ adjunction, 
-%(\ref{MONADFUNCTORALPHA EQ})
+%\eqref{MONADFUNCTORALPHA EQ}
 %is then the composite
 %\[
 %	T^{\times \alpha^{\**} \lambda} \xrightarrow{\eta} 
@@ -2150,7 +2414,7 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 %\end{proof}
 
 \begin{remark}\label{PRECOMPPOSTCOMP REM}
-We unpack the content of (\ref{MONADFUNCTORALPHADOU EQ}) when 
+We unpack the content of \eqref{MONADFUNCTORALPHADOU EQ} when 
 $\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the singleton $\**$, in which case we write $\alpha_{!} = \coprod$.
 We thus have commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
@@ -2170,7 +2434,7 @@ come from the right $T^{\times \lambda}$-module structure.
 Writing $\mathbin{\check{\amalg}}$ for the coproduct of $T$-algebras and recalling the canonical identifications 
 $\mathbin{\check{\coprod}}_{k \in K} (T A_k) \simeq T
 \left( \coprod_{k \in K} A_k \right)$, 
-(\ref{RIGHTMODULETMAPAUX EQ}) shows that the 
+\eqref{RIGHTMODULETMAPAUX EQ} shows that the 
 right $T^{\times \lambda}$-module structure on $T \circ \coprod$
 codifies the multiplication maps
 \[
@@ -2251,7 +2515,7 @@ $T_x \to T_{g x}$ that are suitably associative and unital.
 
 
 The specific model for the orbit category $\mathsf{O}_G$
-used in (\ref{OGDEF EQ}) has extra structure not found in the usual model (i.e. that of the $G$-sets $G/H$ for $H \leq G$),
+used in \eqref{OGDEF EQ} has extra structure not found in the usual model (i.e. that of the $G$-sets $G/H$ for $H \leq G$),
 namely the fact that each $X \in \mathsf{O}_G$
 comes with a canonical total order 
 (the underlying set of $X$ being one of the sets $\{1,\cdots,n\}$).
@@ -2428,7 +2692,7 @@ Therefore, all ternary joins in $(T,\leq_d)$ are binary, i.e.
 	c = e_1 \vee e_2 \vee e_3 = e_i \vee e_j
 \end{equation}
 for some $1\leq i <j \leq 3$, and
-(\ref{TERNJOIN EQ}) fails for 
+\eqref{TERNJOIN EQ} fails for 
  at most one choice of $1\leq i <j \leq 3$.
 \end{proposition}
 
@@ -2513,7 +2777,7 @@ $f <_p e$. Thus
 $b^{\uparrow}_e <_p b^{\uparrow}_f \Leftrightarrow e <_p f$ and injectivity follows.
 
 To check surjectivity, 
-%that (\ref{PLANAR EQ}) is surjective,
+%that \eqref{PLANAR EQ} is surjective,
  it suffices (recall that $e,f$ are assumed $\leq_d$-incomparable) to check that
 defining $e \leq_p f$ to hold iff $b^{\uparrow}_e < b^{\uparrow}_f$ holds in $b^{\uparrow}$ yields a planar structure.
 
@@ -2861,7 +3125,7 @@ In general, isomorphism classes are of course far bigger.
 The interested reader may show that there are 
 $3 \cdot 3! \cdot 2 \cdot 3! \cdot 3!$
 trees in the isomorphism class of the tree depicted in 
-(\ref{D6SMALLER EQ}).
+\eqref{D6SMALLER EQ}.
 \end{example}
 
 
@@ -2961,7 +3225,7 @@ $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a p
 Simplicity of the broad poset $F'$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
 By (the forest version of) Proposition
 \ref{PLANARIZATIONCHAR PROP}
-the only possible planar structure $\leq_p^{\bar{F}}$
+1the only possible planar structure $\leq_p^{\bar{F}}$
 is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
 The claim that $\varphi$ is then planar follows from 
 Remark \ref{CLOSURE REM}
@@ -2984,12 +3248,12 @@ We end this section with a different type of pullback.
 Indeed, the reader may have noted
 that it follows from 
 Proposition \ref{GROTHSTAB PROP}
-that both vertical maps in (\ref{OGDEF EQ})
+that both vertical maps in \eqref{OGDEF EQ}
 are split Grothendieck fibrations. We now introduce some terminology.
 
 \begin{definition}\label{ROOTPULL DEF}
 The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
-in (\ref{OGDEF EQ}) is called the \textit{root functor}.
+in \eqref{OGDEF EQ} is called the \textit{root functor}.
 
 Further, fiber maps (i.e. maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps} and pullbacks with respect to $\mathsf{r}$ are called
 \textit{root pullbacks}.
@@ -3004,7 +3268,7 @@ The exact name choice is meant to accentuate the connection with another key fun
 described in \S \ref{LRVERT SEC},
 which we call the \textit{leaf-root functor}.
 
-Further, unpacking the construction in (\ref{OGDEF EQ}), one sees that the pullback of the $G$-tree
+Further, unpacking the construction in \eqref{OGDEF EQ}, one sees that the pullback of the $G$-tree
 $T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
 along the map 
 $\varphi \colon Y \to X$ in $\mathsf{O}_G$
@@ -3273,7 +3537,7 @@ we first recall some basic definitions and results concerning outer subtrees and
 \end{equation}
 with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying
 $\forall_i f\neq e_i$
-in addition to (\ref{OUTERFACE EQ}),
+in addition to \eqref{OUTERFACE EQ},
 and planar structure pulled back from $T$ (in the sense of Remark \ref{PULLPLANAR REM}).
 
 Moreover, inclusions of the form 
@@ -3409,7 +3673,7 @@ and leaf tuple $\underline{e}$;
 \end{tikzcd}
 \end{equation}
 Further, $T_{\underline{f} \underline{g} \leq e}$ is the
-unique choice of pushout that makes the maps in (\ref{GRAPTPUSH EQ}) planar.
+unique choice of pushout that makes the maps in \eqref{GRAPTPUSH EQ} planar.
 %\item[(e)] a face map $S \to T$ is an outer face map iff whenever the composite relation $\underline{f} \underline{g} \leq e$ is in $S$ then so are the relations $\underline{g} \leq v$ and
 %$\underline{f}v \leq e$.
 \end{itemize}
@@ -3495,7 +3759,7 @@ and isomorphisms.
 
 
 We now turn to discussing the substitution operation. We start with an example focused on the closely related notion of 
- iterated graftings of trees (as described in (\ref{GRAPTPUSH EQ})).
+ iterated graftings of trees (as described in \eqref{GRAPTPUSH EQ}).
 
 \begin{example}\label{GRAFTSUB EX}
 The trees $U_1, U_2,\cdots, U_6$ on the left below can be grafted to obtain the tree $U$ in the middle.
@@ -3617,11 +3881,11 @@ U = \left(
 \end{scope}
 	\end{tikzpicture}
 \end{equation}
-We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in (\ref{UFORMULA EQ}). $T$ can then be regarded as encoding the combinatorics of the iterated grafting in (\ref{UFORMULA EQ}), with alternative ways to reparenthesize
-operations in (\ref{UFORMULA EQ}) in bijection with ways to assemble $T$ out of its nodes.
+We now consider the tree $T$, which is built by converting each $U_i$ into the corolla $\mathsf{lr}(U_i)$, and then performing the same grafting operations as in \eqref{UFORMULA EQ}. $T$ can then be regarded as encoding the combinatorics of the iterated grafting in \eqref{UFORMULA EQ}, with alternative ways to reparenthesize
+operations in \eqref{UFORMULA EQ} in bijection with ways to assemble $T$ out of its nodes.
 
 
-One can now therefore think of the iterated grafting (\ref{UFORMULA EQ}) as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
+One can now therefore think of the iterated grafting \eqref{UFORMULA EQ} as being instead encoded by the tree $T$ together with the (unique) planar tall maps $\varphi_i$ below.
 \begin{equation}\label{SUBSDATUMTREES2 EQ}
 	\begin{tikzpicture}[grow=up,auto,level distance=2.25em,
 	every node/.style = {font=\footnotesize, inner sep=2pt},
@@ -3723,7 +3987,7 @@ $\varphi \colon T \to U$ (such that $a_i \mapsto a,b \mapsto b,\cdots,e \mapsto 
 \end{example}
 
 One of the fundamental ideas shaping our perspective on operads
-is then that substitution data as in (\ref{SUBSDATUMTREES2 EQ})
+is then that substitution data as in \eqref{SUBSDATUMTREES2 EQ}
 can equivalently be repackaged using planar tall maps. 
 
 \begin{definition}\label{SUBSTITUTIONDATUM}
@@ -3829,7 +4093,7 @@ and the maps
 $R \to \colim_{\mathsf{Sc}(R)}U_{(\minus)}$,
 $S \to \colim_{\mathsf{Sc}(S)}U_{(\minus)}$
 are planar tall.
-But it now follows that (\ref{ASSEMBLYGRAFT EQ}) is a grafting pushout diagram (cf. (\ref{GRAPTPUSH EQ})), so that the pushout indeed exists. The conditions
+But it now follows that \eqref{ASSEMBLYGRAFT EQ} is a grafting pushout diagram (cf. \eqref{GRAPTPUSH EQ}), so that the pushout indeed exists. The conditions
 $T = \colim_{\mathsf{Sc}(T)}T_{(\minus)}$,
 $V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$, 
 and that
@@ -3868,7 +4132,7 @@ As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \
 	V(U) = \coprod_{(e^{\uparrow} \leq e) \in V(T)}
 	V(U_{e^{\uparrow} \leq e}).
   \end{equation}
-    Alternatively, (\ref{VERTEXDECOMP EQ}) can be regarded as a map 
+    Alternatively, \eqref{VERTEXDECOMP EQ} can be regarded as a map 
     $\varphi^{\**} \colon V(U) \to V(T)$ induced by the planar tall map 
     $\varphi \colon T \to U$.
     Explicitly, $\varphi^{\**}(U_{u^{\uparrow} \leq u})$ 
@@ -3926,9 +4190,9 @@ Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$,
 it follows from the definition of outer face that there is a
 non trivial partition 
 $\{U_i\} = \{U_i|U_i \hookrightarrow U^{\leq e}\} 
-\amalg \{U_i|U_i \hookrightarrow U_{\nless e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in (\ref{DECOMPPROOF EQ}), so that uniqueness too follows from the induction hypothesis.
+\amalg \{U_i|U_i \hookrightarrow U_{\nless e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in \eqref{DECOMPPROOF EQ}, so that uniqueness too follows from the induction hypothesis.
 
-For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition (\ref{DECOMPPROOF EQ}) where either $|V(U^{\leq e})|,|V(U_{\nless e})|<|V(U)|$ or one of $U^{\leq e},U_{\nless e}$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
+For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition \eqref{DECOMPPROOF EQ} where either $|V(U^{\leq e})|,|V(U_{\nless e})|<|V(U)|$ or one of $U^{\leq e},U_{\nless e}$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
 \cite[Cor. 5.39]{Pe17} the remaining broad relations are precisely the pre-image of the non-identity relations in $U$, showing that the underlying broad poset of the tree $T$ is unique  up to isomorphism. Strict uniqueness is then 
 Proposition \ref{PLANARPULL PROP}.
@@ -3949,7 +4213,7 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 	$T$ is a corolla or if one of $T_1,T_2$
 	is one of the root or leaf stick subtrees.
 
-	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all three of $T_1,T_2,T$ admit compatible decompositions as in (\ref{DECOMPPROOF EQ}) and the result follows by induction on $|V(T)|$.
+	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all three of $T_1,T_2,T$ admit compatible decompositions as in \eqref{DECOMPPROOF EQ} and the result follows by induction on $|V(T)|$.
 \end{proof}
 
 
@@ -4319,7 +4583,7 @@ $f \in G e$ the induced map
 \end{equation}
 is an identity (i.e. planar isomorphism),
 and letting $y$ be such that $f \in T_{\psi(y)}$
-one sees that (\ref{VGPULL EQ})
+one sees that \eqref{VGPULL EQ}
 is the identity
 $T_{\psi(y),f^{\uparrow} \leq f} = 
 T_{x,\bar{\psi}(f)^{\uparrow} \leq \bar{\psi}(f)}$, where $x=\psi(y)$, finishing the proof.
@@ -4328,7 +4592,7 @@ T_{x,\bar{\psi}(f)^{\uparrow} \leq \bar{\psi}(f)}$, where $x=\psi(y)$, finishing
 
 \begin{example}
 The following depicts one of the maps 
-(\ref{VGPULL EQ})
+\eqref{VGPULL EQ}
 for the pullback $\tau^{\**} T \to T$
 in Example \ref{ROOTPULL EX}.
 \[
@@ -4629,7 +4893,7 @@ $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degene
 
 
 \begin{remark}
-The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string as in (\ref{STRINGOBJ EQ}) is equivalent to a string
+The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string as in \eqref{STRINGOBJ EQ} is equivalent to a string
 \begin{equation}\label{STRINGOBJALT EQ}
 	\begin{tikzcd}
 	T_{-1} \ar{r}{\varphi_0} & T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
@@ -4764,7 +5028,7 @@ together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write
 	T'_{n,v_{G e'}}.
 \end{tikzcd}	
 \end{equation}
-%Note that the rooted arrows in (\ref{PTNARROWLOC EQ})
+%Note that the rooted arrows in \eqref{PTNARROWLOC EQ}
 %and we note that the dashed information is superfluous
 %since $T_{0,v_{G e}} = \mathsf{lr}(T_{1,v_{G e}})$,
 %$T'_{0,v_{G e}} = \mathsf{lr}(T'_{1,v_{G e}})$.
@@ -4774,11 +5038,11 @@ For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to
 is a split Grothendieck fibration and 
 $P \to \Omega_{G}^{0}$ is a map of split Grothendieck fibrations. 
 Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
-(\ref{PTNARROWLOC EQ})
+\eqref{PTNARROWLOC EQ}
 are pullbacks (alternatively, an abstract argument also works).
 The alternative description of $V_G$ in 
 Notation \ref{VGDEF NOT} combined with
-(\ref{SUBDATAUNDERPLANG2 EQ}) 
+\eqref{SUBDATAUNDERPLANG2 EQ} 
 then show that 
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
 so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
@@ -4787,19 +5051,19 @@ But since a quotient is an isomorphism iff it is so on roots,
 we further have that 
 a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
 is a rooted isomorphism and
-each $\pi_{i,e}$ in (\ref{PTNARROWLOC EQ}) is an isomorphism.
-But now reinterpreting (\ref{PTNARROWLOC EQ}) as a tuple of diagrams indexed by
+each $\pi_{i,e}$ in \eqref{PTNARROWLOC EQ} is an isomorphism.
+But now reinterpreting \eqref{PTNARROWLOC EQ} as a tuple of diagrams indexed by
 $f \in G e$
 one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
-yields the desired rooted map (\ref{PTNARROW EQ})
+yields the desired rooted map \eqref{PTNARROW EQ}
 in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \end{proof}
 
 
 %\begin{remark}\label{DSCOM REM}
-%The diagrams (with back and lower slanted faces instances of (\ref{PTPULL EQ}))
+%The diagrams (with back and lower slanted faces instances of \eqref{PTPULL EQ})
 %	\[
 %	\begin{tikzcd}[column sep = 0.1em]
 %		\Omega_{G,{n+1}} \ar{rr} \ar{rd}{d_{i+1}} \ar{dd}
@@ -4869,7 +5133,7 @@ $V_{G}^{n}(T_0 \to \cdots \to T_n)$ is identified with the tuple
 \begin{equation}\label{VGNISO EQ}
 	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
 \end{equation}
-where we note that strings are written in prepended notation as in (\ref{STRINGOBJALT EQ}), so that $T_{k,v_{G e}}$ is superfluous unless $k=n$.
+where we note that strings are written in prepended notation as in \eqref{STRINGOBJALT EQ}, so that $T_{k,v_{G e}}$ is superfluous unless $k=n$.
 Further, note that this requires changing the order of $V_G(T_k)$.
 Rather than using the order induced by $T_k$, one instead equips 
 $V_G(T_k)$ with the order induced lexicographically
@@ -4953,8 +5217,8 @@ are pullback arrows for the split Grothendieck fibration
 $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$. Moreover, the projection of $\pi_i(T_0 \to \cdots \to T_n)$ onto $\Fin_s$
 depends only on $T_0 \to \cdots \to T_i$.
 
-\item The rightmost diagrams in both (\ref{PIIDEFDI EQ})
-and (\ref{PIIDEFDI2 EQ}) are pullback diagrams in $\mathsf{Cat}$.
+\item The rightmost diagrams in both \eqref{PIIDEFDI EQ}
+and \eqref{PIIDEFDI2 EQ} are pullback diagrams in $\mathsf{Cat}$.
 
 \item
 For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
@@ -5057,7 +5321,7 @@ and the obvious claim that $\Fin \wr \Fin \wr A \xrightarrow{\sigma^0} \Fin \wr 
 
 (c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullback arrows, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
 
-Lastly, we argue (d) by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in (\ref{PIIDEFDI EQ}) follows by the diagram on the left below, combined with
+Lastly, we argue (d) by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in \eqref{PIIDEFDI EQ} follows by the diagram on the left below, combined with
 Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, 
 where the left square is in the case $k=0$,
 the middle square is a pullback by induction 
@@ -5085,7 +5349,7 @@ and the rightmost square is clearly a pullback.
 	\Fin_s \wr \Sigma_G 
 \end{tikzcd}
 \end{equation}
-The claim for the rightmost square in (\ref{PIIDEFDI2 EQ}) follows by the analogous diagrams with the $d_i$ (but not $d_{1,\cdots,n}$, 
+The claim for the rightmost square in \eqref{PIIDEFDI2 EQ} follows by the analogous diagrams with the $d_i$ (but not $d_{1,\cdots,n}$, 
 $d_{0,\cdots,n-1}$) replaced with $s_j$.
 \end{proof}
 
@@ -5137,10 +5401,10 @@ Explicitly, using Proposition \ref{FIBERKANMAP PROP}
 \right) 
 \cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C),
 \end{equation}
-though we will prefer to work with (\ref{FGXDEF EQ}) throughout.
+though we will prefer to work with \eqref{FGXDEF EQ} throughout.
 
 To intuitively motivate the monad structure of $\mathbb{F}_G X$, note that 
-(\ref{FGXDEFEXP EQ}) roughly states that 
+\eqref{FGXDEFEXP EQ} roughly states that 
 $\mathbb{F}_G X$ consists of ``$G$-trees $T$ with $G$-nodes suitably labeled by $X$'', 
 and thus that $\mathbb{F}_G \mathbb{F}_G X$
 consists of ``$G$-trees $T_0$ with $G$-nodes labeled 
@@ -5153,7 +5417,7 @@ so that the multiplication
 $\mathbb{F}_G \mathbb{F}_G \to \mathbb{F}_G$
 is obtained by ``forgetting $T_0$''.
 
-To rigorously describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension step in (\ref{FGXDEF EQ})
+To rigorously describe the monad structure on $\mathbb{F}_G$, however, we will find it preferable to separate the left Kan extension step in \eqref{FGXDEF EQ}
 from the remaining construction.
 As such, we will 
 build a monad $N$ 
@@ -5304,7 +5568,7 @@ $\Omega_{G}^{0}\wr (\minus)$ constructions.
 Indeed, Proposition \ref{SUBSASPULL PROP} can be reinterpreted as providing a canonical identification
 $\Omega_{G}^{0} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+1}$,
 with the functor $V_G^0 \wr \Omega_G^n$ identified with the functor $V_G$ as defined in Notation \ref{VGDEF NOT}.
-Moreover, arguing by induction on $n$, the fact that the rightmost squares in (\ref{PIIDEFDI EQ}) are pullbacks
+Moreover, arguing by induction on $n$, the fact that the rightmost squares in \eqref{PIIDEFDI EQ} are pullbacks
 (Proposition \ref{PIIPROP PROP})
 provides further identifications
 $\Omega_{G}^{k} \wr \Omega_{G}^{n} \simeq \Omega_{G}^{n+k+1}$
@@ -5364,7 +5628,7 @@ Firstly, the functors $V_G = V_G^0$ are defined from the following diagram
 \]
 by noting that the middle and right squares are pullbacks, 
 and choosing $V_G$ to be the unique functor such that the top composite is $V_G^{n+1}.$
-The higher functors $V_G^k$ are defined exactly as in (\ref{VGDEF EQ}), and the analogue of Proposition \ref{PIIPROP PROP}(a) follows by the same proof.
+The higher functors $V_G^k$ are defined exactly as in \eqref{VGDEF EQ}, and the analogue of Proposition \ref{PIIPROP PROP}(a) follows by the same proof.
 
 The analogue of Proposition \ref{PIIPROP PROP}(b) is tautological, as pullback arrows for 
 $\Omega_G^n \wr A \to \mathsf{O}_G$
@@ -5398,13 +5662,13 @@ To define $d_i$ we consider the diagram below (for some $i<k$).
 \]
 The desiderata that the top $\pi_i$ consist of pullback arrows lifting the lower $\pi_i$ implies that it is uniquely determined by the top $V_G^k$ functor, and hence so is the top composite 
 $V_G^{k-1}d_i$. But since the front face is a pullback square
-(by arguing via induction on $k$ as in (\ref{PROOFD EQ})), there is a unique choice for $d_i$. 
+(by arguing via induction on $k$ as in \eqref{PROOFD EQ}), there is a unique choice for $d_i$. 
 That this definition of $d_i \wr A$ is
 independent of $k$ 
-is a consequence of the fact that the composite natural transformation in (\ref{INDPI1 EQ}) is $\pi_i$.
+is a consequence of the fact that the composite natural transformation in \eqref{INDPI1 EQ} is $\pi_i$.
 Similarly, that the analogues of the left diagrams in 
-(\ref{PIIDEFDI2 EQ})
-hold follows by an identical argument from the fact that the composites of (\ref{INDPI2 EQ}) are $\pi_{i+1}$.
+\eqref{PIIDEFDI2 EQ}
+hold follows by an identical argument from the fact that the composites of \eqref{INDPI2 EQ} are $\pi_{i+1}$.
 
 The definitions of the $s_j$ are similar, except easier since there are no $\pi_i$ to contend with.
 
@@ -5417,7 +5681,7 @@ follows by an identical argument.
 Explicitly,
 $V_G^{k} \colon \Omega_{G}^{n} \wr A
 \to \Fin \wr \Omega_{G}^{n-k-1} \wr A $
-is defined by sending (\ref{OMEGAGNA EQ}) to
+is defined by sending \eqref{OMEGAGNA EQ} to
 \[
 	\left(
 		\left(
@@ -5438,7 +5702,7 @@ for $0 \leq i < n$
 and 
 $s_j \colon \Omega_{G}^{n} \wr A \to \Omega_{G}^{n+1} \wr A$
 for $-1 \leq j \leq n$
-are defined on the object in (\ref{OMEGAGNA EQ})
+are defined on the object in \eqref{OMEGAGNA EQ}
 by performing the corresponding operation on the $T_0 \to \cdots \to T_n$ coordinate and, in the $d_i$ case,
  suitably reordering $V_G(T_n)$.
 \end{remark}
@@ -5651,9 +5915,9 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\arrow[Leftrightarrow, from=dog3, to=cat3,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-That the rightmost sides of (\ref{ASSOCSPAN1 EQ}) and (\ref{ASSOCSPAN2 EQ}) coincide follows from the associativity of the isomorphisms $\alpha$ in (\ref{COHER2 EQ}).
-On the other hand, the leftmost sides coincide since they are instances of the ``simplicial relation'' diagrams in (\ref{SIMPPI EQ}), as is seen by using 
-(\ref{INDPI1 EQ}) and (\ref{INDPI2 EQ})
+That the rightmost sides of \eqref{ASSOCSPAN1 EQ} and \eqref{ASSOCSPAN2 EQ} coincide follows from the associativity of the isomorphisms $\alpha$ in \eqref{COHER2 EQ}.
+On the other hand, the leftmost sides coincide since they are instances of the ``simplicial relation'' diagrams in \eqref{SIMPPI EQ}, as is seen by using 
+\eqref{INDPI1 EQ} and \eqref{INDPI2 EQ}
 to reinterpret the top left sections.
 
 
@@ -5711,7 +5975,7 @@ while $\mu \circ (\eta N)$ is represented by
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 	\end{tikzcd}
 \end{equation}
-That (\ref{UNITSPAN1 EQ}) and (\ref{UNITSPAN2 EQ}) coincide follows analogously by the unital condition for $\alpha$
+That \eqref{UNITSPAN1 EQ} and \eqref{UNITSPAN2 EQ} coincide follows analogously by the unital condition for $\alpha$
 and the face-degeneracy relations in 
 Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
@@ -5877,7 +6141,7 @@ has an initial subcategory
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
 \end{equation}
 of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
-(\ref{INITCAT EQ}) comes together with a right retraction $r$,
+\eqref{INITCAT EQ} comes together with a right retraction $r$,
 i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
 which is built using pullbacks. 
 Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
@@ -6197,8 +6461,8 @@ it is straightforward to check that the following diagram commutes.
 		\iota_{\**} \iota^{\**} \iota_{!}
 \end{tikzcd}
 \end{equation}
-\begin{remark} An exercise in adjunctions shows the outer square in (\ref{BETADEFSQUARE EQ})
- commutes provided at least one of the adjunctions in (\ref{TWOADJOINTS EQ}) is (co)reflexive, so that (\ref{BETADEFSQUARE EQ}) can be regarded as an alternative definition of $\beta$.
+\begin{remark} An exercise in adjunctions shows the outer square in \eqref{BETADEFSQUARE EQ}
+ commutes provided at least one of the adjunctions in \eqref{TWOADJOINTS EQ} is (co)reflexive, so that \eqref{BETADEFSQUARE EQ} can be regarded as an alternative definition of $\beta$.
 \end{remark}
 
 %By adjunction, one needs compare the composites
@@ -6290,7 +6554,7 @@ $
 	id
 $
 is the identity. Both of these are a consequence of 
-(\ref{BETADEFSQUARE EQ}), following from the diagrams below 
+\eqref{BETADEFSQUARE EQ}, following from the diagrams below 
 (where the top composites are identities).
 \[
 \begin{tikzcd}[column sep =3em]
@@ -6523,7 +6787,7 @@ Combining the previous result with
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
-The adjunctions (\ref{TWOADJOINTS EQ}) lift to adjunctions
+The adjunctions \eqref{TWOADJOINTS EQ} lift to adjunctions
 \[
 \begin{tikzcd}[column sep =5em]
 	\mathsf{Op}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
@@ -6554,7 +6818,7 @@ However, the analogous statement fails for $\iota_{\**}$, i.e., one does not alw
 	\iota_{\**}\iota^{\**} \mathbb{F}_G \iota_{\**}
 \end{equation}
 is an isomorphism. 
-In fact, the claim that (\ref{KEYNONISO EQ})
+In fact, the claim that \eqref{KEYNONISO EQ}
 \textit{does} become an isomorphism when restricted to \textit{cofibrant} objects is one of the key ingredients of our proof of the Quillen equivalence between 
 $\mathsf{Op}_G(\mathcal{V})$ and
 $\mathsf{Op}^G(\mathcal{V})$
@@ -6610,7 +6874,7 @@ namely that encoded by the $G$-tree $T$ below.
 \]
 Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
 
-However, such counter-examples all require the use of trees with stumps. Indeed, it can be shown that (\ref{KEYNONISO EQ})
+However, such counter-examples all require the use of trees with stumps. Indeed, it can be shown that \eqref{KEYNONISO EQ}
 is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 \end{remark}
 
@@ -6622,7 +6886,7 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 As discussed preceding Theorem \ref{MAINEXIST2 THM},
 the Elmendorf-Piacenza equivalence
-(\ref{COFADJINT EQ}) has analogues
+\eqref{COFADJINT EQ} has analogues
 \[
 \begin{tikzcd}[column sep =4em,row sep=0.3em]
 	\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}
@@ -6632,7 +6896,8 @@ the Elmendorf-Piacenza equivalence
 	\ar[shift left=1]{l}{\iota_{\**}}
 \end{tikzcd}
 \]
-for each family $\mathcal{F}$ of subgroups of $G$.
+for each \textit{family} $\mathcal{F}$ of subgroups of $G$
+(i.e. a collection closed under conjugation and subgroup).
 Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ 
 and thus the objects of
 $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
@@ -6655,8 +6920,10 @@ $\mathsf{Op}_{\mathcal{F}}$
 of partial genuine equivariant operads.
 
 We start by recalling that 
-in the classic setting
-$\mathcal{F}$ is a family of subgroups of $G$
+% in the classic setting
+a collection $\mathcal F$ of subgroups of $G$
+% $\mathcal{F}$
+is a family % of subgroups of $G$
 if and only if the associated subcategory 
 $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 \mathsf{O}_G$ is a sieve, defined as follows.
@@ -6669,7 +6936,6 @@ $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 	$s \in \mathcal{S}$ then both $d$ and $f$ are also in $\mathcal{S}$. 
 	In particular, sieves are full subcategories.
 \end{definition}
-
 
 \begin{definition}\label{FAMILY_COROLLAS_DEF}
       We call a sieve
@@ -6872,7 +7138,7 @@ for the corresponding categories of algebras.
 \end{notation}
 
 \begin{corollary}\label{TWOADJOINTSOPF COR}
-The adjunctions (\ref{F_TWOADJOINTS_EQ}) lift to adjunctions
+The adjunctions \eqref{F_TWOADJOINTS_EQ} lift to adjunctions
 \begin{equation}\label{TWOADJOINTSOPF EQ}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Op}_\F(\mathcal{V})
@@ -6907,7 +7173,7 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	and, moreover, there is an equivalence of categories
 	$\Op^G \simeq \Op_{\F_{\text{fr}}}$,
 	so that Corollary \ref{TWOADJOINTSOP_COR}
-%	(\ref{TWOADJOINTSOP EQ})
+%	\eqref{TWOADJOINTSOP EQ}
 	is a particular case of 
 	Corollary \ref{TWOADJOINTSOPF COR}.
 	However, while our discussion of 
@@ -6916,7 +7182,7 @@ to regard $\mathbb{F}_{\mathcal{F}}$ as
 	Theorem \ref{MAINEXIST1 THM} are defined via fixed point conditions, 
 	our discussion of 
 	Corollary \ref{TWOADJOINTSOPF COR}
-%	(\ref{TWOADJOINTSOPF EQ})
+%	\eqref{TWOADJOINTSOPF EQ}
 	focuses on the $(\iota_{!},\iota^{\**})$-adjunction, due to the model structures in 
 	Theorem \ref{MAINEXIST2 THM} being projective.
 \end{remark}
@@ -6952,7 +7218,7 @@ $\iota^{\**}\gamma_!$
 is still essentially a forgetful functor, with those levels not present in $\mathcal{F}$ declared to be $\emptyset$.
 
 In practice, however, the use of the composite adjunction
-(\ref{COMPADJ EQ})
+\eqref{COMPADJ EQ}
 is fairly benign, requiring only minor
 adjustments to the notation of the proofs in 
 \S \ref{MAINTHM_PROOF_SECTION}.
@@ -7015,21 +7281,21 @@ note first that $\mathcal{P}[u]$ is given by a coequalizer
 \end{equation}
 where $\check{\amalg}$ denotes the algebraic coproduct, 
 i.e. the coproduct in $\mathsf{Op}_G(\mathcal{V})$, and, a priori,
-the coequalizer is also calculated in $\mathsf{Op}_G(\mathcal{V})$. However, (\ref{REFLCOEQ EQ}) is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
+the coequalizer is also calculated in $\mathsf{Op}_G(\mathcal{V})$. However, \eqref{REFLCOEQ EQ} is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
 and standard arguments\footnote{
 For example, by the proof of 
 \cite[Prop. 3.27]{Ha09}
 it suffices to check that 
 $\mathbb{F}_G$ preserves reflexive coequalizers.
-This follows from (\ref{FGXDEF EQ}) and the fact that if $\otimes$ preserves colimits in each variable then
+This follows from \eqref{FGXDEF EQ} and the fact that if $\otimes$ preserves colimits in each variable then
 it preserves reflexive coequalizers.}
  show that 
 it is hence also an underlying coequalizer in 
 $\mathsf{Sym}_G(\mathcal{V})$.
 
 In practice, we will need to enlarge 
-(\ref{REFLCOEQ EQ}) somewhat.
-Firstly, note that (\ref{REFLCOEQ EQ})
+\eqref{REFLCOEQ EQ} somewhat.
+Firstly, note that \eqref{REFLCOEQ EQ}
 corresponds to the two bottom levels of the bar construction
 $B_l(\mathcal{P}, \mathbb{F}_G X, \mathbb{F}_G Y)=
 \mathcal{P} \mathbin{\check{\amalg}}
@@ -7064,7 +7330,7 @@ abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 	\mathbin{\check{\amalg}} \mathbb{F} Y.
 \end{equation}
 To actually describe the individual levels  of
-(\ref{DOUBAR EQ}) one further resolves $\mathcal{P}$
+\eqref{DOUBAR EQ} one further resolves $\mathcal{P}$
 so as to obtain the bisimplicial object
 (we again abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 \begin{equation}\label{FURRES EQ}
@@ -7081,7 +7347,7 @@ so as to obtain the bisimplicial object
 \end{equation}
 where $\amalg$ denotes the coproduct in $\mathsf{Sym}_G(\mathcal{V})$.
 As in Remark \ref{REPACKAGERES REM}, each level of 
-(\ref{FURRES EQ})
+\eqref{FURRES EQ}
 can then be described as 
 \begin{equation}\label{LANLEVELFOR EQ}
  \mathsf{Lan} N (N^{n} \iota \mathcal{P} 
@@ -7091,7 +7357,7 @@ can then be described as
 \end{equation}
 for $N$ the span monad (cf. Definition \ref{WSPAN_MONAD_DEFINITION}) and $\amalg$ now the coproduct of spans.
 In particular, each level of 
-(\ref{FURRES EQ})
+\eqref{FURRES EQ}
 is thus a left Kan extension over some category
 $\Omega_G^{n,\lambda_l}$, which we explicitly identify in 
 \S \ref{LABELSTRI SEC}, giving the first identification below.
@@ -7123,9 +7389,9 @@ subcategory
 $\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$
 that is suitably initial,
 so that $\Omega_G^e$ can be replaced with $\widehat{\Omega}_G^e$
-in (\ref{EXTTREEFOR EQ}).
+in \eqref{EXTTREEFOR EQ}.
 
-The desired filtration (\ref{FILTR EQ})
+The desired filtration \eqref{FILTR EQ}
 then follows from a filtration of the 
 category $\widehat{\Omega}_G^e$ itself,
 and this discussion is the subject of
@@ -7141,7 +7407,7 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
 
-In this section, we explicitly identify the categories underlying the left Kan extensions in (\ref{LANLEVELFOR EQ}).
+In this section, we explicitly identify the categories underlying the left Kan extensions in \eqref{LANLEVELFOR EQ}.
 
 
 In the notation 
@@ -7154,7 +7420,7 @@ $\lambda_{l}$ for the partition
 $\lambda_{l,a} = \{-\infty\}$,
 $\lambda_{l,i} = 
 \langle \langle l \rangle \rangle - \{-\infty\}$,
-(\ref{LANLEVELFOR EQ})
+\eqref{LANLEVELFOR EQ}
 can be repackaged as an instance of the functor
 $\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle \langle l \rangle \rangle}$.
 Our goal is thus to understand 
@@ -7236,7 +7502,7 @@ Let $-1 \leq s \leq n$ and
 $\lambda = \lambda_a \amalg \lambda_i$
 a partition of $\{1,2,\cdots,l\}$.
 
-We define $\Omega_{G}^{n,s,\lambda}$ to have as objects $n$-planar strings (where $T_{-1} = \mathsf{lr}(T_0)$ as in (\ref{STRINGOBJALT EQ}))
+We define $\Omega_{G}^{n,s,\lambda}$ to have as objects $n$-planar strings (where $T_{-1} = \mathsf{lr}(T_0)$ as in \eqref{STRINGOBJALT EQ})
 \begin{equation}\label{NSTRINGLAB EQ}
 	T_{-1} \xrightarrow{\varphi_0}
 	T_0 \xrightarrow{\varphi_1}
@@ -7264,7 +7530,7 @@ Further, for any $s<0$ or $n<s'$ we write
 \end{definition}
 
 Intuitively, $\Omega_G^{n,s,\lambda}$ consists of strings that are labeled in the range $s \leq r \leq n$,
-with the extra cases (\ref{EXTRACASES EQ}) interpreted by infinitely prepending and postpending copies of $T_{-1}$ and $T_n$ to (\ref{NSTRINGLAB EQ}).
+with the extra cases \eqref{EXTRACASES EQ} interpreted by infinitely prepending and postpending copies of $T_{-1}$ and $T_n$ to \eqref{NSTRINGLAB EQ}.
 
 The main case of interest is that of $s=0$, which we abbreviate as $\Omega_{G}^{n,\lambda} = \Omega_{G}^{n,0,\lambda}$,
 with the remaining
@@ -7288,7 +7554,7 @@ $(\Omega_G^n)^{\times \lambda}_j = \Omega_G^n$ if
 $j \in \lambda_a$ and
 $(\Omega_G^n)^{\times \lambda}_j = \Sigma_G$ if
 $j \in \lambda_i$.
-As such, (\ref{OMEGANMINUSONE EQ}) can be abbreviated as
+As such, \eqref{OMEGANMINUSONE EQ} can be abbreviated as
 $\Omega_{G}^{n,-1,\lambda} = \coprod (\Omega_G^n)^{\times \lambda}$.
 \end{notation}
 
@@ -7325,7 +7591,7 @@ generalize to operators (for $0 \leq i \leq n$, $-1\leq j \leq n$)
 which are compatible with the forgetful functors in the obvious way.
 
 We will prefer to reorganize 
-(\ref{NKNFGT EQ}) and (\ref{LABSTSIM EQ}) somewhat.
+\eqref{NKNFGT EQ} and \eqref{LABSTSIM EQ} somewhat.
 Defining functions 
 $d_i \colon \mathbb{Z} \to \mathbb{Z}$
 and 
@@ -7346,7 +7612,7 @@ s_j(s) =
 		s, & s \leq j
 	\end{cases}
 \end{equation}
-(\ref{LABSTSIM EQ}) can be rewritten as maps
+\eqref{LABSTSIM EQ} can be rewritten as maps
 $
 	d_i \colon 
 	\Omega_{G}^{n,s,\lambda} \to
@@ -7360,7 +7626,7 @@ $
 $.
 Therefore, we henceforth write simply
 $\Omega_G^{n,\bullet,\lambda}$ to denote the string of categories $\Omega_G^{n,s,\lambda}$
-and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
+and forgetful functors, and abbreviate \eqref{LABSTSIM EQ} as
 \[
 \begin{tikzcd}[row sep =0,column sep =1em]
 	d_i \colon 
@@ -7374,7 +7640,7 @@ and forgetful functors, and abbreviate (\ref{LABSTSIM EQ}) as
 
 \begin{remark}\label{ORDLABEL REM}
 Considering the ordered sets 
-$\langle n \rangle =\{0 < 1 < \cdots < n < +\infty\}$, the formulas (\ref{INTERMAPDEF EQ}) 
+$\langle n \rangle =\{0 < 1 < \cdots < n < +\infty\}$, the formulas \eqref{INTERMAPDEF EQ} 
 define functions
 $d_i \colon \langle n \rangle  \to \langle n-1 \rangle$
 ,
@@ -7388,7 +7654,7 @@ as the category of intervals (i.e. ordered finite sets with a minimum and maximu
 
 
 Next, the vertex functors $V_G^k$ of
-(\ref{VGNISO EQ}) generalize to functors
+\eqref{VGNISO EQ} generalize to functors
 $
 	V_G^k \colon
 	\Omega_G^{n,s,\lambda} \to
@@ -7398,10 +7664,10 @@ given by the same formula
 \[
 	(T_{k,v_{G e}}\to \cdots \to T_{n,v_{G e}})_{v_{G e} \in V_G(T_k)},
 \]
-as in (\ref{VGNISO EQ}),
+as in \eqref{VGNISO EQ},
 except with $T_{m,v_{G e}}$ for $k \leq m \leq n$ inheriting the node labels from $T_m$ (if any).
 
-The diagrams in (\ref{PIIDEFDI EQ})
+The diagrams in \eqref{PIIDEFDI EQ}
 for $i<k$ and $i>k$ now generalize to diagrams
 \begin{equation}\label{PIIDEFDILAB EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3em]
@@ -7423,7 +7689,7 @@ for $i<k$ and $i>k$ now generalize to diagrams
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-while the diagrams in (\ref{PIIDEFDI2 EQ})
+while the diagrams in \eqref{PIIDEFDI2 EQ}
 for $j<k$ and $j>k$ generalize to diagrams
 \begin{equation}\label{PIIDEFDI2LAB EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3em]
@@ -7445,7 +7711,7 @@ for $j<k$ and $j>k$ generalize to diagrams
 \end{tikzcd}
 \end{equation}
 where we note that in all cases the $s$-index $\bullet$
-varies according to (\ref{LABSTSIM EQ}).
+varies according to \eqref{LABSTSIM EQ}.
 
 Lastly, the $\Omega_G^{n,s,\lambda}$ are also functorial in $\lambda$. Explicitly, given 
 $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$
@@ -7457,15 +7723,15 @@ one has forgetful functors
 \to
 	\Omega_G^{n,s,\lambda}
 \end{equation}
-compatible with the forgetful functors (\ref{NKNFGT EQ}),
+compatible with the forgetful functors \eqref{NKNFGT EQ},
 the simplicial operators $d_i$, $s_j$ and the isomorphisms
 $\pi_i$.
 
 \begin{remark}
 	When $\alpha$ is the identity 
 and $\lambda' \leq \lambda$ the forgetful functors in
-(\ref{LAMBINC EQ}) are fully faithful inclusions.
-	However, this is not the case for the  forgetful functors in (\ref{NKNFGT EQ}).
+\eqref{LAMBINC EQ} are fully faithful inclusions.
+	However, this is not the case for the  forgetful functors in \eqref{NKNFGT EQ}.
 	Indeed, regarding the map $T \to U$ in
 	Example \ref{LABELEDTREES EX}
 	as an object in $\Omega_G^{1,0,\lambda}$
@@ -7501,13 +7767,13 @@ as the pullback
 \end{notation}
 
 \begin{remark}
-To unpack (\ref{OMEGAWRTUP EQ}),
-note first that by (\ref{EXTRACASES EQ}) $\Omega_G^{-1,r,\lambda}$ is simply either 
+To unpack \eqref{OMEGAWRTUP EQ},
+note first that by \eqref{EXTRACASES EQ} $\Omega_G^{-1,r,\lambda}$ is simply either 
 $\Sigma_G^{\amalg l}$ if $r<0$ or 
 $\Sigma_G$ if $r \geq 0$,
 while $\Omega_G^{n,s,\lambda} = \coprod (\Omega_{G}^{n})^{\times \lambda}$ if $s<0$.
 We can thus break down
-(\ref{OMEGAWRTUP EQ})
+\eqref{OMEGAWRTUP EQ}
 into the three cases
 $s<0$, $0 \leq s \leq n$ and $n < s$,
 depicted below.
@@ -7532,7 +7798,7 @@ depicted below.
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-Therefore, for $s>n$ (\ref{OMEGAWRTUP EQ}) 
+Therefore, for $s>n$ \eqref{OMEGAWRTUP EQ} 
 coincides with 
 $\Omega_G^{n} \wr (\coprod_j A_j)$
 as defined in Notation \ref{OMEGAGNA NOT}.
@@ -7594,12 +7860,12 @@ are also pullback squares.
 
 \begin{proof}
 	Firstly, we note that the $\Omega_{G}^{n,s,\lambda}$
-	analogues, as well as the claim for (\ref{ADDSQUARE EQ}), all follow from the previous results
+	analogues, as well as the claim for \eqref{ADDSQUARE EQ}, all follow from the previous results
 	by keeping track of the labels on the strings, 
 	with the only non immediate part
 	being the analogue of (d), stating that the right squares in 
-	(\ref{PIIDEFDILAB EQ}) and
-	(\ref{PIIDEFDI2LAB EQ}) are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble into the required labels on the top left corner, hence the result follows.
+	\eqref{PIIDEFDILAB EQ} and
+	\eqref{PIIDEFDI2LAB EQ} are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble into the required labels on the top left corner, hence the result follows.
 		
 	For the more general $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions, one can either build the
 	general $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
@@ -7669,10 +7935,10 @@ In the $s=-1$ case, the bottom arrow is instead
 $V_G^k \colon \Omega_G^{k,k,\lambda} \to 
 \Fin \wr \Omega_G^{-1,-1,\lambda} =
 \Fin \wr \coprod_l \Sigma_G$,
-in which case one further attaches (\ref{ADDSQUARE EQ})
+in which case one further attaches \eqref{ADDSQUARE EQ}
 to the diagram above.
 
-The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using (\ref{BOTTOM EQ}).
+The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using \eqref{BOTTOM EQ}.
 \[
 \begin{tikzcd}[row sep = 1.5em,column sep =2.05em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
@@ -7737,7 +8003,7 @@ $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 
 Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
 the bottom square is one of the pullback squares 
-(\ref{ADDSQUARE EQ}), and the right diagram merely unpacks notation
+\eqref{ADDSQUARE EQ}, and the right diagram merely unpacks notation
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
@@ -7766,7 +8032,7 @@ $\Omega_G^{0,-1,\lambda} \wr (A_j) \to
 \Omega_G^{0,0,\lambda} \wr (A_j)$
 encodes the natural map
 $\coprod \circ N \Rightarrow N \circ \coprod $
-of (\ref{MONADFUNCTORALPHADOU EQ}).
+of \eqref{MONADFUNCTORALPHADOU EQ}.
 \end{remark}
 
 
@@ -7774,7 +8040,7 @@ of (\ref{MONADFUNCTORALPHADOU EQ}).
 \subsection{The category of extension trees}
 \label{EXTTREE SEC}
 
-The purpose of this section is to make (\ref{EXTTREEFOR EQ}) explicit. We start by discussing 
+The purpose of this section is to make \eqref{EXTTREEFOR EQ} explicit. We start by discussing 
 realizations of simplicial objects in $\mathsf{Cat}$.
 
 Recalling the standard cosimplicial object
@@ -7876,27 +8142,27 @@ the bisimplicial object
       N ( N^{\circ n} \iota \mathcal{P} \amalg
       \iota X^{\amalg 2l+1} \amalg \iota Y)
 \]
-in (\ref{LANLEVELFOR EQ}),
+in \eqref{LANLEVELFOR EQ},
 whose underlying categories are 
 $\Omega_G^{n,\lambda_l}$
 for $\lambda_l$ the partitions described at the beginning of
 \S \ref{LABELSTRI SEC}.
 Indeed, in the $n$ direction all $d_i$ with $0 < i < n$
 are induced by the multiplication $NN \to N$ defined in 
-(\ref{MULTDEFSPAN EQ}) while $d_0$
+\eqref{MULTDEFSPAN EQ} while $d_0$
 is induced by the composite
 $N \circ \coprod \circ N \to N N \circ \coprod \to N \circ \coprod$, with the second map again given by composition
 and the first induced
 by the natural map 
 $\coprod \circ N \to N \circ \coprod$, which is encoded by a strictly commutative diagram of spans,
-as seen using the top part of (\ref{NATCOP EQ})
+as seen using the top part of \eqref{NATCOP EQ}
 (or, more abstractly, 
 it also suffices to note that 
 $N$ preserves arrows in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$ given by strictly commutative diagrams).
 Degeneracies are similar.
 Moreover, that the functor component of $d_n$
-matches the functor defined in (\ref{LABSTSIM EQ})
-follows from the presence of the $\iota$ in (\ref{LANLEVELFOR EQ}).
+matches the functor defined in \eqref{LABSTSIM EQ}
+follows from the presence of the $\iota$ in \eqref{LANLEVELFOR EQ}.
 
 As for the $l$ direction, we note that our convention on 
 the double bar construction 
@@ -7921,7 +8187,7 @@ when $(B_k) =\alpha^{\**}(A_j)$,
 and are hence given by strictly commutative maps of spans.
 
 Our next task is thus that of identifying the category of extension trees $\Omega_G^e$ appearing
-in (\ref{EXTTREEFOR EQ}),
+in \eqref{EXTTREEFOR EQ},
 i.e. to produce an explicit model for the double realization
 $|\Omega_G^{n,\lambda_l}|$.
 By Remark \ref{REALEX REM}
@@ -8067,7 +8333,7 @@ T_0 \to T_1 \to \cdots \to T_l
  $\langle \langle l \rangle \rangle =
   \{-\infty, -l, \cdots, -1,0,1,\cdots,l,+ \infty\}$.
 Noting that the maps in
-(\ref{RELABSTR EQ})
+\eqref{RELABSTR EQ}
 are simply underlying identities on some fixed tree $T$
 that convert some of the $\mathcal{P}$, $Y$ labels into $X$ labels,
 we label a vertex $T_{v_{Ge}}$ by:
@@ -8076,13 +8342,13 @@ we label a vertex $T_{v_{Ge}}$ by:
 $j$ such that
 $0 < j \leq +\infty$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
-(\ref{RELABSTR EQ}) are $Y$ labels (where $+\infty = l+1$); 
+\eqref{RELABSTR EQ} are $Y$ labels (where $+\infty = l+1$); 
 \item[(ii)]
 $-j$ such that
 $-\infty \leq -j < 0$
 if the last $j$ labels of $T_{v_{Ge}}$ in 
-(\ref{RELABSTR EQ}) are $\mathcal{P}$ labels;
-\item[(iii)] $j=0$ if all labels in (\ref{RELABSTR EQ})
+\eqref{RELABSTR EQ} are $\mathcal{P}$ labels;
+\item[(iii)] $j=0$ if all labels in \eqref{RELABSTR EQ}
 are $X$-labels.
 \end{inparaenum}
  This process clearly establishes the desired bijection on objects.
@@ -8095,7 +8361,7 @@ $\tilde{N}^{(\mathcal P, X,Y)}$
 be built from
 $N_{\bullet,\bullet}^{(\mathcal P, X,Y)}$
 via a double application of Proposition \ref{RANTRANS PROP}  thus yields the following, establishing 
-(\ref{EXTTREEFOR EQ}).
+\eqref{EXTTREEFOR EQ}.
 
 \begin{corollary}
 	$\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \Lan_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$.
@@ -8389,7 +8655,7 @@ such that $\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e) \in V(T)}
  = \{U_i^X\} \amalg \{U_j^Y\} \amalg 
  \{U_k^{\mathcal{P}}\}$. 
  $T$ has an obvious $(\mathcal{P},X,Y)$-labeling making 
-(\ref{LRXDEF EQ}) into a label map, but we must still check $T \in \widehat{\Omega}^{e}_G$, i.e. that 
+\eqref{LRXDEF EQ} into a label map, but we must still check $T \in \widehat{\Omega}^{e}_G$, i.e. that 
 $T$ is alternating with active vertices precisely those labeled by $\mathcal{P}$.
 But since the image of each $e \in T$
 belongs to precisely one $U_k^{\mathcal{P}}$,
@@ -8432,7 +8698,7 @@ and by some $(X,\mathcal{P})$-labeled tree
 $V_{e^{\uparrow} \leq e}$ if $e^{\uparrow} \leq e$
 has a $\mathcal{P}$-label.
 We now consider the factorization problem 
-in (\ref{LRPFUN EQ}), where we want $S \in \widehat{\Omega}_G^e$
+in \eqref{LRPFUN EQ}, where we want $S \in \widehat{\Omega}_G^e$
 and for the map $S \to V$ to the a planar label map.
 Combining Remark \ref{ALTSUB REM} with the uniqueness of the
 $\mathsf{lr}_{\mathcal{P}}(V_{e^{\uparrow} \leq e})$,
@@ -8448,7 +8714,7 @@ Uniqueness of $\mathsf{lr}_{\mathcal{P}} (V)$ then implies
 $S=\mathsf{lr}_{\mathcal{P}} (V)$, and one sets 
 $\mathsf{lr}_{\mathcal{P}} (\varphi)$
 to be the map $T\to S$.
-Associativity and unitality are automatic from the uniqueness of the factorization of (\ref{LRPFUN EQ}).
+Associativity and unitality are automatic from the uniqueness of the factorization of \eqref{LRPFUN EQ}.
 
 For $T = (T_x)_{x \in X}$ in 
 $\Omega_G^e$ with $G$ a general group,
@@ -8486,7 +8752,7 @@ functor $N \colon \Omega_G^e \to \C$ it is
 Summarizing \S \ref{EXTTREE SEC},
 %the previous section, 
 the discussion after Proposition \ref{RANTRANS PROP}
-establishes (\ref{EXTTREEFOR EQ}), and hence 
+establishes \eqref{EXTTREEFOR EQ}, and hence 
 Corollary \ref{KANRED COR} 
 gives the alternative formula
 (the use of opposite categories turns 
@@ -8762,7 +9028,7 @@ the overcategory
 \end{equation}
 is non-empty and connected. 
 By definition of rooted undercategory, $\pi$ is the identity on roots and thus an isomorphism on $\Sigma_G$,
-so that objects of (\ref{UNDERCATPR EQ})
+so that objects of \eqref{UNDERCATPR EQ}
 correspond to maps
 $T \to S$
 that induce a rooted isomorphism on 
@@ -8770,13 +9036,13 @@ $\mathsf{lr}$, i.e. rooted tall maps.
 
 The case $S\in \widehat{\Omega}_G^e[\leq\! k-1]$ is immediate,
 since then the identity $S = S$ is terminal in 
-(\ref{UNDERCATPR EQ}).
+\eqref{UNDERCATPR EQ}.
 Otherwise, since $|S|_Y \neq k$ we have
 $|\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}})|<k$
 and the map 
 $\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \to S$,
 which is a rooted tall, shows that
-(\ref{UNDERCATPR EQ}) is indeed non-empty.
+\eqref{UNDERCATPR EQ} is indeed non-empty.
 
  
 Now, consider a rooted tall map $T \to S$ with 
@@ -8794,12 +9060,12 @@ Note that by Remark \ref{YINERT REM}, the existence
 of the right square relies on 
 $T' \to S$ preserving $Y$-labels.
 Since all maps in 
-(\ref{K-1LANFINAL EQ})
+\eqref{K-1LANFINAL EQ}
 are rooted tall, 
 this produces the
 necessary zigzag connecting the objects $T \to S$ and 
 $\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \to S$
-in the category (\ref{UNDERCATPR EQ}), finishing the proof.
+in the category \eqref{UNDERCATPR EQ}, finishing the proof.
 %
 %
 %Further, given any other element
@@ -8872,11 +9138,11 @@ in the category (\ref{UNDERCATPR EQ}), finishing the proof.
 %  \]
 %\end{proof}
 
-In what follows we write $\tilde{N} \colon \widehat{\Omega}_G^{e,op} \to \mathcal{V}$ for the functor in (\ref{ALTFOR EQ}) and any of its restrictions.
+In what follows we write $\tilde{N} \colon \widehat{\Omega}_G^{e,op} \to \mathcal{V}$ for the functor in \eqref{ALTFOR EQ} and any of its restrictions.
 
-We are now in a position to produce the filtration (\ref{FILTR EQ})
+We are now in a position to produce the filtration \eqref{FILTR EQ}
 of the map $\mathcal{P} \to \mathcal{P}[u]$
-in (\ref{FREE_FG_EXT_EQ}).
+in \eqref{FREE_FG_EXT_EQ}.
 
 \begin{definition} \label{PK_DEFN}
   Let $\P_k$ denote the left Kan extension
@@ -8904,7 +9170,7 @@ we obtain the desired filtration
 	\colim_k \mathcal{P}_k = \mathcal{P}[u].
 \end{equation}
 
-To analyze (\ref{FILT EQ}) homotopically we will further need a pushout description of each map 
+To analyze \eqref{FILT EQ} homotopically we will further need a pushout description of each map 
 $\mathcal{P}_{k-1} \to \mathcal{P}_k$. To do so,  note that the diagram of inclusions
 \begin{equation}\label{INCDIAG EQ}
 \begin{tikzcd}
@@ -8929,12 +9195,12 @@ Indeed, this follows since
 	= \widehat{\Omega}_G^{e}[\leq\! k],
 \]
 and since a map $T \to S$ in 
-$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in (\ref{INCDIAG EQ}) if and only if $T$ is.
+$\widehat{\Omega}_G^e[\leq\! k]$ is in one of subcategories in \eqref{INCDIAG EQ} if and only if $T$ is.
 
 Since Lemma \ref{MINUS_LAN_FINAL_LEMMA} provides an identification 
 $\mathsf{Lan}_{\widehat{\Omega}_{G}^{e}[\leq\! k \mathbin{\backslash} Y]^{op}}\tilde{N} \simeq
 \mathsf{Lan}_{\widehat{\Omega}_{G}^{e}[\leq\! k-1]^{op}}\tilde{N} = \mathcal{P}_{k-1}$,
-applying left Kan extensions to (\ref{INCDIAG EQ}) yields the pushout diagram below.
+applying left Kan extensions to \eqref{INCDIAG EQ} yields the pushout diagram below.
 \begin{equation}\label{FILTRATION_LAN_SQUARE_DIAGRAM}
 \begin{tikzcd}
 	\mathsf{Lan}_{\widehat{\Omega}_{G}^e[k \mathbin{\backslash} Y]^{op}}\tilde{N} \arrow[d] \arrow[r] & 
@@ -9048,7 +9314,7 @@ Iteratively computing left Kan extensions by first left Kan extending to $\Omega
 The desired description of the leftmost map given in (\ref{FILTRATION_LAN_LEVEL})
 now follows by noting that the rooted undercategories
 $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
-are groupoids (compare with (\ref{FGXDEFEXP EQ})).
+are groupoids (compare with \eqref{FGXDEFEXP EQ}).
 \end{proof}
 
 
@@ -9094,7 +9360,7 @@ are groupoids (compare with (\ref{FGXDEFEXP EQ})).
 %         \[
 %         \P \to \P[u] = \upgamma^{\**}((\upgamma_{\**} \P)[u]).
 %         \]
-%         Thus, we see that for any $C \in \Sigma_{\F}$, the map $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout in $\Sym_{\F}(\V)$ over the map (cf. (\ref{FILTINTALT EQ}))
+%         Thus, we see that for any $C \in \Sigma_{\F}$, the map $\P_{k-1}(C) \to \P_k(C)$ is given by the pushout in $\Sym_{\F}(\V)$ over the map (cf. \eqref{FILTINTALT EQ})
 %         \begin{equation}
 %               \label{F_FILTINTALT_EQ}
 %               \upgamma^{\**} \Lan_{\Omega_G^a[k]^{op}}
@@ -9137,16 +9403,17 @@ We begin by recalling genuine equivariant model structures.
       $X^H \to Y^H$ is a weak equivalence (fibration)
       for all $H \leq \Sigma$.
 
-      More generally, given any family $\F$ (or even collection of subgroups) of $\Sigma$,
+      More generally, given any family (\S \ref{INDEXING_SECTION}) $\F$ of subgroups of $\Sigma$,
       the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^\Sigma_{\F}$,
-      has weak equivalences and fibrations defined by restricted $H$ to $\F$.
+      has weak equivalences and fibrations defined by restricting $H$ to $\F$.
 \end{definition}
 
-In particular, when $\F$ is trivial family just containing the trivial subgroup,
+In particular, when $\F$ just contains the trivial subgroup,
 the $\F$-model structure is the \textit{projective} model structure, where weak equivalences (resp. fibrations) are those maps which forget to weak equivalences (resp. fibrations) in $\V$.
-As $\F$ increaes in size, so does to class of (trivial) cofibrations.
+As $\F$ increases in size, so does to class of (trivial) cofibrations.\\
 
-Our main proof will require some auxiliary results concerning genuine model structures.
+Our main proof will require some auxiliary results concerning genuine model structures and related hypotheses.
+% collected in Remark \ref{GEN_FGTRIGHT_REM}.
 However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
 we defer their %harder
@@ -9154,67 +9421,95 @@ proofs to those
 of the stronger results in \S \ref{COFIB SEC}.
 
 
-\begin{remark}\label{GENCOFGEN REM}
-The genuine model structure
-$\mathcal{V}^{\Sigma}_{\text{gen}}$
-and the $\F$-model structure for a family $\V^\Sigma_\F$
-exist whenever $\mathcal{V}$ has
-\textit{cellular fixed points}.
-The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
-For our immediate purposes, however, we will only need to know that 
-$\mathcal{V}^{\Sigma}_{\text{gen}}$
-is then cofibrantly generated with 
-generating (trivial) cofibrations the maps
-$\Sigma/H \cdot i$
-for $H\leq \Sigma$
-and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
+
+% \begin{remark}\label{GENCOFGEN REM}
+% The genuine model structure
+% $\mathcal{V}^{\Sigma}_{\text{gen}}$
+% and the $\F$-model structure for a family $\V^\Sigma_\F$
+% exist whenever $\mathcal{V}$ has
+% \textit{cellular fixed points}.
+% The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
+% For our immediate purposes, however, we will only need to know that 
+% $\mathcal{V}^{\Sigma}_{\text{gen}}$
+% is then cofibrantly generated with 
+% generating (trivial) cofibrations the maps
+% $\Sigma/H \cdot i$
+% for $H\leq \Sigma$
+% and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
 
 % More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
 % $\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
 % $\mathcal{F}$.
-\end{remark}
+% \end{remark}
 
-\begin{remark}\label{ALLCOF REM}
-A skeletal filtration argument shows that all objects in 
-$\mathsf{sSet}^{\Sigma}_{\text{gen}}$,
-$\mathsf{sSet}^{\Sigma}_{\**,\text{gen}}$
-are cofibrant.
-\end{remark}
 
+The statements of our main theorems include two conditions that we will introduce in \S \ref{COFIB SEC},
+namely \textit{cellular fixed points} (Definition \ref{CELL DEF}) and
+\textit{cofibrant symmetric pushout powers} (Definition \ref{COFSYMPUSHPOW}).
+These in particular have the following consequences:
 
 \begin{remark}\label{GEN_FGTRIGHT_REM}
-Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
-\begin{itemize}
-	\item [(i)] Propositions \ref{FGTRIGHT PROP} and
-	\ref{FGTLEFT PROP} imply that for a group homomorphism 
-$\phi: \Sigma \to \bar \Sigma$ 
-the functors
-\[
-\begin{tikzcd}
-	\bar{\Sigma} \cdot_{\Sigma} (\minus)
-		\colon
-	\mathcal{V}_{\text{gen}}^{\Sigma}
-	\ar{r}
-&
-	\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-&
-	\mathsf{res}^{\bar{\Sigma}}_{\Sigma}
-		\colon
-	\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-	\ar{r}
-&
-	\mathcal{V}_{\text{gen}}^{\Sigma}
-\end{tikzcd}
-\]
-	are left Quillen functors. 
-	\item[(ii)] (\ref{EXTERINTADJ EQ}) says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
-	\[
-	\V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
-	\xrightarrow{\otimes}
-	\V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
-	\]
-\end{itemize}
+      Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
+      \begin{enumerate}[label = (\roman*)]
+      \item \label{CELL_ITEM}
+            By \cite[Prop. 2.6]{Ste16},
+            the genuine model structure $\V^\Sigma_{\text{gen}}$ and the $\F$-model structure for a family $\V^\Sigma_\F$.
+            Moreover, in this case
+            $\mathcal{V}^{\Sigma}_{\F}$
+            is cofibrantly generated with 
+            generating (trivial) cofibrations the maps
+            $\Sigma/H \cdot i$
+            for $H\leq \Sigma$ in $\F$ 
+            and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
+      \item \label{GROUPHOM_ITEM}
+            Propositions \ref{FGTRIGHT PROP} and
+            \ref{FGTLEFT PROP} imply that for a group homomorphism 
+            $\phi: \Sigma \to \bar \Sigma$ 
+            the functors
+            \[
+                  \begin{tikzcd}
+                        \bar{\Sigma} \cdot_{\Sigma} (\minus)
+                        \colon
+                        \mathcal{V}_{\text{gen}}^{\Sigma}
+                        \ar{r}
+                        &
+                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+                        &
+                        \mathsf{res}^{\bar{\Sigma}}_{\Sigma}
+                        \colon
+                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+                        \ar{r}
+                        &
+                        \mathcal{V}_{\text{gen}}^{\Sigma}
+                  \end{tikzcd}
+            \]
+            are left Quillen functors. 
+      \item \label{TENSORLEFT_ITEM}
+            \eqref{EXTERINTADJ EQ} says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
+            \[
+                  \V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
+                  \xrightarrow{\otimes}
+                  \V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
+            \]
+      \item \label{CSPP_ITEM}
+            If additionally $\V$ has \textit{cofibrant symmetric pushout powers}
+            (a technical condition to be introduced in \S \ref{PUSHPOW SEC}),
+            then Example \ref{F_ALL_EX} and Proposition \ref{POWERF PROP} imply that
+            if $f$ is a (trivial) cofibration in $\V^G_{\text{gen}}$, then $f^{\square n}$ is a (trivial) cofibration in $\V^{\Sigma_n \wr G}_{\text{gen}}$ for any $n$.
+      \end{enumerate}
 \end{remark} 
+
+\begin{remark}\label{ALLCOF REM}
+        A skeletal filtration argument shows that all objects in
+        $\mathsf{sSet}^{\Sigma}_{\text{gen}}$ and
+        $\mathsf{sSet}^{\Sigma}_{\**,\text{gen}}$
+        are cofibrant.
+        Moreover, Example \ref{SSET_CSPP_EX} says that $(\mathsf{sSet},\times)$, $(\mathsf{sSet}_{\**},\wedge)$ have
+        cofibrant symmetric pushout powers.
+        % A skeletal filtration argument shows that all objects in 
+        % are cofibrant.
+\end{remark}
+
 
 The following lemma is the key to our main proof. 
 Here, a map $f$ in 
@@ -9226,8 +9521,8 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 \begin{lemma}\label{EXMAINLEM LEM}
 	Suppose $\mathcal{V}$ is a cofibrantly generated closed monoidal model category
 	with cellular fixed points and
-	with cofibrant symmetric pushout powers 
-	(cf. Proposition \ref{POWERF PROP}).
+	with cofibrant symmetric pushout powers.
+	% (cf. Proposition \ref{POWERF PROP}).
 	
 	Let $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
 	be level genuine cofibrant
@@ -9252,9 +9547,9 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 
 \begin{proof}
 	Combining the homomorphism $\mathsf{Aut}(T) \to \mathsf{Aut}(C)$ with the leftmost left Quillen functor in 
-	Remark \ref{GEN_FGTRIGHT_REM}(i),
+	Remark \ref{GEN_FGTRIGHT_REM}\ref{GROUPHOM_ITEM},
 	it suffices to check that the parenthesized 
-	expression in (\ref{EXMAINLEM EQ})
+	expression in \eqref{EXMAINLEM EQ}
 	is a (trivial) genuine 
 	$\mathsf{Aut}(T)$-cofibration.
 
@@ -9262,7 +9557,7 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	$\mathsf{Aut}(T) \to 
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{ac}(T)}\right) \times 
 	\mathsf{Aut}\left( (T_v)_{v \in V_G^{in}(T)}\right)$
-	combined with the rightmost left Quillen functor in Remark \ref{GEN_FGTRIGHT_REM}(i) and Remark \ref{GEN_FGTRIGHT_REM}(ii)
+	combined with the rightmost left Quillen functor in Remark \ref{GEN_FGTRIGHT_REM}\ref{GROUPHOM_ITEM} and Remark \ref{GEN_FGTRIGHT_REM}\ref{TENSORLEFT_ITEM}
 	then yield that it suffices to check that the two maps
 \[
 \left( \varnothing \to \bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \right)
@@ -9286,12 +9581,13 @@ $
 	\mathsf{Aut}(T_{v_k})
 $
 as in Remark \ref{WREATHFIXED REM}.
-A further application of Remark \ref{GEN_FGTRIGHT_REM}(ii)
+A further application of Remark \ref{GEN_FGTRIGHT_REM}\ref{TENSORLEFT_ITEM}
 yields that the required conditions need only be checked independently for the
-partial pushout product indexed by each $\lambda_i$,
-thus reducing to 
-Proposition \ref{POWERF PROP}
-(when $\mathcal{F}$ is the family of all subgroups).
+partial pushout product indexed by each $\lambda_i$.
+Thus the result follows by Remark \ref{GEN_FGTRIGHT_REM}\ref{CSPP_ITEM}.
+% thus reducing to 
+% Proposition \ref{POWERF PROP}
+% (when $\mathcal{F}$ is the family of all subgroups).
 \end{proof}
 
 
@@ -9307,7 +9603,7 @@ $\iota_{!} \mathcal{P}$,
 $\iota_{!} u$,
 yields that
 the analogue of the map
-(\ref{EXMAINLEM EQ})
+\eqref{EXMAINLEM EQ}
 is an $\mathsf{Aut}(G \cdot C_n) 
 \simeq G 
 \times \mathsf{Aut}(C_n)=
@@ -9336,7 +9632,7 @@ where the rightmost right adjoint simply forgets structure and the leftmost righ
 \end{tikzcd}
 \end{equation}
 We claim that $\mathsf{Op}_G(\mathcal{V})$ admits a (semi-)model structure with weak equivalences and fibrations defined by the composite right adjoint in 
-(\ref{MAINPFADJ EQ}).
+\eqref{MAINPFADJ EQ}.
 Noting that the left adjoint to 
 $\left( \text{ev}_C (\minus) \right)$
 is given by
@@ -9349,7 +9645,7 @@ and using either
 in the model structure case
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$
 or 
-\cite[Thm. 2.2.2]{WY15}
+\cite[Thm. 2.2.2]{WY18}
 in the semi-model category structure case,
 one must analyze free $\mathbb{F}_G$-extension diagrams of the form
 \[ 
@@ -9371,13 +9667,13 @@ $H \leq \mathsf{Aut}(D)$,
 and $u \colon A \to B$ is a generating (trivial)
 cofibration in $\mathcal{V}$.
 
-The map $\mathcal{P} \to \mathcal{P}[u]$ is then filtered as in (\ref{FILT EQ}),
+The map $\mathcal{P} \to \mathcal{P}[u]$ is then filtered as in \eqref{FILT EQ},
 and since
 $\mathsf{Hom}_{\Sigma_G}(C,D)/H \cdot u$
 is a (trivial) cofibration in 
 $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$
 for all $C \in \Sigma_G$ 
-(cf. Remark \ref{GENCOFGEN REM}),
+(cf. Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}) % Remark \ref{GENCOFGEN REM}
 combining the inductive description of the filtration in (\ref{FILTRATION_LAN_LEVEL})
 with Lemma \ref{EXMAINLEM LEM} shows that if
 $\mathcal{P}$ is level genuine cofibrant
@@ -9395,7 +9691,7 @@ and thus the conditions in
 showing the existence of the model structure.
 In the semi-model structure case, the condition that 
 $\mathcal{P}$ is level genuine cofibrant
-does not quite coincide with the cell complex condition in \cite[Thm. 2.2.2]{WY15}. 
+does not quite coincide with the cell complex condition in \cite[Thm. 2.2.2]{WY18}. 
 However, the regular (i.e. not trivial) 
 cofibration case in the previous paragraph together with a routine induction argument over the cell decomposition of cellular $\P$ shows that cellular  
 $\P$ are indeed level genuine cofibrant.
@@ -9404,18 +9700,18 @@ Thus, the semi-model structure case also follows.
 We now turn to showing the existence of the (semi-)model structures appearing in Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
 which are essentially corollaries 
 of the existence of that defined by
-(\ref{MAINPFADJ EQ}).
+\eqref{MAINPFADJ EQ}.
 
 Firstly, consider the projective (semi-)model structure
 on $\mathsf{Op}_G(\mathcal{V})$.
 This model structure is transferred from the exact same adjunction
-(\ref{MAINPFADJ EQ}), except equipping the 
+\eqref{MAINPFADJ EQ}, except equipping the 
 leftmost $\mathcal{V}^{\mathsf{Aut}(C)}$
 with their naive model structures, where weak equivalences and fibrations are defined by forgetting the $\mathsf{Aut}(C)$-action,
 and ignoring fixed point conditions.
 The desired projective model structure thus
 has both fewer generating (trivial) cofibrations
-and more weak equivalences than the ``genuine projective'' model structure defined by (\ref{MAINPFADJ EQ}).
+and more weak equivalences than the ``genuine projective'' model structure defined by \eqref{MAINPFADJ EQ}.
 Therefore, transfinite composites of pushouts of generating projective trivial cofibrations 
 are genuine projective equivalences and hence also projective equivalences, showing that the condition in 
 \cite[Thm. 11.3.2(2)]{Hi03}
@@ -9430,7 +9726,8 @@ establishing the existence of the projective model structure.
 In the semi-model structure case,
 one replaces \cite[Thm. 11.3.2(2)]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
-with the obvious analogue (unfortunately, we know of no direct reference for this analogue, but its proof is identical)\footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
+with the obvious analogue\footnote{Unfortunately, we know of no direct reference for this analogue, but its proof is identical; \cite[Thm. 2]{Spi01} gives a related result with an aptly similar proof.}.
+% \footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
 %
 
 
@@ -9492,7 +9789,7 @@ $(\mathcal{V},\otimes)$ has diagonals
 one can simply use the inclusion
 $\iota_{!} \colon \mathsf{Op}^G(\mathcal{V})
 \to 
-\mathsf{Op}_G(\mathcal{V})$ of (\ref{TWOADJOINTS EQ}) and repeat the argument in the previous paragraph
+\mathsf{Op}_G(\mathcal{V})$ of \eqref{TWOADJOINTS EQ} and repeat the argument in the previous paragraph
 since $\iota_!$ satisfies (i),(ii),(iii) therein
 for any choice of 
 $\mathcal{F} = \{\mathcal{F}_n\}$
@@ -9575,7 +9872,7 @@ applies mutatis mutandis.
 %
 %Otherwise, one instead adapts the entire proof,
 %starting with the obvious $\mathsf{Op}^G(\mathcal{V})$ analogue
-%of (\ref{MAINPFADJ EQ})
+%of \eqref{MAINPFADJ EQ}
 %and using Remark \ref{EXMAINLEM REM}
 %instead of Lemma \ref{EXMAINLEM LEM}
 %(as in this case, we may still use the filtration (\ref{FILTRATION_LAN_LEVEL}) with $G = \**$ and $\V = \V^G$ by Remarks \ref{NEED_WREATH_REMARK} and \ref{SIGMA_WR_REM}).
@@ -9912,13 +10209,13 @@ applies mutatis mutandis.
 %\begin{remark}
 %        A \textit{semi} model structure is a mildly weaker homotopical structure, first discussed in \cite{Hov98} and \cite{Spitz01}. Intuitively, they have all of the same properties as Quillen model structures, with the exception that trivial cofibrations only have the usual lifting property if their domain is cofibrant. 
 %        These structures can arise when attempting to use the machinery of Kan \cite[11.3.2]{Hi03} (or equivalently Schwede-Shipley \cite[2.3]{SS00}) to transfer model structures.
-%        As is often the case (e.g. \cite{Hov98, Spitz01, BM03, Fre09, Whi14, WY15}), Condition (2) can only be proven for relative $FJ$-cell complexes with cofibrant domains.
+%        As is often the case (e.g. \cite{Hov98, Spitz01, BM03, Fre09, Whi14, WY18}), Condition (2) can only be proven for relative $FJ$-cell complexes with cofibrant domains.
 %        In this situation, while a full model structure cannot be transferred, Kan's proof implies that semi model structures can.
 %        Hence, abusing citations somewhat, the remaining references to \cite[11.3.2]{Hi03} may refer to either that lemma or the analogous semi model structure result.
         % \footnote{
         % which replaces Condition (2) with the weaker requirement that the forgetful functor only takes bona fide $F(J)$-cell complexes to weak equivalences, and has an identical proof.}.
         
-%        See Section 2.2 of \cite{WY15} for a complete definition and further analysis of semi model structures.
+%        See Section 2.2 of \cite{WY18} for a complete definition and further analysis of semi model structures.
 %\end{remark}
 
 % \begin{theorem}
@@ -9953,7 +10250,7 @@ applies mutatis mutandis.
 %\end{corollary}  
 %\begin{proof} 
 %        As $\Op(\V^G) = \Op^G(V)$, we consider the filtration in (\ref{FILTRATION_LAN_LEVEL}) with $G = *$ and $\V = \V^G$. 
-%        Then the result follows from Corollary \ref{AUTTCOFPUSH_GEN_PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) applied to $\V^{G \times \Sigma_T}_{\text{gen}} \to \V^{G \times \Sigma_n}_{\text{gen}}$,
+%        Then the result follows from Corollary \ref{AUTTCOFPUSH_GEN_PROP} and Remark \ref{GEN_FGTRIGHT_REMARK}\ref{GROUPHOM_ITEM} applied to $\V^{G \times \Sigma_T}_{\text{gen}} \to \V^{G \times \Sigma_n}_{\text{gen}}$,
 %        as any map $f \otimes \P(T_v)$ is equivalently given by $f \Box (\varnothing \to \P(T_v))$, and trivial cofibrations are closed under transfinite composition.
 %\end{proof} 
 
@@ -9970,7 +10267,7 @@ applies mutatis mutandis.
 %        Using \cite[11.3.2]{Hi03},
  %%       %\cite[Lemma 2.3]{SS00}
 %        the fact that weak equivalences and transfinite compositions are levelwise implies that 
- %       Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}(i) 
+ %       Proposition \ref{CELLULAR_LEVEL_COFIB_PROP2} and Remark \ref{GEN_FGTRIGHT_REMARK}\ref{GROUPHOM_ITEM}
 %        are sufficient,
 %        as for any such $\F$, (trival) $\F$-cofibrations are, in particular, \textit{level} genuine (trivial) cofibrations (see Remark \ref{LEVEL_COFIB_REMARK}).
         
@@ -10093,9 +10390,12 @@ that there are Quillen equivalences
 \]
 In contrast to the existence of model structure results shown in \S \ref{MAINEXIST SEC},
 this will require a far more careful analysis of the  
-genuine model structures
-$\mathcal{V}^G_{\mathcal{F}}$ mentioned in 
-Remark \ref{GENCOFGEN REM}. This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
+fixed-point model structures
+$\mathcal{V}^G_{\mathcal{F}}$
+from Definition \ref{GENUINEMS_DEF}.
+% mentioned in 
+% Remark \ref{GENCOFGEN REM}.
+This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
 to the setup of $G$-trees in \S
 \ref{G_GRAPH_SECTION},
 and culminate in 
@@ -10113,8 +10413,9 @@ $N \mathcal{F}$-operads of Blumberg-Hill.
 \subsection{Families of subgroups}
 \label{FAMILY_SEC}
 
-Throughout 
-$\mathcal{F}$ denotes a \textit{family} of subgroups of a finite group $G$, i.e. a collection of subgroups closed under conjugation and inclusion, or, equivalently
+Throughout,
+$\mathcal{F}$ denotes a \textit{family} of subgroups of a finite group $G$,
+i.e. a collection of subgroups closed under conjugation and inclusion, or, equivalently
 (cf. \S \ref{INDEXING_SECTION}),
 a sieve 
 $
@@ -10124,19 +10425,22 @@ $
 $.
 
 \begin{remark}
-For fixed $G$ families form a lattice, ordered by inclusion, 
+For fixed $G$, families form a lattice, ordered by inclusion, 
 with meet and join given by intersection and union.
 \end{remark}
 
-As mentioned in Remark \ref{GENCOFGEN REM},
-when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
-\cite[Prop. 2.6]{Ste16} shows that there exists a model structure
-$\mathcal{V}^{G}_{\mathcal{F}}$
-on the $G$-object category
-$\mathcal{V}^G$
-whose fibrations and weak equivalences are determined by the fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
-Our analysis will require an explicit understanding of this cellularity condition,
-which we now recall.
+We begin our investigation of $\F$-model categories
+by revisiting cellular fixed points,
+the first of the two extra hypotheses introduced in Remark \ref{GEN_FGTRIGHT_REM}.
+% As mentioned in Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}, % Remark \ref{GENCOFGEN REM},
+% when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
+% \cite[Prop. 2.6]{Ste16} shows that there exists a model structure
+% $\mathcal{V}^{G}_{\mathcal{F}}$
+% on the $G$-object category
+% $\mathcal{V}^G$
+% whose fibrations and weak equivalences are determined by the fixed points $(\minus)^H$ for $H \in \mathcal{F}$.
+% Our analysis will require an explicit understanding of this cellularity condition,
+% which we now recall.
 
 \begin{definition}\label{CELL DEF}
 	A model category $\mathcal{V}$ is said to have 
@@ -10150,6 +10454,8 @@ which we now recall.
 \end{itemize}
 \end{definition}
 
+This condition, originally from \cite{Gui06} and updated in \cite{Ste16}, guarentees that
+the $\F$-model structure $\V^G_{\F}$ from Definition \ref{GENUINEMS_DEF} exists for any family $\F$ and cofibrantly generated $\V$.
 
 This section will establish some simple useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
 cellularity conditions in Definition \ref{CELL DEF}.
@@ -10194,8 +10500,8 @@ is the pushout of a generating cofibration
 $(G/H) \cdot i_{\alpha}$. Both (i) and (ii) now follow by transfinite induction on $\alpha$ in the partial composite map
 $X_0 \to X_{\alpha}$, with the successor ordinal case following by Def. \ref{CELL DEF} (ii), (iii) and the limit ordinal case by
 Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X_0=\emptyset$.
-%To prove (iii), we consider first the case of $g$ a generating cofibration. The exact same induction argument now applies to any $f$ as in (\ref{TRANSFCOMP EQ}), contingently on a base case $f=(\emptyset \to X)$. But this base case now follows by the exact same argument, now contingent on the base case $f=(\emptyset \to \emptyset)$, which is obvious.
-%The general case now follows by repeating the same argument, now using the analogous filtration (\ref{TRANSFCOMP EQ}) for $g$.
+%To prove (iii), we consider first the case of $g$ a generating cofibration. The exact same induction argument now applies to any $f$ as in \eqref{TRANSFCOMP EQ}, contingently on a base case $f=(\emptyset \to X)$. But this base case now follows by the exact same argument, now contingent on the base case $f=(\emptyset \to \emptyset)$, which is obvious.
+%The general case now follows by repeating the same argument, now using the analogous filtration \eqref{TRANSFCOMP EQ} for $g$.
 \end{proof}
 
 
@@ -10422,7 +10728,7 @@ the projections.
 
 \subsection{Pushout powers}\label{PUSHPOW SEC}
 
-That (\ref{EXTERINTADJ EQ}) is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and the group) are allowed to change. However, when those cofibrations (and hence $G$) coincide there is an additional symmetric group action that  we will need to consider.
+That \eqref{EXTERINTADJ EQ} is a left Quillen bifunctor (and its obvious higher order analogues) is one of the key properties of pushout products of $\mathcal{F}$ cofibrations when those cofibrations (and the group) are allowed to change. However, when those cofibrations (and hence $G$) coincide there is an additional symmetric group action that  we will need to consider.
 
 To handle these actions we will need two new axioms, 
 which will concern cofibrancy and fixed point properties. We start by discussing the cofibrancy axiom.
@@ -10448,19 +10754,40 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 \begin{remark}
       \label{CSPP_REM}
-      There are several notions which have a similar form to ``cofibrant symmetric pushout powers''
-      which appear in the literature, for example
-      the \textit{freely powered} condition of \cite[Def. 4.5.4.2]{Lur17} 
-      and the \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
+      There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
+      for example
+      the \textit{freely powered} condition of \cite[Def. 4.5.4.2]{Lur17}
+      or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
       % symmetric $h$-monoidal of Pavlov-Scholbach,
       % and the cofibration hypothesis of \cite{MMSS},
       % to name a few.
+      These (and other related conditions) are sufficient to generate \textit{projective} model structures on various
+      categories of algebraic objects
+      % (e.g.  commutative monoids, colored non-equivariant operads, and algebras over non-equivariant operads)
+      (e.g. \cite{Wh16,WY18}).
+      While appearing similar,
+      these axioms are built to address non-equivariant problems and are not suitable to prove our main results.
+      Our axiom is instead designed explicitly to work in the context of genuine equivariant homotopy theory.
 
-      The main distinction of our condition from these two is that
-      cofibrant symmetric pushout powers concerns cofibrations in the genuine fixed-point model structure $\V^{\Sigma_n}$;
-      freely powered is a much stronger condition, as in particular it demands that $f^{\square n}$ is a cofibration in the \textit{projective} model structure,
-      while the commutative monoid axiom is mildly weaker by reducing to information in $\V$.
-      For our analysis in \S \cite{COFIB SEC}, it is critical that we remain in the genuine equivariant setting.     
+      This distinction is visible on the level of model categores present in the definitions:
+      our notion lives in the genuine model category $\V^{\Sigma_n}_{\text{gen}}$,
+      while freely powered and the commutative monoid axiom live in
+      the projective model category $\V^{\Sigma_n}_{\text{proj}}$
+      and the non-equivariant $\V$ respectively.
+      % and the commutative monoid axiom takes a quotient to land in the non-equivariant model category $\V$.
+
+      We note that cofibrant symmetric pushout powers alone is not sufficent
+      to establish genuine equivariant model structures on categories of algebraic objects. 
+      % analogues of the results from, for example, \cite{Wh16,WY18}.
+      For example, in \cite{BP_HGOP} we need an appropriate and subtle genuine equivariant generalization of the
+      % commutative
+      \textit{monoid axiom} of \cite{SS00},
+      in addition to cofibrant symmetric pushout powers,
+      in order to establish a genuine equivariant model structure on equivariant colored operads.
+      % Further investigation
+      % on genuine model categories of algebras
+      % is forthcoming.
+      % proper equivariant versions of the commutative monoid axiom (and more generally, the weakened $\spadesuit$ axiom of \cite[\S 6.1]{WY18})
 \end{remark}
 
 
@@ -10473,15 +10800,16 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 
 \begin{example}
+      \label{SSET_CSPP_EX}
 	Both $(\mathsf{sSet},\times)$ and 
 	$(\mathsf{sSet}_{\**},\wedge)$ have cofibrant symmetric pushout powers.
         To see this, we note first that the case of (non-trivial) cofibrations is immediate since
-        the genuine cofibrations in $\sSet^{\Sigma_n}$ are precisely the monomorphisms (e.g. Remark \ref{ALLCOF REM}, \cite[Prop. 2.16]{Ste16}).
+        the genuine cofibrations in $\sSet^{\Sigma_n}$ are precisely the monomorphisms (e.g. \cite[Prop. 2.16]{Ste16}).
 	For the case of $f \colon X \to Y$ a trivial cofibration, it is easier to first show directly that 
 	$f^{\otimes n} \colon X^{\otimes n} \to Y^{\otimes n}$
 	is a trivial cofibration, 
 	and then use the factorizations
-	(\ref{COMPNFOLDFACT EQ})
+	\eqref{COMPNFOLDFACT EQ}
 	for $h=f$, $g=(\emptyset \to X)$, 
 	in which case $f^{\otimes n} = k_n\cdots k_1$ and 
 	$f^{\square n} = k_n$,
@@ -10529,7 +10857,7 @@ and $\pi$ the projection
 $\Sigma_{\lambda_e} \wr G = \Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$.
 
-More explicitly, since in (\ref{PHISTARDEF3 EQ}) one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
+More explicitly, since in \eqref{PHISTARDEF3 EQ} one needs only consider conjugates by coset representatives of $\bar{G}/\phi(G)$, when computing 
 $\left( \iota_{\Sigma_{\lambda_e} \wr G}\right)_{\**}$
 one needs only conjugate by coset representatives of 
 $\Sigma_E \wr G/\Sigma_{\lambda_e} \wr G \simeq \Sigma_E/\Sigma_{\lambda_e}$, so that
@@ -10546,6 +10874,11 @@ showing that in particular $\mathcal{F}^{\ltimes E}$
 is independent of the choice of $e \in E$.
 \end{definition}
 
+\begin{example}
+      \label{F_ALL_EX}
+      In the case $\F = \F_{\text{all}}$ is all subgroups of $G$,
+      \eqref{FLTIMESN2 EQ} makes it clear that $\F^{\ltimes E}$ is all subgroups of $\Sigma_n \wr G$.
+\end{example}
 
 \begin{remark}
 The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
@@ -10612,16 +10945,16 @@ and
 $\pi_G \colon \Sigma_{\lambda^E_e} \wr G
 =\Sigma_{\{e\}} \times G \times \Sigma_{E-e} \wr G
 \to G$. Therefore $K$ 
-satisfies (\ref{FLTIMESN2 EQ}) for 
+satisfies \eqref{FLTIMESN2 EQ} for 
 $\mathcal{F}^{\ltimes E \amalg \bar{E}}$
 since 
 $\pi_{\Sigma_E \wr G}(K)$ does so for 
 $\mathcal{F}^{\ltimes E}$.
 The case of $e \in \bar{E}$ is identical.
 
-(\ref{LTIMESPRODQUI EQ}) simply combines 
+\eqref{LTIMESPRODQUI EQ} simply combines 
 the left Quillen bifunctor
-(\ref{EXTERINTADJ EQ}) with 
+\eqref{EXTERINTADJ EQ} with 
 Proposition \ref{FGTRIGHT PROP}.
 \end{proof}
 
@@ -10637,7 +10970,7 @@ Proposition \ref{FGTRIGHT PROP}.
 Our proof of Proposition \ref{POWERF PROP} will essentially repeat the main argument in the proof of
 \cite[Thm. 1.2]{Pe16}.
 However, both for the sake of completeness and to stress that the argument is independent of the (fairly technical) model structures in \cite{Pe16}, we include an abridged version of the proof below, the key ingredient 
-of which is that (\ref{LTIMESPRODQUI EQ}) is a left Quillen bifunctor. 
+of which is that \eqref{LTIMESPRODQUI EQ} is a left Quillen bifunctor. 
 
 
 \begin{proof}
@@ -10721,7 +11054,7 @@ where each $k_r$, $0 \leq r \leq n$, fits into a pushout diagram
 	\bullet.
 \end{tikzcd}
 \end{equation}
-Briefly, (\ref{COMPNFOLDFACT EQ}) follows from
+Briefly, \eqref{COMPNFOLDFACT EQ} follows from
 a filtration 
 % suitable $\Sigma_n$-symmetric convex subposets 
 $P_0 \subset P_1 \subset \cdots \subset P_n$
@@ -10729,7 +11062,7 @@ of the poset $P_n = (0 \to 1 \to 2)^{\times n}$
 where $P_0$ consists of ``tuples with at least one $0$-coordinate'' and $P_r$ is obtained from $P_{r-1}$ by adding the ``tuples with $n-r$ $1$-coordinates and $r$ $2$-coordinates''.
 Additional details concerning this filtration appear in the proof of \cite[Lemma 4.8]{Pe16}.
 
-The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in (\ref{TRANSFCOMP EQ}).
+The general proof now follows by writing $f$ as a retract of a transfinite composition of pushouts of generating (trivial) cofibrations as in \eqref{TRANSFCOMP EQ}.
 As usual, retracts preserve weak equivalences,
 and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
@@ -10794,10 +11127,10 @@ But since
 $Q^n(\bar{f}_{\beta+1}) \to Q^n(\bar{f}_{\beta+1})
 \amalg_{Q^n(\bar{f}_{\beta}) }
 X_{\beta}^{\otimes n}$ 
-is precisely the map $k_0$ of (\ref{COMPNFOLDFACT EQ}) for 
-$g=\bar{f}_{\beta}$, $h=f_{\beta}$, this last map is the composite $k_nk_{n-1}\cdots k_1$ so that the result now follows from (\ref{COMPNFOLDFACTPUSH EQ}) 
+is precisely the map $k_0$ of \eqref{COMPNFOLDFACT EQ} for 
+$g=\bar{f}_{\beta}$, $h=f_{\beta}$, this last map is the composite $k_nk_{n-1}\cdots k_1$ so that the result now follows from \eqref{COMPNFOLDFACTPUSH EQ} 
 together with the left Quillen bifunctor
-(\ref{LTIMESPRODQUI EQ})
+\eqref{LTIMESPRODQUI EQ}
 since:
 \begin{inparaenum}
 \item[(i)] the induction hypothesis shows the cofibrancy of  $\bar{f}_{\beta}^{\square n-r}$;
@@ -10808,7 +11141,7 @@ $f_{\beta}^{\square r}$ is a pushout of $i_{\beta}^{\square r}$
  imply the cofibrancy of $f_{\beta}^{\square r}$.
 \end{inparaenum}
 %combined with 
-%(\ref{LTIMESPRODQUI EQ}), the induction hypothesis applied to $\bar{f}_{\beta}$, the fact that $f_{\beta}^{\square k}$ is a pushout of $i_{\beta}^{\square k}$
+%\eqref{LTIMESPRODQUI EQ}, the induction hypothesis applied to $\bar{f}_{\beta}$, the fact that $f_{\beta}^{\square k}$ is a pushout of $i_{\beta}^{\square k}$
 %(cf. \cite[Lemma 4.11]{Pe16}) and the (trivial) cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
 \end{proof}
 
@@ -10870,7 +11203,7 @@ are isomorphisms for all $(X_e)_{e \in E}$ in $(\mathsf F_s \wr \V)^K$ for all f
 As the name implies, the condition in the previous definition is automatic for cartesian 
 $\mathcal{V}$. Moreover, this condition is easily seen to hold for $\mathcal{V} = \mathsf{sSet}_{\**}$.
 
-The condition (\ref{CARTFIX EQ}) naturally breaks down into two conditions.
+The condition \eqref{CARTFIX EQ} naturally breaks down into two conditions.
 
 The first condition, which makes sense in the absence of diagonals, corresponds to the case where $K$ acts trivially on $E$ and says that
 $X^K \otimes Y^K \xrightarrow{\simeq} (X \otimes Y)^K$, for $X,Y \in \mathcal{V}^K$.
@@ -10885,7 +11218,7 @@ though now without cofibrancy requirements.
 In fact, if one modifies
 Definition \ref{CARTFIX DEF} 
 by requiring that
-(\ref{CARTFIX EQ})
+\eqref{CARTFIX EQ}
 be an isomorphism only when the
 $X_e$ are $K_e$-cofibrant,
 it is not hard to show that
@@ -10919,14 +11252,14 @@ Definition \ref{CELL DEF} (iii)).
 	\left( f^{\square n} \right)^K.
 \end{equation}
 If $f$ is a genuine cofibration between genuine cofibrant objects then 
-(\ref{FIXEDPUSH EQ}) is an isomorphism.
+\eqref{FIXEDPUSH EQ} is an isomorphism.
 \end{proposition}
 
 At first sight, it may seem that 
 the desired isomorphism
-(\ref{FIXEDPUSH EQ})
-should be an immediate consequence of (\ref{CARTFIX EQ}). However, the real content here is that the two pushout products in 
-(\ref{FIXEDPUSH EQ}) are computed over cubes of different sizes. Namely, while the right hand side is computed using the cube
+\eqref{FIXEDPUSH EQ}
+should be an immediate consequence of \eqref{CARTFIX EQ}. However, the real content here is that the two pushout products in 
+\eqref{FIXEDPUSH EQ} are computed over cubes of different sizes. Namely, while the right hand side is computed using the cube
 $(0 \to 1)^{\times n}$,
 the left hand side is computed over the fixed point cube
 $\left((0 \to 1)^{\times n} \right)^K
@@ -10995,13 +11328,13 @@ When $n=3$ and $n/K = \left\{\{1,2\},\{3\}\right\}$ the fixed subposet $(0 \to 1
 \begin{proof}[proof of Proposition \ref{FIXEDPUSH PROP}]
 The result will follow by induction on $n$. The base case $n=1$ is obvious.
 
-Moreover, it is clear from (\ref{CARTFIX EQ}) that (\ref{FIXEDPUSH EQ}), which is a map of arrows, is an isomorphism on the target objects, hence the real claim is that this map is also an isomorphism on sources.
+Moreover, it is clear from \eqref{CARTFIX EQ} that \eqref{FIXEDPUSH EQ}, which is a map of arrows, is an isomorphism on the target objects, hence the real claim is that this map is also an isomorphism on sources.
 
-We now note that by considering (\ref{COMPNFOLDFACT EQ}) for
+We now note that by considering \eqref{COMPNFOLDFACT EQ} for
 $g= (\emptyset \to X)$, $h=f$ and removing the last map $k_n$
 one obtains a filtration of the source of $f^{\square n}$.
 Applying $(\minus)^K$ to the leftmost map in 
-(\ref{COMPNFOLDFACTPUSH EQ})
+\eqref{COMPNFOLDFACTPUSH EQ}
 one has isomorphisms
 \begin{align*}
 	\left(
@@ -11031,14 +11364,14 @@ one has isomorphisms
 	\right)
 \end{align*}
 Here the first step is an instance of Proposition \ref{STRONGCELL PROP}(ii),
-with the required cofibrancy conditions following from Proposition \ref{POWERF PROP}. The second step follows from (\ref{CARTFIX EQ}).
+with the required cofibrancy conditions following from Proposition \ref{POWERF PROP}. The second step follows from \eqref{CARTFIX EQ}.
 Lastly, the third step follows by
-(\ref{CARTFIX EQ}) together with the induction hypothesis, which applies since $|B|=i<n$.
+\eqref{CARTFIX EQ} together with the induction hypothesis, which applies since $|B|=i<n$.
 
 Noting that Proposition \ref{POWERF PROP} guarantees that all required maps are cofibrations
 so that fixed points $(\minus)^K$ commute with pushouts by Proposition \ref{STRONGCELL PROP}(i),
 we have just shown that 
-the leftmost maps in the pushout diagrams (\ref{COMPNFOLDFACTPUSH EQ}) for 
+the leftmost maps in the pushout diagrams \eqref{COMPNFOLDFACTPUSH EQ} for 
 $\left( f^{\square n} \right)^K$
 are isomorphic to the leftmost maps in the pushout diagrams for the corresponding filtration of 	
 $\underset{[i] \in n/K}{\mathlarger{\mathlarger{\square}}}
@@ -11075,7 +11408,7 @@ This combines Proposition \ref{FIXEDPUSH PROP}
 with the easier isomorphisms
 $f^K \square g^K \xrightarrow{\simeq} 
 (f \square g)^K$,
-which follow by (\ref{CARTFIX EQ})
+which follow by \eqref{CARTFIX EQ}
 together with the observation that $(\minus)^K$
 commutes with pushouts thanks to the cofibrancy conditions and Proposition \ref{STRONGCELL PROP}(i).
 \end{proof}
@@ -11174,7 +11507,7 @@ one has an identification
 \]
 (the subgroup $\Sigma_{\lambda_e} \leq \Sigma_E$ is as described prior to Definition \ref{FLTIMESN DEF}).
 
-Thus, unpacking (\ref{FLTIMESN2 EQ}) one has  
+Thus, unpacking \eqref{FLTIMESN2 EQ} one has  
 \[
 	K \in \mathcal{F}^{\ltimes_G E} 
 	\text{ iff }
@@ -11188,7 +11521,7 @@ Thus, unpacking (\ref{FLTIMESN2 EQ}) one has
 \end{remark}
 
 
-Combining either the left Quillen bifunctor (\ref{EXTERINTADJ EQ}) or 
+Combining either the left Quillen bifunctor \eqref{EXTERINTADJ EQ} or 
 Proposition \ref{POWERF PROP}
 with Proposition \ref{FGTLEFT PROP} yields the following results.
 
@@ -11421,7 +11754,7 @@ with the base case, that of a corolla, being immediate.
 	Consider now a partial homomorphism $G \geq H \to \Sigma_T$ encoding a 
 	$G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
 	The condition that $\Gamma \in \left(\pi_{G \times \Sigma_n}\right)^{\**}(\mathcal{F}_n)$ states that the composite $H \to \Sigma_T \to \Sigma_n$ is in $\mathcal{F}_n$, 
-	and this is precisely the condition (\ref{PARTIALHOMEDGE EQ}) in Remark \ref{UNPACKFTYPE REM}
+	and this is precisely the condition \eqref{PARTIALHOMEDGE EQ} in Remark \ref{UNPACKFTYPE REM}
 	for $e=r$ the root of $T$.
 
 As for the condition 
@@ -11447,18 +11780,18 @@ As for the condition
 	\in \mathcal{F}_{T_i}
 	\end{equation}
 where $\lambda - \{i\}$ denotes the induced partition of 
-$\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in (\ref{KEYLEMMAGECOR EQ}) can be rewritten as 
+$\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
 we see that this is the graph subgroup encoded by the restriction $H \geq H_i \to \Sigma_T$, where $H_i$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
 But since for any edge $e \in T_i$ its isotropy $H_e$ 
-(cf. (\ref{PARTIALHOMEDGE EQ})) is a subgroup of $H_i$, the induction hypothesis implies that (\ref{KEYLEMMAGECOR EQ})
-is equivalent to condition (\ref{PARTIALHOMEDGE EQ}) 
+(cf. \eqref{PARTIALHOMEDGE EQ}) is a subgroup of $H_i$, the induction hypothesis implies that \eqref{KEYLEMMAGECOR EQ}
+is equivalent to condition \eqref{PARTIALHOMEDGE EQ} 
 across all vertices other than the root vertex.
 
 The previous paragraphs show that 
-(\ref{KEYLEMMAGECO EQ})
-indeed holds when restricted to $G$-graph subgroups. However, it still remains to show that any group $\Gamma$ in the rightmost family in (\ref{KEYLEMMAGECO EQ}) is indeed
+\eqref{KEYLEMMAGECO EQ}
+indeed holds when restricted to $G$-graph subgroups. However, it still remains to show that any group $\Gamma$ in the rightmost family in \eqref{KEYLEMMAGECO EQ} is indeed
 a $G$-graph subgroup, i.e. $\Gamma \cap \Sigma_T =\**$.
 In other words, we need to show that any element 
 $\gamma \in \Gamma \leq
@@ -11467,7 +11800,7 @@ whose $G$-coordinate is
 $\gamma_G = e$ is indeed the identity.
 But the condition 
 $\pi_{G \times \Sigma_n}(\Gamma) \in \mathcal{F}_n$ now implies that for such $\gamma$ the $\Sigma_{\lambda}$-coordinate is $\gamma_{\Sigma_{\lambda}} = e$
-and thus (\ref{KEYLEMMAGECOR EQ}) in turn implies that the 
+and thus \eqref{KEYLEMMAGECOR EQ} in turn implies that the 
 $\Sigma_{T_i}$-coordinates are 
 $\gamma_{\Sigma_{T_i}} = e$,
 finishing the proof.
@@ -11499,7 +11832,7 @@ we analyze the cofibrancy of the maps
 	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
 	u(T_v)
 \]
-that constitute the inner part of (\ref{FILTINTALT EQ}), and where we recall that $T \in \Omega_G^a$ is an alternating tree.
+that constitute the inner part of \eqref{FILTINTALT EQ}, and where we recall that $T \in \Omega_G^a$ is an alternating tree.
 This analysis will consist of two parts, to be combined in the next section:
 \begin{inparaenum}
 \item[(i)] a $\mathcal{F}_{T_e}$-cofibrancy claim when $T=G \cdot T_e$ is free and;
@@ -11560,7 +11893,7 @@ f_{s_r}(n) \square
 where we use the notation in
 Remark \ref{TREEINDUCDESC REM} and $s_r$ is the root vertex label.
 
-	The description of $\mathcal{F}_T$ in (\ref{KEYLEMMAGECO EQ}) combined with the left Quillen functors in 
+	The description of $\mathcal{F}_T$ in \eqref{KEYLEMMAGECO EQ} combined with the left Quillen functors in 
 	Propositions \ref{EXTERINTADJG PROP}, \ref{BIQUILLENG PROP} and \ref{FGTLEFT PROP} then yield that 
 \[
 \begin{tikzcd}
@@ -11614,7 +11947,7 @@ which have no analogue in \cite{BM08}.
 %Indeed, this is reflected in
 %at the end of 
 %our proof of Lemma \ref{KEYLEMMAGECO LEM}, 
-%where (\ref{KEYLEMMAGECOR EQ})
+%where \eqref{KEYLEMMAGECOR EQ}
 %is used to deduce the simpler condition
 %$\Gamma \cap \prod \Sigma_{T_i} = \**$,
 %which is sufficient to 
@@ -11626,7 +11959,7 @@ which have no analogue in \cite{BM08}.
 %One might thus hope for similarly easier proofs of the general $\Sigma_{\mathcal{F}}$ case and,
 %reverse engineering our arguments,
 %the most natural such attempt would replace 
-%(\ref{KEYLEMMAGECOR EQ}) with
+%\eqref{KEYLEMMAGECOR EQ} with
 %\[
 %%\begin{equation}\label{WRONGCONJ}
 %\pi_{G \times \Sigma_{T_i}}(\Gamma \cap \prod \Sigma_{T_i})
@@ -11853,7 +12186,7 @@ finishes the proof.
 %\Omega_{G}^{\underline{l}}[U]\]
 %where $\Omega_{G}^{\underline{l}}[U]$ is the full subcategory
 %formed by the quotients of $G \cdot U$.
-%It thus suffices to establish (\ref{FIXEDPOINT1 EQ}) for each %subcategory 
+%It thus suffices to establish \eqref{FIXEDPOINT1 EQ} for each %subcategory 
 %$\Omega_{G}^{\underline{l}}[U]$. 
 %
 %All such $G$-trees can be written as 
@@ -11900,7 +12233,7 @@ finishes the proof.
 %\end{align*}
 %Here the second identification combines the formula for $\iota_{\**}$ in 
 %\S \ref{COMPARISON_REGULAR_SECTION}
-%with the cartesian fixed point formula (\ref{CARTFIX EQ}), which always holds for the product.
+%with the cartesian fixed point formula \eqref{CARTFIX EQ}, which always holds for the product.
 %The third step follows by 
 %Corollary \ref{FIXEDPUSH COR} 
 %(this is the step requiring the cofibrancy of the $f_s$).
@@ -12047,14 +12380,14 @@ Moreover, the analogous statement for cofibrations between cofibrant objects als
         \end{equation}
         are precisely the essential image under $\iota_{\**}$
         of the cellular extensions of objects in $C^{\mathcal{F}}$, 
-        i.e., pushout diagrams as on the right above. That the solid subdiagrams in either side of (\ref{TWOCELLEXTEAS EQ}) are indeed in bijection up isomorphism is simply the claim that 
+        i.e., pushout diagrams as on the right above. That the solid subdiagrams in either side of \eqref{TWOCELLEXTEAS EQ} are indeed in bijection up isomorphism is simply the claim that 
         $\iota^{\**}$ is fully faithful,
         hence the real claim is that $\tilde{W} \simeq \iota_{\**} W$.
         But this follows since by 
         the cellularity axiom (ii) in
         Definition \ref{CELL DEF}
         the map $\iota_{\**}$ preserves the rightmost pushout
-        in (\ref{TWOCELLEXTEAS EQ}) 
+        in \eqref{TWOCELLEXTEAS EQ} 
         (recall that $u \colon X \to Y$ is assumed to be a generating cofibration of $\mathcal{V}^G_{\mathcal{F}}$).
 
         Noting that the cellularity axiom (i) in
@@ -12102,7 +12435,7 @@ where the last two maps are always isomorphisms. But when restricting to cofibra
 \end{proof}
 
 The following is the main lemma. We note that the 
-operad half of (\ref{FGTFUNC EQ})
+operad half of \eqref{FGTFUNC EQ}
 was also obtained by Guti\'{e}rrez-White in \cite{GW18}.
 
 
@@ -12146,8 +12479,8 @@ preserve cofibrant objects.
 Before starting our proof we recall that, as in
 Remark \ref{COMPADJ REM},
 we do not require that $\mathcal{F}$ contain all free corollas, in which case the adjunctions in 
-(\ref{COFADJ2 EQ}) are officially composite adjunctions as in 
-(\ref{COMPADJ EQ}).
+\eqref{COFADJ2 EQ} are officially composite adjunctions as in 
+\eqref{COMPADJ EQ}.
 To avoid cumbersome notation, and noting that the inclusions 
 $\gamma_! \colon 
 \mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) \to 
@@ -12172,7 +12505,7 @@ $\mathsf{Op}_G(\mathcal{V})$.
 
 
 \begin{proof}
-We first observe that the claim concerning the symmetric sequence adjunction in (\ref{COFADJ2 EQ})
+We first observe that the claim concerning the symmetric sequence adjunction in \eqref{COFADJ2 EQ}
 is not really new. Indeed, 
 by Lemma \ref{FAMILY_COROLLAS_LEM}
 there are equivalences of categories
@@ -12212,7 +12545,7 @@ and the comparison of cellular extensions,
 which is the key claim.
 
 
-Further, we will argue the left claim in (\ref{FGTFUNC EQ}) in parallel over the same cellular extensions
+Further, we will argue the left claim in \eqref{FGTFUNC EQ} in parallel over the same cellular extensions
 (the underlying cofibrancy of
 $\mathbb{F}(\emptyset)$, 
 $\mathbb{F}_G(\emptyset)$
@@ -12302,10 +12635,10 @@ Now, recalling that Proposition \ref{MONAD_COMPARISON_PROP}(ii)(iv) gives natura
 %\simeq  \mathbb{F} \iota^{\**} \iota_{\**} \simeq \mathbb{F}
 %\]
 we see that the two solid subdiagrams in 
-(\ref{TWOCELLEXT EQ})
+\eqref{TWOCELLEXT EQ}
 are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
 We now claim that the leftmost diagram in
-(\ref{TWOCELLEXT EQ})
+\eqref{TWOCELLEXT EQ}
 will indeed be the image under $\iota_{\**}$
 of the rightmost diagram
 provided that all four objects 
@@ -12325,7 +12658,7 @@ $(\iota_{\**} \mathcal{O})[\iota_{\**} u]
 
 To establish the remaining claim that the objects 
 in the leftmost diagram in
-(\ref{TWOCELLEXT EQ})
+\eqref{TWOCELLEXT EQ}
 are in the essential image of $\iota_{\**}$,
 we claim
 it suffices to show this for the bottom right corner 
@@ -12386,7 +12719,7 @@ to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
 a cofibration between cofibrant objects in 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
 We now recall that that map can also be described 
-(cf. (\ref{FILTINTALT EQ})) as
+(cf. \eqref{FILTINTALT EQ}) as
 \begin{equation}\label{FILTINTALTAG EQ}
 	\mathsf{Lan}_{(\Omega_{G}^a[k] \to \Sigma_G)^{op}}
 	\left(
@@ -12424,7 +12757,7 @@ commutative on cofibrant objects.
 \end{equation}
 Propositions \ref{AUTTCOFPUSH PROP}
 and \ref{FIXPT PROP} 
-now show that the inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ}), which can be rewritten as
+now show that the inner map inside the left Kan extension in \eqref{FILTINTALTAG EQ}, which can be rewritten as
 \[
 	\underset{v \in V_{G}^{ac}(T)}
 	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
@@ -12441,7 +12774,7 @@ of the cofibrations between cofibrant objects
 under the top $\iota_{\**}$ map.
 %
 But since \eqref{COMCOFOB EQ} commutes on cofibrant objects
-and the $\mathsf{Lan}$ in (\ref{FILTINTALTAG EQ})
+and the $\mathsf{Lan}$ in \eqref{FILTINTALTAG EQ}
 is the leftmost $\phi_!$ functor, 
 Proposition \ref{COFESSIM PROP} implies that the 
 overall map in \eqref{FILTINTALTAG EQ}
@@ -12457,7 +12790,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %
 %
 %
-%        We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
+%        We first observe that the claim concerning the symmetric sequence adjunction of \eqref{COFADJ2 EQ}
 %        is not really new. Indeed, as
 %        there are equivalences of categories
 %        $
@@ -12474,7 +12807,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        the symmetric sequence statement merely repackages 
 %        Proposition \ref{COFESSIM PROP}.
 %        
-%        For the operad adjunction in (\ref{COFADJ2 EQ}),
+%        For the operad adjunction in \eqref{COFADJ2 EQ},
 %        most of the argument in the proof of
 %        Proposition \ref{COFESSIM PROP}
 %        applies mutatis mutandis
@@ -12543,9 +12876,9 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
 %        \]
 %        we see that the two solid subdiagrams in 
-%        (\ref{TWOCELLEXT EQ})
+%        \eqref{TWOCELLEXT EQ}
 %        are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
-%        We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+%        We claim that it now suffices to check that all four objects in the leftmost diagram of \eqref{TWOCELLEXT EQ}
 %        are in the essential image of $\iota_{\**}$.
 %        Indeed, if that is the case then
 %        \begin{align*}
@@ -12562,7 +12895,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %
 %        To establish the remaining claim that the objects 
 %        in the leftmost diagram in
-%        (\ref{TWOCELLEXT EQ})
+%        \eqref{TWOCELLEXT EQ}
 %        are in the essential image of $\iota_{\**}$,
 %        we claim
 %        it suffices to show this for the bottom right corner 
@@ -12581,7 +12914,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        can be checked by forgetting to 
 %        $\Sym_G(\V)$,
 %        and we can thus appeal to the filtration 
-%        (\ref{FILT EQ}) of
+%        \eqref{FILT EQ} of
 %        $\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$.
 %        It thus suffices to verify by induction on $k$ that each 
 %        $\mathcal{P}_k$ is in the essential image of 
@@ -12596,7 +12929,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        a cofibration between cofibrant objects in 
 %        $\mathsf{Sym}_{G}(\mathcal{V})$.
 %        We now recall that that map can also be described 
-%        (cf. (\ref{FILTINTALT EQ})) as
+%        (cf. \eqref{FILTINTALT EQ}) as
 %        \begin{equation}\label{FILTINTALTAG EQ}
 %                \Lan_{\Omega_{\mathcal{F}}^a[k]^{op} \to \Sigma_G^{op}}
 %                \left(
@@ -12615,7 +12948,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
 %        Propositions \ref{AUTTCOFPUSH PROP}
 %        and \ref{FIXPT PROP} show that the 
-%        inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+%        inner map inside the left Kan extension in \eqref{FILTINTALTAG EQ}
 %        is in the essential image
 %        of the cofibrations between cofibrant objects of
 %        $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
@@ -12625,7 +12958,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        \to
 %        \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
         %\todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
-%        Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+%        Since the $\Lan$ in \eqref{FILTINTALTAG EQ}
 %        can now be identified with an instance of the functor $\phi_!$ 
 %        in Corollary \ref{FINALCOR COR} one has 
 %        (using the further identification
@@ -12636,7 +12969,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        with Propositions \ref{COFESSIM PROP} and \ref{FGTRIGHT PROP}.
 %
 %        As for the additional claim concerning the forgetful functors
-%        in (\ref{FGTFUNC EQ}),
+%        in \eqref{FGTFUNC EQ},
 %        that $\mathsf{fgt} \colon
 %        \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
 %        \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
@@ -12648,10 +12981,10 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %        \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
 %        also preserves cofibrant objects follows from the
 %        ``essential image characterization'' of cofibrant objects in
-%        (\ref{COFADJ2 EQ}).%
+%        \eqref{COFADJ2 EQ}.%
 %
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECOND PROOF
-        % We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
+        % We first observe that the claim concerning the symmetric sequence adjunction of \eqref{COFADJ2 EQ}
         % is not really new. Indeed, as
         % there are equivalences of categories
         % $
@@ -12668,7 +13001,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % the symmetric sequence statement merely repackages 
         % Proposition \ref{COFESSIM PROP}.
 %      
-        % For the operad adjunction in (\ref{COFADJ2 EQ}),
+        % For the operad adjunction in \eqref{COFADJ2 EQ},
         % most of the argument in the proof of
         % Proposition \ref{COFESSIM PROP}
         % applies mutatis mutandis
@@ -12745,9 +13078,9 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \iota^{\**} \mathbb F_G \iota_{\**} \simeq \mathbb F
         % \]
         % we see that the two solid subdiagrams in 
-        % (\ref{TWOCELLEXT EQ})
+        % \eqref{TWOCELLEXT EQ}
         % are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
-        % We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+        % We claim that it now suffices to check that all four objects in the leftmost diagram of \eqref{TWOCELLEXT EQ}
         % are in the essential image of $\upgamma^*\iota_{\**}$.
         % Indeed, as we also have a natural isomorphism
         % \[
@@ -12778,7 +13111,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %
         % To establish the remaining claim that the objects 
         % in the leftmost diagram in
-        % (\ref{TWOCELLEXT EQ})
+        % \eqref{TWOCELLEXT EQ}
         % are in the essential image of $\upgamma^{\**} \iota_{\**}$,
         % we claim
         % it suffices to show this for the bottom right corner 
@@ -12841,7 +13174,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % can be checked by forgetting to 
         % $\Sym_G(\V)$,
         % and we can thus appeal to the filtration 
-        % (\ref{FILT EQ}) of
+        % \eqref{FILT EQ} of
         % $\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$.
         % It thus suffices to verify by induction on $k$ that each 
         % $\mathcal{P}_k$ is in the essential image of 
@@ -12856,7 +13189,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % a cofibration between cofibrant objects in 
         % $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
         % We now recall that that map can also be described 
-        % (cf. (\ref{FILTINTALT EQ})) as
+        % (cf. \eqref{FILTINTALT EQ}) as
         % \begin{equation}\label{FILTINTALTAG EQ}
         %         \Lan_{\Omega_{\mathcal{F}}^a[k]^{op} \to \Sigma_G^{op}}
         %         \left(
@@ -12874,7 +13207,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
         % Propositions \ref{AUTTCOFPUSH PROP}
         % and \ref{FIXPT PROP} show that the 
-        % inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+        % inner map inside the left Kan extension in \eqref{FILTINTALTAG EQ}
         % is in the essential image
         % of the cofibrations between cofibrant objects of
         % $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
@@ -12884,7 +13217,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \to
         % \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
         % \todo[inline]{blue: the hypotheses of both cited props require we already know $\O$ is (1) level cofibrant in $\Sym^G_\F$ and/or (2) genuine cofibrant in $\Sym^G$}
-        % Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+        % Since the $\Lan$ in \eqref{FILTINTALTAG EQ}
         % can now be identified with an instance of the functor $\phi_!$ 
         % in Corollary \ref{FINALCOR COR} one has 
         % (using the further identification
@@ -12895,7 +13228,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % with Propositions \ref{COFESSIM PROP} and \ref{FGTRIGHT PROP}.
 %
         % As for the additional claim concerning the forgetful functors
-        % in (\ref{FGTFUNC EQ}),
+        % in \eqref{FGTFUNC EQ},
         % that $\mathsf{fgt} \colon
         % \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
         % \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
@@ -12909,9 +13242,9 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
         % also preserves cofibrant objects follows from the
         % ``essential image characterization'' of cofibrant objects in
-        % (\ref{COFADJ2 EQ}).%
+        % \eqref{COFADJ2 EQ}.%
         %%%%%%%%%%%%%%%%%%%%%%%%% ORIGINAL PROOF
-        % We first observe that the claim concerning the symmetric sequence adjunction of (\ref{COFADJ2 EQ})
+        % We first observe that the claim concerning the symmetric sequence adjunction of \eqref{COFADJ2 EQ}
         % is not really new. Indeed, as
         % there are equivalences of categories
         % $
@@ -12928,7 +13261,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % the symmetric sequence statement merely repackages 
         % Proposition \ref{COFESSIM PROP}.
         %
-        % For the operad adjunction in (\ref{COFADJ2 EQ}),
+        % For the operad adjunction in \eqref{COFADJ2 EQ},
         % most of the argument in the proof of
         % Proposition \ref{COFESSIM PROP}
         % applies mutatis mutandis
@@ -12982,9 +13315,9 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \upgamma^{\**} \mathbb{F}_G \upgamma_{\**} \simeq \upgamma^{\**} \mathbb{F}_G \upgamma_!,
         % \]
         % we see that the two solid subdiagrams in 
-        % (\ref{TWOCELLEXT EQ})
+        % \eqref{TWOCELLEXT EQ}
         % are in fact adjoint up to isomorphism, so that there is a bijection between such data. 
-        % We claim that it now suffices to check that all four objects in the leftmost diagram of (\ref{TWOCELLEXT EQ})
+        % We claim that it now suffices to check that all four objects in the leftmost diagram of \eqref{TWOCELLEXT EQ}
         % are in the essential image of $\iota_{\**}$.
         % Indeed, 
         % if that is the case then
@@ -13003,7 +13336,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % 
         % To establish the remaining claim that the objects 
         % in the leftmost diagram in
-        % (\ref{TWOCELLEXT EQ})
+        % \eqref{TWOCELLEXT EQ}
         % are in the essential image of $\iota_{\**}$,
         % we claim
         % it suffices to show this for the bottom right corner 
@@ -13022,7 +13355,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % can be checked by forgetting to 
         % $\Sym_G(\V)$,
         % and we can thus appeal to the filtration 
-        % (\ref{FILT EQ}) of
+        % \eqref{FILT EQ} of
         % $\mathcal{P} \to \mathcal{P}[\iota_{\**} u]$.
         % It thus suffices to verify by induction on $k$ that each 
         % $\mathcal{P}_k$ is in the essential image of 
@@ -13053,7 +13386,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}}$,
         % Propositions \ref{AUTTCOFPUSH PROP}
         % and \ref{FIXPT PROP} show that the 
-        % inner map inside the left Kan extension in (\ref{FILTINTALTAG EQ})
+        % inner map inside the left Kan extension in \eqref{FILTINTALTAG EQ}
         % is in the essential image
         % of the cofibrations between cofibrant objects of
         % $\mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}$
@@ -13062,7 +13395,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \mathcal{V}^{G \times \Omega^a[k]^{op}}_{\mathcal{F}}
         % \to
         % \mathcal{V}^{\Omega^a_{\mathcal{F}}[k]^{op}}$.
-        % Since the $\Lan$ in (\ref{FILTINTALTAG EQ})
+        % Since the $\Lan$ in \eqref{FILTINTALTAG EQ}
         % can now be identified with an instance of the functor $\phi_!$ 
         % in Corollary \ref{FINALCOR COR} one has 
         % (using the further identification
@@ -13072,7 +13405,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % that the main claim now follows by Corollary \ref{FINALCOR COR}.
         %
         % As for the additional claim concerning the forgetful functors
-        % in (\ref{FGTFUNC EQ}),
+        % in \eqref{FGTFUNC EQ},
         % that $\mathsf{fgt} \colon
         % \mathsf{Op}_{\mathcal{F}}(\mathcal{V})
         % \to \mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$
@@ -13083,7 +13416,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
         % \to \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})$
         % also preserves cofibrant objects follows from the
         % ``essential image characterization'' of cofibrant objects in
-        % (\ref{COFADJ2 EQ}).%
+        % \eqref{COFADJ2 EQ}.%
 \end{proof}
 
 
@@ -13101,7 +13434,7 @@ $\mathsf{Sym}_{\mathcal{F}}^G(\mathcal{V})$)
 are closed under cellular extensions of operads.
 
 Morever, and as mentioned in Remark \ref{MUTMUT REM},
-it now follows that (\ref{KEYNONISO EQ})
+it now follows that \eqref{KEYNONISO EQ}
 is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 \end{remark}
 
@@ -13186,7 +13519,7 @@ as can readily be checked via a cellular argument.
 
 One drawback of the 
 $N \mathcal{F}$-operad $\mathcal{O}_{\mathcal{F}}$
-built in (\ref{OFCONST EQ}),
+built in \eqref{OFCONST EQ},
 however, is that it is not explicit,
 due to the need to use the small object argument.
 To obtain a more explicit model, we make use of the theory of genuine equivariant operads.
@@ -13254,18 +13587,18 @@ $\mathsf{Sym}_G(\mathsf{Set})$,
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
 Similarly, $\mathbb{F}_G$
 will denote both the functor in 
-(\ref{MAINPFADJVAR EQ})
+\eqref{MAINPFADJVAR EQ}
 and the monad on 
 $\mathsf{Sym}_{G}(\mathsf{Set})$
 while 
 $\widetilde{\mathbb{F}}_G$
 will denote both the top composite functor in 
-(\ref{MAINPFADJVAR EQ})
+\eqref{MAINPFADJVAR EQ}
 and the composite monad on 
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
 
 Since both adjunctions in 
-(\ref{MAINPFADJVAR EQ})
+\eqref{MAINPFADJVAR EQ}
 restrict to their $\mathcal{F}$ versions,
 in which case $\delta_{\mathcal{F}}$ denotes the terminal object of any of the $\mathcal{F}$ analogue categories,
 it follows that 
@@ -13280,7 +13613,7 @@ and we now consider the bar construction
 \widetilde{\mathbb{F}}_G ^{\circ n} 
 (\partial_{\mathcal{F}}),
 \]
-where we regard the outer $\widetilde{\mathbb{F}}_G$ as the top composite functor in (\ref{MAINPFADJVAR EQ}).
+where we regard the outer $\widetilde{\mathbb{F}}_G$ as the top composite functor in \eqref{MAINPFADJVAR EQ}.
 We thus have
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
@@ -13377,8 +13710,8 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 \end{lemma}
 
 \begin{proof}
-	Combining (\ref{FGXDEFEXP EQ}) with
-	the top left functor in (\ref{MAINPFADJVAR EQ})
+	Combining \eqref{FGXDEFEXP EQ} with
+	the top left functor in \eqref{MAINPFADJVAR EQ}
 	yields the formula
 \begin{equation}\label{TILF EQ}
 \widetilde{\mathbb{F}}_G X (C) \simeq
@@ -13393,14 +13726,14 @@ is a monomorphism square (i.e monomorphism $2$-cube).
 \cdot_{\mathsf{Aut}(T)} \mathsf{Aut}(C).
 \end{equation}
 	Distributing the inner $\coprod$ over the 
-	$\prod$ %in (\ref{TILF EQ})
+	$\prod$ %in \eqref{TILF EQ}
 	shows that 
 	$\widetilde{\mathbb{F}}_G f$
 	is a coproduct of monomorphisms with the map
 	$f \colon A \to B$
 	corresponding to the summand with $C=T=D$, and hence (b) follows.
 	
-	To show (a), note first that there are three types of operations in (\ref{TILF EQ}):
+	To show (a), note first that there are three types of operations in \eqref{TILF EQ}:
 	coproducts, inductions and products.
 	Since coproducts and inductions preserve both colimits and monomorphisms, they preserve monomorphism cubes,
 	and it thus remains to show that so do products.
@@ -13519,7 +13852,7 @@ $\mathsf{Op}_G(\mathsf{Set})$)
 \end{tikzcd}
 \end{equation}
 The latching map in the rightmost square
-(\ref{BARCOFSQ EQ})
+\eqref{BARCOFSQ EQ}
 is a monomorphism since it is an instance of
 Lemma \ref{MONOCUBE LEM}(b)
 applied to the map
@@ -13544,14 +13877,14 @@ $
 which is a monomorphism by
 Lemma \ref{MONOCUBE LEM}(a).
 %On the other hand, the left bottom horizontal map in 
-%(\ref{BARCOFSQ EQ})
+%\eqref{BARCOFSQ EQ}
 %is a monomorphism by applying Lemma \ref{MONOCUBE LEM}(a)
 %to the cube $\tilde{\mathcal{X}}^n$ obtained from 
 %$\mathcal{X}^n$ by replacing the top level
 %$\mathcal{X}^n_{\underline{n}}$ with
 %$L_{\underline{n}} \mathcal{X}^n$.
 Hence the latching maps in both squares
-in (\ref{BARCOFSQ EQ}) are monomorphisms, 
+in \eqref{BARCOFSQ EQ} are monomorphisms, 
 and thus so is the latching map of the composite square, showing that $l_{\underline{n_+1}} \mathcal{X}^{n+1}$
 is a monomorphism, as desired.
 
@@ -13583,7 +13916,7 @@ are monomorphisms.
 \begin{remark}
 We now address the ``moreover'' claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
 For any $\mathcal{O} \in \mathsf{Op}^G(\mathsf{sSet})$
-one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. Therefore, if $\mathcal{O}$ has fixed points as in (\ref{NFINFTY2 EQ}) then 
+one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. Therefore, if $\mathcal{O}$ has fixed points as in \eqref{NFINFTY2 EQ} then 
 $\pi_0 (\iota_{\**} \mathcal{O}) = \delta_{\mathcal{F}}$
 for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 a collection of families of graph subgroups.
@@ -13598,14 +13931,14 @@ $\iota^{\**} \colon
 	\rightleftarrows
 	\mathsf{Op}^G(\mathsf{Set})
 \colon \iota_{\**}$
-to (\ref{MAINPFADJVAR EQ}) one obtains
+to \eqref{MAINPFADJVAR EQ} one obtains
 an additional composite monad
 $\widehat{\mathbb{F}}_G$
 on
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
 Moreover, Lemma \ref{MAINLEM LEM}
 guarantees that the top composite in 
-(\ref{MAINPFADJVAR EQ})
+\eqref{MAINPFADJVAR EQ}
 lands in the essential image of $\iota_{\**}$,
 so that the monads 
 $\widetilde{\mathbb{F}}_G$ and
@@ -13652,7 +13985,7 @@ $B_{\bullet}(\widehat{\mathbb{F}}_G,
 \widehat{\mathbb{F}}_G,
 \partial_{\mathcal{F}})
 $
-built using (\ref{MAINPFADJVARVAR EQ})
+built using \eqref{MAINPFADJVARVAR EQ}
 is also a cofibrant $N \mathcal{F}$-operad.
 
 This latter model may seem deceptively simple. 
@@ -13731,7 +14064,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 %    \Sym^G_{\F}(\V) \arrow[r, shift right, "i_*"'] & \Sym^\F_G(\V) \arrow[l, shift right, "i^*"'] 
 %  \end{tikzcd}
 %  \]
-%  from (\ref{TWOADJOINTS EQ}) is Quillen.
+%  from \eqref{TWOADJOINTS EQ} is Quillen.
   
 %  Moreover, $i_*$ preserves cofibrant objects.
 %\end{lemma}
@@ -14118,7 +14451,7 @@ is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 The purpose of this appendix is to provide the
 somewhat long proof of Proposition \ref{RANTRANS PROP}, 
 which is needed when repackaging free extensions of
-genuine equivariant operads in (\ref{EXTTREEFOR EQ}).
+genuine equivariant operads in \eqref{EXTTREEFOR EQ}.
 
 
 We start with a more detailed discussion of the realization functor $|\minus|$
@@ -14168,7 +14501,7 @@ $|\mathcal{I}_{\bullet}|$ induced by the arrow in $[1] \times \{i_1\}$ by
 	$[0]\xrightarrow{0 \mapsto k} [n]$,
 	$[1]\xrightarrow{0 \mapsto k,1 \mapsto l} [n]$
 	which can informally be thought of as the ``composite of all faces other than $d_k$, $d_l$''.
-Using (\ref{REALDEF EQ}) one has equivalence relations
+Using \eqref{REALDEF EQ} one has equivalence relations
 between the objects  
 $(k,i_n) \in [n] \times \mathcal{I}_n$
 and 
@@ -14188,7 +14521,7 @@ To verify the claim about generating arrows, note that any arrow of $[n]\times \
 for $I_n \colon i_n \to i'_n$
 an arrow of $\mathcal{I}_n$. 
 The $d_{\hat{l}}$ relation identifies the right arrow in 
-(\ref{FACTORIZATIONREAL EQ})
+\eqref{FACTORIZATIONREAL EQ}
 with
 $(0,d_{\hat{l}}(i_n))
 	\xrightarrow{d_{\hat{l}}(I_n)}
@@ -14212,7 +14545,7 @@ in $[1]\times \mathcal{I}_1$. The result follows.
 	is determined by the categories 
 	$\mathcal{I}_0,\mathcal{I}_1,\mathcal{I}_2$
 	and maps between them, i.e. by the truncation of
-	formula $(\ref{REALDEF EQ})$ for $n,m \leq 2$.
+	formula $\eqref{REALDEF EQ}$ for $n,m \leq 2$.
 
 Indeed, one can show that a sufficient set of generating relations for $|\mathcal{I}_{\bullet}|$ is given by:
 \begin{inparaenum}
@@ -14326,7 +14659,7 @@ Further, $s$ is final.
 
 
 \begin{proof}
-Recall that $|\mcI_{\bullet}|$ is the coequalizer (\ref{REALDEF EQ}). Given $(k,g_m) \in [n] \times \mcI_m$, we write 
+Recall that $|\mcI_{\bullet}|$ is the coequalizer \eqref{REALDEF EQ}. Given $(k,g_m) \in [n] \times \mcI_m$, we write 
 $[k,g_m]$ for the corresponding object in $|\mcI_{\bullet}|$.
 To simplify notation, we write objects of $\mcI_n$ as $i_n$
 and implicitly assume that $[k,i_n]$ refers to the class of the object $(k,i_n) \in [n] \times \mcI_n$.
@@ -14343,7 +14676,7 @@ $(\phi,I_m)\colon (n,i_n) \to (m,i'_m)$ as the composite
 	[0,i'_m].
 \end{equation}
 To check compatibility with composition,
-the cases of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from (\ref{TARGETDEFINITON EQ}), 
+the cases of a pair of either two fiber arrows (i.e. arrows where $\phi$ is the identity) or two pushforward arrows (i.e. arrows where $I_m$ is the identity) are immediate from \eqref{TARGETDEFINITON EQ}, 
 hence we are left with the case 
 $([n],i_n) \xrightarrow{I_n} ([n],i'_n) \to 
 ([m],\phi^{\**} i'_n)$
@@ -14379,7 +14712,7 @@ By Lemma \ref{OBJGENREL LEMMA} any object
 \end{equation}
 where each $f_i$ is a generating arrow of $|\mcI_{\bullet}|$
 induced by either an arrow $I_0$ of $\mcI_0$ or object $i_1\in \mcI_1$.
- We will connect (\ref{UNDERCATOB EQ}) to the canonical object 
+ We will connect \eqref{UNDERCATOB EQ} to the canonical object 
  $\left(([0],h),[0,h]=[0,h]\right)$, arguing by induction on $r$. 
 If $n \neq 0$, the map 
 $d_{\hat{0}} \colon ([n],i_n) \to ([0],d_{\hat{0}}^{\**}(i_n))$
@@ -14615,9 +14948,9 @@ Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
 \C
 \]
 assemble to an object 
-$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams (\ref{IDENTSIMPRELSISO EQ}) for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
+$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams \eqref{IDENTSIMPRELSISO EQ} for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
 
-Dually, if (\ref{IDENTSIMPRELSISO EQ})
+Dually, if \eqref{IDENTSIMPRELSISO EQ}
 are natural isomorphisms for
 $0\leq i <n$ and $0\leq j \leq n$
 one can form 
@@ -14672,7 +15005,7 @@ $0\leq i <n$, $0\leq j \leq n$.
 \begin{proof}
 For the ``only if'' direction, it suffices to note that $s$ sends all pushout arrows of $\Delta^{op} \ltimes \mcI_{\bullet}$ for faces $d_i$, $0<i\leq n$ and degeneracies
 $s_j$, $0\leq j \leq n$ to identities,
-yielding the required commutative diagrams in (\ref{IDENTSIMPRELS EQ}).
+yielding the required commutative diagrams in \eqref{IDENTSIMPRELS EQ}.
 
 For the ``if''  direction, this will follow by building a 
 functor
@@ -14683,7 +15016,7 @@ F_{n-k} d_{0,\cdots,k-1}
 	\xrightarrow{\varphi_{n-k} d_{0,\cdots,k-1}}
 F_{n-k-1} d_{0,\cdots,k}.
 \end{equation}
-The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal map in (\ref{SOURCEFACT EQ}) is straightforward, hence the real task is to prove that (\ref{EQUIVALENCEDEF EQ}) defines a map of simplicial objects.
+The claim that $s \circ (\Delta^{op} \ltimes \bar{F})$ recovers the horizontal map in \eqref{SOURCEFACT EQ} is straightforward, hence the real task is to prove that \eqref{EQUIVALENCEDEF EQ} defines a map of simplicial objects.
 First, functoriality of the original $F_{\bullet}$
 yields identities
 \[
@@ -14697,7 +15030,7 @@ yields identities
 \]
 Next, note that there is no ambiguity in writing simply 
 $\varphi_{n-k} d_{0,\cdots,k-1}$
-to denote the map (\ref{EQUIVALENCEDEF EQ}).
+to denote the map \eqref{EQUIVALENCEDEF EQ}.
 We now check that $\bar{F}_{n-1} d_i = d_i \bar{F}_n$, $0 \leq i \leq n$, which must be verified after restricting to each $k \to k+1$, $0\leq k \leq n-2$. There are three cases, depending on $i$ and $k$:
 \begin{itemize}
 	\item[($i <k+1$)] 
