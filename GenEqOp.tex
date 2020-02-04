@@ -5140,13 +5140,17 @@ $V_G(T_k)$ with the order induced lexicographically
 from the maps 
 $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
 of Remark \ref{VERTEXDECOMP REM}. I.e., for 
-$v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w \in V_G(T_l)$ are distinct.
+$v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w$ in $(T_l)$ are distinct.
 
 Therefore, for each $d_i$ with $i < k$ there are natural isomorphisms as on the left below which interchange the
 lexicographical order on the indexing set $V_G(T_k)$
 induced by the string
 $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
-with the one induced by the string that omits $V_G(T_i)$.
+with the one induced by the string
+$V_G(T_k) \to V_G(T_{k-1}) \to \cdots
+\widehat{V_G(T_i)}
+\cdots \to V_G(T_0)$ 
+that omits $V_G(T_i)$.
 For $d_i$ with $i>k$ one has commutative diagrams as on the right below.
 Note that no such diagram is defined for $d_k$.
 \begin{equation}\label{PIIDEFDI EQ}
@@ -5196,6 +5200,8 @@ $s_{k-k-1}=s_{-1}$.
 
 The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of compatibilities that we now catalog.
 
+{\color{red} HERE}
+
 \begin{proposition}\label{PIIPROP PROP}
 \begin{enumerate}[label=(\alph*)]
 \item The composite
@@ -5215,7 +5221,15 @@ to pullback arrows for $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$.
 \item The isomorphisms $\pi_i(T_0 \to \cdots \to T_n)$
 are pullback arrows for the split Grothendieck fibration 
 $\Fin_s \wr \Omega_G^{n-k-1} \to \Fin_s$. Moreover, the projection of $\pi_i(T_0 \to \cdots \to T_n)$ onto $\Fin_s$
-depends only on $T_0 \to \cdots \to T_i$.
+is the permutation interchanging 
+the lexicographical order on the set
+$V_G(T_k)$ determined by
+$V_G(T_k) \to \cdots \to V_G(T_0)$
+with that determined by
+$V_G(T_k) \to \cdots
+\widehat{V_G(T_{i})}
+\cdots \to V_G(T_0)$.
+
 
 \item The rightmost diagrams in both \eqref{PIIDEFDI EQ}
 and \eqref{PIIDEFDI2 EQ} are pullback diagrams in $\mathsf{Cat}$.
@@ -5319,7 +5333,7 @@ V_G^{k+l+2}.
 (b) generalizes Lemma \ref{VGPULL LEM}, and follows by induction using that result, Lemma \ref{FWRGROTH LEM},
 and the obvious claim that $\Fin \wr \Fin \wr A \xrightarrow{\sigma^0} \Fin \wr A$ sends pullbacks over $\Fin \wr \Fin$ to pullbacks over $\Fin$.
 
-(c) is clear. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullback arrows, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
+(c) is clear from the definition of $\pi_i$. Also, (e) and (f) are easy consequences of (b) and (c): since all natural transformations involved consist of pullback arrows, one needs only check each claim after forgetting to the $\Fin_s$ coordinate, which is straightforward.
 
 Lastly, we argue (d) by induction on $k$ and $n$. The case $k=0$ for the rightmost diagram in \eqref{PIIDEFDI EQ} follows by the diagram on the left below, combined with
 Proposition \ref{SUBSASPULL PROP} applied to the bottom and total squares. The general case then follows from the right diagram, 
@@ -10751,6 +10765,8 @@ However, the argument needed is harder than usual
 one instead follows the argument in the proof of 
 Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
+
+
 
 \begin{remark}
       \label{CSPP_REM}
