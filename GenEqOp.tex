@@ -3225,7 +3225,7 @@ $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a p
 Simplicity of the broad poset $F'$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
 By (the forest version of) Proposition
 \ref{PLANARIZATIONCHAR PROP}
-1the only possible planar structure $\leq_p^{\bar{F}}$
+the only possible planar structure $\leq_p^{\bar{F}}$
 is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
 The claim that $\varphi$ is then planar follows from 
 Remark \ref{CLOSURE REM}
@@ -5200,7 +5200,7 @@ $s_{k-k-1}=s_{-1}$.
 
 The functors $V^k_G$ and isomorphisms $\pi_i$ satisfy a number of compatibilities that we now catalog.
 
-{\color{red} HERE}
+
 
 \begin{proposition}\label{PIIPROP PROP}
 \begin{enumerate}[label=(\alph*)]
@@ -6911,7 +6911,7 @@ the Elmendorf-Piacenza equivalence
 \end{tikzcd}
 \]
 for each \textit{family} $\mathcal{F}$ of subgroups of $G$
-(i.e. a collection closed under conjugation and subgroup).
+(i.e. a collection closed under conjugation and subgroups).
 Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ 
 and thus the objects of
 $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
@@ -6940,7 +6940,7 @@ a collection $\mathcal F$ of subgroups of $G$
 is a family % of subgroups of $G$
 if and only if the associated subcategory 
 $\mathsf{O}_{\mathcal{F}} \hookrightarrow
-\mathsf{O}_G$ is a sieve, defined as follows.
+\mathsf{O}_G$ is a sieve, as per the following.
 
 
 \begin{definition}
@@ -9405,7 +9405,8 @@ $\mathsf{Op}^G(\mathcal{V})$
 and
 $\mathsf{Op}_G(\mathcal{V})$.
 
-We begin by recalling genuine equivariant model structures.
+We begin by recalling the notion of genuine equivariant model structures.
+
 \begin{definition}
       \label{GENUINEMS_DEF}
       Let $\Sigma$ be a group, and $\V$ a model category.
@@ -9417,22 +9418,41 @@ We begin by recalling genuine equivariant model structures.
       $X^H \to Y^H$ is a weak equivalence (fibration)
       for all $H \leq \Sigma$.
 
-      More generally, given any family (\S \ref{INDEXING_SECTION}) $\F$ of subgroups of $\Sigma$,
+      More generally, given any family 
+      (cf. \S \ref{INDEXING_SECTION})
+      $\F$ of subgroups of $\Sigma$,
       the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^\Sigma_{\F}$,
       has weak equivalences and fibrations defined by restricting $H$ to $\F$.
 \end{definition}
 
-In particular, when $\F$ just contains the trivial subgroup,
+In particular, when $\F$ 
+is the family containing only the trivial subgroup $\{e\}$,
 the $\F$-model structure is the \textit{projective} model structure, where weak equivalences (resp. fibrations) are those maps which forget to weak equivalences (resp. fibrations) in $\V$.
-As $\F$ increases in size, so does to class of (trivial) cofibrations.\\
+Note that as $\F$ increases 
+both weak equivalences and fibrations decrease while
+(trivial) cofibrations increase.\\
 
 Our main proof will require some auxiliary results concerning genuine model structures and related hypotheses.
 % collected in Remark \ref{GEN_FGTRIGHT_REM}.
-However, since these results are particular instances of subtler results from \S \ref{COFIB SEC}
+However, since these results are 
+%particular
+instances of subtler results from \S \ref{COFIB SEC}
 which will require a far more careful analysis,
 we defer their %harder
 proofs to those
 of the stronger results in \S \ref{COFIB SEC}.
+%
+In particular, 
+we postpone the definition of the
+\emph{cellular fixed points}
+and
+\emph{cofibrant symmetric pushout powers}
+conditions
+(which are (iii) and (iv) in our main theorems)
+to Definitions \ref{CELL DEF} and \ref{COFSYMPUSHPOW},
+and collect the properties used in this section
+in the following.
+
 
 
 
@@ -9457,59 +9477,64 @@ of the stronger results in \S \ref{COFIB SEC}.
 % \end{remark}
 
 
-The statements of our main theorems include two conditions that we will introduce in \S \ref{COFIB SEC},
-namely \textit{cellular fixed points} (Definition \ref{CELL DEF}) and
-\textit{cofibrant symmetric pushout powers} (Definition \ref{COFSYMPUSHPOW}).
-These in particular have the following consequences:
 
 \begin{remark}\label{GEN_FGTRIGHT_REM}
-      Suppose $\mathcal{V}$ has cellular fixed points and is a closed monoidal model category.
-      \begin{enumerate}[label = (\roman*)]
-      \item \label{CELL_ITEM}
-            By \cite[Prop. 2.6]{Ste16},
-            the genuine model structure $\V^\Sigma_{\text{gen}}$ and the $\F$-model structure for a family $\V^\Sigma_\F$.
-            Moreover, in this case
-            $\mathcal{V}^{\Sigma}_{\F}$
-            is cofibrantly generated with 
-            generating (trivial) cofibrations the maps
-            $\Sigma/H \cdot i$
-            for $H\leq \Sigma$ in $\F$ 
-            and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
-      \item \label{GROUPHOM_ITEM}
-            Propositions \ref{FGTRIGHT PROP} and
-            \ref{FGTLEFT PROP} imply that for a group homomorphism 
-            $\phi: \Sigma \to \bar \Sigma$ 
-            the functors
-            \[
-                  \begin{tikzcd}
-                        \bar{\Sigma} \cdot_{\Sigma} (\minus)
-                        \colon
-                        \mathcal{V}_{\text{gen}}^{\Sigma}
-                        \ar{r}
-                        &
-                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-                        &
-                        \mathsf{res}^{\bar{\Sigma}}_{\Sigma}
-                        \colon
-                        \mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
-                        \ar{r}
-                        &
-                        \mathcal{V}_{\text{gen}}^{\Sigma}
-                  \end{tikzcd}
-            \]
-            are left Quillen functors. 
-      \item \label{TENSORLEFT_ITEM}
+Suppose $\mathcal{V}$ 
+is a closed monoidal model category
+which is cofibrantly generated and 
+has cellular fixed points (Definition \ref{CELL DEF}).
+\begin{enumerate}[label = (\roman*)]
+	\item \label{CELL_ITEM}
+		By \cite[Prop. 2.6]{Ste16},
+		the model structure $\V^\Sigma_{\text{gen}}$
+		exists and is cofibrantly generated
+		with generating (trivial) cofibrations
+		the maps 
+        $\Sigma/H \cdot i$
+        for $H\leq \Sigma$ 
+        and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
+        Likewise, for a family $\mathcal{F}$
+        the model structure $\mathcal{V}^{\Sigma}_{\mathcal{F}}$
+        exists and is cofibrantly generated, 
+        with generating (trivial) cofibrations
+        described analogously by restricting to $H \in \mathcal{F}$.
+        
+	\item \label{GROUPHOM_ITEM}
+		Propositions \ref{FGTRIGHT PROP} and
+		\ref{FGTLEFT PROP} imply that for a group homomorphism 
+		$\phi: \Sigma \to \bar \Sigma$ 
+		the functors
+		\[
+		\begin{tikzcd}
+			\bar{\Sigma} \cdot_{\Sigma} (\minus)
+			\colon
+			\mathcal{V}_{\text{gen}}^{\Sigma}
+			\ar{r}
+		&
+			\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+		&
+			\mathsf{res}^{\bar{\Sigma}}_{\Sigma}
+			\colon
+			\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+			\ar{r}
+		&
+			\mathcal{V}_{\text{gen}}^{\Sigma}
+		\end{tikzcd}
+		\]
+		are left Quillen functors. 
+	\item \label{TENSORLEFT_ITEM}
             \eqref{EXTERINTADJ EQ} says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
             \[
                   \V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
                   \xrightarrow{\otimes}
                   \V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
             \]
-      \item \label{CSPP_ITEM}
-            If additionally $\V$ has \textit{cofibrant symmetric pushout powers}
-            (a technical condition to be introduced in \S \ref{PUSHPOW SEC}),
-            then Example \ref{F_ALL_EX} and Proposition \ref{POWERF PROP} imply that
-            if $f$ is a (trivial) cofibration in $\V^G_{\text{gen}}$, then $f^{\square n}$ is a (trivial) cofibration in $\V^{\Sigma_n \wr G}_{\text{gen}}$ for any $n$.
+	\item \label{CSPP_ITEM}
+		If additionally $\V$ has cofibrant symmetric pushout powers
+		(Definition \ref{COFSYMPUSHPOW}),
+		then Proposition \ref{POWERF PROP} implies that,
+		if $f$ is a (trivial) cofibration in $\V^G_{\text{gen}}$, 
+		then $f^{\square n}$ is a (trivial) cofibration in $\V^{\Sigma_n \wr G}_{\text{gen}}$ for any $n \geq 1$.
       \end{enumerate}
 \end{remark} 
 
@@ -9520,8 +9545,6 @@ These in particular have the following consequences:
         are cofibrant.
         Moreover, Example \ref{SSET_CSPP_EX} says that $(\mathsf{sSet},\times)$, $(\mathsf{sSet}_{\**},\wedge)$ have
         cofibrant symmetric pushout powers.
-        % A skeletal filtration argument shows that all objects in 
-        % are cofibrant.
 \end{remark}
 
 
@@ -9536,7 +9559,6 @@ $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$.
 	Suppose $\mathcal{V}$ is a cofibrantly generated closed monoidal model category
 	with cellular fixed points and
 	with cofibrant symmetric pushout powers.
-	% (cf. Proposition \ref{POWERF PROP}).
 	
 	Let $\mathcal{P} \in \mathsf{Sym}_G(\mathcal{V})$
 	be level genuine cofibrant
@@ -9687,7 +9709,8 @@ $\mathsf{Hom}_{\Sigma_G}(C,D)/H \cdot u$
 is a (trivial) cofibration in 
 $\mathcal{V}^{\mathsf{Aut}(C)}_{\text{gen}}$
 for all $C \in \Sigma_G$ 
-(cf. Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}) % Remark \ref{GENCOFGEN REM}
+(cf. Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}) 
+% Remark \ref{GENCOFGEN REM}
 combining the inductive description of the filtration in (\ref{FILTRATION_LAN_LEVEL})
 with Lemma \ref{EXMAINLEM LEM} shows that if
 $\mathcal{P}$ is level genuine cofibrant
@@ -9738,9 +9761,15 @@ establishing the existence of the projective model structure.
 % By contrast, the condition in 
 % \cite[Thm. 11.3.2]{Hi03}, while more convenient to state, is merely a sufficient condition.}.
 In the semi-model structure case,
-one replaces \cite[Thm. 11.3.2(2)]{Hi03}
+one replaces \cite[Thm. 11.3.2]{Hi03}
 %\cite[Lemma 2.3(1)]{SS00} 
-with the obvious analogue\footnote{Unfortunately, we know of no direct reference for this analogue, but its proof is identical; \cite[Thm. 2]{Spi01} gives a related result with an aptly similar proof.}.
+with the natural analogue result
+that only requires the conclusion of condition (2) therein
+to hold when the mentioned $FJ$-cell complexes 
+have cofibrant domains
+(unfortunately, we know of no direct reference for this analogue result, but its proof is identical\footnote{For example, \cite[Thm. 2]{Spi01}
+proves such an analogue for a variant definition
+of semi-model structure.}).
 % \footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
 %
 
@@ -10407,8 +10436,7 @@ this will require a far more careful analysis of the
 fixed-point model structures
 $\mathcal{V}^G_{\mathcal{F}}$
 from Definition \ref{GENUINEMS_DEF}.
-% mentioned in 
-% Remark \ref{GENCOFGEN REM}.
+%
 This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
 to the setup of $G$-trees in \S
 \ref{G_GRAPH_SECTION},
@@ -10443,9 +10471,16 @@ For fixed $G$, families form a lattice, ordered by inclusion,
 with meet and join given by intersection and union.
 \end{remark}
 
-We begin our investigation of $\F$-model categories
-by revisiting cellular fixed points,
-the first of the two extra hypotheses introduced in Remark \ref{GEN_FGTRIGHT_REM}.
+
+We begin our discussion by recalling
+the cellular fixed point condition,
+originally from \cite{Gui06} and updated in \cite{Ste16},
+that we use to guarantee the existence
+of the $\mathcal{F}$-model structures
+$\mathcal{V}^G_{\mathcal{F}}$
+in Definition \ref{GENUINEMS_DEF}
+(see Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM} or \cite[Prop. 2.6]{Ste16}).
+
 % As mentioned in Remark \ref{GEN_FGTRIGHT_REM}\ref{CELL_ITEM}, % Remark \ref{GENCOFGEN REM},
 % when $\mathcal{V}$ is cofibrantly generated and has cellular fixed points,
 % \cite[Prop. 2.6]{Ste16} shows that there exists a model structure
@@ -10468,10 +10503,8 @@ the first of the two extra hypotheses introduced in Remark \ref{GEN_FGTRIGHT_REM
 \end{itemize}
 \end{definition}
 
-This condition, originally from \cite{Gui06} and updated in \cite{Ste16}, guarentees that
-the $\F$-model structure $\V^G_{\F}$ from Definition \ref{GENUINEMS_DEF} exists for any family $\F$ and cofibrantly generated $\V$.
 
-This section will establish some simple useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
+This section will establish some useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
 cellularity conditions in Definition \ref{CELL DEF}.
 
 \begin{proposition}\label{STRONGCELL PROP}
@@ -10890,11 +10923,7 @@ showing that in particular $\mathcal{F}^{\ltimes E}$
 is independent of the choice of $e \in E$.
 \end{definition}
 
-\begin{example}
-      \label{F_ALL_EX}
-      In the case $\F = \F_{\text{all}}$ is all subgroups of $G$,
-      \eqref{FLTIMESN2 EQ} makes it clear that $\F^{\ltimes E}$ is all subgroups of $\Sigma_n \wr G$.
-\end{example}
+
 
 \begin{remark}
 The previous definition is likely to seem mysterious at first sight. Ultimately, the origin of this definition
