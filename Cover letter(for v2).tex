@@ -250,22 +250,59 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	to highlight that the forgetful functors to $\Sigma_G$
 	are denoted $\mathsf{lr}$
 
-  \item[69.] Expanded Remark \ref{GEN_FGTRIGHT_REM} to include information and results concerning
-        cellular fixed points (formerly found in a separate remark just previous), and
-        cofibrant symmetric pushout powers (in particular, added the specialization of Proposition \ref{POWERF PROP} to the genuine equivariant context).
+	\item[69.]
+	To make the forward references less confusing, 
+	we made sure that all forward references to results take place in
+	Remark \ref{GEN_FGTRIGHT_REM},
+	which was expanded accordingly.
 
-        Added Example \ref{F_ALL_EX} to \S \ref{PUSHPOW SEC} to be referenced in the expanded remark.
+	\item[71.] 
+	Concerning the semi-model structure analogue of
+	\cite[Thm. 11.3.2]{Hi03}
+	(mentioned in the proof of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}).
+	
+	Unfortunately, Spitzweck's notion
+	of $J$-semi-model structure in \cite{Spi01}
+	does not quite match the definition
+	of semi-model structure
+	we are using
+	(which is based on more recent accounts e.g. \cite{Fre09,WY18}),
+	so while \cite[Thm. 2]{Spi01}
+	is indeed an analogue of \cite[Thm. 11.3.2]{Hi03},
+	it features some extra technical conditions concerning cofibrancy.
+	Namely, the \emph{definition} of the $J$-semi-model structures of \cite{Spi01}
+	includes the assumption
+	that transferred cofibrations between cofibrant objects forget to cofibrations.
+	For example,
+	in the context of Theorem \ref{MAINEXIST2 THM},
+	this would mean that cofibrations between cofibrant objects in the \emph{projective} 
+	model structure on $\mathsf{Op}_G$
+	forget to cofibrations in the 
+	\emph{projective} 
+	model structure on $\mathsf{Sym}_G$.
+	However, our argument instead shows that they forget to 
+	cofibrations in the \emph{genuine} 
+	model structure on $\mathsf{Sym}_G$
+	(i.e. the model structure transferred from the left half of \eqref{MAINPFADJ EQ}).
+	And since the projective model structure has more cofibrant objects but less weak equivalences, 
+	this is sufficient to follow the argument in 
+	\cite[Thm. 11.3.2]{Hi03} mutatis mutandis,
+	which is what \cite[Thm. 2]{Spi01} does,
+	\emph{except} \cite[Thm. 2]{Spi01}
+	is using different cofibrancy assumptions than we are.
 
-        Modified the introduction to \S \ref{FAMILY_SEC} to match these edits.
+%	Spitzweck's notion of a $J$-semi-model structure from \cite{Spi01} includes as part of the \textit{definition}
+%        that transfered cofibrations with cofibrant domain forget to cofibrations;
+%        more recent accounts (e.g. \cite{Fre09,WY15}) prove this as a property of well-behaved semi-model categories,
+%        as do we in our key Lemma \ref{MAINLEM LEM}).
+%        After accounting for this difference (i.e. modifying the hypotheses to remove the condition on $\mathbb F I$-cells), the analogue result is \cite[Thm. 2]{Spi01}.
+%        The relevant observation is that the proof of \cite[Thm. 2]{Spi01} is completely analogous to the proof of \cite[Thm. 11.3.2]{Hi03}.
         
-  \item[71.] Spitzweck's notion of a $J$-semi-model structure from \cite{Spi01} includes as part of the \textit{definition}
-        that transfered cofibrations with cofibrant domain forget to cofibrations;
-        more recent accounts (e.g. \cite{Fre09,WY15}) prove this as a property of well-behaved semi-model categories,
-        as do we in our key Lemma \ref{MAINLEM LEM}).
-        After accounting for this difference (i.e. modifying the hypotheses to remove the condition on $\mathbb F I$-cells), the analogue result is \cite[Thm. 2]{Spi01}.
-        The relevant observation is that the proof of \cite[Thm. 2]{Spi01} is completely analogous to the proof of \cite[Thm. 11.3.2]{Hi03}.
-        
-        To circumvent this digression, we have added to our parenthetical comment a reference to \cite[Thm. 2]{Spi01} and its similar proof.
+	For clarify, we hence spelled out the ``natural analogue result'' of \cite[Thm. 11.3.2]{Hi03} we had in mind
+	and added a footnote mentioning \cite[Thm. 2]{Spi01} as yet another variant of \cite[Thm. 11.3.2]{Hi03}.
+	
+	
+	
         
 	\item[72.] the argument in the proof of Theorem \ref{MAINEXIST2 THM}
 	concerning the case with $\mathcal{F}$
