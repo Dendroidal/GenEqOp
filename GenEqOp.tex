@@ -8857,11 +8857,11 @@ relabel some $Y$-vertices to $X$-vertices.
  are Grothendieck fibrations whose fibers over 
  $T \in \Omega_G^a[k]$
  are the punctured cube and cube categories
-\[
+\begin{equation}\label{PUNCUBE EQ}
 	(Y \to X)^{\times V_G^{in}(T)} - Y^{\times  V_G^{in}(T)},
 \qquad
 	(Y \to X)^{\times V_G^{in}(T)}
-\]
+\end{equation}
 for $V_G^{in}(T)$ the set of inert $G$-vertices.
 
 Note that though 
@@ -9267,7 +9267,7 @@ explicit levelwise description of
 %\end{proof}
 
 
-\begin{proposition}
+\begin{proposition}\label{FILTINTALT PROP}
 For each $G$-corolla $C \in \Sigma_G$,
 (\ref{FILTRATION_LAN_SQUARE_DIAGRAM})
 is given by the following pushout in $\V^{\mathsf{Aut}(C)}$
@@ -9312,10 +9312,37 @@ of the iterated pushout product
 \end{proposition}
 
 
+
 \begin{proof}
-This is a consequence of Remark \ref{LIMMOR REM}.
-Iteratively computing left Kan extensions by first left Kan extending to $\Omega_G^a[k]$, we can rewrite the leftmost map in 
-(\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) as
+This follows from Remark \ref{LIMMOR REM}.
+Explicitly,
+consider first the analogue of the leftmost map in 
+(\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) 
+that left Kan extends to 
+$\Omega_G^a[k]$ rather than to $\Sigma_G$, as below.
+The (punctured) cube fiber categories in
+\eqref{PUNCUBE EQ} together with \eqref{FIBERKAN EQ} yield
+an identification (of maps)
+\[
+\left(\mathsf{Lan}_{
+	(\widehat{\Omega}_{G}^e[k \mathbin{\backslash} Y]
+	\to \Omega^a_G[k])^{op}}\tilde{N}
+	\to
+\mathsf{Lan}_{
+	(\widehat{\Omega}_{G}^e[k]^{op}
+	\to \Omega^a_G[k])^{op}
+	}\tilde{N}\right)(T)
+=
+\left(
+	\bigotimes\limits_{v \in V_{G}^{ac}(T)}\P(T_v) \otimes
+	\underset{v \in V_{G}^{in}(T)}
+	{\mathlarger{\mathlarger{\mathlarger{\square}}}}
+	u(T_v)
+\right)
+\]
+so that, iterating left Kan extensions,
+the leftmost map in 
+(\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) is then
 \begin{equation}\label{FILTINTALT EQ}
 	\mathsf{Lan}_{(\Omega_G^a[k] \to \Sigma_G)^{op}}
 	\left(
@@ -9325,14 +9352,17 @@ Iteratively computing left Kan extensions by first left Kan extending to $\Omega
 		u(T_v)
 	\right).
 \end{equation}
-The desired description of the leftmost map given in (\ref{FILTRATION_LAN_LEVEL})
+The desired description of the leftmost map in (\ref{FILTRATION_LAN_LEVEL})
 now follows by noting that the rooted undercategories
 $C \downarrow_{\mathsf{r}} \Omega_G^a[k]$
-are groupoids (compare with \eqref{FGXDEFEXP EQ}).
+only depend on the isomorphisms 
+of $\Omega_G^a[k],\Sigma_G$
+(%compare with 
+cf. \eqref{FGXDEFEXP EQ}).
 \end{proof}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Filtration on Op_F
+
 \renewcommand{\F}{\mathcal F}
 
 
