@@ -457,7 +457,7 @@ In contrasting
 we note that 
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
-$G \geq H \to \Sigma_n$,
+$H \to \Sigma_n$ for some $H \leq G$,
 and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
@@ -506,9 +506,9 @@ The key observation at the source of the work in
 \cite{BH15} is then that, operadically, 
 norm maps are encoded by the graph fixed points 
 appearing in \eqref{GENEOPEQ EQ}.
-More explicitly, noting that a $H$-set $X$ with $n$ elements 
+More explicitly, noting that for $H \leq G$, an $H$-set $X$ with $n$ elements 
 is encoded by a partial homomorphism 
-$G \geq H \to \Sigma_n$, 
+$H \to \Sigma_n$,
 one obtains an associated graph subgroup 
 $\Gamma_X \leq G \times \Sigma_n$,
 % \index{subgroups!GammaX@$\Gamma_X$}
@@ -11628,7 +11628,7 @@ $\Gamma$ is a $G$-graph subgroup iff it can be written as
 	(h,\varphi(h)) : h \in H \leq G
 	\}
 \]
-for some partial homomorphism $G \geq H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
+for some $H \leq G$ and partial homomorphism $H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
 \end{remark}
 
 
@@ -11759,7 +11759,7 @@ $\Omega_{\mathcal{F}}$
 of Definition \ref{FTREE DEF}. 
 
 First, note that a partial homomorphism
-$G \geq H \to \Sigma_n$
+$H \to \Sigma_n$ for some $H \leq G$
 defines a $H$-action on the $n$-corolla $C_n \in \Sigma$
 and hence, by choosing an arbitrary order of 
 $G/H$ and coset representatives $g_i$ for $G/H$, a $G$-corolla
@@ -11815,13 +11815,15 @@ We will hence abuse notation and use $\F$ to denote either $\{\mathcal{F}_n\}_{n
 or $\Sigma_\F$.
 
 Note that a $G$-corolla $(C_i)_{i \in I}$
-is in $\Sigma_\mathcal{F}$
-iff for some (and thus all) 
-$i \in I$ the action of the stabilizer 
-$H_i$ on $C_i$
+is in $\Sigma_{\mathcal{F}}$
+iff
+for some (and thus all) 
+$i \in I$,
+the action of the stabilizer
+$H_i \leq G$ of $i \in I$ on $C_i$
 is given by a partial homomorphism
-$G \geq H_i \to \Sigma_n$
-encoding a group in $\mathcal{F}_n$.
+$H_i \to \Sigma_n$
+with associated graph subgroup in $\mathcal{F}_n$.
 
 
 In what follows, given a tree with a $H$-action
@@ -11835,7 +11837,8 @@ for some arbitrary (and inconsequential for the remaining discussion) choice of 
 Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with automorphism group $\Sigma_T$.
 	Write $\mathcal{F}_T$ for the collection of $G$-graph subgroups of 
 	$G \times \Sigma_T$ encoded by partial homomorphisms
-	$G \geq H \to \Sigma_T$ such that the associated $G$-tree
+	$H \to \Sigma_T$ for some $H \leq G$
+        such that the associated $G$-tree
 	$G \cdot_H T$ is a $\mathcal{F}$-tree
 	(cf. Definition \ref{FTREE DEF}).
 	
@@ -11871,7 +11874,7 @@ is a left Quillen functor.
 
 \begin{remark}\label{UNPACKFTYPE REM}
 Unpacking definitions, a partial homomorphism 
-$G \geq H \to \Sigma_T$
+$H \to \Sigma_T$ with $H \leq G$
 encodes a subgroup in $\mathcal{F}_T$
 iff, for each vertex $v= ( e^{\uparrow} \leq e)$ of $T$ with 
 $H_e \leq H$ the
@@ -11938,7 +11941,7 @@ $G \times \Sigma_T \to G \times \Sigma_{\lambda} \to
 $T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$
 with the base case, that of a corolla, being immediate.
 
-	Consider now a partial homomorphism $G \geq H \to \Sigma_T$ encoding a 
+	Consider now a partial homomorphism $H \to \Sigma_T$, $H \leq G$, encoding a 
 	$G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
 	The condition that $\Gamma \in \left(\pi_{G \times \Sigma_n}\right)^{\**}(\mathcal{F}_n)$ states that the composite $H \to \Sigma_T \to \Sigma_n$ is in $\mathcal{F}_n$, 
 	and this is precisely the condition \eqref{PARTIALHOMEDGE EQ} in Remark \ref{UNPACKFTYPE REM}
@@ -11967,10 +11970,13 @@ As for the condition
 	\in \mathcal{F}_{T_i}
 	\end{equation}
 where $\lambda - \{i\}$ denotes the induced partition of 
-$\{1,\cdots,n\} - \{i\}$. Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
+$\{1,\cdots,n\} - \{i\}$.
+Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
-we see that this is the graph subgroup encoded by the restriction $H \geq H_i \to \Sigma_T$, where $H_i$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
+we see that this is the graph subgroup
+encoded by the restriction $H_i \to \Sigma_T$ of the action of $H$ on $T$,
+where $H_i \leq H$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
 But since for any edge $e \in T_i$ its isotropy $H_e$ 
 (cf. \eqref{PARTIALHOMEDGE EQ}) is a subgroup of $H_i$, the induction hypothesis implies that \eqref{KEYLEMMAGECOR EQ}
 is equivalent to condition \eqref{PARTIALHOMEDGE EQ} 
