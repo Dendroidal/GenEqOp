@@ -1043,16 +1043,20 @@ which are less standard, are discussed in
 Further, by \textit{semi-model category}
 we mean the notion in 
 \cite[Def. 2.2.1]{WY18}\footnote{
-We note that the role of $\mathcal M$ in \cite[Def. 2.2.1]{WY18}
-is auxiliary,
-as one is always free to replace $\mathcal M$ 
-with the terminal category, 
-recovering the definition of semi-model structure in 
-\cite[\S 12.1]{Fre09}
-(the purpose of choosing other $\mathcal{M}$ 
-being that the existence of the
-semi-model structure on $\mathcal D$ therein
-is usually established via transfer from $\mathcal{M}$).},
+  We note that the role of $\mathcal M$ in \cite[Def. 2.2.1]{WY18}
+  is auxiliary,
+  as one is always free to replace $\mathcal M$ 
+  with the terminal category, 
+  recovering the definition of a \textit{$J$-semi-model structure (over $\**$)} from the unpublished
+  \cite[Defn. 1]{Spi01};
+  the purpose of choosing other $\mathcal{M}$ 
+  is that the existence of the
+  semi-model structure on $\mathcal D$ therein
+  is often established via transfer from $\mathcal{M}$.
+  We warn the reader that for non-trivial $\mathcal M$,
+  the notion from \cite{Spi01}
+  is significantly more demanding than the one from \cite{WY18}.
+},
 %(see also \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY18} recovers that from \cite{Fre09} by choosing the model category $\mathcal M$ in \cite[\S 2.2]{WY18} to be the unique model structure on the terminal category.}),
 which relaxes the definition of model structure by requiring that some of the axioms need only apply
 if the domains of certain cofibrations are cofibrant. 
@@ -6320,7 +6324,7 @@ $.
 
 In the case $G = \**$, genuine operads coincide with the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
-\simeq \mathsf{Sym}(\mathcal{V})$
+\simeq \mathsf{Sym}(\mathcal{V})$ \todo{introduce $\Sym$}
 and
 $\mathsf{Op}_{\**}(\mathcal{V})
 \simeq \mathsf{Op}(\mathcal{V})$, 
@@ -10609,8 +10613,9 @@ in Definition \ref{GENUINEMS_DEF}
 \end{definition}
 
 
-This section will establish some useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures. We start by strengthening the 
-cellularity conditions in Definition \ref{CELL DEF}.
+
+% We start by strengthening the 
+% cellularity conditions in Definition \ref{CELL DEF}.
 
 \begin{proposition}\label{STRONGCELL PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
@@ -10657,7 +10662,11 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 \end{proof}
 
 
-
+This section will establish some useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures.
+\begin{remark}
+      We note that the conclusions of Propositions \ref{FGTRIGHT PROP}, \ref{FGTLEFT PROP}, \ref{BIQUILLENG PROP}, \ref{LTIMESPRODINC PROP}, and \ref{POWERF PROP} below
+      in particular hold if we consider genuine equivariant model structures everywhere.
+\end{remark}
 
 
 \begin{proposition}\label{FGTRIGHT PROP}
@@ -10911,39 +10920,62 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 \begin{remark}
       \label{CSPP_REM}
       There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
-      for example
-      the \textit{freely powered} condition of \cite[Def. 4.5.4.2]{Lur17}
-      or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
-      % symmetric $h$-monoidal of Pavlov-Scholbach,
-      % and the cofibration hypothesis of \cite{MMSS},
-      % to name a few.
-      These (and other related conditions) are sufficient to generate \textit{projective} model structures on various
-      categories of algebraic objects
-      % (e.g.  commutative monoids, colored non-equivariant operads, and algebras over non-equivariant operads)
-      (e.g. \cite{Wh16,WY18}).
-      While appearing similar,
-      these axioms are built to address non-equivariant problems and are not suitable to prove our main results.
-      Our axiom is instead designed explicitly to work in the context of genuine equivariant homotopy theory.
+      for example the \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}.
+      The power cofibration axiom, along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
+      are sufficient for the construction of a variety of \textit{projective} model structures on categories of algebraic objects,
+      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17}.
+      The power cofibration axiom is quite restrictive, and several more general conditions have been developed
+      (see e.g. \cite[Thm. 6.1.1]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18}) which accomplish these tasks.
+      However, none of these axioms see any fixed-point information, and thus cannot be used to prove our main results.
 
-      This distinction is visible on the level of model categores present in the definitions:
-      our notion lives in the genuine model category $\V^{\Sigma_n}_{\text{gen}}$,
-      while freely powered and the commutative monoid axiom live in
-      the projective model category $\V^{\Sigma_n}_{\text{proj}}$
-      and the non-equivariant $\V$ respectively.
-      % and the commutative monoid axiom takes a quotient to land in the non-equivariant model category $\V$.
+      We replace the power cofibration axiom and the monoid axiom with
+      cofibrant symmetric pushout powers and the \textit{global monoid axiom} of \cite[Defn. 3.6]{BP_HGOP}, respectively,
+      \todo[inline]{should we add the global monoid axiom to this paper?}
+      both designed explicitly to work in the context of genuine equviariant homotopy theory.
 
-      We note that cofibrant symmetric pushout powers alone is not sufficent
-      to establish genuine equivariant model structures on categories of algebraic objects. 
-      % analogues of the results from, for example, \cite{Wh16,WY18}.
-      For example, in \cite{BP_HGOP} we need an appropriate and subtle genuine equivariant generalization of the
-      % commutative
-      \textit{monoid axiom} of \cite{SS00},
-      in addition to cofibrant symmetric pushout powers,
-      in order to establish a genuine equivariant model structure on equivariant colored operads.
-      % Further investigation
-      % on genuine model categories of algebras
-      % is forthcoming.
-      % proper equivariant versions of the commutative monoid axiom (and more generally, the weakened $\spadesuit$ axiom of \cite[\S 6.1]{WY18})
+      In the semi-model structure case,
+      the monoid axiom is no longer necessary;
+      this is reflected by
+      the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
+      \cite[Remark 1.16]{BP_HGO},
+      and its absence from the semi-model case of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}. 
+      
+      COME BACK
+      
+      % the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
+      % re they need some sort of monoid axiom as well
+      
+      % or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
+      % % symmetric $h$-monoidal of Pavlov-Scholbach,
+      % % and the cofibration hypothesis of \cite{MMSS},
+      % % to name a few.
+      % These (and other related conditions) are sufficient to generate \textit{projective} model structures on various
+      % categories of algebraic objects
+      % % (e.g.  commutative monoids, colored non-equivariant operads, and algebras over non-equivariant operads)
+      % (e.g. \cite{Wh16,WY18}).
+      % While appearing similar,
+      % these axioms are built to address non-equivariant problems and are not suitable to prove our main results.
+      % Our axiom is instead designed explicitly to work in the context of genuine equivariant homotopy theory.
+
+      % This distinction is visible on the level of model categores present in the definitions:
+      % our notion lives in the genuine model category $\V^{\Sigma_n}_{\text{gen}}$,
+      % while freely powered and the commutative monoid axiom live in
+      % the projective model category $\V^{\Sigma_n}_{\text{proj}}$
+      % and the non-equivariant $\V$ respectively.
+      % % and the commutative monoid axiom takes a quotient to land in the non-equivariant model category $\V$.
+
+      % We note that cofibrant symmetric pushout powers alone is not sufficent
+      % to establish genuine equivariant model structures on categories of algebraic objects. 
+      % % analogues of the results from, for example, \cite{Wh16,WY18}.
+      % For example, in \cite{BP_HGOP} we need an appropriate and subtle genuine equivariant generalization of the
+      % % commutative
+      % \textit{monoid axiom} of \cite{SS00},
+      % in addition to cofibrant symmetric pushout powers,
+      % in order to establish a genuine equivariant model structure on equivariant colored operads.
+      % % Further investigation
+      % % on genuine model categories of algebras
+      % % is forthcoming.
+      % % proper equivariant versions of the commutative monoid axiom (and more generally, the weakened $\spadesuit$ axiom of \cite[\S 6.1]{WY18})
 \end{remark}
 
 
