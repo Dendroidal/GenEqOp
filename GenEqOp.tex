@@ -6126,7 +6126,7 @@ and the result follows.
 \end{proof}
 
 
-\begin{remark}
+\begin{remark}\label{PULLEXP REM}
 Explicitly, if $\psi \colon Y \to X$ is a map in $\mathsf{O}_G$,
 and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$ lies over $X$,
 the pullback $\psi^{\**} \tilde{T}$ is given by
@@ -6192,19 +6192,24 @@ of those objects such that $T \to U$ is the identity on roots.
 Similarly, again by Proposition \ref{FIBERKANMAP PROP},
 $V_G(T) \downarrow \Fin \wr A$
 has an initial subcategory
-\begin{equation}\label{INITCAT EQ}
+\begin{equation}\label{INITCAT EQ} 
+	\left(
+	(T_{v_{Ge}})_{V_G(T)} 
+	\downarrow_{\mathsf{F} \wr \mathsf{O}_G}
+	\mathsf{F} \wr A
+	\right)
+\simeq
+	\left(
 	\prod_{v_{Ge} \in V_G(T)} 
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+	\right)
 \end{equation}
 of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
 \eqref{INITCAT EQ} comes together with a right retraction $r$,
 i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
 which is built using pullbacks. 
 Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
-
-{\color{red} HERE}
-
-\[
+\begin{equation}\label{RETDES EQ}
 \left(
 	(T_{v_{Ge}})_{V_G(T)}
 	\xrightarrow{\tau}
@@ -6223,9 +6228,14 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 	A_{\tau(v_{Ge})}
 	\right)
 \right)
-\]
-
-{\color{red} HERE}
+\end{equation}
+where we recall that the leftmost $\tau$
+is described by a map of sets
+$\tau \colon V_G(T) \to X$
+and maps
+$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to U_{\tau(v_{Ge})}$ in $\Sigma_G$
+and $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
+is the root functor.
 
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
@@ -6249,6 +6259,13 @@ $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run ov
 	\right)
 \end{tikzcd}
 \]
+Note that we wrote the map $\mathsf{r} \psi_{v_{Ge}}$ in $\mathsf{O}_G$
+from \eqref{RETDES EQ}
+as 
+$\psi_{Ge} \colon Ge \to G\psi(e)$,
+following the notation
+in Remarks \ref{PULLCOMP REM} and \ref{PULLEXP REM}.
+%
 Since rooted quotients are isomorphisms, the $\psi$
 and $\psi_{Ge}$ appearing above are isomorphisms, 
 and hence the natural transformation
