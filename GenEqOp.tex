@@ -2314,7 +2314,6 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 \end{proposition}
 
 
-
 Any monad $T$ on $\C$ induces obvious monads $T^{\times l}$ on $\C^{\times l}$.
 More generally, and 
 letting $I$ denote the identity monad,
@@ -2325,26 +2324,34 @@ determines a monad
 $T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mathcal{C}^{\times l}$.
 Here ``$a$'' stands for ``active'' and ``$i$'' for ``inert''.
 
+
 Such monads satisfy a number of compatibility conditions. 
-Firstly, if $\lambda'_a \subseteq \lambda_a$
+First, if $\lambda'_a \subseteq \lambda_a$
 there is a monad map
 $T^{\times \lambda'} \Rightarrow T^{\times \lambda}$,
 and we write $\lambda' \leq \lambda$.
-Moreover, writing $\alpha^{\**} \colon 
-\C^{\times m} \to \C^{\times l}$
+Next, writing $\alpha^{\**} \colon 
+\C^{\times l} \to \C^{\times m}$
 for the forgetful functor induced by
-a map $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$,
+a map $\alpha \colon \{1,\cdots,m\} \to \{1,\cdots,l\}$,
 one has an equality
 $T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
 \alpha^{\**} T^{\times \lambda}$,
-where $\alpha^{\**}\lambda$ is the pullback partition.
+where $\alpha^{\**}\lambda$ is the pullback partition
+$\alpha^{-1} \lambda_a \amalg \alpha^{-1} \lambda_i$.
 The following is straightforward.
 
 \begin{proposition}\label{MONADICFUN PROP}
-	Suppose $\C$ has finite coproducts and write
-	$\alpha_{!} \colon \mathcal{C}^{\times l} \to 
-	\mathcal{C}^{\times m}$
-	for the left adjoint of $\alpha^{\**}$. 
+	Suppose $\C$ has finite coproducts.
+	Let $T$ be a monad on $\C$,
+	$\alpha \colon \{1,\cdots,m\} \to \{1,\cdots,l\}$ be a map of sets,
+	and $\lambda$ be a partition $\{1,\cdots,l\} = \lambda_a \amalg \lambda_i$.
+	Write $\alpha_{!} \colon \mathcal{C}^{\times m} \to 
+	\mathcal{C}^{\times l}$
+	for the left adjoint to 
+	$\alpha^{\**} \colon \mathcal{C}^{\times l} \to 
+	\mathcal{C}^{\times m}$.
+% 	 
 	Then the map
 \begin{equation}\label{MONADFUNCTORALPHA EQ}
 	T^{\times \alpha^{\**} \lambda} \Rightarrow \alpha^{\**} T^{\times \lambda} \alpha_{!}
@@ -2352,7 +2359,7 @@ The following is straightforward.
 adjoint to the identity 
 $T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
 \alpha^{\**} T^{\times \lambda}$
-is a map of monads on $\C^{\times l}$.
+is a map of monads on $\C^{\times m}$.
 
 Hence, since $T^{\times \lambda} \alpha_!$ is a right 
 $\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module, 
@@ -2428,9 +2435,28 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 %\end{proof}
 
 \begin{remark}\label{PRECOMPPOSTCOMP REM}
-We unpack the content of \eqref{MONADFUNCTORALPHADOU EQ} when 
-$\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the singleton $\**$, in which case we write $\alpha_{!} = \coprod$.
-We thus have commutative diagrams
+We unpack 
+%the content of 
+\eqref{MONADFUNCTORALPHADOU EQ} for 
+$\alpha \colon \{1,\cdots,m\} \to \**$ a map
+%the unique map 
+to the singleton $\**$
+with the partition making $\**$ active.
+We can then write
+$\alpha_{!} = \coprod$,
+so that 
+\eqref{MONADFUNCTORALPHADOU EQ} becomes
+$\coprod \circ T^{\times m} 
+\Rightarrow 
+T \circ \coprod$.
+For $\lambda$ any partition 
+$\{1,\cdots,m\} = \lambda_a \amalg \lambda_i$
+we thus have a map 
+$\coprod \circ T^{\times \lambda} 
+\Rightarrow 
+T \circ \coprod$
+between right $T^{\times \lambda}$-modules
+which gives commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
 \begin{tikzcd}
 	\coprod_{j \in \lambda_a} TT A_j \amalg \coprod_{j \in \lambda_i} A_j
@@ -2442,7 +2468,7 @@ We thus have commutative diagrams
 		T\left( \coprod_{j \in \lambda_a} A_j \amalg \coprod_{j \in \lambda_i} A_j \right)
 \end{tikzcd}
 \end{equation}
-for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
+for each collection $\left( A_j \right)_{1\leq j \leq m}$ in $\mathcal{C}^{\times m}$,
 where the vertical maps
 come from the right $T^{\times \lambda}$-module structure.
 Writing $\mathbin{\check{\amalg}}$ for the coproduct of $T$-algebras and recalling the canonical identifications 
@@ -6009,6 +6035,8 @@ Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
 
 
+\renewcommand{\F}{\mathbb{F}}
+
 \subsection{The genuine equivariant operad monad} \label{FGMON SEC}
 
 
@@ -7989,8 +8017,7 @@ The additional claims are straightforward.
 \end{proof}
 
 
-\begin{remark}
-      \label{NPXY_REM}
+\begin{remark}\label{NPXY_REM}
 The identifications in Corollary \ref{LABIDEN COR} do allow for the case $n=-1$,
 which is non-trivial due to the existence of
  $\Omega_G^{-1,-1,\lambda} = \coprod_l \Sigma_G$,
@@ -8029,9 +8056,10 @@ $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 %      \end{tikzcd}
 %\end{equation}
 
-Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
-the bottom square is one of the pullback squares 
-\eqref{ADDSQUARE EQ}, and the right diagram merely unpacks notation
+Next, consider the following diagram
+(the right depiction merely unpacks the notation on the left),
+where the bottom square is one of the pullback squares
+\eqref{ADDSQUARE EQ}.
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
@@ -8055,13 +8083,29 @@ the bottom square is one of the pullback squares
 	 \Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-shows that the forgetful functor
+The two representations of the middle horizontal map
+yield an identification
+$\left(
+\Omega_G^{0,0,\lambda} \wr (A_j)
+\right)
+	\simeq
+\left(
+\Omega^0_G \wr \coprod A_j
+\right)	
+$
+so that, since the vertical composites fold coproduct summands,
+the forgetful map
 $\Omega_G^{0,-1,\lambda} \wr (A_j) \to 
 \Omega_G^{0,0,\lambda} \wr (A_j)$
-encodes the natural map
-$\coprod \circ N \Rightarrow N \circ \coprod $
-of \eqref{MONADFUNCTORALPHADOU EQ}.
+is identified with the natural map
+$\coprod (\Omega^0_G)^{\times \lambda} \wr (A_j)
+\to 
+\Omega^0_G \wr \coprod A_j$,
+and thus encodes the natural transformation
+$\coprod \circ N^{\times \lambda} \Rightarrow N \circ \coprod $
+discussed in Remark \ref{PRECOMPPOSTCOMP REM}.
 \end{remark}
+
 
 
 
@@ -9924,10 +9968,12 @@ has the following key properties:
 	and thus (iii) implies
 	that $f$ is a $\mathcal{F}$-projective weak equivalence in
 	$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
-	establishing the required condition in 
-	\cite[Thm. 11.3.2(2)]{Hi03}.
+	establishing the 
+	%required
+	condition in 
+	\cite[Thm. 11.3.2(2)]{Hi03} (or its semi-model category analogue).
 %
-	The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
+	The existence of the projective (semi-)model structure on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 	finishing the proof of Theorem \ref{MAINEXIST2 THM}.
 
 We now turn to Theorem \ref{MAINEXIST1 THM}.
