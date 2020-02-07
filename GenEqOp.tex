@@ -5275,7 +5275,7 @@ $V_G(T_k) \to \cdots
 and \eqref{PIIDEFDI2 EQ} are pullback diagrams in $\mathsf{Cat}$.
 
 \item
-For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
+For $i < k \leq n$ the composite natural transformation in the diagram below is $\pi_i$.
 \begin{equation}\label{INDPI1 EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
@@ -5293,7 +5293,7 @@ For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-For $k< i < k+l+1$ the composite natural transformation in the diagram below is $\pi_{i}$.
+For $k< i < k+l+1 \leq n$ the composite natural transformation in the diagram below is $\pi_{i}$.
 \begin{equation}\label{INDPI2 EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
@@ -5790,7 +5790,6 @@ Lastly, one obtains identifications
 	\pi_i \wr \Omega_G^n \simeq \pi_i \quad
 	s_j \wr \Omega_G^n \simeq s_j \quad
 	\Omega_G^k \wr d_i \simeq d_{i+k+1} \quad
-	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} \quad
 	\Omega_G^k \wr s_j \simeq s_{j+k+1}
 \]
 \end{corollary}
@@ -5816,8 +5815,14 @@ compute the limit of the solid part of the diagram below.
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \]
-Associativity follows similarly. The remaining identifications are obvious.
+Associativity follows similarly. 
+The remaining identifications 
+follow from the $(-) \wr A$ analogues of 
+\eqref{INDPI1 EQ}, \eqref{INDPI2 EQ},
+and the right side of \eqref{PIIDEFDI2 EQ}.
 \end{proof}
+
+
 
 We now have all the necessary ingredients to define our monad on 
 spans.
@@ -7909,13 +7914,73 @@ and a map $(B_k) \to \alpha^{\**}(A_j)$ one obtains a natural map
 
 
 \begin{proposition}\label{PIIPROPAB PROP}
-The analogue statements of Proposition \ref{PIIPROP PROP}
-hold for the $\Omega_{G}^{n,s,\lambda}$
-and the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$
-constructions, 
-with the caveat that in the latter case we
-exclude the cases in Proposition \ref{PIIPROP PROP}(d)(e)(f)
-that involve $d_n$.
+The analogue 
+%statements 
+of Proposition \ref{PIIPROP PROP}
+holds for the $\Omega_{G}^{n,s,\lambda}$.
+In particular 
+(we keep the numbering in 
+Proposition \ref{PIIPROP PROP}
+and have the $s$-index $\bullet$
+vary as in \eqref{LABSTSIM EQ}):
+%
+\begin{enumerate}
+\item[(a)]
+The following composite matches $V_G^{k+l+1}$
+\[
+\begin{tikzcd}
+	\Omega_G^{n,\bullet,\lambda} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_G^{n-k-1,\bullet,\lambda} \ar{r}{V_G^l} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda}
+\end{tikzcd}
+\]
+\item[(d)] The rightmost diagrams in both 
+\eqref{PIIDEFDILAB EQ} and 
+\eqref{PIIDEFDI2LAB EQ} are pullback diagrams in $\mathsf{Cat}$.
+
+\item[(e)]
+For $i < k \leq n$ the composite natural transformation in the diagram below is $\pi_i$.
+\begin{equation}\label{INDPI1SL EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar[equal]{d} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d}
+\\
+	|[alias=G2]|
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^{k-1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}[swap]{\Fin_s \wr V_{G}^{l}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2,\bullet,\lambda}
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
+\end{tikzcd}
+\end{equation}
+For $k< i < k+l+1 \leq n$ the composite natural transformation in the diagram below is $\pi_{i}$.
+\begin{equation}\label{INDPI2SL EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar{d}[swap]{\Fin_s \wr d_{i-k-1}} &
+	|[alias=F1]|
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d}
+\\
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^k}&
+	|[alias=G2]|
+	\Fin_s \wr \Omega_{G}^{n-k-2,\bullet,\lambda} \ar{r}[swap]{\Fin_s \wr V_{G}^{l-1}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2,\bullet,\lambda}
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i-k-1}"]
+\end{tikzcd}
+\end{equation}
+\end{enumerate}
+Moreover, the analogue claim hold for the 
+$\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
+(with the caveat that we exclude the cases of (d)
+that involve $d_n$). 
 
 Additionally, the natural squares  (for $n \geq -1$)
 \begin{equation}\label{ADDSQUARE EQ}
@@ -7930,6 +7995,7 @@ Additionally, the natural squares  (for $n \geq -1$)
 \end{equation}
 are also pullback squares.
 \end{proposition}
+
 
 \begin{proof}
 	Firstly, we note that the $\Omega_{G}^{n,s,\lambda}$
@@ -7948,16 +8014,16 @@ are also pullback squares.
 
 \begin{corollary}\label{LABIDEN COR}
 For $-1 \leq s \leq n$ there are natural identifications
-\[
+\begin{equation}\label{MOREIDENT1 EQ}
 	\Omega_G^{k} \wr \Omega_G^{n,s,\lambda} \wr (A_j) \simeq
 	\Omega_G^{n+k+1,s+k+1,\lambda} \wr (A_j)
-\qquad
+ \phantom{||||}
 	\Omega_G^{n,s,\lambda} \wr 
 	(\Omega_G^k)^{\times \lambda}
 	\wr (A_j)
 \simeq
 	\Omega_G^{n+k+1,s,\lambda} \wr (A_j)
-\]
+\end{equation}
 which identify 
 $V^k_G \wr \Omega_G^{n,s,\lambda} \wr (A_j) $ with 
 $V^k_G \wr (A_j) $
@@ -7967,27 +8033,31 @@ with
 $V_G^n \wr (A_j)$.
 
 Further, these identifications are compatible with each other and associative in the obvious ways, and they induce identifications
-\[
-\begin{tikzcd}[row sep =0]
+\begin{equation}\label{MOREIDENT2 EQ}
+\begin{tikzcd}[row sep=0, column sep = 10]
 	d_i \wr (\Omega_G^{n})^{\times \lambda} \simeq d_i 
 &
 	\pi_i \wr (\Omega_G^{n})^{\times \lambda} \simeq \pi_i 
 &
 	s_j \wr (\Omega_G^{n})^{\times \lambda} \simeq s_j 
 \\
-	\Omega_G^k \wr d_i \simeq d_{i+k+1} 
+	\Omega_G^k \wr (d_i)^{\times \lambda} \simeq d_{i+k+1} 
 &
-	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} 
-&
-	\Omega_G^k \wr s_j \simeq s_{j+k+1}
+	\Omega_G^k \wr (s_j)^{\times \lambda} \simeq s_{j+k+1}
 \end{tikzcd}
-\]
-as well as obvious identifications of forgeful functors.
+\end{equation}
+as well as obvious identifications of forgetful functors.
 \end{corollary}
 
+
 \begin{proof}
-This is analogous to Corollary \ref{IDEN COR}. For the first identification, the case $s \geq 0$ follows from the diagram below, where we note that the bottom arrow is
-$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
+This is analogous to Corollary \ref{IDEN COR}. For the left identification in
+\eqref{MOREIDENT1 EQ}, the case $s \geq 0$ follows
+since both sides compute the limit of the solid diagram below, 
+where we note that the bottom arrow is
+$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$
+(this is used to regard the diagram as computing
+$\Omega^k_G \wr (-)$).
 \[
 \begin{tikzcd}[row sep = 1.5em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
@@ -8004,14 +8074,24 @@ $V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
 	\Fin \wr \Omega_G^{-1,0,\lambda}
 \end{tikzcd}
 \]
-In the $s=-1$ case, the bottom arrow is instead 
+The $s=-1$ case is similar, but since the bottom arrow is now 
 $V_G^k \colon \Omega_G^{k,k,\lambda} \to 
 \Fin \wr \Omega_G^{-1,-1,\lambda} =
 \Fin \wr \coprod_l \Sigma_G$,
-in which case one further attaches \eqref{ADDSQUARE EQ}
-to the diagram above.
+one first attaches 
+the pullback square \eqref{ADDSQUARE EQ}
+to the bottom of the diagram above.
 
-The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using \eqref{BOTTOM EQ}.
+The right identification in \eqref{MOREIDENT1 EQ} is analogous, using the pullback of the solid diagram below
+(for the 
+$\Omega_G^{n+k+1,s,\lambda} \wr (A_j)$ side, 
+note that \eqref{BOTTOM EQ} identifies
+the composite of the central horizontal arrows as 
+$\mathsf{F} \wr V^k_G
+\colon
+\mathsf{F} \wr \Omega_G^{k,s-n-1,\lambda}
+\to 
+\mathsf{F}^{\wr 2} \wr \coprod_l \Sigma_G$).
 \[
 \begin{tikzcd}[row sep = 1.5em,column sep =2.05em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
@@ -8021,17 +8101,22 @@ The second identification is analogous, using the pullback diagram below, with t
 	\Fin \wr \coprod A_j \ar{d}
 \\
 	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}[swap]{d_{n+1,\cdots,n+k+1}}&
-	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^n)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
+	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^k)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
 	\Fin \wr \coprod_l \Fin \wr \Sigma_G \ar{r} &
-	\Fin^{\wr 2} \wr \coprod \Sigma_G \ar{r}[swap]{\sigma^0}  &
+	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0}  &
 	\Fin \wr \coprod_l \Sigma_G &
 \\
 	\Omega_G^{n,s,\lambda} \ar{r}[swap]{V_G^n} &
 	\Fin \wr \coprod_l \Sigma_G
 \end{tikzcd}
 \]
-The additional claims are straightforward.
+The vertex functor claims are straightforward.
+The addition claims in \eqref{MOREIDENT2 EQ} follow from 
+\eqref{INDPI1SL EQ},\eqref{INDPI2SL EQ},
+and the right side of 
+\eqref{PIIDEFDI2LAB EQ}.
 \end{proof}
+
 
 
 \begin{remark}\label{NPXY_REM}
