@@ -6905,7 +6905,7 @@ and will be the subject of \S \ref{COFIB SEC}.
 
 For now, we end this section with a minimal counterexample to  the more general claim.
 
-Let $\mathcal{C}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
+Let $\mathcal{V}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
 $Y=\** \in \mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
 
 	When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
@@ -12734,6 +12734,28 @@ More explicitly, this natural transformation is the composite
 \]
 where the last two maps are always isomorphisms. But when restricting to cofibrant objects the previous result guarantees both that $\phi_! \iota_{\**}$ lands in cofibrant objects and that cofibrant objects are in the essential image of the bottom $\iota_{\**}$. The result follows.
 \end{proof}
+
+
+
+% ----- proof for reduced operads and genuine symmetric sequences -----
+%when $G = G \times \Sigma_T$ and $\mathcal{F} = \mathcal{F}_T$ 
+%\[
+%\phi_! \iota_{\**}(G \cdot_H C)
+%=
+%\coprod_{[H\text{-maps } C \to T]/\sim}
+%{X(T)}^H
+%\]
+%\[
+%\iota_{\**} \phi_! (G \cdot_H C)
+%=
+%\left(\coprod_{[\text{maps } C \to T]/\sim}
+%{X(T)}\right)^H
+%\]
+%here both $\sim$ are isomorphism classes determined along isomorphisms $T\simeq T'$. The reason why coproducts, rather than limits, can be employed is because the resulting undercategory is a a groupoid with contractible components (provided trees have no stumps).
+%The crux is that in the fixed points only the summands corresponding to $H$-maps survive (in fact, in the reduced case, the $H$-structure on $C$ and the map $C\to T$ determine at most one $H$-structure on $T$)
+
+
+
 
 The following is the main lemma. We note that the 
 operad half of \eqref{FGTFUNC EQ}
