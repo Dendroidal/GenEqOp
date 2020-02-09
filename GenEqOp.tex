@@ -10886,26 +10886,29 @@ $\phi^{-1}(H) \in \mathcal{F}$.
 
 
 \begin{proof}
-	A choice $\{a\}$ of double coset representatives of 
-	$\phi(G)\backslash \bar{G} /H$
-	gives $G$-orbit representatives of
-	$\bar{G}/H$, yielding the formula
-	$\mathsf{res}(\bar{G}/H) \simeq 
+      The double coset formula gives a $\phi(G)$-orbit decomposition of
+      $\mathsf{res}^{\bar G}_{\phi(G)}(\bar G/H)$ as
+      % $= \mathsf{Res}^{\bar G}_{\phi(G)}\mathsf{Ind}_{H}^{\bar G}(H/H)$.
+	% A choice $\{a\}$ of double coset representatives of 
+	% $\phi(G)\backslash \bar{G} /H$
+	% gives $G$-orbit representatives of
+	% $\bar{G}/H$, yielding the formula
+	$\mathsf{res}^{\bar G}_{\phi(G)}(\bar{G}/H) \simeq 
 	\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
-	{G/\phi^{-1}(H^{a})}$.
-%	
+	{\bar G/(\phi(G) \cap H^{a})}$.
+        %	
 	Hence
-\[
-	\mathsf{res}\left(\bar{G}/H \cdot f\right)
-		\simeq 
-	\mathsf{res}\left(\bar{G}/H\right) \cdot f
-		\simeq
-	\left(
-		\coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
-		{G/\phi^{-1}(H^{a})}
-	\right)	\cdot f
-\]
-from which it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
+        \[
+              \mathsf{res}\left(\bar{G}/H \cdot f\right)
+              \simeq 
+              \mathsf{res}\left(\bar{G}/H\right) \cdot f
+              \simeq
+              \left(
+                    \coprod_{[a] \in \phi(G)\backslash \bar{G} /H}
+                    {G/\phi^{-1}(H^{a})}
+              \right)	\cdot f
+        \]
+        from which it follows that the left adjoint $\mathsf{res}$ preserves generating (trivial) cofibrations.
 \end{proof}
 
 
@@ -11092,28 +11095,33 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       \label{CSPP_REM}
       There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
       for example the \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}.
-      The power cofibration axiom, along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
-      are sufficient for the construction of a variety of \textit{projective} model structures on categories of algebraic objects,
-      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17}.
-      The power cofibration axiom is quite restrictive, and several more general conditions have been developed
-      (see e.g. \cite[Thm. 6.1.1]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18}) which accomplish these tasks.
-      However, none of these axioms see any fixed-point information, and thus cannot be used to prove our main results.
+      The power cofibration axiom % along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
+      is sufficient for the construction of a variety of \textit{projective} model structures (resp. semi-model categories)
+      on categories of algebraic objects enriched in $\sSet$ (resp. in more general monoidal model categories),
+      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (resp. \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
+      % It is quite restrictive, and several more general conditions have been developed
+      % (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
+      % % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
+      % which accomplish these tasks.
+      However, neither this axiom nor its variants
+      (e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18}))
+      see any fixed-point information, and thus cannot be used to prove our main results.
+      Instead, cofibrant symmetric pushout powers is explicitly designed to work in the context of genuine equivariant homotopy theory.
+      % We replace the power cofibration axiom % and the monoid axiom
+      % with
+      % cofibrant symmetric pushout powers, % and the \textit{global monoid axiom} of \cite[Defn. 3.6]{BP_HGOP}, respectively, both
+      % designed explicitly to work in the context of genuine equviariant homotopy theory.
 
-      We replace the power cofibration axiom and the monoid axiom with
-      cofibrant symmetric pushout powers and the \textit{global monoid axiom} of \cite[Defn. 3.6]{BP_HGOP}, respectively,
-      \todo[inline]{should we add the global monoid axiom to this paper?}
-      both designed explicitly to work in the context of genuine equviariant homotopy theory.
+      % In the semi-model structure case,
+      % the monoid axiom is no longer necessary,
+      % as we can reduce to Proposition \eqref{BIQUILLENG PROP} instead.
+      % This is reflected by
+      % the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
+      % and addressed in \cite[Remark 1.16]{BP_HGOP}.
 
-      In the semi-model structure case,
-      the monoid axiom is no longer necessary;
-      this is reflected by
-      the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
-      \cite[Remark 1.16]{BP_HGOP},
-      and its absence from the semi-model case of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}. 
+
       
-      COME BACK
-      
-      % the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
+      % ---------- the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
       % re they need some sort of monoid axiom as well
       
       % or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
