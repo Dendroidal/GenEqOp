@@ -99,8 +99,12 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	
 	Our previous experience is that ``iff'' seems to be an acceptable shorthand in publication, and that is our preference,
 	but we do not have a strong objection to changing it.
-	
-	\item[8.] The meaning of the term ``family''
+
+        \item[4.] Replaced instances of $G \geq H \to \Sigma_n$ with less abbreviated notation throughout the paper.
+        
+        \item[7.] Gave a heuristic definition of the $G$-action on the norm $N^X R$, as well as a formal definition using the graph subgroup $\Gamma_X$.
+
+        \item[8.] The meaning of the term ``family''
 	was already spelled out the first time the term was used.
 
 	\item[10.] we are not sure why the comment 
@@ -112,11 +116,16 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	can't be used to obtain an Elmendorf-Piacenza style theorem if one wants $\mathsf{Op}^G$ to care about norm maps.
 	Nonetheless, just to be safe, we've rephrased the comment to reiterate that we are discussing what is needed to obtain
 	an Elmendorf-Piacenza theorem.
+
+  \item[13.] Formally defined the $H$-action on $\O(X)$ as the restriction of $\O(n)$ along the map $H \to \Gamma_X \leq G \times \Sigma_n$.
+        
+  \item[15.] Clarified references and definition of semi-model structures we require for this paper.
+        The notion of semi-model structure we use was originally introduced in the unpublished \cite{Spi01} as a \textit{$J$-semi model structure},
+        which agrees with the notion of a semi-model structure from \cite{WY18} for $\mathcal M = \**$.
+        For non-trivial $\mathcal M$, the notions in \cite{Spi01} and \cite{WY18} do not agree;
+        this is discussed further in comment (71.).
+
 	
-
-	\item[15.] Clarified references and definition of semi-model structures we are using. 
-	%In particular, we are using the (relative) notion as described in \cite{WY15}, and added a footnote comparing this to the stronger notion of a $J$-semi-model structure from \cite{Spi01}.
-
 	\item[16.] Concerning Theorem \ref{MAINEXIST2 THM},
 	we are unsure as to why 
 	having different $\mathcal{F}$ determine
@@ -130,18 +139,6 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	$\mathcal{V}^{\mathsf{O}_{G}^{op}}$
 	that ``take the value $\emptyset$ away from $\mathcal{F}$''.
 	Maybe we are thinking of different ``classical cases''? 
-	
-
-	\item[19.] Added a justification for 
-	the characterization of ``independent maps in $\Omega_G$''
-	provided in Remark \ref{INDOMGALT REM}.
-	This required adding 
-	Proposition \ref{INDMAPCHAR PROP},
-	which provides an alternative characterization of \emph{independent maps}
-	(than that in \cite[Def. 5.28]{Pe17})
-	which is better suited for the discussion in this paper.
-	Suitably altered the proof of Proposition \ref{PLANARPULL PROP}
-	to refer to Proposition \ref{INDMAPCHAR PROP}
 	
 	\item[21.] we are unaware of any reference for Props. 
 	\ref{FIBERKANMAP PROP} and \ref{GROTHSTAB PROP}.
@@ -173,7 +170,18 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	but this is already built into the definition of 
 	$\mathsf{O}_G$ given in the introduction to
 	\S \ref{PLANAR_SECTION}.
-	
+
+  \item[33.] Added a justification for 
+	the characterization of ``independent maps in $\Omega_G$''
+	provided in Remark \ref{INDOMGALT REM}.
+	This required adding 
+	Proposition \ref{INDMAPCHAR PROP},
+	which provides an alternative characterization of \emph{independent maps}
+	(than that in \cite[Def. 5.28]{Pe17})
+	which is better suited for the discussion in this paper.
+	Suitably altered the proof of Proposition \ref{PLANARPULL PROP}
+	to refer to Proposition \ref{INDMAPCHAR PROP}
+        
 	\item[35.] more detail has been added to Example \ref{ROOTPULL EX}, hopefully making it easier to understand 
 	how $\tau^{\**}(T)$ and $\pi^{\**}S$ are obtained.
 	
@@ -330,10 +338,10 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	\item[71.] 
 	Concerning the semi-model structure analogue of
 	\cite[Thm. 11.3.2]{Hi03}
-	(mentioned in the proof of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}).
+	(mentioned in the proof of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}):
 	
 	Unfortunately, Spitzweck's notion
-	of $J$-semi-model structure in \cite{Spi01}
+	of $J$-semi-model structure over $\mathcal M$ in \cite{Spi01}
 	does not quite match the definition
 	of semi-model structure
 	we are using
@@ -341,7 +349,7 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	so while \cite[Thm. 2]{Spi01}
 	is indeed an analogue of \cite[Thm. 11.3.2]{Hi03},
 	it features some extra technical conditions concerning cofibrancy.
-	Namely, the \emph{definition} of the $J$-semi-model structures of \cite{Spi01}
+	Namely, the \emph{definition} of the $J$-semi-model structure over $\mathcal M$ from \cite{Spi01}
 	includes the assumption
 	that transferred cofibrations between cofibrant objects forget to cofibrations.
 	For example,
@@ -369,7 +377,7 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 %        After accounting for this difference (i.e. modifying the hypotheses to remove the condition on $\mathbb F I$-cells), the analogue result is \cite[Thm. 2]{Spi01}.
 %        The relevant observation is that the proof of \cite[Thm. 2]{Spi01} is completely analogous to the proof of \cite[Thm. 11.3.2]{Hi03}.
         
-	For clarify, we hence spelled out the ``natural analogue result'' of \cite[Thm. 11.3.2]{Hi03} we had in mind
+	For clarity, we hence spelled out the ``natural analogue result'' of \cite[Thm. 11.3.2]{Hi03} we had in mind
 	and added a footnote mentioning \cite[Thm. 2]{Spi01} as yet another variant of \cite[Thm. 11.3.2]{Hi03}.
 	
 	
