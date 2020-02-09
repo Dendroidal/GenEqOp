@@ -509,7 +509,7 @@ The key observation at the source of the work in
 \cite{BH15} is then that, operadically, 
 norm maps are encoded by the graph fixed points 
 appearing in \eqref{GENEOPEQ EQ}.
-More explicitly, noting that for $H \leq G$, an $H$-set $X$ with $n$ elements 
+More explicitly, noting that, for $H \leq G$, an $H$-set $X$ with $n$ elements 
 is encoded by a
 % partial
 homomorphism 
@@ -517,8 +517,9 @@ $H \to \Sigma_n$,
 one obtains an associated \textit{graph subgroup}
 $\Gamma_X \leq G \times \Sigma_n$,
 \index{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$}
-% $\Gamma_X \cap \Sigma_n =\{\**\}$,
-well defined up to conjugation. % (see Definition \ref{GRAPH DEF}, Remark \ref{GRAPH REM}).
+$\Gamma_X \cap \Sigma_n =\{\**\}$,
+well defined up to conjugation. 
+% (see Definition \ref{GRAPH DEF}, Remark \ref{GRAPH REM}).
 The norm $N^X R$ can then be realized as the $H$-spectrum given by
 restricting the natural $G \times \Sigma_n$-action on $R^{\wedge n}$ along the homomorphism
 \begin{equation}
@@ -688,8 +689,7 @@ the many types of $N \mathcal{F}$-operads.
 
 As such, to obtain an Elemendorf-Piacenza Theorem
 in the context of operads with norm maps we will need to replace 
-% $\mathsf{Top}^{\mathsf{O}_G^{op}}$
-$\mathsf{Op}^{\mathsf{O}_G^{op}}$
+$\mathsf{Top}^{\mathsf{O}_G^{op}}$
 with a category
 $\mathsf{Op}_G$
 \index{categories!OpG@$\mathcal P \in \Op_G$}
@@ -1069,16 +1069,17 @@ we mean the notion in
   We note that the role of $\mathcal M$ in \cite[Def. 2.2.1]{WY18}
   is auxiliary,
   as one is always free to replace $\mathcal M$ 
-  with the terminal category, 
-  recovering the definition of a \textit{$J$-semi-model structure (over $\**$)} from the unpublished
-  \cite[Defn. 1]{Spi01};
-  the purpose of choosing other $\mathcal{M}$ 
+  with the terminal category $\**$, 
+  recovering the notion of a \textit{$J$-semi-model structure (over $\**$)} from \cite[Def. 1]{Spi01}.
+  In practice,
+  the purpose of choosing $\mathcal{M} \neq \**$
+  in \cite{WY18}
   is that the existence of the
   semi-model structure on $\mathcal D$ therein
-  is often established via transfer from $\mathcal{M}$.
-  We warn the reader that for non-trivial $\mathcal M$,
-  the notion from \cite{Spi01}
-  is significantly more demanding than the one from \cite{WY18}.
+  is typically established via transfer from $\mathcal{M}$.
+  We also caution that, when $\mathcal{M} \neq \**$,
+  the notion in \cite{Spi01}
+  is more demanding than that in \cite{WY18}.
 },
 %(see also \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY18} recovers that from \cite{Fre09} by choosing the model category $\mathcal M$ in \cite[\S 2.2]{WY18} to be the unique model structure on the terminal category.}),
 which relaxes the definition of model structure by requiring that some of the axioms need only apply
@@ -9729,9 +9730,17 @@ conditions
 (which are (iii) and (iv) in our main theorems)
 to Definitions \ref{CELL DEF} and \ref{COFSYMPUSHPOW},
 and collect the properties used in this section
-in the following.
-
-
+in the following remark
+%
+(note that, since $\V^G_{\text{gen}}$
+has more (trivial) cofibrations than 
+$\V^G_{\mathcal{F}}$ for any $\F$,
+one can replace the model structures in
+Propositions \ref{FGTRIGHT PROP},
+\ref{FGTLEFT PROP}, 
+\ref{BIQUILLENG PROP}, 
+\ref{POWERF PROP}
+and \eqref{EXTERINTADJ EQ} with genuine ones).
 
 
 % \begin{remark}\label{GENCOFGEN REM}
@@ -9801,7 +9810,7 @@ has cellular fixed points (Definition \ref{CELL DEF}).
 		\]
 		are left Quillen functors. 
 	\item \label{TENSORLEFT_ITEM}
-            \eqref{EXTERINTADJ EQ} says that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
+            \eqref{EXTERINTADJ EQ} implies that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
             \[
                   \V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
                   \xrightarrow{\otimes}
@@ -10784,9 +10793,10 @@ in Definition \ref{GENUINEMS_DEF}
 \end{definition}
 
 
+This section will establish some useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures.
 
-% We start by strengthening the 
-% cellularity conditions in Definition \ref{CELL DEF}.
+We start by strengthening the 
+cellularity conditions in Definition \ref{CELL DEF}.
 
 \begin{proposition}\label{STRONGCELL PROP}
 	Let $\mathcal{V}$ be a cofibrantly generated model category with cellular fixed points. Then:
@@ -10833,11 +10843,6 @@ Def. \ref{CELL DEF} (i). We note that (ii) also includes an obvious base case $X
 \end{proof}
 
 
-This section will establish some useful properties of the $\mathcal{V}^G_{\mathcal{F}}$ model structures.
-\begin{remark}
-      We note that the conclusions of Propositions \ref{FGTRIGHT PROP}, \ref{FGTLEFT PROP}, \ref{BIQUILLENG PROP}, \ref{LTIMESPRODINC PROP}, and \ref{POWERF PROP} below
-      in particular hold if we consider genuine equivariant model structures everywhere.
-\end{remark}
 
 
 \begin{proposition}\label{FGTRIGHT PROP}
@@ -10991,21 +10996,19 @@ $\bar{\mathcal{F}}$ is closed under conjugation.
 
 
 \begin{proof}
-% 	A choice $\{a\}$ of double coset representatives
-% 	of $H \backslash G /\bar{H}$
-% 	gives orbit representatives
-% 	$\left\{([e],[a])\right\}$ of
-% 	$G/H \times G/\bar{H}$,
-% 	yielding the formula
-% 	$G/H \times G/\bar{H}
-% 	\simeq 
-% 	\coprod_{[a]\in H \backslash G /\bar{H}}
-% 	{G/H\cap \bar{H}^a}
-% 	$.
-% %
-%	Hence
-        As $G/H \times G/ \bar H \simeq G \cdot_H \mathsf{res}^G_H G/\bar H$,
-        the double coset formula yields
+	A choice $\{a\}$ of double coset representatives
+	of $H \backslash G /\bar{H}$
+	gives $G$-orbit representatives
+	$\left\{([e],[a])\right\}$ of
+	$G/H \times G/\bar{H}$,
+	yielding the formula
+	$G/H \times G/\bar{H}
+	\simeq 
+	\coprod_{[a]\in H \backslash G /\bar{H}}
+	{G/H\cap \bar{H}^a}
+	$.
+%
+	Hence
 \[
 	\left(G/H \cdot f\right) \square \left(G/\bar{H} \cdot g\right)
 		\simeq
@@ -11799,9 +11802,9 @@ $\Gamma$ is a $G$-graph subgroup iff it can be written as
 	(h,\varphi(h)) : h \in H \leq G
 	\}
 \]
-for some $H \leq G$ and 
-% partial 
-homomorphism $H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
+for some partial homomorphism $H \xrightarrow{\varphi} \Sigma$
+for $H \leq G$, 
+thus motivating the terminology.
 \end{remark}
 
 
@@ -11931,14 +11934,14 @@ more generally, the families of $G$-trees
 $\Omega_{\mathcal{F}}$ 
 of Definition \ref{FTREE DEF}. 
 
-First, note that a
-% partial
-homomorphism
-$H \to \Sigma_n$, for $H \leq G$,
-defines an $H$-action on the $n$-corolla $C_n \in \Sigma$
-and hence, by choosing an arbitrary order of 
-$G/H$ and coset representatives $g_i$ for $G/H$, a $G$-corolla
-$(g_i C_n)_{[g_i] \in G/H}$ in $\Sigma_G$. The following is then elementary.
+First, note that a partial homomorphism
+$H \to \Sigma_n$ for $H \leq G$
+defines an $H$-action on the $n$-corolla $C_n \in \Sigma$.
+Thus, by choosing an arbitrary order of 
+$G/H$ and coset representatives $g_i$ for $G/H$,
+one obtains a $G$-corolla
+$(g_i C_n)_{[g_i] \in G/H}$ in $\Sigma_G$.
+The following is then elementary.
 
 
 \begin{lemma}\label{FAMILY_COROLLAS_LEM}
@@ -11992,20 +11995,11 @@ or $\Sigma_\F$.
 Note that a $G$-corolla $(C_i)_{i \in I}$
 is in $\Sigma_{\mathcal{F}}$
 iff
-for some (and thus all) 
-$i \in I$,
-the graph subgroup associated to the homomorphism
-$H_i \to \Sigma_n$,
-which defines the action of the stabilizer $H_i \leq G$ of $i \in I$ on $C_i$,
-is in $\mathcal F_n$,
-% encoding the action of the stabilizer
-% $H_i \leq G$ of $i \in I$ on $C_i$
-% is given by a
-% % partial
-% homomorphism
-% $H_i \to \Sigma_n$
-% with associated graph subgroup in $\mathcal{F}_n$.
-
+for some (and thus all) $i \in I$
+the action of the stabilizer $H_i$ on $C_i$
+is given by a homomorphism
+$H_i \to \Sigma_n$ that encodes a group in $\mathcal{F}_n$.
+ 
 
 In what follows, given a tree with an $H$-action
 $T \in \Omega^H$,
@@ -12019,7 +12013,7 @@ Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with aut
 	Write $\mathcal{F}_T$ for the collection of $G$-graph subgroups of 
 	$G \times \Sigma_T$ encoded by partial homomorphisms
 	$H \to \Sigma_T$, for varying $H \leq G$,
-        such that the associated $G$-tree
+	such that the associated $G$-tree
 	$G \cdot_H T$ is a $\mathcal{F}$-tree
 	(cf. Definition \ref{FTREE DEF}).
 	
@@ -12055,7 +12049,7 @@ is a left Quillen functor.
 
 \begin{remark}\label{UNPACKFTYPE REM}
 Unpacking definitions, a partial homomorphism 
-$H \to \Sigma_T$, for $H \leq G$,
+$H \to \Sigma_T$ for $H \leq G$
 encodes a subgroup in $\mathcal{F}_T$
 iff, for each vertex $v= ( e^{\uparrow} \leq e)$ of $T$ with 
 $H_e \leq H$ the
@@ -12152,11 +12146,11 @@ As for the condition
 	\end{equation}
 where $\lambda - \{i\}$ denotes the induced partition of 
 $\{1,\cdots,n\} - \{i\}$.
-Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
+Noting that the intersection subgroup inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
 we see that this is the graph subgroup
-encoded by the restriction $H_i \to \Sigma_T$ of the action of $H$ on $T$,
+encoded by the restriction $H_i \to \Sigma_T$,
 where $H_i \leq H$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
 But since for any edge $e \in T_i$ its isotropy $H_e$ 
 (cf. \eqref{PARTIALHOMEDGE EQ}) is a subgroup of $H_i$, the induction hypothesis implies that \eqref{KEYLEMMAGECOR EQ}
