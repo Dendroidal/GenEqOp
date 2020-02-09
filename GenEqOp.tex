@@ -457,7 +457,7 @@ In contrasting
 we note that 
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
-$H \to \Sigma_n$ for some $H \leq G$,
+$H \to \Sigma_n$ for varying $H \leq G$,
 and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
@@ -487,13 +487,16 @@ Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements,
 the corresponding \textit{norm} is another $G$-spectrum $N^X R$
 whose underlying spectrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$,
-but which is equipped with a ``mixed''$G$-action that combines the actions on $R$ and $X$ in the natural way.
+but which is equipped with a ``mixed'' $G$-action,
+acting diagonally on $R$ and permuting the indices via the action on $X$.
+% (a formal definition is given below).
+% combines the actions on $R$ and $X$ in the natural way.
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
 ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
-	N^X R \to R.
+	N^X \! R \to R.
 \end{equation}
 Furthermore, by reducing structure on $R$ the maps \eqref{NORMMAPS EQ} are also defined when $X$ is only an $H$-set for some subgroup $H \leq G$, and the maps \eqref{NORMMAPS EQ}
 then satisfy a number of 
@@ -507,12 +510,24 @@ The key observation at the source of the work in
 norm maps are encoded by the graph fixed points 
 appearing in \eqref{GENEOPEQ EQ}.
 More explicitly, noting that for $H \leq G$, an $H$-set $X$ with $n$ elements 
-is encoded by a partial homomorphism 
+is encoded by a
+% partial
+homomorphism 
 $H \to \Sigma_n$,
-one obtains an associated graph subgroup 
+one obtains an associated \textit{graph subgroup}
 $\Gamma_X \leq G \times \Sigma_n$,
-% \index{subgroups!GammaX@$\Gamma_X$}
-$\Gamma_X \cap \Sigma_n =\{\**\}$, well defined up to conjugation. It then follows that for $R$ an 
+\index{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$}
+% $\Gamma_X \cap \Sigma_n =\{\**\}$,
+well defined up to conjugation. % (see Definition \ref{GRAPH DEF}, Remark \ref{GRAPH REM}).
+The norm $N^X R$ can then be realized as the $H$-spectrum given by
+restricting the natural $G \times \Sigma_n$-action on $R^{\wedge n}$ along the homomorphism
+\begin{equation}
+      \label{GRAPHMAP_EQ}
+      H \xrightarrow{\cong} \Gamma_X \leq G \times \Sigma_n
+\end{equation}
+Moreover, we have an equivalence of mapping spectra $\Hom(R^{\wedge n}, R)^{\Gamma_X} \simeq \Hom^H(N^X R, R)$.
+
+It then follows that for $R$ an 
 $\mathcal{O}$-algebra, maps of the form \eqref{NORMMAPS EQ}
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
@@ -672,8 +687,12 @@ and thereby forgo the ability to distinguish
 the many types of $N \mathcal{F}$-operads.
 
 
-In order to work in the context of operads with norm maps we will need to replace 
-$\mathsf{Top}^{\mathsf{O}_G^{op}}$
+In order to obtain an Elmendorf-Piacenza Theorem 
+% work
+in the context of operads with norm maps,
+we will need to replace 
+% $\mathsf{Top}^{\mathsf{O}_G^{op}}$
+$\mathsf{Op}^{\mathsf{O}_G^{op}}$
 with a category
 $\mathsf{Op}_G$
 \index{categories!OpG@$\mathcal P \in \Op_G$}
@@ -823,7 +842,14 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-where $\O(X)$ for an $H$-set (resp. $K$-set) $X$ denotes $\O(|X|)$ together with a suitably mixed $H$-action ($K$-action).
+where for any $H$-set $X$ with $n$ elements, $H \leq G$,
+$\O(X)$ denotes
+$\O(n)$ together with a mixed $H$-action,
+given by restricting the natural $G \times \Sigma_{n}$-action on $\O(n)$
+along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are ignoring the lack of total order on $X$.
+  Formally, $\O$ and $\P$ are indexed over the category $\Sigma_G$ of ``planar $G$-corollas'', which encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
+In particular, $\O(X)^H \simeq \O(n)^{\Gamma_X}$. 
+
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 \eqref{INTFIXPTCOMP EQ}
@@ -10937,7 +10963,7 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       the monoid axiom is no longer necessary;
       this is reflected by
       the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
-      \cite[Remark 1.16]{BP_HGO},
+      \cite[Remark 1.16]{BP_HGOP},
       and its absence from the semi-model case of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}. 
       
       COME BACK
@@ -11628,7 +11654,9 @@ $\Gamma$ is a $G$-graph subgroup iff it can be written as
 	(h,\varphi(h)) : h \in H \leq G
 	\}
 \]
-for some $H \leq G$ and partial homomorphism $H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
+for some $H \leq G$ and 
+% partial 
+homomorphism $H \xrightarrow{\varphi} \Sigma$, thus motivating the terminology.
 \end{remark}
 
 
@@ -11758,8 +11786,10 @@ more generally, the families of $G$-trees
 $\Omega_{\mathcal{F}}$ 
 of Definition \ref{FTREE DEF}. 
 
-First, note that a partial homomorphism
-$H \to \Sigma_n$ for some $H \leq G$
+First, note that a
+% partial
+homomorphism
+$H \to \Sigma_n$, for $H \leq G$,
 defines an $H$-action on the $n$-corolla $C_n \in \Sigma$
 and hence, by choosing an arbitrary order of 
 $G/H$ and coset representatives $g_i$ for $G/H$, a $G$-corolla
@@ -11819,11 +11849,17 @@ is in $\Sigma_{\mathcal{F}}$
 iff
 for some (and thus all) 
 $i \in I$,
-the action of the stabilizer
-$H_i \leq G$ of $i \in I$ on $C_i$
-is given by a partial homomorphism
-$H_i \to \Sigma_n$
-with associated graph subgroup in $\mathcal{F}_n$.
+the graph subgroup associated to the homomorphism
+$H_i \to \Sigma_n$,
+which defines the action of the stabilizer $H_i \leq G$ of $i \in I$ on $C_i$,
+is in $\mathcal F_n$,
+% encoding the action of the stabilizer
+% $H_i \leq G$ of $i \in I$ on $C_i$
+% is given by a
+% % partial
+% homomorphism
+% $H_i \to \Sigma_n$
+% with associated graph subgroup in $\mathcal{F}_n$.
 
 
 In what follows, given a tree with an $H$-action
@@ -11837,7 +11873,7 @@ for some arbitrary (and inconsequential for the remaining discussion) choice of 
 Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with automorphism group $\Sigma_T$.
 	Write $\mathcal{F}_T$ for the collection of $G$-graph subgroups of 
 	$G \times \Sigma_T$ encoded by partial homomorphisms
-	$H \to \Sigma_T$ for some $H \leq G$
+	$H \to \Sigma_T$, for varying $H \leq G$,
         such that the associated $G$-tree
 	$G \cdot_H T$ is a $\mathcal{F}$-tree
 	(cf. Definition \ref{FTREE DEF}).
@@ -11874,7 +11910,7 @@ is a left Quillen functor.
 
 \begin{remark}\label{UNPACKFTYPE REM}
 Unpacking definitions, a partial homomorphism 
-$H \to \Sigma_T$ with $H \leq G$
+$H \to \Sigma_T$, for $H \leq G$,
 encodes a subgroup in $\mathcal{F}_T$
 iff, for each vertex $v= ( e^{\uparrow} \leq e)$ of $T$ with 
 $H_e \leq H$ the
