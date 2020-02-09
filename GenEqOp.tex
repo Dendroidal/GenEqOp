@@ -457,7 +457,7 @@ In contrasting
 we note that 
 the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
 are readily shown to be precisely the graphs of partial homomorphisms 
-$H \to \Sigma_n$ for varying $H \leq G$,
+$H \to \Sigma_n$ for varying subgroups $H \leq G$,
 and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
@@ -487,8 +487,8 @@ Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements,
 the corresponding \textit{norm} is another $G$-spectrum $N^X R$
 whose underlying spectrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$,
-but which is equipped with a ``mixed'' $G$-action,
-acting diagonally on $R$ and permuting the indices via the action on $X$.
+but which is equipped with a ``mixed'' $G$-action that
+acts diagonally on $R$ and permutes the indices via the action on $X$.
 % (a formal definition is given below).
 % combines the actions on $R$ and $X$ in the natural way.
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
@@ -843,8 +843,8 @@ where for any $H$-set $X$ with $n$ elements, $H \leq G$,
 $\O(X)$ denotes
 $\O(n)$ together with a mixed $H$-action,
 given by restricting the natural $G \times \Sigma_{n}$-action on $\O(n)$
-along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are ignoring the lack of total order on $X$.
-  Formally, $\O$ and $\P$ are indexed over the category $\Sigma_G$ of ``planar $G$-corollas'', which encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
+along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are only up to isomorphism, as there is no total order given on $X$.
+  Formally, we are detailing $i_{\**}\O$, which is indexed over the category $\Sigma_G$ of ``planar $G$-corollas''; these encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
 In particular, $\O(X)^H \simeq \O(n)^{\Gamma_X}$. 
 
 We note that the inputs 
@@ -11934,7 +11934,7 @@ of Definition \ref{FTREE DEF}.
 First, note that a
 % partial
 homomorphism
-$H \to \Sigma_n$, for $H \leq G$,
+$H \to \Sigma_n$, for a subgroup $H \leq G$,
 defines an $H$-action on the $n$-corolla $C_n \in \Sigma$
 and hence, by choosing an arbitrary order of 
 $G/H$ and coset representatives $g_i$ for $G/H$, a $G$-corolla
@@ -11996,7 +11996,7 @@ for some (and thus all)
 $i \in I$,
 the graph subgroup associated to the homomorphism
 $H_i \to \Sigma_n$,
-which defines the action of the stabilizer $H_i \leq G$ of $i \in I$ on $C_i$,
+defining the action of the stabilizer $H_i \leq G$ of $i$ on $C_i$,
 is in $\mathcal F_n$,
 % encoding the action of the stabilizer
 % $H_i \leq G$ of $i \in I$ on $C_i$
@@ -12119,11 +12119,13 @@ $G \times \Sigma_T \to G \times \Sigma_{\lambda} \to
 
 
 \begin{proof} The argument is by induction on the decomposition
-$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$
-with the base case, that of a corolla, being immediate.
-
-	Consider now a partial homomorphism $H \to \Sigma_T$, $H \leq G$, encoding a 
-	$G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
+      $T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$
+      with the base case, that of a corolla, being immediate.
+      
+      Consider now a
+      % partial
+      homomorphism $H \to \Sigma_T$ with $H \leq G$, encoding a 
+      $G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
 	The condition that $\Gamma \in \left(\pi_{G \times \Sigma_n}\right)^{\**}(\mathcal{F}_n)$ states that the composite $H \to \Sigma_T \to \Sigma_n$ is in $\mathcal{F}_n$, 
 	and this is precisely the condition \eqref{PARTIALHOMEDGE EQ} in Remark \ref{UNPACKFTYPE REM}
 	for $e=r$ the root of $T$.
@@ -12152,7 +12154,7 @@ As for the condition
 	\end{equation}
 where $\lambda - \{i\}$ denotes the induced partition of 
 $\{1,\cdots,n\} - \{i\}$.
-Noting that the intersection subgroup  inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
+Noting that the intersection subgroup inside $\pi_{G \times \Sigma_{T_i}}$ in \eqref{KEYLEMMAGECOR EQ} can be rewritten as 
 $\Gamma \cap \pi_{\Sigma_n}^{-1}
 (\Sigma_{\{i\}} \times \Sigma_{\{1,\cdots,n\} - \{i\}})$,
 we see that this is the graph subgroup
