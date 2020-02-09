@@ -9686,22 +9686,22 @@ $\mathsf{Op}_G(\mathcal{V})$.
 
 We begin by recalling the notion of genuine equivariant model structures.
 
-\begin{definition}
-      \label{GENUINEMS_DEF}
-      Let $\Sigma$ be a group, and $\V$ a model category.
+\begin{definition}\label{GENUINEMS_DEF}
+      Let $G$ be a group, and $\V$ a model category.
       The \textit{genuine model structure} (if it exists)
-      on $\mathcal{V}^{\Sigma}$,
-      denoted $\mathcal{V}^{\Sigma}_{\text{gen}}$,
+      on $\mathcal{V}^{G}$,
+      denoted $\mathcal{V}^{G}_{\text{gen}}$,
       has as weak equivalences (resp. fibrations)
       those maps $X \to Y$ such that 
       $X^H \to Y^H$ is a weak equivalence (fibration)
-      for all $H \leq \Sigma$.
+      for all $H \leq G$.
 
-      More generally, given any family 
-      (cf. \S \ref{INDEXING_SECTION})
-      $\F$ of subgroups of $\Sigma$,
-      the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^\Sigma_{\F}$,
-      has weak equivalences and fibrations defined by restricting $H$ to $\F$.
+	More generally, for a family 
+	$\F$ of subgroups of $G$
+	(cf. \S \ref{INDEXING_SECTION}),
+      the \textit{$\F$-model structure} (if it exists), denoted $\mathcal V^G_{\F}$,
+      has weak equivalences and fibrations defined
+      similarly but with $H \in \F$.
 \end{definition}
 
 In particular, when $\F$ 
@@ -9735,7 +9735,7 @@ in the following remark
 (note that, since $\V^G_{\text{gen}}$
 has more (trivial) cofibrations than 
 $\V^G_{\mathcal{F}}$ for any $\F$,
-one can replace the model structures in
+one can replace all model structures in
 Propositions \ref{FGTRIGHT PROP},
 \ref{FGTLEFT PROP}, 
 \ref{BIQUILLENG PROP}, 
@@ -9745,21 +9745,21 @@ and \eqref{EXTERINTADJ EQ} with genuine ones).
 
 % \begin{remark}\label{GENCOFGEN REM}
 % The genuine model structure
-% $\mathcal{V}^{\Sigma}_{\text{gen}}$
-% and the $\F$-model structure for a family $\V^\Sigma_\F$
+% $\mathcal{V}^{G}_{\text{gen}}$
+% and the $\F$-model structure for a family $\V^G_\F$
 % exist whenever $\mathcal{V}$ has
 % \textit{cellular fixed points}.
 % The exact condition, originally from \cite{Gui06} and updated in \cite{Ste16}, can be found in Definition \ref{CELL DEF}. Moreover, note that this is condition (iii) in our main theorems.
 % For our immediate purposes, however, we will only need to know that 
-% $\mathcal{V}^{\Sigma}_{\text{gen}}$
+% $\mathcal{V}^{G}_{\text{gen}}$
 % is then cofibrantly generated with 
 % generating (trivial) cofibrations the maps
-% $\Sigma/H \cdot i$
-% for $H\leq \Sigma$
+% $G/H \cdot i$
+% for $H\leq G$
 % and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
 
-% More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $\Sigma$, there then also exists a model structure 
-% $\mathcal{V}^{\Sigma}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
+% More generally, given a family $\mathcal{F}$ (or even collection of subgroups) of $G$, there then also exists a model structure 
+% $\mathcal{V}^{G}_{\mathcal{F}}$ with weak equivalences, fibrations and generating (trivial) cofibrations all described by restricting $H$ to 
 % $\mathcal{F}$.
 % \end{remark}
 
@@ -9773,48 +9773,48 @@ has cellular fixed points (Definition \ref{CELL DEF}).
 \begin{enumerate}[label = (\roman*)]
 	\item \label{CELL_ITEM}
 		By \cite[Prop. 2.6]{Ste16},
-		the model structure $\V^\Sigma_{\text{gen}}$
+		the model structure $\V^G_{\text{gen}}$
 		exists and is cofibrantly generated
 		with generating (trivial) cofibrations
 		the maps 
-        $\Sigma/H \cdot i$
-        for $H\leq \Sigma$ 
+        $G/H \cdot i$
+        for $H\leq G$ 
         and $i$ a generating (trivial) cofibration of $\mathcal{V}$.
         Likewise, for a family $\mathcal{F}$
-        the model structure $\mathcal{V}^{\Sigma}_{\mathcal{F}}$
+        the model structure $\mathcal{V}^{G}_{\mathcal{F}}$
         exists and is cofibrantly generated, 
         with generating (trivial) cofibrations
-        described analogously by restricting to $H \in \mathcal{F}$.
+        described analogously but with $H \in \mathcal{F}$.
         
 	\item \label{GROUPHOM_ITEM}
 		Propositions \ref{FGTRIGHT PROP} and
 		\ref{FGTLEFT PROP} imply that for a group homomorphism 
-		$\phi: \Sigma \to \bar \Sigma$ 
+		$\phi: G \to \bar G$ 
 		the functors
 		\[
 		\begin{tikzcd}
-			\bar{\Sigma} \cdot_{\Sigma} (\minus)
+			\bar{G} \cdot_{G} (\minus)
 			\colon
-			\mathcal{V}_{\text{gen}}^{\Sigma}
+			\mathcal{V}_{\text{gen}}^{G}
 			\ar{r}
 		&
-			\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+			\mathcal{V}_{\text{gen}}^{\bar{G}}
 		&
-			\mathsf{res}^{\bar{\Sigma}}_{\Sigma}
+			\mathsf{res}^{\bar{G}}_{G}
 			\colon
-			\mathcal{V}_{\text{gen}}^{\bar{\Sigma}}
+			\mathcal{V}_{\text{gen}}^{\bar{G}}
 			\ar{r}
 		&
-			\mathcal{V}_{\text{gen}}^{\Sigma}
+			\mathcal{V}_{\text{gen}}^{G}
 		\end{tikzcd}
 		\]
 		are left Quillen functors. 
 	\item \label{TENSORLEFT_ITEM}
             \eqref{EXTERINTADJ EQ} implies that the monoidal product on $\mathcal{V}$ lifts to a left Quillen bifunctor
             \[
-                  \V^{\Sigma}_{\text{gen}} \times \V^{\bar \Sigma}_{\text{gen}} 
+                  \V^{G}_{\text{gen}} \times \V^{\bar G}_{\text{gen}} 
                   \xrightarrow{\otimes}
-                  \V^{\Sigma \times \bar \Sigma}_{\text{gen}}.
+                  \V^{G \times \bar G}_{\text{gen}}.
             \]
 	\item \label{CSPP_ITEM}
 		If additionally $\V$ has cofibrant symmetric pushout powers
@@ -9827,8 +9827,8 @@ has cellular fixed points (Definition \ref{CELL DEF}).
 
 \begin{remark}\label{ALLCOF REM}
         A skeletal filtration argument shows that all objects in
-        $\mathsf{sSet}^{\Sigma}_{\text{gen}}$ and
-        $\mathsf{sSet}^{\Sigma}_{\**,\text{gen}}$
+        $\mathsf{sSet}^{G}_{\text{gen}}$ and
+        $\mathsf{sSet}^{G}_{\**,\text{gen}}$
         are cofibrant.
         Moreover, Example \ref{SSET_CSPP_EX} says that $(\mathsf{sSet},\times)$, $(\mathsf{sSet}_{\**},\wedge)$ have
         cofibrant symmetric pushout powers.
