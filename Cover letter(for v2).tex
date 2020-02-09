@@ -107,14 +107,25 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
         \item[8.] The meaning of the term ``family''
 	was already spelled out the first time the term was used.
 
-        \item[13.] Formally defined the $H$-action on $\O(X)$ as the restriction of $\O(n)$ along the map $H \to \Gamma_X \leq G \times \Sigma_n$.
-        
-	\item[15.] Clarified references and definition of semi-model structures we require for this paper.
-              The notion of semi-model structure we use was originally introduced in the unpublished \cite{Spi01} as a \textit{$J$-semi model structure},
-              which agrees with the notion of a semi-model structure from \cite{WY18} for $\mathcal M = \**$.
-              For non-trivial $\mathcal M$, the notions in \cite{Spi01} and \cite{WY18} do not agree;
-              this is discussed further in comment (71.).
+	\item[10.] we are not sure why the comment 
+	``in order to work in the context of equivariant operads with norm maps (...) we need genuine equivariant operads''
+	above \eqref{OPMULT EQ}
+	would be interpreted as saying that we can't use equivariant operads obtain the correct homotopy theory.
+	This sentence flowed directly from the last sentence of the previous paragraph, discussing why
+	$\mathsf{Op}^{\mathsf{O}_G^{op}}$
+	can't be used to obtain an Elmendorf-Piacenza style theorem if one wants $\mathsf{Op}^G$ to care about norm maps.
+	Nonetheless, just to be safe, we've rephrased the comment to reiterate that we are discussing what is needed to obtain
+	an Elmendorf-Piacenza theorem.
 
+  \item[13.] Formally defined the $H$-action on $\O(X)$ as the restriction of $\O(n)$ along the map $H \to \Gamma_X \leq G \times \Sigma_n$.
+        
+  \item[15.] Clarified references and definition of semi-model structures we require for this paper.
+        The notion of semi-model structure we use was originally introduced in the unpublished \cite{Spi01} as a \textit{$J$-semi model structure},
+        which agrees with the notion of a semi-model structure from \cite{WY18} for $\mathcal M = \**$.
+        For non-trivial $\mathcal M$, the notions in \cite{Spi01} and \cite{WY18} do not agree;
+        this is discussed further in comment (71.).
+
+	
 	\item[16.] Concerning Theorem \ref{MAINEXIST2 THM},
 	we are unsure as to why 
 	having different $\mathcal{F}$ determine
@@ -187,8 +198,8 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	\item[46.] \eqref{PIIDEFDI2 EQ} does not need natural isomorphisms on the left, i.e. the square strictly commutes. The intuition is that since degeneracies merely duplicate one layer of vertex data, they do not change the way the vertex data is planarized. 
 	
 	\item[51.] 
-	{\color{red} Need to revise proof of Lemma \ref{LANPULLCOMA LEM}
-	to improve legibility}
+	revised the proof of Lemma \ref{LANPULLCOMA LEM}
+	to explicitly describe the retraction $r$ (instead of just describing the composite $r \circ V_G$)
 	
 	the comment preceding Corollary \label{MONDEFCOR COR}
 	is indeed meant to refer to Lemma \ref{ROOTFIBPULL LEM}
@@ -197,6 +208,34 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	is needed to state Corollary \label{MONDEFCOR COR}
 	while 
 	Lemma \ref{LANPULLCOMA LEM} is needed to prove it.
+
+	\item[53.] Concerning Remark \ref{MUTMUT REM},
+	and as pointed out by the referee,
+	we do believe that all counterexamples require stumps,
+	and thus that
+	$\mathbb{F}_G \iota_{\**} \simeq 
+	\iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**}$
+	holds in the context of reduced operads
+	(on a side note, our argument does require $\V$ to satisfy most of the axioms in our main theorems, 
+	so we set $\mathcal{V}=\mathsf{Set}$ in our counterexample
+	to avoid an overstatement).
+%	
+	However, we're not sure it such a result is worth including in the paper.
+	
+	As an aside, the fact that 	
+	$\mathbb{F}_G \iota_{\**} \simeq 
+	\iota_{\**} \iota^{\**} \mathbb{F}_G \iota_{\**}$
+	holds on cofibrant objects mostly comes down to
+	Proposition \ref{FIXPT PROP} 
+	and \eqref{COMCOFOB EQ}.
+%	
+	In order to prove the reduced operad analogue result, 
+	Proposition \ref{FIXPT PROP} can be used as is, 
+	but \eqref{COMCOFOB EQ} 
+	(with $\mathcal{F}$-cofibrancy replaced with genuine cofibrancy)
+	no longer follows from Corollary \ref{FINALCOR COR}
+	and requires an entirely new proof that only works
+	for trees with no stumps.
 	
 	\item[54.] concerning weak indexing systems,
 	we find that Definition \ref{INDEXSYS DEF}
@@ -219,22 +258,21 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	(in both cases the abbreviation is mentioned immediately before the equation)
 
 	\item[58.]
-	fully spelling out the statement of
-	Proposition \ref{PIIPROPAB PROP}
-	would amount to an entire page
-	consisting of nothing other than a copy of 
-	Proposition \ref{PIIPROP PROP}
+	we've spelled out Proposition \ref{PIIPROPAB PROP}
+	a little more (this mostly came down to copying
+	diagrams in Proposition \ref{PIIPROP PROP}
 	with the symbols 
 	$\Omega^n_G$
 	replaced with 
-	$\Omega^{n,s,\lambda}_{G}$ and
-	$\Omega^{n,s,\lambda}_{G} \wr (A_j)$
-	throughout.
+	$\Omega^{n,s,\lambda}_{G}$ throughout)
 	
-	This does not seem like an efficient use of space to us, 
-	so we are wondering how much ``spelling out'' seems necessary.
-	
-	In either case, we spelled out a little more the discussion of the ``excluded cases''.
+	\item[59.] the proof of Corollary \ref{LABIDEN COR}
+	was revised to add more detail and to make
+	some arguments clear
+
+	\item[60.]
+	the confusing wording in the second paragraph of 
+	Remark \ref{NPXY_REM} has been revised
 
 	\item[62.] 
 	In order to better motivate the proof of 
@@ -356,8 +394,8 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	has been expanded
 	({\color{red} should add extra remarks somewhere about how the existence of the needed filtrations does not require $\V$ to have diagonals})
 
-        \item[74.] Added short explanations of the double coset formulas used in 
-        Propositions \ref{FGTLEFT PROP} and \ref{BIQUILLENG PROP}.
+	\item[74.] Added short explanations of the double coset formulas used in 
+	Propositions \ref{FGTLEFT PROP} and \ref{BIQUILLENG PROP}.
 
         \item[78.] added Remark \ref{CSPP_REM}, which compares the cofibrant symmetric pushout powers condition to other model categorical conditions of a similar form, and describe the utility of our definition.
 
@@ -417,9 +455,16 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	$G^{op} \times \Sigma_n$
 	({\color{red} still incomplete})
 	
+	\item (hopefully) fixed the roles of $l$ and $m$ in 
+	Proposition \ref{MONADICFUN PROP} and
+	Remark \ref{PRECOMPPOSTCOMP REM}
+	
 	\item added Remark \ref{IOTAFUNSALT REM},
 	which provides alternative formulas for
 	$\iota_{\**}$
+	
+	\item said a little more at the end of the proof of
+	Corollary \ref{IDEN COR}
 	
 	\item[28.] In the intro to \S \ref{PLANAR_SECTION}
 	we replaced the reference to 

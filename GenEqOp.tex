@@ -686,11 +686,8 @@ would require working in the context of operads \textit{without} norm maps,
 and thereby forgo the ability to distinguish 
 the many types of $N \mathcal{F}$-operads.
 
-
-In order to obtain an Elmendorf-Piacenza Theorem 
-% work
-in the context of operads with norm maps,
-we will need to replace 
+As such, to obtain an Elemendorf-Piacenza Theorem
+in the context of operads with norm maps we will need to replace 
 % $\mathsf{Top}^{\mathsf{O}_G^{op}}$
 $\mathsf{Op}^{\mathsf{O}_G^{op}}$
 with a category
@@ -712,7 +709,7 @@ Analyzing the proofs of the results in
 concerning the closure properties for indexing systems $\mathcal F$,
 a common motif emerges:
 when performing an operadic composition
-\begin{equation}
+\begin{equation}\label{OPMULT EQ}
 \begin{tikzcd}[row sep=0]
 	\O(n) \times \O(m_1) \times \cdots \times \O(m_n) \ar{r} &
 	\O(m_1 + \cdots + m_n),
@@ -2344,7 +2341,6 @@ L \colon \mathsf{Alg}_{T}(\mathcal{C})
 \end{proposition}
 
 
-
 Any monad $T$ on $\C$ induces obvious monads $T^{\times l}$ on $\C^{\times l}$.
 More generally, and 
 letting $I$ denote the identity monad,
@@ -2355,26 +2351,34 @@ determines a monad
 $T^{\times \lambda} = T^{\times \lambda_a} \times I^{\times \lambda_i}$ on $\mathcal{C}^{\times l}$.
 Here ``$a$'' stands for ``active'' and ``$i$'' for ``inert''.
 
+
 Such monads satisfy a number of compatibility conditions. 
-Firstly, if $\lambda'_a \subseteq \lambda_a$
+First, if $\lambda'_a \subseteq \lambda_a$
 there is a monad map
 $T^{\times \lambda'} \Rightarrow T^{\times \lambda}$,
 and we write $\lambda' \leq \lambda$.
-Moreover, writing $\alpha^{\**} \colon 
-\C^{\times m} \to \C^{\times l}$
+Next, writing $\alpha^{\**} \colon 
+\C^{\times l} \to \C^{\times m}$
 for the forgetful functor induced by
-a map $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$,
+a map $\alpha \colon \{1,\cdots,m\} \to \{1,\cdots,l\}$,
 one has an equality
 $T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
 \alpha^{\**} T^{\times \lambda}$,
-where $\alpha^{\**}\lambda$ is the pullback partition.
+where $\alpha^{\**}\lambda$ is the pullback partition
+$\alpha^{-1} \lambda_a \amalg \alpha^{-1} \lambda_i$.
 The following is straightforward.
 
 \begin{proposition}\label{MONADICFUN PROP}
-	Suppose $\C$ has finite coproducts and write
-	$\alpha_{!} \colon \mathcal{C}^{\times l} \to 
-	\mathcal{C}^{\times m}$
-	for the left adjoint of $\alpha^{\**}$. 
+	Suppose $\C$ has finite coproducts.
+	Let $T$ be a monad on $\C$,
+	$\alpha \colon \{1,\cdots,m\} \to \{1,\cdots,l\}$ be a map of sets,
+	and $\lambda$ be a partition $\{1,\cdots,l\} = \lambda_a \amalg \lambda_i$.
+	Write $\alpha_{!} \colon \mathcal{C}^{\times m} \to 
+	\mathcal{C}^{\times l}$
+	for the left adjoint to 
+	$\alpha^{\**} \colon \mathcal{C}^{\times l} \to 
+	\mathcal{C}^{\times m}$.
+% 	 
 	Then the map
 \begin{equation}\label{MONADFUNCTORALPHA EQ}
 	T^{\times \alpha^{\**} \lambda} \Rightarrow \alpha^{\**} T^{\times \lambda} \alpha_{!}
@@ -2382,7 +2386,7 @@ The following is straightforward.
 adjoint to the identity 
 $T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
 \alpha^{\**} T^{\times \lambda}$
-is a map of monads on $\C^{\times l}$.
+is a map of monads on $\C^{\times m}$.
 
 Hence, since $T^{\times \lambda} \alpha_!$ is a right 
 $\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module, 
@@ -2458,9 +2462,28 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 %\end{proof}
 
 \begin{remark}\label{PRECOMPPOSTCOMP REM}
-We unpack the content of \eqref{MONADFUNCTORALPHADOU EQ} when 
-$\alpha \colon \{1,\cdots,l\} \to \**$ is the unique map to the singleton $\**$, in which case we write $\alpha_{!} = \coprod$.
-We thus have commutative diagrams
+We unpack 
+%the content of 
+\eqref{MONADFUNCTORALPHADOU EQ} for 
+$\alpha \colon \{1,\cdots,m\} \to \**$ a map
+%the unique map 
+to the singleton $\**$
+with the partition making $\**$ active.
+We can then write
+$\alpha_{!} = \coprod$,
+so that 
+\eqref{MONADFUNCTORALPHADOU EQ} becomes
+$\coprod \circ T^{\times m} 
+\Rightarrow 
+T \circ \coprod$.
+For $\lambda$ any partition 
+$\{1,\cdots,m\} = \lambda_a \amalg \lambda_i$
+we thus have a map 
+$\coprod \circ T^{\times \lambda} 
+\Rightarrow 
+T \circ \coprod$
+between right $T^{\times \lambda}$-modules
+which gives commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
 \begin{tikzcd}
 	\coprod_{j \in \lambda_a} TT A_j \amalg \coprod_{j \in \lambda_i} A_j
@@ -2472,7 +2495,7 @@ We thus have commutative diagrams
 		T\left( \coprod_{j \in \lambda_a} A_j \amalg \coprod_{j \in \lambda_i} A_j \right)
 \end{tikzcd}
 \end{equation}
-for each collection $\left( A_j \right)_{j\in\underline{l}}$ in $\mathcal{C}$,
+for each collection $\left( A_j \right)_{1\leq j \leq m}$ in $\mathcal{C}^{\times m}$,
 where the vertical maps
 come from the right $T^{\times \lambda}$-module structure.
 Writing $\mathbin{\check{\amalg}}$ for the coproduct of $T$-algebras and recalling the canonical identifications 
@@ -5279,7 +5302,7 @@ $V_G(T_k) \to \cdots
 and \eqref{PIIDEFDI2 EQ} are pullback diagrams in $\mathsf{Cat}$.
 
 \item
-For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
+For $i < k \leq n$ the composite natural transformation in the diagram below is $\pi_i$.
 \begin{equation}\label{INDPI1 EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
@@ -5297,7 +5320,7 @@ For $i<k$ the composite natural transformation in the diagram below is $\pi_i$.
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-For $k< i < k+l+1$ the composite natural transformation in the diagram below is $\pi_{i}$.
+For $k< i < k+l+1 \leq n$ the composite natural transformation in the diagram below is $\pi_{i}$.
 \begin{equation}\label{INDPI2 EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
 	\Omega_{G}^{n} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
@@ -5794,7 +5817,6 @@ Lastly, one obtains identifications
 	\pi_i \wr \Omega_G^n \simeq \pi_i \quad
 	s_j \wr \Omega_G^n \simeq s_j \quad
 	\Omega_G^k \wr d_i \simeq d_{i+k+1} \quad
-	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} \quad
 	\Omega_G^k \wr s_j \simeq s_{j+k+1}
 \]
 \end{corollary}
@@ -5820,8 +5842,14 @@ compute the limit of the solid part of the diagram below.
 	\Fin \wr \Sigma_G
 \end{tikzcd}
 \]
-Associativity follows similarly. The remaining identifications are obvious.
+Associativity follows similarly. 
+The remaining identifications 
+follow from the $(-) \wr A$ analogues of 
+\eqref{INDPI1 EQ}, \eqref{INDPI2 EQ},
+and the right side of \eqref{PIIDEFDI2 EQ}.
 \end{proof}
+
+
 
 We now have all the necessary ingredients to define our monad on 
 spans.
@@ -6039,6 +6067,8 @@ Proposition \ref{PIIPROP PROP}(f).
 \end{proof}
 
 
+\renewcommand{\F}{\mathbb{F}}
+
 \subsection{The genuine equivariant operad monad} \label{FGMON SEC}
 
 
@@ -6128,7 +6158,7 @@ and the result follows.
 \end{proof}
 
 
-\begin{remark}
+\begin{remark}\label{PULLEXP REM}
 Explicitly, if $\psi \colon Y \to X$ is a map in $\mathsf{O}_G$,
 and $\tilde{T} =(T,(A_{v_{Ge}})_{V_G(T)}) \in \Omega_G^0 \wr A$ lies over $X$,
 the pullback $\psi^{\**} \tilde{T}$ is given by
@@ -6194,19 +6224,24 @@ of those objects such that $T \to U$ is the identity on roots.
 Similarly, again by Proposition \ref{FIBERKANMAP PROP},
 $V_G(T) \downarrow \Fin \wr A$
 has an initial subcategory
-\begin{equation}\label{INITCAT EQ}
+\begin{equation}\label{INITCAT EQ} 
+	\left(
+	(T_{v_{Ge}})_{V_G(T)} 
+	\downarrow_{\mathsf{F} \wr \mathsf{O}_G}
+	\mathsf{F} \wr A
+	\right)
+\simeq
+	\left(
 	\prod_{v_{Ge} \in V_G(T)} 
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
+	\right)
 \end{equation}
 of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
 \eqref{INITCAT EQ} comes together with a right retraction $r$,
 i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
 which is built using pullbacks. 
 Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
-
-{\color{red} HERE}
-
-\[
+\begin{equation}\label{RETDES EQ}
 \left(
 	(T_{v_{Ge}})_{V_G(T)}
 	\xrightarrow{\tau}
@@ -6225,9 +6260,14 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 	A_{\tau(v_{Ge})}
 	\right)
 \right)
-\]
-
-{\color{red} HERE}
+\end{equation}
+where we recall that the leftmost $\tau$
+is described by a map of sets
+$\tau \colon V_G(T) \to X$
+and maps
+$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to U_{\tau(v_{Ge})}$ in $\Sigma_G$
+and $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
+is the root functor.
 
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
@@ -6251,6 +6291,13 @@ $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run ov
 	\right)
 \end{tikzcd}
 \]
+Note that we wrote the map $\mathsf{r} \psi_{v_{Ge}}$ in $\mathsf{O}_G$
+from \eqref{RETDES EQ}
+as 
+$\psi_{Ge} \colon Ge \to G\psi(e)$,
+following the notation
+in Remarks \ref{PULLCOMP REM} and \ref{PULLEXP REM}.
+%
 Since rooted quotients are isomorphisms, the $\psi$
 and $\psi_{Ge}$ appearing above are isomorphisms, 
 and hence the natural transformation
@@ -6885,8 +6932,8 @@ and will be the subject of \S \ref{COFIB SEC}.
 
 For now, we end this section with a minimal counterexample to  the more general claim.
 
-Let $G=\mathbb{Z}_{/2}$ and 
-$Y=\** \in \mathsf{Sym}^G(\mathcal{V})$ be the singleton.
+Let $\mathcal{V}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
+$Y=\** \in \mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
 
 	When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
 	(where $C_0 \in \Sigma$ denotes the $0$-corolla),
@@ -7894,13 +7941,73 @@ and a map $(B_k) \to \alpha^{\**}(A_j)$ one obtains a natural map
 
 
 \begin{proposition}\label{PIIPROPAB PROP}
-The analogue statements of Proposition \ref{PIIPROP PROP}
-hold for the $\Omega_{G}^{n,s,\lambda}$
-and the $\Omega_{G}^{n,s,\lambda} \wr (A_j)$
-constructions, 
-with the caveat that in the latter case we
-exclude the cases in Proposition \ref{PIIPROP PROP}(d)(e)(f)
-that involve $d_n$.
+The analogue 
+%statements 
+of Proposition \ref{PIIPROP PROP}
+holds for the $\Omega_{G}^{n,s,\lambda}$.
+In particular 
+(we keep the numbering in 
+Proposition \ref{PIIPROP PROP}
+and have the $s$-index $\bullet$
+vary as in \eqref{LABSTSIM EQ}):
+%
+\begin{enumerate}
+\item[(a)]
+The following composite matches $V_G^{k+l+1}$
+\[
+\begin{tikzcd}
+	\Omega_G^{n,\bullet,\lambda} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_G^{n-k-1,\bullet,\lambda} \ar{r}{V_G^l} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda}
+\end{tikzcd}
+\]
+\item[(d)] The rightmost diagrams in both 
+\eqref{PIIDEFDILAB EQ} and 
+\eqref{PIIDEFDI2LAB EQ} are pullback diagrams in $\mathsf{Cat}$.
+
+\item[(e)]
+For $i < k \leq n$ the composite natural transformation in the diagram below is $\pi_i$.
+\begin{equation}\label{INDPI1SL EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	|[alias=F1]|
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar[equal]{d} &
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d}
+\\
+	|[alias=G2]|
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^{k-1}}&
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}[swap]{\Fin_s \wr V_{G}^{l}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2,\bullet,\lambda}
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
+\end{tikzcd}
+\end{equation}
+For $k< i < k+l+1 \leq n$ the composite natural transformation in the diagram below is $\pi_{i}$.
+\begin{equation}\label{INDPI2SL EQ}
+\begin{tikzcd}[row sep=1.7em,column sep = 3.5em]
+	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{d_{i}} \ar{r}{V_G^k} &
+	\Fin_s \wr \Omega_{G}^{n-k-1,\bullet,\lambda} \ar{r}{\Fin_s \wr V_{G}^l} 
+	\ar{d}[swap]{\Fin_s \wr d_{i-k-1}} &
+	|[alias=F1]|
+	\Fin_s^{\wr 2} \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr \Omega_G^{n-k-l-2,\bullet,\lambda} \ar[equal]{d}
+\\
+	\Omega_{G}^{n-1,\bullet,\lambda} \ar{r}[swap]{V_G^k}&
+	|[alias=G2]|
+	\Fin_s \wr \Omega_{G}^{n-k-2,\bullet,\lambda} \ar{r}[swap]{\Fin_s \wr V_{G}^{l-1}} &
+	\Fin_s^{\wr 2} \wr  \Omega_G^{n-k-l-2,\bullet,\lambda} \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr  \Omega_G^{n-k-l-2,\bullet,\lambda}
+\arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\Fin_s \wr \pi_{i-k-1}"]
+\end{tikzcd}
+\end{equation}
+\end{enumerate}
+Moreover, the analogue claim hold for the 
+$\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
+(with the caveat that we exclude the cases of (d)
+that involve $d_n$). 
 
 Additionally, the natural squares  (for $n \geq -1$)
 \begin{equation}\label{ADDSQUARE EQ}
@@ -7915,6 +8022,7 @@ Additionally, the natural squares  (for $n \geq -1$)
 \end{equation}
 are also pullback squares.
 \end{proposition}
+
 
 \begin{proof}
 	Firstly, we note that the $\Omega_{G}^{n,s,\lambda}$
@@ -7933,16 +8041,16 @@ are also pullback squares.
 
 \begin{corollary}\label{LABIDEN COR}
 For $-1 \leq s \leq n$ there are natural identifications
-\[
+\begin{equation}\label{MOREIDENT1 EQ}
 	\Omega_G^{k} \wr \Omega_G^{n,s,\lambda} \wr (A_j) \simeq
 	\Omega_G^{n+k+1,s+k+1,\lambda} \wr (A_j)
-\qquad
+ \phantom{||||}
 	\Omega_G^{n,s,\lambda} \wr 
 	(\Omega_G^k)^{\times \lambda}
 	\wr (A_j)
 \simeq
 	\Omega_G^{n+k+1,s,\lambda} \wr (A_j)
-\]
+\end{equation}
 which identify 
 $V^k_G \wr \Omega_G^{n,s,\lambda} \wr (A_j) $ with 
 $V^k_G \wr (A_j) $
@@ -7952,27 +8060,31 @@ with
 $V_G^n \wr (A_j)$.
 
 Further, these identifications are compatible with each other and associative in the obvious ways, and they induce identifications
-\[
-\begin{tikzcd}[row sep =0]
+\begin{equation}\label{MOREIDENT2 EQ}
+\begin{tikzcd}[row sep=0, column sep = 10]
 	d_i \wr (\Omega_G^{n})^{\times \lambda} \simeq d_i 
 &
 	\pi_i \wr (\Omega_G^{n})^{\times \lambda} \simeq \pi_i 
 &
 	s_j \wr (\Omega_G^{n})^{\times \lambda} \simeq s_j 
 \\
-	\Omega_G^k \wr d_i \simeq d_{i+k+1} 
+	\Omega_G^k \wr (d_i)^{\times \lambda} \simeq d_{i+k+1} 
 &
-	\Omega_G^k \wr \pi_i \simeq \pi_{i+k+1} 
-&
-	\Omega_G^k \wr s_j \simeq s_{j+k+1}
+	\Omega_G^k \wr (s_j)^{\times \lambda} \simeq s_{j+k+1}
 \end{tikzcd}
-\]
-as well as obvious identifications of forgeful functors.
+\end{equation}
+as well as obvious identifications of forgetful functors.
 \end{corollary}
 
+
 \begin{proof}
-This is analogous to Corollary \ref{IDEN COR}. For the first identification, the case $s \geq 0$ follows from the diagram below, where we note that the bottom arrow is
-$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
+This is analogous to Corollary \ref{IDEN COR}. For the left identification in
+\eqref{MOREIDENT1 EQ}, the case $s \geq 0$ follows
+since both sides compute the limit of the solid diagram below, 
+where we note that the bottom arrow is
+$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$
+(this is used to regard the diagram as computing
+$\Omega^k_G \wr (-)$).
 \[
 \begin{tikzcd}[row sep = 1.5em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
@@ -7989,14 +8101,24 @@ $V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$.
 	\Fin \wr \Omega_G^{-1,0,\lambda}
 \end{tikzcd}
 \]
-In the $s=-1$ case, the bottom arrow is instead 
+The $s=-1$ case is similar, but since the bottom arrow is now 
 $V_G^k \colon \Omega_G^{k,k,\lambda} \to 
 \Fin \wr \Omega_G^{-1,-1,\lambda} =
 \Fin \wr \coprod_l \Sigma_G$,
-in which case one further attaches \eqref{ADDSQUARE EQ}
-to the diagram above.
+one first attaches 
+the pullback square \eqref{ADDSQUARE EQ}
+to the bottom of the diagram above.
 
-The second identification is analogous, using the pullback diagram below, with the composite of the central horizontal arrows reinterpreted using \eqref{BOTTOM EQ}.
+The right identification in \eqref{MOREIDENT1 EQ} is analogous, using the pullback of the solid diagram below
+(for the 
+$\Omega_G^{n+k+1,s,\lambda} \wr (A_j)$ side, 
+note that \eqref{BOTTOM EQ} identifies
+the composite of the central horizontal arrows as 
+$\mathsf{F} \wr V^k_G
+\colon
+\mathsf{F} \wr \Omega_G^{k,s-n-1,\lambda}
+\to 
+\mathsf{F}^{\wr 2} \wr \coprod_l \Sigma_G$).
 \[
 \begin{tikzcd}[row sep = 1.5em,column sep =2.05em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
@@ -8006,21 +8128,25 @@ The second identification is analogous, using the pullback diagram below, with t
 	\Fin \wr \coprod A_j \ar{d}
 \\
 	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}[swap]{d_{n+1,\cdots,n+k+1}}&
-	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^n)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
+	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^k)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
 	\Fin \wr \coprod_l \Fin \wr \Sigma_G \ar{r} &
-	\Fin^{\wr 2} \wr \coprod \Sigma_G \ar{r}[swap]{\sigma^0}  &
+	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0}  &
 	\Fin \wr \coprod_l \Sigma_G &
 \\
 	\Omega_G^{n,s,\lambda} \ar{r}[swap]{V_G^n} &
 	\Fin \wr \coprod_l \Sigma_G
 \end{tikzcd}
 \]
-The additional claims are straightforward.
+The vertex functor claims are straightforward.
+The addition claims in \eqref{MOREIDENT2 EQ} follow from 
+\eqref{INDPI1SL EQ},\eqref{INDPI2SL EQ},
+and the right side of 
+\eqref{PIIDEFDI2LAB EQ}.
 \end{proof}
 
 
-\begin{remark}
-      \label{NPXY_REM}
+
+\begin{remark}\label{NPXY_REM}
 The identifications in Corollary \ref{LABIDEN COR} do allow for the case $n=-1$,
 which is non-trivial due to the existence of
  $\Omega_G^{-1,-1,\lambda} = \coprod_l \Sigma_G$,
@@ -8059,9 +8185,10 @@ $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 %      \end{tikzcd}
 %\end{equation}
 
-Furthermore, the left commutative square below, where vertical arrows are forgetful functors,
-the bottom square is one of the pullback squares 
-\eqref{ADDSQUARE EQ}, and the right diagram merely unpacks notation
+Next, consider the following diagram
+(the right depiction merely unpacks the notation on the left),
+where the bottom square is one of the pullback squares
+\eqref{ADDSQUARE EQ}.
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
@@ -8085,13 +8212,29 @@ the bottom square is one of the pullback squares
 	 \Fin \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-shows that the forgetful functor
+The two representations of the middle horizontal map
+yield an identification
+$\left(
+\Omega_G^{0,0,\lambda} \wr (A_j)
+\right)
+	\simeq
+\left(
+\Omega^0_G \wr \coprod A_j
+\right)	
+$
+so that, since the vertical composites fold coproduct summands,
+the forgetful map
 $\Omega_G^{0,-1,\lambda} \wr (A_j) \to 
 \Omega_G^{0,0,\lambda} \wr (A_j)$
-encodes the natural map
-$\coprod \circ N \Rightarrow N \circ \coprod $
-of \eqref{MONADFUNCTORALPHADOU EQ}.
+is identified with the natural map
+$\coprod (\Omega^0_G)^{\times \lambda} \wr (A_j)
+\to 
+\Omega^0_G \wr \coprod A_j$,
+and thus encodes the natural transformation
+$\coprod \circ N^{\times \lambda} \Rightarrow N \circ \coprod $
+discussed in Remark \ref{PRECOMPPOSTCOMP REM}.
 \end{remark}
+
 
 
 
@@ -9954,10 +10097,12 @@ has the following key properties:
 	and thus (iii) implies
 	that $f$ is a $\mathcal{F}$-projective weak equivalence in
 	$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
-	establishing the required condition in 
-	\cite[Thm. 11.3.2(2)]{Hi03}.
+	establishing the 
+	%required
+	condition in 
+	\cite[Thm. 11.3.2(2)]{Hi03} (or its semi-model category analogue).
 %
-	The existence of the projective (semi-)model structures on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
+	The existence of the projective (semi-)model structure on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 	finishing the proof of Theorem \ref{MAINEXIST2 THM}.
 
 We now turn to Theorem \ref{MAINEXIST1 THM}.
@@ -12662,6 +12807,28 @@ More explicitly, this natural transformation is the composite
 \]
 where the last two maps are always isomorphisms. But when restricting to cofibrant objects the previous result guarantees both that $\phi_! \iota_{\**}$ lands in cofibrant objects and that cofibrant objects are in the essential image of the bottom $\iota_{\**}$. The result follows.
 \end{proof}
+
+
+
+% ----- proof for reduced operads and genuine symmetric sequences -----
+%when $G = G \times \Sigma_T$ and $\mathcal{F} = \mathcal{F}_T$ 
+%\[
+%\phi_! \iota_{\**}(G \cdot_H C)
+%=
+%\coprod_{[H\text{-maps } C \to T]/\sim}
+%{X(T)}^H
+%\]
+%\[
+%\iota_{\**} \phi_! (G \cdot_H C)
+%=
+%\left(\coprod_{[\text{maps } C \to T]/\sim}
+%{X(T)}\right)^H
+%\]
+%here both $\sim$ are isomorphism classes determined along isomorphisms $T\simeq T'$. The reason why coproducts, rather than limits, can be employed is because the resulting undercategory is a a groupoid with contractible components (provided trees have no stumps).
+%The crux is that in the fixed points only the summands corresponding to $H$-maps survive (in fact, in the reduced case, the $H$-structure on $C$ and the map $C\to T$ determine at most one $H$-structure on $T$)
+
+
+
 
 The following is the main lemma. We note that the 
 operad half of \eqref{FGTFUNC EQ}
