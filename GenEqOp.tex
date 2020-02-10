@@ -6402,7 +6402,7 @@ $.
 
 In the case $G = \**$, genuine operads coincide with the usual notion of symmetric operads, i.e. 
 $\mathsf{Sym}_{\**}(\mathcal{V})
-\simeq \mathsf{Sym}(\mathcal{V})$ \todo{introduce $\Sym$}
+\simeq \mathsf{Sym}(\mathcal{V})$ 
 and
 $\mathsf{Op}_{\**}(\mathcal{V})
 \simeq \mathsf{Op}(\mathcal{V})$, 
@@ -6414,17 +6414,45 @@ Our goal in this section will be to relate these to the categories
 $\mathsf{Sym}_G(\mathcal{V})$ and $\mathsf{Op}_G(\mathcal{V})$
 of genuine equivariant sequences and genuine equivariant operads.
 
+\begin{remark}\label{TOOPORNOT REM}
+	Unpacking notation,
+	$\mathsf{Sym}^G(\mathcal{V})$ is defined to be
+	$\mathcal{V}^{G \times \Sigma^{op}}$
+	rather than 
+	$\mathcal{V}^{G \times \Sigma}$,
+	though it is of course  
+	$\mathcal{V}^{G \times \Sigma^{op}}
+	\simeq \mathcal{V}^{G \times \Sigma}$
+	via the inversion isomorphism
+	$\Sigma^{op} \simeq \Sigma$.
+%	
+	However, in light of \eqref{IOTADEF EQ} below, 
+	it is in practice preferable to work with 
+	$\mathcal{V}^{G \times \Sigma^{op}}$
+	when dealing with $\mathsf{Sym}^G(\mathcal{V})$ and
+	$\mathsf{Sym}_G(\mathcal{V})$ simultaneously.
+%	
+	Note that, translating \eqref{GRAPHSUBIN EQ}, 
+	graph subgroups of
+	$G \times \Sigma_n^{op}$
+	have the form
+	$\Gamma = \left\{(h,\phi(h)^{-1})|h\in H\right\}$
+	for $H\leq G$
+	and some homomorphism $\phi \colon H \to \Sigma_n$. 
+\end{remark}
+
+
 We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions described herein.
 
 We now have an inclusion functor
-\[
+\begin{equation}\label{IOTADEF EQ}
 \begin{tikzcd}[row sep =0]
 	\iota \colon G^{op} \times \Sigma \ar[hookrightarrow]{r} &
 	\Sigma_G
 \\
 	C \ar[mapsto]{r} & G \cdot C
 \end{tikzcd}
-\]
+\end{equation}
 where $G \cdot C$ is the constant tuple $(C)_{g \in G}$,
 which we think of as $|G|$ copies of $C$, planarized according to $C$ and the order on $G$.
 Moreover, letting $\Sigma_G^{\text{fr}} \hookrightarrow \Sigma_G$ denote the full subcategory of $G$-free corollas, there is an induced retraction 
@@ -6476,6 +6504,7 @@ and the second map is given by the $G$-action in
 $Y$.
 
 As a side note, the formulas for $\iota_!$ and $\iota_{\**}$ are independent of the chosen order of $G$.
+
 
 
 \begin{remark}\label{IOTAFUNSALT REM}
@@ -6545,6 +6574,7 @@ $G \cdot C_1 \to C$
 under precomposition 
 (note that $(G \cdot C_1) \in \Sigma_G^{\text{fr}}$).
 \end{remark}
+
 
 There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
 $(C_i)_I \in \Sigma_G^{\text{fr}}$
@@ -6721,19 +6751,20 @@ consists of trees with at least one non-free vertex (namely the root vertex), th
 \]
 is constant equal to $\emptyset$, and (iii) follows.
 
+
 Finally, we show (iv). We will slightly abuse notation by writing 
-$G \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
+$G^{op} \times \Sigma \hookrightarrow \Sigma_G$ for the image of $\iota$
 and similarly
-$G \times \Omega^0 \hookrightarrow \Omega_{G}^{0}$ for the image of the obvious analogous functor
-$\iota \colon G \times \Omega^0 \to \Omega_{G}^{0}$.
+$G^{op} \times \Omega^0 \hookrightarrow \Omega_{G}^{0}$ for the image of the obvious analogous functor
+$\iota \colon G^{op} \times \Omega^0 \to \Omega_{G}^{0}$.
 The map 
 $\alpha \colon \mathbb{F} \to \iota^{\**} \mathbb{F}_G \iota_{!}$
 is the adjoint to the map 
 $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on spans by the following diagram.
 \begin{equation}\label{MONADEQUIV DEF}
 \begin{tikzcd}[row sep=5pt, column sep =8pt]
-	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr (G \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
+	G^{op} \times \Omega^0	\ar{dd} \ar{rd} \ar{rr} &&
+	\Fin \wr (G^{op} \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
@@ -6742,7 +6773,7 @@ $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on 
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	G \times \Sigma \ar{rd} 
+	G^{op} \times \Sigma \ar{rd} 
 \\
 	& \Sigma_G
 \end{tikzcd}
@@ -6753,15 +6784,15 @@ is a natural isomorphism
 follows by the previous identifications 
 $C \downarrow_{\mathsf{r}} \Omega_{G}^{0} \simeq
 C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
-for $C \in G \times \Sigma$
+for $C \in G^{op} \times \Sigma$
 together with the fact that the retraction 
-$\rho \colon \Omega_{G}^{0,\text{fr}} \to G \times \Omega^0$
+$\rho \colon \Omega_{G}^{0,\text{fr}} \to G^{op} \times \Omega^0$
 (built just as the retraction
-$\rho \colon \Sigma_G^{\text{fr}} \to G \times \Sigma$)
+$\rho \colon \Sigma_G^{\text{fr}} \to G^{op} \times \Sigma$)
 retracts 
 $C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
 to the undercategory
-$C \downarrow_{\mathsf{r}} G \times \Omega^0$, which is thus initial (as well as final).
+$C \downarrow_{\mathsf{r}} G^{op} \times \Omega^0$, which is thus initial (as well as final).
 %, and the claim that $\alpha$ is an isomorphism follows.
 
 Intuitively, the final claim that 
@@ -6774,14 +6805,14 @@ $
 	\to
 \iota^{\**} \mathbb{F}_G \mathbb{F}_G \iota_{!}
 $
-is encoded by the analogous natural transformation of diagrams for strings $G \times \Omega^1 \hookrightarrow \Omega_{G}^{1,\text{fr}}$.
+is encoded by the analogous natural transformation of diagrams for strings $G^{op} \times \Omega^1 \hookrightarrow \Omega_{G}^{1,\text{fr}}$.
 However, since the presence of left Kan extensions in the 
 definitions of $\mathbb{F}$, $\mathbb{F}_G$
 can make a rigorous direct proof of this last claim fairly cumbersome, we sketch here a workaround argument.
 We first consider the adjunction
 $
 	\iota_{!} \colon
-	\mathsf{WSpan}^l((G\times \Sigma)^{op},\mathcal{V})
+	\mathsf{WSpan}^l(G \times \Sigma^{op},\mathcal{V})
 		\rightleftarrows
 	\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})
 	\colon \iota^{\**}
@@ -6794,7 +6825,7 @@ $\tilde{\alpha} \colon N \to \iota^{\**} N_G \iota_{!}$
 encoded by the diagram (where the front and back squares are pullbacks).
 \[
 \begin{tikzcd}[row sep=3pt, column sep =8pt]
-	(G \times \Omega^0) \wr \iota^{\**} A	\ar{dd} \ar{rd} \ar{rr} &&
+	(G^{op} \times \Omega^0) \wr \iota^{\**} A	\ar{dd} \ar{rd} \ar{rr} &&
 	\Fin \wr \iota^{\**} A \ar{rd} \ar{dd} \ar{rr}&&
 	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
 	\mathcal{V}^{op} \ar[equal]{rd}
@@ -6806,15 +6837,15 @@ encoded by the diagram (where the front and back squares are pullbacks).
 	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
-	G \times \Omega^0	\ar{dd} \ar{rd} \ar{rr}&&
-	\Fin \wr (G \times \Sigma) \ar{rd}
+	G^{op} \times \Omega^0	\ar{dd} \ar{rd} \ar{rr}&&
+	\Fin \wr (G^{op} \times \Sigma) \ar{rd}
 \\
 	&
 	|[alias=O2]|
 	\Omega_{G}^{0} \ar{dd} \ar{rr} &&
 	\Fin \wr \Sigma_G
 \\
-	G \times \Sigma \ar{rd}
+	G^{op} \times \Sigma \ar{rd}
 \\
 	& \Sigma_{G}
 \arrow[from=O1, to=O2,crossing over]
@@ -6823,9 +6854,9 @@ encoded by the diagram (where the front and back squares are pullbacks).
 The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writing
 \[
 	\mathsf{Lan} \colon
-	\mathsf{WSpan}^l((G\times \Sigma)^{op},\mathcal{V})
+	\mathsf{WSpan}^l(G \times \Sigma^{op},\mathcal{V})
 		\rightleftarrows
-	\mathsf{Fun}((G\times \Sigma)^{op},\mathcal{V})
+	\mathsf{Fun}(G \times \Sigma^{op},\mathcal{V})
 	\colon j
 \quad
 	\mathsf{Lan}_G \colon
@@ -6845,8 +6876,8 @@ where the first map is the isomorphism of monads induced by $\tilde{\alpha}$ and
 Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\[
 %\begin{tikzcd}
-%	(G \times \Omega_1)^{(\iota^{\**} A)}	\ar{ddd} \ar{rd} \ar{rrr} &&&
-%	\Fin \wr (G \times \Omega_0)^{(\iota^{\**} A)} \ar{rd} \ar[dashed]{ddd} 
+%	(G^{op} \times \Omega_1)^{(\iota^{\**} A)}	\ar{ddd} \ar{rd} \ar{rrr} &&&
+%	\Fin \wr (G^{op} \times \Omega_0)^{(\iota^{\**} A)} \ar{rd} \ar[dashed]{ddd} 
 %\\
 %	& \bullet \ar{rrr} \ar{ldd} \ar{rd}&&&
 %	\Fin \wr \iota^{\**} \left( \Omega_G^{(A)} \right)
@@ -6855,13 +6886,13 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %	& & \Omega_1^{(A)} \ar{rrr} \ar{ddl}&&&
 %	\Fin \wr \Omega_G^{(A)}\ar{ddl}
 %\\
-%	G \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rrr}&&&
-%	\Fin \wr (G \times \Sigma) \ar[dashed]{rd}
+%	G^{op} \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rrr}&&&
+%	\Fin \wr (G^{op} \times \Sigma) \ar[dashed]{rd}
 %\\
 %	& \Omega_{G,0} \ar{dd} \ar{rrr} &&&
 %	\Fin \wr \Sigma_G
 %\\
-%	G \times \Sigma \ar{rd}
+%	G^{op} \times \Sigma \ar{rd}
 %\\
 %	& \Sigma_{G}
 %\end{tikzcd}
@@ -9681,6 +9712,8 @@ cf. \eqref{FGXDEFEXP EQ}).
 \subsection{Proof of Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}}
 \label{MAINEXIST SEC}
 
+
+
 In this section, we use the filtrations just developed to prove our first two main results,
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
 concerning the existence of model structures on 
@@ -9918,6 +9951,7 @@ Thus the result follows by Remark \ref{GEN_FGTRIGHT_REM}\ref{CSPP_ITEM}.
 \end{proof}
 
 
+
 \begin{remark}\label{EXMAINLEM REM}
 If %When
 $T \in \Omega^a[k]$ is a non-equivariant alternating tree, 
@@ -9928,15 +9962,14 @@ the previous result applied to
 $G \cdot T = (T)_{g \in G}$,
 $\iota_{!} \mathcal{P}$,
 $\iota_{!} u$,
-yields that
-the analogue of the map
+yields that the analogue of the map
 \eqref{EXMAINLEM EQ}
 is an $\mathsf{Aut}(G \cdot C_n) 
-\simeq G 
-\times \mathsf{Aut}(C_n)=
-G \times \Sigma_n$ level genuine (trivial) cofibration,
+\simeq G^{op} \times \mathsf{Aut}(C_n) =
+G^{op} \times \Sigma_n$ level genuine (trivial) cofibration,
 where $C_n = \mathsf{lr}(T)$.
 \end{remark}
+
 
 
 \begin{proof}
@@ -11784,6 +11817,7 @@ commutes with pushouts thanks to the cofibrancy conditions and Proposition \ref{
 \label{G_GRAPH_SECTION}
 
 
+
 We now convert the results in the previous sections to the context we are truly interested in:
 graph families. 
 Throughout this section $\Sigma$ will denote a general group,
@@ -11950,7 +11984,7 @@ The following is then elementary.
 
 \begin{lemma}\label{FAMILY_COROLLAS_LEM}
 Writing $\mathcal{F}_{n}^{\Gamma}$ for the family  of $G$-graph subgroups
-of $G \times \Sigma_n$,
+of $G \times \Sigma_n^{op}$,
 there is an equivalence of categories
 (for any arbitrary choice of order of the $G/H$ and of coset representatives)
 \[\coprod_{n \geq 0} \mathsf{O}_{\F_n^{\Gamma}} \xrightarrow{\simeq} \Sigma_G.\] 
@@ -12237,8 +12271,8 @@ by using label isomorphism classes.
 	and suppose that 
 	$f_s \colon A_s \to B_s$, $1 \leq s \leq l$ are level $\mathcal{F}$-cofibrations (resp. trivial cofibrations)
 	in $\mathsf{Sym}^G(\mathcal{V})$, i.e. that 
-	$f_s(r) \colon A_s(r) \to B_s(r)$ are cofibrations (trivial cofibrations) in 
-	$\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$.
+	$f_s(n) \colon A_s(n) \to B_s(n)$ are cofibrations (trivial cofibrations) in 
+	$\mathcal{V}^{G \times \Sigma_n^{op}}_{\mathcal{F}_n}$.
 	Then for any $l$-labeled tree $T \in \Omega^{\underline{l}}$ the map
 	\begin{equation}\label{FSQVT EQ}
 	f^{\square V(T)} = 
@@ -12250,6 +12284,15 @@ by using label isomorphism classes.
 	(where $V_s(T)$ denotes vertices with label $s$) is a cofibration (resp. trivial cofibration) in 
 	$\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$.
 \end{proposition}
+
+To ease notation, we identify
+$\mathcal{V}^{G \times \Sigma_n^{op}}_{\mathcal{F}_n}
+\simeq
+\mathcal{V}^{G \times \Sigma_n}_{\mathcal{F}_n}$,
+$\mathcal{V}^{G \times \Sigma_T^{op}}_{\mathcal{F}_n}
+\simeq
+\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_n}$
+throughout the proof.
 
 \begin{proof}
 	This follows by induction on the decomposition 
@@ -12911,7 +12954,7 @@ $,
 $
 \mathsf{Sym}^G_{\mathcal{F}}(\mathcal{V})
 \simeq \prod_{n \geq 0}
-\mathcal{V}_{\mathcal{F}_n}^{G \times \Sigma_n}
+\mathcal{V}_{\mathcal{F}_n}^{G \times \Sigma_n^{op}}
 $,
 compatible with both the model structures and the $(\iota^{\**},\iota_{\**})$ adjunctions,
 and hence the symmetric sequence statement merely repackages 
@@ -13135,7 +13178,7 @@ commutative on cofibrant objects.
 	\prod_{T \in \mathsf{Iso}(\Omega^a[k])}
 \mathcal{V}^{\mathsf{O}^{op}_{\mathcal{F}_T}} \ar{d}[swap]{\phi_!} &
 	\prod_{T \in \mathsf{Iso}(\Omega^a[k])}
-\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}
+\mathcal{V}^{G \times \Sigma_T^{op}}_{\mathcal{F}_T}
 	\ar{l}[swap]{\iota_{\**}} \ar{d}{\phi_!} &
 \\
 	\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}  &
