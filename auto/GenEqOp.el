@@ -5,13 +5,13 @@
                      '(("article" "a4paper" "10pt" "draft")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("showkeys" "notref") ("todonotes" "disable") ("hyperref" "pagebackref" "colorlinks" "citecolor=PineGreen" "linkcolor=PineGreen") ("inputenc" "latin1") ("mathalpha" "cal=cm" "bb=ams" "frak=euler" "scr=rsfs") ("ulem" "normalem") ("enumitem" "inline" "shortlabels") ("microtype" "final")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -88,9 +88,9 @@
     "NAIVEOPEQ EQ"
     "NAIVEGEINFTY EQ"
     "GENGEINFTY EQ"
+    "GRAPHSUBIN EQ"
     "GENEOPEQ EQ"
     "NORMMAPS EQ"
-    "GRAPHMAP_EQ"
     "NFINFTY EQ"
     "COFADJINT EQ"
     "OPMULT EQ"
@@ -253,6 +253,8 @@
     "THEMONAD DEF"
     "REPACKAGERES REM"
     "COMPARISON_REGULAR_SECTION"
+    "TOOPORNOT REM"
+    "IOTADEF EQ"
     "TWOADJOINTS EQ"
     "IOTAFUNS EQ"
     "IOTAFUNSALT REM"
@@ -450,21 +452,6 @@
     "SOURCEFACT EQ"
     "IDENTSIMPRELS EQ"
     "EQUIVALENCEDEF EQ")
-   (LaTeX-add-environments
-    "theorem"
-    "lemma"
-    "proposition"
-    "corollary"
-    "conjecture"
-    "claim"
-    "innercustomgeneric"
-    "definition"
-    "example"
-    "remark"
-    "notation"
-    "convention"
-    "assumption"
-    "exercise")
    (LaTeX-add-bibliographies
     "biblio")
    (LaTeX-add-index-entries
@@ -480,6 +467,21 @@
     "Gvertex@$v_{Ge}$"
     "Gvertexsubtree@$T_{v_{Ge}}$"
     "iotau@$\\iota^{\\**}$"
-    "iotal@$\\iota_{\\**}$"))
+    "iotal@$\\iota_{\\**}$")
+   (LaTeX-add-amsthm-newtheorems
+    "theorem"
+    "lemma"
+    "proposition"
+    "corollary"
+    "conjecture"
+    "claim"
+    "innercustomgeneric"
+    "definition"
+    "example"
+    "remark"
+    "notation"
+    "convention"
+    "assumption"
+    "exercise"))
  :latex)
 
