@@ -1329,9 +1329,50 @@ in \cite[Cor. 5.6]{BH15}
 
 %Independently, using different techniques, Rubin \cite{Rub17} and Guti\'{e}rrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
 
-\subsection{Future Work}
+\subsection{Applications and Future Work}
 
 % \nomenclature[C]{$\mathsf{dSet} = \Set^{\Omega^{op}}$, $\mathsf{dSet}^G = \Set^{\Omega^{op} \times G}$}{Dendroidal sets}
+{\color{blue}
+  Applications:
+  \begin{enumerate}
+  \item algebraically: if $X$ is an $\O$-algebra in $G$-spaces, then $\pi_{\**}X$ is an $\pi_{\**}\O$-algebra;
+        but we have more structure: $\pi_{\**}\iota_{\**}X$ is a $\pi_{\**}\iota_{\**}\O$ algebra.
+  \item any time $G$-operads with norms appear, $G$-trees appear:
+        e.g. each model for $G$-$\infty$-operads, as in \cite{BP_HGOP,BP_TAS,Pe17,BP_edss},
+        have weak equivalences defined and applied using $G$-tree manipulations
+  \item the analogue combinatorial notion of a strict genuine equivariant inner Kan complex in $\sdSet_G$
+        appears in every paper
+  \item $\Op_G(\sSet)$ are the natural source for the genuine equivariant generalization of the operadic nerve $\Op(\sSet) \to \Op_\infty$, used in {\color{red} Horev} for equivariant factorization homology
+        \end{enumerate}
+  \item $\Op_G(\Set)$ has a good notion of symmetric monoidal category
+  \end{enumerate}
+
+  Context:
+  \begin{enumerate}
+  \item $hcN \colon \sOp^G \to \dSet^G$ is a Quillen equivalence.
+  \end{enumerate}
+
+  
+  Future Work:
+  \begin{enumerate}
+  \item formally defining $\P$-algebras
+  \item formally defining many-colored variants
+  \item $hcN \colon \sOp_G \to \dSet_G$ is a Quillen equivalence.
+  \item more work with $\Sym_G$.
+  \end{enumerate}
+
+  Machine applications:
+  \begin{enumerate}
+  \item This machine/presentation of the free operad monad can be used in great generality to define algebraic notions,
+        including properads, cyclic operads, modular operads, symmetric monoidal categories, etc., 
+        simply by substituting the category $\Omega$ for the category which encodes the combinatorics of the desired multiplication,
+        and checking that the technical results (regarding grafting, substitution data, planar strings, etc) hold to
+        give a closed-form categorical description of the iterations
+        % describe iteration as strings of (well-behaved) maps in the original category.
+  \item Similarly, we expect the bookkeeping used here will also be helpful to produce appropriately genuine equivariant models for these algebraic structures.
+  \item EXAMPLE: $\Sym_G$
+  \end{enumerate}
+}
 
 
 
