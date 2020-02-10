@@ -1,12 +1,17 @@
 \indexentry{categories!Operad@$\O \in \Op(\V)$}{2}
 \indexentry{categories!Com@$\mathsf{Com}$}{2}
+\indexentry{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$}{3}
 \indexentry{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}{4}
 \indexentry{categories!OrbitG@$\mathsf O_G$}{4}
-\indexentry{DeltaF@$\delta_{\mathcal F}$}{4}
+\indexentry{DeltaF@$\delta_{\mathcal F}$}{5}
 \indexentry{categories!OpG@$\mathcal P \in \Op_G$}{5}
 \indexentry{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}{7}
 \indexentry{monads!FG@$\mathbb F_G$}{7}
+\indexentry{Broadvert@$e^{\uparrow} \leq e$}{16}
+\indexentry{Broadvert@$\underline{e} \leq e$}{16}
+\indexentry{UEUPE@$U_{e^{\uparrow} \leq e}$}{25}
 \indexentry{Gvertex@$v_{Ge}$}{28}
 \indexentry{Gvertexsubtree@$T_{v_{Ge}}$}{28}
+\indexentry{SVGE@$S_{v_{Ge}}$}{31}
 \indexentry{iotau@$\iota^{\**}$}{42}
 \indexentry{iotal@$\iota_{\**}$}{42}

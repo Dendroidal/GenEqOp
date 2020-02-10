@@ -2665,7 +2665,7 @@ $2^{\uparrow} = \epsilon$
 (where $\epsilon$ is the empty tuple),
 and $9^{\uparrow}$ is undefined.
 The vertex above $e$ is then encoded by the \emph{broad relation}
-$e^{\uparrow} \leq e$.
+$e^{\uparrow} \leq e$\index{Broadvert@$e^{\uparrow} \leq e$}.
 
 The broad relation notation is meant to suggest a form of 
 \emph{broad associativity}. For example,
@@ -2679,7 +2679,7 @@ The broad relations of $T$ are those relations that are obtained from the vertex
 via broad transitivity, together with reflexive relations
 $e \leq e$.
 Pictorially, a relation 
-$\underline{e} \leq e$ holds 
+$\underline{e} \leq e$\index{Broadvert@$\underline{e} \leq e$} holds 
 if there is an outer subtree
 (i.e. a tree subdiagram 
 which contains all edges of $T$ adjacent to its vertices;
@@ -4092,7 +4092,9 @@ Note that the only arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a
 In particular, there are no pairs of composable non-identity arrows in $\mathsf{Sc}(T)$. 
 \end{remark}
 
-Given a $T$-substitution datum $\{U_{\{e^{\uparrow}\leq e\}}\}$ we abuse notation by writing
+Given a $T$-substitution datum 
+$\left(U_{e^{\uparrow} \leq e}\right)_{(e^{\uparrow} \leq e)\in V(T)}$
+we abuse notation by writing
 \[U_{(\minus)} \colon \mathsf{Sc}(T) \to \Omega\]
 for the functor $\eta_a \mapsto \eta$, $T_{e^{\uparrow} \leq e} \mapsto U_{e^{\uparrow} \leq e}$  
 and sending the inclusions $\eta_a \subset T_{e^{\uparrow} \leq e}$
@@ -4175,6 +4177,19 @@ is planar tall follow.
 The fact that the two functors in the statement
 are inverse to each other is clear from the same inductive argument.
 \end{proof}
+
+
+\begin{notation}\label{UEUPE NOT}
+	Following the previous result, 
+	given a tall planar map 
+	$\varphi \colon T \to U$
+	and vertex
+	$(e^{\uparrow} \leq e) \in V(T)$
+	we will abbreviate
+	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
+	as simply
+	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
+\end{notation}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
@@ -4988,6 +5003,18 @@ are maps of split Grothendieck fibrations.
 \end{remark}
 
 
+\begin{notation}\label{UEUPEG NOT}
+	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT},
+	given a tall planar map
+	$\varphi \colon T \to S$ of $G$-trees
+	and $G$-vertex $v_{Ge} \in V_G(T)$
+	we write
+	\[
+	S_{v_{Ge}} = 
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
+	\]
+\end{notation}
+
 
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
@@ -4998,10 +5025,9 @@ by
 	(T_{1,v_{Ge}} \to \cdots \to
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
-where we abuse notation by writing $T_{i,v_{Ge}}$
-for 
-$(T_{i,\bar{\varphi}_i(f)^{\uparrow}\leq \bar{\varphi}_i(f)})_{f \in Ge}$, where 
-$\bar{\varphi}_i = \varphi_i \circ \cdots \circ \varphi_1$.
+where $T_{i,v_{Ge}}$ is as in
+Notation \ref{UEUPEG NOT}
+for the map $T_0 \to T_i$ and $v_{Ge} \in V_G(T_0)$.
 
 Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
 the object $V_G(T_0 \to \cdots \to T_n)$
@@ -5018,16 +5044,16 @@ functoriality needs to be addressed separately.
 
 
 \begin{notation}\label{DDDDD NOT}
-	For $X \subseteq \{0,1,\cdots,n\}$
+	For $I \subseteq \{0,1,\cdots,n\}$
 	we write
-	$d_X \colon \Omega^n_G \to \Omega^{n-|X|}_G$
+	$d_I \colon \Omega^n_G \to \Omega^{n-|I|}_G$
 	for the functor which sends 
 	$T_0 \to T_1 \to \cdots \to T_n$
-	to the string with $T_x, x\in X$ omitted.
+	to the string with $T_i, i\in I$ omitted.
 	
 	Note that, in light of \eqref{STRINGOBJALT EQ},
 	this makes sense even when
-	$X = \{0,1,\cdots,n\}$,
+	$I = \{0,1,\cdots,n\}$,
 	resulting in a functor
 	$\mathsf{lr} = d_{0,1,\cdots,n}
 	\colon \Omega_G^n \to \Sigma_G$.
@@ -7573,7 +7599,8 @@ $N^{s+1} \circ \coprod \circ (N^{\times \lambda})^{\circ n-s}$.
 \begin{definition}\label{LABMAP DEF}
 A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) is a pair $(T,V_G(T) \to \{1,\cdots,l\})$ with $T \in \Omega_G$, which we think of as a $G$-tree together with $G$-vertices labels in $1,\cdots,l$.
 
-Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if, for each $G$-vertex $v_{G e}$ of $T$ with label $j$, all vertices of the subtree $S_{v_{G e}}$ (cf. \eqref{TVGE DEF}) are labeled by $j$.
+Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if, for each $G$-vertex $v_{G e}$ of $T$ with label $j$, all vertices of the subtree $S_{v_{G e}}$ 
+(cf. Notation \ref{UEUPEG NOT}) are labeled by $j$.
 
 Lastly, given a subset $J\subset \underline{l}$, a planar label map $\varphi \colon T \to S$ is said to be $J$-inert if for every $G$-vertex $v_{G e}$ of $T$ with label $j \in J$, we have $S_{v_{Ge}} = T_{v_{Ge}}$.
 \end{definition}

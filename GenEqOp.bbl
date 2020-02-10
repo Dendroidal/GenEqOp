@@ -26,7 +26,7 @@ M.~Boardman and R.~Vogt.
 P.~Bonventre and L.~A. Pereira.
 \newblock On the homotopy theory of equivariant colored operads.
 \newblock arXiv preprint
-  \href{https://arxiv.org/abs/1908.05440v1}{1908.05440v1}.
+  \href{https://arxiv.org/abs/1908.05440v1}{\texttt{1908.05440v1}}, 2019.
 
 \bibitem{Bo94}
 F.~Borceux.
@@ -138,6 +138,11 @@ I.~Moerdijk and I.~Weiss.
 \newblock Dendroidal sets.
 \newblock {\em Algebr. Geom. Topol.}, 7:1441--1470, 2007.
 
+\bibitem{DS18}
+D.~Pavlov and J.~Scholbach.
+\newblock Admissibility and rectification of colored symmetric operads.
+\newblock {\em J. Topol.}, 11(3):559--601, 2018.
+
 \bibitem{Pe16}
 L.~A. Pereira.
 \newblock Cofibrancy of operadic constructions in positive symmetric spectra.
@@ -191,11 +196,6 @@ I.~Weiss.
 D.~White.
 \newblock Monoidal {B}ousfield localizations and algebras over operads.
 \newblock arXiv preprint: 1404.5197v1, 2014.
-
-\bibitem{Wh16}
-D.~White.
-\newblock Model structures on commutative monoids in general model categories.
-\newblock Available at: \texttt{http://arxiv.org/abs/1403.6759}, 2016.
 
 \bibitem{WY18}
 D.~White and D.~Yau.
