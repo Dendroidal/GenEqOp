@@ -454,11 +454,17 @@ Rather, that replacement is provided instead by the
 \end{equation}
 In contrasting 
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ},
-we note that 
-the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$ 
-are readily shown to be precisely the graphs of partial homomorphisms 
-$H \to \Sigma_n$ for varying $H \leq G$,
-and that $\Gamma \leq G$ if and only if $\Gamma$ is the graph of a trivial homomorphism. 
+we note first that the subgroups $\Gamma \leq G \times \Sigma_n$ such that $\Gamma \cap \Sigma_n = \{\**\}$
+are characterized as being the 
+\emph{graph subgroups},
+i.e. the subgroups of the form
+\begin{equation}\label{GRAPHSUBIN EQ}
+	\Gamma = \left\{(h,\phi(h)) \in G \times \Sigma_n
+	| h \in H\right\}
+\end{equation}
+for some subgroup $H \leq G$ and homomorphism
+$\phi \colon H \to \Sigma_n$.
+On the other hand, $\Gamma \leq G$ if and only if $\Gamma$ is a graph subgroup \eqref{GRAPHSUBIN EQ} for $\phi$ a trivial homomorphism. 
 As it turns out, the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
 and indeed it is possible
@@ -487,10 +493,10 @@ Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements,
 the corresponding \textit{norm} is another $G$-spectrum $N^X R$
 whose underlying spectrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$,
-but which is equipped with a ``mixed'' $G$-action,
-acting diagonally on $R$ and permuting the indices via the action on $X$.
-% (a formal definition is given below).
-% combines the actions on $R$ and $X$ in the natural way.
+but equipped with a ``mixed $G$-action'',
+which both permutes wedge factors via the action on $X$ 
+and acts diagonally on each factor
+(alternatively, $N^X R$ can be described via graph subgroups; see the next paragraph).
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
@@ -514,21 +520,17 @@ is encoded by a
 % partial
 homomorphism 
 $H \to \Sigma_n$,
-one obtains an associated \textit{graph subgroup}
+one obtains an associated graph subgroup
 $\Gamma_X \leq G \times \Sigma_n$,
 \index{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$}
-$\Gamma_X \cap \Sigma_n =\{\**\}$,
 well defined up to conjugation. 
-% (see Definition \ref{GRAPH DEF}, Remark \ref{GRAPH REM}).
-The norm $N^X R$ can then be realized as the $H$-spectrum given by
-restricting the natural $G \times \Sigma_n$-action on $R^{\wedge n}$ along the homomorphism
-\begin{equation}
-      \label{GRAPHMAP_EQ}
-      H \xrightarrow{\cong} \Gamma_X \leq G \times \Sigma_n
-\end{equation}
-Moreover, we have an equivalence of mapping spectra $\Hom(R^{\wedge n}, R)^{\Gamma_X} \simeq \Hom^H(N^X R, R)$.
-
-It then follows that for $R$ an 
+Next, using the natural 
+$(G \times \Sigma_n)$-action on $R^{\wedge n}$,
+the $H$-action on $N^X R \simeq R^{\wedge n}$
+is obtained via the obvious identification
+$H \simeq \Gamma_X$.
+%
+It then follows that, for $R$ an 
 $\mathcal{O}$-algebra, maps of the form \eqref{NORMMAPS EQ}
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
@@ -839,13 +841,15 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-where for any $H$-set $X$ with $n$ elements, $H \leq G$,
-$\O(X)$ denotes
-$\O(n)$ together with a mixed $H$-action,
-given by restricting the natural $G \times \Sigma_{n}$-action on $\O(n)$
-along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are ignoring the lack of total order on $X$.
-  Formally, $\O$ and $\P$ are indexed over the category $\Sigma_G$ of ``planar $G$-corollas'', which encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
-In particular, $\O(X)^H \simeq \O(n)^{\Gamma_X}$. 
+where $\O(X)$ for $X$ an $H$-set denotes
+$\O(|X|)$ 
+%together
+with the $H$-action
+obtained by the identification $H \simeq \Gamma_X$
+(for $\Gamma_X$ the graph subgroup discussed after 
+\eqref{NORMMAPS EQ}),
+and likewise for $K$-sets.
+In particular, $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$.
 
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
