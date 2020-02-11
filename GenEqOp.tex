@@ -4186,17 +4186,6 @@ are inverse to each other is clear from the same inductive argument.
 \end{proof}
 
 
-\begin{notation}\label{UEUPE NOT}
-	Following the previous result, 
-	given a tall planar map 
-	$\varphi \colon T \to U$
-	and vertex
-	$(e^{\uparrow} \leq e) \in V(T)$
-	we will abbreviate
-	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
-	as simply
-	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
-\end{notation}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
@@ -4218,6 +4207,21 @@ the category of tall maps under $T$.
 	This is a consequence of Proposition \ref{PLANARPULL PROP} together with the previous result.
 	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness of $\mathsf{Sub}(T) \to T \downarrow \Omega^{\mathsf{t}}$ reduces to that in the previous result.
 \end{proof}
+
+
+
+\begin{notation}\label{UEUPE NOT}
+	Following the previous results, 
+	given a map of trees 
+	$\varphi \colon T \to U$
+	and vertex
+	$(e^{\uparrow} \leq e) \in V(T)$
+	we will abbreviate
+	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
+	as simply
+	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
+\end{notation}
+
 
 \begin{remark}\label{VERTEXDECOMP REM}
 As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
@@ -4801,23 +4805,16 @@ Writing $S_{v_{G e}} = (S_{f^{\uparrow} \leq f})_{f \in Ge}$,
 a $T$-substitution datum can equivalently be encoded by the tuple
 $\left(S_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
 $T_{v_{Ge}} \to S_{v_{G e}}$.
-%The need to include $\mathsf{r}$ (which stands for ``rooted'')
-%in the notation is explained by Remark \ref{WHYR REM}.
 
 Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to S_{v_{G e}}$ are as well.
 
 We caution that in the non-planar case the
 $S_{v_{G e}}$ notation requires some care,
-as discussed in {\color{red} bla}. 
+as discussed in Remark \ref{WHYALT REM}. 
 \end{remark}
 
 
 \begin{remark}\label{SUBSDATUMCONV REM}
-%	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
-%
-%	The rooted condition of $T$-substitution data allows us to write
-%	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
-%	for each $v_{G e} \in V_G(T)$, 
 	Writing $T = (T_x)_{x \in X}$ as usual
 	one obtains (non-equivariant) $T_x$-substitution data 
 	$S_{x,(\minus)}$ for each $T_x$.
@@ -4880,9 +4877,10 @@ is the category of planar tall (resp. rooted tall) maps under $T$.
 	Remark \ref{SUBSDATUMCONV REM}.
 \end{proof}
 
-{\color{red} HERE}
 
-{\color{red} recall were indep is at}
+In the following, 
+note that tall rooted maps are independent maps,
+cf. Proposition \ref{INDMAPCHAR PROP}.
 
 \begin{notation}\label{UEUPEG NOT}
 	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT}
@@ -4891,53 +4889,42 @@ is the category of planar tall (resp. rooted tall) maps under $T$.
 	$\varphi \colon T \to S$ of $G$-trees
 	and $G$-vertex $v_{Ge} \in V_G(T)$
 	we write
-	\[
+	\begin{equation}\label{UEUPEG EQ}
 	S_{v_{Ge}} = 
 	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
-	\]
+	\end{equation}
 \end{notation}
 
-{\color{red} HERE}
 
-\begin{remark}
+\begin{remark}\label{WHYALT REM}
 	In Notation \ref{UEUPE NOT} one has,
 	by definition,
 	that the maps $U_{e^{\uparrow} \leq e} \to U$
-	are planar maps regardless of whether the map
-	$\varphi \colon T \to U$ is planar.
+	are planar maps, regardless of whether the map
+	$\varphi \colon T \to U$ therein is planar.
 
-	However, Notation \ref{UEUPEG NOT} is a little subtler.
+	However, Notation \ref{UEUPEG NOT} is subtler.
+	When $\varphi \colon T \to S$ is not a planar map,
+	then the maps $S_{v_{Ge}} \to S$ need to be planar on each tree component of $S_{v_{Ge}}$ but need not respect the order of the roots of $S_{v_{Ge}}$.
+	This is because the tuple
+	\eqref{UEUPEG EQ} 
+	is ordered according to the edge orbit $Ge$ of $T$
+	(this is needed for Remark \ref{SUBSGREF DEF})
+	rather than the edge orbit $G\varphi(e)$ of $S$.
+	
+	To make this more precise, write 
+	$\varphi_{Ge} \colon Ge \to G \varphi(e)$
+	for the induced map, which
+	is an isomorphism by
+	Proposition \ref{INDMAPCHAR PROP},
+	and write $S_{v_{Ge}}'$ for the tuple \eqref{UEUPEG EQ}
+	reorded according to $G \varphi(e)$.
+	One then has that the map
+	$S_{v_{Ge}}' \to S$ is planar
+	and $S_{v_{Ge}} = \varphi_{Ge}^{\**} S_{v_{Ge}}'$.
 \end{remark}
 
 
-
-{\color{red} HERE}
-
-
-\begin{remark} \label{WHYR REM}
-Writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$, 
-it follows from the non-equivariant results
-Proposition \ref{SUBDATAUNDERPLAN PROP} and
-Corollary \ref{SUBDATAUNDERPLAN COR}
-that each inclusion map $U_{f^{\uparrow} \leq f} \to U$
-is planar, so that there is no conflict with 
-Notation \ref{GVERT NOT}.
-
-However, some care is needed concerning the
-$U_{v_{Ge}}^{\mathsf{r}}$ appearing in the reformulation of substitution data given in Remark \ref{SUBSGREF DEF}.
-Letting $\varphi \colon T \to U$ be the induced map,
-one sees that while $U_{v_{Ge}}^{\mathsf{r}}$ and 
-$U_{v_{G\varphi(e)}}$
-have the same constituent trees (with the latter defined by Notation \ref{GVERT NOT}),
-the roots of $U_{v_{Ge}}^{\mathsf{r}}$ are ordered by $Ge$
-while those of $U_{v_{G\varphi(e)}}$ are ordered by $G \varphi(e)$.
-More succinctly, it is then 
-$U_{v_{Ge}}^{\mathsf{r}} = \varphi_{Ge}^{\**}U_{v_{G\varphi(e)}}$ for $\varphi_{Ge} \colon Ge \to G \varphi(e)$
-the induced map.
-
-Lastly, we note that such distinctions are unnecessary for planar data, since then the $\varphi_{G e}$ are ordered isomorphisms (i.e. identities), so that 
-$U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
-\end{remark}
 
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
@@ -4954,10 +4941,10 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 \[
 \begin{tikzcd}[row sep =10pt]
 	(\psi^{\**} T)_{v_{Ge}} \ar{d} \ar[dashed]{r} &
-	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}} \ar{d}
+	\bar{\psi}_{G e}^{\**}S_{v_{G \bar{\psi}(e)}} \ar{d}
 \\
 	T_{v_{G \bar{\psi}(e)}} \ar{r} &
-	U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}}
+	S_{v_{G \bar{\psi}(e)}}
 \end{tikzcd}	
 \]
 defining the left vertical functors (with the right functors defined analogously) in each of the commutative diagrams below.
@@ -5064,12 +5051,12 @@ for the map $T_0 \to T_i$ and $v_{Ge} \in V_G(T_0)$.
 Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
 the object $V_G(T_0 \to \cdots \to T_n)$
 can be thought of as the image of the inverse functor in
-Corollary \ref{SUBDATAUNDERPLANG COR},
+Corollary \ref{SUBDATAUNDERPLANG COR} (in the planar case),
 written according to the reformulation in 
-Remark \ref{SUBSGREF DEF}
-(where since we are in the planar case we need not distinguish between the
-$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notations
-(cf. Remark \ref{WHYR REM})).
+Remark \ref{SUBSGREF DEF}.
+%(where since we are in the planar case we need not distinguish between the
+%$S_{(\minus)}^{\mathsf{r}}$ and $S'_{(\minus)}$ notations
+%(cf. Remark \ref{WHYALT REM})).
 Note however that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
@@ -6256,6 +6243,7 @@ is a right Kan extension diagram then so is the composite diagram.
 \end{lemma}
 
 
+
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), 
 	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
@@ -6267,23 +6255,23 @@ is a right Kan extension diagram then so is the composite diagram.
 \]
 is initial.
 We will slightly abuse notation by writing 
-$(T \to U, (A_{v_{G f}})_{V_G(U)})$ for the objects of 
+$(T \to S, (A_{v_{G f}})_{V_G(S)})$ for the objects of 
 $T \downarrow \Omega_{G}^{0} \wr A$,
 as well as 
 $
 \left(
-	(T_{v_{G e}} \to U_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
+	(T_{v_{G e}} \to S_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
 	(A_v)_{v \in V}
 \right)
 $
 for the objects of 
 $V_G(T) \downarrow \Fin \wr A$,
 with the map $\phi \colon V_G(T) \to V$ and the condition 
-$\rho(A_v) = U_v$ left implicit.
+$\rho(A_v) = S_v$ left implicit.
 
 By Proposition \ref{FIBERKANMAP PROP}, $T \downarrow \Omega_{G}^{0} \wr A$ has an initial subcategory
 $T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A$
-of those objects such that $T \to U$ is the identity on roots. 
+of those objects such that $T \to S$ is the identity on roots. 
 Similarly, again by Proposition \ref{FIBERKANMAP PROP},
 $V_G(T) \downarrow \Fin \wr A$
 has an initial subcategory
@@ -6308,7 +6296,7 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 \left(
 	(T_{v_{Ge}})_{V_G(T)}
 	\xrightarrow{\tau}
-	(U_x)_{X},
+	(S_x)_{X},
 	(A_x)_{X}
 \right)
 \mapsto
@@ -6316,7 +6304,7 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 	\left(
 	T_{v_{G e}} \to 
 	(\mathsf{r} \tau_{v_{Ge}})^{\**}
-	U_{\tau(v_{Ge})}
+	S_{\tau(v_{Ge})}
 	\right),
 	\left(
 	(\mathsf{r} \tau_{v_{Ge}})^{\**}
@@ -6328,13 +6316,13 @@ where we recall that the leftmost $\tau$
 is described by a map of sets
 $\tau \colon V_G(T) \to X$
 and maps
-$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to U_{\tau(v_{Ge})}$ in $\Sigma_G$
+$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to S_{\tau(v_{Ge})}$ in $\Sigma_G$
 and $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
 is the root functor.
 
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
-$T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
+$T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(S)$)).
 \[
 \begin{tikzcd}[column sep =1.5em , row sep =0em]
 	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
@@ -6343,13 +6331,13 @@ $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run ov
 	\underset{v_{Ge} \in V_G(T)}{\prod} 
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
 \\
-	(T \xrightarrow{\psi} U, (A_{{G f}})) \ar[mapsto]{r} &
+	(T \xrightarrow{\psi} S, (A_{{G f}})) \ar[mapsto]{r} &
 	\left(
-		(T_{{G e}} \to U_{{G \psi(e)}}),
+		(T_{{G e}} \to S_{{G \psi(e)}}),
 		(A_{{G f}})
 	\right) \ar[mapsto]{r} &
 	\left(
-		(T_{{G e}} \to \psi_{G e}^{\**} U_{{G \psi(e)}}),
+		(T_{{G e}} \to \psi_{G e}^{\**} S_{{G \psi(e)}}),
 		(\psi_{G e}^{\**} A_{{G \psi(e)}})
 	\right)
 \end{tikzcd}
@@ -6373,12 +6361,12 @@ and since the inclusion $i$ is initial, it suffices to show that
 $r \circ V_G$ is an isomorphism.
 
 But now note that an arbitrary choice of rooted isomorphisms
-$T_{v_{G_e}} \to U^{\mathsf{r}}_{v_{G_e}}$
-uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon T \to U$.
+$T_{v_{G_e}} \to S_{v_{G_e}}$
+uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon T \to S$.
 Therefore, arbitrary choices of 
-$\psi_{G e}^{\**} U_{{G \psi(e)}}$,
+$\psi_{G e}^{\**} S_{{G \psi(e)}}$,
 $\psi_{G e}^{\**} A_{{G \psi(e)}}$
-uniquely determine $U$, $A_{G f}$, finishing the proof.
+uniquely determine $S$, $A_{G f}$, finishing the proof.
 \end{proof}
 
 Lemma \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
