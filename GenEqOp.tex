@@ -4773,17 +4773,17 @@ Definition \ref{SUBSTITUTIONDATUM}.
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{(resp. planar) $T$-substitution datum} is a tuple 
-	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ of trees together with
+	$\left(S_{f^{\uparrow} \leq f} \right)_{V(T)}$ of trees together with
 \begin{itemize}	
 \item[(i)] associative and unital $G$-action maps
-$U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
+	$S_{f^{\uparrow} \leq f} \to S_{g f^{\uparrow} \leq g f}$; 
 \item[(ii)]	(planar) tall maps 
-	$T_{f^{\uparrow} \leq f} \to U_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
+	$T_{f^{\uparrow} \leq f} \to S_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
 \end{itemize}	
 	Further, a map of (planar) $T$-substitution data 
-	$\left(U_{f^{\uparrow} \leq f}\right) \to
-	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (planar) tall maps 
-	$\left(U_{f^{\uparrow} \leq f} \to V_{f^{\uparrow} \leq f} \right)$.
+	$\left(S_{f^{\uparrow} \leq f}\right) \to
+	\left(R_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (planar) tall maps 
+	$\left(S_{f^{\uparrow} \leq f} \to R_{f^{\uparrow} \leq f} \right)$.
 	
 	We denote the category of (planar) $T$-substitution data 
 	by $\mathsf{Sub}(T)$
@@ -4795,15 +4795,20 @@ Recall that a map of $G$-trees is called
 \textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}),
 and we note that by Definition \ref{PLANARMAP_DEF} planar tall maps of $G$-trees are always rooted.
 
-\begin{remark}\label{SUBSGREF DEF}
-Writing $U^{\mathsf{r}}_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in Ge}$
-a $T$-substitution datum can equivalently be encoded by the tuple
-$\left(U^{\mathsf{r}}_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
-$T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
-The need to include $\mathsf{r}$ (which stands for ``rooted'')
-in the notation is explained by Remark \ref{WHYR REM}.
 
-Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$ are as well.
+\begin{remark}\label{SUBSGREF DEF}
+Writing $S_{v_{G e}} = (S_{f^{\uparrow} \leq f})_{f \in Ge}$,
+a $T$-substitution datum can equivalently be encoded by the tuple
+$\left(S_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
+$T_{v_{Ge}} \to S_{v_{G e}}$.
+%The need to include $\mathsf{r}$ (which stands for ``rooted'')
+%in the notation is explained by Remark \ref{WHYR REM}.
+
+Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to S_{v_{G e}}$ are as well.
+
+We caution that in the non-planar case the
+$S_{v_{G e}}$ notation requires some care,
+as discussed in {\color{red} bla}. 
 \end{remark}
 
 
@@ -4815,16 +4820,16 @@ Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to U^{\m
 %	for each $v_{G e} \in V_G(T)$, 
 	Writing $T = (T_x)_{x \in X}$ as usual
 	one obtains (non-equivariant) $T_x$-substitution data 
-	$U_{x,(\minus)}$ for each $T_x$.
+	$S_{x,(\minus)}$ for each $T_x$.
 	We again write
-	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
+	$S_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
 	and note that these are compatible with the $G$-action in the sense that the obvious diagram
 \[
 \begin{tikzcd}[row sep =3pt]
-	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
+	\mathsf{Sc}(T_x) \ar{rr}{S_{x,(\minus)}} \ar{rd}[swap]{g} &&
 	\Omega
 \\
-	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{U_{gx,(\minus)}}
+	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{S_{gx,(\minus)}}
 \end{tikzcd}
 \]
 commutes.
@@ -4840,9 +4845,9 @@ to $\mathsf{Sc}(T)$ that satisfy obvious compatibilities).
 
 
 In the following we write
-$\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+$\colim_{\mathsf{Sc}(T)}S_{(\minus)}$
 to mean
-$(\colim_{\mathsf{Sc}(T_x)}U_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
+$(\colim_{\mathsf{Sc}(T_x)}S_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
 in $\Phi = \Fin \wr \Omega$ rather than in $\Omega$
 (as is needed since $\Omega$ lacks coproducts).
 
@@ -4856,10 +4861,10 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
-	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
-	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
+	\left(S_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} S_{(\minus)}\right) &
+	\left(S_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} S_{(\minus)}\right)
 \end{tikzcd}
 \]
 where $T \downarrow \Omega_G^{\mathsf{pt}}$ 
@@ -4874,6 +4879,39 @@ is the category of planar tall (resp. rooted tall) maps under $T$.
 	applied to each individual $T_x$ together with the equivariance analysis in
 	Remark \ref{SUBSDATUMCONV REM}.
 \end{proof}
+
+{\color{red} HERE}
+
+{\color{red} recall were indep is at}
+
+\begin{notation}\label{UEUPEG NOT}
+	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT}
+	(and in accordance with Remark \ref{SUBSGREF DEF}),
+	given an independent map
+	$\varphi \colon T \to S$ of $G$-trees
+	and $G$-vertex $v_{Ge} \in V_G(T)$
+	we write
+	\[
+	S_{v_{Ge}} = 
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
+	\]
+\end{notation}
+
+{\color{red} HERE}
+
+\begin{remark}
+	In Notation \ref{UEUPE NOT} one has,
+	by definition,
+	that the maps $U_{e^{\uparrow} \leq e} \to U$
+	are planar maps regardless of whether the map
+	$\varphi \colon T \to U$ is planar.
+
+	However, Notation \ref{UEUPEG NOT} is a little subtler.
+\end{remark}
+
+
+
+{\color{red} HERE}
 
 
 \begin{remark} \label{WHYR REM}
@@ -5008,19 +5046,6 @@ Furthermore, generalizing Remark \ref{LRROOTMAP REM},
 all operators $d_i$, $s_j$ 
 are maps of split Grothendieck fibrations.
 \end{remark}
-
-
-\begin{notation}\label{UEUPEG NOT}
-	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT},
-	given a tall planar map
-	$\varphi \colon T \to S$ of $G$-trees
-	and $G$-vertex $v_{Ge} \in V_G(T)$
-	we write
-	\[
-	S_{v_{Ge}} = 
-	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
-	\]
-\end{notation}
 
 
 \begin{notation}\label{VGDEF NOT}
