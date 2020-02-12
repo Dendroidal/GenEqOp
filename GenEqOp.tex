@@ -11349,21 +11349,29 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       % There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
       The \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}
       has a similar form to cofibrant symmetric pushout powers,
-      except it asks for the cofibrancy of $f^{\square n}$ in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$. 
-      This axiom
+      except it asks for the cofibrancy of $f^{\square n}$ in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
+      This axiom, along with some technical conditions,
       % along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
-      is sufficient for the construction of a variety of projective model structures
-      on categories of algebraic objects enriched in $\sSet$
-      (and semi-model categories in more general settings),
+      is sufficient for the construction of a variety of projective (semi-)model structures
+      on categories of algebraic objects,
       including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
       % It is quite restrictive, and several more general conditions have been developed
       % (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
       % % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
       % which accomplish these tasks.
-      COME BACK
-      The power cofibration axiom is very demanding, leading to a number of more general variants
-      (e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})).
-      However, neither the power cofibration axiom or any of these variants see any fixed-point information in $\V^{\Sigma_n}$, and thus cannot be used to prove our main results.
+      However, the power cofibration axiom is very demanding; in particular, it is not satisfied by $\sSet$.
+      This has lead to a number of more general variants,
+      including
+      %the \textit{commutative monoid axiom} of
+      \cite[Defn. 3.1]{Wh17},
+      % $(\clubsuit)$ of
+      \cite[Thm. 6.1.1]{WY18},
+      % and
+      % \textit{symmetric $h$-monoidal} of
+      \cite[Defn. 2.1]{PS18b}.
+      % and \cite[Defn. 4.2.8, Remark 4.2.10]{PS18a}.
+      However, neither the power cofibration axiom nor any of these variants
+      see any fixed-point information in $\V^{\Sigma_n}$, and thus cannot be used to prove our main results.
       Instead, cofibrant symmetric pushout powers is explicitly designed to work in the context of genuine equivariant homotopy theory.
       % We replace the power cofibration axiom % and the monoid axiom
       % with
@@ -11382,14 +11390,14 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       % ---------- the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
       % re they need some sort of monoid axiom as well
       
-      % or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh16}.
+      % or the more relaxed \textit{commutative monoid axiom} of \cite[Def. 3.1]{Wh17}.
       % % symmetric $h$-monoidal of Pavlov-Scholbach,
       % % and the cofibration hypothesis of \cite{MMSS},
       % % to name a few.
       % These (and other related conditions) are sufficient to generate \textit{projective} model structures on various
       % categories of algebraic objects
       % % (e.g.  commutative monoids, colored non-equivariant operads, and algebras over non-equivariant operads)
-      % (e.g. \cite{Wh16,WY18}).
+      % (e.g. \cite{Wh17,WY18}).
       % While appearing similar,
       % these axioms are built to address non-equivariant problems and are not suitable to prove our main results.
       % Our axiom is instead designed explicitly to work in the context of genuine equivariant homotopy theory.
@@ -11403,7 +11411,7 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
       % We note that cofibrant symmetric pushout powers alone is not sufficent
       % to establish genuine equivariant model structures on categories of algebraic objects. 
-      % % analogues of the results from, for example, \cite{Wh16,WY18}.
+      % % analogues of the results from, for example, \cite{Wh17,WY18}.
       % For example, in \cite{BP_HGOP} we need an appropriate and subtle genuine equivariant generalization of the
       % % commutative
       % \textit{monoid axiom} of \cite{SS00},
