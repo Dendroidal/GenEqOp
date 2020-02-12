@@ -280,6 +280,185 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	the confusing wording in the second paragraph of 
 	Remark \ref{NPXY_REM} has been revised
 
+	\item[61.] the connection between our extension category and the approaches 
+	of Berger-Moerdijk in \cite{BM03}
+	and of Batanin-Berger in \cite{BB17}
+	is fairly convoluted.
+	From a ``big picture'' point of view all approaches 
+	are following the same basic intuition. 
+	
+	However, the exact procedure we follow to identify 
+	the extension category seems to be new,
+	owing in part to the setup in 
+	Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
+	which requires us to worry about things that 
+	\cite{BM03} and \cite{BB17} need not worry about
+	(more detail below).
+	To properly compare the approaches, we summarize them below:
+\begin{itemize}
+	\item[(LT)] the approach in 
+	\cite[\S 5.11]{BM03}
+	directly describes filtrations of free extensions as in
+	\eqref{FILTRATION_LAN_SQUARE_DIAGRAM}
+	where the left map is given as a colimit over labeled trees.
+	Somewhat notably, the original description of 
+	the filtration in \cite[\S 5.11]{BM03}
+	was not correct due to ignoring the effect of the operadic unit,
+	leading to a correction of that filtration in 
+	\cite{BM09}.
+	Also of relevance for this approach is Caviglia's work in Appendices B,C of \cite{Cav},
+	which adapts the \cite{BM03} filtration 
+	to the colored case, while also providing a more detailed discussion.
+\item[(PM)] 
+	for polynomial monads $T$, \cite{BB17} describes free extensions as colimits over
+	an ``internal classifier 
+	$\bold{T}^{T_{f,g}}$ for free algebras''
+	(the specific result is \cite[Thm. 6.17]{BB17}
+	for $S=T_{f,g}$, where 
+	$T_{f,g}$ is built in \cite[\S 7]{BB17}).
+	For \emph{tame} polynomial monads, 
+	the desired filtrations of free extensions are then 
+	built by identifying a final subcategory of
+	$\bold{T}^{T_{f,g}}$,
+	and filtering that subcategory.
+\item[(CO)]
+	\cite[Prop. 4.3.16]{WY18} describes a filtration 
+	of free extensions of algebras over a 
+	\emph{colored} symmetric operad. 
+	The relevance of this is given by
+	the fact that there exists a colored operad
+	$\mathsf{Op}$ whose algebras are the classical single colored operads
+	(informally, colors in $\mathsf{Op}$
+	are the set of arities $n \geq 0$
+	and operations are trees, with arities of vertices being the input colors and number of leaves being the target arity;
+	however, this requires keeping track of an order of the vertices, independent of the planarization,
+	so care is needed in practice).
+	On a side note,
+	\cite[Prop. 4.3.16]{WY18} is a 
+	direct colored generalization
+	of \cite[(7.12)]{Ha10},
+	which is an abstraction of 
+	\cite[Prop. 4.20]{Ha10}.
+	In \cite[Prop. 5.20]{Pe16},
+	the second author reproved this filtration result by identifying a free algebra extension
+	as a colimit over a category $\mathcal{W}$
+	(\cite[Def. 5.26]{Pe16}),
+	then identifying a final subcategory of $\mathcal{W}$
+	and filtering that subcategory.
+\end{itemize}	
+
+
+In practice, all approaches (LT),(PM),(CO)
+run into technical issues 
+that would require significant modifications 
+when applied to Theorems 
+\ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
+as follows:
+\begin{itemize}
+\item[(I)]
+First, for Theorem
+\ref{MAINEXIST1 THM},
+note that our free operad monad $\mathbb{F}$
+is, as below, the adjoint to forgetting to symmetric sequences.
+However, both approaches
+(PM) and (CO) work with the composite monad 
+$\widetilde{\mathbb{F}}$
+forgetting to just sequences (with no symmetric group actions).
+\begin{equation}
+\begin{tikzcd}[column sep =9em]
+	\mathcal{V}^{\mathbb{N}_0}
+	\ar[shift left=1.5]{r}
+	{(X_n) \mapsto
+	(\Sigma_n \cdot X_n)}
+&
+	\mathcal{V}^{\Sigma} 
+	\arrow[l, shift left=1.5] 
+	\arrow[r, shift left=1.5,swap,"\mathbb{F}"']
+&
+	\mathsf{Op}(\mathcal{V})
+	\ar[shift left=1.5]{l}
+\end{tikzcd}
+\end{equation}
+However, setting $\mathcal{V}=\mathcal{V}^G$ above,
+the nature of graph subgroups $\Gamma \leq G \times \Sigma$ implies that
+one can only build the generating (trivial) cofibrations in 
+Theorem \ref{MAINEXIST1 THM} by using the monad $\mathbb{F}$,
+as $\widetilde{\mathbb{F}}$ can only build the generators for trivial graph subgroups $\Gamma \leq G$.
+\item[(II)] approach (LT) follows a 
+``build first, check latter'' philosophy, 
+where the underlying symmetric sequence of a free extension is first built directly using labeled trees, 
+with the two tasks of checking that the built sequence is
+an operad and a pushout in operads
+being handled a posteriori (and often left as an exercise to the reader). 
+But since explicitly describing all the compositions/restrictions/compatibilites
+of a genuine equivariant operad isn't easy,
+it seems hard to approach 
+Theorem \ref{MAINEXIST2 THM}
+via a ``build first, check latter'' philosophy
+\end{itemize}
+
+In practice, issue (II) seems the most prohibitive,
+and in the early stages of this paper
+we were planning to follow approach (CO),
+with which we were more familiar 
+(and had promising work arounds for issue (I)), 
+as we were at first convinced that $G$-trees
+could be assembled into a colored operad.
+However, we eventually realized that this can not be the case, since defining genuine operads requires using diagonal maps.
+This caused us to realize that genuine operads in the sense of this paper are instead algebras
+over a \emph{colored} genuine operad $\mathsf{Op}_G$ of $G$-trees,
+forcing us to drop approach (CO).
+
+The approach we eventually followed in this paper is 
+a hybrid of the philosophies in (LT),(PM),(CO).
+As in (LT), we focus directly on the trees themselves throughout
+(whereas in both (PM),(CO)
+the trees are packaged as abstract operations)
+but, as in (PM),(CO)
+we follow a ``define first, then describe'' philosophy,
+where we start with a free extension defined as an 
+abstract object,
+then work our way towards a description.
+
+In practice, this means that while the labeled trees of 
+\cite{BM03},\cite{Cav} are presented as an ``educated guess'' that is then checked to work out,
+our approach provides a step by step procedure for 
+building $\Omega^e_G$
+without ``guessing'', 
+much like \cite{BB17} provides a procedure for building
+$\bold{T}^{T_{f,g}}$
+and \cite{WY18,Ha10,Pe16}
+provide procedures for building $\mathcal{O}_A$.
+
+On a side note,
+one advantage of having a procedural approach is that it is surprisingly easy to ``guess wrong''
+when trying to build extension trees by hand,
+mainly due to the roles of operadic units and of algebra units (i.e. stumps).
+For example, 
+in \cite{BP_HGOP},
+which generalize Theorem \ref{MAINEXIST1 THM} to the colored case 
+or, equivalently, generalizes 
+\cite{Cav} to the equivariant case,
+we adapt the techniques in this paper to describe general pushouts
+in the category $\mathsf{Op}_{\mathfrak{C}}$ of operads with a fixed set of colors $\mathfrak C$.
+Our answer (in \cite[App. A.5]{BP_HGOP}) involves left Kan extensions over a category
+$\Omega^p_{\mathfrak{C}}$ of pushout trees 
+that recovers (up to slight repackaging technicalities)
+the description in 
+\cite[App. B]{Cav}.
+However, in \cite[App. C]{Cav}, 
+which tackles the subject of free extensions, 
+the ``categories of extension trees'' built therein
+don't quite match $\Omega^e_G$.
+More precisely, \cite[App. C]{Cav} forbids degeneracies,
+and we believe that this leads the construction therein to
+not handle the operadic unit correctly,
+and thus not to define an operad (notably, that verification is left to the reader).
+
+	
+
+
+
 	\item[62.] 
 	In order to better motivate the proof of 
 	Proposition \ref{LXP PROP}
