@@ -7443,7 +7443,7 @@ i.e. pushouts of the form
   \end{tikzcd}
 \end{equation}
 in the category $\mathsf{Op}_G(\mathcal{V})$.
-As is common in the literature (e.g. \cite{SS00, Spi01, BM03, Whi14, Pe16}),
+As is common in the literature (e.g. \cite{SS00, Spi01, BM03, WY18, Pe16, BB17}),
 the key technical ingredient will be the identification of a suitable filtration
 \begin{equation}\label{FILTR EQ}
 	\mathcal{P}=\mathcal{P}_0 \to 
@@ -7452,7 +7452,9 @@ the key technical ingredient will be the identification of a suitable filtration
 \end{equation}
 of the map $\mathcal{P} \to \mathcal{P}[u]$
 in the underlying category $\mathsf{Sym}_G(\mathcal{V})$.
-To explain how this filtration is obtained,
+To explain how this filtration is obtained
+(for a comparison with similar filtrations, 
+see Remark \ref{FILTCOMP REM}),
 %and abbreviating 
 %$\mathbb{F}_G$ as $\mathbb{F}$,
 note first that $\mathcal{P}[u]$ is given by a coequalizer
@@ -7589,6 +7591,48 @@ by using these filtrations to prove
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 
 %This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
+
+{\color{red} HERE}
+
+\begin{remark}\label{FILTCOMP REM}
+	Our approach to the filtration \eqref{FILTR EQ}
+	is greatly constrained by Theorems 
+	\ref{MAINEXIST1 THM},
+	\ref{MAINEXIST2 THM},
+	\ref{MAINQUILLENEQUIV THM},
+	which present technical challenges not found in similar filtrations in the literature.
+
+	To discuss why, we consider 
+	\cite[Prop. 4.3.16]{WY18} (resp. \cite[\S 7]{BB17}),
+	which builds filtrations of free extensions
+	of algebras over colored operads
+	(algebras over polynomial monads).
+	The frameworks in \cite{WY18} and \cite{BB17}
+	are general enough to produce such filtrations
+	in the usual category $\mathsf{Op}(\V)$
+	of operads,
+	so one might hope to apply those frameworks here.
+	However, there are two key issues:
+	by Remark \ref{NEED_WREATH_REMARK},
+	the definition of genuine operads $\mathsf{Op}_G(\V)$
+	requires $\V$ to have diagonal maps,
+	which are not used in either of \cite{WY18},\cite{BB17};
+	
+	
+	Remark \ref{WRE}
+	
+	
+	,
+	so one might hope that 
+	
+	
+	which builds filtrations
+	for algebras over colored operads,
+	and \cite[\S 7]{BB17},
+	
+	
+{\color{red} HERE}
+\end{remark}
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
