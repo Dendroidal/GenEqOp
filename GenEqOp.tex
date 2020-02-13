@@ -7592,7 +7592,6 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 
 %This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
 
-{\color{red} HERE}
 
 \begin{remark}\label{FILTCOMP REM}
 	Our approach to the filtration \eqref{FILTR EQ}
@@ -7606,33 +7605,64 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 	\cite[Prop. 4.3.16]{WY18} (resp. \cite[\S 7]{BB17}),
 	which builds filtrations of free extensions
 	of algebras over colored operads
-	(algebras over polynomial monads).
-	The frameworks in \cite{WY18} and \cite{BB17}
-	are general enough to produce such filtrations
-	in the usual category $\mathsf{Op}(\V)$
-	of operads,
-	so one might hope to apply those frameworks here.
-	However, there are two key issues:
+	(resp. over polynomial monads).
+	The frameworks in \cite{WY18},\cite{BB17}
+	are general enough to cover the usual category $\mathsf{Op}(\V)$ of operads,
+	so one might hope they would suffice for our purposes.
+%	
+	However, one runs into two main issues:
+\begin{inparaenum}
+\item[(i)]
 	by Remark \ref{NEED_WREATH_REMARK},
-	the definition of genuine operads $\mathsf{Op}_G(\V)$
-	requires $\V$ to have diagonal maps,
-	which are not used in either of \cite{WY18},\cite{BB17};
-	
-	
-	Remark \ref{WRE}
-	
-	
-	,
-	so one might hope that 
-	
-	
-	which builds filtrations
-	for algebras over colored operads,
-	and \cite[\S 7]{BB17},
-	
-	
-{\color{red} HERE}
+	defining genuine operads $\mathsf{Op}_G(\V)$
+	\emph{requires} using diagonal maps in $\V$,
+	and since diagonals play no role in the monads in \cite{WY18},\cite{BB17},
+	genuine operads can not covered by those frameworks;
+\item[(ii)]
+	\cite{WY18},\cite{BB17}
+	are designed to build model structures
+	with projective weak equivalences,
+	rather than fixed point equivalences as in 	
+	\eqref{GENEOPEQMT EQ}.
+	Consequently, writing $\widetilde{\mathbb F}$ for the monad that \cite{WY18},\cite{BB17} use to describe
+	$\mathsf{Op}^G(\V) = \mathsf{Op}(\V^G)$,
+	one has that not all the generating (trivial) cofibrations needed for 
+	Theorem \ref{MAINEXIST1 THM}
+	(see \eqref{ANOPUCH EQ})
+	are in the image of $\widetilde{\mathbb{F}}$
+	(more precisely, the left map in \eqref{ANOPUCH EQ}
+	is in the image of $\widetilde{\mathbb{F}}$
+	iff $K \leq G$;
+	compare with \eqref{NAIVEGEINFTY EQ},\eqref{GENGEINFTY EQ}).
+\end{inparaenum}
+
+As such, rather than attempting the hefty task of modifying \cite{WY18},\cite{BB17} to address the two issues above, 
+our approach adapts the key ideas in
+\cite{WY18},\cite{BB17} while focusing on $G$-trees for intuition.
+Ultimately, the description of our filtration 
+\eqref{FILTRATION_LAN_LEVEL}
+is reminiscent of the description of free extensions of operads in \cite[\S 5.11]{BM03}\footnote{We caution that
+\cite[\S 3]{BM09}
+corrects an issue in \cite{BM03} concerning the effect of operadic units.},
+though we note that our workflow is very different from that in 
+\cite{BM03}.
+Namely, 
+\cite{BM03} describes an analogue of 
+\eqref{FILTRATION_LAN_LEVEL}
+directly via an ``educated guess'' so as to build an object $F_{\infty}$
+which must a posteriori be checked to be both an operad and the desired pushout $P[u]$ in \cite[Prop. 5.1]{BM03}.
+On the other hand, 
+we start with the pushout $\mathcal{P}[u]$ itself,
+abstractly defined, 
+and gradually work our way down to 
+\eqref{FILTRATION_LAN_LEVEL},
+similarly to \cite{WY18},\cite{BB17}.
 \end{remark}
+
+
+
+
+
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -10280,7 +10310,7 @@ $\mathsf{Op}^G(\mathcal{V})$. This again uses
 with the main step being an analysis of 
 free $\mathbb{F}$-extension diagrams in 
 $\mathsf{Op}^G(\mathcal{V})$
-\[ 
+\begin{remark}\label{ANOPUCH EQ}
 	\begin{tikzcd} 
 	\mathbb{F}
 	\left(
@@ -10297,7 +10327,7 @@ $\mathsf{Op}^G(\mathcal{V})$
 &
 	\mathcal{O}[u] 
 \end{tikzcd} 
-\]
+\end{remark}
 for $K \leq G \times \Sigma_n^{op}$
 and $u \colon A \to B$
 a generating trivial (trivial) cofibration of $\mathcal{V}$.
