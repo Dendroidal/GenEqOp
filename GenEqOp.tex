@@ -4422,17 +4422,6 @@ are inverse to each other is clear from the same inductive argument.
 \end{proof}
 
 
-\begin{notation}\label{UEUPE NOT}
-	Following the previous result, 
-	given a tall planar map 
-	$\varphi \colon T \to U$
-	and vertex
-	$(e^{\uparrow} \leq e) \in V(T)$
-	we will abbreviate
-	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
-	as simply
-	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
-\end{notation}
 
 
 \begin{corollary}\label{SUBDATAUNDERPLAN COR}
@@ -4454,6 +4443,21 @@ the category of tall maps under $T$.
 	This is a consequence of Proposition \ref{PLANARPULL PROP} together with the previous result.
 	Indeed, Proposition \ref{PLANARIZATIONCHAR PROP} can be restated as saying that isomorphisms $T \to T'$ are in bijection with substitution data consisting of isomorphisms, and thus  bijectiveness of $\mathsf{Sub}(T) \to T \downarrow \Omega^{\mathsf{t}}$ reduces to that in the previous result.
 \end{proof}
+
+
+
+\begin{notation}\label{UEUPE NOT}
+	Following the previous results, 
+	given a map of trees 
+	$\varphi \colon T \to U$
+	and vertex
+	$(e^{\uparrow} \leq e) \in V(T)$
+	we will abbreviate
+	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
+	as simply
+	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
+\end{notation}
+
 
 \begin{remark}\label{VERTEXDECOMP REM}
 As noted in the proof of Proposition \ref{SUBDATAUNDERPLAN PROP}, writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$,
@@ -5009,17 +5013,17 @@ Definition \ref{SUBSTITUTIONDATUM}.
 	Let $T \in \Omega_G$ be a $G$-tree.
 	
 	A \textit{(resp. planar) $T$-substitution datum} is a tuple 
-	$\left(U_{f^{\uparrow} \leq f} \right)_{V(T)}$ of trees together with
+	$\left(S_{f^{\uparrow} \leq f} \right)_{V(T)}$ of trees together with
 \begin{itemize}	
 \item[(i)] associative and unital $G$-action maps
-$U_{f^{\uparrow} \leq f} \to U_{g f^{\uparrow} \leq g f}$; 
+	$S_{f^{\uparrow} \leq f} \to S_{g f^{\uparrow} \leq g f}$; 
 \item[(ii)]	(planar) tall maps 
-	$T_{f^{\uparrow} \leq f} \to U_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
+	$T_{f^{\uparrow} \leq f} \to S_{f^{\uparrow} \leq f}$ compatible with the $G$-action maps.
 \end{itemize}	
 	Further, a map of (planar) $T$-substitution data 
-	$\left(U_{f^{\uparrow} \leq f}\right) \to
-	\left(V_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (planar) tall maps 
-	$\left(U_{f^{\uparrow} \leq f} \to V_{f^{\uparrow} \leq f} \right)$.
+	$\left(S_{f^{\uparrow} \leq f}\right) \to
+	\left(R_{f^{\uparrow} \leq f}\right)$ is a compatible tuple of (planar) tall maps 
+	$\left(S_{f^{\uparrow} \leq f} \to R_{f^{\uparrow} \leq f} \right)$.
 	
 	We denote the category of (planar) $T$-substitution data 
 	by $\mathsf{Sub}(T)$
@@ -5031,36 +5035,34 @@ Recall that a map of $G$-trees is called
 \textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}),
 and we note that by Definition \ref{PLANARMAP_DEF} planar tall maps of $G$-trees are always rooted.
 
-\begin{remark}\label{SUBSGREF DEF}
-Writing $U^{\mathsf{r}}_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in Ge}$
-a $T$-substitution datum can equivalently be encoded by the tuple
-$\left(U^{\mathsf{r}}_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
-$T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$.
-The need to include $\mathsf{r}$ (which stands for ``rooted'')
-in the notation is explained by Remark \ref{WHYR REM}.
 
-Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to U^{\mathsf{r}}_{v_{G e}}$ are as well.
+\begin{remark}\label{SUBSGREF DEF}
+Writing $S_{v_{G e}} = (S_{f^{\uparrow} \leq f})_{f \in Ge}$,
+a $T$-substitution datum can equivalently be encoded by the tuple
+$\left(S_{v_{G e}}\right)_{V_G(T)}$ together with \textit{rooted} tall maps 
+$T_{v_{Ge}} \to S_{v_{G e}}$.
+
+Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to S_{v_{G e}}$ are as well.
+
+We caution that in the non-planar case the
+$S_{v_{G e}}$ notation requires some care,
+as discussed in Remark \ref{WHYALT REM}. 
 \end{remark}
 
 
 \begin{remark}\label{SUBSDATUMCONV REM}
-%	To establish the equivariant analogue of Proposition \ref{SUBDATAUNDERPLAN PROP} we first repackage equivariant substitution data in terms of non-equivariant ones.
-%
-%	The rooted condition of $T$-substitution data allows us to write
-%	$U_{v_{G e}} = (U_{f^{\uparrow} \leq f})_{f \in v_{Ge}}$
-%	for each $v_{G e} \in V_G(T)$, 
 	Writing $T = (T_x)_{x \in X}$ as usual
 	one obtains (non-equivariant) $T_x$-substitution data 
-	$U_{x,(\minus)}$ for each $T_x$.
+	$S_{x,(\minus)}$ for each $T_x$.
 	We again write
-	$U_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
+	$S_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
 	and note that these are compatible with the $G$-action in the sense that the obvious diagram
 \[
 \begin{tikzcd}[row sep =3pt]
-	\mathsf{Sc}(T_x) \ar{rr}{U_{x,(\minus)}} \ar{rd}[swap]{g} &&
+	\mathsf{Sc}(T_x) \ar{rr}{S_{x,(\minus)}} \ar{rd}[swap]{g} &&
 	\Omega
 \\
-	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{U_{gx,(\minus)}}
+	& \mathsf{Sc}(T_{gx}) \ar{ru}[swap]{S_{gx,(\minus)}}
 \end{tikzcd}
 \]
 commutes.
@@ -5076,9 +5078,9 @@ to $\mathsf{Sc}(T)$ that satisfy obvious compatibilities).
 
 
 In the following we write
-$\colim_{\mathsf{Sc}(T)}U_{(\minus)}$
+$\colim_{\mathsf{Sc}(T)}S_{(\minus)}$
 to mean
-$(\colim_{\mathsf{Sc}(T_x)}U_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
+$(\colim_{\mathsf{Sc}(T_x)}S_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
 in $\Phi = \Fin \wr \Omega$ rather than in $\Omega$
 (as is needed since $\Omega$ lacks coproducts).
 
@@ -5092,10 +5094,10 @@ Let $T \in \Omega_G$ be a $G$-tree. There are isomorphisms of categories
 	\mathsf{Sub}(T) \ar[r,shift left=2pt] &
 	T \downarrow \Omega_{G}^{\mathsf{rt}} \ar[l,shift left=2pt]
 \\
-	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right) &
-	\left(U_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
-	\left(T \to \colim_{\mathsf{Sc}(T)} U_{(\minus)}\right)
+	\left(S_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} S_{(\minus)}\right) &
+	\left(S_{f^{\uparrow} \leq f}\right)_{V(T)} \ar[r,mapsto] & 
+	\left(T \to \colim_{\mathsf{Sc}(T)} S_{(\minus)}\right)
 \end{tikzcd}
 \]
 where $T \downarrow \Omega_G^{\mathsf{pt}}$ 
@@ -5112,30 +5114,53 @@ is the category of planar tall (resp. rooted tall) maps under $T$.
 \end{proof}
 
 
-\begin{remark} \label{WHYR REM}
-Writing $U = \colim_{\mathsf{Sc}(T)}U_{(\minus)}$, 
-it follows from the non-equivariant results
-Proposition \ref{SUBDATAUNDERPLAN PROP} and
-Corollary \ref{SUBDATAUNDERPLAN COR}
-that each inclusion map $U_{f^{\uparrow} \leq f} \to U$
-is planar, so that there is no conflict with 
-Notation \ref{GVERT NOT}.
+In the following, 
+note that tall rooted maps are independent maps,
+cf. Proposition \ref{INDMAPCHAR PROP}.
 
-However, some care is needed concerning the
-$U_{v_{Ge}}^{\mathsf{r}}$ appearing in the reformulation of substitution data given in Remark \ref{SUBSGREF DEF}.
-Letting $\varphi \colon T \to U$ be the induced map,
-one sees that while $U_{v_{Ge}}^{\mathsf{r}}$ and 
-$U_{v_{G\varphi(e)}}$
-have the same constituent trees (with the latter defined by Notation \ref{GVERT NOT}),
-the roots of $U_{v_{Ge}}^{\mathsf{r}}$ are ordered by $Ge$
-while those of $U_{v_{G\varphi(e)}}$ are ordered by $G \varphi(e)$.
-More succinctly, it is then 
-$U_{v_{Ge}}^{\mathsf{r}} = \varphi_{Ge}^{\**}U_{v_{G\varphi(e)}}$ for $\varphi_{Ge} \colon Ge \to G \varphi(e)$
-the induced map.
+\begin{notation}\label{UEUPEG NOT}
+	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT}
+	(and in accordance with Remark \ref{SUBSGREF DEF}),
+	given an independent map
+	$\varphi \colon T \to S$ of $G$-trees
+	and $G$-vertex $v_{Ge} \in V_G(T)$
+	we write
+	\begin{equation}\label{UEUPEG EQ}
+	S_{v_{Ge}} = 
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
+	\end{equation}
+\end{notation}
 
-Lastly, we note that such distinctions are unnecessary for planar data, since then the $\varphi_{G e}$ are ordered isomorphisms (i.e. identities), so that 
-$U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
+
+\begin{remark}\label{WHYALT REM}
+	In Notation \ref{UEUPE NOT} one has,
+	by definition,
+	that the maps $U_{e^{\uparrow} \leq e} \to U$
+	are planar maps, regardless of whether the map
+	$\varphi \colon T \to U$ therein is planar.
+
+	However, Notation \ref{UEUPEG NOT} is subtler.
+	When $\varphi \colon T \to S$ is not a planar map,
+	then the maps $S_{v_{Ge}} \to S$ need to be planar on each tree component of $S_{v_{Ge}}$ but need not respect the order of the roots of $S_{v_{Ge}}$.
+	This is because the tuple
+	\eqref{UEUPEG EQ} 
+	is ordered according to the edge orbit $Ge$ of $T$
+	(this is needed for Remark \ref{SUBSGREF DEF})
+	rather than the edge orbit $G\varphi(e)$ of $S$.
+	
+	To make this more precise, write 
+	$\varphi_{Ge} \colon Ge \to G \varphi(e)$
+	for the induced map, which
+	is an isomorphism by
+	Proposition \ref{INDMAPCHAR PROP},
+	and write $S_{v_{Ge}}'$ for the tuple \eqref{UEUPEG EQ}
+	reorded according to $G \varphi(e)$.
+	One then has that the map
+	$S_{v_{Ge}}' \to S$ is planar
+	and $S_{v_{Ge}} = \varphi_{Ge}^{\**} S_{v_{Ge}}'$.
 \end{remark}
+
+
 
 \begin{remark}\label{PULLCOMP REM}
 	The isomorphisms in Corollary \ref{SUBDATAUNDERPLANG COR}
@@ -5152,10 +5177,10 @@ $U_{v_{Ge}}^{\mathsf{r}} = U_{v_{G\varphi(e)}}$.
 \[
 \begin{tikzcd}[row sep =10pt]
 	(\psi^{\**} T)_{v_{Ge}} \ar{d} \ar[dashed]{r} &
-	\bar{\psi}_{G e}^{\**}U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}} \ar{d}
+	\bar{\psi}_{G e}^{\**}S_{v_{G \bar{\psi}(e)}} \ar{d}
 \\
 	T_{v_{G \bar{\psi}(e)}} \ar{r} &
-	U_{v_{G \bar{\psi}(e)}}^{\mathsf{r}}
+	S_{v_{G \bar{\psi}(e)}}
 \end{tikzcd}	
 \]
 defining the left vertical functors (with the right functors defined analogously) in each of the commutative diagrams below.
@@ -5246,19 +5271,6 @@ are maps of split Grothendieck fibrations.
 \end{remark}
 
 
-\begin{notation}\label{UEUPEG NOT}
-	Combining Notations \ref{UEUPE NOT} and \ref{GVERT NOT},
-	given a tall planar map
-	$\varphi \colon T \to S$ of $G$-trees
-	and $G$-vertex $v_{Ge} \in V_G(T)$
-	we write
-	\[
-	S_{v_{Ge}} = 
-	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
-	\]
-\end{notation}
-
-
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor to a functor 
 $V_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
@@ -5275,12 +5287,12 @@ for the map $T_0 \to T_i$ and $v_{Ge} \in V_G(T_0)$.
 Alternatively, regarding $T_0 \to \cdots \to T_n$ as a string of $n$ arrows in $T_0 \downarrow \Omega_G^{\mathsf{pt}}$, 
 the object $V_G(T_0 \to \cdots \to T_n)$
 can be thought of as the image of the inverse functor in
-Corollary \ref{SUBDATAUNDERPLANG COR},
+Corollary \ref{SUBDATAUNDERPLANG COR} (in the planar case),
 written according to the reformulation in 
-Remark \ref{SUBSGREF DEF}
-(where since we are in the planar case we need not distinguish between the
-$U_{(\minus)}^{\mathsf{r}}$ and $U_{(\minus)}$ notations
-(cf. Remark \ref{WHYR REM})).
+Remark \ref{SUBSGREF DEF}.
+%(where since we are in the planar case we need not distinguish between the
+%$S_{(\minus)}^{\mathsf{r}}$ and $S'_{(\minus)}$ notations
+%(cf. Remark \ref{WHYALT REM})).
 Note however that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
@@ -6467,6 +6479,7 @@ is a right Kan extension diagram then so is the composite diagram.
 \end{lemma}
 
 
+
 \begin{proof}
 	Unpacking definitions using the pointwise formula for right  Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), 
 	it suffices to check that for each $T \in \Omega_{G}^{0}$ the induced functor
@@ -6478,23 +6491,23 @@ is a right Kan extension diagram then so is the composite diagram.
 \]
 is initial.
 We will slightly abuse notation by writing 
-$(T \to U, (A_{v_{G f}})_{V_G(U)})$ for the objects of 
+$(T \to S, (A_{v_{G f}})_{V_G(S)})$ for the objects of 
 $T \downarrow \Omega_{G}^{0} \wr A$,
 as well as 
 $
 \left(
-	(T_{v_{G e}} \to U_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
+	(T_{v_{G e}} \to S_{\phi(v_{Ge})})_{v_{G e} \in V_G(T)},
 	(A_v)_{v \in V}
 \right)
 $
 for the objects of 
 $V_G(T) \downarrow \Fin \wr A$,
 with the map $\phi \colon V_G(T) \to V$ and the condition 
-$\rho(A_v) = U_v$ left implicit.
+$\rho(A_v) = S_v$ left implicit.
 
 By Proposition \ref{FIBERKANMAP PROP}, $T \downarrow \Omega_{G}^{0} \wr A$ has an initial subcategory
 $T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A$
-of those objects such that $T \to U$ is the identity on roots. 
+of those objects such that $T \to S$ is the identity on roots. 
 Similarly, again by Proposition \ref{FIBERKANMAP PROP},
 $V_G(T) \downarrow \Fin \wr A$
 has an initial subcategory
@@ -6519,7 +6532,7 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 \left(
 	(T_{v_{Ge}})_{V_G(T)}
 	\xrightarrow{\tau}
-	(U_x)_{X},
+	(S_x)_{X},
 	(A_x)_{X}
 \right)
 \mapsto
@@ -6527,7 +6540,7 @@ Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has th
 	\left(
 	T_{v_{G e}} \to 
 	(\mathsf{r} \tau_{v_{Ge}})^{\**}
-	U_{\tau(v_{Ge})}
+	S_{\tau(v_{Ge})}
 	\right),
 	\left(
 	(\mathsf{r} \tau_{v_{Ge}})^{\**}
@@ -6539,13 +6552,13 @@ where we recall that the leftmost $\tau$
 is described by a map of sets
 $\tau \colon V_G(T) \to X$
 and maps
-$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to U_{\tau(v_{Ge})}$ in $\Sigma_G$
+$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to S_{\tau(v_{Ge})}$ in $\Sigma_G$
 and $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
 is the root functor.
 
 We now compute the following composite
 (where we abbreviate expressions $T_{v_{G e}}$ as 
-$T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(U)$)).
+$T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run over $V_G(T)$ (resp. $V_G(S)$)).
 \[
 \begin{tikzcd}[column sep =1.5em , row sep =0em]
 	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
@@ -6554,13 +6567,13 @@ $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run ov
 	\underset{v_{Ge} \in V_G(T)}{\prod} 
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
 \\
-	(T \xrightarrow{\psi} U, (A_{{G f}})) \ar[mapsto]{r} &
+	(T \xrightarrow{\psi} S, (A_{{G f}})) \ar[mapsto]{r} &
 	\left(
-		(T_{{G e}} \to U_{{G \psi(e)}}),
+		(T_{{G e}} \to S_{{G \psi(e)}}),
 		(A_{{G f}})
 	\right) \ar[mapsto]{r} &
 	\left(
-		(T_{{G e}} \to \psi_{G e}^{\**} U_{{G \psi(e)}}),
+		(T_{{G e}} \to \psi_{G e}^{\**} S_{{G \psi(e)}}),
 		(\psi_{G e}^{\**} A_{{G \psi(e)}})
 	\right)
 \end{tikzcd}
@@ -6584,12 +6597,12 @@ and since the inclusion $i$ is initial, it suffices to show that
 $r \circ V_G$ is an isomorphism.
 
 But now note that an arbitrary choice of rooted isomorphisms
-$T_{v_{G_e}} \to U^{\mathsf{r}}_{v_{G_e}}$
-uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon T \to U$.
+$T_{v_{G_e}} \to S_{v_{G_e}}$
+uniquely determines a compatible planar structure on $T$, and thus a unique isomorphism $\psi \colon T \to S$.
 Therefore, arbitrary choices of 
-$\psi_{G e}^{\**} U_{{G \psi(e)}}$,
+$\psi_{G e}^{\**} S_{{G \psi(e)}}$,
 $\psi_{G e}^{\**} A_{{G \psi(e)}}$
-uniquely determine $U$, $A_{G f}$, finishing the proof.
+uniquely determine $S$, $A_{G f}$, finishing the proof.
 \end{proof}
 
 Lemma \ref{ROOTFIBPULL LEM} implies that copying Definition \ref{WSPAN_MONAD_DEFINITION} yields a monad $N_{\mathsf{r}}$
@@ -7666,7 +7679,7 @@ i.e. pushouts of the form
   \end{tikzcd}
 \end{equation}
 in the category $\mathsf{Op}_G(\mathcal{V})$.
-As is common in the literature (e.g. \cite{SS00, Spi01, BM03, Whi14, Pe16}),
+As is common in the literature (e.g. \cite{SS00, Spi01, BM03, WY18, Pe16, BB17}),
 the key technical ingredient will be the identification of a suitable filtration
 \begin{equation}\label{FILTR EQ}
 	\mathcal{P}=\mathcal{P}_0 \to 
@@ -7675,7 +7688,9 @@ the key technical ingredient will be the identification of a suitable filtration
 \end{equation}
 of the map $\mathcal{P} \to \mathcal{P}[u]$
 in the underlying category $\mathsf{Sym}_G(\mathcal{V})$.
-To explain how this filtration is obtained,
+To explain how this filtration is obtained
+(for a comparison with similar filtrations, 
+see Remark \ref{FILTCOMP REM}),
 %and abbreviating 
 %$\mathbb{F}_G$ as $\mathbb{F}$,
 note first that $\mathcal{P}[u]$ is given by a coequalizer
@@ -7811,7 +7826,92 @@ Lastly, \S \ref{MAINEXIST SEC} concludes this section
 by using these filtrations to prove 
 Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 
-%This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, endowing the categories of equivariant operads with multiple model structures, in \S \ref{MAINEXIST SEC}.
+%This filtration will allow for a homotopical study of these free extensions, which combined with the transfer principle of Kan \cite[Thm. 11.3.2]{Hi03} will allow us to prove Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}, in \S \ref{MAINEXIST SEC}.
+
+
+
+\begin{remark}\label{FILTCOMP REM}
+	Our approach to the filtration \eqref{FILTR EQ}
+	is significantly constrained by Theorems 
+	\ref{MAINEXIST1 THM},
+	\ref{MAINEXIST2 THM},
+	\ref{MAINQUILLENEQUIV THM},
+	which present technical challenges not found in similar filtrations in the literature.
+
+	To discuss these challenges, we consider 
+	\cite[Prop. 4.3.16]{WY18} (resp. \cite[\S 7]{BB17}),
+	which builds filtrations of free extensions
+	of algebras over colored operads
+	(resp. over polynomial monads).
+	The frameworks in \cite{WY18},\cite{BB17} are general enough
+	to cover the usual category $\mathsf{Op}(\V)$ of operads,
+	so one might hope they would suffice for our purposes.
+%
+	However, one runs into two key issues:
+\begin{inparaenum}
+\item[(i)]
+	by Remark \ref{NEED_WREATH_REMARK},
+	defining genuine operads $\mathsf{Op}_G(\V)$
+	\emph{requires} using diagonal maps in $\V$,
+	so that,
+	since the monads in \cite{WY18},\cite{BB17}
+	do not use diagonals,
+	$\mathsf{Op}_G(\V)$
+	is not covered by those frameworks;
+\item[(ii)]
+	\cite{WY18},\cite{BB17}
+	are designed to build model structures
+	with projective weak equivalences,
+	rather than fixed point equivalences as in 	
+	\eqref{GENEOPEQMT EQ}.
+	Consequently, writing $\widetilde{\mathbb F}$ for the monad  \cite{WY18},\cite{BB17} use to describe
+	$\mathsf{Op}^G(\V) = \mathsf{Op}(\V^G)$
+	(explicitly, $\widetilde{\mathbb F}$
+	is the monad for the composite adjunction 
+	\eqref{MAINPFADJAL EQ}
+	with 
+	$\coprod_{n} \mathcal{V}^{G \times \Sigma_n^{op}}$
+%	the left category 
+	replaced by $\mathcal{V}^{G \times \mathbb{N}_0}$),
+	one has that not all the generating (trivial) cofibrations needed for 
+	Theorem \ref{MAINEXIST1 THM}
+	are in the image of $\widetilde{\mathbb{F}}$
+	(more precisely, the left map in \eqref{ANOPUCH EQ}
+	is in the image of $\widetilde{\mathbb{F}}$
+	iff $K \leq G$;
+	compare with \eqref{NAIVEGEINFTY EQ},\eqref{GENGEINFTY EQ}).
+\end{inparaenum}
+
+Given these issues, 
+rather than modifying all of \cite{WY18},\cite{BB17},
+our approach to \eqref{FILTR EQ} adapts the key patterns in
+\cite{WY18},\cite{BB17} while focusing on
+the $G$-tree perspective for intuition.
+As such, the ultimate description of our filtration 
+in \eqref{FILTRATION_LAN_LEVEL}
+resembles the description of free extensions of operads in \cite[\S 5.11]{BM03}\footnote{We caution that
+\cite[\S 3]{BM09}
+corrects an issue in \cite{BM03} concerning the treatment of operadic units.},
+though we note that our workflow is as in
+\cite{WY18},\cite{BB17} rather than \cite{BM03}.
+Namely, we start with the abstract pushout $\mathcal{P}[u]$
+and work our way to \eqref{FILTRATION_LAN_LEVEL}.
+%
+Conversely, 
+\cite{BM03} directly uses an analogue
+of \eqref{FILTRATION_LAN_LEVEL} to build an object $F_{\infty}$
+which must \emph{a posteriori}
+be shown to be both an operad and the desired extension $P[u]$ in \cite[Prop. 5.1]{BM03}.
+We note that, as genuine operads are hard to describe explicitly,
+the strategy in \cite{BM03} is ill suited for our context.
+\end{remark}
+
+
+
+
+
+
+
 
 
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
@@ -10437,7 +10537,9 @@ as in Theorem \ref{MAINEXIST1 THM}.
 Otherwise, 
 one can readily adapt the entire proof with only minor changes required, as follows.
 First, one has the following analogue of
-\eqref{MAINPFADJ EQ}
+\eqref{MAINPFADJ EQ},
+where the functors in the leftmost adjunction
+are now isomorphisms
 \begin{equation}\label{MAINPFADJAL EQ}
 \begin{tikzcd}[column sep =5em]
 	\prod_{n \geq 0}
@@ -10459,7 +10561,7 @@ $\mathsf{Op}^G(\mathcal{V})$. This again uses
 with the main step being an analysis of 
 free $\mathbb{F}$-extension diagrams in 
 $\mathsf{Op}^G(\mathcal{V})$
-\[ 
+\begin{equation}\label{ANOPUCH EQ}
 	\begin{tikzcd} 
 	\mathbb{F}
 	\left(
@@ -10476,7 +10578,7 @@ $\mathsf{Op}^G(\mathcal{V})$
 &
 	\mathcal{O}[u] 
 \end{tikzcd} 
-\]
+\end{equation}
 for $K \leq G \times \Sigma_n^{op}$
 and $u \colon A \to B$
 a generating trivial (trivial) cofibration of $\mathcal{V}$.
@@ -14291,7 +14393,8 @@ is an $N \mathcal{F}$-operad.
 We will now build an explicit model for such
 $C \delta_{\mathcal{F}}$.
 We start by considering the following
-adjunctions, where both of the right adjoints, which we write at the bottom, are forgetful functors.
+adjunctions, where both of the right adjoints, 
+which we write at the bottom, are forgetful functors.
 \begin{equation}\label{MAINPFADJVAR EQ}
 \begin{tikzcd}[column sep =9em]
 	\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}
