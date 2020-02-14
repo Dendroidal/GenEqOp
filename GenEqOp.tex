@@ -7284,15 +7284,6 @@ the presheaf structure restricts to make $X(G)$ into a $G$-set.
 
 
 \begin{remark}\label{MUTMUT1 REM}
-Moreover, the isomorphism
-	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
-	\xrightarrow{\epsilon_!}
-	\mathbb{F}_G \iota_{!}$
-then shows that $\mathbb{F}_G$ essentially preserves the image of $\iota_!$, and can thus be identified with $\mathbb{F}$ over it.
-\end{remark}
-
-
-\begin{remark}\label{MUTMUT1 REM}
 	The isomorphism
 	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
 	\xrightarrow{\epsilon_!}
@@ -7321,60 +7312,39 @@ the map
 	\xrightarrow{\eta_{\**}}
 	\iota_{\**}\iota^{\**} \mathbb{F}_G \iota_{\**}
 \end{equation}
-is not always an isomorphism. 
+is not always an isomorphism 
+(a counterexample is discussed at the end of this remark). 
 
-Note that, in light of the identifications
+Note that, via the identifications
 $\mathbb{F} \simeq 
 \iota^{\**} \mathbb{F}_G \iota_! \simeq
 \iota^{\**} \mathbb{F}_G \iota_{\**}$,
 \eqref{KEYNONISO EQ} is identified with a map
 $\mathbb{F}_G \iota_{\**} \to  \iota_{\**} \mathbb{F}$,
-so whenever \eqref{KEYNONISO EQ} is an isomorphism
+so that whenever \eqref{KEYNONISO EQ} is an isomorphism
 at $X \in \mathsf{Sym}^G(\mathcal{V})$
 one has $\mathbb{F}_G \iota_{\**} X \simeq  \iota_{\**} \mathbb{F}X$.
-
-Thus, the claim that \eqref{KEYNONISO EQ} is an isomorphism
-at $X \in \mathsf{Sym}^G(\mathcal{V})$ implies that
-$\mathbb{F}_G \iota_{\**} X \simeq  \iota_{\**} \mathbb{F}X$.
-
-{\color{red} HERE}
-
-is equivalent to $\mathbb{F}_G \iota_{\**} \simeq  \iota_{\**} \mathbb{F}$.
-Informally, the latter means that,
-at
-$X \in \mathsf{Sym}^G(\mathcal{V})$
-is equivalent, by \eqref{IOTAFUNSALT EQ},
-to the claim that the graph fixed points
+We note that, informally, 
+by \eqref{IOTAFUNSALT EQ} the latter means that
+the graph fixed points
 $\left(\mathbb{F} X\right)(n)^{\Gamma}$
-are com
+are computed from the graph fixed points of $X$
+via $\mathbb{F}_G$.
 
-
-
-{\color{red} HERE}
-
-
-Hence, the claim that \eqref{KEYNONISO EQ}
-is an isomorphism is tantamout to the claim that the graph fixed points of $\mathbb{F} X$
-are computed in terms of $G$-trees via 
-$\mathbb{F}_G \iota_{\**}$
-
-
-{\color{red} HERE}
-
-
-In fact, the claim that \eqref{KEYNONISO EQ}
-\textit{does} become an isomorphism when restricted to \textit{cofibrant} objects is one of the key ingredients of our proof of the Quillen equivalence between 
+The claim that \eqref{KEYNONISO EQ}
+\textit{does} become an isomorphism when restricted to \textit{cofibrant} $X \in \mathsf{Sym}^G(\mathcal{V})$
+is one of the key ingredients of our proof of the Quillen equivalence between 
 $\mathsf{Op}_G(\mathcal{V})$ and
 $\mathsf{Op}^G(\mathcal{V})$
 given by Theorem \ref{MAINQUILLENEQUIV THM}, 
 and will be the subject of \S \ref{COFIB SEC}.
 
-For now, we end this section with a minimal counterexample to  the more general claim.
-
+For now, we end this section with a minimal counterexample to the  claim that \eqref{KEYNONISO EQ} 
+is an isomorphism.
 Let $\mathcal{V}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
 $Y=\** \in \mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
-
-	When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
+%
+When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
 	(where $C_0 \in \Sigma$ denotes the $0$-corolla),
 	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
 \[
@@ -13740,9 +13710,6 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 %
 %
 %
-%
-%
-%
 %        We first observe that the claim concerning the symmetric sequence adjunction of \eqref{COFADJ2 EQ}
 %        is not really new. Indeed, as
 %        there are equivalences of categories
@@ -14374,7 +14341,7 @@ in $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = \mathcal{V}^{\Sigma_{\mathcal{F}}^
 
 
 
-\begin{remark}
+\begin{remark}\label{INFACTEST REM}
 The previous proof in fact establishes 
 the slightly more general claim that operads 
 (in either 
@@ -14479,17 +14446,17 @@ To obtain a more explicit model, we make use of the theory of genuine equivarian
 
 Firstly, any weak indexing system $\mathcal{F}$
 gives rise to a genuine equivariant operad
-$\partial_{\mathcal{F}}
+$\delta_{\mathcal{F}}
 \in \mathsf{Op}_G(\mathsf{Set})
 $
 such that
-$\partial_{\mathcal{F}}(C) = \**$
+$\delta_{\mathcal{F}}(C) = \**$
 if $C \in \Sigma_{\mathcal{F}}$
 and 
-$\partial_{\mathcal{F}}(C) = \emptyset$
+$\delta_{\mathcal{F}}(C) = \emptyset$
 if $C \nin \Sigma_{\mathcal{F}}$.
 Alternatively,  
-$\partial_{\mathcal{F}}$
+$\delta_{\mathcal{F}}$
 can also be regarded as the terminal object of
 $\mathsf{Op}_{\mathcal{F}}(\mathsf{Set})
 	\hookrightarrow 
@@ -14562,16 +14529,16 @@ $\widetilde{\mathbb{F}}_G$-algebra,
 and we now consider the bar construction
 \[B_n(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 = \widetilde{\mathbb{F}}_G \circ
 \widetilde{\mathbb{F}}_G ^{\circ n} 
-(\partial_{\mathcal{F}}),
+(\delta_{\mathcal{F}}),
 \]
 where we regard the outer $\widetilde{\mathbb{F}}_G$ as the top composite functor in \eqref{MAINPFADJVAR EQ}.
 We thus have
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 \in
 \mathsf{Op}_{\mathcal{F}}(\mathsf{Set})^{\Delta^{op}}
 	\hookrightarrow
@@ -14580,9 +14547,9 @@ $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 and, moreover, the unique genuine operad map
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 \to 
-\partial_{\mathcal{F}}$
+\delta_{\mathcal{F}}$
 is a weak equivalence in 
 $\mathsf{Op}_G(\mathsf{sSet})$
 thanks to the usual extra degeneracy argument
@@ -14593,14 +14560,14 @@ Therefore,
 the following result suffices to show that
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 $
 is an $N \mathcal{F}$-operad.
 
 \begin{proposition}\label{BARCOF PROP}
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 \in \mathsf{Op}_G(\mathsf{sSet})
 $
 is cofibrant.
@@ -14610,7 +14577,7 @@ Proposition \ref{BARCOF PROP}
 will follow by analyzing the skeletal filtration of
 $B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 $ and showing that the corresponding latching maps,
 which are built using cubical diagrams, are cofibrations.
 
@@ -14723,14 +14690,14 @@ $B_{\bullet}
 =
 B_{\bullet}(\widetilde{\mathbb{F}}_G,
 \widetilde{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 $.
 To describe the $n$-th latching map, we start with the natural $n$-cube in 
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$ 
 given by
 $\mathcal{X}^n_U = 
 \widetilde{\mathbb{F}}_G^{\circ U}
-(\partial_{\mathcal{F}})$
+(\delta_{\mathcal{F}})$
 and where maps 
 are induced by the unit
 $\eta \colon id \to \widetilde{\mathbb{F}}_G$.
@@ -14741,14 +14708,14 @@ $\mathcal{X}^5_{\{1,4\}} \to \mathcal{X}^5_{\{1,3,4,5\}}$
 is 
 \[
 \widetilde{\mathbb{F}}_G^{\circ 2}
-(\partial_{\mathcal{F}})
+(\delta_{\mathcal{F}})
 \xrightarrow{
 \widetilde{\mathbb{F}}_G
 \eta
 \widetilde{\mathbb{F}}_G
 \eta}
 \widetilde{\mathbb{F}}_G^{\circ 4}
-(\partial_{\mathcal{F}}).
+(\delta_{\mathcal{F}}).
 \]
 Since degeneracies of $B_{\bullet}$
 are also induced by $\eta$,
@@ -14855,8 +14822,8 @@ are monomorphisms.
 \begin{tikzcd}
 	\widetilde{\mathbb{F}}_G 
 	(L_{\underline{n}} \mathcal{X}^n \times \Delta^n
-	\amalg_{L_{\underline{n}} \mathcal{X}^n \times \partial\Delta^n}
-	\mathcal{X}^n_{\underline{n}} \times \partial \Delta^n) 
+	\amalg_{L_{\underline{n}} \mathcal{X}^n \times \delta\Delta^n}
+	\mathcal{X}^n_{\underline{n}} \times \delta \Delta^n) 
 	\ar{r} \ar{d} &
 	\mathsf{sk}_{n-1} B_{\bullet} \ar{d}
 \\
@@ -14866,6 +14833,7 @@ are monomorphisms.
 \end{tikzcd}
 \]
 \end{proof}
+
 
 \begin{remark}
 We now address the ``moreover'' claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
@@ -14878,7 +14846,7 @@ But the condition that $\delta_{\mathcal{F}}\in \mathsf{Op}_G(\mathsf{Set})$ sim
 \end{remark}
 
 
-\begin{remark}
+\begin{remark}\label{MAINPFADJVARVAR REM}
 If one appends the adjunction
 $\iota^{\**} \colon
 	\mathsf{Op}_G(\mathsf{Set})
@@ -14909,7 +14877,7 @@ Namely, consider the adjunctions
 	\prod_{n \geq 0}
 	\mathsf{Set}^{\times \text{Ob}
 	\left(\mathsf{O}^{op}_{\mathcal{F}_n^{\Gamma}}\right)}
-	\ar[shift left=1.5]{r}
+	\ar[shift left=1.5]{r}{S}
 &
 	\prod_{n \geq 0}
 	\mathsf{Set}^{\mathsf{O}^{op}_{\mathcal{F}_n^{\Gamma}}} 
@@ -14937,30 +14905,65 @@ to leverage our analysis so as to conclude that
 the bar construction
 $B_{\bullet}(\widehat{\mathbb{F}}_G,
 \widehat{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
+\delta_{\mathcal{F}})
 $
 built using \eqref{MAINPFADJVARVAR EQ}
 is also a cofibrant $N \mathcal{F}$-operad.
 
-This latter model may seem deceptively simple. 
-However, it is not easy to prove directly that
-$B_{\bullet}(\widehat{\mathbb{F}}_G,
-\widehat{\mathbb{F}}_G,
-\partial_{\mathcal{F}})
-$
-is an $N \mathcal{F}$-operad,
-since as it turns out the required claim that
-$\partial_{\mathcal{F}}$ is a 
-$\widehat{\mathbb{F}}_G$-algebra
-is itself not obvious.
-More precisely, the issue is that 
-in building $\widehat{\mathbb{F}}_G$
-one must compute fixed points of free operads, which is a non trivial task. 
-In  the present paper, this fixed point analysis 
-is built into Lemma \ref{MAINLEM LEM}.
-Alternatively, a more direct fixed point analysis is given by Rubin in \cite{Rub17} and, in fact, the key technical analysis therein is tantamount to the claim that 
-$\partial_{\mathcal{F}}$
-is indeed a $\widehat{\mathbb{F}}_G$-algebra.
+However, we caution that this latter
+model is not as simple as it might seem at first.
+This is because the task of showing that
+$\delta_{\mathcal{F}}$
+is a $\widehat{\mathbb{F}}_G$-algebra
+is a non-trivial task.
+More precisely, while it is clear from the 
+definition of $\delta_{\mathcal{F}}$
+that there is at most one map
+$\widehat{\mathbb{F}}_G
+\delta_{\mathcal{F}}
+=
+\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
+\to 
+\delta_{\mathcal{F}}$
+(which would necessarily be an algebra structure),
+it is unclear if such a map exists at all.
+In order to show directly that such a map exists,
+one must analyze 
+$\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}$,
+i.e. (cf. \eqref{IOTAFUNSALT EQ}) one must compute 
+the graph fixed points of free operads
+$\left(\mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}\right)
+(n)^{\Gamma}$,
+and we note that the main technical work of 
+Rubin in \cite{Rub17} consists precisely of such calculations.
+Alternatively, in this paper this fixed point analysis is built into 
+Lemma \ref{MAINLEM LEM},
+so that, cf. Remarks \ref{INFACTEST REM} and \ref{MUTMUT2 REM},
+one has 
+$\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
+\simeq 
+\mathbb{F}_G \iota^{\**} S \delta_{\mathcal{F}}$,
+computing the graph fixed points in terms of $G$-trees.
+%
+%This latter model may seem deceptively simple. 
+%However, it is not easy to prove directly that
+%$B_{\bullet}(\widehat{\mathbb{F}}_G,
+%\widehat{\mathbb{F}}_G,
+%\delta_{\mathcal{F}})
+%$
+%is an $N \mathcal{F}$-operad,
+%since as it turns out the required claim that
+%$\delta_{\mathcal{F}}$ is a 
+%$\widehat{\mathbb{F}}_G$-algebra
+%is itself not obvious.
+%More precisely, the issue is that 
+%in building $\widehat{\mathbb{F}}_G$
+%one must compute fixed points of free operads, which is a non trivial task. 
+%In  the present paper, this fixed point analysis 
+%is built into Lemma \ref{MAINLEM LEM}.
+%Alternatively, a more direct fixed point analysis is given by Rubin in \cite{Rub17} and, in fact, the key technical analysis therein is tantamount to the claim that 
+%$\delta_{\mathcal{F}}$
+%is indeed a $\widehat{\mathbb{F}}_G$-algebra.
 \end{remark}
 
 
