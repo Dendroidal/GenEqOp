@@ -7206,8 +7206,9 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\]
 \end{proof}
 
-Combining the previous result with
-Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
+
+%Combining the previous result with
+%Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
 The adjunctions \eqref{TWOADJOINTS EQ} lift to adjunctions
@@ -7225,22 +7226,142 @@ identifies $\mathsf{Op}^G(\mathcal{V})$ as a reflexive subcategory of
 $\mathsf{Op}_G(\mathcal{V})$.
 \end{corollary}
 
+
+
+\begin{proof}
+	For the top (resp. bottom)
+	adjunction
+	this follows from Proposition \ref{MONADADJ1 PROP}
+	(resp. Proposition \ref{MONADADJ PROP}),
+	the isomorphism of functors
+	$\iota_! \iota^{\**} \mathbb{F}_G \iota_! \simeq
+	\mathbb{F}_G \iota_!$ 
+	(resp. $\iota^{\**} \mathbb{F}_G \simeq
+	\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**}$)
+	and the isomorphism of monads
+	$\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_!$
+	(resp. 
+	$\mathbb{F} \simeq 
+	\iota^{\**} \mathbb{F}_G \iota_! \simeq
+	\iota^{\**} \mathbb{F}_G \iota_{\**}$),
+	cf. Proposition \ref{MONAD_COMPARISON_PROP}.
+\end{proof}	
+
+
 \begin{remark}\label{MUTMUT REM}
 	Remark \ref{REFLCOREFL REM} extends to operads mutatis mutandis.
-	
+\end{remark}
+
+
+\begin{remark}\label{MUTIOTAUP REM}
+	Parts (iv),(ii),(i) of 
+	Proposition \ref{MONAD_COMPARISON_PROP}
+	yield a string of isomorphisms
+\[
+	\mathbb{F} \iota^{\**}
+\simeq
+	\iota^{\**} \mathbb{F}_G \iota_! \iota^{\**}
+\simeq 
+	\iota^{\**} \mathbb{F}_G \iota_{\**} \iota^{\**}
+\simeq
+	\iota^{\**} \mathbb{F}_G.
+\]
+The identification $\mathbb{F} \iota^{\**} \simeq \iota^{\**} \mathbb{F}_G$
+reflects the fact that,
+for $X \in \mathsf{Op}_G(\mathcal{V})$,
+the genuine operad structure maps restricted to the levels
+$X(G \cdot C), C \in \Sigma$
+correspond precisely to the structure of
+an equivariant operad.
+Recalling the adjunction
+$\mathcal{V}^{\mathsf{O}_G^{op}} 
+\rightleftarrows
+\mathcal{V}^G$ (cf. \eqref{COFADJINT EQ}),
+this is analogous to the fact that,
+for $X \in \mathcal{V}^{\mathsf{O}_G^{op}}$,
+the presheaf structure restricts to make $X(G)$ into a $G$-set.
+\end{remark}
+
+
+\begin{remark}\label{MUTMUT1 REM}
 Moreover, the isomorphism
 	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
 	\xrightarrow{\epsilon_!}
 	\mathbb{F}_G \iota_{!}$
 then shows that $\mathbb{F}_G$ essentially preserves the image of $\iota_!$, and can thus be identified with $\mathbb{F}$ over it.
+\end{remark}
 
-However, the analogous statement fails for $\iota_{\**}$, i.e., one does not always have that
+
+\begin{remark}\label{MUTMUT1 REM}
+	The isomorphism
+	$\iota_{!}\iota^{\**} \mathbb{F}_G \iota_{!}
+	\xrightarrow{\epsilon_!}
+	\mathbb{F}_G \iota_{!}$
+	shows that $\mathbb{F}_G$ essentially preserves the image of $\iota_!$.
+	Moreover, since the identification of monads 
+	$\mathbb{F} \simeq \iota^{\**} \mathbb{F}_G \iota_{!}$ 
+	then yields 
+	$\iota_! \mathbb{F} \simeq \mathbb{F}_G \iota!$,
+	one can identify the restriction of 
+	$\mathbb{F}_G$ to the essential image of $\iota_!$
+	with the monad $\mathbb{F}$.
+%	one has that the monads
+%	$\mathbb{F}_G$ and $\mathbb{F}$ are identified
+%	over the essential image of $\iota_!$.
+\end{remark}
+
+{\color{red} HERE}
+
+\begin{remark}\label{MUTMUT2 REM}
+The analogue of Remark \ref{MUTMUT1 REM} with $\iota_!$ replaced with $\iota_{\**}$ does not hold. In particular, 
+the map
+%ne does not always have that
 \begin{equation}\label{KEYNONISO EQ}
 	\mathbb{F}_G \iota_{\**}
 	\xrightarrow{\eta_{\**}}
 	\iota_{\**}\iota^{\**} \mathbb{F}_G \iota_{\**}
 \end{equation}
-is an isomorphism. 
+is not always an isomorphism. 
+
+Note that, in light of the identifications
+$\mathbb{F} \simeq 
+\iota^{\**} \mathbb{F}_G \iota_! \simeq
+\iota^{\**} \mathbb{F}_G \iota_{\**}$,
+\eqref{KEYNONISO EQ} is identified with a map
+$\mathbb{F}_G \iota_{\**} \to  \iota_{\**} \mathbb{F}$,
+so whenever \eqref{KEYNONISO EQ} is an isomorphism
+at $X \in \mathsf{Sym}^G(\mathcal{V})$
+one has $\mathbb{F}_G \iota_{\**} X \simeq  \iota_{\**} \mathbb{F}X$.
+
+Thus, the claim that \eqref{KEYNONISO EQ} is an isomorphism
+at $X \in \mathsf{Sym}^G(\mathcal{V})$ implies that
+$\mathbb{F}_G \iota_{\**} X \simeq  \iota_{\**} \mathbb{F}X$.
+
+{\color{red} HERE}
+
+is equivalent to $\mathbb{F}_G \iota_{\**} \simeq  \iota_{\**} \mathbb{F}$.
+Informally, the latter means that,
+at
+$X \in \mathsf{Sym}^G(\mathcal{V})$
+is equivalent, by \eqref{IOTAFUNSALT EQ},
+to the claim that the graph fixed points
+$\left(\mathbb{F} X\right)(n)^{\Gamma}$
+are com
+
+
+
+{\color{red} HERE}
+
+
+Hence, the claim that \eqref{KEYNONISO EQ}
+is an isomorphism is tantamout to the claim that the graph fixed points of $\mathbb{F} X$
+are computed in terms of $G$-trees via 
+$\mathbb{F}_G \iota_{\**}$
+
+
+{\color{red} HERE}
+
+
 In fact, the claim that \eqref{KEYNONISO EQ}
 \textit{does} become an isomorphism when restricted to \textit{cofibrant} objects is one of the key ingredients of our proof of the Quillen equivalence between 
 $\mathsf{Op}_G(\mathcal{V})$ and
@@ -14265,7 +14386,7 @@ $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$ or
 $\mathsf{Sym}_{\mathcal{F}}^G(\mathcal{V})$)
 are closed under cellular extensions of operads.
 
-Morever, and as mentioned in Remark \ref{MUTMUT REM},
+Morever, and as mentioned in Remark \ref{MUTMUT2 REM},
 it now follows that \eqref{KEYNONISO EQ}
 is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
 \end{remark}
