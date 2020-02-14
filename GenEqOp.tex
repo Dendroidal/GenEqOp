@@ -1272,12 +1272,12 @@ in \cite[Cor. 5.6]{BH15}
 
 %Independently, using different techniques, Rubin \cite{Rub17} and Guti\'{e}rrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
 
-\subsection{Applications and Future Work}
+\subsection{Context, applications and future work}
 
-This paper is part of a series of papers by the authors \cite{Pe17,BP_edss,BP_HGOP,BP_TAS}
-analyzing and understanding different models for the homotopy theory of equivariant operads with norm maps.
-These papers generalize the program of Cisinski, Moerdijk, and Weiss \cite{MW07,MW08,CM11,CM13a,CM13b},
-and a major result is the existance of a Quillen equivalence
+This article is part of a series of papers by the authors \cite{Pe17,BP_edss,BP_HGOP,BP_TAS}
+producing and analyzing different models for the homotopy theory of equivariant operads with norm maps.
+These papers generalize the non-equivariant program of Cisinski, Moerdijk, and Weiss \cite{MW07,MW08,CM11,CM13a,CM13b}.
+A major result is the existence of a Quillen equivalence
 \begin{equation}
       \label{DSETSOP_EQ}
       \begin{tikzcd}[column sep =4em]
@@ -1288,38 +1288,42 @@ and a major result is the existance of a Quillen equivalence
       \end{tikzcd}
 \end{equation} 
 where $\mathsf{dSet}^G$ is the
-model category of equivariant dendroidal sets of \cite{Pe17}, and 
-$\mathsf{sOp}^G$ is the category of equivariant many-colored simplicial operads equipped with the many-colored variant of the model structure from Theorem \ref{MAINEXIST1 THM} from \cite[Theorem III]{BP_HGOP}.
+model category of equivariant dendroidal sets encoding $G$-$\infty$-operads from \cite[Theorem 2.1]{Pe17}, and 
+$\mathsf{sOp}^G$ is the category of equivariant many-colored simplicial operads equipped with the many-colored variant of the model structure in Theorem \ref{MAINEXIST1 THM} from \cite[Theorem III]{BP_HGOP}.
 In particular, this is a generalization of the equivalence between the homotopy theories of simplicial categories and quasicategories.
 More details can be found in the introduction to \cite{BP_HGOP}.
 
 In order to simplify our discussion,
 this paper focuses exclusively on the theory of 
 single colored (genuine) equivariant operads.
-Nonetheless, we conjecture that the remaining
-Theorems \ref{MAINEXIST2 THM} and \ref{MAINQUILLENEQUIV THM}
-extend to the colored setting,
+As mentioned above, \cite[Theorem III]{BP_HGOP} is an extension of Theorem \ref{MAINEXIST1 THM} to the colored setting.
+Moreover,
+% Nonetheless,
+we conjecture 
+the many-colored variants of Theorems \ref{MAINEXIST2 THM} and \ref{MAINQUILLENEQUIV THM}
+also hold,
+%extend to the colored setting,
 and intend to show this in upcoming work.
 We note, however, that an important new subtlety emerges in the 
 equivariant setting:
-while usual colored equivariant operads have $G$-sets of objects,
-colored genuine equivariant operads will instead have \textit{coefficient systems} of objects.
+while usual equivariant colored operads have $G$-sets of objects,
+genuine equivariant colored operads will instead have \textit{coefficient systems} of objects.
 
-While (many-colored) genuine equivariant operads as defined in this paper
+While genuine equivariant (colored) operads as defined in this paper
 do not explicitly appear in \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
 $G$-trees and the algebra and combinatorics of genuine equivariant operads play a prominent role.
 %
-In every model category realizing equivariant operads with norms,
+In every model category encoding the homotopy theory of equivariant operads with norms,
 (co)fibrations and weak equivalences are described using $G$-trees.
 %
 Moreover,
-recall that a category (resp. operad) is equivalent, under the nerve functor, to a strict inner Kan complex in $\sSet$ \cite[Prop. 1.1.2.2]{Lu09} (resp. $\dSet$ \cite[Prop. 5.3, Thm. 6.1]{MW08}).
-Similarly, we will show in a sequel that
-a genuine $G$-operad is equivalent, under the nerve functor $\Op_G \to \dSet_G = \Set^{\Omega_G^{op}}$,
-to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss}),
-and this combinatorial notion of a genuine $G$-operad appears and underlies
-key steps in the proofs of the main results from each of \textit{loc cite}
-(e.g. \cite[Defn. 5.8]{BP_edss} \cite[Prop. 4.47]{BP_TAS}).
+recalling that a category (resp. operad) is equivalent, under a nerve functor, to a strict inner Kan complex in $\sSet$ \cite[Prop. 1.1.2.2]{Lu09} (resp. $\dSet$ \cite[Prop. 5.3, Thm. 6.1]{MW08}),
+a genuine equivariant operad is equivalent, under a nerve functor $\Op_G \to \dSet_G = \Set^{\Omega_G^{op}}$,
+to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss});
+the proof of this fact will also be delegated to a sequel.
+This combinatorial notion of a genuine equivariant operad appears and underlies
+key steps in the proofs of the main results from each of \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
+for example \cite[Defn. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % a combinatorial variant of a genuine equivariant operads
 % arises in each of \textit{loc cite}, encoding revelant and necessary structure for the proofs.
 % ---------- As in \cite{BP_edss}, we delay the proof of this nerve theorem to a sequel.
@@ -1338,7 +1342,7 @@ Additionally, we expect there to be a ``genuine'' analogue
             \ar[shift left=1.5]{l}
       \end{tikzcd}
 \]
-of the Quillen equivalence from \eqref{DSETSOP_EQ}.
+of the Quillen equivalence from \eqref{DSETSOP_EQ}.\\
 
 \todo[inline]{transition}
 
@@ -1347,15 +1351,17 @@ applications and extensions in a number of topics
 outside the homotopy theory of equivariant operads.
 
 First, this work identifies additional structure on the homotopy groups of an $\O$-algebra $X$
-for any $G$-operad $\O$ and $G$-space:
-while it is clear that $X^H$ is an algebra over $\O^H$, and hence
+for any $G$-operad $\O$ and $G$-space $X$:
+While it is clear that $X^H$ is an algebra over $\O^H$, and hence
 $\pi_{\**}(X^H)$ is an algebra over $\pi_{\**}(\O^H)$,
-the genuine equivariant operad paradigm tells us that in fact there are twisted structure maps, and instead
-the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine equivariant operad (of sets) $\pi_{\**}(\iota_{\**}\O)$.
+the genuine equivariant operad paradigm tells us that in fact there are ``twisted structure maps'',
+as
+the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine equivariant operad $\pi_{\**}(\iota_{\**}\O)$.
 
 \begin{example}
-      Let $G = \mathbb Z/2 = \set{1,\tau}$ be the cyclic group of order 2,
-      and consider the three (orbital representations of) $G$-trees below:
+      Let $G = \mathbb Z/2 = \set{-1,1}$ be the cyclic group of order 2,
+      and consider the three $G$-trees below;
+      the orbital representations are displayed above the extended representations. 
       \begin{equation}
             \begin{tikzpicture}
                   [grow=up, auto, every node/.style = {font=\footnotesize},level distance = 2.5em]%
@@ -1363,46 +1369,91 @@ the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine 
                   \tikzstyle{level 3}=[sibling distance=1.5em]%
                   \node {$G/e \cdot C_2$}%
                   child{node [dummy] {}
-                    child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
                       edge from parent node [swap, near end] {$G/e$}
                     }
-                    child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
                       edge from parent node [near end] {$G/e$}
                     }
                     edge from parent node [swap] {$G/e$}
                   };
                   % ----------
-                  \node at (4,0){$G/G \cdot C_2$}%
+                  \node at (5,0) {$G/G \cdot C_2$}%
                   child{node [dummy] {}
-                    child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
                       edge from parent node [swap, near end] {$G/G$}
                     }
-                    child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
                       edge from parent node [near end] {$G/G$}
                     }
                     edge from parent node [swap] {$G/G$}
                   };
                   % ----------
-                  \node at (8,0){$T$}%
+                  \node at (10,0){$T$}%
                   child{node [dummy] {}
-                    child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
                       edge from parent node [swap] {$G/e$}
                     }
                     edge from parent node [swap] {$G/G$}
-                  };                      
+                  };
+                  % ------------------------------
+                  \tikzstyle{level 2}=[sibling distance=3em]%
+                  \node at (-1.2,-2.5) {}
+                  child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [swap, near end] {$b$}
+                    }
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [near end] {$a$}
+                    }
+                    edge from parent node [swap] {$r$}
+                  };
+                  \node at (1.25,-2.5) {}
+                  child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [swap, near end] {$-b$}
+                    }
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [near end] {$-a$}
+                    }
+                    edge from parent node [swap] {$-r$}
+                  };
+                  % ----------
+                  \node at (5,-2.5) {}
+                  child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [swap, near end] {$d$}
+                    }
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [near end] {$c$}
+                    }
+                    edge from parent node [swap] {$s$}
+                  };
+                  % ----------
+                  \node at (10,-2.5) {}
+                  child{node [dummy] {}
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [swap, near end] {$-e$}
+                    }
+                    child{node [dummy,fill=black] {}
+                      edge from parent node [near end] {$e$}
+                    }
+                    edge from parent node [swap] {$t$}
+                  };
             \end{tikzpicture}
       \end{equation}
-      These encode certain algebraic structure maps,
-      by placing a 2-ary operation in $\O$ of appropriate isotropy in the root node,
-      and then elements of $X$ of appropriate isotropy in the stumps.
+      For any $G$-operad $\O$ and $\O$-algebra $X$,
+      these $G$-tree diagrams encode structure maps,
+      by placing elements of $\O(2)$ (resp. $X$) of appropriate isotropy in the root vertices (resp. stumps).
       The first two trees encode the algebra structure maps
       \[
             \O(2) \times X^{\times 2} \to X,
             \qquad
-            \O(2)^G \times (X^G)^{\times 2} \to X^G
+            \O(2)^{\Gamma_{G/G \amalg G/G}} \times (X^G)^{\times 2} \to X^G
       \]
-      (where we note that $\Gamma_{G/G \amalg G/G} = G \leq G \times \mathbb Z/2$).
-      However, this last map encodes the twisted structure map
+      (where we note that $\Gamma_{G/G \amalg G/G} = G \leq G \times \mathbb Z/2$, and hence
+      the right equation is the $G$-fixed points of the left).
+      This last $G$-tree encodes the twisted structure map
       \[
             \O(2)^{\Gamma_{G/e}} \times X \longto X^G,
       \]
@@ -1412,14 +1463,15 @@ the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine 
             \O(2)^{\Gamma_{G/2}} \times (X \times X)^{\Gamma_{G/2}} \to
             X^G
       \]
-      where $\Delta_{\mathbb Z/2}$ sends $x$ to $(x, \tau x)$.
-      This induces a map on homotopy groups, for example
+      where $\Delta_{\mathbb Z/2}$ sends $x$ to $(x, -x)$.
+      This induces a twisted action map on homotopy groups, for example
       \[
             \pi_0\O(2)^{\Gamma_{G/2}} \times \pi_0 X \to \pi_0 (X^G).
       \]
 \end{example}
 
 A full discussion of algebras over genuine equivariant operads is forthcoming.
+
 {\color{OliveGreen}
   Let $\Omega_{G, \mathrm{Cl}}^{0,{\P,Y}}$ denote the full subcategory of closed (no leaves) 2-labeled $G$-trees, with $\lambda_a = \set{\P}$ and $\lambda_i = \set{Y}$, such that all inert vertices are stumps.
   Then, for $\P$ a genuine $G$-operad and $Y$ a coefficient system,
@@ -1442,11 +1494,12 @@ A full discussion of algebras over genuine equivariant operads is forthcoming.
 \todo[inline]{transition}
 
 Second, much of the machinery in this paper, presenting the free operad monad and its equivariant variants,
-can be applied in many contexts to define new equivariant algebraic notions.
+can be applied in different contexts to define new equivariant algebraic notions.
 It is used in \cite{BP_HGOP} to construct a many-color variant of Theorem \ref{MAINEXIST1 THM}.
 Moreover, as previewed in \cite{BNerve},
 there is a subcategory $\Sym_G \to \Op_G$ of ``genuine symmetric monoidal categories'', constructed by
-reconfiguring the description of $\mathbb F_G$ used here to synthesize with the monad $\Sigma \wr (-)$ defining symmetric monoidal categories.
+blending the description of $\mathbb F_G$ used here {\color{red} reference} with
+the monad $\Sigma \wr (-)$ encoding symmetric monoidal categories (cf. Remark \ref{SIGMA_WR_REM}).
 Our formal investigation of $\Sym_G$ is in progress.
 Furthermore, we conjecture that this bookkeeping can be applied to produce
 genuine equivariant analogues of properads and other algebraic theories.
@@ -1454,15 +1507,15 @@ genuine equivariant analogues of properads and other algebraic theories.
 
 \todo[inline]{transition}
 
-Finally, the comparison between $G$-operads $\sOp^G$ and the $G$-$\infty$-operads of {\color{red}Barwick and co}
+Finally, the comparison between simplicial $G$-operads $\sOp^G$ and the parametrized $G$-$\infty$-operads of \cite{BDGNS}
 factors most naturally through the category of genuine $G$-operads $\sOp_G$.
 Non-equivariantly, this comparison is given by
-the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[]{Lu09}.
-In \cite{BNerve}, the first-named author extends this to a functor $N^{\otimes} \colon \sOp^G \to sOp_G \to \Op_{\infty,G}$.
-In particular, this builds a $G$-$\infty$-operad associated to any topological operad $\O$,
-and moreover gives a comparison of categories of algebras $\Alg(\O) \to \Alg(N^{\otimes})$.
-When $\O$ is the genuine equviariant little disks operad,
-this relation has been used by {\color{red} Horev} to give a characterization of equivariant factorization homology.
+the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Defn. 2.1.1.3]{Lu09}.
+In \cite{BNerve}, the first-named author extends this to a functor
+$N^{\otimes} \colon \sOp^G \to \sOp_G \to \Op_{\infty,G}$,
+and moreover produces a functor on the categories of algebras $\Alg(\O) \to \Alg(N^{\otimes}\O)$.
+When $\O$ is the genuine equivariant little disks operad,
+this connection has been used by \cite{Hor} to give a characterization of equivariant factorization homology.
 
 
 
@@ -1514,41 +1567,42 @@ this relation has been used by {\color{red} Horev} to give a characterization of
 
 \todo[inline]{come back}
 
-In order to simplify our discussion,
-this paper focuses exclusively on the theory of 
-single colored (genuine) equivariant operads.
-Nonetheless, we conjecture that all three of 
-Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}
-extend to the colored setting,
-and intend to show this in upcoming work.
-We note, however, that an important new subtlety emerges in the 
-equivariant setting:
-while usual colored equivariant operads have $G$-sets of objects,
-colored genuine equivariant operads will instead have \textit{coefficient systems} of objects.
+% ---------- VERSION 2 ----------
+% In order to simplify our discussion,
+% this paper focuses exclusively on the theory of 
+% single colored (genuine) equivariant operads.
+% Nonetheless, we conjecture that all three of 
+% Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}
+% extend to the colored setting,
+% and intend to show this in upcoming work.
+% We note, however, that an important new subtlety emerges in the 
+% equivariant setting:
+% while usual colored equivariant operads have $G$-sets of objects,
+% colored genuine equivariant operads will instead have \textit{coefficient systems} of objects.
 
-This paper and \cite{Pe17} are the first pieces of a broader project aimed at understanding different models for equivariant operads. 
-In the next major step of the project, 
-we intend to connect the two papers by
-generalizing the main theorem of
-Cisinski and Moerdijk in \cite{CM13b} and 
- showing the existence of a Quillen equivalence
-\begin{equation}
-\begin{tikzcd}[column sep =4em]
-	\mathsf{dSet}^G \ar[shift left=1.5]{r} 
-	&
-	\mathsf{sOp}^G,
-	\ar[shift left=1.5]{l}
-\end{tikzcd}
-\end{equation} 
-where $\mathsf{dSet}^G$ is the
-category of equivariant dendroidal sets of
-\cite{Pe17} and 
-$\mathsf{sOp}^G$ the category of equivariant colored simplicial operads with its (conjectural) ``with norms'' model structure,
-as discussed in the previous paragraph.
+% This paper and \cite{Pe17} are the first pieces of a broader project aimed at understanding different models for equivariant operads. 
+% In the next major step of the project, 
+% we intend to connect the two papers by
+% generalizing the main theorem of
+% Cisinski and Moerdijk in \cite{CM13b} and 
+%  showing the existence of a Quillen equivalence
+% \begin{equation}
+% \begin{tikzcd}[column sep =4em]
+% 	\mathsf{dSet}^G \ar[shift left=1.5]{r} 
+% 	&
+% 	\mathsf{sOp}^G,
+% 	\ar[shift left=1.5]{l}
+% \end{tikzcd}
+% \end{equation} 
+% where $\mathsf{dSet}^G$ is the
+% category of equivariant dendroidal sets of
+% \cite{Pe17} and 
+% $\mathsf{sOp}^G$ the category of equivariant colored simplicial operads with its (conjectural) ``with norms'' model structure,
+% as discussed in the previous paragraph.
 
 
-% \iffalse
 
+% ---------- quite old ----------
 %While this paper focuses soley on \textit{single coloured} operads, 
 %we expect the theory to extend immediately to the coloured setting. 
 %One key difference is that coloured genuine $G$-operads will have a 
@@ -1788,6 +1842,9 @@ provides the proof of a lengthy technical result needed when establishing the fi
 % % \end{itemize}
 
 % Much of the machinery in Sections \ref{GENUINE_OP_MONAD_SECTION} and \ref{FREE_EXTENSIONS_SECTION} are built in large categorical generality, designed such that the intuitive descriptions of, for example, the free operad monad and operations on forests, are verified with strict categorical rigor; as such, they may be of broader interest.
+
+
+%\iffalse
 
 
 \section{Preliminaries}
