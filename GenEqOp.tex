@@ -14846,6 +14846,34 @@ But the condition that $\delta_{\mathcal{F}}\in \mathsf{Op}_G(\mathsf{Set})$ sim
 \end{remark}
 
 
+
+\begin{remark}\label{LANDINESS REM}
+	Regarding
+	$\mathsf{Sym}_G(\mathsf{Set})$
+	as a subcategory of 
+	$\mathsf{Sym}_G(\mathsf{sSet})$,
+	the leftmost left adjoint in 
+	\eqref{MAINPFADJVAR EQ}
+	lands in cofibrant objects of 
+	$\mathsf{Sym}_G(\mathsf{sSet})$
+	and thus, 
+	by Lemma \ref{MAINLEM LEM},
+	in the essential image of
+	$\iota_{\**} \colon
+	\mathsf{Sym}^G(\mathsf{Set})
+	\to 
+	\mathsf{Sym}_G(\mathsf{Set})$.
+	Thus, again by Lemma \ref{MAINLEM LEM},
+	the top composite in 
+	\eqref{MAINPFADJVAR EQ}
+	lands in the essential image of
+	$\iota_{\**} \colon
+	\mathsf{Op}^G(\mathsf{Set})
+	\to 
+	\mathsf{Op}_G(\mathsf{Set})$.
+\end{remark}
+
+
 \begin{remark}\label{MAINPFADJVARVAR REM}
 If one appends the adjunction
 $\iota^{\**} \colon
@@ -14858,11 +14886,7 @@ an additional composite monad
 $\widehat{\mathbb{F}}_G$
 on
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
-Moreover, Lemma \ref{MAINLEM LEM}
-guarantees that the top composite in 
-\eqref{MAINPFADJVAR EQ}
-lands in the essential image of $\iota_{\**}$,
-so that the monads 
+Moreover, by Remark \ref{LANDINESS REM} the monads
 $\widetilde{\mathbb{F}}_G$ and
 $\widehat{\mathbb{F}}_G$
 are in fact isomorphic.
@@ -14870,7 +14894,7 @@ This observation now hints at how
 one can build a model for 
 $N \mathcal{F}$-operads 
 directly in terms of (regular) equivariant operads,
-i.e. without making use of genuine equivariant operads.
+i.e. without making explicit use of genuine equivariant operads.
 Namely, consider the adjunctions
 \begin{equation}\label{MAINPFADJVARVAR EQ}
 \begin{tikzcd}[column sep =3.3em]
@@ -14925,7 +14949,7 @@ $\widehat{\mathbb{F}}_G
 \iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
 \to 
 \delta_{\mathcal{F}}$
-(which would necessarily be an algebra structure),
+(which would necessarily define an algebra structure),
 it is unclear if such a map exists at all.
 In order to show directly that such a map exists,
 one must analyze 
@@ -14942,8 +14966,18 @@ so that, cf. Remarks \ref{INFACTEST REM} and \ref{MUTMUT2 REM},
 one has 
 $\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
 \simeq 
-\mathbb{F}_G \iota^{\**} S \delta_{\mathcal{F}}$,
-computing the graph fixed points in terms of $G$-trees.
+\mathbb{F}_G \iota_{\**} \iota^{\**} S \delta_{\mathcal{F}}
+\simeq
+\mathbb{F}_G S \delta_{\mathcal{F}}$
+(the identify
+second identity follows since
+$S \delta_{\mathcal{F}}$
+is in the essential image of $\iota_{\**}$,
+cf. Remark \ref{LANDINESS REM}).
+
+
+{\color{red} HERE}
+
 %
 %This latter model may seem deceptively simple. 
 %However, it is not easy to prove directly that
