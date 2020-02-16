@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  15 FEB 2020 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  16 FEB 2020 00:15
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1418,7 +1418,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16157.
 Here is how much of TeX's memory you used:
  41154 strings out of 492895
  883127 string characters out of 3123735
- 860653 words of memory out of 3000000
+ 860651 words of memory out of 3000000
  43661 multiletter control sequences out of 15000+200000
  52466 words of font info for 269 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1485,7 +1485,7 @@ rs/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm5.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (93 pages, 4380125 bytes).
+Output written on GenEqOp.pdf (93 pages, 4379982 bytes).
 PDF statistics:
  2625 PDF objects out of 2984 (max. 8388607)
  620 named destinations out of 1000 (max. 500000)
