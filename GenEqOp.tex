@@ -1323,7 +1323,7 @@ to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss});
 the proof of this fact will also be delegated to a sequel.
 This combinatorial notion of a genuine equivariant operad appears and underlies
 key steps in the proofs of the main results from each of \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
-for example \cite[Defn. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
+for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % a combinatorial variant of a genuine equivariant operads
 % arises in each of \textit{loc cite}, encoding revelant and necessary structure for the proofs.
 % ---------- As in \cite{BP_edss}, we delay the proof of this nerve theorem to a sequel.
@@ -1510,7 +1510,7 @@ genuine equivariant analogues of properads and other algebraic theories.
 Finally, the comparison between simplicial $G$-operads $\sOp^G$ and the parametrized $G$-$\infty$-operads of \cite{BDGNS}
 factors most naturally through the category of genuine $G$-operads $\sOp_G$.
 Non-equivariantly, this comparison is given by
-the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Defn. 2.1.1.3]{Lu09}.
+the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Def. 2.1.1.3]{Lu09}.
 In \cite{BNerve}, the first-named author extends this to a functor
 $N^{\otimes} \colon \sOp^G \to \sOp_G \to \Op_{\infty,G}$,
 and moreover produces a functor on the categories of algebras $\Alg(\O) \to \Alg(N^{\otimes}\O)$.
@@ -7301,7 +7301,7 @@ the presheaf structure restricts to make $X(G)$ into a $G$-set.
 %	over the essential image of $\iota_!$.
 \end{remark}
 
-{\color{red} HERE}
+
 
 \begin{remark}\label{MUTMUT2 REM}
 The analogue of Remark \ref{MUTMUT1 REM} with $\iota_!$ replaced with $\iota_{\**}$ does not hold. In particular, 
@@ -11605,35 +11605,50 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 
 
-\begin{remark}
-      \label{CSPP_REM}
+\begin{remark}\label{CSPP_REM}
       % There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
-      The \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}
-      has a similar form to cofibrant symmetric pushout powers,
-      except it asks for the cofibrancy of $f^{\square n}$ in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
-      This axiom, along with some technical conditions,
-      % along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
-      is sufficient for the construction of a variety of projective (semi-)model structures
-      on categories of algebraic objects,
-      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
-      % It is quite restrictive, and several more general conditions have been developed
-      % (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
-      % % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
-      % which accomplish these tasks.
-      However, the power cofibration axiom is very demanding; in particular, it is not satisfied by $\sSet$.
-      This has lead to a number of more general variants,
-      including
-      %the \textit{commutative monoid axiom} of
-      \cite[Defn. 3.1]{Wh17},
-      % $(\clubsuit)$ of
-      \cite[Thm. 6.1.1]{WY18},
-      % and
-      % \textit{symmetric $h$-monoidal} of
-      \cite[Defn. 2.1]{PS18b}.
-      % and \cite[Defn. 4.2.8, Remark 4.2.10]{PS18a}.
-      However, neither the power cofibration axiom nor any of these variants
-      see any fixed-point information in $\V^{\Sigma_n}$, and thus cannot be used to prove our main results.
-      Instead, cofibrant symmetric pushout powers is explicitly designed to work in the context of genuine equivariant homotopy theory.
+	The cofibrant symmetric pushout powers condition
+	can be viewed as an adaptation of 
+	the \textit{power cofibration axiom} of 
+	\cite[Def. 4.5.4.2(iii)]{Lur17},
+	which asks instead for 
+	$f^{\square n}$
+	to be a cofibration
+	in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
+	Along with some technical conditions,
+	the latter axiom suffices for the existence
+	of projective (semi-)model structures
+	on many categories of algebraic objects,
+	such as operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
+	As an aside, we note that the 
+	power cofibration axiom
+	is quite restrictive (e.g. it fails in $\mathsf{sSet}$),
+	and this has lead to the identification of a number of laxer variants
+	(e.g. 
+	%the \textit{commutative monoid axiom} of
+	\cite[Def. 3.1]{Wh17},
+	% $(\clubsuit)$ of
+	\cite[Thm. 6.1.1]{WY18},
+	% and
+	% \textit{symmetric $h$-monoidal} of
+	\cite[Def. 2.1]{PS18b}).
+	
+	% along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
+	% It is quite restrictive, and several more general conditions have been developed
+	% (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
+	% % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
+	% which accomplish these tasks.
+	
+	In practice, the main difference between 
+	Definition \ref{COFSYMPUSHPOW} and 
+	\cite[Def. 4.5.4.2(iii)]{Lur17}
+	is that they are designed for different contexts:
+	\cite[Def. 4.5.4.2(iii)]{Lur17}
+	(and its variants) serve to build projective model structures;
+	Definition \ref{COFSYMPUSHPOW} 
+	serves to build fixed point model structures,
+	such as the ones in Theorem \ref{MAINEXIST1 THM}.
+	
       % We replace the power cofibration axiom % and the monoid axiom
       % with
       % cofibrant symmetric pushout powers, % and the \textit{global monoid axiom} of \cite[Defn. 3.6]{BP_HGOP}, respectively, both
@@ -11645,8 +11660,6 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       % This is reflected by
       % the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
       % and addressed in \cite[Remark 1.16]{BP_HGOP}.
-
-
       
       % ---------- the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
       % re they need some sort of monoid axiom as well
