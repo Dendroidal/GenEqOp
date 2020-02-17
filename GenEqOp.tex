@@ -11603,19 +11603,40 @@ one instead follows the argument in the proof of
 Proposition \ref{POWERF PROP} below when $G=\**$.
 \end{remark}
 
+{\color{red} HERE}
 
-
-\begin{remark}
-      \label{CSPP_REM}
+\begin{remark}\label{CSPP_REM}
       % There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
-      The \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}
-      has a similar form to cofibrant symmetric pushout powers,
-      except it asks for the cofibrancy of $f^{\square n}$ in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
-      This axiom, along with some technical conditions,
+	The cofibrant symmetric pushout powers condition
+	can be viewed as a variant of 
+	the \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17},
+	which asks instead for 
+	$f^{\square n}$
+	to be a cofibration
+	in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
+	Along with some technical conditions,
+	the latter axiom suffices to establish the existence
+	of projective (semi-)model structures
+	on many categories of algebraic objects,
+	such as operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
+	On a side note, we observe that the 
+	power cofibration axiom
+	is quite restrictive (for example, it fails in $\mathsf{sSet}$),
+	and this has lead to a number of laxer variants
+	(e.g. 
+	%the \textit{commutative monoid axiom} of
+	\cite[Defn. 3.1]{Wh17},
+	% $(\clubsuit)$ of
+	\cite[Thm. 6.1.1]{WY18},
+	% and
+	% \textit{symmetric $h$-monoidal} of
+	\cite[Defn. 2.1]{PS18b})
+	
+	
+
+
+	
       % along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
-      is sufficient for the construction of a variety of projective (semi-)model structures
-      on categories of algebraic objects,
-      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
       % It is quite restrictive, and several more general conditions have been developed
       % (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
       % % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
