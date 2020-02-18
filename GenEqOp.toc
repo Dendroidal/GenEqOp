@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Main results}{7}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Context, applications and future work}{8}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.2}Context, applications and future work}{9}{subsection.1.2}% 
 \contentsline {subsection}{\numberline {1.3}Outline}{11}{subsection.1.3}% 
 \contentsline {section}{\numberline {2}Preliminaries}{11}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Grothendieck fibrations}{11}{subsection.2.1}% 
@@ -8,7 +8,7 @@
 \contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{16}{subsection.2.3}% 
 \contentsline {section}{\numberline {3}Planar and tall maps, and substitution}{17}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Planar structures}{17}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Outer faces, tall maps, and substitution}{23}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.2}Outer faces, tall maps, and substitution}{24}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Equivariant leaf-root and vertex functors}{28}{subsection.3.3}% 
 \contentsline {subsection}{\numberline {3.4}Planar strings}{32}{subsection.3.4}% 
 \contentsline {section}{\numberline {4}Genuine equivariant operads}{36}{section.4}% 

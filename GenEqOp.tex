@@ -681,33 +681,101 @@ such a conceptual framework: equivariant trees.
 
 
 Non-equivariantly, it has long been known that
-the combinatorics of operadic composition is best visualized by means of tree diagrams. For instance, the tree
+the combinatorics of operadic composition is best visualized by means of tree diagrams. For instance, 
+the tree $T$ on the right below
 \[%
-	\begin{tikzpicture}[grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
-	\tikzstyle{level 2}=[sibling distance=3.75em]%
-	\tikzstyle{level 3}=[sibling distance=1.5em]%
-		\node {}%
+	\begin{tikzpicture}[auto,grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
+	\tikzstyle{level 2}=[sibling distance=5.5em]%
+	\tikzstyle{level 3}=[sibling distance=2em]%
+		\node [font=\normalsize] {$T$}%
 			child{node [dummy] {}%
-				child{node [dummy] {}}%
+				child{node [dummy] {}
+				edge from parent node [swap] 
+				{$h$}}%
 				child{node [dummy] {}%
-					child{}%
-					child{}%
-					child{}%
-				}%
+					child{
+					edge from parent node [swap,very near end] 
+					{$e$}}%
+					child{
+					edge from parent node [swap,very near end] 
+					{$d$}}%
+					child{
+					edge from parent node [very near end] 
+					{$c$}}%
+				edge from parent node [swap] 
+				{$g$}}%
 				child{node [dummy] {}%
-					child{node {} }%
-					child{node {} }%
-				}%
-			};%
+					child{
+					edge from parent node [swap,very near end] 
+					{$b$}}%
+					child{
+					edge from parent node [very near end] 
+					{$\phantom{b}a$}}%
+				edge from parent node 
+				{$f$}}%
+			edge from parent node [swap] 
+			{$i$}};%
+	\begin{scope}[xshift=-20em]
+	\tikzstyle{level 2}=[sibling distance=2.5em]
+		\node [font=\normalsize] {$C$}%
+	child{node [dummy] {}%
+		child{
+		edge from parent node [swap,very near end] {$e$}}%
+		child[level distance = 2.9em]{
+		edge from parent node [swap,very near end] {$d$}}%
+		child[level distance = 3.3em]{
+		edge from parent node [swap,very near end] {$c$}}%
+		child[level distance = 2.9em]{
+		edge from parent node [very near end] {$b$}}%
+		child{
+		edge from parent node [very near end] {$\phantom{b}a$}}%
+	edge from parent node [swap] {$i$}};%
+	\end{scope}
 	\end{tikzpicture}%
-\]%
-encodes the operadic composition
-\[
-	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
 \]
-where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
+encodes the operadic composition
+\begin{equation}\label{COMPEX EQ}
+	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
+\end{equation}
+where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree $T$, with arity given by number of incoming edges (i.e. edges immediately above)
 and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
-Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
+%
+Before recalling equivariant trees, 
+it is worth making the connection between 
+$T$ and \eqref{COMPEX EQ}
+more precise.
+Recall that $T$ gives rise to 
+a colored operad $\Omega(T)$,
+as follows.
+The colors/objects of $\Omega(T)$
+are simply the edges $a,b,c,\cdots,i$
+while the generating operations,
+corresponding to the nodes,
+are 
+$ab \to f$, $cde \to g$, $\emptyset \to h$, $fgh \to i$
+(i.e., for each node, incoming edges are viewed as inputs 
+and the edge below as an output).
+Let $C$ be the corolla (i.e. tree with a single node) above,
+which is formed by the leaves and root of $T$. 
+There is then a natural map of colored operads
+$\Omega(C) \to \Omega(T)$,
+so that
+\eqref{COMPEX EQ}
+is recovered as the induced map of mapping sets
+(for $\mathsf{Op}_{\bullet}$ the category of colored operads)
+$\mathsf{Op}_{\bullet}
+\left(\Omega(T),\O\right)
+\to 
+\mathsf{Op}_{\bullet}
+\left(\Omega(C),\O\right)$.
+
+
+{\color{red} HERE}
+
+
+Analogously, the role of equivariant trees is, in the context of equivariant operads, to encode operadic compositions
+as in \eqref{COMPEX EQ}
+together with fixed point compatibilities.  
 A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include only a single representative example.
 Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
 and $G \geq H \geq K \geq L$ denote the subgroups %
