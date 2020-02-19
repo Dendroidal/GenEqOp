@@ -803,7 +803,9 @@ together with a $G$-action
 that is transitive on tree components.
 %
 A detailed introduction to (and motivation for) 
-equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (a parallel approach to equivariant operads), though here we include only a single representative example.
+equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets 
+(a parallel approach to equivariant operads), 
+though here we include only a single representative example.
 
 Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ be the group of quaternionic units 
 and $G \geq H \geq K \geq L$ be the subgroups %
@@ -960,8 +962,8 @@ $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 \eqref{INTFIXPTCOMP EQ}
 correspond to the two nodes of the orbital representation
 in \eqref{D6SMALLER EQ}.
-Notice that now the arity (i.e. the associated ``type of input'') of a node
-does not just count incoming edge orbits,
+Notice that now the arity (i.e. the associated ``type of input'')
+of a node does not just count incoming edge orbits,
 but depends on the labels of both 
 incoming and outgoing edge orbits
 (in particular, the latter determines the fixed point condition).
@@ -7514,48 +7516,98 @@ encodes the compositions of norm maps as in
 For now, we end this section with a minimal counterexample to the  claim that \eqref{KEYNONISO EQ} 
 is an isomorphism.
 Let $\mathcal{V}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
-$Y=\** \in \mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
+$Y=\**$ in $\mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
 %
 When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
-	(where $C_0 \in \Sigma$ denotes the $0$-corolla),
-	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
+	(where $C_0 \in \Sigma$ is the $0$-corolla),
+	 the two $G$-trees $T_1$ and $T_2$ below
+	 (with expanded/orbital representations on the left/right) encode two distinct points 
+	 (as $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
 \[
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {$G/G \cdot C_0$}
+\begin{tikzpicture}[grow=up,auto,
+	level distance=2.3em,
+	sibling distance=1.5em,
+	every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) [font=\normalsize] {$G/G \cdot C_0$}
 		child{
 			node [dummy] {}
+		edge from parent node [swap] {$r$}};
+	\node at (1.5,0) [font=\normalsize] {$T_1$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$a+1$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$\phantom{1+}a$}}
+		edge from parent node [swap] {$r$}};
+	\node at (3.5,0) [font=\normalsize] {$T_2$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c\phantom{b}$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b$}}
+		edge from parent node [swap] {$r$}};
+\begin{scope}[xshift = 19em]
+	\node at (0,0) [font=\normalsize] {$G/G \cdot C_0$}
+		child{node [dummy] {}
 		edge from parent node [swap] {$r+G/G$}};
-	\node at (3,0) {$T_1$}
+	\node at (1.75,0) [font=\normalsize] {$T_1$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap] {$a+G$}}
 		edge from parent node [swap] {$r+G/G$}};
-	\node at (7,0) {$T_2$}
+	\node at (4.5,0) [font=\normalsize] {$T_2$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap,near end] {$c+G/G$}}
 			child{node [dummy] {}
 			edge from parent node [near end] {$b+G/G$}}
 		edge from parent node [swap] {$r+G/G$}};
+\end{scope}
 \end{tikzpicture}
 \]
 However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point in 
 $\mathbb F_G \iota_{\**} Y(G \cdot C_0)$,
 %$^{\Gamma} = \iota_{\**} \iota^{\**} \mathbb F_G \iota_{\**} Y(G/G \cdot C_0)$
-namely that encoded by the $G$-tree $T$ below.
+namely the point encoded by the $G$-tree $T$ below.
 \[
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {$G \cdot C_0$}
-		child{
-			node [dummy] {}
+\begin{tikzpicture}[grow=up,auto,
+	level distance=2.3em,
+	sibling distance=1.5em,
+	every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) [font=\normalsize] {}
+		child{node [dummy] {}
+		edge from parent node [swap] {$r$}};
+	\node at (1,0) [font=\normalsize] {}
+		child{node [dummy] {}
+		edge from parent node [swap] {$r+1$}};
+	\node at (3,0) [font=\normalsize] {}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c\phantom{b}$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b$}}
+		edge from parent node [swap] {$r$}};
+	\node at (5,0) [font=\normalsize] {}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c+1$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b+1$}}
+		edge from parent node [swap] {$r+1$}};
+	\draw[decorate,decoration={brace,amplitude=2.5pt}] (1.1,0.1) -- (-0.1,0.1) node[midway,inner sep=4pt,font = \normalsize]{$G \cdot C_0$};	
+	\draw[decorate,decoration={brace,amplitude=2.5pt}] (5.1,0.1) -- (2.9,0.1) node[midway,inner sep=4pt,font = \normalsize]{$T$}; %
+\begin{scope}[xshift=25em]
+	\node at (0,0) [font=\normalsize] {$G \cdot C_0$}
+		child{node [dummy] {}
 		edge from parent node [swap] {$r+G$}};
-	\node at (5,0) {$T$}
+	\node at (3,0) [font=\normalsize] {$T$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap,near end] {$c+G$}}
 			child{node [dummy] {}
 			edge from parent node [near end] {$b+G$}}
 		edge from parent node [swap] {$r+G$}};
+\end{scope}
 \end{tikzpicture}
 \]
 Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
