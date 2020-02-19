@@ -744,7 +744,7 @@ Before recalling equivariant trees,
 it is worth making the connection between 
 $T$ and \eqref{COMPEX EQ}
 more precise.
-Recall that $T$ gives rise to 
+Recall \cite[\S 3]{MW07} that $T$ gives rise to 
 a colored operad $\Omega(T)$,
 as follows.
 The colors/objects of $\Omega(T)$
@@ -768,15 +768,36 @@ $\mathsf{Op}_{\bullet}
 \to 
 \mathsf{Op}_{\bullet}
 \left(\Omega(C),\O\right)$.
+Indeed,
+$\mathsf{Op}_{\bullet}
+\left(\Omega(T),\O\right)
+\simeq
+\O(3) \times \O(2) \times \O(3) \times \O(0)$
+and
+$\mathsf{Op}_{\bullet}\left(\Omega(C),\O\right) 
+\simeq
+\O(5)$
+since maps 
+$\Omega(T) \to \O$
+and 
+$\Omega(C) \to \O$
+are determined by the image of the generating operations.
 
-
-{\color{red} HERE}
 
 
 Analogously, the role of equivariant trees is, in the context of equivariant operads, to encode operadic compositions
 as in \eqref{COMPEX EQ}
-together with fixed point compatibilities.  
-A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include only a single representative example.
+together with fixed point compatibilities.
+%
+Briefly, 
+a $G$-tree \cite[Def. 5.44]{Pe16b}
+is a forest diagram 
+(i.e. a collection of trees)
+together with a $G$-action
+that is transitive on tree components.
+%
+A detailed introduction to (and motivation of) 
+equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (a parallel approach to equivariant operads), though here we include only a single representative example.
 Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
 and $G \geq H \geq K \geq L$ denote the subgroups %
 $H = \langle j \rangle$, %
@@ -841,33 +862,65 @@ given by the (single) tree on the right.
 					edge from parent node [right] {$(G/K) \cdot c$}}%
 				edge from parent node [right] {$(G/H) \cdot d$}};%
 		\end{scope}%
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$}; %
-		\node at (9.15,-0.15) {$T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt,font = \normalsize]{$T$}; %
+		\node at (9.15,-0.15) [font = \normalsize] {$T$};
 	\end{tikzpicture}%
 \end{equation}%
-We note that $G$ acts on the expanded representation of $T$ as indicated by the edge labels (so that the edges $a,b,c,d$ have stabilizers $L$, $K$, $K$, $H$ respectively), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{Pe17}, $T$ then encodes the fact that for any 
-equivariant operad $\O \in \mathsf{Op}^G$ the composition 
+Here, the expanded representation of $T$ is just
+a forest with edge labels that indicate the $G$-action.
+Note that all edges are conjugate to one of the 
+edges $a,b,c,d$ which have, respectively, stabilizers $L, K, K, H$.
+Given the expanded representation,
+the orbital representation is  
+obtained by collapsing each edge orbit into a single edge,
+which is labeled with the corresponding edge set of orbits in the expanded representation
+(one may also reverse this process,
+though we will not need to do so).
+We note that orbital representations always ``look like a tree''.
+
+
+As explained in \cite[Example 4.9]{Pe17},
+$T$ encodes the fact that, for $\O \in \mathsf{Op}^G$ a $G$-operad,
+the composition 
 $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
 \mathcal{O}(6)$ restricts to a fixed point composition
 \begin{equation}\label{INTFIXPTCOMP EQ}
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-% where for any $H$-set $X$ with $n$ elements, $H \leq G$,
-% $\O(X)$ denotes
-% $\O(n)$ together with a mixed $H$-action,
-% given by restricting the natural $G \times \Sigma_{n}$-action on $\O(n)$
-% along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are only up to isomorphism, as there is no total order given on $X$.
-%   Formally, we are detailing $i_{\**}\O$, which is indexed over the category $\Sigma_G$ of ``planar $G$-corollas''; these encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
-where $\O(X)$ for $X$ an $H$-set denotes
-$\O(|X|)$ 
-%together
+(we further unpack \eqref{INTFIXPTCOMP EQ}
+in the next paragraph)
+where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$ 
 with the $H$-action
-obtained by the identification $H \simeq \Gamma_X$
-(for $\Gamma_X$ the graph subgroup discussed after 
+given by the identification $H \simeq \Gamma_X$
+(the graph subgroup $\Gamma_X$ is discussed after 
 \eqref{NORMMAPS EQ}),
 and likewise for $K$-sets.
 In particular, $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$.
+
+{\color{red} HERE}
+
+To make the connection between $T$ and \eqref{INTFIXPTCOMP EQ}
+precise, note that, as in the non-equivariant case,
+one has a $G$-equivariant colored operad
+$\Omega(T)$,
+as well as a $G$-corolla $C$
+formed by the leaves and roots of $T$,
+together with a map 
+$\Omega(C) \to \Omega(T)$
+of $G$-equivariant colored operads.
+Then, writing 
+$\mathsf{Op}_{\bullet}^G$
+for the category of $G$-equivariant colored operads,
+\eqref{INTFIXPTCOMP EQ}
+is simply the induced map
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(T),\mathcal{O}\right)
+\to
+\mathsf{Op}_{\bullet}^G
+\left(\Omega(C),\mathcal{O}\right)$.
+
+{\color{red} HERE}
 
 We note that the inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
