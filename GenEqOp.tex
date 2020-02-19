@@ -744,7 +744,7 @@ Before recalling equivariant trees,
 it is worth making the connection between 
 $T$ and \eqref{COMPEX EQ}
 more precise.
-Recall that $T$ gives rise to 
+Recall \cite[\S 3]{MW07} that $T$ gives rise to 
 a colored operad $\Omega(T)$,
 as follows.
 The colors/objects of $\Omega(T)$
@@ -770,13 +770,19 @@ $\mathsf{Op}_{\bullet}
 \left(\Omega(C),\O\right)$.
 
 
-{\color{red} HERE}
-
-
 Analogously, the role of equivariant trees is, in the context of equivariant operads, to encode operadic compositions
 as in \eqref{COMPEX EQ}
-together with fixed point compatibilities.  
-A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include only a single representative example.
+together with fixed point compatibilities.
+%
+Briefly, 
+a $G$-tree \cite[Def. 5.44]{Pe16b}
+is a forest diagram 
+(i.e. a collection of trees)
+together with a $G$-action
+that is transitive on tree components.
+%
+A detailed introduction to (and motivation of) 
+equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (a parallel approach to equivariant operads), though here we include only a single representative example.
 Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
 and $G \geq H \geq K \geq L$ denote the subgroups %
 $H = \langle j \rangle$, %
@@ -841,10 +847,13 @@ given by the (single) tree on the right.
 					edge from parent node [right] {$(G/K) \cdot c$}}%
 				edge from parent node [right] {$(G/H) \cdot d$}};%
 		\end{scope}%
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$}; %
-		\node at (9.15,-0.15) {$T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt,font = \normalsize]{$T$}; %
+		\node at (9.15,-0.15) [font = \normalsize] {$T$};
 	\end{tikzpicture}%
 \end{equation}%
+
+{\color{red} HERE}
+
 We note that $G$ acts on the expanded representation of $T$ as indicated by the edge labels (so that the edges $a,b,c,d$ have stabilizers $L$, $K$, $K$, $H$ respectively), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{Pe17}, $T$ then encodes the fact that for any 
 equivariant operad $\O \in \mathsf{Op}^G$ the composition 
 $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
@@ -853,6 +862,9 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
+
+{\color{red} HERE}
+
 % where for any $H$-set $X$ with $n$ elements, $H \leq G$,
 % $\O(X)$ denotes
 % $\O(n)$ together with a mixed $H$-action,
