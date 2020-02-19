@@ -2,30 +2,30 @@
 \contentsline {subsection}{\numberline {1.1}Main results}{7}{subsection.1.1}% 
 \contentsline {subsection}{\numberline {1.2}Context, applications and future work}{9}{subsection.1.2}% 
 \contentsline {subsection}{\numberline {1.3}Outline}{11}{subsection.1.3}% 
-\contentsline {section}{\numberline {2}Preliminaries}{11}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Grothendieck fibrations}{11}{subsection.2.1}% 
+\contentsline {section}{\numberline {2}Preliminaries}{12}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Grothendieck fibrations}{12}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Wreath product over finite sets}{13}{subsection.2.2}% 
 \contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{16}{subsection.2.3}% 
 \contentsline {section}{\numberline {3}Planar and tall maps, and substitution}{17}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Planar structures}{17}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Outer faces, tall maps, and substitution}{24}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Equivariant leaf-root and vertex functors}{28}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Planar strings}{32}{subsection.3.4}% 
-\contentsline {section}{\numberline {4}Genuine equivariant operads}{36}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}A monad on spans}{37}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}The genuine equivariant operad monad}{41}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {3.1}Planar structures}{18}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Outer faces, tall maps, and substitution}{23}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Equivariant leaf-root and vertex functors}{29}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Planar strings}{33}{subsection.3.4}% 
+\contentsline {section}{\numberline {4}Genuine equivariant operads}{37}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}A monad on spans}{38}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}The genuine equivariant operad monad}{42}{subsection.4.2}% 
 \contentsline {subsection}{\numberline {4.3}Comparison with (regular) equivariant operads}{44}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}Indexing systems and partial genuine operads}{48}{subsection.4.4}% 
-\contentsline {section}{\numberline {5}Free extensions and the existence of model structures}{50}{section.5}% 
+\contentsline {subsection}{\numberline {4.4}Indexing systems and partial genuine operads}{49}{subsection.4.4}% 
+\contentsline {section}{\numberline {5}Free extensions and the existence of model structures}{51}{section.5}% 
 \contentsline {subsection}{\numberline {5.1}Labeled planar strings}{52}{subsection.5.1}% 
 \contentsline {subsection}{\numberline {5.2}The category of extension trees}{57}{subsection.5.2}% 
 \contentsline {subsection}{\numberline {5.3}Filtrations of free extensions}{62}{subsection.5.3}% 
 \contentsline {subsection}{\numberline {5.4}Proof of Theorems \ref {MAINEXIST1 THM} and \ref {MAINEXIST2 THM}}{65}{subsection.5.4}% 
 \contentsline {section}{\numberline {6}Cofibrancy and Quillen equivalences}{68}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Families of subgroups}{68}{subsection.6.1}% 
-\contentsline {subsection}{\numberline {6.2}Pushout powers}{70}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.1}Families of subgroups}{69}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Pushout powers}{71}{subsection.6.2}% 
 \contentsline {subsection}{\numberline {6.3}$G$-graph families and $G$-trees}{75}{subsection.6.3}% 
 \contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{79}{subsection.6.4}% 
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{82}{subsection.6.5}% 
-\contentsline {section}{\numberline {A}Transferring Kan extensions}{85}{appendix.A}% 
+\contentsline {section}{\numberline {A}Transferring Kan extensions}{86}{appendix.A}% 
 \contentsline {section}{Glossary of Notation}{91}{section*.7}% 
