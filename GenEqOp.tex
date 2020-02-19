@@ -745,24 +745,30 @@ it is worth making the connection between
 $T$ and \eqref{COMPEX EQ}
 more precise.
 Recall \cite[\S 3]{MW07} that $T$ gives rise to 
-a colored operad $\Omega(T)$,
+a colored operad\footnote{
+Recall that colored operads, 
+also known as multicategories,
+are a generalization of the notion of category
+where each arrow/operation
+can have multiple inputs but a single input.}
+$\Omega(T)$,
 as follows.
 The colors/objects of $\Omega(T)$
-are simply the edges $a,b,c,\cdots,i$
+are the edges $a,b,c,\cdots,i$
 while the generating operations,
-corresponding to the nodes,
+determined by the nodes,
 are 
-$ab \to f$, $cde \to g$, $\emptyset \to h$, $fgh \to i$
+$(a,b) \to f$, $(c,d,e) \to g$, $() \to h$, $(f,g,h) \to i$
 (i.e., for each node, incoming edges are viewed as inputs 
-and the edge below as an output).
+and the outgoing edge as an output).
 Let $C$ be the corolla (i.e. tree with a single node) above,
 which is formed by the leaves and root of $T$. 
 There is then a natural map of colored operads
-$\Omega(C) \to \Omega(T)$,
-so that
+$\Omega(C) \to \Omega(T)$
+so that,
+writing $\mathsf{Op}_{\bullet}$ for the category of colored operads,
 \eqref{COMPEX EQ}
-is recovered as the induced map of mapping sets
-(for $\mathsf{Op}_{\bullet}$ the category of colored operads)
+is the induced map of mapping sets
 $\mathsf{Op}_{\bullet}
 \left(\Omega(T),\O\right)
 \to 
@@ -784,9 +790,9 @@ $\Omega(C) \to \O$
 are determined by the image of the generating operations.
 
 
-
-Analogously, the role of equivariant trees is, in the context of equivariant operads, to encode operadic compositions
-as in \eqref{COMPEX EQ}
+Analogously, the role of equivariant trees is,
+in the context of equivariant operads,
+to encode operadic compositions as in \eqref{COMPEX EQ}
 together with fixed point compatibilities.
 %
 Briefly, 
@@ -796,18 +802,18 @@ is a forest diagram
 together with a $G$-action
 that is transitive on tree components.
 %
-A detailed introduction to (and motivation of) 
+A detailed introduction to (and motivation for) 
 equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (a parallel approach to equivariant operads), though here we include only a single representative example.
-Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
-and $G \geq H \geq K \geq L$ denote the subgroups %
+
+Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ be the group of quaternionic units 
+and $G \geq H \geq K \geq L$ be the subgroups %
 $H = \langle j \rangle$, %
 $K = \langle -1 \rangle$, %
 $L = \{1\}$.
-There is then a $G$-tree $T$ with 
-\textit{expanded representation}
-given by the two trees on the left below and
-\textit{orbital representation}
-given by the (single) tree on the right.
+One has a $G$-tree $T$ with 
+\textit{expanded representation} given by the two leftmost trees 
+below and
+\textit{orbital representation} given by the rightmost tree.
 \begin{equation}\label{D6SMALLER EQ}
 	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,
 	every node/.style={font=\scriptsize,inner sep = 2pt}]%
@@ -873,14 +879,14 @@ edges $a,b,c,d$ which have, respectively, stabilizers $L, K, K, H$.
 Given the expanded representation,
 the orbital representation is  
 obtained by collapsing each edge orbit into a single edge,
-which is labeled with the corresponding edge set of orbits in the expanded representation
-(one may also reverse this process,
-though we will not need to do so).
+which is labeled by the corresponding edge set of orbits in the expanded representation
+(one may also reverse this process, though we will not need to do so).
 We note that orbital representations always ``look like a tree''.
 
 
 As explained in \cite[Example 4.9]{Pe17},
-$T$ encodes the fact that, for $\O \in \mathsf{Op}^G$ a $G$-operad,
+the $G$-tree $T$ encodes the fact that,
+for $\O \in \mathsf{Op}^G$ a $G$-operad,
 the composition 
 $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
 \mathcal{O}(6)$ restricts to a fixed point composition
@@ -888,47 +894,81 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-(we further unpack \eqref{INTFIXPTCOMP EQ}
-in the next paragraph)
+(we discuss how \eqref{INTFIXPTCOMP EQ}
+is obtained in the next paragraph)
 where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$ 
 with the $H$-action
 given by the identification $H \simeq \Gamma_X$
-(the graph subgroup $\Gamma_X$ is discussed after 
+(the graph subgroup $\Gamma_X$ is as discussed after 
 \eqref{NORMMAPS EQ}),
 and likewise for $K$-sets.
 In particular, $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$.
 
-{\color{red} HERE}
 
-To make the connection between $T$ and \eqref{INTFIXPTCOMP EQ}
-precise, note that, as in the non-equivariant case,
-one has a $G$-equivariant colored operad
-$\Omega(T)$,
-as well as a $G$-corolla $C$
-formed by the leaves and roots of $T$,
-together with a map 
+We recall the precise connection between $T$ and \eqref{INTFIXPTCOMP EQ}. 
+Let $\mathsf{Op}_{\bullet}^G$
+be the category of 
+$G$-objects in colored operads.
+As in the non-equivariant case,
+one builds 
+$\Omega(T)$ in $\mathsf{Op}_{\bullet}^G$
+and a map
 $\Omega(C) \to \Omega(T)$
-of $G$-equivariant colored operads.
-Then, writing 
-$\mathsf{Op}_{\bullet}^G$
-for the category of $G$-equivariant colored operads,
+in $\mathsf{Op}_{\bullet}^G$,
+where $C$ is the $G$-corolla (i.e. $G$-tree composed of corollas)
+formed by the leaves and roots of $T$.
+%
+The composition
 \eqref{INTFIXPTCOMP EQ}
-is simply the induced map
+is then the induced map
 $\mathsf{Op}_{\bullet}^G
 \left(\Omega(T),\mathcal{O}\right)
 \to
 \mathsf{Op}_{\bullet}^G
 \left(\Omega(C),\mathcal{O}\right)$.
+%
+The implicit claim  
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(T),\mathcal{O}\right)
+\simeq
+\O(H/K)^{H} \times \O(K/L \amalg K/K)^{K}
+$ follows since:
+by equivariance, a $G$-map
+$\phi \colon \Omega(T) \to \O$
+is determined by the images of the operations
+$(a,b,-a) \to c$ and
+$(c,jc) \to d$;
+the operation 
+$\phi\left((a,b,-a) \to c\right)$
+must be in $\O(K/L \amalg K/K)^{K}$,
+since $K$ is the isotropy of $c$ and
+$\{a,b,-a\} \simeq K/L \amalg K/K$
+as $K$-sets; 
+likewise $\phi\left((c,jc) \to d\right)$
+must be in $\O(H/K)^{H}$.
+The claim 
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(C),\mathcal{O}\right)
+\simeq 
+\O(H/L \amalg H/K)^{H}$
+is similar.
 
-{\color{red} HERE}
 
-We note that the inputs 
+
+We note that the two inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 \eqref{INTFIXPTCOMP EQ}
-correspond to the nodes of the orbital representation
-in \eqref{D6SMALLER EQ}, though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing \textit{edge orbits}, while the output 
+correspond to the two nodes of the orbital representation
+in \eqref{D6SMALLER EQ}.
+Notice that now the arity (i.e. the associated ``type of input'') of a node
+does not just count incoming edge orbits,
+but depends on the labels of both 
+incoming and outgoing edge orbits
+(in particular, the latter determines the fixed point condition).
+%
+Similarly, the output 
 $\O(H/L \amalg H/K)^{H}$
-is similarly determined by both the leaf and root edge orbits.
+is determined by both the leaf and root edge orbits.
 The existence of maps of the form \eqref{INTFIXPTCOMP EQ} is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
