@@ -123,6 +123,47 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	can't be used to obtain an Elmendorf-Piacenza style theorem if one wants $\mathsf{Op}^G$ to care about norm maps.
 	Nonetheless, just to be safe, we've rephrased the comment to reiterate that we are discussing what is needed to obtain
 	an Elmendorf-Piacenza theorem.
+	
+	\item[11.] the discussion concerning 
+	the $G$-tree example in
+	\eqref{D6SMALLER EQ}
+	and 
+	the composition of norm maps in
+	\eqref{INTFIXPTCOMP EQ}
+	has been expanded to make it more self contained.
+	
+	Our initial intention was not for
+	\eqref{INTFIXPTCOMP EQ}
+	to be fully understood from this blurb alone,
+	since doing so required a somewhat long digression 
+	that was tangential to the narrative.
+	The intended point here
+	was simply that $G$-trees encode such maps,
+	and that the interested reader could find the details in \cite[\S 4]{Pe17}.
+	
+	Nonetheless, given the confusion caused by
+	\eqref{INTFIXPTCOMP EQ},
+	we've added enough exposition 
+	for \eqref{INTFIXPTCOMP EQ} to be understandable from this introduction alone
+	(a lot of which comes down
+	to providing a more precise understanding of
+	\eqref{COMPEX EQ})
+	
+	
+	\item[12.] 
+	the discussion concerning the expanded and orbital representations (and the relation between them) has been reworded and should hopefully be clearer.
+	
+	We are surprised that
+	``going from the expanded representation to the orbital representation''
+	seems to have caused issues, 
+	as our experience is that that direction is 
+	readily understood from the pictures,
+	so we are wondering what the particular issue was.
+	We do of course agree that going the other way is less obvious,
+	but we never need to do so in this paper,
+	and we added an indication to this in the text.
+	
+
 
   \item[13.] Formally defined the $H$-space $\O(X)$ as the restriction of $\O(n)$ along the map $H \to \Gamma_X \leq G \times \Sigma_n$.
         
@@ -444,11 +485,26 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	\item[74.] Added short explanations of the double coset formulas used in 
 	Propositions \ref{FGTLEFT PROP} and \ref{BIQUILLENG PROP}.
 
-        \item[78.] added Remark \ref{CSPP_REM}, which compares the cofibrant symmetric pushout powers condition to other model categorical conditions of a similar form, and describe the utility of our definition.
-
-        \item[79.] added Definition \ref{GENUINEMS_DEF} explicitly defining the genuine, $\F$, and projective model structures,
-              and added language in \S \ref{PUSHPOW SEC} to emphasize which we are using.
+	\item[78.]
+	we believe the cofibrant symmetric powers axiom in 
+	Definition \ref{COFSYMPUSHPOW} is new.
+	While comparable with,
+	it matches neither the freely powered condition of Lurie nor 
+	the cellularity conditions of Stephan.
 	
+	We think a good way of thinking about 
+	Definition \ref{COFSYMPUSHPOW} is that: 
+	it adapts Lurie's freely powered condition from the 
+	projective to the genuine context;
+	it can be viewed as a ``multiplicative analogue''
+	(in the sense that it concerns $\otimes$) of 
+	Stephan's cellularity (which deals with $\coprod$)
+	
+	As such, we added Remark \ref{CSPP_REM}, which compares
+	Definition \ref{COFSYMPUSHPOW}
+	with other similar conditions.
+
+
 	\item[81.] We are not sure what was meant by the 
 	``where did the wreath product come from?'' comment
 	concerning the proof of Proposition \ref{POWERF PROP},
@@ -470,7 +526,60 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	
 	\item[88.] the discussion concerning Proposition \ref{FIXPT PROP} has been significantly revised: 
 	extra context concerning $\iota_{\**}$ was added beforehand; the proposition was restated to allow for an easier proof; and the proof was simplified and clarified
+
+	\item[90.]
+	we're not quite sure what is meant by the comment that
+	the equation 
+	$\iota^{\**} \mathbb{F}_G = \mathbb{F} \iota^{\**}$
+	suggests one can go without $\mathbb{F}_G$.
+	Since $\iota^{\**}$ simply forgets structure, the equation 
+	$\iota^{\**} \mathbb{F}_G = \mathbb{F} \iota^{\**}$
+	has very limited information, and is just the observation that the top levels of a genuine operad form a regular operad. 
+	In particular, this 
+	says nothing about norm maps.
 	
+	To make the relationship between 
+	$\mathbb{F}_G $ and $\mathbb{F}$
+	clearer, we've added to the discussion at the end of 
+	\S \ref{COMPARISON_REGULAR_SECTION},
+	namely discussing the
+	easy identities
+	$\iota^{\**} \mathbb{F}_G = \mathbb{F} \iota^{\**}$
+	and
+	$\mathbb{F}_G \iota_! = \iota_! \mathbb{F}$
+	(neither of which is says anything substantial)
+	in Remarks \ref{MUTIOTAUP REM} and \ref{MUTMUT1 REM},
+	and the interesting functor
+	$\mathbb{F}_G \iota_{\**} \to \iota_{\**} \mathbb{F}$
+	in Remark \ref{MUTMUT2 REM}.
+	
+	As for how far one can go towards
+	Corollary \ref{NINFTY_REAL_COR_MAIN}
+	without $\mathbb{F}_G$,
+	this is discussed in Remark \ref{MAINPFADJVARVAR REM}.
+	No matter which approach to Corollary \ref{NINFTY_REAL_COR_MAIN} is used, 
+	one of the key steps is understanding 
+	$\iota_{\**} \mathbb{F}$,
+	and the main point is precisely that, under cofibrancy conditions,
+	this is $\mathbb{F}_G \iota_{\**}$.
+	So even if one does not construct $\mathbb{F}_G$ explicitly,
+	that functor is still a fundamental piece of the solution.
+	
+	
+	On a side note, regardless of other approaches,
+	we still think that $\mathbb{F}_G$
+	provides interesting conceptual perspective on 
+	Corollary \ref{NINFTY_REAL_COR_MAIN} that other
+	approaches do not.
+	Namely, Theorem \ref{MAINQUILLENEQUIV THM} effectively says that the system of fixed points in \eqref{NFINFTY EQ}
+	is realizable is because $\delta_{\mathcal{F}}$ is a 
+	$\mathbb{F}_G$-algebra, 
+	(since an arbitrary such system of fixed points 
+	is realizable precisely if it is a 
+	$\mathbb{F}_G$-algebra).
+	
+	
+
 	\item[91.] the proof of Lemma \ref{MAINLEM LEM} has been revised at several points to clarify how the parallel argument connects
 	\eqref{COFADJ2 EQ} and \eqref{FGTFUNC EQ}
 	
@@ -687,6 +796,8 @@ we likewise added this notation to the notational index
 \item[76.] addressed in the answer to [3.]
 
 \item[77.] fixed $G$ to be $\bar{G}$
+      
+\item[79.] this is also addressed by Remark \ref{CSPP_REM}      
       
 \item[80.] reworded ``for all'' as ``for every'' in Prop. \ref{POWERF PROP}
 

@@ -681,44 +681,141 @@ such a conceptual framework: equivariant trees.
 
 
 Non-equivariantly, it has long been known that
-the combinatorics of operadic composition is best visualized by means of tree diagrams. For instance, the tree
+the combinatorics of operadic composition is best visualized by means of tree diagrams. For instance, 
+the tree $T$ on the right below
 \[%
-	\begin{tikzpicture}[grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
-	\tikzstyle{level 2}=[sibling distance=3.75em]%
-	\tikzstyle{level 3}=[sibling distance=1.5em]%
-		\node {}%
+	\begin{tikzpicture}[auto,grow=up, every node/.style = {font=\footnotesize},level distance = 1.9em]%
+	\tikzstyle{level 2}=[sibling distance=5.5em]%
+	\tikzstyle{level 3}=[sibling distance=2em]%
+		\node [font=\normalsize] {$T$}%
 			child{node [dummy] {}%
-				child{node [dummy] {}}%
+				child{node [dummy] {}
+				edge from parent node [swap] 
+				{$h$}}%
 				child{node [dummy] {}%
-					child{}%
-					child{}%
-					child{}%
-				}%
+					child{
+					edge from parent node [swap,very near end] 
+					{$e$}}%
+					child{
+					edge from parent node [swap,very near end] 
+					{$d$}}%
+					child{
+					edge from parent node [very near end] 
+					{$c$}}%
+				edge from parent node [swap] 
+				{$g$}}%
 				child{node [dummy] {}%
-					child{node {} }%
-					child{node {} }%
-				}%
-			};%
+					child{
+					edge from parent node [swap,very near end] 
+					{$b$}}%
+					child{
+					edge from parent node [very near end] 
+					{$\phantom{b}a$}}%
+				edge from parent node 
+				{$f$}}%
+			edge from parent node [swap] 
+			{$i$}};%
+	\begin{scope}[xshift=-20em]
+	\tikzstyle{level 2}=[sibling distance=2.5em]
+		\node [font=\normalsize] {$C$}%
+	child{node [dummy] {}%
+		child{
+		edge from parent node [swap,very near end] {$e$}}%
+		child[level distance = 2.9em]{
+		edge from parent node [swap,very near end] {$d$}}%
+		child[level distance = 3.3em]{
+		edge from parent node [swap,very near end] {$c$}}%
+		child[level distance = 2.9em]{
+		edge from parent node [very near end] {$b$}}%
+		child{
+		edge from parent node [very near end] {$\phantom{b}a$}}%
+	edge from parent node [swap] {$i$}};%
+	\end{scope}
 	\end{tikzpicture}%
-\]%
-encodes the operadic composition
-\[
-	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
 \]
-where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree, with arity given by number of incoming edges (i.e. edges immediately above)
+encodes the operadic composition
+\begin{equation}\label{COMPEX EQ}
+	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
+\end{equation}
+where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes (i.e. circles) in the tree $T$, with arity given by number of incoming edges (i.e. edges immediately above)
 and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
-Similarly, the role of equivariant trees is, in the context of equivariant operads, to encode such operadic compositions together with fixed point compatibilities.  
-A detailed introduction to equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets (which is a parallel approach to equivariant operads), though here we include only a single representative example.
-Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ denote the group of quaternionic units 
-and $G \geq H \geq K \geq L$ denote the subgroups %
+%
+Before recalling equivariant trees, 
+it is worth making the connection between 
+$T$ and \eqref{COMPEX EQ}
+more precise.
+Recall \cite[\S 3]{MW07} that $T$ gives rise to 
+a colored operad\footnote{
+Recall that colored operads, 
+also known as multicategories,
+are a generalization of the notion of category
+where each arrow/operation
+can have multiple inputs but a single input.}
+$\Omega(T)$,
+as follows.
+The colors/objects of $\Omega(T)$
+are the edges $a,b,c,\cdots,i$
+while the generating operations,
+determined by the nodes,
+are 
+$(a,b) \to f$, $(c,d,e) \to g$, $() \to h$, $(f,g,h) \to i$
+(i.e., for each node, incoming edges are viewed as inputs 
+and the outgoing edge as an output).
+Let $C$ be the corolla (i.e. tree with a single node) above,
+which is formed by the leaves and root of $T$. 
+There is then a natural map of colored operads
+$\Omega(C) \to \Omega(T)$
+so that,
+writing $\mathsf{Op}_{\bullet}$ for the category of colored operads,
+\eqref{COMPEX EQ}
+is the induced map of mapping sets
+$\mathsf{Op}_{\bullet}
+\left(\Omega(T),\O\right)
+\to 
+\mathsf{Op}_{\bullet}
+\left(\Omega(C),\O\right)$.
+Indeed,
+$\mathsf{Op}_{\bullet}
+\left(\Omega(T),\O\right)
+\simeq
+\O(3) \times \O(2) \times \O(3) \times \O(0)$
+and
+$\mathsf{Op}_{\bullet}\left(\Omega(C),\O\right) 
+\simeq
+\O(5)$
+since maps 
+$\Omega(T) \to \O$
+and 
+$\Omega(C) \to \O$
+are determined by the image of the generating operations.
+
+
+Analogously, the role of equivariant trees is,
+in the context of equivariant operads,
+to encode operadic compositions as in \eqref{COMPEX EQ}
+together with fixed point compatibilities.
+%
+Briefly, 
+a $G$-tree \cite[Def. 5.44]{Pe16b}
+is a forest diagram 
+(i.e. a collection of trees)
+together with a $G$-action
+that is transitive on tree components.
+%
+A detailed introduction to (and motivation for) 
+equivariant trees can be found in \cite[\S 4]{Pe17}, where the second author develops the theory of equivariant dendroidal sets 
+(a parallel approach to equivariant operads), 
+though here we include only a single representative example.
+
+Let $G = \{ \pm 1, \pm i, \pm j, \pm k\}$ be the group of quaternionic units 
+and $G \geq H \geq K \geq L$ be the subgroups %
 $H = \langle j \rangle$, %
 $K = \langle -1 \rangle$, %
 $L = \{1\}$.
-There is then a $G$-tree $T$ with 
-\textit{expanded representation}
-given by the two trees on the left below and
-\textit{orbital representation}
-given by the (single) tree on the right.
+One has a $G$-tree $T$ with 
+\textit{expanded representation} given by the two leftmost trees 
+below and
+\textit{orbital representation} given by the rightmost tree.
 \begin{equation}\label{D6SMALLER EQ}
 	\begin{tikzpicture}[auto,grow=up, level distance = 2.2em,
 	every node/.style={font=\scriptsize,inner sep = 2pt}]%
@@ -773,41 +870,107 @@ given by the (single) tree on the right.
 					edge from parent node [right] {$(G/K) \cdot c$}}%
 				edge from parent node [right] {$(G/H) \cdot d$}};%
 		\end{scope}%
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$}; %
-		\node at (9.15,-0.15) {$T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (4.85,0) -- (-0.1,0) node[midway,inner sep=4pt,font = \normalsize]{$T$}; %
+		\node at (9.15,-0.15) [font = \normalsize] {$T$};
 	\end{tikzpicture}%
 \end{equation}%
-We note that $G$ acts on the expanded representation of $T$ as indicated by the edge labels (so that the edges $a,b,c,d$ have stabilizers $L$, $K$, $K$, $H$ respectively), and the orbital representation is obtained by collapsing the edge orbits of the expanded representation. As explained in \cite[Example 4.9]{Pe17}, $T$ then encodes the fact that for any 
-equivariant operad $\O \in \mathsf{Op}^G$ the composition 
+Here, the expanded representation of $T$ is just
+a forest with edge labels that indicate the $G$-action.
+Note that all edges are conjugate to one of the 
+edges $a,b,c,d$ which have, respectively, stabilizers $L, K, K, H$.
+Given the expanded representation,
+the orbital representation is  
+obtained by collapsing each edge orbit into a single edge,
+which is labeled by the corresponding edge set of orbits in the expanded representation
+(one may also reverse this process, though we will not need to do so).
+We note that orbital representations always ``look like a tree''.
+
+
+As explained in \cite[Example 4.9]{Pe17},
+the $G$-tree $T$ encodes the fact that,
+for $\O \in \mathsf{Op}^G$ a $G$-operad,
+the composition 
 $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to 
 \mathcal{O}(6)$ restricts to a fixed point composition
 \begin{equation}\label{INTFIXPTCOMP EQ}
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K} \to
 \O(H/L \amalg H/K)^{H}
 \end{equation}
-% where for any $H$-set $X$ with $n$ elements, $H \leq G$,
-% $\O(X)$ denotes
-% $\O(n)$ together with a mixed $H$-action,
-% given by restricting the natural $G \times \Sigma_{n}$-action on $\O(n)$
-% along the homomorphism \eqref{GRAPHMAP_EQ}\footnote{Here, as in \eqref{GENGENMULT EQ}, our descriptions are only up to isomorphism, as there is no total order given on $X$.
-%   Formally, we are detailing $i_{\**}\O$, which is indexed over the category $\Sigma_G$ of ``planar $G$-corollas''; these encode (slightly more than) an $H$-set equipped with a total order (see \S \ref{LRVERT SEC} for more information).}
-where $\O(X)$ for $X$ an $H$-set denotes
-$\O(|X|)$ 
-%together
+(we discuss how \eqref{INTFIXPTCOMP EQ}
+is obtained in the next paragraph)
+where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$ 
 with the $H$-action
-obtained by the identification $H \simeq \Gamma_X$
-(for $\Gamma_X$ the graph subgroup discussed after 
+given by the identification $H \simeq \Gamma_X$
+(the graph subgroup $\Gamma_X$ is as discussed after 
 \eqref{NORMMAPS EQ}),
 and likewise for $K$-sets.
 In particular, $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$.
 
-We note that the inputs 
+
+We recall the precise connection between $T$ and \eqref{INTFIXPTCOMP EQ}. 
+Let $\mathsf{Op}_{\bullet}^G$
+be the category of 
+$G$-objects in colored operads.
+As in the non-equivariant case,
+one builds 
+$\Omega(T)$ in $\mathsf{Op}_{\bullet}^G$
+and a map
+$\Omega(C) \to \Omega(T)$
+in $\mathsf{Op}_{\bullet}^G$,
+where $C$ is the $G$-corolla (i.e. $G$-tree composed of corollas)
+formed by the leaves and roots of $T$.
+%
+The composition
+\eqref{INTFIXPTCOMP EQ}
+is then the induced map
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(T),\mathcal{O}\right)
+\to
+\mathsf{Op}_{\bullet}^G
+\left(\Omega(C),\mathcal{O}\right)$.
+%
+The implicit claim  
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(T),\mathcal{O}\right)
+\simeq
+\O(H/K)^{H} \times \O(K/L \amalg K/K)^{K}
+$ follows since:
+by equivariance, a $G$-map
+$\phi \colon \Omega(T) \to \O$
+is determined by the images of the operations
+$(a,b,-a) \to c$ and
+$(c,jc) \to d$;
+the operation 
+$\phi\left((a,b,-a) \to c\right)$
+must be in $\O(K/L \amalg K/K)^{K}$,
+since $K$ is the isotropy of $c$ and
+$\{a,b,-a\} \simeq K/L \amalg K/K$
+as $K$-sets; 
+likewise $\phi\left((c,jc) \to d\right)$
+must be in $\O(H/K)^{H}$.
+The claim 
+$\mathsf{Op}_{\bullet}^G
+\left(\Omega(C),\mathcal{O}\right)
+\simeq 
+\O(H/L \amalg H/K)^{H}$
+is similar.
+
+
+
+We note that the two inputs 
 $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 \eqref{INTFIXPTCOMP EQ}
-correspond to the nodes of the orbital representation
-in \eqref{D6SMALLER EQ}, though in contrast to the non-equivariant case arity is now determined by both incoming and outgoing \textit{edge orbits}, while the output 
+correspond to the two nodes of the orbital representation
+in \eqref{D6SMALLER EQ}.
+Notice that now the arity (i.e. the associated ``type of input'')
+of a node does not just count incoming edge orbits,
+but depends on the labels of both 
+incoming and outgoing edge orbits
+(in particular, the latter determines the fixed point condition).
+%
+Similarly, the output 
 $\O(H/L \amalg H/K)^{H}$
-is similarly determined by both the leaf and root edge orbits.
+is determined by both the leaf and root edge orbits.
 The existence of maps of the form \eqref{INTFIXPTCOMP EQ} is essentially tantamount to the subtlest 
 closure property for indexing systems $\mathcal{F}$,
 self-induction (cf. \cite[Def. 3.20]{BH15}),
@@ -1323,7 +1486,7 @@ to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss});
 the proof of this fact will also be delegated to a sequel.
 This combinatorial notion of a genuine equivariant operad appears and underlies
 key steps in the proofs of the main results from each of \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
-for example \cite[Defn. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
+for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % a combinatorial variant of a genuine equivariant operads
 % arises in each of \textit{loc cite}, encoding revelant and necessary structure for the proofs.
 % ---------- As in \cite{BP_edss}, we delay the proof of this nerve theorem to a sequel.
@@ -1345,6 +1508,30 @@ Additionally, we expect there to be a ``genuine'' analogue
 of the Quillen equivalence from \eqref{DSETSOP_EQ}.\\
 
 \todo[inline]{transition}
+
+\begin{conjecture}
+	There is a fully faithful nerve functor
+	$N \colon \mathsf{Op}_G
+	\to 
+	\mathsf{dSet}_G$
+	whose essential image 
+	consists of those $X \in \mathsf{dSet}_G$
+	such that
+	\begin{itemize}
+		\item $X$ is pointed, i.e. 
+		$X(G/H \cdot \eta) = \**$ for all $H \leq G$;
+		\item $X$ is a strict Segal object, i.e.
+		the natural maps
+		$X(T) \xrightarrow{\simeq}
+		\prod_{v \in V_G(T)} X(T_v)$
+		are isomorphisms for all $T \in \Omega_G$.
+	\end{itemize}
+\end{conjecture}
+
+
+\todo[inline]{transition}
+
+
 
 The techniques and machinery developed in this paper have
 applications and extensions in a number of topics
@@ -1510,7 +1697,7 @@ genuine equivariant analogues of properads and other algebraic theories.
 Finally, the comparison between simplicial $G$-operads $\sOp^G$ and the parametrized $G$-$\infty$-operads of \cite{BDGNS}
 factors most naturally through the category of genuine $G$-operads $\sOp_G$.
 Non-equivariantly, this comparison is given by
-the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Defn. 2.1.1.3]{Lu09}.
+the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Def. 2.1.1.3]{Lu09}.
 In \cite{BNerve}, the first-named author extends this to a functor
 $N^{\otimes} \colon \sOp^G \to \sOp_G \to \Op_{\infty,G}$,
 and moreover produces a functor on the categories of algebras $\Alg(\O) \to \Alg(N^{\otimes}\O)$.
@@ -7308,7 +7495,7 @@ the presheaf structure restricts to make $X(G)$ into a $G$-set.
 %	over the essential image of $\iota_!$.
 \end{remark}
 
-{\color{red} HERE}
+
 
 \begin{remark}\label{MUTMUT2 REM}
 The analogue of Remark \ref{MUTMUT1 REM} with $\iota_!$ replaced with $\iota_{\**}$ does not hold. In particular, 
@@ -7346,51 +7533,112 @@ $\mathsf{Op}^G(\mathcal{V})$
 given by Theorem \ref{MAINQUILLENEQUIV THM}, 
 and will be the subject of \S \ref{COFIB SEC}.
 
+We note that, 
+for $\mathcal{O} \in \mathsf{Op}^G(\mathcal{V})$,
+the composite
+$\mathbb{F}_G \iota_{\**} \mathcal{O}
+\to 
+\iota_{\**} \mathbb{F} \mathcal{O}
+\to 
+\iota_{\**} \mathcal{O}$
+encodes the compositions of norm maps as in 
+\eqref{INTFIXPTCOMP EQ}.
+
 For now, we end this section with a minimal counterexample to the  claim that \eqref{KEYNONISO EQ} 
 is an isomorphism.
 Let $\mathcal{V}=\mathsf{Set}$, $G=\mathbb{Z}_{/2}$, and 
-$Y=\** \in \mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
+$Y=\**$ in $\mathsf{Sym}^G = \mathsf{Sym}^G(\mathsf{Set})$ be the singleton.
 %
 When evaluating $\mathbb{F}_G \iota_{\**} Y$ at the $G$-fixed stump corolla $G/G \cdot C_0$ 
-	(where $C_0 \in \Sigma$ denotes the $0$-corolla),
-	 the two $G$-trees $T_1$ and $T_2$ below encode two distinct points (since $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
+	(where $C_0 \in \Sigma$ is the $0$-corolla),
+	 the two $G$-trees $T_1$ and $T_2$ below
+	 (with expanded/orbital representations on the left/right) encode two distinct points 
+	 (as $T_1$, $T_2$ are not isomorphic as objects under $G/G\cdot C_0$).
 \[
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {$G/G \cdot C_0$}
+\begin{tikzpicture}[grow=up,auto,
+	level distance=2.3em,
+	sibling distance=1.5em,
+	every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) [font=\normalsize] {$G/G \cdot C_0$}
 		child{
 			node [dummy] {}
+		edge from parent node [swap] {$r$}};
+	\node at (1.5,0) [font=\normalsize] {$T_1$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$a+1$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$\phantom{1+}a$}}
+		edge from parent node [swap] {$r$}};
+	\node at (3.5,0) [font=\normalsize] {$T_2$}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c\phantom{b}$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b$}}
+		edge from parent node [swap] {$r$}};
+\begin{scope}[xshift = 19em]
+	\node at (0,0) [font=\normalsize] {$G/G \cdot C_0$}
+		child{node [dummy] {}
 		edge from parent node [swap] {$r+G/G$}};
-	\node at (3,0) {$T_1$}
+	\node at (1.75,0) [font=\normalsize] {$T_1$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap] {$a+G$}}
 		edge from parent node [swap] {$r+G/G$}};
-	\node at (7,0) {$T_2$}
+	\node at (4.5,0) [font=\normalsize] {$T_2$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap,near end] {$c+G/G$}}
 			child{node [dummy] {}
 			edge from parent node [near end] {$b+G/G$}}
 		edge from parent node [swap] {$r+G/G$}};
+\end{scope}
 \end{tikzpicture}
 \]
 However, when pulling these points back to the $G$-free stump corolla $G \cdot C_0$ one obtains the same point in 
 $\mathbb F_G \iota_{\**} Y(G \cdot C_0)$,
 %$^{\Gamma} = \iota_{\**} \iota^{\**} \mathbb F_G \iota_{\**} Y(G/G \cdot C_0)$
-namely that encoded by the $G$-tree $T$ below.
+namely the point encoded by the $G$-tree $T$ below.
 \[
-\begin{tikzpicture}[grow=up,auto,level distance=2.3em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
-	\node at (0,0) {$G \cdot C_0$}
-		child{
-			node [dummy] {}
+\begin{tikzpicture}[grow=up,auto,
+	level distance=2.3em,
+	sibling distance=1.5em,
+	every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
+	\node at (0,0) [font=\normalsize] {}
+		child{node [dummy] {}
+		edge from parent node [swap] {$r$}};
+	\node at (1,0) [font=\normalsize] {}
+		child{node [dummy] {}
+		edge from parent node [swap] {$r+1$}};
+	\node at (3,0) [font=\normalsize] {}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c\phantom{b}$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b$}}
+		edge from parent node [swap] {$r$}};
+	\node at (5,0) [font=\normalsize] {}
+		child{node [dummy] {}
+			child{node [dummy] {}
+			edge from parent node [swap,near end] {$c+1$}}
+			child{node [dummy] {}
+			edge from parent node [near end] {$b+1$}}
+		edge from parent node [swap] {$r+1$}};
+	\draw[decorate,decoration={brace,amplitude=2.5pt}] (1.1,0.1) -- (-0.1,0.1) node[midway,inner sep=4pt,font = \normalsize]{$G \cdot C_0$};	
+	\draw[decorate,decoration={brace,amplitude=2.5pt}] (5.1,0.1) -- (2.9,0.1) node[midway,inner sep=4pt,font = \normalsize]{$T$}; %
+\begin{scope}[xshift=25em]
+	\node at (0,0) [font=\normalsize] {$G \cdot C_0$}
+		child{node [dummy] {}
 		edge from parent node [swap] {$r+G$}};
-	\node at (5,0) {$T$}
+	\node at (3,0) [font=\normalsize] {$T$}
 		child{node [dummy] {}
 			child{node [dummy] {}
 			edge from parent node [swap,near end] {$c+G$}}
 			child{node [dummy] {}
 			edge from parent node [near end] {$b+G$}}
 		edge from parent node [swap] {$r+G$}};
+\end{scope}
 \end{tikzpicture}
 \]
 Moreover, it is not hard to modify the example above to produce similar examples when evaluating $\mathbb{F}_GY$ at non-empty corollas. 
@@ -11601,35 +11849,50 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
 
 
 
-\begin{remark}
-      \label{CSPP_REM}
+\begin{remark}\label{CSPP_REM}
       % There are several notions in the literature which have a similar form to cofibrant symmetric pushout powers,
-      The \textit{power cofibration axiom} of \cite[Def. 4.5.4.2(iii)]{Lur17}
-      has a similar form to cofibrant symmetric pushout powers,
-      except it asks for the cofibrancy of $f^{\square n}$ in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
-      This axiom, along with some technical conditions,
-      % along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
-      is sufficient for the construction of a variety of projective (semi-)model structures
-      on categories of algebraic objects,
-      including operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
-      % It is quite restrictive, and several more general conditions have been developed
-      % (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
-      % % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
-      % which accomplish these tasks.
-      However, the power cofibration axiom is very demanding; in particular, it is not satisfied by $\sSet$.
-      This has lead to a number of more general variants,
-      including
-      %the \textit{commutative monoid axiom} of
-      \cite[Defn. 3.1]{Wh17},
-      % $(\clubsuit)$ of
-      \cite[Thm. 6.1.1]{WY18},
-      % and
-      % \textit{symmetric $h$-monoidal} of
-      \cite[Defn. 2.1]{PS18b}.
-      % and \cite[Defn. 4.2.8, Remark 4.2.10]{PS18a}.
-      However, neither the power cofibration axiom nor any of these variants
-      see any fixed-point information in $\V^{\Sigma_n}$, and thus cannot be used to prove our main results.
-      Instead, cofibrant symmetric pushout powers is explicitly designed to work in the context of genuine equivariant homotopy theory.
+	The cofibrant symmetric pushout powers condition
+	can be viewed as an adaptation of 
+	the \textit{power cofibration axiom} of 
+	\cite[Def. 4.5.4.2(iii)]{Lur17},
+	which asks instead for 
+	$f^{\square n}$
+	to be a cofibration
+	in the \textit{projective} model structure $\V^{\Sigma_n}_{\text{proj}}$.
+	Along with some technical conditions,
+	the latter axiom suffices for the existence
+	of projective (semi-)model structures
+	on many categories of algebraic objects,
+	such as operads and commutative monoids \cite[Prop. 4.5.4.6]{Lur17} (also \cite[Prop. 6.2.2, Thm. 6.2.3]{WY18}).
+	As an aside, we note that the 
+	power cofibration axiom
+	is quite restrictive (e.g. it fails in $\mathsf{sSet}$),
+	and this has lead to the identification of a number of laxer variants
+	(e.g. 
+	%the \textit{commutative monoid axiom} of
+	\cite[Def. 3.1]{Wh17},
+	% $(\clubsuit)$ of
+	\cite[Thm. 6.1.1]{WY18},
+	% and
+	% \textit{symmetric $h$-monoidal} of
+	\cite[Def. 2.1]{PS18b}).
+	
+	% along with the \textit{monoid axiom} of \cite{SS00} and some small technical conditions,
+	% It is quite restrictive, and several more general conditions have been developed
+	% (see e.g. \cite[Thm. 6.1.1 $(\clubsuit)$]{WY18}, \cite[Defn. 2.1 and Thm. 1.1]{DS18})
+	% % ---------- these are both versions of the power cofibration axiom AND the monoid axiom 
+	% which accomplish these tasks.
+	
+	In practice, the main difference between 
+	Definition \ref{COFSYMPUSHPOW} and 
+	\cite[Def. 4.5.4.2(iii)]{Lur17}
+	is that they are designed for different contexts:
+	\cite[Def. 4.5.4.2(iii)]{Lur17}
+	(and its variants) serve to build projective model structures;
+	Definition \ref{COFSYMPUSHPOW} 
+	serves to build fixed point model structures,
+	such as the ones in Theorem \ref{MAINEXIST1 THM}.
+	
       % We replace the power cofibration axiom % and the monoid axiom
       % with
       % cofibrant symmetric pushout powers, % and the \textit{global monoid axiom} of \cite[Defn. 3.6]{BP_HGOP}, respectively, both
@@ -11641,8 +11904,6 @@ Proposition \ref{POWERF PROP} below when $G=\**$.
       % This is reflected by
       % the difference in the axioms $(\clubsuit)$ verses $(\spadesuit)$ in \cite{WY18},
       % and addressed in \cite[Remark 1.16]{BP_HGOP}.
-
-
       
       % ---------- the only literature on model categories of aglebras is Hopf interval object stuff - everything else is algebras over an operad, whe
       % re they need some sort of monoid axiom as well
@@ -14853,6 +15114,34 @@ But the condition that $\delta_{\mathcal{F}}\in \mathsf{Op}_G(\mathsf{Set})$ sim
 \end{remark}
 
 
+
+\begin{remark}\label{LANDINESS REM}
+	Regarding
+	$\mathsf{Sym}_G(\mathsf{Set})$
+	as a subcategory of 
+	$\mathsf{Sym}_G(\mathsf{sSet})$,
+	the leftmost left adjoint in 
+	\eqref{MAINPFADJVAR EQ}
+	lands in cofibrant objects of 
+	$\mathsf{Sym}_G(\mathsf{sSet})$
+	and thus, 
+	by Lemma \ref{MAINLEM LEM},
+	in the essential image of
+	$\iota_{\**} \colon
+	\mathsf{Sym}^G(\mathsf{Set})
+	\to 
+	\mathsf{Sym}_G(\mathsf{Set})$.
+	Thus, again by Lemma \ref{MAINLEM LEM},
+	the top composite in 
+	\eqref{MAINPFADJVAR EQ}
+	lands in the essential image of
+	$\iota_{\**} \colon
+	\mathsf{Op}^G(\mathsf{Set})
+	\to 
+	\mathsf{Op}_G(\mathsf{Set})$.
+\end{remark}
+
+
 \begin{remark}\label{MAINPFADJVARVAR REM}
 If one appends the adjunction
 $\iota^{\**} \colon
@@ -14865,11 +15154,7 @@ an additional composite monad
 $\widehat{\mathbb{F}}_G$
 on
 $\mathsf{Set}^{\times \text{Ob}(\Sigma_G)}$.
-Moreover, Lemma \ref{MAINLEM LEM}
-guarantees that the top composite in 
-\eqref{MAINPFADJVAR EQ}
-lands in the essential image of $\iota_{\**}$,
-so that the monads 
+Moreover, by Remark \ref{LANDINESS REM} the monads
 $\widetilde{\mathbb{F}}_G$ and
 $\widehat{\mathbb{F}}_G$
 are in fact isomorphic.
@@ -14877,7 +15162,7 @@ This observation now hints at how
 one can build a model for 
 $N \mathcal{F}$-operads 
 directly in terms of (regular) equivariant operads,
-i.e. without making use of genuine equivariant operads.
+i.e. without making explicit use of genuine equivariant operads.
 Namely, consider the adjunctions
 \begin{equation}\label{MAINPFADJVARVAR EQ}
 \begin{tikzcd}[column sep =3.3em]
@@ -14932,7 +15217,7 @@ $\widehat{\mathbb{F}}_G
 \iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
 \to 
 \delta_{\mathcal{F}}$
-(which would necessarily be an algebra structure),
+(which would necessarily define an algebra structure),
 it is unclear if such a map exists at all.
 In order to show directly that such a map exists,
 one must analyze 
@@ -14949,8 +15234,14 @@ so that, cf. Remarks \ref{INFACTEST REM} and \ref{MUTMUT2 REM},
 one has 
 $\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
 \simeq 
-\mathbb{F}_G \iota^{\**} S \delta_{\mathcal{F}}$,
-computing the graph fixed points in terms of $G$-trees.
+\mathbb{F}_G \iota_{\**} \iota^{\**} S \delta_{\mathcal{F}}
+\simeq
+\mathbb{F}_G S \delta_{\mathcal{F}}$
+(the identify
+second identity follows since
+$S \delta_{\mathcal{F}}$
+is in the essential image of $\iota_{\**}$,
+cf. Remark \ref{LANDINESS REM}).
 %
 %This latter model may seem deceptively simple. 
 %However, it is not easy to prove directly that

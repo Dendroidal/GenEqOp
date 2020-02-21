@@ -1,9 +1,23 @@
 \begin{thebibliography}{10}
 
+\bibitem{BDGNS}
+Parametrized higher category theory and higher algebra: Expos{\'e} i --
+  elements of parametrized higher category theory.
+
+\bibitem{BB17}
+M.~A. Batanin and C.~Berger.
+\newblock Homotopy theory for algebras over polynomial monads.
+\newblock {\em Theory Appl. Categ.}, 32:Paper No. 6, 148--253, 2017.
+
 \bibitem{BM03}
 C.~Berger and I.~Moerdijk.
 \newblock Axiomatic homotopy theory for operads.
 \newblock {\em Commentarii Mathematici Helvetici}, 78:805--831, 2003.
+
+\bibitem{BM09}
+C.~Berger and I.~Moerdijk.
+\newblock On the derived category of an algebra over an operad.
+\newblock {\em Georgian Math. J.}, 16(1):13--28, 2009.
 
 \bibitem{BM08}
 C.~Berger and I.~Moerdijk.
@@ -22,11 +36,28 @@ M.~Boardman and R.~Vogt.
   volume 347 of {\em Lecture Notes in Mathematics}.
 \newblock Springer-Verlag, 1973.
 
+\bibitem{BNerve}
+P.~Bonventre.
+\newblock The genuine operadic nerve.
+\newblock {\em Theory Appl. Categ.}, 34:736--780, 2019.
+
+\bibitem{BP_edss}
+P.~Bonventre and L.~A. Pereira.
+\newblock Equivariant dendroidal {S}egal spaces and {$G$-$\infty$-}operads.
+\newblock To appear in \textit{Algebraic \& Geometric Topology}. arXiv preprint
+  \href{https://arxiv.org/abs/1801.02110v3}{1801.02110v3}.
+
 \bibitem{BP_HGOP}
 P.~Bonventre and L.~A. Pereira.
 \newblock On the homotopy theory of equivariant colored operads.
 \newblock arXiv preprint
-  \href{https://arxiv.org/abs/1908.05440v1}{\texttt{1908.05440v1}}, 2019.
+  \href{https://arxiv.org/abs/1908.05440v1}{1908.05440v1}.
+
+\bibitem{BP_TAS}
+P.~Bonventre and L.~A. Pereira.
+\newblock Equivariant dendroidal sets and simplicial operads.
+\newblock arXiv preprint
+  \href{https://arxiv.org/abs/1911.06399}{\texttt{1911.06399v1}}, 2019.
 
 \bibitem{Bo94}
 F.~Borceux.
@@ -34,6 +65,16 @@ F.~Borceux.
   Encyclopedia of Mathematics and its Applications}.
 \newblock Cambridge University Press, Cambridge, 1994.
 \newblock Categories and structures.
+
+\bibitem{CM11}
+D.-C. Cisinski and I.~Moerdijk.
+\newblock Dendroidal sets as models for homotopy operads.
+\newblock {\em J. Topol.}, 4(2):257--299, 2011.
+
+\bibitem{CM13a}
+D.-C. Cisinski and I.~Moerdijk.
+\newblock Dendroidal {S}egal spaces and {$\infty$}-operads.
+\newblock {\em J. Topol.}, 6(3):675--704, 2013.
 
 \bibitem{CM13b}
 D.-C. Cisinski and I.~Moerdijk.
@@ -100,6 +141,12 @@ P.~S. Hirschhorn.
   Mathematical Surveys and Monographs}.
 \newblock American Mathematical Society, Providence, RI, 2003.
 
+\bibitem{Hor}
+A.~Horev.
+\newblock Genuine equivariant factorization homology.
+\newblock arXiv preprint
+  \href{https://arxiv.org/abs/1910.07226}{\texttt{1910.07226}}.
+
 \bibitem{Ho98}
 M.~Hovey.
 \newblock {\em Model categories}, volume~63 of {\em Mathematical Surveys and
@@ -113,6 +160,12 @@ T.~Leister.
   \url{https://golem.ph.utexas.edu/category/2016/08/monoidal_categories_with_proje.html},
   2016.
 \newblock From "The n-{C}ategory {C}af\'e".
+
+\bibitem{Lu09}
+J.~Lurie.
+\newblock {\em Higher topos theory}, volume 170 of {\em Annals of Mathematics
+  Studies}.
+\newblock Princeton University Press, Princeton, NJ, 2009.
 
 \bibitem{Lur17}
 J.~Lurie.
@@ -138,7 +191,12 @@ I.~Moerdijk and I.~Weiss.
 \newblock Dendroidal sets.
 \newblock {\em Algebr. Geom. Topol.}, 7:1441--1470, 2007.
 
-\bibitem{DS18}
+\bibitem{MW08}
+I.~Moerdijk and I.~Weiss.
+\newblock On inner {K}an complexes in the category of dendroidal sets.
+\newblock {\em Adv. Math.}, 221(2):343--389, 2009.
+
+\bibitem{PS18b}
 D.~Pavlov and J.~Scholbach.
 \newblock Admissibility and rectification of colored symmetric operads.
 \newblock {\em J. Topol.}, 11(3):559--601, 2018.
@@ -147,6 +205,12 @@ D.~Pavlov and J.~Scholbach.
 L.~A. Pereira.
 \newblock Cofibrancy of operadic constructions in positive symmetric spectra.
 \newblock {\em Homology Homotopy Appl.}, 18(2):133--168, 2016.
+
+\bibitem{Pe16b}
+L.~A. Pereira.
+\newblock Equivariant dendroidal sets.
+\newblock {Available at: \texttt{http://www.faculty.virginia.edu/luisalex/}},
+  2016.
 
 \bibitem{Pe17}
 L.~A. Pereira.
@@ -192,10 +256,10 @@ I.~Weiss.
 \newblock arXiv preprint:
   \href{https://arxiv.org/abs/1201.3987}{\texttt{1201.3987}}, 2012.
 
-\bibitem{Whi14}
+\bibitem{Wh17}
 D.~White.
-\newblock Monoidal {B}ousfield localizations and algebras over operads.
-\newblock arXiv preprint: 1404.5197v1, 2014.
+\newblock Model structures on commutative monoids in general model categories.
+\newblock {\em J. Pure Appl. Algebra}, 221(12):3124--3168, 2017.
 
 \bibitem{WY18}
 D.~White and D.~Yau.
