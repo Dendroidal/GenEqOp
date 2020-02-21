@@ -28,4 +28,4 @@
 \contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{79}{subsection.6.4}% 
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{82}{subsection.6.5}% 
 \contentsline {section}{\numberline {A}Transferring Kan extensions}{86}{appendix.A}% 
-\contentsline {section}{Glossary of Notation}{91}{section*.7}% 
+\contentsline {section}{Glossary of Notation}{91}{section*.8}% 
