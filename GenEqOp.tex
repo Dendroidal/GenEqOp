@@ -1498,14 +1498,19 @@ for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % while for strict inner Kan complexes on $\dSet^G$, the non-free $G$-trees are all superfluous.
 Additionally, we expect there to be a ``genuine'' analogue
 \[
-      \begin{tikzcd}[column sep =4em]
-            \mathsf{dSet}_G \ar[shift left=1.5]{r} 
-            &
-            \mathsf{sOp}_G,
+	\begin{tikzcd}[column sep =4em]
+		\mathsf{dSet}_G \ar[shift left=1.5]{r} 
+	&
+		\mathsf{sOp}_G,
             \ar[shift left=1.5]{l}
       \end{tikzcd}
 \]
 of the Quillen equivalence from \eqref{DSETSOP_EQ}.\\
+
+$\mathcal{T}$
+$\mathcal{T}_G$
+
+
 
 \todo[inline]{transition}
 
@@ -1527,6 +1532,32 @@ of the Quillen equivalence from \eqref{DSETSOP_EQ}.\\
 		are isomorphisms for all $T \in \Omega_G$.
 	\end{itemize}
 \end{conjecture}
+
+
+{\color{red} separation}
+
+\begin{example}
+Let $G = \mathbb{Z}_{/2}$,
+$\mathcal{O} \in \mathsf{sOp}^G$
+and $X \in \mathsf{sSet}^G$
+an $\mathcal{O}$-algebra.
+\[
+\begin{tikzcd}[row sep=0]
+	\pi_0\left(\mathcal{O}(2)^
+	{\Gamma_{G}}\right)
+	\times
+	\pi_0(X)
+	\ar{r}
+&
+	\pi_0\left(X^{G}\right)
+\\
+	{([p],[x])}
+	\ar[mapsto]{r}
+&
+	{[p(x,x+1)]}
+\end{tikzcd}
+\]
+\end{example}
 
 
 \todo[inline]{transition}
