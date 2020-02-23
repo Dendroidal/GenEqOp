@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Main results}{7}{subsection.1.1}% 
 \contentsline {subsection}{\numberline {1.2}Context, applications and future work}{9}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Outline}{11}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.3}Outline}{12}{subsection.1.3}% 
 \contentsline {section}{\numberline {2}Preliminaries}{12}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Grothendieck fibrations}{12}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Wreath product over finite sets}{14}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{16}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.3}Monads and adjunctions}{17}{subsection.2.3}% 
 \contentsline {section}{\numberline {3}Planar and tall maps, and substitution}{18}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Planar structures}{18}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Outer faces, tall maps, and substitution}{24}{subsection.3.2}% 
