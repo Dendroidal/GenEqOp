@@ -1987,36 +1987,25 @@ this connection has been used by \cite{Hor} to give a characterization of equiva
 
 \begin{equation}
 \begin{tikzcd}[column sep=1em]
-\Omega_{G}^2 \wr A \ar{d}[swap]{d_1} \ar{r} &
-\Fin \wr \Omega_{G}^1 \wr A \ar{d}[swap]{\Fin \wr d_0} \ar{r}&
-\Fin^{\wr 2} \wr \Omega_{G}^0 \wr A \ar{r} &
-|[alias=dog2]|
-\Fin^{\wr 3} \wr A \ar{d}{\sigma^1} \ar{r} &
-\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{d}{\sigma^1} \ar{r} &
-\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}&
-|[alias=cat3]|
-\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
-\mathcal{V}^{op} \ar[equal]{d}
+	\Omega_{G}^0 \ar[equal]{d} \ar{r} &
+	|[alias=dog2]|
+	\Fin \wr \Sigma_{G} \ar{r}&
+	\Fin \wr \Omega^0_{G} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\mathcal{V}^{op} \ar[equal]{d} 
 \\
-\Omega_{G}^1 \wr A \ar{r} \ar{d}[swap]{d_{0}}&
-|[alias=cat2]|
-\Fin \wr \Omega_{G}^0 \wr A \ar{rr} &&
-|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
-|[alias=dog3]|
-\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{rr} &&
-\Fin \wr \mathcal{V}^{op} \ar{r} &
-|[alias=dog]|
-\mathcal{V}^{op} \ar[equal]{d}
+	|[alias=cat2]|
+	\Omega_{G}^0 \ar{rrrr} \ar{d}[swap]{d_{0}} 
+	\ar{rru} &&&&
+	|[alias=dog3]|
+	\mathcal{V}^{op} \ar[equal]{d}
 \\
-|[alias=Omega]|\Omega_{G}^0 \wr A \ar{rrr} &&&
-\Fin \wr A \ar{r} &
-|[alias=cat]|
-\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
-\mathcal{V}^{op}
-\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi_0"]
-\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha"]
-\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \pi_0"]
-\arrow[Leftrightarrow, from=cat3, to=dog3,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \alpha"]
+	|[alias=Omega]|
+	\Sigma_{G} \ar{rrrr} &&&&
+	|[alias=cat]|
+	\mathcal{V}^{op} 
+\arrow[Leftarrow, from=dog3, to=Omega,shorten <=0.15cm,shorten >=0.15cm]%,"\pi_0"]
+\arrow[Rightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm]
 \end{tikzcd}
 \end{equation}
 
