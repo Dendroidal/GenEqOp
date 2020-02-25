@@ -299,7 +299,7 @@ To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and Ma
 the theory of \textit{operads}\index{categories!Operad@$\O \in \Op(\V)$}.
 Informally, an operad $\O$ consists of a sequence of
 sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action
-(recording ``reordering the inputs of the operations''),
+(recording ``reordering of the inputs of the operations''),
 and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
@@ -310,13 +310,13 @@ $E_\infty$-operads, introduced by
 May in \cite{May72}, which are 
 homotopical replacements for the commutative operad
  and encode the aforementioned
- ``commutative monoids up to higher homotopy''.
+ ``commutative monoids up to homotopy''.
 In particular, while an
  $E_\infty$-algebra structure on $X$ does not specify unique maps $X^n \to X$, 
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible; that is, for each subgroup $\Gamma \leq \Sigma_n$ one has
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible. That is, for each subgroup $\Gamma \leq \Sigma_n$ one has
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
@@ -329,27 +329,27 @@ $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)
 % Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 Notably, when studying the homotopy theory of operads in topological spaces
 the preferred notion of weak equivalence is 
-usually that of \textit{naive equivalence},
+usually that of ``naive equivalence'',
 with a map of operads 
 $\O \to \O'$
 deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 upon forgetting the $\Sigma_n$-actions (e.g. \cite[3.2]{BM03}).
-In this context, $E_\infty$-operads are equivalent to the commutative operad $\mathsf{Com}$
+In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$
 \index{categories!Com@$\mathsf{Com}$}
 and, moreover, 
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
-These naive equivalences differ from the equivalences in \textit{genuine equivariant homotopy theory},
-where for a finite group $G$, a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
+These naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'',
+where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
 the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
 This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
 
 
-First, we note that for any finite group $G$ and a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure),
+First, note that for a finite group $G$ and $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure),
 the $n$-th level $\O(n)$ has a $G \times \Sigma_n$-action.
-Now, one might guess that a map of $G$-operads
+As such, one might guess that a map of $G$-operads
 $\O \to \O'$
 should be called a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
@@ -359,9 +359,7 @@ i.e. if the maps
 	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
 \end{equation}
 are weak equivalences of spaces. 
-However, the notion of equivalence suggested in \eqref{NAIVEOPEQ EQ} turns out to not
-capture enough structure.
-% be ``genuine enough''.
+However, the notion of equivalence suggested in \eqref{NAIVEOPEQ EQ} turns out to not be ``genuine enough''.
 To see why, we consider a homotopical replacement for $\mathsf{Com}$ using this theory: 
 %recall that the class of (non-equivariant)
 %$E_{\infty}$-operads,
@@ -411,16 +409,16 @@ i.e. the subgroups of the form
 \end{equation}
 for some subgroup $H \leq G$ and homomorphism
 $\phi \colon H \to \Sigma_n$.
-On the other hand, $\Gamma \leq G$ if and only if $\Gamma$ is the graph subgroup \eqref{GRAPHSUBIN EQ} associated to a trivial homomorphism $\phi$. 
-% As it turns out,
-The notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
+On the other hand, $\Gamma \leq G$ if and only if $\Gamma$ is the graph subgroup \eqref{GRAPHSUBIN EQ} for $\phi$ a trivial homomorphism. 
+As it turns out,
+the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
 and indeed it is possible
 to build maps $\O \to \O'$ where
 $\O$ is a $G$-trivial $E_{\infty}$-operad (as in \eqref{NAIVEGEINFTY EQ})
 and $\O'$ is a $G$-$E_{\infty}$-operad 
 (as in \eqref{GENGEINFTY EQ}).
-Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence from \eqref{NAIVEOPEQ EQ} 
+Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in \eqref{NAIVEOPEQ EQ} 
 with the finer notion of \textit{graph equivalence}, 
 so that $\O \to \O'$ is considered a weak equivalence only if
 the maps
@@ -1620,6 +1618,22 @@ an $\mathcal{O}$-algebra.
 \end{tikzcd}
 \]
 \end{example}
+
+
+{\color{red} separation}
+
+
+
+
+$\mathcal{H}_n(X) = \mathcal{C}(X^{\otimes n}, X)$
+
+
+For coefficient system consisting of fixed points,
+an algebra structure is a map
+$\mathcal{P} \to \iota_{\**} \mathcal{H}_{\bullet}(X)$.
+
+
+
 
 
 \todo[inline]{transition}
