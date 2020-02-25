@@ -1,4 +1,5 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
 \contentsline {subsection}{\numberline {1.1}Main results}{7}{subsection.1.1}% 
 \contentsline {subsection}{\numberline {1.2}Context, applications and future work}{8}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}$\ensuremath {\mathcal F}$-Cofibrant $G$-Symmetric Collections}{11}{subsubsection.1.2.1}% 
 \contentsline {section}{Glossary of Notation}{12}{section*.7}% 
