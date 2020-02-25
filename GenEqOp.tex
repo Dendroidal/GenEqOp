@@ -299,7 +299,7 @@ To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and Ma
 the theory of \textit{operads}\index{categories!Operad@$\O \in \Op(\V)$}.
 Informally, an operad $\O$ consists of a sequence of
 sets/spaces $\O(n)$ of ``$n$-ary operations'' carrying a $\Sigma_n$-action
-(recording ``reordering the inputs of the operations''),
+(recording ``reordering of the inputs of the operations''),
 and a suitable notion of ``composition of operations''.
 The purpose of the theory is then the study of 
 ``objects $X$ with operations indexed by $\O$'',
@@ -310,13 +310,13 @@ $E_\infty$-operads, introduced by
 May in \cite{May72}, which are 
 homotopical replacements for the commutative operad
  and encode the aforementioned
- ``commutative monoids up to higher homotopy''.
+ ``commutative monoids up to homotopy''.
 In particular, while an
  $E_\infty$-algebra structure on $X$ does not specify unique maps $X^n \to X$, 
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible; that is, for each subgroup $\Gamma \leq \Sigma_n$ one has
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible. That is, for each subgroup $\Gamma \leq \Sigma_n$ one has
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
@@ -329,27 +329,27 @@ $E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)
 % Informally, an operad $\O$ consists of ``sets/spaces of $n$-ary operations'' $\O(n)$, $n \geq 0$, each of which carries a $\Sigma_n$-action encoding ``reordering the inputs of the operations'', and a suitable notion of ``composition of operations''.
 Notably, when studying the homotopy theory of operads in topological spaces
 the preferred notion of weak equivalence is 
-usually that of \textit{naive equivalence},
+usually that of ``naive equivalence'',
 with a map of operads 
 $\O \to \O'$
 deemed a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 upon forgetting the $\Sigma_n$-actions (e.g. \cite[3.2]{BM03}).
-In this context, $E_\infty$-operads are equivalent to the commutative operad $\mathsf{Com}$
+In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$
 \index{categories!Com@$\mathsf{Com}$}
 and, moreover, 
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
-These naive equivalences differ from the equivalences in \textit{genuine equivariant homotopy theory},
-where for a finite group $G$, a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
+These naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'',
+where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
 the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
 This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
 
 
-First, we note that for any finite group $G$ and a $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure),
+First, note that for a finite group $G$ and $G$-operad $\O$ (i.e. an operad $\O$ together with a $G$-action commuting with all the structure),
 the $n$-th level $\O(n)$ has a $G \times \Sigma_n$-action.
-Now, one might guess that a map of $G$-operads
+As such, one might guess that a map of $G$-operads
 $\O \to \O'$
 should be called a weak equivalence if each of the maps
 $\O(n) \to \O'(n)$
@@ -359,9 +359,7 @@ i.e. if the maps
 	\O(n)^H \xrightarrow{\sim} \O'(n)^H, \qquad H \leq G \leq G\times \Sigma_n,
 \end{equation}
 are weak equivalences of spaces. 
-However, the notion of equivalence suggested in \eqref{NAIVEOPEQ EQ} turns out to not
-capture enough structure.
-% be ``genuine enough''.
+However, the notion of equivalence suggested in \eqref{NAIVEOPEQ EQ} turns out to not be ``genuine enough''.
 To see why, we consider a homotopical replacement for $\mathsf{Com}$ using this theory: 
 %recall that the class of (non-equivariant)
 %$E_{\infty}$-operads,
@@ -411,16 +409,16 @@ i.e. the subgroups of the form
 \end{equation}
 for some subgroup $H \leq G$ and homomorphism
 $\phi \colon H \to \Sigma_n$.
-On the other hand, $\Gamma \leq G$ if and only if $\Gamma$ is the graph subgroup \eqref{GRAPHSUBIN EQ} associated to a trivial homomorphism $\phi$. 
-% As it turns out,
-The notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
+On the other hand, $\Gamma \leq G$ if and only if $\Gamma$ is the graph subgroup \eqref{GRAPHSUBIN EQ} for $\phi$ a trivial homomorphism. 
+As it turns out,
+the notion of weak equivalence described in \eqref{NAIVEOPEQ EQ} fails to distinguish
 \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ}, 
 and indeed it is possible
 to build maps $\O \to \O'$ where
 $\O$ is a $G$-trivial $E_{\infty}$-operad (as in \eqref{NAIVEGEINFTY EQ})
 and $\O'$ is a $G$-$E_{\infty}$-operad 
 (as in \eqref{GENGEINFTY EQ}).
-Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence from \eqref{NAIVEOPEQ EQ} 
+Therefore, in order to differentiate such operads, one needs to replace the notion of weak equivalence in \eqref{NAIVEOPEQ EQ} 
 with the finer notion of \textit{graph equivalence}, 
 so that $\O \to \O'$ is considered a weak equivalence only if
 the maps
@@ -448,7 +446,7 @@ and acts diagonally on each factor
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
-ring multiplication also induces so called \textit{norm maps}
+ring multiplication further induces so called \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X \! R \to R.
 \end{equation}
@@ -456,7 +454,6 @@ Furthermore, by restricting the structure on $R$,
 the maps \eqref{NORMMAPS EQ} are also defined when $X$ is only an $H$-set for some subgroup $H \leq G$, and the maps \eqref{NORMMAPS EQ}
 then satisfy a number of 
 natural equivariance and associativity conditions.
-\todo[inline]{these don't actually appear anywhere, correct?}
 Crucially,  we note that the more interesting of these associativity conditions involve $H$-sets for various $H$ simultaneously
 (for an example packaged in operadic language,
 see \eqref{INTFIXPTCOMP EQ} below).
@@ -478,7 +475,7 @@ Next,
 using the natural 
 $(G \times \Sigma_n)$-action on $R^{\wedge n}$,
 the $H$-action on $N^X R \simeq R^{\wedge n}$
-is obtained via the identification
+is obtained via the obvious identification
 $H \simeq \Gamma_X$.
 %
 It then follows that,
@@ -486,11 +483,9 @@ for any $\mathcal{O}$-algebra $R$,
 maps of the form \eqref{NORMMAPS EQ}
 are parametrized by the fixed point space
 $\mathcal{O}(n)^{\Gamma_X}$.
-\todo[inline]{I would say more here, i.e. include mapping sets/spaces. This takes a while to write in \cite{BH15}, and is not illuminating there}
 The flaw of the $G$-trivial $E_{\infty}$-operads
 described in \eqref{NAIVEGEINFTY EQ} is then that
-the algebras they encode
-lack all norms maps other than those for $H$-trivial $X$, thus lacking 
+they lack all norms maps other than those for $H$-trivial $X$, thus lacking 
 some of the data encoded by $\mathsf{Com}$.
 Further, from this perspective one may regard the more naive notion of weak equivalence in \eqref{NAIVEOPEQ EQ},
 according to which \eqref{NAIVEGEINFTY EQ} and \eqref{GENGEINFTY EQ} are equivalent,
@@ -607,7 +602,7 @@ the weak equivalences (and fibrations)
 on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of 
 \textit{coefficient systems}
 are detected at each presheaf level.
-Noting that the fixed point characterization of $E \mathcal{F}$-spaces defines an object 
+Noting that the fixed point characterization of $E \mathcal{F}$-spaces defines a natural object 
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by
 \index{DeltaF@$\delta_{\mathcal F}$}
 $\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
@@ -657,11 +652,8 @@ $\mathsf{Op}^G$).
 Each genuine equivariant operad 
 $\mathcal{P} \in \mathsf{Op}_G$
 will consist of a list of spaces,
-indexed
-on all graph subgroups of $G \times \Sigma_n$ for all $n \geq 0$,
-% in the same way as in 
-% \eqref{GENEOPEQ EQ},
-% \todo[inline]{this is not indexed}
+indexed in the same way as in 
+\eqref{GENEOPEQ EQ},
 along with obvious restriction maps and, more importantly, 
 suitable \textit{composition maps}. Precisely identifying the required composition maps is one of the main challenges of this theory, and again we turn to \cite{BH15} for motivation.
 
@@ -770,19 +762,10 @@ $\Omega(T)$,
 as follows.
 The colors/objects of $\Omega(T)$
 are the edges $a,b,c,\cdots,i$
-while the generating operations
-% determined by the nodes,
+while the generating operations,
+determined by the nodes,
 are
-% $(a,b) \to f$, $(c,d,e) \to g$, $() \to h$, $(f,g,h) \to i
-\[
-      (a,b) \to f,
-      \quad
-      (c,d,e) \to g,
-      \quad
-      () \to h,
-      \quad
-      (f,g,h) \to i
-\]
+$(a,b) \to f$, $(c,d,e) \to g$, $() \to h$, $(f,g,h) \to i$
 (i.e., for each node, incoming edges are viewed as inputs 
 and the outgoing edge as an output).
 Let $C$ be the corolla (i.e. tree with a single node) above,
@@ -898,17 +881,17 @@ below and
 		\node at (9.15,-0.15) [font = \normalsize] {$T$};
 	\end{tikzpicture}%
 \end{equation}%
-Here, the expanded representation of $T$ is
-a forest diagram, with edges labeled to indicate the $G$-action.
+Here, the expanded representation of $T$ is just
+a forest with edges labels that indicate the $G$-action.
 Note that all edges are conjugate to one of the 
 edges $a,b,c,d$ which have, respectively, stabilizers $L, K, K, H$.
 For example, the labels of $T$ imply that $\pm i d = \pm k d$ and $\pm j d = \pm d = d$.
 Given the expanded representation,
 the orbital representation is  
 obtained by collapsing each edge orbit into a single edge,
-which is then labeled by said edge orbit %the corresponding  edge set of orbits in the expanded representation
+which is labeled by the corresponding orbit set of edges in the expanded representation
 (one may also reverse this process, though we will not need to do so).
-We note that orbital representations always look like a (labeled) tree.
+We note that orbital representations always ``look like a tree''.
 
 
 As explained in \cite[Example 4.9]{Pe17},
@@ -939,8 +922,7 @@ $G$-objects in colored operads.
 As in the non-equivariant case,
 one builds 
 $\Omega(T)$ in $\mathsf{Op}_{\bullet}^G$
-from the expanded representation of $T$,
-as well as ga map
+and a map
 $\Omega(C) \to \Omega(T)$
 in $\mathsf{Op}_{\bullet}^G$,
 where $C$ is the $G$-corolla (i.e. $G$-tree composed of corollas)
@@ -961,7 +943,7 @@ $\mathsf{Op}_{\bullet}^G
 \simeq
 \O(H/K)^{H} \times \O(K/L \amalg K/K)^{K}
 $
-holds by the following:
+follows since:
 by equivariance, a $G$-map
 $\phi \colon \Omega(T) \to \O$
 is determined by the images of the operations
@@ -989,12 +971,10 @@ $\O(H/K)^{H}$, $\O(K/L \amalg K/K)^{K}$ in
 \eqref{INTFIXPTCOMP EQ}
 correspond to the two nodes of the orbital representation
 in \eqref{D6SMALLER EQ}.
-Notice that now the arity of such a node (i.e. the associated ``type of input'')
-does not just count incoming edge orbits,
-but depends on the labels of both 
-incoming and outgoing edge orbits
+Notice that now the arity (i.e. the associated ``type of input'')
+of such a node does not just count incoming edge orbits,
+but depends on the labels of both incoming and outgoing edge orbits
 (in particular, the latter determines the fixed point condition).
-\todo[inline]{is this true?}
 %
 Similarly, the output 
 $\O(H/L \amalg H/K)^{H}$
@@ -1620,6 +1600,22 @@ an $\mathcal{O}$-algebra.
 \end{tikzcd}
 \]
 \end{example}
+
+
+{\color{red} separation}
+
+
+
+
+$\mathcal{H}_n(X) = \mathcal{C}(X^{\otimes n}, X)$
+
+
+For coefficient system consisting of fixed points,
+an algebra structure is a map
+$\mathcal{P} \to \iota_{\**} \mathcal{H}_{\bullet}(X)$.
+
+
+
 
 
 \todo[inline]{transition}

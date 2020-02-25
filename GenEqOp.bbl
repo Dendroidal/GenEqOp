@@ -1,8 +1,11 @@
 \begin{thebibliography}{10}
 
 \bibitem{BDGNS}
-Parametrized higher category theory and higher algebra: Expos{\'e} i --
-  elements of parametrized higher category theory.
+C.~Barwick, E.~Dotto, S.~Glasman, D.~Nardin, and J.~Shah.
+\newblock Parametrized higher category theory and higher algebra: Expos{\'e} i
+  -- elements of parametrized higher category theory.
+\newblock arXiv preprint
+  \href{https://arxiv.org/abs/1608.03657}{\texttt{1608.03657}}.
 
 \bibitem{BB17}
 M.~A. Batanin and C.~Berger.
@@ -47,17 +50,17 @@ P.~Bonventre and L.~A. Pereira.
 \newblock To appear in \textit{Algebraic \& Geometric Topology}. arXiv preprint
   \href{https://arxiv.org/abs/1801.02110v3}{1801.02110v3}.
 
-\bibitem{BP_HGOP}
-P.~Bonventre and L.~A. Pereira.
-\newblock On the homotopy theory of equivariant colored operads.
-\newblock arXiv preprint
-  \href{https://arxiv.org/abs/1908.05440v1}{1908.05440v1}.
-
 \bibitem{BP_TAS}
 P.~Bonventre and L.~A. Pereira.
 \newblock Equivariant dendroidal sets and simplicial operads.
 \newblock arXiv preprint
   \href{https://arxiv.org/abs/1911.06399}{\texttt{1911.06399v1}}, 2019.
+
+\bibitem{BP_HGOP}
+P.~Bonventre and L.~A. Pereira.
+\newblock On the homotopy theory of equivariant colored operads.
+\newblock arXiv preprint
+  \href{https://arxiv.org/abs/1908.05440v1}{\texttt{1908.05440v1}}, 2019.
 
 \bibitem{Bo94}
 F.~Borceux.
