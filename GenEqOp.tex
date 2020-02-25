@@ -1556,6 +1556,13 @@ on operations
 (some caution is needed concerning the permutation
 $\sigma$, since while the vertices of $gT$ are conjugate to the vertices of $T$, they do not share the same order).
 
+{\color{red} Note:} The operad $\mathcal{T}_G^{fr}$
+does \emph{not} include ``$G$-action operations''. 
+Instead, both $\mathcal{T}_G^{fr}$ and its algebras 
+come with prescribed $G$-actions, 
+which then impose equivariance conditions on the algebra structure maps.
+
+
 One then has a map of $G$-colored operads
 (where $G$ acts trivially on $\mathcal{T}$)
 \[
@@ -1975,7 +1982,46 @@ this connection has been used by \cite{Hor} to give a characterization of equiva
 % \]
 
 
-%We expect that, analogous to the work of Cisinski-Moerdijk, the direct vertical comparisons between $G$-operads and $G$-dendroidal sets will be challenging, hence the need to explore other notions of $G$-$\infty$-operads in the previous paragraph.
+
+
+
+\begin{equation}
+\begin{tikzcd}[column sep=1em]
+\Omega_{G}^2 \wr A \ar{d}[swap]{d_1} \ar{r} &
+\Fin \wr \Omega_{G}^1 \wr A \ar{d}[swap]{\Fin \wr d_0} \ar{r}&
+\Fin^{\wr 2} \wr \Omega_{G}^0 \wr A \ar{r} &
+|[alias=dog2]|
+\Fin^{\wr 3} \wr A \ar{d}{\sigma^1} \ar{r} &
+\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{d}{\sigma^1} \ar{r} &
+\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}&
+|[alias=cat3]|
+\Fin \wr \mathcal{V}^{op} \ar[equal]{d} \ar{r} &
+\mathcal{V}^{op} \ar[equal]{d}
+\\
+\Omega_{G}^1 \wr A \ar{r} \ar{d}[swap]{d_{0}}&
+|[alias=cat2]|
+\Fin \wr \Omega_{G}^0 \wr A \ar{rr} &&
+|[alias=FFOmega]|\Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+|[alias=dog3]|
+\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{rr} &&
+\Fin \wr \mathcal{V}^{op} \ar{r} &
+|[alias=dog]|
+\mathcal{V}^{op} \ar[equal]{d}
+\\
+|[alias=Omega]|\Omega_{G}^0 \wr A \ar{rrr} &&&
+\Fin \wr A \ar{r} &
+|[alias=cat]|
+\Fin \wr \mathcal{V}^{op} \ar{rrr} &&&
+\mathcal{V}^{op}
+\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,shorten >=0.15cm,"\pi_0"]
+\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,shorten >=0.15cm,"\alpha"]
+\arrow[Leftrightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \pi_0"]
+\arrow[Leftrightarrow, from=cat3, to=dog3,shorten <=0.15cm,shorten >=0.15cm,"\Fin \wr \alpha"]
+\end{tikzcd}
+\end{equation}
+
+
+\iffalse
 
 
 \subsection{Outline}
@@ -15375,6 +15421,9 @@ cf. Remark \ref{LANDINESS REM}).
 \end{remark}
 
 
+
+
+
 %\subsubsection{$\F$-Cofibrant $G$-Symmetric Collections}
 
 %We first classify cofibrant objects in $\V\Sym_G$ by breaking $\Omega_{G,0}$ apart along the free $G$-trees. 
@@ -15664,143 +15713,6 @@ cf. Remark \ref{LANDINESS REM}).
 %                 is a Quillen equivalence.
 %         \end{itemize}
 % \end{theorem}
-
-
-
-
-
-
-%%%%%%%%%%%%%% TRYING FOR V = SSET FIRST %%%%%%%%%%%%%%%%%%%%%%%%%
-
-% We first prove the existence of these model structures when $\V = \sSet$. In this case, we denote $\V\Op_G$ by $\sOp_G$. 
-% \begin{theorem}
-%   The genuine model structure on $\sOp_G$ exists.
-% \end{theorem}
-% \begin{proof}
-%   By general arguments of Kan \cite[11.6.1]{Hi03}, it suffices to show that any transfinite composite of cellular extension $\P \to \P[u]$, each built by pushouts
-% \[
-% \begin{tikzcd}
-%   \mathbb{F}_G X \arrow[d, "u"'] \arrow[r] & \P \arrow[d]\\
-%   \mathbb{F}_G Y \arrow[r] & \P[u]
-% \end{tikzcd}
-% \]
-% where $u: X \to Y$ is a generating trivial cofibration in $\sSet^{\Sigma_G^{op}}_{gen}$, is itself a weak equivalence in $\sSet^{\Sigma_G^{op}}_{gen}$. 
-
-% Since transfinite compositions are computed levelwise, it in fact suffices to show that each $\P \to \P[u]$ is a level trivial cofibration in $\sSet^{\Sigma_G^{op}}$; that is, that for all $C\in \Sigma_G$, $\P(C) \to \P[u](C)$ is a genuine trivial cofibration in $\sSet^{\mathrm{Aut}(C)}$. This is precisely the content of Lemma \ref{SSET_CELLULAR_LEVEL_COFIB_LEMMA}.
-% \end{proof}
-
-% \begin{theorem}
-%   Cofibrant objects in $\sOp_G$ forget to cofibrant objects in $\sSet^{\Sigma_G^{op}}$. 
-% \end{theorem}
-% \begin{proof}
-%   Similarly as above, it suffices to show that, for $u: X\to Y$ a cofibration in $\sSet^{\Sigma_G^{op}}$ and $\P$ underlyingly cofibrant in $\sSet^{\Sigma_G^{op}}$, the cellular extension $\P \to \P[u]$ is an underlying cofibration in $\sSet^{\Sigma_G^{op}}$. 
-% \todo[inline]{come back}
-% \end{proof}
-
-% \begin{lemma}
-%   \label{SSET_CELLULAR_LEVEL_COFIB_LEMMA}
-%   If $u: X\to Y$ is a level trivial genuine cofibration in $\sSet^{\Sigma_G^{op}}$ (so $X(C) \to Y(C)$ is a genuine cofibration in $\sSet^{\mathrm{Aut}(C)}$), then $\P \to \P[u]$ is a level trivial genuine cofibration for any $\P \in \sOp_G$.
-% \end{lemma}
-% \begin{proof}
-%   We first record that, since genuine cofibrations of simplicial sets are underlying, all $\P \in \sOp_G$ are levelwise genuine cofibrant, i.e. $\P(C)$ is cofibrant in $\sSet^{\mathrm{Aut}(C)}_{gen}$. 
-% %  Usign the levelwise filtration
-%   \todo[inline]{come back}
-%   Follows from cofibration analysis.
-% \end{proof}
-
-
-
-
-%%%%%%%%%%%%%%%%%% LANS AND STUFF "RESULTS" %%%%%%%%%%%%%%%%%%
-
-% Only transfer across the left-most adjunction requires proof. We will use the following result of White-Yau, following Fresse and Kan:
-% \begin{theorem}
-%   [{\cite[Theorem 2.2.2]{WhYa15}}]
-%   \label{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM}
-%   Suppose $\mathcal C$ is a cofibrantly generated model category, with generating (trivial) cofibrations $I$ (resp. $J$), and that we have a monadic adjunction $U: \mathsf{Alg}_{\mathbb{F}}(\mathcal C) \leftrightarrows \C: \mathbb{F}$ for some monad $\mathbb{F}$ on $\mathcal C$. Further assume that, for any $\mathbb{F}(I)$-cell complex $\P$, and cofibration $u: X \to Y$ and general map $h: X \to U\P$ in $\mathcal C$, the cellular extension $\P \to \P[u]$ given by the pushout
-% \[
-% \begin{tikzcd}
-%   \mathbb{F}(X) \arrow[d, "u"'] \arrow[r, "h"] & \P \arrow[d] \\
-%   \mathbb{F}(Y) \arrow[r] & \P[u]
-% \end{tikzcd}
-% \]
-% is an underlying cofibration in $\C$, which is trivial whenever $u$ is. Then $\mathsf{Alg}_{\mathbb{F}}(\mathcal C)$ has the transfered cofibrationaly-generated semi-model structure, with weak equivalences and fibrations detected by $U$, generating cofibrations $\mathbb{F}(I)$ and trivial cofibrations $\mathbb{F}(J)$, and such that $\mathsf{fgt}$ sends cofibrations with cofibrant domain to cofibrations.
-
-% If the result holds for any $\P\in \mathsf{Alg}_{\mathbb{F}}(\mathcal C)$, then this is in fact a true model structure.
-% \end{theorem}
-% \todo[inline]{come back: edit this!}
-% \begin{theorem}
-%   The $\F$-semi-model structure on $\V\Op_G$ exists for any weak indexing system $\F$ and any $\V$ satisfying \textsc{Assumption 1}.
-% \end{theorem}
-% \begin{proof}
-%   This is an immediate corollary of Theorem \ref{CELLULAR_EXTENSION_COFIBRATION_THEOREM} by applying Theorem \ref{SEMI_MODEL_CATEGORY_EXISTENCE_THEOREM} above.
-% \end{proof}
-
-
-% \begin{theorem}
-%   \label{CELLULAR_EXTENSION_COFIBRATION_THEOREM}
-%   Let $\F$ be a weak indexing system, and $\V$ a category satisfying Assumption 1. Further, let $\P \in \V\Op_G$ be $\F$-cofibrant, $u: X \to Y$ an $\F$-projective-cofibration in $\V\Sym_G$, and $h: \mathbb{F}_G X \to \P$ a map of genuine operads. Then the cellular extension $\P \to \P[u]$ is an $\F$-cofibration, trivial if $u$ is so.
-% \end{theorem}
-% \begin{proof}
-%   We use the filtration from the previous section. In particular, it suffices to show that the map
-% \[
-% \Lan_{\Omega_{G,e}[k,-]^{op}}N^e \to \Lan_{\Omega_{G,e}[k]^{op}}N^e
-% \]
-% induced by the inclusion $p[k]: \Omega_G^e[k,-]\into \Omega_G^e[k]$, is an $\F$-cofibration in $\V\Sym_G$, trivial if $u$ is. If we consider the string of adjunctions below
-% \[
-% \begin{tikzcd}
-%   \V^{\Omega_G^e[k,-]^{op}}_{\F} \arrow[rr, shift left, "{\Lan = p[k]_!}"] && \V^{\Omega_{G,e}[k]^{op}}_{\F} \arrow[ll, shift left, "{\mathsf{fgt} = p[k]^*}"] \arrow[rr, shift left, "\Lan = \mathsf{lr}_!"] && \V^{\Sigma_G^{op}}_{\F} \arrow[ll, shift left, "\mathsf{fgt} = \mathsf{lr}^*"]
-% \end{tikzcd}
-% \]
-% where each category is equipped with the $\F$-projective model structure, if we use the fact that
-% \[
-% \Lan_{\Omega_G^e[k,-]^{op}}N^e = \Lan_{\Omega_G^e[k]^{op}}\Lan_{p[k]}N^e,
-% \]
-% it further suffices to show the following three claims:
-% \begin{enumerate}
-% \item The left Kan extension functor $\mathsf{lr}_!$ is left Quillen if $\F$ is a weak indexing system.
-% \item $N^e$ is $\F$-cofibrant in $\V^{\Omega_G^e[k]^{op}}$.
-% \item The counit $\epsilon_k: \Lan_{p[k]}X \to X$ is an $\F$-trivial-cofibration between cofibrant objects for any cofibrant $X$.
-% \todo[inline]{come back: somehow I've lost the dependence on $u$ being trivial or not...}
-% \end{enumerate}
-% Claim (1) is a direct consequence of Lemam \ref{WEAK_INDEXING_VALENCE_LEMMA}, and Claims (2) and (3) are the content of Propositions \ref{N_E_COFIBRANT_PROP} and \ref{EPSILON_COFIB_LEMMA} below.
-% \end{proof}
-
-
-
-
-% \begin{definition}
-% Refining the above, given an odd tree $T_0\in \Omega^{\mbox{odd}}$, let $T_0(Y)\in\Omega^e$ denote the labeled tree with underlying tree $T_0$ and all even nodes labeled with $Y$. 
-% Further, let $\Omega^e[T_0]$ denote the full subcategory of $\Omega^e$ spanned by those trees $(S_0,\lambda_{S_0})$ which receieve a map from $T_0(Y)$ in $\Omega^e$. 
-% Similarly, let $\Omega_G^e[T_0]$ denote the full subcategory of $\Omega_G^e$ spanned by those trees $(S,\lambda_S)$ which recieve a map from $G\cdot T_0(Y)$.
-% \end{definition}
-
-% We have an inclusion $\tau: G \times \Omega^e[T_0] \into \Omega_G^e[T_0]$, refining the inclusion $G \times \Omega \into \Omega_G$. This induces an adjunction
-% \[
-% \begin{tikzcd}
-% \V^{G\times \Omega^e[T_0]^{op}} \arrow[r, shift right, "\tau_*"'] & \V^{\Omega_G^e[T_0]^{op}} \arrow[l, shift right, "\tau^*"']
-% \end{tikzcd}
-% \]
-% and we observe that
-% \[
-% \tau_*X(G\cdot T_0/N, \lambda) \simeq X(G\cdot T_0, q^*\lambda)^N,
-% \]
-% where we are using the fact that even element in $\Omega_G^e[T_0]$ has underlying tree of the form $G\cdot T_0/N$, and $q^*\lambda$ is the vertex labeling 
-% \[
-% q^*\lambda: V_G(G \cdot T_0) \to V_G(G \cdot T_0/N) \xrightarrow{\lambda} \set{Y,X}.
-% \]
-
-% We further repackage $\Omega_G^e[T_0]$. In particular, we observe that if there is a map $(T',\lambda') \to (T'', \lambda'')$ in $\Omega_G^e[T_0]$, it is uniquely determined by the underlying quotient map $T' \to T''$. Indeed, $\Omega_G^e[T_0](T',T'')$ is the subset of $\Omega_{\Gamma_{T_0}}(G\times \Sigma_{T_0}/N', G\times\Sigma_{T_0}/N'')$, where $T' \simeq G\cdot T_0/N'$ and $T'' \simeq G\cdot T_0/N''$, of those maps $q$ such that $v''\in V_Y(T'')$ implies $q^{-1}(v'')\subseteq V_Y(T')$. 
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -16247,7 +16159,6 @@ $.
 \end{proof}
 
 
-
 %In the following statement note that when 
 %$\mathcal{J}=\mathcal{J}_{\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
 %is a constant simplicial object one has a canonical identification between
@@ -16256,6 +16167,7 @@ $.
 %|\mathcal{J}_{\bullet}|$
 %and the projection
 %$ \Delta^{op}\times \mathcal{J} \to \mathcal{J}$.
+
 
 \begin{corollary}\label{SOURCELANFINAL COR}
 	Consider a map
@@ -16501,7 +16413,10 @@ to conclude that the Kan extensions indeed coincide.
 
 
 
-%\fi%
+\fi
+
+
+
 
 % ---------- Notational Index ----------
 \newpage
