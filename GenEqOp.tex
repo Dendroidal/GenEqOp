@@ -1525,20 +1525,41 @@ Let $\mathcal{T}$
 denote the colored operad whose algebras are operads, 
 as defined in {\color{red} Gutierrez-Vogt}.
 
+In terms of our language, 
+the colors of $\mathcal{T}$
+are the arities $C \in \Sigma$,
+and an operation with signature
+$(C_1,\cdots,C_n;C_0)$
+consists of a tree $T$, a permutation 
+$\sigma \in \Sigma_n$
+such that $V(T) = (C_{\sigma(i)})$
+and a tall map $C_0 \to T$.
 
-Slightly modifying their construction by taking 
-colors to be $G$-free corollas and
-operations to be encoded by $G$-free trees 
-one obtains a colored operad $\mathcal{T}_G^{fr}$.
 
+Their construction can be modified to construct a 
+$G$-equivariant colored operad $\mathcal{T}_G^{fr}$,
+as follows.
+Operations are now the $G$-free corollas 
+$C \in \Sigma_G^{fr}$
+and operations with signature $(C_1,\cdots,C_n;C_0)$
+are encoded by $G$-free trees $T$,
+a permutation $\sigma \in \Sigma_n$ such that
+such that $V_G(T) = (C_{\sigma(i)})$
+and a tall rooted map $C_0 \to T$.
+Moreover, the $G$-action on 
+$\mathcal{T}_G^{fr}$
+is described on objects by
+$gC = g (C_i)_{i \in I} = (C_{g i})_{i \in I}$
+and similar by
+$gT = g (T_i)_{i \in I} = (T_{g i})_{i \in I}$
+on operations
+(some caution is needed concerning the permutation
+$\sigma$, since while the vertices of $gT$ are conjugate to the vertices of $T$, they do not share the same order).
 
-Moreover,
-$\mathcal{T}_G^{fr}$ comes with a $G$-action
-and there is a map of $G$-colored operads
-(where $G$ acts on $\mathcal{T} \times G^{op}$
-via the trivial action on $\mathcal{T}$ and the conjugation action on $G^{op}$)
+One then has a map of $G$-colored operads
+(where $G$ acts trivially on $\mathcal{T}$)
 \[
-	\mathcal{T} \times G^{op} \to \mathcal{T}_G^{fr}
+	\mathcal{T} \to \mathcal{T}_G^{fr}
 \]
 Moreover, upon forgetting the $G$-action,
 this map is fully faithful and essentially surjective.
