@@ -1581,29 +1581,6 @@ is not essentially surjective.
 
 
 
-
-{\color{red} separation}
-
-\begin{conjecture}
-	There is a fully faithful nerve functor
-	$N \colon \mathsf{Op}_G
-	\to 
-	\mathsf{dSet}_G$
-	whose essential image 
-	consists of those $X \in \mathsf{dSet}_G$
-	such that
-	\begin{itemize}
-		\item $X$ is pointed, i.e. 
-		$X(G/H \cdot \eta) = \**$ for all $H \leq G$;
-		\item $X$ is a strict Segal object, i.e.
-		the natural maps
-		$X(T) \xrightarrow{\simeq}
-		\prod_{v \in V_G(T)} X(T_v)$
-		are isomorphisms for all $T \in \Omega_G$.
-	\end{itemize}
-\end{conjecture}
-
-
 {\color{red} separation}
 
 \begin{example}
@@ -1984,28 +1961,352 @@ this connection has been used by \cite{Hor} to give a characterization of equiva
 
 
 
+\subsection{The nerve theorem}
+
+
+In this section we assume that the monoidal structure 
+on $\mathcal{V}$
+is the cartesian product.
+
+\begin{theorem}\label{NERVE THM}
+	There is a fully faithful nerve functor
+	$\mathcal{N} \colon \mathsf{Op}_G(\mathcal{V})
+	\to 
+	\mathcal{V}^{\Omega_G^{op}}$
+	whose essential image 
+	consists of the pointed strict Segal objects,
+	i.e. the $X \in \mathcal{V}^{\Omega_G^{op}}$
+	such that the natural maps
+\begin{equation}\label{SEGCOND EQ}
+	X(T) \xrightarrow{\simeq}
+	\prod_{v \in V_G(T)} X(T_v)
+\end{equation}
+	are isomorphisms for all $T \in \Omega_G$.
+\end{theorem}
+
+{\color{red} note that can't do this the usual way since we have no colored genuine operads}
+
+
+\begin{remark}
+	\eqref{SEGCOND EQ} implies
+	that
+	$X(G/H \cdot \eta) = \**$ for all $H \leq G$,
+	since
+	$V_G(G/H \cdot \eta) = ()$ is the empty tuple,
+	motivating the term ``pointed''.
+	If one allows for non-pointed $X$
+	(i.e. for $X(G/H \cdot \eta) \neq \**$),
+	the Segal condition \eqref{SEGCOND EQ} needs to be modified.
+\end{remark}
+
+The proof of Theorem \ref{NERVE THM}
+will follow by first building $N$,
+and then describing a partial inverse
+(when restricted to pointed Segal objects).
+
+
+{\color{red} HERE}
+
+
+To build the nerve $\mathcal{N} \mathcal{P}$
+for $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
+recall first that 
+$\iota \mathcal{P}$
+is a $N$-algebra
+and consider the bar construction
+$B_{\bullet}=B_{\bullet}(N,N,\iota \mathcal{P})
+=N^{n+1} \iota \mathcal{P}$,
+whose levels are spans of the form
+$\Sigma_G
+\leftarrow 
+\Omega^n_G \xrightarrow{\mathcal{N}_n}
+\mathcal{V}^{op}$
+where
+\[
+	\mathcal{N}_n 
+	\left(T_0 \to \cdots \to T_n\right)
+	\simeq
+	\prod_{v \in V_G(T_n)} X(T_{n,v})
+\]
+Moreover, the face maps $d_i$ of $B_{\bullet}$
+for $i < n$ are induced by the multiplication 
+$NN \Rightarrow N$,
+and thus their natural transformation component is an isomorphism.
+Hence, by Proposition \eqref{RANTRANS PROP},
+and noting that
+$|\Omega^n_G| = \Omega^{\mathsf{t}}_G$
+is the category of $G$-trees and tall maps,
+one obtains upon realization
+a functor
+$\mathcal{N}^{\mathsf{t}} \colon 
+\Omega_G^{\mathsf{t}} \to \mathcal{V}^{op}$.
+This construction almost defines the desired
+nerve functor in Theorem \eqref{NERVE THM},
+except we have a functor out of 
+the subcategory $\Omega_G^{\mathsf{t}}$ 
+rather than the entire category $\Omega_G$.
+To address this, 
+we first enlarge the string categories
+$\Omega^n_G$
+to categories
+$\Omega^{n,o}_G$
+whose objects are still strings but whose maps between strings are 
+the the maps which are component wise outer maps
+(note that quotients are componentwise isomorphisms).
+
+{\color{red} HERE}
 
 \begin{equation}
-\begin{tikzcd}[column sep=1em]
-	\Omega_{G}^0 \ar[equal]{d} \ar{r} &
-	|[alias=dog2]|
-	\Fin \wr \Sigma_{G} \ar{r}&
-	\Fin \wr \Omega^0_{G} \ar{r} &
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
-	\mathcal{V}^{op} \ar[equal]{d} 
+\begin{tikzcd}
+	\Omega^n \ar{r}{(V^0)^{\circ n}} 
+	\ar{d}[swap]{d_i} &
+	\Fin^{\wr n} \wr \Sigma \ar{r} &
+	|[alias=Vt]|
+	\Fin \wr \Omega \ar[equal]{d}
+&
+\Omega^1 \ar[equal]{d} \ar{r} &
+\Omega \ar{r} &
+|[alias=Vt2]|
+\Fin \wr \Omega \ar[equal]{d}
+&
+\Omega^1 \ar{d}[swap]{d_0} \ar{r} &
+\Omega \ar[equal]{r} &
+|[alias=Vt3]|
+\Fin \wr \Omega \ar[equal]{d}
 \\
+	|[alias=FV]|
+	\Omega^{n-1} \ar{r}[swap]{V} &
+\Fin \wr \Sigma \ar{r} &
+\Fin \wr \Omega 
+&
+|[alias=FV2]|
+\Omega^1 \ar{r} &
+\Fin \wr \Omega^0 \ar{r} &
+\Fin \wr \Omega 
+&
+|[alias=FV3]|
+\Omega^0 \ar{r} &
+\Fin \wr \Sigma \ar{r} &
+\Fin \wr \Omega 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
+\arrow[Leftarrow, from=Vt2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_1"]
+\arrow[Leftarrow, from=Vt3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\beta"]
+\end{tikzcd}
+\end{equation}
+
+
+
+{\color{red} HERE}
+
+
+\subsubsection{Essential surjectivity}
+
+$X_1 
+\xrightarrow{d_1} X_0 
+\xrightarrow{\epsilon} N X_{-1}$
+versus 
+$X_1  
+\xrightarrow{\epsilon} N X_0 
+\xrightarrow{N d_0} N X_{-1}$
+
+\begin{equation}
+\begin{tikzcd}
+	\Omega^1 \ar{d}[swap]{d_1} \ar{rr} &&
+	|[alias=Vtt]|
+	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
+	\mathcal{V} \ar[equal]{d}
+&
+	\Omega^1 \ar[equal]{d} \ar{rrr} &&&
+	|[alias=Vtt2]|
+	\Fin \wr \Omega \ar[equal]{d} \ar{r} &
+	\mathcal{V} \ar[equal]{d}
+\\
+	|[alias=FVt]|
+	\Omega^0 
+	\ar{rr} \ar[equal]{d} &&
+	|[alias=Vt]|
+	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
+	\mathcal{V} \ar[equal]{d}
+&
+	|[alias=FFV]|	
+	\Omega^1 
+	\ar{r} \ar{d}[swap]{d_1}&
+	\Fin \wr \Omega^0 \ar{r} \ar{d}[swap]{d_0} &
+	|[alias=Vt2]|
+	\Fin^{\wr 2} \wr \Omega \ar{r}{\sigma^0} \ar[equal]{d} &
+	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
+	\mathcal{V} \ar[equal]{d}
+\\
+	|[alias=FV]|
+	\Omega^0 \ar{r} &
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega \ar{r} &
+	\mathcal{V}
+&
+	\Omega^0 \ar{r} &
+	|[alias=FV2]|
+	\Fin \wr \Sigma \ar{r} &
+	\Fin^{\wr 2} \wr \Omega \ar{r}{\sigma^0} &
+	\Fin \wr \Omega \ar{r} &
+	\mathcal{V}
+\arrow[Leftarrow, from=Vt, to=FV,shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
+\arrow[Leftarrow, from=Vtt, to=FVt,shorten <=0.10cm,shorten >=0.10cm,"m"]
+\arrow[Leftarrow, from=Vt2, to=FV2,shorten <=0.10cm,shorten >=0.10cm,"m"]
+\arrow[Leftarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
+\end{tikzcd}
+\end{equation}
+
+
+{\color{red} HERE}
+
+$N X_0 \xrightarrow{N \epsilon}
+NN X_{-1} \xrightarrow{\mu} N X_{-1}$
+
+
+
+
+\begin{equation}
+\begin{tikzcd}[column sep=1.05em]
+	\Omega^1 \ar[equal]{d} \ar{r} &
+	\Fin \wr \Omega^0 \ar{r} \ar[equal]{d}&
+	\Fin \wr \Omega \ar{r}{\delta^1} &
+	|[alias=dog2]|
+	\Fin^{\wr 2} \wr \Omega \ar{r} \ar[equal]{d} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}{\otimes} \ar[equal]{d} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes} \ar[equal]{d}&
+	\mathcal{V}^{op} \ar[equal]{d} &
+\\
+	\Omega^{1} \ar{r} \ar{d}[swap]{d_{0}} &
 	|[alias=cat2]|
-	\Omega_{G}^0 \ar{rrrr} \ar{d}[swap]{d_{0}} 
-	\ar{rru} &&&&
-	|[alias=dog3]|
+	\Fin \wr \Omega^0 \ar{r} &
+	|[alias=FFOmega]|
+	\Fin^{\wr 2} \wr \Sigma \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Omega \ar{d}{\sigma^0} \ar{r} &
+	|[alias=cat3]|
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} 
+	\ar{r}{\otimes} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes} &
+	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	|[alias=Omega]|
-	\Sigma_{G} \ar{rrrr} &&&&
+	\Omega^{0} \ar{rr} &&
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega \ar{r} &
 	|[alias=cat]|
-	\mathcal{V}^{op} 
-\arrow[Leftarrow, from=dog3, to=Omega,shorten <=0.15cm,shorten >=0.15cm]%,"\pi_0"]
-\arrow[Rightarrow, from=dog2, to=cat2,shorten <=0.15cm,shorten >=0.15cm]
+	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\otimes} &&
+	\mathcal{V}^{op}
+\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
+\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
+\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
+\end{tikzcd}
+\end{equation}
+
+
+
+{\color{red} HERE}
+
+
+\begin{equation}
+\begin{tikzcd}
+	\Omega^0 \ar[equal]{d} \ar{r} &
+	\Omega \ar{r} &
+	|[alias=Vt]|
+	\Fin \wr \Omega \ar[equal]{d}
+&
+	\Omega^1 \ar[equal]{d} \ar{r} &
+	\Omega \ar{r} &
+	|[alias=Vt2]|
+	\Fin \wr \Omega \ar[equal]{d}
+&
+	\Omega^1 \ar{d}[swap]{d_0} \ar{r} &
+	\Omega \ar[equal]{r} &
+	|[alias=Vt3]|
+	\Fin \wr \Omega \ar[equal]{d}
+\\
+	|[alias=FV]|
+	\Omega^0 \ar{r} &
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega 
+&
+	|[alias=FV2]|
+	\Omega^1 \ar{r} &
+	\Fin \wr \Omega^0 \ar{r} &
+	\Fin \wr \Omega 
+&
+	|[alias=FV3]|
+	\Omega^0 \ar{r} &
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
+\arrow[Leftarrow, from=Vt2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_1"]
+\arrow[Leftarrow, from=Vt3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\beta"]
+\end{tikzcd}
+\end{equation}
+
+
+{\color{red} HERE}
+
+
+
+$X_1 \xrightarrow{\epsilon} 
+N X_0 \xrightarrow{N \epsilon}
+NN X_{-1} \xrightarrow{\mu} N X_{-1}$
+
+
+
+
+\begin{equation}
+\begin{tikzcd}[column sep=1.05em]
+	\Omega^1 \ar[equal]{d} \ar{rr} &&
+	|[alias=dog]|
+	\Fin \wr \Omega \ar{d} \ar{r}{\delta^1} &
+	\Fin^{\wr 2} \wr \Omega \ar[equal]{d}
+\\
+	|[alias=cat]|
+	\Omega^1 \ar[equal]{d} \ar{r} &
+	\Fin \wr \Omega^0 \ar{r} \ar[equal]{d}&
+	\Fin \wr \Omega \ar{r}{\delta^1} &
+	|[alias=dog2]|
+	\Fin^{\wr 2} \wr \Omega \ar[equal]{d} 
+\\
+	\Omega^{1} \ar{r} \ar{d}[swap]{d_{0}} &
+	|[alias=cat2]|
+	\Fin \wr \Omega^0 \ar{r} &
+	|[alias=FFOmega]|
+	\Fin^{\wr 2} \wr \Sigma \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Omega \ar{d}{\sigma^0} 
+\\
+	|[alias=Omega]|
+	\Omega^{0} \ar{rr} &&	
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega 
+\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
+\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
+\arrow[Leftarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
+\end{tikzcd}
+\end{equation}
+
+versus $X_1 \xrightarrow{d_0} X_0 \xrightarrow{\epsilon} N X_{-1}$
+
+
+
+
+\begin{equation}
+\begin{tikzcd}
+	\Omega^1 \ar{rr} \ar{d}[swap]{d_0} &&
+	\Fin \wr \Omega \ar[equal]{d}
+\\
+	\Omega^0 \ar[equal]{d} \ar{r} &
+	\Omega \ar{r} &
+	|[alias=Vt]|
+	\Fin \wr \Omega \ar[equal]{d}
+\\
+	|[alias=FV]|
+	\Omega^0 \ar{r} &
+	\Fin \wr \Sigma \ar{r} &
+	\Fin \wr \Omega 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
 \end{tikzcd}
 \end{equation}
 
@@ -6600,7 +6901,7 @@ whereas the natural transformation component of $\mu \circ (\mu N)$ is given by
 	\Fin^{\wr 3} \wr A \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 3} \wr \mathcal{V}^{op} \ar{r} \ar{d}{\sigma^0} &
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r} \ar{d}&
-	\Fin^ \wr \mathcal{V}^{op} \ar{r} &
+	\Fin \wr \mathcal{V}^{op} \ar{r} &
 	|[alias=dog3]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
