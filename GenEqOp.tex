@@ -1984,6 +1984,7 @@ is the cartesian product.
 	are isomorphisms for all $T \in \Omega_G$.
 \end{theorem}
 
+
 {\color{red} note that can't do this the usual way since we have no colored genuine operads}
 
 
@@ -2049,54 +2050,82 @@ To address this,
 we first enlarge the string categories
 $\Omega^n_G$
 to categories
-$\Omega^{n,o}_G$
+$\Omega^{n,o}_G, n \geq 0$
 whose objects are still strings but whose maps between strings are 
 the the maps which are component wise outer maps
 (note that quotients are componentwise isomorphisms).
-
-{\color{red} HERE}
-
+Note that the 
+$\Omega^{n,o}_G$ still form a simplicial object, i.e.
+one still has simplicial operators
+$d_i \colon \Omega^{n+1,o}_G \to \Omega^{n,o}_G$
+for $0\leq n, 0 \leq i \leq n+1$
+and 
+$s_j \colon \Omega^{n,o}_G \to \Omega^{n+1,o}_G$
+for $0\leq n, 0 \leq j \leq n$,
+though we note that one no longer has an augmentation
+to $\Sigma_G$ nor extra degeneracies.
+It is clear that one now has
+$|\Omega_G^{n,o}| = \Omega_G$
+so that, to build
+$\mathcal{N} \colon \Omega_G \to \mathcal{V}^{op}$,
+it suffices to show that
+$B_{\bullet}$
+can be extended to a simplicial object
+$B_{\bullet}^o$
+whose levels are functors 
+$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$.
+This follows by noting that
+the vertex functors
+$V_G \colon \Omega^{n}_{G}
+\to 
+\Fin_s \wr \Omega^{n-1}_{G}$
+extend to functors
+$V_G \colon \Omega^{n,o}_{G}
+\to 
+\Fin \wr \Omega^{n-1}_{G}$.
+This now follows from the observation that the following diagrams
+commute
+(note that all the simplicial operators 
+of $B_{\bullet}$
+are naturally factored
+so that the leftmost
+is extended by one of the diagrams below).
 \begin{equation}
 \begin{tikzcd}
-	\Omega^n \ar{r}{(V^0)^{\circ n}} 
-	\ar{d}[swap]{d_i} &
-	\Fin^{\wr n} \wr \Sigma \ar{r} &
+	\Omega^{n,o}_G \ar{r}{V_G} 
+	\ar{d}[swap]{d_0} &
+	\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
 	|[alias=Vt]|
-	\Fin \wr \Omega \ar[equal]{d}
+	\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
 &
-\Omega^1 \ar[equal]{d} \ar{r} &
-\Omega \ar{r} &
-|[alias=Vt2]|
-\Fin \wr \Omega \ar[equal]{d}
+	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
 &
-\Omega^1 \ar{d}[swap]{d_0} \ar{r} &
-\Omega \ar[equal]{r} &
-|[alias=Vt3]|
-\Fin \wr \Omega \ar[equal]{d}
+	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
 \\
 	|[alias=FV]|
-	\Omega^{n-1} \ar{r}[swap]{V} &
-\Fin \wr \Sigma \ar{r} &
-\Fin \wr \Omega 
+	\Omega^{n-1,o}_G \ar{rr}[swap]{V_G} &&
+	\Fin \wr \Omega^{n-2}_G  
 &
-|[alias=FV2]|
-\Omega^1 \ar{r} &
-\Fin \wr \Omega^0 \ar{r} &
-\Fin \wr \Omega 
+	\Omega^{n-1,o}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n-2}_G
 &
-|[alias=FV3]|
-\Omega^0 \ar{r} &
-\Fin \wr \Sigma \ar{r} &
-\Fin \wr \Omega 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
-\arrow[Leftarrow, from=Vt2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_1"]
-\arrow[Leftarrow, from=Vt3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\beta"]
+	\Omega^{n+1,o}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n}_G
+\arrow[Leftrightarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\pi"]
 \end{tikzcd}
 \end{equation}
-
-
+Thus, by realizing
+$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$
+we obtain the desired nerve functor
+$\mathcal{N} \mathcal{P}
+\colon 
+\Omega_G \to \mathcal{V}^{op}$.
 
 {\color{red} HERE}
+
+We now turn towards the task of building a partial inverse to $\mathcal{N}$.
 
 
 \subsubsection{Essential surjectivity}
