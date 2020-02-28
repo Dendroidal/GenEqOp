@@ -2223,7 +2223,7 @@ $X_{-1}$ becomes a $N$ algebra with multiplication given by
 \begin{equation}\label{XMINUSMULT EQ}
 \begin{tikzcd}
 	N X_{-1} &
-	X_0 \ar{l}{\epsilon}[swap]{\simeq} \ar{r}{d_0} &
+	X_0 \ar{l}[swap]{\epsilon}{\simeq} \ar{r}{d_0} &
 	X_{-1} 
 \end{tikzcd}
 \end{equation}
@@ -2457,10 +2457,112 @@ indeed makes $X_{-1}$ into a $N$-algebra.
 
 
 \begin{proof}[Proof of Theorem \ref{NERVE THM}]
-	cat
+	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
+	and set $X = \mathcal{N} \mathcal{P}$.
+	By construction of the realization process,
+	one has that the composite
+	$\Omega^0 \to \Omega 
+	\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
+	is  
+	$\Omega^0 \xrightarrow{\mathcal{N_0}} \mathcal{V}$,
+	from which it follows that
+	$X_{-1} = \iota \mathcal{P}$
+	and that 
+	$X_0 \xrightarrow{\epsilon} NX_{-1}$
+	in \eqref{XMINUSMULT EQ}
+	is the identity.
+	Moreover, again by construction of the realization process,
+	the composite natural transformations
+	below coincide.
+\begin{equation}\label{EXPREAL EQ}
+\begin{tikzcd}[column sep = 30pt]
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{r}{d_0} &
+	|[alias=Vt]|
+	\Omega_G^0 \ar{rd}{\mathcal{N}_0} \ar{d} &
+&
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	[swap,near start,name=F2]{}
+	&&
+	|[alias=Vt2]|
+	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
+\\
+	|[alias=FV]|
+	\Omega^0_G \ar{r} &
+	\Omega_G \ar{r}[swap]{\mathcal{N} \mathcal{P}} &
+	\mathcal{V}^{op} 
+&
+	|[alias=FV2]|
+	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\mathcal{V}^{op} 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"m"]
+\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
+\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
+\end{tikzcd}
+\end{equation}
+Hence, the natural transformation
+$X_0 \xrightarrow{d_0} X_{-1}$
+is given by the composite natural transformation
+\begin{equation}
+	\begin{tikzcd}[column sep = 30pt]
+	\Omega^0_G \ar{r}{s_{-1}} \ar{d}[swap]{d_0} &
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	[swap,near start,name=F2]{}
+&&
+	|[alias=Vt2]|
+	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
+\\
+	\Sigma_G \ar{r}{s_{-1}} &
+	|[alias=FV2]|
+	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\mathcal{V}^{op} 
+\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
+\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
+\end{tikzcd}
+\end{equation}
+which, by the simplical relations of $\mathcal{N}_{\bullet}$,
+is simply the operator 
+$\mathcal{N}_0 \xrightarrow{d_0} \mathcal{N}_{-1}$,
+i.e. the multiplication in $\iota \mathcal{P}$.
+In other words, we have shown that 
+\eqref{XMINUSMULT EQ}
+recovers $\mathcal{P}$.
+
+Conversely, 
+suppose $X \in \mathcal{V}^{\Omega_G^{op}}$ satisfies the Segal condition and consider $X_{-1}$ with its operad structure.
+We need to show that $X$ and $\mathcal{N} X_{-1}$
+are naturally isomorphic.
+Namely, we claim that
+$\epsilon_0 \colon X \Rightarrow \mathcal{N} X_{-1}$
+is such a natural transformation.
+Since $\Omega^0 \to \Omega 
+\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
+is  
+$\Omega^0 \xrightarrow{\mathcal{N}_0} \mathcal{V}$,
+naturality holds on arrows 
+of $\Omega$ that are in the image of $\Omega^0$
+it thus suffices to check naturality on arrows 
+in the image of $m$ in \eqref{EXPREAL EQ}.
+But now note that the right side of \eqref{EXPREAL EQ}
+is computing
+$NX_{-1} \overset{\mu}{\leftarrow}
+NNX_{-1} \overset{\epsilon}{\leftarrow}
+NX_0 \xrightarrow{Nd_0}
+NX_{-1}$,
+which by 
+\eqref{ALGCHECK EQ}
+coincides with
+$NX_{-1} \overset{\epsilon}{\leftarrow}
+X_0 \overset{d_0}{\leftarrow}
+X_1 \xrightarrow{d_1}
+X_0 \xrightarrow{\epsilon}
+N X_{-1}$.
+Noting that the natural transformation underlying $d_0$ is the identity, the result follows.
 \end{proof}
 
-{\color{red} HERE}
+
+
 
 
 
