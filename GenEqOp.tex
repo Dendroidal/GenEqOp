@@ -2000,16 +2000,16 @@ is the cartesian product.
 	the Segal condition \eqref{SEGCOND EQ} needs to be modified.
 \end{remark}
 
+
 The proof of Theorem \ref{NERVE THM}
-will follow by first building $N$,
+will follow by first building $\mathcal{N}$,
 and then describing a partial inverse
 (when restricted to pointed Segal objects).
 
 
-{\color{red} HERE}
 
-
-To build the nerve $\mathcal{N} \mathcal{P}$
+To build the nerve 
+$\mathcal{N} \mathcal{P} \in \mathcal{V}^{\Omega_G^{op}}$
 for $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
 recall first that 
 $\iota \mathcal{P}$
@@ -2020,14 +2020,14 @@ $B_{\bullet}=B_{\bullet}(N,N,\iota \mathcal{P})
 whose levels are spans of the form
 $\Sigma_G
 \leftarrow 
-\Omega^n_G \xrightarrow{\mathcal{N}_n}
+\Omega^n_G \xrightarrow{N^{\mathcal{P}}_n}
 \mathcal{V}^{op}$
 where
 \[
-	\mathcal{N}_n 
+	N_n^{\mathcal{P}} 
 	\left(T_0 \to \cdots \to T_n\right)
 	\simeq
-	\prod_{v \in V_G(T_n)} X(T_{n,v})
+	\prod_{v \in V_G(T_n)} \mathcal{P}(T_{n,v})
 \]
 Moreover, the face maps $d_i$ of $B_{\bullet}$
 for $i < n$ are induced by the multiplication 
@@ -2050,37 +2050,38 @@ To address this,
 we first enlarge the string categories
 $\Omega^n_G$
 to categories
-$\Omega^{n,o}_G, n \geq 0$
+$\overline{\Omega}^{n}_G, n \geq 0$
 whose objects are still strings but whose maps between strings are 
 the the maps which are component wise outer maps
 (note that quotients are componentwise isomorphisms).
 Note that the 
-$\Omega^{n,o}_G$ still form a simplicial object, i.e.
+$\overline{\Omega}^{n}_G$ still form a simplicial object, i.e.
 one still has simplicial operators
-$d_i \colon \Omega^{n+1,o}_G \to \Omega^{n,o}_G$
+$d_i \colon \overline{\Omega}^{n,o}_G \to \overline{\Omega}^{n,o}_G$
 for $0\leq n, 0 \leq i \leq n+1$
 and 
-$s_j \colon \Omega^{n,o}_G \to \Omega^{n+1,o}_G$
+$s_j \colon \Omega^{n,o}_G \to 
+\overline{\Omega}^{n+1}_G$
 for $0\leq n, 0 \leq j \leq n$,
 though we note that one no longer has an augmentation
-to $\Sigma_G$ nor extra degeneracies.
+to $\Sigma_G$ nor extra degeneracies $s_{-1}$.
 It is clear that one now has
-$|\Omega_G^{n,o}| = \Omega_G$
+$|\overline{\Omega}_G^{n}| = \Omega_G$
 so that, to build
 $\mathcal{N} \colon \Omega_G \to \mathcal{V}^{op}$,
 it suffices to show that
 $B_{\bullet}$
 can be extended to a simplicial object
-$B_{\bullet}^o$
+$\overline{B}_{\bullet}$
 whose levels are functors 
-$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$.
+$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
 This follows by noting that
 the vertex functors
-$V_G \colon \Omega^{n}_{G}
+$V_G \colon \overline{\Omega}^{n}_{G}
 \to 
 \Fin_s \wr \Omega^{n-1}_{G}$
 extend to functors
-$V_G \colon \Omega^{n,o}_{G}
+$V_G \colon \overline{\Omega}^{n,o}_{G}
 \to 
 \Fin \wr \Omega^{n-1}_{G}$.
 This now follows from the observation that the following diagrams
@@ -2092,44 +2093,47 @@ so that the leftmost
 is extended by one of the diagrams below).
 \begin{equation}
 \begin{tikzcd}[column sep = 18pt]
-	\Omega^{n,o}_G \ar{r}{V_G} 
+	\overline{\Omega}^{n}_G \ar{r}{V_G} 
 	\ar{d}[swap]{d_0} &
 	\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
 	|[alias=Vt]|
 	\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
 &
-	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
 	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
 &
-	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
 	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
 \\
 	|[alias=FV]|
-	\Omega^{n-1,o}_G \ar{rr}[swap]{V_G} &&
+	\overline{\Omega}^{n-1}_G \ar{rr}[swap]{V_G} &&
 	\Fin \wr \Omega^{n-2}_G  
 &
-	\Omega^{n-1,o}_G \ar{r}[swap]{V_G} &
+	\overline{\Omega}^{n-1}_G \ar{r}[swap]{V_G} &
 	\Fin \wr \Omega^{n-2}_G
 &
-	\Omega^{n+1,o}_G \ar{r}[swap]{V_G} &
+	\overline{\Omega}^{n+1}_G \ar{r}[swap]{V_G} &
 	\Fin \wr \Omega^{n}_G
 \arrow[Leftrightarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\pi"]
 \end{tikzcd}
 \end{equation}
-Thus, by realizing
-$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$
-we obtain the desired nerve functor
-$\mathcal{N} \mathcal{P}
-\colon 
-\Omega_G \to \mathcal{V}^{op}$.
+
+
+\begin{definition}
+	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$.
+	The \emph{nerve}
+	$\Omega_G \xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}^{op}$
+	is the realization of the simplicial object
+	$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
+\end{definition}
+
+
+
+\vskip 10pt
+
 
 
 We now turn towards the task of building a partial inverse to $\mathcal{N}$.
-
-
-\subsubsection{Essential surjectivity}
-
-
 
 Suppose now one is given
 $X \colon \Omega_G \to \mathcal{V}^{op}$
@@ -2148,21 +2152,23 @@ $\iota \mathcal{P}$ admits a $N$ algebra structure.
 
 Throughout, 
 we will make repeated use of the functors 
-$\Omega^n \to \Omega$
+$\overline{\Omega}^n_G \to \Omega_G$
+and
+$\Omega^n_G \to \Omega_G$
 given by
 $(T_0 \to \cdots \to T_n) \mapsto T_n$,
 and will leave these functors implicit.
 Note that the maps $T_{n-1} \to T_n$ induce transformations
 \begin{equation}\label{SIMP EQ}
 \begin{tikzcd}[row sep=0.4em]
-	\Omega^n_G
+	\overline{\Omega}^n_G
 	\ar{dr}[name=F1]{} 
 	\ar{dd}[swap]{d_n} &
 \\
 	& \Omega_G 
 \\
 	|[alias=G2]|
-	\Omega^{n-1}_G 
+	\overline{\Omega}^{n-1}_G 
 \ar{ur}[swap]{} & 
 \arrow[Leftarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.20cm,
 "m_n"]
@@ -2173,7 +2179,8 @@ We now define spans $X_n$ for $n \geq -1$ by
 	X_n =
 	\left(
 	\Sigma_G \leftarrow
-	\Omega_G^n \to \Omega_G 
+	\Omega_G^n \to
+	\overline{\Omega}^n_G \to \Omega_G 
 	\xrightarrow{X} \mathcal{V}^{op} 
 	\right).
 \]
@@ -2184,13 +2191,13 @@ make $X_n$ into a simplicial object in spans.
 Next, note that one has natural transformations $\epsilon_n$
 \begin{equation}
 \begin{tikzcd}
-	\Omega^n_G \ar[equal]{d} \ar{r} &
+	\overline{\Omega}^n_G \ar[equal]{d} \ar{r} &
 	\Omega_G \ar{r}{\delta^0} &
 	|[alias=Vt]|
 	\Fin \wr \Omega_G \ar[equal]{d}
 \\
 	|[alias=FV]|
-	\Omega^n_G \ar{r}[swap]{V_G} &
+	\overline{\Omega}^n_G \ar{r}[swap]{V_G} &
 	\Fin \wr \Omega_G^{n-1} \ar{r} &
 	\Fin \wr \Omega_G 
 \arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_n"]
@@ -2219,7 +2226,7 @@ $X_n \xrightarrow{\epsilon_n} N X_{n-1}$
 being isomorphisms (of spans).
 The key to proving essential surjectivity 
 is now the claim that 
-$X_{-1}$ becomes a $N$ algebra with multiplication given by
+$X_{-1}$ becomes a $N$-algebra with multiplication given by
 \begin{equation}\label{XMINUSMULT EQ}
 \begin{tikzcd}
 	N X_{-1} &
@@ -2248,7 +2255,7 @@ It now remains to check that all squares in \eqref{ALGCHECK EQ}
 commute, with commutativity of the bottom right square being tautological.
 For the bottom left square in \eqref{ALGCHECK EQ},
 note that, up to whiskering with
-$F \wr \Omega_G \to \mathcal{V}^{op}$,
+$\Fin \wr \Omega_G \to \mathcal{V}^{op}$,
 the composites 
 $X_1 
 \xrightarrow{d_1} X_0 
@@ -2260,35 +2267,35 @@ $X_1
 are described by the diagrams below
 \begin{equation}
 \begin{tikzcd}
-	\Omega_G^1 \ar{d}[swap]{d_1} \ar{r} &
+	\overline{\Omega}_G^1 \ar{d}[swap]{d_1} \ar{r} &
 	|[alias=Vtt]|
 	\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
 	\Fin \wr \Omega_G \ar[equal]{d} 
 &
-	\Omega_G^1 \ar[equal]{d} \ar{rr} &&
+	\overline{\Omega}_G^1 \ar[equal]{d} \ar{rr} &&
 	|[alias=Vtt2]|
 	\Fin \wr \Omega_G \ar[equal]{d} 
 \\
 	|[alias=FVt]|
-	\Omega_G^0 
+	\overline{\Omega}_G^0 
 	\ar{r} \ar[equal]{d} &
 	\Omega_G \ar{r}{\delta^0}&
 	|[alias=Vt]|
 	\Fin \wr \Omega_G \ar[equal]{d} 
 &
 	|[alias=FFV]|	
-	\Omega_G^1 
+	\overline{\Omega}_G^1 
 	\ar{r} \ar{d}[swap]{d_1} &
 	\Fin \wr \Omega_G^0 \ar{r} \ar{d}[swap]{d_0} &
 	|[alias=Vt2]|
 	\Fin \wr \Omega_G \ar[equal]{d}
 \\
 	|[alias=FV]|
-	\Omega_G^0 \ar{r}[swap]{V_G} &
+	\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
 	\Fin \wr \Sigma_G \ar{r} &
 	\Fin \wr \Omega_G 
 &
-	\Omega_G^0 \ar{r}[swap]{V_G} &
+	\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
 	|[alias=FV2]|
 	\Fin \wr \Sigma_G \ar{r} &
 	\Fin \wr \Omega_G 
@@ -2304,15 +2311,14 @@ both compute the map
 $(T_{0,v})_{v \in V_G(T_0)} \to (T_1)$
 given by the maps $T_{0,v} \to T_1$.
 
-To show that the top square in 
-\eqref{ALGCHECK EQ} commutes,
+To show that the top square in \eqref{ALGCHECK EQ} commutes,
 we first consider the composite
 $N X_0 \xrightarrow{N \epsilon}
 NN X_{-1} \xrightarrow{\mu} N X_{-1}$,
 which is given by the composite diagram below.
 \begin{equation}\label{INTERM EQ}
 \begin{tikzcd}[column sep=1.05em]
-	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\overline{\Omega}_G^1 \ar[equal]{d} \ar{r} &
 	\Fin \wr \Omega_G^0 \ar{r} \ar[equal]{d}&
 	\Fin \wr \Omega_G \ar{r}{\delta^1} &
 	|[alias=dog2]|
@@ -2321,7 +2327,7 @@ which is given by the composite diagram below.
 	\Fin \wr \mathcal{V}^{op} \ar{r}{\prod} \ar[equal]{d}&
 	\mathcal{V}^{op} \ar[equal]{d} &
 \\
-	\Omega_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
+	\overline{\Omega}_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
 	|[alias=cat2]|
 	\Fin \wr \Omega_G^0 \ar{r} &
 	|[alias=FFOmega]|
@@ -2335,7 +2341,7 @@ which is given by the composite diagram below.
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	|[alias=Omega]|
-	\Omega_G^{0} \ar{rr} &&
+	\overline{\Omega}_G^{0} \ar{rr} &&
 	\Fin \wr \Sigma_G \ar{r} &
 	\Fin \wr \Omega_G \ar{r} &
 	|[alias=cat]|
@@ -2346,8 +2352,8 @@ which is given by the composite diagram below.
 \arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
 \end{tikzcd}
 \end{equation}
-We now consider the following, where all terms other than the top 
-$\Fin \wr \mathcal{V}^{op}$
+We now consider the following, where all terms other than the 
+new $\Fin \wr \mathcal{V}^{op}$ term on the top row
 retain their relative positions from \eqref{INTERM EQ}.
 \begin{equation}
 \begin{tikzcd}[column sep=1.05em]
@@ -2392,35 +2398,34 @@ N X_0 \xrightarrow{N \epsilon}
 NN X_{-1} \xrightarrow{\mu} N X_{-1}$
 and
 $X_1 \xrightarrow{d_0} X_0 \xrightarrow{\epsilon} N X_{-1}$
-are obtained 
-by whiskering the diagrams below with 
+are obtained by whiskering the diagrams below with 
 $\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to 
 \mathcal{V}^{op}$.
 \begin{equation}\label{INTERM2 EQ}
 \begin{tikzcd}[column sep=1.05em]
-	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\overline{\Omega}_G^1 \ar[equal]{d} \ar{r} &
 	\Omega_G \ar{r}{\delta^0} &
 	|[alias=dog]|
 	\Fin \wr \Omega_G \ar{d} \ar{r}{\delta^1} &
 	\Fin^{\wr 2} \wr \Omega_G \ar[equal]{d}
 &&
-	\Omega_G^1 \ar{r} \ar{d}[swap]{d_0} &
+	\overline{\Omega}_G^1 \ar{r} \ar{d}[swap]{d_0} &
 	\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
 	\Fin \wr \Omega_G \ar[equal]{d}
 \\
 	|[alias=cat]|
-	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\overline{\Omega}_G^1 \ar[equal]{d} \ar{r} &
 	\Fin \wr \Omega_G^0 \ar{r} \ar[equal]{d}&
 	\Fin \wr \Omega_G \ar{r}{\delta^1} &
 	|[alias=dog2]|
 	\Fin^{\wr 2} \wr \Omega_G \ar[equal]{d} 
 &&
-	\Omega_G^0 \ar[equal]{d} \ar{r} &
+	\overline{\Omega}_G^0 \ar[equal]{d} \ar{r} &
 	\Omega_G \ar{r}{\delta^0} &
 	|[alias=Vt]|
 	\Fin \wr \Omega_G \ar[equal]{d}
 \\
-	\Omega_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
+	\overline{\Omega}_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
 	|[alias=cat2]|
 	\Fin \wr \Omega_G^0 \ar{r} &
 	|[alias=FFOmega]|
@@ -2428,12 +2433,12 @@ $\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to
 	\Fin^{\wr 2} \wr \Omega_G \ar{d}{\sigma^0} 
 &&
 	|[alias=FV]|
-	\Omega_G^0 \ar{r} &
+	\overline{\Omega}_G^0 \ar{r} &
 	\Fin \wr \Sigma_G \ar{r} &
 	\Fin \wr \Omega_G 
 \\
 	|[alias=Omega]|
-	\Omega_G^{0} \ar{rr} &&	
+	\overline{\Omega}_G^{0} \ar{rr} &&	
 	\Fin \wr \Sigma_G \ar{r} &
 	\Fin \wr \Omega_G 
 \arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
@@ -2453,8 +2458,9 @@ $T_{1,v} \to T_1$.
 
 We have now shown that \eqref{ALGCHECK EQ} commutes,
 i.e. that \eqref{XMINUSMULT EQ}
-indeed makes $X_{-1}$ into a $N$-algebra.
+indeed makes $X_{-1} = \iota \mathcal{P}$ into a $N$-algebra.
 
+{\color{red} HERE}
 
 \begin{proof}[Proof of Theorem \ref{NERVE THM}]
 	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
@@ -2464,7 +2470,7 @@ indeed makes $X_{-1}$ into a $N$-algebra.
 	$\Omega^0 \to \Omega 
 	\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
 	is  
-	$\Omega^0 \xrightarrow{\mathcal{N_0}} \mathcal{V}$,
+	$\Omega^0 \xrightarrow{N_0^{\mathcal{P}}} \mathcal{V}$,
 	from which it follows that
 	$X_{-1} = \iota \mathcal{P}$
 	and that 
@@ -2476,24 +2482,24 @@ indeed makes $X_{-1}$ into a $N$-algebra.
 	below coincide.
 \begin{equation}\label{EXPREAL EQ}
 \begin{tikzcd}[column sep = 30pt]
-	\Omega^1_G \ar{d}[swap]{d_1} \ar{r}{d_0} &
+	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{r}{d_0} &
 	|[alias=Vt]|
-	\Omega_G^0 \ar{rd}{\mathcal{N}_0} \ar{d} &
+	\overline{\Omega}_G^0 \ar{rd}{N_0^{\mathcal{P}}} \ar{d} &
 &
-	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
-	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{N_1^{\mathcal{P}}}[near end,name=F1]{}
 	[swap,near start,name=F2]{}
 	&&
 	|[alias=Vt2]|
-	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
+	\overline{\Omega}_G^0 \ar{d}{N_0^{\mathcal{P}}} &
 \\
 	|[alias=FV]|
-	\Omega^0_G \ar{r} &
-	\Omega_G \ar{r}[swap]{\mathcal{N} \mathcal{P}} &
+	\overline{\Omega}^0_G \ar{r} &
+	\overline{\Omega}_G \ar{r}[swap]{\mathcal{N} \mathcal{P}} &
 	\mathcal{V}^{op} 
 &
 	|[alias=FV2]|
-	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\overline{\Omega}^0_G \ar{rr}[swap]{N_0^{\mathcal{P}}} &&
 	\mathcal{V}^{op} 
 \arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"m"]
 \arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
@@ -2506,16 +2512,16 @@ is given by the composite natural transformation
 \begin{equation}
 	\begin{tikzcd}[column sep = 30pt]
 	\Omega^0_G \ar{r}{s_{-1}} \ar{d}[swap]{d_0} &
-	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
-	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{N_1^{\mathcal{P}}}[near end,name=F1]{}
 	[swap,near start,name=F2]{}
 &&
 	|[alias=Vt2]|
-	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
+	\overline{\Omega}_G^0 \ar{d}{N_0^{\mathcal{P}}} &
 \\
 	\Sigma_G \ar{r}{s_{-1}} &
 	|[alias=FV2]|
-	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\overline{\Omega}^0_G \ar{rr}[swap]{N_0^{\mathcal{P}}} &&
 	\mathcal{V}^{op} 
 \arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
 \arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
@@ -2527,7 +2533,9 @@ $\mathcal{N}_0 \xrightarrow{d_0} \mathcal{N}_{-1}$,
 i.e. the multiplication in $\iota \mathcal{P}$.
 In other words, we have shown that 
 \eqref{XMINUSMULT EQ}
-recovers $\mathcal{P}$.
+indeed recovers $\mathcal{P}$.
+
+{\color{red} HERE}
 
 Conversely, 
 suppose $X \in \mathcal{V}^{\Omega_G^{op}}$ satisfies the Segal condition and consider $X_{-1}$ with its operad structure.
@@ -2566,7 +2574,7 @@ Noting that the natural transformation underlying $d_0$ is the identity, the res
 
 
 
-\iffalse
+%\iffalse
 
 
 \subsection{Outline}
@@ -16664,7 +16672,7 @@ to conclude that the Kan extensions indeed coincide.
 
 
 
-\fi
+%\fi
 
 
 
