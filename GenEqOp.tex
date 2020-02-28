@@ -1990,6 +1990,7 @@ is the cartesian product.
 	are isomorphisms for all $T \in \Omega_G$.
 \end{theorem}
 
+
 {\color{red} note that can't do this the usual way since we have no colored genuine operads}
 
 
@@ -2055,266 +2056,520 @@ To address this,
 we first enlarge the string categories
 $\Omega^n_G$
 to categories
-$\Omega^{n,o}_G$
+$\Omega^{n,o}_G, n \geq 0$
 whose objects are still strings but whose maps between strings are 
 the the maps which are component wise outer maps
 (note that quotients are componentwise isomorphisms).
-
-{\color{red} HERE}
-
+Note that the 
+$\Omega^{n,o}_G$ still form a simplicial object, i.e.
+one still has simplicial operators
+$d_i \colon \Omega^{n+1,o}_G \to \Omega^{n,o}_G$
+for $0\leq n, 0 \leq i \leq n+1$
+and 
+$s_j \colon \Omega^{n,o}_G \to \Omega^{n+1,o}_G$
+for $0\leq n, 0 \leq j \leq n$,
+though we note that one no longer has an augmentation
+to $\Sigma_G$ nor extra degeneracies.
+It is clear that one now has
+$|\Omega_G^{n,o}| = \Omega_G$
+so that, to build
+$\mathcal{N} \colon \Omega_G \to \mathcal{V}^{op}$,
+it suffices to show that
+$B_{\bullet}$
+can be extended to a simplicial object
+$B_{\bullet}^o$
+whose levels are functors 
+$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$.
+This follows by noting that
+the vertex functors
+$V_G \colon \Omega^{n}_{G}
+\to 
+\Fin_s \wr \Omega^{n-1}_{G}$
+extend to functors
+$V_G \colon \Omega^{n,o}_{G}
+\to 
+\Fin \wr \Omega^{n-1}_{G}$.
+This now follows from the observation that the following diagrams
+commute
+(note that all the simplicial operators 
+of $B_{\bullet}$
+are naturally factored
+so that the leftmost
+is extended by one of the diagrams below).
 \begin{equation}
-\begin{tikzcd}
-	\Omega^n \ar{r}{(V^0)^{\circ n}} 
-	\ar{d}[swap]{d_i} &
-	\Fin^{\wr n} \wr \Sigma \ar{r} &
+\begin{tikzcd}[column sep = 18pt]
+	\Omega^{n,o}_G \ar{r}{V_G} 
+	\ar{d}[swap]{d_0} &
+	\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
 	|[alias=Vt]|
-	\Fin \wr \Omega \ar[equal]{d}
+	\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
 &
-\Omega^1 \ar[equal]{d} \ar{r} &
-\Omega \ar{r} &
-|[alias=Vt2]|
-\Fin \wr \Omega \ar[equal]{d}
+	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
 &
-\Omega^1 \ar{d}[swap]{d_0} \ar{r} &
-\Omega \ar[equal]{r} &
-|[alias=Vt3]|
-\Fin \wr \Omega \ar[equal]{d}
+	\Omega^{n,o}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
 \\
 	|[alias=FV]|
-	\Omega^{n-1} \ar{r}[swap]{V} &
-\Fin \wr \Sigma \ar{r} &
-\Fin \wr \Omega 
+	\Omega^{n-1,o}_G \ar{rr}[swap]{V_G} &&
+	\Fin \wr \Omega^{n-2}_G  
 &
-|[alias=FV2]|
-\Omega^1 \ar{r} &
-\Fin \wr \Omega^0 \ar{r} &
-\Fin \wr \Omega 
+	\Omega^{n-1,o}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n-2}_G
 &
-|[alias=FV3]|
-\Omega^0 \ar{r} &
-\Fin \wr \Sigma \ar{r} &
-\Fin \wr \Omega 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
-\arrow[Leftarrow, from=Vt2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_1"]
-\arrow[Leftarrow, from=Vt3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\beta"]
+	\Omega^{n+1,o}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n}_G
+\arrow[Leftrightarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\pi"]
 \end{tikzcd}
 \end{equation}
+Thus, by realizing
+$\Omega_G^{n,o} \xrightarrow{\mathcal{N}_n} \mathcal{V}^{op}$
+we obtain the desired nerve functor
+$\mathcal{N} \mathcal{P}
+\colon 
+\Omega_G \to \mathcal{V}^{op}$.
 
 
-
-{\color{red} HERE}
+We now turn towards the task of building a partial inverse to $\mathcal{N}$.
 
 
 \subsubsection{Essential surjectivity}
 
+
+
+Suppose now one is given
+$X \colon \Omega_G \to \mathcal{V}^{op}$
+whose opposite satisfies the pointed 
+strict Segal condition \eqref{SEGCOND EQ}.
+Letting $\mathcal{P}$ be the composite
+$\Sigma_G \to \Omega_G \to \mathcal{V}^{op}$,
+we will show that $\mathcal{P}$
+admits a genuine operad structure for which
+$X \simeq \mathcal{N}\mathcal{P}$.
+Moreover, 
+noting that $\mathcal{N}$ is actually built from 
+the span $\iota \mathcal{P}$,
+we will instead show that 
+$\iota \mathcal{P}$ admits a $N$ algebra structure.
+
+Throughout, 
+we will make repeated use of the functors 
+$\Omega^n \to \Omega$
+given by
+$(T_0 \to \cdots \to T_n) \mapsto T_n$,
+and will leave these functors implicit.
+Note that the maps $T_{n-1} \to T_n$ induce transformations
+\begin{equation}\label{SIMP EQ}
+\begin{tikzcd}[row sep=0.4em]
+	\Omega^n_G
+	\ar{dr}[name=F1]{} 
+	\ar{dd}[swap]{d_n} &
+\\
+	& \Omega_G 
+\\
+	|[alias=G2]|
+	\Omega^{n-1}_G 
+\ar{ur}[swap]{} & 
+\arrow[Leftarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.20cm,
+"m_n"]
+\end{tikzcd}
+\end{equation}
+We now define spans $X_n$ for $n \geq -1$ by
+\[
+	X_n =
+	\left(
+	\Sigma_G \leftarrow
+	\Omega_G^n \to \Omega_G 
+	\xrightarrow{X} \mathcal{V}^{op} 
+	\right).
+\]
+Note that $X_{-1} = \iota \mathcal{P}$.
+Moreover, note that the transformations \eqref{SIMP EQ}
+make $X_n$ into a simplicial object in spans.
+
+Next, note that one has natural transformations $\epsilon_n$
+\begin{equation}
+\begin{tikzcd}
+	\Omega^n_G \ar[equal]{d} \ar{r} &
+	\Omega_G \ar{r}{\delta^0} &
+	|[alias=Vt]|
+	\Fin \wr \Omega_G \ar[equal]{d}
+\\
+	|[alias=FV]|
+	\Omega^n_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega_G^{n-1} \ar{r} &
+	\Fin \wr \Omega_G 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_n"]
+\end{tikzcd}
+\end{equation}
+which,
+on $(T_0 \to \cdots \to T_n) \in \Omega^n_G$,
+is the map
+$(T_{n,v})_{v \in V_G(T_0)} \to (T_n)$
+determined by the inclusions
+$T_{n,v} \to T_n$.
+Note that, by whiskering with the map
+$\Fin \wr \Omega_G \to 
+\Fin \wr \mathcal{V}^{op} 
+\xrightarrow{\prod} \mathcal{V}^{op}$,
+$\epsilon_n$
+determines a map of spans
+$X_n \xrightarrow{\epsilon_n} N X_{n-1}$.
+
+Moreover,
+the claim that $X$ satisfies the 
+strict Segal condition \eqref{SEGCOND EQ}
+is equivalent to 
+the maps of spans
+$X_n \xrightarrow{\epsilon_n} N X_{n-1}$
+being isomorphisms (of spans).
+The key to proving essential surjectivity 
+is now the claim that 
+$X_{-1}$ becomes a $N$ algebra with multiplication given by
+\begin{equation}\label{XMINUSMULT EQ}
+\begin{tikzcd}
+	N X_{-1} &
+	X_0 \ar{l}[swap]{\epsilon}{\simeq} \ar{r}{d_0} &
+	X_{-1} 
+\end{tikzcd}
+\end{equation}
+The claim that this defines 
+an algebra structure is the claim that the outer paths
+from $NN X_{-1}$ to $X_{-1}$ below coincide.
+\begin{equation}\label{ALGCHECK EQ}
+\begin{tikzcd}
+	NNX_{-1} \ar{rr}{\mu}&&
+	NX_{-1}
+\\
+	NX_0 \ar{u}{N \epsilon}[swap]{\simeq} \ar{d}[swap]{Nd_0} &
+	X_1 \ar{l}[swap]{\epsilon}{\simeq}  \ar{d}{d_1} \ar{r}{d_0} &
+	X_0 \ar{d}[swap]{d_0} \ar{u}{\epsilon}[swap]{\simeq}
+\\
+	N X_{-1} &
+	X_0 \ar{r}{d_0} \ar{l}[swap]{\epsilon}{\simeq} &
+	X_{-1} 
+\end{tikzcd}
+\end{equation}
+It now remains to check that all squares in \eqref{ALGCHECK EQ}
+commute, with commutativity of the bottom right square being tautological.
+For the bottom left square in \eqref{ALGCHECK EQ},
+note that, up to whiskering with
+$F \wr \Omega_G \to \mathcal{V}^{op}$,
+the composites 
 $X_1 
 \xrightarrow{d_1} X_0 
 \xrightarrow{\epsilon} N X_{-1}$
-versus 
+and
 $X_1  
 \xrightarrow{\epsilon} N X_0 
 \xrightarrow{N d_0} N X_{-1}$
-
+are described by the diagrams below
 \begin{equation}
 \begin{tikzcd}
-	\Omega^1 \ar{d}[swap]{d_1} \ar{rr} &&
+	\Omega_G^1 \ar{d}[swap]{d_1} \ar{r} &
 	|[alias=Vtt]|
-	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
-	\mathcal{V} \ar[equal]{d}
+	\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
+	\Fin \wr \Omega_G \ar[equal]{d} 
 &
-	\Omega^1 \ar[equal]{d} \ar{rrr} &&&
+	\Omega_G^1 \ar[equal]{d} \ar{rr} &&
 	|[alias=Vtt2]|
-	\Fin \wr \Omega \ar[equal]{d} \ar{r} &
-	\mathcal{V} \ar[equal]{d}
+	\Fin \wr \Omega_G \ar[equal]{d} 
 \\
 	|[alias=FVt]|
-	\Omega^0 
-	\ar{rr} \ar[equal]{d} &&
+	\Omega_G^0 
+	\ar{r} \ar[equal]{d} &
+	\Omega_G \ar{r}{\delta^0}&
 	|[alias=Vt]|
-	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
-	\mathcal{V} \ar[equal]{d}
+	\Fin \wr \Omega_G \ar[equal]{d} 
 &
 	|[alias=FFV]|	
-	\Omega^1 
-	\ar{r} \ar{d}[swap]{d_1}&
-	\Fin \wr \Omega^0 \ar{r} \ar{d}[swap]{d_0} &
+	\Omega_G^1 
+	\ar{r} \ar{d}[swap]{d_1} &
+	\Fin \wr \Omega_G^0 \ar{r} \ar{d}[swap]{d_0} &
 	|[alias=Vt2]|
-	\Fin^{\wr 2} \wr \Omega \ar{r}{\sigma^0} \ar[equal]{d} &
-	\Fin \wr \Omega \ar{r} \ar[equal]{d} &
-	\mathcal{V} \ar[equal]{d}
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
 	|[alias=FV]|
-	\Omega^0 \ar{r} &
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega \ar{r} &
-	\mathcal{V}
+	\Omega_G^0 \ar{r}[swap]{V_G} &
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
 &
-	\Omega^0 \ar{r} &
+	\Omega_G^0 \ar{r}[swap]{V_G} &
 	|[alias=FV2]|
-	\Fin \wr \Sigma \ar{r} &
-	\Fin^{\wr 2} \wr \Omega \ar{r}{\sigma^0} &
-	\Fin \wr \Omega \ar{r} &
-	\mathcal{V}
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
 \arrow[Leftarrow, from=Vt, to=FV,shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
 \arrow[Leftarrow, from=Vtt, to=FVt,shorten <=0.10cm,shorten >=0.10cm,"m"]
 \arrow[Leftarrow, from=Vt2, to=FV2,shorten <=0.10cm,shorten >=0.10cm,"m"]
 \arrow[Leftarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
 \end{tikzcd}
 \end{equation}
+That these composite natural transformations coincide is the observation that,
+on $(T_0 \to T_1) \in \Omega^1_G$,
+both compute the map
+$(T_{0,v})_{v \in V_G(T_0)} \to (T_1)$
+given by the maps $T_{0,v} \to T_1$.
 
-
-{\color{red} HERE}
-
+To show that the top square in 
+\eqref{ALGCHECK EQ} commutes,
+we first consider the composite
 $N X_0 \xrightarrow{N \epsilon}
-NN X_{-1} \xrightarrow{\mu} N X_{-1}$
-
-
-
-
-\begin{equation}
+NN X_{-1} \xrightarrow{\mu} N X_{-1}$,
+which is given by the composite diagram below.
+\begin{equation}\label{INTERM EQ}
 \begin{tikzcd}[column sep=1.05em]
-	\Omega^1 \ar[equal]{d} \ar{r} &
-	\Fin \wr \Omega^0 \ar{r} \ar[equal]{d}&
-	\Fin \wr \Omega \ar{r}{\delta^1} &
+	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\Fin \wr \Omega_G^0 \ar{r} \ar[equal]{d}&
+	\Fin \wr \Omega_G \ar{r}{\delta^1} &
 	|[alias=dog2]|
-	\Fin^{\wr 2} \wr \Omega \ar{r} \ar[equal]{d} &
-	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}{\otimes} \ar[equal]{d} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes} \ar[equal]{d}&
+	\Fin^{\wr 2} \wr \Omega_G \ar{r} \ar[equal]{d} &
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{r}{\prod} \ar[equal]{d} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\prod} \ar[equal]{d}&
 	\mathcal{V}^{op} \ar[equal]{d} &
 \\
-	\Omega^{1} \ar{r} \ar{d}[swap]{d_{0}} &
+	\Omega_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
 	|[alias=cat2]|
-	\Fin \wr \Omega^0 \ar{r} &
+	\Fin \wr \Omega_G^0 \ar{r} &
 	|[alias=FFOmega]|
-	\Fin^{\wr 2} \wr \Sigma \ar{r} \ar{d}{\sigma^0} &
-	\Fin^{\wr 2} \wr \Omega \ar{d}{\sigma^0} \ar{r} &
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Omega_G \ar{d}{\sigma^0} \ar{r} &
 	|[alias=cat3]|
 	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} 
-	\ar{r}{\otimes} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes} &
+	\ar{r}{\prod} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\prod} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	|[alias=Omega]|
-	\Omega^{0} \ar{rr} &&
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega \ar{r} &
+	\Omega_G^{0} \ar{rr} &&
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G \ar{r} &
 	|[alias=cat]|
-	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\otimes} &&
+	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\prod} &&
 	\mathcal{V}^{op}
 \arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 \arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 \arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
 \end{tikzcd}
 \end{equation}
-
-
-
-{\color{red} HERE}
-
-
+We now consider the following, where all terms other than the top 
+$\Fin \wr \mathcal{V}^{op}$
+retain their relative positions from \eqref{INTERM EQ}.
 \begin{equation}
-\begin{tikzcd}
-	\Omega^0 \ar[equal]{d} \ar{r} &
-	\Omega \ar{r} &
-	|[alias=Vt]|
-	\Fin \wr \Omega \ar[equal]{d}
-&
-	\Omega^1 \ar[equal]{d} \ar{r} &
-	\Omega \ar{r} &
-	|[alias=Vt2]|
-	\Fin \wr \Omega \ar[equal]{d}
-&
-	\Omega^1 \ar{d}[swap]{d_0} \ar{r} &
-	\Omega \ar[equal]{r} &
-	|[alias=Vt3]|
-	\Fin \wr \Omega \ar[equal]{d}
+\begin{tikzcd}[column sep=1.05em]
+	\Fin \wr \Omega_G \ar{rr} \ar{dr}[swap]{\delta^1} &&
+	\Fin \wr \mathcal{V}^{op} \ar{d}{\delta^1} &&&
 \\
-	|[alias=FV]|
-	\Omega^0 \ar{r} &
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega 
-&
-	|[alias=FV2]|
-	\Omega^1 \ar{r} &
-	\Fin \wr \Omega^0 \ar{r} &
-	\Fin \wr \Omega 
-&
-	|[alias=FV3]|
-	\Omega^0 \ar{r} &
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
-\arrow[Leftarrow, from=Vt2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_1"]
-\arrow[Leftarrow, from=Vt3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\beta"]
+	&
+	\Fin^{\wr 2} \wr \Omega_G \ar{d}{\sigma^0} \ar{r} &
+	|[alias=cat3]|
+	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} 
+	\ar{r}{\prod} &
+	\Fin \wr \mathcal{V}^{op} \ar{r}{\prod} &
+	|[alias=dog]|
+	\mathcal{V}^{op} \ar[equal]{d}
+\\
+	&
+	\Fin \wr \Omega_G \ar{r} &
+	|[alias=cat]|
+	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\prod} &&
+	\mathcal{V}^{op}
+\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
 \end{tikzcd}
 \end{equation}
-
-
-{\color{red} HERE}
-
-
-
+By \eqref{COHER3 EQ},
+the diagram above is the identity for
+the functor
+$\Fin \wr \Omega_G \to 
+\Fin \wr \mathcal{V}^{op}
+\to \mathcal{V}^{op}$.
+As such, the composite
+\eqref{INTERM EQ}
+can be described 
+by whiskering its 4 leftmost columns
+(equivalently, the 3 bottom rows of the left diagram in 
+\eqref{INTERM2 EQ})
+with 
+$\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to 
+\mathcal{V}^{op}$.
+It now follows that 
 $X_1 \xrightarrow{\epsilon} 
 N X_0 \xrightarrow{N \epsilon}
 NN X_{-1} \xrightarrow{\mu} N X_{-1}$
-
-
-
-
-\begin{equation}
+and
+$X_1 \xrightarrow{d_0} X_0 \xrightarrow{\epsilon} N X_{-1}$
+are obtained 
+by whiskering the diagrams below with 
+$\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to 
+\mathcal{V}^{op}$.
+\begin{equation}\label{INTERM2 EQ}
 \begin{tikzcd}[column sep=1.05em]
-	\Omega^1 \ar[equal]{d} \ar{rr} &&
+	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\Omega_G \ar{r}{\delta^0} &
 	|[alias=dog]|
-	\Fin \wr \Omega \ar{d} \ar{r}{\delta^1} &
-	\Fin^{\wr 2} \wr \Omega \ar[equal]{d}
+	\Fin \wr \Omega_G \ar{d} \ar{r}{\delta^1} &
+	\Fin^{\wr 2} \wr \Omega_G \ar[equal]{d}
+&&
+	\Omega_G^1 \ar{r} \ar{d}[swap]{d_0} &
+	\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
 	|[alias=cat]|
-	\Omega^1 \ar[equal]{d} \ar{r} &
-	\Fin \wr \Omega^0 \ar{r} \ar[equal]{d}&
-	\Fin \wr \Omega \ar{r}{\delta^1} &
+	\Omega_G^1 \ar[equal]{d} \ar{r} &
+	\Fin \wr \Omega_G^0 \ar{r} \ar[equal]{d}&
+	\Fin \wr \Omega_G \ar{r}{\delta^1} &
 	|[alias=dog2]|
-	\Fin^{\wr 2} \wr \Omega \ar[equal]{d} 
+	\Fin^{\wr 2} \wr \Omega_G \ar[equal]{d} 
+&&
+	\Omega_G^0 \ar[equal]{d} \ar{r} &
+	\Omega_G \ar{r}{\delta^0} &
+	|[alias=Vt]|
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
-	\Omega^{1} \ar{r} \ar{d}[swap]{d_{0}} &
+	\Omega_G^{1} \ar{r} \ar{d}[swap]{d_{0}} &
 	|[alias=cat2]|
-	\Fin \wr \Omega^0 \ar{r} &
+	\Fin \wr \Omega_G^0 \ar{r} &
 	|[alias=FFOmega]|
-	\Fin^{\wr 2} \wr \Sigma \ar{r} \ar{d}{\sigma^0} &
-	\Fin^{\wr 2} \wr \Omega \ar{d}{\sigma^0} 
+	\Fin^{\wr 2} \wr \Sigma_G \ar{r} \ar{d}{\sigma^0} &
+	\Fin^{\wr 2} \wr \Omega_G \ar{d}{\sigma^0} 
+&&
+	|[alias=FV]|
+	\Omega_G^0 \ar{r} &
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
 \\
 	|[alias=Omega]|
-	\Omega^{0} \ar{rr} &&	
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega 
+	\Omega_G^{0} \ar{rr} &&	
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
 \arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 \arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
 \arrow[Leftarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
 \end{tikzcd}
 \end{equation}
+The fact that the composites in 
+\eqref{INTERM2 EQ} coincide follows since,
+on $(T_0 \to T_1) \in \Omega_G^1$,
+both compute the map
+$(T_{1,v})_{v \in V_G(T_1)} \to (T_1)$
+whose components are given by the inclusions
+$T_{1,v} \to T_1$.
 
-versus $X_1 \xrightarrow{d_0} X_0 \xrightarrow{\epsilon} N X_{-1}$
+
+We have now shown that \eqref{ALGCHECK EQ} commutes,
+i.e. that \eqref{XMINUSMULT EQ}
+indeed makes $X_{-1}$ into a $N$-algebra.
 
 
-
-
-\begin{equation}
-\begin{tikzcd}
-	\Omega^1 \ar{rr} \ar{d}[swap]{d_0} &&
-	\Fin \wr \Omega \ar[equal]{d}
-\\
-	\Omega^0 \ar[equal]{d} \ar{r} &
-	\Omega \ar{r} &
+\begin{proof}[Proof of Theorem \ref{NERVE THM}]
+	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
+	and set $X = \mathcal{N} \mathcal{P}$.
+	By construction of the realization process,
+	one has that the composite
+	$\Omega^0 \to \Omega 
+	\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
+	is  
+	$\Omega^0 \xrightarrow{\mathcal{N_0}} \mathcal{V}$,
+	from which it follows that
+	$X_{-1} = \iota \mathcal{P}$
+	and that 
+	$X_0 \xrightarrow{\epsilon} NX_{-1}$
+	in \eqref{XMINUSMULT EQ}
+	is the identity.
+	Moreover, again by construction of the realization process,
+	the composite natural transformations
+	below coincide.
+\begin{equation}\label{EXPREAL EQ}
+\begin{tikzcd}[column sep = 30pt]
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{r}{d_0} &
 	|[alias=Vt]|
-	\Fin \wr \Omega \ar[equal]{d}
+	\Omega_G^0 \ar{rd}{\mathcal{N}_0} \ar{d} &
+&
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	[swap,near start,name=F2]{}
+	&&
+	|[alias=Vt2]|
+	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
 \\
 	|[alias=FV]|
-	\Omega^0 \ar{r} &
-	\Fin \wr \Sigma \ar{r} &
-	\Fin \wr \Omega 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_0"]
+	\Omega^0_G \ar{r} &
+	\Omega_G \ar{r}[swap]{\mathcal{N} \mathcal{P}} &
+	\mathcal{V}^{op} 
+&
+	|[alias=FV2]|
+	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\mathcal{V}^{op} 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"m"]
+\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
+\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
 \end{tikzcd}
 \end{equation}
+Hence, the natural transformation
+$X_0 \xrightarrow{d_0} X_{-1}$
+is given by the composite natural transformation
+\begin{equation}
+	\begin{tikzcd}[column sep = 30pt]
+	\Omega^0_G \ar{r}{s_{-1}} \ar{d}[swap]{d_0} &
+	\Omega^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
+	\ar{rrd}{\mathcal{N}_1}[near end,name=F1]{}
+	[swap,near start,name=F2]{}
+&&
+	|[alias=Vt2]|
+	\Omega_G^0 \ar{d}{\mathcal{N}_0} &
+\\
+	\Sigma_G \ar{r}{s_{-1}} &
+	|[alias=FV2]|
+	\Omega^0_G \ar{rr}[swap]{\mathcal{N}_0} &&
+	\mathcal{V}^{op} 
+\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
+\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
+\end{tikzcd}
+\end{equation}
+which, by the simplical relations of $\mathcal{N}_{\bullet}$,
+is simply the operator 
+$\mathcal{N}_0 \xrightarrow{d_0} \mathcal{N}_{-1}$,
+i.e. the multiplication in $\iota \mathcal{P}$.
+In other words, we have shown that 
+\eqref{XMINUSMULT EQ}
+recovers $\mathcal{P}$.
+
+Conversely, 
+suppose $X \in \mathcal{V}^{\Omega_G^{op}}$ satisfies the Segal condition and consider $X_{-1}$ with its operad structure.
+We need to show that $X$ and $\mathcal{N} X_{-1}$
+are naturally isomorphic.
+Namely, we claim that
+$\epsilon_0 \colon X \Rightarrow \mathcal{N} X_{-1}$
+is such a natural transformation.
+Since $\Omega^0 \to \Omega 
+\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
+is  
+$\Omega^0 \xrightarrow{\mathcal{N}_0} \mathcal{V}$,
+naturality holds on arrows 
+of $\Omega$ that are in the image of $\Omega^0$
+it thus suffices to check naturality on arrows 
+in the image of $m$ in \eqref{EXPREAL EQ}.
+But now note that the right side of \eqref{EXPREAL EQ}
+is computing
+$NX_{-1} \overset{\mu}{\leftarrow}
+NNX_{-1} \overset{\epsilon}{\leftarrow}
+NX_0 \xrightarrow{Nd_0}
+NX_{-1}$,
+which by 
+\eqref{ALGCHECK EQ}
+coincides with
+$NX_{-1} \overset{\epsilon}{\leftarrow}
+X_0 \overset{d_0}{\leftarrow}
+X_1 \xrightarrow{d_1}
+X_0 \xrightarrow{\epsilon}
+N X_{-1}$.
+Noting that the natural transformation underlying $d_0$ is the identity, the result follows.
+\end{proof}
+
+
+
+
 
 
 \iffalse

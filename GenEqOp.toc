@@ -3,4 +3,4 @@
 \contentsline {subsection}{\numberline {1.2}Context, applications and future work}{8}{subsection.1.2}% 
 \contentsline {subsection}{\numberline {1.3}The nerve theorem}{11}{subsection.1.3}% 
 \contentsline {subsubsection}{\numberline {1.3.1}Essential surjectivity}{12}{subsubsection.1.3.1}% 
-\contentsline {section}{Glossary of Notation}{14}{section*.7}% 
+\contentsline {section}{Glossary of Notation}{15}{section*.7}% 
