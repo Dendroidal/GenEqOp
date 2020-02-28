@@ -1807,7 +1807,7 @@ $hcN(\O^\otimes) = N^\otimes(\O)$.
 This process motivates Lurie's definition of an $\infty$-operad in $\sSet$.
 
 In \cite{BNerve}, the first-named author generalizes this process,
-by first building from a genuine equivariant operad $\P$ an
+by first building from a genuine equivariant operad $\P$ a
 simplicial category
 $\P^{\otimes} \to \underline{\Fin}_{\**,G}$
 equipped with a partial fibration to the coefficient system of pointed finite $G$-sets (e.g. \cite[Def. 3.3]{BNerve}),
@@ -3753,8 +3753,12 @@ used in \eqref{OGDEF EQ} has extra structure not found in the usual model (i.e. 
 namely the fact that each $X \in \mathsf{O}_G$
 comes with a canonical total order 
 (the underlying set of $X$ being one of the sets $\{1,\cdots,n\}$).
+This has the effect of providing $\mathsf F^G = \mathsf F \wr \mathsf O_G$ with canonical choices for many constructions
+(for example, $\mathsf F^G$ is a \textit{bipermutative} monoidal category).
 
 We will find it convenient to use a model of $\Omega$ with similar extra structure, given by planar structures on trees.
+As desired, this provides us with canonical choices for many constructions
+(e.g. Example \ref{ROOTPULL EX}, Proposition \ref{BUILDABLE PROP}, Remark \ref{LEAFROOTEXAMP REM}, Definition \ref{VG DEF}, Propositions \ref{SUBSASPULL PROP}and \ref{PIIPROP PROP}, \dots).
 Intuitively, a planar structure on a tree is the data of a planar representation of the tree, and 
 definitions of \textit{planar trees} along those lines
 are found throughout the literature.
@@ -4448,7 +4452,7 @@ and the fact that for $F \in \Omega_G$ the roots form a single orbit.
 
 \begin{proposition}
 \label{PLANARPULL PROP}
-	Let $F \xrightarrow{\varphi} F'$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi_G$). Then there is a unique factorization 
+	Let $F \xrightarrow{\varphi} F'$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi^G$). Then there is a unique factorization 
 	\[F \xrightarrow{\simeq} \bar{F} \to F'\]
 	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to F'$ is planar.
 \end{proposition}
@@ -10108,7 +10112,7 @@ Proposition \ref{RANTRANS PROP} now yields the following, establishing \eqref{EX
 Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
 We first introduce the auxiliary notion of alternating trees.
 Recall the notion of input path (cf. Notation \ref{INPUTPATH NOT})
-$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi_G$.
+$I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi^G$.
 
 
 \begin{definition}\label{OMEGAA DEF}
