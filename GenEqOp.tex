@@ -1479,26 +1479,23 @@ We note, however, that an important new subtlety emerges in the
 equivariant setting:
 while usual equivariant colored operads have $G$-sets of objects,
 genuine equivariant colored operads will instead have \textit{coefficient systems} of objects.
+Furthermore, one can show that
+there is a genuine equivariant colored operad encoding single-colored genuine equivariant operads,
+analogous to the colored operad encoding single-colored operads from e.g. \cite{GV12}. 
 
-The monadic description of genuine equivariant (colored) operads as displayed in this paper
-is particularly useful for the model categorical considerations of our main results.
-In \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
-a combinatorial presentation of this algebraic structure is more suited for the constructions therein.
-While the monadic description of genuine equivariant (colored) operads
-do not explicitly appear in  \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
-$G$-trees and other presentations of this algebraic structure
-% the algebra and combinatorics of genuine equivariant operads
-do play a prominent role.
-%
-In every model category encoding the homotopy theory of equivariant operads with norms,
-(co)fibrations and weak equivalences are described using $G$-trees.
-%
-Moreover,
-recalling that a category (resp. operad) is equivalent, under a nerve functor, to a strict inner Kan complex in $\sSet$ \cite[Prop. 1.1.2.2]{Lu09} (resp. $\dSet$ \cite[Prop. 5.3, Thm. 6.1]{MW08}),
+Genuine equivarinat operads and $G$-trees play a prominent role
+throughout the authors' program describing the homotopy theory of equivariant operads with norms.
+In every model category from \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
+(co)fibrations and weak equivalences are described explicitly using $G$-trees.
+Moreover, 
+while the monadic description of genuine equivariant (colored) operads used here
+is particularly useful for the model categorical considerations of our main results,
+a combinatorial presentation of this algebraic structure is more suited in \textit{loc cite}.
+Recalling that a category (resp. operad) is equivalent, under a nerve functor, to a strict inner Kan complex in $\sSet$ \cite[Prop. 1.1.2.2]{Lu09} (resp. $\dSet$ \cite[Prop. 5.3, Thm. 6.1]{MW08}),
+in Theorem \ref{NERVE THM} we show that
 a genuine equivariant operad is equivalent, under a nerve functor $\Op_G \to \dSet_G = \Set^{\Omega_G^{op}}$,
-to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss});
-the proof of this fact will also be delegated to a sequel.
-This combinatorial notion of a genuine equivariant operad appears and underlies
+to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss}).
+The combinatorial structure underlies
 key steps in the proofs of the main results from each of \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
 for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % a combinatorial variant of a genuine equivariant operads
@@ -1510,6 +1507,7 @@ for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
 % $G$-$\infty$-operads are defined as those presheaves in $\dSet^G$ with the right lifting property against
 % inner horn inclusions for all $G$-trees,
 % while for strict inner Kan complexes on $\dSet^G$, the non-free $G$-trees are all superfluous.
+
 Additionally, we expect there to be a ``genuine'' analogue
 \[
 	\begin{tikzcd}[column sep =4em]
@@ -1729,7 +1727,7 @@ the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine 
                   };
             \end{tikzpicture}
       \end{equation}
-      For any $G$-operad $\O$ and $\O$-algebra $X$,
+      For any simplicial $G$-operad $\O \in \sOp^G$ and $\O$-algebra $X$,
       these $G$-tree diagrams encode structure maps,
       by placing elements of $\O(2)$ (resp. $X$) of appropriate isotropy in the root vertices (resp. stumps).
       The first two trees encode the algebra structure maps
@@ -1740,20 +1738,22 @@ the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine 
       \]
       (where we note that $\Gamma_{G/G \amalg G/G} = G \leq G \times \mathbb Z/2$, and hence
       the right equation is the $G$-fixed points of the left).
-      This last $G$-tree encodes the twisted structure map
+      This last $G$-tree encodes the twisted structure map (cf. \eqref{INTFIXPTCOMP EQ})
       \[
             \O(2)^{\Gamma_{G/e}} \times X \longto X^G,
+            \qquad
+            (\phi,x) \longmapsto \phi(x, -x).
       \]
-      given by the composite (cf. \eqref{INTFIXPTCOMP EQ})
-      \[
-            \O(2)^{\Gamma_{G/e}} \times X \xrightarrow{\mathrm{id} \times \Delta_{\mathbb Z/2}}
-            \O(2)^{\Gamma_{G/2}} \times (X \times X)^{\Gamma_{G/2}} \to
-            X^G
-      \]
-      where $\Delta_{\mathbb Z/2}$ sends $x$ to $(x, -x)$.
+      % given by the composite
+      % \[
+      %       \O(2)^{\Gamma_{G/e}} \times X \xrightarrow{\mathrm{id} \times \Delta_{\mathbb Z/2}}
+      %       \O(2)^{\Gamma_{G/2}} \times (X \times X)^{\Gamma_{G/2}} \to
+      %       X^G
+      % \]
+      % where $\Delta_{\mathbb Z/2}$ sends $x$ to $(x, -x)$.
       This induces a twisted action map on homotopy groups, for example
       \[
-            \pi_0\O(2)^{\Gamma_{G/2}} \times \pi_0 X \to \pi_0 (X^G).
+            \pi_0\left(\O(2)^{\Gamma_{G/e}}\right) \times \pi_0(X) \to \pi_0 \left(X^G \right).
       \]
 \end{example}
 
@@ -1798,21 +1798,31 @@ Finally, the comparison between simplicial $G$-operads $\sOp^G$ and the parametr
 factors most naturally through the category of genuine $G$-operads $\sOp_G$.
 Non-equivariantly, this comparison is given by
 the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Def. 2.1.1.3]{Lu09}.
-In \cite{BNerve}, the first-named author extends this to a functor
-$N^{\otimes} \colon \sOp^G \to \sOp_G \to \Op_{\infty,G}$,
-and moreover produces a functor on the categories of algebras $\Alg(\O) \to \Alg(N^{\otimes}\O)$.
-When $\O$ is the genuine equivariant little disks operad,
-this connection has been used by \cite{Hor} to give a characterization of equivariant factorization homology.
+This construction first converts a simplicial operad $\O$ into
+a simplicial category
+$\O^\otimes \to \Fin_{\**}$
+equipped with a functor to the category of pointed finite sets, which acts like a fibration over a certain wide subcategory,
+and then takes the homotopy coherent nerve
+$hcN(\O^\otimes) = N^\otimes(\O)$.
+This process motivates Lurie's definition of an $\infty$-operad in $\sSet$.
+
+In \cite{BNerve}, the first-named author generalizes this process,
+by first building from a genuine equivariant operad $\P$ an
+simplicial category
+$\P^{\otimes} \to \underline{\Fin}_{\**,G}$
+equipped with a partial fibration to the coefficient system of pointed finite $G$-sets (e.g. \cite[Def. 3.3]{BNerve}),
+and then showing that the homotopy coherent nerve $hcN(\P^{\otimes}) = N^{\otimes \P}$
+yields a $G$-$\infty$-operad in the sense of \cite{BDGNS}.
+Moreover, this transformation induces a functor on the categories of algebras $\Alg(\O) \to \Alg(N^{\otimes}\O)$.
+%
+This has been applied by \cite{Hor} in the case where $\O = \mathcal D_V$ is the equivariant little disks operad over a $G$-representation $V$.
+Specifically, Horev shows \cite[\S 3.9]{Hor} that $N^\otimes(\mathcal D_V)$ is equivalent to the
+$G$-$\infty$-operad of $V$-framed representations,
+which allows for $\mathcal D_V$-algebras to be used as input into his genuine equivariant factorization homology machinery,
+in particular producing new notions of equivariant topological Hochschild homology.
 
 
-{\color{blue}{
-    colored operad of operads, and we have colored genuine operad of genuine operads
-    \begin{itemize}
-    \item genuine operad for $\underline{\mathfrak C} = \iota_{\**}\mathfrak C$-colored genuine operad equals
-          $\iota_{\**}$ of the operad for $\mathfrak C$-colored operads
-    \end{itemize}
-  }
-}
+
 
 
 
