@@ -5123,7 +5123,7 @@ where $Ge$ inherits the planar order.
 
 We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
 
-\begin{definition}
+\begin{definition}\label{GVERTFUN DEF}
 The \textit{$G$-vertex functor} is the functor
 \[
 	\begin{tikzcd}[row sep=0]
@@ -16135,6 +16135,13 @@ is the cartesian product.
 	are isomorphisms for all $T \in \Omega_G$.
 \end{theorem}
 
+We will prove Theorem \ref{NERVE THM} by building 
+$\mathcal{N}$ in \eqref{FULLNER EQ},
+describing its partial inverse in \eqref{XMINUSMULT EQ},
+then finishing the argument at the end of the appendix. 
+
+
+
 \begin{remark}
 	In \cite{MW08}, which sets 
 	$\mathcal{V} = \mathsf{Set}$, $G = \**$
@@ -16251,7 +16258,6 @@ $\Omega_G^n$.
 	$\Omega^n_G \subseteq \overline{\Omega}^n_G$.
 \end{remark}
 
-
 Clearly the 
 $\overline{\Omega}^{n}_G$ still form a simplicial object, 
 i.e. one has operators
@@ -16266,186 +16272,98 @@ have no augmentation to $\Sigma_G$ nor extra degeneracies $s_{-1}$.
 Moreover, it is clear that
 $|\overline{\Omega}_G| = \Omega_G$.
 
-
-{\color{red} HERE}
-
-
-
-The proof of Theorem \ref{NERVE THM}
-will follow by first building $\mathcal{N}$,
-and then describing a partial inverse
-(when restricted to pointed Segal objects).
-
-
-
-To build the nerve 
-$\mathcal{N} \mathcal{P} \in \mathcal{V}^{\Omega_G^{op}}$
-for $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-recall first that 
-$\iota \mathcal{P}$
-is a $N$-algebra
-and consider the bar construction
-$B_{\bullet}=B_{\bullet}(N,N,\iota \mathcal{P})
-=N^{n+1} \iota \mathcal{P}$,
-whose levels are spans of the form
-$\Sigma_G
-\leftarrow 
-\Omega^n_G \xrightarrow{N^{\mathcal{P}}_n}
-\mathcal{V}^{op}$
-where
-\[
-N_n^{\mathcal{P}} 
-\left(T_0 \to \cdots \to T_n\right)
-\simeq
-\prod_{v \in V_G(T_n)} \mathcal{P}(T_{n,v})
-\]
-Moreover, the face maps $d_i$ of $B_{\bullet}$
-for $i < n$ are induced by the multiplication 
-$NN \Rightarrow N$,
-and thus their natural transformation component is an isomorphism.
-Hence, by Proposition \eqref{RANTRANS PROP},
-and noting that
-$|\Omega^n_G| = \Omega^{\mathsf{t}}_G$
-is the category of $G$-trees and tall maps,
-one obtains upon realization
-a functor
-$\mathcal{N}^{\mathsf{t}} \colon 
-\Omega_G^{\mathsf{t}} \to \mathcal{V}^{op}$.
-This construction almost defines the desired
-nerve functor in Theorem \eqref{NERVE THM},
-except we have a functor out of 
-the subcategory $\Omega_G^{\mathsf{t}}$ 
-rather than the entire category $\Omega_G$.
-To address this, 
-we first enlarge the string categories
-$\Omega^n_G$
-to categories
-$\overline{\Omega}^{n}_G, n \geq 0$
-whose objects are still strings but whose maps between strings are 
-the the maps which are component wise outer maps
-(note that quotients are componentwise isomorphisms).
-Note that the 
-$\overline{\Omega}^{n}_G$ still form a simplicial object, i.e.
-one still has simplicial operators
-$d_i \colon \overline{\Omega}^{n,o}_G \to \overline{\Omega}^{n,o}_G$
-for $0\leq n, 0 \leq i \leq n+1$
-and 
-$s_j \colon \Omega^{n,o}_G \to 
-\overline{\Omega}^{n+1}_G$
-for $0\leq n, 0 \leq j \leq n$,
-though we note that one no longer has an augmentation
-to $\Sigma_G$ nor extra degeneracies $s_{-1}$.
-It is clear that one now has
-$|\overline{\Omega}_G^{n}| = \Omega_G$
-so that, to build
-$\mathcal{N} \colon \Omega_G \to \mathcal{V}^{op}$,
-it suffices to show that
-$B_{\bullet}$
-can be extended to a simplicial object
-$\overline{B}_{\bullet}$
-whose levels are functors 
-$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
-This follows by noting that
-the vertex functors
-$V_G \colon \overline{\Omega}^{n}_{G}
-\to 
-\Fin_s \wr \Omega^{n-1}_{G}$
+More importantly,
+since maps that are outer in each tree component send vertices to vertices,
+one has that the formula in Notation \ref{VGDEF NOT} extends to define a functor
+\begin{equation}\label{VGDEF2 EQ}
+	\overline{\Omega}^n_G 
+	\xrightarrow{V_G}
+	\Fin \wr \Omega^{n-1}_G
+\end{equation}
+Note that \eqref{VGDEF2 EQ} 
+requires the full category $\Fin$ of finite sets
+rather than the subcategory $\Fin_s$ of surjections.
+By construction of $N$ in Definition \ref{WSPAN_MONAD_DEFINITION}
+one has that the functors in \eqref{BARLEVELS EQ}
 extend to functors
-$V_G \colon \overline{\Omega}^{n,o}_{G}
-\to 
-\Fin \wr \Omega^{n-1}_{G}$.
-This now follows from the observation that the following diagrams
-commute
-(note that all the simplicial operators 
-of $B_{\bullet}$
-are naturally factored
-so that the leftmost
-is extended by one of the diagrams below).
+$N^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$.
+Moreover, the natural transformations for the associated simplicial object in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$
+all factor through one of the diagrams below,
 \begin{equation}
 \begin{tikzcd}[column sep = 18pt]
-\overline{\Omega}^{n}_G \ar{r}{V_G} 
-\ar{d}[swap]{d_0} &
-\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
-|[alias=Vt]|
-\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} 
+	\ar{d}[swap]{d_0} &
+	\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
+	|[alias=Vt]|
+	\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
 &
-\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
-\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
 &
-\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
-\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
 \\
-|[alias=FV]|
-\overline{\Omega}^{n-1}_G \ar{rr}[swap]{V_G} &&
-\Fin \wr \Omega^{n-2}_G  
+	|[alias=FV]|
+	\overline{\Omega}^{n-1}_G \ar{rr}[swap]{V_G} &&
+	\Fin \wr \Omega^{n-2}_G  
 &
-\overline{\Omega}^{n-1}_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega^{n-2}_G
+	\overline{\Omega}^{n-1}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n-2}_G
 &
-\overline{\Omega}^{n+1}_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega^{n}_G
+	\overline{\Omega}^{n+1}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n}_G
 \arrow[Leftrightarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\pi"]
 \end{tikzcd}
 \end{equation}
+so that
+$N^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$
+extends \eqref{BARLEVELS EQ}
+as a simplicial object in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$.
+Thus, by Lemmas 
+\ref{TWISTING LEMMA} and \ref{SOURCEFACT LEM}
+one again obtains an isomorphic simplicial object
+$\tilde{N}^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$ which, upon realization,
+extends \eqref{TALLNER EQ} to obtain the desired nerve
+\begin{equation}\label{FULLNER EQ}
+|\overline{\Omega}^n_G| = \Omega_G
+\xrightarrow{\mathcal{N} \mathcal{P}}
+\mathcal{V}^{op}.
+\end{equation}
 
 
-\begin{definition}
-	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$.
-	The \emph{nerve}
-	$\Omega_G \xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}^{op}$
-	is the realization of the simplicial object
-	$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
-\end{definition}
-
-
-
-\vskip 10pt
-
-
-
-We now turn towards the task of building a partial inverse to $\mathcal{N}$.
-
-Suppose now one is given
+We next describe the partial inverse to 
+$\mathcal{N} \colon 
+\mathsf{Op}_G(\mathcal{V}) \to \mathcal{V}^{\Omega_G^{op}}$.
+Choose 
 $X \colon \Omega_G \to \mathcal{V}^{op}$
-whose opposite satisfies the pointed 
-strict Segal condition \eqref{SEGCOND EQ}.
-Letting $\mathcal{P}$ be the composite
+whose opposite satisfies the Segal condition \eqref{SEGCOND EQ}.
+Letting $\mathcal{P}_X$ be the composite
 $\Sigma_G \to \Omega_G \to \mathcal{V}^{op}$,
-we will show that $\mathcal{P}$
-admits a genuine operad structure for which
-$X \simeq \mathcal{N}\mathcal{P}$.
-Moreover, 
-noting that $\mathcal{N}$ is actually built from 
-the span $\iota \mathcal{P}$,
-we will instead show that 
-$\iota \mathcal{P}$ admits a $N$ algebra structure.
-
-Throughout, 
-we will make repeated use of the functors 
+we will show that $\mathcal{P}_X$ is a genuine operad
+or, equivalently, that $\iota \mathcal{P}_X$ is a $N$-algebra.  
+%
+Throughout, we write
 $\overline{\Omega}^n_G \to \Omega_G$
-and
-$\Omega^n_G \to \Omega_G$
-given by
-$(T_0 \to \cdots \to T_n) \mapsto T_n$,
-and will leave these functors implicit.
-Note that the maps $T_{n-1} \to T_n$ induce transformations
+for the target functor
+$(T_0 \to \cdots \to T_n) \mapsto T_n$ and denote by
 \begin{equation}\label{SIMP EQ}
-\begin{tikzcd}[row sep=0.4em]
-\overline{\Omega}^n_G
-\ar{dr}[name=F1]{} 
-\ar{dd}[swap]{d_n} &
+\begin{tikzcd}[row sep=1.2em, column sep = 6em]
+	\overline{\Omega}^n_G
+	\ar{r}[name=F1]{} 
+	\ar{d}[swap]{d_n} &
+	\Omega_G 
 \\
-& \Omega_G 
-\\
-|[alias=G2]|
-\overline{\Omega}^{n-1}_G 
-\ar{ur}[swap]{} & 
+	|[alias=G2]|
+	\overline{\Omega}^{n-1}_G 
+	\ar{ur}[swap]{} & 
 \arrow[Leftarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.20cm,
-"m_n"]
+"\varphi_n"]
 \end{tikzcd}
 \end{equation}
+the natural transformation induced by $T_{n-1} \to T_n$.
+%
 We now define spans $X_n$ for $n \geq -1$ by
-\[
+\begin{equation}\label{XNSPANS EQ}
 X_n =
 \left(
 \Sigma_G \leftarrow
@@ -16453,29 +16371,30 @@ X_n =
 \overline{\Omega}^n_G \to \Omega_G 
 \xrightarrow{X} \mathcal{V}^{op} 
 \right).
-\]
-Note that $X_{-1} = \iota \mathcal{P}$.
-Moreover, note that the transformations \eqref{SIMP EQ}
-make $X_n$ into a simplicial object in spans.
-
-Next, note that one has natural transformations $\epsilon_n$
+\end{equation}
+Note that $X_{-1} = \iota \mathcal{P}_X$.
+Moreover, the transformations \eqref{SIMP EQ}
+make the $X_n$ into a simplicial object in
+$\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
+%
+Next, note that one has natural transformations $\rho_n$
 \begin{equation}
-\begin{tikzcd}
-\overline{\Omega}^n_G \ar[equal]{d} \ar{r} &
-\Omega_G \ar{r}{\delta^0} &
+	\begin{tikzcd}
+	\overline{\Omega}^n_G \ar[equal]{d} \ar{r} &
+	\Omega_G \ar{r}{\delta^0} &
 |[alias=Vt]|
-\Fin \wr \Omega_G \ar[equal]{d}
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
-|[alias=FV]|
-\overline{\Omega}^n_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega_G^{n-1} \ar{r} &
-\Fin \wr \Omega_G 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_n"]
+	|[alias=FV]|
+	\overline{\Omega}^n_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega_G^{n-1} \ar{r} &
+	\Fin \wr \Omega_G 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\rho_n"]
 \end{tikzcd}
 \end{equation}
 which,
 on $(T_0 \to \cdots \to T_n) \in \Omega^n_G$,
-is the map
+are given by the tuple map
 $(T_{n,v})_{v \in V_G(T_0)} \to (T_n)$
 determined by the inclusions
 $T_{n,v} \to T_n$.
@@ -16483,27 +16402,33 @@ Note that, by whiskering with the map
 $\Fin \wr \Omega_G \to 
 \Fin \wr \mathcal{V}^{op} 
 \xrightarrow{\prod} \mathcal{V}^{op}$,
-$\epsilon_n$
-determines a map of spans
-$X_n \xrightarrow{\epsilon_n} N X_{n-1}$.
+$\rho_n$
+determines a map of spans which we likewise denote 
+$\rho_n \colon X_n \to N X_{n-1}$.
 
-Moreover,
-the claim that $X$ satisfies the 
-strict Segal condition \eqref{SEGCOND EQ}
-is equivalent to 
-the maps of spans
-$X_n \xrightarrow{\epsilon_n} N X_{n-1}$
-being isomorphisms (of spans).
-The key to proving essential surjectivity 
-is now the claim that 
-$X_{-1}$ becomes a $N$-algebra with multiplication given by
+\begin{remark}\label{SEGALCOND REM}
+	The Segal condition \eqref{SEGCOND EQ} holds iff the 
+	$\rho_n \colon X_n \to N X_{n-1}$ are isomorphisms.
+\end{remark}
+
+\begin{proposition}
+	Suppose the opposite of $X\colon \Omega_G \to \mathcal{V}^{op}$
+	satisfies the Segal condition \eqref{SEGCOND EQ}. 
+	
+	Then the span $X_{-1}$ in \eqref{XNSPANS EQ} is a $N$-algebra with multiplication
 \begin{equation}\label{XMINUSMULT EQ}
-\begin{tikzcd}
-N X_{-1} &
-X_0 \ar{l}[swap]{\epsilon}{\simeq} \ar{r}{d_0} &
-X_{-1} 
-\end{tikzcd}
+	\begin{tikzcd}
+	N X_{-1} &
+	X_0 \ar{l}[swap]{\rho_0}{\simeq} \ar{r}{d_0} &
+	X_{-1}.
+	\end{tikzcd}
 \end{equation}
+\end{proposition}
+
+{\color{red} HERE}
+
+\begin{proof}	
+
 The claim that this defines 
 an algebra structure is the claim that the outer paths
 from $NN X_{-1}$ to $X_{-1}$ below coincide.
@@ -16729,6 +16654,8 @@ $T_{1,v} \to T_1$.
 We have now shown that \eqref{ALGCHECK EQ} commutes,
 i.e. that \eqref{XMINUSMULT EQ}
 indeed makes $X_{-1} = \iota \mathcal{P}$ into a $N$-algebra.
+
+\end{proof}
 
 {\color{red} HERE}
 
