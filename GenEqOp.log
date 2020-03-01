@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  29 FEB 2020 22:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  1 MAR 2020 03:47
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1422,11 +1422,21 @@ LaTeX Warning: Reference `VGDEF NOT' on page 17 undefined on input line 16277.
 LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 17 undefined on input
  line 16286.
 
-[17] [18]
+[17]
 
-LaTeX Warning: Reference `COHER3 EQ' on page 19 undefined on input line 16575.
+LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 18 undefined on input
+ line 16437.
 
-[19] [20]
+[18]
+
+LaTeX Warning: Reference `COHER3 EQ' on page 19 undefined on input line 16587.
+
+[19]
+
+LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 20 undefined on input
+ line 16705.
+
+[20]
 runsystem(makeindex GenEqOp.idx)...executed (allowed).
 
  (GenEqOp.ind) [21
@@ -1447,12 +1457,12 @@ ble at:
  []
 
 [23]) [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16797.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 16797.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16846.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16846.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16797.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16846.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16797
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16846
 .
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
 (rerunfilecheck)             Checksum: 01795C403C95CFDFB4E2FB5405729F2D;366.
@@ -1462,14 +1472,14 @@ Package rerunfilecheck Info: File `GenEqOp.brf' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16797.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16846.
  ) 
 Here is how much of TeX's memory you used:
- 28534 strings out of 492895
- 568110 string characters out of 3123735
- 695644 words of memory out of 3000000
- 31569 multiletter control sequences out of 15000+200000
- 43983 words of font info for 216 fonts, out of 3000000 for 9000
+ 28626 strings out of 492895
+ 570334 string characters out of 3123735
+ 698443 words of memory out of 3000000
+ 31663 multiletter control sequences out of 15000+200000
+ 43916 words of font info for 215 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,16n,86p,628b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
@@ -1519,9 +1529,9 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/luisa/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
 /Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symb
 ols/msbm5.pfb>
-Output written on GenEqOp.pdf (24 pages, 1332960 bytes).
+Output written on GenEqOp.pdf (24 pages, 1354420 bytes).
 PDF statistics:
- 789 PDF objects out of 1000 (max. 8388607)
+ 798 PDF objects out of 1000 (max. 8388607)
  161 named destinations out of 1000 (max. 500000)
  28317 words of extra memory for PDF output out of 29859 (max. 10000000)
 
