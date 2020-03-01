@@ -1978,8 +1978,8 @@ in particular producing new notions of equivariant topological Hochschild homolo
 
 
 
+\iffalse
 
-%\iffalse
 
 
 \subsection{Outline}
@@ -5123,7 +5123,7 @@ where $Ge$ inherits the planar order.
 
 We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
 
-\begin{definition}
+\begin{definition}\label{GVERTFUN DEF}
 The \textit{$G$-vertex functor} is the functor
 \[
 	\begin{tikzcd}[row sep=0]
@@ -15380,7 +15380,7 @@ cf. Remark \ref{LANDINESS REM}).
 
 
 
-
+\fi
 
 
 \appendix
@@ -15865,7 +15865,7 @@ guarantees that, since $(\minus) \downarrow j$ is a left adjoint, $|\mcI_{\bulle
 We will require two additional straightforward lemmas.
 
 \begin{lemma}\label{TWISTING LEMMA}
-	Let $\mcI_{\bullet}^F \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ be such that the diagrams
+	Let $\mcI_{\bullet}^F \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$ be such that the diagrams
 	\begin{equation}\label{IDENTSIMPRELSISO EQ}
 	\begin{tikzcd}[row sep=0.4em,column sep = 5em]
 		\mathcal{I}_n
@@ -15889,13 +15889,42 @@ Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
 \C
 \]
 assemble to an object 
-$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that the corresponding diagrams \eqref{IDENTSIMPRELSISO EQ} for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative.
+$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that:
+\begin{inparaenum}
+\item[(i)] $\mcI_{\bullet}^{\tilde{F}}$
+has the same operators $d_i,s_j$;
+\item[(ii)] in $\mcI_{\bullet}^{\tilde{F}}$ the 
+%corresponding
+diagrams \eqref{IDENTSIMPRELSISO EQ} for $0 < i \leq n$, $0 \leq j \leq n$ are strictly commutative;
+in $\mcI_{\bullet}^{\tilde{F}}$
+the natural transformation associated to $d_0$
+is the composite
+\begin{equation}
+\begin{tikzcd}[column sep = 40pt]
+	\mathcal{I}_n \ar{r}{d_{2,\cdots,n}}
+	\ar{d}[swap]{d_0} &
+	\mathcal{I}_1 \ar{d}[swap]{d_0} \ar{rr}{d_1} 
+	\ar{rrd}{F_1 }[near end,name=F1]{}
+	[swap,near start,name=F2]{}
+&&
+	|[alias=Vt2]|
+	\mathcal{I}_0 \ar{d}{F_0} &
+\\
+	\mathcal{I}_{n-1} \ar{r}{d_{1,\cdots,n-1}} &
+	|[alias=FV2]|
+	\mathcal{I}_0 \ar{rr}[swap]{F_0} &&
+\mathcal{V}^{op} 
+\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\delta_1"]
+\arrow[Rightarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\delta_0"]
+\end{tikzcd}
+\end{equation}
+\end{inparaenum}
 
 Dually, if \eqref{IDENTSIMPRELSISO EQ}
 are natural isomorphisms for
 $0\leq i <n$ and $0\leq j \leq n$
 one can form 
-$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$ 
+$\mcI_{\bullet}^{\tilde{F}} \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$ 
 such that the corresponding diagrams are strictly commutative.
 \end{lemma}
 
@@ -15914,7 +15943,7 @@ This follows by a straightforward verification.
 	\end{tikzcd}
 \end{equation}
 	exists iff for the associated object 
-	$\mcI_{\bullet} \in \mathsf{Span}(\**,\C)^{\Delta^{op}}$
+	$\mcI_{\bullet} \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$
 	(cf. Lemma \ref{SIMPSPANREIN LEMMA})
 	all faces $d_i$ for $0<i\leq n$ and degeneracies $s_j$ for $0\leq j \leq n$ are strictly commutative, i.e. they are given by diagrams
 \begin{equation}\label{IDENTSIMPRELS EQ}
@@ -16077,7 +16106,7 @@ to conclude that the Kan extensions indeed coincide.
 
 
 
-%\fi
+
 
 
 
@@ -16085,9 +16114,9 @@ to conclude that the Kan extensions indeed coincide.
 
 \section{The nerve theorem}
 
-
-In this section we assume that the monoidal structure 
-on $\mathcal{V}$
+Our goal in this appendix is to prove the nerve theorem below,
+adapting \cite[Prop. 5.3, Thm. 6.1]{MW08}.
+Throughout we assume that the monoidal structure on $\mathcal{V}$
 is the cartesian product.
 
 \begin{theorem}\label{NERVE THM}
@@ -16097,7 +16126,7 @@ is the cartesian product.
 	\mathcal{V}^{\Omega_G^{op}}$
 	whose essential image 
 	consists of the pointed strict Segal objects,
-	i.e. the $X \in \mathcal{V}^{\Omega_G^{op}}$
+	i.e. those $X \in \mathcal{V}^{\Omega_G^{op}}$
 	such that the natural maps
 	\begin{equation}\label{SEGCOND EQ}
 	X(T) \xrightarrow{\simeq}
@@ -16106,198 +16135,235 @@ is the cartesian product.
 	are isomorphisms for all $T \in \Omega_G$.
 \end{theorem}
 
+We will prove Theorem \ref{NERVE THM} by building 
+$\mathcal{N}$ in \eqref{FULLNER EQ},
+describing its partial inverse in \eqref{XMINUSMULT EQ},
+then finishing the argument at the end of the appendix. 
 
-{\color{red} note that can't do this the usual way since we have no colored genuine operads}
 
 
 \begin{remark}
-	\eqref{SEGCOND EQ} implies
-	that
-	$X(G/H \cdot \eta) = \**$ for all $H \leq G$,
-	since
-	$V_G(G/H \cdot \eta) = ()$ is the empty tuple,
-	motivating the term ``pointed''.
-	If one allows for non-pointed $X$
-	(i.e. for $X(G/H \cdot \eta) \neq \**$),
-	the Segal condition \eqref{SEGCOND EQ} needs to be modified.
+	In \cite{MW08}, which sets 
+	$\mathcal{V} = \mathsf{Set}$, $G = \**$
+	and works with \emph{colored} operads 
+	$\mathsf{Op}_{\bullet}$ (of sets),
+	the nerve functor
+	$\mathcal{N} \colon 
+	\mathsf{Op}_{\bullet} \to \mathsf{Set}^{\Omega^{op}}$
+	is defined by
+\begin{equation}\label{NEREASY EQ}
+	(\mathcal{N} \mathcal{O})(T)
+=
+	\mathsf{Op}_{\bullet}\left(
+	\Omega(T),\mathcal{O}
+	\right)
+\end{equation}
+where $\Omega(T)$ for $T \in \Omega$
+is the colored operad described in
+\cite[\S 3]{MW07} (or after \eqref{COMPEX EQ}).
+
+However, since this paper does not
+discuss \emph{colored} genuine operads 
+(due to $\mathsf{Op}_G(\mathcal{V})$
+being the single colored case),
+we can not obtain
+Theorem \ref{NERVE THM} by 
+directly adapting \eqref{NEREASY EQ}.
 \end{remark}
 
 
-The proof of Theorem \ref{NERVE THM}
-will follow by first building $\mathcal{N}$,
-and then describing a partial inverse
-(when restricted to pointed Segal objects).
+\begin{remark}
+	The term ``pointed'' in Theorem \ref{NERVE THM}
+	is motivated by the fact if 
+	$X$ satisfies \eqref{SEGCOND EQ}
+	then it is $X(G/H \cdot \eta) = \**$ for all $H \leq G$,
+	due to $V_G(G/H \cdot \eta) = ()$ being the empty tuple.
+	
+	This pointedness reflect the fact that
+	$\mathsf{Op}_G(\mathcal{V})$
+	includes only \emph{single colored} genuine operads. 
+	In the multiple color setting,
+	the Segal condition \eqref{SEGCOND EQ} needs to be modified
+	\cite[Def. 3.35]{BP_edss}.
+\end{remark}
 
 
 
-To build the nerve 
-$\mathcal{N} \mathcal{P} \in \mathcal{V}^{\Omega_G^{op}}$
-for $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-recall first that 
-$\iota \mathcal{P}$
-is a $N$-algebra
-and consider the bar construction
-$B_{\bullet}=B_{\bullet}(N,N,\iota \mathcal{P})
-=N^{n+1} \iota \mathcal{P}$,
-whose levels are spans of the form
-$\Sigma_G
-\leftarrow 
-\Omega^n_G \xrightarrow{N^{\mathcal{P}}_n}
-\mathcal{V}^{op}$
-where
-\[
-N_n^{\mathcal{P}} 
-\left(T_0 \to \cdots \to T_n\right)
-\simeq
-\prod_{v \in V_G(T_n)} \mathcal{P}(T_{n,v})
-\]
-Moreover, the face maps $d_i$ of $B_{\bullet}$
-for $i < n$ are induced by the multiplication 
-$NN \Rightarrow N$,
-and thus their natural transformation component is an isomorphism.
-Hence, by Proposition \eqref{RANTRANS PROP},
-and noting that
-$|\Omega^n_G| = \Omega^{\mathsf{t}}_G$
-is the category of $G$-trees and tall maps,
-one obtains upon realization
-a functor
-$\mathcal{N}^{\mathsf{t}} \colon 
-\Omega_G^{\mathsf{t}} \to \mathcal{V}^{op}$.
-This construction almost defines the desired
-nerve functor in Theorem \eqref{NERVE THM},
-except we have a functor out of 
-the subcategory $\Omega_G^{\mathsf{t}}$ 
-rather than the entire category $\Omega_G$.
-To address this, 
-we first enlarge the string categories
-$\Omega^n_G$
-to categories
-$\overline{\Omega}^{n}_G, n \geq 0$
-whose objects are still strings but whose maps between strings are 
-the the maps which are component wise outer maps
-(note that quotients are componentwise isomorphisms).
-Note that the 
-$\overline{\Omega}^{n}_G$ still form a simplicial object, i.e.
-one still has simplicial operators
-$d_i \colon \overline{\Omega}^{n,o}_G \to \overline{\Omega}^{n,o}_G$
-for $0\leq n, 0 \leq i \leq n+1$
+Our description of 
+$\mathcal{N} \colon \mathsf{Op}_G(\mathcal{V})
+\to 
+\mathcal{V}^{\Omega_G^{op}}$
+will make use of the monad 
+$N$ on
+$\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$
+in Definition \ref{WSPAN_MONAD_DEFINITION}.
+Given $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
+so that $\iota \mathcal{P}$ is a $N$-algebra,
+consider the bar construction
+$B_{\bullet} = 
+B_{\bullet}(N,N,\iota \mathcal{P})
+= N^{n+1} \iota \mathcal{P}$,
+whose levels we denote as
+\begin{equation}\label{BARLEVELS EQ}
+	\Sigma_G \leftarrow 
+	\Omega_G^n \xrightarrow{N_n^{\mathcal{P}}}
+	\mathcal{V}^{op}.
+\end{equation}
+Ignoring the map to $\Sigma_G$,
+\eqref{BARLEVELS EQ} determines 
+a simplicial object in 
+$\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$.
+Moreover, since the face maps $d_i$ with $i < n$
+are given by the multiplication
+$NN \Rightarrow N$ in \eqref{MULTDEFSPAN EQ},
+the opposite of this simplicial object 
+(in $\mathsf{WSpan}^l(\**,\mathcal{V})$)
+satisfies the dual case conditions in 
+Lemma \ref{TWISTING LEMMA}.
+Thus, Lemma \ref{TWISTING LEMMA}
+provides an isomorphic simplicial object
+$\tilde{N}_n^{\mathcal{P}} \colon 
+\Omega_G^n \to \mathcal{V}^{op}$
+satisfying the dual of the conditions in
+\eqref{IDENTSIMPRELS EQ}.
+Thus, by Lemma \ref{SOURCEFACT LEM},
+upon realization this induces a functor
+\begin{equation}\label{TALLNER EQ}
+	|\Omega^n_G| = \Omega_G^{\mathsf{t}}
+	\xrightarrow{\mathcal{N} \mathcal{P}}
+	\mathcal{V}^{op}
+\end{equation}
+where $\Omega_G^{\mathsf{t}} \subset \Omega_G$
+is the subcategory of tall maps.
+To define the nerve $\mathcal{N}$ in Theorem \ref{NERVE THM},
+we must extend \eqref{TALLNER EQ}
+to the entire category $\Omega_G$.
+To do so, we enlarge the string categories
+$\Omega_G^n$.
+
+\begin{definition}\label{PLANSTRO DEF}
+	Let $n \geq 0$. The category $\overline{\Omega}^n_G$
+	has objects the planar tall strings
+	$(T_0 \to \cdots \to T_n) \in \Omega^n_G$
+	and arrows the diagrams \eqref{PTNARROW EQ}
+	where the $\pi_i$ are outer maps
+	in each tree component.
+\end{definition}
+
+\begin{remark}
+	In contrasting Definitions 
+	\ref{PLANSTR DEF} and \ref{PLANSTRO DEF},
+	recall that quotients are the maps
+	which are isomorphisms in each tree component, so that
+	$\Omega^n_G \subseteq \overline{\Omega}^n_G$.
+\end{remark}
+
+Clearly the 
+$\overline{\Omega}^{n}_G$ still form a simplicial object, 
+i.e. one has operators
+$d_i \colon \overline{\Omega}^{n}_G \to \overline{\Omega}^{n-1}_G$
+for $0 \leq i \leq n+1$
 and 
-$s_j \colon \Omega^{n,o}_G \to 
+$s_j \colon \Omega^{n}_G \to 
 \overline{\Omega}^{n+1}_G$
-for $0\leq n, 0 \leq j \leq n$,
-though we note that one no longer has an augmentation
-to $\Sigma_G$ nor extra degeneracies $s_{-1}$.
-It is clear that one now has
-$|\overline{\Omega}_G^{n}| = \Omega_G$
-so that, to build
-$\mathcal{N} \colon \Omega_G \to \mathcal{V}^{op}$,
-it suffices to show that
-$B_{\bullet}$
-can be extended to a simplicial object
-$\overline{B}_{\bullet}$
-whose levels are functors 
-$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
-This follows by noting that
-the vertex functors
-$V_G \colon \overline{\Omega}^{n}_{G}
-\to 
-\Fin_s \wr \Omega^{n-1}_{G}$
+for $0 \leq j \leq n$,
+though we caution that the $\overline{\Omega}^{n}_G$
+have no augmentation to $\Sigma_G$ nor extra degeneracies $s_{-1}$.
+Moreover, it is clear that
+$|\overline{\Omega}_G| = \Omega_G$.
+
+More importantly,
+since maps that are outer in each tree component send vertices to vertices,
+one has that the formula in Notation \ref{VGDEF NOT} extends to define a functor
+\begin{equation}\label{VGDEF2 EQ}
+	\overline{\Omega}^n_G 
+	\xrightarrow{V_G}
+	\Fin \wr \Omega^{n-1}_G
+\end{equation}
+Note that \eqref{VGDEF2 EQ} 
+requires the full category $\Fin$ of finite sets
+rather than the subcategory $\Fin_s$ of surjections.
+By construction of $N$ in Definition \ref{WSPAN_MONAD_DEFINITION}
+one has that the functors in \eqref{BARLEVELS EQ}
 extend to functors
-$V_G \colon \overline{\Omega}^{n,o}_{G}
-\to 
-\Fin \wr \Omega^{n-1}_{G}$.
-This now follows from the observation that the following diagrams
-commute
-(note that all the simplicial operators 
-of $B_{\bullet}$
-are naturally factored
-so that the leftmost
-is extended by one of the diagrams below).
+$N^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$.
+Moreover, the natural transformations for the associated simplicial object in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$
+all factor through one of the diagrams below,
 \begin{equation}
 \begin{tikzcd}[column sep = 18pt]
-\overline{\Omega}^{n}_G \ar{r}{V_G} 
-\ar{d}[swap]{d_0} &
-\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
-|[alias=Vt]|
-\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} 
+	\ar{d}[swap]{d_0} &
+	\Fin \wr \Omega^{n-1}_G \ar{r}{\Fin \wr V_G} &
+	|[alias=Vt]|
+	\Fin^{\wr 2} \wr \Omega^{n-2}_G \ar{d}[swap]{\sigma^0}
 &
-\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
-\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{d_{i+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr d_i}
 &
-\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
-\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
+	\overline{\Omega}^{n}_G \ar{r}{V_G} \ar{d}[swap]{s_{j+1}} &
+	\Fin \wr \Omega^{n-1}_G \ar{d}{\Fin \wr s_j}
 \\
-|[alias=FV]|
-\overline{\Omega}^{n-1}_G \ar{rr}[swap]{V_G} &&
-\Fin \wr \Omega^{n-2}_G  
+	|[alias=FV]|
+	\overline{\Omega}^{n-1}_G \ar{rr}[swap]{V_G} &&
+	\Fin \wr \Omega^{n-2}_G  
 &
-\overline{\Omega}^{n-1}_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega^{n-2}_G
+	\overline{\Omega}^{n-1}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n-2}_G
 &
-\overline{\Omega}^{n+1}_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega^{n}_G
+	\overline{\Omega}^{n+1}_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega^{n}_G
 \arrow[Leftrightarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\pi"]
 \end{tikzcd}
 \end{equation}
+so that
+$N^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$
+extends \eqref{BARLEVELS EQ}
+as a simplicial object in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$.
+Thus, by Lemmas 
+\ref{TWISTING LEMMA} and \ref{SOURCEFACT LEM}
+one again obtains an isomorphic simplicial object
+$\tilde{N}^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$ which, upon realization,
+extends \eqref{TALLNER EQ} to obtain the desired nerve
+\begin{equation}\label{FULLNER EQ}
+|\overline{\Omega}^n_G| = \Omega_G
+\xrightarrow{\mathcal{N} \mathcal{P}}
+\mathcal{V}^{op}.
+\end{equation}
 
 
-\begin{definition}
-	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$.
-	The \emph{nerve}
-	$\Omega_G \xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}^{op}$
-	is the realization of the simplicial object
-	$\overline{\Omega}_G^{n} \xrightarrow{N_n^{\mathcal{P}}} \mathcal{V}^{op}$.
-\end{definition}
-
-
-
-\vskip 10pt
-
-
-
-We now turn towards the task of building a partial inverse to $\mathcal{N}$.
-
-Suppose now one is given
+We next describe the partial inverse to 
+$\mathcal{N} \colon 
+\mathsf{Op}_G(\mathcal{V}) \to \mathcal{V}^{\Omega_G^{op}}$.
+Choose 
 $X \colon \Omega_G \to \mathcal{V}^{op}$
-whose opposite satisfies the pointed 
-strict Segal condition \eqref{SEGCOND EQ}.
-Letting $\mathcal{P}$ be the composite
+whose opposite satisfies the Segal condition \eqref{SEGCOND EQ}.
+Letting $\mathcal{P}_X$ be the composite
 $\Sigma_G \to \Omega_G \to \mathcal{V}^{op}$,
-we will show that $\mathcal{P}$
-admits a genuine operad structure for which
-$X \simeq \mathcal{N}\mathcal{P}$.
-Moreover, 
-noting that $\mathcal{N}$ is actually built from 
-the span $\iota \mathcal{P}$,
-we will instead show that 
-$\iota \mathcal{P}$ admits a $N$ algebra structure.
-
-Throughout, 
-we will make repeated use of the functors 
+we will show that $\mathcal{P}_X$ is a genuine operad
+or, equivalently, that $\iota \mathcal{P}_X$ is a $N$-algebra.  
+%
+Throughout, we write
 $\overline{\Omega}^n_G \to \Omega_G$
-and
-$\Omega^n_G \to \Omega_G$
-given by
-$(T_0 \to \cdots \to T_n) \mapsto T_n$,
-and will leave these functors implicit.
-Note that the maps $T_{n-1} \to T_n$ induce transformations
+for the target functor
+$(T_0 \to \cdots \to T_n) \mapsto T_n$ and denote by
 \begin{equation}\label{SIMP EQ}
-\begin{tikzcd}[row sep=0.4em]
-\overline{\Omega}^n_G
-\ar{dr}[name=F1]{} 
-\ar{dd}[swap]{d_n} &
+\begin{tikzcd}[row sep=1.2em, column sep = 6em]
+	\overline{\Omega}^n_G
+	\ar{r}[name=F1]{} 
+	\ar{d}[swap]{d_n} &
+	\Omega_G 
 \\
-& \Omega_G 
-\\
-|[alias=G2]|
-\overline{\Omega}^{n-1}_G 
-\ar{ur}[swap]{} & 
+	|[alias=G2]|
+	\overline{\Omega}^{n-1}_G 
+	\ar{ur}[swap]{} & 
 \arrow[Leftarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.20cm,
-"m_n"]
+"\varphi_n"]
 \end{tikzcd}
 \end{equation}
+the natural transformation induced by $T_{n-1} \to T_n$.
+%
 We now define spans $X_n$ for $n \geq -1$ by
-\[
+\begin{equation}\label{XNSPANS EQ}
 X_n =
 \left(
 \Sigma_G \leftarrow
@@ -16305,29 +16371,30 @@ X_n =
 \overline{\Omega}^n_G \to \Omega_G 
 \xrightarrow{X} \mathcal{V}^{op} 
 \right).
-\]
-Note that $X_{-1} = \iota \mathcal{P}$.
-Moreover, note that the transformations \eqref{SIMP EQ}
-make $X_n$ into a simplicial object in spans.
-
-Next, note that one has natural transformations $\epsilon_n$
-\begin{equation}
-\begin{tikzcd}
-\overline{\Omega}^n_G \ar[equal]{d} \ar{r} &
-\Omega_G \ar{r}{\delta^0} &
+\end{equation}
+Note that $X_{-1} = \iota \mathcal{P}_X$.
+Moreover, the transformations \eqref{SIMP EQ}
+make the $X_n$ into a simplicial object in
+$\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
+%
+Next, note that one has natural transformations $\rho_n$
+\begin{equation}\label{THERHON EQ}
+	\begin{tikzcd}
+	\overline{\Omega}^n_G \ar[equal]{d} \ar{r} &
+	\Omega_G \ar{r}{\delta^0} &
 |[alias=Vt]|
-\Fin \wr \Omega_G \ar[equal]{d}
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
-|[alias=FV]|
-\overline{\Omega}^n_G \ar{r}[swap]{V_G} &
-\Fin \wr \Omega_G^{n-1} \ar{r} &
-\Fin \wr \Omega_G 
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon_n"]
+	|[alias=FV]|
+	\overline{\Omega}^n_G \ar{r}[swap]{V_G} &
+	\Fin \wr \Omega_G^{n-1} \ar{r} &
+	\Fin \wr \Omega_G 
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\rho_n"]
 \end{tikzcd}
 \end{equation}
 which,
 on $(T_0 \to \cdots \to T_n) \in \Omega^n_G$,
-is the map
+are given by the tuple map
 $(T_{n,v})_{v \in V_G(T_0)} \to (T_n)$
 determined by the inclusions
 $T_{n,v} \to T_n$.
@@ -16335,96 +16402,114 @@ Note that, by whiskering with the map
 $\Fin \wr \Omega_G \to 
 \Fin \wr \mathcal{V}^{op} 
 \xrightarrow{\prod} \mathcal{V}^{op}$,
-$\epsilon_n$
-determines a map of spans
-$X_n \xrightarrow{\epsilon_n} N X_{n-1}$.
+$\rho_n$
+determines a map of spans which we likewise denote 
+$\rho_n \colon X_n \to N X_{n-1}$.
 
-Moreover,
-the claim that $X$ satisfies the 
-strict Segal condition \eqref{SEGCOND EQ}
-is equivalent to 
-the maps of spans
-$X_n \xrightarrow{\epsilon_n} N X_{n-1}$
-being isomorphisms (of spans).
-The key to proving essential surjectivity 
-is now the claim that 
-$X_{-1}$ becomes a $N$-algebra with multiplication given by
+\begin{remark}\label{SEGALCOND REM}
+	The Segal condition \eqref{SEGCOND EQ} holds iff
+	$\rho_0 \colon X_0 \to N X_{-1}$ is an isomorphism
+	and iff the 
+	$\rho_n \colon X_n \to N X_{n-1}$ are isomorphisms 
+	for all $n\geq 0$.
+\end{remark}
+
+\begin{proposition}
+	Suppose the opposite of $X\colon \Omega_G \to \mathcal{V}^{op}$
+	satisfies the Segal condition \eqref{SEGCOND EQ}. 
+	
+	Then the span $X_{-1}$ in \eqref{XNSPANS EQ} is a $N$-algebra with multiplication
 \begin{equation}\label{XMINUSMULT EQ}
-\begin{tikzcd}
-N X_{-1} &
-X_0 \ar{l}[swap]{\epsilon}{\simeq} \ar{r}{d_0} &
-X_{-1} 
-\end{tikzcd}
+	\begin{tikzcd}
+	N X_{-1} &
+	X_0 \ar{l}[swap]{\rho_0}{\simeq} \ar{r}{d_0} &
+	X_{-1}.
+	\end{tikzcd}
 \end{equation}
-The claim that this defines 
-an algebra structure is the claim that the outer paths
-from $NN X_{-1}$ to $X_{-1}$ below coincide.
+\end{proposition}
+
+
+\begin{proof}
+The required associativity and unitality conditions for 
+\eqref{XMINUSMULT EQ}
+say that the outer paths in the diagrams below coincide
+($\mu,\eta$ are the multiplication and unit of $N$,
+cf. Definition \ref{WSPAN_MONAD_DEFINITION}).
 \begin{equation}\label{ALGCHECK EQ}
-\begin{tikzcd}
-NNX_{-1} \ar{rr}{\mu}&&
-NX_{-1}
+\begin{tikzcd}[column sep = 25pt]
+	NNX_{-1} \ar{rr}{\mu}&&
+	NX_{-1}
+&
+	X_{-1} \ar{r}{\eta} \ar{rd}{s_{-1}} \ar[equal]{rdd} &
+	NX_{-1}
 \\
-NX_0 \ar{u}{N \epsilon}[swap]{\simeq} \ar{d}[swap]{Nd_0} &
-X_1 \ar{l}[swap]{\epsilon}{\simeq}  \ar{d}{d_1} \ar{r}{d_0} &
-X_0 \ar{d}[swap]{d_0} \ar{u}{\epsilon}[swap]{\simeq}
+	NX_0 \ar{u}{N \rho_0}[swap]{\simeq} \ar{d}[swap]{Nd_0} &
+	X_1 \ar{l}[swap]{\rho_1}{\simeq}  \ar{d}{d_1} \ar{r}{d_0} &
+	X_0 \ar{d}{d_0} \ar{u}[swap]{\rho_0}{\simeq}
+&
+	&
+	X_0 \ar{u}[swap]{\rho_0}{\simeq} \ar{d}{d_0}
 \\
-N X_{-1} &
-X_0 \ar{r}{d_0} \ar{l}[swap]{\epsilon}{\simeq} &
-X_{-1} 
+	N X_{-1} &
+	X_0 \ar{r}{d_0} \ar{l}[swap]{\rho_0}{\simeq} &
+	X_{-1} 
+&
+	&
+	X_{-1}
 \end{tikzcd}
 \end{equation}
-It now remains to check that all squares in \eqref{ALGCHECK EQ}
-commute, with commutativity of the bottom right square being tautological.
-For the bottom left square in \eqref{ALGCHECK EQ},
-note that, up to whiskering with
+One readily checks that the unitality diagram commutes.
+It remains to check that all squares in the associativity diagram commute. 
+The case of the bottom right square is tautological.
+For the bottom left square note that, up to whiskering with
 $\Fin \wr \Omega_G \to \mathcal{V}^{op}$,
 the composites 
 $X_1 
 \xrightarrow{d_1} X_0 
-\xrightarrow{\epsilon} N X_{-1}$
+\xrightarrow{\rho_0} N X_{-1}$
 and
 $X_1  
-\xrightarrow{\epsilon} N X_0 
+\xrightarrow{\rho_1} N X_0 
 \xrightarrow{N d_0} N X_{-1}$
-are described by the diagrams below
+are induced by the diagrams below
 \begin{equation}
 \begin{tikzcd}
-\overline{\Omega}_G^1 \ar{d}[swap]{d_1} \ar{r} &
-|[alias=Vtt]|
-\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
-\Fin \wr \Omega_G \ar[equal]{d} 
+	\overline{\Omega}_G^1 \ar{d}[swap]{d_1} \ar{r} &
+	|[alias=Vtt]|
+	\Omega_G \ar{r}{\delta^0} \ar[equal]{d} &
+	\Fin \wr \Omega_G \ar[equal]{d} 
 &
-\overline{\Omega}_G^1 \ar[equal]{d} \ar{rr} &&
-|[alias=Vtt2]|
-\Fin \wr \Omega_G \ar[equal]{d} 
+	\overline{\Omega}_G^1 \ar[equal]{d} \ar{rr} &&
+	|[alias=Vtt2]|
+	\Fin \wr \Omega_G \ar[equal]{d} 
 \\
-|[alias=FVt]|
-\overline{\Omega}_G^0 
-\ar{r} \ar[equal]{d} &
-\Omega_G \ar{r}{\delta^0}&
-|[alias=Vt]|
-\Fin \wr \Omega_G \ar[equal]{d} 
+	|[alias=FVt]|
+	\overline{\Omega}_G^0 
+	\ar{r} \ar[equal]{d} &
+	\Omega_G \ar{r}{\delta^0}&
+	|[alias=Vt]|
+	\Fin \wr \Omega_G \ar[equal]{d} 
 &
-|[alias=FFV]|	
-\overline{\Omega}_G^1 
-\ar{r} \ar{d}[swap]{d_1} &
-\Fin \wr \Omega_G^0 \ar{r} \ar{d}[swap]{d_0} &
-|[alias=Vt2]|
-\Fin \wr \Omega_G \ar[equal]{d}
+	|[alias=FFV]|	
+	\overline{\Omega}_G^1 
+	\ar{r} \ar{d}[swap]{d_1} &
+	\Fin \wr \Omega_G^0 \ar{r} \ar{d}[swap]{d_0} &
+	|[alias=Vt2]|
+	\Fin \wr \Omega_G \ar[equal]{d}
 \\
-|[alias=FV]|
-\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
-\Fin \wr \Sigma_G \ar{r} &
-\Fin \wr \Omega_G 
+	|[alias=FV]|
+	\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
 &
-\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
-|[alias=FV2]|
-\Fin \wr \Sigma_G \ar{r} &
-\Fin \wr \Omega_G 
-\arrow[Leftarrow, from=Vt, to=FV,shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
-\arrow[Leftarrow, from=Vtt, to=FVt,shorten <=0.10cm,shorten >=0.10cm,"m"]
-\arrow[Leftarrow, from=Vt2, to=FV2,shorten <=0.10cm,shorten >=0.10cm,"m"]
-\arrow[Leftarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
+	\overline{\Omega}_G^0 \ar{r}[swap]{V_G} &
+	|[alias=FV2]|
+	\Fin \wr \Sigma_G \ar{r} &
+	\Fin \wr \Omega_G 
+\arrow[Leftarrow, from=Vt, to=FV,shorten <=0.10cm,shorten >=0.10cm,"\rho_0"]
+\arrow[Leftarrow, from=Vtt, to=FVt,shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
+\arrow[Leftarrow, from=Vt2, to=FV2,shorten <=0.10cm,shorten >=0.10cm,"\varphi_0"]
+\arrow[Leftarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\rho_1"]
 \end{tikzcd}
 \end{equation}
 That these composite natural transformations coincide is the observation that,
@@ -16435,7 +16520,7 @@ given by the maps $T_{0,v} \to T_1$.
 
 To show that the top square in \eqref{ALGCHECK EQ} commutes,
 we first consider the composite
-$N X_0 \xrightarrow{N \epsilon}
+$N X_0 \xrightarrow{N \rho_0}
 NN X_{-1} \xrightarrow{\mu} N X_{-1}$,
 which is given by the composite diagram below.
 \begin{equation}\label{INTERM EQ}
@@ -16471,12 +16556,12 @@ which is given by the composite diagram below.
 \mathcal{V}^{op}
 \arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 \arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
-\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
+\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\rho_0"]
 \end{tikzcd}
 \end{equation}
-We now consider the following, where all terms other than the 
-new $\Fin \wr \mathcal{V}^{op}$ term on the top row
-retain their relative positions from \eqref{INTERM EQ}.
+We now consider the following, where all terms (other than the 
+additional $\Fin \wr \mathcal{V}^{op}$ term on the top row)
+retain their relative positions in \eqref{INTERM EQ}.
 \begin{equation}
 \begin{tikzcd}[column sep=1.05em]
 \Fin \wr \Omega_G \ar{rr} \ar{dr}[swap]{\delta^1} &&
@@ -16506,23 +16591,21 @@ $\Fin \wr \Omega_G \to
 \Fin \wr \mathcal{V}^{op}
 \to \mathcal{V}^{op}$.
 As such, the composite
-\eqref{INTERM EQ}
+natural transformation in \eqref{INTERM EQ}
 can be described 
 by whiskering its 4 leftmost columns
 (equivalently, the 3 bottom rows of the left diagram in 
 \eqref{INTERM2 EQ})
 with 
-$\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to 
-\mathcal{V}^{op}$.
-It now follows that 
-$X_1 \xrightarrow{\epsilon} 
-N X_0 \xrightarrow{N \epsilon}
+$\Fin \wr \Omega_G \to \mathcal{V}^{op}$.
+It now follows that the composites
+$X_1 \xrightarrow{\rho_1} 
+N X_0 \xrightarrow{N \rho_0}
 NN X_{-1} \xrightarrow{\mu} N X_{-1}$
 and
-$X_1 \xrightarrow{d_0} X_0 \xrightarrow{\epsilon} N X_{-1}$
+$X_1 \xrightarrow{d_0} X_0 \xrightarrow{\rho_0} N X_{-1}$
 are obtained by whiskering the diagrams below with 
-$\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to 
-\mathcal{V}^{op}$.
+$\Fin \wr \Omega_G \to \mathcal{V}^{op}$.
 \begin{equation}\label{INTERM2 EQ}
 \begin{tikzcd}[column sep=1.05em]
 \overline{\Omega}_G^1 \ar[equal]{d} \ar{r} &
@@ -16564,131 +16647,172 @@ $\Fin \wr \Omega_G \to \Fin \wr \mathcal{V}^{op} \to
 \Fin \wr \Sigma_G \ar{r} &
 \Fin \wr \Omega_G 
 \arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
-\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
-\arrow[Leftarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\epsilon"]
-\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\epsilon"]
+\arrow[Leftarrow, from=dog2, to=cat2,shorten <=0.15cm,,shorten >=0.15cm,"\rho_0"]
+\arrow[Leftarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\rho_1"]
+\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\rho_0"]
 \end{tikzcd}
 \end{equation}
-The fact that the composites in 
+That the composites in 
 \eqref{INTERM2 EQ} coincide follows since,
 on $(T_0 \to T_1) \in \Omega_G^1$,
 both compute the map
 $(T_{1,v})_{v \in V_G(T_1)} \to (T_1)$
 whose components are given by the inclusions
 $T_{1,v} \to T_1$.
-
-
-We have now shown that \eqref{ALGCHECK EQ} commutes,
-i.e. that \eqref{XMINUSMULT EQ}
-indeed makes $X_{-1} = \iota \mathcal{P}$ into a $N$-algebra.
-
-{\color{red} HERE}
+\end{proof}
 
 \begin{proof}[Proof of Theorem \ref{NERVE THM}]
-	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-	and set $X = \mathcal{N} \mathcal{P}$.
-	By construction of the realization process,
-	one has that the composite
-	$\Omega^0 \to \Omega 
-	\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
-	is  
-	$\Omega^0 \xrightarrow{N_0^{\mathcal{P}}} \mathcal{V}$,
-	from which it follows that
-	$X_{-1} = \iota \mathcal{P}$
-	and that 
-	$X_0 \xrightarrow{\epsilon} NX_{-1}$
-	in \eqref{XMINUSMULT EQ}
-	is the identity.
-	Moreover, again by construction of the realization process,
-	the composite natural transformations
-	below coincide.
-	\begin{equation}\label{EXPREAL EQ}
-	\begin{tikzcd}[column sep = 30pt]
+	Let $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$ and
+	$\mathcal{N} \mathcal{P} \colon 
+	\Omega_G \to \mathcal{V}^{op}$ be as in 
+	\eqref{FULLNER EQ}.
+	By the construction in 
+	Lemmas \ref{TWISTING LEMMA} and \ref{SOURCEFACT LEM},
+	the composites below coincide,
+	where $(d_i,\nu_i)$ denote the simplicial operators of the simplicial object 
+	$N_n^{\mathcal{P}}$ in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$
+	discussed above \eqref{FULLNER EQ}.
+\begin{equation}\label{EXPREAL EQ}
+\begin{tikzcd}[column sep = 30pt]
 	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{r}{d_0} &
 	|[alias=Vt]|
 	\overline{\Omega}_G^0 \ar{rd}{N_0^{\mathcal{P}}} \ar{d} &
-	&
+&
 	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
 	\ar{rrd}{N_1^{\mathcal{P}}}[near end,name=F1]{}
 	[swap,near start,name=F2]{}
-	&&
+&&
 	|[alias=Vt2]|
 	\overline{\Omega}_G^0 \ar{d}{N_0^{\mathcal{P}}} &
-	\\
+\\
 	|[alias=FV]|
 	\overline{\Omega}^0_G \ar{r} &
 	\overline{\Omega}_G \ar{r}[swap]{\mathcal{N} \mathcal{P}} &
 	\mathcal{V}^{op} 
-	&
+&
 	|[alias=FV2]|
 	\overline{\Omega}^0_G \ar{rr}[swap]{N_0^{\mathcal{P}}} &&
 	\mathcal{V}^{op} 
-	\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"m"]
-	\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
-	\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
-	\end{tikzcd}
-	\end{equation}
-	Hence, the natural transformation
-	$X_0 \xrightarrow{d_0} X_{-1}$
-	is given by the composite natural transformation
-	\begin{equation}
-	\begin{tikzcd}[column sep = 30pt]
+	\arrow[Leftarrow, from=Vt, to=FV, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
+	\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\nu_0"]
+	\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\nu_1"]
+\end{tikzcd}
+\end{equation}
+	Setting $X= \mathcal{N} \mathcal{P}$,
+	the fact that the left triangle above commutes shows that
+	$X_0 \xrightarrow{\rho_0} N X_{-1}$ is the identity 
+	(cf. \eqref{BARLEVELS EQ} and
+	Definition \ref{WSPAN_MONAD_DEFINITION})
+	so that, by Remark \ref{SEGALCOND REM},
+	$\mathcal{N} \mathcal{P}$ satisfies the Segal condition
+	\eqref{SEGCOND EQ}.
+	Moreover, $d_0 \colon X_0 \to X_{-1}$
+	is thus computed by the left diagram below,
+	whose composite is the right diagram
+	by the simplicial identities in $N^{\mathcal{P}}_{n}$.
+\begin{equation}\label{BLABLEID EQ}
+\begin{tikzcd}[column sep = 30pt]
 	\Omega^0_G \ar{r}{s_{-1}} \ar{d}[swap]{d_0} &
 	\overline{\Omega}^1_G \ar{d}[swap]{d_1} \ar{rr}{d_0} 
 	\ar{rrd}{N_1^{\mathcal{P}}}[near end,name=F1]{}
 	[swap,near start,name=F2]{}
 	&&
 	|[alias=Vt2]|
-	\overline{\Omega}_G^0 \ar{d}{N_0^{\mathcal{P}}} &
-	\\
-	\Sigma_G \ar{r}{s_{-1}} &
+	\overline{\Omega}_G^0 \ar{d}{N_0^{\mathcal{P}}}
+&
+	\Omega^0_G \ar{d}[swap]{d_0}
+	\ar{rd}{N^{\mathcal{P}}_{0}}[swap,name=F3]{}
+\\
+	\Sigma_G \ar{r}[swap]{s_{-1}} &
 	|[alias=FV2]|
 	\overline{\Omega}^0_G \ar{rr}[swap]{N_0^{\mathcal{P}}} &&
 	\mathcal{V}^{op} 
-	\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\mu"]
-	\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\varphi_1"]
-	\end{tikzcd}
-	\end{equation}
-	which, by the simplical relations of $\mathcal{N}_{\bullet}$,
-	is simply the operator 
-	$\mathcal{N}_0 \xrightarrow{d_0} \mathcal{N}_{-1}$,
-	i.e. the multiplication in $\iota \mathcal{P}$.
-	In other words, we have shown that 
-	\eqref{XMINUSMULT EQ}
-	indeed recovers $\mathcal{P}$.
-	
-	{\color{red} HERE}
-	
-	Conversely, 
-	suppose $X \in \mathcal{V}^{\Omega_G^{op}}$ satisfies the Segal condition and consider $X_{-1}$ with its operad structure.
-	We need to show that $X$ and $\mathcal{N} X_{-1}$
-	are naturally isomorphic.
-	Namely, we claim that
-	$\epsilon_0 \colon X \Rightarrow \mathcal{N} X_{-1}$
-	is such a natural transformation.
-	Since $\Omega^0 \to \Omega 
-	\xrightarrow{\mathcal{N} \mathcal{P}} \mathcal{V}$
-	is  
-	$\Omega^0 \xrightarrow{\mathcal{N}_0} \mathcal{V}$,
-	naturality holds on arrows 
-	of $\Omega$ that are in the image of $\Omega^0$
-	it thus suffices to check naturality on arrows 
-	in the image of $m$ in \eqref{EXPREAL EQ}.
-	But now note that the right side of \eqref{EXPREAL EQ}
-	is computing
-	$NX_{-1} \overset{\mu}{\leftarrow}
-	NNX_{-1} \overset{\epsilon}{\leftarrow}
-	NX_0 \xrightarrow{Nd_0}
-	NX_{-1}$,
-	which by 
-	\eqref{ALGCHECK EQ}
-	coincides with
-	$NX_{-1} \overset{\epsilon}{\leftarrow}
-	X_0 \overset{d_0}{\leftarrow}
-	X_1 \xrightarrow{d_1}
-	X_0 \xrightarrow{\epsilon}
-	N X_{-1}$.
-	Noting that the natural transformation underlying $d_0$ is the identity, the result follows.
+&
+	|[alias=FV3]|
+	\Sigma_G \ar{r}[swap]{N^{\mathcal{P}}_{-1}} & 
+	\mathcal{V}^{op}
+	\arrow[Leftrightarrow, from=Vt2, to=F1, shorten <=0.10cm,shorten >=0.10cm,"\nu_0"]
+	\arrow[Leftarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\nu_1"]
+	\arrow[Leftarrow, from=F3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\nu_0"]
+\end{tikzcd}
+\end{equation}
+But, by definition, this right diagram is simply the $N$-algebra multiplication of $\iota \mathcal{P}$,
+showing that \eqref{XMINUSMULT EQ} indeed inverts $\mathcal{NP}$ 
+by recovering $\mathcal{P}$ 
+with its genuine operad structure.
+
+For the reverse claim characterizing the essential image,
+suppose the opposite of
+$X \colon \Omega_G \to \mathcal{V}^{op}$
+satisfies the Segal condition \eqref{SEGCOND EQ},
+let $X_{-1}$ be the $N$-algebra in \eqref{XMINUSMULT EQ}
+and $\mathcal{P}_X \in \mathsf{Op}_G(\mathcal{V})$
+be so that $X_{-1} = \iota \mathcal{P}_X$.
+It remains to show that
+$X \simeq \mathcal{N} \mathcal{P}_X$.
+But now recall that $\mathcal{N} \mathcal{P}_X$
+is built by realizing the simplicial object
+$\tilde{N}_n^{\mathcal{P}_X} \colon 
+\overline{\Omega}^n_G \to \mathcal{V}^{op}$
+in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$
+built from $N_n^{\mathcal{P}_X}$ via Lemma \ref{TWISTING LEMMA},
+so that 
+$\tilde{N}_n^{\mathcal{P}_X}$
+is as below, where the right side expands $N_0^{\mathcal{P}_X}$.
+\[
+	\overline{\Omega}^{n}_G 
+	\xrightarrow{d_{1,\cdots,n}}
+	\overline{\Omega}^{0}_G \xrightarrow{N_0^{\mathcal{P}_X}}
+	\mathcal{V}^{op}
+\qquad
+	\overline{\Omega}^{n}_G 
+	\xrightarrow{d_{1,\cdots,n}}
+	\overline{\Omega}^{0}_G \xrightarrow{V_G}
+	\Fin \wr \Sigma_{G} \to 
+	\Fin \wr \Omega_{G} \xrightarrow{X}
+	\Fin \wr \mathcal{V}^{op} \xrightarrow{\prod}
+	\mathcal{V}^{op}
+\]
+Further writing $X_n$ for the simplicial object 
+$\overline{\Omega}^{n}_G 
+\xrightarrow{d_{1,\cdots,n}}
+\overline{\Omega}^{0}_G \to \Omega_G \xrightarrow{X}
+\mathcal{V}^{op}$
+in $\mathsf{WSpan}^r(*,\mathcal{V}^{op})$ 
+(this simply forgets structure in \eqref{XNSPANS EQ}),
+the natural transformations $\rho_0$ in \eqref{THERHON EQ}
+define an isomorphism of simplicial objects
+$\rho_0 \colon X_n \xrightarrow{\simeq} \tilde{N}_n^{\mathcal{P}_X}$.
+Indeed, the non-trivial claim is that $\rho_0$ respects 
+the natural transformation components of the differentials
+$d_1\colon X_1 \to X_0$
+and
+$d_1\colon \tilde{N}_1^{\mathcal{P}_X} 
+\to \tilde{N}_0^{\mathcal{P}_X}$.
+But the latter is computed by 
+\eqref{EXPREAL EQ}, and is thus the 
+natural transformation component of the composite
+$NX_{-1} \overset{\mu}{\leftarrow}
+NNX_{-1} \overset{N \rho_0}{\leftarrow}
+NX_0 \xrightarrow{Nd_0}
+NX_{-1}$
+(as $\nu_0, \nu_1$ in \eqref{EXPREAL EQ}
+are induced by $\mu$ and 
+\eqref{XMINUSMULT EQ}),
+which by \eqref{ALGCHECK EQ}
+has the same natural transformation component as
+$NX_{-1} \overset{\rho_0}{\leftarrow}
+X_0 \overset{d_0}{\leftarrow}
+X_1 \xrightarrow{d_1}
+X_0 \xrightarrow{\rho_0}
+N X_{-1}$ 
+(note that the natural transformation for $d_0$ is the identity).
+Thus $\rho_0 \colon X_n \xrightarrow{\simeq} \tilde{N}_n^{\mathcal{P}_X}$
+is indeed an isomorphism of simplicial objects in 
+$\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$ so that, 
+upon realization,
+we obtain the desired isomorphism
+$X \simeq \mathcal{N} \mathcal{P}_X$.
 \end{proof}
 
 
