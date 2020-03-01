@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  1 MAR 2020 03:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  1 MAR 2020 18:23
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1359,84 +1359,87 @@ LaTeX Warning: Reference `NINFTY_SECTION' on page 8 undefined on input line 141
 6.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1521
 
- []
+LaTeX Warning: Reference `GSYMCAT DEF' on page 9 undefined on input line 1642.
+
+[9]
+
+LaTeX Warning: Reference `FGMON SEC' on page 10 undefined on input line 1648.
 
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 1524.
-[9] [10]
+ine 1697.
 
-LaTeX Warning: Reference `SIGMA_WR_REM' on page 11 undefined on input line 1789
+LaTeX Warning: Reference `SIGMA_WR_REM' on page 10 undefined on input line 1783
 .
 
+[10]
 
 LaTeX Warning: Reference `RANTRANS PROP' on page 11 undefined on input line 153
-93.
+87.
 
 
 LaTeX Warning: Reference `EXTTREEFOR EQ' on page 11 undefined on input line 153
-95.
+89.
 
 
-LaTeX Warning: Reference `REAL DEF' on page 11 undefined on input line 15407.
+LaTeX Warning: Reference `REAL DEF' on page 11 undefined on input line 15401.
 
 [11]
 
-LaTeX Warning: Reference `WSPAN DEF' on page 12 undefined on input line 15534.
+LaTeX Warning: Reference `WSPAN DEF' on page 12 undefined on input line 15528.
 
 
 LaTeX Warning: Reference `GROTHCONS DEF' on page 12 undefined on input line 155
-36.
+30.
 
-[12] [13] [14] [15]
+[12] [13] [14]
 
-LaTeX Warning: Reference `RANTRANS PROP' on page 16 undefined on input line 160
-41.
+LaTeX Warning: Reference `RANTRANS PROP' on page 15 undefined on input line 160
+35.
 
+[15]
 
 LaTeX Warning: Reference `FIBERKANMAP PROP' on page 16 undefined on input line 
-16081.
+16075.
+
+
+LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 16 undefined on input
+ line 16193.
+
+
+LaTeX Warning: Reference `MULTDEFSPAN EQ' on page 16 undefined on input line 16
+212.
 
 [16]
 
-LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 17 undefined on input
- line 16199.
-
-
-LaTeX Warning: Reference `MULTDEFSPAN EQ' on page 17 undefined on input line 16
-218.
-
-
-LaTeX Warning: Reference `PTNARROW EQ' on page 17 undefined on input line 16248
+LaTeX Warning: Reference `PTNARROW EQ' on page 17 undefined on input line 16242
 .
 
 
-LaTeX Warning: Reference `PLANSTR DEF' on page 17 undefined on input line 16255
+LaTeX Warning: Reference `PLANSTR DEF' on page 17 undefined on input line 16249
 .
 
 
-LaTeX Warning: Reference `VGDEF NOT' on page 17 undefined on input line 16277.
+LaTeX Warning: Reference `VGDEF NOT' on page 17 undefined on input line 16271.
 
 
 LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 17 undefined on input
- line 16286.
+ line 16280.
 
 [17]
 
 LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 18 undefined on input
- line 16437.
+ line 16431.
 
 [18]
 
-LaTeX Warning: Reference `COHER3 EQ' on page 19 undefined on input line 16587.
+LaTeX Warning: Reference `COHER3 EQ' on page 19 undefined on input line 16581.
 
-[19]
 
-LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 20 undefined on input
- line 16705.
+LaTeX Warning: Reference `WSPAN_MONAD_DEFINITION' on page 19 undefined on input
+ line 16699.
 
-[20]
+[19] [20]
 runsystem(makeindex GenEqOp.idx)...executed (allowed).
 
  (GenEqOp.ind) [21
@@ -1446,40 +1449,35 @@ runsystem(makeindex GenEqOp.idx)...executed (allowed).
 \openout7 = `GenEqOp.brf'.
 
  [22]
-Underfull \hbox (badness 10000) in paragraph at lines 184--184
-[]\OT1/cmr/m/n/9 (+20) J. Lurie.  Higher al-ge-bra.  Can be found at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--222
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
 []\OT1/cmr/m/n/9 (+20) L. A. Pereira.  Equiv-ari-ant den-droidal sets.  Avail-a
 ble at:
  []
 
-[23]) [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16846.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 16846.
+) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16840.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16840.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16846.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16840.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16846
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16840
 .
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
-(rerunfilecheck)             Checksum: 01795C403C95CFDFB4E2FB5405729F2D;366.
+(rerunfilecheck)             Checksum: 78A769443F985023D0BBC81E7EE4BF47;366.
 Package rerunfilecheck Info: File `GenEqOp.brf' has not changed.
-(rerunfilecheck)             Checksum: 4479D7D83695ACFC7B31D112D3F43FA7;2928.
+(rerunfilecheck)             Checksum: A64FD22062A5C2D2CA2BC3EC64A57D2E;3188.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16846.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16840.
  ) 
 Here is how much of TeX's memory you used:
- 28626 strings out of 492895
- 570334 string characters out of 3123735
- 698443 words of memory out of 3000000
- 31663 multiletter control sequences out of 15000+200000
- 43916 words of font info for 215 fonts, out of 3000000 for 9000
+ 28242 strings out of 492895
+ 563033 string characters out of 3123735
+ 683980 words of memory out of 3000000
+ 31322 multiletter control sequences out of 15000+200000
+ 36449 words of font info for 191 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,16n,86p,628b,1554s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/Mn
@@ -1496,42 +1494,40 @@ mbol/MnSymbol6.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/mnsymbol/MnSymbol7.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/luisa/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol9.pfb><C:/Users/luisa/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/User
-s/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.
-pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmmi5.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/luisa/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/luisa/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/luis
-a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C
-:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cme
-xtra/cmmib6.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/luisa/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/luisa/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/luisa/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmss8.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/luisa/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/luisa/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/luis
-a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
-:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmti8.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmti9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/luisa/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/luisa/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:
-/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symb
-ols/msbm5.pfb>
-Output written on GenEqOp.pdf (24 pages, 1354420 bytes).
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/User
+s/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12
+.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/luisa/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/luisa/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lui
+sa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/luisa/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/luisa/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
+luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmss8.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/luisa/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/luisa/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
+rs/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9
+.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmti8.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti9.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/luisa/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/luisa/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on GenEqOp.pdf (23 pages, 1315431 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 28317 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 787 PDF objects out of 1000 (max. 8388607)
+ 145 named destinations out of 1000 (max. 500000)
+ 27805 words of extra memory for PDF output out of 29859 (max. 10000000)
 

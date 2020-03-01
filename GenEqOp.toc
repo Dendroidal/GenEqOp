@@ -3,4 +3,4 @@
 \contentsline {subsection}{\numberline {1.2}Context, applications and future work}{9}{subsection.1.2}% 
 \contentsline {section}{\numberline {A}Transferring Kan extensions}{11}{appendix.A}% 
 \contentsline {section}{\numberline {B}The nerve theorem}{16}{appendix.B}% 
-\contentsline {section}{Glossary of Notation}{21}{section*.7}% 
+\contentsline {section}{Glossary of Notation}{21}{section*.8}% 

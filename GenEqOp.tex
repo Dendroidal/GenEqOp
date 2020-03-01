@@ -1443,26 +1443,224 @@ in \cite[Cor. 5.6]{BH15}
 
 %Independently, using different techniques, Rubin \cite{Rub17} and Guti\'{e}rrez-White \cite{GW} have also announced confirmations of this conjecture for (regular) indexing systems.
 
+
+
 \subsection{Context, applications and future work}
 
-This article is part of a series of papers by the authors \cite{Pe17,BP_edss,BP_HGOP,BP_TAS}
-producing and analyzing different models for the homotopy theory of equivariant operads with norm maps.
-These papers generalize the non-equivariant program of Cisinski, Moerdijk, and Weiss \cite{MW07,MW08,CM11,CM13a,CM13b}.
-A major result is the existence of a Quillen equivalence
-\begin{equation}
-      \label{DSETSOP_EQ}
-      \begin{tikzcd}[column sep =4em]
-            \mathsf{dSet}^G \ar[shift left=1.5]{r} 
-            &
-            \mathsf{sOp}^G,
-            \ar[shift left=1.5]{l}
-      \end{tikzcd}
+
+\subsubsection*{Models for equivariant operads with norm maps}
+
+
+This article is closely linked to the authors project in
+\cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
+which culminates in the existence of a Quillen equivalence
+\cite[Thm. I]{BP_TAS}
+\begin{equation}\label{DSETSOP_EQ}
+\begin{tikzcd}[column sep =4em]
+	\mathsf{dSet}^G \ar[shift left=1.5]{r} 
+	&
+	\mathsf{sOp}_{\bullet}^G.
+\ar[shift left=1.5]{l}
+\end{tikzcd}
 \end{equation} 
-where $\mathsf{dSet}^G$ is the
-model category of equivariant dendroidal sets encoding $G$-$\infty$-operads, i.e. ``colored $G$-operads with norms up to homotopy'', from \cite[Theorem 2.1]{Pe17}, and 
-$\mathsf{sOp}^G$ is the category of equivariant many-colored simplicial operads equipped with the many-colored variant of the model structure in Theorem \ref{MAINEXIST1 THM} from \cite[Theorem III]{BP_HGOP}.
-In particular, this is a generalization of the equivalence between the homotopy theories of simplicial categories and quasicategories.
-More details can be found in the introduction to \cite{BP_HGOP}.
+Here $\mathsf{sOp}_{\bullet}^G$
+is the model category of $G$-equivariant colored operads
+with norm maps (in $\mathsf{sSet}$)
+given by \cite[Thm. III]{BP_HGOP},
+which is the colored extension of Theorem \ref{MAINEXIST1 THM},
+while 
+$\mathsf{dSet}^G = \mathsf{Set}^{\Omega^{op} \times G}$
+(where $\Omega$ is the category of trees)
+is the model category of
+$G$-$\infty$-operads \cite[Thm. 2.1]{Pe17},
+whose model structure is defined using the 
+category $\Omega_G$ of $G$-trees.
+
+The equivalence \eqref{DSETSOP_EQ}
+generalizes the 
+%non-equivariant 
+equivalence
+$\mathsf{dSet} \rightleftarrows \mathsf{sOp}_{\bullet}$
+\cite[Thm. 8.15]{CM13b},
+which culminates the project
+of Cisinski, Moerdijk, Weiss in \cite{MW07,MW08,CM11,CM13a,CM13b}.
+%
+Crucially, we note that, 
+while the underlying categories in \eqref{DSETSOP_EQ}
+are obtained from those in 
+\cite[Thm. 8.15]{CM13b}
+by taking $G$-objects,
+the model structures in \eqref{DSETSOP_EQ}
+are more subtle, needing the use of $G$-trees. 
+
+As a result, when generalizing the arguments and constructions in
+\cite{MW07,MW08,CM11,CM13a,CM13b}
+one must often think in terms of genuine operads.
+For example, 
+in \cite[\S 8.2]{Pe17},
+to understand the homotopy theory of $G$-$\infty$-operads
+in $\mathsf{dSet}^G$,
+which are ``$G$-operads with norm maps up to homotopy'',
+one considers objects \cite[Not. 8.11]{Pe17} in 
+$\mathsf{dSet}_G = \mathsf{Set}^{\Omega_G^{op}}$
+that are ``genuine operads up to homotopy''.
+Similarly, in
+\cite[\S 5]{BP_edss} one must consider the
+``homotopy genuine operad of a Segal space'' 
+\cite[Def. 5.8]{BP_edss}
+(notably, 
+\cite{BP_edss} uses an alternative description of genuine operads 
+\cite[Def. 3.35]{BP_edss}; see Theorem \ref{NERVE THM}).
+Heuristically, this need for genuine operads comes from the 
+observation that taking fixed points does not commute with taking 
+homotopy/isomorphism classes
+{\color{red} link to below}.
+As such, while the categories in \eqref{DSETSOP_EQ}
+are ``described in terms of $\Omega^{op} \times G$'',
+any construction in those categories involving homotopy classes
+needs to be ``described in terms of $\Omega_G^{op}$''
+so as to account for norm maps.
+
+
+\subsubsection*{Algebras over genuine operads}
+
+Just like usual operads,
+genuine operads admit a notion of algebra.
+A full formal definition of such algebras is forthcoming, 
+but the following example illustrates the main idea.
+
+
+\begin{example}
+	Let $G = \mathbb{Z}_{/2}$,
+	$\mathcal{O} \in \mathsf{sOp}^G$
+	be a $G$-operad
+	and $X \in \mathsf{sSet}^G$
+	be an $\mathcal{O}$-algebra.
+	It is immediate that 
+	$\pi_0(X)$ is a $\pi_0(\mathcal{O})$-algebra
+	while 
+	$\pi_0(X^G)$ is a $\pi_0(\mathcal{O}^G)$-algebra.
+	However, the sets $\pi_0(X)$, $\pi_0(X^G)$ admit additional structure.
+	Consider the following $G$-tree
+\begin{equation}\label{ALGTREEEX EQ}
+\begin{tikzpicture}
+[grow=up, auto, every node/.style = {font=\footnotesize},level distance = 2.5em]%
+\tikzstyle{level 2}=[sibling distance=3.75em]%
+\tikzstyle{level 3}=[sibling distance=1.5em]%
+% ----------
+\node at (10,0) [font=\normalsize]  {$T$}%
+child{node [dummy] {}
+	child{node [dummy,fill=black] {}
+		edge from parent node [swap] {$G \cdot a$}
+	}
+	edge from parent node [swap] {$(G/G)\cdot r$}
+};
+% ------------------------------
+\tikzstyle{level 2}=[sibling distance=3em]%
+
+\node at (6,0) [font=\normalsize] {$T$}
+child{node [dummy] {}
+	child{node [dummy,fill=black] {}
+		edge from parent node [swap, near end] {$a+1$}
+	}
+	child{node [dummy,fill=black] {}
+		edge from parent node [near end] {$\phantom{-}a$}
+	}
+	edge from parent node [swap] {$r$}
+};
+\end{tikzpicture}
+\end{equation}
+where we regard white (resp. black) nodes as corresponding to $\mathcal{O}$ (resp. $X$).
+Then, as in \eqref{INTFIXPTCOMP EQ},
+the tree in \eqref{ALGTREEEX EQ}
+encodes a ``multiplication''
+(note that $\Gamma_G \leq G \times \Sigma_2$ is the diagonal)
+\begin{equation}\label{ALGTREECOM EQ}
+	\begin{tikzcd}[row sep=0]
+	\pi_0\left(\mathcal{O}(2)^
+	{\Gamma_{G}}\right)
+	\times
+	\pi_0(X)
+	\ar{r}
+	&
+	\pi_0\left(X^{G}\right)
+\\
+	{([p],[x])}
+	\ar[mapsto]{r}
+	&
+	{[p(x,x+1)]}
+	\end{tikzcd}
+\end{equation}
+More generally, analogues of
+\eqref{ALGTREECOM EQ} are obtained for any 
+$G$-tree which, as in \eqref{ALGTREEEX EQ},
+has a single white node topped by black $0$-ary nodes.
+
+Writing 
+$\pi_0 (\iota_{\**} X) \in \mathsf{Set}^{\mathsf{O}_G^{op}}$
+for the coefficient system
+$H \mapsto \pi_0 (X^H)$,
+the multiplications \eqref{ALGTREECOM EQ} for such $G$-trees  
+describe the algebra structure of 
+$\pi_0 (\iota_{\**} X)$
+over the genuine operad
+$\pi_0 \left(\iota_{\**} \mathcal{O} \right) \in
+\mathsf{Op}_G(\mathsf{Set})$,
+where $\iota_{\**}$ is now as in Theorem \ref{MAINQUILLENEQUIV THM}.
+%{\color{OliveGreen}
+%	Let $\Omega_{G, \mathrm{Cl}}^{0,{\P,Y}}$ denote the full subcategory of closed (no leaves) 2-labeled $G$-trees, with $\lambda_a = \set{\P}$ and $\lambda_i = \set{Y}$, such that all inert vertices are stumps.
+%	Then, for $\P$ a genuine $G$-operad and $Y$ a coefficient system,
+%	the \textit{free $\P$-algebra on $Y$}, $\mathbb F_\P(Y)$, is given by the opposite of the right Kan extension
+%	\[
+%	\begin{tikzcd}
+%	\Omega_{G, \mathrm{Cl}}^{0,\set{\P,Y}} \arrow[r, "\boldsymbol{V}_G^{\set{\P,Y}}"] \arrow[d, "\mathsf{r}"]
+%	&
+%	\mathsf F_s \wr \Sigma_G \times \mathsf F_s \wr \mathsf O_G \arrow[r, "{(\P,Y)}"]
+%	&
+%	\mathsf F_s \wr \V^{op} \times \mathsf F_s \wr \V^{op} \arrow[r, "\otimes"]
+%	&
+%	\V^{op}
+%	\\
+%	\mathsf O_G \arrow[urrr, "\mathbb F_\P(Y)^{op} = \Ran"']
+%	\end{tikzcd}
+%	\]
+%}
+\end{example}
+
+
+
+{\color{red} HERE}
+
+
+\begin{remark}
+	One way to formalize algebras over genuine operads
+	is to adapt the composition product $\circ$ on symmetric sequences
+	\cite[Def. 1.4]{GJ94}
+	to a product on $G$-symmetric sequences $\mathsf{Sym}_G(\mathcal{V}) = 
+	\mathcal{V}^{\Sigma_G^{op}}$
+	(here $\Sigma_G$ is the category of $G$-corollas, 
+	cf. Definition \ref{GSYMCAT DEF}).
+%
+	Loosely, this $G$-composition product is encoded by $G$-trees as in \eqref{ALGTREEEX EQ} but where black nodes need not be $0$-ary.
+	
+	The composition product approach has some advantages over the
+	``free genuine operad monad on $\mathsf{Sym}_G(\mathcal{V})$''
+	approach described in \S \ref{FGMON SEC}.
+	Namely, one can both define genuine operads as ``algebras over $\circ$''
+	and algebras over genuine operads as ``left modules in arity $0$''.
+	However, it is hard to describe 
+	\emph{free} (genuine) operads using the composition product, 
+	making such an approach poorly suited 
+	for proving Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
+\end{remark}
+
+
+conjecture Elmendorf Piacenza for algebras
+
+
+
+{\color{red} HERE}
+
 
 In order to simplify our discussion,
 this paper focuses exclusively on the theory of 
@@ -1483,41 +1681,16 @@ Furthermore, one can show that
 there is a genuine equivariant colored operad encoding single-colored genuine equivariant operads,
 analogous to the colored operad encoding single-colored operads from e.g. \cite{GV12}. 
 
-Genuine equivarinat operads and $G$-trees play a prominent role
-throughout the authors' program describing the homotopy theory of equivariant operads with norms.
-In every model category from \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
-(co)fibrations and weak equivalences are described explicitly using $G$-trees.
-Moreover, 
-while the monadic description of genuine equivariant (colored) operads used here
-is particularly useful for the model categorical considerations of our main results,
-a combinatorial presentation of this algebraic structure is more suited in \textit{loc cite}.
-Recalling that a category (resp. operad) is equivalent, under a nerve functor, to a strict inner Kan complex in $\sSet$ \cite[Prop. 1.1.2.2]{Lu09} (resp. $\dSet$ \cite[Prop. 5.3, Thm. 6.1]{MW08}),
-in Theorem \ref{NERVE THM} we show that
-a genuine equivariant operad is equivalent, under a nerve functor $\Op_G \to \dSet_G = \Set^{\Omega_G^{op}}$,
-to a strict inner Kan complex (cf. \cite[Remark 3.42]{BP_edss}).
+
+
 The combinatorial structure underlies
 key steps in the proofs of the main results from each of \cite{Pe17,BP_edss,BP_HGOP,BP_TAS},
 for example \cite[Def. 5.8]{BP_edss} and \cite[Prop. 4.47]{BP_TAS}.
-% a combinatorial variant of a genuine equivariant operads
-% arises in each of \textit{loc cite}, encoding revelant and necessary structure for the proofs.
-% ---------- As in \cite{BP_edss}, we delay the proof of this nerve theorem to a sequel.
-% Similarly, $G$-operads are strict inner Kan complexes in $\dSet^G$ \cite[Remark 3.42]{BP_edss}. 
-% However, as elaborated on in \cite[Remark 3.42]{BP_edss},
-% this is \textit{not} an appropriate strictification of $G$-$\infty$-operads in $\dSet^G$:
-% $G$-$\infty$-operads are defined as those presheaves in $\dSet^G$ with the right lifting property against
-% inner horn inclusions for all $G$-trees,
-% while for strict inner Kan complexes on $\dSet^G$, the non-free $G$-trees are all superfluous.
 
-Additionally, we expect there to be a ``genuine'' analogue
-\[
-	\begin{tikzcd}[column sep =4em]
-		\mathsf{dSet}_G \ar[shift left=1.5]{r} 
-	&
-		\mathsf{sOp}_G,
-            \ar[shift left=1.5]{l}
-      \end{tikzcd}
-\]
-of the Quillen equivalence from \eqref{DSETSOP_EQ}.\\
+
+
+
+
 
 
 
@@ -1583,34 +1756,6 @@ is not essentially surjective.
 
 
 
-
-
-{\color{red} separation}
-
-\begin{example}
-Let $G = \mathbb{Z}_{/2}$,
-$\mathcal{O} \in \mathsf{sOp}^G$
-and $X \in \mathsf{sSet}^G$
-an $\mathcal{O}$-algebra.
-\[
-\begin{tikzcd}[row sep=0]
-	\pi_0\left(\mathcal{O}(2)^
-	{\Gamma_{G}}\right)
-	\times
-	\pi_0(X)
-	\ar{r}
-&
-	\pi_0\left(X^{G}\right)
-\\
-	{([p],[x])}
-	\ar[mapsto]{r}
-&
-	{[p(x,x+1)]}
-\end{tikzcd}
-\]
-\end{example}
-
-
 {\color{red} separation}
 
 
@@ -1626,157 +1771,6 @@ $\mathcal{P} \to \iota_{\**} \mathcal{H}_{\bullet}(X)$.
 
 
 
-
-\todo[inline]{transition}
-
-
-
-The techniques and machinery developed in this paper have
-applications and extensions in a number of topics
-outside the homotopy theory of equivariant operads.
-
-First, this work identifies additional structure on the homotopy groups of an $\O$-algebra $X$
-for any $G$-operad $\O$ and $G$-space $X$:
-While it is clear that $X^H$ is an algebra over $\O^H$, and hence
-$\pi_{\**}(X^H)$ is an algebra over $\pi_{\**}(\O^H)$,
-the genuine equivariant operad paradigm tells us that in fact there are ``twisted structure maps'',
-as
-the coefficient system $\pi_{\**}(\iota_{\**}X)$ is an algebra over the genuine equivariant operad $\pi_{\**}(\iota_{\**}\O)$.
-
-\begin{example}
-      Let $G = \mathbb Z/2 = \set{-1,1}$ be the cyclic group of order 2,
-      and consider the three $G$-trees below;
-      the orbital representations are displayed above the extended representations. 
-      \begin{equation}
-            \begin{tikzpicture}
-                  [grow=up, auto, every node/.style = {font=\footnotesize},level distance = 2.5em]%
-                  \tikzstyle{level 2}=[sibling distance=3.75em]%
-                  \tikzstyle{level 3}=[sibling distance=1.5em]%
-                  \node {$G/e \cdot C_2$}%
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$G/e$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$G/e$}
-                    }
-                    edge from parent node [swap] {$G/e$}
-                  };
-                  % ----------
-                  \node at (5,0) {$G/G \cdot C_2$}%
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$G/G$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$G/G$}
-                    }
-                    edge from parent node [swap] {$G/G$}
-                  };
-                  % ----------
-                  \node at (10,0){$T$}%
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap] {$G/e$}
-                    }
-                    edge from parent node [swap] {$G/G$}
-                  };
-                  % ------------------------------
-                  \tikzstyle{level 2}=[sibling distance=3em]%
-                  \node at (-1.2,-2.5) {}
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$b$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$a$}
-                    }
-                    edge from parent node [swap] {$r$}
-                  };
-                  \node at (1.25,-2.5) {}
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$-b$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$-a$}
-                    }
-                    edge from parent node [swap] {$-r$}
-                  };
-                  % ----------
-                  \node at (5,-2.5) {}
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$d$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$c$}
-                    }
-                    edge from parent node [swap] {$s$}
-                  };
-                  % ----------
-                  \node at (10,-2.5) {}
-                  child{node [dummy] {}
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [swap, near end] {$-e$}
-                    }
-                    child{node [dummy,fill=black] {}
-                      edge from parent node [near end] {$e$}
-                    }
-                    edge from parent node [swap] {$t$}
-                  };
-            \end{tikzpicture}
-      \end{equation}
-      For any simplicial $G$-operad $\O \in \sOp^G$ and $\O$-algebra $X$,
-      these $G$-tree diagrams encode structure maps,
-      by placing elements of $\O(2)$ (resp. $X$) of appropriate isotropy in the root vertices (resp. stumps).
-      The first two trees encode the algebra structure maps
-      \[
-            \O(2) \times X^{\times 2} \to X,
-            \qquad
-            \O(2)^{\Gamma_{G/G \amalg G/G}} \times (X^G)^{\times 2} \to X^G
-      \]
-      (where we note that $\Gamma_{G/G \amalg G/G} = G \leq G \times \mathbb Z/2$, and hence
-      the right equation is the $G$-fixed points of the left).
-      This last $G$-tree encodes the twisted structure map (cf. \eqref{INTFIXPTCOMP EQ})
-      \[
-            \O(2)^{\Gamma_{G/e}} \times X \longto X^G,
-            \qquad
-            (\phi,x) \longmapsto \phi(x, -x).
-      \]
-      % given by the composite
-      % \[
-      %       \O(2)^{\Gamma_{G/e}} \times X \xrightarrow{\mathrm{id} \times \Delta_{\mathbb Z/2}}
-      %       \O(2)^{\Gamma_{G/2}} \times (X \times X)^{\Gamma_{G/2}} \to
-      %       X^G
-      % \]
-      % where $\Delta_{\mathbb Z/2}$ sends $x$ to $(x, -x)$.
-      This induces a twisted action map on homotopy groups, for example
-      \[
-            \pi_0\left(\O(2)^{\Gamma_{G/e}}\right) \times \pi_0(X) \to \pi_0 \left(X^G \right).
-      \]
-\end{example}
-
-A full discussion of algebras over genuine equivariant operads is forthcoming.
-
-{\color{OliveGreen}
-  Let $\Omega_{G, \mathrm{Cl}}^{0,{\P,Y}}$ denote the full subcategory of closed (no leaves) 2-labeled $G$-trees, with $\lambda_a = \set{\P}$ and $\lambda_i = \set{Y}$, such that all inert vertices are stumps.
-  Then, for $\P$ a genuine $G$-operad and $Y$ a coefficient system,
-  the \textit{free $\P$-algebra on $Y$}, $\mathbb F_\P(Y)$, is given by the opposite of the right Kan extension
-  \[
-        \begin{tikzcd}
-              \Omega_{G, \mathrm{Cl}}^{0,\set{\P,Y}} \arrow[r, "\boldsymbol{V}_G^{\set{\P,Y}}"] \arrow[d, "\mathsf{r}"]
-              &
-              \mathsf F_s \wr \Sigma_G \times \mathsf F_s \wr \mathsf O_G \arrow[r, "{(\P,Y)}"]
-              &
-              \mathsf F_s \wr \V^{op} \times \mathsf F_s \wr \V^{op} \arrow[r, "\otimes"]
-              &
-              \V^{op}
-              \\
-              \mathsf O_G \arrow[urrr, "\mathbb F_\P(Y)^{op} = \Ran"']
-        \end{tikzcd}
-  \]
-}
 
 \todo[inline]{transition}
 
@@ -4895,7 +4889,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 \end{remark}
 
 
-\begin{definition}
+\begin{definition}\label{GSYMCAT DEF}
 	The \textit{$G$-symmetric category},
 	whose objects we call \textit{$G$-corollas}, is the full subcategory 
 	$\Sigma_G \hookrightarrow \Omega_{G}^0$ of those $G$-trees
