@@ -7,10 +7,25 @@ C.~Barwick, E.~Dotto, S.~Glasman, D.~Nardin, and J.~Shah.
 \newblock arXiv preprint
   \href{https://arxiv.org/abs/1608.03657}{\texttt{1608.03657}}.
 
+\bibitem{BB17}
+M.~A. Batanin and C.~Berger.
+\newblock Homotopy theory for algebras over polynomial monads.
+\newblock {\em Theory Appl. Categ.}, 32:Paper No. 6, 148--253, 2017.
+
 \bibitem{BM03}
 C.~Berger and I.~Moerdijk.
 \newblock Axiomatic homotopy theory for operads.
 \newblock {\em Commentarii Mathematici Helvetici}, 78:805--831, 2003.
+
+\bibitem{BM09}
+C.~Berger and I.~Moerdijk.
+\newblock On the derived category of an algebra over an operad.
+\newblock {\em Georgian Math. J.}, 16(1):13--28, 2009.
+
+\bibitem{BM08}
+C.~Berger and I.~Moerdijk.
+\newblock On an extension of the notion of {R}eedy category.
+\newblock {\em Math. Z.}, 269(3-4):977--1004, 2011.
 
 \bibitem{BH15}
 A.~J. Blumberg and M.~A. Hill.
@@ -47,6 +62,13 @@ P.~Bonventre and L.~A. Pereira.
 \newblock arXiv preprint
   \href{https://arxiv.org/abs/1908.05440v1}{\texttt{1908.05440v1}}, 2019.
 
+\bibitem{Bo94}
+F.~Borceux.
+\newblock {\em Handbook of categorical algebra. 2}, volume~51 of {\em
+  Encyclopedia of Mathematics and its Applications}.
+\newblock Cambridge University Press, Cambridge, 1994.
+\newblock Categories and structures.
+
 \bibitem{CM11}
 D.-C. Cisinski and I.~Moerdijk.
 \newblock Dendroidal sets as models for homotopy operads.
@@ -67,6 +89,17 @@ S.~R. Costenoble and S.~Waner.
 \newblock Fixed set systems of equivariant infinite loop spaces.
 \newblock {\em Trans. Amer. Math. Soc.}, 326(2):485--505, 1991.
 
+\bibitem{DP07}
+K.~Do\v{s}en and Z.~Petri\'c.
+\newblock Relevant categories and partial functions.
+\newblock {\em Publ. Inst. Math. (Beograd) (N.S.)}, 82(96):17--23, 2007.
+
+\bibitem{EK66}
+S.~Eilenberg and G.~M. Kelly.
+\newblock Closed categories.
+\newblock In {\em Proc. {C}onf. {C}ategorical {A}lgebra ({L}a {J}olla,
+  {C}alif., 1965)}, pages 421--562. Springer, New York, 1966.
+
 \bibitem{Elm83}
 A.~D. Elmendorf.
 \newblock Systems of fixed point sets.
@@ -85,6 +118,12 @@ E.~Getzler and J.~Jones.
   spaces.
 \newblock Available at: \texttt{https://arxiv.org/abs/hep-th/9403055}, 1994.
 
+\bibitem{Gui06}
+B.~Guillou.
+\newblock A short note on models for equivariant homotopy theory.
+\newblock Available at: \url{http://www.ms.uky.edu/~guillou/EquivModels.pdf},
+  2006.
+
 \bibitem{GV12}
 J.~J. Guti\'{e}rrez and R.~M. Vogt.
 \newblock A model structure for coloured operads in symmetric spectra.
@@ -95,6 +134,11 @@ J.~J. Guti\'{e}rrez and D.~White.
 \newblock Encoding equivariant commutativity via operads.
 \newblock {\em Algebr. Geom. Topol.}, 18(5):2919--2962, 2018.
 
+\bibitem{Ha09}
+J.~E. Harper.
+\newblock Homotopy theory of modules over operads in symmetric spectra.
+\newblock {\em Algebr. Geom. Topol.}, 9(3):1637--1680, 2009.
+
 \bibitem{Hatcher}
 A.~Hatcher.
 \newblock {\em Algebraic topology}.
@@ -104,6 +148,12 @@ A.~Hatcher.
 M.~A. Hill, M.~J. Hopkins, and D.~C. Ravenel.
 \newblock On the non-existence of elements of {K}ervaire invariant one.
 \newblock {\em Annals of Mathematics}, 184:1--262, 2016.
+
+\bibitem{Hi03}
+P.~S. Hirschhorn.
+\newblock {\em Model categories and their localizations}, volume~99 of {\em
+  Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society, Providence, RI, 2003.
 
 \bibitem{Hor}
 A.~Horev.
@@ -117,11 +167,32 @@ M.~Hovey.
   Monographs}.
 \newblock American Mathematical Society, Providence, RI, 1999.
 
+\bibitem{Lei16}
+T.~Leister.
+\newblock Monoidal categories with projections.
+\newblock
+  \url{https://golem.ph.utexas.edu/category/2016/08/monoidal_categories_with_proje.html},
+  2016.
+\newblock From "The n-{C}ategory {C}af\'e".
+
 \bibitem{Lu09}
 J.~Lurie.
 \newblock {\em Higher topos theory}, volume 170 of {\em Annals of Mathematics
   Studies}.
 \newblock Princeton University Press, Princeton, NJ, 2009.
+
+\bibitem{Lur17}
+J.~Lurie.
+\newblock Higher algebra.
+\newblock Can be found at
+  \href{http://www.math.harvard.edu/~lurie/papers/HA.pdf}{http://www.math.harvard.edu/~lurie/papers/HA.pdf},
+  2017.
+
+\bibitem{McL}
+S.~Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5 of {\em
+  Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, New York, second edition, 1998.
 
 \bibitem{May72}
 J.~P. May.
@@ -139,6 +210,16 @@ I.~Moerdijk and I.~Weiss.
 \newblock On inner {K}an complexes in the category of dendroidal sets.
 \newblock {\em Adv. Math.}, 221(2):343--389, 2009.
 
+\bibitem{PS18b}
+D.~Pavlov and J.~Scholbach.
+\newblock Admissibility and rectification of colored symmetric operads.
+\newblock {\em J. Topol.}, 11(3):559--601, 2018.
+
+\bibitem{Pe16}
+L.~A. Pereira.
+\newblock Cofibrancy of operadic constructions in positive symmetric spectra.
+\newblock {\em Homology Homotopy Appl.}, 18(2):133--168, 2016.
+
 \bibitem{Pe16b}
 L.~A. Pereira.
 \newblock Equivariant dendroidal sets.
@@ -155,11 +236,22 @@ R.~J. Piacenza.
 \newblock Homotopy theory of diagrams and {CW}-complexes over a category.
 \newblock {\em Canadian Journal of Mathematics}, 43:814--824, 1991.
 
+\bibitem{Ri14}
+E.~Riehl.
+\newblock {\em Categorical homotopy theory}, volume~24 of {\em New Mathematical
+  Monographs}.
+\newblock Cambridge University Press, Cambridge, 2014.
+
 \bibitem{Rub17}
 J.~Rubin.
 \newblock Combinatorial {$N_\infty$} operads.
 \newblock arXiv preprint:
   \href{https://arxiv.org/abs/1705.03585}{\texttt{1705.03585}}, 2017.
+
+\bibitem{SS00}
+S.~Schwede and B.~E. Shipley.
+\newblock Algebras and modules in monoidal model categories.
+\newblock {\em Proc. London Math. Soc. (3)}, 80(2):491--511, 2000.
 
 \bibitem{Spi01}
 M.~Spitzweck.
@@ -171,6 +263,17 @@ M.~Spitzweck.
 M.~Stephan.
 \newblock On equivariant homotopy theory for model categories.
 \newblock {\em Homology Homotopy Appl.}, 18(2):183--208, 2016.
+
+\bibitem{We12}
+I.~Weiss.
+\newblock Broad posets, trees, and the dendroidal category.
+\newblock arXiv preprint:
+  \href{https://arxiv.org/abs/1201.3987}{\texttt{1201.3987}}, 2012.
+
+\bibitem{Wh17}
+D.~White.
+\newblock Model structures on commutative monoids in general model categories.
+\newblock {\em J. Pure Appl. Algebra}, 221(12):3124--3168, 2017.
 
 \bibitem{WY18}
 D.~White and D.~Yau.
