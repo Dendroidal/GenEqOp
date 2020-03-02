@@ -2940,7 +2940,7 @@ Alternatively, $\Omega$ can also be described
 using the algebraic model of 
 \textit{broad posets}
 introduced by Weiss in \cite{We12} and further worked out by the second author in \cite[\S 5]{Pe17}.
-This latter will be our ``official'' model,
+This latter approach will be our ``official'' model,
 though a detailed understanding of broad posets is needed only
 to follow our formal discussion of planar structures in \S \ref{PLASTR SEC}.
 Otherwise, the reader willing to accept the results of \S \ref{PLASTR SEC} should 
@@ -2950,7 +2950,8 @@ $f \leq_d e$ and $e^{\uparrow}$
 to read the remainder of the paper.
 Such understanding can be obtained from 
 \cite[Example 5.10]{Pe17}
-and Example \ref{PLANAREX EX} below.
+and Example \ref{PLANAREX EX} below 
+(see also Example \ref{OUTERTREE EX}).
 
 
 Given a finite group $G$, there is also a category $\Omega_G$
@@ -2962,11 +2963,12 @@ A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
 but here we prefer the alternative definition $\Phi = \Fin \wr \Omega$.
 The category of $G$-forests is then 
 $\Phi^G$, i.e. the category of $G$-objects in $\Phi$. 
-Similarly writing
+Similarly, writing
 $\Fin^G$ for the category of $G$-objects in $\Fin$ and
 identifying the $G$-orbit category as the subcategory
 $\mathsf{O}_G \hookrightarrow \Fin^G$
-of those sets with transitive actions, $\Omega_G$ can be described as given by the pullback of categories
+of those sets with transitive actions, $\Omega_G$ can be described
+by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
 \begin{tikzcd}
 	\Omega_G \ar{r} \ar{d}[swap]{\mathsf{r}} & 
@@ -3108,7 +3110,7 @@ To do so, we first introduce some notation.
 and refer to this poset as the \textit{input path of $e$}.
 \end{notation}
 
-We will repeatedly use the following, which is a consequence of \cite[Cor. 5.26]{Pe17}.
+We will repeatedly use the following, which is a consequence of \cite[Cor. 5.25]{Pe17}.
 
 \begin{lemma}\label{INCOMPNOTOP}
 If $e \leq_d f$, $e \leq_d f'$, then $f,f'$ are $\leq_d$-comparable. 
@@ -3125,9 +3127,10 @@ If $e \leq_d f$, $e \leq_d f'$, then $f,f'$ are $\leq_d$-comparable.
 
 \begin{proof}
 	(a) is immediate from Lemma \ref{INCOMPNOTOP}.
-        To prove (b) we note that
-        the root edge is in every input path, hence
-	$\min (\bigcap_{i} I(e_i))$ exists by (a), and that this is clearly the join $\bigvee_i {e_i}$.
+	To prove (b) we note that
+	the root edge is in every input path.
+	Hence $\min (\bigcap_{i} I(e_i))$ exists by (a), 
+	and this is clearly the join $\bigvee_i {e_i}$.
 \end{proof}
 
 
@@ -3153,7 +3156,7 @@ $b = e' \vee f'$ and $b^{\uparrow}_{e'} = b^{\uparrow}_{e}$, $b^{\uparrow}_{f'} 
 while the condition $b^{\uparrow}_e = b^{\uparrow}_f$ would provide a predecessor of $b$ in $I(e) \cap I(f)$. 
 
 For (b), note that any relation $a <_d b$ factors as 
-$a \leq_d b^{\star}_a <_d b$ for some unique $b^{\**}_a \in b^{\uparrow}$, where uniqueness follows from Lemma \ref{INCOMPNOTOP}. Choosing $a=e$ implies $I(e) \cap b^{\uparrow} = \{b^{\**}_e\}$ and letting $a$ range over edges such that $e \leq_d a <_d b$ shows that $b^{\**}_e$ is in fact the predecessor of $b$.
+$a \leq_d b^{\star}_a <_d b$ for some unique $b^{\**}_a \in b^{\uparrow}$, where uniqueness follows from Lemma \ref{INCOMPNOTOP}. Choosing $a=e$ implies $I(e) \cap b^{\uparrow} = \{b^{\**}_e\}$ and letting $a$ range over edges such that $e \leq_d a <_d b$ shows that $b^{\**}_e$ is in fact the predecessor of $b$ in $I(e)$.
 
 To prove (c) one reduces to the case $e'=e$, in which case it suffices to check $I(e) \cap I(f') = I(e) \cap I(f)$. But if it were otherwise there would exist an edge $a$ satisfying
 $f' \leq_d a <_d f$ and $e \leq_d a$, and this would imply $e \leq_d f$, contradicting our hypothesis.
@@ -3178,7 +3181,7 @@ for some $1\leq i <j \leq 3$, and
 \begin{proof}
 If $c^{\uparrow}_{e_i} \neq c^{\uparrow}_{e_j}$ then
 $c = \min\left(I(e_i) \cap I(e_j)\right) = e_i \vee e_j$, whereas the converse follows from Proposition \ref{INPUTPREDECESSORPROP PROP}(a).
-
+%
 The ``therefore'' part follows by noting that 
 $c^{\uparrow}_{e_1}$, $c^{\uparrow}_{e_2}$, $c^{\uparrow}_{e_3}$
 can not all coincide, or else $c$ would not be the minimum of
@@ -3222,7 +3225,8 @@ $I(e_1) \cap I(e_2) \cap I(e_3)$.
 
 
 Given a set $S$ of size $n$ we write
-$\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will also abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order on $S$.
+$\textsf{Ord}(S) = \mathsf{Iso}(S,\{1,\cdots,n\})$. 
+We will also abuse notation by regarding its objects as pairs $(S,\leq)$ where $\leq$ is a total order on $S$.
 
 
 
@@ -3241,7 +3245,7 @@ $\textsf{Ord}(S) \simeq \mathsf{Iso}(S,\{1,\cdots,n\})$. We will also abuse nota
 
 
 \begin{proof}
-We will keep the notation of Proposition \ref{INPUTPREDECESSORPROP PROP} throughout,
+We will keep the notation in Proposition \ref{INPUTPREDECESSORPROP PROP} throughout,
 i.e. $e, f$ are $\leq_d$-incomparable edges and we write $b = e \vee f$. 
 
 	We first show injectivity,
@@ -3286,10 +3290,9 @@ $c = e \vee g$ and transitivity follows.
 
 
 \begin{remark}\label{CLOSURE REM}
-Proposition \ref{PLANARIZATIONCHAR PROP} states in particular that $\leq_p$
-is the closure of the $\leq_d$ relations  
-and the $\leq_p$ relations within each
-$a^{\uparrow}$
+Proposition \ref{PLANARIZATIONCHAR PROP} states, in particular,
+that $\leq_p$ is the closure of the $\leq_d$ relations  
+and the $\leq_p$ relations within each $a^{\uparrow}$
 under the planar condition in 
 Definition \ref{PLANARIZE DEF}.
 \end{remark}
@@ -3459,9 +3462,9 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
 To illustrate our convention, consider the trees in Example \ref{STANDMODEL EX}. 
 
 There are subtrees
-$F_1 \subset F_2 \subset U$
-where $F_1$ is the subtree with edge set $\{1,2,6,7\}$ and 
-$F_2$ is the subtree with edge set $\{1,2,3,6,7\}$, both with inherited tree and planar structures. 
+$F_1 \hookrightarrow F_2 \hookrightarrow U$,
+where $F_1$ is the subtree with edge set $\{1,2,6,7\}$,
+and $F_2$ is the subtree with edge set $\{1,2,3,6,7\}$, both with inherited tree and planar structures. 
 Applying $(\minus)^s$ to the inclusion diagram on the left below then yields a diagram as on the right.
 \[
 \begin{tikzcd}[row sep = 0.5em,column sep =1.3em]
@@ -3489,7 +3492,7 @@ Applying $(\minus)^s$ to the diagram of underlying identities on the left yields
 
 \begin{example}
 An additional reason to leave the use of $(\minus)^s$ implicit
-as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the action rather than the planarization (which is already implicit anyway).
+as described in Convention \ref{PLANARCONV CON} is that when depicting $G$-trees it is preferable to choose edge labels that describe the $G$-action rather than the planarization (which is already implicit anyway).
 
 For example, for the two groups 
 $G = \mathbb{Z}_{/4}$ and 
@@ -3645,8 +3648,8 @@ However, rather than work with the definition in
 
 
 \begin{remark}
-	By (iii) above
-	the map $F \xrightarrow{\varphi} F'$ is independent whenever $F$ is a tree. 
+	By (iii) above,
+	a map $F \xrightarrow{\varphi} F'$ is independent whenever $F$ is a tree. 
 	More generally, (ii) can hence only fail
 	if $e,\bar{e}$ are in distinct tree components of $F$.
 	Thus, independent maps admit the following informal description:
@@ -3661,7 +3664,7 @@ However, rather than work with the definition in
 	A map $S \xrightarrow{\varphi} T$ in the category $\Omega$ of forests preserving the planar structure $\leq_p$
 	is called a \textit{planar map}.
 	
-	More generally, a map $F \xrightarrow{\varphi} F'$ in one of the categories $\Phi$, $\Phi^G$, $\Omega_G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map compatible with the planar structures $\leq_p$.
+	More generally, a map $F \xrightarrow{\varphi} F'$ in one of the categories $\Phi$, $\Phi^G$, $\Omega_G$ of forests, $G$-forests, $G$-trees is called a \textit{planar map} if it is an independent map that preserves the planar structures $\leq_p$.
 \end{definition}
 
 
@@ -3672,7 +3675,7 @@ condition (iii) in Proposition \ref{INDMAPCHAR PROP}.
 
 
 \begin{remark}\label{INDOMGALT REM}
-In the case of $\Omega_G$
+In the case of $\Omega_G$,
 independence admits simpler characterizations:
 $\varphi$ is independent iff $\varphi$ is injective on each edge orbit iff $\varphi$ is injective on the root orbit.
 
@@ -3692,7 +3695,8 @@ and the fact that for $F \in \Omega_G$ the roots form a single orbit.
 
 \begin{proposition}
 \label{PLANARPULL PROP}
-	Let $F \xrightarrow{\varphi} F'$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi^G$). Then there is a unique factorization 
+	Let $F \xrightarrow{\varphi} F'$ be an independent map in $\Phi$ (or $\Omega$, $\Omega_G$, $\Phi^G$). 
+	One has a unique factorization 
 	\[F \xrightarrow{\simeq} \bar{F} \to F'\]
 	such that $F \xrightarrow{\simeq} \bar{F}$ is an isomorphism and $\bar{F} \to F'$ is planar.
 \end{proposition}
@@ -3700,9 +3704,10 @@ and the fact that for $F \in \Omega_G$ the roots form a single orbit.
 \begin{proof}
 We need to show that there is a unique planar structure 
 $\leq_p^{\bar{F}}$ on the underlying forest of $F$ making the underlying map a planar map.
-Simplicity of the broad poset $F'$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
+Simplicity \cite[Def. 5.3]{Pe17}
+of the broad poset $F'$ ensures that for any vertex $e^{\uparrow} \leq e$ of $F$ the edges in $\varphi(e^{\uparrow})$ are all distinct while independence of $\varphi$ likewise ensures that the edges in $\varphi(\underline{r}_F)$ are distinct.
 By (the forest version of) Proposition
-\ref{PLANARIZATIONCHAR PROP}
+\ref{PLANARIZATIONCHAR PROP},
 the only possible planar structure $\leq_p^{\bar{F}}$
 is the one which orders each set $e^{\uparrow}$ and the root tuple $\underline{r}_F$ according to their images.
 The claim that $\varphi$ is then planar follows from 
@@ -3716,24 +3721,22 @@ cf. Proposition \ref{INDMAPCHAR PROP}(ii).
 
 
 \begin{remark}\label{PULLPLANAR REM}
-Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back along independent maps. However, they can not always be pushed forward. As a counter-example, in the setting of Example \ref{STANDMODEL EX}, consider the map $C \to T_1$ defined by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
+Proposition \ref{PLANARPULL PROP} says that planar structures can be pulled back along independent maps. However, they can not always be pushed forward. As a counter-example, in the setting of Example \ref{STANDMODEL EX}, consider the map $C \to T_1$ given by $1 \mapsto 1$, $2 \mapsto 4$, $3 \mapsto 2$, $4 \mapsto 5$.
 \end{remark}
 
 
-%%% PASTE: root pullback stuffs
-
-We end this section with a different type of pullback.
-Indeed, the reader may have noted
-that it follows from 
+We end this section by discussing a different type of pullback.
+The reader may have noticed that it follows from 
 Proposition \ref{GROTHSTAB PROP}
 that both vertical maps in \eqref{OGDEF EQ}
 are split Grothendieck fibrations. We now introduce some terminology.
+
 
 \begin{definition}\label{ROOTPULL DEF}
 The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
 in \eqref{OGDEF EQ} is called the \textit{root functor}.
 
-Further, fiber maps (i.e. maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps} and pullbacks with respect to $\mathsf{r}$ are called
+Further, fiber maps (those maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps}, and pullbacks with respect to $\mathsf{r}$ are called
 \textit{root pullbacks}.
 \end{definition}
 
@@ -3746,12 +3749,14 @@ The exact name choice is meant to accentuate the connection with another key fun
 described in \S \ref{LRVERT SEC},
 which we call the \textit{leaf-root functor}.
 
-Further, unpacking the construction in \eqref{OGDEF EQ}, one sees that the pullback of the $G$-tree
-$T = (T_x)_{x \in X}$ with structure maps $T_x \to T_{g x}$
+Further, unpacking the construction in \eqref{OGDEF EQ}, one sees that,
+for a $G$-tree $T = (T_x)_{x \in X}$
+with structure maps $T_x \to T_{g x}$,
+the pullback of $T$
 along the map 
 $\varphi \colon Y \to X$ in $\mathsf{O}_G$
 is simply the $G$-tree
-$(T_{\varphi(y)})_{y \in Y}$
+$\varphi^{\**}T=(T_{\varphi(y)})_{y \in Y}$
 with structure maps 
 $T_{\varphi(y)} \to T_{g \varphi(y)} = T_{\varphi(g y)}$.
 
@@ -3774,13 +3779,13 @@ The pullback $\tau^{\**} T$ along the map $\tau$
 is obtained by interchanging the two tree components of $T$,
 as in the top depiction of $\tau^{\**} T$. 
 However, one drawback of this top depiction 
-is that the edge orbit generators $a,b,c$
+is that the edge orbit generators $a,b,c$ now
 appear in the middle of the forest.
 By choosing the leftmost 
 %(i.e. minimal with respect to $\leq_p$)
 edge orbit generators
-$d = i a$, $e = i b$, $f = i c$ one obtains the
-bottom depiction of $\tau^{\**} T$. 
+$d = i a$, $e = i b$, $f = i c$,
+one obtains the bottom depiction of $\tau^{\**} T$. 
 
 For the pullback $\pi^{\**} S$,
 since $\pi$ folds two points into one,
@@ -3788,10 +3793,10 @@ the underlying forest of $\pi^{\**} S$
 consists of two copies of the underlying tree of $S$,
 with $\pi^{\**}S \to S$
 folding those copies while respecting the planarizations.
-Top depiction of $\pi^{\**} S$ then
+The top depiction of $\pi^{\**} S$ then
 chooses edge orbit generators 
 $a,b,c,\bar{a},\bar{b}$
-that are as left as possible among edges 
+that are as left as possible while also %among edges 
 lifting the generators $a,b,c$ of $S$.
 The bottom depiction of $\pi^{\**} S$,
 which sets $d = i \bar{a}$, $e = i \bar{b}$, 
@@ -3832,7 +3837,7 @@ chooses the leftmost possible generators.
 					edge from parent node [near end] {$i a$}}
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt,font=\normalsize]{$T$};
 	\end{scope}
 	\begin{scope}[yshift=4em]
 		\node at  (3,0) {}
@@ -3865,7 +3870,7 @@ chooses the leftmost possible generators.
 					edge from parent node [near end] {$i a$}}
 				edge from parent node {$i b$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt,font=\normalsize]{$\tau^{\**}T$};
 	\end{scope}
 	\begin{scope}[yshift=-4em]
 		\node at  (0,0) {}
@@ -3898,10 +3903,10 @@ chooses the leftmost possible generators.
 					edge from parent node [near end] {$\phantom{+1}-i d$}}
 				edge from parent node {$i e$}}
 			edge from parent node [swap] {$i f$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\tau^{\**}T$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt,font=\normalsize]{$\tau^{\**}T$};
 	\end{scope}
 	\begin{scope}[yshift=12em,xshift=20em]
-		\node at  (1.5,0) {$S$}
+		\node at  (1.5,0) [font=\normalsize] {$S$}
 			child{node [dummy] {}
 				child[sibling distance = 4.25em]{node [dummy] {}
 					child[sibling distance = 1em]{
@@ -3948,7 +3953,7 @@ chooses the leftmost possible generators.
 					edge from parent node [near end] {$\phantom{j}\bar{a}$}}
 				edge from parent node {$\bar{b}$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\pi^{\**}S$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt,font=\normalsize]{$\pi^{\**}S$};
 	\end{scope}
 	\begin{scope}[yshift=-4em,xshift=20em]
 		\node at  (0,0) {}
@@ -3981,7 +3986,7 @@ chooses the leftmost possible generators.
 					edge from parent node [near end] {$\phantom{+1}i d$}}
 				edge from parent node {$i e$}}
 			edge from parent node [swap] {$i c$}};
-		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt]{$\pi^{\**}S$};
+		\draw[decorate,decoration={brace,amplitude=2.5pt}] (3.1,0) -- (-0.1,0) node[midway,inner sep=4pt,font=\normalsize]{$\pi^{\**}S$};
 	\end{scope}
 	\end{tikzpicture}
 \]
