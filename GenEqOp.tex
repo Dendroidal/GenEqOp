@@ -1900,8 +1900,7 @@ Appendix \ref{TRANSKAN AP}
 provides the proof of a lengthy technical result needed when establishing the filtrations in \S \ref{FREE_EXTENSIONS_SECTION}.
 
 Lastly, Appendix \ref{NERVE AP} proves Theorem \ref{NERVE THM},
-which compares the description of 
-genuine operads used in this paper 
+which compares the description of genuine operads used in this paper 
 with the description used in \cite{BP_edss}.
 
 
@@ -1960,7 +1959,7 @@ with the description used in \cite{BP_edss}.
 
 % We now give a brief overview of the remaining sections.
 
-% \todo[inline]{come back}
+
 
 % In \textbf{\hyperref[PRELIM_SECTION]{Section \ref{PRELIM_SECTION}: Preliminaries}} we identify the major categorical constructions we will be using throughout the paper, as well as establish notion and background material.
 
@@ -1994,13 +1993,13 @@ with the description used in \cite{BP_edss}.
 
 \subsection{Grothendieck fibrations}\label{GROTHFIB REF}
 
-% \nomenclature[M]{$\pi \colon \mathcal E \to \mathcal B$}{Grothendieck fibration (\S \ref{GROTHFIB REF})}
+
 
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
 is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
 \index{Grothendieck fibrations!1GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$}
-if for every arrow 
+if, for every arrow 
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
 there exists a \emph{cartesian arrow}
@@ -2044,8 +2043,7 @@ A map of Grothendieck fibrations (resp. split fibrations) is then a commutative 
 	& \mathcal{B}
 \end{tikzcd}
 \end{equation}
-such that $\delta$ preserves cartesian arrows (pullbacks).
-
+such that $\delta$ preserves cartesian arrows (resp. pullbacks).
 
 There is a well known equivalence between Grothendieck fibrations over $\mathcal{B}$ and contravariant pseudo-functors
 $\mathcal{B}^{op} \to \mathsf{Cat}$,
@@ -2081,8 +2079,9 @@ $(\mathcal{B}^{op} \ltimes
 \end{definition}
 
 
-One useful property of Grothendieck fibrations is that
-right Kan extensions can be computed using fibers, i.e., 
+One useful property of Grothendieck fibrations
+$\pi \colon \mathcal{E} \to \mathcal{B}$
+is that right Kan extensions can be computed using fibers, i.e., 
 given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category $\mathcal{V}$ one has
 \begin{equation}\label{FIBERKAN EQ}
 	\mathsf{Ran}_{\pi}F (b)
@@ -2103,7 +2102,8 @@ $\mathcal{E}_b \hookrightarrow b \downarrow \mathcal{E}$, so that $\mathcal{E}_b
 $b \downarrow \mathcal{E}$,
 a well known sufficient condition for initiality.
 In practice, we will also need a generalization of the Kan extension formula \eqref{FIBERKAN EQ} for maps of Grothendieck fibrations as in \eqref{GROTHFIBMAP EQ}.
-Keeping the notation therein, given an $\bar{e} \in \bar{\mathcal{E}}$ we will write 
+Keeping the notation therein, 
+given $\bar{e} \in \bar{\mathcal{E}}$ we write 
 $\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$
 \index{categories!undercategory@$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow \bar{e} \downarrow \mathcal{E}$}
@@ -2136,7 +2136,7 @@ $
 	(e,f\colon\bar{e} \to \delta(e))
 \mapsto
 	\left(
-	(\pi(f)^{\**}e, \bar{e} \to \delta \pi(f)^{\**}(e))
+	\pi(f)^{\**}e, \bar{e} \to \delta \pi(f)^{\**}(e)
 	\right)
 $
 (where $\delta \pi(f)^{\**} = \bar{\pi}^{\**}(f) \delta$) is  right adjoint to the inclusion
@@ -2240,7 +2240,7 @@ $(c_i)_{i \in I}$ is given by
 \index{wreath products!DELTAI@$\delta^i$}
 \index{wreath products!SIGMAI@$\sigma^i$}
       \label{FIN_COA_COS_NOT}
-Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
+Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$,
 one can regard the collection of categories 
 $\Fin^{\wr n+1 }\wr \C = \Fin^{\wr \{0,\cdots,n\}} \wr \C $ for $n \geq -1$
  as a coaugmented cosimplicial object in $\mathsf{Cat}$.
@@ -2347,7 +2347,7 @@ in the diagrams below coincide.
 \arrow[Leftrightarrow, from=Vtt2, to=FFV, shorten <=0.10cm,shorten >=0.10cm,"\Fin \wr \alpha"]
 \end{tikzcd}
 \end{equation}
-Similarly, $\alpha$ is unital in the sense that both of the following diagrams strictly commute or, more precisely,
+Similarly, $\alpha$ is unital in the sense that the diagrams below commute or, more precisely,
 the composite natural transformation in either diagram is the identity for the functor 
 $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 \begin{equation}\label{COHER3 EQ}
@@ -2388,7 +2388,7 @@ $\coprod \colon \Fin \wr \mathcal{V} \to \mathcal{V}$.
 \begin{remark}
 \label{SIGMA_WR_REM}
 More generally, if $\mathcal{V}$ is an arbitrary
-symmetric monoidal category, one always has a functor 
+symmetric monoidal category, one has a functor 
 $\Sigma \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
 (where as usual $\Sigma \hookrightarrow \Fin$ denotes the skeleton of finite sets and isomorphisms) satisfying the obvious analogues of
 \eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ},
@@ -2417,7 +2417,10 @@ obtained by combining
 $\alpha_{((A,B),(C))}$ 
 and
 $\alpha_{((A),(B,C))}$.
-The pentagon axiom is then checked by combining \textit{six} instances of each of the squares in \eqref{COHER2 EQ} (i.e. twelve squares total), most of which are obvious except for the fact that the $(A\otimes B) \otimes (C \otimes D)$ vertex of the pentagon contributes two pairs of squares rather than just one, with each pair corresponding to the two alternate expressions 
+The pentagon axiom is then checked by combining \textit{six} instances of each of the squares in \eqref{COHER2 EQ} 
+(i.e. twelve squares total), most of which are obvious except for the fact that the $(A\otimes B) \otimes (C \otimes D)$ vertex of the pentagon contributes two pairs of squares 
+as in \eqref{COHER2 EQ} rather than just one, 
+with each pair corresponding to the two alternate expressions 
 $((A \otimes B)) \otimes ((C) \otimes (D))$ and 
 $((A) \otimes (B)) \otimes ((C \otimes D))$.
 \end{remark}
@@ -2568,7 +2571,7 @@ Finally, we note that if a symmetric monoidal category has both diagonals and pr
 
 
 \begin{remark}
-	Extending Notation \ref{FIN_COA_COS_NOT} one sees that 
+	Extending Notation \ref{FIN_COA_COS_NOT}, one sees that 
 	$\Fin \wr (\minus)$, 
 	$\Fin_i \wr (\minus)$,
 	$\Fin_s \wr (\minus)$,
@@ -2599,8 +2602,8 @@ that will be used in \S \ref{GENUINE_OP_MONAD_SECTION}.
 Given a map 
 $(\phi,(f_i)) \colon
 (b'_i)_{i \in I} \to (b_j)_{j \in J}$ 
-in $\Fin \wr \mathcal{B}$
-and object $(e_j)_{j \in J}$ one readily checks that its pullback can be defined by $(f^{\**}_{\phi(i)}e_{\phi(i)})_{i \in I}$.
+in $\Fin \wr \mathcal{B}$ and object $(e_j)_{j \in J}$,
+one readily checks that its pullback can be defined by $(f^{\**}_{\phi(i)}e_{\phi(i)})_{i \in I}$.
 \end{proof}
 
 
@@ -2649,17 +2652,21 @@ commutes with colimits in each variable, and the leftmost diagram
 	\arrow[Leftarrow, from=FD, to=FF,shorten <=0.10cm]
 	\end{tikzcd}
 \end{equation}
-is a left Kan extension diagram then so is the composite of the rightmost diagram. 
+is a left Kan extension diagram,
+then so is the composite of the rightmost diagram. 
 \end{lemma}
 
 
 \begin{proof}
-	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning \eqref{WRRAN EQ} amounts to showing that for each $(d_i) \in \Fin_s \wr \mathcal{D}$ one has natural isomorphisms
+	Unpacking definitions using the pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL} or \eqref{FIBERKAN EQ}), the claim concerning \eqref{WRRAN EQ} amounts to showing that,
+	for each $(d_i) \in \Fin_s \wr \mathcal{D}$,
+	one has natural isomorphisms
 	\begin{equation}\label{POINTKAN EQ}
 	\underset{((d_i) \to (kc_j))\in
 	\left( (d_i) \downarrow \Fin_s \wr \C \right) }{\lim} {\left(\bigotimes_j{G(c_j)}\right)}
 		\simeq	
-	\bigotimes_i \underset{(d_i  \to kc_i) \in d_i \downarrow \C}{\lim}
+	\bigotimes_i \underset{(d_i  \to kc_i) \in 
+		(d_i \downarrow \C)}{\lim}
 	\left(G(c_i)\right).
 	\end{equation}
 Proposition \ref{FIBERKANMAP PROP} now applies to 
