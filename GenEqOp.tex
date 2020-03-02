@@ -2798,16 +2798,15 @@ $T^{\times \alpha^{\**}\lambda} \alpha^{\**} =
 is a map of monads on $\C^{\times m}$.
 
 Hence, since $T^{\times \lambda} \alpha_!$ is a right 
-$\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module, 
-it is also a right $T^{\times \lambda'}$-module\footnote{
-Recall that a right (resp. left) module
-over a monad $T$ on $\mathcal{C}$
-is a functor $M \colon \mathcal{C} \to \mathcal{D}$
-(resp. $N \colon \mathcal{D} \to \mathcal{C}$)
-together with an action natural transformation
-$M \circ T \Rightarrow M$
-(resp. $T \circ N \Rightarrow N$)
-that is suitably associative and unital.}
+$\alpha^{\**} T^{\times \lambda}\alpha_{!}$-module\footnote{
+	Recall that a right (resp. left) module
+	over a monad $T$ on $\mathcal{C}$
+	is a functor $M \colon \mathcal{C} \to \mathcal{D}$
+	(resp. $N \colon \mathcal{D} \to \mathcal{C}$)
+	together with an action map $M \circ T \Rightarrow M$
+	(resp. $T \circ N \Rightarrow N$)
+	that is suitably associative and unital.}, 
+it is also a right $T^{\times \lambda'}$-module
 whenever
 $\lambda' \leq \alpha^{\**} \lambda$.
 Finally, the natural map 
@@ -2872,7 +2871,6 @@ whenever $\lambda' \leq \alpha^{\**} \lambda$.
 
 \begin{remark}\label{PRECOMPPOSTCOMP REM}
 We unpack 
-%the content of 
 \eqref{MONADFUNCTORALPHADOU EQ} for 
 $\alpha \colon \{1,\cdots,m\} \to \**$ a map
 %the unique map 
@@ -2892,7 +2890,9 @@ $\coprod \circ T^{\times \lambda}
 \Rightarrow 
 T \circ \coprod$
 between right $T^{\times \lambda}$-modules
-which gives commutative diagrams
+which,
+for each collection $\left( A_j \right)_{1\leq j \leq m}$ in $\mathcal{C}^{\times m}$,
+gives commutative diagrams
 \begin{equation}\label{RIGHTMODULETMAPAUX EQ}
 \begin{tikzcd}
 	\coprod_{j \in \lambda_a} TT A_j \amalg \coprod_{j \in \lambda_i} A_j
@@ -2904,7 +2904,6 @@ which gives commutative diagrams
 		T\left( \coprod_{j \in \lambda_a} A_j \amalg \coprod_{j \in \lambda_i} A_j \right)
 \end{tikzcd}
 \end{equation}
-for each collection $\left( A_j \right)_{1\leq j \leq m}$ in $\mathcal{C}^{\times m}$,
 where the vertical maps
 come from the right $T^{\times \lambda}$-module structure.
 Writing $\mathbin{\check{\amalg}}$ for the coproduct of $T$-algebras and recalling the canonical identifications 
