@@ -7,17 +7,17 @@
 \indexentry{categories!OpG@$\mathcal P \in \Op_G$|hyperpage}{5}
 \indexentry{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{8}
 \indexentry{monads!FG@$\mathbb F_G$|hyperpage}{8}
-\indexentry{Wreath products!FIN@$\mathsf{F}$|hyperpage}{14}
-\indexentry{Wreath products!FIN@$\mathsf{F}\wr $|hyperpage}{14}
-\indexentry{Wreath products!DELTAI@$\delta^i$|hyperpage}{14}
-\indexentry{Wreath products!SIGMAI@$\sigma^i$|hyperpage}{14}
-\indexentry{Wreath products!FINS@$\mathsf{F}_s$|hyperpage}{15}
-\indexentry{Wreath products!FINSWR@$\mathsf{F}_s \wr$|hyperpage}{15}
-\indexentry{Broadvert@$e^{\uparrow} \leq e$|hyperpage}{19}
-\indexentry{Broadvert@$\underline{e} \leq e$|hyperpage}{19}
-\indexentry{UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
-\indexentry{Gvertex@$v_{Ge}$|hyperpage}{31}
-\indexentry{Gvertexsubtree@$T_{v_{Ge}}$|hyperpage}{31}
-\indexentry{SVGE@$S_{v_{Ge}}$|hyperpage}{33}
+\indexentry{wreath products!FIN@$\mathsf{F}$|hyperpage}{14}
+\indexentry{wreath products!FIN@$\mathsf{F}\wr $|hyperpage}{14}
+\indexentry{wreath products!DELTAI@$\delta^i$|hyperpage}{14}
+\indexentry{wreath products!SIGMAI@$\sigma^i$|hyperpage}{14}
+\indexentry{wreath products!FINS@$\mathsf{F}_s$|hyperpage}{15}
+\indexentry{wreath products!FINSWR@$\mathsf{F}_s \wr$|hyperpage}{15}
+\indexentry{vertices/outer subtrees!Broadvert@$e^{\uparrow} \leq e$|hyperpage}{19}
+\indexentry{vertices/outer subtrees!Broadvert@$\underline{e} \leq e$|hyperpage}{19}
+\indexentry{vertices/outer subtrees!UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
+\indexentry{vertices/outer subtrees!Gvertex@$v_{Ge}$|hyperpage}{31}
+\indexentry{vertices/outer subtrees!Gvertexsubtree@$T_{v_{Ge}}$|hyperpage}{31}
+\indexentry{vertices/outer subtrees!SVGE@$S_{v_{Ge}}$|hyperpage}{33}
 \indexentry{iotau@$\iota^{\**}$|hyperpage}{45}
 \indexentry{iotal@$\iota_{\**}$|hyperpage}{45}

@@ -318,7 +318,8 @@ In particular, while an
  it nonetheless specifies such maps ``uniquely up to homotopy''.
 %Moreover, May showed that these operads encoded infinite loop spaces (and hence connective spectra). 
 
-$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible. That is, for each subgroup $\Gamma \leq \Sigma_n$ one has
+$E_\infty$-operads are characterized by the homotopy type of their levels $\O(n)$: $\O$ is $E_\infty$ if and only if each $\O(n)$ is $\Sigma_n$-free and contractible. That is, for each subgroup $\Gamma \leq \Sigma_n$,
+the homotopy type of the $\Gamma$-fixed points is
 \[
 %\mbox{For $\Gamma \leq \Sigma_n$,} \qquad 
 \O(n)^\Gamma \sim
@@ -344,7 +345,7 @@ and, moreover,
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
 These naive equivalences differ from the equivalences in ``genuine equivariant homotopy theory'',
-where a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
+where (for $G$ a group) a map of $G$-spaces $X \to Y$ is deemed a $G$-equivalence only if
 the induced fix point maps $X^H \to Y^H$ are weak equivalences for all $H \leq G$.
 This contrast hints at a number of novel subtleties that appear in the study of equivariant operads, which we now discuss.
 
@@ -373,8 +374,7 @@ To see why, we consider a homotopical replacement for $\mathsf{Com}$ using this 
 %	\item[(i)] $\O(n)$ is $\Sigma_n$-free and;
 %	\item[(ii)] $\O(n)$ is contractible.
 %\end{inparaenum}
-if one simply equips an $E_{\infty}$-operad $\O$ with a trivial $G$-action, the resulting $G$-operad has fixed points for each subgroup $\Gamma \leq G \times \Sigma_n$
-determined by
+if one simply equips an $E_{\infty}$-operad $\O$ with a trivial $G$-action, the resulting $G$-operad has fixed points for each subgroup $\Gamma \leq G \times \Sigma_n$ described by
 \begin{equation}\label{NAIVEGEINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
@@ -448,7 +448,8 @@ and acts diagonally on each factor
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
-ring multiplication further induces so called \textit{norm maps}
+ring multiplication further induces
+$G$-equivariant \textit{norm maps}
 \begin{equation}\label{NORMMAPS EQ}
 	N^X \! R \to R.
 \end{equation}
@@ -478,7 +479,7 @@ using the natural
 $(G \times \Sigma_n)$-action on $R^{\wedge n}$,
 the $H$-action on $N^X R \simeq R^{\wedge n}$
 is obtained via the obvious identification
-$H \simeq \Gamma_X$.
+$H \simeq \Gamma_X$, cf. \eqref{GRAPHSUBIN EQ}.
 %
 It then follows that,
 for any $\mathcal{O}$-algebra $R$,
@@ -507,7 +508,7 @@ while the maximal type is that of the $G$-$E_{\infty}$-operads in \eqref{GENGEIN
 The remaining types, which interpolate between 
 % $G$-trivial $E_{\infty}$ and $G$-$E_{\infty}$,
 the two,
-can hence be thought of as encoding varying degrees of ``up to homotopy equivariant commutativity''.
+can hence be thought of as encoding varying degrees of ``equivariant commutativity up to homotopy''.
 More concretely, each type of $N_{\infty}$-operad is determined by a collection
 $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 \index{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
@@ -524,7 +525,8 @@ with an operad $\O$ being called a
 \end{equation}
 Such collections $\mathcal{F}$ are, however, far from arbitrary, with much of the work in \cite[\S 3]{BH15} spent cataloging a number of closure conditions that these $\mathcal{F}$ must satisfy.
 The simplest of these conditions
-state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first two conditions, which are common in equivariant homotopy theory,
+state that each $\mathcal{F}_n$ is a \textit{family}, i.e. closed under subgroups and conjugation. These first two conditions, 
+which are ubiquitous in equivariant homotopy theory,
 are a simple consequence of each $\O(n)$ being a space.
 However, the remaining conditions, 
 all of which involve $\mathcal{F}_n$ for various $n$ simultaneously and are a consequence of operadic multiplication,
@@ -539,7 +541,8 @@ The precise conditions are collected in
 \cite[Def. 3.22]{BH15},
 which also introduces the term \textit{indexing system} for 
 an $\mathcal{F}$ satisfying all of those conditions.
-A main result of \cite[\S 4]{BH15} is then that whenever an $N\mathcal F$-operad $\O$ as in \eqref{NFINFTY EQ} exists,
+A main result of \cite[\S 4]{BH15} is then that,
+whenever an $N\mathcal F$-operad $\O$ as in \eqref{NFINFTY EQ} exists,
 the associated collection $\mathcal{F}$ must be an indexing system.
 However, the converse statement, that given any indexing system $\mathcal{F}$ such an $\O$ can be produced, was left as a conjecture.
 
@@ -603,7 +606,7 @@ on $\mathsf{Top}^G$ are detected on all fixed points and
 the weak equivalences (and fibrations)
 on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of 
 \textit{coefficient systems}
-are detected at each presheaf level.
+are detected at each level of the presheaves.
 Noting that the fixed point characterization of $E \mathcal{F}$-spaces defines a natural object 
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by
 \index{DeltaF@$\delta_{\mathcal F}$}
@@ -746,8 +749,9 @@ encodes the operadic composition
 \begin{equation}\label{COMPEX EQ}
 	\O(3) \times \O(2) \times \O(3) \times \O(0) \to \O(5)
 \end{equation}
-where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes/vertices (i.e. circles) in the tree $T$, with arity given by number of incoming edges (i.e. edges immediately above)
-and the output $\O(5)$ has arity given by counting leaves (i.e. edges at the top, not capped by a node).
+where the inputs $\O(3), \O(2), \O(3), \O(0)$ correspond to the nodes/vertices (i.e. circles) in the tree $T$, with arity given by number of incoming edges (i.e. edges immediately above),
+and the arity of the output $\O(5)$ is given by counting leaves
+(i.e. edges at the top, not capped by a node).
 %
 Before recalling equivariant trees, 
 it is worth making the connection between 
@@ -759,6 +763,7 @@ Recall that colored operads,
 also known as multicategories,
 are a generalization of the notion of category
 where each arrow/operation
+$(c_1,\cdots,c_n) \to c_0$
 has multiple inputs but a single output.}
 $\Omega(T)$,
 as follows.
@@ -884,10 +889,11 @@ below and
 	\end{tikzpicture}%
 \end{equation}%
 Here, the expanded representation of $T$ is just
-a forest with edges labels that indicate the $G$-action.
+a forest with edge labels that indicate the $G$-action.
 Note that all edges are conjugate to one of the 
 edges $a,b,c,d$ which have, respectively, stabilizers $L, K, K, H$.
-For example, the labels of $T$ imply that $\pm i d = \pm k d$ and $\pm j d = \pm d = d$.
+For example, the labels of $T$ imply that 
+$\pm j d = \pm d$ and $\pm i d = \pm k d$.
 Given the expanded representation,
 the orbital representation is  
 obtained by collapsing each edge orbit into a single edge,
@@ -1029,7 +1035,9 @@ must satisfy associativity, unitality, compatibility with restriction maps, and 
 Rather than making such compatibilities explicit, however, we will find it preferable for our purposes to simply define genuine equivariant operads intrinsically in terms of $G$-trees.
 
 
-We end this introduction with an alternative perspective on the role of genuine equivariant operads.
+We end this introduction with an alternative perspective
+(further expounded in \S \ref{CONTEX SEC})
+on the role of genuine operads.
 The Elmendorf-Piacenza theorem in 
 \eqref{COFADJINT EQ}
 is ultimately a strengthening of the basic observation that the homotopy groups
@@ -1038,17 +1046,15 @@ Similarly, the generalized
 Elmendorf-Piacenza result \cite[Thm. 3.17]{Ste16}
 applied to the category 
 $\mathcal{V}=\mathsf{sCat}$
-of simplicial categories strengthens 
-the observation that 
-for a $G$-simplicial category $\C$
+of simplicial categories strengthens the observation that, 
+for a $G$-simplicial category $\C$,
 the associated homotopy category
 $\text{ho}(\mathcal{C})$
 is a coefficient system of categories rather than just a $G$-category.
 Likewise, Theorem \ref{MAINQUILLENEQUIV THM}
-strengthens the (not so basic) observation that for a $G$-simplicial operad $\O$ the associated homotopy operad 
+strengthens the (not so basic) observation that, for a $G$-simplicial operad $\O$, the associated homotopy operad 
 $\text{ho}(\mathcal{O})$
-is neither just a $G$-operad nor 
-just a coefficient system of operads
+is neither just a $G$-operad nor just a coefficient system of operads,
 but rather the richer algebraic structure that we refer to as a ``genuine equivariant operad''.
 
 
@@ -1183,8 +1189,8 @@ We note that a similar result has also been proven by Guti\'{e}rrez-White in \ci
 Theorem \ref{MAINEXIST1 THM}
 is proven in \S \ref{MAINEXIST SEC}.
 Condition (i) can be found in 
-\cite[Def. 2.1.17]{Ho98} while (ii) 
-can be found in \cite[Def. 4.2.6]{Ho98}.
+\cite[Def. 2.1.17]{Ho98},
+while (ii) can be found in \cite[Def. 4.2.6]{Ho98}.
 The additional conditions (iii) and (iv),
 which are less standard, are discussed in 
 \S \ref{FAMILY_SEC} and
@@ -1292,9 +1298,12 @@ Blumberg-Hill's indexing systems $\mathcal{F}$
 give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
 and partial $G$-symmetric sequences
-$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
+$\mathsf{Sym_{\mathcal{F}}}(\mathcal{V})
 =
-\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ which are suitably compatible with the monad
+\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$.
+Further, these 
+$\mathsf{Sym_{\mathcal{F}}}(\mathcal{V})$
+are suitably compatible with the monad
 $\mathbb{F}_G$,
 thus giving rise to categories
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
@@ -1406,9 +1415,9 @@ $(\mathcal{V},\otimes)$:
 Theorem \ref{MAINQUILLENEQUIV THM}
 is proven in 
 \S \ref{MAINTHM_PROOF_SECTION}.
-Condition (vi), which is not 
-needed in either of
-Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM}
+Condition (vi), 
+which is not needed in either of
+Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},
 is discussed in 
 \S \ref{PUSHPOW SEC}.
 
@@ -2168,11 +2177,11 @@ We also record the following, the proof of which is straightforward.
 \subsection{Wreath product over finite sets}
 \label{WREATH SEC}
 
-Throughout we will let $\Fin$\index{Wreath products!FIN@$\mathsf{F}$}
+Throughout we will let $\Fin$\index{wreath products!FIN@$\mathsf{F}$}
 denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 
 
-\begin{definition}\index{Wreath products!FIN@$\mathsf{F}\wr $}
+\begin{definition}\index{wreath products!FIN@$\mathsf{F}\wr $}
 	For a category $\C$, we write 
 	$\Fin \wr \C = (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$ 
 	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
@@ -2217,8 +2226,8 @@ $(c_i)_{i \in I}$ is given by
 
  
 \begin{notation}
-\index{Wreath products!DELTAI@$\delta^i$}
-\index{Wreath products!SIGMAI@$\sigma^i$}
+\index{wreath products!DELTAI@$\delta^i$}
+\index{wreath products!SIGMAI@$\sigma^i$}
       \label{FIN_COA_COS_NOT}
 Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
 one can regard the collection of categories 
@@ -2521,8 +2530,8 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 
 
 \begin{remark}\label{FINSURJ REM}
-	\index{Wreath products!FINS@$\mathsf{F}_s$}
-	\index{Wreath products!FINSWR@$\mathsf{F}_s \wr$}
+	\index{wreath products!FINS@$\mathsf{F}_s$}
+	\index{wreath products!FINSWR@$\mathsf{F}_s \wr$}
 	In light of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
 	for the subcategory of surjections,
@@ -3039,7 +3048,7 @@ $2^{\uparrow} = \epsilon$
 (where $\epsilon$ is the empty tuple),
 and $9^{\uparrow}$ is undefined.
 The vertex above $e$ is then encoded by the \emph{broad relation}
-$e^{\uparrow} \leq e$\index{Broadvert@$e^{\uparrow} \leq e$}.
+$e^{\uparrow} \leq e$\index{vertices/outer subtrees!Broadvert@$e^{\uparrow} \leq e$}.
 
 The broad relation notation is meant to suggest a form of 
 \emph{broad associativity}. For example,
@@ -3053,7 +3062,7 @@ The broad relations of $T$ are those relations that are obtained from the vertex
 via broad transitivity, together with reflexive relations
 $e \leq e$.
 Pictorially, a relation 
-$\underline{e} \leq e$\index{Broadvert@$\underline{e} \leq e$} holds 
+$\underline{e} \leq e$\index{vertices/outer subtrees!Broadvert@$\underline{e} \leq e$} holds 
 if there is an outer subtree
 (i.e. a tree subdiagram 
 which contains all edges of $T$ adjacent to its vertices;
@@ -4586,7 +4595,7 @@ the category of tall maps under $T$.
 	we will abbreviate
 	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
 	as simply
-	$U_{e^{\uparrow} \leq e}$\index{UEUPE@$U_{e^{\uparrow} \leq e}$}.
+	$U_{e^{\uparrow} \leq e}$\index{vertices/outer subtrees!UEUPE@$U_{e^{\uparrow} \leq e}$}.
 \end{notation}
 
 
@@ -4935,10 +4944,10 @@ we write $T_{e^{\uparrow}\leq e}$
 as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
 
 Further, each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
-We will prefer to write $G$-vertices as $v_{Ge}$\index{Gvertex@$v_{Ge}$}, 
+We will prefer to write $G$-vertices as $v_{Ge}$\index{vertices/outer subtrees!Gvertex@$v_{Ge}$}, 
 and write
 \begin{equation}\label{TVGE DEF}
-	T_{v_{Ge}}\index{Gvertexsubtree@$T_{v_{Ge}}$} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+	T_{v_{Ge}}\index{vertices/outer subtrees!Gvertexsubtree@$T_{v_{Ge}}$} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
 \end{equation}
 where $Ge$ inherits the planar order.
 \end{notation}
@@ -5258,7 +5267,7 @@ cf. Proposition \ref{INDMAPCHAR PROP}.
 	we write
 	\begin{equation}\label{UEUPEG EQ}
 	S_{v_{Ge}} = 
-	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{SVGE@$S_{v_{Ge}}$}
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{vertices/outer subtrees!SVGE@$S_{v_{Ge}}$}
 	\end{equation}
 \end{notation}
 
