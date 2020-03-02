@@ -30,7 +30,7 @@
 % ---------- indexing ----------`
 
 \usepackage{imakeidx}
-\makeindex[columns=3, title=Glossary of Notation, intoc]
+\makeindex[columns=2, title=Glossary of Notation, intoc]
 
 % ------ New Characters --------------------------------------
 
@@ -1999,13 +1999,13 @@ with the description used in \cite{BP_edss}.
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
 is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
-\index{GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$ (Grothendieck fibration)}
+\index{Grothendieck fibrations!1GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$}
 if for every arrow 
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
 there exists a \emph{cartesian arrow}
 $f^{\**} e \to e$ lifting $f$,
-\index{Grothendieck FibrationCartesian@$f^{\**} e \to e$}
+\index{Grothendieck fibration!Cartesian@$f^{\**} e \to e$}
 i.e. an arrow such that for any choice of horizontal arrows 
 \[
 \begin{tikzcd}[row sep=7pt]
@@ -2061,7 +2061,7 @@ Given a small category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 \end{equation}
 the \textit{covariant Grothendieck construction}
 $\mathcal{B} \ltimes \mathcal{E}_{\bullet}$ (over $\mathcal B$)
-\index{categories!GrothendieckConstruction@$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$}
+\index{Grothendieck fibrations!GrothendieckConstruction@$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$}
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
 $e \in \mathcal{E}_b$ and 
 arrows $(b,e) \to (b',e')$ given by pairs
@@ -2091,7 +2091,7 @@ given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category 
 \simeq
 	\mathsf{lim} F|_{\mathcal{E}_b}
 \end{equation}
-\index{Ran@$\mathsf{Ran}_{\pi}F$ (right Kan extension)}  
+\index{Ran@$\mathsf{Ran}_{\pi}F$}  
 where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL}),
 and the second identification follows by noting that,
 due to the existence of cartesian arrows,
@@ -2219,7 +2219,7 @@ $c_{i_1}, c_{i_2} \in \mathcal{C}$ are isomorphic.
 Writing 
 $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
 \Sigma_{\lambda_k}$
-\index{SigmaLambda@$\Sigma_{\lambda}$}
+\index{subgroups!SigmaLambda@$\Sigma_{\lambda}$}
 and picking representatives $i_j \in \lambda_j$,
 the automorphism group of  
 $(c_i)_{i \in I}$ is given by
@@ -2552,7 +2552,7 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	\textit{symmetric monoidal category with fold maps}
 	as a category $\mathcal{V}$ together with a functor
 	$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
-        \index{$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$}
+        % \index{$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$}
 	satisfying the analogues of  
 	\eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ}.
 	Further, the dual of such $\mathcal{V}$ is called a 
