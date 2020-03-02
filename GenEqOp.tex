@@ -1524,11 +1524,11 @@ Similarly, in
 Heuristically, this need for genuine operads comes from the 
 observation that taking fixed points does not commute with taking 
 homotopy/isomorphism classes
-(see \eqref{ALGTREECOM EQ} below).
+(compare with \eqref{ALGTREECOM EQ} below).
 As such, while the categories in \eqref{DSETSOP_EQ}
 are ``described in terms of $\Omega^{op} \times G$'',
 any construction in those categories involving homotopy classes
-needs to be ``described in terms of $\Omega_G^{op}$''
+needs to be ``described in terms of $\Omega_G^{op}$'',
 so as to account for norm maps.
 
 \begin{remark}\label{COLEREDGEN REM}
@@ -1540,7 +1540,7 @@ so as to account for norm maps.
 	have a \emph{coefficient system} of objects 
 	rather than just a $G-$set of objects.
 	
-	In \cite{BP_edss} we an alternative description 
+	In \cite{BP_edss} we give an alternative description 
 	of genuine operads (of sets) \cite[Def. 3.35]{BP_edss},
 	which includes the colored case, 
 	as the objects of $\mathsf{dSet}_G$
@@ -1553,9 +1553,8 @@ so as to account for norm maps.
 
 \subsubsection*{Algebras over genuine operads}
 
-Just like usual operads,
-genuine operads admit a notion of algebra.
-A full formal definition of such algebras is forthcoming, 
+Just like usual operads, genuine operads admit a notion of algebra.
+The full formal definition of such algebras is forthcoming, 
 but the following example illustrates the main idea.
 
 
@@ -1610,7 +1609,7 @@ child{node [dummy] {}
 where we regard white (resp. black) nodes as corresponding to $\mathcal{O}$ (resp. $X$).
 Then, as in \eqref{INTFIXPTCOMP EQ},
 the tree in \eqref{ALGTREEEX EQ}
-encodes a ``multiplication''
+encodes a multiplication
 (note that $\Gamma_G \leq G \times \Sigma_2$ is the diagonal)
 \begin{equation}\label{ALGTREECOM EQ}
 	\begin{tikzcd}[row sep=0]
@@ -1712,7 +1711,7 @@ we conjecture the following.
 \]
 \end{conjecture}
 
-The key ingredient needed to obtain Conjecture \ref{EPGEN CONJ}
+The key ingredient needed to establish Conjecture \ref{EPGEN CONJ}
 is an analogue of Lemma \ref{MAINLEM LEM}, which we believe holds by a similar analysis.
 
 
@@ -1753,13 +1752,13 @@ is an analogue of Lemma \ref{MAINLEM LEM}, which we believe holds by a similar a
 	
 	Summarizing the above, 
 	Theorem \ref{MAINQUILLENEQUIV THM} 
-	in fact verifies Conjecture \eqref{EPGEN CONJ}
+	hence verifies Conjecture \eqref{EPGEN CONJ}
 	for the operad $\mathcal{T}^{\mathsf{fr}}_G$. 
 	
 	For some extra detail, 
-	including a more precise description of $\mathcal{T}^{\mathsf{fr}}_G$ ,
+	including a more detailed description of $\mathcal{T}^{\mathsf{fr}}_G$ ,
 	see Remark \ref{SOMEMOREDET REM},
-	which discusses the role the map
+	which discusses the role that the map
 	$\mathcal{T} \to \mathcal{T}^{\mathsf{fr}}_G$ 
 	plays ``behind the scenes''  in \S \ref{COMPARISON_REGULAR_SECTION}.
 \end{remark}
@@ -1775,14 +1774,14 @@ the operadic nerve functor $N^\otimes \colon \sOp \to \Op_\infty$ \cite[Def. 2.1
 This construction first converts a simplicial operad $\O$ into
 a simplicial category
 $\O^\otimes \to \Fin_{\**}$
-equipped with a functor to the category of pointed finite sets, which acts like a fibration over a certain wide subcategory,
+equipped with a functor to the category of pointed finite sets, which behaves like a fibration over a certain wide subcategory,
 and then takes the homotopy coherent nerve
 $hcN(\O^\otimes) = N^\otimes(\O)$.
 This process motivates Lurie's definition of an $\infty$-operad in $\sSet$.
 
-In \cite{BNerve}, the first-named author generalizes this process,
-by first building from a genuine equivariant operad $\P$ an
-simplicial category
+In \cite{BNerve}, the first author generalizes this process,
+by first building, from a genuine equivariant operad $\P$, 
+a simplicial category
 $\P^{\otimes} \to \underline{\Fin}_{\**,G}$
 equipped with a partial fibration to the coefficient system of pointed finite $G$-sets (e.g. \cite[Def. 3.3]{BNerve}),
 and then showing that the homotopy coherent nerve $hcN(\P^{\otimes}) = N^{\otimes \P}$
