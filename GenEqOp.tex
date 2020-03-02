@@ -13,7 +13,7 @@
 \usepackage{ifdraft}[pos=0.8]
 \ifdraft{
   \color[RGB]{63,63,63}
-  \pagecolor[RGB]{220,220,204}
+%  \pagecolor[RGB]{220,220,204}
   \usepackage[notref]{showkeys}
   \usepackage{todonotes}
 }
@@ -286,6 +286,8 @@ As an application, we build explicit models for the $N_{\infty}$-operads of Blum
 
 
 \tableofcontents
+
+
 
 \section{Introduction}
 
@@ -1446,6 +1448,7 @@ in \cite[Cor. 5.6]{BH15}
 
 
 \subsection{Context, applications and future work}
+\label{CONTEX SEC}
 
 
 \subsubsection*{Models for equivariant operads with norm maps}
@@ -2165,10 +2168,11 @@ We also record the following, the proof of which is straightforward.
 \subsection{Wreath product over finite sets}
 \label{WREATH SEC}
 
-Throughout we will let $\Fin$ denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
+Throughout we will let $\Fin$\index{Wreath products!FIN@$\mathsf{F}$}
+denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 
 
-\begin{definition}
+\begin{definition}\index{Wreath products!FIN@$\mathsf{F}\wr $}
 	For a category $\C$, we write 
 	$\Fin \wr \C = (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$ 
 	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
@@ -2213,6 +2217,8 @@ $(c_i)_{i \in I}$ is given by
 
  
 \begin{notation}
+\index{Wreath products!DELTAI@$\delta^i$}
+\index{Wreath products!SIGMAI@$\sigma^i$}
       \label{FIN_COA_COS_NOT}
 Using the coproduct functor $\Fin^{\wr 2} = \Fin^{\wr \{{0,1\}}} =\Fin \wr \Fin \xrightarrow{\amalg} \Fin$ (where $\coprod_{i\in I} J_i$ is ordered lexicographically) and the singleton $\{1\} \in \Fin$
 one can regard the collection of categories 
@@ -2515,7 +2521,9 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 
 
 \begin{remark}\label{FINSURJ REM}
-	In lieu of the two previous remarks,
+	\index{Wreath products!FINS@$\mathsf{F}_s$}
+	\index{Wreath products!FINSWR@$\mathsf{F}_s \wr$}
+	In light of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
 	for the subcategory of surjections,
 	we define a 
@@ -6042,11 +6050,6 @@ since we are really defining a ``relative'' analogue of the wreath product
 However, we will prefer $\Omega_{G}^n \wr A$ due to space concerns.
 \end{remark}
 
-\begin{remark}
-The definition of $\Omega_{G}^{n} \wr A$ in (\ref{OMGGNA})
-is unchanged by replacing $\Fin_s$ with $\Fin$. 
-As such, to avoid cluttering the larger diagrams in this section we will from now on often abuse notation by writing simply $\Fin$ instead of $\Fin_s$.
-\end{remark}
 
 
 Our primary interest here will be in the 
@@ -6106,14 +6109,14 @@ Firstly, the functors $V_G = V_G^0$ are defined from the following diagram
 \[
 \begin{tikzcd}[row sep = 1.3em,column sep = 3em]
 	\Omega_{G}^{n+1} \wr A \ar[dashed]{r}{V_G} \ar{d}& 
-	\Fin \wr \Omega_G^n \wr A \ar{r}{\Fin \wr V_{G}^n} \ar{d}&
-	\Fin^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
-	\Fin \wr A \ar{d}
+	\Fin_s \wr \Omega_G^n \wr A \ar{r}{\Fin_s \wr V_{G}^n} \ar{d}&
+	\Fin_s^{\wr 2} \wr A  \ar{d} \ar{r}{\sigma^0} &
+	\Fin_s \wr A \ar{d}
 \\
 	\Omega_{G}^{n+1} \ar{r}{V_G} &
-	\Fin \wr \Omega_{G}^{n} \ar{r}{\Fin \wr V_{G}^{n}} &
-	\Fin^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Omega_{G}^{n} \ar{r}{\Fin_s \wr V_{G}^{n}} &
+	\Fin_s^{\wr 2} \wr \Sigma_G \ar{r}{\sigma^0} &
+	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \]
 by noting that the middle and right squares are pullbacks, 
@@ -6123,7 +6126,7 @@ The higher functors $V_G^k$ are defined exactly as in \eqref{VGDEF EQ}, and the 
 The analogue of Proposition \ref{PIIPROP PROP}(b) is tautological, as pullback arrows for 
 $\Omega_G^n \wr A \to \mathsf{O}_G$
 are defined as compatible pairs of pullbacks in 
-$\Omega_G^n$ and $\Fin \wr A$.
+$\Omega_G^n$ and $\Fin_s \wr A$.
 
 To define $d_i$ we consider the diagram below (for some $i<k$).
 \[
@@ -6131,20 +6134,20 @@ To define $d_i$ we consider the diagram below (for some $i<k$).
 	\Omega_{G}^n \wr A \ar{rrrr}{V_G^{k}} \ar[dashed]{rd}[swap,near end]{d_i} \ar{dd}
 	&&
 	&&
-	|[alias=FFOmegan]|\Fin \wr \Omega_G^{n-k-1} \wr A  \ar[dd] \ar[equal]{rd}
+	|[alias=FFOmegan]|\Fin_s \wr \Omega_G^{n-k-1} \wr A  \ar[dd] \ar[equal]{rd}
 \\
 	&
 	|[alias=Omeganp1]|\Omega_{G}^{n-1} \wr A \ar[crossing over]{rrrr}[swap,near start]{V_G^{k-1}} &&&&
 	|[alias=Omeganp2]|
-	\Fin \wr \Omega_G^{n-k-1} \ar{dd}&
+	\Fin_s \wr \Omega_G^{n-k-1} \ar{dd}&
 \\
 	\Omega_{G}^{n} \ar{rrrr} \ar{rd}[swap,near end]{d_i}&&
 	 &&
-	|[alias=FFOmeganm1]| \Fin \wr \Omega_G^{n-k-1} \ar[rd,equal] 
+	|[alias=FFOmeganm1]| \Fin_s \wr \Omega_G^{n-k-1} \ar[rd,equal] 
 \\
 	&
 	|[alias=Omegan]|\Omega_G^{n-1} \ar{rrrr}[swap,near start]{V_G^{k-1}} &&&&
-	\Fin \wr \Omega_G^{n-k-1} &
+	\Fin_s \wr \Omega_G^{n-k-1} &
 	\arrow[Leftrightarrow, from=Omeganp1, to=FFOmegan,shorten <=0.15cm,shorten >=0.15cm,swap,"\pi_i"]
 	\arrow[Leftrightarrow, from=FFOmeganm1, to=Omegan,shorten <=0.15cm,shorten >=0.15cm]
 	\arrow[from=Omeganp1, to=Omegan,crossing over]
@@ -6170,7 +6173,7 @@ follows by an identical argument.
 \begin{remark}\label{VGDEFA REM}
 Explicitly,
 $V_G^{k} \colon \Omega_{G}^{n} \wr A
-\to \Fin \wr \Omega_{G}^{n-k-1} \wr A $
+\to \Fin_s \wr \Omega_{G}^{n-k-1} \wr A $
 is defined by sending \eqref{OMEGAGNA EQ} to
 \[
 	\left(
@@ -6239,16 +6242,16 @@ compute the limit of the solid part of the diagram below.
 \begin{tikzcd}[row sep = 1.5em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
-	\Fin^{\wr 2} \wr A \ar{r}{\sigma^0} \ar{d}&
-	\Fin \wr A \ar{d}
+	\Fin_s^{\wr 2} \wr A \ar{r}{\sigma^0} \ar{d}&
+	\Fin_s \wr A \ar{d}
 \\
 	\Omega_G^{n+k+1} \ar{r}[swap]{V_G^k} \ar{d}&
-	\Fin \wr \Omega^n_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}&
-	\Fin^{\wr 2} \wr \Sigma_G \ar{r}[swap]{\sigma^0} &
-	\Fin \wr \Sigma_G &
+	\Fin_s \wr \Omega^n_G \ar{r}[swap]{\Fin_s \wr V_G^n} \ar{d}&
+	\Fin_s^{\wr 2} \wr \Sigma_G \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr \Sigma_G &
 \\
 	\Omega_G^k \ar{r}[swap]{V_G^k} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \]
 Associativity follows similarly. 
@@ -6274,12 +6277,12 @@ spans.
 \[
 	\begin{tikzcd}
 	\Omega_G^0 \wr A \ar{r}{V_G} \ar{d}&
-	\Fin \wr A \ar{r} \ar{d}&
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes^{op}} &
+	\Fin_s \wr A \ar{r} \ar{d}&
+	\Fin_s \wr \mathcal{V}^{op} \ar{r}{\otimes^{op}} &
 	\mathcal{V}^{op}
 \\
 	\Omega_{G}^{0} \ar{r}[swap]{V_G} \ar{d} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \\
 	\Sigma_G
 	\end{tikzcd}
@@ -6291,18 +6294,18 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\begin{tikzcd}
 	\Sigma_G \ar[equal]{d}&
 	\Omega_{G}^1 \wr A \ar{r}{V_G} \ar{d}[swap]{d_{0}} \ar{l}&
-	\Fin \wr \Omega_{G}^0 \wr A \ar{r}{\Fin \wr V_G} &
-	|[alias=FFOmega]| \Fin^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
-	\Fin^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r}{\otimes^{op}} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes^{op}} &
+	\Fin_s \wr \Omega_{G}^0 \wr A \ar{r}{\Fin_s \wr V_G} &
+	|[alias=FFOmega]| \Fin_s^{\wr 2} \wr A \ar{d}{\sigma^0} \ar{r} &
+	\Fin_s^{\wr 2} \wr \mathcal{V}^{op} \ar{d}{\sigma^0} \ar{r}{\otimes^{op}} &
+	\Fin_s \wr \mathcal{V}^{op} \ar{r}{\otimes^{op}} &
 	|[alias=dog]|
 	\mathcal{V}^{op} \ar[equal]{d}
 \\
 	\Sigma_G &
 	|[alias=Omega]|\Omega_{G}^{0} \wr A \ar{rr}[swap]{V_G} \ar{l}&&
-	\Fin \wr A \ar{r} &
+	\Fin_s \wr A \ar{r} &
 	|[alias=cat]|
-	\Fin \wr \mathcal{V}^{op} \ar{rr}[swap]{\otimes^{op}} &&
+	\Fin_s \wr \mathcal{V}^{op} \ar{rr}[swap]{\otimes^{op}} &&
 	\mathcal{V}^{op}
 	\arrow[Leftrightarrow, from=FFOmega, to=Omega,shorten <=0.15cm,,shorten >=0.15cm,"\pi_0"]
 	\arrow[Leftrightarrow, from=dog, to=cat,shorten <=0.15cm,,shorten >=0.15cm,"\alpha"]
@@ -6324,8 +6327,8 @@ Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly com
 \\
 	\Sigma_G &
 	\Omega_{G}^{0} \wr A \ar{l} \ar{r}[swap]{V_G}&
-	\Fin \wr A \ar{r} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}[swap]{\otimes^{op}} &
+	\Fin_s \wr A \ar{r} &
+	\Fin_s \wr \mathcal{V}^{op} \ar{r}[swap]{\otimes^{op}} &
 	\mathcal{V}^{op}.
 	\end{tikzcd}
 \end{equation}	
@@ -6339,6 +6342,8 @@ $(N,\mu,\eta)$ is a monad on $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op})$.
 
 
 \begin{proof}
+Throughout the proof we abbreviate $\Fin_s$ as $\Fin$.
+
 The natural transformation component of $\mu \circ (N \mu)$ is given by the composite diagram
 \begin{equation}\label{ASSOCSPAN1 EQ}
 	\begin{tikzcd}[column sep=1em]
@@ -6549,20 +6554,20 @@ $\Omega_G^0 \wr A \to \Omega_G^0$, naturally in $A$.
 The hypothesis that $A \to \Sigma_G$ is a root fibration map
 implies that the rightmost vertical map below 
 is a map of split fibrations over
-$\Fin \wr \mathsf{O}_G$.
+$\Fin_s \wr \mathsf{O}_G$.
 \[
 \begin{tikzcd}
 	\Omega_{G}^0 \wr A \ar{r}{V_G} \ar{d} &
-	\Fin \wr A \ar{d}
+	\Fin_s \wr A \ar{d}
 \\
 	\Omega_{G}^0 \ar{r}[swap]{V_G} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \]
 Since by Lemma \ref{VGPULL LEM} the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
-(over $\mathsf{O}_G$) to pullback arrows in $\Fin \wr \Sigma_G$ (over $\Fin \wr \mathsf{O}_G$), 
+(over $\mathsf{O}_G$) to pullback arrows in $\Fin_s \wr \Sigma_G$ (over $\Fin_s \wr \mathsf{O}_G$), 
 the root pullback arrows in 
-$\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin \wr A$,
+$\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin_s \wr A$,
 and the result follows.
 \end{proof}
 
@@ -6589,12 +6594,12 @@ as in Remark \ref{PULLCOMP REM}.
 \begin{tikzcd}
 	\Omega_{G}^{0} \wr A \ar{r}{V_G} 
 	\ar{d} & 
-	\Fin \wr A  
+	\Fin_s \wr A  
 	\ar{d}  \ar{r}[swap,name=F]{}&
 	\mathcal{V}^{op}
 \\
 	\Omega_{G}^{0} \ar{r}[swap]{V_G} & 
-	|[alias=FEG]|\Fin \wr \Sigma_G \ar{ru}
+	|[alias=FEG]|\Fin_s \wr \Sigma_G \ar{ru}
 \arrow[Rightarrow, from=FEG, to=F,shorten <=0.15cm]
 \end{tikzcd}
 \]
@@ -6609,7 +6614,7 @@ is a right Kan extension diagram then so is the composite diagram.
 \[
 \begin{tikzcd}
 	T \downarrow \Omega_{G}^{0} \wr A \ar{r}{V_G} & 
-	V_G(T) \downarrow \Fin \wr A
+	V_G(T) \downarrow \Fin_s \wr A
 \end{tikzcd}
 \]
 is initial.
@@ -6624,7 +6629,7 @@ $
 \right)
 $
 for the objects of 
-$V_G(T) \downarrow \Fin \wr A$,
+$V_G(T) \downarrow \Fin_s \wr A$,
 with the map $\phi \colon V_G(T) \to V$ and the condition 
 $\rho(A_v) = S_v$ left implicit.
 
@@ -6632,13 +6637,13 @@ By Proposition \ref{FIBERKANMAP PROP}, $T \downarrow \Omega_{G}^{0} \wr A$ has a
 $T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A$
 of those objects such that $T \to S$ is the identity on roots. 
 Similarly, again by Proposition \ref{FIBERKANMAP PROP},
-$V_G(T) \downarrow \Fin \wr A$
+$V_G(T) \downarrow \Fin_s \wr A$
 has an initial subcategory
 \begin{equation}\label{INITCAT EQ} 
 	\left(
 	(T_{v_{Ge}})_{V_G(T)} 
-	\downarrow_{\mathsf{F} \wr \mathsf{O}_G}
-	\mathsf{F} \wr A
+	\downarrow_{\Fin_s \wr \mathsf{O}_G}
+	\Fin_s \wr A
 	\right)
 \simeq
 	\left(
@@ -6646,9 +6651,9 @@ has an initial subcategory
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
 	\right)
 \end{equation}
-of those objects inducing an identity on $\Fin \wr \mathsf{O}_G$. Moreover, 
+of those objects inducing an identity on $\Fin_s \wr \mathsf{O}_G$. Moreover, 
 \eqref{INITCAT EQ} comes together with a right retraction $r$,
-i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin \wr A$, 
+i.e. a right adjoint to the inclusion $i$ into $V_G(T) \downarrow \Fin_s \wr A$, 
 which is built using pullbacks. 
 Explicitly, unpacking the proof of Proposition \ref{FIBERKANMAP PROP} one has that $r$ is given by the assignment
 \begin{equation}\label{RETDES EQ}
@@ -6686,7 +6691,7 @@ $T_{Ge}$ and implicitly assume that tuples with index $G e$ (resp. $G f$) run ov
 \begin{tikzcd}[column sep =1.5em , row sep =0em]
 	T \downarrow_{\mathsf{r}} \Omega_{G}^{0} \wr A 
 	\ar{r}{V_G} &
-	V_G(T) \downarrow \Fin \wr A \ar{r}{r} &
+	V_G(T) \downarrow \Fin_s \wr A \ar{r}{r} &
 	\underset{v_{Ge} \in V_G(T)}{\prod} 
 	T_{v_{Ge}} \downarrow_{\mathsf{r}} A
 \\
@@ -7061,7 +7066,7 @@ We first show (i), starting with some notation.
 In analogy with $\Sigma_{G}^{\text{fr}}$,
 we write $\Omega_{G}^{0,\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
 $\mathsf{lr} \colon \Omega_{G}^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$,
-$V_G \colon \Omega_{G}^{0,\text{fr}} \to \Fin \wr \Sigma_G^{\text{fr}}$.
+$V_G \colon \Omega_{G}^{0,\text{fr}} \to \Fin_s \wr \Sigma_G^{\text{fr}}$.
 Moreover, for each $C \in \Sigma_G^{\text{fr}}$ one has an equality of rooted undercategories between
 $C \downarrow_{\mathsf{r}} \Omega_{G}^0$
 and
@@ -7071,8 +7076,8 @@ $\iota^{\**} \mathbb{F}_G X$ is computed by the Kan extension of the following d
 \[
 \begin{tikzcd}
 	\Omega_{G}^{0,\text{fr}} \ar{d} \ar{r} &
-	\Fin \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin \wr X} &
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\Fin_s \wr \Sigma_G^{\text{fr}} \ar{r}{\Fin_s \wr X} &
+	\Fin_s \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
 	\Sigma_G^{\text{fr}}
@@ -7152,8 +7157,8 @@ consists of trees with at least one non-free vertex (namely the root vertex), th
 \[
 \begin{tikzcd}
 	C \downarrow \Omega_{G}^{0} \ar{r}{V_G} &
-	\Fin \wr \Sigma_G \ar{r}{\Fin \wr X} &
-	\Fin \wr \mathcal{V}^{op} \ar{r}{\otimes}&
+	\Fin_s \wr \Sigma_G \ar{r}{\Fin_s \wr X} &
+	\Fin_s \wr \mathcal{V}^{op} \ar{r}{\otimes}&
 	\mathcal{V}^{op}
 \end{tikzcd}
 \]
@@ -7172,13 +7177,13 @@ $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on 
 \begin{equation}\label{MONADEQUIV DEF}
 \begin{tikzcd}[row sep=5pt, column sep =8pt]
 	G^{op} \times \Omega^0	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr (G^{op} \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
-	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
+	\Fin_s \wr (G^{op} \times \Sigma) \ar{rd}  \ar{rr}{\iota^{\**} X}&&
+	\Fin_s \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd}&
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
 	& \Omega_{G}^{0} \ar{dd} \ar{rr} &&
-	\Fin \wr \Sigma_G  \ar{rr}[swap]{X} &&
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\Fin_s \wr \Sigma_G  \ar{rr}[swap]{X} &&
+	\Fin_s \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
 	G^{op} \times \Sigma \ar{rd} 
@@ -7234,24 +7239,24 @@ encoded by the diagram (where the front and back squares are pullbacks).
 \[
 \begin{tikzcd}[row sep=3pt, column sep =8pt]
 	(G^{op} \times \Omega^0) \wr \iota^{\**} A	\ar{dd} \ar{rd} \ar{rr} &&
-	\Fin \wr \iota^{\**} A \ar{rd} \ar{dd} \ar{rr}&&
-	\Fin \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
+	\Fin_s \wr \iota^{\**} A \ar{rd} \ar{dd} \ar{rr}&&
+	\Fin_s \wr \mathcal{V}^{op} \ar{r} \ar[equal]{rd} &
 	\mathcal{V}^{op} \ar[equal]{rd}
 \\
 	& 
 	|[alias=O1]|
 	\Omega_{G}^{0} \wr A \ar[crossing over]{rr} &&
-	\Fin \wr A \ar{dd} \ar{rr} &&
-	\Fin \wr \mathcal{V}^{op} \ar{r} &
+	\Fin_s \wr A \ar{dd} \ar{rr} &&
+	\Fin_s \wr \mathcal{V}^{op} \ar{r} &
 	\mathcal{V}^{op}
 \\
 	G^{op} \times \Omega^0	\ar{dd} \ar{rd} \ar{rr}&&
-	\Fin \wr (G^{op} \times \Sigma) \ar{rd}
+	\Fin_s \wr (G^{op} \times \Sigma) \ar{rd}
 \\
 	&
 	|[alias=O2]|
 	\Omega_{G}^{0} \ar{dd} \ar{rr} &&
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \\
 	G^{op} \times \Sigma \ar{rd}
 \\
@@ -7285,20 +7290,20 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %\[
 %\begin{tikzcd}
 %	(G^{op} \times \Omega_1)^{(\iota^{\**} A)}	\ar{ddd} \ar{rd} \ar{rrr} &&&
-%	\Fin \wr (G^{op} \times \Omega_0)^{(\iota^{\**} A)} \ar{rd} \ar[dashed]{ddd} 
+%	\Fin_s \wr (G^{op} \times \Omega_0)^{(\iota^{\**} A)} \ar{rd} \ar[dashed]{ddd} 
 %\\
 %	& \bullet \ar{rrr} \ar{ldd} \ar{rd}&&&
-%	\Fin \wr \iota^{\**} \left( \Omega_G^{(A)} \right)
+%	\Fin_s \wr \iota^{\**} \left( \Omega_G^{(A)} \right)
 %	\ar[dashed]{ldd}\ar{rd}
 %\\
 %	& & \Omega_1^{(A)} \ar{rrr} \ar{ddl}&&&
-%	\Fin \wr \Omega_G^{(A)}\ar{ddl}
+%	\Fin_s \wr \Omega_G^{(A)}\ar{ddl}
 %\\
 %	G^{op} \times \Omega_0	\ar{dd} \ar{rd} \ar[dashed]{rrr}&&&
-%	\Fin \wr (G^{op} \times \Sigma) \ar[dashed]{rd}
+%	\Fin_s \wr (G^{op} \times \Sigma) \ar[dashed]{rd}
 %\\
 %	& \Omega_{G,0} \ar{dd} \ar{rrr} &&&
-%	\Fin \wr \Sigma_G
+%	\Fin_s \wr \Sigma_G
 %\\
 %	G^{op} \times \Sigma \ar{rd}
 %\\
@@ -7779,9 +7784,9 @@ the full subcategories spanned by the $\F$-trees.
 
 %Writing $\Omega_{\mathcal{F}}^0 \hookrightarrow \Omega_{G}^0$ for the full subcategory of $\mathcal{F}-$trees and quotients, 
 %this amounts to asking whether the leaf-root and vertex functors of \S \ref{LRVERT SEC} restrict to the $\mathcal{F}$ context. That the vertex functor restricts to a functor
-%$V_G \colon \Omega_{\mathcal{F}}^0 \to \Fin \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
+%$V_G \colon \Omega_{\mathcal{F}}^0 \to \Fin_s \wr \Sigma_{\mathcal{F}}$ is in fact tautological: indeed,
 %$\Omega_{\mathcal{F}}$ can be defined to be the pre-image 
-%$(V_{G})^{-1}(\Fin \wr \Sigma_{\mathcal{F}})$.
+%$(V_{G})^{-1}(\Fin_s \wr \Sigma_{\mathcal{F}})$.
 %Compatibility with the leaf-root functor, however, 
 %requires an additional closure condition on $\mathcal{F}$,
 %which we now formally introduce.
@@ -7820,8 +7825,8 @@ $\Omega_{\mathcal{F}}^1 \hookrightarrow \Omega^1_G$
 of planar tall strings between $\mathcal{F}$-trees
 matches the pullback of
 $\Omega_{\mathcal{F}}^0 \to
-\Fin \wr \Sigma_{\mathcal{F}} \leftarrow 
-\Fin \wr \Omega_{\mathcal{F}}^0
+\Fin_s \wr \Sigma_{\mathcal{F}} \leftarrow 
+\Fin_s \wr \Omega_{\mathcal{F}}^0
 $.
 \end{remark}
 
@@ -7877,8 +7882,8 @@ Proposition \ref{MONAD_COMPARISON_PROP}.
 %              \label{F_F_LAN_EQ}
 %              \begin{tikzcd}
 %                    \Omega_{\F}^{0} \ar{d} \ar{r} &
-%                    \Fin \wr \Sigma_{\F} \ar{r}{\Fin \wr X} &
-%                    \Fin \wr \mathcal{V}^{op} \ar{r} &
+%                    \Fin_s \wr \Sigma_{\F} \ar{r}{\Fin_s \wr X} &
+%                    \Fin_s \wr \mathcal{V}^{op} \ar{r} &
 %                    \mathcal{V}^{op}
 %                    \\
 %                    \Sigma_{\F}
@@ -8605,12 +8610,12 @@ as the pullback
 \begin{equation}\label{OMEGAWRTUP EQ}
 \begin{tikzcd}[row sep=1em]
 	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{dd}& 
-	\Fin \wr \coprod A_j \ar{d}
+	\Fin_s \wr \coprod A_j \ar{d}
 \\
-	& \Fin \wr \coprod_l \Sigma_G \ar{d}
+	& \Fin_s \wr \coprod_l \Sigma_G \ar{d}
 \\
 	\Omega_{G}^{n,s,\lambda} \ar{r}[swap]{V_{G}^{n}} &
-	\Fin \wr \Omega_G^{-1,s-n-1,\lambda}
+	\Fin_s \wr \Omega_G^{-1,s-n-1,\lambda}
 \end{tikzcd}
 \end{equation}
 \end{notation}
@@ -8627,24 +8632,24 @@ into the three cases
 $s<0$, $0 \leq s \leq n$ and $n < s$,
 depicted below.
 \begin{equation}
-\begin{tikzcd}[column sep =1.4em]
+\begin{tikzcd}[column sep =1.25em]
 	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
-	\Fin \wr \coprod_j A_j \ar{d}
+	\Fin_s \wr \coprod_j A_j \ar{d}
 &
 	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
-	\Fin \wr \coprod_j A_j \ar{d}
+	\Fin_s \wr \coprod_j A_j \ar{d}
 &
 	\Omega_{G}^{n,s,\lambda} \wr (A_j) \ar{r}{V_{G}^{n}} \ar{d}& 
-	\Fin \wr \coprod_j A_j \ar{d}
+	\Fin_s \wr \coprod_j A_j \ar{d}
 \\
 	\coprod (\Omega_{G}^{n})^{\times \lambda} \ar{r}[swap]{V_{G}^{n}} &
-	\Fin \wr \coprod_l \Sigma_G
+	\Fin_s \wr \coprod_l \Sigma_G
 &
 	\Omega_{G}^{n,s,\lambda} \ar{r}[swap]{V_{G}^{n}} &
-	\Fin \wr \coprod_l \Sigma_G
+	\Fin_s \wr \coprod_l \Sigma_G
 &
 	\Omega_{G}^{n} \ar{r}[swap]{V_{G}^{n}} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
 Therefore, for $s>n$ \eqref{OMEGAWRTUP EQ} 
@@ -8657,12 +8662,12 @@ are pullbacks and the bottom composite is $V_G^n$,
 \begin{tikzcd}[column sep = 4em]
 	\coprod (\Omega_{G}^{n})^{\times \lambda} \wr (A_j) 
 	\ar{r}{\coprod (V_{G}^{n})^{\times \lambda}} \ar{d}&
-	\coprod \Fin \wr A_j \ar{r} \ar{d} & 
-	\Fin \wr \coprod_j A_j \ar{d}
+	\coprod \Fin_s \wr A_j \ar{r} \ar{d} & 
+	\Fin_s \wr \coprod_j A_j \ar{d}
 \\
 	\coprod (\Omega_{G}^{n})^{\times \lambda} \ar{r}[swap]{\coprod (V_{G}^{n})^{\times \lambda}} &
-	\coprod_l \Fin \wr \Sigma_G \ar{r} &
-	\Fin \wr \coprod_l \Sigma_G
+	\coprod_l \Fin_s \wr \Sigma_G \ar{r} &
+	\Fin_s \wr \coprod_l \Sigma_G
 \end{tikzcd}
 \end{equation}
 so that there is an identification
@@ -8758,10 +8763,10 @@ Additionally, the natural squares  (for $n \geq -1$)
 \begin{tikzcd}
 	\Omega_{G}^{n,n,\lambda}
 	\ar{r}{V_{G}^{n}} \ar{d}& 
-	\Fin \wr \coprod_l \Sigma_G \ar{d}
+	\Fin_s \wr \coprod_l \Sigma_G \ar{d}
 \\
 	\Omega_{G}^{n} \ar{r}[swap]{V_{G}^{n}} &
-	\Fin \wr \Sigma_G
+	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
 are also pullback squares.
@@ -8826,29 +8831,29 @@ This is analogous to Corollary \ref{IDEN COR}. For the left identification in
 \eqref{MOREIDENT1 EQ}, the case $s \geq 0$ follows
 since both sides compute the limit of the solid diagram below, 
 where we note that the bottom arrow is
-$V_G^k \colon \Omega_G^k \to \Fin \wr \Sigma_G$
+$V_G^k \colon \Omega_G^k \to \Fin_s \wr \Sigma_G$
 (this is used to regard the diagram as computing
 $\Omega^k_G \wr (-)$).
 \[
 \begin{tikzcd}[row sep = 1.5em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
-	\Fin^{\wr 2} \wr \coprod (A_j) \ar{r}{\sigma^0} \ar{d}&
-	\Fin \wr \coprod (A_j) \ar{d}
+	\Fin_s^{\wr 2} \wr \coprod (A_j) \ar{r}{\sigma^0} \ar{d}&
+	\Fin_s \wr \coprod (A_j) \ar{d}
 \\
 	\Omega_G^{n+k+1,s+k+1,\lambda} \ar{r}[swap]{V_G^k} \ar{d}[swap]{d_{k+1,\cdots,n+k+1}}&
-	\Fin \wr \Omega^{n,s,\lambda}_G \ar{r}[swap]{\Fin \wr V_G^n} \ar{d}{d_{0,\cdots,n}}&
-	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0} &
-	\Fin \wr \coprod_l \Sigma_G &
+	\Fin_s \wr \Omega^{n,s,\lambda}_G \ar{r}[swap]{\Fin_s \wr V_G^n} \ar{d}{d_{0,\cdots,n}}&
+	\Fin_s^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0} &
+	\Fin_s \wr \coprod_l \Sigma_G &
 \\
 	\Omega_G^{k,k+1,\lambda} \ar{r}[swap]{V_G^k} &
-	\Fin \wr \Omega_G^{-1,0,\lambda}
+	\Fin_s \wr \Omega_G^{-1,0,\lambda}
 \end{tikzcd}
 \]
 The $s=-1$ case is similar, but since the bottom arrow is now 
 $V_G^k \colon \Omega_G^{k,k,\lambda} \to 
-\Fin \wr \Omega_G^{-1,-1,\lambda} =
-\Fin \wr \coprod_l \Sigma_G$,
+\Fin_s \wr \Omega_G^{-1,-1,\lambda} =
+\Fin_s \wr \coprod_l \Sigma_G$,
 one first attaches 
 the pullback square \eqref{ADDSQUARE EQ}
 to the bottom of the diagram above.
@@ -8858,27 +8863,27 @@ The right identification in \eqref{MOREIDENT1 EQ} is analogous, using the pullba
 $\Omega_G^{n+k+1,s,\lambda} \wr (A_j)$ side, 
 note that \eqref{BOTTOM EQ} identifies
 the composite of the central horizontal arrows as 
-$\mathsf{F} \wr V^k_G
+$\Fin_s \wr V^k_G
 \colon
-\mathsf{F} \wr \Omega_G^{k,s-n-1,\lambda}
+\Fin_s \wr \Omega_G^{k,s-n-1,\lambda}
 \to 
-\mathsf{F}^{\wr 2} \wr \coprod_l \Sigma_G$).
+\Fin_s^{\wr 2} \wr \coprod_l \Sigma_G$).
 \[
-\begin{tikzcd}[row sep = 1.5em,column sep =2.05em]
+\begin{tikzcd}[row sep = 1.5em,column sep =1.8em]
 	\bullet \ar[dashed]{r} \ar[dashed]{d}&
 	\bullet \ar[dashed]{rr} \ar[dashed]{d}& &
-	\Fin \wr \coprod \Fin \wr A_j \ar{r} \ar{d}&
-	\Fin^{\wr 2} \wr \coprod A_j \ar{r}{\sigma^0} \ar{d}&
-	\Fin \wr \coprod A_j \ar{d}
+	\Fin_s \wr \coprod \Fin_s \wr A_j \ar{r} \ar{d}&
+	\Fin_s^{\wr 2} \wr \coprod A_j \ar{r}{\sigma^0} \ar{d}&
+	\Fin_s \wr \coprod A_j \ar{d}
 \\
 	\Omega_G^{n+k+1,s,\lambda} \ar{r}[swap]{V_G^n} \ar{d}[swap]{d_{n+1,\cdots,n+k+1}}&
-	\Fin \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin \wr \coprod (V_G^k)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
-	\Fin \wr \coprod_l \Fin \wr \Sigma_G \ar{r} &
-	\Fin^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0}  &
-	\Fin \wr \coprod_l \Sigma_G &
+	\Fin_s \wr \coprod (\Omega^{k}_G)^{\times \lambda} \ar{rr}[swap]{\Fin_s \wr \coprod (V_G^k)^{\times \lambda}} \ar{d}{d_{0,\cdots,k}}&&
+	\Fin_s \wr \coprod_l \Fin_s \wr \Sigma_G \ar{r} &
+	\Fin_s^{\wr 2} \wr \coprod_l \Sigma_G \ar{r}[swap]{\sigma^0}  &
+	\Fin_s \wr \coprod_l \Sigma_G &
 \\
 	\Omega_G^{n,s,\lambda} \ar{r}[swap]{V_G^n} &
-	\Fin \wr \coprod_l \Sigma_G
+	\Fin_s \wr \coprod_l \Sigma_G
 \end{tikzcd}
 \]
 The vertex functor claims are straightforward.
@@ -8934,26 +8939,26 @@ Next, consider the following diagram
 where the bottom square is one of the pullback squares
 \eqref{ADDSQUARE EQ}.
 \begin{equation}\label{NATCOP EQ}
-\begin{tikzcd}[column sep = 3.5em,row sep = 0.8em]
+\begin{tikzcd}[column sep = 3.4em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
 	\ar{r}{\coprod (V_G^0)^{\times \lambda}} \ar{d} &
-	\coprod \Fin \wr (\Omega_G^{-1})^{\times \lambda} \ar{r} & 
-	\Fin \wr \Omega_G^{-1,-2,\lambda} \ar[equal]{d} 
+	\coprod \Fin_s \wr (\Omega_G^{-1})^{\times \lambda} \ar{r} & 
+	\Fin_s \wr \Omega_G^{-1,-2,\lambda} \ar[equal]{d} 
 &
 	\coprod (\Omega^0_G)^{\times \lambda} \ar{r} \ar{d} &
-	\coprod \Fin \wr \Sigma_G \ar{d}
+	\coprod \Fin_s \wr \Sigma_G \ar{d}
 \\
 	\Omega^{0,0,\lambda}_G \ar{rr}{V_G^0} \ar{d} &&
-	\Fin \wr \Omega_G^{-1,-1,\lambda} \ar{d}
+	\Fin_s \wr \Omega_G^{-1,-1,\lambda} \ar{d}
 &
 	\Omega_G^{0,0,\lambda} \ar{r} \ar{d} & 
-	\Fin \wr \coprod \Sigma_G \ar{d}
+	\Fin_s \wr \coprod \Sigma_G \ar{d}
 \\
 	\Omega^{0,1,\lambda}_G \ar{rr}{V_G^0} &&
-	 \Fin \wr \Omega_G^{-1,0,\lambda}
+	 \Fin_s \wr \Omega_G^{-1,0,\lambda}
 &
 	\Omega_G^0 \ar{r} &
-	 \Fin \wr \Sigma_G
+	 \Fin_s \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
 The two representations of the middle horizontal map
@@ -10639,7 +10644,7 @@ u(T_v)
 are, respectively, 
 $\mathsf{Aut}\left( (T_v)_{v \in V_G^{ac}(T)}\right)$ and 
 $\mathsf{Aut}\left( (T_v)_{v \in V_G^{in}(T)}\right)$
-genuine cofibrations, with the latter trivial if $u$ is. Here, the automorphism groups are taken in the category in $\Fin \wr \Sigma_G$,
+genuine cofibrations, with the latter trivial if $u$ is. Here, the automorphism groups are taken in the category in $\Fin_s \wr \Sigma_G$,
 and thus admit a product description of the form
 $
 	\Sigma_{|\lambda_1|} \wr 
