@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  2 MAR 2020 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  2 MAR 2020 14:25
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1301,10 +1301,7 @@ Overfull \hbox (6.35692pt too wide) detected at line 890
 ("C:\Users\luisa\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-msb.c
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [8] [9] [10]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 1813.
- [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+) [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
 Overfull \hbox (4.00557pt too wide) detected at line 5857
 [][][]|
@@ -1421,16 +1418,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16737.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16737
 .
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
-(rerunfilecheck)             Checksum: D8CEA7802AF951BE7B89F5CB29BC8F46;2327.
+(rerunfilecheck)             Checksum: D4280891FDEF2035B8EA8983A273AF36;2327.
 Package rerunfilecheck Info: File `GenEqOp.brf' has not changed.
-(rerunfilecheck)             Checksum: CBE26EA960DA44529624A8C319336F4D;7536.
+(rerunfilecheck)             Checksum: 5E64B047C6930B55B6291DCD6FFF73F7;7583.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16737.
  ) 
 Here is how much of TeX's memory you used:
- 42641 strings out of 492895
- 921779 string characters out of 3123735
- 931353 words of memory out of 3000000
- 45124 multiletter control sequences out of 15000+200000
+ 42619 strings out of 492895
+ 921197 string characters out of 3123735
+ 930437 words of memory out of 3000000
+ 45103 multiletter control sequences out of 15000+200000
  44976 words of font info for 247 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,21n,86p,628b,2806s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1496,9 +1493,9 @@ isa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/symbols/msbm5.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (99 pages, 4713371 bytes).
+Output written on GenEqOp.pdf (99 pages, 4712222 bytes).
 PDF statistics:
- 2826 PDF objects out of 2984 (max. 8388607)
- 663 named destinations out of 1000 (max. 500000)
+ 2829 PDF objects out of 2984 (max. 8388607)
+ 662 named destinations out of 1000 (max. 500000)
  35181 words of extra memory for PDF output out of 35830 (max. 10000000)
 

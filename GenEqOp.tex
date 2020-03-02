@@ -1810,17 +1810,14 @@ in particular producing new notions of equivariant topological Hochschild homolo
 
 \subsection{Outline}
 
-\todo[inline]{when do different pieces of the machine happen?}
 
 This paper is comprised of two major halves, 
 with 
-\S \ref{PLANAR_SECTION},
-\S \ref{GENUINE_OP_MONAD_SECTION}
+\S \ref{PLANAR_SECTION},\S \ref{GENUINE_OP_MONAD_SECTION}
 addressing the definition of the novel structure of
 genuine equivariant operads,
 and 
-\S \ref{FREE_EXTENSIONS_SECTION},
-\S \ref{COFIB SEC}
+\S \ref{FREE_EXTENSIONS_SECTION},\S \ref{COFIB SEC}
 addressing the proofs of the main results,
 Theorems \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM},\ref{MAINQUILLENEQUIV THM}.
 A more detailed outline follows.
@@ -1838,8 +1835,7 @@ symmetric monoidal categories with diagonals
 \S \ref{PLANAR_SECTION} lays the groundwork for the definition of genuine equivariant operads in 
 \S \ref{GENUINE_OP_MONAD_SECTION} by discussing the concept of node substitution (which is at the core of the definition of free operads)
 in the context of equivariant trees. The key idea, which is captured in diagram
-\eqref{SUBSDATUMTREES EQ} and Proposition \ref{SUBSASPULL PROP}
-% \ref{SUBDATAUNDERPLAN PROP},\ref{SUBDATAUNDERPLANG COR}, 
+\eqref{SUBSDATUMTREES EQ} and Proposition \ref{SUBSASPULL PROP},
 is that such substitution data are encoded by special maps of $G$-trees that we call planar tall maps. The bulk of the section is spent studying these types of maps, culminating in the concept of planar strings in \S \ref{PLANARSTRING SEC}, which encode iterated substitution.
 
 \S \ref{GENUINE_OP_MONAD_SECTION} then uses planar strings to provide the formal definition of the category 
@@ -1847,7 +1843,7 @@ $\mathsf{Op}_G(\mathcal{V})$
 of genuine equivariant operads in a 
 two step process in 
 \S \ref{MONSPAN SEC} and \S \ref{FGMON SEC}.
-\S \ref{COMPARISON_REGULAR_SECTION} then compares 
+\S \ref{COMPARISON_REGULAR_SECTION} compares 
 the genuine equivariant operad category
 $\mathsf{Op}_G(\mathcal{V})$
 with the usual equivariant operad category
@@ -1871,6 +1867,7 @@ with
 dedicated to providing a suitable filtration of such free extensions,
 and \S \ref{MAINEXIST SEC} concluding the proofs.
 
+
 \S \ref{COFIB SEC} proves our main result,
 Theorem \ref{MAINQUILLENEQUIV THM}.
 The core of the technical analysis 
@@ -1893,10 +1890,13 @@ by using the theory of genuine equivariant operads
 to build explicit cofibrant models for 
 $N \mathcal{F}$-operads.
 
-Lastly,
 Appendix \ref{TRANSKAN AP}
 provides the proof of a lengthy technical result needed when establishing the filtrations in \S \ref{FREE_EXTENSIONS_SECTION}.
 
+Lastly, Appendix \ref{NERVE AP} proves Theorem \ref{NERVE THM},
+which compares the description of 
+genuine operads used in this paper 
+with the description used in \cite{BP_edss}.
 
 
 %In the first section, we recall background categorical material which will play a role throughout the paper,
@@ -16003,7 +16003,7 @@ to conclude that the Kan extensions indeed coincide.
 
 
 
-\section{The nerve theorem}
+\section{The nerve theorem}\label{NERVE AP}
 
 Our goal in this appendix is to prove the nerve theorem below,
 adapting \cite[Prop. 5.3, Thm. 6.1]{MW08}.
