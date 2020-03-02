@@ -87,6 +87,9 @@ Defn 3.21, Remark 3.22, Prop 3.23 became Defn 3.19, Remark 3.20, Prop 3.21
 \item[34.] We are unsure how the notation in 
 Remark \ref{LRROOTMAP REM} clashed with the notation in 
 \eqref{OGDEF EQ} and Definition \ref{ROOTPULL DEF}.
+In particular, we note that the root functor $\mathsf r \colon \Omega_G \to \mathsf O_G$
+factors as
+$\Omega_G \xrightarrow{\mathsf{lr}} \Sigma_G \xrightarrow{\mathsf r} \mathsf O_G$.
 
 \end{itemize}
 
@@ -112,13 +115,17 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	$N^X R$ to graph subgroups
 	
 	\item[8.] The meaning of the term ``family''
-	was already spelled out the first time the term was used.
+              is
+              % was already
+              spelled out the first time the term was used, just after \eqref{NFINFTY EQ}.
 
-	\item[10.] we are not sure why the comment 
-	``in order to work in the context of equivariant operads with norm maps (...) we need genuine equivariant operads''
-	above \eqref{OPMULT EQ}
-	would be interpreted as saying that we can't use equivariant operads obtain the correct homotopy theory.
-	This sentence flowed directly from the last sentence of the previous paragraph, discussing why
+	\item[10.]
+              % we are not sure why the comment
+              Our expectation was not that the sentence
+              ``in order to work in the context of equivariant operads with norm maps (...) we need genuine equivariant operads''
+              above \eqref{OPMULT EQ}
+              would be interpreted as saying that we can't use equivariant operads obtain the correct homotopy theory.
+              Instead, this sentence flowed directly from the last sentence of the previous paragraph, discussing why
 	$\mathsf{Op}^{\mathsf{O}_G^{op}}$
 	can't be used to obtain an Elmendorf-Piacenza style theorem if one wants $\mathsf{Op}^G$ to care about norm maps.
 	Nonetheless, just to be safe, we've rephrased the comment to reiterate that we are discussing what is needed to obtain
@@ -143,9 +150,9 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	
 	Nonetheless, given the confusion caused by
 	\eqref{INTFIXPTCOMP EQ},
-	we've added enough exposition 
+	we've added exposition 
 	for \eqref{INTFIXPTCOMP EQ} to be understandable from this introduction alone
-	(a lot of which comes down
+	(much of which comes down
 	to providing a more precise understanding of
 	\eqref{COMPEX EQ})
 	
@@ -202,12 +209,12 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	
 	\item[27.] In the intro to \S \ref{PLANAR_SECTION} we
 	clarified that $\mathsf{F}^G$ denotes $G$-objects in $\mathsf{F}$,
-	which is not a skeletal category (rather, it is the subcategory of $\mathsf{F}^G$ consisting of \emph{order preserving maps} that is skeletal).
+	which is not a skeletal category (rather, it is the wide subcategory of $\mathsf{F}^G$ consisting of \emph{order preserving maps} that is skeletal).
 	%
 	This may seem pedantic,
 	but it took us a fair amount of time to figure out the best level of ``skeletalness'' for the categories 
 	$\Omega, \Phi, \mathsf{F}, \Omega_G, \cdots$, 
-	which seems to be to demand that only planar/ordered maps are skeletal.
+	which seems to demand that only planar/ordered maps are skeletal.
 	
 	\item[31.] the $\mathsf{O}^p_G$ notation in 
 	Convention \ref{PLANARCONV CON}
@@ -215,7 +222,7 @@ Remark \ref{LRROOTMAP REM} clashed with the notation in
 	The intended meaning is that we reinterpret totally ordered finite sets as having underlying set of the form
 	$\{1<2<3<\cdots <n\}$,
 	but this is already built into the definition of 
-	$\mathsf{O}_G$ given in the introduction to
+	$\mathsf{O}_G$ (coming from the definition of $\mathsf F$) given in the introduction to
 	\S \ref{PLANAR_SECTION}.
 
   \item[33.] Added a justification for 
@@ -793,7 +800,7 @@ we likewise added this notation to the notational index
       
 \item[75.] Made sure the statement of Lemma \ref{REWORFAM LEM} makes sense
 
-\item[76.] addressed in the answer to [3.]
+\item[76.] addressed in the answer to Comment [3.]
 
 \item[77.] fixed $G$ to be $\bar{G}$
       
