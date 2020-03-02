@@ -2,13 +2,24 @@
 \indexentry{categories!Com@$\mathsf{Com}$|hyperpage}{2}
 \indexentry{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$|hyperpage}{3}
 \indexentry{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$|hyperpage}{4}
+\indexentry{NF@$N \mathcal F$-operad|hyperpage}{4}
 \indexentry{categories!OrbitG@$\mathsf O_G$|hyperpage}{5}
 \indexentry{DeltaF@$\delta_{\mathcal F}$|hyperpage}{5}
 \indexentry{categories!OpG@$\mathcal P \in \Op_G$|hyperpage}{5}
+\indexentry{OX@$\O(X)$, $X \in \mathsf F^H$|hyperpage}{7}
 \indexentry{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{8}
 \indexentry{monads!FG@$\mathbb F_G$|hyperpage}{8}
+\indexentry{categories!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$|hyperpage}{8}
+\indexentry{categories!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$|hyperpage}{8}
+\indexentry{categories!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$|hyperpage}{8}
+\indexentry{Grothendieck fibrations!1GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$|hyperpage}{12}
+\indexentry{Grothendieck fibration!Cartesian@$f^{\**} e \to e$|hyperpage}{12}
+\indexentry{Grothendieck fibrations!GrothendieckConstruction@$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$|hyperpage}{13}
+\indexentry{Ran@$\mathsf{Ran}_{\pi}F$|hyperpage}{13}
+\indexentry{categories!undercategory@$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow \bar{e} \downarrow \mathcal{E}$|hyperpage}{13}
 \indexentry{wreath products!FIN@$\mathsf{F}$|hyperpage}{14}
 \indexentry{wreath products!FIN@$\mathsf{F}\wr $|hyperpage}{14}
+\indexentry{subgroups!SigmaLambda@$\Sigma_{\lambda}$|hyperpage}{14}
 \indexentry{wreath products!DELTAI@$\delta^i$|hyperpage}{14}
 \indexentry{wreath products!SIGMAI@$\sigma^i$|hyperpage}{14}
 \indexentry{wreath products!FINS@$\mathsf{F}_s$|hyperpage}{15}
