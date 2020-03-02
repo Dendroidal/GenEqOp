@@ -27,7 +27,7 @@
 \usepackage{amsmath, amsthm}% {amsfonts, amssymb}
 
 
-% ---------- indexing ----------
+% ---------- indexing ----------`
 
 \usepackage{imakeidx}
 \makeindex[columns=3, title=Glossary of Notation, intoc]
@@ -436,13 +436,13 @@ For our purposes, however, we instead focus on the perspective of Blumberg-Hill 
 which concerns the Hill-Hopkins-Ravenel norm maps featured in the solution of the Kervaire Invariant One Problem \cite{HHR}.
 
 Given a $G$-spectrum $R$ and finite $G$-set $X$ with $n$ elements, 
-the corresponding \textit{norm} is another $G$-spectrum $N^X R$,
+the corresponding \textit{norm} is another $G$-spectrum $N^X \! R$,
 whose underlying spectrum is 
 $R^{\wedge X} \simeq R^{\wedge n}$,
 but equipped with a ``mixed $G$-action''
 which both permutes wedge factors via the action on $X$ 
 and acts diagonally on each factor
-(alternatively, $N^X R$ can be described via graph subgroups; see the next paragraph).
+(alternatively, $N^X \! R$ can be described via graph subgroups; see the next paragraph).
 Moreover, for any $\mathsf{Com}$-algebra $R$, i.e.
 any strictly commutative $G$-ring spectrum, 
 %(i.e. if $R$ is an algebra over $\mathsf{Com}$ in $G$-spectra),
@@ -474,8 +474,8 @@ well-defined up to conjugation.
 Next,
 using the natural 
 $(G \times \Sigma_n)$-action on $R^{\wedge n}$,
-the $H$-action on $N^X R \simeq R^{\wedge n}$
-is obtained via the obvious identification
+the $H$-action on $N^X \! R \simeq R^{\wedge n}$
+is obtained via the identification
 $H \simeq \Gamma_X$.
 %
 It then follows that,
@@ -511,7 +511,9 @@ $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 \index{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
 where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$,
 with an operad $\O$ being called a
-\textit{$N \mathcal{F}$-operad} if it satisfies the fixed point condition
+\textit{$N \mathcal{F}$-operad}
+\index{NF@$N \mathcal F$-operad}
+if it satisfies the fixed point condition
 \begin{equation}\label{NFINFTY EQ}
 	\O(n)^{\Gamma} \sim 
 \begin{cases}
@@ -906,10 +908,11 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 \end{equation}
 (we discuss how \eqref{INTFIXPTCOMP EQ}
 is obtained in the next paragraph)
-where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$ 
+where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$
+\index{OX@$\O(X)$, $X \in \mathsf F^H$}
 with the $H$-action
 given by the identification $H \simeq \Gamma_X$
-(the graph subgroup $\Gamma_X$ is as discussed after 
+(the graph subgroup $\Gamma_X \leq G \times \Sigma_n$ is as discussed after 
 \eqref{NORMMAPS EQ}),
 and likewise for $K$-sets.
 In particular, $\O(X)^H \simeq \O(|X|)^{\Gamma_X}$.
@@ -1289,14 +1292,18 @@ that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
 give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
+\index{categories!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$}
 and partial $G$-symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})
 =
-\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$ which are suitably compatible with the monad
+\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$
+\index{categories!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$}
+which are suitably compatible with the monad
 $\mathbb{F}_G$,
 thus giving rise to categories
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
-of \textit{partial genuine equivariant operads}.
+of \textit{partial genuine equivariant operads}
+\index{categories!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$}.
 
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
@@ -2778,11 +2785,13 @@ provides the proof of a lengthy technical result needed when establishing the fi
 Recall that a functor 
 $\pi \colon \mathcal{E} \to \mathcal{B}$
 is called a \textit{Grothendieck fibration} \cite[\S 8.1]{Bo94}
+\index{GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$ (Grothendieck fibration)}
 if for every arrow 
 $f \colon b' \to b$ in $\mathcal{B}$
 and $e \in \mathcal{E}$ such that $\pi(e)=b$,
 there exists a \emph{cartesian arrow} 
 $f^{\**} e \to e$ lifting $f$,
+\index{Grothendieck FibrationCartesian@$f^{\**} e \to e$}
 i.e. an arrow such that for any choice of horizontal arrows 
 \[
 \begin{tikzcd}[row sep=7pt]
@@ -2802,8 +2811,8 @@ $e'' \to e$ lifts $b'' \to b$,
 there exists a unique dashed arrow
 $e'' \to f^{\**} e$ lifting $b'' \to b'$ and making the leftmost diagram commute.
 
-In most contexts the cartesian arrows $f^{\**} e \to e$ are assumed to be defined only up to unique isomorphism, 
-but in all examples considered in this paper
+In most contexts, the cartesian arrows $f^{\**} e \to e$ are assumed to be defined only up to unique isomorphism.
+However, in all examples considered in this paper,
 we will be able to identify preferred choices of cartesian arrows, and we will refer to those preferred choices as \textit{pullbacks}.
 Moreover, pullbacks will be compatible with composition and units in the obvious way, i.e. $g^{\**} f^{\**} e = (fg)^{\**}e$ and $id_b^{\**}e=e$.
 On a terminological note, 
@@ -2825,7 +2834,7 @@ such that $\delta$ preserves cartesian arrows (pullbacks).
 
 
 There is a well known equivalence between Grothendieck fibrations over $\mathcal{B}$ and contravariant pseudo-functors
-$\mathcal{B}^{op} \to \mathsf{Cat}$
+$\mathcal{B}^{op} \to \mathsf{Cat}$,
 with split fibrations corresponding to (regular) contravariant functors. We recall how this works in the split case, starting with the covariant version.
 
 \begin{definition}\label{GROTHCONS DEF}
@@ -2837,7 +2846,9 @@ Given a small category $\mathcal{B}$ and functor $\mathcal{E}_{\bullet}$
 \end{tikzcd}
 \end{equation}
 the \textit{covariant Grothendieck construction}
-$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$ (over $\mathcal B$)
+$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$
+(over $\mathcal B$)
+\index{categories!GrothendieckConstruction@$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$}
 has objects pairs $(b,e)$ with $b \in \mathcal{B}$,
 $e \in \mathcal{E}_b$ and 
 arrows $(b,e) \to (b',e')$ given by pairs
@@ -2867,9 +2878,11 @@ given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category 
 \simeq
 	\mathsf{lim} F|_{\mathcal{E}_b}
 \end{equation}
-where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL})
-and the second identification follows by noting that due to the existence of cartesian arrows the fibers
-$\mathcal{E}_b$ are initial (in the sense of \cite[IX.3]{McL})
+\index{Ran@$\mathsf{Ran}_{\pi}F$ (right Kan extension)}  
+where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL}),
+and the second identification follows by noting that,
+due to the existence of cartesian arrows,
+the fibers $\mathcal{E}_b$ are initial (in the sense of \cite[IX.3]{McL})
 in the undercategories $b \downarrow \mathcal{E}$.
 In fact, a little more is true: a choice of cartesian arrows 
 yields a right adjoint to the inclusion
@@ -2880,6 +2893,7 @@ In practice, we will also need a generalization of the Kan extension formula \eq
 Keeping the notation therein, given an $\bar{e} \in \bar{\mathcal{E}}$ we will write 
 $\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow
 \bar{e} \downarrow \mathcal{E}$
+\index{categories!undercategory@$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow \bar{e} \downarrow \mathcal{E}$}
 for the full subcategory of those pairs 
 $\left(e,f \colon \bar{e} \to \delta(e)\right)$
 such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
@@ -2890,7 +2904,7 @@ such that $\bar{\pi}(f) = id_{\bar{\pi}(\bar{e})}$.
 	as in \eqref{GROTHFIBMAP EQ},
 	each subcategory $\bar{e} \downarrow_{\mathcal{B}} \mathcal{E}$
 	for $\bar{e} \in \bar{\mathcal{E}}$
-	is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$
+	is an initial subcategory of $\bar{e} \downarrow \mathcal{E}$,
 	and hence for each functor 
 	$\mathcal{E} \to \mathcal{V}$
 	with $\mathcal{V}$ complete one has
@@ -2961,12 +2975,14 @@ We also record the following, the proof of which is straightforward.
 \subsection{Wreath product over finite sets}
 \label{WREATH SEC}
 
-Throughout we will let $\Fin$ denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
+Throughout we will let $\Fin$
+\index{categories!Fin@$\Fin$}denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 
 
 \begin{definition}
 	For a category $\C$, we write 
-	$\Fin \wr \C = (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$ 
+	$\Fin \wr \C := (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$
+        \index{categories!FinWrC@$\Fin \wr \C$}
 	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
 \[
 \begin{tikzcd}[row sep=0pt]
@@ -2988,9 +3004,10 @@ and write $\lambda$ for the partition
 $I = \lambda_1 \amalg \cdots \amalg \lambda_k$
 such that $1 \leq i_1, i_2 \leq n$ are in the same class iff
 $c_{i_1}, c_{i_2} \in \mathcal{C}$ are isomorphic.
- Writing 
- $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
- \Sigma_{\lambda_k}$
+Writing 
+$\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
+\Sigma_{\lambda_k}$
+\index{SigmaLambda@$\Sigma_{\lambda}$}
 and picking representatives $i_j \in \lambda_j$,
 the automorphism group of  
 $(c_i)_{i \in I}$ is given by
@@ -3033,8 +3050,10 @@ $\Fin \wr \sigma^{i} = \sigma^{i+1}$.
  
 
 \begin{remark}
-	If $\mathcal{V}$ has all finite coproducts then injections and fold maps assemble into a functor as on the left below.
-Dually, if $\mathcal{V}$ has all finite products then projections and diagonals assemble into a functor as on the right.
+      If $\mathcal{V}$ has all finite coproducts, then
+      injections and fold maps assemble into a functor as on the left below.
+      Dually, if $\mathcal{V}$ has all finite products,
+      then projections and diagonals assemble into a functor as on the right.
 \begin{equation}\label{WREATHPROD EQ}
 \begin{tikzcd}[row sep=0pt]
 	\Fin \wr \mathcal{V} \ar{r}{\coprod} & \mathcal{V} & &
@@ -3068,7 +3087,7 @@ Firstly, there is a natural isomorphism $\alpha$ as on the left below
 that encodes both reparenthesizing of coproducts and removal of initial objects 
 (note that the empty tuple $()_{i \in \emptyset}\in \Fin \wr \mathcal{V}$ is mapped under $\coprod$ to an initial object of $\mathcal{V}$). Additionally, we are free to assume that the triangle on the right of \eqref{COHER EQ} strictly commutes, i.e. 
 that ``unary coproducts'' of singletons $(v)$ are given simply by $v$ itself.
-$\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
+The transformation $\alpha$ is then associative in the sense that the composite natural isomorphisms between the two functors
 $\Fin^{\wr 3} \wr \mathcal{V} \to \mathcal{V}$
 in the diagrams below coincide.
 \begin{equation}\label{COHER2 EQ}
@@ -3318,6 +3337,7 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 	\textit{symmetric monoidal category with fold maps}
 	as a category $\mathcal{V}$ together with a functor
 	$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$
+        \index{$\Fin_s \wr \mathcal{V} \xrightarrow{\otimes} \mathcal{V}$}
 	satisfying the analogues of  
 	\eqref{COHER EQ}, \eqref{COHER2 EQ}, \eqref{COHER3 EQ}.
 	Further, the dual of such $\mathcal{V}$ is called a 
