@@ -29,4 +29,4 @@
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{83}{subsection.6.5}% 
 \contentsline {section}{\numberline {A}Transferring Kan extensions}{87}{appendix.A}% 
 \contentsline {section}{\numberline {B}The nerve theorem}{92}{appendix.B}% 
-\contentsline {section}{Glossary of Notation}{97}{section*.6}% 
+\contentsline {section}{Glossary of Notation}{96}{section*.6}% 

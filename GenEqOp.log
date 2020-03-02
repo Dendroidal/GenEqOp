@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  1 MAR 2020 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  1 MAR 2020 23:06
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1383,17 +1383,17 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 14650.
 
-[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96]
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
 runsystem(makeindex GenEqOp.idx)...executed (allowed).
 
-
-(GenEqOp.ind) [97
+ (GenEqOp.ind)
+[96
 
 ] (GenEqOp.bbl (GenEqOp.brf)
 \tf@brf=\write7
 \openout7 = `GenEqOp.brf'.
 
- [98]
+ [97]
 Underfull \hbox (badness 10000) in paragraph at lines 190--190
 []\OT1/cmr/m/n/9 (+20) J. Lurie.  Higher al-ge-bra.  Can be found at
  []
@@ -1404,7 +1404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--228
 ble at:
  []
 
-[99]) [100]
+[98]) [99]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16724.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 16724.
  (GenEqOp.aux)
@@ -1419,10 +1419,10 @@ Package rerunfilecheck Info: File `GenEqOp.brf' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16724.
  ) 
 Here is how much of TeX's memory you used:
- 42636 strings out of 492895
- 921661 string characters out of 3123735
- 932411 words of memory out of 3000000
- 45117 multiletter control sequences out of 15000+200000
+ 42639 strings out of 492895
+ 921737 string characters out of 3123735
+ 932474 words of memory out of 3000000
+ 45121 multiletter control sequences out of 15000+200000
  44976 words of font info for 247 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,21n,86p,628b,2806s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1488,9 +1488,9 @@ isa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/symbols/msbm5.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (100 pages, 4715351 bytes).
+Output written on GenEqOp.pdf (99 pages, 4714309 bytes).
 PDF statistics:
- 2824 PDF objects out of 2984 (max. 8388607)
- 665 named destinations out of 1000 (max. 500000)
+ 2820 PDF objects out of 2984 (max. 8388607)
+ 664 named destinations out of 1000 (max. 500000)
  35181 words of extra memory for PDF output out of 35830 (max. 10000000)
 
