@@ -4036,9 +4036,8 @@ If one forgoes the requirement that $T_{\underline{e} \leq e}$ be equipped with 
 
 
 
-
 \begin{example}\label{OUTERTREE EX}
-	The following illustrates some outer faces of the tree $T$ in Example \ref{PLANAREX EX}.
+	The following illustrates some planar outer faces of the tree $T$ in Example \ref{PLANAREX EX}.
 	Pictorially, Definition \ref{OUTFACE DEF}
 	says that $T_{\underline{e} \leq e}$
 	is obtained from $T$ by removing those edges and vertices that are either
@@ -4164,7 +4163,7 @@ unique choice of pushout that makes the maps in \eqref{GRAPTPUSH EQ} planar.
 
 
 \begin{proof}
-We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe17}: more precisely, 
+We first show (a). That $T_{\underline{e} \leq e}$ is indeed a tree is the content of \cite[Prop. 5.20]{Pe17}. More precisely, 
 $T_{\underline{e} \leq e} = (T^{\leq e})_{\less \underline{e}}$
 in the notation therein. That the root of $T_{\underline{e} \leq e}$ is $e$ is clear and that the leaf tuple is $\underline{e}$ follows from \cite[Remark 5.23]{Pe17}.
 
@@ -4234,7 +4233,7 @@ and isomorphisms.
 
 
 \begin{notation}\label{UNIQCOR NOT}
-	Given a tree $T \in \Omega$ there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
+	Given a tree $T \in \Omega$, there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
 	$\mathsf{lr}(T) \to T$, which we call the 
 	\textit{leaf-root} of $T$ (this name is motivated by the equivariant analogue, discussed in \S \ref{LRVERT SEC}).
 	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
@@ -4499,8 +4498,8 @@ can equivalently be repackaged using planar tall maps.
 
 
 \begin{remark}\label{SCTARR REM}
-Note that the only arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \subset T_{e^{\uparrow}\leq e}$.
-In particular, there are no pairs of composable non-identity arrows in $\mathsf{Sc}(T)$. 
+Note that the only non-identity arrows in $\mathsf{Sc}(T)$ are inclusions of the form $\eta_a \hookrightarrow T_{e^{\uparrow}\leq e}$.
+In particular, one can not compose non-identity arrows in $\mathsf{Sc}(T)$.
 \end{remark}
 
 Given a $T$-substitution datum 
@@ -4660,7 +4659,7 @@ predecessors in Proposition \ref{INPUTPREDECESSORPROP PROP}(b).
 \end{remark}
 
 
-We end this section with a couple of lemmas that will allow us to reverse the substitution procedure of 
+We end this section with a pair of results that will allow us to reverse the substitution procedure of 
 Proposition \ref{SUBDATAUNDERPLAN PROP}
 and will be needed in \S \ref{EXTTREE SEC}.
 Recall that the single edge tree $\eta \in \Omega$ is called the stick tree,
@@ -4670,7 +4669,7 @@ cf. Notation \ref{STICKTRE NOT}.
 	Let $U \in \Omega$ be a tree. Then:
 \begin{itemize}
 	\item[(i)] given non-stick outer subtrees $U_i$ such that 
-	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar tall map $T \to U$ such that the sets $\{U_i\}$, $\{U_{e^{\uparrow}\leq e}\}$ coincide;
+	$V(U) = \coprod_i V(U_i)$ there is a unique tree $T$ and planar inner face $T \to U$ such that the sets $\{U_i\}$, $\{U_{e^{\uparrow}\leq e}\}$ coincide;
 	\item[(ii)] given multiplicities $m_e \geq 1$ for each edge $e \in U$, there is a unique planar degeneracy $\rho \colon T \to U$ such that $\rho^{-1}(e)$ has $m_e$ elements;
 	\item[(iii)] planar tall maps $T \to U$ are in bijection with collections $\{U_i\}$ of outer subtrees such that $V(U) = \coprod_i V(U_i)$ and $U_j$ is not an inner edge of any $U_i$ whenever $U_j \simeq \eta$ is a stick.
 \end{itemize}
@@ -4679,7 +4678,8 @@ cf. Notation \ref{STICKTRE NOT}.
 
 \begin{proof}
 	We first show (i) by induction on the number of subtrees $U_i$. The base case $\{U_i\}=\{U\}$ is immediate, setting 
-	$T= \mathsf{lr}(U)$. Otherwise, $U$ must not be a corolla and letting $e$ be an edge that is both an inner edge of $U$ and a root of some $U_i$, and one can form a grafting pushout diagram
+	$T= \mathsf{lr}(U)$. Otherwise, $U$ must not be a corolla.
+	Letting $e$ be an edge that is both an inner edge of $U$ and a root of some $U_i$, one can form a grafting pushout diagram
 \begin{equation} \label{DECOMPPROOF EQ}
 \begin{tikzcd}
 	\eta \ar{r}{e} \ar{d}[swap]{e} & U^{\leq e} \ar{d}
@@ -4687,12 +4687,13 @@ cf. Notation \ref{STICKTRE NOT}.
 	U_{\nless e} \ar{r} & U
 \end{tikzcd}
 \end{equation}
-where $U^{\leq e}$ (resp. $U_{\nless e}$) are the outer faces consisting of the edges $u \leq_d e$ (resp. $u \nless_d e$).
+where $U^{\leq e}$ (resp. $U_{\nless e}$) is the outer face consisting of the edges $u \leq_d e$ (resp. $u \nless_d e$).
 Since there is a unique $U_i$ containing the vertex $e^{\uparrow} \leq e$, 
 it follows from the definition of outer face that there is a
 non trivial partition 
 $\{U_i\} = \{U_i|U_i \hookrightarrow U^{\leq e}\} 
-\amalg \{U_i|U_i \hookrightarrow U_{\nless e}\}$. Existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in \eqref{DECOMPPROOF EQ}, so that uniqueness too follows from the induction hypothesis.
+\amalg \{U_i|U_i \hookrightarrow U_{\nless e}\}$. 
+The existence of $T \to U$ now follows from the induction hypothesis. For uniqueness, the condition that no $U_i$ is a stick guarantees that $T$ possesses a single inner edge mapping to $e$, and thus admits a compatible decomposition as in \eqref{DECOMPPROOF EQ}, so that uniqueness too follows from the induction hypothesis.
 
 For (ii), we argue existence by nested induction on the number of vertices $|V(U)|$ and the sum of the multiplicities $m_e$. The base case $|V(U)|=0$, i.e., $U = \eta$ is immediate. Otherwise, writing $m_e = m'_e +1$, one can form a decomposition \eqref{DECOMPPROOF EQ} where either $|V(U^{\leq e})|,|V(U_{\nless e})|<|V(U)|$ or one of $U^{\leq e},U_{\nless e}$ is $\eta$, so that $T \to U$ can be built via the induction hypothesis. For uniqueness, note first that 
 by \cite[Lemma 5.33]{Pe17} each pre-image $\rho^{-1}(e)$ is linearly ordered and by the ``further'' claim in 
@@ -4713,8 +4714,8 @@ as a planar degeneracy followed by a planar inner face, and each  of these maps 
 \begin{proof}
 	The result is obvious if either
 	$T$ is a corolla or if one of $T_1,T_2$
-	is one of the root or leaf stick subtrees.
-
+	is a stick subtree for a leaf or root.
+%
 	Otherwise, one can necessarily choose $e$ to be an inner edge of $T$, in which case all three of $T_1,T_2,T$ admit compatible decompositions as in \eqref{DECOMPPROOF EQ} and the result follows by induction on $|V(T)|$.
 \end{proof}
 
