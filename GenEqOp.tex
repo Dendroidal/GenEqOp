@@ -4220,9 +4220,13 @@ The following is a restatement of \cite[Cor. 5.24]{Pe17}
 	$U= T_{\varphi(\underline{l}_S) \leq \varphi(r_S)}$).
 \end{proposition}
 
-We recall that a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges, i.e. edges other than the root or the leaves. In particular, it follows that a face is inner if and only if it is tall. 
+Recall that a map 
+$S \to T$ in $\Omega$
+is called a face (resp. degeneracy)
+if it is injective on edges (surjective on edges and preserves leaves).
+Moreover, a face $F \to T$ is called \textit{inner} if it is obtained by iteratively removing inner edges (edges other than the root or the leaves). In particular, a face is inner if and only if it is tall. 
 The usual degeneracy-face decomposition
-(cf. \cite[Lemma 3.1]{MW07} or \cite[Prop. 5.37]{Pe17})
+\cite[Lemma 3.1]{MW07},\cite[Prop. 5.37]{Pe17}
 thus combines with Proposition \ref{TALLOUTERDEC PROP} to give the following.
 
 
@@ -4771,7 +4775,10 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 \begin{remark}
 	Quotients can alternatively be described as the cartesian arrows for the Grothendieck fibration
 	$\Omega_G \xrightarrow{\mathsf{r}} \mathsf{O}_G$.
-	We note that this is strictly more general than the notion of root pullbacks (Figure \ref{FIGURE}), which are the \textit{chosen} cartesian arrows: those quotients such that each
+	We note that this is more general than the notion of root pullbacks (Figure \ref{FIGURE}), which are the \textit{chosen} cartesian arrows.
+	More explicitly,
+	root pullbacks are those quotientes for which
+	% those quotients such that each
 	$\varphi_y \colon S_y \to T_{\phi(y)}$
 	is a planar isomorphism, i.e., an identity.
 \end{remark}
@@ -4800,7 +4807,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 \begin{remark}
 	The leaf-root functor extends 
 	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
-	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows in $\Omega_G$.
+	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows of $\Omega_G$.
         \index{categories!Gtrees0tall@$\Omega_G^{\mathsf t}$}
 	Nonetheless, we will be primarily interested in the 
  restriction  
@@ -4809,7 +4816,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 
 \begin{remark}\label{LEAFROOTEXAMP REM}
 	Generalizing the remark in Notation \ref{UNIQCOR NOT},
-	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits an also unique planar tall map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
+	$\mathsf{lr}(T)$ can alternatively be characterized as being the \textit{unique} $G$-corolla which admits a (likewise unique) planar tall map $\mathsf{lr}(T) \to T$. Moreover, $\mathsf{lr}(T)$ can usually be regarded as the ``smallest inner face'' of $T$, obtained by removing all the inner edges, although this characterization fails when 
 	$T=(\eta_x)_{x \in X}$ is a stick $G$-tree. Some examples with $G=\mathbb{Z}_{/4}$ follow.
 \[
 	\begin{tikzpicture}[grow=up,auto,level distance=2.3em,
@@ -4923,10 +4930,10 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 
 
 \begin{remark}\label{LRROOTMAP REM}
-	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM})
-the leaf-root functor $\mathsf{lr} \colon \Omega_{G}^0 \to \Sigma_G$ is not a Grothendieck fibration,
-but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
-(for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
+	Since planarizations can not be pushed forward along tree maps (cf. Remark \ref{PULLPLANAR REM}),
+	the leaf-root functor $\mathsf{lr} \colon \Omega_{G}^0 \to \Sigma_G$ is not a Grothendieck fibration,
+	but instead only a map of Grothendieck fibrations over $\mathsf{O}_G$ 
+	(for the obvious root functor $\mathsf{r} \colon \Sigma_G \to \mathsf{O}_G$).
 \end{remark}
 
 
@@ -5008,7 +5015,7 @@ where $Ge$ inherits the planar order.
 \end{notation}
 
 
-We note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
+Note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definition.
 
 \begin{definition}\label{GVERTFUN DEF}
 The \textit{$G$-vertex functor} is the functor
@@ -5023,7 +5030,7 @@ Remark \ref{FINSURJ REM}.
 \end{definition}
 
 \begin{remark}
-	Note that though the composite
+	Note that, though the composite
 	$\Omega_G^0 \to \Fin_s \wr \Sigma_G \to \Fin_s$
 	coincides on objects with the functor described in Remark \ref{VERTEXDECOMPG REM},
 	the variance is now reversed. 
@@ -5033,12 +5040,13 @@ Remark \ref{FINSURJ REM}.
 	In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
 	The need to introduce the $\Fin_s \wr (\minus)$ construction comes from the fact that
 	in general quotient maps do not preserve the number of $G$-vertices.
-	As an example,
+	To illustrate,
+	and keeping the set-up of Example \ref{ROOTPULL EX},
 	let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
-	$\varphi \colon \pi^{\**} S \to S$ of Example \ref{ROOTPULL EX}
-	determined by the assignments
+	$\varphi \colon \pi^{\**} S \to S$
+	given by 
 	$a \mapsto a$, $b \mapsto b$, $c \mapsto c$, $d \mapsto i a$, $e \mapsto i b$,	
-	and presented below in orbital notation. 
+	which we present below in orbital notation. 
 		\[
 		\begin{tikzpicture}[grow=up,auto,level distance=2.4em,every node/.style = {font=\footnotesize},dummy/.style={circle,draw,inner sep=0pt,minimum size=1.75mm}]
 		\node at (0,0) {$\pi^{\**}S$}
@@ -5228,7 +5236,7 @@ Definition \ref{SUBSTITUTIONDATUM}.
 
 Recall that a map of $G$-trees is called 
 \textit{rooted} if it induces an ordered isomorphism on the root orbit (cf. Definition \ref{ROOTPULL DEF}),
-and we note that by Definition \ref{PLANARMAP_DEF} planar tall maps of $G$-trees are always rooted.
+and we note that, by Definition \ref{PLANARMAP_DEF}, planar tall maps of $G$-trees are always rooted.
 
 
 \begin{remark}\label{SUBSGREF DEF}
@@ -5239,7 +5247,7 @@ $T_{v_{Ge}} \to S_{v_{G e}}$.
 
 Further, the $T$-substitution datum is planar iff the maps $T_{v_{Ge}} \to S_{v_{G e}}$ are as well.
 
-We caution that in the non-planar case the
+We caution that, in the non-planar case, the
 $S_{v_{G e}}$ notation requires some care,
 as discussed in Remark \ref{WHYALT REM}. 
 \end{remark}
@@ -5272,7 +5280,7 @@ to $\mathsf{Sc}(T)$ that satisfy obvious compatibilities).
 \end{remark}
 
 
-In the following we write
+In the following, we write
 $\colim_{\mathsf{Sc}(T)}S_{(\minus)}$
 to mean
 $(\colim_{\mathsf{Sc}(T_x)}S_{x,(\minus)})_{x \in X}$ or, in other words, we take the colimit 
@@ -5336,11 +5344,10 @@ cf. Proposition \ref{INDMAPCHAR PROP}.
 
 	However, Notation \ref{UEUPEG NOT} is subtler.
 	When $\varphi \colon T \to S$ is not a planar map,
-	then the maps $S_{v_{Ge}} \to S$ need to be planar on each tree component of $S_{v_{Ge}}$ but need not respect the order of the roots of $S_{v_{Ge}}$.
-	This is because the tuple
-	\eqref{UEUPEG EQ} 
+	the maps $S_{v_{Ge}} \to S$ need to be planar on each tree component of $S_{v_{Ge}}$, but need not respect the order of the roots of $S_{v_{Ge}}$.
+	This is because the tuple \eqref{UEUPEG EQ} 
 	is ordered according to the edge orbit $Ge$ of $T$
-	(this is needed for Remark \ref{SUBSGREF DEF})
+	(this is needed for Remark \ref{SUBSGREF DEF}),
 	rather than the edge orbit $G\varphi(e)$ of $S$.
 	
 	To make this more precise, write 
@@ -5348,8 +5355,8 @@ cf. Proposition \ref{INDMAPCHAR PROP}.
 	for the induced map, which
 	is an isomorphism by
 	Proposition \ref{INDMAPCHAR PROP},
-	and write $S_{v_{Ge}}'$ for the tuple \eqref{UEUPEG EQ}
-	reorded according to $G \varphi(e)$.
+	and write $S_{v_{Ge}}'$ for the tuple \eqref{UEUPEG EQ},
+	except reorded according to $G \varphi(e)$.
 	One then has that the map
 	$S_{v_{Ge}}' \to S$ is planar
 	and $S_{v_{Ge}} = \varphi_{Ge}^{\**} S_{v_{Ge}}'$.
