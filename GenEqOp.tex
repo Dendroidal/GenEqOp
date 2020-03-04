@@ -5404,8 +5404,9 @@ defining the left vertical functors (with the right functors defined analogously
 
 \subsection{Planar strings}\label{PLANARSTRING SEC}
 
-We now use the leaf-root and vertex functors to repackage 
-our substitution results in a format that will be more convenient for our definition of genuine equivariant operads in \S \ref{GENUINE_OP_MONAD_SECTION}.
+We now use the leaf-root and vertex functors in \S \ref{LRVERT SEC}
+to repackage our substitution results in a format 
+that will be more convenient for our definition of genuine equivariant operads in \S \ref{GENUINE_OP_MONAD_SECTION}.
 
 
 \begin{definition}\label{PLANSTR DEF}
@@ -5434,9 +5435,8 @@ where each $\pi_i$ is a quotient map.
 
 \begin{notation}\label{SIMPOPERATORS NOT}
 	Since compositions of planar tall arrows are planar tall
-	and identity arrows are planar tall	
-	it follows that 
-	$\Omega_{G}^{\bullet}$
+	and identity arrows are planar tall,	
+	it follows that $\Omega_{G}^{\bullet}$
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composition and degeneracies by inserting identities. 
 
@@ -5464,7 +5464,7 @@ where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
 Since for any planar $n$-string we have 
 $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
-there is a well-defined functor
+there is a well-defined \emph{root functor}
 $\mathsf{r} \colon \Omega_{G}^{n} \to \mathsf{O}_G$,
 which is readily seen to be a split Grothendieck fibration.
 Furthermore, generalizing Remark \ref{LRROOTMAP REM},
@@ -5474,7 +5474,8 @@ are maps of split Grothendieck fibrations.
 
 
 \begin{notation}\label{VGDEF NOT}
-We extend the vertex functor to a functor 
+We extend the vertex functor 
+in Definition \ref{GVERTFUN DEF} to a functor 
 $V_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
 by
 \begin{equation}\label{VGDEF EQ}
@@ -5495,7 +5496,7 @@ Remark \ref{SUBSGREF DEF}.
 %(where since we are in the planar case we need not distinguish between the
 %$S_{(\minus)}^{\mathsf{r}}$ and $S'_{(\minus)}$ notations
 %(cf. Remark \ref{WHYALT REM})).
-Note however that from this perspective
+Note, however, that from this perspective
 functoriality needs to be addressed separately.
 \end{notation}
 
@@ -5519,10 +5520,10 @@ functoriality needs to be addressed separately.
 
 
 \begin{notation}\label{ROOTUNDER NOT}
-	For the maps 
+	For the map 
 	$\mathsf{lr} \colon \Omega_G^n \to \Sigma_G$
 	of Grothendieck fibrations over $\mathsf{O}_G$
-	we abbreviate the partial undercategories
+	we abbreviate the partial undercategory
 	$C \downarrow_{\mathsf{O}_G} \Omega^n_G$
 	for $C \in \Sigma_G$
 	defined before Proposition \ref{FIBERKANMAP PROP}
@@ -5589,7 +5590,7 @@ together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write
 %$T'_{0,v_{G e}} = \mathsf{lr}(T'_{1,v_{G e}})$.
 That $\Omega_{G}^{n} \to P$ is injective on arrows is then clear.
 
-For surjectivity, note first that by Lemma \ref{VGPULL LEM} the composite $P \to \Omega_{G}^{0} \to \mathsf{O}_G$
+For surjectivity, note first that, by Lemma \ref{VGPULL LEM}, the composite $P \to \Omega_{G}^{0} \to \mathsf{O}_G$
 is a split Grothendieck fibration and 
 $P \to \Omega_{G}^{0}$ is a map of split Grothendieck fibrations. 
 Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
@@ -5602,13 +5603,12 @@ then show that
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
 so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
 Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
-But since a quotient is an isomorphism iff it is so on roots,
+But, since a quotient is an isomorphism iff it is so on roots,
 we further have that 
 a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
 is a rooted isomorphism and
 each $\pi_{i,e}$ in \eqref{PTNARROWLOC EQ} is an isomorphism.
-But now reinterpreting \eqref{PTNARROWLOC EQ} as a tuple of diagrams indexed by
-$f \in G e$
+But now reinterpreting \eqref{PTNARROWLOC EQ} as a tuple of diagrams indexed by $f \in G e$,
 one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
 using the rooted half of Corollary \ref{SUBDATAUNDERPLANG COR},
@@ -5674,7 +5674,7 @@ When $n = 2$, $V_{G}^{2}$ is thus the composite
 	\Fin_s \wr \Sigma_{G}
 \end{tikzcd}
 \]
-while for $n=4$,  $V_{G}^{1}$ is the composite
+while, for $n=4$,  $V_{G}^{1}$ is the composite
 \[
 \begin{tikzcd}[column sep =1.7em]
 	\Omega_{G}^{4} \ar{r}{V_G} &
@@ -5695,7 +5695,7 @@ $V_G(T_k)$ with the order induced lexicographically
 from the maps 
 $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
 of Remark \ref{VERTEXDECOMP REM}. I.e., for 
-$v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w$ in $(T_l)$ are distinct.
+$v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w$ in $V_G(T_l)$ are distinct.
 
 Therefore, for each $d_i$ with $i < k$ there are natural isomorphisms as on the left below which interchange the
 lexicographical order on the indexing set $V_G(T_k)$
