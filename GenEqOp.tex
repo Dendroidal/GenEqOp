@@ -8128,13 +8128,13 @@ i.e. the coproduct in $\mathsf{Op}_G(\mathcal{V})$, and, a priori,
 the coequalizer is also calculated in $\mathsf{Op}_G(\mathcal{V})$. However, \eqref{REFLCOEQ EQ} is a so called \textit{reflexive coequalizer}, meaning that the maps being coequalized have a common section,
 and standard arguments\footnote{
 For example, by the proof of 
-\cite[Prop. 3.27]{Ha09}
-it suffices to check that 
+\cite[Prop. 3.27]{Ha09},
+it suffices to show that 
 $\mathbb{F}_G$ preserves reflexive coequalizers.
-This follows from \eqref{FGXDEF EQ} and the fact that if $\otimes$ preserves colimits in each variable then
-it preserves reflexive coequalizers.}
- show that 
-it is hence also an underlying coequalizer in 
+This follows from \eqref{FGXDEF EQ} and the fact that,
+if $\otimes$ preserves colimits in each variable,
+then $(-)^{\otimes n}$ preserves reflexive coequalizers.}
+show that it is hence also an underlying coequalizer in 
 $\mathsf{Sym}_G(\mathcal{V})$.
 
 In practice, we will need to enlarge 
@@ -8146,15 +8146,15 @@ $B_l(\mathcal{P}, \mathbb{F}_G X, \mathbb{F}_G Y)=
 (\mathbb{F}_G X)^{\check{\amalg} l} 
 \mathbin{\check{\amalg}} \mathbb{F}_G Y$,
 whose colimit (over $\Delta^{op}$) is again $\mathcal{P}[u]$.
-For technical reasons, we prefer the double bar construction
-\footnote{
+For technical reasons, we prefer 
+the double bar construction\footnote{
 More formally,
 $B_{\bullet}(\mathcal{P}, \mathbb{F} X, \mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)$
 is the diagonal
 of the iterated bar construction
 $B^{op}_{\bullet}\left(\mathcal{P}, \mathbb{F} X, 
 B_{\bullet}(\mathbb{F} X, \mathbb{F} X, \mathbb{F} Y)\right)$,
-where the $op$ indicates that in the outer bar construction we reverse the order of the simplicial operators.
+where the $op$ in $B^{op}_{\bullet}$ indicates that in the outer bar construction we reverse the order of the simplicial operators.
 }
 (where to increase readability, we 
 abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
@@ -8173,8 +8173,8 @@ abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 	(\mathbb{F} X)^{\check{\amalg} 2l+1} 
 	\mathbin{\check{\amalg}} \mathbb{F} Y.
 \end{equation}
-To actually describe the individual levels  of
-\eqref{DOUBAR EQ} one further resolves $\mathcal{P}$
+To actually describe the individual levels of \eqref{DOUBAR EQ},
+one further resolves $\mathcal{P}$
 so as to obtain the bisimplicial object
 (we again abbreviate $\mathbb{F}_G$ as $\mathbb{F}$)
 \begin{equation}\label{FURRES EQ}
@@ -8321,7 +8321,7 @@ Conversely,
 of \eqref{FILTRATION_LAN_LEVEL} to build an object $F_{\infty}$
 which must \emph{a posteriori}
 be shown to be both an operad and the desired extension $P[u]$ in \cite[Prop. 5.1]{BM03}.
-We note that, as genuine operads are hard to describe explicitly,
+However, we note that, as genuine operads are harder to describe explicitly,
 the strategy in \cite{BM03} is ill suited for our context.
 \end{remark}
 
@@ -8336,7 +8336,7 @@ the strategy in \cite{BM03} is ill suited for our context.
 \subsection{Labeled planar strings}\label{LABELSTRI SEC}
 
 
-In this section, we explicitly identify the categories underlying the left Kan extensions in \eqref{LANLEVELFOR EQ}.
+In this section we explicitly identify the categories underlying the left Kan extensions in \eqref{LANLEVELFOR EQ}.
 
 
 In the notation 
@@ -8355,7 +8355,7 @@ $\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ 
 Our goal is thus to understand 
 the underlying categories of the spans in the image of the functor
 $N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}$,
-though we will find it preferable and no harder to tackle the more general case of the functors 
+though we will find it preferable, and no harder, to tackle the more general case of the functors 
 $N^{s+1} \circ \coprod \circ (N^{\times \lambda})^{\circ n-s}$.
 
 \begin{definition}\label{LABMAP DEF}
@@ -8364,7 +8364,7 @@ A \textit{$l$-node labeled $G$-tree} (or just \textit{$l$-labeled $G$-tree}) is 
 Further, a tall map $\varphi \colon T \to S$ between $l$-labeled trees is called a \textit{label map} if, for each $G$-vertex $v_{G e}$ of $T$ with label $j$, all vertices of the subtree $S_{v_{G e}}$ 
 (cf. Notation \ref{UEUPEG NOT}) are labeled by $j$.
 
-Lastly, given a subset $J\subset \underline{l}$, a planar label map $\varphi \colon T \to S$ is said to be $J$-inert if for every $G$-vertex $v_{G e}$ of $T$ with label $j \in J$, we have $S_{v_{Ge}} = T_{v_{Ge}}$.
+Lastly, given a subset $J \subseteq \underline{l}$, a planar label map $\varphi \colon T \to S$ is said to be $J$-inert if for every $G$-vertex $v_{G e}$ of $T$ with label $j \in J$, we have $S_{v_{Ge}} = T_{v_{Ge}}$.
 \end{definition}
 
 
@@ -8429,8 +8429,8 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 
 \begin{definition}
 Let $-1 \leq s \leq n$ and 
-$\lambda = \lambda_a \amalg \lambda_i$
-a partition of $\{1,2,\cdots,l\}$.
+$\lambda = \lambda_a \amalg \lambda_i$ 
+be a partition of $\{1,2,\cdots,l\}$.
 
 We define $\Omega_{G}^{n,s,\lambda}$ to have as objects $n$-planar strings (where $T_{-1} = \mathsf{lr}(T_0)$ as in \eqref{STRINGOBJALT EQ})
 \begin{equation}\label{NSTRINGLAB EQ}
@@ -8620,7 +8620,7 @@ for $i<k$ and $i>k$ now generalize to diagrams
 \end{tikzcd}
 \end{equation}
 while the diagrams in \eqref{PIIDEFDI2 EQ}
-for $j<k$ and $j>k$ generalize to diagrams
+for $j<k$ and $j \geq k$ generalize to diagrams
 \begin{equation}\label{PIIDEFDI2LAB EQ}
 \begin{tikzcd}[row sep=1.7em,column sep = 3em]
 	\Omega_{G}^{n,\bullet,\lambda} \ar{d}[swap]{s_{j}} \ar{r}{V_G^k} &
@@ -8647,6 +8647,7 @@ Lastly, the $\Omega_G^{n,s,\lambda}$ are also functorial in $\lambda$. Explicitl
 $\alpha \colon \{1,\cdots,l\} \to \{1,\cdots,m\}$
 and partitions such that 
 $\lambda' \leq \alpha^{\**} \lambda$
+(i.e. $\lambda'_a \subseteq \alpha^{-1}(\lambda_a)$)
 one has forgetful functors
 \begin{equation}\label{LAMBINC EQ}
 	\Omega_G^{n,s,\lambda'}
@@ -8654,7 +8655,7 @@ one has forgetful functors
 	\Omega_G^{n,s,\lambda}
 \end{equation}
 compatible with the forgetful functors \eqref{NKNFGT EQ},
-the simplicial operators $d_i$, $s_j$ and the isomorphisms
+simplicial operators $d_i$, $s_j$, and isomorphisms
 $\pi_i$.
 
 \begin{remark}
@@ -8697,8 +8698,9 @@ as the pullback
 \end{notation}
 
 \begin{remark}
-To unpack \eqref{OMEGAWRTUP EQ},
-note first that by \eqref{EXTRACASES EQ} $\Omega_G^{-1,r,\lambda}$ is simply either 
+To unpack \eqref{OMEGAWRTUP EQ}, note first that,
+by \eqref{EXTRACASES EQ},
+$\Omega_G^{-1,r,\lambda}$ is simply either 
 $\Sigma_G^{\amalg l}$ if $r<0$ or 
 $\Sigma_G$ if $r \geq 0$,
 while $\Omega_G^{n,s,\lambda} = \coprod (\Omega_{G}^{n})^{\times \lambda}$ if $s<0$.
@@ -8728,8 +8730,8 @@ depicted below.
 	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \end{equation}
-Therefore, for $s>n$ \eqref{OMEGAWRTUP EQ} 
-coincides with 
+Therefore, for $s>n$, 
+\eqref{OMEGAWRTUP EQ} coincides with 
 $\Omega_G^{n} \wr (\coprod_j A_j)$
 as defined in Notation \ref{OMEGAGNA NOT}.
 Moreover, for $s<0$ both squares in the diagram below
@@ -8829,7 +8831,7 @@ For $k< i < k+l+1 \leq n$ the composite natural transformation in the diagram be
 \end{tikzcd}
 \end{equation}
 \end{enumerate}
-Moreover, the analogue claim hold for the 
+Moreover, the analogue claim holds for the 
 $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions
 (with the caveat that we exclude the cases of (d)
 that involve $d_n$). 
@@ -8856,7 +8858,8 @@ are also pullback squares.
 	with the only non immediate part
 	being the analogue of (d), stating that the right squares in 
 	\eqref{PIIDEFDILAB EQ} and
-	\eqref{PIIDEFDI2LAB EQ} are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners do assemble into the required labels on the top left corner, hence the result follows.
+	\eqref{PIIDEFDI2LAB EQ} are pullbacks. Since in these diagrams the $s$-coordinate $\bullet$ is determined by the top left corner, a direct analysis shows that compatible choices of labels for strings on the top right and bottom left corners assemble into the required labels on the top left corner, 
+	and the result follows.
 		
 	For the more general $\Omega_{G}^{n,s,\lambda} \wr (A_j)$ constructions, one can either build the
 	general $V_G^k$, $d_i$, $s_j$, $\pi_i$ 
@@ -8884,7 +8887,7 @@ $V_G^n \wr (\Omega_G^k)^{\times \lambda}\wr (A_j) $
 with 
 $V_G^n \wr (A_j)$.
 
-Further, these identifications are compatible with each other and associative in the obvious ways, and they induce identifications
+Further, these identifications are compatible with each other, associative in the obvious ways, and they induce identifications
 \begin{equation}\label{MOREIDENT2 EQ}
 \begin{tikzcd}[row sep=0, column sep = 10]
 	d_i \wr (\Omega_G^{n})^{\times \lambda} \simeq d_i 
@@ -8898,7 +8901,8 @@ Further, these identifications are compatible with each other and associative in
 	\Omega_G^k \wr (s_j)^{\times \lambda} \simeq s_{j+k+1}
 \end{tikzcd}
 \end{equation}
-as well as obvious identifications of forgetful functors.
+as well as obvious identifications for the forgetful functors
+in \eqref{NKNFGT EQ}.
 \end{corollary}
 
 
@@ -9013,7 +9017,7 @@ $N^{\circ s+1} \coprod (N^{\times \lambda})^{\circ n-s}$.
 Next, consider the following diagram
 (the right depiction merely unpacks the notation on the left),
 where the bottom square is one of the pullback squares
-\eqref{ADDSQUARE EQ}.
+in \eqref{ADDSQUARE EQ}.
 \begin{equation}\label{NATCOP EQ}
 \begin{tikzcd}[column sep = 3.4em,row sep = 0.8em]
 	\Omega^{0,-1,\lambda}_G 
