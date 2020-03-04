@@ -7716,10 +7716,6 @@ is an isomorphism whenever evaluated at a $Y$ such that $Y(C_0)=\emptyset$.
 
 
 
-
-
-
-
 \renewcommand{\F}{\mathcal{F}}
 
 \subsection{Indexing systems and partial genuine operads}
@@ -7739,7 +7735,8 @@ the Elmendorf-Piacenza equivalence
 \]
 for each \textit{family} $\mathcal{F}$ of subgroups of $G$
 (i.e. a collection closed under conjugation and subgroups).
-Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$ consists of those $G/H$ such that $H \in \mathcal{F}$ 
+Here $\mathsf{O}_\mathcal{F} \hookrightarrow \mathsf{O}_G$
+consists of those $G/H$ such that $H \in \mathcal{F}$, 
 and thus the objects of
 $\mathsf{Top}^{\mathsf{O}_{\mathcal{F}}^{op}}$
 are partial coefficient systems.
@@ -7772,9 +7769,10 @@ $\mathsf{O}_{\mathcal{F}} \hookrightarrow
 
 \begin{definition}
 	A \textit{sieve} of a category $\mathcal{D}$
-	is a subcategory $\mathcal{S}$ such that
+	is a subcategory $\mathcal{S}$ such that,
 	for any arrow $f \colon d \to s$ in $\mathcal{D}$ with 
-	$s \in \mathcal{S}$ then both $d$ and $f$ are also in $\mathcal{S}$. 
+	$s \in \mathcal{S}$,
+	both $d$ and $f$ are also in $\mathcal{S}$. 
 	In particular, sieves are full subcategories.
 \end{definition}
 
@@ -7842,7 +7840,7 @@ the full subcategories spanned by the $\F$-trees.
 
 
 \begin{remark}\label{VACUOUSNESS REM}
-	By vacuousness the stick $G$-trees
+	By vacuousness, the stick $G$-trees
 	$(G/H) \cdot \eta = (\eta)_{G/H}$ are always $\mathcal{F}$-trees.
 \end{remark}
 
@@ -7869,10 +7867,10 @@ the full subcategories spanned by the $\F$-trees.
 
 \begin{definition}\label{INDEXSYS DEF}
 	A family $\mathcal{F}$ of $G$-corollas is called a 
-	\textit{weak indexing system}
-	if for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F}}^0$ we have 
-	$\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$;
-        that is, if the leaf-root functor restricts to a functor
+	\textit{weak indexing system} if,
+	for any $\mathcal{F}$-tree $T \in \Omega_{\mathcal{F}}^0$,
+	we have $\mathsf{lr}(T) \in \Sigma_{\mathcal{F}}$;
+	that is, if the leaf-root functor restricts to a functor
 	$\mathsf{lr} \colon \Omega_{\mathcal{F}}^0 \to \Sigma_{\mathcal{F}}$.
 Moreover, $\mathcal{F}$ is called simply an \textit{indexing system} if all trivial corollas 
 $(G/H)\cdot C_n = (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
@@ -7880,7 +7878,8 @@ $(G/H)\cdot C_n = (C_n)_{G/H}$ are in $\Sigma_{\mathcal{F}}$.
 
 
 \begin{remark}
-	In light of Remark \ref{VACUOUSNESS REM} any weak indexing system must contain the $1$-corollas $(G/H) \cdot C_1 \simeq (C_1)_{G/H}$ for all $H\leq G$.
+	In light of Remark \ref{VACUOUSNESS REM},
+	any weak indexing system must contain the $1$-corollas $(G/H) \cdot C_1 \simeq (C_1)_{G/H}$ for all $H\leq G$.
 \end{remark}
 
 \begin{remark}
@@ -7895,7 +7894,9 @@ The existence of canonical maps
 $\mathsf{lr}(T) \to T$ shows that the sieve condition
 implies the $\mathsf{lr}$ condition
 in Definition \ref{INDEXSYS DEF}. 
-Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, and thus follows from Definition \ref{INDEXSYS DEF} since the subcategory 
+Conversely, as discussed immediately preceding \cite[Def. 9.5]{Pe17}, the sieve condition needs only be checked for inner faces and degeneracies, i.e. tall maps, 
+and thus follows from Definition \ref{INDEXSYS DEF},
+since the subcategory 
 $\Omega_{\mathcal{F}}^1 \hookrightarrow \Omega^1_G$ 
 of planar tall strings between $\mathcal{F}$-trees
 matches the pullback of
@@ -8056,7 +8057,7 @@ $\gamma^{\**} \iota_{\**}$
 is still defined by computing fixed points while the 
 left adjoint
 $\iota^{\**}\gamma_!$
-is still essentially a forgetful functor, with those levels not present in $\mathcal{F}$ declared to be $\emptyset$.
+is still essentially a forgetful functor, with those levels not in $\mathcal{F}$ declared to be $\emptyset$.
 
 In practice, however, the use of the composite adjunction
 \eqref{COMPADJ EQ}
