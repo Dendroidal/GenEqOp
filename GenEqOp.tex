@@ -5697,7 +5697,9 @@ $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$
 of Remark \ref{VERTEXDECOMP REM}. I.e., for 
 $v,w \in V_G(T_k)$ the condition $v<w$ is determined by the lowest $l$ such that the images of $v,w$ in $V_G(T_l)$ are distinct.
 
-Therefore, for each $d_i$ with $i < k$ there are natural isomorphisms as on the left below which interchange the
+Therefore, for each $d_i$ with $i < k$,
+there are natural isomorphisms as on 
+the left below which interchange the
 lexicographical order on the indexing set $V_G(T_k)$
 induced by the string
 $V_G(T_k) \to V_G(T_{k-1}) \to \cdots \to V_G(T_0)$ 
@@ -5953,7 +5955,8 @@ given $X \in \mathsf{Sym}_G(\mathcal{V})$, $\mathbb{F}_G X$ is given by the left
 Explicitly, using Proposition \ref{FIBERKANMAP PROP}
 	and the fact that 
 	the rooted undercategories
-	$C \downarrow_{\mathsf{r}} \Omega_G^0$
+	$C \downarrow_{\mathsf{r}} \Omega_G^0$ 
+	(cf. Notation \ref{ROOTUNDER NOT})
 	only depend on the isomorphisms
 	in $\Omega^0_G,\Sigma_G$,
 	the left Kan extension can be computed by
@@ -6002,7 +6005,7 @@ by using the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
 %In \S \ref{COMPARISON_REGULAR_SECTION}, we use Proposition \ref{MONAD_COMPARISON_PROP} to show that the usual ``free $G$-operad'' monad is
 %isomorphic to one transfered from $\mathbb F_G$,
 %yeilding a comparison between the two notions of equivariant operad.
-Lastly, \ref{INDEXING_SECTION} shows that the indexing systems of Blumberg-Hill (or, more precisely, a slight generalization called ``weak indexing systems''; see Remark \ref{WINDEX_GAMMA_REM}) naturally give rise to notions of ``partial genuine operads''.
+Lastly, \S \ref{INDEXING_SECTION} shows that the indexing systems of Blumberg-Hill (or, more precisely, a slight generalization called ``weak indexing systems''; see Remark \ref{WINDEX_GAMMA_REM}) naturally give rise to notions of ``partial genuine operads''.
 
 %We end this section by enumerating other adjunctions along which transfers of $\mathbb F_G$ can occur, 
 %building the notions of ``partial genuine $G$-operads''.
@@ -6077,7 +6080,7 @@ and $\mathsf{Lan}$/$\mathsf{Ran}$ denote the left/right Kan extension functors.
 
 
 
-We will mainly be interested in the span categories 
+We will be mainly interested in the span categories 
 $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})\simeq 
 \mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
 
@@ -6199,7 +6202,7 @@ $\Omega_G^n \wr A \to \mathsf{O}_G$
 are defined as compatible pairs of pullbacks in 
 $\Omega_G^n$ and $\Fin_s \wr A$.
 
-To define $d_i$ we consider the diagram below (for some $i<k$).
+To define $d_i$, we consider the diagram below (for some $i<k$).
 \[
 \begin{tikzcd}[column sep = small, row sep = small]
 	\Omega_{G}^n \wr A \ar{rrrr}{V_G^{k}} \ar[dashed]{rd}[swap,near end]{d_i} \ar{dd}
@@ -6383,8 +6386,8 @@ One has a multiplication $\mu \colon N \circ N \Rightarrow N$ given by the natur
 	\end{tikzcd}
 \end{equation}
 where we note that the top right composite in the 
-$\pi_0$ square is indeed $V_{G}^{1}$
-using the inductive description in (the $(\minus) \wr A$ analogue of) Notation \ref{INDVNG NOT}.
+$\pi_0$ square is indeed $V_{G}^{1}$,
+thanks to the inductive description in (the $(\minus) \wr A$ analogue of) Notation \ref{INDVNG NOT}.
 
 Lastly, there is a unit $\eta \colon id \Rightarrow N$ given by the strictly commutative diagrams
 %(where to see that the second square commutes we recall that $V_G^{-1} = \delta^0$)
@@ -6571,8 +6574,9 @@ Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
 together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$.
 
 
-We will now show that under reasonable conditions on 
-$\mathcal{V}$ this monad can be transferred by using 
+We will now show that,
+under reasonable conditions on $\mathcal{V}$,
+this monad can be transferred by using 
 Proposition \ref{MONADADJ PROP},
 i.e. we will show that the natural transformations 
 $
@@ -6597,8 +6601,8 @@ $\Sigma_G^{op} \leftarrow A^{op} \to \mathcal{V}$
 together with a split Grothendieck fibration 
 $\mathsf{r} \colon A \to \mathsf{O}_G$
 such that $A \to \Sigma_G$ is a map of split fibrations.
-
-Similarly, arrows are maps of spans that induce maps of split fibrations.
+%
+Similarly, arrows are maps of spans inducing maps of split fibrations.
 \end{definition}
 
 We refer to split fibrations $A \to \mathsf{O}_G$
@@ -6635,7 +6639,7 @@ $\Fin_s \wr \mathsf{O}_G$.
 	\Fin_s \wr \Sigma_G
 \end{tikzcd}
 \]
-Since by Lemma \ref{VGPULL LEM} the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
+Since, by Lemma \ref{VGPULL LEM}, the map $V_G$ sends pullback  arrows in $\Omega_{G}^0$
 (over $\mathsf{O}_G$) to pullback arrows in $\Fin_s \wr \Sigma_G$ (over $\Fin_s \wr \mathsf{O}_G$), 
 the root pullback arrows in 
 $\Omega_G^0 \wr A$ can be defined as compatible pairs of pullback arrows in $\Omega^0_G$ and $\Fin_s \wr A$,
@@ -6653,9 +6657,9 @@ the pullback $\psi^{\**} \tilde{T}$ is given by
 \]
 where $\bar{\psi}$ is the map 
 $\bar{\psi} \colon \psi^{\**}T \to T$
-and $\bar{\psi}_{G e}$ denotes the restriction
+and $\bar{\psi}_{G e}$ is the restriction
 $\bar{\psi} \colon G e \to G \bar{\psi}(e)$, 
-as in Remark \ref{PULLCOMP REM}.
+cf. Remark \ref{PULLCOMP REM}.
 \end{remark}
 
 
@@ -6751,8 +6755,8 @@ where we recall that the leftmost $\tau$
 is described by a map of sets
 $\tau \colon V_G(T) \to X$
 and maps
-$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to S_{\tau(v_{Ge})}$ in $\Sigma_G$
-and $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
+$\tau_{v_{Ge}} \colon T_{v_{Ge}} \to S_{\tau(v_{Ge})}$ in $\Sigma_G$,
+and that $\mathsf{r} \colon \Sigma_{G} \to \mathsf{O}_G$
 is the root functor.
 
 We now compute the following composite
@@ -6926,7 +6930,7 @@ of genuine equivariant sequences and genuine equivariant operads.
 \end{remark}
 
 
-We will throughout this section fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions described herein.
+Throughout this section we fix a total order of $G$ such that the identity $e$ is the first element, though we note that the exact order is unimportant, as any other such choice would lead to unique isomorphisms between the constructions described herein.
 
 We now have an inclusion functor
 \begin{equation}\label{IOTADEF EQ}
@@ -7001,8 +7005,8 @@ As a side note, the formulas for $\iota_!$ and $\iota_{\**}$ are independent of 
 	
 	To obtain these formulas,
 	write $1 \in I$ for the first element and 
-	$H \leq G$ for its isotropy,
-	and note that the $G$-action described after \eqref{IOTAFUNS EQ} defines an action on $Y(C_1)$.
+	$H \leq G$ for its isotropy.
+	Note that the $G$-action described after \eqref{IOTAFUNS EQ} defines an $H$-action on $Y(C_1)$.
 	Moreover, viewing 
 	$C_1 \in \Sigma$ as an integer arity $n\geq 0$,
 	so that $Y(C_1) = Y(n)$
@@ -7060,8 +7064,8 @@ under precomposition
 \end{remark}
 
 
-There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which for 
-$(C_i)_I \in \Sigma_G^{\text{fr}}$
+There is an obvious natural transformation $\beta \colon \iota_! \Rightarrow \iota_{\**}$ which,
+for $(C_i)_I \in \Sigma_G^{\text{fr}}$,
 sends $Y(C_1)$ to the ``$G$-twisted diagonal'' of 
 $\prod_I Y(C_i)$.
 Moreover, letting $\eta_!,\epsilon_!$ 
@@ -7135,7 +7139,8 @@ it is straightforward to check that the following diagram commutes.
 \begin{proof}
 We first show (i), starting with some notation. 
 In analogy with $\Sigma_{G}^{\text{fr}}$,
-we write $\Omega_{G}^{0,\text{fr}}$ for the subcategory of free trees and note that the leaf-root and vertex functors then restrict to functors
+we write $\Omega_{G}^{0,\text{fr}}$ for the subcategory of free trees,
+and note that the leaf-root and vertex functors then restrict to functors
 $\mathsf{lr} \colon \Omega_{G}^{0,\text{fr}} \to \Sigma_G^{\text{fr}}$,
 $V_G \colon \Omega_{G}^{0,\text{fr}} \to \Fin_s \wr \Sigma_G^{\text{fr}}$.
 Moreover, for each $C \in \Sigma_G^{\text{fr}}$ one has an equality of rooted undercategories between
@@ -7216,10 +7221,11 @@ is the identity. Both of these are a consequence of
 		\ar[Rightarrow]{ru}[swap]{\iota^{\**} \beta}
 \end{tikzcd}
 \]
-(iii) amounts to showing that if $X(C) =\emptyset$ whenever 
-$C \nin \Sigma_G^{\text{fr}}$
+Part (iii) amounts to showing that, if $X(C) =\emptyset$ whenever 
+$C \nin \Sigma_G^{\text{fr}}$,
 then we must also have that
-$\mathbb{F}_G X(C) =\emptyset$.
+$\mathbb{F}_G X(C) =\emptyset$
+for $C \nin \Sigma_G^{\text{fr}}$.
 Indeed, since for  
 $C \nin \Sigma_G^{\text{fr}}$
 the undercategory
@@ -7262,13 +7268,11 @@ $\tilde \alpha: \mathbb{F} \iota^{\**} \to \iota^{\**} \mathbb{F}_G$ encoded on 
 	& \Sigma_G
 \end{tikzcd}
 \end{equation}
-That 
-$\alpha$
-is a natural isomorphism
+That $\alpha$ is a natural isomorphism
 follows by the previous identifications 
 $C \downarrow_{\mathsf{r}} \Omega_{G}^{0} \simeq
 C \downarrow_{\mathsf{r}} \Omega_{G}^{0,\text{fr}}$
-for $C \in G^{op} \times \Sigma$
+for $C \in G^{op} \times \Sigma$,
 together with the fact that the retraction 
 $\rho \colon \Omega_{G}^{0,\text{fr}} \to G^{op} \times \Omega^0$
 (built just as the retraction
@@ -7300,7 +7304,7 @@ $
 		\rightleftarrows
 	\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})
 	\colon \iota^{\**}
-$
+$,
 where $\iota_!$ is composition with $\iota$ and $\iota^{\**}$ is the pullback of spans. 
 Writing $N$, $N_G$ for the monads 
 on the span categories, mimicking (\ref{MONADEQUIV DEF}) yields
@@ -7344,9 +7348,9 @@ The claim that $\tilde{\alpha}$ is a map of monads is then straightforward. Writ
 	\colon j
 \quad
 	\mathsf{Lan}_G \colon
-	\mathsf{WSpan}^l(\Omega_G^{op},\mathcal{V})
+	\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})
 		\rightleftarrows
-	\mathsf{Fun}(\Omega_G^{op},\mathcal{V})
+	\mathsf{Fun}(\Sigma_G^{op},\mathcal{V})
 	\colon j_G
 \]
 for the span-functor adjunctions,  
@@ -7529,7 +7533,7 @@ one has $\mathbb{F}_G \iota_{\**} X \simeq  \iota_{\**} \mathbb{F}X$.
 We note that, informally, 
 by \eqref{IOTAFUNSALT EQ} the latter means that
 the graph fixed points
-$\left(\mathbb{F} X\right)(n)^{\Gamma}$
+$\left(\left(\mathbb{F} X\right)(n)\right)^{\Gamma}$
 are computed from the graph fixed points of $X$
 via $\mathbb{F}_G$.
 
