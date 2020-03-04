@@ -9092,7 +9092,10 @@ yields the following definition.
 
 \begin{remark}\label{REALEX REM}
 Suppose that $\C \in \mathsf{Cat}$ contains subcategories 
-$\C_h$, $\C^v$ whose arrows span those of $\C$.
+$\C_h$, $\C^v$
+such that any arrow of $\C$ factors as 
+an arrow of $\C_h$ followed by an arrow of $\C_v$.
+%
 Defining 
 $\mathcal{C}^{v}_{h,\bullet} \in \mathsf{Cat}^{\Delta^{op}}$
 so that the objects of $\mathcal{C}^{v}_{h,n}$ are $n$-strings in $\C_h$ and the arrows are compatible $n$-tuples of
@@ -9101,9 +9104,9 @@ that it is
 $|\mathcal{C}^{v}_{h,\bullet}| = \C$.
 
 An immediate example is given by the planar strings in Definition \ref{PLANSTR DEF}. Writing 
-$\C = \Omega_G^{\mathsf{t}}$ the category of tall maps,
-$\C_h = \Omega_G^{\mathsf{pt}}$ the category of planar tall maps and
-$\C^v = \Omega_G^{0}$ the category of quotients,
+$\C = \Omega_G^{\mathsf{t}}$ for the category of tall maps,
+$\C_h = \Omega_G^{\mathsf{pt}}$ the category of planar tall maps,
+and $\C^v = \Omega_G^{0}$ the category of quotients,
 one has $\C_{h,\bullet}^{v} = \Omega_G^{\bullet}$ and thus
 $|\Omega_G^{\bullet}| = \Omega_G^{\mathsf{t}}$.
 
@@ -9148,6 +9151,7 @@ where $\tilde{N}\colon |A_{\bullet}| \to \mathcal{V}^{op}$
 is given by $N_0$ on objects and generating arrows 
 in $A_0$, and on generating arrows $d_1(a) \to d_0(a)$
 for $a \in A_1$ as the composite
+natural transformation arrow
 \[
 \begin{tikzcd}[column sep =3em]
 	|[alias=TA]|
@@ -9177,7 +9181,7 @@ whose underlying categories are
 $\Omega_G^{n,\lambda_l}$
 for $\lambda_l$ the partitions described at the beginning of
 \S \ref{LABELSTRI SEC}.
-Indeed, in the $n$ direction all $d_i$ with $0 < i < n$
+Indeed, in the $n$ direction, all $d_i$ with $0 < i < n$
 are induced by the multiplication $NN \to N$ defined in 
 \eqref{MULTDEFSPAN EQ} while $d_0$
 is induced by the composite
@@ -9192,7 +9196,7 @@ $N$ preserves arrows in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$ given by s
 Degeneracies are similar.
 Moreover, that the functor component of $d_n$
 matches the functor defined in \eqref{LABSTSIM EQ}
-follows from the presence of the $\iota$ in \eqref{LANLEVELFOR EQ}.
+follows from the presence of $\iota$ in \eqref{LANLEVELFOR EQ}.
 
 As for the $l$ direction, we note that our convention on 
 the double bar construction 
@@ -9220,7 +9224,7 @@ Our next task is thus that of identifying the category of extension trees $\Omeg
 in \eqref{EXTTREEFOR EQ},
 i.e. to produce an explicit model for the double realization
 $|\Omega_G^{n,\lambda_l}|$.
-By Remark \ref{REALEX REM}
+By Remark \ref{REALEX REM},
 we can first perform the realization in the $n$ direction, so as to obtain
 $|\Omega_G^{n,\lambda_l}|=|\Omega_G^{\mathsf{t},\lambda_l}|$,
 where we recall that 
@@ -9247,7 +9251,8 @@ We now identify $\Omega_G^{e}$ directly.
 
 
 \begin{example}\label{REGALTERNMAP EX}
-The following  is an example of a planar map in $\Omega_G^e$ for $G=\**$, where black nodes represent $\mathcal{P}$-labeled nodes, grey nodes represent $Y$-labeled nodes and white nodes represent $X$-labeled nodes.
+The following  is an example of a planar map in $\Omega_G^e$ for $G=\**$, where black nodes represent $\mathcal{P}$-labeled nodes, grey nodes represent $Y$-labeled nodes,
+and white nodes represent $X$-labeled nodes.
 \[
 \begin{tikzpicture}[grow=up,auto,level distance=2.3em,
 every node/.style = {font=\footnotesize},
@@ -9457,22 +9462,26 @@ Proposition \ref{RANTRANS PROP} now yields the following, establishing \eqref{EX
 	$\mathcal P \coprod\limits_{\mathbb F X} \mathbb F Y \simeq \mathsf{Lan}_{(\Omega_G^e \to \Sigma_G)^{op}}\tilde N^{(\mathcal P, X,Y)}$.
 \end{corollary}
 
-Our next task is that of identifying a convenient initial subcategory $\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
-We first introduce the auxiliary notion of alternating trees.
+
+Our next task is to identify a convenient initial subcategory
+$\widehat{\Omega}_G^{e} \hookrightarrow \Omega_G^e$.
+We first introduce the auxiliary notion of \emph{alternating trees}.
 Recall the notion of input path (cf. Notation \ref{INPUTPATH NOT})
 $I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi^G$.
 
 
 \begin{definition}\label{OMEGAA DEF}
-A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, for all leafs $l \in T$ one has that the input path $I(l)$ has an even number of elements.
+A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, 
+for all leafs $l \in T$,
+one has that the input path $I(l)$ has an even number of elements.
 
 Further, a vertex $e^{\uparrow} \leq e$ is called \textit{active}
 if $|I(e)|$ is odd and \textit{inert} otherwise.
 
 Finally, a tall map $T \xrightarrow{\varphi} S$ between alternating $G$-trees is called a 
-\textit{tall alternating map}
-if for any inert vertex $e^{\uparrow} \leq e$ of $T$ one has that 
-$S_{e^{\uparrow} \leq e}$ is an inert vertex of $S$.
+\textit{tall alternating map} if,
+for any inert vertex $e^{\uparrow} \leq e$ of $T$,
+one has that $S_{e^{\uparrow} \leq e}$ is an inert vertex of $S$.
 
 We will denote the category of alternating $G$-trees and tall alternating maps by $\Omega_G^a$.
 \end{definition}
@@ -9565,28 +9574,31 @@ The term ``alternating'' reflects the fact that adjacent nodes have different co
 
 
 \begin{remark}\label{ALTSUB REM}
-	If $T \in \Omega$ is alternating, it follows from 
-	Remark \ref{INPPATH REM} that a tall map 
+	If $T \in \Omega$ is alternating, 
+	Remark \ref{INPPATH REM} implies that a tall map 
 	$\varphi \colon T \to U$ is an alternating map
 	iff the corresponding substitution datum 
-	under Proposition \ref{SUBDATAUNDERPLAN PROP}
-	is given by the identity 
-	$U_{e^{\uparrow} \leq e } = T_{e^{\uparrow} \leq e}$
-	when $e^{\uparrow} \leq e$ is inert 
+	in Proposition \ref{SUBDATAUNDERPLAN PROP}
+	is given by an isomorphism 
+	$U_{e^{\uparrow} \leq e } \simeq T_{e^{\uparrow} \leq e}$
+	for inert $e^{\uparrow} \leq e$, 
 	and by an alternating tree
-	$U_{e^{\uparrow} \leq e }$ when 
-	$e^{\uparrow} \leq e$ is active.
+	$U_{e^{\uparrow} \leq e }$ for active 
+	$e^{\uparrow} \leq e$.
 \end{remark}
 
 
 \begin{definition}\label{HATOMEGAE DEF}
 	$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
-	whose underlying tree is alternating, active nodes are labeled by $\mathcal{P}$,
-	and inert nodes are labeled by $X$ or $Y$. 
+	whose underlying tree is alternating
+	and active (resp. inert) nodes are labeled by $\mathcal{P}$
+	(by $X$ or $Y$). 
 \end{definition}
 
+
 Note that conditions (i) and (ii) in Definition \ref{EXTTREECAT DEF} 
-imply that for any map in $\widehat{\Omega}_G^e$
+imply that,
+for any map in $\widehat{\Omega}_G^e$,
 the underlying map is an alternating map.
 
 The following is the key to establishing the desired initiality of 
@@ -9735,8 +9747,8 @@ where the $U_i^X$, $U_j^Y$ are simply the $X,Y$-labeled nodes,
 and the $\{U_k^{\mathcal{P}}\}$ are the maximal outer subtrees whose nodes have only $\mathcal{P}$-labels (these may possibly be sticks). 
 Lemma \ref{OUTERFACEUNION LEM} guarantees that 
 each edge and each $\mathcal{P}$-labeled node belong to exactly
-one of the $U_k^{\mathcal{P}}$, and applying 
-Proposition \ref{BUILDABLE PROP}(iii)
+one of the $U_k^{\mathcal{P}}$, 
+so that applying Proposition \ref{BUILDABLE PROP}(iii)
 yields a planar tall map
 \begin{equation}\label{LRXDEF EQ}
 T = \mathsf{lr}_{\mathcal{P}}(U) \to U
@@ -9747,15 +9759,17 @@ such that $\{U_{e^{\uparrow} \leq e}\}_{(e^{\uparrow} \leq e) \in V(T)}
  $T$ has an obvious $(\mathcal{P},X,Y)$-labeling making 
 \eqref{LRXDEF EQ} into a label map, but we must still check $T \in \widehat{\Omega}^{e}_G$, i.e. that 
 $T$ is alternating with active vertices precisely those labeled by $\mathcal{P}$.
-But since the image of each $e \in T$
+But, since the image of each $e \in T$
 belongs to precisely one $U_k^{\mathcal{P}}$,
 $e$ belongs to precisely one of the $\mathcal{P}$-labeled nodes of $T$, so that any leaf input path
 $I(l) = (l = e_n \leq e_{n-1} \leq \cdots \leq e_1 \leq e_0)$
-must start with, end with, and alternate between 
+in $T$ must start with, end with, and alternate between 
 $\mathcal{P}$-nodes, and thus have even length.
 
-To check uniqueness, note that for any other planar label map $S \to U$ with $S \in \widehat{\Omega}_G^e$
-and $e^{\uparrow} \leq e$ a $\mathcal{P}$ vertex of $S$
+To check uniqueness note that, 
+for any other planar label map $S \to U$ with 
+$S \in \widehat{\Omega}_G^e$
+and $e^{\uparrow} \leq e$ a $\mathcal{P}$ vertex of $S$,
 the outer face 
 $U_{e^{\uparrow} \leq e}$
 must be a maximal 
@@ -9772,7 +9786,8 @@ and since this can be done in at most one way, we conclude
 $S=T$. 
 
 To check functoriality,
-consider the diagram below, where $T \to U$ is the map defined above and $\varphi \colon U \to V$ any map in $\Omega_G^e$.
+consider the diagram below, where $T \to U$ is the map \eqref{LRXDEF EQ}
+defined above and $\varphi \colon U \to V$ any map in $\Omega_G^e$.
 \begin{equation}\label{LRPFUN EQ}
 \begin{tikzcd}
 	T \ar{r} \ar[dashed]{d} &  U \ar{d}{\varphi}
@@ -9783,7 +9798,7 @@ consider the diagram below, where $T \to U$ is the map defined above and $\varph
 The composite $T \to V$ is encoded by a substitution datum
 $\{T_{e^{\uparrow} \leq e} \to V_{e^{\uparrow} \leq e}\}$
 which is given by an isomorphism
-if $e^{\uparrow} \leq e$ has label $X$ or $Y$ (possibly changing a $Y$ label to a $X$ label),
+if $e^{\uparrow} \leq e$ has label $X$ or $Y$ (possibly changing a $Y$-label to a $X$-label),
 and by some $(X,\mathcal{P})$-labeled tree 
 $V_{e^{\uparrow} \leq e}$ if $e^{\uparrow} \leq e$
 has a $\mathcal{P}$-label.
@@ -9876,14 +9891,20 @@ We define \textit{degrees} of $T$ by
 \]
 which we note do not depend on the choice of $i \in I$.
 
-Similarly, for $T = (T_i)_{i \in I} \in \Omega_G^a$
+Similarly, for $T = (T_i)_{i \in I} \in \Omega_G^a$,
 we write $V^{in}(T_i)$ for the inert vertices and
 $|T| = |V^{in}(T_i)|$.
+
 
 \begin{remark}
 	One key property of the degrees $|T|$, $|T|_X$, $|T|_Y$ is that they are invariant under root pullbacks, which are defined
 	by generalizing Definition \ref{ROOTPULL DEF}
 	in the obvious way.
+	
+	As such, we caution that, though 
+	$|V^{in}(T_i)| = k$
+	for each of the $T_i$ that constitute $T=(T_i)_{i \in I}$,
+	one can only guarantee $|V_G^{in}(T)| \leq k$.
 \end{remark}
 
 
@@ -9940,11 +9961,6 @@ relabel some $Y$-vertices to $X$-vertices.
 	(Y \to X)^{\times V_G^{in}(T)}
 \end{equation}
 for $V_G^{in}(T)$ the set of inert $G$-vertices.
-
-Note that though 
-$|V^{in}(T_i)| = k$
-for each of the $T_i$ that constitute $T=(T_i)_{i \in I}$,
-one can only guarantee $|V_G^{in}(T)| \leq k$.
 \end{remark}
 
 
@@ -9967,7 +9983,8 @@ over $\Sigma_G$.
 \end{lemma}
 
 The proof will make use of an additional construction on 
-$\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
+$\Omega_{G}^e$: 
+given $T \in \Omega_{G}^e$ we let $T_{\mathcal{P}}$ denote the result of replacing all $X$-labeled nodes of $T$ with $\mathcal{P}$-labeled nodes.
 
 \begin{remark}\label{YINERT REM}
 	In contrast to the functor
@@ -9975,10 +9992,11 @@ $\Omega_{G}^e$: given $T \in \Omega_{G}^e$ let $T_{\mathcal{P}}$ denote the resu
 	\Omega_G^e \to \widehat{\Omega}_G^e $
 	of Proposition \ref{LXP PROP},
 	the $(\minus)_{\mathcal{P}}$ construction 
-	does not define a full functor
-        $\Omega_G^e \to \Omega_G^e$, instead only being functorial, and the obvious maps $T_{\mathcal{P}} \to T$ only being natural,
-        with respect to the
-        maps of $\Omega_G^e$ that preserve $Y$-labels.
+	is not a full functor
+	$\Omega_G^e \to \Omega_G^e$.
+	Instead, $(\minus)_{\mathcal{P}}$ is only functorial, and the obvious maps $T_{\mathcal{P}} \to T$ are only natural,
+	with respect to the
+	maps of $\Omega_G^e$ that preserve $Y$-labels.
 \end{remark}
 
 
@@ -10108,7 +10126,7 @@ C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k-1]
 C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]
 \]
 is initial, i.e. 
-(cf. \cite[IX.3]{McL}) that for each
+\cite[IX.3]{McL} that for each
 $(S,\pi \colon C \to \mathsf{lr}(S))$ in 
 $C \downarrow_{\mathsf{r}} \widehat{\Omega}_G^e[\leq\! k \mathbin{\backslash} Y]$
 the overcategory
@@ -10118,7 +10136,7 @@ the overcategory
 	(S,\pi)  
 \end{equation}
 is non-empty and connected. 
-By definition of rooted undercategory, $\pi$ is the identity on roots and thus an isomorphism on $\Sigma_G$,
+By definition of rooted undercategory, $\pi$ is the identity on roots and thus an isomorphism in $\Sigma_G$,
 so that objects of \eqref{UNDERCATPR EQ}
 correspond to maps
 $T \to S$
@@ -10132,11 +10150,11 @@ Otherwise, since $|S|_Y \neq k$ we have
 $|\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}})|<k$
 and the map 
 $\mathsf{lr}_{\mathcal{P}}(S_{\mathcal{P}}) \to S$,
-which is a rooted tall, shows that
+which is a rooted tall map, shows that
 \eqref{UNDERCATPR EQ} is indeed non-empty.
 
- 
-Now, consider a rooted tall map $T \to S$ with 
+
+Next, consider a rooted tall map $T \to S$ with 
 $T \in \widehat{\Omega}_G^e[\leq\! k-1]$. One can form a diagram
 \begin{equation}\label{K-1LANFINAL EQ}
 \begin{tikzcd}
@@ -10147,7 +10165,7 @@ $T \in \widehat{\Omega}_G^e[\leq\! k-1]$. One can form a diagram
 \end{equation}
 where $T \to T' \to S$ is the natural factorization such that $ T' \to S$ preserves $Y$-labels, 
 i.e., $T'$ is obtained from $T$ by simply relabeling to $X$ those $Y$-labeled vertices of $T$ that become $X$-vertices in $S$.
-Note that by Remark \ref{YINERT REM}, the existence
+Note that, by Remark \ref{YINERT REM}, the existence
 of the right square relies on 
 $T' \to S$ preserving $Y$-labels.
 Since all maps in 
@@ -10229,11 +10247,13 @@ in the category \eqref{UNDERCATPR EQ}, finishing the proof.
 %  \]
 %\end{proof}
 
-In what follows we write $\tilde{N} \colon \widehat{\Omega}_G^{e,op} \to \mathcal{V}$ for the functor in \eqref{ALTFOR EQ} and any of its restrictions.
-
-We are now in a position to produce the filtration \eqref{FILTR EQ}
-of the map $\mathcal{P} \to \mathcal{P}[u]$
-in \eqref{FREE_FG_EXT_EQ}.
+In what follows we write $\tilde{N} \colon \widehat{\Omega}_G^{e,op} \to \mathcal{V}$ for the functor in \eqref{ALTFOR EQ}
+(see also Remark \ref{TILNUNPACK REM})
+and any of its restrictions.
+%
+We can now describe the filtration \eqref{FILTR EQ}
+of the map $\mathcal{P} \to \mathcal{P}[u]$.
+%in \eqref{FREE_FG_EXT_EQ}.
 
 \begin{definition} \label{PK_DEFN}
   Let $\P_k$ denote the left Kan extension
@@ -10396,9 +10416,9 @@ Explicitly,
 consider first the analogue of the leftmost map in 
 (\ref{FILTRATION_LAN_SQUARE_DIAGRAM}) 
 that left Kan extends to 
-$\Omega_G^a[k]$ rather than to $\Sigma_G$, as below.
+$\Omega_G^a[k]$ rather than to $\Sigma_G$, as on the left below.
 The (punctured) cube fiber categories in
-\eqref{PUNCUBE EQ} together with \eqref{FIBERKAN EQ} yield
+\eqref{PUNCUBE EQ} and \eqref{FIBERKAN EQ} yield
 an identification (of maps)
 \[
 \left(\mathsf{Lan}_{

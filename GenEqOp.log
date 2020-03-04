@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  4 MAR 2020 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.1)  4 MAR 2020 16:52
 entering extended mode
 **./GenEqOp.tex
 (GenEqOp.tex
@@ -1337,12 +1337,12 @@ Overfull \hbox (4.72548pt too wide) detected at line 9043
  []
 
 [58] [59] [60] [61] [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 10537--10543
+Underfull \hbox (badness 10000) in paragraph at lines 10557--10563
 
  []
 
 [66] [67] [68] [69]
-Overfull \hbox (77.82855pt too wide) in paragraph at lines 11726--11738
+Overfull \hbox (77.82855pt too wide) in paragraph at lines 11746--11758
 []\OT1/cmr/m/n/9 (-20) The dou-ble coset for-mula gives a $\OML/cmm/m/it/9 \OM
 X/MnSymbolE/m/n/9 ˆ\OML/cmm/m/it/9 G\OMX/MnSymbolE/m/n/9 $\OT1/cmr/m/n/9 (-20)
  -orbit de-com-po-si-tion $[][]\OMX/MnSymbolE/m/n/9 ˆ[]~\OML/cmm/m/it/9 H\OMX/M
@@ -1350,43 +1350,43 @@ nSymbolE/m/n/9  \U/MnSymbolD/m/n/9  [][] []$\OT1/cmr/m/n/9 (-20) .|
  []
 
 [70] [71] [72] [73] [74]
-Overfull \hbox (5.68918pt too wide) detected at line 12592
+Overfull \hbox (5.68918pt too wide) detected at line 12612
 []|
  []
 
 [75]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 12645.
+(hyperref)                removing `math shift' on input line 12665.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 12645.
+(hyperref)                removing `math shift' on input line 12665.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 12645.
+(hyperref)                removing `math shift' on input line 12665.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 12645.
+(hyperref)                removing `math shift' on input line 12665.
 
 [76] [77] [78] [79] [80] [81] [82]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 14735.
+(hyperref)                removing `math shift' on input line 14755.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 14735.
+(hyperref)                removing `subscript' on input line 14755.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\infty' on input line 14735.
+(hyperref)                removing `\infty' on input line 14755.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 14735.
+(hyperref)                removing `math shift' on input line 14755.
 
 [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
 runsystem(makeindex GenEqOp.idx)...executed (allowed).
@@ -1410,23 +1410,23 @@ ble at:
  []
 
 [98]) [99]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16809.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 16809.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16829.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16829.
  (GenEqOp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16809.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 16829.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16809
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 16829
 .
 Package rerunfilecheck Info: File `GenEqOp.out' has not changed.
 (rerunfilecheck)             Checksum: D4280891FDEF2035B8EA8983A273AF36;2327.
 Package rerunfilecheck Info: File `GenEqOp.brf' has not changed.
-(rerunfilecheck)             Checksum: DA768B685F4853A2DE4A2ACA373C31EC;7626.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16809.
+(rerunfilecheck)             Checksum: D9ECC700F6B21AC0B9DBDF9EF47CFD5F;7626.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16829.
  ) 
 Here is how much of TeX's memory you used:
  42627 strings out of 492895
  921255 string characters out of 3123735
- 930437 words of memory out of 3000000
+ 927964 words of memory out of 3000000
  45103 multiletter control sequences out of 15000+200000
  45244 words of font info for 251 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1493,9 +1493,9 @@ isa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/symbols/msbm5.pfb><C:/Users/luisa/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on GenEqOp.pdf (99 pages, 4734411 bytes).
+Output written on GenEqOp.pdf (99 pages, 4735266 bytes).
 PDF statistics:
- 2867 PDF objects out of 2984 (max. 8388607)
+ 2868 PDF objects out of 2984 (max. 8388607)
  662 named destinations out of 1000 (max. 500000)
  35181 words of extra memory for PDF output out of 35830 (max. 10000000)
 
