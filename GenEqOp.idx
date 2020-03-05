@@ -5,7 +5,7 @@
 \indexentry{indexing systems!DeltaF@$\delta_{\mathcal F}$|hyperpage}{5}
 \indexentry{categories!of operads/symmetric sequences!OpG@$\Op_G(\V)$|hyperpage}{5}
 \indexentry{categories!of operads/symmetric sequences!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{8}
-\indexentry{monads!FG@$\mathbb F_G$|hyperpage}{8}
+\indexentry{monads!genopmonad@$\mathbb{F}_G$|hyperpage}{8}
 \indexentry{indexing systems!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$|hyperpage}{8}
 \indexentry{categories!of operads/symmetric sequences!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$|hyperpage}{8}
 \indexentry{categories!of operads/symmetric sequences!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$|hyperpage}{8}
@@ -33,8 +33,9 @@
 \indexentry{key functors!Gtreesleafroot0@$\mathsf{r}$|hyperpage}{23}
 \indexentry{structure on trees!outer faces!planarouterface@$T_{\underline{e} \leq e}$|hyperpage}{24}
 \indexentry{key functors!Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{26}
-\indexentry{structure on trees!vertices!UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
+\indexentry{structure on trees!outer faces!UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
 \indexentry{categories!of trees!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{30}
+\indexentry{categories!of operads/symmetric sequences!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{30}
 \indexentry{categories!of trees!SigmaG@$\Sigma_G$|hyperpage}{30}
 \indexentry{key functors!Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{30}
 \indexentry{categories!of trees!Gtrees0tall@$\Omega_G^{\mathsf t}$|hyperpage}{30}
@@ -43,7 +44,7 @@
 \indexentry{structure on trees!vertices!Gvertex@$v_{Ge}$|hyperpage}{31}
 \indexentry{structure on trees!vertices!Gvertexsubtree@$T_{v_{Ge}}$|hyperpage}{31}
 \indexentry{key functors!vertices@$\boldsymbol{V}_G$|hyperpage}{31}
-\indexentry{structure on trees!vertices!SVGE@$S_{v_{Ge}}$|hyperpage}{33}
+\indexentry{structure on trees!outer faces!SVGE@$S_{v_{Ge}}$|hyperpage}{33}
 \indexentry{categories!of trees!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{33}
 \indexentry{key functors!Gtreessimpdegen@$s_i$|hyperpage}{34}
 \indexentry{key functors!Gtreessimpface@$d_i$|hyperpage}{34}
@@ -53,6 +54,18 @@
 \indexentry{categories!of trees!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$|hyperpage}{34}
 \indexentry{key functors!vertices@$\boldsymbol{V}_G^k$|hyperpage}{35}
 \indexentry{key functors!Gtreessimppi@$\pi_i$|hyperpage}{36}
+\indexentry{monads!spanmonad@$N$|hyperpage}{41}
+\indexentry{key functors!upsilon@$\upsilon$|hyperpage}{42}
+\indexentry{categories!of operads/symmetric sequences!OpG@$\Op_G(\V)$|hyperpage}{44}
+\indexentry{monads!genopmonad@$\mathbb{F}_G$|hyperpage}{44}
 \indexentry{key functors!iotau@$\iota^{\**}$|hyperpage}{45}
 \indexentry{key functors!iotal@$\iota_{\**}$|hyperpage}{45}
 \indexentry{key functors!iotar@$\iota_{"!}$|hyperpage}{45}
+\indexentry{categories!of operads/symmetric sequences!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$|hyperpage}{48}
+\indexentry{key functors!gamma@$\gamma$|hyperpage}{50}
+\indexentry{categories!of operads/symmetric sequences!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$|hyperpage}{50}
+\indexentry{categories!of trees!OMNSLAM@$\Omega_G^{n,s,\lambda}$|hyperpage}{54}
+\indexentry{categories!of trees!OMEXT@$\Omega_G^{e}$|hyperpage}{59}
+\indexentry{categories!of trees!OMEXT@$\Omega_G^{a}$|hyperpage}{61}
+\indexentry{categories!of trees!OMEXT@$\widehat{\Omega}_G^{e}$|hyperpage}{61}
+\indexentry{indexing systems!F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$|hyperpage}{77}
