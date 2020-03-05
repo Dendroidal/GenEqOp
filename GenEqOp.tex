@@ -1285,7 +1285,7 @@ whenever $\mathcal{V}$ is a closed symmetric monoidal category with diagonals
 we define in \S \ref{FGMON SEC}
 a \textit{free genuine equivariant operad} monad 
 $\mathbb{F}_G$ on
-\index{monads!FG@$\mathbb F_G$}
+\index{monads!genopmonad@$\mathbb{F}_G$}
 $\mathsf{Sym}_G(\mathcal{V})$
 whose algebras form the desired category 
 $\mathsf{Op}_G(\mathcal{V})$.
@@ -4652,7 +4652,7 @@ the category of tall maps under $T$.
 	we will abbreviate
 	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
 	as simply
-	$U_{e^{\uparrow} \leq e}$\index{structure on trees!vertices!UEUPE@$U_{e^{\uparrow} \leq e}$}.
+	$U_{e^{\uparrow} \leq e}$\index{structure on trees!outer faces!UEUPE@$U_{e^{\uparrow} \leq e}$}.
 \end{notation}
 
 
@@ -4791,6 +4791,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 
 
 \begin{definition}\label{GSYMCAT DEF}
+	\index{categories!of operads/symmetric sequences!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}
 	The \textit{$G$-symmetric category},
 	whose objects we call \textit{$G$-corollas}, is the full subcategory 
 	$\Sigma_G \hookrightarrow \Omega_{G}^0$ of those $G$-trees
@@ -5337,7 +5338,7 @@ cf. Proposition \ref{INDMAPCHAR PROP}.
 	we write
 	\begin{equation}\label{UEUPEG EQ}
 	S_{v_{Ge}} = 
-	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{structure on trees!vertices!SVGE@$S_{v_{Ge}}$}
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{structure on trees!outer faces!SVGE@$S_{v_{Ge}}$}
 	\end{equation}
 \end{notation}
 
@@ -6358,7 +6359,7 @@ and the right side of \eqref{PIIDEFDI2 EQ}.
 We now have all the necessary ingredients to define our monad on 
 spans.
 
-\begin{definition}
+\begin{definition}\index{monads!spanmonad@$N$}
   \label{WSPAN_MONAD_DEFINITION}
 	Suppose $\mathcal{V}$ has finite products or, more generally, that it is a symmetric monoidal category with diagonals in the sense of Remark \ref{FINSURJ REM}.
 	
@@ -6582,7 +6583,7 @@ Since
 $\mathsf{Wspan}^r(\Sigma_G,\mathcal{V}^{op}) \simeq 
 \mathsf{Wspan}^l(\Sigma_G^{op},\mathcal{V})$,
 Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
-\[
+\[\index{key functors!upsilon@$\upsilon$}
 	\mathsf{Lan} \colon
 	\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})
 		\rightleftarrows
@@ -6850,6 +6851,8 @@ This follows by combining Lemma \ref{LANPULLCOMA LEM} with Lemma \ref{FINWREATPR
 
 Recalling Proposition \ref{MONADADJ PROP} now leads to the following.
 \begin{definition}\label{THEMONAD DEF}
+	\index{categories!of operads/symmetric sequences!OpG@$\Op_G(\V)$}
+	\index{monads!genopmonad@$\mathbb{F}_G$}
 The \textit{genuine equivariant operad monad} is the monad
 $\F_G$ on $\mathsf{Sym}_G(\mathcal{V})=\mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$
 given by
@@ -7436,6 +7439,7 @@ Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP}.
 %Propositions \ref{MONADADJ1 PROP} and \ref{MONADADJ PROP} now yields the following.
 
 \begin{corollary}\label{TWOADJOINTSOP_COR}
+\index{categories!of operads/symmetric sequences!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$}
 The adjunctions \eqref{TWOADJOINTS EQ} lift to adjunctions
 \[
 \begin{tikzcd}[column sep =5em]
@@ -7815,12 +7819,13 @@ Writing
 $\upgamma \colon 
 \Sigma_{\mathcal{F}}
 \hookrightarrow
-\Sigma_G$
+\Sigma_G$\index{key functors!gamma@$\gamma$}
 for the inclusion and 
 $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V}) = 
 \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$,
 we thus have a pair of adjunctions
 \begin{equation}\label{F_TWOADJOINTS_EQ}
+\index{categories!of operads/symmetric sequences!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$}
 	\begin{tikzcd}[column sep =5em]
 		\mathsf{Sym}_\F(\mathcal{V})
 		\arrow[r, bend left, "\upgamma_{!}"]
@@ -8446,7 +8451,7 @@ $b \mapsto b$, $c \mapsto c$, $d \mapsto d$, $e \mapsto e$) is a label map which
 \end{example}
 
 
-\begin{definition}
+\begin{definition}\index{categories!of trees!OMNSLAM@$\Omega_G^{n,s,\lambda}$}
 Let $-1 \leq s \leq n$ and 
 $\lambda = \lambda_a \amalg \lambda_i$ 
 be a partition of $\{1,2,\cdots,l\}$.
@@ -9254,7 +9259,7 @@ together with tall maps that induce quotients on all nodes not labeled by $-\inf
 We now identify $\Omega_G^{e}$ directly.
 
 
-\begin{definition}\label{EXTTREECAT DEF}
+\begin{definition}\label{EXTTREECAT DEF}\index{categories!of trees!OMEXT@$\Omega_G^{e}$}
 	The \textit{extension tree category $\Omega_G^e$}
 	has as objects $\{\mathcal{P},X,Y\}$-labeled trees
 	and as arrows tall maps $\varphi \colon T \to S$ such that:
@@ -9489,7 +9494,7 @@ Recall the notion of input path (cf. Notation \ref{INPUTPATH NOT})
 $I(e) = \{f \in T \colon e \leq_d f\}$ for an edge $e \in T$, which naturally extends to $T$ in any of $\Omega, \Phi, \Omega_G, \Phi^G$.
 
 
-\begin{definition}\label{OMEGAA DEF}
+\begin{definition}\label{OMEGAA DEF}\index{categories!of trees!OMEXT@$\Omega_G^{a}$}
 A $G$-tree $T \in \Omega_G$ is called \textit{alternating} if, 
 for all leafs $l \in T$,
 one has that the input path $I(l)$ has an even number of elements.
@@ -9608,6 +9613,7 @@ The term ``alternating'' reflects the fact that adjacent nodes have different co
 
 
 \begin{definition}\label{HATOMEGAE DEF}
+	\index{categories!of trees!OMEXT@$\widehat{\Omega}_G^{e}$}
 	$\widehat{\Omega}_G^e \hookrightarrow \Omega_G^e$ is the full subcategory of $(\mathcal{P},X,Y)$-labeled trees
 	whose underlying tree is alternating
 	and active (resp. inert) nodes are labeled by $\mathcal{P}$
@@ -12871,6 +12877,7 @@ $(g_i C_n)_{[g_i] \in G/H}$ in $\Sigma_G$.
 The following is then elementary.
 
 \begin{lemma}\label{FAMILY_COROLLAS_LEM}
+\index{indexing systems!F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
 Writing $\mathcal{F}_{n}^{\Gamma}$ for the family  of $G$-graph subgroups
 of $G \times \Sigma_n^{op}$,
 there is an equivalence of categories
