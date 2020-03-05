@@ -15455,8 +15455,10 @@ and
 $(0,d_{\hat{k}}(i_n))
 \in [0] \times \mathcal{I}_0$
 %\[ [n] \times \mathcal{I}_n \ni (k,i_n) \sim (0,d_{\hat{k}}(i_n))\in [0] \times \mathcal{I}_0 \]
-and since for any generating relation $(k,i_n)\sim (l,i'_m)$
-it is $d_{\hat{k}}(i_n) = d_{\hat{l}}(i'_m)$ the identification 
+and,
+since for any generating relation $(k,i_n)\sim (l,i'_m)$
+it is $d_{\hat{k}}(i_n) = d_{\hat{l}}(i'_m)$,
+the identification 
 $\text{Ob}(|\mathcal{I}_{\bullet}|) \simeq \text{Ob}(\mathcal{I}_0)$
 follows.
 
@@ -15652,8 +15654,8 @@ and the right square is encoded by an arrow in $[m]\times \mathcal{I}_n$.
 We now show that $s$ is final.
 Fix $h \in \mcI_0$. We must check that 
 $[0,h] \downarrow \Delta^{op} \ltimes \mcI_{\bullet}$ is connected.
-By Lemma \ref{OBJGENREL LEMMA} any object 
- in this undercategory has a description (not necessarily unique) as a pair
+By Lemma \ref{OBJGENREL LEMMA},
+any object in this undercategory has a description (not necessarily unique) as a pair
 \begin{equation}\label{UNDERCATOB EQ}
 \left(\left([n],i_n\right), [0,h] \xrightarrow{f_1} \cdots \xrightarrow{f_r} s([n],i_n) \right)
 \end{equation}
@@ -15740,7 +15742,7 @@ for the functor
 Given 
 $(\mcI \xrightarrow{\pi} \mathcal{J})
 \in (\mathsf{Cat} \downarrow \mathcal{J})$ and 
-$\C \in \mathsf{Cat}$ we will show that functors 
+$\C \in \mathsf{Cat}$, we will show that functors 
 $F \colon (\mathcal{I} \downarrow j) \to\C$
 are in bijection with functors
 $\hat{F} \colon \mathcal{I} \to \C^{\downarrow j}$ over $\mathcal{J}$.
@@ -15776,8 +15778,8 @@ $F_{i'}(J \circ \pi(I))
 \to
 F_i(J)$.
 Fixing $I$ and allowing 
-$J \in \mathcal{J}(\pi(i),j)$
-to vary these arrows form a natural transformation
+$J \in \mathcal{J}(\pi(i),j)$ to vary,
+these arrows form a natural transformation
 $F_I \colon F_{i'} \circ \pi(I)^{\**} 
 \Rightarrow
 F_i$,
@@ -15928,7 +15930,7 @@ is the composite
 
 Dually, if \eqref{IDENTSIMPRELSISO EQ}
 are natural isomorphisms for
-$0\leq i <n$ and $0\leq j \leq n$
+$0\leq i <n$ and $0\leq j \leq n$,
 one can form 
 $\mcI_{\bullet}^{\tilde{F}} \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$ 
 such that the corresponding diagrams are strictly commutative.
@@ -16087,9 +16089,8 @@ The second step
 follows from Proposition \ref{FIBERKANMAP PROP} applied to the map 
 $(\Delta^{op} \ltimes A^{op}_{\bullet})^{op} \to
 \Delta \times \Sigma_G$
-of Grothendieck fibrations over $\Delta$,
-since for each
-$(n,C) \in \Delta \times \Sigma_G$
+of Grothendieck fibrations over $\Delta$ since,
+for each $(n,C) \in \Delta \times \Sigma_G$,
 one has a natural identification
 between
 $(n,C) \downarrow_{\Delta} (\Delta^{op} \ltimes A^{op}_{\bullet})^{op}$
@@ -16180,12 +16181,12 @@ directly adapting \eqref{NEREASY EQ}.
 
 \begin{remark}
 	The term ``pointed'' in Theorem \ref{NERVE THM}
-	is motivated by the fact if 
+	is motivated by the fact that if 
 	$X$ satisfies \eqref{SEGCOND EQ}
 	then it is $X(G/H \cdot \eta) = \**$ for all $H \leq G$,
 	due to $V_G(G/H \cdot \eta) = ()$ being the empty tuple.
 	
-	This pointedness reflect the fact that
+	This pointedness reflects the fact that
 	$\mathsf{Op}_G(\mathcal{V})$
 	includes only \emph{single colored} genuine operads. 
 	In the multiple color setting,
@@ -16232,7 +16233,7 @@ $\tilde{N}_n^{\mathcal{P}} \colon
 \Omega_G^n \to \mathcal{V}^{op}$
 satisfying the dual of the conditions in
 \eqref{IDENTSIMPRELS EQ}.
-Thus, by Lemma \ref{SOURCEFACT LEM},
+Thus, by Lemma \ref{SOURCEFACT LEM} and Remark \ref{REALEX REM},
 upon realization this induces a functor
 \begin{equation}\label{TALLNER EQ}
 	|\Omega^n_G| = \Omega_G^{\mathsf{t}}
@@ -16251,7 +16252,9 @@ $\Omega_G^n$.
 	Let $n \geq 0$. The category $\overline{\Omega}^n_G$
 	has objects the planar tall strings
 	$(T_0 \to \cdots \to T_n) \in \Omega^n_G$
-	and arrows the diagrams \eqref{PTNARROW EQ}
+	and arrows diagrams
+	$(\pi_i \colon T_i \to T'_i)$
+	as in \eqref{PTNARROW EQ}
 	where the $\pi_i$ are outer maps
 	in each tree component.
 \end{definition}
@@ -16284,7 +16287,7 @@ one has that the formula in Notation \ref{VGDEF NOT} extends to define a functor
 \begin{equation}\label{VGDEF2 EQ}
 	\overline{\Omega}^n_G 
 	\xrightarrow{V_G}
-	\Fin \wr \Omega^{n-1}_G
+	\Fin \wr \Omega^{n-1}_G.
 \end{equation}
 Note that \eqref{VGDEF2 EQ} 
 requires the full category $\Fin$ of finite sets
@@ -16326,7 +16329,7 @@ $N^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$
 extends \eqref{BARLEVELS EQ}
 as a simplicial object in $\mathsf{WSpan}^r(\**,\mathcal{V}^{op})$.
 Thus, by Lemmas 
-\ref{TWISTING LEMMA} and \ref{SOURCEFACT LEM}
+\ref{TWISTING LEMMA} and \ref{SOURCEFACT LEM},
 one again obtains an isomorphic simplicial object
 $\tilde{N}^{\mathcal{P}}_n \colon \overline{\Omega}^n_G \to \mathcal{V}^{op}$ which, upon realization,
 extends \eqref{TALLNER EQ} to obtain the desired nerve
