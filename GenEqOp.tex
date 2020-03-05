@@ -2100,7 +2100,6 @@ given a functor $F \colon \mathcal{E} \to \mathcal{V}$ into a complete category 
 \simeq
 	\mathsf{lim} F|_{\mathcal{E}_b}
 \end{equation}
-\index{Ran@$\mathsf{Ran}_{\pi}F$}  
 where the first identification is the usual pointwise formula for Kan extensions (cf. \cite[X.3 Thm. 1]{McL}),
 and the second identification follows by noting that,
 due to the existence of cartesian arrows,
@@ -6016,7 +6015,7 @@ in \S \ref{MONSPAN SEC}
 which we then transfer
 to $\mathsf{Sym}_G(\mathcal{V})$
 in \S \ref{FGMON SEC} 
-by using the $(\mathsf{Lan},\iota)$ adjunction in Remark \ref{RANLANADJ REM}.
+by using the $(\mathsf{Lan},\upsilon)$ adjunction in Remark \ref{RANLANADJ REM}.
 \S \ref{COMPARISON_REGULAR_SECTION} then compares genuine equivariant operads with regular equivariant operads, obtaining   the pair of adjunctions in Corollary \ref{TWOADJOINTSOP_COR}, which are required when formulating and proving our main results.
 %In \S \ref{COMPARISON_REGULAR_SECTION}, we use Proposition \ref{MONAD_COMPARISON_PROP} to show that the usual ``free $G$-operad'' monad is
 %isomorphic to one transfered from $\mathbb F_G$,
@@ -6080,16 +6079,16 @@ the previous remark)
 	\mathsf{WSpan}^l(\C, \D)
 		\rightleftarrows
 	\mathsf{Fun}(\C, \D)
-	\colon \iota
+	\colon \upsilon
 \]
 \[
-	\iota \colon 
+	\upsilon \colon 
 	\mathsf{Fun}(\C, \D)
 		\rightleftarrows
 	\mathsf{WSpan}^r(\C, \D)^{op}
 	\colon \mathsf{Ran}
 \]
-where the functors $\iota$ denote the obvious inclusions 
+where the functors $\upsilon$ denote the obvious inclusions 
 (note the need for the $(\minus)^{op}$ in the second adjunction) 
 and $\mathsf{Lan}$/$\mathsf{Ran}$ denote the left/right Kan extension functors.
 \end{remark}
@@ -6585,7 +6584,7 @@ Proposition \ref{MONSPAN PROP} and Remark \ref{RANLANADJ REM} give an adjuntion
 	\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})
 		\rightleftarrows
 	\mathsf{Fun}(\Sigma^{op}_G, \mathcal{V})
-	\colon \iota
+	\colon \upsilon
 \]
 together with a monad $N$ in the leftmost category $\mathsf{WSpan}^l(\Sigma^{op}_G, \mathcal{V})$.
 
@@ -6596,15 +6595,15 @@ this monad can be transferred by using
 Proposition \ref{MONADADJ PROP},
 i.e. we will show that the natural transformations 
 $
-\mathsf{Lan} \circ N \Rightarrow \mathsf{Lan} \circ N \circ \iota \circ \mathsf{Lan}
+\mathsf{Lan} \circ N \Rightarrow \mathsf{Lan} \circ N \circ \upsilon \circ \mathsf{Lan}
 $
 and
-$\mathsf{Lan} \circ \iota \Rightarrow id$
+$\mathsf{Lan} \circ \upsilon \Rightarrow id$
 are isomorphisms.
 
 This will require us to introduce a slight modification of the category of spans.
 For motivation, note that iterations
-$N^{\circ n+1} \circ \iota$ produce spans of the form
+$N^{\circ n+1} \circ \upsilon$ produce spans of the form
 $\Sigma_G \leftarrow \Omega_G^{n} \to \mathcal{V}^{op}$
 (where we use the identification $\Omega_G^{n} \wr \Sigma_G \simeq \Omega_G^{n}$). 
 As noted in Remark \ref{ALLSPLITMAPS REM}, the maps 
@@ -6835,9 +6834,9 @@ $\mathcal{V}$ is a symmetric monoidal category with diagonals such that $\otimes
 Then the natural transformations
 \[
 	\mathsf{Lan} \circ N_{\mathsf{r}} \Rightarrow
-	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ \mathsf{Lan},
+	\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon \circ \mathsf{Lan},
 \qquad
-	\mathsf{Lan} \circ \iota \Rightarrow id
+	\mathsf{Lan} \circ \upsilon \Rightarrow id
 \]
 are natural isomorphisms.
 \end{corollary}
@@ -6852,49 +6851,49 @@ The \textit{genuine equivariant operad monad} is the monad
 $\F_G$ on $\mathsf{Sym}_G(\mathcal{V})=\mathsf{Fun}(\Sigma_G^{op}, \mathcal{V})$
 given by
 \[
-	\F_G = \mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota
+	\F_G = \mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon
 \]
 and with multiplication and unit given by the composites
 \[
-\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota \circ
-\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota
+\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon \circ
+\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon
 \overset{\simeq}{\Leftarrow}
-\mathsf{Lan} \circ N_{\mathsf{r}} \circ  N_{\mathsf{r}} \circ \iota
+\mathsf{Lan} \circ N_{\mathsf{r}} \circ  N_{\mathsf{r}} \circ \upsilon
 \Rightarrow
-\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota
+\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon
 \]
 \[
-id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \iota
+id \overset{\simeq}{\Leftarrow} \mathsf{Lan} \circ \upsilon
 \Rightarrow
-\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota.
+\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon.
 \]
 We will write $\Op_G(\V)$ for the category 
 $\mathsf{Alg}_{\mathbb{F}_G}(\mathsf{Sym}_G(\mathcal{V}))$ of \textit{genuine equivariant operads}.
 \end{definition}
 
 \begin{remark}
-	The functor $\mathsf{Lan} \circ N_{\mathsf{r}} \circ \iota$ is isomorphic to 
-	$\mathsf{Lan} \circ N \circ \iota$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and as such we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
+	The functor $\mathsf{Lan} \circ N_{\mathsf{r}} \circ \upsilon$ is isomorphic to 
+	$\mathsf{Lan} \circ N \circ \upsilon$, and this isomorphism is compatible with the multiplication and unit	in Definition \ref{THEMONAD DEF}, and as such we will henceforth simply write $N$ rather than $N_{\mathsf{r}}$.
 	
-	From this point of view, root fibrations play an auxiliary role in verifying that $\mathsf{Lan} \circ N \circ \iota$ is indeed a monad, but are unnecessary to describe the monad structure itself.
+	From this point of view, root fibrations play an auxiliary role in verifying that $\mathsf{Lan} \circ N \circ \upsilon$ is indeed a monad, but are unnecessary to describe the monad structure itself.
 \end{remark}
 
 \begin{remark}\label{REPACKAGERES REM}
 Since a map 
-\[\F_G X =\mathsf{Lan} \circ N \circ \iota X \to X\]
+\[\F_G X =\mathsf{Lan} \circ N \circ \upsilon X \to X\]
 is adjoint to a map
-\[N \circ \iota X \to \iota X \]
+\[N \circ \upsilon X \to \upsilon X \]
 one easily verifies that 
 $X$ is a genuine equivariant operad, i.e. 
 an $\F_G$-algebra, iff 
-$\iota X$ is an $N$-algebra
+$\upsilon X$ is an $N$-algebra
 (cf. Proposition \ref{MONADADJ PROP}(ii)).
 
 Moreover, the bar resolution
 $ \F_G^{\circ n +1} X $
 is isomorphic to
 $
-	\mathsf{Lan} \left( N^{\circ n +1} \iota X \right)
+	\mathsf{Lan} \left( N^{\circ n +1} \upsilon X \right)
 $.
 \end{remark}
 
@@ -8210,8 +8209,8 @@ As in Remark \ref{REPACKAGERES REM}, each level of
 \eqref{FURRES EQ}
 can then be described as 
 \begin{equation}\label{LANLEVELFOR EQ}
- \mathsf{Lan} N (N^{n} \iota \mathcal{P} 
-\amalg \iota X^{\amalg 2l+1} \amalg \iota Y)
+ \mathsf{Lan} N (N^{n} \upsilon \mathcal{P} 
+\amalg \upsilon X^{\amalg 2l+1} \amalg \upsilon Y)
 =
 \mathsf{Lan} N^{(\mathcal P, X, Y)}_{n,l},
 \end{equation}
@@ -8367,7 +8366,7 @@ $\lambda_{l,i} =
 \langle \langle l \rangle \rangle - \{-\infty\}$,
 \eqref{LANLEVELFOR EQ}
 can be repackaged as an instance of the functor
-$\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \iota^{\times \langle \langle l \rangle \rangle}$.
+$\mathsf{Lan} \circ N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}\circ \upsilon^{\times \langle \langle l \rangle \rangle}$.
 Our goal is thus to understand 
 the underlying categories of the spans in the image of the functor
 $N \circ \coprod \circ (N^{\times \lambda_l})^{\circ n}$,
@@ -9189,8 +9188,8 @@ Proposition \ref{RANTRANS PROP} applies to both simplicial directions of
 the bisimplicial object
 \begin{equation}\label{BISIMP EQ}
 	N^{(\mathcal P,X,Y)}_{n,l} =
-	N ( N^{\circ n} \iota \mathcal{P} \amalg
-	\iota X^{\amalg 2l+1} \amalg \iota Y)
+	N ( N^{\circ n} \upsilon \mathcal{P} \amalg
+	\upsilon X^{\amalg 2l+1} \amalg \upsilon Y)
 \end{equation}
 in \eqref{LANLEVELFOR EQ},
 whose underlying categories are 
@@ -9212,7 +9211,7 @@ $N$ preserves arrows in $\mathsf{WSpan}^l(\Sigma_G^{op},\mathcal{V})$ given by s
 Degeneracies are similar.
 Moreover, that the functor component of $d_n$
 matches the functor defined in \eqref{LABSTSIM EQ}
-follows from the presence of $\iota$ in \eqref{LANLEVELFOR EQ}.
+follows from the presence of $\upsilon$ in \eqref{LANLEVELFOR EQ}.
 
 As for the $l$ direction, we note that our convention on 
 the double bar construction 
@@ -16221,11 +16220,11 @@ $N$ on
 $\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$
 in Definition \ref{WSPAN_MONAD_DEFINITION}.
 Given $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-so that $\iota \mathcal{P}$ is a $N$-algebra,
+so that $\upsilon \mathcal{P}$ is a $N$-algebra,
 consider the bar construction
 $B_{\bullet} = 
-B_{\bullet}(N,N,\iota \mathcal{P})
-= N^{n+1} \iota \mathcal{P}$,
+B_{\bullet}(N,N,\upsilon \mathcal{P})
+= N^{n+1} \upsilon \mathcal{P}$,
 whose levels we denote as
 \begin{equation}\label{BARLEVELS EQ}
 	\Sigma_G \leftarrow 
@@ -16365,7 +16364,7 @@ whose opposite satisfies the Segal condition \eqref{SEGCOND EQ}.
 Letting $\mathcal{P}_X$ be the composite
 $\Sigma_G \to \Omega_G \to \mathcal{V}^{op}$,
 we will show that $\mathcal{P}_X$ is a genuine operad
-or, equivalently, that $\iota \mathcal{P}_X$ is a $N$-algebra.  
+or, equivalently, that $\upsilon \mathcal{P}_X$ is a $N$-algebra.  
 %
 Throughout, we write
 $\overline{\Omega}^n_G \to \Omega_G$
@@ -16397,7 +16396,7 @@ X_n =
 \xrightarrow{X} \mathcal{V}^{op} 
 \right).
 \end{equation}
-Note that $X_{-1} = \iota \mathcal{P}_X$.
+Note that $X_{-1} = \upsilon \mathcal{P}_X$.
 Moreover, the transformations \eqref{SIMP EQ}
 make the $X_n$ into a simplicial object in
 $\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$.
@@ -16761,7 +16760,7 @@ $T_{1,v} \to T_1$.
 	\arrow[Leftarrow, from=F3, to=FV3, shorten <=0.10cm,shorten >=0.10cm,"\nu_0"]
 \end{tikzcd}
 \end{equation}
-But, by definition, this right diagram is simply the $N$-algebra multiplication of $\iota \mathcal{P}$,
+But, by definition, this right diagram is simply the $N$-algebra multiplication of $\upsilon \mathcal{P}$,
 showing that \eqref{XMINUSMULT EQ} indeed inverts $\mathcal{NP}$ 
 by recovering $\mathcal{P}$ 
 with its genuine operad structure.
@@ -16772,7 +16771,7 @@ $X \colon \Omega_G \to \mathcal{V}^{op}$
 satisfies the Segal condition \eqref{SEGCOND EQ},
 let $X_{-1}$ be the $N$-algebra in \eqref{XMINUSMULT EQ}
 and $\mathcal{P}_X \in \mathsf{Op}_G(\mathcal{V})$
-be so that $X_{-1} = \iota \mathcal{P}_X$.
+be so that $X_{-1} = \upsilon \mathcal{P}_X$.
 It remains to show that
 $X \simeq \mathcal{N} \mathcal{P}_X$.
 But now recall that $\mathcal{N} \mathcal{P}_X$
