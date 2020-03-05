@@ -13611,7 +13611,7 @@ Moreover, the analogous statement for cofibrations between cofibrant objects als
 
 
 \begin{proof}
-        Note first that since $\iota_{\**}$ identifies 
+        Note first that, since $\iota_{\**}$ identifies 
         $\mathcal{V}^{G}$ as a reflexive 
         subcategory of $\mathcal{V}^{\mathsf{O}_{\mathcal{F}}^{op}}$, 
         it is 
@@ -13672,12 +13672,12 @@ Moreover, the analogous statement for cofibrations between cofibrant objects als
         i.e., pushout diagrams as on the right above. That the solid subdiagrams in either side of \eqref{TWOCELLEXTEAS EQ} are indeed in bijection up isomorphism is simply the claim that 
         $\iota^{\**}$ is fully faithful,
         hence the real claim is that $\tilde{W} \simeq \iota_{\**} W$.
-        But this follows since by 
-        the cellularity axiom (ii) in
-        Definition \ref{CELL DEF}
-        the map $\iota_{\**}$ preserves the rightmost pushout
-        in \eqref{TWOCELLEXTEAS EQ} 
-        (recall that $u \colon X \to Y$ is assumed to be a generating cofibration of $\mathcal{V}^G_{\mathcal{F}}$).
+	But this follows since,
+	by the cellularity axiom (ii) in
+	Definition \ref{CELL DEF},
+	the map $\iota_{\**}$ preserves the rightmost pushout
+	in \eqref{TWOCELLEXTEAS EQ} 
+	(recall that $u \colon X \to Y$ is assumed to be a generating cofibration of $\mathcal{V}^G_{\mathcal{F}}$).
 
         Noting that the cellularity axiom (i) in
         Definition \ref{CELL DEF} implies that
@@ -13693,7 +13693,7 @@ $\phi \colon G \to \bar{G}$
 a homomorphism, and 
 $\mathcal{F}$, $\bar{\mathcal{F}}$
 families of $G$, $\bar{G}$
-such that $\phi_{!}\mathcal{F} \subset \mathcal{F}$.
+such that $\phi_{!}\mathcal{F} \subseteq \mathcal{F}$.
 Then the diagram
 \[
 \begin{tikzcd}
@@ -13712,7 +13712,7 @@ cofibrant objects of $\mathcal{V}^{G}_{\mathcal{F}}$.
 \begin{proof}
 	It is straightforward to check that the left adjoints commute, i.e. that there is a natural isomorphism 
 	$\iota^{\**} \phi_{!} \simeq \phi_{!} \iota^{\**}$
-which by adjunction induces a natural transformation
+which, by adjunction, induces a natural transformation
 	$\phi_! \iota_{\**} \to \iota_{\**} \phi_!$.
 More explicitly, this natural transformation is the composite
 \[\phi_! \iota_{\**} \to 
@@ -13837,7 +13837,7 @@ Proposition \ref{COFESSIM PROP}
 $\mathcal{F}_n =\emptyset$ for some $n$).
 
 
-Moreover, when assuming the claims in \eqref{COFADJ2 EQ}
+Moreover, when assuming the claims in \eqref{COFADJ2 EQ},
 one has that
 the two forgetful functor claims in \eqref{FGTFUNC EQ}
 become equivalent,
@@ -14024,7 +14024,7 @@ $\mathsf{Sym}_{\mathcal{F}}(\mathcal{V})$.
 
 Using the iterative description 
 of the $\mathcal{P}_k$ in
-(\ref{FILTRATION_LAN_LEVEL})
+(\ref{FILTRATION_LAN_LEVEL}),
 it now suffices
 to check that the leftmost map in (\ref{FILTRATION_LAN_LEVEL}) is
 a cofibration between cofibrant objects in 
@@ -14084,7 +14084,7 @@ is in the essential image
 of the cofibrations between cofibrant objects
 under the top $\iota_{\**}$ map.
 %
-But since \eqref{COMCOFOB EQ} commutes on cofibrant objects
+But, since \eqref{COMCOFOB EQ} commutes on cofibrant objects
 and the $\mathsf{Lan}$ in \eqref{FILTINTALTAG EQ}
 is the leftmost $\phi_!$ functor, 
 Proposition \ref{COFESSIM PROP} implies that the 
@@ -14754,9 +14754,9 @@ is an isomorphism when restricted to cofibrant $G$-symmetric sequences.
         For the counit, it is immediate from Lemma \ref{MAINLEM LEM} that if $X \in \mathsf{Op}^G(\mathcal{V})$ is bifibrant
         the functor $\iota^{\**} \iota_{\**} X$ is already derived, and hence the derived counit is identified with the counit isomorphism $\iota^{\**} \iota_{\**} X \xrightarrow{\simeq} X$.
 
-        For the unit, note first that it is immediate from the definitions
+        For the unit, note first that it follows from the definitions
         of the model structures in Theorems 
-        \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM} 
+        \ref{MAINEXIST1 THM},\ref{MAINEXIST2 THM} 
         and the formula for $\iota_{\**}$ in \eqref{IOTAFUNSALT EQ}
         that 
         $\iota_{\**} \colon 
@@ -15226,8 +15226,9 @@ are monomorphisms.
 \begin{remark}
 We now address the ``moreover'' claim in Corollary \ref{NINFTY_REAL_COR_MAIN}. 
 For any $\mathcal{O} \in \mathsf{Op}^G(\mathsf{sSet})$
-one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. Therefore, if $\mathcal{O}$ has fixed points as in \eqref{NFINFTY2 EQ} then 
-$\pi_0 (\iota_{\**} \mathcal{O}) = \delta_{\mathcal{F}}$
+one has $\pi_0 (\iota_{\**} \mathcal{O})\in \mathsf{Op}_G(\mathsf{Set})$. 
+Therefore, if $\mathcal{O}$ has fixed points as in \eqref{NFINFTY2 EQ},
+then $\pi_0 (\iota_{\**} \mathcal{O}) = \delta_{\mathcal{F}}$
 for $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
 a collection of families of graph subgroups.
 But the condition that $\delta_{\mathcal{F}}\in \mathsf{Op}_G(\mathsf{Set})$ simply repackages Definition \ref{INDEXSYS DEF}.
@@ -15357,8 +15358,7 @@ $\iota_{\**} \mathbb{F} \iota^{\**} S \delta_{\mathcal{F}}
 \mathbb{F}_G \iota_{\**} \iota^{\**} S \delta_{\mathcal{F}}
 \simeq
 \mathbb{F}_G S \delta_{\mathcal{F}}$
-(the identify
-second identity follows since
+(the second identity follows since
 $S \delta_{\mathcal{F}}$
 is in the essential image of $\iota_{\**}$,
 cf. Remark \ref{LANDINESS REM}).
