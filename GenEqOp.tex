@@ -1408,11 +1408,19 @@ are Quillen equivalences.
 Morover, 
 analogous Quillen equivalences of
 semi-model structures\footnote{
-  We note that a Quillen adjunction between semi-model categories must defined by the usual condition on the right adjoint.
-  This implies, but is not equivalent to, an appropriate condition on the left adjoint, namely that it
-  preserves cofibrations and preserves trivial cofibrations with cofibrant source.
-  The definition of a Quillen equivalences remains unchanged.
-  A relevant discussion can be found in \cite[\S 12.1.8]{Fre09}.}
+	An adjunction 
+	$L \colon \mathcal{C} 
+	\rightleftarrows 
+	\mathcal{D} \colon R$
+	between semi-model categories
+	is a Quillen equivalence if 
+	$R$ preserves (trivial) fibrations and,
+	for $A\in \mathcal{C}$ cofibrant and
+	$X \in \mathcal{D}$ fibrant,
+	$LA \to X$ is a weak equivalence iff 
+	$A \to RX$ is.
+%	\cite[\S 12.1.8]{Fre09}.
+}
 $\mathsf{Op}_{\mathcal F}(\mathcal{V}) \simeq
 \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
@@ -5045,7 +5053,7 @@ Remark \ref{FINSURJ REM}.
 \begin{remark}\label{NEED_WREATH_REMARK}
 	In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
 	The need to introduce the $\Fin_s \wr (\minus)$ construction comes from the fact that
-	in general, quotient maps do not preserve the number of $G$-vertices.
+	in general quotient maps do not preserve the number of $G$-vertices.
 	To illustrate,
 	and keeping the set-up of Example \ref{ROOTPULL EX},
 	let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
@@ -5087,10 +5095,10 @@ The following elementary statement will play an important auxiliary role.
 
 
 \begin{lemma}\label{VGPULL LEM}
-The $G$-vertex functor \eqref{GVERT_EQ}
-% \[
-% 	\boldsymbol{V}_G \colon \Omega_{G}^0 \longto \Fin_s \wr \Sigma_G
-% \]
+The $G$-vertex functor 
+$
+ 	\boldsymbol{V}_G \colon \Omega_{G}^0 \to \Fin_s \wr \Sigma_G
+$
 sends pullbacks over $\mathsf{O}_G$ (i.e. root pullbacks)
 to pullbacks over $\Fin_s \wr \mathsf{O}_G$
 (cf. Lemma \ref{FWRGROTH LEM}).
