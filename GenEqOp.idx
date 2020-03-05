@@ -1,63 +1,58 @@
-\indexentry{categories!Operad@$\O \in \Op(\V)$|hyperpage}{2}
-\indexentry{categories!operadsi@$\sOp = \Op(\sSet)$|hyperpage}{2}
-\indexentry{categories!Com@$\mathsf{Com}$|hyperpage}{2}
-\indexentry{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$|hyperpage}{3}
-\indexentry{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$|hyperpage}{4}
-\indexentry{NF@$N \mathcal F$-operad|hyperpage}{4}
-\indexentry{DeltaF@$\delta_{\mathcal F}$|hyperpage}{5}
-\indexentry{categories!OpG@$\mathcal P \in \Op_G(\V)$|hyperpage}{5}
-\indexentry{OX@$\O(X)$, $X \in \mathsf F^H$|hyperpage}{7}
-\indexentry{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{8}
+\indexentry{categories!of operads/symmetric sequences!Operad@$\Op(\V)$|hyperpage}{2}
+\indexentry{categories!of operads/symmetric sequences!operadsi@$\sOp = \Op(\sSet)$|hyperpage}{2}
+\indexentry{indexing systems!F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$|hyperpage}{4}
+\indexentry{indexing systems!NF@$N \mathcal F$-operad|hyperpage}{4}
+\indexentry{indexing systems!DeltaF@$\delta_{\mathcal F}$|hyperpage}{5}
+\indexentry{categories!of operads/symmetric sequences!OpG@$\Op_G(\V)$|hyperpage}{5}
+\indexentry{categories!of operads/symmetric sequences!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$|hyperpage}{8}
 \indexentry{monads!FG@$\mathbb F_G$|hyperpage}{8}
-\indexentry{categories!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$|hyperpage}{8}
-\indexentry{categories!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$|hyperpage}{8}
-\indexentry{categories!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$|hyperpage}{8}
+\indexentry{indexing systems!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$|hyperpage}{8}
+\indexentry{categories!of operads/symmetric sequences!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$|hyperpage}{8}
+\indexentry{categories!of operads/symmetric sequences!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$|hyperpage}{8}
 \indexentry{Grothendieck fibrations!1GrothendieckFibration@$\pi \colon \mathcal{E} \to \mathcal{B}$|hyperpage}{12}
 \indexentry{Grothendieck fibrations!Cartesian@$f^{\**} e \to e$|hyperpage}{12}
 \indexentry{Grothendieck fibrations!GrothendieckConstruction@$\mathcal{B} \ltimes \mathcal{E}_{\bullet}$|hyperpage}{13}
 \indexentry{Grothendieck fibrations!undercategory@$\bar{e} \downarrow_{\mathcal{B}} \mathcal{E} \hookrightarrow \bar{e} \downarrow \mathcal{E}$|hyperpage}{13}
 \indexentry{wreath products!FIN@$\mathsf{F}$|hyperpage}{14}
-\indexentry{wreath products!FIN@$\mathsf{F}\wr $|hyperpage}{14}
-\indexentry{subgroups!SigmaLambda@$\Sigma_{\lambda}$|hyperpage}{14}
+\indexentry{wreath products!FIN@$\mathsf{F}\wr (-)$|hyperpage}{14}
 \indexentry{wreath products!DELTAI@$\delta^i$|hyperpage}{14}
 \indexentry{wreath products!SIGMAI@$\sigma^i$|hyperpage}{14}
 \indexentry{wreath products!FINS@$\mathsf{F}_s$|hyperpage}{15}
-\indexentry{wreath products!FINSWR@$\mathsf{F}_s \wr$|hyperpage}{15}
-\indexentry{categories!Gtrees1@$\Omega_G$|hyperpage}{18}
-\indexentry{categories!GtreesForest@$\Phi = \Fin \wr \Omega$|hyperpage}{18}
-\indexentry{categories!OrbitG@$\mathsf O_G$|hyperpage}{18}
-\indexentry{Gtreesleafroot0@$\mathsf{r}$|hyperpage}{18}
-\indexentry{Gtreesorderplanar@$\leq_p$|hyperpage}{18}
-\indexentry{Gtreesorderdescendancy@$\leq_d$|hyperpage}{18}
-\indexentry{vertices/outer subtrees!Broadvert@$e^{\uparrow} \leq e$|hyperpage}{19}
-\indexentry{vertices/outer subtrees!Broadvert@$\underline{e} \leq e$|hyperpage}{19}
-\indexentry{vertices/outer subtrees!inputpath@$I(e)$|hyperpage}{19}
-\indexentry{vertices/outer subtrees!vertices@$V(T)$|hyperpage}{20}
-\indexentry{categories!Gtrees1@$\Omega_G$|hyperpage}{21}
-\indexentry{Gtreesleafroot0@$\mathsf{r}$|hyperpage}{23}
-\indexentry{vertices/outer subtrees!planarouterface@$T_{\underline{e} \leq e}$|hyperpage}{24}
-\indexentry{Gtreesstick@$\eta \in \Omega$|hyperpage}{25}
-\indexentry{Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{26}
-\indexentry{GtreesSegalCore@$\mathsf{Sc}(T)$|hyperpage}{27}
-\indexentry{vertices/outer subtrees!UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
-\indexentry{categories!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{30}
-\indexentry{categories!SigmaG@$\Sigma_G$|hyperpage}{30}
-\indexentry{Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{30}
-\indexentry{categories!Gtrees0tall@$\Omega_G^{\mathsf t}$|hyperpage}{30}
-\indexentry{vertices/outer subtrees!vertices@$V(T)$|hyperpage}{30}
-\indexentry{vertices/outer subtrees!verticesG@$V_G(T) = V(T)/G$|hyperpage}{30}
-\indexentry{vertices/outer subtrees!Gvertex@$v_{Ge}$|hyperpage}{31}
-\indexentry{vertices/outer subtrees!Gvertexsubtree@$T_{v_{Ge}}$|hyperpage}{31}
-\indexentry{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$|hyperpage}{31}
-\indexentry{vertices/outer subtrees!SVGE@$S_{v_{Ge}}$|hyperpage}{33}
-\indexentry{categories!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{33}
-\indexentry{Gtreessimpdegen@$s_i$|hyperpage}{34}
-\indexentry{Gtreessimpface@$d_i$|hyperpage}{34}
-\indexentry{categories!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{34}
-\indexentry{Gtreesleafroot0@$\mathsf{r}$|hyperpage}{34}
-\indexentry{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$|hyperpage}{34}
-\indexentry{categories!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$|hyperpage}{34}
-\indexentry{vertices/outer subtrees!vertices@$\boldsymbol{V}_G^k$|hyperpage}{35}
-\indexentry{Gtreessimppi@$\pi_i$|hyperpage}{36}
-\indexentry{iotau@$\iota^{\**}$|hyperpage}{45}
-\indexentry{iotal@$\iota_{\**}$|hyperpage}{45}
+\indexentry{wreath products!FINSWR@$\mathsf{F}_s \wr (-)$|hyperpage}{15}
+\indexentry{categories!of trees!Gtrees1@$\Omega_G$|hyperpage}{18}
+\indexentry{categories!of trees!GtreesForest@$\Phi = \Fin \wr \Omega$|hyperpage}{18}
+\indexentry{categories!other!OrbitG@$\mathsf O_G$|hyperpage}{18}
+\indexentry{key functors!Gtreesleafroot0@$\mathsf{r}$|hyperpage}{18}
+\indexentry{structure on trees!relations!Gtreesorderplanar@$\leq_p$|hyperpage}{18}
+\indexentry{structure on trees!relations!Gtreesorderdescendancy@$\leq_d$|hyperpage}{18}
+\indexentry{structure on trees!relations!Broadvert@$e^{\uparrow} \leq e$|hyperpage}{19}
+\indexentry{structure on trees!relations!Broadvert@$\underline{e} \leq e$|hyperpage}{19}
+\indexentry{structure on trees!other!inputpath@$I(e)$|hyperpage}{19}
+\indexentry{structure on trees!vertices!vertices@$V(T)$|hyperpage}{20}
+\indexentry{categories!of trees!Gtrees1@$\Omega_G$|hyperpage}{21}
+\indexentry{key functors!Gtreesleafroot0@$\mathsf{r}$|hyperpage}{23}
+\indexentry{structure on trees!outer faces!planarouterface@$T_{\underline{e} \leq e}$|hyperpage}{24}
+\indexentry{key functors!Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{26}
+\indexentry{structure on trees!vertices!UEUPE@$U_{e^{\uparrow} \leq e}$|hyperpage}{28}
+\indexentry{categories!of trees!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{30}
+\indexentry{categories!of trees!SigmaG@$\Sigma_G$|hyperpage}{30}
+\indexentry{key functors!Gtreesleafroot1@$\mathsf{lr}$|hyperpage}{30}
+\indexentry{categories!of trees!Gtrees0tall@$\Omega_G^{\mathsf t}$|hyperpage}{30}
+\indexentry{structure on trees!vertices!vertices@$V(T)$|hyperpage}{30}
+\indexentry{structure on trees!vertices!verticesG@$V_G(T) = V(T)/G$|hyperpage}{30}
+\indexentry{structure on trees!vertices!Gvertex@$v_{Ge}$|hyperpage}{31}
+\indexentry{structure on trees!vertices!Gvertexsubtree@$T_{v_{Ge}}$|hyperpage}{31}
+\indexentry{key functors!vertices@$\boldsymbol{V}_G$|hyperpage}{31}
+\indexentry{structure on trees!vertices!SVGE@$S_{v_{Ge}}$|hyperpage}{33}
+\indexentry{categories!of trees!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{33}
+\indexentry{key functors!Gtreessimpdegen@$s_i$|hyperpage}{34}
+\indexentry{key functors!Gtreessimpface@$d_i$|hyperpage}{34}
+\indexentry{categories!of trees!Gtrees0stringsn@$\Omega_G^n$|hyperpage}{34}
+\indexentry{key functors!Gtreesleafroot0@$\mathsf{r}$|hyperpage}{34}
+\indexentry{key functors!vertices@$\boldsymbol{V}_G$|hyperpage}{34}
+\indexentry{categories!of trees!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$|hyperpage}{34}
+\indexentry{key functors!vertices@$\boldsymbol{V}_G^k$|hyperpage}{35}
+\indexentry{key functors!Gtreessimppi@$\pi_i$|hyperpage}{36}
+\indexentry{key functors!iotau@$\iota^{\**}$|hyperpage}{45}
+\indexentry{key functors!iotal@$\iota_{\**}$|hyperpage}{45}
+\indexentry{key functors!iotar@$\iota_{"!}$|hyperpage}{45}
