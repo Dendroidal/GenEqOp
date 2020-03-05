@@ -27,6 +27,6 @@
 \contentsline {subsection}{\numberline {6.3}$G$-graph families and $G$-trees}{76}{subsection.6.3}% 
 \contentsline {subsection}{\numberline {6.4}Cofibrancy and the proof of Theorem \ref {MAINQUILLENEQUIV THM}}{80}{subsection.6.4}% 
 \contentsline {subsection}{\numberline {6.5}Realizing $N_{\infty }$-operads}{83}{subsection.6.5}% 
-\contentsline {section}{\numberline {A}Transferring Kan extensions}{86}{appendix.A}% 
-\contentsline {section}{\numberline {B}The nerve theorem}{91}{appendix.B}% 
+\contentsline {section}{\numberline {A}Transferring Kan extensions}{87}{appendix.A}% 
+\contentsline {section}{\numberline {B}The nerve theorem}{92}{appendix.B}% 
 \contentsline {section}{Glossary of Notation}{96}{section*.5}% 
