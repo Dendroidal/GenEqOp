@@ -12703,17 +12703,19 @@ $\Gamma$ is a $G$-graph subgroup iff it can be written as
 \[
 	\Gamma = 
 	\{
-	(h,\varphi(h)) : h \in H \leq G
+	(h,\phi(h)) : h \in H \leq G
 	\}
 \]
-for some partial homomorphism $H \xrightarrow{\varphi} \Sigma$
+for some partial homomorphism $H \xrightarrow{\phi} \Sigma$
 for $H \leq G$, 
 thus motivating the terminology.
 \end{remark}
 
 
 \begin{remark}
-	The collection of all $G$-graph subgroups is itself a family $\mathcal{F}^{\Gamma}$. Indeed, this family  coincides with 
+	The collection of all $G$-graph subgroups is itself a family,
+	denoted $\mathcal{F}^{\Gamma}$.
+	Indeed, this family  coincides with 
 	$(\iota_{\Sigma})_{\**}(\{\**\})$
 for the inclusion homomorphism 
 $\iota_{\Sigma} \colon \Sigma \to G \times \Sigma$.
@@ -12749,7 +12751,7 @@ $\Delta \colon G \times (\Sigma_n \wr \Sigma)
 
 
 \begin{remark}\label{UNPACKINGLTIMES REM}
-Given a finite set $E$
+Given a finite set $E$,
 the image of the inclusion	
 $\Delta \colon G \times (\Sigma_E \wr \Sigma)
 \to 
@@ -12796,7 +12798,7 @@ with Proposition \ref{FGTLEFT PROP} yields the following results.
 \begin{proposition}\label{EXTERINTADJG PROP}
 Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points.
 Let $\mathcal{F}$, $\bar{\mathcal{F}}$ be $G$-graph families of 
-$G \times \Sigma$ and $G \times \bar{\Sigma}$. Then the following (with diagonal $G$-action on the images) 
+$G \times \Sigma$ and $G \times \bar{\Sigma}$. Then the following (with diagonal $G$-action on the image) 
 is a left Quillen bifunctor.
 \[
 	\mathcal{V}^{G \times \Sigma}_{\mathcal{F}}
@@ -12859,7 +12861,7 @@ Hence, families of corollas $\Sigma_{\mathcal{F}}$
 are in bijection with collections
 $\{\mathcal{F}_n\}_{n\geq 0}$
 of $G$-graph families 
-$\mathcal{F}_n \subset \mathcal{F}_{n}^{\Gamma}$.
+$\mathcal{F}_n \subseteq \mathcal{F}_{n}^{\Gamma}$.
 \end{lemma}
 
 
@@ -12903,7 +12905,7 @@ iff
 for some (and thus all) $i \in I$
 the action of the stabilizer $H_i$ of $i$ on $C_i$
 is given by a homomorphism
-$H_i \to \Sigma_n$ with associated graph group in $\mathcal{F}_n$.
+$H_i \to \Sigma_n$ whose graph group is in $\mathcal{F}_n$.
 
 In what follows, given a tree with an $H$-action
 $T \in \Omega^H$,
@@ -12932,7 +12934,8 @@ Let $\mathcal{F}$ be a family of $G$-corollas and $T \in \Omega$ a tree with aut
 
 \begin{remark}\label{LRLEFTQUILLEN REM}
 The closure condition defining weak indexing systems in Definition \ref{INDEXSYS DEF}
-can be translated in terms of families as saying that for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
+can be translated in terms of families as saying that,
+for any tree $T \in \Omega$ with $\mathsf{lr}(T)=C_n$ and 
 $\phi \colon \Sigma_T \to \Sigma_n$ 
 the natural homomorphism, one has
 $(id_G \times \phi)(\Gamma) \in \mathcal{F}_n$
@@ -12968,7 +12971,8 @@ encodes a subgroup in $\mathcal{F}_{|v|}$, where $|v|=|e^{\uparrow}|$.
 
 \begin{remark}\label{TREEINDUCDESC REM}
 Recall that any tree $T \in \Omega$ other than the stick $\eta$ has an essentially unique grafting decomposition
-$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$ where $C_n$ is the root corolla and the leaves of $C_n$ are grafted to the roots of the $T_i$. We now let 
+$T= C_n \amalg_{n \cdot \eta}(T_1 \amalg \cdots \amalg T_n)$ where $C_n$ is the root corolla,
+and the leaves of $C_n$ are grafted to the roots of the $T_i$. We now let 
 $\lambda$ be the partition 
 $\{1,\cdots,n\} = \lambda_1 \amalg\cdots \amalg \lambda_k$
  such that $1 \leq i_1, i_2 \leq n$ are in the same class iff
@@ -13022,7 +13026,7 @@ $G \times \Sigma_T \to G \times \Sigma_{\lambda} \to
       
       Consider now a
       % partial
-      homomorphism $H \to \Sigma_T$ with $H \leq G$, encoding a 
+      homomorphism $H \to \Sigma_T$, with $H \leq G$, encoding a 
       $G$-graph subgroup $\Gamma \leq G \times \Sigma_T$.
 	The condition that $\Gamma \in \left(\pi_{G \times \Sigma_n}\right)^{\**}(\mathcal{F}_n)$ states that the composite $H \to \Sigma_T \to \Sigma_n$ is in $\mathcal{F}_n$, 
 	and this is precisely the condition \eqref{PARTIALHOMEDGE EQ} in Remark \ref{UNPACKFTYPE REM}
@@ -13058,7 +13062,7 @@ $\Gamma \cap \pi_{\Sigma_n}^{-1}
 we see that this is the graph subgroup
 encoded by the restriction $H_i \to \Sigma_T$,
 where $H_i \leq H$ is the isotropy subgroup of the root $r_i$ of $T_i$ (equivalently, this is also the subgroup sending $T_i$ to itself).
-But since for any edge $e \in T_i$ its isotropy $H_e$ 
+But since, for any edge $e \in T_i$, its isotropy $H_e$ 
 (cf. \eqref{PARTIALHOMEDGE EQ}) is a subgroup of $H_i$, the induction hypothesis implies that \eqref{KEYLEMMAGECOR EQ}
 is equivalent to condition \eqref{PARTIALHOMEDGE EQ} 
 across all vertices other than the root vertex.
@@ -13120,7 +13124,7 @@ of Definition \ref{LABMAP DEF},
 and write 
 $\Omega_G^{\underline{l}}$ for the category of 
 $l$-labeled trees and quotients 
-(we will have no need for string categories at this point).
+(we not need for string categories at this point).
 Moreover, $l$-labeled $\mathcal{F}$-trees 
 $\Omega_{\mathcal{F}}^{\underline{l}}$ are
 defined exactly as in Definition \ref{FTREE DEF},
@@ -13135,13 +13139,14 @@ by using label isomorphism classes.
 \begin{proposition}\label{AUTTCOFPUSH PROP}
 	Suppose that $\mathcal{V}$ is a cofibrantly generated closed monoidal model category with cellular fixed points and with cofibrant symmetric pushout powers.
 
-	Let $\mathcal{F}$ be a family of corollas 
+	Let $\mathcal{F}$ be a family of corollas,
 	and suppose that 
 	$f_s \colon A_s \to B_s$, $1 \leq s \leq l$ are level $\mathcal{F}$-cofibrations (resp. trivial cofibrations)
 	in $\mathsf{Sym}^G(\mathcal{V})$, i.e. that 
 	$f_s(n) \colon A_s(n) \to B_s(n)$ are cofibrations (trivial cofibrations) in 
 	$\mathcal{V}^{G \times \Sigma_n^{op}}_{\mathcal{F}_n}$.
-	Then for any $l$-labeled tree $T \in \Omega^{\underline{l}}$ the map
+	Then, for any $l$-labeled tree $T \in \Omega^{\underline{l}}$,
+	the map
 	\begin{equation}\label{FSQVT EQ}
 	f^{\square V(T)} = 
 		\underset{1\leq s \leq l}{\mathlarger{\mathlarger{\square}}}
@@ -13150,7 +13155,7 @@ by using label isomorphism classes.
 	f_s(v)
 	\end{equation}
 	(where $V_s(T)$ denotes vertices with label $s$) is a cofibration (resp. trivial cofibration) in 
-	$\mathcal{V}^{G \times \Sigma_T}_{\mathcal{F}_T}$.
+	$\mathcal{V}^{G \times \Sigma_T^{op}}_{\mathcal{F}_T}$.
 \end{proposition}
 
 To ease notation, we identify
@@ -13322,8 +13327,8 @@ which have no analogue in \cite{BM08}.
 
 
 By allowing $T \in \Omega^{\underline{l}}$
-to vary \eqref{FSQVT EQ}
-defines an arrow
+to vary,
+\eqref{FSQVT EQ} defines an arrow
 $f^{\square V(-)}$ in $\mathcal{V}^{G \times \Omega^{\underline{l},op}}$.
 Our next step is to compare this construction with an analogue construction for $G$-trees.
 
@@ -13344,10 +13349,10 @@ $\iota_{\**}
 \mathcal{V}^{\Omega^{\underline{l},op}_G}
 $
 for the right adjoint to precomposition.
-Just as in \eqref{IOTAFUNSALT EQ}, we then have
-that for $Y \in \mathcal{V}^{G \times \Omega^{\underline{l},op}}$
+Just as in \eqref{IOTAFUNSALT EQ}, we then have that,
+for $Y \in \mathcal{V}^{G \times \Omega^{\underline{l},op}}$
 and $T = (T_i)_{i \in I}$
-in $\mathcal{V}^{\Omega^{\underline{l}}}_G$ it is
+in $\mathcal{V}^{\Omega^{\underline{l}}}_G$, it is
 \begin{equation}\label{IOTAFUNSALTBIG EQ}
 	\iota_{\**}Y (T)
 =
@@ -13394,7 +13399,7 @@ and $H \leq G$ is the isotropy of the first element of $I$.
 	and likewise for \eqref{FSQVTG EQ}.
 	Letting 
 	$T = (T_i)_I$ and $H\leq G$ be as in 
-	\eqref{IOTAFUNSALTBIG EQ}
+	\eqref{IOTAFUNSALTBIG EQ},
 	we then have
 \[
 	\left(\iota_{\**} \left(f^{\square V(-)}\right)\right)(T)
@@ -13413,6 +13418,7 @@ and $H \leq G$ is the isotropy of the first element of $I$.
 \]
 where the first step is 
 \eqref{IOTAFUNSALTBIG EQ},
+the second step is \eqref{FSQVT EQ}, 
 the third step is
 Corollary \ref{FIXEDPUSH COR}
 with $H_v$
