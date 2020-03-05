@@ -1408,7 +1408,11 @@ are Quillen equivalences.
 Morover, 
 analogous Quillen equivalences of
 semi-model structures\footnote{
-See \cite[\S 12.1.8]{Fre09} for a precise definition.}
+  We note that a Quillen adjunction between semi-model categories must defined by the usual condition on the right adjoint.
+  This implies, but is not equivalent to, an appropriate condition on the left adjoint, namely that it
+  preserves cofibrations and preserves trivial cofibrations with cofibrant source.
+  The definition of a Quillen equivalences remains unchanged.
+  A relevant discussion can be found in \cite[\S 12.1.8]{Fre09}.}
 $\mathsf{Op}_{\mathcal F}(\mathcal{V}) \simeq
 \mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
@@ -2961,7 +2965,7 @@ and Example \ref{PLANAREX EX} below
 
 
 Given a finite group $G$, there is also a category $\Omega_G$
-\index{categories!$G$-trees1@$\Omega_G$}
+\index{categories!Gtrees1@$\Omega_G$}
 of $G$-trees, jointly discovered by the authors and first discussed by the second author in 
 \cite[\S 4.3,\S 5.3]{Pe17}, which we now recall.
 Firstly, we let $\Phi$
@@ -2988,7 +2992,7 @@ by the pullback of categories
 \end{tikzcd}
 \end{equation}
 (where $\mathsf{r} \colon \Phi \to \Fin$ is the \emph{root functor},
-\index{Gtreesroot@$\mathsf{r}\colon \Phi \to \Fin$}
+\index{Gtreesleafroot0@$\mathsf{r}$}
 sending a forest to its set of roots),
 which is a repackaging of \cite[Def. 5.44]{Pe17}.
 Explicitly, a $G$-tree $T$ is then a tuple 
@@ -3247,6 +3251,7 @@ We will also abuse notation by regarding its objects as pairs $(S,\leq)$ where $
 \begin{proposition}\label{PLANARIZATIONCHAR PROP}
 	Let $T \in \Omega$ be a tree, 
 	with $V(T)$ its set of vertices.
+        \index{vertices/outer subtrees!vertices@$V(T)$}
 	There is a bijection
 \[
 	\begin{tikzcd}[row sep = 0em]
@@ -3464,7 +3469,7 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
 
 \begin{convention}\label{PLANARCONV CON}
       From now on we write simply $\Omega$, $\Omega_G$ to denote the categories $\Omega^s$, $\Omega_G^s$ of standard models (where planar structures are defined in the underlying forest as in Remark \ref{FORESTPLAN REM}).
-      \index{categories!$G$-trees1@$\Omega_G$}
+      \index{categories!Gtrees1@$\Omega_G$}
       Therefore, whenever a construction produces an object or diagram in $\Omega^p$ or $\Omega^p_G$,
       we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
       
@@ -3750,7 +3755,7 @@ are split Grothendieck fibrations. We now introduce some terminology.
 \begin{definition}\label{ROOTPULL DEF}
 The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
 in \eqref{OGDEF EQ} is called the \textit{root functor}.
-\index{Gtreesroot@$\mathsf{r}\colon \Phi \to \Fin$}
+\index{Gtreesleafroot0@$\mathsf{r}$}
 
 Further, fiber maps (those maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps}, and pullbacks with respect to $\mathsf{r}$ are called
 \textit{root pullbacks}.
@@ -4258,7 +4263,7 @@ and isomorphisms.
 	Given a tree $T \in \Omega$, there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
 	$\mathsf{lr}(T) \to T$, which we call the 
 	\textit{leaf-root} of $T$ (this name is motivated by the equivariant analogue, discussed in \S \ref{LRVERT SEC}).
-        \index{Gtreesleafroot@$\mathsf{lr}$}
+        \index{Gtreesleafroot1@$\mathsf{lr}$}
 	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
 \end{notation}
 
@@ -4768,7 +4773,7 @@ We start by recalling a key class of maps of $G$-trees.
 is an isomorphism of trees.	
 
 The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
-\index{categories!Gtrees0string0@$\Omega_G^0$}
+\index{categories!Gtrees0stringsn@$\Omega_G^n$}
 \end{definition}
 
 
@@ -4800,7 +4805,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
             \mathsf{lr}\left((T_x)_{x \in X}\right)=
             \left(\mathsf{lr}(T_x)\right)_{x \in X}.
       \]
-      \index{Gtreesleafroot@$\mathsf{lr}$}
+      \index{Gtreesleafroot1@$\mathsf{lr}$}
 \end{definition}
 
 
@@ -5019,12 +5024,14 @@ Note that $T_{v_{Ge}}$ is always a $G$-corolla, leading to the following definit
 
 \begin{definition}\label{GVERTFUN DEF}
 The \textit{$G$-vertex functor} is the functor
-\[
-	\begin{tikzcd}[row sep=0]
-	\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G \\
-	T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
-	\end{tikzcd}	
-\]
+\begin{equation}
+        \label{GVERT_EQ}
+  	  \begin{tikzcd}[row sep=0]
+	  \Omega_{G}^0 \ar{r}{\boldsymbol{V}_G} & \Fin_s \wr \Sigma_G \\
+	  T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
+	  \end{tikzcd}	
+\end{equation}
+\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$}
 where $\Fin_s$ is the category of finite sets and surjections of
 Remark \ref{FINSURJ REM}.
 \end{definition}
@@ -5039,7 +5046,7 @@ Remark \ref{FINSURJ REM}.
 \begin{remark}\label{NEED_WREATH_REMARK}
 	In the non-equivariant case the vertex functor can be defined to land instead in $\Sigma \wr \Sigma$.
 	The need to introduce the $\Fin_s \wr (\minus)$ construction comes from the fact that
-	in general quotient maps do not preserve the number of $G$-vertices.
+	in general, quotient maps do not preserve the number of $G$-vertices.
 	To illustrate,
 	and keeping the set-up of Example \ref{ROOTPULL EX},
 	let $G=\{\pm 1, \pm i, \pm j, \pm k\}$ and consider the pullback map 
@@ -5081,12 +5088,10 @@ The following elementary statement will play an important auxiliary role.
 
 
 \begin{lemma}\label{VGPULL LEM}
-The $G$-vertex functor
-\[
-\begin{tikzcd}
-	\Omega_{G}^0 \ar{r}{V_G} & \Fin_s \wr \Sigma_G
-\end{tikzcd}
-\]
+The $G$-vertex functor \eqref{GVERT_EQ}
+% \[
+% 	\boldsymbol{V}_G \colon \Omega_{G}^0 \longto \Fin_s \wr \Sigma_G
+% \]
 sends pullbacks over $\mathsf{O}_G$ (i.e. root pullbacks)
 to pullbacks over $\Fin_s \wr \mathsf{O}_G$
 (cf. Lemma \ref{FWRGROTH LEM}).
@@ -5412,7 +5417,8 @@ that will be more convenient for our definition of genuine equivariant operads i
 \begin{definition}\label{PLANSTR DEF}
 	The category $\Omega_{G}^n$ of 
 	\textit{planar $n$-strings} is the category whose objects are strings
-\begin{equation}\label{STRINGOBJ EQ}
+        \index{categories!Gtrees0stringsn@$\Omega_G^n$}
+        \begin{equation}\label{STRINGOBJ EQ}
 	\begin{tikzcd}
 	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
 	\end{tikzcd}	
@@ -5420,12 +5426,12 @@ that will be more convenient for our definition of genuine equivariant operads i
 	where $T_i \in \Omega_G$ and the $\varphi_i$ are planar \textit{tall} maps, while arrows are commutative diagrams 
 	\begin{equation} \label{PTNARROW EQ}
 	\begin{tikzcd}
-	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\pi_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\pi_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\pi_n}
+	T_0 \ar{r}{\varphi_1} \ar{d}[swap]{\rho_0} & T_1 \ar{r}{\varphi_2} \ar{d}[swap]{\rho_1} & \cdots \ar{r}{\varphi_n} & T_n \ar{d}[swap]{\rho_n}
 \\
 	T'_0 \ar{r}[swap]{\varphi'_1} & T'_1 \ar{r}[swap]{\varphi'_2} & \cdots \ar{r}[swap]{\varphi'_n} & T'_n
 	\end{tikzcd}	
 	\end{equation}
-where each $\pi_i$ is a quotient map.
+where each $\rho_i$ is a quotient map.
 \end{definition}
 
 %\begin{remark}
@@ -5438,27 +5444,31 @@ where each $\pi_i$ is a quotient map.
 	and identity arrows are planar tall,	
 	it follows that $\Omega_{G}^{\bullet}$
 	forms a simplicial object in $\mathsf{Cat}$, 
-	with faces given by composition and degeneracies by inserting identities. 
+	with faces given by composition and degeneracies by inserting identities.
+        \index{Gtreessimpdegen@$s_i$}
+        \index{Gtreessimpface@$d_i$}
 
 	Further setting 
-	$\Omega_{G}^{-1} = \Sigma_G$, the leaf-root functor $\Omega_{G}^{0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
+	$\Omega_{G}^{-1} = \Sigma_G$,
+        \index{categories!Gtrees0stringsn@$\Omega_G^n$}
+        the leaf-root functor $\Omega_{G}^{0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
 	$\Omega_{G}^{\bullet}$ into an augmented simplicial object and, furthermore, the maps 
 	$s_{-1} \colon \Omega_{G}^{n} \to \Omega_{G}^{n+1}$
-sending $T_0 \to T_1 \to \cdots \to T_n$ to 
-$\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
-\end{notation}
-
+        % \index{Gtreessimpdegen@$s_{-1}$}
+        sending $T_0 \to T_1 \to \cdots \to T_n$ to
+        $\mathsf{lr}(T_0) \to T_0 \to T_1 \to \cdots \to T_n$ equip it with extra degeneracies.
+  \end{notation}
+  
 
 \begin{remark}
-The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string as in \eqref{STRINGOBJ EQ} is equivalent to a string
-\begin{equation}\label{STRINGOBJALT EQ}
-	\begin{tikzcd}
-	T_{-1} \ar{r}{\varphi_0} & T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
-	\end{tikzcd}	
-\end{equation}
-where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
+      The identification $\Omega_{G}^{-1} = \Sigma_G$ can be understood by noting that a string as in \eqref{STRINGOBJ EQ} is equivalent to a string
+      \begin{equation}\label{STRINGOBJALT EQ}
+            \begin{tikzcd}
+                  T_{-1} \ar{r}{\varphi_0} & T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
+            \end{tikzcd}	
+      \end{equation}
+      where $T_{-1} = \mathsf{lr}(T_0) = \cdots = \mathsf{lr}(T_n)$.
 \end{remark}
-
 
 \begin{remark}\label{ALLSPLITMAPS REM}
 Since for any planar $n$-string we have 
@@ -5466,6 +5476,7 @@ $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
 there is a well-defined \emph{root functor}
 $\mathsf{r} \colon \Omega_{G}^{n} \to \mathsf{O}_G$,
+\index{Gtreesleafroot0@$\mathsf{r}$}
 which is readily seen to be a split Grothendieck fibration.
 Furthermore, generalizing Remark \ref{LRROOTMAP REM},
 all operators $d_i$, $s_j$ 
@@ -5476,13 +5487,14 @@ are maps of split Grothendieck fibrations.
 \begin{notation}\label{VGDEF NOT}
 We extend the vertex functor 
 in Definition \ref{GVERTFUN DEF} to a functor 
-$V_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
+$\boldsymbol{V}_G \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-1}$
 by
 \begin{equation}\label{VGDEF EQ}
-	V_G(T_0 \to T_1 \to \cdots \to T_n) = 
+	\boldsymbol{V}_G(T_0 \to T_1 \to \cdots \to T_n) = 
 	(T_{1,v_{Ge}} \to \cdots \to
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
+\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$}
 where $T_{i,v_{Ge}}$ is as in
 Notation \ref{UEUPEG NOT}
 for the map $T_0 \to T_i$ and $v_{Ge} \in V_G(T_0)$.
@@ -5505,6 +5517,7 @@ functoriality needs to be addressed separately.
 	For $I \subseteq \{0,1,\cdots,n\}$
 	we write
 	$d_I \colon \Omega^n_G \to \Omega^{n-|I|}_G$
+        % \index{Gtreessimpfaces@$d_I$}
 	for the functor which sends 
 	$T_0 \to T_1 \to \cdots \to T_n$
 	to the string with $T_i, i\in I$ omitted.
@@ -5528,6 +5541,7 @@ functoriality needs to be addressed separately.
 	for $C \in \Sigma_G$
 	defined before Proposition \ref{FIBERKANMAP PROP}
 	as $C \downarrow_{\mathsf{r}} \Omega^n_G$,
+        \index{categories!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$}
 	and refer to this as the \emph{rooted undercategory}.
 \end{notation}
 
@@ -5569,14 +5583,14 @@ An arrow in $P$ from
 $T_0 \to \cdots \to T_n$ to 
 $T'_0 \to \cdots \to T'_n$
 then consists of a quotient 
-$\pi_0 \colon T_0 \to T'_0$
-together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write $e'=\pi_0(e)$)
+$\rho_0 \colon T_0 \to T'_0$
+together with a $V_G(T_0)$ indexed tuple of quotients of strings (where we write $e'=\rho_0(e)$)
 \begin{equation} \label{PTNARROWLOC EQ}
 \begin{tikzcd}[column sep=1.2em]
-	T_{0,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{0,e}} & 
-	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{\pi_{1,e}} &
+	T_{0,v_{G e}} \ar{r}{} \ar{d}[swap]{\rho_{0,e}} & 
+	T_{1,v_{G e}} \ar{r}{} \ar{d}[swap]{\rho_{1,e}} &
 	\cdots \ar{r}{} &
-	T_{n,v_{G e}} \ar{d}{\pi_{n,e}}
+	T_{n,v_{G e}} \ar{d}{\rho_{n,e}}
 \\
 	T'_{0,v_{G e'}} \ar{r}{} &
 	T'_{1,v_{G e'}} \ar{r}{} &
@@ -5593,7 +5607,7 @@ That $\Omega_{G}^{n} \to P$ is injective on arrows is then clear.
 For surjectivity, note first that, by Lemma \ref{VGPULL LEM}, the composite $P \to \Omega_{G}^{0} \to \mathsf{O}_G$
 is a split Grothendieck fibration and 
 $P \to \Omega_{G}^{0}$ is a map of split Grothendieck fibrations. 
-Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\pi_0$ and all $\pi_{i,e}$ in 
+Indeed, pullbacks in $P$ can be built explicitly as those arrows such that $\rho_0$ and all $\rho_{i,e}$ in 
 \eqref{PTNARROWLOC EQ}
 are pullbacks (alternatively, an abstract argument also works).
 The alternative description of $V_G$ in 
@@ -5602,12 +5616,12 @@ Notation \ref{VGDEF NOT} combined with
 then show that 
 $\Omega_{G}^{n} \to P$ preserves pullback arrows,
 so that surjectivity needs only be checked for maps in the fibers over $\mathsf{O}_G$, i.e. on rooted maps.
-Tautologically, a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$ is.
+Tautologically, a map in $P$ is rooted iff $\rho_0 \colon T_0 \to T'_0$ is.
 But, since a quotient is an isomorphism iff it is so on roots,
 we further have that 
-a map in $P$ is rooted iff $\pi_0 \colon T_0 \to T'_0$
+a map in $P$ is rooted iff $\rho_0 \colon T_0 \to T'_0$
 is a rooted isomorphism and
-each $\pi_{i,e}$ in \eqref{PTNARROWLOC EQ} is an isomorphism.
+each $\rho_{i,e}$ in \eqref{PTNARROWLOC EQ} is an isomorphism.
 But now reinterpreting \eqref{PTNARROWLOC EQ} as a tuple of diagrams indexed by $f \in G e$,
 one obtains a diagram in $\mathsf{Sub}(T_0)$ of the same shape  which, once converted to a diagram in 
 $T_0 \downarrow \Omega_G^{\mathsf{rt}}$
@@ -5646,6 +5660,7 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \[
 	V_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
+\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G^k$}  
 be inductively defined by setting $V_{G}^{0} = V_G$ and
 letting
 $V_{G}^{k+1}$ be the composite
@@ -5730,6 +5745,7 @@ Note that no such diagram is defined for $d_k$.
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
+\index{Gtreessimppi@$\pi_i$}
 Similarly, for $s_j$ with $j<k$ (resp. $j \geq k$) one
 has commutative diagrams as on the left (resp. right) below. Note that for $s_k$ one uses the extra degeneracy 
 $s_{k-k-1}=s_{-1}$.
