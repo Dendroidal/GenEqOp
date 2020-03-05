@@ -30,7 +30,7 @@
 % ---------- indexing ----------
 
 \usepackage{imakeidx}
-\makeindex[columns=2, title=Glossary of Notation, intoc]
+\makeindex[columns=2, title=Glossary of recurrent notation, intoc]
 
 % ------ New Characters --------------------------------------
 
@@ -298,9 +298,9 @@ consisting only of products of Eilenberg-MacLane spaces (e.g. \cite[4K.6]{Hatche
 Instead, the more interesting structures are
 those monoids which are commutative and associative only up to homotopy and, moreover, up to ``all higher homotopies''.
 To capture these more subtle algebraic notions, Boardman-Vogt \cite{BV73} and May \cite{May72} developed
-the theory of \textit{operads} \index{categories!Operad@$\O \in \Op(\V)$}.
+the theory of \textit{operads} \index{categories!of operads/symmetric sequences!Operad@$\Op(\V)$}.
 Informally, a (simplicial) operad $\O \in \sOp = \Op(\sSet)$
-\index{categories!operadsi@$\sOp = \Op(\sSet)$}
+\index{categories!of operads/symmetric sequences!operadsi@$\sOp = \Op(\sSet)$}
 consists of a sequence of
 spaces $\O(n) \in \sSet$
 % \index{categories!simplicial@$\sSet$}
@@ -344,7 +344,6 @@ $\O(n) \to \O'(n)$
 is a weak equivalence of spaces
 upon forgetting the $\Sigma_n$-actions (e.g. \cite[3.2]{BM03}).
 In this context, $E_\infty$-operads are then equivalent to the commutative operad $\mathsf{Com}$
-\index{categories!Com@$\mathsf{Com}$}
 and, moreover, 
 any cofibrant replacement of $\mathsf{Com}$
 is $E_{\infty}$.
@@ -476,7 +475,6 @@ homomorphism
 $H \to \Sigma_n$,
 one obtains an associated graph subgroup
 $\Gamma_X \leq G \times \Sigma_n$,
-\index{subgroups!GammaX@$\Gamma_X \leq G \times \Sigma_n$}
 well-defined up to conjugation. 
 Next,
 using the natural 
@@ -515,11 +513,11 @@ the two,
 can hence be thought of as encoding varying degrees of ``equivariant commutativity up to homotopy''.
 More concretely, each type of $N_{\infty}$-operad is determined by a collection
 $\mathcal{F} = \{\mathcal{F}_n\}_{n \geq 0}$
-\index{F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
+\index{indexing systems!F@$\mathcal F = \set{\mathcal F_n}_{n \geq 0}$}
 where each $\mathcal{F}_n$ is itself a collection of graph subgroups of $G \times \Sigma_n$,
 with an operad $\O$ being called a
 \textit{$N \mathcal{F}$-operad}
-\index{NF@$N \mathcal F$-operad}
+\index{indexing systems!NF@$N \mathcal F$-operad}
 if it satisfies the fixed point condition
 \begin{equation}\label{NFINFTY EQ}
 	\O(n)^{\Gamma} \sim 
@@ -617,7 +615,7 @@ on the category $\mathsf{Top}^{\mathsf{O}_G^{op}}$ of
 are detected at each level of the presheaves.
 Noting that the fixed point characterization of $E \mathcal{F}$-spaces defines a natural object 
 $\delta_{\mathcal{F}} \in \mathsf{Top}^{\mathsf{O}_G^{op}}$ by
-\index{DeltaF@$\delta_{\mathcal F}$}
+\index{indexing systems!DeltaF@$\delta_{\mathcal F}$}
 $\delta_{\mathcal{F}}(G/H)=\**$ if $H \in \mathcal{F}$ and
 $\delta_{\mathcal{F}}(G/H)=\emptyset$ otherwise, 
 $E \mathcal{F}$-spaces can then be built as
@@ -657,7 +655,7 @@ in the context of operads with norm maps, we will need to replace
 $\mathsf{Top}^{\mathsf{O}_G^{op}}$
 with a category
 $\mathsf{sOp}_G$
-\index{categories!OpG@$\mathcal P \in \Op_G(\V)$}
+\index{categories!of operads/symmetric sequences!OpG@$\Op_G(\V)$}
 of new algebraic objects we dub 
 \textit{genuine equivariant operads}
 (as opposed to (regular) equivariant operads
@@ -923,7 +921,6 @@ $\mathcal{O}(2) \times \mathcal{O}(3)^{\times 2} \to
 (we discuss how \eqref{INTFIXPTCOMP EQ}
 is obtained in the next paragraph)
 where $\O(X)$ for $X$ an $H$-set denotes $\O(|X|)$
-\index{OX@$\O(X)$, $X \in \mathsf F^H$}
 with the $H$-action
 given by the identification $H \simeq \Gamma_X$
 (the graph subgroup $\Gamma_X \leq G \times \Sigma_n$ is as discussed after 
@@ -1281,7 +1278,7 @@ $\Sigma$ of finite sets and isomorphisms.
 We then define $G$-symmetric sequences by
 $\mathsf{Sym}_G(\mathcal{V})=
 \mathcal{V}^{\Sigma_G^{op}}$
-\index{categories!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}
+\index{categories!of operads/symmetric sequences!SymG@$\Sym_G(\mathcal V) = \V^{\Sigma_G^{op}}$}
 and,
 whenever $\mathcal{V}$ is a closed symmetric monoidal category with diagonals 
 (cf. Remark \ref{FINSURJ REM}),
@@ -1306,12 +1303,12 @@ that (a slight generalization of)
 Blumberg-Hill's indexing systems $\mathcal{F}$
 give rise to sieves 
 $\Sigma_{\mathcal{F}} \hookrightarrow \Sigma_G$
-\index{categories!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$}
+\index{indexing systems!SigmaF@$\Sigma_{\mathcal F} \hookrightarrow \Sigma_G$}
 and partial $G$-symmetric sequences
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{V})
 =
 \mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$
-\index{categories!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$}.
+\index{categories!of operads/symmetric sequences!SymF@$\mathsf{Sym_{\mathcal{F}}}(\mathcal{F})=\mathcal{V}^{\Sigma_{\mathcal{F}}^{op}}$}.
 Further, these 
 $\mathsf{Sym_{\mathcal{F}}}(\mathcal{V})$
 are suitably compatible with the monad
@@ -1319,7 +1316,7 @@ $\mathbb{F}_G$,
 thus giving rise to categories
 $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 of \textit{partial genuine equivariant operads}
-\index{categories!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$}.
+\index{categories!of operads/symmetric sequences!OpF@$\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$}.
 
 
 \begin{customthm}{II}\label{MAINEXIST2 THM}
@@ -2209,7 +2206,7 @@ Throughout we will let $\Fin$\index{wreath products!FIN@$\mathsf{F}$}
 denote the usual skeleton of the category of (ordered) finite sets and all set maps. Explicitly, its objects are the finite sets $\{1,2,\cdots,n\}$ for $n\geq 0$.
 
 
-\begin{definition}\index{wreath products!FIN@$\mathsf{F}\wr $}
+\begin{definition}\index{wreath products!FIN@$\mathsf{F}\wr (-)$}
 	For a category $\C$, we write 
 	$\Fin \wr \C = (\Fin^{op} \ltimes (\C^{op})^{\times \bullet})^{op}$ 
 	for the contravariant Grothendieck construction (cf. Definition \ref{GROTHCONS DEF}) of the functor
@@ -2236,7 +2233,6 @@ $c_{i_1}, c_{i_2} \in \mathcal{C}$ are isomorphic.
 Writing 
 $\Sigma_{\lambda} = \Sigma_{\lambda_1} \times \cdots \times
 \Sigma_{\lambda_k}$
-\index{subgroups!SigmaLambda@$\Sigma_{\lambda}$}
 and picking representatives $i_j \in \lambda_j$,
 the automorphism group of  
 $(c_i)_{i \in I}$ is given by
@@ -2564,7 +2560,7 @@ $((A) \otimes (B)) \otimes ((C \otimes D))$.
 
 \begin{remark}\label{FINSURJ REM}
 	\index{wreath products!FINS@$\mathsf{F}_s$}
-	\index{wreath products!FINSWR@$\mathsf{F}_s \wr$}
+	\index{wreath products!FINSWR@$\mathsf{F}_s \wr (-)$}
 	In light of the two previous remarks,
 	and writing $\Fin_s \hookrightarrow \Fin$ 
 	for the subcategory of surjections,
@@ -2972,11 +2968,11 @@ and Example \ref{PLANAREX EX} below
 
 
 Given a finite group $G$, there is also a category $\Omega_G$
-\index{categories!Gtrees1@$\Omega_G$}
+\index{categories!of trees!Gtrees1@$\Omega_G$}
 of $G$-trees, jointly discovered by the authors and first discussed by the second author in 
 \cite[\S 4.3,\S 5.3]{Pe17}, which we now recall.
 Firstly, we let $\Phi$
-\index{categories!GtreesForest@$\Phi = \Fin \wr \Omega$}
+\index{categories!of trees!GtreesForest@$\Phi = \Fin \wr \Omega$}
 denote the category of forests, 
 i.e. ``formal coproducts of trees''.
 A broad poset description of $\Phi$ is found in \cite[\S 5.2]{Pe17},
@@ -2987,7 +2983,7 @@ Similarly, writing
 $\Fin^G$ for the category of $G$-objects in $\Fin$ and
 identifying the $G$-orbit category as the subcategory
 $\mathsf{O}_G \hookrightarrow \Fin^G$
-\index{categories!OrbitG@$\mathsf O_G$}
+\index{categories!other!OrbitG@$\mathsf O_G$}
 of those sets with transitive actions, $\Omega_G$ can be described
 by the pullback of categories
 \begin{equation}\label{OGDEF EQ}
@@ -2999,7 +2995,7 @@ by the pullback of categories
 \end{tikzcd}
 \end{equation}
 (where $\mathsf{r} \colon \Phi \to \Fin$ is the \emph{root functor},
-\index{Gtreesleafroot0@$\mathsf{r}$}
+\index{key functors!Gtreesleafroot0@$\mathsf{r}$}
 sending a forest to its set of roots),
 which is a repackaging of \cite[Def. 5.44]{Pe17}.
 Explicitly, a $G$-tree $T$ is then a tuple 
@@ -3039,8 +3035,8 @@ as in \cite{We12}, \cite[Def. 5.9]{Pe17}.
 
 \begin{definition}\label{PLANARIZE DEF}
       Let $T \in \Omega$ be a tree. A \textit{planar structure} of $T$ is an extension of the descendancy partial order $\leq_d$ to a total order $\leq_p$ such that:
-      \index{Gtreesorderplanar@$\leq_p$}
-      \index{Gtreesorderdescendancy@$\leq_d$}
+      \index{structure on trees!relations!Gtreesorderplanar@$\leq_p$}
+      \index{structure on trees!relations!Gtreesorderdescendancy@$\leq_d$}
 	\begin{itemize}
 		\item \textit{Planar}: if $e \leq_p f$ and $e \nleq_d f$ then 
 		$g \leq_d f$ implies $e \leq_p g$.
@@ -3097,7 +3093,7 @@ $2^{\uparrow} = \epsilon$
 (where $\epsilon$ is the empty tuple),
 and $9^{\uparrow}$ is undefined.
 The vertex above $e$ is then encoded by the \emph{broad relation}
-$e^{\uparrow} \leq e$\index{vertices/outer subtrees!Broadvert@$e^{\uparrow} \leq e$}.
+$e^{\uparrow} \leq e$\index{structure on trees!relations!Broadvert@$e^{\uparrow} \leq e$}.
 
 The broad relation notation is meant to suggest a form of 
 \emph{broad associativity}. For example,
@@ -3111,7 +3107,7 @@ The broad relations of $T$ are those relations that are obtained from the vertex
 via broad transitivity, together with reflexive relations
 $e \leq e$.
 Pictorially, a relation 
-$\underline{e} \leq e$\index{vertices/outer subtrees!Broadvert@$\underline{e} \leq e$} holds 
+$\underline{e} \leq e$\index{structure on trees!relations!Broadvert@$\underline{e} \leq e$} holds 
 if there is an outer subtree
 (i.e. a tree subdiagram 
 which contains all edges of $T$ adjacent to its vertices;
@@ -3132,7 +3128,7 @@ To do so, we first introduce some notation.
 	Let $T \in \Omega$ be a tree and $e \in T$ an edge. We will denote
 	\[ I(e) =\{f \in T \colon e \leq_d f \} \]
         and refer to this poset as the \textit{input path of $e$}.
-        \index{vertices/outer subtrees!inputpath@$I(e)$}
+        \index{structure on trees!other!inputpath@$I(e)$}
 \end{notation}
 
 We will repeatedly use the following, which is a consequence of \cite[Cor. 5.25]{Pe17}.
@@ -3258,7 +3254,7 @@ We will also abuse notation by regarding its objects as pairs $(S,\leq)$ where $
 \begin{proposition}\label{PLANARIZATIONCHAR PROP}
 	Let $T \in \Omega$ be a tree, 
 	with $V(T)$ its set of vertices.
-        \index{vertices/outer subtrees!vertices@$V(T)$}
+        \index{structure on trees!vertices!vertices@$V(T)$}
 	There is a bijection
 \[
 	\begin{tikzcd}[row sep = 0em]
@@ -3476,7 +3472,7 @@ $\Phi^s$ and $\Fin \wr \Omega^s$.
 
 \begin{convention}\label{PLANARCONV CON}
       From now on we write simply $\Omega$, $\Omega_G$ to denote the categories $\Omega^s$, $\Omega_G^s$ of standard models (where planar structures are defined in the underlying forest as in Remark \ref{FORESTPLAN REM}).
-      \index{categories!Gtrees1@$\Omega_G$}
+      \index{categories!of trees!Gtrees1@$\Omega_G$}
       Therefore, whenever a construction produces an object or diagram in $\Omega^p$ or $\Omega^p_G$,
       we always implicitly reinterpret it by using the standardization functor $(\minus)^s$.
       
@@ -3762,7 +3758,7 @@ are split Grothendieck fibrations. We now introduce some terminology.
 \begin{definition}\label{ROOTPULL DEF}
 The map $\mathsf{r} \colon \Omega_G \to \mathsf{O}_G$
 in \eqref{OGDEF EQ} is called the \textit{root functor}.
-\index{Gtreesleafroot0@$\mathsf{r}$}
+\index{key functors!Gtreesleafroot0@$\mathsf{r}$}
 
 Further, fiber maps (those maps inducing identities, i.e. ordered bijections, on $\mathsf{r}(\minus)$) are called \textit{rooted maps}, and pullbacks with respect to $\mathsf{r}$ are called
 \textit{root pullbacks}.
@@ -4046,7 +4042,7 @@ we first recall some basic definitions and results concerning outer subtrees and
 \begin{equation}\label{OUTERFACE EQ}
 	f \leq_d e,\quad \forall_i f \nless_d e_i,
 \end{equation}
-\index{vertices/outer subtrees!planarouterface@$T_{\underline{e} \leq e}$}
+\index{structure on trees!outer faces!planarouterface@$T_{\underline{e} \leq e}$}
 with generating broad relations the relations $f^{\uparrow} \leq f$ for those $f \in T$ satisfying
 $\forall_i f\neq e_i$
 in addition to \eqref{OUTERFACE EQ},
@@ -4161,7 +4157,6 @@ We now recap some basic results.
 	We write $\eta \in \Omega$
 	for the \emph{stick tree} 
 	consisting of a single edge and no vertices.
-        \index{Gtreesstick@$\eta \in \Omega$}
 \end{notation}
 
 \begin{proposition}
@@ -4270,7 +4265,7 @@ and isomorphisms.
 	Given a tree $T \in \Omega$, there is a unique corolla $\mathsf{lr}(T) \in \Sigma$ and planar tall map 
 	$\mathsf{lr}(T) \to T$, which we call the 
 	\textit{leaf-root} of $T$ (this name is motivated by the equivariant analogue, discussed in \S \ref{LRVERT SEC}).
-        \index{Gtreesleafroot1@$\mathsf{lr}$}
+        \index{key functors!Gtreesleafroot1@$\mathsf{lr}$}
 	Explicitly, the number of leaves of $\mathsf{lr}(T)$ matches that of $T$, together with the inherited order. 
 \end{notation}
 
@@ -4529,7 +4524,6 @@ can equivalently be repackaged using planar tall maps.
 \begin{definition}
 	Let $T \in \Omega$ be a tree. 
 	The \textit{Segal core poset $\mathsf{Sc}(T)$} is the poset with objects the single edge subtrees $\eta_e$ and vertex subtrees $T_{e^{\uparrow} \leq e}$, ordered by inclusion.
-        \index{GtreesSegalCore@$\mathsf{Sc}(T)$}
 \end{definition}
 
 
@@ -4658,7 +4652,7 @@ the category of tall maps under $T$.
 	we will abbreviate
 	$U_{\varphi(e^{\uparrow}) \leq \varphi(e)}$
 	as simply
-	$U_{e^{\uparrow} \leq e}$\index{vertices/outer subtrees!UEUPE@$U_{e^{\uparrow} \leq e}$}.
+	$U_{e^{\uparrow} \leq e}$\index{structure on trees!vertices!UEUPE@$U_{e^{\uparrow} \leq e}$}.
 \end{notation}
 
 
@@ -4780,7 +4774,7 @@ We start by recalling a key class of maps of $G$-trees.
 is an isomorphism of trees.	
 
 The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation is justified in \S \ref{PLANARSTRING SEC}).
-\index{categories!Gtrees0stringsn@$\Omega_G^n$}
+\index{categories!of trees!Gtrees0stringsn@$\Omega_G^n$}
 \end{definition}
 
 
@@ -4802,7 +4796,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 	$\Sigma_G \hookrightarrow \Omega_{G}^0$ of those $G$-trees
 	$C = (C_x)_{x \in X}$ such that some (and thus all) $C_x$ is a corolla $C_x \in \Sigma \hookrightarrow \Omega$
 	(cf. Notation \ref{UNIQCOR NOT}).
-        \index{categories!SigmaG@$\Sigma_G$}
+        \index{categories!of trees!SigmaG@$\Sigma_G$}
 \end{definition}
 
 
@@ -4812,7 +4806,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
             \mathsf{lr}\left((T_x)_{x \in X}\right)=
             \left(\mathsf{lr}(T_x)\right)_{x \in X}.
       \]
-      \index{Gtreesleafroot1@$\mathsf{lr}$}
+      \index{key functors!Gtreesleafroot1@$\mathsf{lr}$}
 \end{definition}
 
 
@@ -4820,7 +4814,7 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 	The leaf-root functor extends 
 	to a functor $\mathsf{lr} \colon \Omega^{\mathsf{t}}_G \to \Sigma_G$, 
 	where $\Omega^{\mathsf{t}}_G$ is the category of tall maps, defined exactly as in Definition \ref{QUOT DEF}, but not to a functor defined on all arrows of $\Omega_G$.
-        \index{categories!Gtrees0tall@$\Omega_G^{\mathsf t}$}
+        \index{categories!of trees!Gtrees0tall@$\Omega_G^{\mathsf t}$}
 	Nonetheless, we will be primarily interested in the 
  restriction  
 	$\Omega_{G}^0 \xrightarrow{\mathsf{lr}} \Sigma_G$.
@@ -4953,8 +4947,8 @@ The category of $G$-trees and quotients is denoted $\Omega_{G}^0$ (this notation
 Given $T = (T_x)_{x \in X} \in \Omega_G$ we define its set of \textit{vertices} to be $V(T) = \coprod_{x \in X} V(T_x)$
 and its set of
 \textit{$G$-vertices} $V_G(T)$ to be the orbit set $V(T)/G$.
-\index{vertices/outer subtrees!vertices@$V(T)$}
-\index{vertices/outer subtrees!verticesG@$V_G(T) = V(T)/G$}
+\index{structure on trees!vertices!vertices@$V(T)$}
+\index{structure on trees!vertices!verticesG@$V_G(T) = V(T)/G$}
 
 Furthermore, we will regard 
 $V(T)$ as an object of $\Fin$ by using the induced planar order
@@ -5018,10 +5012,10 @@ we write $T_{e^{\uparrow}\leq e}$
 as a shorthand for $T_{x,e^{\uparrow}\leq e}$, where $e \in T_x$.
 
 Further, each element of $V_G(T)$ corresponds to an unique edge orbit $Ge$ for $e$ not a leaf.
-We will prefer to write $G$-vertices as $v_{Ge}$\index{vertices/outer subtrees!Gvertex@$v_{Ge}$}, 
+We will prefer to write $G$-vertices as $v_{Ge}$\index{structure on trees!vertices!Gvertex@$v_{Ge}$}, 
 and write
 \begin{equation}\label{TVGE DEF}
-	T_{v_{Ge}}\index{vertices/outer subtrees!Gvertexsubtree@$T_{v_{Ge}}$} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
+	T_{v_{Ge}}\index{structure on trees!vertices!Gvertexsubtree@$T_{v_{Ge}}$} = (T_{f^{\uparrow} \leq f})_{f \in Ge}
 \end{equation}
 where $Ge$ inherits the planar order.
 \end{notation}
@@ -5038,7 +5032,7 @@ The \textit{$G$-vertex functor} is the functor
 	  T \ar[mapsto]{r} & (T_{v_{Ge}})_{v_{Ge} \in V_G(T)},
 	  \end{tikzcd}	
 \end{equation}
-\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$}
+\index{key functors!vertices@$\boldsymbol{V}_G$}
 where $\Fin_s$ is the category of finite sets and surjections of
 Remark \ref{FINSURJ REM}.
 \end{definition}
@@ -5266,12 +5260,13 @@ as discussed in Remark \ref{WHYALT REM}.
 
 
 \begin{remark}\label{SUBSDATUMCONV REM}
-	Writing $T = (T_x)_{x \in X}$ as usual
+	Writing $T = (T_x)_{x \in X}$ as usual,
 	one obtains (non-equivariant) $T_x$-substitution data 
 	$S_{x,(\minus)}$ for each $T_x$.
-	We again write
+	As in the discussion after Remark \ref{SCTARR REM},
+	we again write
 	$S_{x,(\minus)} \colon \mathsf{Sc}(T_x) \to \Omega$
-	and note that these are compatible with the $G$-action in the sense that the obvious diagram
+	and note that these are compatible with the $G$-action, in the sense that the obvious diagram
 \[
 \begin{tikzcd}[row sep =3pt]
 	\mathsf{Sc}(T_x) \ar{rr}{S_{x,(\minus)}} \ar{rd}[swap]{g} &&
@@ -5342,7 +5337,7 @@ cf. Proposition \ref{INDMAPCHAR PROP}.
 	we write
 	\begin{equation}\label{UEUPEG EQ}
 	S_{v_{Ge}} = 
-	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{vertices/outer subtrees!SVGE@$S_{v_{Ge}}$}
+	\left(S_{\varphi(f^{\uparrow}) \leq \varphi(f)}\right)_{f \in Ge}.\index{structure on trees!vertices!SVGE@$S_{v_{Ge}}$}
 	\end{equation}
 \end{notation}
 
@@ -5424,7 +5419,7 @@ that will be more convenient for our definition of genuine equivariant operads i
 \begin{definition}\label{PLANSTR DEF}
 	The category $\Omega_{G}^n$ of 
 	\textit{planar $n$-strings} is the category whose objects are strings
-        \index{categories!Gtrees0stringsn@$\Omega_G^n$}
+        \index{categories!of trees!Gtrees0stringsn@$\Omega_G^n$}
         \begin{equation}\label{STRINGOBJ EQ}
 	\begin{tikzcd}
 	T_0 \ar{r}{\varphi_1} & T_1 \ar{r}{\varphi_2} & \cdots \ar{r}{\varphi_n} & T_n
@@ -5452,12 +5447,12 @@ where each $\rho_i$ is a quotient map.
 	it follows that $\Omega_{G}^{\bullet}$
 	forms a simplicial object in $\mathsf{Cat}$, 
 	with faces given by composition and degeneracies by inserting identities.
-        \index{Gtreessimpdegen@$s_i$}
-        \index{Gtreessimpface@$d_i$}
+        \index{key functors!Gtreessimpdegen@$s_i$}
+        \index{key functors!Gtreessimpface@$d_i$}
 
 	Further setting 
 	$\Omega_{G}^{-1} = \Sigma_G$,
-        \index{categories!Gtrees0stringsn@$\Omega_G^n$}
+        \index{categories!of trees!Gtrees0stringsn@$\Omega_G^n$}
         the leaf-root functor $\Omega_{G}^{0} \xrightarrow{\mathsf{lr}} \Sigma_G$ makes 
 	$\Omega_{G}^{\bullet}$ into an augmented simplicial object and, furthermore, the maps 
 	$s_{-1} \colon \Omega_{G}^{n} \to \Omega_{G}^{n+1}$
@@ -5483,7 +5478,7 @@ $\mathsf{r}(T_i) = \mathsf{r}(T_j)$
 for any $1 \leq i,j \leq n$, 
 there is a well-defined \emph{root functor}
 $\mathsf{r} \colon \Omega_{G}^{n} \to \mathsf{O}_G$,
-\index{Gtreesleafroot0@$\mathsf{r}$}
+\index{key functors!Gtreesleafroot0@$\mathsf{r}$}
 which is readily seen to be a split Grothendieck fibration.
 Furthermore, generalizing Remark \ref{LRROOTMAP REM},
 all operators $d_i$, $s_j$ 
@@ -5501,7 +5496,7 @@ by
 	(T_{1,v_{Ge}} \to \cdots \to
 	T_{n,v_{Ge}})_{v_{Ge} \in V_G(T_0)}	
 \end{equation}
-\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G$}
+\index{key functors!vertices@$\boldsymbol{V}_G$}
 where $T_{i,v_{Ge}}$ is as in
 Notation \ref{UEUPEG NOT}
 for the map $T_0 \to T_i$ and $v_{Ge} \in V_G(T_0)$.
@@ -5548,7 +5543,7 @@ functoriality needs to be addressed separately.
 	for $C \in \Sigma_G$
 	defined before Proposition \ref{FIBERKANMAP PROP}
 	as $C \downarrow_{\mathsf{r}} \Omega^n_G$,
-        \index{categories!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$}
+        \index{categories!of trees!undercat@$C \downarrow_{\mathsf r} \Omega^n_G$}
 	and refer to this as the \emph{rooted undercategory}.
 \end{notation}
 
@@ -5667,7 +5662,7 @@ in $\Omega_{G}^{n}$ lifting the rooted map in $P$.
 \[
 	\boldsymbol{V}_{G}^{k} \colon \Omega_{G}^{n} \to \Fin_s \wr \Omega_{G}^{n-k-1}
 \]
-\index{vertices/outer subtrees!vertices@$\boldsymbol{V}_G^k$}  
+\index{key functors!vertices@$\boldsymbol{V}_G^k$}  
 be inductively defined by setting $\boldsymbol{V}_{G}^{0} = \boldsymbol{V}_G$ and
 letting
 $\boldsymbol{V}_{G}^{k+1}$ be the composite
@@ -5752,7 +5747,7 @@ Note that no such diagram is defined for $d_k$.
 \arrow[Leftrightarrow, from=F1, to=G2,shorten >=0.15cm,shorten <=0.15cm,"\pi_{i}"]
 \end{tikzcd}
 \end{equation}
-\index{Gtreessimppi@$\pi_i$}
+\index{key functors!Gtreessimppi@$\pi_i$}
 Similarly, for $s_j$ with $j<k$ (resp. $j \geq k$) one
 has commutative diagrams as on the left (resp. right) below. Note that for $s_k$ one uses the extra degeneracy 
 $s_{k-k-1}=s_{-1}$.
@@ -6980,8 +6975,9 @@ are the identity on the first tree component $C_1$.
 We now consider the associated adjunctions.
 \begin{equation}\label{TWOADJOINTS EQ}
 \begin{tikzcd}[column sep =5em]
-\index{iotau@$\iota^{\**}$}
-\index{iotal@$\iota_{\**}$}
+\index{key functors!iotau@$\iota^{\**}$}
+\index{key functors!iotal@$\iota_{\**}$}
+\index{key functors!iotar@$\iota_{"!}$}
 	\mathsf{Sym}_G(\mathcal{V}) \ar{r}[swap]{\iota^{\**}} 
 	&
 	\mathsf{Sym}^G(\mathcal{V})
@@ -8470,8 +8466,8 @@ together with
 $l$-labelings of $T_s, T_{s+1},\cdots, T_{n}$ such that the $\varphi_r,r>s$ are $\lambda_i$-inert label maps.
 
 Arrows in $\Omega_{G}^{n,s,\lambda}$ are quotients of strings
-$(\pi_r \colon T_r \to T'_r)$ such that 
-$\pi_r, r\geq s$ are label maps.
+$(\rho_r \colon T_r \to T'_r)$ such that 
+$\rho_r, r\geq s$ are label maps.
 
 Further, for any $s<0$ or $n<s'$ we write
 \begin{equation}\label{EXTRACASES EQ}
@@ -16276,9 +16272,9 @@ $\Omega_G^n$.
 	has objects the planar tall strings
 	$(T_0 \to \cdots \to T_n) \in \Omega^n_G$
 	and arrows diagrams
-	$(\pi_i \colon T_i \to T'_i)$
+	$(\rho_i \colon T_i \to T'_i)$
 	as in \eqref{PTNARROW EQ}
-	where the $\pi_i$ are outer maps
+	where the $\rho_i$ are outer maps
 	in each tree component.
 \end{definition}
 
