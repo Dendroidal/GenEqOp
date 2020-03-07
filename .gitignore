@@ -41,3 +41,6 @@ GenEqOp.idx
 *.aux
 *.idx
 *.log
+for arxiv/biblio.bib
+for arxiv/GenEqOp.brf
+for arxiv/GenEqOp.tex
