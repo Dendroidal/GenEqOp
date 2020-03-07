@@ -2,7 +2,7 @@
 % arara: makeindex
 % arara: pdflatex
 \documentclass[a4paper,10pt
-,draft
+%,draft
 % , final
 ]{article}%
 
@@ -373,10 +373,10 @@ To see why, we consider a homotopical replacement for $\mathsf{Com}$ using this 
 %$\mathsf{Com}(n)=\**$,
 %consists of those operads 
 %$\O$ such that:
-%\begin{inparaenum}
+%\begin{enumerate*}
 %	\item[(i)] $\O(n)$ is $\Sigma_n$-free and;
 %	\item[(ii)] $\O(n)$ is contractible.
-%\end{inparaenum}
+%\end{enumerate*}
 if one simply equips an $E_{\infty}$-operad $\O$ with a trivial $G$-action, the resulting $G$-operad has fixed points for each subgroup $\Gamma \leq G \times \Sigma_n$ described by
 \begin{equation}\label{NAIVEGEINFTY EQ}
 	\O(n)^{\Gamma} \sim 
@@ -1182,12 +1182,12 @@ $\mathsf{Op}^G_{\mathcal{F}}(\mathcal{V})$
 exist
 provided that
 $(\mathcal{V},\otimes)$:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category with cofibrant unit;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers.
-\end{inparaenum}
+\end{enumerate*}
 \end{customthm}
 
 We note that a similar result has also been proven by Guti\'{e}rrez-White in \cite{GW18}.
@@ -1349,13 +1349,13 @@ $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$
 exist
 provided that
 $(\mathcal{V},\otimes)$:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category with cofibrant unit;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
 \item[(v)] has diagonals.
-\end{inparaenum}
+\end{enumerate*}
 \end{customthm}
 
 Theorem \ref{MAINEXIST2 THM} is proven in 
@@ -1423,14 +1423,14 @@ $\mathsf{Op}_{\mathcal F}(\mathcal{V}) \simeq
 exist
 provided that
 $(\mathcal{V},\otimes)$:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] is a cofibrantly generated model category;
 \item [(ii)] is a closed monoidal model category with cofibrant unit;
 \item[(iii)] has cellular fixed points;
 \item[(iv)] has cofibrant symmetric pushout powers;
 \item[(v)] has diagonals;
 \item[(vi)] has cartesian fixed points.
-\end{inparaenum}
+\end{enumerate*}
 \end{customthm}
 
 Theorem \ref{MAINQUILLENEQUIV THM}
@@ -3293,7 +3293,7 @@ It remains to check transitivity in the hardest case, that of
 $e <_p f <_p g$ with $\leq_d$-incomparable $f,g$.
 We write $c = e \vee f \vee g$.
 By the ``therefore'' part of Proposition \ref{TERNARYJOIN PROP}, either:
-\begin{inparaenum}
+\begin{enumerate*}
 	\item[(i)] $e \vee f <_d c$, in which case 
 	Proposition \ref{TERNARYJOIN PROP}
 	implies 
@@ -3307,7 +3307,7 @@ c^{\uparrow}_f <
 c^{\uparrow}_g $ in $c^{\uparrow}$
 so that $c^{\uparrow}_e \neq c^{\uparrow}_g$ and by Proposition \ref{TERNARYJOIN PROP} it is also 
 $c = e \vee g$ and transitivity follows.
-\end{inparaenum}
+\end{enumerate*}
 \end{proof}
 
 
@@ -4568,13 +4568,13 @@ and $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$ is chosen in the unique way that make
 
 \begin{proof}
 We first show in parallel that:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] $\colim_{\mathsf{Sc}(T)} U_{(\minus)}$, which we denote $U_T$, exists;
 \item[(ii)] for the datum $\left(T_{e^{\uparrow}\leq e}\right)$, it is $T = \colim_{\mathsf{Sc}(T)} T_{(\minus)}$;
 \item[(iii)] $V(U_T) = \coprod_{V(T)} V(U_{e^{\uparrow} \leq e})$;
 \item[(iv)] the induced map
 $T \to U_T$ is planar tall.
-\end{inparaenum}
+\end{enumerate*}
  
 The argument is by induction on the number of vertices of $T$, with the base cases of $T$ with $0$ or $1$ vertices being immediate, since then $T$ is the terminal object of $\mathsf{Sc}(T)$.
 Otherwise, one can choose a non trivial grafting decomposition so as to write $T = R \amalg_e S$, resulting 
@@ -8291,7 +8291,7 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 	so one might hope they would suffice for our purposes.
 %
 	However, one runs into two key issues:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)]
 	by Remark \ref{NEED_WREATH_REMARK},
 	defining genuine operads $\mathsf{Op}_G(\V)$
@@ -8323,7 +8323,7 @@ Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM}.
 	is in the image of $\widetilde{\mathbb{F}}$
 	iff $K \leq G$;
 	compare with \eqref{NAIVEGEINFTY EQ},\eqref{GENGEINFTY EQ}).
-\end{inparaenum}
+\end{enumerate*}
 
 Given these issues, 
 rather than modifying all of \cite{WY18},\cite{BB17},
@@ -9396,7 +9396,7 @@ Noting that the maps in
 are simply underlying identities on some fixed tree $T$
 that convert some of the $\mathcal{P}$, $Y$ labels into $X$ labels,
 we label a vertex $T_{v_{Ge}}$ by:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)]
 $j$ such that
 $0 < j \leq +\infty$
@@ -9409,7 +9409,7 @@ if the last $j$ labels of $T_{v_{Ge}}$ in
 \eqref{RELABSTR EQ} are $\mathcal{P}$ labels;
 \item[(iii)] $j=0$ if all labels in \eqref{RELABSTR EQ}
 are $X$-labels.
-\end{inparaenum}
+\end{enumerate*}
  This process clearly establishes the desired bijection on objects.
 
 The compatibilities with arrows and with the simplicial structure are straightforward.
@@ -9452,14 +9452,14 @@ Lemma \ref{OBJGENREL LEMMA} says that
 the arrows of 
 $|\Omega_G^{n,\lambda_{l}}|$
 are generated by three types of arrows:
-\begin{inparaenum}
+\begin{enumerate*}
 	\item[(i)] arrows in $\Omega_G^{0,\lambda_{0}}$;
 	\item[(ii)] arrows determined by an object
 	$(T_0 \to T_1) \in \Omega_G^{1,\lambda_{0}}$;
 	\item[(iii)]
 	arrows determined by an object
 	$T \in \Omega_G^{0,\lambda_{1}}$.
-\end{inparaenum}
+\end{enumerate*}
 In terms of $\Omega^e_G$, one has that:
 type (i) arrows are the (labeled) quotients, 
 which act on \eqref{NPXY EQ}
@@ -10952,7 +10952,7 @@ $\upgamma_! \colon
 \mathsf{Op}_{G}(\mathcal{V})$
 (which is an extension by $\emptyset$)
 has the following key properties:
-\begin{inparaenum}
+\begin{enumerate*}
 	\item[(i)] it preserves colimits;
 	\item[(ii)] it sends the generating (trivial) cofibrations
 	of $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
@@ -10970,7 +10970,7 @@ has the following key properties:
 	\item[(iii)] maps in $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ which become genuine projective 
 	weak equivalences in $\mathsf{Op}_{G}(\mathcal{V})$
 	are $\mathcal{F}$-projective weak equivalences.
-\end{inparaenum}
+\end{enumerate*}
 	Thus, if $f$ is a transfinite 
 	composite of pushouts of generating trivial cofibrations
 	in $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$,
@@ -12350,7 +12350,7 @@ As usual, retracts preserve weak equivalences,
 and we can hence assume that there is an ordinal $\kappa$
 and $X_{\bullet} \colon \kappa \to \mathcal{V}^G$
 such that 
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] 
 $f_{\beta} \colon X_{\beta} \to X_{\beta+1}$
 is the pushout of a generating (trivial) cofibration $i_{\beta}$;
@@ -12359,7 +12359,7 @@ $\colim_{\alpha < \beta} X_{\alpha} \xrightarrow{\simeq} X_{\beta}$ for limit or
 \item[(iii)] setting 
 $X_{\kappa} = \colim_{\beta < \kappa} X_{\beta}$, 
 $f$ equals the transfinite composite $X_0 \to X_{\kappa}$.
-\end{inparaenum}
+\end{enumerate*}
 
 We argue by transfinite induction on $\kappa$.
 Writing $\bar{f}_{\beta} \colon X_0 \to X_{\beta}$ for the partial composites, it suffices to check that the natural transformation of $\kappa$-diagrams (rightmost map not included)
@@ -12415,14 +12415,14 @@ $g=\bar{f}_{\beta}$, $h=f_{\beta}$, this last map is the composite $k_nk_{n-1}\c
 together with the left Quillen bifunctor
 \eqref{LTIMESPRODQUI EQ}
 since:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] the induction hypothesis shows the cofibrancy of  $\bar{f}_{\beta}^{\square n-r}$;
 \item[(ii)] the cofibrancy of $i_{\beta}^{\square r}$
 together with the fact that 
 $f_{\beta}^{\square r}$ is a pushout of $i_{\beta}^{\square r}$
 (cf. \cite[Lemma 4.11]{Pe16})
  imply the cofibrancy of $f_{\beta}^{\square r}$.
-\end{inparaenum}
+\end{enumerate*}
 %combined with 
 %\eqref{LTIMESPRODQUI EQ}, the induction hypothesis applied to $\bar{f}_{\beta}$, the fact that $f_{\beta}^{\square k}$ is a pushout of $i_{\beta}^{\square k}$
 %(cf. \cite[Lemma 4.11]{Pe16}) and the (trivial) cofibrancy of $i_{\beta}^{\square k}$ proven at the beginning.
@@ -13138,11 +13138,11 @@ we analyze the cofibrancy of the maps
 \]
 that constitute the inner part of \eqref{FILTINTALT EQ}, and where we recall that $T \in \Omega_G^a$ is an alternating tree.
 This analysis will consist of two parts, to be combined in the next section:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] a $\mathcal{F}_{T_e}$-cofibrancy claim when $T=G \cdot T_e$ is free and;
 \item[(ii)] a fixed point claim for non free trees, 
 as in Remark \ref{REFLCOREFL REM}.
-\end{inparaenum}
+\end{enumerate*}
 
 
 For both the sake of generality and to simplify notation in the proofs, we will state the following results using the labeled trees 
@@ -15523,7 +15523,7 @@ in $[1]\times \mathcal{I}_1$. The result follows.
 	formula $\eqref{REALDEF EQ}$ for $n,m \leq 2$.
 
 Indeed, one can show that a sufficient set of generating relations for $|\mathcal{I}_{\bullet}|$ is given by:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)]
  the relations in $\mathcal{I}_0$
 (including relations stating that identities of  
@@ -15532,6 +15532,7 @@ $\mathcal{I}_0$ are identities of $|\mathcal{I}_{\bullet}|$);
 $i_0 = d_1(s_0(i_0)) \xrightarrow{s_0(i_0)} d_1(s_0(i_0)) = i_0$
 is an identity;
 \item[(iii)] for each arrow $I_1\colon i_1 \to i'_1$ in $\mathcal{I}_1$ the relation that the square below commutes
+\end{enumerate*}
 \[
 \begin{tikzcd}
 	d_1(i_1) \ar{r}{i_1} \ar{d}[swap]{d_1(I_1)} & 
@@ -15542,14 +15543,15 @@ is an identity;
 \end{tikzcd}
 \]
 and;
+\begin{enumerate*}
 \item[(iv)] for each object $i_2 \in \mathcal{I}_2$ the relation that the following triangle commutes.
+\end{enumerate*}
 \[
 \begin{tikzcd}[row sep = 0.5em]
 	d_{1,2}(i_2) \ar{rr}{d_1(i_2)} \ar{rd}[swap]{d_2(i_2)} & & d_{0,1}(i_2) \\
 	& d_{0,2}(i_2) \ar{ru}[swap]{d_0(i_2)}
 \end{tikzcd}
 \]
-\end{inparaenum}
 \end{remark}
 
 %\begin{example}\label{PLANARSTRING EX}
@@ -15694,12 +15696,12 @@ $d_{\hat{0}} \colon ([n],i_n) \to ([0],d_{\hat{0}}^{\**}(i_n))$
  and the fact that 
 $s \left(d_{\hat{0}}^{\**}\right) = id_{[0, d_{\hat{0}}^{\**}(i_n)]}$ provides an arrow to an object with $n=0$ without changing $r$.
 If $n=0$, one can apply the induction hypothesis by lifting $f_r$ to $\Delta^{op} \ltimes \mcI_{\bullet}$ according to one of two cases:
-\begin{inparaenum}
+\begin{enumerate*}
 	\item[(i)] if $f_r$ is induced by an arrow $I_0$ of $\mcI_0$, the lift of $f_r$ is simply  
 	$([0],i'_0) \xrightarrow {I_0} ([0],i_0)$;
 	\item[(ii)] if $f_r$ is induced by $i_1\in \mcI_1$ the lift is provided by the map
 	$([1],i_1) \to ([0],d_0(i_1))$.
-\end{inparaenum}
+\end{enumerate*}
 \end{proof}
 
 
@@ -15924,7 +15926,7 @@ Then the functors $\tilde{F}_n \colon \mcI_n \to \C$ given by the composites
 \]
 assemble to an object 
 $\mcI_{\bullet}^{\tilde{F}} \in \mathsf{WSpan}^l(\**,\C)^{\Delta^{op}}$ which is isomorphic to $\mcI_{\bullet}^F$ and such that:
-\begin{inparaenum}
+\begin{enumerate*}
 \item[(i)] $\mcI_{\bullet}^{\tilde{F}}$
 has the same operators $d_i,s_j$;
 \item[(ii)] in $\mcI_{\bullet}^{\tilde{F}}$ the 
@@ -15933,6 +15935,7 @@ diagrams \eqref{IDENTSIMPRELSISO EQ} for $0 < i \leq n$, $0 \leq j \leq n$ are s
 in $\mcI_{\bullet}^{\tilde{F}}$
 the natural transformation associated to $d_0$
 is the composite
+\end{enumerate*}
 \begin{equation}
 \begin{tikzcd}[column sep = 40pt]
 	\mathcal{I}_n \ar{r}{d_{2,\cdots,n}}
@@ -15952,7 +15955,7 @@ is the composite
 \arrow[Rightarrow, from=F2, to=FV2, shorten <=0.10cm,shorten >=0.10cm,"\delta_0"]
 \end{tikzcd}
 \end{equation}
-\end{inparaenum}
+
 
 Dually, if \eqref{IDENTSIMPRELSISO EQ}
 are natural isomorphisms for
