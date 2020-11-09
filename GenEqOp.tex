@@ -16234,11 +16234,18 @@ $N$ on
 $\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$
 in Definition \ref{WSPAN_MONAD_DEFINITION}.
 Given $\mathcal{P} \in \mathsf{Op}_G(\mathcal{V})$,
-so that $\upsilon \mathcal{P}$ is a $N$-algebra,
+so that $\upsilon \mathcal{P}$ is a $N$-algebra (cf. Remark \ref{REPACKAGERES REM}; recall that 
+$\upsilon \colon \mathsf{Fun}(\Sigma_G^{op},\mathcal{V})
+\to 
+\mathsf{WSpan}^r(\Sigma_G,\mathcal{V}^{op})$
+is the inclusion functor sending
+$\Sigma_G \xrightarrow{\mathcal{P}}\mathcal{V}^{op}$
+to the span 
+$\Sigma_G \overset{=}{\leftarrow} \Sigma_G \xrightarrow{\mathcal{P}}\mathcal{V}^{op}$, as discussed in \S\ref{FGMON SEC}),
 consider the bar construction
 $B_{\bullet} = 
 B_{\bullet}(N,N,\upsilon \mathcal{P})
-= N^{n+1} \upsilon \mathcal{P}$,
+= N^{\bullet+1} \upsilon \mathcal{P}$,
 whose levels we denote as
 \begin{equation}\label{BARLEVELS EQ}
 	\Sigma_G \leftarrow 
