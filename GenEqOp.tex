@@ -1,6 +1,3 @@
-% arara: pdflatex
-% arara: makeindex
-% arara: pdflatex
 \documentclass[a4paper,10pt
 %,draft
 % , final
@@ -1203,23 +1200,40 @@ which are less standard, are discussed in
 \S \ref{PUSHPOW SEC}, respectively.
 %
 Further, by \textit{semi-model category}
-we mean the notion in 
-\cite[Def. 2.2.1]{WY18}\footnote{
-  We note that the role of $\mathcal M$ in \cite[Def. 2.2.1]{WY18}
-  is auxiliary,
-  as one is always free to replace $\mathcal M$ 
-  with the terminal category $\**$, 
-  recovering the notion of a \textit{$J$-semi-model structure (over $\**$)} from \cite[Def. 1]{Spi01}.
-  In practice,
-  the purpose of choosing $\mathcal{M} \neq \**$
-  in \cite{WY18}
-  is that the existence of the
-  semi-model structure on $\mathcal D$ therein
-  is typically established via transfer from $\mathcal{M}$.
-  We also caution that, when $\mathcal{M} \neq \**$,
+we mean the notion in
+\cite[Def. 2.1.1]{BW}\footnote{
+  This agrees with the original notion of
+  a \textit{$J$-semi-model category (over $\**$)} from \cite[Def. 1]{Spi01},
+  as well as, e.g. 
+  a \textit{semi-model category (over $\**$)} from \cite[Def. 2.2.1]{WY18}.  
+  In practice, the purpose of choosing some $\mathcal M$ distinct from $\**$ in these definitions
+  is that the extience of the semi-model structure on $\mathcal D$ therein
+  is typically established via transfer from $\mathcal{M}$;
+  however, the more powerful of these transfer theorems (e.g. \cite[Thm. 2.2.2]{WY18} and \cite[Thm. 2.2.2]{BW})
+  cannot be applied to the context in this paper.
+  As a final note for the reader,
+  we caution that, when $\mathcal{M} \neq \**$,
   the notion in \cite{Spi01}
   is more demanding than that in \cite{WY18}.
-},
+ },
+% \cite[Def. 2.2.1]{WY18}\footnote{
+%   We note that the role of $\mathcal M$ in \cite[Def. 2.2.1]{WY18}
+%   is auxiliary,
+%   as one is always free to replace $\mathcal M$ 
+%   with the terminal category $\**$, 
+%   recovering e.g.
+%   the notion of a \textit{semimodel structure} from \cite[Def. 2.1.1]{BW}
+%   as well as the original notion of a \textit{$J$-semi-model structure (over $\**$)} from \cite[Def. 1]{Spi01}.
+%   In practice,
+%   the purpose of choosing $\mathcal{M} \neq \**$
+%   in \cite{WY18}
+%   is that the existence of the
+%   semi-model structure on $\mathcal D$ therein
+%   is typically established via transfer from $\mathcal{M}$.
+%   We also caution that, when $\mathcal{M} \neq \**$,
+%   the notion in \cite{Spi01}
+%   is more demanding than that in \cite{WY18},\cite{BW}.
+% },
 %(see also \cite[\S 12.1]{Fre09}\footnote{The notion in \cite{WY18} recovers that from \cite{Fre09} by choosing the model category $\mathcal M$ in \cite[\S 2.2]{WY18} to be the unique model structure on the terminal category.}),
 which relaxes the definition of model structure by requiring that some of the axioms need only apply
 if the domains of certain cofibrations are cofibrant. 
@@ -10842,9 +10856,10 @@ and using either
 %(or equivalently \cite[Thm A.1]{Ste16})
 in the model structure case
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$
-or 
-\cite[Thm. 2.2.2]{WY18}
-in the semi-model category structure case,
+or
+\cite[Thm. 2.2.1]{BW}
+% \cite[Thm. 2.2.2]{WY18}
+in the semi-model structure case,
 one must analyze free $\mathbb{F}_G$-extension diagrams of the form
 \[ 
 \begin{tikzcd} 
@@ -10880,21 +10895,24 @@ then
 $\mathcal{P} \to \mathcal{P}[u]$
 is a level genuine cofibration, trivial whenever $u$ is.
 
-In the model structure case 
+
+When
 $\mathcal{V} = \mathsf{sSet},\mathsf{sSet}_{\**}$,
 Remark \ref{ALLCOF REM}
 guarantees that any 
-$\mathcal{P}$ is level genuine cofibrant,
-and thus the conditions in
-\cite[Thm. 11.3.2]{Hi03} are met (since transfinite composites of trivial cofibrations are again trivial cofibrations),
-showing the existence of the model structure.
-In the semi-model structure case, the condition that 
-$\mathcal{P}$ is level genuine cofibrant
-does not quite coincide with the cell complex condition in \cite[Thm. 2.2.2]{WY18}. 
-However, the regular (i.e. not trivial) 
-cofibration case in the previous paragraph together with a routine induction argument over the cell decomposition of cellular $\P$ shows that cellular  
-$\P$ are indeed level genuine cofibrant.
-Thus, the semi-model structure case also follows.
+$\mathcal{P}$ is level genuine cofibrant.
+Thus in the model (resp. semi-model) structure cases,
+the necessary conditions for
+\cite[Thm. 11.3.2]{Hi03} (resp. \cite[Thm. 2.2.1]{BW}) are met,
+as transfinite composites of trivial cofibrations are again trivial cofibrations,
+showing the existence of the (semi-)model structure.
+% In the semi-model structure case, the condition that 
+% $\mathcal{P}$ is level genuine cofibrant
+% does not quite coincide with the cell complex condition in \cite[Thm. 2.2.2]{WY18}. 
+% However, the regular (i.e. not trivial) 
+% cofibration case in the previous paragraph together with a routine induction argument over the cell decomposition of cellular $\P$ shows that cellular  
+% $\P$ are indeed level genuine cofibrant.
+% Thus, the semi-model structure case also follows.
 
 We now turn to showing the existence of the (semi-)model structures appearing in Theorems \ref{MAINEXIST1 THM} and \ref{MAINEXIST2 THM},
 which are essentially corollaries 
@@ -10913,27 +10931,28 @@ has both fewer generating (trivial) cofibrations
 and more weak equivalences than the ``genuine projective'' model structure defined by \eqref{MAINPFADJ EQ}.
 Therefore, transfinite composites of pushouts of generating projective trivial cofibrations 
 are genuine projective equivalences and hence also projective equivalences, showing that the condition in 
-\cite[Thm. 11.3.2(2)]{Hi03}
+\cite[Thm. 11.3.2(2)]{Hi03} (resp. \cite[Thm. 2.2.1]{BW})
 %\cite[Lemma 2.3(1)]{SS00} 
 holds,
-establishing the existence of the projective model structure. 
-% \footnote{
-% The condition in \cite[Lemma 2.3(1)]{SS00}
-% is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
-% By contrast, the condition in 
-% \cite[Thm. 11.3.2]{Hi03}, while more convenient to state, is merely a sufficient condition.}.
-In the semi-model structure case,
-one replaces \cite[Thm. 11.3.2]{Hi03}
-%\cite[Lemma 2.3(1)]{SS00} 
-with the natural analogue result
-that only requires the conclusion of condition (2) therein
-to hold when the mentioned $FJ$-cell complexes 
-have cofibrant domains
-(unfortunately, we know of no direct reference for this analogue result, but its proof is identical\footnote{For example, \cite[Thm. 2]{Spi01}
-proves such an analogue for a variant definition
-of semi-model structure.}).
-% \footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
-%
+establishing the existence of the projective (semi-)model structure. 
+%%% \footnote{
+%%% The condition in \cite[Lemma 2.3(1)]{SS00}
+%%% is clearly also necessary for the existence of the model structure therein, and hence a necessary and sufficient condition. 
+%%% By contrast, the condition in 
+%%% \cite[Thm. 11.3.2]{Hi03}, while more convenient to state, is merely a sufficient condition.}.
+% In the semi-model structure case,
+% one replaces \cite[Thm. 11.3.2]{Hi03}
+% %\cite[Lemma 2.3(1)]{SS00} 
+% with \cite[Thm. 2.2.1]{BW}.
+% with the natural analogue result
+% that only requires the conclusion of condition (2) therein
+% to hold when the mentioned $FJ$-cell complexes 
+% have cofibrant domains
+% (unfortunately, we know of no direct reference for this analogue result, but its proof is identical\footnote{For example, \cite[Thm. 2]{Spi01}
+% proves such an analogue for a variant definition
+% of semi-model structure.}).
+%%% \footnote{\cite{Spi01} first introduced the notion of a \textit{$J$-semi-model}, which includes as part of the definition that transfered cofibrations with cofibrant domain forget to cofibrations; more recent accounts prove this as a property of well-behaved semi-model categories (as do we in our key Lemma \ref{MAINLEM LEM}). After accounting for this difference, the analogue result is \cite[Thm. 2]{Spi01}.}.
+
 
 
   
@@ -10984,7 +11003,7 @@ has the following key properties:
 	establishing the 
 	%required
 	condition in 
-	\cite[Thm. 11.3.2(2)]{Hi03} (or its semi-model category analogue).
+	\cite[Thm. 11.3.2(2)]{Hi03} (resp. \cite[Thm. 2.2.1]{BW}).
 %
 	The existence of the projective (semi-)model structure on $\mathsf{Op}_{\mathcal{F}}(\mathcal{V})$ follows,
 	finishing the proof of Theorem \ref{MAINEXIST2 THM}.
@@ -11025,7 +11044,7 @@ are now isomorphisms,
 which we use to induce a 
 ``genuine projective'' model structure on 
 $\mathsf{Op}^G(\mathcal{V})$. This again uses
-\cite[Thm. 11.3.2(2)]{Hi03},
+\cite[Thm. 11.3.2(2)]{Hi03} (resp. \cite[Thm. 2.2.1]{BW}),
 with the main step being an analysis of 
 free $\mathbb{F}$-extension diagrams in 
 $\mathsf{Op}^G(\mathcal{V})$
@@ -11061,13 +11080,13 @@ $\mathcal{O}_{k-1}(n) \to \mathcal{O}_{k}(n)$
 are $G\times \Sigma_n^{op}$-genuine cofibrations 
 follows by Remark \ref{EXMAINLEM REM}
 (replacing the role of Lemma \ref{EXMAINLEM LEM} in the $\mathsf{Op}_G(\mathcal{V})$ argument),
-so that \cite[Thm. 11.3.2(2)]{Hi03}
+so that \cite[Thm. 11.3.2(2)]{Hi03} (resp. \cite[Thm. 2.2.1]{BW})
 applies to establish the 
-genuine projective model structure on 
+genuine projective (semi-)model structure on 
 $\mathsf{Op}^G(\mathcal{V})$
 lifted along \eqref{MAINPFADJAL EQ}.
 To finish the argument,
-note that, compared to this genuine projective model structure,
+note that, compared to this genuine projective (semi-)model structure,
 a choice of 
 $\mathcal{F} = \{\mathcal{F}_n\}$
 as in Theorem \ref{MAINEXIST1 THM}
@@ -11075,7 +11094,7 @@ decreases generating (trivial) cofibrations and
 increases weak equivalences,
 so that the argument
 in the previous paragraph concerning the
-projective model structure on
+projective (semi-)model structure on
 $\mathsf{Op}_{G}(\mathcal{V})$
 applies mutatis mutandis.
 %
@@ -11601,7 +11620,8 @@ In contrast to the existence of model structure results shown in \S \ref{MAINEXI
 this will require a far more careful analysis of the  
 fixed-point model structures
 $\mathcal{V}^G_{\mathcal{F}}$
-from Definition \ref{GENUINEMS_DEF}.
+from Definition \ref{GENUINEMS_DEF},
+precluding a simple application of e.g. \cite[Thm. 2.2.2]{WY18} or \cite[Thm. 2.2.2]{BW}.
 %
 This analysis is the subject of \S \ref{FAMILY_SEC} and \S \ref{PUSHPOW SEC}, the results of which are converted 
 to the setup of $G$-trees in \S
